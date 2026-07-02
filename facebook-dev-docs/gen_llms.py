@@ -20,7 +20,7 @@ MARKDOWN_DIR = ROOT / "markdown"
 PUBLIC_DIR = ROOT / "site" / "docs" / "public"
 
 # Keep in sync with SITE_URL in site/docs/.vitepress/config.mts.
-SITE_URL = "https://nermalcat69.github.io/meta-business-api"
+SITE_URL = "https://nermalcat69.github.io/meta-developer-docs"
 
 FRONTMATTER_RE = re.compile(r"^---\n(.*?)\n---\n\n(.*)$", re.DOTALL)
 

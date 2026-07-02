@@ -5,14 +5,14 @@ A crawlable Markdown mirror of Meta's developer documentation
 WhatsApp/Messenger Platform, Instagram Platform, Facebook Login, Audience
 Network, and more. Content is current **as of July 2, 2026**.
 
-**Live site:** https://nermalcat69.github.io/meta-business-api/
+**Live site:** https://nermalcat69.github.io/meta-developer-docs/
 
 It's built specifically to be useful as **context for AI coding agents** —
 each page is clean Markdown with a link back to its real
 `developers.facebook.com` source, and the whole corpus is also available as:
 
-- [`/llms.txt`](https://nermalcat69.github.io/meta-business-api/llms.txt) — an index of every page, per the [llms.txt convention](https://llmstxt.org/)
-- [`/llms-full.txt`](https://nermalcat69.github.io/meta-business-api/llms-full.txt) — the full content of every page in one file
+- [`/llms.txt`](https://nermalcat69.github.io/meta-developer-docs/llms.txt) — an index of every page, per the [llms.txt convention](https://llmstxt.org/)
+- [`/llms-full.txt`](https://nermalcat69.github.io/meta-developer-docs/llms-full.txt) — the full content of every page in one file
 
 Point an agent at either URL to give it the full Meta developer docs as
 context in one shot, instead of crawling the (client-rendered, hard-to-parse)

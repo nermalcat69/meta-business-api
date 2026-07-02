@@ -44,7 +44,7 @@ drift from the live site over time.
 
 Found a stale page, a conversion bug, or something worth improving? Issues
 and pull requests are welcome on the
-[GitHub repository](https://github.com/nermalcat69/meta-business-api).
+[GitHub repository](https://github.com/nermalcat69/meta-developer-docs).
 
 ## Built by
 

@@ -4,10 +4,10 @@ import { fileURLToPath } from "node:url";
 import { generateSidebar, generateNav } from "./scripts/genSidebar.mts";
 
 // Deployed via GitHub Pages (project page), so the site lives under a
-// /meta-business-api/ subpath rather than at the domain root. Update both of
+// /meta-developer-docs/ subpath rather than at the domain root. Update both of
 // these together if the repo is renamed or moved to a custom domain.
-const SITE_URL = "https://nermalcat69.github.io/meta-business-api";
-const BASE = "/meta-business-api/";
+const SITE_URL = "https://nermalcat69.github.io/meta-developer-docs";
+const BASE = "/meta-developer-docs/";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const docsRoot = path.resolve(__dirname, "..");
