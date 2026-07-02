@@ -7,13 +7,13 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/conversio
 
 Updated: Jan 9, 2026
 
-This guide explains Meta’s ClickID and the `_fbc` and `_fbp` parameters. The `_fbc` and `_fbp` parameters represent browser cookie values and can be sent with your server events. See [About Cookie Settings For Your Meta Pixel⁠](https://www.facebook.com/business/help/471978536642445).
+This guide explains Meta's ClickID and the `_fbc` and `_fbp` parameters. The `_fbc` and `_fbp` parameters represent browser cookie values and can be sent with your server events. See [About Cookie Settings For Your Meta Pixel⁠](https://www.facebook.com/business/help/471978536642445).
 
-We recommend that you always send `_fbc` and `_fbp` browser cookie values in the `fbc` and `fbp` event parameters, respectively, when available. These values are subject to change over multiple browser sessions, so we recommend refreshing a user’s profile with the latest value whenever possible.
+We recommend that you always send `_fbc` and `_fbp` browser cookie values in the `fbc` and `fbp` event parameters, respectively, when available. These values are subject to change over multiple browser sessions, so we recommend refreshing a user's profile with the latest value whenever possible.
 
-## What Is Meta’s ClickID
+## What Is Meta's ClickID
 
-ClickID is a **Meta-generated** parameter that is passed with the URL of an advertiser’s website when a user clicks an ad on Facebook and/or Instagram. Sharing ClickID can help you attribute more conversions and reach more people, which may drive better ad performance. ClickID auto-attachment does not impact other custom tracking parameters you may have enabled.
+ClickID is a **Meta-generated** parameter that is passed with the URL of an advertiser's website when a user clicks an ad on Facebook and/or Instagram. Sharing ClickID can help you attribute more conversions and reach more people, which may drive better ad performance. ClickID auto-attachment does not impact other custom tracking parameters you may have enabled.
 
 Example URL with ClickID: `https://example.com/?fbclid=IwAR2F4-dbP0l7Mn1IawQQGCINEz7PYXQvwjNwB_qa2ofrHyiLjcbCRxTDMgk`
 
@@ -27,7 +27,7 @@ Example URL with ClickID: `https://example.com/?fbclid=IwAR2F4-dbP0l7Mn1IawQQGCI
 
 ### Retrieve from `fbclid` URL query parameter
 
-Whenever present in the URL query parameters, try to obtain the parameter server-side by reading it from the HTTP request URL’s query string.
+Whenever present in the URL query parameters, try to obtain the parameter server-side by reading it from the HTTP request URL's query string.
 
 Example:
 
@@ -44,9 +44,9 @@ Host: www.example.org
 ClickID value is available within `_fbc` cookie in 2 cases:
 
 * Meta Pixel is installed on the website. In this case, Meta Pixel automatically stores ClickID value in the `_fbc` browser cookie once available
-* You already store it in the cookie from the server or in backend storage, following the best practices listed in the “Store ClickID” section
+* You already store it in the cookie from the server or in backend storage, following the best practices listed in the "Store ClickID" section
 
-In both these cases formatted ClickID can be obtained from the `_fbc` cookie by reading the Cookie headers of the HTTP request. See how to format ClickID correctly in the [“Format ClickID”](https://developers.facebook.com/documentation/ads-commerce/conversions-api/parameters/fbp-and-fbc#2--format-clickid) section below.
+In both these cases formatted ClickID can be obtained from the `_fbc` cookie by reading the Cookie headers of the HTTP request. See how to format ClickID correctly in the ["Format ClickID"](https://developers.facebook.com/documentation/ads-commerce/conversions-api/parameters/fbp-and-fbc#2--format-clickid) section below.
 
 ## 2. Format ClickID
 
@@ -56,13 +56,13 @@ The formatted ClickID value must be of the form
 `version.subdomainIndex.creationTime.<fbclid>`, where:
 
 * version is always this prefix: **fb**
-* subdomainIndex is which domain the cookie is defined on (**‘com’ = 0**, **‘example.com’ = 1**, **‘www.example.com’ = 2**)
-* creationTime is the UNIX time since epoch in **milliseconds** when the `_fbc` was stored. If you don’t save the `_fbc` cookie, use the timestamp when you first observed or received this `fbclid` value
+* subdomainIndex is which domain the cookie is defined on (**'com' = 0**, **'example.com' = 1**, **'www.example.com' = 2**)
+* creationTime is the UNIX time since epoch in **milliseconds** when the `_fbc` was stored. If you don't save the `_fbc` cookie, use the timestamp when you first observed or received this `fbclid` value
 * **`<fbclid>`** is the value for the `fbclid` query parameter in the page URL.
 
 ***Note**: If you use the parameter builder library to form fbc, the format will contain an appendix at the end. Please refer to the [parameter builder library](https://developers.facebook.com/documentation/ads-commerce/conversions-api/parameter-builder-library) page for more details.*
 
-Here’s an example of what the resulting `fbc` parameter value could look like (note that the `<fbclid>` portion is invalid):
+Here's an example of what the resulting `fbc` parameter value could look like (note that the `<fbclid>` portion is invalid):
 
 ```
 fb.1.1554763741205.AbCdEfGhIjKlMnOpQrStUvWxYz1234567890
@@ -70,7 +70,7 @@ fb.1.1554763741205.AbCdEfGhIjKlMnOpQrStUvWxYz1234567890
 
 ## 3. Store ClickID
 
-**Note**: Before storing ClickID it is crucial to format it as described in the [“Format ClickID”](https://developers.facebook.com/documentation/ads-commerce/conversions-api/parameters/fbp-and-fbc#2--format-clickid) section above - it will ensure a valid value sent to Meta via the Conversions API.
+**Note**: Before storing ClickID it is crucial to format it as described in the ["Format ClickID"](https://developers.facebook.com/documentation/ads-commerce/conversions-api/parameters/fbp-and-fbc#2--format-clickid) section above - it will ensure a valid value sent to Meta via the Conversions API.
 
 ### Set formatted ClickID in the `_fbc` cookie in the HTTP response
 
@@ -83,8 +83,8 @@ once retrieved from the `fbclid` URL query parameter or the `_fbc` browser cooki
 
 Note, only set the cookie if:
 
-* \_fbc cookie doesn’t exist and ClickID was retrieved from the `fbclid` URL query parameter
-* `fbclid` in the URL query parameter isn’t equal to the corresponding value in the `_fbc` cookie value. In the cookie, `fbclid` corresponds to the string after the last “.” in cookie value.
+* \_fbc cookie doesn't exist and ClickID was retrieved from the `fbclid` URL query parameter
+* `fbclid` in the URL query parameter isn't equal to the corresponding value in the `_fbc` cookie value. In the cookie, `fbclid` corresponds to the string after the last "." in cookie value.
 
 Example:
 
@@ -108,8 +108,8 @@ After the value of the ClickID is obtained, it needs to be correctly formatted b
 **Parameter value**: must be of the form `version.subdomainIndex.creationTime.fbclid`, where:
 
 * version is always this prefix: `fb`
-* subdomainIndex is which domain the cookie is defined on (‘com’ = 0, example.com’ = 1, ‘www.example.com’ = 2). If you’re generating this field on a server, and not saving an `_fbc` cookie, use the value 1.
-* creationTime is the UNIX time since epoch in milliseconds when the `_fbc` cookie was saved. If you don’t save the `_fbc` cookie, use the timestamp when you first observed or received this `fbclid` value.
+* subdomainIndex is which domain the cookie is defined on ('com' = 0, example.com' = 1, 'www.example.com' = 2). If you're generating this field on a server, and not saving an `_fbc` cookie, use the value 1.
+* creationTime is the UNIX time since epoch in milliseconds when the `_fbc` cookie was saved. If you don't save the `_fbc` cookie, use the timestamp when you first observed or received this `fbclid` value.
 * `fbclid` is the value for the `fbclid` query parameter in the page URL.
 
 Value example:
@@ -147,7 +147,7 @@ Conversions API payload example:
 
 ### Payload Helper
 
-[Payload Helper](https://developers.facebook.com/documentation/ads-commerce/conversions-api/payload-helper) is a tool that allows you to construct the Conversions API request payload to ensure correct format of the data sent to Meta. It also features Business SDK in multiple programming languages you can use to integrate with Conversions API. They are available upon clicking on the “Get Code” button within the “Generate Code” section.
+[Payload Helper](https://developers.facebook.com/documentation/ads-commerce/conversions-api/payload-helper) is a tool that allows you to construct the Conversions API request payload to ensure correct format of the data sent to Meta. It also features Business SDK in multiple programming languages you can use to integrate with Conversions API. They are available upon clicking on the "Get Code" button within the "Generate Code" section.
 
 ## `fbp`
 
@@ -156,13 +156,13 @@ When the Meta Pixel is installed on a website, and the Pixel uses first-party co
 The `fbp` event parameter value must be of the form version.subdomainIndex.creationTime.randomnumber, where:
 
 * `version` is always this prefix: `fb`
-* `subdomainIndex` is which domain the cookie is defined on (‘com’ = 0, ‘example.com’ = 1, ‘www.example.com’ = 2). If you’re generating this field on a server, and not saving an `_fbp` cookie, use the value 1.
-* `creationTime` is the UNIX time since epoch in **milliseconds** when the `_fbp` cookie was saved. If you don’t save the `_fbp` cookie, use the timestamp when you first observed or received this fbp value.
+* `subdomainIndex` is which domain the cookie is defined on ('com' = 0, 'example.com' = 1, 'www.example.com' = 2). If you're generating this field on a server, and not saving an `_fbp` cookie, use the value 1.
+* `creationTime` is the UNIX time since epoch in **milliseconds** when the `_fbp` cookie was saved. If you don't save the `_fbp` cookie, use the timestamp when you first observed or received this fbp value.
 * `Randomnumber` is generated by the Meta Pixel SDK to ensure every `_fbp` cookie is unique.
 
 ***Note**: If you use the parameter builder library to form fbc, the format will contain an appendix at the end. Please refer to the [parameter builder library](https://developers.facebook.com/documentation/ads-commerce/conversions-api/parameter-builder-library) page for more details.*
 
-Here’s an example of what the `fbp` value could look like:
+Here's an example of what the `fbp` value could look like:
 
 ```
 fb.1.1596403881668.1116446470

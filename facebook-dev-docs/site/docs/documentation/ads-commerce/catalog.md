@@ -18,7 +18,7 @@ The latest Conversions API Gateway and Signals Gateway version is: `v2.3.0`
 * Signals Gateway Pixel partner-based onboarding available during setup step. Advertisers can now choose their setup methods, including popular partners such as Google Tag Manager.
   * Google Tag Manager [detailed setup guide](https://developers.facebook.com/documentation/ads-commerce/gateway-products/signals-gateway/pixel-setup-google-tag-manager) is also available
 * Added pagination and search functionality for data sources, destinations, and pipelines in Signals Gateway, improving usability and making it easier to find and manage data elements.
-* Custom conversions and website custom audience supported in Signals Gateway. We’ll conduct matching and enrichment through rules configured in Events Manager, and also forward matched events to the Conversions API seamlessly. [Learn more⁠](https://www.facebook.com/business/help/462806641140703?id=1205376682832142)
+* Custom conversions and website custom audience supported in Signals Gateway. We'll conduct matching and enrichment through rules configured in Events Manager, and also forward matched events to the Conversions API seamlessly. [Learn more⁠](https://www.facebook.com/business/help/462806641140703?id=1205376682832142)
 
 ## May 15, 2025
 
@@ -27,7 +27,7 @@ The latest Conversions API Gateway and Signals Gateway version is: `v2.3.0`
 #### Features:
 
 * Improved Enhance Events feature to enrich events with additional possible user data.
-* **Signals Gateway instance setup for partners**: We have added a setup flow for large partners’ Signals Gateway instances from the Signals Gateway microsite.
+* **Signals Gateway instance setup for partners**: We have added a setup flow for large partners' Signals Gateway instances from the Signals Gateway microsite.
 * **Signals Gateway instance setup using Google Cloud Platform**: We have added a setup flow for Signals Gateway instances using Google Cloud Platform (GCP) from the Signals Gateway microsite.
 * **Custom destination updates**: Our custom destination option now supports major providers.
 * We have added post-general availability (GA) work items, our audience feature able to connect most major providers.
@@ -58,11 +58,11 @@ The latest Conversions API Gateway and Signals Gateway version is: `v2.3.0`
 
 #### Features:
 
-* Signals Gateway is a product within your own cloud instance that collects, processes, and transmits advertiser’s first-party data to their desired destinations. It offers built-in features and tools for collecting, processing, and transmitting signals from one or more data sources to various data destinations with no pre-defined data purpose.
-* Signals Gateway utilizes a “data pipelines” concept, which allows advertisers to efficiently manage their data flow by incorporating multiple data sources and destinations into each pipeline.
+* Signals Gateway is a product within your own cloud instance that collects, processes, and transmits advertiser's first-party data to their desired destinations. It offers built-in features and tools for collecting, processing, and transmitting signals from one or more data sources to various data destinations with no pre-defined data purpose.
+* Signals Gateway utilizes a "data pipelines" concept, which allows advertisers to efficiently manage their data flow by incorporating multiple data sources and destinations into each pipeline.
 * Signals Gateway provides robust data collection tools, including Signals Gateway Pixel and Signals Gateway SDK options, for seamless data capture directly into Signals Gateway data sources.
 * The Audience Generation Feature allows advertisers to set rules for creating audiences from their data through existing data pipelines, enabling them to use these curated audiences for campaigns and customer segmentation analysis.
-* The Meta Conversions API plugin enables advertisers to route data to The Conversions API for Meta advertising purposes, with components governed by Meta’s Business Tool Terms.
+* The Meta Conversions API plugin enables advertisers to route data to The Conversions API for Meta advertising purposes, with components governed by Meta's Business Tool Terms.
 * The Google BigQuery plugin will provide a dedicated data destination for connecting to Google Cloud BigQuery, allowing data flow into BigQuery for data analytics.
 * The Custom HTTPS Destination can be used to stream events to a custom endpoint securely, through basic auth, Oauth or an API key.
 
@@ -104,7 +104,7 @@ The latest Conversions API Gateway and Signals Gateway version is: `v2.3.0`
 
 #### Features:
 
-* SA EKS’s UX change - SA EKS now is using the same UI as our MA EKS.
+* SA EKS's UX change - SA EKS now is using the same UI as our MA EKS.
 
 ## April 30, 2024
 
@@ -120,7 +120,7 @@ The latest Conversions API Gateway and Signals Gateway version is: `v2.3.0`
 
 #### Features:
 
-* The **Settings** > **Updates** menu now provides a ‘Download logs’ button. With this button you will be able to download system logs for debugging.
+* The **Settings** > **Updates** menu now provides a 'Download logs' button. With this button you will be able to download system logs for debugging.
 
 ## October 24, 2023
 
@@ -132,7 +132,7 @@ The latest Conversions API Gateway and Signals Gateway version is: `v2.3.0`
   * Installing Conversions API Gateway from Events Manager is basically the same as installing with the AWS CloudFormation template provided in the developer document. The difference is that some information will be pre-populated in the Events Manager setup process and the pixel chosen in the Events Manager is connected by default.
   * When the custom domain routing is set up with Cloudflare, the newly installed Conversions API Gateway will work as Conversions API Gateway for Multiple Accounts.
 * Improved Kubernetes implementation to have support for infrastructure lifecycle management to keep Conversions API Gateway instance on the latest optimized infrastructure
-* Users don’t need to provide email and password in AWS CloudFormation when creating an instance. Users will use an invitation link generated in the Outputs tab of AWS CloudFormation to create an admin account and login.
+* Users don't need to provide email and password in AWS CloudFormation when creating an instance. Users will use an invitation link generated in the Outputs tab of AWS CloudFormation to create an admin account and login.
 * In Conversions API Gateway for Multiple Accounts, Host account users have the ability to enable two-factor authentication using email when the SMTP is enabled. Once this feature is activated, individual users are given the option to enable two-factor authentication for their accounts if they so choose.
 
 ## September 11, 2023
@@ -147,7 +147,7 @@ The latest Conversions API Gateway and Signals Gateway version is: `v2.3.0`
 
 #### Bug fixes:
 
-* We are disabling the update of any component other than Solutions Installer if Solutions Installer is not updated for the users who have automatic updates turned off. For the users who have automatic updates disabled, we want the Solutions Installer component to be updated first because other components’ updates will fail unless the Solutions Installer is updated.
+* We are disabling the update of any component other than Solutions Installer if Solutions Installer is not updated for the users who have automatic updates turned off. For the users who have automatic updates disabled, we want the Solutions Installer component to be updated first because other components' updates will fail unless the Solutions Installer is updated.
 
 ## July 24, 2023
 
@@ -192,7 +192,7 @@ The latest Conversions API Gateway and Signals Gateway version is: `v2.3.0`
   * A new control, Automatic System Optimizations, has been added. Your Conversions API Gateway instance can enable new automatic system optimizations. This is an extension of Automatic Updates and defaults to enabled if Automatic Updates are enabled
 * Conversions API Gateway for Multiple Accounts Control Plane API is generally available for users to programmatically manage accounts, data sources and users.
 * Support changing auto scaling configuration post installation in the Conversions API Gateway for Multiple Accounts.
-  * Previously, the auto scaling configuration could be set during installation but there wasn’t a provision to update it from the Conversions API Gateway UI. Now we are providing the capability to change auto scaling configuration post installation in the Conversions API Gateway for Multiple Accounts.
+  * Previously, the auto scaling configuration could be set during installation but there wasn't a provision to update it from the Conversions API Gateway UI. Now we are providing the capability to change auto scaling configuration post installation in the Conversions API Gateway for Multiple Accounts.
 * Automatic backup functionality is enabled by default to allow for disaster recovery of the system. It can be disabled from the Conversions API Gateway UI if required.
 
 #### Bug fixes:
@@ -251,7 +251,7 @@ The latest Conversions API Gateway and Signals Gateway version is: `v2.3.0`
 * For advertisers who switch to v1.3.0, the Conversions API Gateway will provision and install a new Virtual Private Cloud (VPC) instead of using the default VPC and:
   * The Conversions API Gateway will be installed in the Public subnet of the new VPC.
   * Advertisers using IPv6 need to create an additional AAAA DNS record pointing to the IPv6 address of the EC2 instance.
-* Provisioning Web UI change: the “Click to Conversions API Gateway” button is now removed. Customers are prompted to go back to Events Manager to complete setup.
+* Provisioning Web UI change: the "Click to Conversions API Gateway" button is now removed. Customers are prompted to go back to Events Manager to complete setup.
 
 #### Bug fixes:
 
@@ -271,7 +271,7 @@ The latest Conversions API Gateway and Signals Gateway version is: `v2.3.0`
 
 #### Features:
 
-* Enabled automatic Conversions API Gateway updates to give users access to the latest security and performance optimizations as they’re released.
+* Enabled automatic Conversions API Gateway updates to give users access to the latest security and performance optimizations as they're released.
 * Enabled keycloak integration for security and user authentication.
 * Fetched additional attributes in active telemetry like pod restart count, ingress certificate status to troubleshoot performance and stability issues.
 

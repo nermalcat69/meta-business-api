@@ -15,7 +15,7 @@ To [automatically implement advanced matching⁠](https://www.facebook.com/busin
 
 ## Implementation
 
-To use advanced matching, format the visitor’s data as a JSON object and include it in the [pixel base code `fbq('init')` function call](https://developers.facebook.com/documentation/meta-pixel/get-started#base-code) as a third parameter.
+To use advanced matching, format the visitor's data as a JSON object and include it in the [pixel base code `fbq('init')` function call](https://developers.facebook.com/documentation/meta-pixel/get-started#base-code) as a third parameter.
 
 Be sure to place advanced matching parameters in the pixel base code or the values will not be treated as manual advanced matching values.
 

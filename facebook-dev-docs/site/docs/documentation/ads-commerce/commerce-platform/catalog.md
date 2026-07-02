@@ -24,7 +24,7 @@ Shops ads for omni-channel business is designed to provide a seamless shopping e
 * Once the buyer likes the products, they can either add items to cart or check out directly.
   * The buyer will be shown the location of stores nearby.
   * The buyer will be able to select the pick-up store.
-* When the buyer clicks on checkout, Meta will load the products into the advertiser’s website cart and present a payment/checkout page to proceed with the transaction in the in-app browser.
+* When the buyer clicks on checkout, Meta will load the products into the advertiser's website cart and present a payment/checkout page to proceed with the transaction in the in-app browser.
   * The store picked by the buyer in the step above will be shown on the checkout/cart page.
   * The buyer will need to enter additional information such as pick-up time, etc.
 * The buyer can complete the checkout in the in-app browser. The checkout experience is the same as someone checking out products on your website using a mobile web browser.
@@ -91,28 +91,28 @@ There is also an option to add a feed that can be managed dynamically with [thes
 
 * Creating a new local catalog or updating a pre-existing catalog (separate from your Shop catalog)
   * Go to your Commerce Manager Business Asset page
-  * Under the “Catalog” section, click the **+** icon to create a new catalog.
-  * Under the “Catalog Type” section, select **Local products or services**, then click next
+  * Under the "Catalog" section, click the **+** icon to create a new catalog.
+  * Under the "Catalog Type" section, select **Local products or services**, then click next
   * Select **Ecommerce - local products** as your catalog type, then select **Store Location** as the location type
-  * In the “Configure settings -> Connect your catalog to a Page” field, select the shop you set up locations for in the previous step. Then click **Create** to create the catalog
+  * In the "Configure settings -> Connect your catalog to a Page" field, select the shop you set up locations for in the previous step. Then click **Create** to create the catalog
 * Uploading main feed
   * You can enter the catalog detail page from the previous creation flow or selecting the catalog in your commerce manager main page
   * Go to the data source tab and upload **the feed you used to set up your Shops catalog** as the main feed
 * Uploading local inventory feed
-  * Once you have uploaded the main feed, click on the “Data sources” tab again, now a section named “Local inventory feeds” should appear.
+  * Once you have uploaded the main feed, click on the "Data sources" tab again, now a section named "Local inventory feeds" should appear.
   * Click on **Add new feed** in the Local inventory feeds section.
   * Upload the local inventory feed you prepared in Step 1.
 
 ### Step 3: Associate Your Local Inventory Catalog with Store Locations
 
 * Click on the **Settings** tab on the left column
-* Navigate to the Catalog tab, connect your store location page to the catalog under the “Stores” section
+* Navigate to the Catalog tab, connect your store location page to the catalog under the "Stores" section
 
 ### Verification and Troubleshooting
 
 * Verify that your local inventory feed is correctly uploaded and associated with your store locations.
 * Check for any errors or warnings in your feed upload report.
-* Use Meta’s debugging tools to troubleshoot any issues.
+* Use Meta's debugging tools to troubleshoot any issues.
 
 By following these steps, you should be able to successfully create a catalog with local inventory feed.
 
@@ -129,7 +129,7 @@ To correctly process orders from your Facebook and Instagram Shops, you will nee
 Example checkout URL for items with pickup information:
 
 ```
-https://www.example.com/custom/checkout?products=123:3,124:2,125:1&products_json={"123":{"store_code":"1"},124":{"store_code":"2"}}
+https://www.example.com/custom/checkout?products=123:3,124:2,125:1&products_json={"123":{"store_code":"1"},124":{"store_code":"2"}​}
 ```
 
 #### Query Parameters

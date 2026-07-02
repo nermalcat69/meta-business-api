@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/business-messaging/mes
 
 Updated: Apr 16, 2026
 
-Private Replies allows a business to send a single message to a person who published a post on your business’ Facebook Page or who commented on a post or comment on the business’ Facebook Page or Group. The message will contain a link to the post or comment that the person published.
+Private Replies allows a business to send a single message to a person who published a post on your business' Facebook Page or who commented on a post or comment on the business' Facebook Page or Group. The message will contain a link to the post or comment that the person published.
 
 ### Limitations
 
@@ -23,7 +23,7 @@ You will need:
 
 * A Page access token requested by a person who can perform the `MESSAGING` task on the Page
 * The `pages_messaging` permission
-* The ID for your business’ Facebook Page
+* The ID for your business' Facebook Page
 * The ID for the post or comment made by the person to whom you are sending the private reply. The ID can be obtained from the `pages_feed` webhooks (recommended to avoid rate limiting) or an API call to the `/page/feed` endpoint
 
 Optional, but recommended:

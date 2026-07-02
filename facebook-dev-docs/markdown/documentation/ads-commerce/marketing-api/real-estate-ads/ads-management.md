@@ -42,7 +42,7 @@ JavaScript SDKAndroid SDKObjective-C
 ---
 
 ```
-<!-- Facebook Pixel Code -->  
+<!-- Facebook Pixel Code -->  
 <script>  
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?  
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;  
@@ -50,21 +50,21 @@ n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,  
 document,'script','https://connect.facebook.net/en_US/fbevents.js');  
   
-// Insert Your Facebook Pixel ID below.  
-fbq('init', '<FB_PIXEL_ID>');  
+// Insert Your Facebook Pixel ID below.  
+fbq('init', '<FB_PIXEL_ID>');  
   
-fbq('track', 'Search', {  
-  content_type: 'home_listing',  
-  content_ids: ['1234', '2345', '3456', '4567'], // Top search results  
-  city: 'New York City', //Required for Search event  
-  region: 'New York', // region is the state for the US. Required for Search event  
-  country: 'US', //Required for Search event  
-} );  
+fbq('track', 'Search', {  
+  content_type: 'home_listing',  
+  content_ids: ['1234', '2345', '3456', '4567'], // Top search results  
+  city: 'New York City', //Required for Search event  
+  region: 'New York', // region is the state for the US. Required for Search event  
+  country: 'US', //Required for Search event  
+} );  
 </script>  
-<!-- End Facebook Pixel Code -->
+<!-- End Facebook Pixel Code -->
 ```
 
-Once you determine which events should fire, you should provide each event’s parameters.
+Once you determine which events should fire, you should provide each event's parameters.
 
 ## Event parameters
 
@@ -93,7 +93,7 @@ The table below lists required and recommended parameters.
 | Parameter Name | Data Type | Description |
 | --- | --- | --- |
 | `availability` | `string` | Value must be `available_soon`, `for_rent`, `for_sale`, `off_market`, `recently_sold` or `sale_pending`. |
-| `city` | `string` | Provide the user’s city of interest, such as `'Menlo Park'` |
+| `city` | `string` | Provide the user's city of interest, such as `'Menlo Park'` |
 | `content_ids` | `string` or `string[]` | Any IDs in your listing catalog. For example, for `ViewContent` event, send the ID of the item viewed, or for `Search` send an array of IDs for top results: `['1234', '2345', '3456', '4567']` |
 | `content_type` | `string` or `string[]` | For example:  * `'home_listing'` * `['home_listing', 'product']` * `['home_listing', 'hotel']` |
 | `country` | `string` | Target country of interest, such as `'United States'` |
@@ -110,7 +110,7 @@ The table below lists required and recommended parameters.
 
 ## Step 2: Associate signals to listing catalog
 
-Associate your event sources with each of your listing catalogs. See [Business Manager’s Catalog Page⁠](https://business.facebook.com/settings/product-catalogs/) To select the pixel and app via API which send events, make an `HTTP POST`:
+Associate your event sources with each of your listing catalogs. See [Business Manager's Catalog Page⁠](https://business.facebook.com/settings/product-catalogs/) To select the pixel and app via API which send events, make an `HTTP POST`:
 
 Select language
 
@@ -119,10 +119,10 @@ cURL
 ---
 
 ```
-curl \  
-  -F '0=<PIXEL_ID>' \  
-  -F '1=<APP_ID>' \  
-  -F 'access_token=<ACCESS_TOKEN>' \  
+curl \  
+  -F '0=<PIXEL_ID>' \  
+  -F '1=<APP_ID>' \  
+  -F 'access_token=<ACCESS_TOKEN>' \  
 https://graph.facebook.com/<API_VERSION>/<PRODUCT_CATALOG_ID>/external_event_sources
 ```
 
@@ -143,10 +143,10 @@ cURL
 ---
 
 ```
-curl \  
-  -F 'name=My Real Estate Company Events' \  
-  -F 'event_sources=['<PIXEL_ID>','<APP_ID>']' \  
-  -F 'access_token=<ACCESS_TOKEN>' \  
+curl \  
+  -F 'name=My Real Estate Company Events' \  
+  -F 'event_sources=['<PIXEL_ID>','<APP_ID>']' \  
+  -F 'access_token=<ACCESS_TOKEN>' \  
 https://graph.facebook.com/<API_VERSION>/<BUSINESS_ID>/event_source_groups
 ```
 
@@ -159,9 +159,9 @@ cURL
 ---
 
 ```
-curl \  
-  -F 'accounts=['<ACCOUNT_ID_WITHOUT_ACT>']' \  
-  -F 'access_token=<ACCESS_TOKEN>' \  
+curl \  
+  -F 'accounts=['<ACCOUNT_ID_WITHOUT_ACT>']' \  
+  -F 'access_token=<ACCESS_TOKEN>' \  
 https://graph.facebook.com/<API_VERSION>/<EVENT_SOURCE_GROUP_ID>/shared_accounts
 ```
 
@@ -194,7 +194,7 @@ To set up a new audience, make an `HTTP POST` to `/act_<AD_ACCOUNT_ID>/customaud
 | exclusions: `event` (required) | `enum { Search, ViewContent, InitiateCheckout, Purchase }` | Event name of a signal used for exclusion: `{'event': 'Search', …}`. |
 | exclusions: `retention` (required) | `object` | Minimum and maximum amount of time since Meta received the event. Determines whether to consider the event for exclusion, for example, `{…, 'retention': {'min_seconds': 0, 'max_seconds': 259200}, …}`. Retention must be at least 4 hours. |
 | `rule` | `object` | [Audience Rule](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/website-custom-audiences#audiencerules) from Website Custom Audiences. Filter event stream by these rules before any `inclusions` and `exclusions` processed.  See a list of specific fields available. You can use these with any of standard `JSON` [Operators for Audience Rules](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/website-custom-audiences#audiencerules). |
-| rule: `home_listing_set_id` (required) | `object` | Listing set ID: `{'eq': '1234'}}` |
+| rule: `home_listing_set_id` (required) | `object` | Listing set ID: `{'eq': '1234'}​}` |
 
 For example, to create an audience that targets people who viewed or purchased in the last 14 days:
 
@@ -205,25 +205,25 @@ cURL
 ---
 
 ```
-curl \  
-  -F 'name=Viewed or Purchased Last 14 days' \  
-  -F 'subtype=CLAIM' \  
-  -F 'claim_objective=HOME_LISTING' \  
-  -F 'content_type=HOME_LISTING' \  
-  -F 'event_source_group=<EVENT_SOURCE_GROUP_ID>' \  
-  -F 'rule={"home_listing_set_id":{"eq":"<HOME_LISTING_SET_ID>"}}' \  
-  -F 'inclusions=[  
-    {  
-      "event": "ViewContent",  
-      "count": {"gt":0},  
-      "retention": {"min_seconds":0,"max_seconds":1209600}  
-    },  
-    {  
-      "event": "Purchase",  
-      "count": {"gt":0},  
-      "retention": {"min_seconds":0,"max_seconds":1209600}  
-    }  
-  ]' \  
-  -F 'access_token=<ACCESS_TOKEN>' \  
+curl \  
+  -F 'name=Viewed or Purchased Last 14 days' \  
+  -F 'subtype=CLAIM' \  
+  -F 'claim_objective=HOME_LISTING' \  
+  -F 'content_type=HOME_LISTING' \  
+  -F 'event_source_group=<EVENT_SOURCE_GROUP_ID>' \  
+  -F 'rule={"home_listing_set_id":{"eq":"<HOME_LISTING_SET_ID>"}​}' \  
+  -F 'inclusions=[  
+    {  
+      "event": "ViewContent",  
+      "count": {"gt":0},  
+      "retention": {"min_seconds":0,"max_seconds":1209600}  
+    },  
+    {  
+      "event": "Purchase",  
+      "count": {"gt":0},  
+      "retention": {"min_seconds":0,"max_seconds":1209600}  
+    }  
+  ]' \  
+  -F 'access_token=<ACCESS_TOKEN>' \  
 https://graph.facebook.com/<API_VERSION>/act_<AD_ACCOUNT_ID>/customaudiences
 ```

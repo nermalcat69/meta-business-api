@@ -9,7 +9,7 @@ Updated: Sep 2, 2021
 
 **When can I use Message Tags?**
 
-You must send one message to the user within 24 hours from the time the user opted in to being contacted by your business on Messenger. You cannot use Message Tags to send the initial message to the user. Once you have started the conversation in Messenger, you can use Message Tags to send messages more than 24 hours after a user’s last message or user-initiated contact only if your message meets one of the approved Message Tags use cases. For more details, see [Message Tags](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/send-api) in the [Messenger Platform](https://developers.facebook.com/documentation/business-messaging/messenger-platform) documentation.
+You must send one message to the user within 24 hours from the time the user opted in to being contacted by your business on Messenger. You cannot use Message Tags to send the initial message to the user. Once you have started the conversation in Messenger, you can use Message Tags to send messages more than 24 hours after a user's last message or user-initiated contact only if your message meets one of the approved Message Tags use cases. For more details, see [Message Tags](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/send-api) in the [Messenger Platform](https://developers.facebook.com/documentation/business-messaging/messenger-platform) documentation.
 
 **Do I need to save login\_id in my database?**
 
@@ -25,11 +25,11 @@ The product experience can be shown as part of login or to current, logged-in us
 
 **After opting in, can users choose to stop receiving messages or change their preferences?**
 
-Users can opt out of messaging at the individual thread level by selecting “Turn off messages.”. They can also [mute⁠](https://www.facebook.com/help/messenger-app/963733803657199/?helpref=related) or [block⁠](https://www.facebook.com/help/messenger-app/3115643275145823/?helpref=related) your business’ messages. You must immediately respect any request to block, discontinue, or otherwise block, discontinue or otherwise opt out of messaging with your business. For more details, see [How do I turn messages from a business on or off in Messenger?⁠](https://www.facebook.com/help/messenger-app/755835711227533) in the Help Center documentation.
+Users can opt out of messaging at the individual thread level by selecting "Turn off messages.". They can also [mute⁠](https://www.facebook.com/help/messenger-app/963733803657199/?helpref=related) or [block⁠](https://www.facebook.com/help/messenger-app/3115643275145823/?helpref=related) your business' messages. You must immediately respect any request to block, discontinue, or otherwise block, discontinue or otherwise opt out of messaging with your business. For more details, see [How do I turn messages from a business on or off in Messenger?⁠](https://www.facebook.com/help/messenger-app/755835711227533) in the Help Center documentation.
 
-**When can I send promotional messages or messages more than 24 hours since the user’s last contact?**
+**When can I send promotional messages or messages more than 24 hours since the user's last contact?**
 
-You must send one message to the user within 24 hours from the time the user opted in to being contacted by your business on Messenger. You cannot use Message Tags to send the initial message to the user. Once the conversation with the user has started, you can send promotional messages within 24 hours of a user’s last message. Otherwise, if you’d like to send promotional updates to the user outside the 24 hour messaging window, consider using Sponsored Messages or a One-Time Notification.
+You must send one message to the user within 24 hours from the time the user opted in to being contacted by your business on Messenger. You cannot use Message Tags to send the initial message to the user. Once the conversation with the user has started, you can send promotional messages within 24 hours of a user's last message. Otherwise, if you'd like to send promotional updates to the user outside the 24 hour messaging window, consider using Sponsored Messages or a One-Time Notification.
 
 **Can I send sponsored messages with login\_id?**
 
@@ -45,7 +45,7 @@ All the apps will receive the messaging\_optin event containing a valid `login_i
 
 **What happens if I send a message using the generated login\_id before I receive the opt-in webhook event?**
 
-The login\_id is generated before the authentication flow finishes, so as soon as an app receives the login success callback, they can send a message using the generated `login_id`, even if the Webhook event didn’t arrive.
+The login\_id is generated before the authentication flow finishes, so as soon as an app receives the login success callback, they can send a message using the generated `login_id`, even if the Webhook event didn't arrive.
 
 **Will I get a messaging\_optin event for each successful user login?**
 
@@ -59,13 +59,13 @@ Make sure to include `reset_messenger_state=1` on the login flow. This will trig
 
 You can use a manual login URL that triggers the login flow on any browser. When the Facebook Login popup is opened, the state is reset. You can close the window before logging in and the next time the mobile flow is triggered, the `messaging_optin` event should be sent.
 
-**What does the “Page ID is not valid” error mean?**
+**What does the "Page ID is not valid" error mean?**
 
 For users to be able to test this integration before submitting for App Review, they need to have a role in the app.
 
-**What does the error message “(#100) Param recipient[id] must be a valid ID string (e.g., “123”)” mean?**
+**What does the error message "(#100) Param recipient[id] must be a valid ID string (e.g., "123")" mean?**
 
-For apps to be able to send messages using the received login\_id, they need to have pages\_messaging permission. Observe that when using the `login_id`, the field in the recipient object is named “login\_id” instead of “id”.
+For apps to be able to send messages using the received login\_id, they need to have pages\_messaging permission. Observe that when using the `login_id`, the field in the recipient object is named "login\_id" instead of "id".
 
 ## See Also
 

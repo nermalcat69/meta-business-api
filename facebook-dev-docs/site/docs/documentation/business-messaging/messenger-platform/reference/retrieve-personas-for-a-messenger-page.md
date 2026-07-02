@@ -47,11 +47,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/v26.0/{thread_label_id}' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/v26.0/{thread_label_id}' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Path Parameters
@@ -207,11 +207,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/v26.0/{thread_label_id}' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/v26.0/{thread_label_id}' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 ---
@@ -231,11 +231,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request DELETE \  
-  --url 'https://graph.facebook.com/v26.0/{thread_label_id}' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request DELETE \  
+  --url 'https://graph.facebook.com/v26.0/{thread_label_id}' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Path Parameters
@@ -377,11 +377,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request DELETE \  
-  --url 'https://graph.facebook.com/v26.0/{thread_label_id}' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request DELETE \  
+  --url 'https://graph.facebook.com/v26.0/{thread_label_id}' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 ## Authentication

@@ -19,7 +19,7 @@ Updated: Jan 23, 2026
 
 ![Domain management page with Choose domain step showing fields for primary domain for data routing and primary domain for web access](https://scontent.fdel27-9.fna.fbcdn.net/v/t39.2365-6/474803182_1147474330417163_9129145423184896583_n.png?_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=xJPNom0_jEEQ7kNvwEalYs2&_nc_oc=AdqvPfq3EW7AT9W_jXg8V6Wr6gC2TahW9dJnThsPHvmd-u9NGOKhCK4bRT54EwzKp0ZLw2sHalI_BO6NLjdJqHQ5&_nc_zt=14&_nc_ht=scontent.fdel27-9.fna&_nc_gid=4ASu2s-pF9-YrTOA9jwQlA&_nc_ss=7b289&oh=00_AQDwqQ17AHiJUtucIBjlX3iTzUrwnJaXhh90T-oEEd1YQQ&oe=6A609A4D)
 
-#### Step 3: Choose the data routing domain (required) and web access domain (required), and click ‘Continue’
+#### Step 3: Choose the data routing domain (required) and web access domain (required), and click 'Continue'
 
 ![Confirm domain dialog listing the data routing domain and web access domain with Edit domain and Confirm buttons](https://scontent.fdel27-3.fna.fbcdn.net/v/t39.2365-6/474951095_1293515691904108_5882973339210842_n.png?_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=AKvULEAtTCYQ7kNvwG8lmao&_nc_oc=Adrlz40Jmw12D2cZAGpaOv-XFTQ1F6WpBwC-z2b1_xZ7ecvGrJC7_2iF4mIT-Iz9coDetMykkEtoOK0fOw7JcJJ6&_nc_zt=14&_nc_ht=scontent.fdel27-3.fna&_nc_gid=4ASu2s-pF9-YrTOA9jwQlA&_nc_ss=7b289&oh=00_AQCiB0TtyK3EYBv0swKgkcRk7QxMC2kpMBvJ0MelioSD2Q&oe=6A607A8C)
 

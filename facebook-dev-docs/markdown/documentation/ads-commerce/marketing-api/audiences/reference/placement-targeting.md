@@ -59,7 +59,7 @@ You can combine categories, such as iPod, iPad, or iPhone.
 
 **These categories are not mutually exclusive**. If you select iOS you target all devices running iOS, including iPhone and iPod, without specifying `user_device`.
 
-**For Brand Awareness Objective ads**, you can’t target based on mobile device type, such as feature phones or Samsung, or based on iOS version number. You can only choose Android or iOS, or all mobile phones.
+**For Brand Awareness Objective ads**, you can't target based on mobile device type, such as feature phones or Samsung, or based on iOS version number. You can only choose Android or iOS, or all mobile phones.
 
 ### Available fields
 
@@ -75,7 +75,7 @@ You can combine categories, such as iPod, iPad, or iPhone.
 | Field | Description |
 | --- | --- |
 | `iOS`  type: string | iOS devices, including iPhone, iPad, and iPod |
-| `iOS_ver_x.x_and_above`  type: string | iOS devices running OS version x.x and above.  **Options:** 2.0, 3.0, 4.0, 4.3, 5.0, 6.0, 7.0, 8.0, 9.0. **Example:** `iOS_ver_4.0_and_above`  For Meta App Ads:   * SKAdNetwork and Meta’s Aggregated Event Measurement ad sets only support version range from `iOS_ver_14.0_and_above`. * Non-SKAdNetwork or Meta’s Aggregated Event Measurement ad set only support iOS version range from `iOS_ver_2.0_to_14.4`. |
+| `iOS_ver_x.x_and_above`  type: string | iOS devices running OS version x.x and above.  **Options:** 2.0, 3.0, 4.0, 4.3, 5.0, 6.0, 7.0, 8.0, 9.0. **Example:** `iOS_ver_4.0_and_above`  For Meta App Ads:   * SKAdNetwork and Meta's Aggregated Event Measurement ad sets only support version range from `iOS_ver_14.0_and_above`. * Non-SKAdNetwork or Meta's Aggregated Event Measurement ad set only support iOS version range from `iOS_ver_2.0_to_14.4`. |
 | `iOS_ver_x.x_to_y.y`  type: string | iOS devices running OS versions x.x to y.y.  **Options:** 2.0, 3.0, 4.0, 4.3, 5.0, 6.0, 7.0, 8.0, 9.0.  **Example:** `iOS_ver_8.0_to_9.0`, where x.x must be less than y.y |
 | `Android`  type: string | Android devices |
 | `Android_ver_x.x_and_above`  type: string | Android devices running version x.x and above.  **Options:** 2.0, 2.1, 2.2, 2.3, 3.0, 3.1, 3.2, 4.0, 4.1, 4.2, 4.3, 4.4, 5.0, 5.1, 6.0, 7.0, 7.1, and 8.0.  **Example:** `Android_ver_4.0_and_above` |
@@ -177,7 +177,7 @@ This example targets:
 * Life Event: Newlywed (1 year)
 * Home Ownership: Renters
 
-Here’s another example targeting by location, demographic, relationship status and interests:
+Here's another example targeting by location, demographic, relationship status and interests:
 
 ```
 curl \
@@ -218,10 +218,10 @@ curl \
 | Name | Description |
 | --- | --- |
 | `relationship_statuses`  type: array | Array of integers representing relationship status.  `1`: single  `2`: in\_relationship  `3`: married  `4`: engaged  `6`: not specified  **Default:** `ALL`, if you specify Null or do not provide a value.  **Restrictions:** Do not use `0`. |
-| `life_events`  type: array | Array of objects with ‘id’ and optional ‘name’ fields: `[{'id': 123, 'name': 'foo'}, {'id': 456}, 789]` |
-| `industries`  type: array | Array of objects with ‘id’ and optional ‘name’ fields |
-| `income`  type: array | Array of objects with ‘id’ and optional ‘name’ fields |
-| `family_statuses`  type: array | Array of objects with ‘id’ and (optional) ‘name’ fields |
+| `life_events`  type: array | Array of objects with 'id' and optional 'name' fields: `[{'id': 123, 'name': 'foo'}, {'id': 456}, 789]` |
+| `industries`  type: array | Array of objects with 'id' and optional 'name' fields |
+| `income`  type: array | Array of objects with 'id' and optional 'name' fields |
+| `family_statuses`  type: array | Array of objects with 'id' and (optional) 'name' fields |
 
 ### Education and work
 
@@ -266,30 +266,28 @@ Provide granular targeting on locale:
 
 | Field | Description |
 | --- | --- |
-| `locales`  type: array | Locales, see [Targeting Search, Locales](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference/targeting-search#locale). Indices in a sub-array ‘locales’. Target Accounts Center accounts with language other than common language for a location. Provide an ID for the language, such as 5 for German. Limit: 50. See mapping of virtual ‘locales’ to language sets at [Targeting Search, Locale](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference/targeting-search#locale) with `type=adlocale`. |
+| `locales`  type: array | Locales, see [Targeting Search, Locales](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference/targeting-search#locale). Indices in a sub-array 'locales'. Target Accounts Center accounts with language other than common language for a location. Provide an ID for the language, such as 5 for German. Limit: 50. See mapping of virtual 'locales' to language sets at [Targeting Search, Locale](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference/targeting-search#locale) with `type=adlocale`. |
 
 ## Reach people interested in selected cities and regions
 
-This feature expands upon our existing location targeting feature, by enabling advertisers to reach people who have shown intent to travel to, make purchases in, or general interest in the cities and regions you’ve selected, within the same country.
+This feature expands upon our existing location targeting feature, by enabling advertisers to reach people who have shown intent to travel to, make purchases in, or general interest in the cities and regions you've selected, within the same country.
 
 * To opt in, set the `geo` parameter under `individual_setting` in `targeting_automation` to `1`.
 * To opt out, set the `geo` parameter under `individual_setting` in `targeting_automation` to `0`.
 
 ```
-```
-"targeting": {  
-  "age_range": [25, 35],  
-  "geo_locations": {  
-    "countries": ["GB"],  
-    "cities": [{"key":"2430536", "radius":12, "distance_unit":"mile"}]  
-  },  
-  "targeting_automation": {  
-    "individual_setting": {  
-      "geo": 1  
-    }  
-  }  
+"targeting": {  
+  "age_range": [25, 35],  
+  "geo_locations": {  
+    "countries": ["GB"],  
+    "cities": [{"key":"2430536", "radius":12, "distance_unit":"mile"}]  
+  },  
+  "targeting_automation": {  
+    "individual_setting": {  
+      "geo": 1  
+    }  
+  }  
 }
-```
 ```
 
 ### Limitations
@@ -311,7 +309,7 @@ curl -X POST \
       {
         "cities": [{"key":"2430536","radius":12,"distance_unit":"mile"}]
       },
-    "targeting_automation": {"individual_setting": {"geo": 1 } }}' \
+    "targeting_automation": {"individual_setting": {"geo": 1 } }​}' \
   -F 'access_token="<ACCESS_TOKEN>"' \
 https://facebook.com/v25.0/act_<AD_ACCOUNT_ID>/adsets
 ```
@@ -336,22 +334,20 @@ Set the `age` parameter under `individual_setting` in `targeting_automation` to 
 #### Example request
 
 ```
-```
 {  
-  "geo_locations": {  
-    "countries": [  
-      "US"  
-    ]  
-  },  
-  "age_min": 18,  
-  "age_range": [25, 35],  
-  "targeting_automation": {  
-    "individual_setting": {  
-      "age": 1  
-    }  
-  }  
+  "geo_locations": {  
+    "countries": [  
+      "US"  
+    ]  
+  },  
+  "age_min": 18,  
+  "age_range": [25, 35],  
+  "targeting_automation": {  
+    "individual_setting": {  
+      "age": 1  
+    }  
+  }  
 }
-```
 ```
 
 ### Gender as a suggestion
@@ -361,22 +357,20 @@ Set the `gender` parameter under `individual_setting` in `targeting_automation` 
 #### Example request
 
 ```
-```
 {  
-  "geo_locations": {  
-    "countries": [  
-      "US"  
-    ]  
-  },  
-  "age_min": 21,  
-  "genders":[1],  
-  "targeting_automation": {  
-    "individual_setting": {  
-      "gender": 1  
-    }  
-  }  
+  "geo_locations": {  
+    "countries": [  
+      "US"  
+    ]  
+  },  
+  "age_min": 21,  
+  "genders":[1],  
+  "targeting_automation": {  
+    "individual_setting": {  
+      "gender": 1  
+    }  
+  }  
 }
-```
 ```
 
 ### Create an ad set with suggestions
@@ -398,7 +392,7 @@ Set the `gender` parameter under `individual_setting` in `targeting_automation` 
     "geo_locations": {
       "countries": ["US"]
     },
-    "targeting_automation": {"individual_setting": {"age": 1, "gender": 1 } }}' \
+    "targeting_automation": {"individual_setting": {"age": 1, "gender": 1 } }​}' \
   -F 'access_token="<ACCESS_TOKEN>"' \
 https://facebook.com/v25.0/act_<AD_ACCOUNT_ID>/adsets
 ```
@@ -406,11 +400,9 @@ https://facebook.com/v25.0/act_<AD_ACCOUNT_ID>/adsets
 #### Example response
 
 ```
-```
 {  
-  "id": "<AD_SET_ID>",  
+  "id": "<AD_SET_ID>",  
 }
-```
 ```
 
 ### Retrieve an ad set with suggestions
@@ -427,42 +419,40 @@ https://graph.facebook.com/v25.0/<AD_SET_ID>/
 #### Example response
 
 ```
-```
 {  
-  "targeting": {  
-    "age_max": 65,  
-    "age_min": 19,  
-    "age_range": [  
-      25,  
-      35  
-    ],  
-    "genders": [  
-      1  
-    ],  
-    "geo_locations": {  
-      "countries": [  
-        "US"  
-      ],  
-      "location_types": [  
-        "home",  
-        "recent"  
-      ]  
-    },  
-    "targeting_relaxation_types": {  
-      "lookalike": 0,  
-      "custom_audience": 0  
-    },  
-    "targeting_automation": {  
-      "advantage_audience": 0,  
-      "individual_setting": {  
-        "age": 1,  
-        "gender": 1  
-      }  
-    }  
-  },  
-  "id": "<AD_SET_ID>",  
+  "targeting": {  
+    "age_max": 65,  
+    "age_min": 19,  
+    "age_range": [  
+      25,  
+      35  
+    ],  
+    "genders": [  
+      1  
+    ],  
+    "geo_locations": {  
+      "countries": [  
+        "US"  
+      ],  
+      "location_types": [  
+        "home",  
+        "recent"  
+      ]  
+    },  
+    "targeting_relaxation_types": {  
+      "lookalike": 0,  
+      "custom_audience": 0  
+    },  
+    "targeting_automation": {  
+      "advantage_audience": 0,  
+      "individual_setting": {  
+        "age": 1,  
+        "gender": 1  
+      }  
+    }  
+  },  
+  "id": "<AD_SET_ID>",  
 }
-```
 ```
 
 ## Custom broad category targeting

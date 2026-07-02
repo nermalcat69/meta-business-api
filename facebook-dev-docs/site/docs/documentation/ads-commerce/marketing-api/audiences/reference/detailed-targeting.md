@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/marketing
 
 Updated: Feb 9, 2026
 
-Target [Ad sets](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-campaign) on a number of criteria you provide in targeting specs. Most targets are predefined values, such as country “Japan” or city “Tokyo”.
+Target [Ad sets](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-campaign) on a number of criteria you provide in targeting specs. Most targets are predefined values, such as country "Japan" or city "Tokyo".
 
 Find valid values with Marketing API, Targeting Search: `https://graph.facebook.com/{API_VERSION}/search`. You must provide your query string in `UTF8` format.
 
@@ -32,12 +32,12 @@ The response:
 
 | Field | Value |
 | --- | --- |
-| `current_status` | * `NORMAL` * `NON-DELIVERABLE` - Does not deliver, though the ad set may continue to deliver according to predetermined rules. * `DEPRECATING` - Ad sets targeted at this objective continue to deliver, but the object can’t be used to create new or update ad sets. When updated, ad sets with this term will be rejected, unless the term is removed. * `NON-DELIVERABLE-IN-EXCLUSION` - The object can’t be used in targeting exclusions. * `UNKNOWN` |
+| `current_status` | * `NORMAL` * `NON-DELIVERABLE` - Does not deliver, though the ad set may continue to deliver according to predetermined rules. * `DEPRECATING` - Ad sets targeted at this objective continue to deliver, but the object can't be used to create new or update ad sets. When updated, ad sets with this term will be rejected, unless the term is removed. * `NON-DELIVERABLE-IN-EXCLUSION` - The object can't be used in targeting exclusions. * `UNKNOWN` |
 | `future_plan` | Map of timestamp to status. Returns a map of dates and planned statuses, which are the same values as available under `current_status`. |
 
 ## Geographic
 
-Search targeting by country, country group, city, state, zip code, and other geographic areas at `type=adgeolocation`. You can specify optional parameters with `type=adgeolocation`. To find the United States’ country code:
+Search targeting by country, country group, city, state, zip code, and other geographic areas at `type=adgeolocation`. You can specify optional parameters with `type=adgeolocation`. To find the United States' country code:
 
 ```
 curl -G \
@@ -430,7 +430,7 @@ The response:
 
 ### Geomarket codes
 
-To get these, specify `type=adgeolocation` and `location_types=['geo_market']` in your query. To search for Comscore codes that start with “New”:
+To get these, specify `type=adgeolocation` and `location_types=['geo_market']` in your query. To search for Comscore codes that start with "New":
 
 ```
 curl -G \
@@ -444,43 +444,41 @@ https://graph.facebook.com/v25.0/search
 The result:
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "key": "COMSCORE_MARKET:2051",  
-      "name": "New Orleans, LA",  
-      "type": "geo_market",  
-      "country_code": "US",  
-      "country_name": "United States",  
-      "supports_region": true,  
-      "supports_city": true  
-    },  
-    {  
-      "key": "COMSCORE_MARKET:2001",  
-      "name": "New York, NY",  
-      "type": "geo_market",  
-      "country_code": "US",  
-      "country_name": "United States",  
-      "supports_region": true,  
-      "supports_city": true  
-    },  
-    {  
-      "key": "COMSCORE_MARKET:2031",  
-      "name": "Hartford-New Haven, CT",  
-      "type": "geo_market",  
-      "country_code": "US",  
-      "country_name": "United States",  
-      "supports_region": true,  
-      "supports_city": true  
-    },  
+  "data": [  
+    {  
+      "key": "COMSCORE_MARKET:2051",  
+      "name": "New Orleans, LA",  
+      "type": "geo_market",  
+      "country_code": "US",  
+      "country_name": "United States",  
+      "supports_region": true,  
+      "supports_city": true  
+    },  
+    {  
+      "key": "COMSCORE_MARKET:2001",  
+      "name": "New York, NY",  
+      "type": "geo_market",  
+      "country_code": "US",  
+      "country_name": "United States",  
+      "supports_region": true,  
+      "supports_city": true  
+    },  
+    {  
+      "key": "COMSCORE_MARKET:2031",  
+      "name": "Hartford-New Haven, CT",  
+      "type": "geo_market",  
+      "country_code": "US",  
+      "country_name": "United States",  
+      "supports_region": true,  
+      "supports_city": true  
+    },  
   
-    {  
+    {  
 ....  
-    }  
-  ]  
+    }  
+  ]  
 }
-```
 ```
 
 ### Electoral districts
@@ -832,7 +830,7 @@ curl -G \
 
 ## Behaviors
 
-Target based on a user’s actions or past purchase behavior. Retrieve all possible behavior targeting options with `type=adTargetingCategory&class=behaviors`.
+Target based on a user's actions or past purchase behavior. Retrieve all possible behavior targeting options with `type=adTargetingCategory&class=behaviors`.
 
 ```
 curl -G \
@@ -1013,7 +1011,7 @@ The following are common parameters for this API. For type-specific input parame
 | --- | --- |
 | `q` | **Required for most search types.**  String to autocomplete values. |
 | `type` | **Required.**  Type of autocomplete data to retrieve. See below |
-| `list` | **Optional.**  Retrieve preferred Facebook global ID’s instead of FIPS codes. Supported for `adzipcode`  When used, value must equal `GLOBAL` |
+| `list` | **Optional.**  Retrieve preferred Facebook global ID's instead of FIPS codes. Supported for `adzipcode`  When used, value must equal `GLOBAL` |
 | `limit` | **Optional.**  Maximum results to return, defaults 8 |
 
 Based on the category of autocomplete data, provide the appropriate `type`. To retrieve locales, specify `type=adlocale`. Valid categories are:

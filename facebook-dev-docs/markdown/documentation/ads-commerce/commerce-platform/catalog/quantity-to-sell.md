@@ -18,31 +18,27 @@ Information about `fb_sales_channel` and `ig_sales_channel` such as `status`, `f
 **Sample Request**
 
 ```
-```
-curl -G \  
--d 'fields=["id"]' \  
--d 'access_token=<ACCESS_TOKEN>'  
+curl -G \  
+-d 'fields=["id"]' \  
+-d 'access_token=<ACCESS_TOKEN>'  
 https://graph.facebook.com/<API_VERSION>/<COMMERCE_MERCHANT_SETTINGS_ID>/shops
-```
 ```
 
 **Sample Response**
 
 ```
-```
-"data": [  
-  {  
-   "id": "283382596466157"  
- }  
-  ....  
+"data": [  
+  {  
+   "id": "283382596466157"  
+ }  
+  ....  
 ],  
-"paging": {  
- "cursors": {  
-    "before": "<before_cursor>",  
-    "after": "<after_cursor>"  
-  }  
-}}
-```
+"paging": {  
+ "cursors": {  
+    "before": "<before_cursor>",  
+    "after": "<after_cursor>"  
+  }  
+}​}
 ```
 
 ## Reading
@@ -60,12 +56,10 @@ You can use `filter` to show only shops that match certain fields.
 Reading from this edge will return a JSON-formatted result:
 
 ```
-```
 {  
-"data": [],  
+"data": [],  
 "paging":{}  
 }
-```
 ```
 
 **data**

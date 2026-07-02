@@ -11,7 +11,7 @@ The `execution_spec` of a rule determines the action that applies to all objects
 
 | Execution Type | Description |
 | --- | --- |
-| `NOTIFICATION` | Sends a jeweled notification to this rule’s creator, or the list of users specified in `user_ids`, if this option is provided.  **Supported Evaluation Types:** `SCHEDULE`, `TRIGGER` |
+| `NOTIFICATION` | Sends a jeweled notification to this rule's creator, or the list of users specified in `user_ids`, if this option is provided.  **Supported Evaluation Types:** `SCHEDULE`, `TRIGGER` |
 | `PAUSE` | Pauses the objects.  **Supported Evaluation Types:** `SCHEDULE`, `TRIGGER` |
 | `UNPAUSE` | Unpauses the objects.  **Supported Evaluation Types:** `SCHEDULE`, `TRIGGER` |
 | `CHANGE_BUDGET` | Changes the budgets based on a defined [`change_spec`](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-rules/overview/change-spec). This applies to ad sets only.  **Supported Evaluation Types:** `SCHEDULE` |
@@ -19,11 +19,11 @@ The `execution_spec` of a rule determines the action that applies to all objects
 | `CHANGE_BID` | Changes the bids based on a defined [`change_spec`](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-rules/overview/change-spec). This applies to ad sets only.  **Supported Evaluation Types:** `SCHEDULE` |
 | `ROTATE` | Pauses the currently active ad, and activates the next ad by ID in the ad set. Requires an `id` filter of ad sets, and an `entity_type` filter of an ad.  **Supported Evaluation Types:** `SCHEDULE` |
 | [`REBALANCE_BUDGET`](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-rules/guides/rebalance-budget) | Pauses the objects that match the evaluation criteria, and rebalances their budgets towards the rest based on a defined `rebalance_spec`. This applies to ad sets only.  **Supported Evaluation Types:** `SCHEDULE` |
-| `PING_ENDPOINT` | Sends a ping to the application’s subscription via Webhooks. See [Trigger Based Rules for more details on setup](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-rules/guides/trigger-based-rules).  **Supported Evaluation Types:** `TRIGGER` |
+| `PING_ENDPOINT` | Sends a ping to the application's subscription via Webhooks. See [Trigger Based Rules for more details on setup](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-rules/guides/trigger-based-rules).  **Supported Evaluation Types:** `TRIGGER` |
 
 ## `execution_options`
 
-You may need to provide additional information to perform some of these actions. The `execution_spec` provides an optional `execution_options` array to specify these additional parameters. The array contains a list of `execution_option` objects, which are dictionaries with keys of `field`, `value`, and `operator` just like [Evaluation Spec’s `filter` objects](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-rules/overview/evaluation-spec).
+You may need to provide additional information to perform some of these actions. The `execution_spec` provides an optional `execution_options` array to specify these additional parameters. The array contains a list of `execution_option` objects, which are dictionaries with keys of `field`, `value`, and `operator` just like [Evaluation Spec's `filter` objects](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-rules/overview/evaluation-spec).
 
 [Trigger Based Rules](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-rules/guides/trigger-based-rules) do not require any execution options.
 
@@ -43,6 +43,6 @@ If `user_ids` are provided for [Schedule Based Rules](https://developers.faceboo
 
 * A daily email is generated to summarize actions performed by your rule within the last 24 hours
 * The information is sent to the list of users specified under `user_ids`
-* the email is sent at 12:30AM, using the ad account’s time zone
+* the email is sent at 12:30AM, using the ad account's time zone
 
 This summary email aggregates notifications for all rules to which each user is subscribed. If no actions are performed by any of the subscribed rules, the user does not get an email for that day.

@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/marketing
 
 Updated: May 21, 2026
 
-Dynamic Creative allows you to automatically deliver different combinations of an ad’s creative to your users. It helps you find the best creative combination per impression and learns from the asset’s performance across audiences.
+Dynamic Creative allows you to automatically deliver different combinations of an ad's creative to your users. It helps you find the best creative combination per impression and learns from the asset's performance across audiences.
 
 This solution also improves your ability to explore a variety of creative asset combinations and audiences, so you can show the best images, titles, descriptions and other assets to your users.
 
@@ -23,7 +23,7 @@ Use this API for new and ongoing campaigns, as well as campaigns that run longer
 * Step 1: [Create Campaign and Ad Set](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-creative/asset-feed-spec/asset-customization-rules#campaign)
 * Step 2: [Provide the ad creative with `asset_feed_spec`](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-creative/asset-feed-spec/asset-customization-rules#creative)
 * Step 3: [Create your ad](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-creative/asset-feed-spec/asset-customization-rules#ad)
-* Optional Step 4: [Check your ad’s review status](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-creative/asset-feed-spec/asset-customization-rules#ad_review).
+* Optional Step 4: [Check your ad's review status](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-creative/asset-feed-spec/asset-customization-rules#ad_review).
 * Get [insights](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-creative/asset-feed-spec/insights) and analyze your results
 
 ## Step 1: Create Campaign and Ad Set
@@ -47,7 +47,7 @@ curl \
 
 Once you have your campaign, create an ad set by using the [standard ad set endpoint](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-campaign).
 
-* You can use all `billing_event`s, `targeting`, and `promoted_object`s, as long as they are compatible with the parent ad campaign’s `objective`.
+* You can use all `billing_event`s, `targeting`, and `promoted_object`s, as long as they are compatible with the parent ad campaign's `objective`.
 * You must set the `optimization_goal` to `OFFSITE_CONVERSIONS` for `OUTCOME_SALES`, `OUTCOME_ENGAGEMENT`, `OUTCOME_LEADS`, and `OUTCOME_TRAFFIC` objectives.
 * Then set `is_dynamic_creative` to `true`.
 
@@ -64,7 +64,7 @@ curl \
   -F 'promoted_object={"pixel_id": "<PIXEL_ID>", "custom_event_type": "PURCHASE"}'
   -F 'billing_event=IMPRESSIONS'
   -F 'bid_strategy=LOWEST_COST_WITHOUT_CAP'
-  -F 'targeting={"geo_locations": {"countries": ["US"]}}'
+  -F 'targeting={"geo_locations": {"countries": ["US"]}​}'
   -F 'start_time=2024-04-09'
   -F 'end_time=2024-04-20'
   -F access_token=<ACCESS_TOKEN>

@@ -14,16 +14,16 @@ This document shows you how to customize the Engage with customers on Messenger 
 
 * Click **Dashboard** in menu to the left in the App Dashboard. Each use case that you have added to your app is listed here.
 * Select the use case you want to customize. This allows you to add settings and permissions to make your app work the way you want it to.
-* Add permissions that your app needs and remove permissions that your app doesn’t need.
-  * If a permission or feature is required for a use case, it can’t be removed.
-* Click **Ready to test** to test each use case. If you need to submit your app for Meta App Review, you must test each use case. The [**Meta’s Graph API Explorer**](https://developers.facebook.com/tools/explorer) allows you to test your queries and get access tokens and code samples for your queries.
+* Add permissions that your app needs and remove permissions that your app doesn't need.
+  * If a permission or feature is required for a use case, it can't be removed.
+* Click **Ready to test** to test each use case. If you need to submit your app for Meta App Review, you must test each use case. The [**Meta's Graph API Explorer**](https://developers.facebook.com/tools/explorer) allows you to test your queries and get access tokens and code samples for your queries.
 * Click **Dashboard** to repeat the above for each use case.
 
 ## Permissions and features
 
 * To customize the Messenger Platform use case, select **Customize the Engage with customers on Messenger from Meta use case**. You are redirected to a list of permissions.
 * Click **Add** next to each additional feature or permission that your app needs to work the way you want it to.
-* If your app requires [App Review](https://developers.facebook.com/docs/resp-plat-initiatives/individual-processes/app-review) click the **Actions** button and select **+ Add to App Review**. You’ll complete the review submission later.
+* If your app requires [App Review](https://developers.facebook.com/docs/resp-plat-initiatives/individual-processes/app-review) click the **Actions** button and select **+ Add to App Review**. You'll complete the review submission later.
 
 ### Messenger from Meta use cases permissions and features
 
@@ -100,7 +100,7 @@ This optional feature of Facebook Login for Business allows you to create multip
 If your app needs to access business data owned by other business portfolios to provide services or functionality to those businesses, you must become a Tech Provider. This option will require additional data questions and approval through App Review before publishing.
 
 * Click **Become a Tech Provider**.
-* Click **Yes, I’m a Tech Provider**. The App Dashboard is updated to include additional items listed on **Dashboard** for your use cases.
+* Click **Yes, I'm a Tech Provider**. The App Dashboard is updated to include additional items listed on **Dashboard** for your use cases.
 * Click **Business verification** to add a verified business portfolio or add a business portfolio and start the verification process.
 
 ## App Review
@@ -109,7 +109,7 @@ If your app needs to access business data owned by other business portfolios to 
 * **Complete App Settings** – Click **Review your app settings** to add or update any [app settings](https://developers.facebook.com/docs/development/create-an-app/app-dashboard/basic-settings) such as app icon, privacy policy URL, and app category. **This step must be complete before continuing.**
 * **Reviewer instructions** – Click **Provide reviewer instructions** A popup dialog appears for each platform on which you app is available. Select each platform and answer the questions with questions for our reviewers to test your use case implementations. Click **Done**.
 * Click each permission and feature you requested.
-* Click the checkbox to agree to use each permission or feature in accordance with its allowed usage. If your app doesn’t use a permission or feature listed, remove it by clicking the trashcan icon.
+* Click the checkbox to agree to use each permission or feature in accordance with its allowed usage. If your app doesn't use a permission or feature listed, remove it by clicking the trashcan icon.
 * Click the **Submit for Review** button in the lower right.
 
 ## Publish
@@ -118,7 +118,7 @@ If your app needs to access business data owned by other business portfolios to 
 
 To publish your app, you need the following assets:
 
-* An app icon – Your app’s unique icon image; this file must be less than 5 MB, between 512 x 512 and 1024 x 1024 pixels, and in JPEG, GIF or PNG format.
+* An app icon – Your app's unique icon image; this file must be less than 5 MB, between 512 x 512 and 1024 x 1024 pixels, and in JPEG, GIF or PNG format.
 * Contact information for a Data Protection Officer, if you are doing business in the European Union.
 * A [Privacy Policy⁠](https://en.wikipedia.org/wiki/Privacy_policy) URL for your app
 * A [data deletion](https://developers.facebook.com/docs/development/create-an-app/app-dashboard/data-deletion-callback) URL with instructions or a callback that allows your app user to delete their data from your app.

@@ -25,187 +25,179 @@ Make sure the pixel base code is already loaded when you fire an event. If you u
 #### Search Pixel Event
 
 ```
-```
-// This sample assumes the FB Pixel base code is already loaded  
+// This sample assumes the FB Pixel base code is already loaded  
   
-fbq('track', 'Search', {  
-  // Fire the 'Search' event on the search results page  
+fbq('track', 'Search', {  
+  // Fire the 'Search' event on the search results page  
   
-  // IF YOU CHOOSE NOT TO USE A RECOMMENDED PARAM, THEN REMOVE IT, DON'T LEAVE IT EMPTY  
+  // IF YOU CHOOSE NOT TO USE A RECOMMENDED PARAM, THEN REMOVE IT, DON'T LEAVE IT EMPTY  
   
-  // RECOMMENDED: set to 'hotel'  
-  content_type: 'hotel',  
+  // RECOMMENDED: set to 'hotel'  
+  content_type: 'hotel',  
   
-  // HIGHLY RECOMMENDED: checkin date  
-  // Allows you to target people based on their travel dates (using a booking window)  
-  // Improves the landing experience with travel dates filled in (using template tags)  
-  // use YYYYMMDD, YYYY-MM-DD, YYYY-MM-DDThh:mmTZD or YYYY-MM-DDThh:mm:ssTZD  
-  checkin_date: '2018-04-01',  
+  // HIGHLY RECOMMENDED: checkin date  
+  // Allows you to target people based on their travel dates (using a booking window)  
+  // Improves the landing experience with travel dates filled in (using template tags)  
+  // use YYYYMMDD, YYYY-MM-DD, YYYY-MM-DDThh:mmTZD or YYYY-MM-DDThh:mm:ssTZD  
+  checkin_date: '2018-04-01',  
   
-  // HIGHLY RECOMMENDED: checkout date  
-  // use YYYYMMDD, YYYY-MM-DD, YYYY-MM-DDThh:mmTZD or YYYY-MM-DDThh:mm:ssTZD  
-  checkout_date: '2018-04-05',  
+  // HIGHLY RECOMMENDED: checkout date  
+  // use YYYYMMDD, YYYY-MM-DD, YYYY-MM-DDThh:mmTZD or YYYY-MM-DDThh:mm:ssTZD  
+  checkout_date: '2018-04-05',  
   
-  // RECOMMENDED: content ids - include eg top 5 search results  
-  content_ids: '["123", "234", "345", "456", "567"]',  
+  // RECOMMENDED: content ids - include eg top 5 search results  
+  content_ids: '["123", "234", "345", "456", "567"]',  
   
-  // REQUIRED: city, don't use abbreviations  
-  city: 'New York',  
+  // REQUIRED: city, don't use abbreviations  
+  city: 'New York',  
   
-  // REQUIRED: region, don't use abbreviations  
-  region: 'New York',  
+  // REQUIRED: region, don't use abbreviations  
+  region: 'New York',  
   
-  // REQUIRED: country, don't use abbreviations  
-  country: 'United States',  
+  // REQUIRED: country, don't use abbreviations  
+  country: 'United States',  
   
-  // RECOMMENDED: number of adults  
-  num_adults: 1,  
+  // RECOMMENDED: number of adults  
+  num_adults: 1,  
   
-  // RECOMMENDED: number of children  
-  num_children: 0  
+  // RECOMMENDED: number of children  
+  num_children: 0  
 });
-```
 ```
 
 #### ViewContent Pixel Event
 
 ```
-```
-// This sample assumes the FB Pixel base code is already loaded  
+// This sample assumes the FB Pixel base code is already loaded  
   
-fbq('track', 'ViewContent', {  
-  // Fire the 'ViewContent' event on the hotel details page  
+fbq('track', 'ViewContent', {  
+  // Fire the 'ViewContent' event on the hotel details page  
   
-  // IF YOU CHOOSE NOT TO USE A RECOMMENDED PARAM, THEN REMOVE IT, DON'T LEAVE IT EMPTY  
+  // IF YOU CHOOSE NOT TO USE A RECOMMENDED PARAM, THEN REMOVE IT, DON'T LEAVE IT EMPTY  
   
-  // RECOMMENDED: set to 'hotel'  
-  content_type: 'hotel',  
+  // RECOMMENDED: set to 'hotel'  
+  content_type: 'hotel',  
   
-  // HIGHLY RECOMMENDED: checkin date  
-  // Allows you to target people based on their travel dates (using a booking window)  
-  // Improves the landing experience with travel dates filled in (using template tags)  
-  // use YYYYMMDD, YYYY-MM-DD, YYYY-MM-DDThh:mmTZD or YYYY-MM-DDThh:mm:ssTZD  
-  checkin_date: '2018-04-01',  
+  // HIGHLY RECOMMENDED: checkin date  
+  // Allows you to target people based on their travel dates (using a booking window)  
+  // Improves the landing experience with travel dates filled in (using template tags)  
+  // use YYYYMMDD, YYYY-MM-DD, YYYY-MM-DDThh:mmTZD or YYYY-MM-DDThh:mm:ssTZD  
+  checkin_date: '2018-04-01',  
   
-  // HIGHLY RECOMMENDED: checkout date  
-  // use YYYYMMDD, YYYY-MM-DD, YYYY-MM-DDThh:mmTZD or YYYY-MM-DDThh:mm:ssTZD  
-  checkout_date: '2018-04-05',  
+  // HIGHLY RECOMMENDED: checkout date  
+  // use YYYYMMDD, YYYY-MM-DD, YYYY-MM-DDThh:mmTZD or YYYY-MM-DDThh:mm:ssTZD  
+  checkout_date: '2018-04-05',  
   
-  // REQUIRED: content id of hotel that is shown  
-  content_ids: '123',  
+  // REQUIRED: content id of hotel that is shown  
+  content_ids: '123',  
   
-  // RECOMMENDED: city, don't use abbreviations  
-  city: 'New York',  
+  // RECOMMENDED: city, don't use abbreviations  
+  city: 'New York',  
   
-  // RECOMMENDED: region, don't use abbreviations  
-  region: 'New York',  
+  // RECOMMENDED: region, don't use abbreviations  
+  region: 'New York',  
   
-  // RECOMMENDED: country, don't use abbreviations  
-  country: 'United States',  
+  // RECOMMENDED: country, don't use abbreviations  
+  country: 'United States',  
   
-  // RECOMMENDED: number of adults  
-  num_adults: 1,  
+  // RECOMMENDED: number of adults  
+  num_adults: 1,  
   
-  // RECOMMENDED: number of children  
-  num_children: 0  
+  // RECOMMENDED: number of children  
+  num_children: 0  
 });
-```
 ```
 
 #### InitiateCheckout Pixel Event
 
 ```
-```
-// This sample assumes the FB Pixel base code is already loaded  
+// This sample assumes the FB Pixel base code is already loaded  
   
-fbq('track', 'InitiateCheckout', {  
-  // Fire the 'InitiateCheckout' event when the user enters the payment screen  
+fbq('track', 'InitiateCheckout', {  
+  // Fire the 'InitiateCheckout' event when the user enters the payment screen  
   
-  // IF YOU CHOOSE NOT TO USE A RECOMMENDED PARAM, THEN REMOVE IT, DON'T LEAVE IT EMPTY  
+  // IF YOU CHOOSE NOT TO USE A RECOMMENDED PARAM, THEN REMOVE IT, DON'T LEAVE IT EMPTY  
   
-  // RECOMMENDED: set to 'hotel'  
-  content_type: 'hotel',  
+  // RECOMMENDED: set to 'hotel'  
+  content_type: 'hotel',  
   
-  // HIGHLY RECOMMENDED: checkin date  
-  // Allows you to target people based on their travel dates (using a booking window)  
-  // Improves the landing experience with travel dates filled in (using template tags)  
-  // use YYYYMMDD, YYYY-MM-DD, YYYY-MM-DDThh:mmTZD or YYYY-MM-DDThh:mm:ssTZD  
-  checkin_date: '2018-04-01',  
+  // HIGHLY RECOMMENDED: checkin date  
+  // Allows you to target people based on their travel dates (using a booking window)  
+  // Improves the landing experience with travel dates filled in (using template tags)  
+  // use YYYYMMDD, YYYY-MM-DD, YYYY-MM-DDThh:mmTZD or YYYY-MM-DDThh:mm:ssTZD  
+  checkin_date: '2018-04-01',  
   
-  // HIGHLY RECOMMENDED: checkout date  
-  // use YYYYMMDD, YYYY-MM-DD, YYYY-MM-DDThh:mmTZD or YYYY-MM-DDThh:mm:ssTZD  
-  checkout_date: '2018-04-05',  
+  // HIGHLY RECOMMENDED: checkout date  
+  // use YYYYMMDD, YYYY-MM-DD, YYYY-MM-DDThh:mmTZD or YYYY-MM-DDThh:mm:ssTZD  
+  checkout_date: '2018-04-05',  
   
-  // REQUIRED: content id of hotel that being booked  
-  content_ids: '123',  
+  // REQUIRED: content id of hotel that being booked  
+  content_ids: '123',  
   
-  // RECOMMENDED: city, don't use abbreviations  
-  city: 'New York',  
+  // RECOMMENDED: city, don't use abbreviations  
+  city: 'New York',  
   
-  // RECOMMENDED: region, don't use abbreviations  
-  region: 'New York',  
+  // RECOMMENDED: region, don't use abbreviations  
+  region: 'New York',  
   
-  // RECOMMENDED: country, don't use abbreviations  
-  country: 'United States',  
+  // RECOMMENDED: country, don't use abbreviations  
+  country: 'United States',  
   
-  // RECOMMENDED: number of adults  
-  num_adults: 1,  
+  // RECOMMENDED: number of adults  
+  num_adults: 1,  
   
-  // RECOMMENDED: number of children  
-  num_children: 0  
+  // RECOMMENDED: number of children  
+  num_children: 0  
 });
-```
 ```
 
 #### Purchase Pixel Event
 
 ```
-```
-// This sample assumes the FB Pixel base code is already loaded  
+// This sample assumes the FB Pixel base code is already loaded  
   
-fbq('track', 'Purchase', {  
-  // Fire the 'Purchase' event on the booking confirmed page  
+fbq('track', 'Purchase', {  
+  // Fire the 'Purchase' event on the booking confirmed page  
   
-  // IF YOU CHOOSE NOT TO USE A RECOMMENDED PARAM, THEN REMOVE IT, DON'T LEAVE IT EMPTY  
+  // IF YOU CHOOSE NOT TO USE A RECOMMENDED PARAM, THEN REMOVE IT, DON'T LEAVE IT EMPTY  
   
-  // RECOMMENDED: set to 'hotel'  
-  content_type: 'hotel',  
+  // RECOMMENDED: set to 'hotel'  
+  content_type: 'hotel',  
   
-  // HIGHLY RECOMMENDED: checkin date  
-  // Allows you to target people based on their travel dates (using a booking window)  
-  // Improves the landing experience with travel dates filled in (using template tags)  
-  // use YYYYMMDD, YYYY-MM-DD, YYYY-MM-DDThh:mmTZD or YYYY-MM-DDThh:mm:ssTZD  
-  checkin_date: '2018-04-01',  
+  // HIGHLY RECOMMENDED: checkin date  
+  // Allows you to target people based on their travel dates (using a booking window)  
+  // Improves the landing experience with travel dates filled in (using template tags)  
+  // use YYYYMMDD, YYYY-MM-DD, YYYY-MM-DDThh:mmTZD or YYYY-MM-DDThh:mm:ssTZD  
+  checkin_date: '2018-04-01',  
   
-  // HIGHLY RECOMMENDED: checkout date  
-  // use YYYYMMDD, YYYY-MM-DD, YYYY-MM-DDThh:mmTZD or YYYY-MM-DDThh:mm:ssTZD  
-  checkout_date: '2018-04-05',  
+  // HIGHLY RECOMMENDED: checkout date  
+  // use YYYYMMDD, YYYY-MM-DD, YYYY-MM-DDThh:mmTZD or YYYY-MM-DDThh:mm:ssTZD  
+  checkout_date: '2018-04-05',  
   
-  // REQUIRED: content id of hotel that was booked  
-  content_ids: '123',  
+  // REQUIRED: content id of hotel that was booked  
+  content_ids: '123',  
   
-  // RECOMMENDED: city, don't use abbreviations  
-  city: 'New York',  
+  // RECOMMENDED: city, don't use abbreviations  
+  city: 'New York',  
   
-  // RECOMMENDED: region, don't use abbreviations  
-  region: 'New York',  
+  // RECOMMENDED: region, don't use abbreviations  
+  region: 'New York',  
   
-  // RECOMMENDED: country  
-  country: 'United States',  
+  // RECOMMENDED: country  
+  country: 'United States',  
   
-  // RECOMMENDED: number of adults  
-  num_adults: 1,  
+  // RECOMMENDED: number of adults  
+  num_adults: 1,  
   
-  // RECOMMENDED: number of children  
-  num_children: 0,  
+  // RECOMMENDED: number of children  
+  num_children: 0,  
   
-  // REQUIRED: total value of booking  
-  value: 1200,  
+  // REQUIRED: total value of booking  
+  value: 1200,  
   
-  // REQUIRED: currency of booking  
-  currency: 'USD'  
+  // REQUIRED: currency of booking  
+  currency: 'USD'  
 });
-```
 ```
 
 ## Mobile App Events for Android
@@ -584,8 +576,8 @@ When you send multiple values, for example with `content_ids` or `content_type`,
 
 | Parameter Name and Type | Description |
 | --- | --- |
-| `checkin_date` (pixel)  `fb_checkin_date` (app)  type: string | **Highly recommended**.  The date the user is wanting to check-in to the hotel in the hotel’s time-zone. We accept dates in `YYYYMMDD`, `YYYY-MM-DD`, `YYYY-MM-DDThh:mmTZD` and `YYYY-MM-DDThh:mm:ssTZD`. When provided, you can use this in the ad using [template tags](https://developers.facebook.com/documentation/ads-commerce/marketing-api/hotel-ads/template-tags) and target people based on their travel dates [using booking window in your audiences](https://developers.facebook.com/documentation/ads-commerce/marketing-api/travel-ads/audience-management).  Examples:   * `20180623` * `2018-06-23` * `2017-06-23T15:30GMT` * `2017-06-23T15:30:00GMT` |
-| `checkout_date` (pixel)  `fb_checkout_date` (app)  type: string | **Highly recommended**.  The date the user is wanting to check-out from the hotel in the hotel’s time-zone. We accept the same date formats as listed for `checkin_date`. When provided, you can use this in the ad using [template tags](https://developers.facebook.com/documentation/ads-commerce/marketing-api/hotel-ads/template-tags) and target people based on their travel dates [using booking window in your audiences](https://developers.facebook.com/documentation/ads-commerce/marketing-api/travel-ads/audience-management). |
+| `checkin_date` (pixel)  `fb_checkin_date` (app)  type: string | **Highly recommended**.  The date the user is wanting to check-in to the hotel in the hotel's time-zone. We accept dates in `YYYYMMDD`, `YYYY-MM-DD`, `YYYY-MM-DDThh:mmTZD` and `YYYY-MM-DDThh:mm:ssTZD`. When provided, you can use this in the ad using [template tags](https://developers.facebook.com/documentation/ads-commerce/marketing-api/hotel-ads/template-tags) and target people based on their travel dates [using booking window in your audiences](https://developers.facebook.com/documentation/ads-commerce/marketing-api/travel-ads/audience-management).  Examples:   * `20180623` * `2018-06-23` * `2017-06-23T15:30GMT` * `2017-06-23T15:30:00GMT` |
+| `checkout_date` (pixel)  `fb_checkout_date` (app)  type: string | **Highly recommended**.  The date the user is wanting to check-out from the hotel in the hotel's time-zone. We accept the same date formats as listed for `checkin_date`. When provided, you can use this in the ad using [template tags](https://developers.facebook.com/documentation/ads-commerce/marketing-api/hotel-ads/template-tags) and target people based on their travel dates [using booking window in your audiences](https://developers.facebook.com/documentation/ads-commerce/marketing-api/travel-ads/audience-management). |
 | `content_ids` (pixel)  `fb_content_id` (app)  type: string or string[] | Recommended for `search`, **Required** for all others.  Any relevant ID(s) as listed in your travel catalog, e.g. for `ViewContent` event you might send the ID of the item presented, or for `Search` event you might send an array of IDs for the top search results.  Examples:   * `"1234"` * `'["1234", "2345", "3456"]'` |
 | `content_type` (pixel)  `fb_content_type` (app)  type: string or string[] | **Recommended**.  Must be `hotel`. |
 | `city` (pixel)  `fb_city` (app)  type: string | **Required** for `search`.  Provide the city of the location from user intent.  Example: `Auckland`. |

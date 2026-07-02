@@ -24,7 +24,7 @@ Get Code
 | Setting | Description | Default |
 | --- | --- | --- |
 | `data-href` | The absolute URL of the post. | `n/a` |
-| `data-lazy` | `true` means use the browser’s lazy-loading mechanism by setting the `loading="lazy"` iframe attribute. The effect is that the browser does not render the plugin if it’s not close to the viewport and might never be seen. Can be one of `true` or `false` (default). | `false` |
+| `data-lazy` | `true` means use the browser's lazy-loading mechanism by setting the `loading="lazy"` iframe attribute. The effect is that the browser does not render the plugin if it's not close to the viewport and might never be seen. Can be one of `true` or `false` (default). | `false` |
 | `data-width` | The width of the post. Min. `350` pixel; Max. `750` pixel. Leave empty to use fluid width. | fluid width |
 | `data-show-text` | Applied to photo post. Set to `true` to include the text from the Facebook post, if any. | `false` |
 
@@ -56,7 +56,7 @@ Besides the [Code Generator](https://developers.facebook.com/documentation/plugi
 
 ### 1. Get Post URL
 
-First you need to **[get the URL of a post](https://developers.facebook.com/documentation/plugins/page-plugin#how-to-get-a-posts-url)** you wish to share. The post **must** be public, which is indicated by the gray world icon, right next the post’s publishing time:
+First you need to **[get the URL of a post](https://developers.facebook.com/documentation/plugins/page-plugin#how-to-get-a-posts-url)** you wish to share. The post **must** be public, which is indicated by the gray world icon, right next the post's publishing time:
 ![Public Post Icon](https://scontent.fdel27-4.fna.fbcdn.net/v/t39.2365-6/696231022_1504775958047720_9006595395638684863_n.png?_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=YKVNgyJrzh8Q7kNvwEHMzqc&_nc_oc=Adp8Ms5VXQbfXaWDVhK_uRH7Skg0bsXvurQVDZ9kvnqSTvGYMlS6YsDWfwCr164IXMT9-4EDqmsc2RQyCH3MvfHq&_nc_zt=14&_nc_ht=scontent.fdel27-4.fna&_nc_gid=P82jsKPelmmkGcA8L0aoLg&_nc_ss=7b289&oh=00_AQAovg2tVqJH1uL3AtYbCqGfjhGvYpQTg6k-nAdrvl-U2g&oe=6A60A20C)
 
 For testing you can use this **example URL**:
@@ -78,7 +78,7 @@ You can find more help on implementing the JavaScript SDK in the [JavaScript SDK
 
 ### 3. Place Embedded Post Tag
 
-Next place the Embedded Post tag at any place of your website. Replace `{your-post-url}` with your posts’ URL.
+Next place the Embedded Post tag at any place of your website. Replace `{your-post-url}` with your posts' URL.
 
 ```
 <div class="fb-post" data-href="{your-post-url}"></div>
@@ -86,7 +86,7 @@ Next place the Embedded Post tag at any place of your website. Replace `{your-po
 
 ### 4. Testing
 
-Once you completed these steps you’re able to test your Embedded Post. A completed integration will look like something like this:
+Once you completed these steps you're able to test your Embedded Post. A completed integration will look like something like this:
 
 ```
 <html>
@@ -108,12 +108,12 @@ The result of our test example is shown in the screenshot below.
 
 Follow the instructions further down this page to adjust size, language and other settings.
 
-## Getting a post’s URL
+## Getting a post's URL
 
-There may be scenarios in which your embed code is created by a CMS and you just need the raw post URL. There are two ways to get a post’s URL:
+There may be scenarios in which your embed code is created by a CMS and you just need the raw post URL. There are two ways to get a post's URL:
 
-* Copy the URL of the permalink from your **browser’s address bar**.
-* Right-click the post’s **publishing time** and copy the link address.
+* Copy the URL of the permalink from your **browser's address bar**.
+* Right-click the post's **publishing time** and copy the link address.
 
 Both methods are highlighted in red in the screenshot below.
 
@@ -223,7 +223,7 @@ You may need to adjust the width of a Social Plugin to accommodate different lan
 
 The embedded post will show any media attached to it, as well as the number of likes, shares, and comments that the post has. Embedding posts will let people using your web site see the same rich information that is shown on Facebook.com, and they will enable people to follow or like content authors or Pages directly from the embed.
 
-**What happens if someone deletes a post or changes a post’s audience selector?**
+**What happens if someone deletes a post or changes a post's audience selector?**
 
 The following message will display in place of the embedded post:
 

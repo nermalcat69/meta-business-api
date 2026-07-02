@@ -9,9 +9,9 @@ Updated: Dec 4, 2025
 
 API users tend to create 1000s of campaigns/ad sets/ads, and would like to have the ability to group together sets of ad objects arbitrarily. For example, an advertiser may want to track all campaigns that are targeting men or women, or track all ads that are using the same creative. Or use external data, like, track all campaigns that were created by a particular team, as a part of a particular marketing initiative.
 
-Until now this could be achieved by overloading the name of the ad object. API developers have come up with complicated naming schemes, creating campaigns with names like **“[client]-[fmp]-[autogen]-[18-34-oregon]-[custaudience-141]”**, and these names are used to parse out tags.
+Until now this could be achieved by overloading the name of the ad object. API developers have come up with complicated naming schemes, creating campaigns with names like **"[client]-[fmp]-[autogen]-[18-34-oregon]-[custaudience-141]"**, and these names are used to parse out tags.
 
-With the introduction of Labels API, we allow developers to tag ad objects with multiple "labels" (strings). Developers can query by these labels, so they can quickly collate and query ad objects such as campaigns, ad sets, ads and creatives that belong to the same “label”.
+With the introduction of Labels API, we allow developers to tag ad objects with multiple "labels" (strings). Developers can query by these labels, so they can quickly collate and query ad objects such as campaigns, ad sets, ads and creatives that belong to the same "label".
 
 ### Limits
 
@@ -96,8 +96,8 @@ HTTPPHP SDKJavaScript SDKAndroid SDKiOS SDKcURL
 ---
 
 ```
-POST /v25.0/act_<AD_ACCOUNT_ID>/adlabels HTTP/1.1  
-Host: graph.facebook.com  
+POST /v25.0/act_<AD_ACCOUNT_ID>/adlabels HTTP/1.1  
+Host: graph.facebook.com  
   
 name=My+Label
 ```

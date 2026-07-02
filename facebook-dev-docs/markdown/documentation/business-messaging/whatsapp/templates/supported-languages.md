@@ -20,49 +20,47 @@ Text headers support 1 [parameter](https://developers.facebook.com/documentation
 ### Creation syntax
 
 ```
-```
-<!-- No parameter syntax -->  
+<!-- No parameter syntax -->  
 {  
-  "type": "header",  
-  "format": "text",  
-  "text": "<HEADER_TEXT>"  
+  "type": "header",  
+  "format": "text",  
+  "text": "<HEADER_TEXT>"  
 }  
   
-<!-- Named parameter syntax -->  
+<!-- Named parameter syntax -->  
 {  
-  "type": "header",  
-  "format": "text",  
-  "text": "<HEADER_TEXT>",  
-  "example": {  
-    "header_text_named_params": [  
-      {  
-        "param_name": "<NAMED_PARAMETER_NAME>",  
-        "example": "<PARAMETER_EXAMPLE_VALUE>"  
-      }  
-    ]  
-  }  
+  "type": "header",  
+  "format": "text",  
+  "text": "<HEADER_TEXT>",  
+  "example": {  
+    "header_text_named_params": [  
+      {  
+        "param_name": "<NAMED_PARAMETER_NAME>",  
+        "example": "<PARAMETER_EXAMPLE_VALUE>"  
+      }  
+    ]  
+  }  
 }  
   
-<!-- Positional parameter syntax -->  
+<!-- Positional parameter syntax -->  
 {  
-  "type": "header",  
-  "format": "text",  
-  "text": "<HEADER_TEXT>",  
-  "example": {  
-    "header_text": [  
-      "<PARAMETER_EXAMPLE_VALUE>"  
-    ]  
-  }  
+  "type": "header",  
+  "format": "text",  
+  "text": "<HEADER_TEXT>",  
+  "example": {  
+    "header_text": [  
+      "<PARAMETER_EXAMPLE_VALUE>"  
+    ]  
+  }  
 }
-```
 ```
 
 ### Creation parameters
 
 | Placeholder | Description | Example Value |
 | --- | --- | --- |
-| `<HEADER_TEXT>`  *String* | **Required.**  Header body text string. Supports 1 [parameter](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview#parameter-formats).  If this string contains a parameter, you must include the `example` property and example parameter value.  Maximum 60 characters. | `Our new sale starts {{sale_start_date}}!` |
-| `<NAMED_PARAMETER_NAME>`  *String* | **Required if using a named parameter.**  [Named parameter](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview#named-parameters) name. | `{{sale_start_date}}` |
+| `<HEADER_TEXT>`  *String* | **Required.**  Header body text string. Supports 1 [parameter](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview#parameter-formats).  If this string contains a parameter, you must include the `example` property and example parameter value.  Maximum 60 characters. | `Our new sale starts {​{sale_start_date}​}!` |
+| `<NAMED_PARAMETER_NAME>`  *String* | **Required if using a named parameter.**  [Named parameter](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview#named-parameters) name. | `{​{sale_start_date}​}` |
 | `<PARAMETER_EXAMPLE_VALUE>`  *String* | **Required if using a parameter.**  [Parameter](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview#parameter-formats) example value. | `December 1st` |
 
 ### Creation example
@@ -70,21 +68,19 @@ Text headers support 1 [parameter](https://developers.facebook.com/documentation
 This example uses 1 named parameter.
 
 ```
-```
 {  
-  "type": "HEADER",  
-  "format": "TEXT",  
-  "text": "Our new sale starts {{sale_start_date}}!",  
-  "example": {  
-    "header_text_named_params": [  
-      {  
-        "param_name": "sale_start_date",  
-        "example": "December 1st"  
-      }  
-    ]  
-  }  
+  "type": "HEADER",  
+  "format": "TEXT",  
+  "text": "Our new sale starts {​{sale_start_date}​}!",  
+  "example": {  
+    "header_text_named_params": [  
+      {  
+        "param_name": "sale_start_date",  
+        "example": "December 1st"  
+      }  
+    ]  
+  }  
 }
-```
 ```
 
 ## Media header
@@ -96,17 +92,15 @@ Note: Gifs are only available for [Marketing Messages API for WhatsApp](https://
 ### Creation syntax
 
 ```
-```
 {  
-  "type": "HEADER",  
-  "format": "<FORMAT>",  
-  "example": {  
-    "header_handle": [  
-      "<HEADER_HANDLE>"  
-    ]  
-  }  
+  "type": "HEADER",  
+  "format": "<FORMAT>",  
+  "example": {  
+    "header_handle": [  
+      "<HEADER_HANDLE>"  
+    ]  
+  }  
 }
-```
 ```
 
 ### Creation parameters
@@ -119,34 +113,30 @@ Note: Gifs are only available for [Marketing Messages API for WhatsApp](https://
 ### Creation example
 
 ```
-```
 {  
-  "type": "HEADER",  
-  "format": "IMAGE",  
-  "example": {  
-    "header_handle": [  
-      "4::aW..."  
-    ]  
-  }  
+  "type": "HEADER",  
+  "format": "IMAGE",  
+  "example": {  
+    "header_handle": [  
+      "4::aW..."  
+    ]  
+  }  
 }
-```
 ```
 
 ## Location header
 
-Location headers appear as generic maps at the top of the template and are useful for use cases such as order tracking, delivery updates, ride-hailing pickup/dropoff, and locating physical stores. When tapped, the app user’s default map app opens and loads the specified location. You specify locations when you send the template.
+Location headers appear as generic maps at the top of the template and are useful for use cases such as order tracking, delivery updates, ride-hailing pickup/dropoff, and locating physical stores. When tapped, the app user's default map app opens and loads the specified location. You specify locations when you send the template.
 
 Location headers can only be used in templates categorized as `UTILITY` or `MARKETING`. Real-time locations are not supported.
 
 ### Creation syntax
 
 ```
-```
 {  
-  "type": "header",  
-  "format": "location"  
+  "type": "header",  
+  "format": "location"  
 }
-```
 ```
 
 ### Creation parameters
@@ -156,33 +146,29 @@ None.
 ### Creation example
 
 ```
-```
 {  
-  "type": "header",  
-  "format": "location"  
+  "type": "header",  
+  "format": "location"  
 }
-```
 ```
 
 ### Send syntax
 
 ```
-```
 {  
-  "type": "header",  
-  "parameters": [  
-    {  
-      "type": "location",  
-      "location": {  
-        "latitude": "<LOCATION_LATITUDE>",  
-        "longitude": "<LOCATION_LONGITUDE>",  
-        "name": "<LOCATION_NAME>",  
-        "address": "<LOCATION_ADDRESS>"  
-      }  
-    }  
-  ]  
+  "type": "header",  
+  "parameters": [  
+    {  
+      "type": "location",  
+      "location": {  
+        "latitude": "<LOCATION_LATITUDE>",  
+        "longitude": "<LOCATION_LONGITUDE>",  
+        "name": "<LOCATION_NAME>",  
+        "address": "<LOCATION_ADDRESS>"  
+      }  
+    }  
+  ]  
 }
-```
 ```
 
 ### Send parameters
@@ -197,22 +183,20 @@ None.
 ### Send example
 
 ```
-```
 {  
-  "type": "header",  
-  "parameters": [  
-    {  
-      "type": "location",  
-      "location": {  
-        "latitude": "37.44211676562361",  
-        "longitude": "-122.16155960083124",  
-        "name": "Philz Coffee",  
-        "address": "101 Forest Ave, Palo Alto, CA 94301"  
-      }  
-    }  
-  ]  
+  "type": "header",  
+  "parameters": [  
+    {  
+      "type": "location",  
+      "location": {  
+        "latitude": "37.44211676562361",  
+        "longitude": "-122.16155960083124",  
+        "name": "Philz Coffee",  
+        "address": "101 Forest Ave, Palo Alto, CA 94301"  
+      }  
+    }  
+  ]  
 }
-```
 ```
 
 ## Body
@@ -224,71 +208,67 @@ The message text in the body component accepts multiple [parameters](https://dev
 ### Creation syntax
 
 ```
-```
-<!-- No parameters syntax -->  
+<!-- No parameters syntax -->  
 {  
-  "type": "body",  
-  "text": "<BODY_TEXT>"  
+  "type": "body",  
+  "text": "<BODY_TEXT>"  
 }  
   
-<!-- Named parameters syntax -->  
+<!-- Named parameters syntax -->  
 {  
-  "type": "body",  
-  "text": "<BODY_TEXT>",  
-  "example": {  
-    "body_text_named_params": [  
-      {  
-        "param_name": "<NAMED_PARAMETER_NAME>",  
-        "example": "<PARAMETER_EXAMPLE_VALUE>"  
-      }  
-      <!-- Additional named parameters go here, if using -->  
-    ]  
-  }  
+  "type": "body",  
+  "text": "<BODY_TEXT>",  
+  "example": {  
+    "body_text_named_params": [  
+      {  
+        "param_name": "<NAMED_PARAMETER_NAME>",  
+        "example": "<PARAMETER_EXAMPLE_VALUE>"  
+      }  
+      <!-- Additional named parameters go here, if using -->  
+    ]  
+  }  
 }  
   
-<!-- Positional parameters syntax -->  
+<!-- Positional parameters syntax -->  
 {  
-  "type": "body",  
-  "text": "<BODY_TEXT>",  
-  "example": {  
-    "body_text": [  
-      "<PARAMETER_EXAMPLE_VALUE>"  
-      <!-- Additional positional parameters go here, if using -->  
-    ]  
-  }  
+  "type": "body",  
+  "text": "<BODY_TEXT>",  
+  "example": {  
+    "body_text": [  
+      "<PARAMETER_EXAMPLE_VALUE>"  
+      <!-- Additional positional parameters go here, if using -->  
+    ]  
+  }  
 }
-```
 ```
 
 ### Creation parameters
 
 | Placeholder | Description | Example Value |
 | --- | --- | --- |
-| `<BODY_TEXT>`  *String* | **Required.**  Body text string. Supports multiple [parameters](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview#parameter-formats).  Maximum of 1024 characters. | `Thank you, {{first_name}}! Your order number is {{order_number}}.` |
-| `<NAMED_PARAMETER_NAME>`  *String* | **Required if using a named parameter.**  [Named parameter](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview#named-parameters) name. | `{{order_number}}` |
+| `<BODY_TEXT>`  *String* | **Required.**  Body text string. Supports multiple [parameters](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview#parameter-formats).  Maximum of 1024 characters. | `Thank you, {​{first_name}​}! Your order number is {​{order_number}​}.` |
+| `<NAMED_PARAMETER_NAME>`  *String* | **Required if using a named parameter.**  [Named parameter](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview#named-parameters) name. | `{​{order_number}​}` |
 | `<PARAMETER_EXAMPLE_VALUE>`  *String* | **Required if using a parameter.**  [Parameter](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview#parameter-formats) example value. | `December 1st` |
 
 ### Creation example
 
 ```
-```
 {  
-  "type": "body",  
-  "text": "Thank you, {{first_name}}! Your order number is {{order_number}}.",  
-  "example": {  
-    "body_text_named_params": [  
-      {  
-        "param_name": "first_name",  
-        "example": "Pablo"  
-      },  
-      {  
-        "param_name": "order_number",  
-        "example": "860198-230332"  
-      }  
-    ]  
-  }  
+  "type": "body",  
+  "text": "Thank you, {​{first_name}​}! Your order number is {​{order_number}​}.",  
+  "example": {  
+    "body_text_named_params": [  
+      {  
+        "param_name": "first_name",  
+        "example": "Pablo"  
+      },  
+      {  
+        "param_name": "order_number",  
+        "example": "860198-230332"  
+      }  
+    ]  
+  }  
 }
-```
 ```
 
 ## Footer
@@ -298,12 +278,10 @@ Footers are optional text-only components that appear immediately after the body
 ### Syntax
 
 ```
-```
 {  
-  "type": "FOOTER",  
-  "text": "<TEXT>"  
+  "type": "FOOTER",  
+  "text": "<TEXT>"  
 }
-```
 ```
 
 ### Properties
@@ -315,12 +293,10 @@ Footers are optional text-only components that appear immediately after the body
 ### Example
 
 ```
-```
 {  
-  "type": "FOOTER",  
-  "text": "Use the buttons below to manage your marketing subscriptions"  
+  "type": "FOOTER",  
+  "text": "Use the buttons below to manage your marketing subscriptions"  
 }
-```
 ```
 
 ## Buttons
@@ -332,22 +308,20 @@ Templates can have a combination of up to 10 button components in total, althoug
 Buttons are defined within a single buttons component object, packed into a single `buttons` array. For example, this template uses a voice call button and a URL button:
 
 ```
-```
 {  
-  "type": "BUTTONS",  
-  "buttons": [  
-    {  
-      "type": "VOICE_CALL",  
-      "text": "Call"  
-    },  
-    {  
-      "type": "URL",  
-      "text": "Shop Now",  
-      "url": "https://www.luckyshrub.com/shop/"  
-    }  
-  ]  
+  "type": "BUTTONS",  
+  "buttons": [  
+    {  
+      "type": "VOICE_CALL",  
+      "text": "Call"  
+    },  
+    {  
+      "type": "URL",  
+      "text": "Shop Now",  
+      "url": "https://www.luckyshrub.com/shop/"  
+    }  
+  ]  
 }
-```
 ```
 
 If a template has more than three buttons, two buttons appear in the delivered message, and WhatsApp replaces the remaining buttons with a **See all options** button. Tapping the **See all options** button reveals the remaining buttons.
@@ -356,34 +330,30 @@ If a template has more than three buttons, two buttons appear in the delivered m
 
 ### Copy code buttons
 
-Copy code buttons copy a text string (defined when the template is sent in a template message) to the device’s clipboard when tapped by the app user. Templates are limited to one copy code button.
+Copy code buttons copy a text string (defined when the template is sent in a template message) to the device's clipboard when tapped by the app user. Templates are limited to one copy code button.
 
 #### Syntax
 
 ```
-```
 {  
-  "type": "COPY_CODE",  
-  "example": "<EXAMPLE>"  
+  "type": "COPY_CODE",  
+  "example": "<EXAMPLE>"  
 }
-```
 ```
 
 #### Properties
 
 | Placeholder | Description | Example Value |
 | --- | --- | --- |
-| `<EXAMPLE>` | String to be copied to the device’s clipboard when tapped by the app user.  Maximum 20 characters. | `250FF` |
+| `<EXAMPLE>` | String to be copied to the device's clipboard when tapped by the app user.  Maximum 20 characters. | `250FF` |
 
 #### Example
 
 ```
-```
 {  
-  "type": "COPY_CODE",  
-  "example": "250FF"  
+  "type": "COPY_CODE",  
+  "example": "250FF"  
 }
-```
 ```
 
 ### Multi-product message buttons
@@ -405,13 +375,11 @@ Phone number buttons call the specified business phone number when tapped by the
 #### Syntax
 
 ```
-```
 {  
-  "type": "PHONE_NUMBER",  
-  "text": "<TEXT>",  
-  "phone_number": "<PHONE_NUMBER>"  
+  "type": "PHONE_NUMBER",  
+  "text": "<TEXT>",  
+  "phone_number": "<PHONE_NUMBER>"  
 }
-```
 ```
 
 #### Properties
@@ -424,13 +392,11 @@ Phone number buttons call the specified business phone number when tapped by the
 #### Example
 
 ```
-```
 {  
-  "type": "PHONE_NUMBER",  
-  "text": "Call",  
-  "phone_number": "15550051310"  
+  "type": "PHONE_NUMBER",  
+  "text": "Call",  
+  "phone_number": "15550051310"  
 }
-```
 ```
 
 ### Quick reply buttons
@@ -455,12 +421,10 @@ When using the API to send a template that has multiple quick reply buttons, you
 #### Syntax
 
 ```
-```
 {  
-  "type": "QUICK_REPLY",  
-  "text": "<TEXT>"  
+  "type": "QUICK_REPLY",  
+  "text": "<TEXT>"  
 }
-```
 ```
 
 #### Properties
@@ -472,12 +436,10 @@ When using the API to send a template that has multiple quick reply buttons, you
 #### Example
 
 ```
-```
 {  
-  "type": "QUICK_REPLY",  
-  "text": "Unsubscribe from Promos"  
+  "type": "QUICK_REPLY",  
+  "text": "Unsubscribe from Promos"  
 }
-```
 ```
 
 ### SPM buttons
@@ -486,46 +448,42 @@ Single-product message (SPM) buttons are special, non-customizable buttons that 
 
 ### URL buttons
 
-URL buttons load the specified URL in the device’s default web browser when tapped by the app user. Templates are limited to two URL buttons.
+URL buttons load the specified URL in the device's default web browser when tapped by the app user. Templates are limited to two URL buttons.
 
 #### Syntax
 
 ```
-```
 {  
-  "type": "URL",  
-  "text": "<TEXT>",  
-  "url": "<URL>",  
+  "type": "URL",  
+  "text": "<TEXT>",  
+  "url": "<URL>",  
   
-  # Required if <URL> contains a variable  
-  "example": [  
-    "<EXAMPLE>"  
-  ]  
+  # Required if <URL> contains a variable  
+  "example": [  
+    "<EXAMPLE>"  
+  ]  
 }
-```
 ```
 
 #### Properties
 
 | Placeholder | Description | Example Value |
 | --- | --- | --- |
-| `<EXAMPLE>` | URL of website. Supports 1 variable.  If using a variable, add sample variable property to the end of the URL string. The URL loads in the device’s default mobile web browser when the customer taps the button.  2000 characters maximum. | `https://www.luckyshrub.com/shop?promo=summer2023` |
+| `<EXAMPLE>` | URL of website. Supports 1 variable.  If using a variable, add sample variable property to the end of the URL string. The URL loads in the device's default mobile web browser when the customer taps the button.  2000 characters maximum. | `https://www.luckyshrub.com/shop?promo=summer2023` |
 | `<TEXT>` | Button label text. 25 characters maximum. | `Shop Now` |
-| `<URL>` | URL of website that loads in the device’s default mobile web browser when the button is tapped by the app user.  Supports 1 variable, appended to the end of the URL string.  2000 characters maximum. | `https://www.luckyshrub.com/shop?promo={{1}}` |
+| `<URL>` | URL of website that loads in the device's default mobile web browser when the button is tapped by the app user.  Supports 1 variable, appended to the end of the URL string.  2000 characters maximum. | `https://www.luckyshrub.com/shop?promo={​{1}​}` |
 
 #### Example
 
 ```
-```
 {  
-  "type": "URL",  
-  "text": "Shop Now",  
-  "url": "https://www.luckyshrub.com/shop?promo={{1}}",  
-  "example": [  
-    "summer2023"  
-  ]  
+  "type": "URL",  
+  "text": "Shop Now",  
+  "url": "https://www.luckyshrub.com/shop?promo={​{1}​}",  
+  "example": [  
+    "summer2023"  
+  ]  
 }
-```
 ```
 
 #### URL encoding
@@ -542,23 +500,21 @@ The following characters are common sources of encoding issues:
 | `ç` | `%C3%A7` | `Gonçalves` → `Gon%C3%A7alves` |
 | `ñ` | `%C3%B1` | `Peña` → `Pe%C3%B1a` |
 
-For example, if your template URL is `https://example.com/order?name={{customer_name}}` and the parameter value is `Gonçalves`, you must send the value as `Gon%C3%A7alves`:
+For example, if your template URL is `https://example.com/order?name={​{customer_name}​}` and the parameter value is `Gonçalves`, you must send the value as `Gon%C3%A7alves`:
 
 ```
-```
 {  
-  "type": "button",  
-  "sub_type": "url",  
-  "index": "0",  
-  "parameters": [  
-    {  
-      "type": "text",  
-      "parameter_name": "customer_name",  
-      "text": "Gon%C3%A7alves"  
-    }  
-  ]  
+  "type": "button",  
+  "sub_type": "url",  
+  "index": "0",  
+  "parameters": [  
+    {  
+      "type": "text",  
+      "parameter_name": "customer_name",  
+      "text": "Gon%C3%A7alves"  
+    }  
+  ]  
 }
-```
 ```
 
 ## Limited-time offer
@@ -589,7 +545,7 @@ curl -L 'https://graph.facebook.com/v25.0/102290129340398/message_templates' \
     {
       "type": "HEADER",
       "format": "TEXT",
-      "text": "Our {{1}} is on!",
+      "text": "Our {​{1}​} is on!",
       "example": {
         "header_text": [
           "Summer Sale"
@@ -598,7 +554,7 @@ curl -L 'https://graph.facebook.com/v25.0/102290129340398/message_templates' \
     },
     {
       "type": "BODY",
-      "text": "Shop now through {{1}} and use code {{2}} to get {{3}} off of all merchandise.",
+      "text": "Shop now through {​{1}​} and use code {​{2}​} to get {​{3}​} off of all merchandise.",
       "example": {
         "body_text": [
           [
@@ -638,54 +594,52 @@ An example request to create a utility template with the following components:
 * a URL button
 
 ```
-```
-curl -L 'https://graph.facebook.com/v16.0/102290129340398/message_templates' \  
--H 'Authorization: Bearer EAAJB...' \  
--H 'Content-Type: application/json' \  
--d '  
+curl -L 'https://graph.facebook.com/v16.0/102290129340398/message_templates' \  
+-H 'Authorization: Bearer EAAJB...' \  
+-H 'Content-Type: application/json' \  
+-d '  
 {  
-  "name": "order_confirmation",  
-  "language": "en_US",  
-  "category": "UTILITY",  
-  "components": [  
-    {  
-      "type": "HEADER",  
-      "format": "DOCUMENT",  
-      "example": {  
-        "header_handle": [  
-          "4::YX..."  
-        ]  
-      }  
-    },  
-    {  
-      "type": "BODY",  
-      "text": "Thank you for your order, {{1}}! Your order number is {{2}}. Tap the PDF linked above to view your receipt. If you have any questions, please use the buttons below to contact support. Thank you for being a customer!",  
-      "example": {  
-        "body_text": [  
-          [  
-            "Pablo","860198-230332"  
-          ]  
-        ]  
-      }  
-    },  
-    {  
-      "type": "BUTTONS",  
-      "buttons": [  
-        {  
-          "type": "PHONE_NUMBER",  
-          "text": "Call",  
-          "phone_number": "15550051310"  
-        },  
-        {  
-          "type": "URL",  
-          "text": "Contact Support",  
-          "url": "https://www.luckyshrub.com/support"  
-        }  
-      ]  
-    }  
-  ]  
+  "name": "order_confirmation",  
+  "language": "en_US",  
+  "category": "UTILITY",  
+  "components": [  
+    {  
+      "type": "HEADER",  
+      "format": "DOCUMENT",  
+      "example": {  
+        "header_handle": [  
+          "4::YX..."  
+        ]  
+      }  
+    },  
+    {  
+      "type": "BODY",  
+      "text": "Thank you for your order, {​{1}​}! Your order number is {​{2}​}. Tap the PDF linked above to view your receipt. If you have any questions, please use the buttons below to contact support. Thank you for being a customer!",  
+      "example": {  
+        "body_text": [  
+          [  
+            "Pablo","860198-230332"  
+          ]  
+        ]  
+      }  
+    },  
+    {  
+      "type": "BUTTONS",  
+      "buttons": [  
+        {  
+          "type": "PHONE_NUMBER",  
+          "text": "Call",  
+          "phone_number": "15550051310"  
+        },  
+        {  
+          "type": "URL",  
+          "text": "Contact Support",  
+          "url": "https://www.luckyshrub.com/support"  
+        }  
+      ]  
+    }  
+  ]  
 }'
-```
 ```
 
 ### Order delivery update
@@ -713,7 +667,7 @@ curl 'https://graph.facebook.com/v25.0/102290129340398/message_templates' \
     },
     {
       "type": "BODY",
-      "text": "Good news {{1}}! Your order #{{2}} is on its way to the location above. Thank you for your order!",
+      "text": "Good news {​{1}​}! Your order #{​{2}​} is on its way to the location above. Thank you for your order!",
       "example": {
         "body_text": [
           [
@@ -742,4 +696,4 @@ curl 'https://graph.facebook.com/v25.0/102290129340398/message_templates' \
 
 ## Webhooks
 
-Subscribe to the [message\_template\_components\_update](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/message_template_components_update) webhook field to be notified of changes to a template’s components.
+Subscribe to the [message\_template\_components\_update](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/message_template_components_update) webhook field to be notified of changes to a template's components.

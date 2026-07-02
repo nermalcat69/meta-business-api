@@ -26,7 +26,7 @@ To assist your customers in using the MM API for WhatsApp, several steps are req
 | Step | Notes |
 | --- | --- |
 | 1: Onboard yourself | Enroll via [App Dashboard](https://developers.facebook.com/apps) and follow instructions under the [Onboarding yourself](https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/pricing#onboarding-yourself). |
-| 2: Send messages | Same Template endpoint and message send payload as Cloud API - only the ‘send message’ endpoint changes. |
+| 2: Send messages | Same Template endpoint and message send payload as Cloud API - only the 'send message' endpoint changes. |
 | 3: View metrics | **New!** Integrate with the Insights API to view the metrics as Cloud API (sent/read/delivered), plus new metrics like Website and App conversions. |
 
 ## Onboarding yourself
@@ -36,9 +36,9 @@ To assist your customers in using the MM API for WhatsApp, several steps are req
 To enroll, a partner must:
 
 * Navigate to the **[App Dashboard](https://developers.facebook.com/apps)** > **WhatsApp** > **Quickstart** panel
-* On the **Quickstart** page, locate the “Improve ROI with Marketing Messages API for WhatsApp” card and click the “Get started” button
-* Request any missing app review permissions by clicking the “Request permission” button. See “[Submit for app review](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/app-review)” for more information
-* Click on “Continue to integration guide” to accept the Terms of Service
+* On the **Quickstart** page, locate the "Improve ROI with Marketing Messages API for WhatsApp" card and click the "Get started" button
+* Request any missing app review permissions by clicking the "Request permission" button. See "[Submit for app review](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/app-review)" for more information
+* Click on "Continue to integration guide" to accept the Terms of Service
 
 ![WhatsApp Quickstart page in the App Dashboard with the Improve ROI with Marketing Messages Lite API card and Get started button](https://scontent.fdel1-1.fna.fbcdn.net/v/t39.2365-6/475969838_666164382411179_8539011248692952115_n.png?_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=7NsP_OGFInUQ7kNvwGFPCxY&_nc_oc=AdoLLnfbdeMEKPV8Wkbv2Bpwre-Qy3GdvEqmGH_HGphC2dJ98frvGdKWjkWH48AroUdXXbgxL5cJ9C_JNFtUyUnQ&_nc_zt=14&_nc_ht=scontent.fdel1-1.fna&_nc_gid=SdSQBnxpp57tXL51XFtEUw&_nc_ss=7b2a8&oh=00_AQDNgHwsvyqF02FeLlgGtMyhMLnfn494K4FJUfseOmdKfg&oe=6A605400)
 
@@ -52,11 +52,11 @@ If you do not already have an App with the following Advanced App Permissions, i
 
 | Advanced App Permission | Required in order to do the following on behalf of your customer |
 | --- | --- |
-| `whatsapp_business_messaging` | Call the MM API for WhatsApp ‘send messages’ endpoint, to send messages via Marketing Messages API for WhatsApp |
+| `whatsapp_business_messaging` | Call the MM API for WhatsApp 'send messages' endpoint, to send messages via Marketing Messages API for WhatsApp |
 | `whatsapp_business_management` | Call WABA, Phone Number, and Template endpoints, for managing WABAs, Phone Numbers, and Templates; and retrieve basic metrics via [WhatsApp Business Management API](https://developers.facebook.com/documentation/business-messaging/whatsapp/analytics) |
 | `ads_read` (optional) | This permission is optional, and is only required to call the [Insights API](https://developers.facebook.com/documentation/ads-commerce/marketing-api/insights), allowing a partner to fetch advanced metrics on conversions (for example, Web conversions, App conversions) |
 
-For the app review submission, prepare a screen recording of how each permission is used. Show a sample of each action in the “Required in order to do …” column above, to demonstrate each permission in use.
+For the app review submission, prepare a screen recording of how each permission is used. Show a sample of each action in the "Required in order to do …" column above, to demonstrate each permission in use.
 
 ## Onboarding end businesses
 
@@ -100,23 +100,21 @@ Permissions:
 Refer to the [Embedded Signup implementation](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/implementation) document and add `marketing_messages_lite` to the list of features before onboarding WhatsApp SMB users.
 
 ```
-```
 {  
-  "config_id": "<config_id>",  
-  "response_type": "code",  
-  "override_default_response_type": true,  
-  "extras": {  
-    "featureType": "whatsapp_business_app_onboarding",  
-    "sessionInfoVersion": "3",  
-    "features": [  
-      {  
-        "name": "marketing_messages_lite"  
-      }  
-    ],  
-    "version": "v3"  
-  }  
+  "config_id": "<config_id>",  
+  "response_type": "code",  
+  "override_default_response_type": true,  
+  "extras": {  
+    "featureType": "whatsapp_business_app_onboarding",  
+    "sessionInfoVersion": "3",  
+    "features": [  
+      {  
+        "name": "marketing_messages_lite"  
+      }  
+    ],  
+    "version": "v3"  
+  }  
 }
-```
 ```
 
 #### Step 4: Wait for the onboarding confirmation webhook
@@ -157,21 +155,17 @@ Optional Body:
 If a partner wants to migrate OBO WABAs to a WhatsApp Business Solution as opposed to being shared solely with the partner, an optional solution\_id can be passed into the API call.
 
 ```
-```
 {  
-  "solution_id": "<MULTI-PARTNER_SOLUTION_ID>"  
+  "solution_id": "<MULTI-PARTNER_SOLUTION_ID>"  
 }
-```
 ```
 
 Response:
 
 ```
-```
 {  
-  "request_id": "893436979557695"  
+  "request_id": "893436979557695"  
 }
-```
 ```
 
 * Error: Invalid recipient type
@@ -179,7 +173,7 @@ Response:
     * They have either accepted the ToS already
     * The end business is not in an allowlisted country
     * There are no country eligible WABAs shared with the Solution Partner
-* Error: Your business has already sent this request. To follow up on the request, contact the business you’re requesting access from.
+* Error: Your business has already sent this request. To follow up on the request, contact the business you're requesting access from.
   * Reason: There is already a request to this end business to onboard onto MM API for WhatsApp using this flow.
 * Error: The app does not have sufficient permissions to call this API.
   * Reason: The app SUAT used to call the API must have advanced access on at least whatsapp\_business\_messaging and whatsapp\_business\_management.
@@ -202,7 +196,7 @@ Once a business admin completes the MM API for WhatsApp onboarding flow, and any
 * Fetch an updated Business Integration System User Access Token (BISUAT)
 
 In order to call the Insights API, you will need a Business Integration System User Access Token scoped to the Ad account that is linked to the WABA you are managing.
-Follow the guide in the “Business Integration System User Access Token Management API” section to fetch your existing token for managing ad account IDs received in the webhook.
+Follow the guide in the "Business Integration System User Access Token Management API" section to fetch your existing token for managing ad account IDs received in the webhook.
 
 Request syntax:
 
@@ -223,11 +217,9 @@ curl -i -X POST "https://graph.facebook.com/<API_VERSION>/<CLIENT_BUSINESS_ID>/s
 Response syntax
 
 ```
-```
 {  
-  "access_token": "<NEW_ACCESS_TOKEN>"  
+  "access_token": "<NEW_ACCESS_TOKEN>"  
 }
-```
 ```
 
 ### Onboard WhatsApp Business app users
@@ -258,11 +250,11 @@ See [Sending messages](https://developers.facebook.com/documentation/business-me
 
 See the Guide to [Viewing metrics](https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/view-metrics) for documentation on how to:
 
-* Fetch the IDs of the Ad entities mapped to a business’ WABAs and Templates, in order to call Insights APIs.
+* Fetch the IDs of the Ad entities mapped to a business' WABAs and Templates, in order to call Insights APIs.
 * Fetch metrics for messages sent via MM API for WhatsApp.
 
 Partners are **strongly recommended** to fetch metrics using the Ads Insights APIs (not Business Management APIs), as these APIs provide richer metrics reporting, including conversion reporting from sources such as Web and App conversion events.
 
 After integrating with reporting APIs (Insights API recommended), surface these metrics in your dashboards and APIs for your customers to use.
 
-Reach out to your Partner Manager for suggestions on metrics best practices, including a copy of Meta’s “**Business Messaging Reporting Dashboards Playbook**” for partners.
+Reach out to your Partner Manager for suggestions on metrics best practices, including a copy of Meta's "**Business Messaging Reporting Dashboards Playbook**" for partners.

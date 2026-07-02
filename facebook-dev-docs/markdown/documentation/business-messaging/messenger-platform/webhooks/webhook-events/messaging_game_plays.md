@@ -48,5 +48,5 @@ You can subscribe to this callback by selecting the `message_edits` field when [
 | Property | Type | Description |
 | --- | --- | --- |
 | `mid` | string | The Message ID of the message that the user edited. |
-| `text` | string | The new message content, after the user’s edit. |
+| `text` | string | The new message content, after the user's edit. |
 | `num_edit` | integer | The number of times the user has edited the message. (The user cannot edit a message more than five times. This constraint is on the Messenger client side.) |

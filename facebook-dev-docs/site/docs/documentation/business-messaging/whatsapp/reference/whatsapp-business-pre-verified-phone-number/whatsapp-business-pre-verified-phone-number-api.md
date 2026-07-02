@@ -81,12 +81,12 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Pre-Verified-Phone-Number-ID}/verify_code' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "code": "123456"  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Pre-Verified-Phone-Number-ID}/verify_code' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "code": "123456"  
 }'
 ```
 
@@ -98,12 +98,12 @@ Select status code
 
 ```
 {  
-  "successful_verification": {  
-    "summary": "Code verification successful",  
-    "value": {  
-      "success": true  
-    }  
-  }  
+  "successful_verification": {  
+    "summary": "Code verification successful",  
+    "value": {  
+      "success": true  
+    }  
+  }  
 }
 ```
 
@@ -627,12 +627,12 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Pre-Verified-Phone-Number-ID}/verify_code' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "code": "123456"  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Pre-Verified-Phone-Number-ID}/verify_code' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "code": "123456"  
 }'
 ```
 
@@ -644,12 +644,12 @@ Select status code
 
 ```
 {  
-  "successful_verification": {  
-    "summary": "Code verification successful",  
-    "value": {  
-      "success": true  
-    }  
-  }  
+  "successful_verification": {  
+    "summary": "Code verification successful",  
+    "value": {  
+      "success": true  
+    }  
+  }  
 }
 ```
 

@@ -16,100 +16,96 @@ The **messages** webhook describes messages sent from a WhatsApp user to a busin
 Messages webhooks describing a message sent by a WhatsApp user — either directly, via an ad, or via a UI component in a previously received message — all have the same common structure. You can easily identify these webhooks because they include a `messages` array. For example, this webhook describes a text message sent to a business:
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "102290129340398",  
-      "changes": [  
-        {  
-          "value": {  
-            "messaging_product": "whatsapp",  
-            "metadata": {  
-              "display_phone_number": "15550783881",  
-              "phone_number_id": "106540352242922"  
-            },  
-            "contacts": [  
-              {  
-                "profile": {  
-                  "name": "Sheena Nelson"  
-                },  
-                "wa_id": "16505551234"  
-              }  
-            ],  
-            "messages": [  
-              {  
-                "from": "16505551234",  
-                "id": "wamid.HBgLMTY1MDM4Nzk0MzkVAgASGBQzQTRBNjU5OUFFRTAzODEwMTQ0RgA=",  
-                "timestamp": "1749416383",  
-                "type": "text",  
-                "text": {  
-                  "body": "Does it come in another color?"  
-                }  
-              }  
-            ]  
-          },  
-          "field": "messages"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "102290129340398",  
+      "changes": [  
+        {  
+          "value": {  
+            "messaging_product": "whatsapp",  
+            "metadata": {  
+              "display_phone_number": "15550783881",  
+              "phone_number_id": "106540352242922"  
+            },  
+            "contacts": [  
+              {  
+                "profile": {  
+                  "name": "Sheena Nelson"  
+                },  
+                "wa_id": "16505551234"  
+              }  
+            ],  
+            "messages": [  
+              {  
+                "from": "16505551234",  
+                "id": "wamid.HBgLMTY1MDM4Nzk0MzkVAgASGBQzQTRBNjU5OUFFRTAzODEwMTQ0RgA=",  
+                "timestamp": "1749416383",  
+                "type": "text",  
+                "text": {  
+                  "body": "Does it come in another color?"  
+                }  
+              }  
+            ]  
+          },  
+          "field": "messages"  
+        }  
+      ]  
+    }  
+  ]  
 }
 ```
-```
 
-Objects in the `messages` array can vary greatly based on message type (indicated by the object’s `type` property). For this reason, each incoming message type has a dedicated reference, linked in the menu on the left.
+Objects in the `messages` array can vary greatly based on message type (indicated by the object's `type` property). For this reason, each incoming message type has a dedicated reference, linked in the menu on the left.
 
 ### Outgoing messages
 
-Messages webhooks describing a message sent by a business to a WhatsApp user have a different structure. You can easily identify these because they include a `statuses` array. For example, this webhook describes a message that has been delivered to a WhatsApp user’s device:
+Messages webhooks describing a message sent by a business to a WhatsApp user have a different structure. You can easily identify these because they include a `statuses` array. For example, this webhook describes a message that has been delivered to a WhatsApp user's device:
 
-```
 ```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "102290129340398",  
-      "changes": [  
-        {  
-          "value": {  
-            "messaging_product": "whatsapp",  
-            "metadata": {  
-              "display_phone_number": "15550783881",  
-              "phone_number_id": "106540352242922"  
-            },  
-            "statuses": [  
-              {  
-                "id": "wamid.HBgLMTY1MDM4Nzk0MzkVAgARGBI3MTE5MjVBOTE3MDk5QUVFM0YA",  
-                "status": "delivered",  
-                "timestamp": "1750263773",  
-                "recipient_id": "16505551234",  
-                "conversation": {  
-                  "id": "6ceb9d929c9bdc4f90e967a32f8639b4",  
-                  "origin": {  
-                    "type": "service"  
-                  }  
-                },  
-                "pricing": {  
-                  "billable": true,  
-                  "pricing_model": "CBP",  
-                  "category": "service"  
-                }  
-              }  
-            ]  
-          },  
-          "field": "messages"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "102290129340398",  
+      "changes": [  
+        {  
+          "value": {  
+            "messaging_product": "whatsapp",  
+            "metadata": {  
+              "display_phone_number": "15550783881",  
+              "phone_number_id": "106540352242922"  
+            },  
+            "statuses": [  
+              {  
+                "id": "wamid.HBgLMTY1MDM4Nzk0MzkVAgARGBI3MTE5MjVBOTE3MDk5QUVFM0YA",  
+                "status": "delivered",  
+                "timestamp": "1750263773",  
+                "recipient_id": "16505551234",  
+                "conversation": {  
+                  "id": "6ceb9d929c9bdc4f90e967a32f8639b4",  
+                  "origin": {  
+                    "type": "service"  
+                  }  
+                },  
+                "pricing": {  
+                  "billable": true,  
+                  "pricing_model": "CBP",  
+                  "category": "service"  
+                }  
+              }  
+            ]  
+          },  
+          "field": "messages"  
+        }  
+      ]  
+    }  
+  ]  
 }
 ```
-```
 
-These webhooks don’t describe the contents of the outgoing message itself, only its status, and each outgoing message can have up to three separate webhooks (one for a status of sent, one for delivered, and one for read).
+These webhooks don't describe the contents of the outgoing message itself, only its status, and each outgoing message can have up to three separate webhooks (one for a status of sent, one for delivered, and one for read).
 
 Status webhooks also have a [dedicated reference](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/messages/status).
 

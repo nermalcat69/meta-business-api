@@ -32,7 +32,7 @@ The `schedule_spec` of a rule determines how frequently you want it to run. Set 
 
 | Schedule Type | Description |
 | --- | --- |
-| `DAILY` | Run the rule at midnight in the ad account’s timezone. |
+| `DAILY` | Run the rule at midnight in the ad account's timezone. |
 | `HOURLY` | Run the rule at the start of every hour. |
 | `SEMI_HOURLY` | Run the rule at the start of every half-hour. |
 | `CUSTOM` ([Example](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-rules/guides/advanced-scheduling)) | Run the rule at customized schedules. |
@@ -49,7 +49,7 @@ In the `schedule` list, each individual specification can be composed of a combi
 
 For more information on how to use `CUSTOM` schedule types, see [Advanced Scheduling](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-rules/guides/advanced-scheduling).
 
-Here’s an example of an `evaluation_spec`. This rule applies to all objects in the initial list of ids that, in the last 7 days, have had more than `10000` impressions. In this case, you do not need the `entity_type` filter, because you defined a static list of initial objects using an `id` filter with no prefix.
+Here's an example of an `evaluation_spec`. This rule applies to all objects in the initial list of ids that, in the last 7 days, have had more than `10000` impressions. In this case, you do not need the `entity_type` filter, because you defined a static list of initial objects using an `id` filter with no prefix.
 
 ```
 curl \

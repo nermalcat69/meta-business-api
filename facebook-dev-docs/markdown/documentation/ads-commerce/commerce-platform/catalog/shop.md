@@ -65,7 +65,7 @@ Create a product set with Collection metadata that matches specific product IDs:
 ```
 curl \
   -F "name=Best Sellers" \
-  -F "filter={'retailer_id': {'is_any': ['pid1', 'pid2']}}"
+  -F "filter={'retailer_id': {'is_any': ['pid1', 'pid2']}​}"
   -F "metadata={'cover_image_url':'https://foo.com/image.jpg', 'external_url':'https://foo.com/best-sellers', 'description':'Our best selling products'}" \
   -F "access_token=<ACCESS_TOKEN>" \
   https://graph.facebook.com/API_VERSION/PRODUCT_CATALOG_ID/product_sets

@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/gateway-p
 
 Updated: Feb 2, 2025
 
-The [Conversions API Gateway](https://developers.facebook.com/documentation/ads-commerce/gateway-products/conversions-api-gateway) and [Signals Gateway](https://developers.facebook.com/documentation/ads-commerce/gateway-products/signals-gateway) “Gateway Products” share a common set of components and infrastructure that provides the foundation for both. This foundation is usually referred to as the “Gateway Products” in this documentation.
+The [Conversions API Gateway](https://developers.facebook.com/documentation/ads-commerce/gateway-products/conversions-api-gateway) and [Signals Gateway](https://developers.facebook.com/documentation/ads-commerce/gateway-products/signals-gateway) "Gateway Products" share a common set of components and infrastructure that provides the foundation for both. This foundation is usually referred to as the "Gateway Products" in this documentation.
 
 ## [Conversions API Gateway](https://developers.facebook.com/documentation/ads-commerce/gateway-products/conversions-api-gateway)
 
@@ -25,7 +25,7 @@ Create flexible events pipelines that support various data sources and data dest
 
 ## Gateway Platform Details
 
-Some of the Gateway Platform’s common components include:
+Some of the Gateway Platform's common components include:
 
 * [Account Management](https://developers.facebook.com/documentation/ads-commerce/gateway-products/host-management/account-management)
 * [Host User Management](https://developers.facebook.com/documentation/ads-commerce/gateway-products/host-management/user-management)

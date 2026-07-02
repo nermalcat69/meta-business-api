@@ -22,19 +22,17 @@ You can create a maximum of 100 templates in a WhatsApp Business Account per hou
 ### Common syntax
 
 ```
-```
-curl 'https://graph.facebook.com/v23.0/102290129340398/message_templates' \  
--H 'Authorization: Bearer EAAJB...' \  
--H 'Content-Type: application/json' \  
--d '  
+curl 'https://graph.facebook.com/v23.0/102290129340398/message_templates' \  
+-H 'Authorization: Bearer EAAJB...' \  
+-H 'Content-Type: application/json' \  
+-d '  
 {  
-"name": "<NAME>",  
-"category": "<CATEGORY>",  
-"language": "<LANGUAGE>",  
-"parameter_format": "<PARAMETER_FORMAT>",  
-"components": [<COMPONENTS>]  
+"name": "<NAME>",  
+"category": "<CATEGORY>",  
+"language": "<LANGUAGE>",  
+"parameter_format": "<PARAMETER_FORMAT>",  
+"components": [<COMPONENTS>]  
 }'
-```
 ```
 
 ### Names
@@ -63,144 +61,136 @@ If you create multiple templates with the same name but with different languages
 
 ### Parameter formats
 
-Some template components allow you to define strings that contain one or more parameters (described as “variables” in WhatsApp Manager). These are replaced with values included by you in your send message payload when you send the template.
+Some template components allow you to define strings that contain one or more parameters (described as "variables" in WhatsApp Manager). These are replaced with values included by you in your send message payload when you send the template.
 
 Upon template creation, if a string includes one or more parameters, you can specify their format — either `named` or `positional` — and you must include an example value for each parameter. If you do not specify a format, the template uses `positional` format by default.
 
 #### Named parameters
 
-Parameters using the named format must be unique, single strings, composed of lowercase characters and underscores, wrapped in double curly brackets, for example, `{{first_name}}`. Example values in template creation payloads and real values in template send payloads can appear in any order.
+Parameters using the named format must be unique, single strings, composed of lowercase characters and underscores, wrapped in double curly brackets, for example, `{​{first_name}​}`. Example values in template creation payloads and real values in template send payloads can appear in any order.
 
 Example template creation payload with named parameters:
 
 ```
-```
 {  
-"name": "order_confirmation",  
-"language": "en_US",  
-"category": "utility",  
-"parameter_format": "named",  
-"components": [  
-  {  
-    "type": "body",  
-    "text": "Thank you, {{first_name}}! Your order number is {{order_number}}.",  
-    "example": {  
-      "body_text_named_params": [  
-        {  
-          "param_name": "first_name",  
-          "example": "Pablo"  
-        },  
-        {  
-          "param_name": "order_number",  
-          "example": "860198-230332"  
-        }  
-      ]  
-    }  
-  }  
+"name": "order_confirmation",  
+"language": "en_US",  
+"category": "utility",  
+"parameter_format": "named",  
+"components": [  
+  {  
+    "type": "body",  
+    "text": "Thank you, {​{first_name}​}! Your order number is {​{order_number}​}.",  
+    "example": {  
+      "body_text_named_params": [  
+        {  
+          "param_name": "first_name",  
+          "example": "Pablo"  
+        },  
+        {  
+          "param_name": "order_number",  
+          "example": "860198-230332"  
+        }  
+      ]  
+    }  
+  }  
 ]  
 }
-```
 ```
 
 Example template send payload of template that uses named parameters:
 
 ```
-```
 {  
-"messaging_product": "whatsapp",  
-"recipient_type": "individual",  
-"to": "+16505551234",  
-"type": "template",  
-"template": {  
-  "name": "order_confirmation",  
-  "language": {  
-    "code": "en_US"  
-  },  
-  "components": [  
-    {  
-      "type": "body",  
-      "parameters": [  
-        {  
-          "type": "text",  
-          "parameter_name": "first_name",  
-          "text": "Jessica"  
-        },  
-        {  
-          "type": "text",  
-          "parameter_name": "order_number",  
-          "text": "SKBUP2-4CPIG9"  
-        }  
-      ]  
-    }  
-  ]  
+"messaging_product": "whatsapp",  
+"recipient_type": "individual",  
+"to": "+16505551234",  
+"type": "template",  
+"template": {  
+  "name": "order_confirmation",  
+  "language": {  
+    "code": "en_US"  
+  },  
+  "components": [  
+    {  
+      "type": "body",  
+      "parameters": [  
+        {  
+          "type": "text",  
+          "parameter_name": "first_name",  
+          "text": "Jessica"  
+        },  
+        {  
+          "type": "text",  
+          "parameter_name": "order_number",  
+          "text": "SKBUP2-4CPIG9"  
+        }  
+      ]  
+    }  
+  ]  
 }  
 }
-```
 ```
 
 #### Positional parameters
 
-Positional parameters must be ordered array index numbers, starting from 1, wrapped in double curly brackets: (`{{1}}`...`{{2}}`...and so on). Example values in template creation payloads and real values in template send payloads must appear in the order in which their corresponding placeholders appear in the component text string.
+Positional parameters must be ordered array index numbers, starting from 1, wrapped in double curly brackets: (`{​{1}​}`...`{​{2}​}`...and so on). Example values in template creation payloads and real values in template send payloads must appear in the order in which their corresponding placeholders appear in the component text string.
 
 Example template creation payload with positional parameter:
 
 ```
-```
 {  
-"name": "order_confirmation",  
-"language": "en_US",  
-"category": "utility",  
-"parameter_format": "positional",  
-"components": [  
-  {  
-    "type": "body",  
-    "text": "Hi {{1}}! Your order number is {{2}}. Thank you.",  
-    "example": {  
-      "body_text": [  
-        [  
-          "Pablo",  
-          "860198-230332"  
-        ]  
-      ]  
-    }  
-  }  
+"name": "order_confirmation",  
+"language": "en_US",  
+"category": "utility",  
+"parameter_format": "positional",  
+"components": [  
+  {  
+    "type": "body",  
+    "text": "Hi {​{1}​}! Your order number is {​{2}​}. Thank you.",  
+    "example": {  
+      "body_text": [  
+        [  
+          "Pablo",  
+          "860198-230332"  
+        ]  
+      ]  
+    }  
+  }  
 ]  
 }
-```
 ```
 
 Example template send payload of template that uses positional parameter:
 
 ```
-```
 {  
-"messaging_product": "whatsapp",  
-"recipient_type": "individual",  
-"to": "+16505551234",  
-"type": "template",  
-"template": {  
-  "name": "order_confirmation",  
-  "language": {  
-    "code": "en_US"  
-  },  
-  "components": [  
-    {  
-      "type": "body",  
-      "parameters": [  
-        {  
-          "type": "text",  
-          "text": "Jessica"  
-        },  
-        {  
-          "type": "text",  
-          "text": "SKBUP2-4CPIG9"  
-        }  
-      ]  
-    }  
-  ]  
+"messaging_product": "whatsapp",  
+"recipient_type": "individual",  
+"to": "+16505551234",  
+"type": "template",  
+"template": {  
+  "name": "order_confirmation",  
+  "language": {  
+    "code": "en_US"  
+  },  
+  "components": [  
+    {  
+      "type": "body",  
+      "parameters": [  
+        {  
+          "type": "text",  
+          "text": "Jessica"  
+        },  
+        {  
+          "type": "text",  
+          "text": "SKBUP2-4CPIG9"  
+        }  
+      ]  
+    }  
+  ]  
 }  
 }
-```
 ```
 
 ## Media
@@ -215,28 +205,24 @@ See [Template review](https://developers.facebook.com/documentation/business-mes
 
 ## Template status
 
-Templates must have a status of `APPROVED` before they can be sent in template messages. A template’s status is initially set by the template review process, but can be changed to another value based on usage and [quality feedback](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-quality).
+Templates must have a status of `APPROVED` before they can be sent in template messages. A template's status is initially set by the template review process, but can be changed to another value based on usage and [quality feedback](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-quality).
 
 Template status changes are communicated via [message\_template\_status\_update](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/message_template_status_update) webhooks, but you can use the [Template API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/message-template-api#get-version-template-id) and request the `status` field to get the status of a template at any time.
 
 ### Example request
 
 ```
-```
-curl 'https://graph.facebook.com/<API_VERSION>/<TEMPLATE_ID>?fields=status' \  
--H 'Authorization: Bearer <ACCESS_TOKEN>'
-```
+curl 'https://graph.facebook.com/<API_VERSION>/<TEMPLATE_ID>?fields=status' \  
+-H 'Authorization: Bearer <ACCESS_TOKEN>'
 ```
 
 ### Example response
 
 ```
-```
 {  
-"status": "APPROVED",  
-"id": "1259544702043867"  
+"status": "APPROVED",  
+"id": "1259544702043867"  
 }
-```
 ```
 
 See the [Template API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/message-template-api#get-version-template-id) reference for a list of all possible status values and what they mean.
@@ -279,7 +265,7 @@ See [Time-to-live](https://developers.facebook.com/documentation/business-messag
 
 Template quality rating is a system used to evaluate the quality of message templates, based on usage, customer feedback, and engagement. This rating helps maintain a high-quality messaging ecosystem and helps ensure that you are sending relevant and well-received messages.
 
-See [Template quality rating](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-quality) for more information about quality ratings, how they can affect a template’s status, and how you can be notified of changes to template quality scores.
+See [Template quality rating](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-quality) for more information about quality ratings, how they can affect a template's status, and how you can be notified of changes to template quality scores.
 
 ## Delivery sequence of multiple messages
 

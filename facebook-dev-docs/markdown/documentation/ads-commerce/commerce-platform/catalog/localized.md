@@ -50,9 +50,9 @@ Variants represent product SKUs, that is, the unit at which you keep stock. If y
 | 10024\_2\_00F | Winter Coat | ABC | M | BLUE | $299 | 1 |
 | 10024\_3\_00F | Winter Coat | ABC | L | BLUE | $299 | 0 |
 
-**Important**: Unfortunately, you can’t simply replace your feed A with feed B, because this will cause your item with ID 10024 to be deleted from your catalog. Doing so will **negatively impact your existing Advantage+ catalog ads performance**, as we will need to rebuild product ranking for your new IDs. Doing this could take a few days or a few weeks (timing mostly dependent on your Facebook pixel).
+**Important**: Unfortunately, you can't simply replace your feed A with feed B, because this will cause your item with ID 10024 to be deleted from your catalog. Doing so will **negatively impact your existing Advantage+ catalog ads performance**, as we will need to rebuild product ranking for your new IDs. Doing this could take a few days or a few weeks (timing mostly dependent on your Facebook pixel).
 
-**Please note**: A Facebook pixel is required for Advantage+ catalog ads. Your pixel sends an event to Facebook when a user views a product, adds it to cart or purchases it. It sends this event with either content\_type=”product” (ID: 10024) or content\_type=”product\_group” (ITEM\_GROUP\_ID ABC).
+**Please note**: A Facebook pixel is required for Advantage+ catalog ads. Your pixel sends an event to Facebook when a user views a product, adds it to cart or purchases it. It sends this event with either content\_type="product" (ID: 10024) or content\_type="product\_group" (ITEM\_GROUP\_ID ABC).
 
 ```
 fbq('track', 'AddToCart', {
@@ -84,8 +84,8 @@ fbq('track', 'AddToCart', {
 
 ### **How long would it take to rebuild product rankings if the item information in your catalog was completely replaced?**
 
-* If your pixel sends events with content\_type=”product”, then when upgrading from A to B, it will never rebuild product ranking. You will need to update your pixel to send events with content\_type=”product\_group” before upgrading, or change the content ID to match the new IDs.
-* If your pixel sends events with content\_type=”product\_group”, then it depends on the number of daily events matching your products. You can see this by going to **Commerce Manager** > **Catalog** > **Events** > Select the **Event Source** (pixel) > **See All Website Conversions** > Click on **“Purchase”** events and then look at the graph below. The number of events matched should be greater than zero and potentially constant for the past few days
+* If your pixel sends events with content\_type="product", then when upgrading from A to B, it will never rebuild product ranking. You will need to update your pixel to send events with content\_type="product\_group" before upgrading, or change the content ID to match the new IDs.
+* If your pixel sends events with content\_type="product\_group", then it depends on the number of daily events matching your products. You can see this by going to **Commerce Manager** > **Catalog** > **Events** > Select the **Event Source** (pixel) > **See All Website Conversions** > Click on **"Purchase"** events and then look at the graph below. The number of events matched should be greater than zero and potentially constant for the past few days
 
 ![Commerce Manager Website Conversions graph on the Purchases tab, with a tooltip showing 99.2% Purchases with Matched Content IDs across September](https://scontent.fdel27-4.fna.fbcdn.net/v/t39.2365-6/254295035_1166361650520778_8565381803748898731_n.png?_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=bDc4mFfP960Q7kNvwFJxGVX&_nc_oc=AdqraXMTGzPNZJqhQxmRsxhGmiQtCw1yuuOdwhSy2D6xAe4X0dMKuiWoj-JuAAn8A3UN5FOf7BWX5gFsHB16lZOc&_nc_zt=14&_nc_ht=scontent.fdel27-4.fna&_nc_gid=p--4BlF0-6T_ues6f9Vf8A&_nc_ss=7b289&oh=00_AQAeh2aRJW_Oi2-EuEr6tibKLcuSmcu8_-p7hsIFDvcRRw&oe=6A60A221)
 
@@ -102,11 +102,11 @@ Yes, you can make the B feed as follows:
 | 10024\_2\_00F | Winter Coat | ABC | M | BLUE | $299 | 1 |
 | 10024\_3\_00F | Winter Coat | ABC | L | BLUE | $299 | 0 |
 
-Notice the first record’s ID is kept as 10024 to be consistent with Feed A. This means that your existing product ranking for the product “Winter Coat” will remain in our system and your Advantage+ catalog ads performance will not be impacted.
+Notice the first record's ID is kept as 10024 to be consistent with Feed A. This means that your existing product ranking for the product "Winter Coat" will remain in our system and your Advantage+ catalog ads performance will not be impacted.
 
-### **The above solution doesn’t work for me, is there any other solution?**
+### **The above solution doesn't work for me, is there any other solution?**
 
-We are aware that this solution may not work for you if you use platforms such as Magento which auto-generate feeds with IDs that map 1:1 with SKUs. If that’s the case, then we are working on an alternative solution which involves adding a new field in Feed B as follows:
+We are aware that this solution may not work for you if you use platforms such as Magento which auto-generate feeds with IDs that map 1:1 with SKUs. If that's the case, then we are working on an alternative solution which involves adding a new field in Feed B as follows:
 
 | ID | Title | Item\_Group\_ID | Size | Color | Price | Quantity\_to\_Sell \_on\_Facebook | Previous\_Retailer\_ID |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -121,7 +121,7 @@ Please contact your Facebook representative to be part of the early stages of th
 
 ## 3. Add Additional Fields for Commerce
 
-If your catalog already has variants or if you don’t need to add variants, then the next step is to add the following fields for commerce.
+If your catalog already has variants or if you don't need to add variants, then the next step is to add the following fields for commerce.
 
 Please see below for considerations when adding these additional fields, as adding them incorrectly may have a temporary negative impact on the performance of your Advantage+ catalog ads.
 
@@ -140,9 +140,9 @@ More information about all the available fields can be found [here](https://deve
 
 If any of the above solutions do not work for you, please let your Facebook representative know. You can still create a new commerce catalog and onboard to checkout with it. If later on you wish to take advantage of using one catalog, you will need to start running Advantage+ catalog ads with your commerce catalog. Before doing that, please go through the following checklist:
 
-* Make sure your pixel events match products in your catalog. You can do this by going to **Commerce Manager** > **Catalog** > **Events** > Select the **Event Source** (pixel) > **See All Website Conversions** > **“Purchase”** events. The number of events matched should be greater than zero and constant for the past few days.
+* Make sure your pixel events match products in your catalog. You can do this by going to **Commerce Manager** > **Catalog** > **Events** > Select the **Event Source** (pixel) > **See All Website Conversions** > **"Purchase"** events. The number of events matched should be greater than zero and constant for the past few days.
 * Run a Advantage+ catalog ads split test between your ads and commerce catalogs. Keep all other variables the same and monitor your key metrics.
 * If performance is equal or better, then slowly shift ad spend towards your commerce catalog.
 * Over time, you can stop using your other catalogs completely and use your commerce catalog for ads.
 
-**Please note**: It is not possible to connect a new catalog to an existing commerce account. If you created a new catalog for checkout and want to connect it to your commerce account instead of an old catalog, you will have to delete your commerce account and set it up again, connecting the new catalog during the setup process. This may impact your commerce account’s historical orders, payouts, and financial reports.
+**Please note**: It is not possible to connect a new catalog to an existing commerce account. If you created a new catalog for checkout and want to connect it to your commerce account instead of an old catalog, you will have to delete your commerce account and set it up again, connecting the new catalog during the setup process. This may impact your commerce account's historical orders, payouts, and financial reports.

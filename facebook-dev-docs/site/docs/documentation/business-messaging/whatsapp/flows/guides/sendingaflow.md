@@ -57,13 +57,11 @@ For more details, see the [template components reference](https://developers.fac
 #### Sample response
 
 ```
-```
 {  
-  "id": "<template-id>",  
-  "status": "PENDING",  
-  "category": "MARKETING"  
+  "id": "<template-id>",  
+  "status": "PENDING",  
+  "category": "MARKETING"  
 }
-```
 ```
 
 Ensure that your template passes all required reviews so that `status` is `APPROVED` instead of `PENDING`.
@@ -71,61 +69,57 @@ Ensure that your template passes all required reviews so that `status` is `APPRO
 Now you can send a template message with a flow using the following request:
 
 ```
-```
-curl -X  POST \  
- 'https://graph.facebook.com/v16.0/FROM_PHONE_NUMBER_ID/messages' \  
- -H 'Authorization: Bearer ACCESS_TOKEN' \  
- -H 'Content-Type: application/json' \  
- -d '{  
-  "messaging_product": "whatsapp",  
-  "recipient_type": "individual",  
-  "to": "PHONE_NUMBER",  
-  "type": "template",  
-  "template": {  
-    "name": "TEMPLATE_NAME",  
-    "language": {  
-      "code": "LANGUAGE_AND_LOCALE_CODE"  
-    },  
-    "components": [  
-      {  
-        "type": "button",  
-        "sub_type": "flow",  
-        "index": "0",  
-        "parameters": [  
-          {  
-            "type": "action",  
-            "action": {  
-              "flow_token": "FLOW_TOKEN",   //optional, default is "unused"  
-              "flow_action_data": {  
-                 ...  
-              }   // optional, json object with the data payload for the first screen  
-            }  
-          }  
-        ]  
-      }  
-    ]  
-  }  
+curl -X  POST \  
+ 'https://graph.facebook.com/v16.0/FROM_PHONE_NUMBER_ID/messages' \  
+ -H 'Authorization: Bearer ACCESS_TOKEN' \  
+ -H 'Content-Type: application/json' \  
+ -d '{  
+  "messaging_product": "whatsapp",  
+  "recipient_type": "individual",  
+  "to": "PHONE_NUMBER",  
+  "type": "template",  
+  "template": {  
+    "name": "TEMPLATE_NAME",  
+    "language": {  
+      "code": "LANGUAGE_AND_LOCALE_CODE"  
+    },  
+    "components": [  
+      {  
+        "type": "button",  
+        "sub_type": "flow",  
+        "index": "0",  
+        "parameters": [  
+          {  
+            "type": "action",  
+            "action": {  
+              "flow_token": "FLOW_TOKEN",   //optional, default is "unused"  
+              "flow_action_data": {  
+                 ...  
+              }   // optional, json object with the data payload for the first screen  
+            }  
+          }  
+        ]  
+      }  
+    ]  
+  }  
 }'
-```
 ```
 
 #### Sample response
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "contacts": [  
-    {  
-      "input": "<phone-number>",  
-      "wa_id": "<phone-number>"  
-    }  
-  ],  
-  "messages": [  
-    {  
-      "id": "<message-id>"  
-    }  
-  ]  
+  "messaging_product": "whatsapp",  
+  "contacts": [  
+    {  
+      "input": "<phone-number>",  
+      "wa_id": "<phone-number>"  
+    }  
+  ],  
+  "messages": [  
+    {  
+      "id": "<message-id>"  
+    }  
+  ]  
 }
-```
 ```

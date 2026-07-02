@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/catalog/g
 
 Updated: Mar 16, 2023
 
-Before buyers can purchase items from you, you’ll need to upload your product information into a [catalog](https://developers.facebook.com/documentation/ads-commerce/catalog). If you advertise with Advantage+ catalog ads (dynamic ads), you already have a catalog and should augment your existing catalog. If you do not have a catalog or do not want to reuse an existing one, you can create a new E-Commerce catalog using the [Commerce Manager⁠](https://business.facebook.com/products/catalogs/new).
+Before buyers can purchase items from you, you'll need to upload your product information into a [catalog](https://developers.facebook.com/documentation/ads-commerce/catalog). If you advertise with Advantage+ catalog ads (dynamic ads), you already have a catalog and should augment your existing catalog. If you do not have a catalog or do not want to reuse an existing one, you can create a new E-Commerce catalog using the [Commerce Manager⁠](https://business.facebook.com/products/catalogs/new).
 
 Catalogs are managed within your Meta [Business Manager⁠](https://business.facebook.com/). Your Marketing department may already have set up a Business on Facebook to manage their ads campaigns on behalf of your organization and should be able to provide you access. If you do not have a Business Manager, you can create one now by following the instructions from our [Help Center⁠](https://www.facebook.com/business/help/1275400645914358).
 
@@ -41,7 +41,7 @@ A catalog is a structured data file that holds information about the items in yo
 
 There are multiple ways to populate your catalog. The most common approach is to list all your products and attributes into a flat file using one of the supported formats (CSV, TSV, RSS XML, ATOM XML, as well as [Google Sheets⁠](https://www.facebook.com/business/help/1898524300466211), and upload it as a catalog Feed.
 
-After you’ve created your catalog, you can create one or many Product Feeds to update or replace product items in your catalog. Product Feeds can be uploaded manually or automatically using a schedule (hourly, daily or weekly). Two types of schedules are supported for a given Product Feed:
+After you've created your catalog, you can create one or many Product Feeds to update or replace product items in your catalog. Product Feeds can be uploaded manually or automatically using a schedule (hourly, daily or weekly). Two types of schedules are supported for a given Product Feed:
 
 * **Replace Schedule**: to refresh your entire feed. Items not present in the feed file will be deleted.
 * **Update Schedule**: to make changes to selected items in your feed.
@@ -71,10 +71,10 @@ You can check for upload errors using two different approaches:
 
 Whether they are uploaded using product feed or batch sessions, once product items have been ingested, there could be important visibility or checkout blocking issues that come up during validations that are run on a regular basis. You can check for those errors in two ways:
 
-* **Manually**: you can check individual products in the ‘Items’ section in your Product Catalog. You will find any errors with a product under the ‘Issues’ tab of that product item.
+* **Manually**: you can check individual products in the 'Items' section in your Product Catalog. You will find any errors with a product under the 'Issues' tab of that product item.
 * **Programmatically**: you can automatically check any errors in two ways:
 * **Product Item API**: For each uploaded product item id, the [Product Item](https://developers.facebook.com/docs/marketing-api/reference/product-item) API can be used to retrieve all non-fatal errors associated with it (Note that fatal errors would have prevented the ingestion from happening). The errors field in the [Product Item](https://developers.facebook.com/docs/marketing-api/reference/product-item) API contains a list of errors associated with the item.
-* **Product Search API**: The list of affected product items can be requested via the [Product Search](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-catalog/products) API. In the parameters, you need to add ‘errors’ to the field list to see the list of errors affecting each item and filter by either error type or error priority to fetch only items affected matching those filters.
+* **Product Search API**: The list of affected product items can be requested via the [Product Search](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-catalog/products) API. In the parameters, you need to add 'errors' to the field list to see the list of errors affecting each item and filter by either error type or error priority to fetch only items affected matching those filters.
 
 #### Catalog All Errors
 

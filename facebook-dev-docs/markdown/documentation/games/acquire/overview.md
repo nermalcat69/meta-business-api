@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/games/acquire/overview
 
 Updated: Mar 3, 2026
 
-Your game’s visual assets -- icon, cover images, gameplay video, and screenshots -- are the first things players see when they discover your game on Facebook.
+Your game's visual assets -- icon, cover images, gameplay video, and screenshots -- are the first things players see when they discover your game on Facebook.
 
 This page provides the complete specifications, rules, and recommendations for each asset type.
 
@@ -35,15 +35,15 @@ The game icon is the single most important asset for discoverability. It appears
 * **File size:** Under 1 MB.
 * **Corners:** Submit a square image with no rounded corners. Facebook applies its own corner rounding and masking depending on the context where the icon is displayed.
 
-### Do’s
+### Do's
 
 * **Use a single, recognizable focal element.** The icon should be readable and identifiable at very small sizes (as small as 40 x 40 pixels in some contexts). A single character, object, or symbol works best.
 * **Use bold, vibrant colors.** Icons with high color contrast stand out in lists and grids. Avoid dull, muted, or overly dark color palettes.
 * **Make it unique.** Your icon should be distinct from other games on the platform. Avoid generic icons that look like stock art or that could belong to any game.
-* **Ensure consistency with your game.** The icon should visually connect to your game’s art style, characters, or theme. A player who recognizes the icon should immediately think of your game.
+* **Ensure consistency with your game.** The icon should visually connect to your game's art style, characters, or theme. A player who recognizes the icon should immediately think of your game.
 * **Test at small sizes.** Shrink the icon to 40 x 40 pixels and check that it is still identifiable. If details are lost at that size, simplify the design.
 
-### Don’ts
+### Don'ts
 
 * **Do not include text in the icon.** Text (including the game name) is nearly illegible at small sizes and clutters the icon. The game name is displayed separately beneath the icon in all contexts.
 * **Do not use rounded corners or circular crops.** Facebook applies its own corner rounding. If you pre-round the corners, the result will have an awkward double-rounded appearance.
@@ -54,7 +54,7 @@ The game icon is the single most important asset for discoverability. It appears
 
 ## Cover Image (Landscape)
 
-The landscape cover image appears on your game’s detail page, in News Feed stories when players share your game, and in some promotional placements. It is your game’s “banner” and should convey the game’s theme and feel at a glance.
+The landscape cover image appears on your game's detail page, in News Feed stories when players share your game, and in some promotional placements. It is your game's "banner" and should convey the game's theme and feel at a glance.
 
 ### Specifications
 
@@ -63,17 +63,17 @@ The landscape cover image appears on your game’s detail page, in News Feed sto
 * **Format:** PNG or JPG.
 * **File size:** Under 1 MB.
 
-### Do’s
+### Do's
 
-* **Showcase your game’s visual identity.** Use key art, characters, or scenes from your game. The cover image should feel like it belongs to the same visual world as the game itself.
+* **Showcase your game's visual identity.** Use key art, characters, or scenes from your game. The cover image should feel like it belongs to the same visual world as the game itself.
 * **Use the full canvas.** Fill the entire image area with your design. Do not leave large blank or solid-color margins.
-* **Keep critical content in the center.** The edges of the image may be cropped in some display contexts. Keep important elements (characters, logos, text) away from the edges, within a roughly 1000 x 500 pixel “safe zone” centered in the image.
+* **Keep critical content in the center.** The edges of the image may be cropped in some display contexts. Keep important elements (characters, logos, text) away from the edges, within a roughly 1000 x 500 pixel "safe zone" centered in the image.
 * **Use high-quality artwork.** The image should be crisp, well-composed, and professionally designed.
 
-### Don’ts
+### Don'ts
 
 * **Do not use excessive text.** A short game title or tagline is acceptable, but the image should not be dominated by text. Facebook may flag images with more than 20% text coverage.
-* **Do not include call-to-action text.** Avoid text like “Play Now,” “Free,” “Download,” or “Tap Here.” Facebook overlays its own calls to action in some contexts.
+* **Do not include call-to-action text.** Avoid text like "Play Now," "Free," "Download," or "Tap Here." Facebook overlays its own calls to action in some contexts.
 * **Do not use screenshots with UI elements.** The cover image is marketing art, not a screenshot. Avoid including game HUD elements, score displays, or UI buttons.
 * **Do not use copyrighted material** that you do not have rights to use.
 
@@ -90,14 +90,14 @@ The square cover image is used in square layout contexts across the platform, in
 
 ### Guidelines
 
-The same do’s and don’ts as the landscape cover image apply here. The key difference is the aspect ratio. When adapting your landscape cover image to square:
+The same do's and don'ts as the landscape cover image apply here. The key difference is the aspect ratio. When adapting your landscape cover image to square:
 
 * Do not simply crop the landscape image. Re-compose the artwork for the square format, ensuring that the key visual elements are well-positioned within the square frame.
 * If your landscape cover image has important elements on the far left or right, those elements will likely be cut off in a direct crop. Rearrange or re-center the composition.
 
 ## Gameplay Video
 
-The gameplay video shows potential players what the game actually looks like in action. It is one of the most effective tools for converting impressions into players, because players can see the game’s mechanics and visual quality before committing to play.
+The gameplay video shows potential players what the game actually looks like in action. It is one of the most effective tools for converting impressions into players, because players can see the game's mechanics and visual quality before committing to play.
 
 ### Specifications
 
@@ -106,17 +106,17 @@ The gameplay video shows potential players what the game actually looks like in 
 * **Duration:** 15 to 30 seconds recommended. Maximum 60 seconds.
 * **File size:** Under 50 MB.
 * **Audio:** Optional. If included, audio must be appropriate and not excessively loud.
-* **Orientation:** Should match the game’s orientation (portrait or landscape).
+* **Orientation:** Should match the game's orientation (portrait or landscape).
 
-### Do’s
+### Do's
 
 * **Show real gameplay footage.** The video must depict the actual game as players will experience it. Capture footage from the game itself, not from a mockup or prototype.
 * **Show the core gameplay loop.** Demonstrate the primary mechanics -- matching tiles, racing, solving puzzles, building, etc. -- in a way that a viewer can understand the game within seconds.
-* **Start with action.** The first frame should show gameplay, not a loading screen, splash screen, or menu. Capture the viewer’s attention immediately.
+* **Start with action.** The first frame should show gameplay, not a loading screen, splash screen, or menu. Capture the viewer's attention immediately.
 * **Keep it concise.** 15-30 seconds is ideal. Show the best, most representative moments of gameplay without dragging on.
 * **Use smooth, high-quality capture.** Record at a consistent frame rate without stuttering, pausing, or screen tearing.
 
-### Don’ts
+### Don'ts
 
 * **Do not use cinematic trailers or pre-rendered content.** The video must show the actual game, not a stylized trailer that does not reflect the gameplay experience.
 * **Do not show menus, settings, or non-gameplay screens** for more than 2-3 seconds. Players want to see the game, not the UI.
@@ -138,9 +138,9 @@ The banner image is used in some promotional and editorial placements on the Gam
 
 ### Guidelines
 
-* Use wide-format artwork that showcases your game’s theme and art style.
+* Use wide-format artwork that showcases your game's theme and art style.
 * Keep important elements centered, as the edges may be cropped in some contexts.
-* Follow the same do’s and don’ts as the cover images (no excessive text, no call-to-action text, high quality).
+* Follow the same do's and don'ts as the cover images (no excessive text, no call-to-action text, high quality).
 
 ## Screenshots
 
@@ -166,12 +166,12 @@ Across all asset types, Facebook has guidelines regarding text in images:
 
 * **Images with more than 20% text coverage may receive reduced reach** in promotional contexts or be flagged during review.
 * **Game titles are acceptable** in cover images but should not dominate the composition.
-* **Marketing text (“Free!”, “#1 Game!”, “Play Now!”)** should be avoided entirely.
+* **Marketing text ("Free!", "#1 Game!", "Play Now!")** should be avoided entirely.
 * **Gameplay text visible in screenshots** (such as score displays or in-game dialog) is acceptable and does not count toward the 20% text guideline.
 
 ## Branding Requirements
 
-* **Your game’s branding should be consistent** across all assets. The icon, cover images, and video should all feel like they belong to the same game.
+* **Your game's branding should be consistent** across all assets. The icon, cover images, and video should all feel like they belong to the same game.
 * **Do not use Facebook, Meta, or Instagram branding** in your assets unless specifically authorized.
 * **Do not use third-party trademarks** or copyrighted material (characters, logos, artwork) that you do not have rights to use.
 * **If your game is based on a licensed IP,** ensure you have the appropriate licenses and indicate this in your review submission notes.
@@ -183,15 +183,15 @@ Across all asset types, Facebook has guidelines regarding text in images:
 | Good | Bad |
 | --- | --- |
 | A bold, colorful character face filling the entire square canvas. Recognizable at any size. | A full screenshot of the game shrunk to fit the square format. Details are lost at small sizes. |
-| A simple, iconic symbol representing the game’s theme (e.g., a gem for a match-3 game) with vibrant colors. | A dark, muted image with small text saying the game’s name. The text is unreadable at icon sizes. |
-| Clean, custom artwork designed specifically as an icon. | A photo or stock image with no connection to the game’s actual art style. |
+| A simple, iconic symbol representing the game's theme (e.g., a gem for a match-3 game) with vibrant colors. | A dark, muted image with small text saying the game's name. The text is unreadable at icon sizes. |
+| Clean, custom artwork designed specifically as an icon. | A photo or stock image with no connection to the game's actual art style. |
 
 ### Cover Image
 
 | Good | Bad |
 | --- | --- |
-| Key art featuring the game’s main character in action, with a dynamic background. No text overlays. | A plain screenshot with the game’s HUD visible, including health bars, score counters, and buttons. |
-| A stylized scene from the game world that conveys the game’s genre and mood. Short game title in the corner. | A white background with the game’s name in large black text and nothing else. |
+| Key art featuring the game's main character in action, with a dynamic background. No text overlays. | A plain screenshot with the game's HUD visible, including health bars, score counters, and buttons. |
+| A stylized scene from the game world that conveys the game's genre and mood. Short game title in the corner. | A white background with the game's name in large black text and nothing else. |
 
 ### Gameplay Video
 
@@ -210,7 +210,7 @@ Before submitting your assets, verify the following:
 * Gameplay video shows real gameplay, starts with action, and is 15-30 seconds long.
 * All images are high resolution with no compression artifacts, blurriness, or pixelation.
 * No images contain more than 20% text.
-* No images contain call-to-action text (“Play Now,” “Free,” etc.).
+* No images contain call-to-action text ("Play Now," "Free," etc.).
 * No images contain Facebook, Meta, or third-party branding.
 * All assets are visually consistent with each other and with the game itself.
 * Banner image and at least 3 screenshots are provided (recommended).

@@ -19,7 +19,7 @@ If the `schedule_type` is `CUSTOM`, you must also specify the list of custom sch
 | `end_minute` | Time in minutes after 12:00AM. Must be a multiple of 30 minutes and after `start_minute`. If set, `end_minute` determines with `start_minute` the range of time to run the rule. If `end_minute` is the same as `start_minute`, the rule runs at that exact time. |
 | `days` | List of days to run the rule. Each day must be a value from `0-6`. `0` is Sunday, `1` is Monday, ..., `6` is Saturday. If this is not set, the rule runs on all 7 days based on the `start_minute` and, if exists, the `end_minute`. |
 
-Here’s an example of using Advanced Scheduling to schedule the rule to run every day at 10 AM. Omitting the `days` applies the schedule to every day.
+Here's an example of using Advanced Scheduling to schedule the rule to run every day at 10 AM. Omitting the `days` applies the schedule to every day.
 
 ```
 curl \
@@ -44,7 +44,7 @@ https://graph.facebook.com/<VERSION>/<AD_ACCOUNT_ID>/adrules_library
 
 ## Custom schedule examples
 
-Here’s an example of a rule that runs every 30 minutes only on weekends. By omitting `start_minute`, the rule runs as `SEMI_HOURLY` for the specified days.
+Here's an example of a rule that runs every 30 minutes only on weekends. By omitting `start_minute`, the rule runs as `SEMI_HOURLY` for the specified days.
 
 ```
 curl \
@@ -67,7 +67,7 @@ curl \
 https://graph.facebook.com/<VERSION>/<AD_ACCOUNT_ID>/adrules_library
 ```
 
-Here’s an example of a rule that only runs on Wednesdays at 2 AM. By omitting `end_minute`, the rule runs at one specific time instead of a range of times.
+Here's an example of a rule that only runs on Wednesdays at 2 AM. By omitting `end_minute`, the rule runs at one specific time instead of a range of times.
 
 ```
 curl \
@@ -91,7 +91,7 @@ curl \
 https://graph.facebook.com/<VERSION>/<AD_ACCOUNT_ID>/adrules_library
 ```
 
-The API calculates each individual schedule independently as an OR with the other schedules. Here’s an example of a rule that runs all day on the weekdays, but only from 12-1PM on the weekends. By having an `end_minute` here, the range of time runs from the `start_minute` to `end_minute`.
+The API calculates each individual schedule independently as an OR with the other schedules. Here's an example of a rule that runs all day on the weekdays, but only from 12-1PM on the weekends. By having an `end_minute` here, the range of time runs from the `start_minute` to `end_minute`.
 
 ```
 curl \

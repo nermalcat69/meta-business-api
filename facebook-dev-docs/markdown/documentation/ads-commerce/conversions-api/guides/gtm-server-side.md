@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/conversio
 
 Updated: Jun 30, 2026
 
-You can use the automation platform Zapier to send events to the Conversions API. Use Facebook’s Zapier app to automatically send events every time something changes in your data source.
+You can use the automation platform Zapier to send events to the Conversions API. Use Facebook's Zapier app to automatically send events every time something changes in your data source.
 
 ## Overview
 
@@ -34,7 +34,7 @@ Trigger event refers to the action that must happen in your data source for the 
 
 Select the Zapier trigger event that makes more sense for your advertising needs.
 
-You must configure your data source to match Facebook’s events schema. For Google Sheets, set the spreadsheet fields to correspond to our event fields.
+You must configure your data source to match Facebook's events schema. For Google Sheets, set the spreadsheet fields to correspond to our event fields.
 
 #### Step 3: Select events to be posted
 
@@ -51,7 +51,7 @@ Now you can activate your Zap. Once that is done, an event should be posted to t
 To finalize the Google Sheets example, consider a Zap that you created that:
 
 * Uses Google Sheet as a data source.
-* Has “New Spreadsheet Row” as a trigger event.
+* Has "New Spreadsheet Row" as a trigger event.
 * Has `Purchase` as an action event.
 
 Once this Zap is activated, a Purchase event is posted to our API every time a new row is added to the source spreadsheet.

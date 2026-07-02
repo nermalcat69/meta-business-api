@@ -29,29 +29,27 @@ The call button is supported for use with the following:
 ## Sample request
 
 ```
-```
-curl -X POST -H "Content-Type: application/json" -d '{  
-  "recipient":{  
-    "id":"<PSID>"  
-  },  
-  "message":{  
-    "attachment":{  
-      "type":"template",  
-      "payload":{  
-        "template_type":"button",  
-        "text":"Need further assistance? Talk to a representative",  
-        "buttons":[  
-          {  
-            "type":"phone_number",  
-            "title":"Call Representative",  
-            "payload":"+15105551234"  
-          }  
-        ]  
-      }  
-    }  
-  }  
-}' "https://graph.facebook.com/me/messages?access_token=<PAGE_ACCESS_TOKEN>"
-```
+curl -X POST -H "Content-Type: application/json" -d '{  
+  "recipient":{  
+    "id":"<PSID>"  
+  },  
+  "message":{  
+    "attachment":{  
+      "type":"template",  
+      "payload":{  
+        "template_type":"button",  
+        "text":"Need further assistance? Talk to a representative",  
+        "buttons":[  
+          {  
+            "type":"phone_number",  
+            "title":"Call Representative",  
+            "payload":"+15105551234"  
+          }  
+        ]  
+      }  
+    }  
+  }  
+}' "https://graph.facebook.com/me/messages?access_token=<PAGE_ACCESS_TOKEN>"
 ```
 
 ## Sample response

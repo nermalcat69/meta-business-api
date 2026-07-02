@@ -20,8 +20,8 @@ HTTPPHP SDKJavaScript SDKAndroid SDKiOS SDK
 ---
 
 ```
-GET /v25.0/{business-user-id}/assigned_business_asset_groups HTTP/1.1  
-Host: graph.facebook.com
+GET /v25.0/{business-user-id}/assigned_business_asset_groups HTTP/1.1  
+Host: graph.facebook.com
 ```
 
 Try it in [Graph API Explorer](https://developers.facebook.com/tools/explorer/?method=GET&path=%7Bbusiness-user-id%7D%2Fassigned_business_asset_groups&version=v25.0)

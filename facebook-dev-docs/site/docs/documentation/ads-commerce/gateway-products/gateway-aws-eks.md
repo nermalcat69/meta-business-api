@@ -49,7 +49,7 @@ When the domain becomes active, you will see the below screen.
 
 Choose the Cloudflare method
 
-Navigate to the Domain Management page. Review the instructions and requirements, then click the **Get started** button at the bottom of the page. In order to complete the setup process, you’ll need:
+Navigate to the Domain Management page. Review the instructions and requirements, then click the **Get started** button at the bottom of the page. In order to complete the setup process, you'll need:
 
 * A Cloudflare account with admin access.
 * Admin access for your cloud platform account.
@@ -57,7 +57,7 @@ Navigate to the Domain Management page. Review the instructions and requirements
 
 ![Cloudflare setup intro page describing the data routing flow, prerequisites, and benefits with a Get Started button](https://scontent.fdel27-5.fna.fbcdn.net/v/t39.2365-6/486010759_674734918559655_3638732759097622571_n.png?_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=6jNx48c00f0Q7kNvwF6xhNc&_nc_oc=AdoUNmFPhPW7Q_uWd3tsxFRBusUWqhZM5YDZzyaOj85cg5kxCK4M-5xTKofQ00nV1cAOnxivYQUbWhwwd6RoFNrA&_nc_zt=14&_nc_ht=scontent.fdel27-5.fna&_nc_gid=keFALnvfAprpLnKnWk75_g&_nc_ss=7b289&oh=00_AQBJ61Dh7_HEi2N9cg2akGy4uQE3ocOfau43Fqn6Yf0yHA&oe=6A606C58)
 
-Choose a Cloudflare setup method. We recommended that you select the option to register a new domain and use it with Cloudflare. Choose the option you’d like to select.
+Choose a Cloudflare setup method. We recommended that you select the option to register a new domain and use it with Cloudflare. Choose the option you'd like to select.
 
 ![Choose a Cloudflare setup method screen with three options: register a new domain, use an existing Cloudflare account, or use a domain from another provider](https://scontent.fdel27-5.fna.fbcdn.net/v/t39.2365-6/485642817_980516060855929_4410391120381008420_n.png?_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=Jx8Ucf3yi6YQ7kNvwFds6oN&_nc_oc=AdpiDtZ--O-Z7P2lWlffw_ExfMfn_gNz6Wn3HsKtGcQTjIB3G7vmY6IA16FI2OjKKPzl5Gh9vRSW1DIZYzLuVkP6&_nc_zt=14&_nc_ht=scontent.fdel27-5.fna&_nc_gid=keFALnvfAprpLnKnWk75_g&_nc_ss=7b289&oh=00_AQAAkXMldCfpan2g8Is8XL6F7qS211zRs9JP2x5bo95XCw&oe=6A607FFC)
 
@@ -81,7 +81,7 @@ Select this method if you have a domain registered with another provider (such a
 
 ![Use a domain from another provider on Cloudflare instructions: create an account, add a payment method, and add a domain with another registrar](https://scontent.fdel27-4.fna.fbcdn.net/v/t39.2365-6/373553191_2025045221177783_6321911626782296088_n.png?_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=0GdFfpKxlEoQ7kNvwF4WXmO&_nc_oc=Adq06qfQmn4l-Rb54SRdLVnoJEqGYQYJxng7E-XkPUZUG_qUluP3uMRK960NldB3BNj0OPSUXzj2cNMKdtAHo7se&_nc_zt=14&_nc_ht=scontent.fdel27-4.fna&_nc_gid=keFALnvfAprpLnKnWk75_g&_nc_ss=7b289&oh=00_AQA9RFkHtOuw4yKZ8xg1e0bNAFD6-aneh1Y6WVX5K0phyA&oe=6A608271)
 
-On the next page, you’ll find instructions for how to proceed on Cloudflare, depending on your selected setup method.
+On the next page, you'll find instructions for how to proceed on Cloudflare, depending on your selected setup method.
 
 Next you will start the Cloudflare setup process.
 

@@ -31,11 +31,11 @@ Host: graph.facebook.com
 | `id` | string | Yes | A unique content ID for the product. Each content ID must appear only once in your catalog. To run Advantage+ catalog ads, this ID must exactly match the content ID for the same product in your Meta Pixel code. Character limit: 100. |
 | `retailer_id` | string | Yes | Retailer-provided unique identifier for the article or publication item. |
 | `name` | string | Yes | The title of the article or publication. Shown in ads. Character limit: 200. See [title specifications⁠](https://www.facebook.com/business/help/2104231189874655). |
-| `description` | string | No | A short summary or abstract of the article or publication. Shown in ads. Use plain text and don’t enter text in all capital letters. Character limit: 9999. See [description specifications⁠](https://www.facebook.com/business/help/2302017289821154). |
+| `description` | string | No | A short summary or abstract of the article or publication. Shown in ads. Use plain text and don't enter text in all capital letters. Character limit: 9999. See [description specifications⁠](https://www.facebook.com/business/help/2302017289821154). |
 | `image_url` | string | Yes | The URL for the main image of your product. Shown in ads. Must be in a supported format (JPG/PNG) and at least 500 x 500 pixels. See [image specifications⁠](https://www.facebook.com/business/help/686259348512056). |
-| `url` | string | Yes | The link to the specific product page on your business’s website where people can learn more about or purchase this product. Links must begin with `http://` or `https://`. |
+| `url` | string | Yes | The link to the specific product page on your business's website where people can learn more about or purchase this product. Links must begin with `http://` or `https://`. |
 | `price` | string | No | The individual price of the article or publication. Shown in ads. Do not enter a subscription price. Format the price as a number followed by the 3-letter currency code (ISO 4217 standards). Use a period (`.`) as the decimal point, do not use commas. |
-| `sale_price` | string | No | The discounted price of the article or publication if it’s on sale. Format the price as a number followed by the 3-letter currency code (ISO 4217 standards). Use a period (`.`) as the decimal point, do not use commas. A sale price is required if you want to use an overlay for discounted prices. |
+| `sale_price` | string | No | The discounted price of the article or publication if it's on sale. Format the price as a number followed by the 3-letter currency code (ISO 4217 standards). Use a period (`.`) as the decimal point, do not use commas. A sale price is required if you want to use an overlay for discounted prices. |
 | `currency` | string | No | ISO 4217 currency code for the price. |
 | `brand` | string | No | The name of the publishing entity or platform. Character limit: 100. |
 | `publication_category` | enum | No | The format of the publication. Used to recommend your product to the right people. Supported values:   * `Article` * `Ebook` * `Audiobook` * `Blogpost` * `Book` * `Magazine` * `Newspaper` * `Report` * `Whitepaper` * `Journal` * `Newsletter` * `Other` |
@@ -55,10 +55,10 @@ Host: graph.facebook.com
 | `video_urls` | array<string> | No | URLs for videos of your product. Videos can be shown in ads and make your ads more engaging. Must be a direct link to download the video file. You can add up to 20 videos. |
 | `custom_label_0` through `custom_label_4` | string | No | Any relevant information you want to add to your ad creative such as in the headline. |
 | `custom_number_0` through `custom_number_4` | integer | No | Any number you want to filter products by when you create product sets. Use this to filter by number ranges (is greater than and is less than). Use whole numbers between 0 and 4294967295. Decimals and commas are not supported. |
-| `applink_ios_url` | string | No | A deep link to your app on iOS. Used to send people from your ads to your app, if installed. If it isn’t installed, redirects to your website or the App Store. |
+| `applink_ios_url` | string | No | A deep link to your app on iOS. Used to send people from your ads to your app, if installed. If it isn't installed, redirects to your website or the App Store. |
 | `applink_ios_app_store_id` | integer | No | The unique numeric identifier for the app on the Apple App Store. |
 | `applink_ios_app_name` | string | No | The official name of the app as it appears on the Apple App Store. |
-| `applink_android_url` | string | No | A deep link to your app on Android. Used to send people from your ads to your app, if installed. If it isn’t installed, redirects to your website or Google Play. |
+| `applink_android_url` | string | No | A deep link to your app on Android. Used to send people from your ads to your app, if installed. If it isn't installed, redirects to your website or Google Play. |
 | `applink_android_package` | string | No | The unique package identifier for the Android app. |
 | `applink_android_class` | string | No | Android activity class name. |
 | `applink_android_app_name` | string | No | The official name of the app as it appears on the Google Play Store. |

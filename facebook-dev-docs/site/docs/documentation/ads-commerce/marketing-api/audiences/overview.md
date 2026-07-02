@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/marketing
 
 Updated: Jun 16, 2026
 
-Audience targeting helps you show your ads to the audiences most relevant to your business. There are two general approaches — specific or broad — you can take when creating a target audience. The approach you choose depends on what you’re trying to accomplish and your available resources.
+Audience targeting helps you show your ads to the audiences most relevant to your business. There are two general approaches — specific or broad — you can take when creating a target audience. The approach you choose depends on what you're trying to accomplish and your available resources.
 
 You can be specific and create audiences based on customer data, such as conversion data or activity in your app or website. Or, you can provide broader information, such as demographics or location, and Meta delivers ads to people who match those attributes.
 

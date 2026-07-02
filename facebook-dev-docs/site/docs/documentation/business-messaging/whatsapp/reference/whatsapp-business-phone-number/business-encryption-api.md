@@ -74,11 +74,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/whatsapp_business_encryption' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/whatsapp_business_encryption' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -89,27 +89,27 @@ Select status code
 
 ```
 {  
-  "valid_key": {  
-    "summary": "Valid public key with verified signature",  
-    "value": {  
-      "data": [  
-        {  
-          "business_public_key_signature_status": "VALID"  
-        }  
-      ]  
-    }  
-  },  
-  "mismatch_key": {  
-    "summary": "Public key with signature mismatch",  
-    "value": {  
-      "data": [  
-        {  
-          "business_public_key": " ",  
-          "business_public_key_signature_status": "MISMATCH"  
-        }  
-      ]  
-    }  
-  }  
+  "valid_key": {  
+    "summary": "Valid public key with verified signature",  
+    "value": {  
+      "data": [  
+        {  
+          "business_public_key_signature_status": "VALID"  
+        }  
+      ]  
+    }  
+  },  
+  "mismatch_key": {  
+    "summary": "Public key with signature mismatch",  
+    "value": {  
+      "data": [  
+        {  
+          "business_public_key": " ",  
+          "business_public_key_signature_status": "MISMATCH"  
+        }  
+      ]  
+    }  
+  }  
 }
 ```
 
@@ -699,11 +699,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/whatsapp_business_encryption' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/whatsapp_business_encryption' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -714,27 +714,27 @@ Select status code
 
 ```
 {  
-  "valid_key": {  
-    "summary": "Valid public key with verified signature",  
-    "value": {  
-      "data": [  
-        {  
-          "business_public_key_signature_status": "VALID"  
-        }  
-      ]  
-    }  
-  },  
-  "mismatch_key": {  
-    "summary": "Public key with signature mismatch",  
-    "value": {  
-      "data": [  
-        {  
-          "business_public_key": " ",  
-          "business_public_key_signature_status": "MISMATCH"  
-        }  
-      ]  
-    }  
-  }  
+  "valid_key": {  
+    "summary": "Valid public key with verified signature",  
+    "value": {  
+      "data": [  
+        {  
+          "business_public_key_signature_status": "VALID"  
+        }  
+      ]  
+    }  
+  },  
+  "mismatch_key": {  
+    "summary": "Public key with signature mismatch",  
+    "value": {  
+      "data": [  
+        {  
+          "business_public_key": " ",  
+          "business_public_key_signature_status": "MISMATCH"  
+        }  
+      ]  
+    }  
+  }  
 }
 ```
 
@@ -783,12 +783,12 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/whatsapp_business_encryption' \  
-  --header 'Authorization: Bearer <Token>' \  
-  -F 'business_public_key=-----BEGIN PUBLIC KEY-----  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/whatsapp_business_encryption' \  
+  --header 'Authorization: Bearer <Token>' \  
+  -F 'business_public_key=-----BEGIN PUBLIC KEY-----  
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA...  
------END PUBLIC KEY-----  
+-----END PUBLIC KEY-----  
 '
 ```
 
@@ -800,12 +800,12 @@ Select status code
 
 ```
 {  
-  "success": {  
-    "summary": "Successful key upload",  
-    "value": {  
-      "success": true  
-    }  
-  }  
+  "success": {  
+    "summary": "Successful key upload",  
+    "value": {  
+      "success": true  
+    }  
+  }  
 }
 ```
 
@@ -1392,12 +1392,12 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/whatsapp_business_encryption' \  
-  --header 'Authorization: Bearer <Token>' \  
-  -F 'business_public_key=-----BEGIN PUBLIC KEY-----  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/whatsapp_business_encryption' \  
+  --header 'Authorization: Bearer <Token>' \  
+  -F 'business_public_key=-----BEGIN PUBLIC KEY-----  
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA...  
------END PUBLIC KEY-----  
+-----END PUBLIC KEY-----  
 '
 ```
 
@@ -1409,12 +1409,12 @@ Select status code
 
 ```
 {  
-  "success": {  
-    "summary": "Successful key upload",  
-    "value": {  
-      "success": true  
-    }  
-  }  
+  "success": {  
+    "summary": "Successful key upload",  
+    "value": {  
+      "success": true  
+    }  
+  }  
 }
 ```
 

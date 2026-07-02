@@ -26,7 +26,7 @@ Below is a high level diagram of the major components involved in Signals Gatewa
 
 ### Multi-Domain Support
 
-The Signals Gateway supports multiple domains. For example, you can have multiple domains such as “domain.com” , “domain.co.uk”, “anotherdomain.com”. All of these domains could be configured within a single instance of the Signals Gateway during deployment. Please review the [Setup Guide](https://developers.facebook.com/documentation/ads-commerce/gateway-products/signals-gateway/setup) for more details.
+The Signals Gateway supports multiple domains. For example, you can have multiple domains such as "domain.com" , "domain.co.uk", "anotherdomain.com". All of these domains could be configured within a single instance of the Signals Gateway during deployment. Please review the [Setup Guide](https://developers.facebook.com/documentation/ads-commerce/gateway-products/signals-gateway/setup) for more details.
 
 ## Signals Gateway Components
 

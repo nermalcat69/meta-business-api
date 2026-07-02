@@ -9,9 +9,9 @@ Updated: Mar 13, 2026
 
 This document shows you how to send a utility message.
 
-#### What’s a utility message?
+#### What's a utility message?
 
-A utility message is a message, created from a template, sent to your customers that contain order or account status updates, and appointment or event reminders, and can be personalized with a customer’s name, locale, appointment or event date, and more. A utility message template contains placeholder values such as a person’s name, order id, tracking number, and so on, that are filled in at the time the message is sent to the consumer. Your app users can create their own utility message templates or use one of Meta’s utility message templates to create these messages.
+A utility message is a message, created from a template, sent to your customers that contain order or account status updates, and appointment or event reminders, and can be personalized with a customer's name, locale, appointment or event date, and more. A utility message template contains placeholder values such as a person's name, order id, tracking number, and so on, that are filled in at the time the message is sent to the consumer. Your app users can create their own utility message templates or use one of Meta's utility message templates to create these messages.
 
 ### How it works
 
@@ -20,7 +20,7 @@ There are a number of flows for your app users to send utility messages:
 **Use a Meta template**
 
 * Search for a template
-* Clone it to the Page’s template library
+* Clone it to the Page's template library
 * Send a message
 
 #### Create and send a Page-owned template
@@ -40,7 +40,7 @@ There are a number of flows for your app users to send utility messages:
 
 ## Before You Start
 
-This guide assumes you have set up your webhooks server to receive notifications and subscribed to the `message_template_status_update` field as well as other webhook messaging fields your app user’s utility messages need.
+This guide assumes you have set up your webhooks server to receive notifications and subscribed to the `message_template_status_update` field as well as other webhook messaging fields your app user's utility messages need.
 
 You need the following:
 
@@ -59,61 +59,59 @@ Meta has a number of pre-approved templates that your app users can use to send 
 
 ### Step 1. Search for a template
 
-To get a list of Meta utility message templates, send a `GET` request to the `/message_template_library` endpoint. Add additional parameters to refine your search. In the following example we are searching for English templates that include the word “order” in the name or message content.
+To get a list of Meta utility message templates, send a `GET` request to the `/message_template_library` endpoint. Add additional parameters to refine your search. In the following example we are searching for English templates that include the word "order" in the name or message content.
 
 ```
 curl -X GET "https://graph.facebook.com/v25.0/message_template_library?name_or_content=order&language=en?access_token=EAACE..."
 ```
 
-On success your app receives a JSON response with a list of templates that match the query. The template’s `name` value is needed to use the template for your app user’s utility messages.
+On success your app receives a JSON response with a list of templates that match the query. The template's `name` value is needed to use the template for your app user's utility messages.
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "name": "order_confirmation_1",  
-      "language": "en",  
-      "category": "UTILITY",  
-      "topic": "ORDER_MANAGEMENT",  
-      "usecase": "DELIVERY_CONFIRMATION",  
-      "industry": [  
-        "E_COMMERCE"  
-      ],  
-      "body": "{{1}}, your order was successfully delivered!  
+  "data": [  
+    {  
+      "name": "order_confirmation_1",  
+      "language": "en",  
+      "category": "UTILITY",  
+      "topic": "ORDER_MANAGEMENT",  
+      "usecase": "DELIVERY_CONFIRMATION",  
+      "industry": [  
+        "E_COMMERCE"  
+      ],  
+      "body": "{​{1}​}, your order was successfully delivered!  
   
-You can track your package and manage your order below.",  
-      "body_params": [  
-        "John"  
-      ],  
-      "body_param_types": [  
-        "TEXT"  
-      ],  
-      "buttons": [  
-        {  
-          "type": "URL",  
-          "text": "Manage order",  
-          "url": "https://www.example.com"  
-        }  
-      ],  
-      "id": "7635027653257090"  
-    },  
-    ...                               // List is truncated for brevity  
-  ]  
+You can track your package and manage your order below.",  
+      "body_params": [  
+        "John"  
+      ],  
+      "body_param_types": [  
+        "TEXT"  
+      ],  
+      "buttons": [  
+        {  
+          "type": "URL",  
+          "text": "Manage order",  
+          "url": "https://www.example.com"  
+        }  
+      ],  
+      "id": "7635027653257090"  
+    },  
+    ...                               // List is truncated for brevity  
+  ]  
 }
-```
 ```
 
 ### Step 2. Clone the template
 
-To clone a Meta utility message template to a Page’s template library, send a `POST` request to the `/<PAGE_ID>/message_templates` endpoint with the following parameters:
+To clone a Meta utility message template to a Page's template library, send a `POST` request to the `/<PAGE_ID>/message_templates` endpoint with the following parameters:
 
 * `name` set to the name of the cloned template
 * `category` set to `UTILITY`
 * `language` set to the language code for this message
 * `library_template_name` set to the name of the Meta template being cloned (`order_confirmation_1`)
 
-In the following example, the the cloned template requires the additional `library_template_body_inputs` and `library_template_button_inputs` parameters set to the components containing the app user’s values.
+In the following example, the the cloned template requires the additional `library_template_body_inputs` and `library_template_button_inputs` parameters set to the components containing the app user's values.
 
 ```
 curl -X POST -H "Content-Type: application/json"
@@ -121,11 +119,11 @@ curl -X POST -H "Content-Type: application/json"
            "name": "jaspers_market_order_confirmation_1",
            "category": "UTILITY",
            "language": "en_US",
-           "library_template_name”: "order_confirmation_1",
+           "library_template_name": "order_confirmation_1",
            "library_template_body_inputs": [
              {
                 "type": "body",
-                "text": "{{1}}, your order was successfully delivered!\n\n You can track your package and manage your order below."
+                "text": "{​{1}​}, your order was successfully delivered!\n\n You can track your package and manage your order below."
              }
            ],
            "library_template_button_inputs": [
@@ -140,7 +138,7 @@ curl -X POST -H "Content-Type: application/json"
          }' "https://graph.facebook.com/v25.0/1909458034523498/message_templates?access_token=EAACE..."
 ```
 
-On success your app receives a JSON response with the template’s ID, the approval status, and the template category.
+On success your app receives a JSON response with the template's ID, the approval status, and the template category.
 
 ```
 {
@@ -204,8 +202,8 @@ To create a utility message template, send a `POST` request to the `/<PAGE_ID>/m
 
 Templates support two parameter formats:
 
-* **Named parameters** — Placeholders use descriptive names: `{{customer_name}}`, `{{order_id}}`. Set `parameter_format` to `NAMED` when creating the template. Example values are provided in the `body_text_named_params` and `header_text_named_params` fields using `param_name` and `example` pairs.
-* **Positional parameters** (default) — Placeholders use sequential numbers: `{{1}}`, `{{2}}`, `{{3}}`. Example values are provided in the `body_text` and `header_text` fields. This is the default format when `parameter_format` is not specified.
+* **Named parameters** — Placeholders use descriptive names: `{​{customer_name}​}`, `{​{order_id}​}`. Set `parameter_format` to `NAMED` when creating the template. Example values are provided in the `body_text_named_params` and `header_text_named_params` fields using `param_name` and `example` pairs.
+* **Positional parameters** (default) — Placeholders use sequential numbers: `{​{1}​}`, `{​{2}​}`, `{​{3}​}`. Example values are provided in the `body_text` and `header_text` fields. This is the default format when `parameter_format` is not specified.
 
 #### Text-Only Templates (Named Parameters)
 
@@ -222,7 +220,7 @@ curl -H 'Content-Type: application/json' \
             {
               "type": "HEADER",
               "format": "TEXT",
-              "text":"{{order_type}} Update",
+              "text":"{​{order_type}​} Update",
               "example": {
                "header_text_named_params": [
                  {
@@ -234,7 +232,7 @@ curl -H 'Content-Type: application/json' \
              },
              {
                "type": "BODY",
-               "text": "Good news! Your order #{{order_id}} is on its way. Thank you for your order, {{customer_name}}!",
+               "text": "Good news! Your order #{​{order_id}​} is on its way. Thank you for your order, {​{customer_name}​}!",
                "example": {
                  "body_text_named_params": [
                    {
@@ -266,14 +264,14 @@ curl -H 'Content-Type: application/json' \
             {
               "type": "HEADER",
               "format": "TEXT",
-              "text":"{{1}} Update",
+              "text":"{​{1}​} Update",
               "example": {
                "header_text":["Order"]
               }
              },
              {
                "type": "BODY",
-               "text": "Good news! Your order #{{1}} is on its way. Thank you for your order!",
+               "text": "Good news! Your order #{​{1}​} is on its way. Thank you for your order!",
                "example": {
                  "body_text": [
                    [
@@ -301,7 +299,7 @@ curl -H 'Content-Type: application/json' \
              {
               "type": "HEADER",
               "format": "IMAGE",
-              "text":"{{order_type}} Update",
+              "text":"{​{order_type}​} Update",
               "example": {
                "header_handle": ["4:dGVzdF9pbWFn......."],
                "header_text_named_params": [
@@ -314,7 +312,7 @@ curl -H 'Content-Type: application/json' \
              },
              {
                "type": "BODY",
-               "text": "Good news! Your order #{{order_id}} is on its way. Thank you for your order, {{customer_name}}!",
+               "text": "Good news! Your order #{​{order_id}​} is on its way. Thank you for your order, {​{customer_name}​}!",
                "example": {
                  "body_text_named_params": [
                    {
@@ -344,7 +342,7 @@ On success your app receives a JSON response with the template ID, the review st
 
 ### Step 2. Send a message
 
-To send a utility message using a template from your app user’s template library, send a `POST` request to the `/<PAGE_ID>/messages` endpoint with the following required parameters:
+To send a utility message using a template from your app user's template library, send a `POST` request to the `/<PAGE_ID>/messages` endpoint with the following required parameters:
 
 * `recipient.id` set to the Page-scoped ID for the person your app user is sending the message to
 * `message.template` set to a list of parameters:
@@ -354,7 +352,7 @@ To send a utility message using a template from your app user’s template libra
 
 #### Sending with Positional Parameters
 
-For templates created with positional parameters (the default), parameters are matched by position. In the following example, `{{1}}` in the header will be replaced with the first header parameter, and `{{1}}` in the body will be replaced with the first body parameter.
+For templates created with positional parameters (the default), parameters are matched by position. In the following example, `{​{1}​}` in the header will be replaced with the first header parameter, and `{​{1}​}` in the body will be replaced with the first body parameter.
 
 ```
 curl -X POST -H "Content-Type: application/json" -d '{
@@ -394,7 +392,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 #### Sending with Named Parameters
 
-For templates created with `parameter_format` set to `NAMED`, include the `parameter_name` field in each parameter to match it to the corresponding placeholder in the template. In the following example, `{{order_type}}` in the header and `{{order_id}}` and `{{customer_name}}` in the body will be replaced with their respective values.
+For templates created with `parameter_format` set to `NAMED`, include the `parameter_name` field in each parameter to match it to the corresponding placeholder in the template. In the following example, `{​{order_type}​}` in the header and `{​{order_id}​}` and `{​{customer_name}​}` in the body will be replaced with their respective values.
 
 ```
 curl -X POST -H "Content-Type: application/json" -d '{
@@ -442,62 +440,58 @@ curl -X POST -H "Content-Type: application/json" -d '{
 On success your app will receive a JSON response with the recipient ID and message ID.
 
 ```
-```
 {  
-  "recipient_id": "25381719828140932",  
-  "message_id": "m_zm2fACsz21560tai1om-TvABABVG5smou58Xoe7OB4ekibklqP8d2WdzC-Z8j2LVG1G43QVrtVr-jwVZFg72kg"  
+  "recipient_id": "25381719828140932",  
+  "message_id": "m_zm2fACsz21560tai1om-TvABABVG5smou58Xoe7OB4ekibklqP8d2WdzC-Z8j2LVG1G43QVrtVr-jwVZFg72kg"  
 }
 ```
-```
 
-## Use an existing Page’s template
+## Use an existing Page's template
 
 ### Step 1. Search for a template
 
-To get a list of a Page’s utility message templates, send a `GET` request to the `/<PAGE_ID>/message_templates` endpoint.
+To get a list of a Page's utility message templates, send a `GET` request to the `/<PAGE_ID>/message_templates` endpoint.
 
-Add additional parameters to find specific utility message types. In the following example we are searching for templates that include the word “`delivery_confirmation`” in the template name.
+Add additional parameters to find specific utility message types. In the following example we are searching for templates that include the word "`delivery_confirmation`" in the template name.
 
 ```
 curl -X GET "https://graph.facebook.com/v25.0/102290129340398/message_templates?name=delivery_confirmation&access_token=EAAJB..."
 ```
 
-On success your app receives a JSON response with a list of templates that match your query. You will need the template `name` value to use the template for your app user’s utility messages.
+On success your app receives a JSON response with a list of templates that match your query. You will need the template `name` value to use the template for your app user's utility messages.
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "name": "delivery_confirmation_1",  
-      "language": "en",  
-      "category": "UTILITY",  
-      "topic": "ORDER_MANAGEMENT",  
-      "usecase": "DELIVERY_CONFIRMATION",  
-      "industry": [  
-        "E_COMMERCE"  
-      ],  
-      "body": "{{1}}, your order was successfully delivered!",  
-      "body_params": [  
-        "Mark"  
-      ],  
-      "body_param_types": [  
-        "TEXT"  
-      ],  
-      "id": "7635027653257090"  
-    },  
-    {  
-      "name": "delivery_confirmation_2",  
-    ...  
-    },  
-  ]  
+  "data": [  
+    {  
+      "name": "delivery_confirmation_1",  
+      "language": "en",  
+      "category": "UTILITY",  
+      "topic": "ORDER_MANAGEMENT",  
+      "usecase": "DELIVERY_CONFIRMATION",  
+      "industry": [  
+        "E_COMMERCE"  
+      ],  
+      "body": "{​{1}​}, your order was successfully delivered!",  
+      "body_params": [  
+        "Mark"  
+      ],  
+      "body_param_types": [  
+        "TEXT"  
+      ],  
+      "id": "7635027653257090"  
+    },  
+    {  
+      "name": "delivery_confirmation_2",  
+    ...  
+    },  
+  ]  
 }
-```
 ```
 
 ### Step 2. Send a message
 
-To send a utility message using a template from your app user’s template library, send a `POST` request to the `/<PAGE_ID>/messages` endpoint with the following required parameters:
+To send a utility message using a template from your app user's template library, send a `POST` request to the `/<PAGE_ID>/messages` endpoint with the following required parameters:
 
 * `recipient.id` set to the Page-scoped ID for the person your app user is sending the message to
 * `message.template` set to a list of parameters:
@@ -507,7 +501,7 @@ To send a utility message using a template from your app user’s template libra
 
 #### Sending with Positional Parameters
 
-For templates created with positional parameters (the default), parameters are matched by position. In the following example, `{{1}}` in the header will be replaced with the first header parameter, and `{{1}}` in the body will be replaced with the first body parameter.
+For templates created with positional parameters (the default), parameters are matched by position. In the following example, `{​{1}​}` in the header will be replaced with the first header parameter, and `{​{1}​}` in the body will be replaced with the first body parameter.
 
 ```
 curl -X POST -H "Content-Type: application/json" -d '{
@@ -547,7 +541,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 #### Sending with Named Parameters
 
-For templates created with `parameter_format` set to `NAMED`, include the `parameter_name` field in each parameter to match it to the corresponding placeholder in the template. In the following example, `{{order_type}}` in the header and `{{order_id}}` and `{{customer_name}}` in the body will be replaced with their respective values.
+For templates created with `parameter_format` set to `NAMED`, include the `parameter_name` field in each parameter to match it to the corresponding placeholder in the template. In the following example, `{​{order_type}​}` in the header and `{​{order_id}​}` and `{​{customer_name}​}` in the body will be replaced with their respective values.
 
 ```
 curl -X POST -H "Content-Type: application/json" -d '{
@@ -595,12 +589,10 @@ curl -X POST -H "Content-Type: application/json" -d '{
 On success your app will receive a JSON response with the recipient ID and message ID.
 
 ```
-```
 {  
-  "recipient_id": "25381719828140932",  
-  "message_id": "m_zm2fACsz21560tai1om-TvABABVG5smou58Xoe7OB4ekibklqP8d2WdzC-Z8j2LVG1G43QVrtVr-jwVZFg72kg"  
+  "recipient_id": "25381719828140932",  
+  "message_id": "m_zm2fACsz21560tai1om-TvABABVG5smou58Xoe7OB4ekibklqP8d2WdzC-Z8j2LVG1G43QVrtVr-jwVZFg72kg"  
 }
-```
 ```
 
 ## Use a Template with Customizable Postback Button
@@ -619,36 +611,34 @@ In the following example, we have a customizable message body text and a `POSTBA
 #### Using Positional Parameters
 
 ```
-```
-curl -X POST -H "Content-Type: application/json" -d '{  
-  "name": "jaspers_market_order_confirmation_update_us",  
-  "language": "en",  
-  "category": "UTILITY",  
-  "components": [  
-    {  
-      "type": "BODY",  
-      "text": "Your order is now {{1}}",  
-      "example": {  
-        "body_text": [  
-          [  
-            "Your order is now confirmed"  
-          ]  
-        ]  
-      }  
-    },  
-    {  
-      "type": "BUTTONS",  
-      "buttons": [  
-        {  
-          "type": "POSTBACK",  
-          "text": "Track Order",  
-          "payload": "order_id_{{2}}"  
-        }  
-      ]  
-    }  
-  ]  
-}' "https://graph.facebook.com/v21.0/1909458034523498/messages?access_token=EAACE..."
-```
+curl -X POST -H "Content-Type: application/json" -d '{  
+  "name": "jaspers_market_order_confirmation_update_us",  
+  "language": "en",  
+  "category": "UTILITY",  
+  "components": [  
+    {  
+      "type": "BODY",  
+      "text": "Your order is now {​{1}​}",  
+      "example": {  
+        "body_text": [  
+          [  
+            "Your order is now confirmed"  
+          ]  
+        ]  
+      }  
+    },  
+    {  
+      "type": "BUTTONS",  
+      "buttons": [  
+        {  
+          "type": "POSTBACK",  
+          "text": "Track Order",  
+          "payload": "order_id_{​{2}​}"  
+        }  
+      ]  
+    }  
+  ]  
+}' "https://graph.facebook.com/v21.0/1909458034523498/messages?access_token=EAACE..."
 ```
 
 #### Using Named Parameters
@@ -656,38 +646,36 @@ curl -X POST -H "Content-Type: application/json" -d '{
 You can also use named parameters for the body text by setting `parameter_format` to `NAMED`. Note that button payloads continue to use positional parameters.
 
 ```
-```
-curl -X POST -H "Content-Type: application/json" -d '{  
-  "name": "jaspers_market_order_confirmation_update_named_us",  
-  "language": "en",  
-  "category": "UTILITY",  
-  "parameter_format": "NAMED",  
-  "components": [  
-    {  
-      "type": "BODY",  
-      "text": "Your order is now {{order_status}}",  
-      "example": {  
-        "body_text_named_params": [  
-          {  
-            "param_name": "order_status",  
-            "example": "confirmed"  
-          }  
-        ]  
-      }  
-    },  
-    {  
-      "type": "BUTTONS",  
-      "buttons": [  
-        {  
-          "type": "POSTBACK",  
-          "text": "Track Order",  
-          "payload": "order_id_{{number}}"  
-        }  
-      ]  
-    }  
-  ]  
-}' "https://graph.facebook.com/v21.0/1909458034523498/messages?access_token=EAACE..."
-```
+curl -X POST -H "Content-Type: application/json" -d '{  
+  "name": "jaspers_market_order_confirmation_update_named_us",  
+  "language": "en",  
+  "category": "UTILITY",  
+  "parameter_format": "NAMED",  
+  "components": [  
+    {  
+      "type": "BODY",  
+      "text": "Your order is now {​{order_status}​}",  
+      "example": {  
+        "body_text_named_params": [  
+          {  
+            "param_name": "order_status",  
+            "example": "confirmed"  
+          }  
+        ]  
+      }  
+    },  
+    {  
+      "type": "BUTTONS",  
+      "buttons": [  
+        {  
+          "type": "POSTBACK",  
+          "text": "Track Order",  
+          "payload": "order_id_{​{number}​}"  
+        }  
+      ]  
+    }  
+  ]  
+}' "https://graph.facebook.com/v21.0/1909458034523498/messages?access_token=EAACE..."
 ```
 
 On success your app receives a JSON response with the template ID, the review status, and the template category.
@@ -702,66 +690,62 @@ On success your app receives a JSON response with the template ID, the review st
 
 ### Step 2. Send a message
 
-To send a utility message using a template from your app user’s template library, send a `POST` request to the `/<PAGE_ID>/messages` endpoint with the following required parameters:
+To send a utility message using a template from your app user's template library, send a `POST` request to the `/<PAGE_ID>/messages` endpoint with the following required parameters:
 
 * `recipient.id` set to the Page-scoped ID for the person your app user is sending the message to
 * `message.template` set to a list of parameters:
   * `name` set to the name of the specific template being used to create the message
   * `language` set to the language code for this template
-  * `components` set to the name of the app user’s template library
+  * `components` set to the name of the app user's template library
 
-Add additional parameters to customize the message. In the following example, `{{1}}` and `{{2}}` will be replaced with the recipient’s order ID, updating both the body text and the `POSTBACK` button’s payload.
+Add additional parameters to customize the message. In the following example, `{​{1}​}` and `{​{2}​}` will be replaced with the recipient's order ID, updating both the body text and the `POSTBACK` button's payload.
 
 **Note:** The example uses positional parameters. If your template was created with `parameter_format` set to `NAMED`, you must include the `parameter_name` field in each body parameter. The button payload remains the same for both positional and named parameter formats. See [Send a message](https://developers.facebook.com/documentation/business-messaging/messenger-platform/send-messages/templates#step-2--send-a-message) for details.
 
 ```
-```
-curl -X POST -H "Content-Type: application/json" -d '{  
-  "recipient": {  
-    "id": "25381719828140932"  
-  },  
-  "messaging_type": "UTILITY",  
-  "message": {  
-    "template": {  
-      "name": "jaspers_market_order_confirmation_update_us",  
-      "language": {  
-        "code": "en"  
-      },  
-      "components": [  
-        {  
-          "type": "body",  
-          "parameters": [  
-            {  
-              "type": "text",  
-              "text": "confirmed"  
-            }  
-          ]  
-        },  
-        {  
-          "type": "buttons",  
-          "parameters": [  
-            {  
-              "type": "POSTBACK",  
-              "payload": "12345"  
-            }  
-          ]  
-        }  
-      ]  
-    }  
-  }  
-}' "https://graph.facebook.com/v21.0/1909458034523498/messages?access_token=EAACE..."
-```
+curl -X POST -H "Content-Type: application/json" -d '{  
+  "recipient": {  
+    "id": "25381719828140932"  
+  },  
+  "messaging_type": "UTILITY",  
+  "message": {  
+    "template": {  
+      "name": "jaspers_market_order_confirmation_update_us",  
+      "language": {  
+        "code": "en"  
+      },  
+      "components": [  
+        {  
+          "type": "body",  
+          "parameters": [  
+            {  
+              "type": "text",  
+              "text": "confirmed"  
+            }  
+          ]  
+        },  
+        {  
+          "type": "buttons",  
+          "parameters": [  
+            {  
+              "type": "POSTBACK",  
+              "payload": "12345"  
+            }  
+          ]  
+        }  
+      ]  
+    }  
+  }  
+}' "https://graph.facebook.com/v21.0/1909458034523498/messages?access_token=EAACE..."
 ```
 
 On success your app will receive a JSON response with the template ID, review status, and template category.
 
 ```
-```
 {  
-  "recipient_id": "25381719828140932",  
-  "message_id": "m_zm2fACsz21560tai1om-TvABABVG5smou58Xoe7OB4ekibklqP8d2WdzC-Z8j2LVG1G43QVrtVr-jwVZFg72kg"  
+  "recipient_id": "25381719828140932",  
+  "message_id": "m_zm2fACsz21560tai1om-TvABABVG5smou58Xoe7OB4ekibklqP8d2WdzC-Z8j2LVG1G43QVrtVr-jwVZFg72kg"  
 }
-```
 ```
 
 ## Use a Template with Customizable URL Button
@@ -780,39 +764,37 @@ In the following example, we have a customizable message body text and a `URL` b
 #### Using Positional Parameters
 
 ```
-```
-curl -X POST -H "Content-Type: application/json" -d '{  
-  "name": "jaspers_market_order_confirmation_update_us",  
-  "language": "en",  
-  "category": "UTILITY",  
-  "components": [  
-    {  
-      "type": "BODY",  
-      "text": "Your order is now {{1}}",  
-      "example": {  
-        "body_text": [  
-          [  
-            "Your order is now confirmed"  
-          ]  
-        ]  
-      }  
-    },  
-    {  
-      "type": "BUTTONS",  
-      "buttons": [  
-        {  
-          "type": "URL",  
-          "text": "Track Order",  
-          "url": "http://www.example.com/orders/{{1}}",  
-          "example": {  
-            "url_suffix_example": "https://www.example.com/orders/1234"  
-          }  
-        }  
-      ]  
-    }  
-  ]  
-}' "https://graph.facebook.com/v21.0/1909458034523498/messages?access_token=EAACE..."
-```
+curl -X POST -H "Content-Type: application/json" -d '{  
+  "name": "jaspers_market_order_confirmation_update_us",  
+  "language": "en",  
+  "category": "UTILITY",  
+  "components": [  
+    {  
+      "type": "BODY",  
+      "text": "Your order is now {​{1}​}",  
+      "example": {  
+        "body_text": [  
+          [  
+            "Your order is now confirmed"  
+          ]  
+        ]  
+      }  
+    },  
+    {  
+      "type": "BUTTONS",  
+      "buttons": [  
+        {  
+          "type": "URL",  
+          "text": "Track Order",  
+          "url": "http://www.example.com/orders/{​{1}​}",  
+          "example": {  
+            "url_suffix_example": "https://www.example.com/orders/1234"  
+          }  
+        }  
+      ]  
+    }  
+  ]  
+}' "https://graph.facebook.com/v21.0/1909458034523498/messages?access_token=EAACE..."
 ```
 
 #### Using Named Parameters
@@ -820,41 +802,39 @@ curl -X POST -H "Content-Type: application/json" -d '{
 You can also use named parameters for the body text by setting `parameter_format` to `NAMED`. Note that URL button suffixes continue to use positional parameters.
 
 ```
-```
-curl -X POST -H "Content-Type: application/json" -d '{  
-  "name": "jaspers_market_order_confirmation_update_named_us",  
-  "language": "en",  
-  "category": "UTILITY",  
-  "parameter_format": "NAMED",  
-  "components": [  
-    {  
-      "type": "BODY",  
-      "text": "Your order is now {{order_status}}",  
-      "example": {  
-        "body_text_named_params": [  
-          {  
-            "param_name": "order_status",  
-            "example": "confirmed"  
-          }  
-        ]  
-      }  
-    },  
-    {  
-      "type": "BUTTONS",  
-      "buttons": [  
-        {  
-          "type": "URL",  
-          "text": "Track Order",  
-          "url": "http://www.example.com/orders/{{url_suffix}}",  
-          "example": {  
-            "url_suffix_example": "https://www.example.com/orders/1234"  
-          }  
-        }  
-      ]  
-    }  
-  ]  
-}' "https://graph.facebook.com/v21.0/1909458034523498/messages?access_token=EAACE..."
-```
+curl -X POST -H "Content-Type: application/json" -d '{  
+  "name": "jaspers_market_order_confirmation_update_named_us",  
+  "language": "en",  
+  "category": "UTILITY",  
+  "parameter_format": "NAMED",  
+  "components": [  
+    {  
+      "type": "BODY",  
+      "text": "Your order is now {​{order_status}​}",  
+      "example": {  
+        "body_text_named_params": [  
+          {  
+            "param_name": "order_status",  
+            "example": "confirmed"  
+          }  
+        ]  
+      }  
+    },  
+    {  
+      "type": "BUTTONS",  
+      "buttons": [  
+        {  
+          "type": "URL",  
+          "text": "Track Order",  
+          "url": "http://www.example.com/orders/{​{url_suffix}​}",  
+          "example": {  
+            "url_suffix_example": "https://www.example.com/orders/1234"  
+          }  
+        }  
+      ]  
+    }  
+  ]  
+}' "https://graph.facebook.com/v21.0/1909458034523498/messages?access_token=EAACE..."
 ```
 
 On success your app receives a JSON response with the template ID, the review status, and the template category.
@@ -869,66 +849,62 @@ On success your app receives a JSON response with the template ID, the review st
 
 ### Step 2. Send a message
 
-To send a utility message using a template from your app user’s template library, send a `POST` request to the `/<PAGE_ID>/messages` endpoint with the following required parameters:
+To send a utility message using a template from your app user's template library, send a `POST` request to the `/<PAGE_ID>/messages` endpoint with the following required parameters:
 
 * `recipient.id` set to the Page-scoped ID for the person your app user is sending the message to
 * `message.template` set to a list of parameters:
   * `name` set to the name of the specific template being used to create the message
   * `language` set to the language code for this template
-  * `components` set to the name of the app user’s template library
+  * `components` set to the name of the app user's template library
 
-Add additional parameters to customize the message. In the following example, `{{1}}` in the body text will be replaced with with the word `confirmed` and the `{{1}}` in the URL of the button will be replaced with the order ID.
+Add additional parameters to customize the message. In the following example, `{​{1}​}` in the body text will be replaced with with the word `confirmed` and the `{​{1}​}` in the URL of the button will be replaced with the order ID.
 
 **Note:** The example uses positional parameters. If your template was created with `parameter_format` set to `NAMED`, you must include the `parameter_name` field in each body parameter. The button URL suffix remains the same for both positional and named parameter formats. See [Send a message](https://developers.facebook.com/documentation/business-messaging/messenger-platform/send-messages/templates#step-2--send-a-message) for details.
 
 ```
-```
-curl -X POST -H "Content-Type: application/json" -d '{  
-  "recipient": {  
-    "id": "25381719828140932"  
-  },  
-  "messaging_type": "UTILITY",  
-  "message": {  
-    "template": {  
-      "name": "jaspers_market_order_confirmation_update_us",  
-      "language": {  
-        "code": "en"  
-      },  
-      "components": [  
-        {  
-          "type": "body",  
-          "parameters": [  
-            {  
-              "type": "text",  
-              "text": "confirmed"  
-            }  
-          ]  
-        },  
-        {  
-          "type": "buttons",  
-          "parameters": [  
-            {  
-              "type": "URL",  
-              "url": "1234"  
-            }  
-          ]  
-        }  
-      ]  
-    }  
-  }  
-}' "https://graph.facebook.com/v21.0/1909458034523498/messages?access_token=EAACE..."
-```
+curl -X POST -H "Content-Type: application/json" -d '{  
+  "recipient": {  
+    "id": "25381719828140932"  
+  },  
+  "messaging_type": "UTILITY",  
+  "message": {  
+    "template": {  
+      "name": "jaspers_market_order_confirmation_update_us",  
+      "language": {  
+        "code": "en"  
+      },  
+      "components": [  
+        {  
+          "type": "body",  
+          "parameters": [  
+            {  
+              "type": "text",  
+              "text": "confirmed"  
+            }  
+          ]  
+        },  
+        {  
+          "type": "buttons",  
+          "parameters": [  
+            {  
+              "type": "URL",  
+              "url": "1234"  
+            }  
+          ]  
+        }  
+      ]  
+    }  
+  }  
+}' "https://graph.facebook.com/v21.0/1909458034523498/messages?access_token=EAACE..."
 ```
 
 On success your app will receive a JSON response with the template ID, review status, and template category.
 
 ```
-```
 {  
-  "recipient_id": "25381719828140932",  
-  "message_id": "m_zm2fACsz21560tai1om-TvABABVG5smou58Xoe7OB4ekibklqP8d2WdzC-Z8j2LVG1G43QVrtVr-jwVZFg72kg"  
+  "recipient_id": "25381719828140932",  
+  "message_id": "m_zm2fACsz21560tai1om-TvABABVG5smou58Xoe7OB4ekibklqP8d2WdzC-Z8j2LVG1G43QVrtVr-jwVZFg72kg"  
 }
-```
 ```
 
 ## Utility Messages in Conversation API
@@ -939,59 +915,51 @@ Utility Messages that use only a `BODY` component will be represented in the Con
 ### Example: Utility Message with Only a Body in Conversation API
 
 ```
-```
-curl -X GET "https://graph.facebook.com/v21.0/me/messages?access_token=EAACE..."
-```
+curl -X GET "https://graph.facebook.com/v21.0/me/messages?access_token=EAACE..."
 ```
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "messages": {  
-        "data": [  
-          {  
-            "message": "Good news! Your order #123123123 is confirmed!",  
-            "id": "m_-9paUc9QYpm9VbVRgslJlNAcspcsz2P9LWJH6flWihChxY9ujvS623AfYOMWiHeq_fgsSh4GXjGwTPWN9Slm2Q"  
-          },  
-  ...  
+  "data": [  
+    {  
+      "messages": {  
+        "data": [  
+          {  
+            "message": "Good news! Your order #123123123 is confirmed!",  
+            "id": "m_-9paUc9QYpm9VbVRgslJlNAcspcsz2P9LWJH6flWihChxY9ujvS623AfYOMWiHeq_fgsSh4GXjGwTPWN9Slm2Q"  
+          },  
+  ...  
 }
-```
 ```
 
 ### Example: Utility Message With Header or Buttons in Conversation API
 
 ```
-```
-curl -X GET "https://graph.facebook.com/v21.0/me/messages?access_token=EAACE..."
-```
+curl -X GET "https://graph.facebook.com/v21.0/me/messages?access_token=EAACE..."
 ```
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "messages": {  
-        "data": [  
-          {  
-            "attachments": {  
-              "data": [  
-                {  
-                  "generic_template": {  
-                    "title": "Order is being shipped",  
-                    "subtitle": "Good news! Your order #123123123 is now shipped. The tracking number is #track123"  
-                  }  
-                }  
-              ]  
-            },  
-            "message": "",  
-            "id": "m_qvfnMpHYUNzLf__jekbCjdAcspcsz2P9LWJH6flWihCIJ-wkOtKKkRzUDwl0nKO-is6mGR_WeP0caoCVKTWfLw"  
-          },  
-  ...  
+  "data": [  
+    {  
+      "messages": {  
+        "data": [  
+          {  
+            "attachments": {  
+              "data": [  
+                {  
+                  "generic_template": {  
+                    "title": "Order is being shipped",  
+                    "subtitle": "Good news! Your order #123123123 is now shipped. The tracking number is #track123"  
+                  }  
+                }  
+              ]  
+            },  
+            "message": "",  
+            "id": "m_qvfnMpHYUNzLf__jekbCjdAcspcsz2P9LWJH6flWihCIJ-wkOtKKkRzUDwl0nKO-is6mGR_WeP0caoCVKTWfLw"  
+          },  
+  ...  
 }
-```
 ```
 
 ## Common Template Rejection Reasons
@@ -1000,9 +968,9 @@ Submissions are commonly rejected for the following reasons, so make sure you av
 
 ### Parameter Formatting
 
-* Variable parameters are missing or have mismatched curly braces. The correct format is {{1}}.
+* Variable parameters are missing or have mismatched curly braces. The correct format is {​{1}​}.
 * Variable parameters contain special characters such as a #, $, or %.
-* Variable parameters are not sequential. For example, {{1}}, {{2}}, {{4}}, {{5}} are defined but {{3}} does not exist.
+* Variable parameters are not sequential. For example, {​{1}​}, {​{2}​}, {​{4}​}, {​{5}​} are defined but {​{3}​} does not exist.
 * Template contains too many variable parameters relative to the message length. You need to decrease the number of variable parameters or increase the message length.
 * The message template cannot start or end with a parameter. In essence, dangling parameters are not allowed. In this case, the template will not be able to be created.
 
@@ -1010,9 +978,9 @@ The below table shows various rejection reason codes and their details.
 
 | Rejection Reason Code | Description |
 | --- | --- |
-| `INCORRECT_PARAMS` | Your template has incorrect parameter formatting. Parameters must use double curly braces (e.g., `{{1}}` for positional parameters). Common issues include:   * Using single braces (e.g., `{1}`) * Mixing positional and named parameter formats * Invalid positional parameters (e.g., `{{1a}}`, `{{name}}` when using positional format) |
+| `INCORRECT_PARAMS` | Your template has incorrect parameter formatting. Parameters must use double curly braces (e.g., `{​{1}​}` for positional parameters). Common issues include:   * Using single braces (e.g., `{1}`) * Mixing positional and named parameter formats * Invalid positional parameters (e.g., `{​{1a}​}`, `{​{name}​}` when using positional format) |
 | `PARAMS_TO_WORD_RATIO_EXCEED_LIMIT` | The template contains too many variable parameters relative to the message length |
-| `TAG_SHOULD_BE_MARKETING` | Template doesn’t qualify for Utility Messages due to presence of marketing related content |
+| `TAG_SHOULD_BE_MARKETING` | Template doesn't qualify for Utility Messages due to presence of marketing related content |
 
 ### Content and Policy Violations
 

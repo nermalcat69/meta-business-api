@@ -12,7 +12,7 @@ To test the checkout experience on Instagram make sure to install the latest Ins
 
 ## 1. Facebook page and shop
 
-As a Facebook user, visit the seller’s Facebook page where the shop for Instagram was set up. The **Shop** tab should not be visible in the page’s left navigation menu.
+As a Facebook user, visit the seller's Facebook page where the shop for Instagram was set up. The **Shop** tab should not be visible in the page's left navigation menu.
 
 You must not be an administrator of the page; otherwise, you will see the shop even though it was unpublished.
 
@@ -20,18 +20,18 @@ You must not be an administrator of the page; otherwise, you will see the shop e
 
 As an Instagram user, open a PDP on Instagram.
 
-* Open a PDP of the same SKU on the seller’s website. Compare product details on IG with product details on the website:
+* Open a PDP of the same SKU on the seller's website. Compare product details on IG with product details on the website:
 
-* name, price, description (note: description on IG may not have all product details on the website’s PDP. additional information may be added to the IG description field, such as product dimensions and country of origin) should match.
+* name, price, description (note: description on IG may not have all product details on the website's PDP. additional information may be added to the IG description field, such as product dimensions and country of origin) should match.
 * variant names should match (if applicable).
 * stock status for each variant should match (note: IG inventory updates strategy may not be real-time, discrepancies are possible but should be kept to a minimum).
 * if a product is on sale on the website, it should also have a sale price on Instagram, with the regular price in strikethrough.
 
 2.2 Product description text should be well formatted (no extra spacing, punctuation is correct) and informative (may contain information such as item size, volume, and origin).
 
-2.3. Tap on “Shipping and Returns”. You should see the “This item is covered with Purchase Protection” copy if the item’s category is eligible for Purchase Protection.
+2.3. Tap on "Shipping and Returns". You should see the "This item is covered with Purchase Protection" copy if the item's category is eligible for Purchase Protection.
 
-2.4. For a final sale item, under “Shipping and Returns” you should see the following copy “This {seller display name} item can’t be returned”.
+2.4. For a final sale item, under "Shipping and Returns" you should see the following copy "This {seller display name} item can't be returned".
 
 ## 3. Instagram checkout
 
@@ -61,9 +61,9 @@ As Instagram user:
 * order cancellation
 * return complete confirmation
 
-* Place an order on Instagram. After placing the order, the order status on IG should be updated to “Shipped” within 3 business days or within the handling time you specified on the product through its [shipping settings⁠](https://www.facebook.com/business/help/211403042968780?id=353836851981351).
+* Place an order on Instagram. After placing the order, the order status on IG should be updated to "Shipped" within 3 business days or within the handling time you specified on the product through its [shipping settings⁠](https://www.facebook.com/business/help/211403042968780?id=353836851981351).
 * Once the order is shipped, the tracking number should be visible in order details on Instagram. Check you have transaction on your card/PayPal that is used for purchase.
-* You should be able to look up the shipment using a carrier’s tracking service with the order tracking number attached in order details on Instagram.
+* You should be able to look up the shipment using a carrier's tracking service with the order tracking number attached in order details on Instagram.
 * Place an order for each shipping option and validate each order is delivered within a promised timeframe for each option.
 * Once the order is delivered to you, validate the order invoice to make sure the payment method name is valid; order totals match with totals in the IG app; product name, description, image matches with the seller website.
 * Place an order with a two-line shipping address. When the order is delivered, verify the address on the invoice – it should contain the line two.

@@ -61,11 +61,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/message_qrdls' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/message_qrdls' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -76,63 +76,63 @@ Select status code
 
 ```
 {  
-  "default_fields": {  
-    "summary": "Default fields response",  
-    "description": "Response with default fields (code, prefilled_message, deep_link_url)",  
-    "value": {  
-      "data": [  
-        {  
-          "code": "5QBPAD2DC6L5A1",  
-          "prefilled_message": "Show me Cyber Tuesday deals!",  
-          "deep_link_url": "https://wa.me/message/5QBPAD2DC6L5A1"  
-        },  
-        {  
-          "code": "ANED2T5QRU7HG1",  
-          "prefilled_message": "Show me Cyber Monday deals!",  
-          "deep_link_url": "https://wa.me/message/ANED2T5QRU7HG1"  
-        },  
-        {  
-          "code": "WOMVT6TJ2BP7A1",  
-          "prefilled_message": "Tell me more about your production workshop",  
-          "deep_link_url": "https://wa.me/message/WOMVT6TJ2BP7A1"  
-        }  
-      ]  
-    }  
-  },  
-  "with_qr_image": {  
-    "summary": "Response with QR code image",  
-    "description": "Response including QR code image URL in SVG format",  
-    "value": {  
-      "data": [  
-        {  
-          "code": "FO7JXE4BG3RFG1",  
-          "prefilled_message": "Tell me more about your event planning packages",  
-          "deep_link_url": "https://wa.me/message/FO7JXE4BG3RFG1",  
-          "qr_image_url": "https://scontent-iad3-1.xx.fbcdn.net/m1/v/t6/An-H7T8OyTqO07lcRGHlKteuPMKDnx07nua3dGb4i560bVxDscweOV4KoKD_4wCDFoHR_C5LyVjxQISKPxwora1bbFhUEo2nA19ZPLBUVoQSmV12l1x-nuu312jKty-5rmojmde_a0g?ccb=10-5&oh=00_AfASq_vjojFza_9A-HDeRgHM3wZ8yjNprpYBjNKOn8RkSg&oe=64550A9E&_nc_sid=f36290"  
-        }  
-      ]  
-    }  
-  },  
-  "single_qr_code": {  
-    "summary": "Filtered by specific QR code",  
-    "description": "Response when filtering by a specific QR code ID",  
-    "value": {  
-      "data": [  
-        {  
-          "code": "ANED2T5QRU7HG1",  
-          "prefilled_message": "Show me Cyber Monday deals!",  
-          "deep_link_url": "https://wa.me/message/ANED2T5QRU7HG1"  
-        }  
-      ]  
-    }  
-  },  
-  "empty_response": {  
-    "summary": "No QR codes found",  
-    "description": "Response when no QR codes exist or match the filter criteria",  
-    "value": {  
-      "data": []  
-    }  
-  }  
+  "default_fields": {  
+    "summary": "Default fields response",  
+    "description": "Response with default fields (code, prefilled_message, deep_link_url)",  
+    "value": {  
+      "data": [  
+        {  
+          "code": "5QBPAD2DC6L5A1",  
+          "prefilled_message": "Show me Cyber Tuesday deals!",  
+          "deep_link_url": "https://wa.me/message/5QBPAD2DC6L5A1"  
+        },  
+        {  
+          "code": "ANED2T5QRU7HG1",  
+          "prefilled_message": "Show me Cyber Monday deals!",  
+          "deep_link_url": "https://wa.me/message/ANED2T5QRU7HG1"  
+        },  
+        {  
+          "code": "WOMVT6TJ2BP7A1",  
+          "prefilled_message": "Tell me more about your production workshop",  
+          "deep_link_url": "https://wa.me/message/WOMVT6TJ2BP7A1"  
+        }  
+      ]  
+    }  
+  },  
+  "with_qr_image": {  
+    "summary": "Response with QR code image",  
+    "description": "Response including QR code image URL in SVG format",  
+    "value": {  
+      "data": [  
+        {  
+          "code": "FO7JXE4BG3RFG1",  
+          "prefilled_message": "Tell me more about your event planning packages",  
+          "deep_link_url": "https://wa.me/message/FO7JXE4BG3RFG1",  
+          "qr_image_url": "https://scontent-iad3-1.xx.fbcdn.net/m1/v/t6/An-H7T8OyTqO07lcRGHlKteuPMKDnx07nua3dGb4i560bVxDscweOV4KoKD_4wCDFoHR_C5LyVjxQISKPxwora1bbFhUEo2nA19ZPLBUVoQSmV12l1x-nuu312jKty-5rmojmde_a0g?ccb=10-5&oh=00_AfASq_vjojFza_9A-HDeRgHM3wZ8yjNprpYBjNKOn8RkSg&oe=64550A9E&_nc_sid=f36290"  
+        }  
+      ]  
+    }  
+  },  
+  "single_qr_code": {  
+    "summary": "Filtered by specific QR code",  
+    "description": "Response when filtering by a specific QR code ID",  
+    "value": {  
+      "data": [  
+        {  
+          "code": "ANED2T5QRU7HG1",  
+          "prefilled_message": "Show me Cyber Monday deals!",  
+          "deep_link_url": "https://wa.me/message/ANED2T5QRU7HG1"  
+        }  
+      ]  
+    }  
+  },  
+  "empty_response": {  
+    "summary": "No QR codes found",  
+    "description": "Response when no QR codes exist or match the filter criteria",  
+    "value": {  
+      "data": []  
+    }  
+  }  
 }
 ```
 
@@ -657,11 +657,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/message_qrdls' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/message_qrdls' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -672,63 +672,63 @@ Select status code
 
 ```
 {  
-  "default_fields": {  
-    "summary": "Default fields response",  
-    "description": "Response with default fields (code, prefilled_message, deep_link_url)",  
-    "value": {  
-      "data": [  
-        {  
-          "code": "5QBPAD2DC6L5A1",  
-          "prefilled_message": "Show me Cyber Tuesday deals!",  
-          "deep_link_url": "https://wa.me/message/5QBPAD2DC6L5A1"  
-        },  
-        {  
-          "code": "ANED2T5QRU7HG1",  
-          "prefilled_message": "Show me Cyber Monday deals!",  
-          "deep_link_url": "https://wa.me/message/ANED2T5QRU7HG1"  
-        },  
-        {  
-          "code": "WOMVT6TJ2BP7A1",  
-          "prefilled_message": "Tell me more about your production workshop",  
-          "deep_link_url": "https://wa.me/message/WOMVT6TJ2BP7A1"  
-        }  
-      ]  
-    }  
-  },  
-  "with_qr_image": {  
-    "summary": "Response with QR code image",  
-    "description": "Response including QR code image URL in SVG format",  
-    "value": {  
-      "data": [  
-        {  
-          "code": "FO7JXE4BG3RFG1",  
-          "prefilled_message": "Tell me more about your event planning packages",  
-          "deep_link_url": "https://wa.me/message/FO7JXE4BG3RFG1",  
-          "qr_image_url": "https://scontent-iad3-1.xx.fbcdn.net/m1/v/t6/An-H7T8OyTqO07lcRGHlKteuPMKDnx07nua3dGb4i560bVxDscweOV4KoKD_4wCDFoHR_C5LyVjxQISKPxwora1bbFhUEo2nA19ZPLBUVoQSmV12l1x-nuu312jKty-5rmojmde_a0g?ccb=10-5&oh=00_AfASq_vjojFza_9A-HDeRgHM3wZ8yjNprpYBjNKOn8RkSg&oe=64550A9E&_nc_sid=f36290"  
-        }  
-      ]  
-    }  
-  },  
-  "single_qr_code": {  
-    "summary": "Filtered by specific QR code",  
-    "description": "Response when filtering by a specific QR code ID",  
-    "value": {  
-      "data": [  
-        {  
-          "code": "ANED2T5QRU7HG1",  
-          "prefilled_message": "Show me Cyber Monday deals!",  
-          "deep_link_url": "https://wa.me/message/ANED2T5QRU7HG1"  
-        }  
-      ]  
-    }  
-  },  
-  "empty_response": {  
-    "summary": "No QR codes found",  
-    "description": "Response when no QR codes exist or match the filter criteria",  
-    "value": {  
-      "data": []  
-    }  
-  }  
+  "default_fields": {  
+    "summary": "Default fields response",  
+    "description": "Response with default fields (code, prefilled_message, deep_link_url)",  
+    "value": {  
+      "data": [  
+        {  
+          "code": "5QBPAD2DC6L5A1",  
+          "prefilled_message": "Show me Cyber Tuesday deals!",  
+          "deep_link_url": "https://wa.me/message/5QBPAD2DC6L5A1"  
+        },  
+        {  
+          "code": "ANED2T5QRU7HG1",  
+          "prefilled_message": "Show me Cyber Monday deals!",  
+          "deep_link_url": "https://wa.me/message/ANED2T5QRU7HG1"  
+        },  
+        {  
+          "code": "WOMVT6TJ2BP7A1",  
+          "prefilled_message": "Tell me more about your production workshop",  
+          "deep_link_url": "https://wa.me/message/WOMVT6TJ2BP7A1"  
+        }  
+      ]  
+    }  
+  },  
+  "with_qr_image": {  
+    "summary": "Response with QR code image",  
+    "description": "Response including QR code image URL in SVG format",  
+    "value": {  
+      "data": [  
+        {  
+          "code": "FO7JXE4BG3RFG1",  
+          "prefilled_message": "Tell me more about your event planning packages",  
+          "deep_link_url": "https://wa.me/message/FO7JXE4BG3RFG1",  
+          "qr_image_url": "https://scontent-iad3-1.xx.fbcdn.net/m1/v/t6/An-H7T8OyTqO07lcRGHlKteuPMKDnx07nua3dGb4i560bVxDscweOV4KoKD_4wCDFoHR_C5LyVjxQISKPxwora1bbFhUEo2nA19ZPLBUVoQSmV12l1x-nuu312jKty-5rmojmde_a0g?ccb=10-5&oh=00_AfASq_vjojFza_9A-HDeRgHM3wZ8yjNprpYBjNKOn8RkSg&oe=64550A9E&_nc_sid=f36290"  
+        }  
+      ]  
+    }  
+  },  
+  "single_qr_code": {  
+    "summary": "Filtered by specific QR code",  
+    "description": "Response when filtering by a specific QR code ID",  
+    "value": {  
+      "data": [  
+        {  
+          "code": "ANED2T5QRU7HG1",  
+          "prefilled_message": "Show me Cyber Monday deals!",  
+          "deep_link_url": "https://wa.me/message/ANED2T5QRU7HG1"  
+        }  
+      ]  
+    }  
+  },  
+  "empty_response": {  
+    "summary": "No QR codes found",  
+    "description": "Response when no QR codes exist or match the filter criteria",  
+    "value": {  
+      "data": []  
+    }  
+  }  
 }
 ```
 
@@ -753,13 +753,13 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/message_qrdls' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "prefilled_message": "Hi! I'm interested in your products. Can you help me?",  
-  "generate_qr_image": "SVG"  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/message_qrdls' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "prefilled_message": "Hi! I'm interested in your products. Can you help me?",  
+  "generate_qr_image": "SVG"  
 }'
 ```
 
@@ -771,23 +771,23 @@ Select status code
 
 ```
 {  
-  "created_qr_code_with_image": {  
-    "summary": "Newly created QR code with image",  
-    "value": {  
-      "code": "ANED2T5QRU7HG1",  
-      "prefilled_message": "Hi! I'm interested in your products. Can you help me?",  
-      "deep_link_url": "https://wa.me/message/ANED2T5QRU7HG1",  
-      "qr_image_url": "https://scontent-iad3-2.xx.fbcdn.net/m1/v/t6/An-psFmLBls2NFXnhhkSVqwIHEqCTQoNKTLxxlOeci0Wbsukd2RLiwZalHrXwqT5RTFSzOhyw6OLvJJO0itaQtJI1BS2WkNcV67wR3GNx7ZX1tFSNCbpo1e6KPptKF1GbVGzmUfkgSPX?ccb=10-5&oh=00_AfAOAr6oRA2OKV_Ur3GUh4em57sACxUkfhXHsObiFrxOsA&oe=64DCCEF6&_nc_sid=5a413f"  
-    }  
-  },  
-  "updated_qr_code": {  
-    "summary": "Updated existing QR code",  
-    "value": {  
-      "code": "WOMVT6TJ2BP7A1",  
-      "prefilled_message": "Hello! I'd like to know more about your latest offers.",  
-      "deep_link_url": "https://wa.me/message/WOMVT6TJ2BP7A1"  
-    }  
-  }  
+  "created_qr_code_with_image": {  
+    "summary": "Newly created QR code with image",  
+    "value": {  
+      "code": "ANED2T5QRU7HG1",  
+      "prefilled_message": "Hi! I'm interested in your products. Can you help me?",  
+      "deep_link_url": "https://wa.me/message/ANED2T5QRU7HG1",  
+      "qr_image_url": "https://scontent-iad3-2.xx.fbcdn.net/m1/v/t6/An-psFmLBls2NFXnhhkSVqwIHEqCTQoNKTLxxlOeci0Wbsukd2RLiwZalHrXwqT5RTFSzOhyw6OLvJJO0itaQtJI1BS2WkNcV67wR3GNx7ZX1tFSNCbpo1e6KPptKF1GbVGzmUfkgSPX?ccb=10-5&oh=00_AfAOAr6oRA2OKV_Ur3GUh4em57sACxUkfhXHsObiFrxOsA&oe=64DCCEF6&_nc_sid=5a413f"  
+    }  
+  },  
+  "updated_qr_code": {  
+    "summary": "Updated existing QR code",  
+    "value": {  
+      "code": "WOMVT6TJ2BP7A1",  
+      "prefilled_message": "Hello! I'd like to know more about your latest offers.",  
+      "deep_link_url": "https://wa.me/message/WOMVT6TJ2BP7A1"  
+    }  
+  }  
 }
 ```
 
@@ -1276,13 +1276,13 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/message_qrdls' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "prefilled_message": "Hi! I'm interested in your products. Can you help me?",  
-  "generate_qr_image": "SVG"  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/message_qrdls' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "prefilled_message": "Hi! I'm interested in your products. Can you help me?",  
+  "generate_qr_image": "SVG"  
 }'
 ```
 
@@ -1294,23 +1294,23 @@ Select status code
 
 ```
 {  
-  "created_qr_code_with_image": {  
-    "summary": "Newly created QR code with image",  
-    "value": {  
-      "code": "ANED2T5QRU7HG1",  
-      "prefilled_message": "Hi! I'm interested in your products. Can you help me?",  
-      "deep_link_url": "https://wa.me/message/ANED2T5QRU7HG1",  
-      "qr_image_url": "https://scontent-iad3-2.xx.fbcdn.net/m1/v/t6/An-psFmLBls2NFXnhhkSVqwIHEqCTQoNKTLxxlOeci0Wbsukd2RLiwZalHrXwqT5RTFSzOhyw6OLvJJO0itaQtJI1BS2WkNcV67wR3GNx7ZX1tFSNCbpo1e6KPptKF1GbVGzmUfkgSPX?ccb=10-5&oh=00_AfAOAr6oRA2OKV_Ur3GUh4em57sACxUkfhXHsObiFrxOsA&oe=64DCCEF6&_nc_sid=5a413f"  
-    }  
-  },  
-  "updated_qr_code": {  
-    "summary": "Updated existing QR code",  
-    "value": {  
-      "code": "WOMVT6TJ2BP7A1",  
-      "prefilled_message": "Hello! I'd like to know more about your latest offers.",  
-      "deep_link_url": "https://wa.me/message/WOMVT6TJ2BP7A1"  
-    }  
-  }  
+  "created_qr_code_with_image": {  
+    "summary": "Newly created QR code with image",  
+    "value": {  
+      "code": "ANED2T5QRU7HG1",  
+      "prefilled_message": "Hi! I'm interested in your products. Can you help me?",  
+      "deep_link_url": "https://wa.me/message/ANED2T5QRU7HG1",  
+      "qr_image_url": "https://scontent-iad3-2.xx.fbcdn.net/m1/v/t6/An-psFmLBls2NFXnhhkSVqwIHEqCTQoNKTLxxlOeci0Wbsukd2RLiwZalHrXwqT5RTFSzOhyw6OLvJJO0itaQtJI1BS2WkNcV67wR3GNx7ZX1tFSNCbpo1e6KPptKF1GbVGzmUfkgSPX?ccb=10-5&oh=00_AfAOAr6oRA2OKV_Ur3GUh4em57sACxUkfhXHsObiFrxOsA&oe=64DCCEF6&_nc_sid=5a413f"  
+    }  
+  },  
+  "updated_qr_code": {  
+    "summary": "Updated existing QR code",  
+    "value": {  
+      "code": "WOMVT6TJ2BP7A1",  
+      "prefilled_message": "Hello! I'd like to know more about your latest offers.",  
+      "deep_link_url": "https://wa.me/message/WOMVT6TJ2BP7A1"  
+    }  
+  }  
 }
 ```
 

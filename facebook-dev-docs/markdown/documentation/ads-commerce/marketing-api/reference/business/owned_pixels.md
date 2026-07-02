@@ -20,8 +20,8 @@ HTTPPHP SDKJavaScript SDKAndroid SDKiOS SDK
 ---
 
 ```
-GET /v25.0/{business-id}/owned_pages HTTP/1.1  
-Host: graph.facebook.com
+GET /v25.0/{business-id}/owned_pages HTTP/1.1  
+Host: graph.facebook.com
 ```
 
 Try it in [Graph API Explorer](https://developers.facebook.com/tools/explorer/?method=GET&path=%7Bbusiness-id%7D%2Fowned_pages&version=v25.0)
@@ -108,7 +108,7 @@ access_status: string,
 | 190 | Invalid OAuth 2.0 Access Token |
 | 415 | Two factor authentication required. User have to enter a code from SMS or TOTP code generator to pass 2fac. This could happen when accessing a 2fac-protected asset like a page that is owned by a 2fac-protected business manager. |
 | 100 | Invalid parameter |
-| 42001 | This Page can’t be removed because it’s already linked to an Instagram business profile. To remove this Page from Business Manager, go to Instagram and convert to a personal account or change the Page linked to your business profile. |
+| 42001 | This Page can't be removed because it's already linked to an Instagram business profile. To remove this Page from Business Manager, go to Instagram and convert to a personal account or change the Page linked to your business profile. |
 | 200 | Permissions error |
 | 413 | Invalid password |
 | 3982 | You do not have sufficient permissions to import this asset into the given Business Manager. |

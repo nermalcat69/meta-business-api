@@ -7,24 +7,24 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/ads-ai-co
 
 Updated: Jun 16, 2025
 
-**NOTE**: This document will be deprecated on **September 4, 2025**. On that date, Shops checkout will no longer be available on Facebook and Instagram. Buyers will instead be sent to sellers’ own websites for checkout.
+**NOTE**: This document will be deprecated on **September 4, 2025**. On that date, Shops checkout will no longer be available on Facebook and Instagram. Buyers will instead be sent to sellers' own websites for checkout.
 
 This guide describes customer communication and service, a focal part of the post-purchase customer journey. It also provides information on the mail servers used to send emails so that you can ensure these emails are deliverable.
 
 ## Customer Service
 
-Buyers can contact you [via email](https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-cli/ads-cli-overview#transactional_order_emails) to get help with their orders. They initiate this support flow by tapping the “Get Help” option in their order details. They can provide additional information to better qualify their request, and attach a photo. This information will be forwarded to the customer support contact email address registered in your shop set-up. You must respond to this email within 2 business days.
+Buyers can contact you [via email](https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-cli/ads-cli-overview#transactional_order_emails) to get help with their orders. They initiate this support flow by tapping the "Get Help" option in their order details. They can provide additional information to better qualify their request, and attach a photo. This information will be forwarded to the customer support contact email address registered in your shop set-up. You must respond to this email within 2 business days.
 
-The customer support email is associated with a Facebook or Instagram domain, not with the buyer’s personal email address. Customer support emails are relayed through our systems, as we need to be able to monitor communications between buyers and seller to offer [Purchase Protection](https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-cli/ads-cli-overview#purchase-protection).
+The customer support email is associated with a Facebook or Instagram domain, not with the buyer's personal email address. Customer support emails are relayed through our systems, as we need to be able to monitor communications between buyers and seller to offer [Purchase Protection](https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-cli/ads-cli-overview#purchase-protection).
 
 ### Purchase Protection
 
-If an item meets Facebook’s eligibility requirements for Purchase Protection, buyers see a “Covered by purchase protection” notification in the Product Detail page for the item.
+If an item meets Facebook's eligibility requirements for Purchase Protection, buyers see a "Covered by purchase protection" notification in the Product Detail page for the item.
 
 #### Resolve Issues
 
 * Customers should try to resolve issues with you first, by initiating a customer support request.
-* If they can’t resolve the issue with you directly, they can file a claim with Facebook or Instagram.
+* If they can't resolve the issue with you directly, they can file a claim with Facebook or Instagram.
 * We will review the claim to determine whether it qualifies for Purchase Protection, and issue a refund for the full purchase price of the item and shipping costs if the claim is approved.
 
 Read our [Purchase Protection policy⁠](https://www.facebook.com/policies/purchase_protection) to learn more.
@@ -33,11 +33,11 @@ Read our [Purchase Protection policy⁠](https://www.facebook.com/policies/purch
 
 From Facebook or Instagram app, a customer can request order cancellation or return, reach out for help if their order is late or missing, damage or not as described, or it they have another question. These inquires will be directed to you through the customer service contact email address you provided in [Commerce Manager⁠](https://www.facebook.com/commerce_manager/).
 
-As much as possible, we will connect the customer directly to your customer service team. We only get involved in disputes if you cannot reach a resolution directly with the customer or if the customer doesn’t recognize their purchase.
+As much as possible, we will connect the customer directly to your customer service team. We only get involved in disputes if you cannot reach a resolution directly with the customer or if the customer doesn't recognize their purchase.
 
 To follow our [Seller Policies⁠](https://www.facebook.com/legal/merchant_policies), you must respond to customer inquiries quickly and attempt to resolve issues within 2 business days.
 
-While we maintain an internal record to monitor the service quality of sellers, it’s your responsibility to keep track of customer service requests.
+While we maintain an internal record to monitor the service quality of sellers, it's your responsibility to keep track of customer service requests.
 
 ---
 
@@ -52,32 +52,28 @@ A new support case is created when a customer requests help from the Facebook or
 Once the request is submitted, your customer service team will receive a case email. For example, an Instagram **case** email format:
 
 ```
-```
-From: Instagram Support <case++{unique case number}@support.instagram.com>  
-To: {customer service contact email address}  
-Subject: Message from {instagram username}
-```
+From: Instagram Support <case++{unique case number}@support.instagram.com>  
+To: {customer service contact email address}  
+Subject: Message from {instagram username}
 ```
 
 ---
 
 ### Claim Emails
 
-If the customer service team is not responding to the customer’s case email within 2 business days, the customer can follow up and request help from Facebook/Instagram. This will create a new order claim that will generate a new request to both Facebook/Instagram and your customer service teams.
+If the customer service team is not responding to the customer's case email within 2 business days, the customer can follow up and request help from Facebook/Instagram. This will create a new order claim that will generate a new request to both Facebook/Instagram and your customer service teams.
 
-A new claim is also created if a customer requests help with the following reason: “I didn’t make this order”.
+A new claim is also created if a customer requests help with the following reason: "I didn't make this order".
 
 For example, an Instagram **claim** email format:
 
 ```
-```
-From: Instagram <no-reply@shopping.instagram.com>  
-To: {customer service contact email address}  
-Subject: A claim has been opened for order #{order number}
-```
+From: Instagram <no-reply@shopping.instagram.com>  
+To: {customer service contact email address}  
+Subject: A claim has been opened for order #{order number}
 ```
 
-Your customer service team will receive an email when a new claim is created. Facebook/Instagram will be reviewing the claim and will contact you if needed. You don’t have to respond to the claim email unless you requested by Facebook/Instagram support associate.
+Your customer service team will receive an email when a new claim is created. Facebook/Instagram will be reviewing the claim and will contact you if needed. You don't have to respond to the claim email unless you requested by Facebook/Instagram support associate.
 
 ## Email Usage Guidelines
 
@@ -108,15 +104,15 @@ The order emails are sent to customers from:
 
 All order emails contain a Facebook/Instagram order number in the email body. Your internal order number can be also added to order emails (except order confirmation) and displayed right below the Facebook/Instagram order number. For your internal order number to be displayed, you must provide it with the order acknowledgment API call in the `merchant_order_reference` field.
 
-It is essential that emails sent by Facebook or Instagram are not blocked by your organization’s email infrastructure. This ensures that your team can handle the messages from your customers.
+It is essential that emails sent by Facebook or Instagram are not blocked by your organization's email infrastructure. This ensures that your team can handle the messages from your customers.
 
-If you’re not receiving emails from Facebook/Instagram, check that you haven’t changed your email notifications settings. If the issue persists, you should contact your IT department. They will likely be able to perform a check of the controls described in this guide.
+If you're not receiving emails from Facebook/Instagram, check that you haven't changed your email notifications settings. If the issue persists, you should contact your IT department. They will likely be able to perform a check of the controls described in this guide.
 
 ---
 
 ### Check Email Client Spam Filters
 
-Even if your mail host accepts emails, it’s still possible that email clients (such as Microsoft Outlook) will mark an email as “Spam” or “Junk”. In this case, a person must check their Spam or Junk folder to find the email.
+Even if your mail host accepts emails, it's still possible that email clients (such as Microsoft Outlook) will mark an email as "Spam" or "Junk". In this case, a person must check their Spam or Junk folder to find the email.
 
 Both Facebook and seller order numbers are added to an initial case email your customer service team receives.
 
@@ -139,16 +135,14 @@ If an anti-spoof policy is not in place, emails are rejected, which can cause a 
 
 ### Email Servers
 
-Your email administrator must add these email origin servers’ IP addresses to your allow list to ensure that your organization does not reject Facebook or Instagram Shopping emails.
+Your email administrator must add these email origin servers' IP addresses to your allow list to ensure that your organization does not reject Facebook or Instagram Shopping emails.
 
 ```
-```
-66.220.144.128/25 (66.220.144.128-66.220.144.254)  
-66.220.155.128/25 (66.220.155.128-66.220.155.254)  
-69.171.232.128/25 (69.171.232.128-69.171.232.254)  
-69.63.178.128/25 (69.63.178.128-69.63.178.254)  
-69.63.184.0/25 (69.63.184.0-69.63.184.126)
-```
+66.220.144.128/25 (66.220.144.128-66.220.144.254)  
+66.220.155.128/25 (66.220.155.128-66.220.155.254)  
+69.171.232.128/25 (69.171.232.128-69.171.232.254)  
+69.63.178.128/25 (69.63.178.128-69.63.178.254)  
+69.63.184.0/25 (69.63.184.0-69.63.184.126)
 ```
 
 ---
@@ -166,15 +160,15 @@ With Microsoft Exchange, you can add our email domains to your allow list using 
 
 ## Cancellations & Returns
 
-A customer can only cancel an order within 30 minutes of their purchase in the Facebook or Instagram app. If it’s too late to cancel the order, a customer may request a return within 30 days of the purchase, where available. Sellers can cancel customer’s order after 30 minutes of the purchase, assuming the order has not been marked as shipped.
+A customer can only cancel an order within 30 minutes of their purchase in the Facebook or Instagram app. If it's too late to cancel the order, a customer may request a return within 30 days of the purchase, where available. Sellers can cancel customer's order after 30 minutes of the purchase, assuming the order has not been marked as shipped.
 
-Per [our returns policy⁠](https://www.facebook.com/business/help/612828795802804), sellers must accept returns for a minimum of 30 days (except for “final sale” items). The return period can be specified in your Commerce Manager settings. The return policy for a product is visible to a customer on the order confirmation.
+Per [our returns policy⁠](https://www.facebook.com/business/help/612828795802804), sellers must accept returns for a minimum of 30 days (except for "final sale" items). The return period can be specified in your Commerce Manager settings. The return policy for a product is visible to a customer on the order confirmation.
 
 ## Edge Cases
 
 ### Re-Ship / Exchange
 
-If a customer claims they didn’t receive their shipment or if their items were damaged on delivery you can choose to re-ship the order as a replacement. The re-ship scenario is not yet supported by Facebook Commerce Platform. It’s your responsibility to notify the customer via email and communicate with them.
+If a customer claims they didn't receive their shipment or if their items were damaged on delivery you can choose to re-ship the order as a replacement. The re-ship scenario is not yet supported by Facebook Commerce Platform. It's your responsibility to notify the customer via email and communicate with them.
 
 ### In-Store Returns
 
@@ -214,7 +208,7 @@ A. We will direct the customer to you for customer support. The customer can can
 
 A. We closely monitor incoming purchases and have the ability to outright block or pend transactions we consider suspicious for further review. This occurs prior to the order being sent to the business for fulfillment. Facebook runs various risk and fraud checks across the FB family of apps, and we have run payments risk & operations across a wide array of products such as donations, Oculus, and games. In chargeback scenarios, we will facilitate representment between the you and the processor. Businesses will be protected against chargebacks classified as unauthorized. Businesses will however continue to be responsible for all not as described or not received.
 
-#### Q. What are the Facebook’s policies is the businesses agreeing to when signing up for this channel?
+#### Q. What are the Facebook's policies is the businesses agreeing to when signing up for this channel?
 
 * [Commerce Product Seller Agreement⁠](https://www.facebook.com/legal/commerce_product_merchant_agreement)
 * [Commerce Policy⁠](https://www.facebook.com/policies/commerce)

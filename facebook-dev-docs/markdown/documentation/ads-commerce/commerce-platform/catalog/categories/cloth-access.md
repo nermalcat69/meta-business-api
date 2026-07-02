@@ -34,9 +34,9 @@ To enhance your catalog and help customers discover your items online, enter a [
 
 ### Google product category
 
-The Google product category (GPC) (`google_product_category`) represents the item according to the [Google’s product taxonomy⁠](https://www.google.com/basepages/producttype/taxonomy-with-ids.en-US.txt).
+The Google product category (GPC) (`google_product_category`) represents the item according to the [Google's product taxonomy⁠](https://www.google.com/basepages/producttype/taxonomy-with-ids.en-US.txt).
 
-Use the category’s taxonomy path or its category ID number, listed [here⁠](https://www.google.com/basepages/producttype/taxonomy-with-ids.en-US.txt?fbclid=IwAR0US1k8zZOLliqA-fOM5pMQn3YcVU8-Vog-GpcYqqCqwMXxyiLt31aUYoo).
+Use the category's taxonomy path or its category ID number, listed [here⁠](https://www.google.com/basepages/producttype/taxonomy-with-ids.en-US.txt?fbclid=IwAR0US1k8zZOLliqA-fOM5pMQn3YcVU8-Vog-GpcYqqCqwMXxyiLt31aUYoo).
 
 Example: `Apparel & Accessories > Clothing > Shirts & Tops` or `212`
 
@@ -58,7 +58,7 @@ When you provide a Facebook product category, you can also use additional fields
 
 ## Tax calculations
 
-Meta automatically assigns a category to each item in your catalog based on its title, description, and other details. Alternatively, you can provide a Facebook product category for each item yourself, which overrides Meta’s automatic category assignment. Tax rates and taxability for specific product categories vary based on state laws.
+Meta automatically assigns a category to each item in your catalog based on its title, description, and other details. Alternatively, you can provide a Facebook product category for each item yourself, which overrides Meta's automatic category assignment. Tax rates and taxability for specific product categories vary based on state laws.
 
 Learn more about how Meta determines [sales tax⁠](https://www.facebook.com/business/help/1768310879858675) (Help Center article).
 
@@ -102,7 +102,7 @@ The recommended category-specific fields are all optional. You can also use addi
 
 ### Taxonomies and Categories
 
-* [Google’s product taxonomy⁠](https://www.google.com/basepages/producttype/taxonomy-with-ids.en-US.txt)
+* [Google's product taxonomy⁠](https://www.google.com/basepages/producttype/taxonomy-with-ids.en-US.txt)
 * [Facebook product categories, in multiple languages⁠](https://www.facebook.com/business/help/526764014610932)
 * [Google product category for catalog items, Help Center⁠](https://www.facebook.com/business/help/526764014610932)
 

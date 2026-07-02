@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/development/release
 
 Updated: Dec 18, 2020
 
-Test pages are [test user](https://developers.facebook.com/documentation/development/build-and-test/test-users)-generated Facebook Pages that you can use to simulate real Facebook Pages when testing your app in [Development](https://developers.facebook.com/documentation/development/build-and-test/app-modes#development-mode) mode. Test pages cannot interact with real Facebook users, and any data you generate with a test page will only be visible to test users on your app, or to real Facebook users who have an Administrator, Developer, or Tester [role](https://developers.facebook.com/documentation/development/build-and-test/app-roles) on your app. Test pages are exempt from our spam and fake account detection systems, so they won’t be disabled when you use them to test your app.
+Test pages are [test user](https://developers.facebook.com/documentation/development/build-and-test/test-users)-generated Facebook Pages that you can use to simulate real Facebook Pages when testing your app in [Development](https://developers.facebook.com/documentation/development/build-and-test/app-modes#development-mode) mode. Test pages cannot interact with real Facebook users, and any data you generate with a test page will only be visible to test users on your app, or to real Facebook users who have an Administrator, Developer, or Tester [role](https://developers.facebook.com/documentation/development/build-and-test/app-roles) on your app. Test pages are exempt from our spam and fake account detection systems, so they won't be disabled when you use them to test your app.
 
 ## Limitations
 
@@ -17,12 +17,12 @@ Test pages are [test user](https://developers.facebook.com/documentation/develop
 
 ## Creating Test Pages
 
-To create a test page, log into one of your app’s [test users](https://developers.facebook.com/documentation/development/build-and-test/test-users) and create a Facebook Page as you normally would.
+To create a test page, log into one of your app's [test users](https://developers.facebook.com/documentation/development/build-and-test/test-users) and create a Facebook Page as you normally would.
 
 To log in as a test user:
 
 * Go to the [Apps](https://developers.facebook.com/apps) panel and select your app to load it in the App Dashboard.
-* Go to **Roles** > **Test Users** and click an existing test user’s **Edit** button.
+* Go to **Roles** > **Test Users** and click an existing test user's **Edit** button.
 * Click **Log in as this test user** and complete the confirmation flow.
 
 ## Managing Test Pages

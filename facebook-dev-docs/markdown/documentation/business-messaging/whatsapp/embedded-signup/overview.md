@@ -15,28 +15,26 @@ If you are a Tech Provider or Tech Partner, any business customer who completes 
 
 ## What you will need
 
-* the business customer’s WABA ID (returned via [session logging](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/implementation#session-logging-message-event-listener) or [API request](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/manage-accounts#get-shared-waba-id-with-access-token))
-* the business customer’s business phone number ID (returned via [session logging](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/implementation#session-logging-message-event-listener) or [API request](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/manage-phone-numbers#getting-phone-numbers))
+* the business customer's WABA ID (returned via [session logging](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/implementation#session-logging-message-event-listener) or [API request](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/manage-accounts#get-shared-waba-id-with-access-token))
+* the business customer's business phone number ID (returned via [session logging](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/implementation#session-logging-message-event-listener) or [API request](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/manage-phone-numbers#getting-phone-numbers))
 * your app ID (displayed at the top of the **App Dashboard**)
 * your app secret (displayed in the **App Dashboard** > **App settings** > **Basic** panel)
 
-Also, if you wish to test messaging capabilities using the customer’s business phone number, you will need a WhatsApp phone number that can already send and receive messages from other WhatsApp numbers.
+Also, if you wish to test messaging capabilities using the customer's business phone number, you will need a WhatsApp phone number that can already send and receive messages from other WhatsApp numbers.
 
 Perform all of the requests described below using server-to-server requests. Do not use client-side requests.
 
 ## Step 1: Exchange the token code for a business token
 
-Use the **GET /oauth/access\_token** endpoint to exchange the token code [returned](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/implementation#session-logging-message-event-listener) by Embedded Signup for a business integration system user access token (“business token”).
+Use the **GET /oauth/access\_token** endpoint to exchange the token code [returned](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/implementation#session-logging-message-event-listener) by Embedded Signup for a business integration system user access token ("business token").
 
 ### Request
 
 ```
-```
-curl --get 'https://graph.facebook.com/v21.0/oauth/access_token' \  
--d 'client_id=<APP_ID>' \  
--d 'client_secret=<APP_SECRET>' \  
--d 'code=<CODE>'
-```
+curl --get 'https://graph.facebook.com/v21.0/oauth/access_token' \  
+-d 'client_id=<APP_ID>' \  
+-d 'client_secret=<APP_SECRET>' \  
+-d 'code=<CODE>'
 ```
 
 ### Request parameters
@@ -52,28 +50,24 @@ curl --get 'https://graph.facebook.com/v21.0/oauth/access_token' \
 Upon success:
 
 ```
-```
 <BUSINESS_TOKEN>
-```
 ```
 
 ### Response parameters
 
 | Placeholder | Description | Example value |
 | --- | --- | --- |
-| `<BUSINESS_TOKEN>` | The customer’s [business token](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#business-integration-system-user-access-tokens). | `EAAAN6tcBzAUBOwtDtTfmZCJ9n3FHpSDcDTH86ekf89XnnMZAtaitMUysPDE7LES3CXkA4MmbKCghdQeU1boHr0QZA05SShiILcoUy7ZAb2GE7hrUEpYHKLDuP2sYZCURkZCHGEvEGjScGLHzC4KDm8tq2slt4BsOQE1HHX8DzHahdT51MRDqBw0YaeZByrVFZkVAoVTxXUtuKgDDdrmJQXMnI4jqJYetsZCP1efj5ygGscZBm4OvvuCYB039ZAFlyNn` |
+| `<BUSINESS_TOKEN>` | The customer's [business token](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#business-integration-system-user-access-tokens). | `EAAAN6tcBzAUBOwtDtTfmZCJ9n3FHpSDcDTH86ekf89XnnMZAtaitMUysPDE7LES3CXkA4MmbKCghdQeU1boHr0QZA05SShiILcoUy7ZAb2GE7hrUEpYHKLDuP2sYZCURkZCHGEvEGjScGLHzC4KDm8tq2slt4BsOQE1HHX8DzHahdT51MRDqBw0YaeZByrVFZkVAoVTxXUtuKgDDdrmJQXMnI4jqJYetsZCP1efj5ygGscZBm4OvvuCYB039ZAFlyNn` |
 
-## Step 2: Subscribe to webhooks on the customer’s WABA
+## Step 2: Subscribe to webhooks on the customer's WABA
 
-Use the [POST /<WABA\_ID>/subscribed\_apps](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/subscribed-apps-api#post-version-waba-id-subscribed-apps) endpoint to subscribe your app to webhooks on the business customer’s WABA. If you want the customer’s webhooks to be sent to a different callback URL than the one set on your app, you have multiple [webhook override](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/override) options.
+Use the [POST /<WABA\_ID>/subscribed\_apps](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/subscribed-apps-api#post-version-waba-id-subscribed-apps) endpoint to subscribe your app to webhooks on the business customer's WABA. If you want the customer's webhooks to be sent to a different callback URL than the one set on your app, you have multiple [webhook override](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/override) options.
 
 ### Request
 
 ```
-```
-curl -X POST 'https://graph.facebook.com/<API_VERSION>/<WABA_ID>/subscribed_apps' \  
--H 'Authorization: Bearer <ACCESS_TOKEN>'
-```
+curl -X POST 'https://graph.facebook.com/<API_VERSION>/<WABA_ID>/subscribed_apps' \  
+-H 'Authorization: Bearer <ACCESS_TOKEN>'
 ```
 
 ### Request parameters
@@ -81,7 +75,7 @@ curl -X POST 'https://graph.facebook.com/<API_VERSION>/<WABA_ID>/subscribed_a
 | Placeholder | Description | Example value |
 | --- | --- | --- |
 | `<API_VERSION>`  *String* | **Optional.**  Graph API version. | v25.0 |
-| `<BUSINESS_TOKEN>`*String* | **Required.**  The business customer’s [business token](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#business-integration-system-user-access-tokens). | `EAAAN6tcBzAUBOwtDtTfmZCJ9n3FHpSDcDTH86ekf89XnnMZAtaitMUysPDE7LES3CXkA4MmbKCghdQeU1boHr0QZA05SShiILcoUy7ZAb2GE7hrUEpYHKLDuP2sYZCURkZCHGEvEGjScGLHzC4KDm8tq2slt4BsOQE1HHX8DzHahdT51MRDqBw0YaeZByrVFZkVAoVTxXUtuKgDDdrmJQXMnI4jqJYetsZCP1efj5ygGscZBm4OvvuCYB039ZAFlyNn` |
+| `<BUSINESS_TOKEN>`*String* | **Required.**  The business customer's [business token](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#business-integration-system-user-access-tokens). | `EAAAN6tcBzAUBOwtDtTfmZCJ9n3FHpSDcDTH86ekf89XnnMZAtaitMUysPDE7LES3CXkA4MmbKCghdQeU1boHr0QZA05SShiILcoUy7ZAb2GE7hrUEpYHKLDuP2sYZCURkZCHGEvEGjScGLHzC4KDm8tq2slt4BsOQE1HHX8DzHahdT51MRDqBw0YaeZByrVFZkVAoVTxXUtuKgDDdrmJQXMnI4jqJYetsZCP1efj5ygGscZBm4OvvuCYB039ZAFlyNn` |
 | `<WABA_ID>`*String* | **Required.**  WhatsApp Business Account ID. | `102290129340398` |
 
 ### Response
@@ -89,78 +83,70 @@ curl -X POST 'https://graph.facebook.com/<API_VERSION>/<WABA_ID>/subscribed_a
 Upon success:
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
 ```
-```
 
-## Step 3: Register the customer’s phone number
+## Step 3: Register the customer's phone number
 
-Use the [Register API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/register-api#post-version-phone-number-id-register) to register the business customer’s business phone number for use with Cloud API.
+Use the [Register API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/register-api#post-version-phone-number-id-register) to register the business customer's business phone number for use with Cloud API.
 
 ### Request
 
 ```
-```
-curl 'https://graph.facebook.com/v21.0/<BUSINESS_CUSTOMER_PHONE_NUMBER_ID>/register' \  
--H 'Content-Type: application/json' \  
--H 'Authorization: Bearer <BUSINESS_TOKEN>' \  
--d '  
+curl 'https://graph.facebook.com/v21.0/<BUSINESS_CUSTOMER_PHONE_NUMBER_ID>/register' \  
+-H 'Content-Type: application/json' \  
+-H 'Authorization: Bearer <BUSINESS_TOKEN>' \  
+-d '  
 {  
-  "messaging_product": "whatsapp",  
-  "pin": "<DESIRED_PIN>"  
+  "messaging_product": "whatsapp",  
+  "pin": "<DESIRED_PIN>"  
 }'
-```
 ```
 
 ### Request parameters
 
 | Placeholder | Description | Example value |
 | --- | --- | --- |
-| `<BUSINESS_CUSTOMER_PHONE_NUMBER_ID>`*String* | **Required.**  The business customer’s business phone number ID. | `106540352242922` |
-| `<BUSINESS_TOKEN>`*String* | **Required.**  The business customer’s [business token](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#business-integration-system-user-access-tokens). | `EAAAN6tcBzAUBOwtDtTfmZCJ9n3FHpSDcDTH86ekf89XnnMZAtaitMUysPDE7LES3CXkA4MmbKCghdQeU1boHr0QZA05SShiILcoUy7ZAb2GE7hrUEpYHKLDuP2sYZCURkZCHGEvEGjScGLHzC4KDm8tq2slt4BsOQE1HHX8DzHahdT51MRDqBw0YaeZByrVFZkVAoVTxXUtuKgDDdrmJQXMnI4jqJYetsZCP1efj5ygGscZBm4OvvuCYB039ZAFlyNn` |
-| `<DESIRED_PIN>`*String* | **Required.**  Set this value to a 6-digit number. This will be the business phone number’s two-step verification PIN. | `581063` |
+| `<BUSINESS_CUSTOMER_PHONE_NUMBER_ID>`*String* | **Required.**  The business customer's business phone number ID. | `106540352242922` |
+| `<BUSINESS_TOKEN>`*String* | **Required.**  The business customer's [business token](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#business-integration-system-user-access-tokens). | `EAAAN6tcBzAUBOwtDtTfmZCJ9n3FHpSDcDTH86ekf89XnnMZAtaitMUysPDE7LES3CXkA4MmbKCghdQeU1boHr0QZA05SShiILcoUy7ZAb2GE7hrUEpYHKLDuP2sYZCURkZCHGEvEGjScGLHzC4KDm8tq2slt4BsOQE1HHX8DzHahdT51MRDqBw0YaeZByrVFZkVAoVTxXUtuKgDDdrmJQXMnI4jqJYetsZCP1efj5ygGscZBm4OvvuCYB039ZAFlyNn` |
+| `<DESIRED_PIN>`*String* | **Required.**  Set this value to a 6-digit number. This will be the business phone number's two-step verification PIN. | `581063` |
 
 ### Response
 
 Upon success:
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 ## Step 4: Send a test message
 
 *This step is optional.*
 
-If you wish to test the messaging capabilities of your business customer’s business phone number, send a message to the customer’s number from your own WhatsApp number (this will open a [customer service window](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/send-messages#customer-service-windows), allowing you to respond with any type of message).
+If you wish to test the messaging capabilities of your business customer's business phone number, send a message to the customer's number from your own WhatsApp number (this will open a [customer service window](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/send-messages#customer-service-windows), allowing you to respond with any type of message).
 
 Next, use the [Messages API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/message-api#post-version-phone-number-id-messages) to send a text message in response.
 
 ### Request
 
 ```
-```
-curl 'https://graph.facebook.com/v21.0/<BUSINESS_CUSTOMER_PHONE_NUMBER_ID>/messages' \  
--H 'Content-Type: application/json' \  
--H 'Authorization: Bearer <BUSINESS_TOKEN>' \  
--d '  
+curl 'https://graph.facebook.com/v21.0/<BUSINESS_CUSTOMER_PHONE_NUMBER_ID>/messages' \  
+-H 'Content-Type: application/json' \  
+-H 'Authorization: Bearer <BUSINESS_TOKEN>' \  
+-d '  
 {  
-  "messaging_product": "whatsapp",  
-  "recipient_type": "individual",  
-  "to": "<WHATSAPP_USER_NUMBER>",  
-  "type": "text",  
-  "text": {  
-    "body": "<BODY_TEXT>"  
-  }  
+  "messaging_product": "whatsapp",  
+  "recipient_type": "individual",  
+  "to": "<WHATSAPP_USER_NUMBER>",  
+  "type": "text",  
+  "text": {  
+    "body": "<BODY_TEXT>"  
+  }  
 }'
-```
 ```
 
 ### Request parameters
@@ -168,8 +154,8 @@ curl 'https://graph.facebook.com/v21.0/<BUSINESS_CUSTOMER_PHONE_NUMBER_ID>/mess
 | Placeholder | Description | Example value |
 | --- | --- | --- |
 | `<BODY_TEXT>`*String* | **Required.**  Message body text. Supports URLs.  Maximum 4096 characters. | `Message received, loud and clear!` |
-| `<BUSINESS_CUSTOMER_PHONE_NUMBER_ID>`*String* | **Required.**  The business customer’s business phone number ID. | `106540352242922` |
-| `<BUSINESS_TOKEN>`*String* | **Required.**  The business customer’s [business token](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#business-integration-system-user-access-tokens). | `EAAAN6tcBzAUBOwtDtTfmZCJ9n3FHpSDcDTH86ekf89XnnMZAtaitMUysPDE7LES3CXkA4MmbKCghdQeU1boHr0QZA05SShiILcoUy7ZAb2GE7hrUEpYHKLDuP2sYZCURkZCHGEvEGjScGLHzC4KDm8tq2slt4BsOQE1HHX8DzHahdT51MRDqBw0YaeZByrVFZkVAoVTxXUtuKgDDdrmJQXMnI4jqJYetsZCP1efj5ygGscZBm4OvvuCYB039ZAFlyNn` |
+| `<BUSINESS_CUSTOMER_PHONE_NUMBER_ID>`*String* | **Required.**  The business customer's business phone number ID. | `106540352242922` |
+| `<BUSINESS_TOKEN>`*String* | **Required.**  The business customer's [business token](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#business-integration-system-user-access-tokens). | `EAAAN6tcBzAUBOwtDtTfmZCJ9n3FHpSDcDTH86ekf89XnnMZAtaitMUysPDE7LES3CXkA4MmbKCghdQeU1boHr0QZA05SShiILcoUy7ZAb2GE7hrUEpYHKLDuP2sYZCURkZCHGEvEGjScGLHzC4KDm8tq2slt4BsOQE1HHX8DzHahdT51MRDqBw0YaeZByrVFZkVAoVTxXUtuKgDDdrmJQXMnI4jqJYetsZCP1efj5ygGscZBm4OvvuCYB039ZAFlyNn` |
 | `<WHATSAPP_USER_NUMBER>`*String* | **Required.**  Your WhatsApp phone number that can send and receive messages from other WhatsApp numbers.  Note that this cannot be a business phone number already registered for use with Cloud API. | `+16505551234` |
 
 ### Response
@@ -177,22 +163,20 @@ curl 'https://graph.facebook.com/v21.0/<BUSINESS_CUSTOMER_PHONE_NUMBER_ID>/mess
 Upon success:
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "contacts": [  
-    {  
-      "input": "<WHATSAPP_USER_NUMBER>",  
-      "wa_id": "<WHATSAPP_USER_ID>"  
-    }  
-  ],  
-  "messages": [  
-    {  
-      "id": "<WHATSAPP_MESSAGE_ID>"  
-    }  
-  ]  
+  "messaging_product": "whatsapp",  
+  "contacts": [  
+    {  
+      "input": "<WHATSAPP_USER_NUMBER>",  
+      "wa_id": "<WHATSAPP_USER_ID>"  
+    }  
+  ],  
+  "messages": [  
+    {  
+      "id": "<WHATSAPP_MESSAGE_ID>"  
+    }  
+  ]  
 }
-```
 ```
 
 ### Response parameters
@@ -203,7 +187,7 @@ Upon success:
 | `<WHATSAPP_USER_ID>` | Your WhatsApp user ID. | `16505551234` |
 | `<WHATSAPP_USER_NUMBER>` | Your WhatsApp phone number that the message was sent to. | `+16505551234` |
 
-If you were able to successfully send and receive messages using the customer’s business phone number, and if **messages** webhooks were triggered [describing the initial message that you sent](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/messages), as well as the [delivery statuses](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/messages/status) of the message you sent in response, the customer’s business phone number is working properly.
+If you were able to successfully send and receive messages using the customer's business phone number, and if **messages** webhooks were triggered [describing the initial message that you sent](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/messages), as well as the [delivery statuses](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/messages/status) of the message you sent in response, the customer's business phone number is working properly.
 
 ## Step 5: Instruct the customer to add a payment method
 

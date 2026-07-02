@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/marketing
 
 Updated: May 21, 2026
 
-Monitor the state of your ads in real time. A Trigger Based Rule is evaluated as soon as its pertinent ad objects’ metadata or insights data are changed. The latency for metadata changes is usually a few seconds, and the latency for insights changes is within a few minutes (current p99 is about 7.5 minutes).
+Monitor the state of your ads in real time. A Trigger Based Rule is evaluated as soon as its pertinent ad objects' metadata or insights data are changed. The latency for metadata changes is usually a few seconds, and the latency for insights changes is within a few minutes (current p99 is about 7.5 minutes).
 
 For Trigger Based Rules, `schedule_spec` is not supported, since they are always checked in real time.
 
@@ -73,9 +73,9 @@ curl -i -X POST \
 
 ### Metadata update rule
 
-This rule is used to monitor when an ad object’s metadata is changed. See [list](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-rules/overview/evaluation-spec#metadata-filters-supported-by-trigger-and-schedule-based-rules) of supported metadata fields. Within `trigger` spec, `field` is required, while `value` and `operator` are optional.
+This rule is used to monitor when an ad object's metadata is changed. See [list](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-rules/overview/evaluation-spec#metadata-filters-supported-by-trigger-and-schedule-based-rules) of supported metadata fields. Within `trigger` spec, `field` is required, while `value` and `operator` are optional.
 
-If you are interested in a field’s change, no matter what its value is, you only need to specify the `field` option. Here is an example to send you a Facebook Notification whenever an ad set’s daily budget is changed.
+If you are interested in a field's change, no matter what its value is, you only need to specify the `field` option. Here is an example to send you a Facebook Notification whenever an ad set's daily budget is changed.
 
 ```
 curl -i -X POST \
@@ -101,7 +101,7 @@ curl -i -X POST \
 "https://graph.facebook.com/<VERSION>/<AD_ACCOUNT_ID>/adrules_library"
 ```
 
-If you are only interested in a subset of the events, you can provide `operator` and `value` options to refine the `trigger` condition. Here is an example to be notified when an ad set’s daily budget is changed and exceeds 1000:
+If you are only interested in a subset of the events, you can provide `operator` and `value` options to refine the `trigger` condition. Here is an example to be notified when an ad set's daily budget is changed and exceeds 1000:
 
 ```
 curl -i -X POST \
@@ -137,7 +137,7 @@ With `STATS_MILESTONE` as `type`, `evaluation_spec` triggers when `field` reache
 
 For this specific type of rule, the trigger `operator` must be `EQUAL`, and the `time_preset` filter must have a value of `LIFETIME`.
 
-There is a more restrictive set of supported fields. Any field not listed below is not supported as a trigger `field`, but **can still be used as a filter** in the list of `filters`. In addition, there are required minimum values for the trigger’s `value` depending on the `field`.
+There is a more restrictive set of supported fields. Any field not listed below is not supported as a trigger `field`, but **can still be used as a filter** in the list of `filters`. In addition, there are required minimum values for the trigger's `value` depending on the `field`.
 
 | Supported Trigger Field Values | Minimum Value |
 | --- | --- |

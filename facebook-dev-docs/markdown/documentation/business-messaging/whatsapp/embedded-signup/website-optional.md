@@ -38,15 +38,13 @@ const launchWhatsAppSignup = () => {
 When a business customer successfully completes the bypass (`only_waba_sharing`) flow, the [session logging message event](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/implementation#session-logging-message-event-listener) will have `event` set to `FINISH_ONLY_WABA`:
 
 ```
-```
 {  
-  data: {  
-    phone_number_id: "<CUSTOMER_BUSINESS_PHONE_NUMBER_ID>",  
-    waba_id: "<CUSTOMER_WABA_ID>"  
-  },  
-  type: "WA_EMBEDDED_SIGNUP",  
-  event: "FINISH_ONLY_WABA",  
-  version: 3  
+  data: {  
+    phone_number_id: "<CUSTOMER_BUSINESS_PHONE_NUMBER_ID>",  
+    waba_id: "<CUSTOMER_WABA_ID>"  
+  },  
+  type: "WA_EMBEDDED_SIGNUP",  
+  event: "FINISH_ONLY_WABA",  
+  version: 3  
 }
-```
 ```

@@ -46,11 +46,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/v26.0/{page_id}/calls' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request POST \  
+  --url 'https://graph.facebook.com/v26.0/{page_id}/calls' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Path Parameters
@@ -348,11 +348,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/v26.0/{page_id}/calls' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request POST \  
+  --url 'https://graph.facebook.com/v26.0/{page_id}/calls' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 ## Authentication

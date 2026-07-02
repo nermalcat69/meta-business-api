@@ -34,13 +34,13 @@ Objective-CAndroid SDK
 ---
 
 ```
-[[FBSDKAppEvents shared] logEvent:FBSDKAppEventNameViewedContent  
-  valueToSum:54.23  
-  parameters:@{  
-    FBSDKAppEventParameterNameCurrency    : @"USD",  
-    FBSDKAppEventParameterNameContentType : @"product",  
-    FBSDKAppEventParameterNameContentID   : @"123456789"  
-  }  
+[[FBSDKAppEvents shared] logEvent:FBSDKAppEventNameViewedContent  
+  valueToSum:54.23  
+  parameters:@{  
+    FBSDKAppEventParameterNameCurrency    : @"USD",  
+    FBSDKAppEventParameterNameContentType : @"product",  
+    FBSDKAppEventParameterNameContentID   : @"123456789"  
+  }  
 ];
 ```
 
@@ -53,10 +53,10 @@ Objective-CAndroid SDK
 ---
 
 ```
-[[FBSDKAppEvents shared] logPurchase:54.23 currency : @"USD" parameters:@{  
-  FBSDKAppEventParameterNameContentID   : @"['1234','5678']",  
-  FBSDKAppEventParameterNameContentType : @"product"  
-  }  
+[[FBSDKAppEvents shared] logPurchase:54.23 currency : @"USD" parameters:@{  
+  FBSDKAppEventParameterNameContentID   : @"['1234','5678']",  
+  FBSDKAppEventParameterNameContentType : @"product"  
+  }  
 ];
 ```
 
@@ -105,7 +105,7 @@ The additional parameters available are:
 | Name | Description |
 | --- | --- |
 | `fb_content_type`  string | Either `product` or `product_group` |
-| `fb_content_id`  string | **Required.**  A string containing a JSON-encoded array of the retailer’s product or product group IDs |
+| `fb_content_id`  string | **Required.**  A string containing a JSON-encoded array of the retailer's product or product group IDs |
 | `_valueToSum`  string | **Optional.**  Value of the product purchased |
 | `fb_currency`  string | **Optional.**  Currency of the product or purchase amount |
 

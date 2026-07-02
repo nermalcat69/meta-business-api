@@ -72,11 +72,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{WABA-ID}/solutions' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{WABA-ID}/solutions' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -87,70 +87,70 @@ Select status code
 
 ```
 {  
-  "multiple_solutions": {  
-    "summary": "Multiple solutions with different statuses",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "1234567890123456",  
-          "name": "E-commerce Integration Solution",  
-          "status": "ACTIVE",  
-          "status_for_pending_request": "NONE",  
-          "owner_app": {  
-            "id": "9876543210987654",  
-            "name": "Solution Partner App"  
-          },  
-          "owner_permissions": [  
-            "MANAGE",  
-            "DEVELOP",  
-            "MANAGE_TEMPLATES",  
-            "VIEW_COST"  
-          ]  
-        },  
-        {  
-          "id": "2345678901234567",  
-          "name": "Customer Support Solution",  
-          "status": "DRAFT",  
-          "status_for_pending_request": "NONE"  
-        }  
-      ],  
-      "paging": {  
-        "cursors": {  
-          "before": "FAKE_CURSOR_BEFORE_123ABC",  
-          "after": "FAKE_CURSOR_AFTER_456DEF"  
-        },  
-        "next": "https://graph.facebook.com/v25.0/1234567890123456/solutions?limit=25&after=FAKE_CURSOR_AFTER_456DEF"  
-      }  
-    }  
-  },  
-  "single_solution": {  
-    "summary": "Single solution with minimal fields",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "3456789012345678",  
-          "name": "Analytics Integration Solution",  
-          "status": "ACTIVE",  
-          "status_for_pending_request": "NONE"  
-        }  
-      ],  
-      "paging": {  
-        "cursors": {  
-          "before": "FAKE_CURSOR_BEFORE_789GHI",  
-          "after": "FAKE_CURSOR_AFTER_789GHI"  
-        }  
-      }  
-    }  
-  },  
-  "empty_list": {  
-    "summary": "No solutions found for this WABA",  
-    "value": {  
-      "data": [],  
-      "paging": {  
-        "cursors": {}  
-      }  
-    }  
-  }  
+  "multiple_solutions": {  
+    "summary": "Multiple solutions with different statuses",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "1234567890123456",  
+          "name": "E-commerce Integration Solution",  
+          "status": "ACTIVE",  
+          "status_for_pending_request": "NONE",  
+          "owner_app": {  
+            "id": "9876543210987654",  
+            "name": "Solution Partner App"  
+          },  
+          "owner_permissions": [  
+            "MANAGE",  
+            "DEVELOP",  
+            "MANAGE_TEMPLATES",  
+            "VIEW_COST"  
+          ]  
+        },  
+        {  
+          "id": "2345678901234567",  
+          "name": "Customer Support Solution",  
+          "status": "DRAFT",  
+          "status_for_pending_request": "NONE"  
+        }  
+      ],  
+      "paging": {  
+        "cursors": {  
+          "before": "FAKE_CURSOR_BEFORE_123ABC",  
+          "after": "FAKE_CURSOR_AFTER_456DEF"  
+        },  
+        "next": "https://graph.facebook.com/v25.0/1234567890123456/solutions?limit=25&after=FAKE_CURSOR_AFTER_456DEF"  
+      }  
+    }  
+  },  
+  "single_solution": {  
+    "summary": "Single solution with minimal fields",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "3456789012345678",  
+          "name": "Analytics Integration Solution",  
+          "status": "ACTIVE",  
+          "status_for_pending_request": "NONE"  
+        }  
+      ],  
+      "paging": {  
+        "cursors": {  
+          "before": "FAKE_CURSOR_BEFORE_789GHI",  
+          "after": "FAKE_CURSOR_AFTER_789GHI"  
+        }  
+      }  
+    }  
+  },  
+  "empty_list": {  
+    "summary": "No solutions found for this WABA",  
+    "value": {  
+      "data": [],  
+      "paging": {  
+        "cursors": {}  
+      }  
+    }  
+  }  
 }
 ```
 
@@ -775,11 +775,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{WABA-ID}/solutions' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{WABA-ID}/solutions' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -790,70 +790,70 @@ Select status code
 
 ```
 {  
-  "multiple_solutions": {  
-    "summary": "Multiple solutions with different statuses",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "1234567890123456",  
-          "name": "E-commerce Integration Solution",  
-          "status": "ACTIVE",  
-          "status_for_pending_request": "NONE",  
-          "owner_app": {  
-            "id": "9876543210987654",  
-            "name": "Solution Partner App"  
-          },  
-          "owner_permissions": [  
-            "MANAGE",  
-            "DEVELOP",  
-            "MANAGE_TEMPLATES",  
-            "VIEW_COST"  
-          ]  
-        },  
-        {  
-          "id": "2345678901234567",  
-          "name": "Customer Support Solution",  
-          "status": "DRAFT",  
-          "status_for_pending_request": "NONE"  
-        }  
-      ],  
-      "paging": {  
-        "cursors": {  
-          "before": "FAKE_CURSOR_BEFORE_123ABC",  
-          "after": "FAKE_CURSOR_AFTER_456DEF"  
-        },  
-        "next": "https://graph.facebook.com/v25.0/1234567890123456/solutions?limit=25&after=FAKE_CURSOR_AFTER_456DEF"  
-      }  
-    }  
-  },  
-  "single_solution": {  
-    "summary": "Single solution with minimal fields",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "3456789012345678",  
-          "name": "Analytics Integration Solution",  
-          "status": "ACTIVE",  
-          "status_for_pending_request": "NONE"  
-        }  
-      ],  
-      "paging": {  
-        "cursors": {  
-          "before": "FAKE_CURSOR_BEFORE_789GHI",  
-          "after": "FAKE_CURSOR_AFTER_789GHI"  
-        }  
-      }  
-    }  
-  },  
-  "empty_list": {  
-    "summary": "No solutions found for this WABA",  
-    "value": {  
-      "data": [],  
-      "paging": {  
-        "cursors": {}  
-      }  
-    }  
-  }  
+  "multiple_solutions": {  
+    "summary": "Multiple solutions with different statuses",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "1234567890123456",  
+          "name": "E-commerce Integration Solution",  
+          "status": "ACTIVE",  
+          "status_for_pending_request": "NONE",  
+          "owner_app": {  
+            "id": "9876543210987654",  
+            "name": "Solution Partner App"  
+          },  
+          "owner_permissions": [  
+            "MANAGE",  
+            "DEVELOP",  
+            "MANAGE_TEMPLATES",  
+            "VIEW_COST"  
+          ]  
+        },  
+        {  
+          "id": "2345678901234567",  
+          "name": "Customer Support Solution",  
+          "status": "DRAFT",  
+          "status_for_pending_request": "NONE"  
+        }  
+      ],  
+      "paging": {  
+        "cursors": {  
+          "before": "FAKE_CURSOR_BEFORE_123ABC",  
+          "after": "FAKE_CURSOR_AFTER_456DEF"  
+        },  
+        "next": "https://graph.facebook.com/v25.0/1234567890123456/solutions?limit=25&after=FAKE_CURSOR_AFTER_456DEF"  
+      }  
+    }  
+  },  
+  "single_solution": {  
+    "summary": "Single solution with minimal fields",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "3456789012345678",  
+          "name": "Analytics Integration Solution",  
+          "status": "ACTIVE",  
+          "status_for_pending_request": "NONE"  
+        }  
+      ],  
+      "paging": {  
+        "cursors": {  
+          "before": "FAKE_CURSOR_BEFORE_789GHI",  
+          "after": "FAKE_CURSOR_AFTER_789GHI"  
+        }  
+      }  
+    }  
+  },  
+  "empty_list": {  
+    "summary": "No solutions found for this WABA",  
+    "value": {  
+      "data": [],  
+      "paging": {  
+        "cursors": {}  
+      }  
+    }  
+  }  
 }
 ```
 

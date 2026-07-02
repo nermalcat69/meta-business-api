@@ -16,15 +16,24 @@ function readTitle(absFile: string, fallback: string): string {
 }
 
 function titleCase(slug: string): string {
-  return slug
-    .replace(/[-_]/g, " ")
-    .replace(/\b\w/g, (c) => c.toUpperCase());
+  return slug.replace(/[-_]/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+function firstLink(items: DefaultTheme.SidebarItem[]): string | undefined {
+  for (const item of items) {
+    if (item.link) return item.link;
+    if (item.items) {
+      const found = firstLink(item.items);
+      if (found) return found;
+    }
+  }
+  return undefined;
 }
 
 /**
- * Recursively builds a VitePress sidebar group for one directory.
- * `dir` is the absolute directory path; `base` is its URL path (with
- * trailing slash) used to prefix generated links.
+ * Recursively builds sidebar entries for one directory. `dir` is the
+ * absolute directory path; `base` is its URL path (trailing slash) used to
+ * prefix generated links.
  */
 function buildGroup(dir: string, base: string): DefaultTheme.SidebarItem[] {
   const entries = fs.readdirSync(dir, { withFileTypes: true });
@@ -37,28 +46,32 @@ function buildGroup(dir: string, base: string): DefaultTheme.SidebarItem[] {
 
   for (const file of files) {
     const slug = file.name.replace(/\.md$/, "");
+    // A file that also has a same-named sibling directory is folded into
+    // that directory's group below (as its "overview" entry), so skip it here.
+    if (dirs.some((d) => d.name === slug)) continue;
     const abs = path.join(dir, file.name);
-    const fallbackTitle = slug === "index" ? titleCase(path.basename(dir)) : titleCase(slug);
-    const title = readTitle(abs, fallbackTitle);
-    const link = slug === "index" ? base : `${base}${slug}`;
-    items.push({ text: title, link });
+    const title = readTitle(abs, titleCase(slug));
+    items.push({ text: title, link: `${base}${slug}` });
   }
 
   for (const d of dirs) {
     const childDir = path.join(dir, d.name);
     const childBase = `${base}${d.name}/`;
-    const indexFile = path.join(childDir, "index.md");
     const overviewFile = path.join(dir, `${d.name}.md`);
-    const groupTitle = fs.existsSync(indexFile)
-      ? readTitle(indexFile, titleCase(d.name))
-      : fs.existsSync(overviewFile)
-        ? readTitle(overviewFile, titleCase(d.name))
-        : titleCase(d.name);
+    const hasOverview = fs.existsSync(overviewFile);
+
+    const childItems = buildGroup(childDir, childBase);
+    if (hasOverview) {
+      childItems.unshift({
+        text: readTitle(overviewFile, "Overview"),
+        link: `${base}${d.name}`,
+      });
+    }
 
     items.push({
-      text: groupTitle,
+      text: hasOverview ? readTitle(overviewFile, titleCase(d.name)) : titleCase(d.name),
       collapsed: true,
-      items: buildGroup(childDir, childBase),
+      items: childItems,
     });
   }
 
@@ -67,22 +80,37 @@ function buildGroup(dir: string, base: string): DefaultTheme.SidebarItem[] {
 
 /**
  * Builds the full multi-section sidebar map keyed by top-level URL prefix,
- * e.g. `/documentation/ads-commerce/` -> [...]. One entry is produced per
- * immediate child of `docsRoot/documentation` and one for `docsRoot/docs`.
+ * e.g. `/documentation/ads-commerce` -> [...]. One entry per top-level
+ * category under `docsRoot/documentation`, plus one for `docsRoot/docs`.
  */
 export function generateSidebar(docsRoot: string): DefaultTheme.Sidebar {
   const sidebar: DefaultTheme.Sidebar = {};
 
   const documentationDir = path.join(docsRoot, "documentation");
-  for (const entry of fs.readdirSync(documentationDir, { withFileTypes: true })) {
-    if (!entry.isDirectory()) continue;
-    const base = `/documentation/${entry.name}/`;
-    sidebar[base] = buildGroup(path.join(documentationDir, entry.name), base);
+  const entries = fs.readdirSync(documentationDir, { withFileTypes: true });
+  const dirNames = new Set(entries.filter((e) => e.isDirectory()).map((e) => e.name));
+  const fileSlugs = new Set(
+    entries.filter((e) => e.isFile() && e.name.endsWith(".md")).map((e) => e.name.replace(/\.md$/, "")),
+  );
+  const slugs = new Set([...dirNames, ...fileSlugs]);
+
+  for (const slug of slugs) {
+    const base = `/documentation/${slug}/`;
+    const overviewFile = path.join(documentationDir, `${slug}.md`);
+    const hasOverview = fileSlugs.has(slug);
+    const items: DefaultTheme.SidebarItem[] = [];
+    if (hasOverview) {
+      items.push({ text: readTitle(overviewFile, "Overview"), link: `/documentation/${slug}` });
+    }
+    if (dirNames.has(slug)) {
+      items.push(...buildGroup(path.join(documentationDir, slug), base));
+    }
+    sidebar[`/documentation/${slug}`] = items;
   }
 
   const docsDir = path.join(docsRoot, "docs");
   if (fs.existsSync(docsDir)) {
-    sidebar["/docs/"] = buildGroup(docsDir, "/docs/");
+    sidebar["/docs"] = buildGroup(docsDir, "/docs/");
   }
 
   return sidebar;
@@ -93,28 +121,30 @@ export function generateNav(docsRoot: string): DefaultTheme.NavItem[] {
   const nav: DefaultTheme.NavItem[] = [{ text: "Home", link: "/" }];
 
   const documentationDir = path.join(docsRoot, "documentation");
-  const categories = fs
-    .readdirSync(documentationDir, { withFileTypes: true })
-    .filter((e) => e.isDirectory())
-    .map((e) => e.name)
-    .sort((a, b) => a.localeCompare(b));
+  const entries = fs.readdirSync(documentationDir, { withFileTypes: true });
+  const dirNames = new Set(entries.filter((e) => e.isDirectory()).map((e) => e.name));
+  const fileSlugs = new Set(
+    entries.filter((e) => e.isFile() && e.name.endsWith(".md")).map((e) => e.name.replace(/\.md$/, "")),
+  );
+  const slugs = [...new Set([...dirNames, ...fileSlugs])].sort((a, b) => a.localeCompare(b));
 
   nav.push({
     text: "Documentation",
-    items: categories.map((name) => {
-      const indexFile = path.join(documentationDir, name, "index.md");
-      const overviewFile = path.join(documentationDir, `${name}.md`);
-      const title = fs.existsSync(indexFile)
-        ? readTitle(indexFile, titleCase(name))
-        : fs.existsSync(overviewFile)
-          ? readTitle(overviewFile, titleCase(name))
-          : titleCase(name);
-      return { text: title, link: `/documentation/${name}/` };
+    items: slugs.map((slug) => {
+      const overviewFile = path.join(documentationDir, `${slug}.md`);
+      const hasOverview = fileSlugs.has(slug);
+      const title = hasOverview ? readTitle(overviewFile, titleCase(slug)) : titleCase(slug);
+      let link = `/documentation/${slug}`;
+      if (!hasOverview && dirNames.has(slug)) {
+        const items = buildGroup(path.join(documentationDir, slug), `/documentation/${slug}/`);
+        link = firstLink(items) ?? link;
+      }
+      return { text: title, link };
     }),
   });
 
   if (fs.existsSync(path.join(docsRoot, "docs"))) {
-    nav.push({ text: "Legacy Docs", link: "/docs/" });
+    nav.push({ text: "Legacy Docs", link: "/docs/graph-api" });
   }
 
   return nav;

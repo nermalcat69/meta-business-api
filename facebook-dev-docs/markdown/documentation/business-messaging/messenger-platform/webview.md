@@ -51,31 +51,27 @@ To get a list of conversations, send a `GET` request to the `/PAGE-ID/conversati
 *Formatted for readability*
 
 ```
-```
-curl -i -X GET "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/conversations  
-    ?platform=PLATFORM  
-    &access_token=PAGE-ACCESS-TOKEN"
-```
+curl -i -X GET "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/conversations  
+    ?platform=PLATFORM  
+    &access_token=PAGE-ACCESS-TOKEN"
 ```
 
 On success, your app will receive a JSON object with a list of IDs for the conversations between you and a person and the most recent time a message was sent.
 
 ```
-```
 {  
-  "data":  
-    {  
-      "id": "CONVERSATION-ID-1",  
-      "updated_time": "UNIX-TIMESTAMP"  
-    },  
-    {  
-      "id": "CONVERSATION-ID-2",  
-      "updated_time": "UNIX-TIMESTAMP"  
-    }  
-    ...  
-  ]  
+  "data":  
+    {  
+      "id": "CONVERSATION-ID-1",  
+      "updated_time": "UNIX-TIMESTAMP"  
+    },  
+    {  
+      "id": "CONVERSATION-ID-2",  
+      "updated_time": "UNIX-TIMESTAMP"  
+    }  
+    ...  
+  ]  
 }
-```
 ```
 
 ### Find a Conversation with a Specific User
@@ -87,12 +83,10 @@ To get a conversation between your Instagram Professional account or Facebook Pa
 *Formatted for readability*
 
 ```
-```
-curl -i -X GET "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/conversations  
-    ?platform=PLATFORM  
-    &user_id=INSTAGRAM-OR-PAGE-SCOPED-ID  
-    &access_token=PAGE-ACCESS-TOKEN"
-```
+curl -i -X GET "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/conversations  
+    ?platform=PLATFORM  
+    &user_id=INSTAGRAM-OR-PAGE-SCOPED-ID  
+    &access_token=PAGE-ACCESS-TOKEN"
 ```
 
 On success, your app will receive the ID for the conversation.
@@ -112,11 +106,9 @@ On success, your app will receive the ID for the conversation.
 To get a list of messages in a conversations, send a `GET` request to the `/CONVERSATION-ID` endpoint and include the `messages` field.
 
 ```
-```
-curl -i -X GET "https://graph.facebook.com/LATEST-API-VERSION/CONVERSATION-ID  
-    ?fields=messages  
-    &access_token=PAGE-ACCESS-TOKEN"
-```
+curl -i -X GET "https://graph.facebook.com/LATEST-API-VERSION/CONVERSATION-ID  
+    ?fields=messages  
+    &access_token=PAGE-ACCESS-TOKEN"
 ```
 
 On success, your app will receive a list of message IDs and the time each message was created.
@@ -148,46 +140,42 @@ On success, your app will receive a list of message IDs and the time each messag
 
 To get information about a message, such as the sender, receiver, and message content, send a `GET` request to the `/MESSAGE-ID` endpoint with the fields you are interested.
 
-The `reply_to` field is present only when a message is a reply to another message in the thread; the `is_self_reply` flag indicates if the reply is to the sender’s own message.
+The `reply_to` field is present only when a message is a reply to another message in the thread; the `is_self_reply` flag indicates if the reply is to the sender's own message.
 
 Default fields are `id` and `created_time`.
 
 **Note:** Queries to the `/CONVERSATION-ID` endpoint will return all message IDs in a conversation. However, you can only get details about the 20 most recent messages in the conversation. If you query a message that is older than the last 20, you will see [an error that the message has been deleted.](https://developers.facebook.com/documentation/business-messaging/messenger-platform/error-codes)
 
 ```
-```
-curl -i -X GET "https://graph.facebook.com/LATEST-API-VERSION/MESSAGE-ID  
-    ?fields=id,created_time,from,to,message,reply_to  
-    &access_token=PAGE-ACCESS-TOKEN"
-```
+curl -i -X GET "https://graph.facebook.com/LATEST-API-VERSION/MESSAGE-ID  
+    ?fields=id,created_time,from,to,message,reply_to  
+    &access_token=PAGE-ACCESS-TOKEN"
 ```
 
 On success, your app will receive the following JSON response. In this example a customer sent a plain text message to your Instagram Professional account.
 
 ```
-```
 {  
-  "id": "aWdGGiblWZ...",  
-  "created_time": "2022-07-12T19:11:07+0000",  
-  "to": {  
-    "data": [  
-      {  
-        "username": "INSTAGRAM-PROFESSIONAL-ACCOUNT-USERNAME",  
-        "id": "INSTAGRAM-PROFESSIONAL-ACCOUNT-ID"  
-      }  
-    ]  
-  },  
-  "from": {  
-    "username": "INSTAGRAM-USERNAME",  
-    "id": "INSTAGRAM-SCOPED-ID"  
-  },  
-  "message": "Hi Kitty!",  
-  "reply_to": {  
-    "mid":"zEspJ9wmRG9…",  
-    "is_self_reply":true  
-  }  
+  "id": "aWdGGiblWZ...",  
+  "created_time": "2022-07-12T19:11:07+0000",  
+  "to": {  
+    "data": [  
+      {  
+        "username": "INSTAGRAM-PROFESSIONAL-ACCOUNT-USERNAME",  
+        "id": "INSTAGRAM-PROFESSIONAL-ACCOUNT-ID"  
+      }  
+    ]  
+  },  
+  "from": {  
+    "username": "INSTAGRAM-USERNAME",  
+    "id": "INSTAGRAM-SCOPED-ID"  
+  },  
+  "message": "Hi Kitty!",  
+  "reply_to": {  
+    "mid":"zEspJ9wmRG9…",  
+    "is_self_reply":true  
+  }  
 }
-```
 ```
 
 ## Conversation Ownership Filtering
@@ -209,39 +197,35 @@ The Conversations API now supports the `is_owner` field, allowing your app to de
 **Sample Request:**
 
 ```
-```
-curl -i -X GET "https://graph.facebook.com/LATEST-API-VERSION/conversations?fields=messages,is_owner&access_token=PAGE-ACCESS-TOKEN"
-```
+curl -i -X GET "https://graph.facebook.com/LATEST-API-VERSION/conversations?fields=messages,is_owner&access_token=PAGE-ACCESS-TOKEN"
 ```
 
 **Sample Response:**
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "messages": {  
-        "data": [  
-          { "id": "Message ID-1", "created_time": "UNIX-TIMESTAMP" },  
-          { "id": "Message ID-2", "created_time": "UNIX-TIMESTAMP" }  
-        ]  
-      },  
-      "is_owner": true,  
-      "id": "Conversation ID-1"  
-    },  
-    {  
-      "messages": {  
-        "data": [  
-          { "id": "Message ID-3", "created_time": "UNIX-TIMESTAMP" }  
-        ]  
-      },  
-      "is_owner": false,  
-      "id": "Conversation ID-2"  
-    }  
-  ]  
+  "data": [  
+    {  
+      "messages": {  
+        "data": [  
+          { "id": "Message ID-1", "created_time": "UNIX-TIMESTAMP" },  
+          { "id": "Message ID-2", "created_time": "UNIX-TIMESTAMP" }  
+        ]  
+      },  
+      "is_owner": true,  
+      "id": "Conversation ID-1"  
+    },  
+    {  
+      "messages": {  
+        "data": [  
+          { "id": "Message ID-3", "created_time": "UNIX-TIMESTAMP" }  
+        ]  
+      },  
+      "is_owner": false,  
+      "id": "Conversation ID-2"  
+    }  
+  ]  
 }
-```
 ```
 
 ## Learn more

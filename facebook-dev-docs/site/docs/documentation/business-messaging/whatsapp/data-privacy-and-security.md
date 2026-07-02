@@ -32,20 +32,18 @@ Use the [Block Users API](https://developers.facebook.com/documentation/business
 ### Request syntax
 
 ```
-```
-curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/block_users' \  
--H 'Content-Type: application/json' \  
--H 'Authorization: Bearer <ACCESS_TOKEN>' \  
--d '  
+curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/block_users' \  
+-H 'Content-Type: application/json' \  
+-H 'Authorization: Bearer <ACCESS_TOKEN>' \  
+-d '  
 {  
-  "messaging_product": "whatsapp",  
-  "block_users": [  
-    {  
-      "user": "<WHATSAPP_USER_PHONE_NUMBER>"  
-    }  
-  ]  
+  "messaging_product": "whatsapp",  
+  "block_users": [  
+    {  
+      "user": "<WHATSAPP_USER_PHONE_NUMBER>"  
+    }  
+  ]  
 }'
-```
 ```
 
 ### Request parameters
@@ -55,39 +53,37 @@ curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_
 | `<ACCESS_TOKEN>`  *String* | **Required.**  [System token](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#system-user-access-tokens) or [business token](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#business-integration-system-user-access-tokens). | `EAAA...` |
 | `<API_VERSION>`  *String* | **Optional.**  Graph API version. | v25.0 |
 | `<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>`  *String* | **Required.**  WhatsApp business phone number ID. | `106540352242922` |
-| `<WHATSAPP_USER_PHONE_NUMBER>`  *String* | **Required.**  WhatsApp user phone number. This is the same value returned by the API as the `input` value when sending a message to a WhatsApp user. Note that a WhatsApp user’s phone number and ID may not always match. | `+16505551234` |
+| `<WHATSAPP_USER_PHONE_NUMBER>`  *String* | **Required.**  WhatsApp user phone number. This is the same value returned by the API as the `input` value when sending a message to a WhatsApp user. Note that a WhatsApp user's phone number and ID may not always match. | `+16505551234` |
 
 ### Response syntax
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "block_users": {  
-    "added_users": [  
-      {  
-        "input": "<WHATSAPP_USER_PHONE_NUMBER>",  
-        "wa_id": "<WHATSAPP_USER_ID>"  
-      }  
-    ],  
-    "failed_users": [  
-      {  
-        "input": "<WHATSAPP_USER_PHONE_NUMBER>",  
-        "wa_id": "<WHATSAPP_USER_ID>",  
-        "errors": [  
-          {  
-            "message": "<MESSAGE>",  
-            "code": "<CODE>",  
-            "error_data": {  
-              "details": "<DETAILS>"  
-            }  
-          }  
-        ]  
-      }  
-    ]  
-  }  
+  "messaging_product": "whatsapp",  
+  "block_users": {  
+    "added_users": [  
+      {  
+        "input": "<WHATSAPP_USER_PHONE_NUMBER>",  
+        "wa_id": "<WHATSAPP_USER_ID>"  
+      }  
+    ],  
+    "failed_users": [  
+      {  
+        "input": "<WHATSAPP_USER_PHONE_NUMBER>",  
+        "wa_id": "<WHATSAPP_USER_ID>",  
+        "errors": [  
+          {  
+            "message": "<MESSAGE>",  
+            "code": "<CODE>",  
+            "error_data": {  
+              "details": "<DETAILS>"  
+            }  
+          }  
+        ]  
+      }  
+    ]  
+  }  
 }
-```
 ```
 
 ### Response parameters
@@ -97,8 +93,8 @@ curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_
 | `<CODE>`  *Integer* | Error code. See [Error codes](https://developers.facebook.com/documentation/business-messaging/whatsapp/data-privacy-and-security#error-codes) below. Only present in `failed_users`. | `131047` |
 | `<DETAILS>`  *String* | Additional detail about the error. Only present in `failed_users`. | `User has not messaged in the last 24 hours` |
 | `<MESSAGE>`  *String* | Error message describing why the block failed. Only present in `failed_users`. | `Re-engagement required` |
-| `<WHATSAPP_USER_ID>`  *String* | WhatsApp user ID. Note that a WhatsApp user’s ID and phone number may not always match.  Returned as `wa_id`. May not be present in `failed_users` if the number is invalid. | `16505551234` |
-| `<WHATSAPP_USER_PHONE_NUMBER>`  *String* | WhatsApp user phone number. This is the same value returned by the API as the `input` value when sending a message to a WhatsApp user. Note that a WhatsApp user’s phone number and ID may not always match.  Returned as `input` in both `added_users` and `failed_users` arrays. | `+16505551234` |
+| `<WHATSAPP_USER_ID>`  *String* | WhatsApp user ID. Note that a WhatsApp user's ID and phone number may not always match.  Returned as `wa_id`. May not be present in `failed_users` if the number is invalid. | `16505551234` |
+| `<WHATSAPP_USER_PHONE_NUMBER>`  *String* | WhatsApp user phone number. This is the same value returned by the API as the `input` value when sending a message to a WhatsApp user. Note that a WhatsApp user's phone number and ID may not always match.  Returned as `input` in both `added_users` and `failed_users` arrays. | `+16505551234` |
 
 ### Example request
 
@@ -127,65 +123,61 @@ curl 'https://graph.facebook.com/v25.0/106540352242922/block_users' \
 Successful response when all users are blocked:
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "block_users": {  
-    "added_users": [  
-      {  
-        "input": "+16505551234",  
-        "wa_id": "16505551234"  
-      },  
-      {  
-        "input": "+14155559876",  
-        "wa_id": "14155559876"  
-      }  
-    ]  
-  }  
+  "messaging_product": "whatsapp",  
+  "block_users": {  
+    "added_users": [  
+      {  
+        "input": "+16505551234",  
+        "wa_id": "16505551234"  
+      },  
+      {  
+        "input": "+14155559876",  
+        "wa_id": "14155559876"  
+      }  
+    ]  
+  }  
 }
-```
 ```
 
 Mixed success/failure response when some users cannot be blocked:
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "block_users": {  
-    "added_users": [  
-      {  
-        "input": "+16505551234",  
-        "wa_id": "16505551234"  
-      }  
-    ],  
-    "failed_users": [  
-      {  
-        "input": "+14155559876",  
-        "wa_id": "14155559876",  
-        "errors": [  
-          {  
-            "message": "Re-engagement required",  
-            "code": 131047,  
-            "error_data": {  
-              "details": "User has not messaged in the last 24 hours"  
-            }  
-          }  
-        ]  
-      }  
-    ]  
-  },  
-  "error": {  
-    "message": "(#139100) Failed to block/unblock users",  
-    "type": "OAuthException",  
-    "code": 139100,  
-    "error_data": {  
-      "details": "Failed to block some users, see the block_users response list for details"  
-    },  
-    "fbtrace_id": "<FBTRACE_ID>"  
-  }  
+  "messaging_product": "whatsapp",  
+  "block_users": {  
+    "added_users": [  
+      {  
+        "input": "+16505551234",  
+        "wa_id": "16505551234"  
+      }  
+    ],  
+    "failed_users": [  
+      {  
+        "input": "+14155559876",  
+        "wa_id": "14155559876",  
+        "errors": [  
+          {  
+            "message": "Re-engagement required",  
+            "code": 131047,  
+            "error_data": {  
+              "details": "User has not messaged in the last 24 hours"  
+            }  
+          }  
+        ]  
+      }  
+    ]  
+  },  
+  "error": {  
+    "message": "(#139100) Failed to block/unblock users",  
+    "type": "OAuthException",  
+    "code": 139100,  
+    "error_data": {  
+      "details": "Failed to block some users, see the block_users response list for details"  
+    },  
+    "fbtrace_id": "<FBTRACE_ID>"  
+  }  
 }
-```
 ```
 
 ## Unblock a user
@@ -195,20 +187,18 @@ Use the [Block Users API](https://developers.facebook.com/documentation/business
 ### Request syntax
 
 ```
-```
-curl -X DELETE 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/block_users' \  
--H 'Content-Type: application/json' \  
--H 'Authorization: Bearer <ACCESS_TOKEN>' \  
--d '  
+curl -X DELETE 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/block_users' \  
+-H 'Content-Type: application/json' \  
+-H 'Authorization: Bearer <ACCESS_TOKEN>' \  
+-d '  
 {  
-  "messaging_product": "whatsapp",  
-  "block_users": [  
-    {  
-      "user": "<WHATSAPP_USER_PHONE_NUMBER>"  
-    }  
-  ]  
+  "messaging_product": "whatsapp",  
+  "block_users": [  
+    {  
+      "user": "<WHATSAPP_USER_PHONE_NUMBER>"  
+    }  
+  ]  
 }'
-```
 ```
 
 ### Request parameters
@@ -218,47 +208,45 @@ curl -X DELETE 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_P
 | `<ACCESS_TOKEN>`  *String* | **Required.**  [System token](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#system-user-access-tokens) or [business token](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#business-integration-system-user-access-tokens). | `EAAA...` |
 | `<API_VERSION>`  *String* | **Optional.**  Graph API version. | v25.0 |
 | `<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>`  *String* | **Required.**  WhatsApp business phone number ID. | `106540352242922` |
-| `<WHATSAPP_USER_PHONE_NUMBER>`  *String* | **Required.**  WhatsApp user phone number. This is the same value returned by the API as the `input` value when sending a message to a WhatsApp user. Note that a WhatsApp user’s phone number and ID may not always match. | `+16505551234` |
+| `<WHATSAPP_USER_PHONE_NUMBER>`  *String* | **Required.**  WhatsApp user phone number. This is the same value returned by the API as the `input` value when sending a message to a WhatsApp user. Note that a WhatsApp user's phone number and ID may not always match. | `+16505551234` |
 
 ### Response syntax
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "block_users": {  
-    "removed_users": [  
-      {  
-        "input": "<WHATSAPP_USER_PHONE_NUMBER>",  
-        "wa_id": "<WHATSAPP_USER_ID>"  
-      }  
-    ],  
-    "failed_users": [  
-      {  
-        "input": "<WHATSAPP_USER_PHONE_NUMBER>",  
-        "wa_id": "<WHATSAPP_USER_ID>",  
-        "errors": [  
-          {  
-            "message": "<MESSAGE>",  
-            "code": "<CODE>",  
-            "error_data": {  
-              "details": "<DETAILS>"  
-            }  
-          }  
-        ]  
-      }  
-    ]  
-  }  
+  "messaging_product": "whatsapp",  
+  "block_users": {  
+    "removed_users": [  
+      {  
+        "input": "<WHATSAPP_USER_PHONE_NUMBER>",  
+        "wa_id": "<WHATSAPP_USER_ID>"  
+      }  
+    ],  
+    "failed_users": [  
+      {  
+        "input": "<WHATSAPP_USER_PHONE_NUMBER>",  
+        "wa_id": "<WHATSAPP_USER_ID>",  
+        "errors": [  
+          {  
+            "message": "<MESSAGE>",  
+            "code": "<CODE>",  
+            "error_data": {  
+              "details": "<DETAILS>"  
+            }  
+          }  
+        ]  
+      }  
+    ]  
+  }  
 }
-```
 ```
 
 ### Response parameters
 
 | Field | Description | Example Value |
 | --- | --- | --- |
-| `<WHATSAPP_USER_PHONE_NUMBER>`  *String* | WhatsApp user phone number. This is the same value returned by the API as the `input` value when sending a message to a WhatsApp user. Note that a WhatsApp user’s phone number and ID may not always match.  Returned as `input` in both `removed_users` and `failed_users` arrays. | `+16505551234` |
-| `<WHATSAPP_USER_ID>`  *String* | WhatsApp user ID. Note that a WhatsApp user’s ID and phone number may not always match.  Returned as `wa_id`. May not be present in `failed_users` if the number is invalid. | `16505551234` |
+| `<WHATSAPP_USER_PHONE_NUMBER>`  *String* | WhatsApp user phone number. This is the same value returned by the API as the `input` value when sending a message to a WhatsApp user. Note that a WhatsApp user's phone number and ID may not always match.  Returned as `input` in both `removed_users` and `failed_users` arrays. | `+16505551234` |
+| `<WHATSAPP_USER_ID>`  *String* | WhatsApp user ID. Note that a WhatsApp user's ID and phone number may not always match.  Returned as `wa_id`. May not be present in `failed_users` if the number is invalid. | `16505551234` |
 | `<MESSAGE>`  *String* | Error message describing why the unblock failed. Only present in `failed_users`. | `Re-engagement required` |
 | `<CODE>`  *Integer* | Error code. See [Error codes](https://developers.facebook.com/documentation/business-messaging/whatsapp/data-privacy-and-security#error-codes) below. Only present in `failed_users`. | `131047` |
 | `<DETAILS>`  *String* | Additional detail about the error. Only present in `failed_users`. | `User has not messaged in the last 24 hours` |
@@ -290,65 +278,61 @@ curl -X DELETE 'https://graph.facebook.com/v25.0/106540352242922/block_users' \
 Successful response when all users are unblocked:
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "block_users": {  
-    "removed_users": [  
-      {  
-        "input": "+16505551234",  
-        "wa_id": "16505551234"  
-      },  
-      {  
-        "input": "+14155559876",  
-        "wa_id": "14155559876"  
-      }  
-    ]  
-  }  
+  "messaging_product": "whatsapp",  
+  "block_users": {  
+    "removed_users": [  
+      {  
+        "input": "+16505551234",  
+        "wa_id": "16505551234"  
+      },  
+      {  
+        "input": "+14155559876",  
+        "wa_id": "14155559876"  
+      }  
+    ]  
+  }  
 }
-```
 ```
 
 Mixed success/failure response when some users cannot be unblocked:
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "block_users": {  
-    "removed_users": [  
-      {  
-        "input": "+16505551234",  
-        "wa_id": "16505551234"  
-      }  
-    ],  
-    "failed_users": [  
-      {  
-        "input": "+14155559876",  
-        "wa_id": "14155559876",  
-        "errors": [  
-          {  
-            "message": "Re-engagement required",  
-            "code": 131047,  
-            "error_data": {  
-              "details": "User has not messaged in the last 24 hours"  
-            }  
-          }  
-        ]  
-      }  
-    ]  
-  },  
-  "error": {  
-    "message": "(#139100) Failed to block/unblock users",  
-    "type": "OAuthException",  
-    "code": 139100,  
-    "error_data": {  
-      "details": "Failed to unblock some users, see the block_users response list for details"  
-    },  
-    "fbtrace_id": "<FBTRACE_ID>"  
-  }  
+  "messaging_product": "whatsapp",  
+  "block_users": {  
+    "removed_users": [  
+      {  
+        "input": "+16505551234",  
+        "wa_id": "16505551234"  
+      }  
+    ],  
+    "failed_users": [  
+      {  
+        "input": "+14155559876",  
+        "wa_id": "14155559876",  
+        "errors": [  
+          {  
+            "message": "Re-engagement required",  
+            "code": 131047,  
+            "error_data": {  
+              "details": "User has not messaged in the last 24 hours"  
+            }  
+          }  
+        ]  
+      }  
+    ]  
+  },  
+  "error": {  
+    "message": "(#139100) Failed to block/unblock users",  
+    "type": "OAuthException",  
+    "code": 139100,  
+    "error_data": {  
+      "details": "Failed to unblock some users, see the block_users response list for details"  
+    },  
+    "fbtrace_id": "<FBTRACE_ID>"  
+  }  
 }
-```
 ```
 
 ## Get blocked users
@@ -358,10 +342,8 @@ Use the [Block Users API](https://developers.facebook.com/documentation/business
 ### Request syntax
 
 ```
-```
-curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/block_users?limit=<LIMIT>&after=<AFTER_CURSOR>&before=<BEFORE_CURSOR>' \  
--H 'Authorization: Bearer <ACCESS_TOKEN>'
-```
+curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/block_users?limit=<LIMIT>&after=<AFTER_CURSOR>&before=<BEFORE_CURSOR>' \  
+-H 'Authorization: Bearer <ACCESS_TOKEN>'
 ```
 
 ### Request parameters
@@ -378,29 +360,27 @@ curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_
 ### Response syntax
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "messaging_product": "whatsapp",  
-      "wa_id": "<WHATSAPP_USER_ID>"  
-    }  
-  ],  
-  "paging": {  
-    "cursors": {  
-      "after": "<AFTER_CURSOR>",  
-      "before": "<BEFORE_CURSOR>"  
-    }  
-  }  
+  "data": [  
+    {  
+      "messaging_product": "whatsapp",  
+      "wa_id": "<WHATSAPP_USER_ID>"  
+    }  
+  ],  
+  "paging": {  
+    "cursors": {  
+      "after": "<AFTER_CURSOR>",  
+      "before": "<BEFORE_CURSOR>"  
+    }  
+  }  
 }
-```
 ```
 
 ### Response parameters
 
 | Field | Description | Example Value |
 | --- | --- | --- |
-| `<WHATSAPP_USER_ID>`  *String* | WhatsApp user ID. Note that a WhatsApp user’s ID and phone number may not always match.  Returned as `wa_id` in each object in the `data` array. | `16505551234` |
+| `<WHATSAPP_USER_ID>`  *String* | WhatsApp user ID. Note that a WhatsApp user's ID and phone number may not always match.  Returned as `wa_id` in each object in the `data` array. | `16505551234` |
 | `<AFTER_CURSOR>`  *String* | Cursor for forward pagination. Learn more about [paginated results in Graph API](https://developers.facebook.com/docs/graph-api/results). | `eyJvZAmZAzZAXQ...` |
 | `<BEFORE_CURSOR>`  *String* | Cursor for backward pagination. Learn more about [paginated results in Graph API](https://developers.facebook.com/docs/graph-api/results). | `eyJvZAmZAzZAXQ...` |
 
@@ -416,26 +396,24 @@ curl 'https://graph.facebook.com/v25.0/106540352242922/block_users?limit=10' \
 ### Example response
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "messaging_product": "whatsapp",  
-      "wa_id": "16505551234"  
-    },  
-    {  
-      "messaging_product": "whatsapp",  
-      "wa_id": "14155559876"  
-    }  
-  ],  
-  "paging": {  
-    "cursors": {  
-      "after": "eyJvZAmZAzZAXQiOjAsInZAlcnNpb25JZACI6IjE3Mzc2Nzk2ODgzODM1ODQifQZDZD",  
-      "before": "eyJvZAmZAzZAXQiOjAsInZAlcnNpb25JZACI6IjE3Mzc2Nzk2ODgzODM1ODQifQZDZD"  
-    }  
-  }  
+  "data": [  
+    {  
+      "messaging_product": "whatsapp",  
+      "wa_id": "16505551234"  
+    },  
+    {  
+      "messaging_product": "whatsapp",  
+      "wa_id": "14155559876"  
+    }  
+  ],  
+  "paging": {  
+    "cursors": {  
+      "after": "eyJvZAmZAzZAXQiOjAsInZAlcnNpb25JZACI6IjE3Mzc2Nzk2ODgzODM1ODQifQZDZD",  
+      "before": "eyJvZAmZAzZAXQiOjAsInZAlcnNpb25JZACI6IjE3Mzc2Nzk2ODgzODM1ODQifQZDZD"  
+    }  
+  }  
 }
-```
 ```
 
 ## Error codes

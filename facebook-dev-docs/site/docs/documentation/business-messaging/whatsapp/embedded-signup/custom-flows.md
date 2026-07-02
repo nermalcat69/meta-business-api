@@ -65,8 +65,8 @@ This screen provides a summary of the permissions the business customer grants t
 
 ### Success screen
 
-This screen indicates that Meta successfully created and associated all of the business customer’s assets (business portfolio, WhatsApp Business account (WABA), phone number display profile, and business phone number).
+This screen indicates that Meta successfully created and associated all of the business customer's assets (business portfolio, WhatsApp Business account (WABA), phone number display profile, and business phone number).
 
-When the business customer clicks **Finish**, Embedded Signup triggers a message event containing the business customer’s WABA ID and business phone number ID, which you must then use to onboard the business customer to the platform.
+When the business customer clicks **Finish**, Embedded Signup triggers a message event containing the business customer's WABA ID and business phone number ID, which you must then use to onboard the business customer to the platform.
 
 ![Success screen confirming the business customer account is connected, with a Finish button to complete Embedded Signup](https://scontent.fdel1-2.fna.fbcdn.net/v/t39.2365-6/532564823_655188414258906_330922092450163709_n.png?_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=jCm9kDT4D_gQ7kNvwFh252O&_nc_oc=AdqjVUrGvm0jQ87VGGHWdP2as8lpuI8e0vGIdeloEqPnaPUBQ0YYRc_ZcIOkrJPKGXFgntOErfevKDKRANPzkfUy&_nc_zt=14&_nc_ht=scontent.fdel1-2.fna&_nc_gid=Ne0mfExgUF7KeuC4D-S3iA&_nc_ss=7b2a8&oh=00_AQAavOQCAjqojNyrO3sICq6ETbCowf9PoWk8N5EUDbUkvw&oe=6A60626C)

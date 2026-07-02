@@ -17,9 +17,9 @@ These are some terms you may see in the managed partner ads documentation.
 
 | Term | Description |
 | --- | --- |
-| Marketplace or Retailer | Platforms that bring consumers and sellers together exclusively online. They often stock and sell products from different brands. **The [API documentation](https://developers.facebook.com/documentation/ads-commerce/marketing-api/collaborative-ads/managed-partner-ads/api-guide) sometimes calls this “parent”**. |
-| Seller | Businesses that sell their products through marketplaces, retailers, or both. **The [API documentation](https://developers.facebook.com/documentation/ads-commerce/marketing-api/collaborative-ads/managed-partner-ads/api-guide) sometimes calls this “child”**. |
-| Managed partner | An onboarded seller participating in a managed partner ads partnership with a marketplace or retailer. **The [API documentation](https://developers.facebook.com/documentation/ads-commerce/marketing-api/collaborative-ads/managed-partner-ads/api-guide) sometimes calls this “child”**. |
+| Marketplace or Retailer | Platforms that bring consumers and sellers together exclusively online. They often stock and sell products from different brands. **The [API documentation](https://developers.facebook.com/documentation/ads-commerce/marketing-api/collaborative-ads/managed-partner-ads/api-guide) sometimes calls this "parent"**. |
+| Seller | Businesses that sell their products through marketplaces, retailers, or both. **The [API documentation](https://developers.facebook.com/documentation/ads-commerce/marketing-api/collaborative-ads/managed-partner-ads/api-guide) sometimes calls this "child"**. |
+| Managed partner | An onboarded seller participating in a managed partner ads partnership with a marketplace or retailer. **The [API documentation](https://developers.facebook.com/documentation/ads-commerce/marketing-api/collaborative-ads/managed-partner-ads/api-guide) sometimes calls this "child"**. |
 
 ## Seller information
 

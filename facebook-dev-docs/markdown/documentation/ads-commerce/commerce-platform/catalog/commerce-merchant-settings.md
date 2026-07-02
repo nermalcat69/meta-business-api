@@ -37,31 +37,27 @@ Information about `fb_sales_channel` and `ig_sales_channel` such as status and `
 **Sample Request**
 
 ```
-```
-curl -G \  
--d "access_token=<ACCESS_TOKEN>" \  
+curl -G \  
+-d "access_token=<ACCESS_TOKEN>" \  
 https://graph.facebook.com/<API_VERSION>/<SHOP_ID>
-```
 ```
 
 **Sample Response**
 
 ```
-```
 {  
-"fb_sales_channel": {  
-"status": "<ENABLED/DISABLED/STAGING>",  
-"fb_page": {  
-"name": "<example_fb_page>"  
+"fb_sales_channel": {  
+"status": "<ENABLED/DISABLED/STAGING>",  
+"fb_page": {  
+"name": "<example_fb_page>"  
 }  
 },  
-"ig_sales_channel": {  
-"status": "<ENABLED/DISABLED/STAGING>",  
-"ig_user": {  
-"username": "<example_ig_user>"  
+"ig_sales_channel": {  
+"status": "<ENABLED/DISABLED/STAGING>",  
+"ig_user": {  
+"username": "<example_ig_user>"  
 }  
 },  
-"id": "<shop_id>"  
+"id": "<shop_id>"  
 }
-```
 ```

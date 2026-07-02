@@ -38,7 +38,7 @@ Omnichannel ads support many features of Meta ads, including:
 
 * [Advantage+ Catalog Ads⁠](https://www.facebook.com/business/help/397103717129942?id=1913105122334058): automatically show people your most relevant products based on their interests, intent, and actions.
   * Omnichannel ads support Advantage+ Catalog ads at the campaign level. To opt-in, the field `product_catalog_id` is required in the `promoted_object` parameter in omnichannel ad campaign creation.
-  * Besides e-commerce catalog, store-based local inventory (SBLI) catalog will also be available through the same setup flow. It will efficiently deliver relevant products available at a person’s nearby store.
+  * Besides e-commerce catalog, store-based local inventory (SBLI) catalog will also be available through the same setup flow. It will efficiently deliver relevant products available at a person's nearby store.
 * [Advantage+ Shopping Campaigns⁠](https://www.facebook.com/business/help/1362234537597370): help you reach valuable audiences with less set up time and greater efficiency.
   * Omnichannel ads support ASC campaigns.
 * [Advantage+ Creative⁠](https://www.facebook.com/business/help/297506218282224?id=649869995454285): Optimize your images and videos to versions your audience is more likely to interact with.
@@ -120,7 +120,7 @@ To create a new omnichannel ad set, make a `POST` request to the `/adsets` endpo
   * For an omnichannel ad set, `promoted_object` should have an `omnichannel_object` with Pixel and offline objects. PURCHASE is the only custom event type supported for omnichannel ad sets. Please review the example below.
     * If you are using a Meta Pixel to track website events and a separate dataset to track offline events, please send both Pixel ID and offline dataset ID (see example 1 below).
     * If you are using a single dataset to manage both your website and offline events, please use that dataset ID in both fields. (see [example 2 below](https://developers.facebook.com/documentation/ads-commerce/marketing-api/creative/generative-ai-features#example-2)).
-  * If you are creating **Advantage+ catalog ads** at ad campaign level, you’ll also need to add `product_set_id` with the `variation` field set to PRODUCT\_SET\_AND\_IN\_STORE. See the [example below](https://developers.facebook.com/documentation/ads-commerce/marketing-api/creative/generative-ai-features#adv-plus-eg).
+  * If you are creating **Advantage+ catalog ads** at ad campaign level, you'll also need to add `product_set_id` with the `variation` field set to PRODUCT\_SET\_AND\_IN\_STORE. See the [example below](https://developers.facebook.com/documentation/ads-commerce/marketing-api/creative/generative-ai-features#adv-plus-eg).
     * You can also create a **website, app, and in-store** ad with Advantage+ catalog. You will need to add a `product_set_id`, a `pixel_id` that has an associated offline conversion dataset, an app ID, and a Pixel ID. You will also need to set the `variation` to PRODUCT\_SET\_WEBSITE\_APP\_AND\_INSTORE. You do not need an `omnichannel_object`. See the [example below](https://developers.facebook.com/documentation/ads-commerce/marketing-api/creative/generative-ai-features#web-app-instore).
 * `targeting`: The targeting spec for the ad set.
 * `optimization_goal`: OFFSITE\_CONVERSIONS, which will optimize for people more likely to make a conversion in the site and store
@@ -276,7 +276,7 @@ The following error codes may be returned when creating a campaign:
 | `2446432` | Omnichannel ads only support the OUTCOME\_SALES objective. |
 | `3858449` | Omnichannel ads are only available for eligible ad account IDs. Use an eligible ad account ID or contact your Meta representative for more info. |
 | `3858450` | Ad set needs a valid Meta Pixel ID for omnichannel ads. Use a valid ID or create a Pixel in Meta Events Manager. |
-| `3858451` | Omnichannel ads ad sets need a valid custom event type. The only valid event type is “PURCHASE”. |
+| `3858451` | Omnichannel ads ad sets need a valid custom event type. The only valid event type is "PURCHASE". |
 | `3858452` | Omnichannel ads ad sets need a valid offline dataset ID. Use a valid offline dataset or set one up in Events Manager. |
 | `3858453` | Omnichannel ads ad sets only support an attribution spec of 7-day click-through and 1-day view-through. |
 | `3858454` | Omnichannel ads ad sets only support the `offsite_conversions` optimization goal. |
@@ -335,9 +335,9 @@ https://graph.facebook.com/v20.0/act_<AD_ACCOUNT_ID>/ads \
 "template_data":{
 "call_to_action":{"type":"SHOP_NOW"},
 "link":"<LINK>",
-"name":"Headline {{product.price}}",
-"description": "Description {{product.description}}",
-"message": "Test {{product.name | titleize}}",
+"name":"Headline {​{product.price}​}",
+"description": "Description {​{product.description}​}",
+"message": "Test {​{product.name | titleize}​}",
 }
 }' \
 -F 'product_set_id="<PRODUCT_SET_ID>"' \
@@ -356,9 +356,9 @@ https://graph.facebook.com/v20.0/act_<AD_ACCOUNT_ID>/ads \
 "template_data":{
 "call_to_action":{"type":"SHOP_NOW"},
 "link":"<LINK>",
-"name":"Headline {{product.price}}",
-"description": "Description {{product.description}}",
-"message": "Test {{product.name | titleize}}",
+"name":"Headline {​{product.price}​}",
+"description": "Description {​{product.description}​}",
+"message": "Test {​{product.name | titleize}​}",
 }
 }' \
 -F 'product_set_id="<PRODUCT_SET_ID_FROM_SBLI_CATALOG>"' \
@@ -410,8 +410,8 @@ The following error codes may be returned when creating a campaign:
 
 | Subcode | Description |
 | --- | --- |
-| `3858455` | Omnichannel ads don’t support flexible formats for ad creative. Instead use single image or video, collection, or carousel formats. |
-| `3858456` | Omnichannel ads don’t support using ad creative from an existing post or creative hub mockup. |
+| `3858455` | Omnichannel ads don't support flexible formats for ad creative. Instead use single image or video, collection, or carousel formats. |
+| `3858456` | Omnichannel ads don't support using ad creative from an existing post or creative hub mockup. |
 
 ## Other resources
 

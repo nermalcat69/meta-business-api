@@ -18,27 +18,25 @@ Subscribe to the `calls` webhook field to receive these events. For business-ini
 This webhook notifies you in near real-time when a call is initiated. For consumer-initiated calls, respond by calling `/{page-id}/calls` with `action=accept` to establish the WebRTC connection.
 
 ```
-```
 {  
-  "object": "page",  
-  "entry": [  
-    {  
-      "id": "{page-id}",  
-      "time": 1671644824,  
-      "calls": [  
-        {  
-          "id": "c_M5YPhGE5jm0L_PMQdScLlYJlR7tU_f0rgXiTQ",  
-          "to": "106378625516323",  
-          "from": "5275811702471834",  
-          "event": "connect",  
-          "timestamp": 1671644824,  
-          "call_direction": "[business_initiated|user_initiated]"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "page",  
+  "entry": [  
+    {  
+      "id": "{page-id}",  
+      "time": 1671644824,  
+      "calls": [  
+        {  
+          "id": "c_M5YPhGE5jm0L_PMQdScLlYJlR7tU_f0rgXiTQ",  
+          "to": "106378625516323",  
+          "from": "5275811702471834",  
+          "event": "connect",  
+          "timestamp": 1671644824,  
+          "call_direction": "[business_initiated|user_initiated]"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 | Property | Description |
@@ -47,7 +45,7 @@ This webhook notifies you in near real-time when a call is initiated. For consum
 | `to` *string* | Callee of the call (Page ID) |
 | `from` *string* | Caller of the call (PSID) |
 | `event` *string* | `connect` or `terminate` |
-| `timestamp` *Unix timestamp* | Start time of the call from the caller’s perspective |
+| `timestamp` *Unix timestamp* | Start time of the call from the caller's perspective |
 | `call_direction` *string* | `business_initiated` or `user_initiated` |
 
 ## Call status
@@ -57,26 +55,24 @@ This webhook notifies you in near real-time when a call is initiated. For consum
 This webhook notifies you when a business-initiated call begins ringing or is accepted by the consumer.
 
 ```
-```
 {  
-  "object": "page",  
-  "entry": [  
-    {  
-      "id": "{page-id}",  
-      "time": 1671644824,  
-      "calls": [  
-        {  
-          "id": "c_M5YPhGE5jm0L_PMQdScLlYJlR7tU_f0rgXiTQ",  
-          "event": "call_status",  
-          "timestamp": 1671644824,  
-          "recipient_id": "{psid}",  
-          "call_status": "[ringing | accepted]"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "page",  
+  "entry": [  
+    {  
+      "id": "{page-id}",  
+      "time": 1671644824,  
+      "calls": [  
+        {  
+          "id": "c_M5YPhGE5jm0L_PMQdScLlYJlR7tU_f0rgXiTQ",  
+          "event": "call_status",  
+          "timestamp": 1671644824,  
+          "recipient_id": "{psid}",  
+          "call_status": "[ringing | accepted]"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 | Property | Description |
@@ -84,7 +80,7 @@ This webhook notifies you when a business-initiated call begins ringing or is ac
 | `id` *string* | Unique ID for the call |
 | `event` *string* | `call_status` |
 | `recipient_id` *string* | PSID of the consumer |
-| `call_status` *string* | * `ringing`: The outgoing call is ringing the consumer’s device * `accepted`: The consumer accepted the call |
+| `call_status` *string* | * `ringing`: The outgoing call is ringing the consumer's device * `accepted`: The consumer accepted the call |
 
 ## Media update
 
@@ -98,31 +94,29 @@ This webhook notifies you when a consumer-side media event occurs, providing new
 When you receive this webhook, generate an SDP answer from the offer and apply it to your local peer connection to establish or update the WebRTC connection.
 
 ```
-```
 {  
-  "object": "page",  
-  "entry": [  
-    {  
-      "id": "{page-id}",  
-      "time": 1671644824,  
-      "calls": [  
-        {  
-          "id": "c_M5YPhGE5jm0L_PMQdScLlYJlR7tU_f0rgXiTQ",  
-          "event": "media_update",  
-          "timestamp": 1671644824,  
-          "session": {  
-              "version": 1,  
-              "sdp_renegotiation": {  
-                  "sdp_type": "offer",  
-                  "sdp": "<<RFC 4566 SDP>>"  
-              }  
-          }  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "page",  
+  "entry": [  
+    {  
+      "id": "{page-id}",  
+      "time": 1671644824,  
+      "calls": [  
+        {  
+          "id": "c_M5YPhGE5jm0L_PMQdScLlYJlR7tU_f0rgXiTQ",  
+          "event": "media_update",  
+          "timestamp": 1671644824,  
+          "session": {  
+              "version": 1,  
+              "sdp_renegotiation": {  
+                  "sdp_type": "offer",  
+                  "sdp": "<<RFC 4566 SDP>>"  
+              }  
+          }  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 | Property | Description |
@@ -142,28 +136,26 @@ This webhook notifies you when the call ends for any reason. This occurs when:
 * Your app calls `/{page-id}/calls` with `action=reject` (consumer-initiated calls only)
 
 ```
-```
 {  
-  "object": "page",  
-  "entry": [  
-    {  
-      "id": "{page-id}",  
-      "time": 1671644824,  
-      "calls": [  
-        {  
-          "id": "c_M5YPhGE5jm0L_PMQdScLlYJlR7tU_f0rgXiTQ",  
-          "event": "terminate",  
-          "timestamp": 1671644824,  
-          "status" : "[Failed | Completed]",  
-          "start_time" : 1671644824,  
-          "end_time" : 1671644944,  
-          "duration" : 120  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "page",  
+  "entry": [  
+    {  
+      "id": "{page-id}",  
+      "time": 1671644824,  
+      "calls": [  
+        {  
+          "id": "c_M5YPhGE5jm0L_PMQdScLlYJlR7tU_f0rgXiTQ",  
+          "event": "terminate",  
+          "timestamp": 1671644824,  
+          "status" : "[Failed | Completed]",  
+          "start_time" : 1671644824,  
+          "end_time" : 1671644944,  
+          "duration" : 120  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 | Property | Description |

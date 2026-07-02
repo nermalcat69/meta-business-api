@@ -63,7 +63,7 @@ Other requirements for Shops ads:
 
 * Shops ads supports the following conversion events (`CUSTOM_EVENT_TYPE`) in the product set (for catalog-based campaigns) or in the Meta Pixel (for pixel-based campaigns): `ADD_TO_WISHLIST`, `ADD_TO_CART`, `INITIATE_CHECKOUT`, `PURCHASE`, and `VIEW_CONTENT`.
 * Shops ads supports two values for `optimization_goal`: `OFFSITE_CONVERSIONS` (optimize for offsite conversions) and `VALUE` (optimize for the maximum total purchase value within the attribution window).
-* For Shops ads to be delivered to the shop, targeting must include audiences in countries listed in the shop’s `offsite_iab_checkout_enabled_countries`. Check this field for each shop and target those countries in your ad set.
+* For Shops ads to be delivered to the shop, targeting must include audiences in countries listed in the shop's `offsite_iab_checkout_enabled_countries`. Check this field for each shop and target those countries in your ad set.
 * For Shops ads to be delivered to the shop, the placement must include at least one platform with offsite checkout support (currently, Facebook and Instagram).
 
 Example of creating a catalog-based Shops ads ad set that is billed on `IMPRESSIONS`:
@@ -92,7 +92,7 @@ curl \
   -F 'billing_event=IMPRESSIONS' \
   -F 'daily_budget=15000' \
   -F 'campaign_id=<CAMPAIGN_ID>' \
-  -F 'targeting={"geo_locations": {"countries":["US"]}}' \
+  -F 'targeting={"geo_locations": {"countries":["US"]}​}' \
   -F 'destination_type=WEBSITE' \
   -F 'promoted_object={"pixel_id":"<PIXEL_ID>","custom_event_type": "PURCHASE"}' \
   -F 'status=PAUSED' \
@@ -137,43 +137,37 @@ Set the following fields on the creative:
 Example `onsite_destinations` set to a shop storefront page:
 
 ```
-```
 {  
-  "onsite_destinations": [  
-    {  
-      "storefront_shop_id": "<SHOP_STOREFRONT_ID>"  
-    }  
-  ]  
+  "onsite_destinations": [  
+    {  
+      "storefront_shop_id": "<SHOP_STOREFRONT_ID>"  
+    }  
+  ]  
 }
-```
 ```
 
 Example `onsite_destinations` set to a product set:
 
 ```
-```
 {  
-  "onsite_destinations": [  
-    {  
-      "shop_collection_product_set_id": "<PRODUCT_SET_ID>"  
-    }  
-  ]  
+  "onsite_destinations": [  
+    {  
+      "shop_collection_product_set_id": "<PRODUCT_SET_ID>"  
+    }  
+  ]  
 }
-```
 ```
 
 Example `onsite_destinations` set to a specific product:
 
 ```
-```
 {  
-  "onsite_destinations": [  
-    {  
-      "details_page_product_id": "<PRODUCT_ID>"  
-    }  
-  ]  
+  "onsite_destinations": [  
+    {  
+      "details_page_product_id": "<PRODUCT_ID>"  
+    }  
+  ]  
 }
-```
 ```
 
 Example of a creative for an image ad:
@@ -233,7 +227,7 @@ curl \
     "optimization_type":"FORMAT_AUTOMATION",
     "ad_formats": ["CAROUSEL", "COLLECTION"],
     "images": [{"hash": "<CUSTOMIZED_IMAGE_HASH>"}],
-    "descriptions": [{"text": "{{product.description}}"}, {"text": "From {{product.current_price}}"}]
+    "descriptions": [{"text": "{​{product.description}​}"}, {"text": "From {​{product.current_price}​}"}]
     }' \
   -F 'object_story_spec={
     "template_data": {
@@ -242,7 +236,7 @@ curl \
           },
       "link": "<OFFSITE_LANDING_URL>",
       "multi_share_end_card": false,
-      "name": "{{product.name}}"
+      "name": "{​{product.name}​}"
     },
     "page_id": "<PAGE_ID>",
     "instagram_user_id" : "<IG_USER_ID>"
@@ -289,7 +283,7 @@ curl \
   -F 'billing_event=IMPRESSIONS' \
   -F 'daily_budget=15000' \
   -F 'campaign_id=<CAMPAIGN_ID>' \
-  -F 'targeting={"geo_locations": {"countries":["US"]}}' \
+  -F 'targeting={"geo_locations": {"countries":["US"]}​}' \
   -F 'destination_type=WEBSITE' \
   -F 'promoted_object={"pixel_id":"<PIXEL_ID>","custom_event_type": "PURCHASE"}' \
   -F 'status=PAUSED' \
@@ -320,36 +314,34 @@ curl -i -X GET \
 **Sample Response**
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "id": "<COMMERCE_ACCOUNT_ID>",  
-      "shops": {  
-        "data": [  
-          {  
-            "id": "<SHOP_ID>",  
-            "fb_sales_channel": {  
-              "status": "ENABLED",  
-              "fb_page": {  
-                "name": "Page 1",  
-                "id": "<PAGE_ID>"  
-              }  
-            }  
-          }  
-        ]  
-      },  
-      "cta": "OFFSITE_IAB_CHECKOUT",  
-      "offsite_iab_checkout_enabled_countries": [  
-        "US"  
-      ]  
-    }  
-  ]  
+  "data": [  
+    {  
+      "id": "<COMMERCE_ACCOUNT_ID>",  
+      "shops": {  
+        "data": [  
+          {  
+            "id": "<SHOP_ID>",  
+            "fb_sales_channel": {  
+              "status": "ENABLED",  
+              "fb_page": {  
+                "name": "Page 1",  
+                "id": "<PAGE_ID>"  
+              }  
+            }  
+          }  
+        ]  
+      },  
+      "cta": "OFFSITE_IAB_CHECKOUT",  
+      "offsite_iab_checkout_enabled_countries": [  
+        "US"  
+      ]  
+    }  
+  ]  
 }
 ```
-```
 
-A shop’s `cta` can change from `ONSITE_CHECKOUT` to `OFFSITE_IAB_CHECKOUT`, but not the other way around. A shop can become ineligible and move from `OFFSITE_IAB_CHECKOUT` to other CTAs, such as `OFFSITE_LINK`.
+A shop's `cta` can change from `ONSITE_CHECKOUT` to `OFFSITE_IAB_CHECKOUT`, but not the other way around. A shop can become ineligible and move from `OFFSITE_IAB_CHECKOUT` to other CTAs, such as `OFFSITE_LINK`.
 
 ## Get commerce IDs for creating Shops ads
 
@@ -365,7 +357,7 @@ You can get the Commerce Account ID and Shop ID by running the previous query.
 
 ```
 curl -i -X GET \
-  "https://graph.facebook.com/v25.0/<PAGE_ID>/commerce_merchant_settings?fields=id,shops{id,fb_sales_channel{fb_page{id,name}}}&access_token=<PAGE_ACCESS_TOKEN>"
+  "https://graph.facebook.com/v25.0/<PAGE_ID>/commerce_merchant_settings?fields=id,shops{id,fb_sales_channel{fb_page{id,name}​}}&access_token=<PAGE_ACCESS_TOKEN>"
 ```
 
 A commerce account might have multiple shops. You need to get the one with the Page you want to create Shops ads with.
@@ -380,25 +372,23 @@ curl -i -X GET \
 **Sample Response**
 
 ```
-```
 {  
-  "id": "<COMMERCE_ACCOUNT_ID>",  
-  "product_catalogs": {  
-    "data": [  
-      {  
-        "id": "<PRODUCT_CATALOG_ID>",  
-        "product_sets": {  
-          "data": [  
-            {  
-              "id": "<PRODUCT_SET_ID>",  
-              "name": "Product Set 1",  
-              "filter": "{\"product_item_id\":{\"is_any\":[]}}"  
-            }  
-          ]  
-        }  
-      }  
-    ]  
-  }  
+  "id": "<COMMERCE_ACCOUNT_ID>",  
+  "product_catalogs": {  
+    "data": [  
+      {  
+        "id": "<PRODUCT_CATALOG_ID>",  
+        "product_sets": {  
+          "data": [  
+            {  
+              "id": "<PRODUCT_SET_ID>",  
+              "name": "Product Set 1",  
+              "filter": "{\"product_item_id\":{\"is_any\":[]}​}"  
+            }  
+          ]  
+        }  
+      }  
+    ]  
+  }  
 }
-```
 ```

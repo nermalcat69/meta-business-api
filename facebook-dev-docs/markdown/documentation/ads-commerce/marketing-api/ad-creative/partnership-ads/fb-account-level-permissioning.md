@@ -11,9 +11,9 @@ Instagram account-level permissioning allows you to request partnership ad permi
 
 When a creator accepts an account-level permission request in the Instagram app, you can:
 
-* Create partnership ads from a creator’s handle without a pre-existing post.
-* Create partnership ads from any of a creator’s existing posts that tag your brand (**Note:** You must be tagged using the paid partnership label, an @ mention﹡, people tags﹡, product tags﹡, or Instagram Collabs﹡).
-* Include or exclude a creator’s audience in the partnership ad campaign.
+* Create partnership ads from a creator's handle without a pre-existing post.
+* Create partnership ads from any of a creator's existing posts that tag your brand (**Note:** You must be tagged using the paid partnership label, an @ mention﹡, people tags﹡, product tags﹡, or Instagram Collabs﹡).
+* Include or exclude a creator's audience in the partnership ad campaign.
 
 Creators can:
 
@@ -51,14 +51,12 @@ curl -X POST \
 ### Example response
 
 ```
-```
 {  
-  "id": "<PERMISSION_ID>"  
+  "id": "<PERMISSION_ID>"  
 }
 ```
-```
 
-## View a brand partner’s partnership ad permissions
+## View a brand partner's partnership ad permissions
 
 Your app can retrieve a list of existing partnership ad permissions (including those that are pending) for a brand partner with a `GET` call to the `/{business-account-id}/branded_content_ad_permissions` endpoint.
 
@@ -66,7 +64,7 @@ Your app can retrieve a list of existing partnership ad permissions (including t
 
 | Name | Description |
 | --- | --- |
-| `creator_username`  string | **Optional.** Filter results by a specific creator’s Instagram username. |
+| `creator_username`  string | **Optional.** Filter results by a specific creator's Instagram username. |
 
 ### Example request
 
@@ -80,31 +78,29 @@ curl -G \
 ### Example response
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "creator_username": "jaspersmarket",  
-      "creator_id": "123",  
-      "creator_fb_page": "123",  
-      "brand_ig_user": {  
-        "id": "1234"  
-      },  
-      "permission_status": "APPROVED", // Creator approval status: REVOKED, PENDING, etc.  
-      "id": "<PERMISSION_ID>"  
-    }  
-  ],  
-  "paging": {  
-    "cursors": {  
-      "before": "MTM4OTY1MDkwNzkyMTE4NQ==",  
-      "after": "MTAyMzMxNzA5NzY5MjU4NA=="  
-    }  
-  }  
+  "data": [  
+    {  
+      "creator_username": "jaspersmarket",  
+      "creator_id": "123",  
+      "creator_fb_page": "123",  
+      "brand_ig_user": {  
+        "id": "1234"  
+      },  
+      "permission_status": "APPROVED", // Creator approval status: REVOKED, PENDING, etc.  
+      "id": "<PERMISSION_ID>"  
+    }  
+  ],  
+  "paging": {  
+    "cursors": {  
+      "before": "MTM4OTY1MDkwNzkyMTE4NQ==",  
+      "after": "MTAyMzMxNzA5NzY5MjU4NA=="  
+    }  
+  }  
 }
 ```
-```
 
-## Revoke a creator’s partnership ad permissions
+## Revoke a creator's partnership ad permissions
 
 Your app can revoke the partnership ad permissions of creators with a `POST` call to the `/{business-account-id}/branded_content_ad_permissions` endpoint with the `revoke` field set to `true`.
 
@@ -121,11 +117,9 @@ curl -X POST \
 ### Example response
 
 ```
-```
 {  
-  "id": "<PERMISSION_ID>"  
+  "id": "<PERMISSION_ID>"  
 }
-```
 ```
 
 ## Best practices

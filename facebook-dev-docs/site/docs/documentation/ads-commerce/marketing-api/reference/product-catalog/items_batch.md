@@ -25,7 +25,7 @@ To fetch hotels whose name contains "suites":
 ```
 curl -G \
 -d 'fields=["hotel_id","name"]' \
--d 'filter={"name":{"i_contains":"suites"}}' \
+-d 'filter={"name":{"i_contains":"suites"}​}' \
 -d 'access_token=<ACCESS_TOKEN>'
 https://graph.facebook.com/<API_VERSION>/<PRODUCT_CATALOG_ID>/hotels
 ```
@@ -43,8 +43,8 @@ HTTPPHP SDKJavaScript SDKAndroid SDKiOS SDK
 ---
 
 ```
-GET /v25.0/{product-catalog-id}/hotels HTTP/1.1  
-Host: graph.facebook.com
+GET /v25.0/{product-catalog-id}/hotels HTTP/1.1  
+Host: graph.facebook.com
 ```
 
 Try it in [Graph API Explorer](https://developers.facebook.com/tools/explorer/?method=GET&path=%7Bproduct-catalog-id%7D%2Fhotels&version=v25.0)

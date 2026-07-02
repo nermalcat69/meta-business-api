@@ -52,7 +52,7 @@ To set up a new travel audience, make an `HTTP POST` to `/act_<AD_ACCOUNT_ID>/cu
 | `claim_objective`  Type: `enum {TRAVEL}` | **Required**.  The objective of the audience.  Must be set to `TRAVEL`. |
 | `content_type`  Type: `enum {HOTEL, FLIGHT, DESTINATION}` | **Required**.  Specify the type of signal that should be used to build this audience.  Must be set to `HOTEL`, `FLIGHT` or `DESTINATION`. |
 | `event_sources`  Type: `json string` | An array of `id` and `type` pairs. The `id` field takes a single event source id, and the `type` field is either a pixel, app, or `offline_events`. For example:  ``` "event_sources": [  {  "type": "pixel",  "id": "562030684179932"  },  {  "type": "app",  "id": "562030684179934"  } ] ```  Required if you do not provide `event_source_group`. If you do provide, do not also provide `event_source_group`. |
-| `event_source_group`  Type: `id` | Specify the event source group whose events will back the audience. Required if you don’t provide `event_sources`. |
+| `event_source_group`  Type: `id` | Specify the event source group whose events will back the audience. Required if you don't provide `event_sources`. |
 | `inclusions`  Type: `object[]` | **Required**.  An array of JSON objects listing each intent signal that would make an Accounts Center account eligible for this audience. See [**Inclusion Object Parameters**](https://developers.facebook.com/documentation/ads-commerce/marketing-api/hotel-ads#inclusion-object) table below. |
 | `description`  Type: `string` | A further description of the audience. |
 | `exclusions`  Type: `object[]` | An array of JSON objects listing each intent signal that would exclude an eligible Accounts Center account from this audience. See [**Exclusion Object Parameters**](https://developers.facebook.com/documentation/ads-commerce/marketing-api/hotel-ads#exclusion-object) table below. |
@@ -64,7 +64,7 @@ To set up a new travel audience, make an `HTTP POST` to `/act_<AD_ACCOUNT_ID>/cu
 | --- | --- |
 | `event`  Type: `enum {Search, ViewContent, InitiateCheckout, Purchase}` | **Required**.  The event name of a signal you want to consider for inclusion.  Example: `{"event": "Search", …}` |
 | `retention`  Type: `object` | **Required**.  The minimum/maximum amount of time since the event was received for it to be considered for purposes of inclusion. The retention window must be at least 4 hours.  See [**Retention Object Parameters**](https://developers.facebook.com/documentation/ads-commerce/marketing-api/hotel-ads#retention-object) table below.  Example: `{…, "retention": {"min_seconds": 0, "max_seconds": 259200}, …}` |
-| `booking_window`  Type: `object` | Booking window is the time in seconds between the user’s check-in date and the current time. You specify a range and only people whose booking window is within this range are included. Negative booking windows are also supported, allowing you to include people whose check-in date has passed.  See [**Booking Window Object Parameters**](https://developers.facebook.com/documentation/ads-commerce/marketing-api/hotel-ads#booking_window-object) table below.  Examples:   * `{"booking_window": {"min_seconds": 0, "max_seconds": 259200}}` * `{"booking_window": {"max_seconds": 0}}` |
+| `booking_window`  Type: `object` | Booking window is the time in seconds between the user's check-in date and the current time. You specify a range and only people whose booking window is within this range are included. Negative booking windows are also supported, allowing you to include people whose check-in date has passed.  See [**Booking Window Object Parameters**](https://developers.facebook.com/documentation/ads-commerce/marketing-api/hotel-ads#booking_window-object) table below.  Examples:   * `{"booking_window": {"min_seconds": 0, "max_seconds": 259200}​}` * `{"booking_window": {"max_seconds": 0}​}` |
 | `count`  Type: `JSON` operators | The number of times that the event has been fired. You can use both equality and numeric comparison operators here.  Examples: `{…"count": {"lte": 3}, …}` |
 
 #### Retention object parameters
@@ -100,12 +100,12 @@ Just as with the classical parameter, each parameter here can be used with any o
 | `length_of_stay`  Type: `int` | Number of nights spent during the trip.  Example: `{… "length_of_stay": {"eq": 1}, …}` |
 | `number_of_weekends`  Type: `int` | Number of weekends between the start and end date.  Example: `{…, "number_of_weekends": {"gte": 5}, …}` |
 | `num_travelers`  Type: `int` | Total number of travelers.   * For a `content_type` of `HOTEL` or `DESTINATION` this is `num_adults` + `num_children` * For a `content_type` of `FLIGHT`, this also includes `num_infants`   Example: `{…, "num_travelers": {"gt": 1}, …}` |
-| Date fields:  [Hotel ads](https://developers.facebook.com/documentation/ads-commerce/marketing-api/hotel-ads/events#parameter-details)   * `checkin_date` * `checkout_date`   [Flight ads](https://developers.facebook.com/docs/marketing-api/dynamic-ads-for-flights/events#parameter-details)   * `departing_departure_date` * `departing_arrival_date` * `returning_departure_date` * `returning_arrival_date`   [Destination ads](https://developers.facebook.com/documentation/ads-commerce/marketing-api/destination-ads/events#parameter-details)   * `travel_start` * `travel_end`   Type: `string` | Use relevant date fields based on `content_type`.  Example: `{"checkin_date": {"gte": "2016-09-01"}}` |
-| `itinerary_contains_date`  Type: `string` | Trip contains a specific date.  Example: `{"itinerary_contains_date": {"eq": "2016-12-25"}}` |
+| Date fields:  [Hotel ads](https://developers.facebook.com/documentation/ads-commerce/marketing-api/hotel-ads/events#parameter-details)   * `checkin_date` * `checkout_date`   [Flight ads](https://developers.facebook.com/docs/marketing-api/dynamic-ads-for-flights/events#parameter-details)   * `departing_departure_date` * `departing_arrival_date` * `returning_departure_date` * `returning_arrival_date`   [Destination ads](https://developers.facebook.com/documentation/ads-commerce/marketing-api/destination-ads/events#parameter-details)   * `travel_start` * `travel_end`   Type: `string` | Use relevant date fields based on `content_type`.  Example: `{"checkin_date": {"gte": "2016-09-01"}​}` |
+| `itinerary_contains_date`  Type: `string` | Trip contains a specific date.  Example: `{"itinerary_contains_date": {"eq": "2016-12-25"}​}` |
 
 ### Code samples
 
-Single travelers who have searched at least 3 times in the last 5 days but haven’t booked yet:
+Single travelers who have searched at least 3 times in the last 5 days but haven't booked yet:
 
 ```
 curl \
@@ -114,7 +114,7 @@ curl \
   -F 'claim_objective=TRAVEL' \
   -F 'content_type=HOTEL' \
   -F 'event_source_group=<EVENT_SOURCE_GROUP_ID>' \
-  -F 'rule={"num_travelers":{"eq":1}}' \
+  -F 'rule={"num_travelers":{"eq":1}​}' \
   -F 'inclusions=[
     {
       "event": "Search",
@@ -122,7 +122,7 @@ curl \
       "retention": {"min_seconds":0,"max_seconds":432000}
     }
   ]' \
-  -F 'exclusions=[{"event":"Purchase","retention":{"min_seconds":0,"max_seconds":172800}}]' \
+  -F 'exclusions=[{"event":"Purchase","retention":{"min_seconds":0,"max_seconds":172800}​}]' \
   -F 'access_token=<ACCESS_TOKEN>' \
 https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/customaudiences
 ```
@@ -136,15 +136,15 @@ curl \
   -F 'claim_objective=TRAVEL' \
   -F 'content_type=HOTEL' \
   -F 'event_source_group=<EVENT_SOURCE_GROUP_ID>' \
-  -F 'rule={"hotel_set_id":{"eq":"<HOTEL_SET_ID>"}}' \
+  -F 'rule={"hotel_set_id":{"eq":"<HOTEL_SET_ID>"}​}' \
   -F 'inclusions=[
-    {"event":"ViewContent","retention":{"min_seconds":0,"max_seconds":172800}},
+    {"event":"ViewContent","retention":{"min_seconds":0,"max_seconds":172800}​},
     {
       "event": "InitiateCheckout",
       "retention": {"min_seconds":0,"max_seconds":172800}
     }
   ]' \
-  -F 'exclusions=[{"event":"Purchase","retention":{"min_seconds":0,"max_seconds":172800}}]' \
+  -F 'exclusions=[{"event":"Purchase","retention":{"min_seconds":0,"max_seconds":172800}​}]' \
   -F 'access_token=<ACCESS_TOKEN>' \
 https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/customaudiences
 ```
@@ -174,7 +174,7 @@ curl \
 https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/customaudiences
 ```
 
-People who have searched hotels in ‘New York City’ more than 3 times in the past 2 days but haven’t booked yet:
+People who have searched hotels in 'New York City' more than 3 times in the past 2 days but haven't booked yet:
 
 ```
 curl \
@@ -183,7 +183,7 @@ curl \
   -F 'claim_objective=TRAVEL' \
   -F 'content_type=HOTEL' \
   -F 'event_source_group=<EVENT_SOURCE_GROUP_ID>' \
-  -F 'rule={"destination":{"i_contains":"New York City"}}' \
+  -F 'rule={"destination":{"i_contains":"New York City"}​}' \
   -F 'inclusions=[
     {
       "event": "Search",
@@ -191,12 +191,12 @@ curl \
       "retention": {"min_seconds":0,"max_seconds":172800}
     }
   ]' \
-  -F 'exclusions=[{"event":"Purchase","retention":{"min_seconds":0,"max_seconds":172800}}]' \
+  -F 'exclusions=[{"event":"Purchase","retention":{"min_seconds":0,"max_seconds":172800}​}]' \
   -F 'access_token=<ACCESS_TOKEN>' \
 https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/customaudiences
 ```
 
-People who have searched hotels between specific `checkin_date` and `checkout_date` in the past 2 days but haven’t booked yet:
+People who have searched hotels between specific `checkin_date` and `checkout_date` in the past 2 days but haven't booked yet:
 
 ```
 curl \
@@ -207,17 +207,17 @@ curl \
   -F 'event_source_group=<EVENT_SOURCE_GROUP_ID>' \
   -F 'rule={
     "and": [
-      {"checkin_date":{"gte":"2018-02-02"}},
-      {"checkout_date":{"lte":"2018-02-05"}}
+      {"checkin_date":{"gte":"2018-02-02"}​},
+      {"checkout_date":{"lte":"2018-02-05"}​}
     ]
   }' \
-  -F 'inclusions=[{"event":"Search","retention":{"min_seconds":0,"max_seconds":172800}}]' \
-  -F 'exclusions=[{"event":"Purchase","retention":{"min_seconds":0,"max_seconds":172800}}]' \
+  -F 'inclusions=[{"event":"Search","retention":{"min_seconds":0,"max_seconds":172800}​}]' \
+  -F 'exclusions=[{"event":"Purchase","retention":{"min_seconds":0,"max_seconds":172800}​}]' \
   -F 'access_token=<ACCESS_TOKEN>' \
 https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/customaudiences
 ```
 
-People who have searched hotel stays containing a specific date (such as Christmas) in the past 2 days but haven’t booked yet:
+People who have searched hotel stays containing a specific date (such as Christmas) in the past 2 days but haven't booked yet:
 
 ```
 curl \
@@ -226,9 +226,9 @@ curl \
   -F 'claim_objective=TRAVEL' \
   -F 'content_type=HOTEL' \
   -F 'event_source_group=<EVENT_SOURCE_GROUP_ID>' \
-  -F 'rule={"itinerary_contains_date":{"eq":"2018-12-25"}}' \
-  -F 'inclusions=[{"event":"Search","retention":{"min_seconds":0,"max_seconds":172800}}]' \
-  -F 'exclusions=[{"event":"Purchase","retention":{"min_seconds":0,"max_seconds":172800}}]' \
+  -F 'rule={"itinerary_contains_date":{"eq":"2018-12-25"}​}' \
+  -F 'inclusions=[{"event":"Search","retention":{"min_seconds":0,"max_seconds":172800}​}]' \
+  -F 'exclusions=[{"event":"Purchase","retention":{"min_seconds":0,"max_seconds":172800}​}]' \
   -F 'access_token=<ACCESS_TOKEN>' \
 https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/customaudiences
 ```
@@ -241,7 +241,7 @@ curl \
   -F 'claim_objective=TRAVEL' \
   -F 'content_type=FLIGHT' \
   -F 'event_source_group=<EVENT_SOURCE_GROUP_ID>' \
-  -F 'rule={"and":[{"returning_departure_date":{"exists":false]}}' \
+  -F 'rule={"and":[{"returning_departure_date":{"exists":false]}​}' \
   -F 'inclusions=[
     {
       "event": "Search",
@@ -249,7 +249,7 @@ curl \
       "retention": {"min_seconds":0,"max_seconds":432000}
     }
   ]' \
-  -F 'exclusions=[{"event":"Purchase","retention":{"min_seconds":0,"max_seconds":172800}}]' \
+  -F 'exclusions=[{"event":"Purchase","retention":{"min_seconds":0,"max_seconds":172800}​}]' \
   -F 'access_token=<ACCESS_TOKEN>' \
   https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/customaudiences
 ```

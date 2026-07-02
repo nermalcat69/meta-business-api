@@ -11,7 +11,7 @@ Updated: Aug 20, 2025
 
 Meta Admin Center enables organizations to create and manage Meta accounts for people in their organization to access Meta products.
 
-With managed Meta accounts, organizations have more control over the security of their employees’ accounts. Businesses will be able to manage Meta accounts on behalf of their employees and have access to enterprise-grade features like single sign-on integrations.
+With managed Meta accounts, organizations have more control over the security of their employees' accounts. Businesses will be able to manage Meta accounts on behalf of their employees and have access to enterprise-grade features like single sign-on integrations.
 
 The information provided on this site is technical in nature and is only intended for use by developers for the purpose of understanding or building integrations.
 

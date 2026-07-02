@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/marketing
 
 Updated: Dec 5, 2025
 
-Facebook’s automotive inventory ads use cross-device intent signals to automatically promote relevant vehicles from your inventory with unique creatives on Facebook. Automotive inventory ads is a vertical solution for the automotive industry that includes a custom creative format, data models, and ads delivery optimization important for automotive clients.
+Facebook's automotive inventory ads use cross-device intent signals to automatically promote relevant vehicles from your inventory with unique creatives on Facebook. Automotive inventory ads is a vertical solution for the automotive industry that includes a custom creative format, data models, and ads delivery optimization important for automotive clients.
 
 ## Before you start
 

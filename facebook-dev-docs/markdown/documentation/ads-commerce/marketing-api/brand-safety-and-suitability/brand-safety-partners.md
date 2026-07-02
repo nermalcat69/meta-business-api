@@ -13,11 +13,11 @@ Meta offers several brand suitability controls to help you place ads adjacent to
 
 ### [Integration setup](https://developers.facebook.com/documentation/ads-commerce/marketing-api/brand-safety-and-suitability/brand-safety-partners)
 
-An overview of initial setup steps required for program participation. The main elements it addresses include: setting up a business in Business Manager, creating, and obtaining access to ad accounts, and creating an app to access Meta’s API.
+An overview of initial setup steps required for program participation. The main elements it addresses include: setting up a business in Business Manager, creating, and obtaining access to ad accounts, and creating an app to access Meta's API.
 
 ### [Publisher Block Lists API](https://developers.facebook.com/documentation/ads-commerce/marketing-api/brand-safety-and-suitability/block-list)
 
-Publisher block lists stop your ads from appearing with publishers you don’t consider suitable for your brand or campaign.
+Publisher block lists stop your ads from appearing with publishers you don't consider suitable for your brand or campaign.
 
 ### [Content Block Lists API](https://developers.facebook.com/documentation/ads-commerce/marketing-api/brand-safety-and-suitability/content-block-lists)
 

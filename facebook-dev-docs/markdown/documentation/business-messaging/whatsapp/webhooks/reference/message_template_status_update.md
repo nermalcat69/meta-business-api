@@ -9,38 +9,36 @@ Updated: Jun 17, 2026
 
 This reference describes trigger events and payload contents for the WhatsApp Business account `message_template_quality_update` webhook.
 
-The **message\_template\_quality\_update** webhook notifies you of changes to a template’s [quality score](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-quality).
+The **message\_template\_quality\_update** webhook notifies you of changes to a template's [quality score](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-quality).
 
 ## Triggers
 
-* A template’s quality score changes.
+* A template's quality score changes.
 
 ## Syntax
 
 ```
-```
 {  
-  "entry": [  
-    {  
-      "id": "<WHATSAPP_BUSINESS_ACCOUNT_ID>",  
-      "time": <WEBHOOK_TRIGGER_TIMESTAMP>,  
-      "changes": [  
-        {  
-          "value": {  
-            "previous_quality_score": "<PREVIOUS_QUALITY_SCORE>",  
-            "new_quality_score": "<NEW_QUALITY_SCORE>",  
-            "message_template_id": <TEMPLATE_ID>,  
-            "message_template_name": "<TEMPLATE_NAME>",  
-            "message_template_language": "<TEMPLATE_LANGUAGE_AND_LOCALE_CODE>"  
-          },  
-          "field": "message_template_quality_update"  
-        }  
-      ]  
-    }  
-  ],  
-  "object": "whatsapp_business_account"  
+  "entry": [  
+    {  
+      "id": "<WHATSAPP_BUSINESS_ACCOUNT_ID>",  
+      "time": <WEBHOOK_TRIGGER_TIMESTAMP>,  
+      "changes": [  
+        {  
+          "value": {  
+            "previous_quality_score": "<PREVIOUS_QUALITY_SCORE>",  
+            "new_quality_score": "<NEW_QUALITY_SCORE>",  
+            "message_template_id": <TEMPLATE_ID>,  
+            "message_template_name": "<TEMPLATE_NAME>",  
+            "message_template_language": "<TEMPLATE_LANGUAGE_AND_LOCALE_CODE>"  
+          },  
+          "field": "message_template_quality_update"  
+        }  
+      ]  
+    }  
+  ],  
+  "object": "whatsapp_business_account"  
 }
-```
 ```
 
 ## Parameters
@@ -58,27 +56,25 @@ The **message\_template\_quality\_update** webhook notifies you of changes to a 
 ## Example
 
 ```
-```
 {  
-  "entry": [  
-    {  
-      "id": "102290129340398",  
-      "time": 1674864290,  
-      "changes": [  
-        {  
-          "value": {  
-            "previous_quality_score": "GREEN",  
-            "new_quality_score": "YELLOW",  
-            "message_template_id": 806312974732579,  
-            "message_template_name": "welcome_template",  
-            "message_template_language": "en-US"  
-          },  
-          "field": "message_template_quality_update"  
-        }  
-      ]  
-    }  
-  ],  
-  "object": "whatsapp_business_account"  
+  "entry": [  
+    {  
+      "id": "102290129340398",  
+      "time": 1674864290,  
+      "changes": [  
+        {  
+          "value": {  
+            "previous_quality_score": "GREEN",  
+            "new_quality_score": "YELLOW",  
+            "message_template_id": 806312974732579,  
+            "message_template_name": "welcome_template",  
+            "message_template_language": "en-US"  
+          },  
+          "field": "message_template_quality_update"  
+        }  
+      ]  
+    }  
+  ],  
+  "object": "whatsapp_business_account"  
 }
-```
 ```

@@ -25,7 +25,7 @@ In addition to these conversation components, the Messenger Platform supports a 
 
 ![Three Messenger text message bubbles showing subscription, order confirmation, and weather forecast replies](https://scontent.fdel1-1.fna.fbcdn.net/v/t39.2365-6/13503471_1613963512265939_694041731_n.png?_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=cDKa4sCJZt8Q7kNvwECPmQM&_nc_oc=AdpK8ykp6Xbh_1NFrSaw0yMkvqP9RQz4_xoC1SB_E2yH6HZlytZI_X90PC7D9moGiZkWk5Nrs-7FFh5EIDiQg7BB&_nc_zt=14&_nc_ht=scontent.fdel1-1.fna&_nc_gid=7v6n6uaLUfoe1bshaYp1NA&_nc_ss=7b289&oh=00_AQAvn9HLoFBBIdjE4vO-NuQOk7svBdKdas1HptD8zmkt9Q&oe=6A606D77)
 
-Simple text is the foundation of any experience on Messenger, and is one of the most important tools at your disposal if you goal is to create a conversational experience. Try processing text messages with the Messenger Platform’s [built-in natural language processing (NLP)](https://developers.facebook.com/documentation/business-messaging/messenger-platform/built-in-nlp) feature to handle all kinds of interactions with simple text.
+Simple text is the foundation of any experience on Messenger, and is one of the most important tools at your disposal if you goal is to create a conversational experience. Try processing text messages with the Messenger Platform's [built-in natural language processing (NLP)](https://developers.facebook.com/documentation/business-messaging/messenger-platform/built-in-nlp) feature to handle all kinds of interactions with simple text.
 
 [Sending Text →](https://developers.facebook.com/documentation/business-messaging/messenger-platform/send-messages#sending_text)
 
@@ -90,6 +90,6 @@ A conversation with your bot begins when the [get started button](https://develo
 
 ![Messenger persistent menu listing Talk to an agent, Outfit suggestions, and Shop now above the message composer](https://scontent.fdel1-8.fna.fbcdn.net/v/t39.2365-6/641632137_1445181560673827_7485593691845895443_n.jpg?_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=peVRE0U-8Z0Q7kNvwGyVocL&_nc_oc=AdptmKqLtl_X5t0ZeMp0Kf4gCHoe-CKSKJndcDMd4ouSaCD8Irj6Dlfnh5C6fxOB9ebWnDSJjJo71gpYrDriyYv5&_nc_zt=14&_nc_ht=scontent.fdel1-8.fna&_nc_gid=7v6n6uaLUfoe1bshaYp1NA&_nc_ss=7b289&oh=00_AQBacCA5m2lMcIjiWPszEn7ykZ5UKm0tXeoJHkFhsErqWw&oe=6A6071D6)
 
-The persistent menu is an always-on user interface element that helps people discover and more easily access your bot’s functionality throughout the conversation. This menu should contain top-level actions that a person can enact at any point. You may also optionally make the persistent menu the only way to interact with your bot by disabling the composer.
+The persistent menu is an always-on user interface element that helps people discover and more easily access your bot's functionality throughout the conversation. This menu should contain top-level actions that a person can enact at any point. You may also optionally make the persistent menu the only way to interact with your bot by disabling the composer.
 
 [Setting the Persistent Menu →](https://developers.facebook.com/documentation/business-messaging/messenger-platform/send-messages/persistent-menu)

@@ -78,11 +78,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Solution-ID}/reject_deactivation_request' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Solution-ID}/reject_deactivation_request' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -93,24 +93,24 @@ Select status code
 
 ```
 {  
-  "successful_rejection": {  
-    "summary": "Deactivation request successfully rejected",  
-    "value": {  
-      "id": "1234567890123456",  
-      "name": "E-commerce Integration Solution",  
-      "status": "ACTIVE",  
-      "status_for_pending_request": "NONE",  
-      "owner_app": {  
-        "id": "9876543210987654",  
-        "name": "Solution Partner App"  
-      },  
-      "owner_permissions": [  
-        "MANAGE",  
-        "DEVELOP",  
-        "MANAGE_TEMPLATES"  
-      ]  
-    }  
-  }  
+  "successful_rejection": {  
+    "summary": "Deactivation request successfully rejected",  
+    "value": {  
+      "id": "1234567890123456",  
+      "name": "E-commerce Integration Solution",  
+      "status": "ACTIVE",  
+      "status_for_pending_request": "NONE",  
+      "owner_app": {  
+        "id": "9876543210987654",  
+        "name": "Solution Partner App"  
+      },  
+      "owner_permissions": [  
+        "MANAGE",  
+        "DEVELOP",  
+        "MANAGE_TEMPLATES"  
+      ]  
+    }  
+  }  
 }
 ```
 
@@ -671,11 +671,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Solution-ID}/reject_deactivation_request' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Solution-ID}/reject_deactivation_request' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -686,24 +686,24 @@ Select status code
 
 ```
 {  
-  "successful_rejection": {  
-    "summary": "Deactivation request successfully rejected",  
-    "value": {  
-      "id": "1234567890123456",  
-      "name": "E-commerce Integration Solution",  
-      "status": "ACTIVE",  
-      "status_for_pending_request": "NONE",  
-      "owner_app": {  
-        "id": "9876543210987654",  
-        "name": "Solution Partner App"  
-      },  
-      "owner_permissions": [  
-        "MANAGE",  
-        "DEVELOP",  
-        "MANAGE_TEMPLATES"  
-      ]  
-    }  
-  }  
+  "successful_rejection": {  
+    "summary": "Deactivation request successfully rejected",  
+    "value": {  
+      "id": "1234567890123456",  
+      "name": "E-commerce Integration Solution",  
+      "status": "ACTIVE",  
+      "status_for_pending_request": "NONE",  
+      "owner_app": {  
+        "id": "9876543210987654",  
+        "name": "Solution Partner App"  
+      },  
+      "owner_permissions": [  
+        "MANAGE",  
+        "DEVELOP",  
+        "MANAGE_TEMPLATES"  
+      ]  
+    }  
+  }  
 }
 ```
 

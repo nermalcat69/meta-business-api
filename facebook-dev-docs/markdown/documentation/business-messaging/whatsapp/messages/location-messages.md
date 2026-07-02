@@ -20,40 +20,38 @@ Users can respond to a message by selecting one of the predefined buttons, which
 Use the [Messages API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/message-api#post-version-phone-number-id-messages) to send an interactive reply buttons message to a WhatsApp user.
 
 ```
-```
-curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/messages' \  
--H 'Content-Type: application/json' \  
--H 'Authorization: Bearer <ACCESS_TOKEN>' \  
--d '  
+curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/messages' \  
+-H 'Content-Type: application/json' \  
+-H 'Authorization: Bearer <ACCESS_TOKEN>' \  
+-d '  
 {  
-  "messaging_product": "whatsapp",  
-  "recipient_type": "individual",  
-  "to": "<WHATSAPP_USER_PHONE_NUMBER>",  
-  "type": "interactive",  
-  "interactive": {  
-    "type": "button",  
-    "header": {<MESSAGE_HEADER>},  
-    "body": {  
-      "text": "<BODY_TEXT>"  
-    },  
-    "footer": {  
-      "text": "<FOOTER_TEXT>"  
-    },  
-    "action": {  
-      "buttons": [  
-        {  
-          "type": "reply",  
-          "reply": {  
-            "id": "<BUTTON_ID>",  
-            "title": "<BUTTON_LABEL_TEXT>"  
-          }  
-        }  
-        <!-- Additional buttons would go here (maximum 3) -->  
-      ]  
-    }  
-  }  
+  "messaging_product": "whatsapp",  
+  "recipient_type": "individual",  
+  "to": "<WHATSAPP_USER_PHONE_NUMBER>",  
+  "type": "interactive",  
+  "interactive": {  
+    "type": "button",  
+    "header": {<MESSAGE_HEADER>},  
+    "body": {  
+      "text": "<BODY_TEXT>"  
+    },  
+    "footer": {  
+      "text": "<FOOTER_TEXT>"  
+    },  
+    "action": {  
+      "buttons": [  
+        {  
+          "type": "reply",  
+          "reply": {  
+            "id": "<BUTTON_ID>",  
+            "title": "<BUTTON_LABEL_TEXT>"  
+          }  
+        }  
+        <!-- Additional buttons would go here (maximum 3) -->  
+      ]  
+    }  
+  }  
 }'
-```
 ```
 
 ## Request parameters
@@ -123,22 +121,20 @@ curl 'https://graph.facebook.com/v25.0/106540352242922/messages' \
 ## Example response
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "contacts": [  
-    {  
-      "input": "+16505551234",  
-      "wa_id": "16505551234"  
-    }  
-  ],  
-  "messages": [  
-    {  
-      "id": "wamid.HBgLMTY0NjcwNDM1OTUVAgARGBI1RjQyNUE3NEYxMzAzMzQ5MkEA"  
-    }  
-  ]  
+  "messaging_product": "whatsapp",  
+  "contacts": [  
+    {  
+      "input": "+16505551234",  
+      "wa_id": "16505551234"  
+    }  
+  ],  
+  "messages": [  
+    {  
+      "id": "wamid.HBgLMTY0NjcwNDM1OTUVAgARGBI1RjQyNUE3NEYxMzAzMzQ5MkEA"  
+    }  
+  ]  
 }
-```
 ```
 
 ## Webhooks
@@ -146,12 +142,10 @@ curl 'https://graph.facebook.com/v25.0/106540352242922/messages' \
 When a WhatsApp user taps on a reply button, a **messages** webhook is triggered that describes their selection in a `button_reply` object:
 
 ```
-```
-"button_reply": {  
-  "id": "<BUTTON_ID>",  
-  "title": "<BUTTON_LABEL_TEXT>"  
+"button_reply": {  
+  "id": "<BUTTON_ID>",  
+  "title": "<BUTTON_LABEL_TEXT>"  
 }
-```
 ```
 
 * `<BUTTON_ID>` — The button ID of the button tapped by the user.
@@ -160,53 +154,51 @@ When a WhatsApp user taps on a reply button, a **messages** webhook is triggered
 ### Example webhook
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "102290129340398",  
-      "changes": [  
-        {  
-          "value": {  
-            "messaging_product": "whatsapp",  
-            "metadata": {  
-              "display_phone_number": "15550783881",  
-              "phone_number_id": "106540352242922"  
-            },  
-            "contacts": [  
-              {  
-                "profile": {  
-                  "name": "Pablo Morales"  
-                },  
-                "wa_id": "16505551234"  
-              }  
-            ],  
-            "messages": [  
-              {  
-                "context": {  
-                  "from": "15550783881",  
-                  "id": "wamid.HBgLMTY0NjcwNDM1OTUVAgARGBJBM0Y4RUU0RUNFQkFDMjYzQUMA"  
-                },  
-                "from": "16505551234",  
-                "id": "wamid.HBgLMTY0NjcwNDM1OTUVAgASGBQzQThBREYwNzc2RDc2QjA1QTIwMgA=",  
-                "timestamp": "1714510003",  
-                "type": "interactive",  
-                "interactive": {  
-                  "type": "button_reply",  
-                  "button_reply": {  
-                    "id": "change-button",  
-                    "title": "Change"  
-                  }  
-                }  
-              }  
-            ]  
-          },  
-          "field": "messages"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "102290129340398",  
+      "changes": [  
+        {  
+          "value": {  
+            "messaging_product": "whatsapp",  
+            "metadata": {  
+              "display_phone_number": "15550783881",  
+              "phone_number_id": "106540352242922"  
+            },  
+            "contacts": [  
+              {  
+                "profile": {  
+                  "name": "Pablo Morales"  
+                },  
+                "wa_id": "16505551234"  
+              }  
+            ],  
+            "messages": [  
+              {  
+                "context": {  
+                  "from": "15550783881",  
+                  "id": "wamid.HBgLMTY0NjcwNDM1OTUVAgARGBJBM0Y4RUU0RUNFQkFDMjYzQUMA"  
+                },  
+                "from": "16505551234",  
+                "id": "wamid.HBgLMTY0NjcwNDM1OTUVAgASGBQzQThBREYwNzc2RDc2QjA1QTIwMgA=",  
+                "timestamp": "1714510003",  
+                "type": "interactive",  
+                "interactive": {  
+                  "type": "button_reply",  
+                  "button_reply": {  
+                    "id": "change-button",  
+                    "title": "Change"  
+                  }  
+                }  
+              }  
+            ]  
+          },  
+          "field": "messages"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```

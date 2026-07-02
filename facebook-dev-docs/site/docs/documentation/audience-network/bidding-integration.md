@@ -9,11 +9,11 @@ Updated: Jun 9, 2026
 
 Audience Network lets publishers monetize their Android, iOS, and Unity apps with ads from Facebook advertisers. It supports multiple ad formats and offers bidding-based mediation to maximize revenue.
 
-This documentation is intended for publishers. If you’re an advertiser, see the [Audience Network business site⁠](https://www.facebook.com/business/marketing/audience-network).
+This documentation is intended for publishers. If you're an advertiser, see the [Audience Network business site⁠](https://www.facebook.com/business/marketing/audience-network).
 
 ## Quick start
 
-This assumes that you already have a published app that you want to add Audience Network as a mediation partner. If you don’t, start with the Platform Setup for [Android](https://developers.facebook.com/documentation/audience-network/setting-up/platform-setup/android/get-started), [iOS](https://developers.facebook.com/documentation/audience-network/setting-up/platform-setup/ios/get-started), or [Unity](https://developers.facebook.com/documentation/audience-network/setting-up/platform-setup/unity/get-started).
+This assumes that you already have a published app that you want to add Audience Network as a mediation partner. If you don't, start with the Platform Setup for [Android](https://developers.facebook.com/documentation/audience-network/setting-up/platform-setup/android/get-started), [iOS](https://developers.facebook.com/documentation/audience-network/setting-up/platform-setup/ios/get-started), or [Unity](https://developers.facebook.com/documentation/audience-network/setting-up/platform-setup/unity/get-started).
 
 * Go to [Platform Setup](https://developers.facebook.com/documentation/audience-network/setting-up/platform-setup) to add the SDK to your app.
 * Complete [Ad Setup](https://developers.facebook.com/documentation/audience-network/setting-up/ad-setup) to implement the desired ads. For iOS, make sure to also follow [ATE Flag](https://developers.facebook.com/documentation/audience-network/setting-up/platform-setup/ios/advertising-tracking-enabled), and [SKAdNetwork](https://developers.facebook.com/documentation/audience-network/setting-up/platform-setup/ios/SKAdNetwork) instructions.
@@ -43,7 +43,7 @@ Learn how bidding works with our [Bidding Overview](https://developers.facebook.
 
 ## Optimization
 
-If you’re already up and running, use these tools and best practices to get the most from your implementation:
+If you're already up and running, use these tools and best practices to get the most from your implementation:
 
 * [Best practices](https://developers.facebook.com/documentation/audience-network/optimization/best-practices) — recommendations for ad layouts and audio.
 * [Audience Network Policy](https://developers.facebook.com/documentation/audience-network/optimization/best-practices#policy) — compliance requirements for publishers.

@@ -21,166 +21,158 @@ A `group_lifecycle_update` webhook is triggered when a group is either created o
 ### Group create succeed
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "WHATSAPP_ACCOUNT_ID",  
-      "changes": [  
-        {  
-          "value": {  
-            "messaging_product": "whatsapp",  
-            "metadata": {  
-              "display_phone_number": "DISPLAY_PHONE_NUMBER",  
-              "phone_number_id": "PHONE_NUMBER_ID"  
-            },  
-            "groups": [  
-              {  
-                "timestamp": "TIMESTAMP",  
-                "group_id": "GROUP_ID",  
-                "type": "group_create",  
-                "request_id": "REQUEST_ID",  
-                "subject": "test invite link",  
-                "invite_link": "https://chat.whatsapp.com/LINK_ID",  
-                "join_approval_mode": "JOIN_APPROVAL_MODE"  
-              }  
-            ]  
-          },  
-          "field": "group_lifecycle_update"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "WHATSAPP_ACCOUNT_ID",  
+      "changes": [  
+        {  
+          "value": {  
+            "messaging_product": "whatsapp",  
+            "metadata": {  
+              "display_phone_number": "DISPLAY_PHONE_NUMBER",  
+              "phone_number_id": "PHONE_NUMBER_ID"  
+            },  
+            "groups": [  
+              {  
+                "timestamp": "TIMESTAMP",  
+                "group_id": "GROUP_ID",  
+                "type": "group_create",  
+                "request_id": "REQUEST_ID",  
+                "subject": "test invite link",  
+                "invite_link": "https://chat.whatsapp.com/LINK_ID",  
+                "join_approval_mode": "JOIN_APPROVAL_MODE"  
+              }  
+            ]  
+          },  
+          "field": "group_lifecycle_update"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ### Group create fail
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "WHATSAPP_ACCOUNT_ID",  
-      "changes": [  
-        {  
-          "value": {  
-              "messaging_product": "whatsapp",  
-              "metadata": {  
-                   "display_phone_number": "DISPLAY_PHONE_NUMBER",  
-                   "phone_number_id": "PHONE_NUMBER_ID",  
-              },  
-               "groups": [  
-          {  
-                    "timestamp": "TIMESTAMP",  
-                    "type": "group_create",  
-                    "subject": "GROUP_SUBJECT",  
-                    "description": "GROUP_DESCRIPTION",  
-                    "request_id": "REQUEST_ID",  
-                    "group_id": "GROUP_ID",  
-                    "errors": [  
-                      {  
-                        "code": "ERROR_CODE",  
-                        "message": "ERROR_MESSAGE",  
-                        "title": "ERROR_TITLE",  
-                        "error_data": {  
-                          "details": "ERROR_DETAILS"  
-                        }  
-                      }  
-                    ]  
-          }  
-               ]  
-            },  
-          "field": "group_lifecycle_update"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "WHATSAPP_ACCOUNT_ID",  
+      "changes": [  
+        {  
+          "value": {  
+              "messaging_product": "whatsapp",  
+              "metadata": {  
+                   "display_phone_number": "DISPLAY_PHONE_NUMBER",  
+                   "phone_number_id": "PHONE_NUMBER_ID",  
+              },  
+               "groups": [  
+          {  
+                    "timestamp": "TIMESTAMP",  
+                    "type": "group_create",  
+                    "subject": "GROUP_SUBJECT",  
+                    "description": "GROUP_DESCRIPTION",  
+                    "request_id": "REQUEST_ID",  
+                    "group_id": "GROUP_ID",  
+                    "errors": [  
+                      {  
+                        "code": "ERROR_CODE",  
+                        "message": "ERROR_MESSAGE",  
+                        "title": "ERROR_TITLE",  
+                        "error_data": {  
+                          "details": "ERROR_DETAILS"  
+                        }  
+                      }  
+                    ]  
+          }  
+               ]  
+            },  
+          "field": "group_lifecycle_update"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ### Delete group succeed
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "WHATSAPP_ACCOUNT_ID",  
-      "changes": [  
-        {  
-          "value": {  
-              "messaging_product": "whatsapp",  
-              "metadata": {  
-                   "display_phone_number": "DISPLAY_PHONE_NUMBER",  
-                   "phone_number_id": "PHONE_NUMBER_ID",  
-              },  
-               "groups": [  
-                  {  
-                    "timestamp": "TIMESTAMP",  
-                    "group_id": "GROUP_ID",  
-                    "type": "group_delete",  
-                    "request_id": "REQUEST_ID",  
-                 }  
-               ]  
-          },  
-          "field": "group_lifecycle_update"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "WHATSAPP_ACCOUNT_ID",  
+      "changes": [  
+        {  
+          "value": {  
+              "messaging_product": "whatsapp",  
+              "metadata": {  
+                   "display_phone_number": "DISPLAY_PHONE_NUMBER",  
+                   "phone_number_id": "PHONE_NUMBER_ID",  
+              },  
+               "groups": [  
+                  {  
+                    "timestamp": "TIMESTAMP",  
+                    "group_id": "GROUP_ID",  
+                    "type": "group_delete",  
+                    "request_id": "REQUEST_ID",  
+                 }  
+               ]  
+          },  
+          "field": "group_lifecycle_update"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ### Delete group fails
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "WHATSAPP_ACCOUNT_ID",  
-      "changes": [  
-        {  
-          "value": {  
-              "messaging_product": "whatsapp",  
-              "metadata": {  
-                   "display_phone_number": "DISPLAY_PHONE_NUMBER",  
-                   "phone_number_id": "PHONE_NUMBER_ID",  
-              },  
-               "groups": [  
-                  {  
-                    "timestamp": "TIMESTAMP",  
-                    "group_id": "GROUP_ID",  
-                    "type": "group_delete",  
-                    "request_id": "REQUEST_ID",  
-                    "errors": [  
-                      {  
-                        "code": "ERROR_CODE",  
-                        "message": "ERROR_MESSAGE",  
-                        "title": "ERROR_TITLE",  
-                        "error_data": {  
-                          "details": "ERROR_DETAILS"  
-                        }  
-                      }  
-                    ]  
-                 }  
-               ]  
-          },  
-          "field": "group_lifecycle_update"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "WHATSAPP_ACCOUNT_ID",  
+      "changes": [  
+        {  
+          "value": {  
+              "messaging_product": "whatsapp",  
+              "metadata": {  
+                   "display_phone_number": "DISPLAY_PHONE_NUMBER",  
+                   "phone_number_id": "PHONE_NUMBER_ID",  
+              },  
+               "groups": [  
+                  {  
+                    "timestamp": "TIMESTAMP",  
+                    "group_id": "GROUP_ID",  
+                    "type": "group_delete",  
+                    "request_id": "REQUEST_ID",  
+                    "errors": [  
+                      {  
+                        "code": "ERROR_CODE",  
+                        "message": "ERROR_MESSAGE",  
+                        "title": "ERROR_TITLE",  
+                        "error_data": {  
+                          "details": "ERROR_DETAILS"  
+                        }  
+                      }  
+                    ]  
+                 }  
+               ]  
+          },  
+          "field": "group_lifecycle_update"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ## `group_participants_update` webhooks
@@ -190,41 +182,39 @@ A `group_participants_update` webhook is triggered when a WhatsApp user joins a 
 ### User joined group using invite link succeed
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "WHATSAPP_ACCOUNT_ID",  
-      "changes": [  
-        {  
-          "value": {  
-              "messaging_product": "whatsapp",  
-              "metadata": {  
-                   "display_phone_number": "DISPLAY_PHONE_NUMBER",  
-                   "phone_number_id": "PHONE_NUMBER_ID",  
-              },  
-               "groups": [  
-                  {  
-                    "timestamp": "TIMESTAMP",  
-                    "group_id": "GROUP_ID",  
-                    "type": "group_participants_add",  
-                    "reason": "invite_link",  
-                    "added_participants": [  
-                        {  
-                          "wa_id": "WHATSAPP_ID",  
-                        },  
-                    ]  
-                 }  
-              ]  
-          },  
-          "field": "group_participants_update"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "WHATSAPP_ACCOUNT_ID",  
+      "changes": [  
+        {  
+          "value": {  
+              "messaging_product": "whatsapp",  
+              "metadata": {  
+                   "display_phone_number": "DISPLAY_PHONE_NUMBER",  
+                   "phone_number_id": "PHONE_NUMBER_ID",  
+              },  
+               "groups": [  
+                  {  
+                    "timestamp": "TIMESTAMP",  
+                    "group_id": "GROUP_ID",  
+                    "type": "group_participants_add",  
+                    "reason": "invite_link",  
+                    "added_participants": [  
+                        {  
+                          "wa_id": "WHATSAPP_ID",  
+                        },  
+                    ]  
+                 }  
+              ]  
+          },  
+          "field": "group_participants_update"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ### User accepts or cancels join request
@@ -233,253 +223,243 @@ A `group_participants_update` webhook is triggered when a WhatsApp user joins a 
 * **For cancel requests:** `GROUP_REQUEST_TYPE` is set to `group_join_request_revoked`.
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "WHATSAPP_BUSINESS_ACCOUNT_ID",  
-      "changes": [  
-        {  
-          "value": {  
-            "messaging_product": "whatsapp",  
-            "metadata": {  
-              "display_phone_number": "BUSINESS_DISPLAY_PHONE_NUMBER",  
-              "phone_number_id": "BUSINESS_PHONE_NUMBER_ID"  
-            },  
-            "groups": [  
-              {  
-                "timestamp": "WEBHOOK_TRIGGER_TIMESTAMP",  
-                "group_id": "GROUP_ID",  
-                "type": "GROUP_REQUEST_TYPE",  
-                "reason": "REASON_FOR_REQUEST_OUTCOME",  
-                "join_request_id": "JOIN_REQUEST_ID",  
-                "wa_id": "WHATSAPP_USER_ID"  
-              }  
-            ]  
-          },  
-          "field": "group_participants_update"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "WHATSAPP_BUSINESS_ACCOUNT_ID",  
+      "changes": [  
+        {  
+          "value": {  
+            "messaging_product": "whatsapp",  
+            "metadata": {  
+              "display_phone_number": "BUSINESS_DISPLAY_PHONE_NUMBER",  
+              "phone_number_id": "BUSINESS_PHONE_NUMBER_ID"  
+            },  
+            "groups": [  
+              {  
+                "timestamp": "WEBHOOK_TRIGGER_TIMESTAMP",  
+                "group_id": "GROUP_ID",  
+                "type": "GROUP_REQUEST_TYPE",  
+                "reason": "REASON_FOR_REQUEST_OUTCOME",  
+                "join_request_id": "JOIN_REQUEST_ID",  
+                "wa_id": "WHATSAPP_USER_ID"  
+              }  
+            ]  
+          },  
+          "field": "group_participants_update"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ### Join request approved
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "WHATSAPP_BUSINESS_ACCOUNT_ID",  
-      "changes": [  
-        {  
-          "value": {  
-            "messaging_product": "whatsapp",  
-            "metadata": {  
-              "display_phone_number": "BUSINESS_DISPLAY_PHONE_NUMBER",  
-              "phone_number_id": "BUSINESS_PHONE_NUMBER_ID"  
-            },  
-            "groups": [  
-              {  
-                "timestamp": WEBHOOK_TRIGGER_TIMESTAMP,  
-                "group_id": "GROUP_ID",  
-                "type": "group_participants_add",  
-                "reason": "invite_link",  
-                "added_participants": [  
-                  {  
-                    "input": "WHATSAPP_USER_PHONE_NUMBER",  
-                    "wa_id": "WHATSAPP_USER_ID"  
-                  },  
-                  //Additional added participants here, if approved in bulk.  
-                ]  
-              }  
-            ]  
-          },  
-          "field": "group_participants_update"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "WHATSAPP_BUSINESS_ACCOUNT_ID",  
+      "changes": [  
+        {  
+          "value": {  
+            "messaging_product": "whatsapp",  
+            "metadata": {  
+              "display_phone_number": "BUSINESS_DISPLAY_PHONE_NUMBER",  
+              "phone_number_id": "BUSINESS_PHONE_NUMBER_ID"  
+            },  
+            "groups": [  
+              {  
+                "timestamp": WEBHOOK_TRIGGER_TIMESTAMP,  
+                "group_id": "GROUP_ID",  
+                "type": "group_participants_add",  
+                "reason": "invite_link",  
+                "added_participants": [  
+                  {  
+                    "input": "WHATSAPP_USER_PHONE_NUMBER",  
+                    "wa_id": "WHATSAPP_USER_ID"  
+                  },  
+                  //Additional added participants here, if approved in bulk.  
+                ]  
+              }  
+            ]  
+          },  
+          "field": "group_participants_update"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ### Group participant remove succeed
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "WHATSAPP_ACCOUNT_ID",  
-      "changes": [  
-        {  
-          "value": {  
-              "messaging_product": "whatsapp",  
-              "metadata": {  
-                   "display_phone_number": "DISPLAY_PHONE_NUMBER",  
-                   "phone_number_id": "PHONE_NUMBER_ID",  
-              },  
-               "groups": [  
-                  {  
-                    "timestamp": "TIMESTAMP",  
-                    "group_id": "GROUP_ID",  
-                    "type": "group_participants_remove",  
-                    "request_id": "REQUEST_ID",  
-                    "removed_participants": [  
-                        // User 1 removed successfully  
-                        {  
-                          "input": "PHONE_NUMBER or WHATSAPP_ID"  
-                        },  
-                        {  
-                          "input": "PHONE_NUMBER or WHATSAPP_ID"  
-                        },  
-                        ...  
-                    ]  
-                 }  
-                 "initiated_by": "business"  
-              ]  
-          },  
-          "field": "group_participants_update"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "WHATSAPP_ACCOUNT_ID",  
+      "changes": [  
+        {  
+          "value": {  
+              "messaging_product": "whatsapp",  
+              "metadata": {  
+                   "display_phone_number": "DISPLAY_PHONE_NUMBER",  
+                   "phone_number_id": "PHONE_NUMBER_ID",  
+              },  
+               "groups": [  
+                  {  
+                    "timestamp": "TIMESTAMP",  
+                    "group_id": "GROUP_ID",  
+                    "type": "group_participants_remove",  
+                    "request_id": "REQUEST_ID",  
+                    "removed_participants": [  
+                        // User 1 removed successfully  
+                        {  
+                          "input": "PHONE_NUMBER or WHATSAPP_ID"  
+                        },  
+                        {  
+                          "input": "PHONE_NUMBER or WHATSAPP_ID"  
+                        },  
+                        ...  
+                    ]  
+                 }  
+                 "initiated_by": "business"  
+              ]  
+          },  
+          "field": "group_participants_update"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ### Group participant remove with participants partially fails
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "WHATSAPP_ACCOUNT_ID",  
-      "changes": [  
-        {  
-          "value": {  
-              "messaging_product": "whatsapp",  
-              "metadata": {  
-                   "display_phone_number": "DISPLAY_PHONE_NUMBER",  
-                   "phone_number_id": "PHONE_NUMBER_ID",  
-              },  
-               "groups": [  
-                  {  
-                    "timestamp": "TIMESTAMP",  
-                    "group_id": "GROUP_ID",  
-                    "type": "group_participants_remove",  
-                    "request_id": "REQUEST_ID",  
-                    "initiated_by": "business",  
-                    "removed_participants": [  
-                      // User 1 removed successfully  
-                      {  
-                        "input": "PHONE_NUMBER or WHATSAPP_ID"  
-                      },  
-                      // Additional users removed successfully  
-                      ...  
-                    ],  
-                    "failed_participants": [  
-                      // User 2 not removed due to errors  
-                      {  
-                        "input": "PHONE_NUMBER or WHATSAPP_ID",  
-                        "errors": [  
-                          {  
-                            "code": "ERROR_CODE",  
-                            "message": "ERROR_MESSAGE",  
-                            "title": "ERROR_TITLE",  
-                            "error_data": {  
-                              "details": "ERROR_DETAILS"  
-                            }  
-                          }  
-                        ]  
-                      }  
-                    ],  
-                    "errors": [  
-                      {  
-                        "code": "ERROR_CODE",  
-                        "message": "Failed to remove some participants from the group",  
-                        "title": "Not All Participants Remove Succeeded",  
-                        "error_data": {  
-                          "details": "ERROR_DETAILS"  
-                        }  
-                      }  
-                    ]  
-                 }  
-                 "initiated_by": "business"  
-              ]  
-          },  
-          "field": "group_participants_update"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "WHATSAPP_ACCOUNT_ID",  
+      "changes": [  
+        {  
+          "value": {  
+              "messaging_product": "whatsapp",  
+              "metadata": {  
+                   "display_phone_number": "DISPLAY_PHONE_NUMBER",  
+                   "phone_number_id": "PHONE_NUMBER_ID",  
+              },  
+               "groups": [  
+                  {  
+                    "timestamp": "TIMESTAMP",  
+                    "group_id": "GROUP_ID",  
+                    "type": "group_participants_remove",  
+                    "request_id": "REQUEST_ID",  
+                    "initiated_by": "business",  
+                    "removed_participants": [  
+                      // User 1 removed successfully  
+                      {  
+                        "input": "PHONE_NUMBER or WHATSAPP_ID"  
+                      },  
+                      // Additional users removed successfully  
+                      ...  
+                    ],  
+                    "failed_participants": [  
+                      // User 2 not removed due to errors  
+                      {  
+                        "input": "PHONE_NUMBER or WHATSAPP_ID",  
+                        "errors": [  
+                          {  
+                            "code": "ERROR_CODE",  
+                            "message": "ERROR_MESSAGE",  
+                            "title": "ERROR_TITLE",  
+                            "error_data": {  
+                              "details": "ERROR_DETAILS"  
+                            }  
+                          }  
+                        ]  
+                      }  
+                    ],  
+                    "errors": [  
+                      {  
+                        "code": "ERROR_CODE",  
+                        "message": "Failed to remove some participants from the group",  
+                        "title": "Not All Participants Remove Succeeded",  
+                        "error_data": {  
+                          "details": "ERROR_DETAILS"  
+                        }  
+                      }  
+                    ]  
+                 }  
+                 "initiated_by": "business"  
+              ]  
+          },  
+          "field": "group_participants_update"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ### Group participant remove fails
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "WHATSAPP_ACCOUNT_ID",  
-      "changes": [  
-        {  
-          "value": {  
-              "messaging_product": "whatsapp",  
-              "metadata": {  
-                   "display_phone_number": "DISPLAY_PHONE_NUMBER",  
-                   "phone_number_id": "PHONE_NUMBER_ID",  
-              },  
-               "groups": [  
-                  {  
-                    "timestamp": "TIMESTAMP",  
-                    "group_id": "GROUP_ID",  
-                    "type": "group_participants_remove",  
-                    "request_id": "REQUEST_ID",  
-                    "failed_participants": [  
-                      {  
-                        "input": "PHONE_NUMBER or WHATSAPP_ID"  
-                      },  
-                      {  
-                        "input": "PHONE_NUMBER or WHATSAPP_ID"  
-                      },  
-                      // Additional users failed to be removed  
-                      ...  
-                    ],  
-                    "errors": [  
-                      {  
-                        "code": "ERROR_CODE",  
-                        "message": "ERROR_MESSAGE",  
-                        "title": "ERROR_TITLE",  
-                        "error_data": {  
-                          "details": "ERROR_DETAILS"  
-                        }  
-                      }  
-                    ]  
-                 }  
-                 "initiated_by": "business"  
-              ]  
-          },  
-          "field": "group_participants_update"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "WHATSAPP_ACCOUNT_ID",  
+      "changes": [  
+        {  
+          "value": {  
+              "messaging_product": "whatsapp",  
+              "metadata": {  
+                   "display_phone_number": "DISPLAY_PHONE_NUMBER",  
+                   "phone_number_id": "PHONE_NUMBER_ID",  
+              },  
+               "groups": [  
+                  {  
+                    "timestamp": "TIMESTAMP",  
+                    "group_id": "GROUP_ID",  
+                    "type": "group_participants_remove",  
+                    "request_id": "REQUEST_ID",  
+                    "failed_participants": [  
+                      {  
+                        "input": "PHONE_NUMBER or WHATSAPP_ID"  
+                      },  
+                      {  
+                        "input": "PHONE_NUMBER or WHATSAPP_ID"  
+                      },  
+                      // Additional users failed to be removed  
+                      ...  
+                    ],  
+                    "errors": [  
+                      {  
+                        "code": "ERROR_CODE",  
+                        "message": "ERROR_MESSAGE",  
+                        "title": "ERROR_TITLE",  
+                        "error_data": {  
+                          "details": "ERROR_DETAILS"  
+                        }  
+                      }  
+                    ]  
+                 }  
+                 "initiated_by": "business"  
+              ]  
+          },  
+          "field": "group_participants_update"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ### Group participant leaves webhook
@@ -487,41 +467,39 @@ A `group_participants_update` webhook is triggered when a WhatsApp user joins a 
 This webhook is sent when a group participant leaves the group. The `initiated_by` field and only the `wa_id` in the `removed_participants` list will point to the participant who left the group.
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "WHATSAPP_ACCOUNT_ID",  
-      "changes": [  
-        {  
-          "value": {  
-              "messaging_product": "whatsapp",  
-              "metadata": {  
-                   "display_phone_number": "DISPLAY_PHONE_NUMBER",  
-                   "phone_number_id": "PHONE_NUMBER_ID",  
-              },  
-               "groups": [  
-                  {  
-                    "timestamp": "TIMESTAMP",  
-                    "group_id": "GROUP_ID",  
-                    "type": "group_participants_remove",  
-                    "removed_participants": [  
-                      {  
-                        "wa_id": "WHATSAPP_ID",  
-                      }  
-                    ]  
-                 }  
-                 "initiated_by": "participant"  
-               ]  
-          },  
-          "field": "group_participants_update"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "WHATSAPP_ACCOUNT_ID",  
+      "changes": [  
+        {  
+          "value": {  
+              "messaging_product": "whatsapp",  
+              "metadata": {  
+                   "display_phone_number": "DISPLAY_PHONE_NUMBER",  
+                   "phone_number_id": "PHONE_NUMBER_ID",  
+              },  
+               "groups": [  
+                  {  
+                    "timestamp": "TIMESTAMP",  
+                    "group_id": "GROUP_ID",  
+                    "type": "group_participants_remove",  
+                    "removed_participants": [  
+                      {  
+                        "wa_id": "WHATSAPP_ID",  
+                      }  
+                    ]  
+                 }  
+                 "initiated_by": "participant"  
+               ]  
+          },  
+          "field": "group_participants_update"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ## `group_settings_update` webhooks
@@ -529,215 +507,209 @@ This webhook is sent when a group participant leaves the group. The `initiated_b
 ### Group settings update succeed
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "<ID>",  
-      "changes": [  
-        {  
-          "value": {  
-            "messaging_product": "whatsapp",  
-            "metadata": {  
-              "display_phone_number": "DISPLAY_NUMBER",  
-              "phone_number_id": "PHONE_NUMBER_ID"  
-            },  
-            "groups": [  
-              {  
-                "timestamp": "TIMESTAMP",  
-                "group_id": "GROUP_ID",  
-                "type": "group_settings_update",  
-                "request_id": "REQUEST_ID",  
-                "profile_picture": {  
-                  "mime_type": "image/jpeg",  
-                  "update_successful": true,  
-                  "sha256": "PHOTO_HASH",  
-                },  
-                "group_subject": {  
-                  "text": "Test Subject",  
-                  "update_successful": true,  
-                },  
-                "group_description": {  
-                  "text": "Test Description",  
-                  "update_successful": true,  
-                }  
-              }  
-            ]  
-          },  
-          "field": "group_settings_update"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "<ID>",  
+      "changes": [  
+        {  
+          "value": {  
+            "messaging_product": "whatsapp",  
+            "metadata": {  
+              "display_phone_number": "DISPLAY_NUMBER",  
+              "phone_number_id": "PHONE_NUMBER_ID"  
+            },  
+            "groups": [  
+              {  
+                "timestamp": "TIMESTAMP",  
+                "group_id": "GROUP_ID",  
+                "type": "group_settings_update",  
+                "request_id": "REQUEST_ID",  
+                "profile_picture": {  
+                  "mime_type": "image/jpeg",  
+                  "update_successful": true,  
+                  "sha256": "PHOTO_HASH",  
+                },  
+                "group_subject": {  
+                  "text": "Test Subject",  
+                  "update_successful": true,  
+                },  
+                "group_description": {  
+                  "text": "Test Description",  
+                  "update_successful": true,  
+                }  
+              }  
+            ]  
+          },  
+          "field": "group_settings_update"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ### Group settings update partial fail
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "WHATSAPP_BUSINESS_ACCOUNT_ID",  
-      "changes": [  
-        {  
-          "value": {  
-            "messaging_product": "whatsapp",  
-            "metadata": {  
-              "display_phone_number": "DISPLAY_PHONE_NUMBER",  
-              "phone_number_id": "PHONE_NUMBER_ID"  
-            },  
-            "groups": [  
-              {  
-                "timestamp": "TIMESTAMP",  
-                "group_id": "GROUP_ID",  
-                "type": "group_settings_update",  
-                "request_id": "REQUEST_ID",  
-                "profile_picture": {  
-                  "mime_type": "image/jpeg",  
-                  "update_successful": true,  
-                  "sha256": "PHOTO_HASH",  
-                },  
-                "group_subject": {  
-                  "text": "Test Subject",  
-                  "update_successful": false,  
-                  "errors": [  
-                    {  
-                      "code": "ERROR_CODE",  
-                      "message": "ERROR_MESSAGE",  
-                      "title": "ERROR_TITLE",  
-                      "error_data": {  
-                        "details": "ERROR_DETAILS"  
-                      }  
-                    }  
-                  ]  
-                },  
-                "group_description": {  
-                  "text": "Test Description",  
-                  "update_successful": false,  
-                  "errors": [  
-                    {  
-                      "code": "ERROR_CODE",  
-                      "message": "ERROR_MESSAGE",  
-                      "title": "ERROR_TITLE",  
-                      "error_data": {  
-                        "details": "ERROR_DETAILS"  
-                      }  
-                    }  
-                  ]  
-                },  
-                "errors": [  
-                  {  
-                    "code": "ERROR_CODE",  
-                    "message": "ERROR_MESSAGE",  
-                    "title": "ERROR_TITLE",  
-                    "error_data": {  
-                      "details": "ERROR_DETAILS"  
-                    }  
-                  }  
-                ]  
-              }  
-            ]  
-          },  
-          "field": "group_settings_update"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "WHATSAPP_BUSINESS_ACCOUNT_ID",  
+      "changes": [  
+        {  
+          "value": {  
+            "messaging_product": "whatsapp",  
+            "metadata": {  
+              "display_phone_number": "DISPLAY_PHONE_NUMBER",  
+              "phone_number_id": "PHONE_NUMBER_ID"  
+            },  
+            "groups": [  
+              {  
+                "timestamp": "TIMESTAMP",  
+                "group_id": "GROUP_ID",  
+                "type": "group_settings_update",  
+                "request_id": "REQUEST_ID",  
+                "profile_picture": {  
+                  "mime_type": "image/jpeg",  
+                  "update_successful": true,  
+                  "sha256": "PHOTO_HASH",  
+                },  
+                "group_subject": {  
+                  "text": "Test Subject",  
+                  "update_successful": false,  
+                  "errors": [  
+                    {  
+                      "code": "ERROR_CODE",  
+                      "message": "ERROR_MESSAGE",  
+                      "title": "ERROR_TITLE",  
+                      "error_data": {  
+                        "details": "ERROR_DETAILS"  
+                      }  
+                    }  
+                  ]  
+                },  
+                "group_description": {  
+                  "text": "Test Description",  
+                  "update_successful": false,  
+                  "errors": [  
+                    {  
+                      "code": "ERROR_CODE",  
+                      "message": "ERROR_MESSAGE",  
+                      "title": "ERROR_TITLE",  
+                      "error_data": {  
+                        "details": "ERROR_DETAILS"  
+                      }  
+                    }  
+                  ]  
+                },  
+                "errors": [  
+                  {  
+                    "code": "ERROR_CODE",  
+                    "message": "ERROR_MESSAGE",  
+                    "title": "ERROR_TITLE",  
+                    "error_data": {  
+                      "details": "ERROR_DETAILS"  
+                    }  
+                  }  
+                ]  
+              }  
+            ]  
+          },  
+          "field": "group_settings_update"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ### Group settings update total fail
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "<ID>",  
-      "changes": [  
-        {  
-          "value": {  
-            "messaging_product": "whatsapp",  
-            "metadata": {  
-              "display_phone_number": "DISPLAY_PHONE_NUMBER",  
-              "phone_number_id": "PHONE_NUMBER"  
-            },  
-            "groups": [  
-              {  
-                "timestamp": "TIMESTAMP",  
-                "group_id": "GROUP_ID",  
-                "request_id": "REQUEST_ID",  
-                "type": "group_settings_update",  
-                "profile_picture": {  
-                  "mime_type": "image/jpeg",  
-                    "sha256": "PHOTO_HASH",  
-                  "update_successful": false,  
-                  "errors": [  
-                    {  
-                      "code": "ERROR_CODE",  
-                      "message": "ERROR_MESSAGE",  
-                      "title": "ERROR_TITLE",  
-                      "error_data": {  
-                        "details": "ERROR_DETAILS"  
-                      }  
-                    }  
-                  ]  
-                },  
-                "group_subject": {  
-                  "text": "Test Subject",  
-                  "update_successful": false,  
-                  "errors": [  
-                    {  
-                      "code": "ERROR_CODE",  
-                      "message": "ERROR_MESSAGE",  
-                      "title": "ERROR_TITLE",  
-                      "error_data": {  
-                        "details": "ERROR_DETAILS"  
-                      }  
-                    }  
-                  ]  
-                },  
-                "group_description": {  
-                  "text": "Test Description",  
-                  "update_successful": false,  
-                  "errors": [  
-                    {  
-                      "code": "ERROR_CODE",  
-                      "message": "ERROR_MESSAGE",  
-                      "title": "ERROR_TITLE",  
-                      "error_data": {  
-                        "details": "ERROR_DETAILS"  
-                      }  
-                    }  
-                  ]  
-                },  
-                "errors": [  
-                  {  
-                    "code": "ERROR_CODE",  
-                    "message": "ERROR_MESSAGE",  
-                    "title": "ERROR_TITLE",  
-                    "error_data": {  
-                      "details": "ERROR_DETAILS"  
-                    }  
-                  }  
-                ]  
-              }  
-            ]  
-          },  
-          "field": "group_settings_update"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "<ID>",  
+      "changes": [  
+        {  
+          "value": {  
+            "messaging_product": "whatsapp",  
+            "metadata": {  
+              "display_phone_number": "DISPLAY_PHONE_NUMBER",  
+              "phone_number_id": "PHONE_NUMBER"  
+            },  
+            "groups": [  
+              {  
+                "timestamp": "TIMESTAMP",  
+                "group_id": "GROUP_ID",  
+                "request_id": "REQUEST_ID",  
+                "type": "group_settings_update",  
+                "profile_picture": {  
+                  "mime_type": "image/jpeg",  
+                    "sha256": "PHOTO_HASH",  
+                  "update_successful": false,  
+                  "errors": [  
+                    {  
+                      "code": "ERROR_CODE",  
+                      "message": "ERROR_MESSAGE",  
+                      "title": "ERROR_TITLE",  
+                      "error_data": {  
+                        "details": "ERROR_DETAILS"  
+                      }  
+                    }  
+                  ]  
+                },  
+                "group_subject": {  
+                  "text": "Test Subject",  
+                  "update_successful": false,  
+                  "errors": [  
+                    {  
+                      "code": "ERROR_CODE",  
+                      "message": "ERROR_MESSAGE",  
+                      "title": "ERROR_TITLE",  
+                      "error_data": {  
+                        "details": "ERROR_DETAILS"  
+                      }  
+                    }  
+                  ]  
+                },  
+                "group_description": {  
+                  "text": "Test Description",  
+                  "update_successful": false,  
+                  "errors": [  
+                    {  
+                      "code": "ERROR_CODE",  
+                      "message": "ERROR_MESSAGE",  
+                      "title": "ERROR_TITLE",  
+                      "error_data": {  
+                        "details": "ERROR_DETAILS"  
+                      }  
+                    }  
+                  ]  
+                },  
+                "errors": [  
+                  {  
+                    "code": "ERROR_CODE",  
+                    "message": "ERROR_MESSAGE",  
+                    "title": "ERROR_TITLE",  
+                    "error_data": {  
+                      "details": "ERROR_DETAILS"  
+                    }  
+                  }  
+                ]  
+              }  
+            ]  
+          },  
+          "field": "group_settings_update"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ## `group_status_update` webhooks
@@ -751,69 +723,65 @@ You may receive a webhook if a group you manage is suspended. You may also recei
 ### Group suspended
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "WHATSAPP_BUSINESS_ACCOUNT_ID",  
-      "changes": [  
-        {  
-          "value": {  
-            "messaging_product": "whatsapp",  
-            "metadata": {  
-              "display_phone_number": "DISPLAY_PHONE_NUMBER",  
-              "phone_number_id": "PHONE_NUMBER_ID"  
-            },  
-            "groups": [  
-              {  
-                "timestamp": "TIMESTAMP",  
-                "type": "group_suspend",  
-                "group_id": "GROUP_ID"  
-              }  
-            ]  
-          },  
-          "field": "group_status_update"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "WHATSAPP_BUSINESS_ACCOUNT_ID",  
+      "changes": [  
+        {  
+          "value": {  
+            "messaging_product": "whatsapp",  
+            "metadata": {  
+              "display_phone_number": "DISPLAY_PHONE_NUMBER",  
+              "phone_number_id": "PHONE_NUMBER_ID"  
+            },  
+            "groups": [  
+              {  
+                "timestamp": "TIMESTAMP",  
+                "type": "group_suspend",  
+                "group_id": "GROUP_ID"  
+              }  
+            ]  
+          },  
+          "field": "group_status_update"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ### Group suspension cleared
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "WHATSAPP_BUSINESS_ACCOUNT_ID",  
-      "changes": [  
-        {  
-          "value": {  
-            "messaging_product": "whatsapp",  
-            "metadata": {  
-              "display_phone_number": "DISPLAY_PHONE_NUMBER",  
-              "phone_number_id": "PHONE_NUMBER_ID"  
-            },  
-            "groups": [  
-              {  
-                "timestamp": "TIMESTAMP",  
-                "type": "group_suspend_cleared",  
-                "group_id": "GROUP_ID"  
-              }  
-            ]  
-          },  
-          "field": "group_status_update"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "WHATSAPP_BUSINESS_ACCOUNT_ID",  
+      "changes": [  
+        {  
+          "value": {  
+            "messaging_product": "whatsapp",  
+            "metadata": {  
+              "display_phone_number": "DISPLAY_PHONE_NUMBER",  
+              "phone_number_id": "PHONE_NUMBER_ID"  
+            },  
+            "groups": [  
+              {  
+                "timestamp": "TIMESTAMP",  
+                "type": "group_suspend_cleared",  
+                "group_id": "GROUP_ID"  
+              }  
+            ]  
+          },  
+          "field": "group_status_update"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ## Group message status webhooks
@@ -831,68 +799,66 @@ Each webhook you receive will be in reference to a single message sent to a sing
 **Aggregated group message status**
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "WHATSAPP_BUSINESS_ACCOUNT_ID",  
-      "changes": [  
-        {  
-          "value": {  
-            "messaging_product": "whatsapp",  
-            "metadata": {  
-              "display_phone_number": "BUSINESS_DISPLAY_PHONE_NUMBER",  
-              "phone_number_id": "BUSINESS_PHONE_NUMBER_ID"  
-            },  
-            "statuses": [  
-              {  
-                "id": "WHATSAPP_MESSAGE_ID",  
-                "status": "read",  
-                "timestamp": "WEBHOOK_TRIGGER_TIMESTAMP",  
-                "recipient_id": "GROUP_ID",  
-                "recipient_type": "group",  
-                "recipient_participant_id": "GROUP_PARTICIPANT_PHONE_NUMBER_1",  
-                "conversation": {  
-                  "id": "CONVERSATION_ID",  
-                  "origin": {  
-                    "type": "CONVERSATION_CATEGORY"  
-                  },  
-                  "pricing": {  
-                    "billable": IS_BILLABLE,  
-                    "pricing_model": "PRICING_MODEL",  
-                    "category": "CONVERSATION_CATEGORY"  
-                  }  
-                }  
-              },  
-              {  
-                "id": "WHATSAPP_MESSAGE_ID",  
-                "status": "read",  
-                "timestamp": "WEBHOOK_TRIGGER_TIMESTAMP",  
-                "recipient_id": "GROUP_ID",  
-                "recipient_type": "group",  
-                "recipient_participant_id": "GROUP_PARTICIPANT_PHONE_NUMBER_2",  
-                "conversation": {  
-                  "id": "CONVERSATION_ID",  
-                  "origin": {  
-                    "type": "CONVERSATION_CATEGORY"  
-                  },  
-                  "pricing": {  
-                    "billable": IS_BILLABLE,  
-                    "pricing_model": "PRICING_MODEL",  
-                    "category": "CONVERSATION_CATEGORY"  
-                  }  
-                }  
-              }  
-            ]  
-          },  
-          "field": "messages"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "WHATSAPP_BUSINESS_ACCOUNT_ID",  
+      "changes": [  
+        {  
+          "value": {  
+            "messaging_product": "whatsapp",  
+            "metadata": {  
+              "display_phone_number": "BUSINESS_DISPLAY_PHONE_NUMBER",  
+              "phone_number_id": "BUSINESS_PHONE_NUMBER_ID"  
+            },  
+            "statuses": [  
+              {  
+                "id": "WHATSAPP_MESSAGE_ID",  
+                "status": "read",  
+                "timestamp": "WEBHOOK_TRIGGER_TIMESTAMP",  
+                "recipient_id": "GROUP_ID",  
+                "recipient_type": "group",  
+                "recipient_participant_id": "GROUP_PARTICIPANT_PHONE_NUMBER_1",  
+                "conversation": {  
+                  "id": "CONVERSATION_ID",  
+                  "origin": {  
+                    "type": "CONVERSATION_CATEGORY"  
+                  },  
+                  "pricing": {  
+                    "billable": IS_BILLABLE,  
+                    "pricing_model": "PRICING_MODEL",  
+                    "category": "CONVERSATION_CATEGORY"  
+                  }  
+                }  
+              },  
+              {  
+                "id": "WHATSAPP_MESSAGE_ID",  
+                "status": "read",  
+                "timestamp": "WEBHOOK_TRIGGER_TIMESTAMP",  
+                "recipient_id": "GROUP_ID",  
+                "recipient_type": "group",  
+                "recipient_participant_id": "GROUP_PARTICIPANT_PHONE_NUMBER_2",  
+                "conversation": {  
+                  "id": "CONVERSATION_ID",  
+                  "origin": {  
+                    "type": "CONVERSATION_CATEGORY"  
+                  },  
+                  "pricing": {  
+                    "billable": IS_BILLABLE,  
+                    "pricing_model": "PRICING_MODEL",  
+                    "category": "CONVERSATION_CATEGORY"  
+                  }  
+                }  
+              }  
+            ]  
+          },  
+          "field": "messages"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ### Multiple messages, single participant
@@ -905,116 +871,112 @@ Each webhook you receive will be in reference to multiple messages sent to a sin
 **Aggregated group message status**
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "WHATSAPP_BUSINESS_ACCOUNT_ID",  
-      "changes": [  
-        {  
-          "value": {  
-            "messaging_product": "whatsapp",  
-            "metadata": {  
-              "display_phone_number": "BUSINESS_DISPLAY_PHONE_NUMBER",  
-              "phone_number_id": "BUSINESS_PHONE_NUMBER_ID"  
-            },  
-            "statuses": [  
-              {  
-                "id": "WHATSAPP_MESSAGE_ID_1",  
-                "status": "delivered",  
-                "timestamp": "WEBHOOK_TRIGGER_TIMESTAMP",  
-                "recipient_id": "GROUP_ID",  
-                "recipient_type": "group",  
-                "recipient_participant_id": "GROUP_PARTICIPANT_PHONE_NUMBER",  
-                "conversation": {  
-                  "id": "CONVERSATION_ID",  
-                  "origin": {  
-                    "type": "CONVERSATION_CATEGORY"  
-                  },  
-                  "pricing": {  
-                    "billable": IS_BILLABLE,  
-                    "pricing_model": "PRICING_MODEL",  
-                    "category": "CONVERSATION_CATEGORY"  
-                  }  
-                }  
-              },  
-              {  
-                "id": "WHATSAPP_MESSAGE_ID_2",  
-                "status": "delivered",  
-                "timestamp": "WEBHOOK_TRIGGER_TIMESTAMP",  
-                "recipient_id": "GROUP_ID",  
-                "recipient_type": "group",  
-                "recipient_participant_id": "GROUP_PARTICIPANT_PHONE_NUMBER",  
-                "conversation": {  
-                  "id": "CONVERSATION_ID",  
-                  "origin": {  
-                    "type": "CONVERSATION_CATEGORY"  
-                  },  
-                  "pricing": {  
-                    "billable": IS_BILLABLE,  
-                    "pricing_model": "PRICING_MODEL",  
-                    "category": "CONVERSATION_CATEGORY"  
-                  }  
-                }  
-              }  
-            ]  
-          },  
-          "field": "messages"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "WHATSAPP_BUSINESS_ACCOUNT_ID",  
+      "changes": [  
+        {  
+          "value": {  
+            "messaging_product": "whatsapp",  
+            "metadata": {  
+              "display_phone_number": "BUSINESS_DISPLAY_PHONE_NUMBER",  
+              "phone_number_id": "BUSINESS_PHONE_NUMBER_ID"  
+            },  
+            "statuses": [  
+              {  
+                "id": "WHATSAPP_MESSAGE_ID_1",  
+                "status": "delivered",  
+                "timestamp": "WEBHOOK_TRIGGER_TIMESTAMP",  
+                "recipient_id": "GROUP_ID",  
+                "recipient_type": "group",  
+                "recipient_participant_id": "GROUP_PARTICIPANT_PHONE_NUMBER",  
+                "conversation": {  
+                  "id": "CONVERSATION_ID",  
+                  "origin": {  
+                    "type": "CONVERSATION_CATEGORY"  
+                  },  
+                  "pricing": {  
+                    "billable": IS_BILLABLE,  
+                    "pricing_model": "PRICING_MODEL",  
+                    "category": "CONVERSATION_CATEGORY"  
+                  }  
+                }  
+              },  
+              {  
+                "id": "WHATSAPP_MESSAGE_ID_2",  
+                "status": "delivered",  
+                "timestamp": "WEBHOOK_TRIGGER_TIMESTAMP",  
+                "recipient_id": "GROUP_ID",  
+                "recipient_type": "group",  
+                "recipient_participant_id": "GROUP_PARTICIPANT_PHONE_NUMBER",  
+                "conversation": {  
+                  "id": "CONVERSATION_ID",  
+                  "origin": {  
+                    "type": "CONVERSATION_CATEGORY"  
+                  },  
+                  "pricing": {  
+                    "billable": IS_BILLABLE,  
+                    "pricing_model": "PRICING_MODEL",  
+                    "category": "CONVERSATION_CATEGORY"  
+                  }  
+                }  
+              }  
+            ]  
+          },  
+          "field": "messages"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ### Group message delivered
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "WHATSAPP_BUSINESS_ACCOUNT_ID",  
-      "changes": [  
-        {  
-          "value": {  
-            "messaging_product": "whatsapp",  
-            "metadata": {  
-              "display_phone_number": "BUSINESS_DISPLAY_PHONE_NUMBER",  
-              "phone_number_id": "BUSINESS_PHONE_NUMBER_ID"  
-            },  
-            "statuses": [  
-              {  
-                "id": "WHATSAPP_MESSAGE_ID",  
-                "status": "delivered",  
-                "timestamp": "WEBHOOK_TRIGGER_TIMESTAMP",  
-                "recipient_id": "GROUP_ID",  
-                "recipient_type": "group",  
-                "participant_recipient_id": "GROUP_PARTICIPANT_PHONE_NUMBER",  
-                "conversation": {  
-                "id": "CONVERSATION_ID",  
-                "origin": {  
-                  "type": "CONVERSATION_CATEGORY"  
-                }  
-              },  
-                "pricing": {  
-                  "billable": IS_BILLABLE,  
-                  "pricing_model": "PRICING_MODEL",  
-                  "category": "CONVERSATION_CATEGORY"  
-                }  
-              }  
-            ]  
-          },  
-          "field": "messages"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "WHATSAPP_BUSINESS_ACCOUNT_ID",  
+      "changes": [  
+        {  
+          "value": {  
+            "messaging_product": "whatsapp",  
+            "metadata": {  
+              "display_phone_number": "BUSINESS_DISPLAY_PHONE_NUMBER",  
+              "phone_number_id": "BUSINESS_PHONE_NUMBER_ID"  
+            },  
+            "statuses": [  
+              {  
+                "id": "WHATSAPP_MESSAGE_ID",  
+                "status": "delivered",  
+                "timestamp": "WEBHOOK_TRIGGER_TIMESTAMP",  
+                "recipient_id": "GROUP_ID",  
+                "recipient_type": "group",  
+                "participant_recipient_id": "GROUP_PARTICIPANT_PHONE_NUMBER",  
+                "conversation": {  
+                "id": "CONVERSATION_ID",  
+                "origin": {  
+                  "type": "CONVERSATION_CATEGORY"  
+                }  
+              },  
+                "pricing": {  
+                  "billable": IS_BILLABLE,  
+                  "pricing_model": "PRICING_MODEL",  
+                  "category": "CONVERSATION_CATEGORY"  
+                }  
+              }  
+            ]  
+          },  
+          "field": "messages"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ### Pricing information
@@ -1035,84 +997,80 @@ Status messages webhooks that contain pricing information will have:
 #### Group message read (*With pricing*)
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "WHATSAPP_BUSINESS_ACCOUNT_ID",  
-      "changes": [  
-        {  
-          "value": {  
-            "messaging_product": "whatsapp",  
-            "metadata": {  
-              "display_phone_number": "BUSINESS_DISPLAY_PHONE_NUMBER",  
-              "phone_number_id": "BUSINESS_PHONE_NUMBER_ID"  
-            },  
-            "statuses": [  
-              {  
-                "id": "WHATSAPP_MESSAGE_ID",  
-                "status": "read",  
-                "timestamp": "WEBHOOK_TRIGGER_TIMESTAMP",  
-                "recipient_id": "GROUP_ID",  
-                "recipient_type": "group",  
-                "participant_recipient_id": "GROUP_PARTICIPANT_PHONE_NUMBER",  
-                "conversation": {  
-                "id": "CONVERSATION_ID",  
-                "origin": {  
-                  "type": "CONVERSATION_CATEGORY"  
-                }  
-              },  
-                "pricing": {  
-                  "billable": IS_BILLABLE,  
-                  "pricing_model": "PRICING_MODEL",  
-                  "category": "CONVERSATION_CATEGORY"  
-                }  
-              }  
-            ]  
-          },  
-          "field": "messages"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "WHATSAPP_BUSINESS_ACCOUNT_ID",  
+      "changes": [  
+        {  
+          "value": {  
+            "messaging_product": "whatsapp",  
+            "metadata": {  
+              "display_phone_number": "BUSINESS_DISPLAY_PHONE_NUMBER",  
+              "phone_number_id": "BUSINESS_PHONE_NUMBER_ID"  
+            },  
+            "statuses": [  
+              {  
+                "id": "WHATSAPP_MESSAGE_ID",  
+                "status": "read",  
+                "timestamp": "WEBHOOK_TRIGGER_TIMESTAMP",  
+                "recipient_id": "GROUP_ID",  
+                "recipient_type": "group",  
+                "participant_recipient_id": "GROUP_PARTICIPANT_PHONE_NUMBER",  
+                "conversation": {  
+                "id": "CONVERSATION_ID",  
+                "origin": {  
+                  "type": "CONVERSATION_CATEGORY"  
+                }  
+              },  
+                "pricing": {  
+                  "billable": IS_BILLABLE,  
+                  "pricing_model": "PRICING_MODEL",  
+                  "category": "CONVERSATION_CATEGORY"  
+                }  
+              }  
+            ]  
+          },  
+          "field": "messages"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 #### Group message read (*Without pricing*)
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "WHATSAPP_BUSINESS_ACCOUNT_ID",  
-      "changes": [  
-        {  
-          "value": {  
-            "messaging_product": "whatsapp",  
-            "metadata": {  
-              "display_phone_number": "BUSINESS_DISPLAY_PHONE_NUMBER",  
-              "phone_number_id": "BUSINESS_PHONE_NUMBER_ID"  
-            },  
-            "statuses": [  
-              {  
-                "id": "WHATSAPP_MESSAGE_ID",  
-                "status": "read",  
-                "timestamp": "WEBHOOK_TRIGGER_TIMESTAMP",  
-                "recipient_id": "GROUP_ID",  
-                "recipient_type": "group",  
-                "participant_recipient_id": "GROUP_PARTICIPANT_PHONE_NUMBER"  
-              }  
-            ]  
-          },  
-          "field": "messages"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "WHATSAPP_BUSINESS_ACCOUNT_ID",  
+      "changes": [  
+        {  
+          "value": {  
+            "messaging_product": "whatsapp",  
+            "metadata": {  
+              "display_phone_number": "BUSINESS_DISPLAY_PHONE_NUMBER",  
+              "phone_number_id": "BUSINESS_PHONE_NUMBER_ID"  
+            },  
+            "statuses": [  
+              {  
+                "id": "WHATSAPP_MESSAGE_ID",  
+                "status": "read",  
+                "timestamp": "WEBHOOK_TRIGGER_TIMESTAMP",  
+                "recipient_id": "GROUP_ID",  
+                "recipient_type": "group",  
+                "participant_recipient_id": "GROUP_PARTICIPANT_PHONE_NUMBER"  
+              }  
+            ]  
+          },  
+          "field": "messages"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```

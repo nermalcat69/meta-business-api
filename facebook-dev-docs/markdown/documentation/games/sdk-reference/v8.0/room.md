@@ -24,12 +24,10 @@ Check if user can follow official game page
 **Example:**
 
 ```
-```
 FBInstant.community.canFollowOfficialPageAsync()  
-  .then(function(data) {  
-    console.log(data);  
-  });
-```
+  .then(function(data) {  
+    console.log(data);  
+  });
 ```
 
 ---
@@ -47,12 +45,10 @@ Check if user can join official game group
 **Example:**
 
 ```
-```
 FBInstant.community.canJoinOfficialGroupAsync()  
-  .then(function(data) {  
-    console.log(data);  
-  });
-```
+  .then(function(data) {  
+    console.log(data);  
+  });
 ```
 
 ---
@@ -72,9 +68,7 @@ Renders overlay with follow official page CTA
 **Example:**
 
 ```
-```
 FBInstant.community.followOfficialPageAsync()
-```
 ```
 
 ---
@@ -94,9 +88,7 @@ Renders overlay with join group CTA
 **Example:**
 
 ```
-```
 FBInstant.community.joinOfficialGroupAsync()
-```
 ```
 
 ---

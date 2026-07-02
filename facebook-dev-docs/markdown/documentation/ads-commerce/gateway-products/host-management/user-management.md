@@ -19,7 +19,7 @@ In the dialog box that opens provide the new name for the instance and click **C
 
 ![Update account name dialog with an Account name field and Cancel and Save buttons for renaming the Signals Gateway instance](https://scontent.fdel27-4.fna.fbcdn.net/v/t39.2365-6/476125514_605615415660206_2466641148015456081_n.png?_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=Xemc2iPAAq0Q7kNvwG0BMmR&_nc_oc=AdoNlKuyEJMKDf5fEmlzFRXfhPRabyT1fjW-zdyoxpgU3B3UJIz24h5uLb-FInPxx8LtSvFV79ogCguQkN-5Qcmu&_nc_zt=14&_nc_ht=scontent.fdel27-4.fna&_nc_gid=1nCvp-XpbjCYDZxlhb-_XQ&_nc_ss=7b289&oh=00_AQAmAYHwTjG0cr_Xn1oKABoK4LbRE_BCkOY_E581540AVg&oe=6A60A1B2)
 
-## Update the “Gateway Products” Conversions API Gateway or Signals Gateway
+## Update the "Gateway Products" Conversions API Gateway or Signals Gateway
 
 Host admin users can update the Gateway Product in **Updates**, under the Host settings menu.
 

@@ -22,8 +22,8 @@ HTTPPHP SDKJavaScript SDKAndroid SDKiOS SDKcURL
 ---
 
 ```
-GET /v25.0/act_<AD_ACCOUNT_ID>/adcreatives?fields=name HTTP/1.1  
-Host: graph.facebook.com
+GET /v25.0/act_<AD_ACCOUNT_ID>/adcreatives?fields=name HTTP/1.1  
+Host: graph.facebook.com
 ```
 
 Try it in [Graph API Explorer](https://developers.facebook.com/tools/explorer/?method=GET&path=act_%3CAD_ACCOUNT_ID%3E%2Fadcreatives%3Ffields%3Dname&version=v25.0)
@@ -96,8 +96,8 @@ HTTPPHP SDKJavaScript SDKAndroid SDKiOS SDKcURL
 ---
 
 ```
-POST /v25.0/act_<AD_ACCOUNT_ID>/adcreatives HTTP/1.1  
-Host: graph.facebook.com  
+POST /v25.0/act_<AD_ACCOUNT_ID>/adcreatives HTTP/1.1  
+Host: graph.facebook.com  
   
 name=Sample+Promoted+Post&object_story_id=%3CPAGE_ID%3E_%3CPOST_ID%3E
 ```

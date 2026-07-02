@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/threads/changelog
 
 Updated: May 6, 2026
 
-[Postman⁠](https://www.postman.com/) is a popular tool to help test and develop APIs. To make it more convenient for developers integrating with Threads API, we’ve created a Postman collection that contains a full set of API calls.
+[Postman⁠](https://www.postman.com/) is a popular tool to help test and develop APIs. To make it more convenient for developers integrating with Threads API, we've created a Postman collection that contains a full set of API calls.
 
 This document shows you how to set up the Threads API Postman Collection and use Postman to make requests to Threads API.
 

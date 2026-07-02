@@ -11,11 +11,11 @@ The collection ad format includes an [Instant Experience](https://developers.fac
 
 You can create an ad with the collection format by building an [Instant Experience](https://developers.facebook.com/documentation/ads-commerce/marketing-api/guides/instant-experiences). Start with a template or choose your own customized layout.
 
-You can also include Facebook’s ad creation user interfaces for the collection format in your website using the JavaScript SDK to create a [Collections Ads Dialog](https://developers.facebook.com/documentation/ads-commerce/marketing-api/mobile-app-ads#collection-ads-dialog).
+You can also include Facebook's ad creation user interfaces for the collection format in your website using the JavaScript SDK to create a [Collections Ads Dialog](https://developers.facebook.com/documentation/ads-commerce/marketing-api/mobile-app-ads#collection-ads-dialog).
 
 To create collections used in Shops or to add metadata to a product set, see [Commerce Platform: Product Set Collection API](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/catalog/collections).
 
-Consider all references of “Canvas” to represent Instant Experience as Canvas is the previous name for this format.
+Consider all references of "Canvas" to represent Instant Experience as Canvas is the previous name for this format.
 
 ## Supported objectives and placements
 
@@ -172,8 +172,8 @@ curl -X POST \
       "customization": {
         "text_color": "FFFFFF",
         "text_background_color": "000000",
-        "name_template": "{{product.name}}",
-        "body_template": "{{product.current_price strip_zeros}}"
+        "name_template": "{​{product.name}​}",
+        "body_template": "{​{product.current_price strip_zeros}​}"
       },
     }
   }' \
@@ -192,8 +192,8 @@ curl -X POST \
   -F 'canvas_product_set={
     "max_items": 50,
     "product_set_id": "<PRODUCT_SET_ID>",
-    "item_headline": "{{product.name}}",
-    "item_description": "{{product.current_price}}"
+    "item_headline": "{​{product.name}​}",
+    "item_description": "{​{product.current_price}​}"
     "image_overlay_spec": {
       "overlay_template": "pill_with_text",
       "text_type": "price",
@@ -409,7 +409,7 @@ To set up the Facebook SDK for JavaScript, see:
 * [Quickstart guide](https://developers.facebook.com/docs/javascript/quickstart)
 * [Initialization reference](https://developers.facebook.com/docs/javascript/reference/FB.init)
 
-The JavaScript SDK relies on the logged in user’s permissions to create Instant Experiences. If the user does not have the necessary permissions to create an Instant Experience for the supplied page and business, the dialog will show an error. The user must also have access to the product catalogs and sets. In order to ensure no errors, the user must have access to the Meta Business Suite and have permissions to create ads for the page.
+The JavaScript SDK relies on the logged in user's permissions to create Instant Experiences. If the user does not have the necessary permissions to create an Instant Experience for the supplied page and business, the dialog will show an error. The user must also have access to the product catalogs and sets. In order to ensure no errors, the user must have access to the Meta Business Suite and have permissions to create ads for the page.
 
 Then you can trigger the collection ads dialog.
 
@@ -446,12 +446,10 @@ To preview a collection ad, use the [Instant Experiences Preview Dialog](https:/
 ### Example response
 
 ```
-```
 {  
-  "success": true,  
-  "id": "<CANVAS_ID>"  
+  "success": true,  
+  "id": "<CANVAS_ID>"  
 }
-```
 ```
 
 The `id` returned will be an **unpublished** Instant Experience. It needs to be [published](https://developers.facebook.com/documentation/ads-commerce/marketing-api/guides/instant-experiences#publish) before it can be used in ad campaigns.
@@ -460,7 +458,7 @@ If there is no response or an `undefined` response is returned, it means the dia
 
 ## Including destination catalogs
 
-You can show ad creatives from a destination catalog in a collection ad’s hero image. You can also display a carousel of hotel images at that destination. To do this, you must provide a fallback image that displays at the hero image in case there is no corresponding destination for hotels in the carousel. For more information, see [Destination Catalog](https://developers.facebook.com/documentation/ads-commerce/marketing-api/destination-ads/catalog).
+You can show ad creatives from a destination catalog in a collection ad's hero image. You can also display a carousel of hotel images at that destination. To do this, you must provide a fallback image that displays at the hero image in case there is no corresponding destination for hotels in the carousel. For more information, see [Destination Catalog](https://developers.facebook.com/documentation/ads-commerce/marketing-api/destination-ads/catalog).
 
 Note these limitations:
 

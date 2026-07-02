@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/gateway-p
 
 Updated: Feb 2, 2025
 
-Including customer Facebook Login for advanced matching in the Conversions API is available from v1.6.0. This feature can be helpful for improving the [Event Match Quality⁠](https://www.facebook.com/business/help/765081237991954?id=818859032317965) Score of events sent from websites that use “[Login with Facebook](https://developers.facebook.com/documentation/facebook-login/web)”.
+Including customer Facebook Login for advanced matching in the Conversions API is available from v1.6.0. This feature can be helpful for improving the [Event Match Quality⁠](https://www.facebook.com/business/help/765081237991954?id=818859032317965) Score of events sent from websites that use "[Login with Facebook](https://developers.facebook.com/documentation/facebook-login/web)".
 
 The feature is disabled by default in the Conversions API Gateway but advertisers can turn it on by following the below steps.
 

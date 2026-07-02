@@ -18,41 +18,39 @@ WhatsApp Business Accounts (WABAs) must be fully verified and consistently maint
 Use the [Messages API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/message-api#post-version-phone-number-id-messages) to send a text message template to a WhatsApp user.
 
 ```
-```
-curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/messages' \  
--H 'Content-Type: application/json' \  
--H 'Authorization: Bearer <ACCESS_TOKEN>' \  
--d '  
+curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/messages' \  
+-H 'Content-Type: application/json' \  
+-H 'Authorization: Bearer <ACCESS_TOKEN>' \  
+-d '  
 {  
-  "messaging_product": "whatsapp",  
-  "recipient_type": "individual",  
-  "to": "<WHATSAPP_USER_PHONE_NUMBER>",  
-  "type": "template",  
-  "template": {  
-    "name": "<TEMPLATE_NAME>",  
-    "language": {  
-      "code": "<LANGUAGE_AND_LOCALE_CODE>"  
-    },  
-    "components": [  
-      {  
-        "type": "tap_target_configuration",  
-        "parameters": [  
-          {  
-            "type": "tap_target_configuration",  
-            "tap_target_configuration": [  
-              {  
-                "url": "<URL>",  
-                "title": "<TITLE>"  
-              }  
-            ]  
-          }  
-        ]  
-      },  
-          <!-- Add additional components -->  
-    ]  
-  }  
+  "messaging_product": "whatsapp",  
+  "recipient_type": "individual",  
+  "to": "<WHATSAPP_USER_PHONE_NUMBER>",  
+  "type": "template",  
+  "template": {  
+    "name": "<TEMPLATE_NAME>",  
+    "language": {  
+      "code": "<LANGUAGE_AND_LOCALE_CODE>"  
+    },  
+    "components": [  
+      {  
+        "type": "tap_target_configuration",  
+        "parameters": [  
+          {  
+            "type": "tap_target_configuration",  
+            "tap_target_configuration": [  
+              {  
+                "url": "<URL>",  
+                "title": "<TITLE>"  
+              }  
+            ]  
+          }  
+        ]  
+      },  
+          <!-- Add additional components -->  
+    ]  
+  }  
 }
-```
 ```
 
 ### Request parameters
@@ -130,21 +128,19 @@ curl 'https://graph.facebook.com/v25.0/106540352242922/messages' \
 ## Example response
 
 ```
-```
 {  
-   "messaging_product": "whatsapp",  
-   "contacts": [  
-       {  
-           "input": "+1233214532",  
-           "wa_id": "1233214532"  
-       }  
-   ],  
-   "messages": [  
-       {  
-           "id": "wamid.HBgLMTMyMzI4NjU2NzgVAgARGBJBQzRBRDBEMDEwQzVBM0M0QkIA",  
-           "message_status": "accepted"  
-       }  
-   ]  
+   "messaging_product": "whatsapp",  
+   "contacts": [  
+       {  
+           "input": "+1233214532",  
+           "wa_id": "1233214532"  
+       }  
+   ],  
+   "messages": [  
+       {  
+           "id": "wamid.HBgLMTMyMzI4NjU2NzgVAgARGBJBQzRBRDBEMDEwQzVBM0M0QkIA",  
+           "message_status": "accepted"  
+       }  
+   ]  
 }
-```
 ```

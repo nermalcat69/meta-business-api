@@ -32,27 +32,27 @@ The Facebook Developer Community groups are the best resources for you to ask qu
 
 ### How to access
 
-Support is available by directly asking a question using the “Ask a question” feature, or by selecting “Contact Direct Support”.
+Support is available by directly asking a question using the "Ask a question" feature, or by selecting "Contact Direct Support".
 
 Here are the steps to get help from your developer dashboard. Note that there are two main ways of accessing the Help page, depending on where you are.
 
 * **Within developers.facebook.com/support:**
 
-If you are on developers.facebook.com, you can access help via the “Get Help” on the bottom right.
+If you are on developers.facebook.com, you can access help via the "Get Help" on the bottom right.
 
 ![Get help panel opened from the Help button, listing Ask a question, Report a bug, and Get Started resources](https://scontent.fdel27-3.fna.fbcdn.net/v/t39.2365-6/672159963_1484143163444333_2262696339697654961_n.png?_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=WD01bOqm1U8Q7kNvwH1iReE&_nc_oc=AdpE7uilA0J54nrNEPE6iJVfRJMKjOBmvpKcUXYL0s1SdOS4E0BUUIP_joga7zxo4op94IwPfz7thad76NlQ3Wep&_nc_zt=14&_nc_ht=scontent.fdel27-3.fna&_nc_gid=X4brJEcKFyJ0dLzElrRPJA&_nc_ss=7b289&oh=00_AQD740T6-BhZMphwNBTei09KZT_0rp82UuTnjnWRAx9aDw&oe=6A60841E)
 
 * **Within data access renewal:**
 
-If you are currently in Data Access Renewal, you can access support within your developer assessment page using “Get help” on the bottom left corner of the screen. Note that you must open any of your required actions before you see this feature.
+If you are currently in Data Access Renewal, you can access support within your developer assessment page using "Get help" on the bottom left corner of the screen. Note that you must open any of your required actions before you see this feature.
 
 ![Data Access Renewal Overview page showing the Get help link at the bottom left corner](https://scontent.fdel27-7.fna.fbcdn.net/v/t39.2365-6/670936240_1484143170110999_6368264106195410675_n.png?_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=lU_YyTbyQoUQ7kNvwFt1rfF&_nc_oc=AdpgXrd39SFA9HTxT84YximDh7zc3VKsMsYO7RPNsB4yNef71WoURXd6hHLM1mYgQ7fBrKDWkDZDABo9iPqe98KR&_nc_zt=14&_nc_ht=scontent.fdel27-7.fna&_nc_gid=X4brJEcKFyJ0dLzElrRPJA&_nc_ss=7b289&oh=00_AQAuUmIIjYnlFrOOCXk3uD7jQr2QvdgDdeY2WM_Q-n7vNQ&oe=6A60872F)
 
-Once you’ve accessed Help, click “Ask a question” on the left hand panel:
+Once you've accessed Help, click "Ask a question" on the left hand panel:
 
 ![Ask a question dialog with a topic dropdown, question field, and Best matches answers plus a Contact Direct Support option](https://scontent.fdel27-5.fna.fbcdn.net/v/t39.2365-6/672185019_1484143173444332_8990571146004029819_n.png?_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=zePriu6RL18Q7kNvwH4elL2&_nc_oc=AdruR-b0mM9Vibi2i5Il_yY9M8XdB9-wny_qq6Y_23Rb4r_sDkCecbzHasZMW3QGCBFa-eVeMhnvpYSvbKx2AAEm&_nc_zt=14&_nc_ht=scontent.fdel27-5.fna&_nc_gid=X4brJEcKFyJ0dLzElrRPJA&_nc_ss=7b289&oh=00_AQDVbf3VNBdoRionTXnd8FNyURG0Hbp5QaJHuBMul5WqEQ&oe=6A609A3A)
 
-There is dropdown field for selecting a “topic”, for which you can ask a question. If you do not see your question in the dropdown field or you have an additional question, select “Contact Direct Support” .
+There is dropdown field for selecting a "topic", for which you can ask a question. If you do not see your question in the dropdown field or you have an additional question, select "Contact Direct Support" .
 
 pic4
 ![Contact Direct Support form with Topic, Title, and Description fields and a Confirm button to submit a question](https://scontent.fdel27-5.fna.fbcdn.net/v/t39.2365-6/673636747_1484143176777665_3197532051252895224_n.png?_nc_cat=105&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=9I39iteLcSQQ7kNvwFWNHyh&_nc_oc=Adr4UbqvGtL1Eoyjw_ijBO-0dyFee3hqYkhGDwSg4EcupYGnF4EDsfmetfQDEaTS65xqUbimfQSLX2aVk4eAaWTA&_nc_zt=14&_nc_ht=scontent.fdel27-5.fna&_nc_gid=X4brJEcKFyJ0dLzElrRPJA&_nc_ss=7b289&oh=00_AQDE6OQYoa4xK9XZ8K1pENXablPQaUvZYG3jY-y_2NA1hg&oe=6A60A468)

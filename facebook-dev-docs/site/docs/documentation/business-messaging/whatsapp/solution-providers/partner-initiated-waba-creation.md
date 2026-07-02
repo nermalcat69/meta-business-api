@@ -41,25 +41,23 @@ When you receive this webhook:
 You receive the following payload on your `account_update` webhook subscription when a coexistence client is offboarded due to a device change or re-registration:
 
 ```
-```
 {  
-  "entry": [  
-    {  
-      "id": "<WABA_ID>",  
-      "time": <WEBHOOK_TIMESTAMP>,  
-      "changes": [  
-        {  
-          "value": {  
-            "event": "ACCOUNT_OFFBOARDED"  
-          },  
-          "field": "account_update"  
-        }  
-      ]  
-    }  
-  ],  
-  "object": "whatsapp_business_account"  
+  "entry": [  
+    {  
+      "id": "<WABA_ID>",  
+      "time": <WEBHOOK_TIMESTAMP>,  
+      "changes": [  
+        {  
+          "value": {  
+            "event": "ACCOUNT_OFFBOARDED"  
+          },  
+          "field": "account_update"  
+        }  
+      ]  
+    }  
+  ],  
+  "object": "whatsapp_business_account"  
 }
-```
 ```
 
 ## Capabilities during reonboarding
@@ -76,37 +74,35 @@ The following describes capability states while reonboarding is in progress.
 
 ## Confirm reconnection
 
-You receive an `ACCOUNT_RECONNECTED` webhook when your client’s Cloud API companion is restored.
+You receive an `ACCOUNT_RECONNECTED` webhook when your client's Cloud API companion is restored.
 
 After reconnection:
 
 * Cloud API messaging resumes automatically.
-* Other companion devices (such as WhatsApp Web) aren’t automatically re-linked. Your client must manually re-link any companion devices.
+* Other companion devices (such as WhatsApp Web) aren't automatically re-linked. Your client must manually re-link any companion devices.
 
 ### `ACCOUNT_RECONNECTED` webhook payload
 
 You receive the following payload on your `account_update` webhook subscription when your client reconnects:
 
 ```
-```
 {  
-  "entry": [  
-    {  
-      "id": "<WABA_ID>",  
-      "time": <WEBHOOK_TIMESTAMP>,  
-      "changes": [  
-        {  
-          "value": {  
-            "event": "ACCOUNT_RECONNECTED"  
-          },  
-          "field": "account_update"  
-        }  
-      ]  
-    }  
-  ],  
-  "object": "whatsapp_business_account"  
+  "entry": [  
+    {  
+      "id": "<WABA_ID>",  
+      "time": <WEBHOOK_TIMESTAMP>,  
+      "changes": [  
+        {  
+          "value": {  
+            "event": "ACCOUNT_RECONNECTED"  
+          },  
+          "field": "account_update"  
+        }  
+      ]  
+    }  
+  ],  
+  "object": "whatsapp_business_account"  
 }
-```
 ```
 
 ## Limitations

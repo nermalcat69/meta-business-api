@@ -106,11 +106,9 @@ curl "https://graph.facebook.com/<LATEST-API-VERSION>/<PAGE_ID>/message_attachme
 Upon success, the API returns an attachment ID. You can now include this ID in your messages.
 
 ```
-```
 {  
-    "attachment_id": "<ATTACHMENT_ID>"  
+    "attachment_id": "<ATTACHMENT_ID>"  
 }
-```
 ```
 
 ## Send the media
@@ -150,15 +148,13 @@ curl "https://graph.facebook.com/<LATEST-API-VERSION>/<PAGE_ID>/messages"
 
 #### Sample API response
 
-Upon success, the API returns a JSON response with the recipient’s ID and the message’s ID.
+Upon success, the API returns a JSON response with the recipient's ID and the message's ID.
 
 ```
-```
 {  
-  "recipient_id": "<IGSID>",  
-  "message_id": "<MESSAGE_ID>"  
+  "recipient_id": "<IGSID>",  
+  "message_id": "<MESSAGE_ID>"  
 }
-```
 ```
 
 ## Upload and send
@@ -199,7 +195,7 @@ curl "https://graph.facebook.com/<LATEST-API-VERSION>/<PAGE_ID>/messages"
 
 ### From a server
 
-To upload and send an image, audio, file, or video from your server, send a `POST` request to the `/<PAGE_ID>/messages` endpoint with the `recipient` parameter containing the Instagram-scoped ID (IGSID) and the `message` parameter containing an `attachment` object with the `type` set to `AUDIO`, `IMAGE`, `VIDEO` or `FILE` and `filedata` parameter the file’s location and type. The format for `filedata` values looks like `@/path_on_my_server/video.mp4;type=video/mp4`.
+To upload and send an image, audio, file, or video from your server, send a `POST` request to the `/<PAGE_ID>/messages` endpoint with the `recipient` parameter containing the Instagram-scoped ID (IGSID) and the `message` parameter containing an `attachment` object with the `type` set to `AUDIO`, `IMAGE`, `VIDEO` or `FILE` and `filedata` parameter the file's location and type. The format for `filedata` values looks like `@/path_on_my_server/video.mp4;type=video/mp4`.
 
 #### Sample request
 
@@ -230,11 +226,9 @@ curl "https://graph.facebook.com/<LATEST-API-VERSION>/<PAGE_ID>/messages"
 Upon success, the API returns a JSON response with the recipient ID, message ID, and attachment ID.
 
 ```
-```
 {  
-  "recipient_id": "<IGSID>",  
-  "message_id": "<MESSAGE_ID>",  
-  "attachment_id": "<ATTACHMENT_ID>"  
+  "recipient_id": "<IGSID>",  
+  "message_id": "<MESSAGE_ID>",  
+  "attachment_id": "<ATTACHMENT_ID>"  
 }
-```
 ```

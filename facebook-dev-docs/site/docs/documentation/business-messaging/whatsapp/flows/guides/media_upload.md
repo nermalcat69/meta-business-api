@@ -19,7 +19,7 @@ Most common states are the result of API calls, such as creating or publishing a
 
 ### Draft
 
-When a Flow is initially created, it enters the “Draft” state which indicates that the Flow is actively being modified.
+When a Flow is initially created, it enters the "Draft" state which indicates that the Flow is actively being modified.
 
 While in the Draft state, the Flow is only able to be sent for testing, and also has the ability to be fully deleted if no longer needed.
 
@@ -29,8 +29,8 @@ WhatsApp shows a banner at the top of the Flow when a user views it in Draft sta
 
 ### Deleted
 
-Technically this is not a “state” of a Flow because this represents a Flow that no longer exists.
-However, it’s important to note that Flows may be deleted, but only if they are in the Draft state.
+Technically this is not a "state" of a Flow because this represents a Flow that no longer exists.
+However, it's important to note that Flows may be deleted, but only if they are in the Draft state.
 
 You can delete a Flow using [Flow Builder](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/gettingstarted).
 
@@ -40,11 +40,11 @@ You can delete a Flow using [Flow Builder](https://developers.facebook.com/docum
 
 Once a Flow is ready to be sent, it transitions from the Draft state to the Published state. This allows it to be sent to real users rather than just for testing.
 
-After a Flow has been published, you can make some changes and return the Flow to “Draft”. Use this option for small changes and fixes, rather than significant changes.
+After a Flow has been published, you can make some changes and return the Flow to "Draft". Use this option for small changes and fixes, rather than significant changes.
 
 The following alternatives let you edit a Flow after publishing:
 
-* Edit Flow metadata or Flow JSON. This puts the Flow back to “Draft”. Old messages keep previous content, but the new messages reflect the changes. Use this for small fixes.
+* Edit Flow metadata or Flow JSON. This puts the Flow back to "Draft". Old messages keep previous content, but the new messages reflect the changes. Use this for small fixes.
 * If you need to change the Flow significantly, [create a new Flow](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/flowsapi#create) that clones the existing one (using the `clone_flow_id` field).
 * Since you cannot delete a published Flow, deprecate it instead using [the `/deprecate` API call](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/flowsapi#deprecate).
 
@@ -52,7 +52,7 @@ The following alternatives let you edit a Flow after publishing:
 
 ### Deprecated
 
-Once a Flow enters the Deprecated state, it can no longer be sent to real users. Keep in mind that a deprecated Flow may still be present on users’ devices and you may still see responses from the deprecated Flow.
+Once a Flow enters the Deprecated state, it can no longer be sent to real users. Keep in mind that a deprecated Flow may still be present on users' devices and you may still see responses from the deprecated Flow.
 
 **Next states**: None (terminal)
 
@@ -67,7 +67,7 @@ A throttled Flow can still be opened and sent, however sending is limited to 10 
 
 If your Flow enters the Throttled state and you need help diagnosing the issue, start by opening a support case using the [Support Portal⁠](https://business.facebook.com/direct-support/).
 
-If WhatsApp monitoring detects an improvement in the health of the Flow’s endpoint, it transitions the Flow out of the Throttled state and back into the [Published](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/media_upload#published) state.
+If WhatsApp monitoring detects an improvement in the health of the Flow's endpoint, it transitions the Flow out of the Throttled state and back into the [Published](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/media_upload#published) state.
 
 **Next states**: [Published](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/media_upload#published), [Deprecated](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/media_upload#deprecated), [Blocked](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/media_upload#blocked)
 
@@ -81,19 +81,19 @@ While in the Blocked state, the business cannot send the Flow and users cannot o
 
 ## Editing a published Flow
 
-After a Flow has been published, you might still need to make some changes to it. You can modify a published Flow by updating the metadata or Flow JSON. After that, the Flow returns to the “Draft” state.
+After a Flow has been published, you might still need to make some changes to it. You can modify a published Flow by updating the metadata or Flow JSON. After that, the Flow returns to the "Draft" state.
 
-Note that the old cloning functionality still works the same way as before. You can always move your progress to a new Flow by cloning the current one. It’s your decision whether you want to make changes in the current Flow or create a new one by cloning, depending on what fits better.
+Note that the old cloning functionality still works the same way as before. You can always move your progress to a new Flow by cloning the current one. It's your decision whether you want to make changes in the current Flow or create a new one by cloning, depending on what fits better.
 
-Flow messages that you already sent to WhatsApp users won’t reflect the updates you made to the Flow. Only the new messages you send after you publish the Flow again will have the new version of the Flow JSON. WhatsApp supports up to 5 last versions. WhatsApp deprecates older Flow versions.
+Flow messages that you already sent to WhatsApp users won't reflect the updates you made to the Flow. Only the new messages you send after you publish the Flow again will have the new version of the Flow JSON. WhatsApp supports up to 5 last versions. WhatsApp deprecates older Flow versions.
 
-Keep the new Flow JSON in sync with the Flow endpoint if it’s been used. Breaking changes to the Flow JSON will break the whole Flow experience if the Flow data doesn’t correspond to the endpoint contract.
+Keep the new Flow JSON in sync with the Flow endpoint if it's been used. Breaking changes to the Flow JSON will break the whole Flow experience if the Flow data doesn't correspond to the endpoint contract.
 
 WhatsApp only measures quality features like Flow endpoint webhook notifications, error rate, and latency metrics for the last published Flow version.
 
 **Restrictions**
 
-* Some old Flows still don’t support editing. You can create a new Flow by cloning the old one, and the new Flow will support editing.
+* Some old Flows still don't support editing. You can create a new Flow by cloning the old one, and the new Flow will support editing.
 
 ## Example Flow lifecycles
 
@@ -135,4 +135,4 @@ In this example, you work on a Flow but decide that you no longer need it. This 
 |  | Create a new Flow | [Create](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/flowsapi#create) | Draft |
 | Draft | Update the Flow JSON content | [Update JSON](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/flowsapi#update-json) | Draft |
 | Draft | Update the `data_channel_uri` | [Update](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/flowsapi#update) | Draft |
-| Draft | Decide that the Flow isn’t needed anymore | [Delete](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/flowsapi#delete) | Deleted |
+| Draft | Decide that the Flow isn't needed anymore | [Delete](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/flowsapi#delete) | Deleted |

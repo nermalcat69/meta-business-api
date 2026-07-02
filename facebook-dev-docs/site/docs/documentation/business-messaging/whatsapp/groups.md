@@ -45,7 +45,7 @@ There is no call duration limit.
 
 #### Is SIP supported?
 
-Yes, see [“Configure and use call signalling via session initiation protocol (SIP)”](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/sip)
+Yes, see ["Configure and use call signalling via session initiation protocol (SIP)"](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/sip)
 
 #### Can I send/receive text/media messages while a call is in progress?
 
@@ -109,7 +109,7 @@ Yes, it is possible for two partners to operate a single WhatsApp Business API p
 
 [See Multi-Solution Conversations for more details](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/multi-solution-conversations).
 
-Another option is for the voice provider used by another Solution Partner. In this case a Meta app or being a tech provider on Meta is not needed. This architecture is depicted in detail in the section [“Integrating using a third party voice provider”](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/integration-patterns#integrating-using-a-third-party-voice-provider-detailed-design).
+Another option is for the voice provider used by another Solution Partner. In this case a Meta app or being a tech provider on Meta is not needed. This architecture is depicted in detail in the section ["Integrating using a third party voice provider"](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/integration-patterns#integrating-using-a-third-party-voice-provider-detailed-design).
 
 ## Graph API call signaling FAQ
 
@@ -123,10 +123,10 @@ As such it is not mandatory to use STUN/TURN to determine the ICE candidates.
 
 #### Does Meta recommend any STUN/TURN servers or WebRTC infra for use by Solution Partner?
 
-Meta doesn’t have recommendations. Here are a few ideas in case they are helpful.
+Meta doesn't have recommendations. Here are a few ideas in case they are helpful.
 
 * Check for any existing VoIP related technology and if so, consult that team. WebRTC relies on SRTP/SRTCP for actual media which is the VoIP media standard.
-* Using STUN/TURN works well in an end user setup with a browser from a personal device. If the integration with the Meta voice APIs involves terminating the media directly on an end user device, the STUN/TURN, and so on, happen directly on that user device. But often, the media does terminate in a partner’s own infra so services like IVR can be offered. In such cases, the Solution Partner infra may have its own ways to allocate an IP and port for VoIP connections, for example using VIP behind a load-balancer, and so on.
+* Using STUN/TURN works well in an end user setup with a browser from a personal device. If the integration with the Meta voice APIs involves terminating the media directly on an end user device, the STUN/TURN, and so on, happen directly on that user device. But often, the media does terminate in a partner's own infra so services like IVR can be offered. In such cases, the Solution Partner infra may have its own ways to allocate an IP and port for VoIP connections, for example using VIP behind a load-balancer, and so on.
 
 #### What ICE role should the ICE agent on the business side take?
 
@@ -140,13 +140,13 @@ Short answer is yes. Cloud API uses [ICE-lite (RFC 8445)⁠](https://datatracker
 
 Meta has global infra presence and Meta will choose the media relay on Meta infra that is closest to the WhatsApp user involved in the call.
 
-On the Solution Partner side, the media server/host (aka targeting) can be chosen based on many parameters including the IP Meta chooses, the country of consumer phone number, and the business phone number. The selection of media server location is an important factor in optimizing the media latency between Solution Partner IP and Meta IP which in turn contributes to higher call quality. At the minimum, the Solution Partner call/media hosting location should be close to the country of the WhatsApp user as determined from the country code of the user’s phone number.
+On the Solution Partner side, the media server/host (aka targeting) can be chosen based on many parameters including the IP Meta chooses, the country of consumer phone number, and the business phone number. The selection of media server location is an important factor in optimizing the media latency between Solution Partner IP and Meta IP which in turn contributes to higher call quality. At the minimum, the Solution Partner call/media hosting location should be close to the country of the WhatsApp user as determined from the country code of the user's phone number.
 
 Any targeting implementation on the Solution Partner side should optimize for the candidates IPs on the Meta SDPs and not on the source of signaling endpoints.
 
 #### Is there an API to send a provisional response equivalent to SIP 180 Ringing?
 
-If not, when does the caller’s device start ringing?
+If not, when does the caller's device start ringing?
 
 Caller (the WhatsApp Consumer app) would already be ringing by the time the webhook is received. There is no need for provisional responses.
 
@@ -154,9 +154,9 @@ Caller (the WhatsApp Consumer app) would already be ringing by the time the webh
 
 Cloud API uses SRTP for the encryption of media streams [(RTP/SAVPF)⁠](https://datatracker.ietf.org/doc/html/rfc5124?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR516SvNTWneWJ1BRyPN_AUwkutE4mEG3HfgWLNwp2vKQNk5dxI0lA9ItJirSg_aem_0fRiwIWcHro6u8toSKri-Q) and the actual SRTP key exchange is initially performed end-to-end with [DTLS-SRTP⁠](https://datatracker.ietf.org/doc/html/rfc5764?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR4Gyix9SeTw6091BlLDa8L1G5d_IkKU991tQBUQRCo8ZB1LwdhRduYcZpxAog_aem_FIN9kFgm_K-iiNno_LesBg).
 
-#### Can Meta send the call webhooks to a different endpoint based on the caller’s geographical location or other factors such as network latency?
+#### Can Meta send the call webhooks to a different endpoint based on the caller's geographical location or other factors such as network latency?
 
-The webhook URL is configurable. HTTPS is used, so standard load balancing and targeting techniques can be applied to reroute accordingly. A different (aka override or alternate) webhook URL can also be configured per [WhatsApp Business account](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/manage-webhooks#overriding-the-callback-url) and per [business phone number](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/override#set-phone-number-alternate-callback). The webhook is only used for signaling and Meta servers calling the webhook server are located in US. Select the location of the media endpoint based on the country code of the WhatsApp consumer (available on the webhooks) or the ice candidate IPs on SDP sent by Meta. See the above FAQ questions **“What is the recommendation on how to determine the ICE candidate?”** and **“How to reduce media latency of the calls?”**.
+The webhook URL is configurable. HTTPS is used, so standard load balancing and targeting techniques can be applied to reroute accordingly. A different (aka override or alternate) webhook URL can also be configured per [WhatsApp Business account](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/manage-webhooks#overriding-the-callback-url) and per [business phone number](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/override#set-phone-number-alternate-callback). The webhook is only used for signaling and Meta servers calling the webhook server are located in US. Select the location of the media endpoint based on the country code of the WhatsApp consumer (available on the webhooks) or the ice candidate IPs on SDP sent by Meta. See the above FAQ questions **"What is the recommendation on how to determine the ICE candidate?"** and **"How to reduce media latency of the calls?"**.
 
 #### What are the Meta IP addresses that will call the Webhook or SIP or Media servers in order to allowlist them in a firewall?
 
@@ -203,20 +203,20 @@ Calling related webhooks will likely have a shorter retry policy but stale webho
 
 No. Be prepared to handle duplicate webhooks.
 
-Due to the distributed nature of Meta’s architecture, exactly-once delivery cannot be guaranteed for any webhooks including even messaging related webhooks. Following are some known scenarios where duplicates can occur today.
+Due to the distributed nature of Meta's architecture, exactly-once delivery cannot be guaranteed for any webhooks including even messaging related webhooks. Following are some known scenarios where duplicates can occur today.
 
-* The Meta HTTPS request to the webhook server timed out after ~20s. In this case, the server thinks it successfully handled a webhook request but from Meta’s side, it failed due to timeout. Meta retries sending this webhook, which then appears as a duplicate.
+* The Meta HTTPS request to the webhook server timed out after ~20s. In this case, the server thinks it successfully handled a webhook request but from Meta's side, it failed due to timeout. Meta retries sending this webhook, which then appears as a duplicate.
 * If the phone number has more than 1 app subscribed to the calls field and Meta dispatches webhooks to app1 and app2 in that order. If app2 fails, Meta will retry the whole dispatch so app1 will receive a duplicate webhook. Meta is in the process of fixing this.
 * Failure recovery on Meta queueing infrastructure may result in duplicate webhook sends.
 * There could be other reasons that are currently unknown.
 
 #### Do you guarantee ordering of webhooks for a given call?
 
-No. Ordering is not guaranteed due to the distributed nature of Meta’s architecture and retries.
+No. Ordering is not guaranteed due to the distributed nature of Meta's architecture and retries.
 
 For example the terminate webhook can arrive before the connect webhook if the WhatsApp user hangs up the call immediately after initiating the call. Following are other known examples.
 
-The connect webhook is attempted which fails with timeout after ~20s. The ‘terminate webhook’ is sent next. The retry of connect webhook happens after the ‘terminate webhook’. In case of timeout, the webhook server thinks there is no failure but this is seen as failure that warrants a retry.
+The connect webhook is attempted which fails with timeout after ~20s. The 'terminate webhook' is sent next. The retry of connect webhook happens after the 'terminate webhook'. In case of timeout, the webhook server thinks there is no failure but this is seen as failure that warrants a retry.
 
 #### Can I configure multiple webhook servers for calling and have a notion of primary and secondary for high availability?
 
@@ -240,9 +240,9 @@ Please view the [Sample CURL request section](https://developers.facebook.com/do
 
 The session param requires the SDP to be set as a string per the [RFC-8866⁠](https://datatracker.ietf.org/doc/html/rfc8866?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR71KdJILwN4hWgqf_F3lofWYA30zDvZe_Iv-VQc-RYr-mI3sPpiDNd1n-202w_aem_sxVB9-IHuH8oj4lGJW_wJw) specification which requires CRLF to be used to end a record. Sdp param itself is a string so it should not be further serialized. The legacy connection param however required the [RFC-8866⁠](https://datatracker.ietf.org/doc/html/rfc8866?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR516SvNTWneWJ1BRyPN_AUwkutE4mEG3HfgWLNwp2vKQNk5dxI0lA9ItJirSg_aem_0fRiwIWcHro6u8toSKri-Q) compliant SDP string to be within a JSON structure and hence required further serialization.
 
-In short, use “\r\n” for the `session->SDP` param. **Do not use the legacy `connection->WebRTC->SDP` param.**
+In short, use "\r\n" for the `session->SDP` param. **Do not use the legacy `connection->WebRTC->SDP` param.**
 
-#### How do I fix error ‘No fingerprint found in SDP’?
+#### How do I fix error 'No fingerprint found in SDP'?
 
 The SDP should have an `a=fingerprint` line when using [DTLS⁠](https://datatracker.ietf.org/doc/html/rfc6347?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR4G883r_f8OxuBN4Ug2aWo3tRDVPu6JtxWg9T734Z5waARzxf7VGfEehXYlFw_aem_sWjiUmtGyV3tjOHfK_Nwxg) as the [SRTP⁠](https://datatracker.ietf.org/doc/html/rfc3711?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR5hUUCuVfMrSpK1nFWwfgmhEX4J170f66mpbcRuH2F1v9AX32Sq6E3-nMvJdw_aem_zQZRjbb3Ajl9qFef31D3HA) key exchange protocol. Make sure to add that line or [configure the business phone number to use SDES](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/sip#configure-sdes-for-srtp-key-exchange-protocol) instead. See all the possible [Signaling and media possible configurations](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/sip#signaling-and-media-possible-configurations).
 
@@ -280,7 +280,7 @@ Only one stream is supported in the Offer/Answer SDP.
 
 Only one audio track is supported in the SDP stream.
 
-#### For a consumer to business call, can WhatsApp consumer apps work with an SDP offer generated by a business agent’s browser?
+#### For a consumer to business call, can WhatsApp consumer apps work with an SDP offer generated by a business agent's browser?
 
 In this case, the WebRTC agent within the browser should generate an SDP answer, not an offer.
 
@@ -296,7 +296,7 @@ The Solution Partner should initiate the ICE connectivity checks as soon as the 
 
 This can be done even before calling the accept API but the ICE process will only converge after Meta processes the SDP answer, due to the need for DTLS certificate fingerprint.
 
-#### What are the port numbers used by ICE candidates on Meta’s SDP for allowlisting on firewalls?
+#### What are the port numbers used by ICE candidates on Meta's SDP for allowlisting on firewalls?
 
 Port numbers can be any one from `40012`, `3482`, `3484`, `3478`, `3480`. These are subject to change.
 
@@ -308,7 +308,7 @@ Processing an SDP offer to generate an SDP answer is the primary functionality o
 
 #### How to reduce media latency of the calls?
 
-Meta’s targeting algorithms will choose the Meta relay that receives media from Solution Partner close to the WhatsApp consumer’s location. This media relay is the ice candidate Meta will share in the SDP. Any Solution Partner side targeting should place the Solution Partner media servers in the same region as the consumer. This obviously minimizes latency for calls within the same region, but it will minimize the media packet routes on public internet for international calls.
+Meta's targeting algorithms will choose the Meta relay that receives media from Solution Partner close to the WhatsApp consumer's location. This media relay is the ice candidate Meta will share in the SDP. Any Solution Partner side targeting should place the Solution Partner media servers in the same region as the consumer. This obviously minimizes latency for calls within the same region, but it will minimize the media packet routes on public internet for international calls.
 
 #### Is there a process of reconnection if there is a temporary network drop on either end of the media leg?
 
@@ -326,11 +326,11 @@ G711 codec in comparison needs 64 kbps for codec + 20 kbps overhead = 84 kbps pe
 
 Multiply the above numbers with the expected number of concurrent calls to calculate the cumulative bandwidth required. Example: A 1mbps bandwidth can roughly handle 15 concurrent calls on opus (1000/64) vs. 12 concurrent calls on G711 (1000/84).
 
-To calculate the total data usage, multiply the bandwidth with call duration in seconds. For Opus, it’s a bit more tricky because it has variable bandwidth depending on many factors including available bandwidth estimated using bandwidth estimation, whether local party is talking or silent, and so on. But roughly, a 1 min call on Opus consumes 3.75MB of data vs. the same on G711 takes 4.9MB of data.
+To calculate the total data usage, multiply the bandwidth with call duration in seconds. For Opus, it's a bit more tricky because it has variable bandwidth depending on many factors including available bandwidth estimated using bandwidth estimation, whether local party is talking or silent, and so on. But roughly, a 1 min call on Opus consumes 3.75MB of data vs. the same on G711 takes 4.9MB of data.
 
 #### Is it possible to handover / transfer a call from one agent to another during an active call session? In essence, a customer is speaking with Agent A and needs to be transferred to Agent B?
 
-Meta doesn’t have any native support.
+Meta doesn't have any native support.
 
 Meta is unaware of different agents on the business / partner side, so the call transfer is an operation that is doable solely on the partner side. For example, the media flow can be Meta media server to Partner media server to Agent A. When transfer happens, the flow becomes Meta media server to Partner media server to Agent B. So in the both cases, the leg from Meta media server to Partner media server remains constant.
 
@@ -343,7 +343,7 @@ It is visible when **all the following conditions are met:**
 * The business phone number has the calling status set to `ENABLED` in the [Call Settings API](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/call-settings).
 * Business phone number `call_icon_visibility` is not `HIDE_IN_CHAT` and not `DISABLE_ALL`
 * The call icon visibility feature is supported in WhatsApp mobile versions 2.24.10.8 and above on Android and iOS.
-* Consumer’s WhatsApp version 2.23.14 or above. All consumers are expected to be on this version or above.
+* Consumer's WhatsApp version 2.23.14 or above. All consumers are expected to be on this version or above.
 
 [View the Call Settings API to learn more](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/call-settings)
 
@@ -374,7 +374,7 @@ No.
 
 #### Is it possible to limit calling access to specific or individual WhatsApp users instead of all WhatsApp users?
 
-Example: a lead that’s qualified or a customer who is in premium tier
+Example: a lead that's qualified or a customer who is in premium tier
 
 No. There is no way to control visibility or access of calling on an individual WhatsApp user basis. However the [Call Settings API](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/call-settings) can be used to set `call_icon_visibility` to `DISABLE_ALL` which will hide call icons to all WhatsApp users. For qualified WhatsApp users, a message with the call CTA button can be sent so only they can call the business by tapping on the button in the message.
 
@@ -407,7 +407,7 @@ WhatsApp consumer apps are extended to support a new keypad for business calls.
 
 When a WhatsApp consumer calls a business, the local ringback tone starts immediately if the WhatsApp consumer device has internet connectivity.
 
-The call UI shows ‘Calling BUSINESS\_NAME’. When Cloud API receives the consumer call request and pre-accepts the call, the call UI changes to ‘Ringing BUSINESS\_NAME’. After the accept Graph API call is made, the call UI changes to an active call window showing live timer for the call duration.
+The call UI shows 'Calling BUSINESS\_NAME'. When Cloud API receives the consumer call request and pre-accepts the call, the call UI changes to 'Ringing BUSINESS\_NAME'. After the accept Graph API call is made, the call UI changes to an active call window showing live timer for the call duration.
 
 #### Is calling supported for end users from WhatsApp Web or WhatsApp Desktop apps?
 
@@ -428,13 +428,13 @@ User Initiated conversation:
 * Send a message to the Cloud API number from the WhatsApp consumer account
 * Send any message apart from the call permission message to the user
 * Send a call permission request to the user
-* Accept the call permission requests on the user’s device
+* Accept the call permission requests on the user's device
 
 Business Initiated conversation:
 
 * Send a template message to the user from the business
 * Send the call permission request to the user
-* Accept the call permission requests on the user’s device
+* Accept the call permission requests on the user's device
 
 #### Is there a way to reset the call permission request limits?
 
@@ -442,7 +442,7 @@ A connected call will reset the call permission limits.
 
 #### What happens if the WhatsApp user has set up Silence Unknown Callers settings?
 
-Business initiated calls bypass ‘Silence Unknown Callers’ settings since the call can only happen after explicit permission provided by the user.
+Business initiated calls bypass 'Silence Unknown Callers' settings since the call can only happen after explicit permission provided by the user.
 
 #### Why is my Call Permission Request message rendered differently?
 
@@ -497,11 +497,11 @@ $ nc -zvw2 -G 2 your-sip-server.example.com 5061
 Connection to your-sip-server.example.com port 5061 [tcp/sip-tls] succeeded!
 ```
 
-If the connection times out or is refused, check your firewall rules and ensure that the configured port is open and your SIP server is listening on it. Also verify that [Meta’s IP addresses](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/sip#ip-addresses) are allowlisted in your firewall.
+If the connection times out or is refused, check your firewall rules and ensure that the configured port is open and your SIP server is listening on it. Also verify that [Meta's IP addresses](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/sip#ip-addresses) are allowlisted in your firewall.
 
 #### Why is Meta seemingly not sending an ACK for our 200 OK response?
 
-The most likely reason is your 200 OK is incorrectly modifying Meta’s `record-route` headers in Meta’s SIP INVITE request.
+The most likely reason is your 200 OK is incorrectly modifying Meta's `record-route` headers in Meta's SIP INVITE request.
 
 See [Integration patterns Asterisk example](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/integration-examples#not-receiving-ack-from-meta-or-business-audio-stops-around-30s-or-meta-returns-404-response-to-bye) for full details and the solution to this problem.
 
@@ -523,7 +523,7 @@ Consult the SIP server documentation or vendor. The likely reason is the SIP ser
 
 #### Is it required to SIP REGISTER business phone number to Meta SIP server?
 
-No. Do not send REGISTER requests to Meta’s SIP server. Doing so is unnecessary resource consumption on both sides. REGISTER requests will fail with 403 Forbidden error. As such Meta’s SIP server owns only meta.vc domain and the only SIP users in that domain are regular WhatsApp consumer users. The WhatsApp Business Numbers belong to the SIP domain configured using the [settings API](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/sip#configure-update-sip-settings-on-business-phone-number).
+No. Do not send REGISTER requests to Meta's SIP server. Doing so is unnecessary resource consumption on both sides. REGISTER requests will fail with 403 Forbidden error. As such Meta's SIP server owns only meta.vc domain and the only SIP users in that domain are regular WhatsApp consumer users. The WhatsApp Business Numbers belong to the SIP domain configured using the [settings API](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/sip#configure-update-sip-settings-on-business-phone-number).
 
 #### Does Meta support SIP re-INVITEs?
 
@@ -541,7 +541,7 @@ SIP for calling only covers call specific events. For messaging or any non-call 
 
 Do not rely on TLS connection reuse for Meta initiated SIP requests (mid-dialog messages such as BYE). However, Meta does enforce TLS connection reuse for SIP responses, which are always sent back on the same connection the request arrived on.
 
-Whether a given Meta initiated request reuses an existing TLS connection or opens a new one depends on Meta’s internal routing at that moment. At higher call volumes, TLS connections are more likely to be reused.
+Whether a given Meta initiated request reuses an existing TLS connection or opens a new one depends on Meta's internal routing at that moment. At higher call volumes, TLS connections are more likely to be reused.
 
 #### Does Meta have a specific, approved list of vendors or SBCs for SIP?
 

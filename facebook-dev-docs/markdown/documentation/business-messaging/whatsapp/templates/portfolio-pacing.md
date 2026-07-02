@@ -13,9 +13,9 @@ If a message template reaches the lowest quality rating (a status of **Active - 
 * 2nd Instance: Paused for 6 hours
 * 3rd Instance: Disabled
 
-When a message template is paused (status of **Paused**) it can’t be sent to customers, so you should halt any automated messaging campaigns that rely on that template. Although you won’t be charged for attempting to send a paused message template to a customer, and the attempt won’t count against your messaging limit, the API will reject these attempts anyway. You should only resume these campaigns when the template’s status has been set to Active again.
+When a message template is paused (status of **Paused**) it can't be sent to customers, so you should halt any automated messaging campaigns that rely on that template. Although you won't be charged for attempting to send a paused message template to a customer, and the attempt won't count against your messaging limit, the API will reject these attempts anyway. You should only resume these campaigns when the template's status has been set to Active again.
 
-You may wish to edit a paused template if you feel that editing its content will reduce the amount of negative feedback it may receive and increase user engagement. Keep in mind, however, that once you edit a message template and resubmit it for approval, its status will change to In Review and it can’t be sent to customers again until it has been re-approved and its status set to Active.
+You may wish to edit a paused template if you feel that editing its content will reduce the amount of negative feedback it may receive and increase user engagement. Keep in mind, however, that once you edit a message template and resubmit it for approval, its status will change to In Review and it can't be sent to customers again until it has been re-approved and its status set to Active.
 
 You may also wish to make changes to your business logic, such as targeting and delivery parameters, if you feel it is contributing to negative feedback or low engagement.
 
@@ -27,11 +27,11 @@ When a message template has been paused you will be notified by WhatsApp Manager
 
 ### Unpausing
 
-A template will unpause on its own after satisfying the pause duration outlined above. Once unpaused, the template’s status will be set to **Active** and you may begin sending it to customers again. If you didn’t halt any automated messaging campaigns that relied on a paused template, they should start working again. However, it is recommended that you halt any campaigns that rely on a template that has been paused until it is unpaused, because the APIs will reject your requests anyway.
+A template will unpause on its own after satisfying the pause duration outlined above. Once unpaused, the template's status will be set to **Active** and you may begin sending it to customers again. If you didn't halt any automated messaging campaigns that relied on a paused template, they should start working again. However, it is recommended that you halt any campaigns that rely on a template that has been paused until it is unpaused, because the APIs will reject your requests anyway.
 
-The template’s [quality rating](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-quality) will also be reset to a value based on the most recent customer feedback the template has received.
+The template's [quality rating](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-quality) will also be reset to a value based on the most recent customer feedback the template has received.
 
-Similar to pause notifications, you will be notified by WhatsApp Manager notification, email, and webhook once the template’s status has been set to Active.
+Similar to pause notifications, you will be notified by WhatsApp Manager notification, email, and webhook once the template's status has been set to Active.
 
 Applies to businesses in Brazil, Colombia, and Singapore, starting September 12, 2023. Applies to all businesses starting October 12, 2023.
 
@@ -55,7 +55,7 @@ In the WhatsApp Manager:
 * Mouseover the suitcase icon (**Account tools**) and click **Message templates**.
 * If you have multiple WhatsApp Business Accounts, use the dropdown menu in the top-right corner to select the account whose templates you want to manage.
 * Find the message template that you would like to edit and click it.
-* Edit the template’s contents.
+* Edit the template's contents.
 * Click the **Add Sample** button and add sample variable values and images.
 * Click **Submit**.
 

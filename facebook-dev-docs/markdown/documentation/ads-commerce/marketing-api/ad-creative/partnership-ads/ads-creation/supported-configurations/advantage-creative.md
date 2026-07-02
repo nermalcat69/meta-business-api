@@ -38,11 +38,9 @@ curl -X POST \
 ### Example response
 
 ```
-```
 {
   "id": "<CREATIVE_ID>"
 }
-```
 ```
 
 ## Product Extensions
@@ -80,11 +78,9 @@ curl -X POST \
 ### Example response
 
 ```
-```
 {
   "id": "<CREATIVE_ID>"
 }
-```
 ```
 
 ## Learn More

@@ -11,7 +11,7 @@ This document shows you how to programmatically add the Persistent Menu to your 
 
 ## How it works
 
-The Persistent Menu allows you to create and send a menu of the main features of your business, such as hours of operation, store locations, and products, is always visible in a person’s Messenger conversation with your business.
+The Persistent Menu allows you to create and send a menu of the main features of your business, such as hours of operation, store locations, and products, is always visible in a person's Messenger conversation with your business.
 
 When a person clicks an item in the menu, Meta sends a `postback` webhook notification to your server with information about which item the person selected and by whom, and the standard messaging window opens. You have 24 hours to respond to the person after the CTA.
 
@@ -23,7 +23,7 @@ When a person clicks an item in the menu, Meta sends a `postback` webhook notifi
   * Existing conversations will not see an updated menu unless a person refreshes their inbox; new conversations will see updated menus. Be sure your app can handle deprecated menu items.
 * The `composer_input_disabled` parameter is not available
 * The `webview_height_ratio` parameter is not available
-* You cannot customize a menu based on the recipient’s Page-scoped ID (PSID)
+* You cannot customize a menu based on the recipient's Page-scoped ID (PSID)
 
 ## Requirements
 
@@ -76,7 +76,7 @@ curl -X POST -H "Content-Type: application/json" -d
 
 ## Localization
 
-You may provide default and localized button text for the persistent menu that will be displayed based on a person’s locale.
+You may provide default and localized button text for the persistent menu that will be displayed based on a person's locale.
 
 To do this, specify separate objects in the `persistent_menu` array for each locale by setting the `locale` property to a [supported locale](https://developers.facebook.com/documentation/business-messaging/messenger-platform/messenger-profile/supported-locales):
 
@@ -143,19 +143,19 @@ curl -X DELETE "https://graph.facebook.com/v12.0/me/messenger_profile?fields=["p
 
 Just like with buttons, menu items can produce a webview or postback.
 
-✅ Use the menu as entry points for your Page’s main features.
+✅ Use the menu as entry points for your Page's main features.
 
-✅ Be descriptive: your menu lets people know what your Page’s features are. The menu instantly lets users know how they can interact with your Page.
+✅ Be descriptive: your menu lets people know what your Page's features are. The menu instantly lets users know how they can interact with your Page.
 
 ✅ Be selective: limit menu items to 5 for best user experience.
 
-❌ Don’t expect the menu to contain user-specific data. The menu can be localized, but will not contain user-specific data.
+❌ Don't expect the menu to contain user-specific data. The menu can be localized, but will not contain user-specific data.
 
-❌ Don’t put a “Menu” button in the menu that sends the user a message containing a menu. Just put that content directly in the menu — that’s what it’s for!
+❌ Don't put a "Menu" button in the menu that sends the user a message containing a menu. Just put that content directly in the menu — that's what it's for!
 
-❌ Don’t put generic actions like “Restart” in the menu.
+❌ Don't put generic actions like "Restart" in the menu.
 
-❌ Don’t use the most prominent menu positions for secondary information like *about*, *terms of service*, *privacy policy*, or *powered by*. These take focus away from the core features of your Page.
+❌ Don't use the most prominent menu positions for secondary information like *about*, *terms of service*, *privacy policy*, or *powered by*. These take focus away from the core features of your Page.
 
 ### Developer Support
 

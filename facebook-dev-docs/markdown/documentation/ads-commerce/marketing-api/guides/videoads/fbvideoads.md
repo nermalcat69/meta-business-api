@@ -60,7 +60,7 @@ See [Reference: Campaign](https://developers.facebook.com/documentation/ads-comm
 
 ### Step 3: Create an [ad set](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-campaign)
 
-If your goal is lowest cost-per-view possible, pair the video view campaign objective with an ad set’s `optimization_goal=THRUPLAY`. You can set `bidding_event` to `IMPRESSIONS` or `THRUPLAY`, to pay per impression or per video view. See [CPV bidding](https://developers.facebook.com/documentation/ads-commerce/marketing-api/bidding/guides/cost-per-action-ads).
+If your goal is lowest cost-per-view possible, pair the video view campaign objective with an ad set's `optimization_goal=THRUPLAY`. You can set `bidding_event` to `IMPRESSIONS` or `THRUPLAY`, to pay per impression or per video view. See [CPV bidding](https://developers.facebook.com/documentation/ads-commerce/marketing-api/bidding/guides/cost-per-action-ads).
 
 ```
 curl \
@@ -414,7 +414,7 @@ curl -X POST \
 
 ### Create Video Carousel Ad
 
-Video carousel ads can have ‘caption’ in the child attachment to customize the display URL on the end screen:
+Video carousel ads can have 'caption' in the child attachment to customize the display URL on the end screen:
 
 ```
 "child_attachments": [
@@ -443,8 +443,8 @@ Limitations:
 * Carousel mobile app ads support only one app
 * Minimum of 3 images compared to 2 on non-app ad carousel ads
 * Carousel mobile app ads must have a call to action
-* The end card which typically displays the Page’s profile photo will not display for carousel mobile app ads.
-  Note that you should specify the same app store link in each `child_attachment`. You do not have to specify the link again in the `call_to_action:{'value':{'link':... }}}`
+* The end card which typically displays the Page's profile photo will not display for carousel mobile app ads.
+  Note that you should specify the same app store link in each `child_attachment`. You do not have to specify the link again in the `call_to_action:{'value':{'link':... }​}}`
 
 For example, to create a carousel ad for mobile app installs:
 
@@ -577,11 +577,11 @@ This is a Carousel Ad on iOS, showing how fields described are used.
 | `child_attachments.image_hash`  type: string | Hash of preview image associated with the link from your [image library](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-image); use 1:1 aspect ratio and a minimum of 458 x 458 px for best display. Either `picture` or `image_hash` must be specified. |
 | `child_attachments.name`  type: string | Title of link preview. If not specified, the title of the linked page is used. Typically truncated after 35 characters. You should set a unique `name`, since Facebook **interfaces** show actions reported by `name`. |
 | `child_attachments.description`  type: string | Either a price, discount, or website domain. If not specified, content from the linked page is extracted and used. Typically truncated after 30 characters. |
-| `child_attachments.call_to_action`  type: object | Optional call to action. See [Call To Action](https://developers.facebook.com/docs/marketing-api/unpublished-page-posts#cta-spec). You do not have to specify the link again in `call_to_action:{'value':{'link':... }}}`. |
+| `child_attachments.call_to_action`  type: object | Optional call to action. See [Call To Action](https://developers.facebook.com/docs/marketing-api/unpublished-page-posts#cta-spec). You do not have to specify the link again in `call_to_action:{'value':{'link':... }​}}`. |
 | `child_attachments.video_id`  type: string | ID of the [ad video](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-account/advideos). Can be used in any child element. If specified, must also set `image_hash` or `picture`. |
 | `message`  type: string | Main body of post, also called the status message. |
-| `link`  type: string | URL of a link to “See more”. Required. |
-| `caption`  type: string | URL to display in the “See more” link. Not applicable for carousel mobile app ads. |
+| `link`  type: string | URL of a link to "See more". Required. |
+| `caption`  type: string | URL to display in the "See more" link. Not applicable for carousel mobile app ads. |
 | `multi_share_optimized`  type: boolean | If set to `true`, automatically select and order images and links. Otherwise use original order of child elements. Defaults to `true`. |
 | `multi_share_end_card`  type: boolean | If set to `false`, removes the end card which displays the page icon. Default is `true`. |
 

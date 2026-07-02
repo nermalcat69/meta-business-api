@@ -57,7 +57,7 @@ The WhatsApp Business Calling API allows businesses to integrate voice and video
 ## Architecture
 
 ![WhatsApp Business Calling API architecture diagram showing signaling and media flow between a business and WhatsApp users](https://scontent.fdel1-1.fna.fbcdn.net/v/t39.2365-6/564723412_1339317954593522_7943224529857744756_n.jpg?_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=YBOwAiGNFJEQ7kNvwFRaU3t&_nc_oc=AdqTS9QIy3txgN2oMtnje96k7-78OTzUxR62nVf52dMg0262QnDdvqC6gZm_tHxN3Vav1cUxADQaOQ8PvM5waDVc&_nc_zt=14&_nc_ht=scontent.fdel1-1.fna&_nc_gid=kWZ8IdPR5MKYcOvN3HATXw&_nc_ss=7b2a8&oh=00_AQCdDUaUjugPEtVNNMGM1mTZop0mF79rvAa4Y6ynGQuOYQ&oe=6A606305)
-(*Right click image and choose “Open in new tab” for enlarged image*)
+(*Right click image and choose "Open in new tab" for enlarged image*)
 
 ### Signaling and media possible configurations
 
@@ -92,7 +92,7 @@ The WhatsApp Business Calling API offers a number of features that affect when a
 
 * Inbound call control allows you to prevent users from placing calls from your business profile
 * Business call hours allows you to avoid missed calls and direct users to message when your call center is closed
-* Callback requests offer users the option to request a callback when you don’t pick up a call or if your call center is closed
+* Callback requests offer users the option to request a callback when you don't pick up a call or if your call center is closed
 
 [Learn more about call control settings](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/call-settings#parameter-details)
 
@@ -123,7 +123,7 @@ Specifically, business-initiated calling limits are relaxed for sandbox accounts
 
 You obtain a public test number after completing the [Get Started flow](https://developers.facebook.com/documentation/business-messaging/whatsapp/get-started).
 
-Your business isn’t required to have a daily [messaging limit](https://developers.facebook.com/documentation/business-messaging/whatsapp/messaging-limits) of 2,000 unique recipients to test Calling API features when using public test numbers and Sandbox accounts.
+Your business isn't required to have a daily [messaging limit](https://developers.facebook.com/documentation/business-messaging/whatsapp/messaging-limits) of 2,000 unique recipients to test Calling API features when using public test numbers and Sandbox accounts.
 
 Calling is disabled by default on test numbers. You must [configure calling features in phone number call settings](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/call-settings#configure-call-settings) before using the Calling API on a test number.
 
@@ -145,7 +145,7 @@ Business-initiated calling is available in [every location Cloud API is availabl
 * Vietnam
 * Nigeria
 
-**Note:** The business phone number’s country code must be in this supported list. The consumer phone number can be from any [country where Cloud API is available](https://developers.facebook.com/documentation/business-messaging/whatsapp/support#country-restrictions).
+**Note:** The business phone number's country code must be in this supported list. The consumer phone number can be from any [country where Cloud API is available](https://developers.facebook.com/documentation/business-messaging/whatsapp/support#country-restrictions).
 
 ## Next steps
 
@@ -165,7 +165,7 @@ Use this table as a centralized place to keep track of feature updates related t
 | January 27, 2026 | Calling restrictions based on user feedback are now in effect | Learn more about [calling restrictions based on user feedback](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/call-settings#calling-restrictions-for-user-feedback). |
 | December 19, 2025 | Update in business initiated call limit | The number of business-initiated calls per user has been increased to 100 per day from 10 per day.  [Learn more about business-initiated call limits](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/user-call-permissions#limits--per-business---whatsapp-user-pair-) |
 | December 10, 2025 | Introduced `restrict_to_user_countries` for call icon settings | Now you can control in which countries the call icon should be visible. [Learn more about call icon country settings](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/call-settings#call-icons). |
-| October 13, 2025 | * Update in business initiated call limit * Added “Testing and Sandbox” section to documentation | The number of business-initiated calls per user has been increased to 10 per day from 5 per day.  [Learn more about business-initiated call limits](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/user-call-permissions#limits--per-business---whatsapp-user-pair-)  A [Testing and Sandbox accounts](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling#testing-and-sandbox-accounts) has been added to the documentation |
+| October 13, 2025 | * Update in business initiated call limit * Added "Testing and Sandbox" section to documentation | The number of business-initiated calls per user has been increased to 10 per day from 5 per day.  [Learn more about business-initiated call limits](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/user-call-permissions#limits--per-business---whatsapp-user-pair-)  A [Testing and Sandbox accounts](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling#testing-and-sandbox-accounts) has been added to the documentation |
 | September 29, 2025 | Asterisk integration guide | New guide to [integrate with Asterisk](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/integration-examples#asterisk-using-sip) |
 | September 24, 2025 | Context propagation from call buttons and deep links | Specify an opaque string in call buttons or call deep links to help with tracking the origin of user-initiated calls. [Learn about call buttons and deep links](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/call-button-messages-deep-links) |
 | September 8, 2025 | Health status API calling update | [Health Status API](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/health-status) is now extended to include a new `can_receive_call_sip` field to help you self-diagnose issues related to [SIP](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/sip) setup |

@@ -27,7 +27,7 @@ Refer to the [Webhooks CRM Integration guide](https://developers.facebook.com/do
 
 ### Zapier
 
-The Meta Lead ID will be stored in the **id** field when downloading leads using Zapier’s Facebook Lead Ads trigger app. You will be able to see the Meta Lead ID first in a test trigger where Zapier pulls in a lead from Meta.
+The Meta Lead ID will be stored in the **id** field when downloading leads using Zapier's Facebook Lead Ads trigger app. You will be able to see the Meta Lead ID first in a test trigger where Zapier pulls in a lead from Meta.
 
 ![Zapier Facebook Lead Ads test trigger result with the id field highlighted](https://scontent.fdel1-5.fna.fbcdn.net/v/t39.2365-6/651821893_1459945329197450_5381514566017344384_n.png?_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=p-IgCA7RS44Q7kNvwH3mA2Z&_nc_oc=Adq9h19_VpqKhGCeAVlEeTRy9IdNUiyqwbhTQJiztKhYcxnjLmcbVaX71dkw5Jc_oechGMpjtjNj9Tgfs8aY-t3z&_nc_zt=14&_nc_ht=scontent.fdel1-5.fna&_nc_gid=79BQYvXKiD3EPDnadmJpXg&_nc_ss=7b289&oh=00_AQCvRy7SkVfU338luovXSaUcw7YoQPRAlfB567ji63tH3Q&oe=6A608760)
 
@@ -37,13 +37,13 @@ In the Zapier action app, store the Meta Lead ID by mapping it to the standard L
 
 ### LeadsBridge
 
-The Meta Lead ID will be stored in the **id** field when downloading leads using LeadsBridge’s Facebook Lead Ads app. In the **Fields Mapping** section, store the Meta Lead ID by mapping it to the standard Lead ID field in your CRM or a custom field if it does not exist.
+The Meta Lead ID will be stored in the **id** field when downloading leads using LeadsBridge's Facebook Lead Ads app. In the **Fields Mapping** section, store the Meta Lead ID by mapping it to the standard Lead ID field in your CRM or a custom field if it does not exist.
 
 ![LeadsBridge Facebook to Salesforce field mapping with Lead ID mapped to id](https://scontent.fdel1-9.fna.fbcdn.net/v/t39.2365-6/653473737_1459945235864126_5108390485232099148_n.png?_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=q00jKMMFm-oQ7kNvwHBIvD0&_nc_oc=AdpDfgSviOiuB7UvaU9X-wm5Zxejt3tyjQtzRfs1BVQgF9VokMGtGh07Am43rs9L9zWiZHvmvsEOLqnuUpAtbmIQ&_nc_zt=14&_nc_ht=scontent.fdel1-9.fna&_nc_gid=79BQYvXKiD3EPDnadmJpXg&_nc_ss=7b289&oh=00_AQCAMTrIJLuAkxvbmMB2FvKzjtCYKScDnAZph8Tv64Wu4w&oe=6A608624)
 
 ### Make (Integromat)
 
-The Meta Lead ID will be stored in the **Lead ID** field when downloading leads using Make’s Facebook Lead Ads scenario. In the **Properties** section, store the Meta Lead ID by mapping it to the standard Lead ID field in your CRM or a custom field if it does not exist.
+The Meta Lead ID will be stored in the **Lead ID** field when downloading leads using Make's Facebook Lead Ads scenario. In the **Properties** section, store the Meta Lead ID by mapping it to the standard Lead ID field in your CRM or a custom field if it does not exist.
 
 ![Make CRM module mapping panel with Lead ID selected from Facebook Lead Ads fields](https://scontent.fdel1-1.fna.fbcdn.net/v/t39.2365-6/652455312_1459945215864128_5676126213379310171_n.png?_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=43eWwCxENMQQ7kNvwHvmcIR&_nc_oc=AdqKGMsRJJh1KQIv-GDwooCalSgM-4iS7T98KTT3PAr5LaM68dC4pjQC0pm5hEfqaI94V-DiT2KAcRVyQMLxh6dJ&_nc_zt=14&_nc_ht=scontent.fdel1-1.fna&_nc_gid=79BQYvXKiD3EPDnadmJpXg&_nc_ss=7b289&oh=00_AQBD1usrWsehnfAossHf7hNrv6A5cuoAXf_nXzbF-cVyOA&oe=6A607347)
 
@@ -51,17 +51,17 @@ The Meta Lead ID will be stored in the **Lead ID** field when downloading leads 
 
 ### Salesforce - Leads Capture
 
-The Meta Lead ID will be stored in the **Lead ID** field when downloading leads using the [Salesforce Advertising Studio’s Lead Capture feature⁠](https://help.salesforce.com/s/articleView?id=sf.mc_ads_lead_capture). In the **Configure Fields** section, store the Meta Lead ID by mapping it to a custom field you created for it.
+The Meta Lead ID will be stored in the **Lead ID** field when downloading leads using the [Salesforce Advertising Studio's Lead Capture feature⁠](https://help.salesforce.com/s/articleView?id=sf.mc_ads_lead_capture). In the **Configure Fields** section, store the Meta Lead ID by mapping it to a custom field you created for it.
 
 ![Salesforce Lead Capture Configure Fields screen mapping Lead ID to lead_id](https://scontent.fdel1-4.fna.fbcdn.net/v/t39.2365-6/651795117_1459945419197441_8888185355101117998_n.png?_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=AyV83Ce6tdIQ7kNvwFV1G7F&_nc_oc=Adq9gLAoq5D2qISsJbNgBsFI3MbpX2FOJ53yvPj1RP9bnzpzWFpAoM2W09GbjbWJp9mf19IUwLVeqO69Hap8ufrK&_nc_zt=14&_nc_ht=scontent.fdel1-4.fna&_nc_gid=79BQYvXKiD3EPDnadmJpXg&_nc_ss=7b289&oh=00_AQDv_6D24Vi33ICN2P-cwMTyVFm7Qp1yecBwLHT7z44_lQ&oe=6A607529)
 
 ### Hubspot - Lead Sync
 
-Hubspot’s [Lead Sync⁠](https://knowledge.hubspot.com/ads/sync-leads-from-your-facebook-page-or-linkedin-ads-account-to-hubspot) integration does not store the Meta Lead ID. Download your leads using a Webhook or a partner integration so that you can upload events for Conversion Leads. Alternatively, you can sync your events using Hubspot’s [Lifecycle Stage Sync⁠](https://knowledge.hubspot.com/ads/create-and-sync-crm-lifecycle-events-with-your-google-ads-or-facebook-ad-accounts) (Professional and Enterprise only).
+Hubspot's [Lead Sync⁠](https://knowledge.hubspot.com/ads/sync-leads-from-your-facebook-page-or-linkedin-ads-account-to-hubspot) integration does not store the Meta Lead ID. Download your leads using a Webhook or a partner integration so that you can upload events for Conversion Leads. Alternatively, you can sync your events using Hubspot's [Lifecycle Stage Sync⁠](https://knowledge.hubspot.com/ads/create-and-sync-crm-lifecycle-events-with-your-google-ads-or-facebook-ad-accounts) (Professional and Enterprise only).
 
 ### Zoho CRM - Social
 
-Zoho CRM’s [Social integration⁠](https://www.zoho.com/social/facebook/facebook-lead-generation.html) does not store the Meta Lead ID. Download your leads using a Webhook or a partner integration so that you can upload events for Conversion Leads.
+Zoho CRM's [Social integration⁠](https://www.zoho.com/social/facebook/facebook-lead-generation.html) does not store the Meta Lead ID. Download your leads using a Webhook or a partner integration so that you can upload events for Conversion Leads.
 
 ### Microsoft Dynamics 365
 

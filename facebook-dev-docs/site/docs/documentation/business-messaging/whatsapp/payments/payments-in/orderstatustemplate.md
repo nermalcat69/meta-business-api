@@ -13,7 +13,7 @@ Order details message template is a template with [interactive components](https
 
 Once your Order details message templates have been created and approved, you can use the approved template to send the template message with order or bill information to prompt the WhatsApp user to make a payment.
 
-Before sending an order details template message, businesses need to create a template with an “Open order details” call-to-action button. See [Create Message Templates for Your WhatsApp Business account⁠](https://www.facebook.com/business/help/2055875911147364?id=2129163877102343) for more information on prerequisites and how to create a template.
+Before sending an order details template message, businesses need to create a template with an "Open order details" call-to-action button. See [Create Message Templates for Your WhatsApp Business account⁠](https://www.facebook.com/business/help/2055875911147364?id=2129163877102343) for more information on prerequisites and how to create a template.
 
 ## Creating an order details template on WhatsApp Manager
 
@@ -30,7 +30,7 @@ In **WhatsApp Manager** > **Account tools**:
 * The template will be approved or rejected after the template components are verified by the system.
   * If business believe the category determined is not consistent with our template category guidelines, please confirm there are no [common issues](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-review) that leads to rejections and if you are looking for further clarification you may [request a review](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-categorization#requesting-review) of the template via [Business Support⁠](https://business.facebook.com/business-support-home/).
 * Once approved template [status](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview#template-status) will be changed to `ACTIVE`.
-  * Note that template’s status can change automatically from `ACTIVE` to `PAUSED` or `DISABLED` based on customer feedback and engagement. [Monitor status changes](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-review#common-rejection-reasons) and take appropriate actions whenever such change occurs.
+  * Note that template's status can change automatically from `ACTIVE` to `PAUSED` or `DISABLED` based on customer feedback and engagement. [Monitor status changes](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-review#common-rejection-reasons) and take appropriate actions whenever such change occurs.
 
 ![Business settings WhatsApp Accounts page showing a WhatsApp Business account Settings tab with Business information](https://scontent.fdel1-1.fna.fbcdn.net/v/t39.2365-6/561631212_1339317814593536_2945252722681774358_n.jpg?_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=k0U3syJqnvMQ7kNvwGAGNn1&_nc_oc=Adq0cDwrtOlklhWGYNO4PykaQHJZDub940CwWOWkQ770H9zDe0gvlIOUYBad-izeXOIqjbUMhX6LVLvyGhGnqYOS&_nc_zt=14&_nc_ht=scontent.fdel1-1.fna&_nc_gid=OGmAvQLh1gRexK5abWZdNA&_nc_ss=7b2a8&oh=00_AQBG-KVn9CO_L9vcRMs0UdBKv-nf-defBaoG8-26INQGwQ&oe=6A605D3D)
 
@@ -39,44 +39,42 @@ In **WhatsApp Manager** > **Account tools**:
 To create a template through API and understand the general syntax, required categories and
 components please refer to [templates API](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview#creating-templates). All the guidelines outlined above in creating templates apply through API as well.
 
-Order details template is categorized as “Utility” template and apart from ‘name’ and ‘language’ of
-choice, it has general template components such as HEADER, BODY, FOOTER, and a fixed BUTTON with “ORDER\_DETAILS” type and “Review and Pay” text.
+Order details template is categorized as "Utility" template and apart from 'name' and 'language' of
+choice, it has general template components such as HEADER, BODY, FOOTER, and a fixed BUTTON with "ORDER\_DETAILS" type and "Review and Pay" text.
 
 ```
-```
-POST https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_BUSINESS_ID>/message_templates  
+POST https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_BUSINESS_ID>/message_templates  
 {  
-  "name": "<TEMPLATE_NAME>",  
-  "language": "<LANGUAGE_AND_LOCALE_CODE>",  
-  "category": "UTILITY",  
-  /* Businesses can create the order details template under marketing category by including display_format attribute */  
-  /* "display_format": "order_details",*/  
-  "components": [  
-    {  
-      "type": "HEADER",  
-      "format": "TEXT",  
-      "text": "<TEMPLATE_HEADER_TEXT>"  
-    },  
-    {  
-      "type": "BODY",  
-      "text": "<TEMPLATE_BODY_TEXT>"  
-    },  
-    {  
-      "type": "FOOTER",  
-      "text": "<TEMPLATE_FOOTER_TEXT>"  
-    },  
-    {  
-      "type": "BUTTONS",  
-      "buttons": [  
-        {  
-          "type": "ORDER_DETAILS",  
-          "text": "Review and Pay"  
-        }  
-      ]  
-    }  
-  ]  
+  "name": "<TEMPLATE_NAME>",  
+  "language": "<LANGUAGE_AND_LOCALE_CODE>",  
+  "category": "UTILITY",  
+  /* Businesses can create the order details template under marketing category by including display_format attribute */  
+  /* "display_format": "order_details",*/  
+  "components": [  
+    {  
+      "type": "HEADER",  
+      "format": "TEXT",  
+      "text": "<TEMPLATE_HEADER_TEXT>"  
+    },  
+    {  
+      "type": "BODY",  
+      "text": "<TEMPLATE_BODY_TEXT>"  
+    },  
+    {  
+      "type": "FOOTER",  
+      "text": "<TEMPLATE_FOOTER_TEXT>"  
+    },  
+    {  
+      "type": "BUTTONS",  
+      "buttons": [  
+        {  
+          "type": "ORDER_DETAILS",  
+          "text": "Review and Pay"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ## Sending order details template message
@@ -90,126 +88,122 @@ For example, the following sample describes how to send [UPI Intent](https://dev
 The below example shows an example payload with `upi` as the payment type. For other variants of the `payment_settings` block (for example, for the type `payment_gateway` type), refer to this [document](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-in/pg#step-1).
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "recipient_type": "individual",  
-  "to": "<PHONE_NUMBER>",  
-  "type": "template",  
-  "template": {  
-    "name": "<TEMPLATE_NAME>",  
-    "language": {  
-      "policy": "deterministic",  
-      "code": "<LANGUAGE_AND_LOCALE_CODE>"  
-    },  
-    "components": [  
-      {  
-        "type": "header",  
-        "parameters": [  
-          {  
-            "type": "image", // Uses header with image as an example  
-            "image": {  
-              "link": "http(s)://the-url"  
-            }  
-          }  
-        ]  
-      },  
-      {  
-        "type": "button",  
-        "sub_type": "order_details",  
-        "index": 0,  
-        "parameters": [  
-          {  
-            "type": "action",  
-            "action": {  
-              "order_details": {  
-                "currency": "INR",  
-                "order": {  
-                  "discount": {  
-                    "offset": 100,  
-                    "value": 250  
-                  },  
-                  "items": [  
-                    {  
-                      "amount": {  
-                        "offset": 100,  
-                        "value": 400  
-                      },  
-                      "name": "<ORDER_ITEM_NAME>",  
-                      "quantity": 1,  
-                      "retailer_id": "<ORDER_ITEM_RETAILER_ID>",  
-                      "country_of_origin": "<ORIGIN_COUNTRY>",  
-                      "importer_name": "<IMPORTER_NAME>",  
-                      "importer_address": {  
-                        "address_line1": "<IMPORTER_ADDRESS>",  
-                        "city": "<CITY>",  
-                        "country_code": "<COUNTRY>",  
-                        "postal_code": "<ZIP_CODE>"  
-                      }  
-                    }  
-                  ],  
-                  "shipping": {  
-                    "offset": 100,  
-                    "value": 0  
-                  },  
-                  "status": "pending",  
-                  "subtotal": {  
-                    "offset": 100,  
-                    "value": 400  
-                  },  
-                  "tax": {  
-                    "offset": 100,  
-                    "value": 500  
-                  }  
-                },  
-                "payment_settings": [  
-                  {  
-                    "type": "upi_intent_link",  
-                    "upi_intent_link": {  
-                      "link": "upi://pay?pa=merchant_vpa&pn=merchant%20Name&mc=mc_code&purpose=purpose_code&tr=transaction_record"  
-                    }  
-                  }  
-                ],  
-                "payment_configuration": "unique_payment_config_id",  
-                "payment_type": "upi",  
-                "reference_id": "reference_id_value",  
-                "total_amount": {  
-                  "offset": 100,  
-                  "value": 650  
-                },  
-                "type": "digital-goods"  
-              }  
-            }  
-          }  
-        ]  
-      }  
-    ]  
-  }  
+  "messaging_product": "whatsapp",  
+  "recipient_type": "individual",  
+  "to": "<PHONE_NUMBER>",  
+  "type": "template",  
+  "template": {  
+    "name": "<TEMPLATE_NAME>",  
+    "language": {  
+      "policy": "deterministic",  
+      "code": "<LANGUAGE_AND_LOCALE_CODE>"  
+    },  
+    "components": [  
+      {  
+        "type": "header",  
+        "parameters": [  
+          {  
+            "type": "image", // Uses header with image as an example  
+            "image": {  
+              "link": "http(s)://the-url"  
+            }  
+          }  
+        ]  
+      },  
+      {  
+        "type": "button",  
+        "sub_type": "order_details",  
+        "index": 0,  
+        "parameters": [  
+          {  
+            "type": "action",  
+            "action": {  
+              "order_details": {  
+                "currency": "INR",  
+                "order": {  
+                  "discount": {  
+                    "offset": 100,  
+                    "value": 250  
+                  },  
+                  "items": [  
+                    {  
+                      "amount": {  
+                        "offset": 100,  
+                        "value": 400  
+                      },  
+                      "name": "<ORDER_ITEM_NAME>",  
+                      "quantity": 1,  
+                      "retailer_id": "<ORDER_ITEM_RETAILER_ID>",  
+                      "country_of_origin": "<ORIGIN_COUNTRY>",  
+                      "importer_name": "<IMPORTER_NAME>",  
+                      "importer_address": {  
+                        "address_line1": "<IMPORTER_ADDRESS>",  
+                        "city": "<CITY>",  
+                        "country_code": "<COUNTRY>",  
+                        "postal_code": "<ZIP_CODE>"  
+                      }  
+                    }  
+                  ],  
+                  "shipping": {  
+                    "offset": 100,  
+                    "value": 0  
+                  },  
+                  "status": "pending",  
+                  "subtotal": {  
+                    "offset": 100,  
+                    "value": 400  
+                  },  
+                  "tax": {  
+                    "offset": 100,  
+                    "value": 500  
+                  }  
+                },  
+                "payment_settings": [  
+                  {  
+                    "type": "upi_intent_link",  
+                    "upi_intent_link": {  
+                      "link": "upi://pay?pa=merchant_vpa&pn=merchant%20Name&mc=mc_code&purpose=purpose_code&tr=transaction_record"  
+                    }  
+                  }  
+                ],  
+                "payment_configuration": "unique_payment_config_id",  
+                "payment_type": "upi",  
+                "reference_id": "reference_id_value",  
+                "total_amount": {  
+                  "offset": 100,  
+                  "value": 650  
+                },  
+                "type": "digital-goods"  
+              }  
+            }  
+          }  
+        ]  
+      }  
+    ]  
+  }  
 }
-```
 ```
 
 Once the order details template message is delivered, a successful response will include an object with an identifier prefixed with wamid. Use the ID listed after wamid to track your message status.
 
 ```
-```
 {  
-    "messaging_product": "whatsapp",  
-    "contacts": [  
-        {  
-            "input": "<PHONE_NUMBER>",  
-            "wa_id": "<WHATSAPP_ID>"  
-        }  
-    ],  
-    "messages": [  
-        {  
-            "id": "wamid.ID"  
-        }  
-    ]  
+    "messaging_product": "whatsapp",  
+    "contacts": [  
+        {  
+            "input": "<PHONE_NUMBER>",  
+            "wa_id": "<WHATSAPP_ID>"  
+        }  
+    ],  
+    "messages": [  
+        {  
+            "id": "wamid.ID"  
+        }  
+    ]  
 }
-```
 ```
 
 ## Post order details template message flow
 
-After the order details template message delivery the rest of the payment flow is the same as “Sending invoice in customer session window” and depends on the chosen [payment integration](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-in/overview) order details parameters. For more details refer [UPI Intent](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-in/upi-intent#step-5--consumer-pays-for-the-order), [Payment Gateway](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-in/pg#step-2--receive-webhook-about-transaction-status) and [Payment Links](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-in/payment-links#step-5--consumer-pays-for-the-order) post payments flows.
+After the order details template message delivery the rest of the payment flow is the same as "Sending invoice in customer session window" and depends on the chosen [payment integration](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-in/overview) order details parameters. For more details refer [UPI Intent](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-in/upi-intent#step-5--consumer-pays-for-the-order), [Payment Gateway](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-in/pg#step-2--receive-webhook-about-transaction-status) and [Payment Links](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-in/payment-links#step-5--consumer-pays-for-the-order) post payments flows.

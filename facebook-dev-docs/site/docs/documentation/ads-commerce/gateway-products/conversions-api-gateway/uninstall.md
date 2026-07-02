@@ -23,7 +23,7 @@ You will be redirected to a page that provides information about automatic uploa
 
 ### For AWS S3 Bucket
 
-A modal will pop up, with resources and guidance on creating an S3 bucket. Click **Continue** when you’ve finished the set up process:
+A modal will pop up, with resources and guidance on creating an S3 bucket. Click **Continue** when you've finished the set up process:
 
 ![Prerequisite step of the Set up automatic file uploads modal with AWS S3 bucket and IAM user setup instructions](https://scontent.fdel27-7.fna.fbcdn.net/v/t39.2365-6/475409094_2057819541298530_1002506155733033865_n.png?_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=bkPFMJP8xQ4Q7kNvwEOWD4d&_nc_oc=Adp0epB7miLt8svrXWWnj6x3WT0BNI6sF3cljKDhpiKHYeZHao5J8MddDsXMjJL7SOGjxG2WEquYmBxgGpZxTaDQ&_nc_zt=14&_nc_ht=scontent.fdel27-7.fna&_nc_gid=uP9Ckbj9cylW1QGZXewDPQ&_nc_ss=7b289&oh=00_AQAVLga2XbrBfrTrnq0bhy8wg8yMiGDfnYAOsqrI2sjy_w&oe=6A608A91)
 
@@ -31,7 +31,7 @@ Provide the requested information for the S3 and IAM user created in the previou
 
 ![Connect S3 Bucket step with fields for AccessKey, SecretAccessKey, Bucket name, and Hosting region](https://scontent.fdel27-2.fna.fbcdn.net/v/t39.2365-6/474952097_619850067123166_1481859281092577258_n.png?_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=mCi2cudvcXQQ7kNvwEUOxKT&_nc_oc=Adp14j6FMIYUeA0RNxNgfC5wrfSiQ4O9gWM7phdGInkmA_5LdWT_wLch3g7RvOyx6icU1LIrMwUDfjVsc4S6xUoR&_nc_zt=14&_nc_ht=scontent.fdel27-2.fna&_nc_gid=uP9Ckbj9cylW1QGZXewDPQ&_nc_ss=7b289&oh=00_AQBgCFEE8-GHtmo_kFXwsq8sUqCHEfXCpCqqxtUOlxWbYQ&oe=6A60761D)
 
-When the setup is finished, you’ll be provided with a sample file for reference.
+When the setup is finished, you'll be provided with a sample file for reference.
 
 ![Confirmation step showing setup complete with a Download .CSV File button for a sample file](https://scontent.fdel27-9.fna.fbcdn.net/v/t39.2365-6/474592528_1000768772099598_1692546674831921155_n.png?_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=uKkRhlxxO9cQ7kNvwF2IfX5&_nc_oc=AdqzZuVYkPnmIMDW9SfI56Le6T312LHwy1N64Dwa894v89Uvvev6JNcL7gkugAq367MGpC0tYf66hNJKZLRk7nPT&_nc_zt=14&_nc_ht=scontent.fdel27-9.fna&_nc_gid=uP9Ckbj9cylW1QGZXewDPQ&_nc_ss=7b289&oh=00_AQBSw668J_nv3AdKmVeNgXdAcKVOJ9ZsAHSJTakiMXQwqA&oe=6A60952B)
 
@@ -47,7 +47,7 @@ A confirmation page with the sample file will pop up. You can start delivering f
 
 ![Confirmation that Google Storage automatic upload setup is complete with a Download .CSV File button](https://scontent.fdel27-9.fna.fbcdn.net/v/t39.2365-6/513082483_1919278848845745_4426215382845703991_n.png?_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=I3L-vjEr9boQ7kNvwGai8G0&_nc_oc=AdqPY5veD1fVFknJUjQXJZtA-vxywiYlGSQxSpTkDYP9ZqVHCnPWQPkdaY3E8lMRVQdWLMypOKDEIR7_SZhhFOF1&_nc_zt=14&_nc_ht=scontent.fdel27-9.fna&_nc_gid=uP9Ckbj9cylW1QGZXewDPQ&_nc_ss=7b289&oh=00_AQDvWKLrvjsm7d4R9MOvtL6B8ScNIVgZwuTd9o3eTjPAzg&oe=6A608263)
 
-You can now go back to the same setup page from the Overview page to monitor the job run, and to modify connection information by clicking the “...” button.
+You can now go back to the same setup page from the Overview page to monitor the job run, and to modify connection information by clicking the "..." button.
 
 ![Automatic uploads for events section on the Overview page with a Go to settings button](https://scontent.fdel27-1.fna.fbcdn.net/v/t39.2365-6/475441586_1127299421988924_4977570746402086788_n.png?_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=PDlIW8_iTx8Q7kNvwHuhAM-&_nc_oc=AdobXRUpcSWXoqoLQMuP9H9CsWVltiDRkIXyfVyPSveE11tuB7Pr8_B2CaXaAnNL_oUlYXwMzctjuAy2dc5J6ks7&_nc_zt=14&_nc_ht=scontent.fdel27-1.fna&_nc_gid=uP9Ckbj9cylW1QGZXewDPQ&_nc_ss=7b289&oh=00_AQD_KmjBwfwOd63l5FpSTtKLPbJUrc4TTqxfoLahag2pCA&oe=6A607CAC)
 
@@ -57,7 +57,7 @@ Below is a detailed header definition table to use when formatting your data fil
 
 | Key | Description | Required | Default Value |
 | --- | --- | --- | --- |
-| `DATA_SET_ID` | ID of source this event is sent to | **Yes** | Event will be dropped if ID isn’t provided |
+| `DATA_SET_ID` | ID of source this event is sent to | **Yes** | Event will be dropped if ID isn't provided |
 | `EVENT_NAME` | Event name of the record | **Yes** | Purchase |
 | `EVENT_TIME` | Date and time when transaction happens, **format** `YYYY-MM-DD HH:mm:ss` | **Yes** | empty |
 | `ACTION_SOURCE` | The Meta-defined action source that indicates the type of event. See a list of sources [here](https://developers.facebook.com/documentation/ads-commerce/conversions-api/parameters/server-event). | **Yes** | physical\_store |
@@ -65,16 +65,16 @@ Below is a detailed header definition table to use when formatting your data fil
 | `CURRENCY` | Currency of the transaction | **Required for Purchase event** | USD |
 | `CONTENT_IDS` | The IDs for contents or items with transactions. Supports multi values split by pipe symbol. For example: `id1`|`id2` | No | empty |
 | `ORDER_ID` | Transaction id or order id of the record | No, **but recommended** | empty |
-| `EMAIL` | Customer’s email | No, **but highly recommended** | empty |
-| `PHONE` | Customer’s phone number | No, **but highly recommended** | empty |
-| `FIRST_NAME` | Customer’s first name | No, **but highly recommended** | empty |
-| `LAST_NAME` | Customer’s last name | No, **but highly recommended** | empty |
-| `DOB` | Customer’s date of birth string, **accept YYYYMMDD format**. Example: 1/1/2013 needs to be formatted as `20230101` | No, **but recommended** | empty |
-| `COUNTRY` | Customer’s Country  **Use two letter code**. Example: `US` | No, **but recommended** | empty |
-| `STATE` | Customer’s state | No, **but recommended** | empty |
-| `CITY` | Customer’s city | No, **but recommended** | empty |
-| `ZIP` | Customer’s zip code | No, **but recommended** | empty |
-| `CLICK_ID` | Identifier associated with user’s link click. (also known as fbc or fbclid) | No, **but recommended** | empty |
+| `EMAIL` | Customer's email | No, **but highly recommended** | empty |
+| `PHONE` | Customer's phone number | No, **but highly recommended** | empty |
+| `FIRST_NAME` | Customer's first name | No, **but highly recommended** | empty |
+| `LAST_NAME` | Customer's last name | No, **but highly recommended** | empty |
+| `DOB` | Customer's date of birth string, **accept YYYYMMDD format**. Example: 1/1/2013 needs to be formatted as `20230101` | No, **but recommended** | empty |
+| `COUNTRY` | Customer's Country  **Use two letter code**. Example: `US` | No, **but recommended** | empty |
+| `STATE` | Customer's state | No, **but recommended** | empty |
+| `CITY` | Customer's city | No, **but recommended** | empty |
+| `ZIP` | Customer's zip code | No, **but recommended** | empty |
+| `CLICK_ID` | Identifier associated with user's link click. (also known as fbc or fbclid) | No, **but recommended** | empty |
 | `MAD_ID` | Advertising ID for Apple or Android | No, **but recommended** | empty |
 | `EXTERNAL_ID` | Third party user ID | No, **but recommended** | empty |
 | `LEAD_ID` | The lead ID from Lead Ads | **Required for Leads event** | empty |

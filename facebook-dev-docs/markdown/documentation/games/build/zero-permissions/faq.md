@@ -16,7 +16,7 @@ Notifications can reach players through three channels. Facebook automatically f
 | Channel | Description |
 | --- | --- |
 | **Messenger bot message** | Delivered as a bot message if your game has a configured bot and the player has subscribed to it. |
-| **Facebook Jewel** | Appears in the Facebook notification bell (the “jewel” icon in the top navigation). |
+| **Facebook Jewel** | Appears in the Facebook notification bell (the "jewel" icon in the top navigation). |
 | **Gaming Tab** | Appears in the Facebook Gaming Tab notification area. |
 
 ![Messenger bot notification](https://scontent.fdel27-3.fna.fbcdn.net/v/t39.2365-6/655811940_1465974388594544_8601201898754809413_n.png?_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=wYk0_oOHaQUQ7kNvwGJsjP7&_nc_oc=AdpMoKJDdGLRSp8Q_aJ5GPMkUQsE0_xW0JLdSMEfxPj1v59qGY040na1sJrI2lDX0y9Ng5ltmOMLDNQ7ATvQBGR0&_nc_zt=14&_nc_ht=scontent.fdel27-3.fna&_nc_gid=e4rDptUypR8y5sj4YINDkw&_nc_ss=7b289&oh=00_AQCkkR-UWGU5nsa3YQIGP1KrC8EyWFLHQolGh6sbdnHKWw&oe=6A6076D1)![Facebook Jewel notification](https://scontent.fdel27-3.fna.fbcdn.net/v/t39.2365-6/655973094_1465974408594542_5758783850702550237_n.png?_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=Cy9IZHgKbAgQ7kNvwGZ3XUB&_nc_oc=AdoqrwGJG9X8tmTreCR7d4yjWjsriUhiOoWI_mSjjQTjlzqqeUTAgMyb1ohSkwSIP5B03R7RZPE_vu_QpAAhdPMw&_nc_zt=14&_nc_ht=scontent.fdel27-3.fna&_nc_gid=e4rDptUypR8y5sj4YINDkw&_nc_ss=7b289&oh=00_AQDxeDoNGRNrYTIGRZY_9VVHh83Mq61wtig0V4fJ03wMNQ&oe=6A6083FE)![Gaming Tab notification](https://scontent.fdel27-5.fna.fbcdn.net/v/t39.2365-6/657674994_1465974405261209_4347021933097550602_n.png?_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=QGR75u_xJrAQ7kNvwF2bV61&_nc_oc=Adpg1mrpwdiIVikPVqyNrJHVxTotmfq1Rifzgiw5ckVs8UEjywg_-L7kAVk9ss2vioEWLWYogTJbGtJ6oo4yb48s&_nc_zt=14&_nc_ht=scontent.fdel27-5.fna&_nc_gid=e4rDptUypR8y5sj4YINDkw&_nc_ss=7b289&oh=00_AQBAo2vyZxypEVeEvLWmVSAytl89GzrS5N4e1fxicgOqKA&oe=6A608A65)
@@ -41,7 +41,7 @@ Content-Type: application/json
 
 | Parameter | Required | Description |
 | --- | --- | --- |
-| `player_id` | Yes | The player’s game-scoped ID (from `FBInstant.player.getID()`). |
+| `player_id` | Yes | The player's game-scoped ID (from `FBInstant.player.getID()`). |
 | `message` | Yes | Content object with `title`, `body`, and optional `media_url`. |
 | `label` | No | A label to group similar notification types. Used for filtering when cancelling. |
 | `payload` | No | Custom data attached to the game URL. When the player taps the notification, this data is accessible in the launched game session. |
@@ -70,17 +70,15 @@ curl -X POST "https://graph.fb.gg/{app_id}/notifications?access_token={app_acces
 To send a notification with a delay, include the `schedule_interval` parameter:
 
 ```
-```
 {  
-  "player_id": "8504197016307157",  
-  "message": {  
-    "title": "We miss you!",  
-    "body": "Your daily challenge is waiting. Come back and play!"  
-  },  
-  "label": "daily_challenge",  
-  "schedule_interval": 86400  
+  "player_id": "8504197016307157",  
+  "message": {  
+    "title": "We miss you!",  
+    "body": "Your daily challenge is waiting. Come back and play!"  
+  },  
+  "label": "daily_challenge",  
+  "schedule_interval": 86400  
 }
-```
 ```
 
 This schedules the notification for delivery 24 hours (86,400 seconds) later. You can have at most 5 pending scheduled notifications per recipient.
@@ -107,12 +105,10 @@ curl -X POST "https://graph.fb.gg/{app_id}/notifications_cancel_all?access_token
 **Example — cancel only turn reminders:**
 
 ```
-```
 {  
-  "player_id": "8504197016307157",  
-  "label": "turn_reminder"  
+  "player_id": "8504197016307157",  
+  "label": "turn_reminder"  
 }
-```
 ```
 
 ## Setting Up Bot Messages (Optional)

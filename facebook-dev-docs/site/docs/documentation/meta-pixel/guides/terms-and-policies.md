@@ -11,7 +11,7 @@ Single Page Applications (SPA) does not require a page to be reloaded when the U
 
 ### Requirements
 
-* The Pixel’s [base code](https://developers.facebook.com/documentation/meta-pixel/get-started) must already be installed on the webpage where you will be tracking events.
+* The Pixel's [base code](https://developers.facebook.com/documentation/meta-pixel/get-started) must already be installed on the webpage where you will be tracking events.
 
 **Note:** You can set `disablePushState` to `true` to stop sending `PageView` events on history state changes but it is not recommended.
 
@@ -79,5 +79,5 @@ Track a specific area where an action it taking place using the History State AP
 
 ## Learn More
 
-* Visit [Google’s Tag Manager documentation⁠](https://marketingplatform.google.com/about/tag-manager/) to track events using a tag manager
+* Visit [Google's Tag Manager documentation⁠](https://marketingplatform.google.com/about/tag-manager/) to track events using a tag manager
 * Debug using [DataLayer plugins⁠](https://chrome.google.com/webstore/detail/datalayer-checker/ffljdddodmkedhkcjhpmdajhjdbkogke) or the [Meta Pixel Helper⁠](https://chrome.google.com/webstore/detail/facebook-pixel-helper/fdgfkebogiimcoedlicjlajpkdmockpc) to see event tracking

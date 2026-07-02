@@ -13,7 +13,7 @@ Use the cancellation and refund API to initiate cancellations or refunds on a gi
 
 You can only cancel an order or items (unshipped) fully or partially.
 
-Orders can be canceled after they are moved out of the `FB_PROCESSING` state, with an exception of orders in the `FB_PROCESSING` state for more than 24 hours. An order can be in the `FB_PROCESSING` state for that long due to: 1) the inability to complete the buyer risk check or 2) a sanction on the buyer’s account.
+Orders can be canceled after they are moved out of the `FB_PROCESSING` state, with an exception of orders in the `FB_PROCESSING` state for more than 24 hours. An order can be in the `FB_PROCESSING` state for that long due to: 1) the inability to complete the buyer risk check or 2) a sanction on the buyer's account.
 
 ```
 curl -X POST \
@@ -41,7 +41,7 @@ https://graph.facebook.com/v25.0/<ORDER_ID>/cancellations
 
 | Attribute | Description |
 | --- | --- |
-| `retailer_id`  Type: string | **Required if `item_id` is not provided**.  ID representing the product in the seller’s catalog. You must provide `retailer_id` or `item_id`, but not both. If `item_id` is provided, `retailer_id` must not be provided. |
+| `retailer_id`  Type: string | **Required if `item_id` is not provided**.  ID representing the product in the seller's catalog. You must provide `retailer_id` or `item_id`, but not both. If `item_id` is provided, `retailer_id` must not be provided. |
 | `item_id`  Type: string | **Required if `retailer_id` is not provided**.  A Meta-generated ID representing the line item on the order. This value is readable as the `id` field of the [`item`](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/order-management/order-api#item) response. You must provide `retailer_id` or `item_id`, but not both. If `retailer_id` is provided, `item_id` must not be provided. |
 | `quantity`  Type: number | **Required**  Number of items canceled. |
 
@@ -58,38 +58,34 @@ https://graph.facebook.com/v25.0/<ORDER_ID>/cancellations
 #### Sample Request (Full Order)
 
 ```
-```
 {  
-  "cancel_reason": {  
-    "reason_code": "CUSTOMER_REQUESTED",  
-    "reason_description": "Buyer did not need it anymore"  
-  },  
-  "restock_items": true,  
-  "idempotency_key": "cb090e84-e75a-9a34-45d3-5153bec88b65"  
+  "cancel_reason": {  
+    "reason_code": "CUSTOMER_REQUESTED",  
+    "reason_description": "Buyer did not need it anymore"  
+  },  
+  "restock_items": true,  
+  "idempotency_key": "cb090e84-e75a-9a34-45d3-5153bec88b65"  
   
 }
-```
 ```
 
 #### Sample Request (Partial Order)
 
 ```
-```
 {  
-  "cancel_reason": {  
-    "reason_code": "OUT_OF_STOCK",  
-    "reason_description": "Ran out of item"  
-  },  
-  "restock_items": false,  
-  "items": [  
-    {  
-      "retailer_id": "FB_product_1234",  
-      "quantity": 1  
-    }  
-  ],  
-  "idempotency_key": "cb090e84-e75a-9a34-45d3-5153bec88b65"  
+  "cancel_reason": {  
+    "reason_code": "OUT_OF_STOCK",  
+    "reason_description": "Ran out of item"  
+  },  
+  "restock_items": false,  
+  "items": [  
+    {  
+      "retailer_id": "FB_product_1234",  
+      "quantity": 1  
+    }  
+  ],  
+  "idempotency_key": "cb090e84-e75a-9a34-45d3-5153bec88b65"  
 }
-```
 ```
 
 #### Sample Response
@@ -143,7 +139,7 @@ https://graph.facebook.com/v25.0/<ORDER_ID>/refunds
 
 | Attribute | Description |
 | --- | --- |
-| `retailer_id`  Type: string | **Required if `item_id` is not provided**.  ID representing the product in the seller’s catalog. You must provide `retailer_id` or `item_id`, but not both. If `item_id` is provided, `retailer_id` must not be provided. |
+| `retailer_id`  Type: string | **Required if `item_id` is not provided**.  ID representing the product in the seller's catalog. You must provide `retailer_id` or `item_id`, but not both. If `item_id` is provided, `retailer_id` must not be provided. |
 | `item_id`  Type: string | **Required if `retailer_id` is not provided**.  A Meta-generated ID representing the line item on the order. This value is readable as the `id` field of the [`item`](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/order-management/order-api#item) response. You must provide `retailer_id` or `item_id`, but not both. If `retailer_id` is provided, `item_id` must not be provided. |
 | `item_refund_amount`  Type: [`currency_amount`](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/order-management/legacy-api#currency_amount) | **Required if `item_refund_quantity` is not provided**.  Amount to refund, before any tax. Can be any value up to the full value of the item. See [`currency_amount`](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/order-management/legacy-api#currency_amount). |
 | `item_refund_quantity`  Type: number | **Required if `item_refund_amount` is not provided**.  Number of items to be refunded fully. |
@@ -170,51 +166,47 @@ https://graph.facebook.com/v25.0/<ORDER_ID>/refunds
 #### Sample Request (Full Order)
 
 ```
-```
 {  
-    "reason_code": "WRONG_ITEM",  
-    "idempotency_key": "cb090e84-e75a-9a34-45d3-5153bec88b65"  
+    "reason_code": "WRONG_ITEM",  
+    "idempotency_key": "cb090e84-e75a-9a34-45d3-5153bec88b65"  
 }
-```
 ```
 
 #### Sample Request (Partial Order)
 
 ```
-```
 {  
-  "items": [  
-    {  
-      "retailer_id": "1234",  
-      "item_refund_quantity": 1  
-    },  
-    {  
-      "retailer_id": "38383838",  
-      "item_refund_amount": {  
-        "amount": "2.5",  
-        "currency": "USD"  
-      }  
-    }  
-  ],  
-  "shipping": {  
-    "shipping_refund": {  
-      "amount": "2.4",  
-      "currency": "USD"  
-    }  
-  },  
-  "deductions": [  
-    {  
-      "deduction_type": "RETURN_SHIPPING",  
-      "deduction_amount": {  
-        "amount": "5.5",  
-        "currency": "USD"  
-      }  
-    }  
-  ],  
-  "reason_code": "WRONG_ITEM",  
-  "idempotency_key": "cb090e84-e75a-9a34-45d3-5153bec88b65"  
+  "items": [  
+    {  
+      "retailer_id": "1234",  
+      "item_refund_quantity": 1  
+    },  
+    {  
+      "retailer_id": "38383838",  
+      "item_refund_amount": {  
+        "amount": "2.5",  
+        "currency": "USD"  
+      }  
+    }  
+  ],  
+  "shipping": {  
+    "shipping_refund": {  
+      "amount": "2.4",  
+      "currency": "USD"  
+    }  
+  },  
+  "deductions": [  
+    {  
+      "deduction_type": "RETURN_SHIPPING",  
+      "deduction_amount": {  
+        "amount": "5.5",  
+        "currency": "USD"  
+      }  
+    }  
+  ],  
+  "reason_code": "WRONG_ITEM",  
+  "idempotency_key": "cb090e84-e75a-9a34-45d3-5153bec88b65"  
 }
-```
 ```
 
 #### Response
@@ -222,16 +214,14 @@ https://graph.facebook.com/v25.0/<ORDER_ID>/refunds
 If successful:
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 Otherwise, a relevant error message is returned.
 
-If you received an error that this order couldn’t be refunded until the customer’s payment method had been charged, validate if [the payment was captured](https://developers.facebook.com/docs/commerce-platform/reporting/payments-and-promotions#transaction_detail_object).
+If you received an error that this order couldn't be refunded until the customer's payment method had been charged, validate if [the payment was captured](https://developers.facebook.com/docs/commerce-platform/reporting/payments-and-promotions#transaction_detail_object).
 
 ## List Cancellations
 
@@ -246,29 +236,27 @@ https://graph.facebook.com/v25.0/<ORDER_ID>/cancellations
 If successful:
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "id": "412737486183265",  
-      "items": {  
-        "data": [  
-          {  
-            "id": "32121321312",  
-            "product_id": "2082596341811586",  
-            "retailer_id": "FB_product_1234",  
-            "quantity": 1  
-          }  
-        ]  
-      },  
-      "cancel_reason": {  
-        "reason_code": "CUSTOMER_REQUESTED",  
-        "reason_description": "Buyer did not need it anymore"  
-      }  
-    }  
-  ]  
+  "data": [  
+    {  
+      "id": "412737486183265",  
+      "items": {  
+        "data": [  
+          {  
+            "id": "32121321312",  
+            "product_id": "2082596341811586",  
+            "retailer_id": "FB_product_1234",  
+            "quantity": 1  
+          }  
+        ]  
+      },  
+      "cancel_reason": {  
+        "reason_code": "CUSTOMER_REQUESTED",  
+        "reason_description": "Buyer did not need it anymore"  
+      }  
+    }  
+  ]  
 }
-```
 ```
 
 ## List Refunds
@@ -342,44 +330,42 @@ https://graph.facebook.com/v25.0/<ORDER_ID>/refunds
 If successful:
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "id": "498980194169539",  
-      "items": {  
-        "data": [  
-          {  
-            "id": "486602442073981",  
-            "product_id": "2452389501475182",  
-            "retailer_id": "FB_shirt_1234",  
-             "refund_subtotal": {  
-                "amount": "1.00",  
-                "currency": "USD"  
-              },  
-              "quantity": 1  
-          }  
-        ]  
-      },  
-      "refund_reason": {  
-        "reason_code": "BUYERS_REMORSE"  
-      },  
-      "refund_amount": {  
-        "subtotal": "1.00",  
-        "shipping": "10.00",  
-        "tax": "-1.02",  
-        "total": "12.02",  
-        "amount": "12.02",  
-        "currency": "USD"  
-      },  
-    }  
-  ],  
-  "paging": {  
-    "cursors": {  
-      "before": "QVFIUkdCNjRRQ2tpZAloxbFlZAMnZABN3pYcnB5TzZALYlAzTVo2eF8wM3BraFRRRWNLZAnJwczAtanA0VUE4WnB4dVZAQYUE3OTRZASTBMZAjBWYWxOZAGJJdm9vODRn",  
-      "after": "QVFIUkdCNjRRQ2tpZAloxbFlZAMnZABN3pYcnB5TzZALYlAzTVo2eF8wM3BraFRRRWNLZAnJwczAtanA0VUE4WnB4dVZAQYUE3OTRZASTBMZAjBWYWxOZAGJJdm9vODRn"  
-    }  
-  }  
+  "data": [  
+    {  
+      "id": "498980194169539",  
+      "items": {  
+        "data": [  
+          {  
+            "id": "486602442073981",  
+            "product_id": "2452389501475182",  
+            "retailer_id": "FB_shirt_1234",  
+             "refund_subtotal": {  
+                "amount": "1.00",  
+                "currency": "USD"  
+              },  
+              "quantity": 1  
+          }  
+        ]  
+      },  
+      "refund_reason": {  
+        "reason_code": "BUYERS_REMORSE"  
+      },  
+      "refund_amount": {  
+        "subtotal": "1.00",  
+        "shipping": "10.00",  
+        "tax": "-1.02",  
+        "total": "12.02",  
+        "amount": "12.02",  
+        "currency": "USD"  
+      },  
+    }  
+  ],  
+  "paging": {  
+    "cursors": {  
+      "before": "QVFIUkdCNjRRQ2tpZAloxbFlZAMnZABN3pYcnB5TzZALYlAzTVo2eF8wM3BraFRRRWNLZAnJwczAtanA0VUE4WnB4dVZAQYUE3OTRZASTBMZAjBWYWxOZAGJJdm9vODRn",  
+      "after": "QVFIUkdCNjRRQ2tpZAloxbFlZAMnZABN3pYcnB5TzZALYlAzTVo2eF8wM3BraFRRRWNLZAnJwczAtanA0VUE4WnB4dVZAQYUE3OTRZASTBMZAjBWYWxOZAGJJdm9vODRn"  
+    }  
+  }  
 }
-```
 ```

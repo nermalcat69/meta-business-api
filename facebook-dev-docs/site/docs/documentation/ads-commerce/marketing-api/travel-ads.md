@@ -55,35 +55,33 @@ https://graph.facebook.com/<API_VERSION>/<AD_ID>/insights
 A sample response looks like this:
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "impressions": "8801",  
-      "date_start": "2016-04-29",  
-      "date_stop": "2016-05-13",  
-      "body_asset": {  
-        "text": "Test text",  
-        "id": "6051732675652"  
-      }  
-    },  
-    {  
-      "impressions": "7558",  
-      "date_start": "2016-04-29",  
-      "date_stop": "2016-05-13",  
-      "body_asset": {  
-        "text": "Test ext new",  
-        "id": "6051732676452"  
-      }  
-    },  
-  ],  
-  "paging": {  
-    "cursors": {  
-      "before": "MAZDZD",  
-      "after": "MgZDZD"  
-    }  
-  }}
-```
+  "data": [  
+    {  
+      "impressions": "8801",  
+      "date_start": "2016-04-29",  
+      "date_stop": "2016-05-13",  
+      "body_asset": {  
+        "text": "Test text",  
+        "id": "6051732675652"  
+      }  
+    },  
+    {  
+      "impressions": "7558",  
+      "date_start": "2016-04-29",  
+      "date_stop": "2016-05-13",  
+      "body_asset": {  
+        "text": "Test ext new",  
+        "id": "6051732676452"  
+      }  
+    },  
+  ],  
+  "paging": {  
+    "cursors": {  
+      "before": "MAZDZD",  
+      "after": "MgZDZD"  
+    }  
+  }​}
 ```
 
 To retrieve insights for an **ad set** broken down by `image_asset` and `age`:
@@ -99,34 +97,32 @@ https://graph.facebook.com/<API_VERSION>/<ADSET_ID>/insights
 A sample response looks like this:
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "impressions": "5497",  
-      "date_start": "2016-04-29",  
-      "date_stop": "2016-05-13",  
-      "image_asset": {  
-        "hash": "<REDACTED>",  
-        "url": "<REDACTED>",  
-        "id": "6051732672052"  
-      }  
-    },  
-    {  
-      "impressions": "5962",  
-      "date_start": "2016-04-29",  
-      "date_stop": "2016-05-13",  
-      "image_asset": {  
-        "hash": "<REDACTED>",  
-        "url": "<REDACTED>",  
-        "id": "6051732672652"  
-      }  
-    },  
-  ],  
-  "paging": {  
-    "cursors": {  
-      "before": "MAZDZD",  
-      "after": "MwZDZD"  
-    }
-```
+  "data": [  
+    {  
+      "impressions": "5497",  
+      "date_start": "2016-04-29",  
+      "date_stop": "2016-05-13",  
+      "image_asset": {  
+        "hash": "<REDACTED>",  
+        "url": "<REDACTED>",  
+        "id": "6051732672052"  
+      }  
+    },  
+    {  
+      "impressions": "5962",  
+      "date_start": "2016-04-29",  
+      "date_stop": "2016-05-13",  
+      "image_asset": {  
+        "hash": "<REDACTED>",  
+        "url": "<REDACTED>",  
+        "id": "6051732672652"  
+      }  
+    },  
+  ],  
+  "paging": {  
+    "cursors": {  
+      "before": "MAZDZD",  
+      "after": "MwZDZD"  
+    }
 ```

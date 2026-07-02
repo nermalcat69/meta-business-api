@@ -17,7 +17,7 @@ Starting from Conversions API Gateway and Signals Gateway v2.2.0, up-to-date ver
 
 ### Create Pixel Connection
 
-Onboards a new Meta Pixel to the “Gateway Products” product Conversions API Gateway or Signals Gateway.
+Onboards a new Meta Pixel to the "Gateway Products" product Conversions API Gateway or Signals Gateway.
 
 #### Schema
 
@@ -480,7 +480,7 @@ query ConnectionStatusCardQuery(
 
 ### Activate/Deactivate Gateway from Receiving Pixel Events
 
-Changes Gateway’s Pixel event receiving status.
+Changes Gateway's Pixel event receiving status.
 
 #### Schema
 
@@ -620,7 +620,7 @@ Variables
 
 ### Activate/Deactivate Pixel Event Publishing Status
 
-Changes Pixel’s event publishing status. If deactivated, Gateway will discard received events and not publish them to Meta.
+Changes Pixel's event publishing status. If deactivated, Gateway will discard received events and not publish them to Meta.
 
 #### Schema
 
@@ -758,7 +758,7 @@ Variables
 
 ### Activate/Deactivate Pixel Event Publishing Status by Event Name
 
-Changes Pixel’s event publishing status by event name and Pixel ID. If deactivated, Gateway Products will discard these events and not publish them to Meta.
+Changes Pixel's event publishing status by event name and Pixel ID. If deactivated, Gateway Products will discard these events and not publish them to Meta.
 
 #### Schema
 

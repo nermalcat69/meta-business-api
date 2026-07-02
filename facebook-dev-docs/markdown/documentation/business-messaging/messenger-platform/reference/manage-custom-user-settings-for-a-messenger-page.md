@@ -45,11 +45,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/v26.0/{id}/custom_labels' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/v26.0/{id}/custom_labels' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Path Parameters
@@ -267,11 +267,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/v26.0/{id}/custom_labels' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/v26.0/{id}/custom_labels' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 ---
@@ -291,11 +291,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/v26.0/{id}/custom_labels' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request POST \  
+  --url 'https://graph.facebook.com/v26.0/{id}/custom_labels' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Path Parameters
@@ -479,11 +479,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/v26.0/{id}/custom_labels' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request POST \  
+  --url 'https://graph.facebook.com/v26.0/{id}/custom_labels' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 ## Authentication

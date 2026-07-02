@@ -17,9 +17,9 @@ Before you start, you need the following:
 
 * A valid Facebook **Page ID** (passed in the URL).
 * A valid user access token with permissions to manage catalogs and Pages.
-* (*Optional*) Meta’s business ID managing the page you want to link to the catalog.
+* (*Optional*) Meta's business ID managing the page you want to link to the catalog.
 * (*Optional*) External business ID/installation ID of third-party partner.
-* (*Optional*) Agency’s information to share catalog with the agency business.
+* (*Optional*) Agency's information to share catalog with the agency business.
 
 ## API use cases
 
@@ -52,8 +52,8 @@ Optional fields inside `business_metadata`:
 
 | Field | Description |
 | --- | --- |
-| `external_business_id` | **Optional** Partner’s business ID for which the catalog is created. |
-| `agency` | **Optional** If provided, must include both `business_id` (agency’s Facebook business ID) and `permitted_tasks` (for example, 240588526848665 to manage or 2015469438531460 to advertise). |
+| `external_business_id` | **Optional** Partner's business ID for which the catalog is created. |
+| `agency` | **Optional** If provided, must include both `business_id` (agency's Facebook business ID) and `permitted_tasks` (for example, 240588526848665 to manage or 2015469438531460 to advertise). |
 
 In your API call you must include the access token which has permission for **catalog management** and **page metadata management**.
 

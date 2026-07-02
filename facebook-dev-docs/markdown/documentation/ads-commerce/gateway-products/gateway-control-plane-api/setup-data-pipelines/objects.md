@@ -720,7 +720,7 @@ mutation useUpdateDataDestinationHttpConfigMutation(
       "authEndpoint": "",
       "httpMethod": "GET"
     },
-    "payloadSchema": "{\n  \"data\": [\n    {% for event in events %}\n      {\n        \"action_source\": {{action_source}},\n        \"event_name\": {{event_name}},\n        \"event_time\": {{event_time}},\n        \"event_id\": {{event_id}},\n        \"user_data\": {\n          \"madid\": {{mobile_advertiser_id}},\n          \"client_ip_address\": {{client_ip_address}}\n        },\n        \"custom_data\": {\n          \"currency\": {{currency}},\n          \"value\": {{value}},\n          \"num_items\": {{num_items}}\n        },\n        \"app_data\": {\n          \"advertiser_tracking_enabled\": {{advertiser_tracking_enabled}},\n          \"application_tracking_enabled\": {{application_tracking_enabled}}\n        }\n    }\n    {% endfor %}\n  ]\n}"
+    "payloadSchema": "{\n  \"data\": [\n    {% for event in events %}\n      {\n        \"action_source\": {​{action_source}​},\n        \"event_name\": {​{event_name}​},\n        \"event_time\": {​{event_time}​},\n        \"event_id\": {​{event_id}​},\n        \"user_data\": {\n          \"madid\": {​{mobile_advertiser_id}​},\n          \"client_ip_address\": {​{client_ip_address}​}\n        },\n        \"custom_data\": {\n          \"currency\": {​{currency}​},\n          \"value\": {​{value}​},\n          \"num_items\": {​{num_items}​}\n        },\n        \"app_data\": {\n          \"advertiser_tracking_enabled\": {​{advertiser_tracking_enabled}​},\n          \"application_tracking_enabled\": {​{application_tracking_enabled}​}\n        }\n    }\n    {% endfor %}\n  ]\n}"
   }
 }
 ```

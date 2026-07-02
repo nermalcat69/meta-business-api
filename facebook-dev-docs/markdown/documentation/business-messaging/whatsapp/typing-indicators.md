@@ -31,19 +31,17 @@ POST /<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/messages
 ### Post body
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "recipient_type": "individual",  
-  "to": "<WHATSAPP_USER_PHONE_NUMBER>",  
-  "context": {  
-    "message_id": "WAMID_TO_REPLY_TO"  
-  },  
+  "messaging_product": "whatsapp",  
+  "recipient_type": "individual",  
+  "to": "<WHATSAPP_USER_PHONE_NUMBER>",  
+  "context": {  
+    "message_id": "WAMID_TO_REPLY_TO"  
+  },  
   
-  /* Message type and type contents goes here */  
+  /* Message type and type contents goes here */  
   
 }
-```
 ```
 
 ### Post body parameters
@@ -58,22 +56,20 @@ POST /<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/messages
 Example of a text message sent as a reply to a previous message.
 
 ```
-```
-curl 'https://graph.facebook.com/v19.0/106540352242922/messages' \  
--H 'Content-Type: application/json' \  
--H 'Authorization: Bearer EAAJB...' \  
--d '  
+curl 'https://graph.facebook.com/v19.0/106540352242922/messages' \  
+-H 'Content-Type: application/json' \  
+-H 'Authorization: Bearer EAAJB...' \  
+-d '  
 {  
-  "messaging_product": "whatsapp",  
-  "recipient_type": "individual",  
-  "to": "+16505551234",  
-  "context": {  
-    "message_id": "wamid.HBgLMTY0NjcwNDM1OTUVAgASGBQzQTdCNTg5RjY1MEMyRjlGMjRGNgA="  
-  },  
-  "type": "text",  
-  "text": {  
-    "body": "You're welcome, Pablo!"  
-  }  
+  "messaging_product": "whatsapp",  
+  "recipient_type": "individual",  
+  "to": "+16505551234",  
+  "context": {  
+    "message_id": "wamid.HBgLMTY0NjcwNDM1OTUVAgASGBQzQTdCNTg5RjY1MEMyRjlGMjRGNgA="  
+  },  
+  "type": "text",  
+  "text": {  
+    "body": "You're welcome, Pablo!"  
+  }  
 }'
-```
 ```

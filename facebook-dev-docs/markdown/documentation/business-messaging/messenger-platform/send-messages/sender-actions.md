@@ -7,11 +7,11 @@ source_url: https://developers.facebook.com/documentation/business-messaging/mes
 
 Updated: Apr 22, 2026
 
-The Personas API allows you to create and manage personas for your business messaging experience. A persona may be backed by a human agent or a bot. When you introduce a persona into a conversation, the persona’s profile picture is shown and all messages sent by the persona are accompanied by an annotation above the message that states the persona name and the business it represents.
+The Personas API allows you to create and manage personas for your business messaging experience. A persona may be backed by a human agent or a bot. When you introduce a persona into a conversation, the persona's profile picture is shown and all messages sent by the persona are accompanied by an annotation above the message that states the persona name and the business it represents.
 
 ## Best practices
 
-* The `name` of a persona is freeform with a maximum of 50 characters. A first name and last name or initial, such as “John Z.”, is recommended.
+* The `name` of a persona is freeform with a maximum of 50 characters. A first name and last name or initial, such as "John Z.", is recommended.
 * The Page name is still shown at the top of the conversation when using a persona. It is not necessary to include the company name in the `name` field.
 * The persona should not be overly generic.
 * The persona should be clearly distinguished from the Page or bot itself.
@@ -52,11 +52,9 @@ curl -X POST "https://graph.facebook.com/<LATEST_API_VERSION>/<PAGE_ID>/personas
 ### Sample response
 
 ```
-```
 {  
-  "id": "<PERSONA_ID>"  
+  "id": "<PERSONA_ID>"  
 }
-```
 ```
 
 | Property | Type | Description |
@@ -78,28 +76,26 @@ curl -X GET "https://graph.facebook.com/<LATEST_API_VERSION>/<PAGE_ID>/personas?
 ### Sample response
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "name": "Adam",  
-      "profile_picture_url": "https://facebook.com/adam-image.jpg",  
-      "id": "<PERSONA_A_ID>"  
-    },  
-    {  
-      "name": "David Mark",  
-      "profile_picture_url": "https://facebook.com/david-image.jpg",  
-      "id": "<PERSONA_B_ID>"  
-    }  
-  ],  
-  "paging": {  
-    "cursors": {  
-      "before": "QVFIUlMtR2ZATQlRtVUZALUlloV1",  
-      "after": "QVFIUkpnMGx0aTNvUjJNVmJUT0Yw"  
-    }  
-  }  
+  "data": [  
+    {  
+      "name": "Adam",  
+      "profile_picture_url": "https://facebook.com/adam-image.jpg",  
+      "id": "<PERSONA_A_ID>"  
+    },  
+    {  
+      "name": "David Mark",  
+      "profile_picture_url": "https://facebook.com/david-image.jpg",  
+      "id": "<PERSONA_B_ID>"  
+    }  
+  ],  
+  "paging": {  
+    "cursors": {  
+      "before": "QVFIUlMtR2ZATQlRtVUZALUlloV1",  
+      "after": "QVFIUkpnMGx0aTNvUjJNVmJUT0Yw"  
+    }  
+  }  
 }
-```
 ```
 
 | Property | Type | Description |
@@ -120,13 +116,11 @@ curl -X GET "https://graph.facebook.com/<LATEST_API_VERSION>/<PERSONA_ID>?access
 ### Sample response
 
 ```
-```
 {  
-  "name": "Adam",  
-  "profile_picture_url": "https://facebook.com/adam-image.jpg",  
-  "id": "<PERSONA_ID>"  
+  "name": "Adam",  
+  "profile_picture_url": "https://facebook.com/adam-image.jpg",  
+  "id": "<PERSONA_ID>"  
 }
-```
 ```
 
 | Property | Type | Description |
@@ -137,7 +131,7 @@ curl -X GET "https://graph.facebook.com/<LATEST_API_VERSION>/<PERSONA_ID>?access
 
 ## Send a message as a persona
 
-To send a message as a persona, send a `POST` request to the `/<PAGE_ID>/messages` endpoint with the `persona_id` parameter along with the `recipient` and `message` parameters. If you do not include `persona_id`, the message is sent using the Page’s identity.
+To send a message as a persona, send a `POST` request to the `/<PAGE_ID>/messages` endpoint with the `persona_id` parameter along with the `recipient` and `message` parameters. If you do not include `persona_id`, the message is sent using the Page's identity.
 
 ### Sample request
 
@@ -164,11 +158,9 @@ curl -X DELETE "https://graph.facebook.com/<LATEST_API_VERSION>/<PERSONA_ID>?acc
 ### Sample response
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 | Property | Type | Description |

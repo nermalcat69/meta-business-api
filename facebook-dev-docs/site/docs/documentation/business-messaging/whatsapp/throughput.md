@@ -18,14 +18,12 @@ WhatsApp supports link previews when the link is sent via chat or shared via sta
 To get started with enabling link previews, websites need to add HTML mark-ups to the HEAD section on the page.
 
 ```
-```
 <head>  
-  <meta property="og:title" content="WhatsApp"/>  
-  <meta property="og:description" content="Simple. Secure. Reliable messaging."/>  
-  <meta property="og:url" content="https://whatsapp.com"/>  
-  <meta property="og:image"content="https://static.whatsapp.net/rsrc.php/ym/r/36B424nhiL4.svg"/>  
+  <meta property="og:title" content="WhatsApp"/>  
+  <meta property="og:description" content="Simple. Secure. Reliable messaging."/>  
+  <meta property="og:url" content="https://whatsapp.com"/>  
+  <meta property="og:image"content="https://static.whatsapp.net/rsrc.php/ym/r/36B424nhiL4.svg"/>  
 </head>
-```
 ```
 
 The `<head>` containing the HTML mark-ups must appear within the first 300KB of the HTML. The entire HTML does not need to fit within 300KB.
@@ -40,7 +38,7 @@ The `<og:url>` mark-up represents the canonical URL of the page. The URL should 
 
 The `<og:image>` mark-up is an absolute URL for an image used as the thumbnail for the link preview. This image should be under 600KB in size. Image should be 300px or more in width with 4:1 width/height or less aspect ratio.
 
-WhatsApp will make the best attempt to show link previews, for example: relaxing requirements, looking for other HTML mark-ups and reverting to small link previews. However, this should not be relied on. It’s not guaranteed to work (and continue to work).
+WhatsApp will make the best attempt to show link previews, for example: relaxing requirements, looking for other HTML mark-ups and reverting to small link previews. However, this should not be relied on. It's not guaranteed to work (and continue to work).
 
 WhatsApp crawls the web page via an HTTP GET request.
 
@@ -52,6 +50,6 @@ The request will also have the `Accept-Language` header set to the language sele
 
 Start with composing a message with the link to test (not tap to send yet). On behalf of the sender, WhatsApp will crawl this URL and attempt to generate a link preview.
 
-If a preview does not come up above the composer box after 10 seconds, please check all the requirements above are met. Else, continue with sending the message by tapping the “send” button.
+If a preview does not come up above the composer box after 10 seconds, please check all the requirements above are met. Else, continue with sending the message by tapping the "send" button.
 
 If a preview does not show up in the expected large size, please check the image requirements above are met. Else, link previews are all working as expected. Your link preview is now configured.

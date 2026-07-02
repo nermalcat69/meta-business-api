@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/commerce-
 
 Updated: Apr 28, 2026
 
-We recommend that you choose the most specific category possible that applies to each item to help customers understand what type of item you’re selling. Currently, you can provide an item’s category from the Google product category (GPC), the Facebook product category (FPC), or both.
+We recommend that you choose the most specific category possible that applies to each item to help customers understand what type of item you're selling. Currently, you can provide an item's category from the Google product category (GPC), the Facebook product category (FPC), or both.
 
 Please refer to [this table](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/catalog/variants#subvertical-gpc) for a mapping of our catalog subverticals to the Google Product Categories. Note that subverticals are a product category. Learn more about [product categories](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/catalog/categories).
 
@@ -16,173 +16,173 @@ Please refer to [this table](https://developers.facebook.com/documentation/ads-c
 | GPC ID | Google Product Category | Facebook Product Category |
 | --- | --- | --- |
 | 1604 | Apparel & Accessories > Clothing | Clothing & Accessories//Clothing |
-| 1604 | Apparel & Accessories > Clothing | Clothing & Accessories//Clothing//Men’s Clothing |
-| 1604 | Apparel & Accessories > Clothing | Clothing & Accessories//Clothing//Women’s Clothing |
-| 1604 | Apparel & Accessories > Clothing | Clothing & Accessories//Clothing//Kids’ Clothing//Boys’ Clothing |
-| 1604 | Apparel & Accessories > Clothing | Clothing & Accessories//Clothing//Kids’ Clothing//Girls’ Clothing |
-| 5322 | Apparel & Accessories > Clothing > Activewear | Clothing & Accessories//Clothing//Men’s Clothing//Activewear |
-| 5322 | Apparel & Accessories > Clothing > Activewear | Clothing & Accessories//Clothing//Women’s Clothing//Activewear |
-| 182 | Apparel & Accessories > Clothing > Baby & Toddler Clothing | Clothing & Accessories//Clothing//Baby Clothing//Boys’ Baby Clothing |
-| 182 | Apparel & Accessories > Clothing > Baby & Toddler Clothing | Clothing & Accessories//Clothing//Baby Clothing//Girls’ Baby Clothing |
-| 5408 | Apparel & Accessories > Clothing > Baby & Toddler Clothing > Baby & Toddler Bottoms | Clothing & Accessories//Clothing//Baby Clothing//Boys’ Baby Clothing//Bottoms |
-| 5408 | Apparel & Accessories > Clothing > Baby & Toddler Clothing > Baby & Toddler Bottoms | Clothing & Accessories//Clothing//Baby Clothing//Girls’ Baby Clothing//Bottoms |
-| 5424 | Apparel & Accessories > Clothing > Baby & Toddler Clothing > Baby & Toddler Dresses | Clothing & Accessories//Clothing//Baby Clothing//Girls’ Baby Clothing//Dresses |
-| 5425 | Apparel & Accessories > Clothing > Baby & Toddler Clothing > Baby & Toddler Outerwear | Clothing & Accessories//Clothing//Baby Clothing//Boys’ Baby Clothing//Outerwear |
-| 5425 | Apparel & Accessories > Clothing > Baby & Toddler Clothing > Baby & Toddler Outerwear | Clothing & Accessories//Clothing//Baby Clothing//Girls’ Baby Clothing//Outerwear |
-| 5622 | Apparel & Accessories > Clothing > Baby & Toddler Clothing > Baby & Toddler Outfits | Clothing & Accessories//Clothing//Baby Clothing//Boys’ Baby Clothing//Outfits & Sets |
-| 5622 | Apparel & Accessories > Clothing > Baby & Toddler Clothing > Baby & Toddler Outfits | Clothing & Accessories//Clothing//Baby Clothing//Girls’ Baby Clothing//Outfits & Sets |
-| 5412 | Apparel & Accessories > Clothing > Baby & Toddler Clothing > Baby & Toddler Sleepwear | Clothing & Accessories//Clothing//Baby Clothing//Boys’ Baby Clothing//Sleepwear |
-| 5412 | Apparel & Accessories > Clothing > Baby & Toddler Clothing > Baby & Toddler Sleepwear | Clothing & Accessories//Clothing//Baby Clothing//Girls’ Baby Clothing//Sleepwear |
-| 5423 | Apparel & Accessories > Clothing > Baby & Toddler Clothing > Baby & Toddler Socks & Tights | Clothing & Accessories//Clothing//Baby Clothing//Boys’ Baby Clothing//Socks |
-| 5423 | Apparel & Accessories > Clothing > Baby & Toddler Clothing > Baby & Toddler Socks & Tights | Clothing & Accessories//Clothing//Baby Clothing//Girls’ Baby Clothing//Socks |
-| 5409 | Apparel & Accessories > Clothing > Baby & Toddler Clothing > Baby & Toddler Swimwear | Clothing & Accessories//Clothing//Baby Clothing//Boys’ Baby Clothing//Swimwear |
-| 5409 | Apparel & Accessories > Clothing > Baby & Toddler Clothing > Baby & Toddler Swimwear | Clothing & Accessories//Clothing//Baby Clothing//Girls’ Baby Clothing//Swimwear |
-| 5410 | Apparel & Accessories > Clothing > Baby & Toddler Clothing > Baby & Toddler Tops | Clothing & Accessories//Clothing//Baby Clothing//Boys’ Baby Clothing//Tops |
-| 5410 | Apparel & Accessories > Clothing > Baby & Toddler Clothing > Baby & Toddler Tops | Clothing & Accessories//Clothing//Baby Clothing//Girls’ Baby Clothing//Tops |
-| 5411 | Apparel & Accessories > Clothing > Baby & Toddler Clothing > Baby One-Pieces | Clothing & Accessories//Clothing//Baby Clothing//Boys’ Baby Clothing//Bodysuits |
-| 5411 | Apparel & Accessories > Clothing > Baby & Toddler Clothing > Baby One-Pieces | Clothing & Accessories//Clothing//Baby Clothing//Girls’ Baby Clothing//Bodysuits |
-| 2271 | Apparel & Accessories > Clothing > Dresses | Clothing & Accessories//Clothing//Kids’ Clothing//Girls’ Clothing//Dresses |
-| 2271 | Apparel & Accessories > Clothing > Dresses | Clothing & Accessories//Clothing//Women’s Clothing//Dresses |
-| 5182 | Apparel & Accessories > Clothing > One-Pieces | Clothing & Accessories//Clothing//Kids’ Clothing//Girls’ Clothing//Jumpsuits & Rompers |
-| 5182 | Apparel & Accessories > Clothing > One-Pieces | Clothing & Accessories//Clothing//Women’s Clothing//Jumpsuits & Rompers |
-| 5250 | Apparel & Accessories > Clothing > One-Pieces > Jumpsuits & Rompers | Clothing & Accessories//Clothing//Women’s Clothing//Jumpsuits & Rompers |
-| 7132 | Apparel & Accessories > Clothing > One-Pieces > Overalls | Clothing & Accessories//Clothing//Women’s Clothing//Jumpsuits & Rompers |
-| 203 | Apparel & Accessories > Clothing > Outerwear | Clothing & Accessories//Clothing//Kids’ Clothing//Boys’ Clothing//Outerwear |
-| 203 | Apparel & Accessories > Clothing > Outerwear | Clothing & Accessories//Clothing//Kids’ Clothing//Girls’ Clothing//Outerwear |
-| 203 | Apparel & Accessories > Clothing > Outerwear | Clothing & Accessories//Clothing//Men’s Clothing//Coats & Jackets |
-| 203 | Apparel & Accessories > Clothing > Outerwear | Clothing & Accessories//Clothing//Women’s Clothing//Coats & Jackets |
-| 5598 | Apparel & Accessories > Clothing > Outerwear > Coats & Jackets | Clothing & Accessories//Clothing//Men’s Clothing//Blazers & Sport Coats |
-| 5598 | Apparel & Accessories > Clothing > Outerwear > Coats & Jackets | Clothing & Accessories//Clothing//Men’s Clothing//Coats & Jackets |
-| 5598 | Apparel & Accessories > Clothing > Outerwear > Coats & Jackets | Clothing & Accessories//Clothing//Women’s Clothing//Coats & Jackets |
-| 5598 | Apparel & Accessories > Clothing > Outerwear > Coats & Jackets | Clothing & Accessories//Clothing//Kids’ Clothing//Boys’ Clothing//Outerwear |
-| 5598 | Apparel & Accessories > Clothing > Outerwear > Coats & Jackets | Clothing & Accessories//Clothing//Kids’ Clothing//Girls’ Clothing//Outerwear |
-| 5514 | Apparel & Accessories > Clothing > Outerwear > Rain Pants | Clothing & Accessories//Clothing//Men’s Clothing//Pants |
-| 5514 | Apparel & Accessories > Clothing > Outerwear > Rain Pants | Clothing & Accessories//Clothing//Women’s Clothing//Pants |
-| 7313 | Apparel & Accessories > Clothing > Outfit Sets | Clothing & Accessories//Clothing//Kids’ Clothing//Boys’ Clothing//Outfits & Sets |
-| 7313 | Apparel & Accessories > Clothing > Outfit Sets | Clothing & Accessories//Clothing//Kids’ Clothing//Girls’ Clothing//Outfits & Sets |
-| 204 | Apparel & Accessories > Clothing > Pants | Clothing & Accessories//Clothing//Men’s Clothing//Pants |
-| 204 | Apparel & Accessories > Clothing > Pants | Clothing & Accessories//Clothing//Men’s Clothing//Jeans |
-| 204 | Apparel & Accessories > Clothing > Pants | Clothing & Accessories//Clothing//Women’s Clothing//Pants |
-| 204 | Apparel & Accessories > Clothing > Pants | Clothing & Accessories//Clothing//Women’s Clothing//Jeans |
-| 204 | Apparel & Accessories > Clothing > Pants | Clothing & Accessories//Clothing//Kids’ Clothing//Boys’ Clothing//Pants |
-| 204 | Apparel & Accessories > Clothing > Pants | Clothing & Accessories//Clothing//Kids’ Clothing//Boys’ Clothing//Jeans |
-| 204 | Apparel & Accessories > Clothing > Pants | Clothing & Accessories//Clothing//Kids’ Clothing//Girls’ Clothing//Pants |
-| 204 | Apparel & Accessories > Clothing > Pants | Clothing & Accessories//Clothing//Kids’ Clothing//Girls’ Clothing//Jeans |
-| 212 | Apparel & Accessories > Clothing > Shirts & Tops | Clothing & Accessories//Clothing//Men’s Clothing//Casual Shirts |
-| 212 | Apparel & Accessories > Clothing > Shirts & Tops | Clothing & Accessories//Clothing//Men’s Clothing//Dress Shirts |
-| 212 | Apparel & Accessories > Clothing > Shirts & Tops | Clothing & Accessories//Clothing//Men’s Clothing//T-Shirts |
-| 212 | Apparel & Accessories > Clothing > Shirts & Tops | Clothing & Accessories//Clothing//Women’s Clothing//Tops & T-Shirts |
-| 212 | Apparel & Accessories > Clothing > Shirts & Tops | Clothing & Accessories//Clothing//Kids’ Clothing//Boys’ Clothing//Tops & T-Shirts |
-| 212 | Apparel & Accessories > Clothing > Shirts & Tops | Clothing & Accessories//Clothing//Kids’ Clothing//Girls’ Clothing//Tops & T-Shirts |
-| 207 | Apparel & Accessories > Clothing > Shorts | Clothing & Accessories//Clothing//Men’s Clothing//Shorts |
-| 207 | Apparel & Accessories > Clothing > Shorts | Clothing & Accessories//Clothing//Women’s Clothing//Shorts |
-| 207 | Apparel & Accessories > Clothing > Shorts | Clothing & Accessories//Clothing//Kids’ Clothing//Boys’ Clothing//Shorts |
-| 207 | Apparel & Accessories > Clothing > Shorts | Clothing & Accessories//Clothing//Kids’ Clothing//Girls’ Clothing//Shorts |
-| 1581 | Apparel & Accessories > Clothing > Skirts | Clothing & Accessories//Clothing//Women’s Clothing//Skirts |
-| 1581 | Apparel & Accessories > Clothing > Skirts | Clothing & Accessories//Clothing//Kids’ Clothing//Girls’ Clothing//Skirts |
-| 5344 | Apparel & Accessories > Clothing > Skorts | Clothing & Accessories//Clothing//Women’s Clothing//Skirts |
-| 5344 | Apparel & Accessories > Clothing > Skorts | Clothing & Accessories//Clothing//Kids’ Clothing//Girls’ Clothing//Skirts |
-| 208 | Apparel & Accessories > Clothing > Sleepwear & Loungewear | Clothing & Accessories//Clothing//Kids’ Clothing//Boys’ Clothing//Sleepwear |
-| 208 | Apparel & Accessories > Clothing > Sleepwear & Loungewear | Clothing & Accessories//Clothing//Kids’ Clothing//Girls’ Clothing//Sleepwear |
-| 208 | Apparel & Accessories > Clothing > Sleepwear & Loungewear | Clothing & Accessories//Clothing//Men’s Clothing//Sleepwear |
-| 208 | Apparel & Accessories > Clothing > Sleepwear & Loungewear | Clothing & Accessories//Clothing//Women’s Clothing//Lingerie & Sleepwear |
-| 5713 | Apparel & Accessories > Clothing > Sleepwear & Loungewear > Loungewear | Clothing & Accessories//Clothing//Men’s Clothing//Sleepwear |
-| 5713 | Apparel & Accessories > Clothing > Sleepwear & Loungewear > Loungewear | Clothing & Accessories//Clothing//Women’s Clothing//Lingerie & Sleepwear//Sleepwear |
-| 5513 | Apparel & Accessories > Clothing > Sleepwear & Loungewear > Nightgowns | Clothing & Accessories//Clothing//Women’s Clothing//Lingerie & Sleepwear//Sleepwear |
-| 2580 | Apparel & Accessories > Clothing > Sleepwear & Loungewear > Pajamas | Clothing & Accessories//Clothing//Men’s Clothing//Sleepwear |
-| 2580 | Apparel & Accessories > Clothing > Sleepwear & Loungewear > Pajamas | Clothing & Accessories//Clothing//Women’s Clothing//Lingerie & Sleepwear//Sleepwear |
-| 2302 | Apparel & Accessories > Clothing > Sleepwear & Loungewear > Robes | Clothing & Accessories//Clothing//Men’s Clothing//Sleepwear |
-| 2302 | Apparel & Accessories > Clothing > Sleepwear & Loungewear > Robes | Clothing & Accessories//Clothing//Women’s Clothing//Lingerie & Sleepwear//Sleepwear |
-| 1594 | Apparel & Accessories > Clothing > Suits | Clothing & Accessories//Clothing//Baby Clothing//Boys’ Baby Clothing//Suits |
-| 1594 | Apparel & Accessories > Clothing > Suits | Clothing & Accessories//Clothing//Kids’ Clothing//Boys’ Clothing//Suits |
-| 1594 | Apparel & Accessories > Clothing > Suits | Clothing & Accessories//Clothing//Men’s Clothing//Suits |
-| 1594 | Apparel & Accessories > Clothing > Suits | Clothing & Accessories//Clothing//Women’s Clothing//Suits & Blazers |
-| 5183 | Apparel & Accessories > Clothing > Suits > Pant Suits | Clothing & Accessories//Clothing//Baby Clothing//Boys’ Baby Clothing//Suits |
-| 5183 | Apparel & Accessories > Clothing > Suits > Pant Suits | Clothing & Accessories//Clothing//Men’s Clothing//Suits |
-| 5183 | Apparel & Accessories > Clothing > Suits > Pant Suits | Clothing & Accessories//Clothing//Women’s Clothing//Suits & Blazers |
-| 1516 | Apparel & Accessories > Clothing > Suits > Skirt Suits | Clothing & Accessories//Clothing//Women’s Clothing//Suits & Blazers |
-| 1580 | Apparel & Accessories > Clothing > Suits > Tuxedos | Clothing & Accessories//Clothing//Baby Clothing//Boys’ Baby Clothing//Suits |
-| 1580 | Apparel & Accessories > Clothing > Suits > Tuxedos | Clothing & Accessories//Clothing//Men’s Clothing//Suits |
-| 1580 | Apparel & Accessories > Clothing > Suits > Tuxedos | Clothing & Accessories//Clothing//Kids’ Clothing//Boys’ Clothing//Suits |
-| 211 | Apparel & Accessories > Clothing > Swimwear | Clothing & Accessories//Clothing//Men’s Clothing//Swimwear |
-| 211 | Apparel & Accessories > Clothing > Swimwear | Clothing & Accessories//Clothing//Women’s Clothing//Swimwear |
-| 211 | Apparel & Accessories > Clothing > Swimwear | Clothing & Accessories//Clothing//Kids’ Clothing//Girls’ Clothing//Swimwear |
-| 211 | Apparel & Accessories > Clothing > Swimwear | Clothing & Accessories//Clothing//Kids’ Clothing//Boys’ Clothing//Swimwear |
-| 6031 | Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Dirndls | Clothing & Accessories//Clothing//Baby Clothing//Girls’ Baby Clothing//Dresses |
-| 6031 | Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Dirndls | Clothing & Accessories//Clothing//Women’s Clothing//Dresses |
-| 6031 | Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Dirndls | Clothing & Accessories//Clothing//Kids’ Clothing//Girls’ Clothing//Dresses |
-| 5674 | Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Hakama Trousers | Clothing & Accessories//Clothing//Men’s Clothing//Pants |
-| 5674 | Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Hakama Trousers | Clothing & Accessories//Clothing//Women’s Clothing//Pants |
-| 5673 | Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Kimono Outerwear | Clothing & Accessories//Clothing//Women’s Clothing//Coats & Jackets |
-| 5343 | Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Kimonos | Clothing & Accessories//Clothing//Baby Clothing//Girls’ Baby Clothing//Dresses |
-| 5343 | Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Kimonos | Clothing & Accessories//Clothing//Women’s Clothing//Dresses |
-| 5343 | Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Kimonos | Clothing & Accessories//Clothing//Kids’ Clothing//Girls’ Clothing//Dresses |
-| 8149 | Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Religious Ceremonial Clothing > Baptism & Communion Dresses | Clothing & Accessories//Clothing//Baby Clothing//Girls’ Baby Clothing//Dresses |
-| 8149 | Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Religious Ceremonial Clothing > Baptism & Communion Dresses | Clothing & Accessories//Clothing//Women’s Clothing//Dresses |
-| 8149 | Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Religious Ceremonial Clothing > Baptism & Communion Dresses | Clothing & Accessories//Clothing//Kids’ Clothing//Girls’ Clothing//Dresses |
-| 8248 | Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Saris & Lehengas | Clothing & Accessories//Clothing//Women’s Clothing//Dresses |
-| 8248 | Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Saris & Lehengas | Clothing & Accessories//Clothing//Women’s Clothing//Skirts |
-| 8248 | Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Saris & Lehengas | Clothing & Accessories//Clothing//Women’s Clothing//Tops & T-Shirts |
-| 7281 | Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Traditional Leather Pants | Clothing & Accessories//Clothing//Men’s Clothing//Pants |
-| 7281 | Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Traditional Leather Pants | Clothing & Accessories//Clothing//Women’s Clothing//Pants |
-| 5676 | Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Yukata | Clothing & Accessories//Clothing//Baby Clothing//Girls’ Baby Clothing//Dresses |
-| 5676 | Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Yukata | Clothing & Accessories//Clothing//Women’s Clothing//Dresses |
-| 5676 | Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Yukata | Clothing & Accessories//Clothing//Kids’ Clothing//Girls’ Clothing//Dresses |
-| 213 | Apparel & Accessories > Clothing > Underwear & Socks | Clothing & Accessories//Clothing//Kids’ Clothing//Boys’ Clothing//Socks |
-| 213 | Apparel & Accessories > Clothing > Underwear & Socks | Clothing & Accessories//Clothing//Kids’ Clothing//Boys’ Clothing//Underwear |
-| 213 | Apparel & Accessories > Clothing > Underwear & Socks | Clothing & Accessories//Clothing//Kids’ Clothing//Girls’ Clothing//Socks & Tights |
-| 213 | Apparel & Accessories > Clothing > Underwear & Socks | Clothing & Accessories//Clothing//Kids’ Clothing//Girls’ Clothing//Underwear |
-| 213 | Apparel & Accessories > Clothing > Underwear & Socks | Clothing & Accessories//Clothing//Men’s Clothing//Socks |
-| 213 | Apparel & Accessories > Clothing > Underwear & Socks | Clothing & Accessories//Clothing//Men’s Clothing//Underwear |
-| 213 | Apparel & Accessories > Clothing > Underwear & Socks | Clothing & Accessories//Clothing//Women’s Clothing//Lingerie & Sleepwear//Underwear |
-| 213 | Apparel & Accessories > Clothing > Underwear & Socks | Clothing & Accessories//Clothing//Women’s Clothing//Tights, Socks & Hosiery//Socks |
-| 214 | Apparel & Accessories > Clothing > Underwear & Socks > Bras | Clothing & Accessories//Clothing//Women’s Clothing//Lingerie & Sleepwear//Bras |
-| 215 | Apparel & Accessories > Clothing > Underwear & Socks > Hosiery | Clothing & Accessories//Clothing//Women’s Clothing//Tights, Socks & Hosiery |
-| 215 | Apparel & Accessories > Clothing > Underwear & Socks > Hosiery | Clothing & Accessories//Clothing//Women’s Clothing//Tights, Socks & Hosiery//Leg Warmers |
-| 215 | Apparel & Accessories > Clothing > Underwear & Socks > Hosiery | Clothing & Accessories//Clothing//Women’s Clothing//Tights, Socks & Hosiery//Pantyhose & Tights |
-| 215 | Apparel & Accessories > Clothing > Underwear & Socks > Hosiery | Clothing & Accessories//Clothing//Women’s Clothing//Tights, Socks & Hosiery//Socks |
-| 215 | Apparel & Accessories > Clothing > Underwear & Socks > Hosiery | Clothing & Accessories//Clothing//Women’s Clothing//Tights, Socks & Hosiery//Stockings & Thigh-Highs |
-| 5327 | Apparel & Accessories > Clothing > Underwear & Socks > Jock Straps | Clothing & Accessories//Clothing//Men’s Clothing//Underwear |
-| 1772 | Apparel & Accessories > Clothing > Underwear & Socks > Lingerie | Clothing & Accessories//Clothing//Women’s Clothing//Lingerie & Sleepwear |
-| 2563 | Apparel & Accessories > Clothing > Underwear & Socks > Lingerie Accessories | Clothing & Accessories//Clothing//Women’s Clothing//Lingerie & Sleepwear |
-| 1807 | Apparel & Accessories > Clothing > Underwear & Socks > Long Johns | Clothing & Accessories//Clothing//Men’s Clothing//Underwear |
-| 1807 | Apparel & Accessories > Clothing > Underwear & Socks > Long Johns | Clothing & Accessories//Clothing//Women’s Clothing//Lingerie & Sleepwear//Underwear |
-| 2963 | Apparel & Accessories > Clothing > Underwear & Socks > Petticoats & Pettipants | Clothing & Accessories//Clothing//Women’s Clothing//Lingerie & Sleepwear//Slips |
-| 1578 | Apparel & Accessories > Clothing > Underwear & Socks > Shapewear | Clothing & Accessories//Clothing//Women’s Clothing//Lingerie & Sleepwear//Shapewear |
-| 209 | Apparel & Accessories > Clothing > Underwear & Socks > Socks | Clothing & Accessories//Clothing//Men’s Clothing//Socks |
-| 209 | Apparel & Accessories > Clothing > Underwear & Socks > Socks | Clothing & Accessories//Clothing//Women’s Clothing//Tights, Socks & Hosiery//Socks |
-| 209 | Apparel & Accessories > Clothing > Underwear & Socks > Socks | Clothing & Accessories//Clothing//Kids’ Clothing//Boys’ Clothing//Socks |
-| 209 | Apparel & Accessories > Clothing > Underwear & Socks > Socks | Clothing & Accessories//Clothing//Kids’ Clothing//Girls’ Clothing//Socks & Tights |
-| 2745 | Apparel & Accessories > Clothing > Underwear & Socks > Undershirts | Clothing & Accessories//Clothing//Men’s Clothing//T-Shirts |
-| 2562 | Apparel & Accessories > Clothing > Underwear & Socks > Underwear | Clothing & Accessories//Clothing//Men’s Clothing//Underwear |
-| 2562 | Apparel & Accessories > Clothing > Underwear & Socks > Underwear | Clothing & Accessories//Clothing//Women’s Clothing//Lingerie & Sleepwear//Underwear |
-| 5834 | Apparel & Accessories > Clothing > Underwear & Socks > Underwear Slips | Clothing & Accessories//Clothing//Women’s Clothing//Lingerie & Sleepwear//Slips |
-| 5441 | Apparel & Accessories > Clothing > Wedding & Bridal Party Dresses | Clothing & Accessories//Clothing//Women’s Clothing//Dresses |
-| 5330 | Apparel & Accessories > Clothing > Wedding & Bridal Party Dresses > Bridal Party Dresses | Clothing & Accessories//Clothing//Women’s Clothing//Dresses |
-| 5329 | Apparel & Accessories > Clothing > Wedding & Bridal Party Dresses > Wedding Dresses | Clothing & Accessories//Clothing//Women’s Clothing//Dresses |
+| 1604 | Apparel & Accessories > Clothing | Clothing & Accessories//Clothing//Men's Clothing |
+| 1604 | Apparel & Accessories > Clothing | Clothing & Accessories//Clothing//Women's Clothing |
+| 1604 | Apparel & Accessories > Clothing | Clothing & Accessories//Clothing//Kids' Clothing//Boys' Clothing |
+| 1604 | Apparel & Accessories > Clothing | Clothing & Accessories//Clothing//Kids' Clothing//Girls' Clothing |
+| 5322 | Apparel & Accessories > Clothing > Activewear | Clothing & Accessories//Clothing//Men's Clothing//Activewear |
+| 5322 | Apparel & Accessories > Clothing > Activewear | Clothing & Accessories//Clothing//Women's Clothing//Activewear |
+| 182 | Apparel & Accessories > Clothing > Baby & Toddler Clothing | Clothing & Accessories//Clothing//Baby Clothing//Boys' Baby Clothing |
+| 182 | Apparel & Accessories > Clothing > Baby & Toddler Clothing | Clothing & Accessories//Clothing//Baby Clothing//Girls' Baby Clothing |
+| 5408 | Apparel & Accessories > Clothing > Baby & Toddler Clothing > Baby & Toddler Bottoms | Clothing & Accessories//Clothing//Baby Clothing//Boys' Baby Clothing//Bottoms |
+| 5408 | Apparel & Accessories > Clothing > Baby & Toddler Clothing > Baby & Toddler Bottoms | Clothing & Accessories//Clothing//Baby Clothing//Girls' Baby Clothing//Bottoms |
+| 5424 | Apparel & Accessories > Clothing > Baby & Toddler Clothing > Baby & Toddler Dresses | Clothing & Accessories//Clothing//Baby Clothing//Girls' Baby Clothing//Dresses |
+| 5425 | Apparel & Accessories > Clothing > Baby & Toddler Clothing > Baby & Toddler Outerwear | Clothing & Accessories//Clothing//Baby Clothing//Boys' Baby Clothing//Outerwear |
+| 5425 | Apparel & Accessories > Clothing > Baby & Toddler Clothing > Baby & Toddler Outerwear | Clothing & Accessories//Clothing//Baby Clothing//Girls' Baby Clothing//Outerwear |
+| 5622 | Apparel & Accessories > Clothing > Baby & Toddler Clothing > Baby & Toddler Outfits | Clothing & Accessories//Clothing//Baby Clothing//Boys' Baby Clothing//Outfits & Sets |
+| 5622 | Apparel & Accessories > Clothing > Baby & Toddler Clothing > Baby & Toddler Outfits | Clothing & Accessories//Clothing//Baby Clothing//Girls' Baby Clothing//Outfits & Sets |
+| 5412 | Apparel & Accessories > Clothing > Baby & Toddler Clothing > Baby & Toddler Sleepwear | Clothing & Accessories//Clothing//Baby Clothing//Boys' Baby Clothing//Sleepwear |
+| 5412 | Apparel & Accessories > Clothing > Baby & Toddler Clothing > Baby & Toddler Sleepwear | Clothing & Accessories//Clothing//Baby Clothing//Girls' Baby Clothing//Sleepwear |
+| 5423 | Apparel & Accessories > Clothing > Baby & Toddler Clothing > Baby & Toddler Socks & Tights | Clothing & Accessories//Clothing//Baby Clothing//Boys' Baby Clothing//Socks |
+| 5423 | Apparel & Accessories > Clothing > Baby & Toddler Clothing > Baby & Toddler Socks & Tights | Clothing & Accessories//Clothing//Baby Clothing//Girls' Baby Clothing//Socks |
+| 5409 | Apparel & Accessories > Clothing > Baby & Toddler Clothing > Baby & Toddler Swimwear | Clothing & Accessories//Clothing//Baby Clothing//Boys' Baby Clothing//Swimwear |
+| 5409 | Apparel & Accessories > Clothing > Baby & Toddler Clothing > Baby & Toddler Swimwear | Clothing & Accessories//Clothing//Baby Clothing//Girls' Baby Clothing//Swimwear |
+| 5410 | Apparel & Accessories > Clothing > Baby & Toddler Clothing > Baby & Toddler Tops | Clothing & Accessories//Clothing//Baby Clothing//Boys' Baby Clothing//Tops |
+| 5410 | Apparel & Accessories > Clothing > Baby & Toddler Clothing > Baby & Toddler Tops | Clothing & Accessories//Clothing//Baby Clothing//Girls' Baby Clothing//Tops |
+| 5411 | Apparel & Accessories > Clothing > Baby & Toddler Clothing > Baby One-Pieces | Clothing & Accessories//Clothing//Baby Clothing//Boys' Baby Clothing//Bodysuits |
+| 5411 | Apparel & Accessories > Clothing > Baby & Toddler Clothing > Baby One-Pieces | Clothing & Accessories//Clothing//Baby Clothing//Girls' Baby Clothing//Bodysuits |
+| 2271 | Apparel & Accessories > Clothing > Dresses | Clothing & Accessories//Clothing//Kids' Clothing//Girls' Clothing//Dresses |
+| 2271 | Apparel & Accessories > Clothing > Dresses | Clothing & Accessories//Clothing//Women's Clothing//Dresses |
+| 5182 | Apparel & Accessories > Clothing > One-Pieces | Clothing & Accessories//Clothing//Kids' Clothing//Girls' Clothing//Jumpsuits & Rompers |
+| 5182 | Apparel & Accessories > Clothing > One-Pieces | Clothing & Accessories//Clothing//Women's Clothing//Jumpsuits & Rompers |
+| 5250 | Apparel & Accessories > Clothing > One-Pieces > Jumpsuits & Rompers | Clothing & Accessories//Clothing//Women's Clothing//Jumpsuits & Rompers |
+| 7132 | Apparel & Accessories > Clothing > One-Pieces > Overalls | Clothing & Accessories//Clothing//Women's Clothing//Jumpsuits & Rompers |
+| 203 | Apparel & Accessories > Clothing > Outerwear | Clothing & Accessories//Clothing//Kids' Clothing//Boys' Clothing//Outerwear |
+| 203 | Apparel & Accessories > Clothing > Outerwear | Clothing & Accessories//Clothing//Kids' Clothing//Girls' Clothing//Outerwear |
+| 203 | Apparel & Accessories > Clothing > Outerwear | Clothing & Accessories//Clothing//Men's Clothing//Coats & Jackets |
+| 203 | Apparel & Accessories > Clothing > Outerwear | Clothing & Accessories//Clothing//Women's Clothing//Coats & Jackets |
+| 5598 | Apparel & Accessories > Clothing > Outerwear > Coats & Jackets | Clothing & Accessories//Clothing//Men's Clothing//Blazers & Sport Coats |
+| 5598 | Apparel & Accessories > Clothing > Outerwear > Coats & Jackets | Clothing & Accessories//Clothing//Men's Clothing//Coats & Jackets |
+| 5598 | Apparel & Accessories > Clothing > Outerwear > Coats & Jackets | Clothing & Accessories//Clothing//Women's Clothing//Coats & Jackets |
+| 5598 | Apparel & Accessories > Clothing > Outerwear > Coats & Jackets | Clothing & Accessories//Clothing//Kids' Clothing//Boys' Clothing//Outerwear |
+| 5598 | Apparel & Accessories > Clothing > Outerwear > Coats & Jackets | Clothing & Accessories//Clothing//Kids' Clothing//Girls' Clothing//Outerwear |
+| 5514 | Apparel & Accessories > Clothing > Outerwear > Rain Pants | Clothing & Accessories//Clothing//Men's Clothing//Pants |
+| 5514 | Apparel & Accessories > Clothing > Outerwear > Rain Pants | Clothing & Accessories//Clothing//Women's Clothing//Pants |
+| 7313 | Apparel & Accessories > Clothing > Outfit Sets | Clothing & Accessories//Clothing//Kids' Clothing//Boys' Clothing//Outfits & Sets |
+| 7313 | Apparel & Accessories > Clothing > Outfit Sets | Clothing & Accessories//Clothing//Kids' Clothing//Girls' Clothing//Outfits & Sets |
+| 204 | Apparel & Accessories > Clothing > Pants | Clothing & Accessories//Clothing//Men's Clothing//Pants |
+| 204 | Apparel & Accessories > Clothing > Pants | Clothing & Accessories//Clothing//Men's Clothing//Jeans |
+| 204 | Apparel & Accessories > Clothing > Pants | Clothing & Accessories//Clothing//Women's Clothing//Pants |
+| 204 | Apparel & Accessories > Clothing > Pants | Clothing & Accessories//Clothing//Women's Clothing//Jeans |
+| 204 | Apparel & Accessories > Clothing > Pants | Clothing & Accessories//Clothing//Kids' Clothing//Boys' Clothing//Pants |
+| 204 | Apparel & Accessories > Clothing > Pants | Clothing & Accessories//Clothing//Kids' Clothing//Boys' Clothing//Jeans |
+| 204 | Apparel & Accessories > Clothing > Pants | Clothing & Accessories//Clothing//Kids' Clothing//Girls' Clothing//Pants |
+| 204 | Apparel & Accessories > Clothing > Pants | Clothing & Accessories//Clothing//Kids' Clothing//Girls' Clothing//Jeans |
+| 212 | Apparel & Accessories > Clothing > Shirts & Tops | Clothing & Accessories//Clothing//Men's Clothing//Casual Shirts |
+| 212 | Apparel & Accessories > Clothing > Shirts & Tops | Clothing & Accessories//Clothing//Men's Clothing//Dress Shirts |
+| 212 | Apparel & Accessories > Clothing > Shirts & Tops | Clothing & Accessories//Clothing//Men's Clothing//T-Shirts |
+| 212 | Apparel & Accessories > Clothing > Shirts & Tops | Clothing & Accessories//Clothing//Women's Clothing//Tops & T-Shirts |
+| 212 | Apparel & Accessories > Clothing > Shirts & Tops | Clothing & Accessories//Clothing//Kids' Clothing//Boys' Clothing//Tops & T-Shirts |
+| 212 | Apparel & Accessories > Clothing > Shirts & Tops | Clothing & Accessories//Clothing//Kids' Clothing//Girls' Clothing//Tops & T-Shirts |
+| 207 | Apparel & Accessories > Clothing > Shorts | Clothing & Accessories//Clothing//Men's Clothing//Shorts |
+| 207 | Apparel & Accessories > Clothing > Shorts | Clothing & Accessories//Clothing//Women's Clothing//Shorts |
+| 207 | Apparel & Accessories > Clothing > Shorts | Clothing & Accessories//Clothing//Kids' Clothing//Boys' Clothing//Shorts |
+| 207 | Apparel & Accessories > Clothing > Shorts | Clothing & Accessories//Clothing//Kids' Clothing//Girls' Clothing//Shorts |
+| 1581 | Apparel & Accessories > Clothing > Skirts | Clothing & Accessories//Clothing//Women's Clothing//Skirts |
+| 1581 | Apparel & Accessories > Clothing > Skirts | Clothing & Accessories//Clothing//Kids' Clothing//Girls' Clothing//Skirts |
+| 5344 | Apparel & Accessories > Clothing > Skorts | Clothing & Accessories//Clothing//Women's Clothing//Skirts |
+| 5344 | Apparel & Accessories > Clothing > Skorts | Clothing & Accessories//Clothing//Kids' Clothing//Girls' Clothing//Skirts |
+| 208 | Apparel & Accessories > Clothing > Sleepwear & Loungewear | Clothing & Accessories//Clothing//Kids' Clothing//Boys' Clothing//Sleepwear |
+| 208 | Apparel & Accessories > Clothing > Sleepwear & Loungewear | Clothing & Accessories//Clothing//Kids' Clothing//Girls' Clothing//Sleepwear |
+| 208 | Apparel & Accessories > Clothing > Sleepwear & Loungewear | Clothing & Accessories//Clothing//Men's Clothing//Sleepwear |
+| 208 | Apparel & Accessories > Clothing > Sleepwear & Loungewear | Clothing & Accessories//Clothing//Women's Clothing//Lingerie & Sleepwear |
+| 5713 | Apparel & Accessories > Clothing > Sleepwear & Loungewear > Loungewear | Clothing & Accessories//Clothing//Men's Clothing//Sleepwear |
+| 5713 | Apparel & Accessories > Clothing > Sleepwear & Loungewear > Loungewear | Clothing & Accessories//Clothing//Women's Clothing//Lingerie & Sleepwear//Sleepwear |
+| 5513 | Apparel & Accessories > Clothing > Sleepwear & Loungewear > Nightgowns | Clothing & Accessories//Clothing//Women's Clothing//Lingerie & Sleepwear//Sleepwear |
+| 2580 | Apparel & Accessories > Clothing > Sleepwear & Loungewear > Pajamas | Clothing & Accessories//Clothing//Men's Clothing//Sleepwear |
+| 2580 | Apparel & Accessories > Clothing > Sleepwear & Loungewear > Pajamas | Clothing & Accessories//Clothing//Women's Clothing//Lingerie & Sleepwear//Sleepwear |
+| 2302 | Apparel & Accessories > Clothing > Sleepwear & Loungewear > Robes | Clothing & Accessories//Clothing//Men's Clothing//Sleepwear |
+| 2302 | Apparel & Accessories > Clothing > Sleepwear & Loungewear > Robes | Clothing & Accessories//Clothing//Women's Clothing//Lingerie & Sleepwear//Sleepwear |
+| 1594 | Apparel & Accessories > Clothing > Suits | Clothing & Accessories//Clothing//Baby Clothing//Boys' Baby Clothing//Suits |
+| 1594 | Apparel & Accessories > Clothing > Suits | Clothing & Accessories//Clothing//Kids' Clothing//Boys' Clothing//Suits |
+| 1594 | Apparel & Accessories > Clothing > Suits | Clothing & Accessories//Clothing//Men's Clothing//Suits |
+| 1594 | Apparel & Accessories > Clothing > Suits | Clothing & Accessories//Clothing//Women's Clothing//Suits & Blazers |
+| 5183 | Apparel & Accessories > Clothing > Suits > Pant Suits | Clothing & Accessories//Clothing//Baby Clothing//Boys' Baby Clothing//Suits |
+| 5183 | Apparel & Accessories > Clothing > Suits > Pant Suits | Clothing & Accessories//Clothing//Men's Clothing//Suits |
+| 5183 | Apparel & Accessories > Clothing > Suits > Pant Suits | Clothing & Accessories//Clothing//Women's Clothing//Suits & Blazers |
+| 1516 | Apparel & Accessories > Clothing > Suits > Skirt Suits | Clothing & Accessories//Clothing//Women's Clothing//Suits & Blazers |
+| 1580 | Apparel & Accessories > Clothing > Suits > Tuxedos | Clothing & Accessories//Clothing//Baby Clothing//Boys' Baby Clothing//Suits |
+| 1580 | Apparel & Accessories > Clothing > Suits > Tuxedos | Clothing & Accessories//Clothing//Men's Clothing//Suits |
+| 1580 | Apparel & Accessories > Clothing > Suits > Tuxedos | Clothing & Accessories//Clothing//Kids' Clothing//Boys' Clothing//Suits |
+| 211 | Apparel & Accessories > Clothing > Swimwear | Clothing & Accessories//Clothing//Men's Clothing//Swimwear |
+| 211 | Apparel & Accessories > Clothing > Swimwear | Clothing & Accessories//Clothing//Women's Clothing//Swimwear |
+| 211 | Apparel & Accessories > Clothing > Swimwear | Clothing & Accessories//Clothing//Kids' Clothing//Girls' Clothing//Swimwear |
+| 211 | Apparel & Accessories > Clothing > Swimwear | Clothing & Accessories//Clothing//Kids' Clothing//Boys' Clothing//Swimwear |
+| 6031 | Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Dirndls | Clothing & Accessories//Clothing//Baby Clothing//Girls' Baby Clothing//Dresses |
+| 6031 | Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Dirndls | Clothing & Accessories//Clothing//Women's Clothing//Dresses |
+| 6031 | Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Dirndls | Clothing & Accessories//Clothing//Kids' Clothing//Girls' Clothing//Dresses |
+| 5674 | Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Hakama Trousers | Clothing & Accessories//Clothing//Men's Clothing//Pants |
+| 5674 | Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Hakama Trousers | Clothing & Accessories//Clothing//Women's Clothing//Pants |
+| 5673 | Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Kimono Outerwear | Clothing & Accessories//Clothing//Women's Clothing//Coats & Jackets |
+| 5343 | Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Kimonos | Clothing & Accessories//Clothing//Baby Clothing//Girls' Baby Clothing//Dresses |
+| 5343 | Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Kimonos | Clothing & Accessories//Clothing//Women's Clothing//Dresses |
+| 5343 | Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Kimonos | Clothing & Accessories//Clothing//Kids' Clothing//Girls' Clothing//Dresses |
+| 8149 | Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Religious Ceremonial Clothing > Baptism & Communion Dresses | Clothing & Accessories//Clothing//Baby Clothing//Girls' Baby Clothing//Dresses |
+| 8149 | Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Religious Ceremonial Clothing > Baptism & Communion Dresses | Clothing & Accessories//Clothing//Women's Clothing//Dresses |
+| 8149 | Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Religious Ceremonial Clothing > Baptism & Communion Dresses | Clothing & Accessories//Clothing//Kids' Clothing//Girls' Clothing//Dresses |
+| 8248 | Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Saris & Lehengas | Clothing & Accessories//Clothing//Women's Clothing//Dresses |
+| 8248 | Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Saris & Lehengas | Clothing & Accessories//Clothing//Women's Clothing//Skirts |
+| 8248 | Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Saris & Lehengas | Clothing & Accessories//Clothing//Women's Clothing//Tops & T-Shirts |
+| 7281 | Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Traditional Leather Pants | Clothing & Accessories//Clothing//Men's Clothing//Pants |
+| 7281 | Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Traditional Leather Pants | Clothing & Accessories//Clothing//Women's Clothing//Pants |
+| 5676 | Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Yukata | Clothing & Accessories//Clothing//Baby Clothing//Girls' Baby Clothing//Dresses |
+| 5676 | Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Yukata | Clothing & Accessories//Clothing//Women's Clothing//Dresses |
+| 5676 | Apparel & Accessories > Clothing > Traditional & Ceremonial Clothing > Yukata | Clothing & Accessories//Clothing//Kids' Clothing//Girls' Clothing//Dresses |
+| 213 | Apparel & Accessories > Clothing > Underwear & Socks | Clothing & Accessories//Clothing//Kids' Clothing//Boys' Clothing//Socks |
+| 213 | Apparel & Accessories > Clothing > Underwear & Socks | Clothing & Accessories//Clothing//Kids' Clothing//Boys' Clothing//Underwear |
+| 213 | Apparel & Accessories > Clothing > Underwear & Socks | Clothing & Accessories//Clothing//Kids' Clothing//Girls' Clothing//Socks & Tights |
+| 213 | Apparel & Accessories > Clothing > Underwear & Socks | Clothing & Accessories//Clothing//Kids' Clothing//Girls' Clothing//Underwear |
+| 213 | Apparel & Accessories > Clothing > Underwear & Socks | Clothing & Accessories//Clothing//Men's Clothing//Socks |
+| 213 | Apparel & Accessories > Clothing > Underwear & Socks | Clothing & Accessories//Clothing//Men's Clothing//Underwear |
+| 213 | Apparel & Accessories > Clothing > Underwear & Socks | Clothing & Accessories//Clothing//Women's Clothing//Lingerie & Sleepwear//Underwear |
+| 213 | Apparel & Accessories > Clothing > Underwear & Socks | Clothing & Accessories//Clothing//Women's Clothing//Tights, Socks & Hosiery//Socks |
+| 214 | Apparel & Accessories > Clothing > Underwear & Socks > Bras | Clothing & Accessories//Clothing//Women's Clothing//Lingerie & Sleepwear//Bras |
+| 215 | Apparel & Accessories > Clothing > Underwear & Socks > Hosiery | Clothing & Accessories//Clothing//Women's Clothing//Tights, Socks & Hosiery |
+| 215 | Apparel & Accessories > Clothing > Underwear & Socks > Hosiery | Clothing & Accessories//Clothing//Women's Clothing//Tights, Socks & Hosiery//Leg Warmers |
+| 215 | Apparel & Accessories > Clothing > Underwear & Socks > Hosiery | Clothing & Accessories//Clothing//Women's Clothing//Tights, Socks & Hosiery//Pantyhose & Tights |
+| 215 | Apparel & Accessories > Clothing > Underwear & Socks > Hosiery | Clothing & Accessories//Clothing//Women's Clothing//Tights, Socks & Hosiery//Socks |
+| 215 | Apparel & Accessories > Clothing > Underwear & Socks > Hosiery | Clothing & Accessories//Clothing//Women's Clothing//Tights, Socks & Hosiery//Stockings & Thigh-Highs |
+| 5327 | Apparel & Accessories > Clothing > Underwear & Socks > Jock Straps | Clothing & Accessories//Clothing//Men's Clothing//Underwear |
+| 1772 | Apparel & Accessories > Clothing > Underwear & Socks > Lingerie | Clothing & Accessories//Clothing//Women's Clothing//Lingerie & Sleepwear |
+| 2563 | Apparel & Accessories > Clothing > Underwear & Socks > Lingerie Accessories | Clothing & Accessories//Clothing//Women's Clothing//Lingerie & Sleepwear |
+| 1807 | Apparel & Accessories > Clothing > Underwear & Socks > Long Johns | Clothing & Accessories//Clothing//Men's Clothing//Underwear |
+| 1807 | Apparel & Accessories > Clothing > Underwear & Socks > Long Johns | Clothing & Accessories//Clothing//Women's Clothing//Lingerie & Sleepwear//Underwear |
+| 2963 | Apparel & Accessories > Clothing > Underwear & Socks > Petticoats & Pettipants | Clothing & Accessories//Clothing//Women's Clothing//Lingerie & Sleepwear//Slips |
+| 1578 | Apparel & Accessories > Clothing > Underwear & Socks > Shapewear | Clothing & Accessories//Clothing//Women's Clothing//Lingerie & Sleepwear//Shapewear |
+| 209 | Apparel & Accessories > Clothing > Underwear & Socks > Socks | Clothing & Accessories//Clothing//Men's Clothing//Socks |
+| 209 | Apparel & Accessories > Clothing > Underwear & Socks > Socks | Clothing & Accessories//Clothing//Women's Clothing//Tights, Socks & Hosiery//Socks |
+| 209 | Apparel & Accessories > Clothing > Underwear & Socks > Socks | Clothing & Accessories//Clothing//Kids' Clothing//Boys' Clothing//Socks |
+| 209 | Apparel & Accessories > Clothing > Underwear & Socks > Socks | Clothing & Accessories//Clothing//Kids' Clothing//Girls' Clothing//Socks & Tights |
+| 2745 | Apparel & Accessories > Clothing > Underwear & Socks > Undershirts | Clothing & Accessories//Clothing//Men's Clothing//T-Shirts |
+| 2562 | Apparel & Accessories > Clothing > Underwear & Socks > Underwear | Clothing & Accessories//Clothing//Men's Clothing//Underwear |
+| 2562 | Apparel & Accessories > Clothing > Underwear & Socks > Underwear | Clothing & Accessories//Clothing//Women's Clothing//Lingerie & Sleepwear//Underwear |
+| 5834 | Apparel & Accessories > Clothing > Underwear & Socks > Underwear Slips | Clothing & Accessories//Clothing//Women's Clothing//Lingerie & Sleepwear//Slips |
+| 5441 | Apparel & Accessories > Clothing > Wedding & Bridal Party Dresses | Clothing & Accessories//Clothing//Women's Clothing//Dresses |
+| 5330 | Apparel & Accessories > Clothing > Wedding & Bridal Party Dresses > Bridal Party Dresses | Clothing & Accessories//Clothing//Women's Clothing//Dresses |
+| 5329 | Apparel & Accessories > Clothing > Wedding & Bridal Party Dresses > Wedding Dresses | Clothing & Accessories//Clothing//Women's Clothing//Dresses |
 | 167 | Apparel & Accessories > Clothing Accessories | Clothing & Accessories//Clothing Accessories |
-| 167 | Apparel & Accessories > Clothing Accessories | Clothing & Accessories//Clothing Accessories//Men’s Accessories |
-| 167 | Apparel & Accessories > Clothing Accessories | Clothing & Accessories//Clothing Accessories//Women’s Accessories |
-| 167 | Apparel & Accessories > Clothing Accessories | Clothing & Accessories//Clothing Accessories//Boys’ Accessories |
-| 167 | Apparel & Accessories > Clothing Accessories | Clothing & Accessories//Clothing Accessories//Girls’ Accessories |
-| 1786 | Apparel & Accessories > Clothing Accessories > Balaclavas | Clothing & Accessories//Clothing Accessories//Boys’ Accessories//Hats |
-| 1786 | Apparel & Accessories > Clothing Accessories > Balaclavas | Clothing & Accessories//Clothing Accessories//Girls’ Accessories//Hats |
-| 1786 | Apparel & Accessories > Clothing Accessories > Balaclavas | Clothing & Accessories//Clothing Accessories//Men’s Accessories//Hats |
-| 1786 | Apparel & Accessories > Clothing Accessories > Balaclavas | Clothing & Accessories//Clothing Accessories//Women’s Accessories//Hats |
-| 168 | Apparel & Accessories > Clothing Accessories > Bandanas & Headties | Clothing & Accessories//Clothing Accessories//Boys’ Accessories//Hats |
-| 168 | Apparel & Accessories > Clothing Accessories > Bandanas & Headties | Clothing & Accessories//Clothing Accessories//Girls’ Accessories//Hats |
-| 168 | Apparel & Accessories > Clothing Accessories > Bandanas & Headties | Clothing & Accessories//Clothing Accessories//Men’s Accessories//Hats |
-| 168 | Apparel & Accessories > Clothing Accessories > Bandanas & Headties | Clothing & Accessories//Clothing Accessories//Women’s Accessories//Hats |
-| 169 | Apparel & Accessories > Clothing Accessories > Belts | Clothing & Accessories//Clothing Accessories//Men’s Accessories//Belts |
-| 169 | Apparel & Accessories > Clothing Accessories > Belts | Clothing & Accessories//Clothing Accessories//Women’s Accessories//Belts |
-| 169 | Apparel & Accessories > Clothing Accessories > Belts | Clothing & Accessories//Clothing Accessories//Boys’ Accessories//Belts |
-| 169 | Apparel & Accessories > Clothing Accessories > Belts | Clothing & Accessories//Clothing Accessories//Girls’ Accessories//Belts |
+| 167 | Apparel & Accessories > Clothing Accessories | Clothing & Accessories//Clothing Accessories//Men's Accessories |
+| 167 | Apparel & Accessories > Clothing Accessories | Clothing & Accessories//Clothing Accessories//Women's Accessories |
+| 167 | Apparel & Accessories > Clothing Accessories | Clothing & Accessories//Clothing Accessories//Boys' Accessories |
+| 167 | Apparel & Accessories > Clothing Accessories | Clothing & Accessories//Clothing Accessories//Girls' Accessories |
+| 1786 | Apparel & Accessories > Clothing Accessories > Balaclavas | Clothing & Accessories//Clothing Accessories//Boys' Accessories//Hats |
+| 1786 | Apparel & Accessories > Clothing Accessories > Balaclavas | Clothing & Accessories//Clothing Accessories//Girls' Accessories//Hats |
+| 1786 | Apparel & Accessories > Clothing Accessories > Balaclavas | Clothing & Accessories//Clothing Accessories//Men's Accessories//Hats |
+| 1786 | Apparel & Accessories > Clothing Accessories > Balaclavas | Clothing & Accessories//Clothing Accessories//Women's Accessories//Hats |
+| 168 | Apparel & Accessories > Clothing Accessories > Bandanas & Headties | Clothing & Accessories//Clothing Accessories//Boys' Accessories//Hats |
+| 168 | Apparel & Accessories > Clothing Accessories > Bandanas & Headties | Clothing & Accessories//Clothing Accessories//Girls' Accessories//Hats |
+| 168 | Apparel & Accessories > Clothing Accessories > Bandanas & Headties | Clothing & Accessories//Clothing Accessories//Men's Accessories//Hats |
+| 168 | Apparel & Accessories > Clothing Accessories > Bandanas & Headties | Clothing & Accessories//Clothing Accessories//Women's Accessories//Hats |
+| 169 | Apparel & Accessories > Clothing Accessories > Belts | Clothing & Accessories//Clothing Accessories//Men's Accessories//Belts |
+| 169 | Apparel & Accessories > Clothing Accessories > Belts | Clothing & Accessories//Clothing Accessories//Women's Accessories//Belts |
+| 169 | Apparel & Accessories > Clothing Accessories > Belts | Clothing & Accessories//Clothing Accessories//Boys' Accessories//Belts |
+| 169 | Apparel & Accessories > Clothing Accessories > Belts | Clothing & Accessories//Clothing Accessories//Girls' Accessories//Belts |
 | 5443 | Apparel & Accessories > Clothing Accessories > Bridal Accessories | Clothing & Accessories//Clothing Accessories |
-| 5443 | Apparel & Accessories > Clothing Accessories > Bridal Accessories | Clothing & Accessories//Clothing Accessories//Women’s Accessories |
-| 170 | Apparel & Accessories > Clothing Accessories > Gloves & Mittens | Clothing & Accessories//Clothing Accessories//Men’s Accessories//Gloves & Mittens |
-| 170 | Apparel & Accessories > Clothing Accessories > Gloves & Mittens | Clothing & Accessories//Clothing Accessories//Women’s Accessories//Gloves & Mittens |
-| 170 | Apparel & Accessories > Clothing Accessories > Gloves & Mittens | Clothing & Accessories//Clothing Accessories//Boys’ Accessories//Gloves & Mittens |
-| 170 | Apparel & Accessories > Clothing Accessories > Gloves & Mittens | Clothing & Accessories//Clothing Accessories//Girls’ Accessories//Gloves & Mittens |
+| 5443 | Apparel & Accessories > Clothing Accessories > Bridal Accessories | Clothing & Accessories//Clothing Accessories//Women's Accessories |
+| 170 | Apparel & Accessories > Clothing Accessories > Gloves & Mittens | Clothing & Accessories//Clothing Accessories//Men's Accessories//Gloves & Mittens |
+| 170 | Apparel & Accessories > Clothing Accessories > Gloves & Mittens | Clothing & Accessories//Clothing Accessories//Women's Accessories//Gloves & Mittens |
+| 170 | Apparel & Accessories > Clothing Accessories > Gloves & Mittens | Clothing & Accessories//Clothing Accessories//Boys' Accessories//Gloves & Mittens |
+| 170 | Apparel & Accessories > Clothing Accessories > Gloves & Mittens | Clothing & Accessories//Clothing Accessories//Girls' Accessories//Gloves & Mittens |
 | 171 | Apparel & Accessories > Clothing Accessories > Hair Accessories | Health & Beauty//Beauty//Hair Care & Styling |
 | 8451 | Apparel & Accessories > Clothing Accessories > Hair Accessories > Hair Bun & Volume Shapers | Health & Beauty//Beauty//Hair Care & Styling//Hair Ties & Styling Accessories |
 | 2477 | Apparel & Accessories > Clothing Accessories > Hair Accessories > Hair Combs | Health & Beauty//Beauty//Hair Care & Styling//Brushes & Combs |
@@ -192,62 +192,62 @@ Please refer to [this table](https://developers.facebook.com/documentation/ads-c
 | 5915 | Apparel & Accessories > Clothing Accessories > Hair Accessories > Hair Wreaths | Health & Beauty//Beauty//Hair Care & Styling//Hair Ties & Styling Accessories |
 | 1662 | Apparel & Accessories > Clothing Accessories > Hair Accessories > Headbands | Health & Beauty//Beauty//Hair Care & Styling//Hair Ties & Styling Accessories |
 | 1483 | Apparel & Accessories > Clothing Accessories > Hair Accessories > Ponytail Holders | Health & Beauty//Beauty//Hair Care & Styling//Hair Ties & Styling Accessories |
-| 7133 | Apparel & Accessories > Clothing Accessories > Hand Muffs | Clothing & Accessories//Clothing Accessories//Men’s Accessories//Gloves & Mittens |
-| 7133 | Apparel & Accessories > Clothing Accessories > Hand Muffs | Clothing & Accessories//Clothing Accessories//Women’s Accessories//Gloves & Mittens |
-| 7133 | Apparel & Accessories > Clothing Accessories > Hand Muffs | Clothing & Accessories//Clothing Accessories//Boys’ Accessories//Gloves & Mittens |
-| 7133 | Apparel & Accessories > Clothing Accessories > Hand Muffs | Clothing & Accessories//Clothing Accessories//Girls’ Accessories//Gloves & Mittens |
-| 173 | Apparel & Accessories > Clothing Accessories > Hats | Clothing & Accessories//Clothing Accessories//Men’s Accessories//Hats |
-| 173 | Apparel & Accessories > Clothing Accessories > Hats | Clothing & Accessories//Clothing Accessories//Women’s Accessories//Hats |
-| 173 | Apparel & Accessories > Clothing Accessories > Hats | Clothing & Accessories//Clothing Accessories//Boys’ Accessories//Hats |
-| 173 | Apparel & Accessories > Clothing Accessories > Hats | Clothing & Accessories//Clothing Accessories//Girls’ Accessories//Hats |
+| 7133 | Apparel & Accessories > Clothing Accessories > Hand Muffs | Clothing & Accessories//Clothing Accessories//Men's Accessories//Gloves & Mittens |
+| 7133 | Apparel & Accessories > Clothing Accessories > Hand Muffs | Clothing & Accessories//Clothing Accessories//Women's Accessories//Gloves & Mittens |
+| 7133 | Apparel & Accessories > Clothing Accessories > Hand Muffs | Clothing & Accessories//Clothing Accessories//Boys' Accessories//Gloves & Mittens |
+| 7133 | Apparel & Accessories > Clothing Accessories > Hand Muffs | Clothing & Accessories//Clothing Accessories//Girls' Accessories//Gloves & Mittens |
+| 173 | Apparel & Accessories > Clothing Accessories > Hats | Clothing & Accessories//Clothing Accessories//Men's Accessories//Hats |
+| 173 | Apparel & Accessories > Clothing Accessories > Hats | Clothing & Accessories//Clothing Accessories//Women's Accessories//Hats |
+| 173 | Apparel & Accessories > Clothing Accessories > Hats | Clothing & Accessories//Clothing Accessories//Boys' Accessories//Hats |
+| 173 | Apparel & Accessories > Clothing Accessories > Hats | Clothing & Accessories//Clothing Accessories//Girls' Accessories//Hats |
 | 2020 | Apparel & Accessories > Clothing Accessories > Headwear | Health & Beauty//Beauty//Hair Care & Styling//Hair Ties & Styling Accessories |
 | 7054 | Apparel & Accessories > Clothing Accessories > Headwear > Fascinators | Health & Beauty//Beauty//Hair Care & Styling//Hair Ties & Styling Accessories |
-| 5939 | Apparel & Accessories > Clothing Accessories > Headwear > Turbans | Clothing & Accessories//Clothing Accessories//Men’s Accessories//Hats |
-| 5939 | Apparel & Accessories > Clothing Accessories > Headwear > Turbans | Clothing & Accessories//Clothing Accessories//Women’s Accessories//Hats |
-| 5939 | Apparel & Accessories > Clothing Accessories > Headwear > Turbans | Clothing & Accessories//Clothing Accessories//Boys’ Accessories//Hats |
-| 5939 | Apparel & Accessories > Clothing Accessories > Headwear > Turbans | Clothing & Accessories//Clothing Accessories//Girls’ Accessories//Hats |
-| 5941 | Apparel & Accessories > Clothing Accessories > Leg Warmers | Clothing & Accessories//Clothing//Women’s Clothing//Tights, Socks & Hosiery//Leg Warmers |
-| 176 | Apparel & Accessories > Clothing Accessories > Neckties | Clothing & Accessories//Clothing Accessories//Men’s Accessories//Ties |
-| 176 | Apparel & Accessories > Clothing Accessories > Neckties | Clothing & Accessories//Clothing Accessories//Boys’ Accessories//Ties |
-| 178 | Apparel & Accessories > Clothing Accessories > Sunglasses | Clothing & Accessories//Clothing Accessories//Men’s Accessories//Sunglasses |
-| 178 | Apparel & Accessories > Clothing Accessories > Sunglasses | Clothing & Accessories//Clothing Accessories//Women’s Accessories//Sunglasses |
-| 178 | Apparel & Accessories > Clothing Accessories > Sunglasses | Clothing & Accessories//Clothing Accessories//Girls’ Accessories//Sunglasses |
-| 178 | Apparel & Accessories > Clothing Accessories > Sunglasses | Clothing & Accessories//Clothing Accessories//Boys’ Accessories//Sunglasses |
-| 179 | Apparel & Accessories > Clothing Accessories > Suspenders | Clothing & Accessories//Clothing Accessories//Men’s Accessories//Suspenders |
-| 179 | Apparel & Accessories > Clothing Accessories > Suspenders | Clothing & Accessories//Clothing Accessories//Boys’ Accessories//Suspenders |
-| 5687 | Apparel & Accessories > Clothing Accessories > Traditional Clothing Accessories > Obis | Clothing & Accessories//Clothing Accessories//Men’s Accessories//Belts |
-| 5687 | Apparel & Accessories > Clothing Accessories > Traditional Clothing Accessories > Obis | Clothing & Accessories//Clothing Accessories//Women’s Accessories//Belts |
-| 5685 | Apparel & Accessories > Clothing Accessories > Traditional Clothing Accessories > Tabi Socks | Clothing & Accessories//Clothing//Men’s Clothing//Socks |
-| 5685 | Apparel & Accessories > Clothing Accessories > Traditional Clothing Accessories > Tabi Socks | Clothing & Accessories//Clothing//Women’s Clothing//Tights, Socks & Hosiery//Socks |
-| 5685 | Apparel & Accessories > Clothing Accessories > Traditional Clothing Accessories > Tabi Socks | Clothing & Accessories//Clothing//Kids’ Clothing//Boys’ Clothing//Socks |
-| 5685 | Apparel & Accessories > Clothing Accessories > Traditional Clothing Accessories > Tabi Socks | Clothing & Accessories//Clothing//Kids’ Clothing//Girls’ Clothing//Socks & Tights |
+| 5939 | Apparel & Accessories > Clothing Accessories > Headwear > Turbans | Clothing & Accessories//Clothing Accessories//Men's Accessories//Hats |
+| 5939 | Apparel & Accessories > Clothing Accessories > Headwear > Turbans | Clothing & Accessories//Clothing Accessories//Women's Accessories//Hats |
+| 5939 | Apparel & Accessories > Clothing Accessories > Headwear > Turbans | Clothing & Accessories//Clothing Accessories//Boys' Accessories//Hats |
+| 5939 | Apparel & Accessories > Clothing Accessories > Headwear > Turbans | Clothing & Accessories//Clothing Accessories//Girls' Accessories//Hats |
+| 5941 | Apparel & Accessories > Clothing Accessories > Leg Warmers | Clothing & Accessories//Clothing//Women's Clothing//Tights, Socks & Hosiery//Leg Warmers |
+| 176 | Apparel & Accessories > Clothing Accessories > Neckties | Clothing & Accessories//Clothing Accessories//Men's Accessories//Ties |
+| 176 | Apparel & Accessories > Clothing Accessories > Neckties | Clothing & Accessories//Clothing Accessories//Boys' Accessories//Ties |
+| 178 | Apparel & Accessories > Clothing Accessories > Sunglasses | Clothing & Accessories//Clothing Accessories//Men's Accessories//Sunglasses |
+| 178 | Apparel & Accessories > Clothing Accessories > Sunglasses | Clothing & Accessories//Clothing Accessories//Women's Accessories//Sunglasses |
+| 178 | Apparel & Accessories > Clothing Accessories > Sunglasses | Clothing & Accessories//Clothing Accessories//Girls' Accessories//Sunglasses |
+| 178 | Apparel & Accessories > Clothing Accessories > Sunglasses | Clothing & Accessories//Clothing Accessories//Boys' Accessories//Sunglasses |
+| 179 | Apparel & Accessories > Clothing Accessories > Suspenders | Clothing & Accessories//Clothing Accessories//Men's Accessories//Suspenders |
+| 179 | Apparel & Accessories > Clothing Accessories > Suspenders | Clothing & Accessories//Clothing Accessories//Boys' Accessories//Suspenders |
+| 5687 | Apparel & Accessories > Clothing Accessories > Traditional Clothing Accessories > Obis | Clothing & Accessories//Clothing Accessories//Men's Accessories//Belts |
+| 5687 | Apparel & Accessories > Clothing Accessories > Traditional Clothing Accessories > Obis | Clothing & Accessories//Clothing Accessories//Women's Accessories//Belts |
+| 5685 | Apparel & Accessories > Clothing Accessories > Traditional Clothing Accessories > Tabi Socks | Clothing & Accessories//Clothing//Men's Clothing//Socks |
+| 5685 | Apparel & Accessories > Clothing Accessories > Traditional Clothing Accessories > Tabi Socks | Clothing & Accessories//Clothing//Women's Clothing//Tights, Socks & Hosiery//Socks |
+| 5685 | Apparel & Accessories > Clothing Accessories > Traditional Clothing Accessories > Tabi Socks | Clothing & Accessories//Clothing//Kids' Clothing//Boys' Clothing//Socks |
+| 5685 | Apparel & Accessories > Clothing Accessories > Traditional Clothing Accessories > Tabi Socks | Clothing & Accessories//Clothing//Kids' Clothing//Girls' Clothing//Socks & Tights |
 | 5122 | Apparel & Accessories > Jewelry > Watch Accessories | Jewelry & Watches//Watches//Watch Accessories |
 | 7471 | Apparel & Accessories > Jewelry > Watch Accessories > Watch Stickers & Decals | Jewelry & Watches//Watches//Watch Accessories |
 | 201 | Apparel & Accessories > Jewelry > Watches | Jewelry & Watches//Watches |
-| 5567 | Apparel & Accessories > Shoe Accessories > Boot Liners | Clothing & Accessories//Shoes & Footwear//Men’s Shoes//Boots |
-| 5567 | Apparel & Accessories > Shoe Accessories > Boot Liners | Clothing & Accessories//Shoes & Footwear//Women’s Shoes//Boots |
+| 5567 | Apparel & Accessories > Shoe Accessories > Boot Liners | Clothing & Accessories//Shoes & Footwear//Men's Shoes//Boots |
+| 5567 | Apparel & Accessories > Shoe Accessories > Boot Liners | Clothing & Accessories//Shoes & Footwear//Women's Shoes//Boots |
 | 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear |
-| 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Men’s Shoes |
-| 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Men’s Shoes//Athletic Shoes |
-| 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Men’s Shoes//Boots |
-| 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Men’s Shoes//Casual & Dress Shoes |
-| 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Men’s Shoes//Fashion Sneakers |
-| 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Men’s Shoes//Sandals |
-| 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Men’s Shoes//Slippers |
-| 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Women’s Shoes |
-| 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Women’s Shoes//Athletic Shoes |
-| 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Women’s Shoes//Boots |
-| 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Women’s Shoes//Fashion Sneakers |
-| 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Women’s Shoes//Flats |
-| 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Women’s Shoes//Heels |
-| 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Women’s Shoes//Sandals |
-| 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Women’s Shoes//Slippers |
+| 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Men's Shoes |
+| 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Men's Shoes//Athletic Shoes |
+| 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Men's Shoes//Boots |
+| 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Men's Shoes//Casual & Dress Shoes |
+| 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Men's Shoes//Fashion Sneakers |
+| 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Men's Shoes//Sandals |
+| 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Men's Shoes//Slippers |
+| 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Women's Shoes |
+| 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Women's Shoes//Athletic Shoes |
+| 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Women's Shoes//Boots |
+| 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Women's Shoes//Fashion Sneakers |
+| 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Women's Shoes//Flats |
+| 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Women's Shoes//Heels |
+| 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Women's Shoes//Sandals |
+| 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Women's Shoes//Slippers |
 | 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Baby Shoes |
-| 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Baby Shoes//Boys’ Baby Shoes |
-| 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Baby Shoes//Girls’ Baby Shoes |
-| 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Kids’ Shoes |
-| 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Kids’ Shoes//Boys’ Baby Shoes |
-| 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Kids’ Shoes//Girls’ Baby Shoes |
+| 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Baby Shoes//Boys' Baby Shoes |
+| 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Baby Shoes//Girls' Baby Shoes |
+| 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Kids' Shoes |
+| 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Kids' Shoes//Boys' Baby Shoes |
+| 187 | Apparel & Accessories > Shoes | Clothing & Accessories//Shoes & Footwear//Kids' Shoes//Girls' Baby Shoes |
 
 ## Baby & Toddler
 
@@ -399,9 +399,9 @@ Please refer to [this table](https://developers.facebook.com/documentation/ads-c
 | 7445 | Health & Beauty > Personal Care > Cosmetics > Nail Care > Nail Polish Thinners | Health & Beauty//Beauty//Nail Care//Nail Polish & Art |
 | 2683 | Health & Beauty > Personal Care > Cosmetics > Nail Care > Nail Polishes | Health & Beauty//Beauty//Nail Care//Nail Polish & Art |
 | 479 | Health & Beauty > Personal Care > Cosmetics > Perfume & Cologne | Health & Beauty//Beauty//Fragrances |
-| 479 | Health & Beauty > Personal Care > Cosmetics > Perfume & Cologne | Health & Beauty//Beauty//Fragrances//Kids’ Fragrances |
-| 479 | Health & Beauty > Personal Care > Cosmetics > Perfume & Cologne | Health & Beauty//Beauty//Fragrances//Men’s Fragrances |
-| 479 | Health & Beauty > Personal Care > Cosmetics > Perfume & Cologne | Health & Beauty//Beauty//Fragrances//Women’s Fragrances |
+| 479 | Health & Beauty > Personal Care > Cosmetics > Perfume & Cologne | Health & Beauty//Beauty//Fragrances//Kids' Fragrances |
+| 479 | Health & Beauty > Personal Care > Cosmetics > Perfume & Cologne | Health & Beauty//Beauty//Fragrances//Men's Fragrances |
+| 479 | Health & Beauty > Personal Care > Cosmetics > Perfume & Cologne | Health & Beauty//Beauty//Fragrances//Women's Fragrances |
 | 567 | Health & Beauty > Personal Care > Cosmetics > Skin Care | Health & Beauty//Beauty//Skin Care |
 | 481 | Health & Beauty > Personal Care > Cosmetics > Skin Care > Acne Treatments & Kits | Health & Beauty//Beauty//Skin Care//Acne & Blemish Treatments |
 | 6104 | Health & Beauty > Personal Care > Cosmetics > Skin Care > Body Oil | Health & Beauty//Beauty//Skin Care//Facial Lotion & Moisturizer |

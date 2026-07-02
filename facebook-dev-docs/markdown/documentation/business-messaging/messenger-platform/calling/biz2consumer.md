@@ -18,14 +18,12 @@ You can reject an incoming call before accepting it, or terminate an active call
 ### Request syntax
 
 ```
-```
-POST /{page-id}/calls  
+POST /{page-id}/calls  
 {  
-  "platform": "messenger",  
-  "call_id": "{call-id}",  
-  "action": "reject"  
+  "platform": "messenger",  
+  "call_id": "{call-id}",  
+  "action": "reject"  
 }
-```
 ```
 
 ### Request parameters
@@ -39,11 +37,9 @@ POST /{page-id}/calls
 ### Example response
 
 ```
-```
 {  
-  "success" : true  
+  "success" : true  
 }
-```
 ```
 
 ### Error response
@@ -62,14 +58,12 @@ For more details, see the [Messenger Platform error codes reference](https://dev
 ### Request syntax
 
 ```
-```
-POST /{page-id}/calls  
+POST /{page-id}/calls  
 {  
-  "platform": "messenger",  
-  "call_id": "{call-id}",  
-  "action" : "terminate"  
+  "platform": "messenger",  
+  "call_id": "{call-id}",  
+  "action" : "terminate"  
 }
-```
 ```
 
 ### Request parameters
@@ -83,11 +77,9 @@ POST /{page-id}/calls
 ### Example response
 
 ```
-```
 {  
-  "success" : true  
+  "success" : true  
 }
-```
 ```
 
 ### Error response

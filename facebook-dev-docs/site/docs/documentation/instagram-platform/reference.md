@@ -33,7 +33,7 @@ This guide assumes you have read the [Instagram Platform Overview](https://devel
 | **Access Tokens** | * Instagram User access token | * Facebook Page access token |
 | **Host URL** | `graph.instagram.com` | `graph.facebook.com` |
 | **Login Type** | Business Login for Instagram | Facebook Login for Business |
-| [**Permissions**](https://developers.facebook.com/docs/permissions/reference#i) | **Self messaging webhook**   * `instagram_business_basic` * `instagram_business_manage_messages`   **Self comment webhook**   * `instagram_business_basic` * `instagram_business_manage_comments` | **Self messaging webhook**   * `instagram_business_basic` * `instagram_business_manage_messages`   **Self comment webhook**   * `instagram_basic` * `instagram_manage_comments` * `pages_read_engagement`   If the app user was granted a role on the [Page](https://developers.facebook.com/documentation/instagram-platform/overview#pages) connected to your app user’s Instagram professional account via the Business Manager, your app will also need:   * `ads_management` * `ads_read` |
+| [**Permissions**](https://developers.facebook.com/docs/permissions/reference#i) | **Self messaging webhook**   * `instagram_business_basic` * `instagram_business_manage_messages`   **Self comment webhook**   * `instagram_business_basic` * `instagram_business_manage_comments` | **Self messaging webhook**   * `instagram_business_basic` * `instagram_business_manage_messages`   **Self comment webhook**   * `instagram_basic` * `instagram_manage_comments` * `pages_read_engagement`   If the app user was granted a role on the [Page](https://developers.facebook.com/documentation/instagram-platform/overview#pages) connected to your app user's Instagram professional account via the Business Manager, your app will also need:   * `ads_management` * `ads_read` |
 | **Webhooks** | **Self messaging webhook**   * `messages`   **Self comment webhook**   * `comments` * `live_comments` | **Self messaging webhook**   * `messages`   **Self comment webhook**   * `comments` * `live_comments` |
 
 ## Step 2: Set Up Webhooks
@@ -45,30 +45,28 @@ When the Instagram Professional account sends a message to itself in the Instagr
 ### Example Echo Webhook
 
 ```
-```
 {  
-  "object": "instagram",  
-  "entry": [  
-    {  
-      "id": "<YOUR_APP_USERS_IG_USER_ID>",  
-      "time": 1569262486134,  
-      "messaging": [  
-        {  
-          "sender": { "id": "<YOUR_APP_USERS_IG_USER_ID>" },  
-          "recipient": { "id": "<INSTAGRAM_SCOPED_ID>" },  
-          "timestamp": 1569262485349,  
-          "message": {  
-            "mid": "<MESSAGE_ID>",  
-            "text": "<MESSAGE_TEXT>",  
-            "is_echo": true,  
-            "is_self": true  
-          }  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "instagram",  
+  "entry": [  
+    {  
+      "id": "<YOUR_APP_USERS_IG_USER_ID>",  
+      "time": 1569262486134,  
+      "messaging": [  
+        {  
+          "sender": { "id": "<YOUR_APP_USERS_IG_USER_ID>" },  
+          "recipient": { "id": "<INSTAGRAM_SCOPED_ID>" },  
+          "timestamp": 1569262485349,  
+          "message": {  
+            "mid": "<MESSAGE_ID>",  
+            "text": "<MESSAGE_TEXT>",  
+            "is_echo": true,  
+            "is_self": true  
+          }  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ## Step 3: Send a Self Message Using the Business Messaging API
@@ -91,11 +89,9 @@ curl -X POST "https://graph.facebook.com/v25.0/<INSTAGRAM_SCOPED_ID>/messages" \
 On success, your app receives a confirmation with the message ID.
 
 ```
-```
 {  
-  "id": "<MESSAGE_ID>"  
+  "id": "<MESSAGE_ID>"  
 }
-```
 ```
 
 ## Postback and Comment Webhooks
@@ -105,30 +101,28 @@ When the Instagram Professional user clicks a CTA button or interacts with a mes
 ### Example Postback Webhook
 
 ```
-```
 {  
-  "object": "instagram",  
-  "entry": [  
-    {  
-      "id": "45202218377435",  
-      "time": 1743480368963,  
-      "messaging": [  
-        {  
-          "sender": { "id": "<YOUR_APP_USERS_IG_USER_ID>" },  
-          "recipient": { "id": "<INSTAGRAM_SCOPED_ID>" },  
-          "timestamp": 1743480368714,  
-          "is_self": true,  
-          "postback": {  
-            "title": "Start Chatting",  
-            "payload": "DEVELOPER_DEFINED_PAYLOAD",  
-            "mid": "<MESSAGE_ID>"  
-          }  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "instagram",  
+  "entry": [  
+    {  
+      "id": "45202218377435",  
+      "time": 1743480368963,  
+      "messaging": [  
+        {  
+          "sender": { "id": "<YOUR_APP_USERS_IG_USER_ID>" },  
+          "recipient": { "id": "<INSTAGRAM_SCOPED_ID>" },  
+          "timestamp": 1743480368714,  
+          "is_self": true,  
+          "postback": {  
+            "title": "Start Chatting",  
+            "payload": "DEVELOPER_DEFINED_PAYLOAD",  
+            "mid": "<MESSAGE_ID>"  
+          }  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ### Example Comment Webhook
@@ -136,33 +130,31 @@ When the Instagram Professional user clicks a CTA button or interacts with a mes
 When the Instagram Professional user comments on their own post, a **comments webhook** is generated with `self_ig_scoped_id` as the `IGSID` of their professional account.
 
 ```
-```
 {  
-  "object": "instagram",  
-  "entry": [  
-    {  
-      "id": "<YOUR_APP_USERS_INSTAGRAM_ACCOUNT_ID>",  
-      "time": "<TIME_META_SENT_THIS_NOTIFICATION>",  
-      "changes": [  
-        {  
-          "field": "comments",  
-          "value": {  
-            "from": {  
-              "id": "<YOUR_APP_USERS_INSTAGRAM_ACCOUNT_ID>",  
-              "username": "<INSTAGRAM_USER_USERNAME>",  
-              "self_ig_scoped_id": "<YOUR_APP_USERS_INSTAGRAM_SCOPED_ID>"  
-            },  
-            "id": "<COMMENT_ID>",  
-            "text": "<COMMENT_TEXT>",  
-            "media": {  
-              "id": "<MEDIA_ID>",  
-              "media_product_type": "<MEDIA_PRODUCT_TYPE>"  
-            }  
-          }  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "instagram",  
+  "entry": [  
+    {  
+      "id": "<YOUR_APP_USERS_INSTAGRAM_ACCOUNT_ID>",  
+      "time": "<TIME_META_SENT_THIS_NOTIFICATION>",  
+      "changes": [  
+        {  
+          "field": "comments",  
+          "value": {  
+            "from": {  
+              "id": "<YOUR_APP_USERS_INSTAGRAM_ACCOUNT_ID>",  
+              "username": "<INSTAGRAM_USER_USERNAME>",  
+              "self_ig_scoped_id": "<YOUR_APP_USERS_INSTAGRAM_SCOPED_ID>"  
+            },  
+            "id": "<COMMENT_ID>",  
+            "text": "<COMMENT_TEXT>",  
+            "media": {  
+              "id": "<MEDIA_ID>",  
+              "media_product_type": "<MEDIA_PRODUCT_TYPE>"  
+            }  
+          }  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```

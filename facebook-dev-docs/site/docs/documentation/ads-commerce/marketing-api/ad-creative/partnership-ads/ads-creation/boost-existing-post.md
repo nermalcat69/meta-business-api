@@ -13,7 +13,7 @@ There are several options for creating partnership ads:
 
 * Boost existing media or posts with the existing media ID or an ad code
 * Get creator content recommendations that Meta predicts will be the best performing partnership ads for objectives
-* Make yourself the ad’s primary identity and the creator as the secondary identity, or vice versa
+* Make yourself the ad's primary identity and the creator as the secondary identity, or vice versa
 * Add the following capabilities to your ads:
   * Placement Asset Customization
   * Advantage+ Creative
@@ -27,7 +27,7 @@ There are several options for creating partnership ads:
 You need:
 
 * To meet the [eligibility requirements for Instagram partnership ads and branded content⁠](https://help.instagram.com/1372533836927082) and [Facebook partnership ads⁠](https://www.facebook.com/business/help/906775900606811)
-* The ID for your brand’s [Instagram professional account⁠](https://help.instagram.com/138925576505882)
+* The ID for your brand's [Instagram professional account⁠](https://help.instagram.com/138925576505882)
 * The username for the Instagram professional account (optional)
 * A Page access token with the `ADVERTISE` role on the Page linked to the Instagram professional account
 * Advanced Access for all permissions if you will be retrieving media and creating ads on behalf of an Instagram professional account that you do not own or administer

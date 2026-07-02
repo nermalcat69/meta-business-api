@@ -7,12 +7,12 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/marketing
 
 Updated: Jun 26, 2026
 
-The `asset_feed_spec` field allows you to deliver different combinations of an ad’s creative to different users. There are two ways to set up your combinations:
+The `asset_feed_spec` field allows you to deliver different combinations of an ad's creative to different users. There are two ways to set up your combinations:
 
 * **Automatically**: You provide the creative assets, and Meta automatically delivers different combinations to different users. To use this option, see [Dynamic Creative API](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-creative/asset-feed-spec/dynamic-creative).
 * **Manually**: You provide the creative assets and you create rules on how to display those assets. To use this option, see [Asset Customization Rules](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-creative/asset-feed-spec/asset-customization-rules).
 
-The asset feed spec contains a collection of different creative elements, such as images, titles, bodies, and so on. You can specify multiple creative assets for each asset type. The spec’s format is different for each use case. See also [Reference, Asset Feed Spec](https://developers.facebook.com/docs/marketing-api/reference/ad-asset-feed-spec).
+The asset feed spec contains a collection of different creative elements, such as images, titles, bodies, and so on. You can specify multiple creative assets for each asset type. The spec's format is different for each use case. See also [Reference, Asset Feed Spec](https://developers.facebook.com/docs/marketing-api/reference/ad-asset-feed-spec).
 
 ## Create asset feed
 
@@ -221,7 +221,7 @@ If you have a Dynamic Creative feed with multiple videos, bodies, and titles, th
 
 ## Edit asset feed
 
-You can add, replace, or remove any of the creative’s assets. To do so, provide another creative with the new `asset_feed_spec`.
+You can add, replace, or remove any of the creative's assets. To do so, provide another creative with the new `asset_feed_spec`.
 
 You can:
 

@@ -71,11 +71,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Solution-ID}' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Solution-ID}' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -86,34 +86,34 @@ Select status code
 
 ```
 {  
-  "active_solution": {  
-    "summary": "Active solution with full details",  
-    "value": {  
-      "id": "1234567890123456",  
-      "name": "E-commerce Integration Solution",  
-      "status": "ACTIVE",  
-      "status_for_pending_request": "NONE",  
-      "owner_app": {  
-        "id": "9876543210987654",  
-        "name": "Solution Partner App"  
-      },  
-      "owner_permissions": [  
-        "MANAGE",  
-        "DEVELOP",  
-        "MANAGE_TEMPLATES",  
-        "VIEW_COST"  
-      ]  
-    }  
-  },  
-  "draft_solution": {  
-    "summary": "Draft solution with minimal details",  
-    "value": {  
-      "id": "2345678901234567",  
-      "name": "Customer Support Solution",  
-      "status": "DRAFT",  
-      "status_for_pending_request": "NONE"  
-    }  
-  }  
+  "active_solution": {  
+    "summary": "Active solution with full details",  
+    "value": {  
+      "id": "1234567890123456",  
+      "name": "E-commerce Integration Solution",  
+      "status": "ACTIVE",  
+      "status_for_pending_request": "NONE",  
+      "owner_app": {  
+        "id": "9876543210987654",  
+        "name": "Solution Partner App"  
+      },  
+      "owner_permissions": [  
+        "MANAGE",  
+        "DEVELOP",  
+        "MANAGE_TEMPLATES",  
+        "VIEW_COST"  
+      ]  
+    }  
+  },  
+  "draft_solution": {  
+    "summary": "Draft solution with minimal details",  
+    "value": {  
+      "id": "2345678901234567",  
+      "name": "Customer Support Solution",  
+      "status": "DRAFT",  
+      "status_for_pending_request": "NONE"  
+    }  
+  }  
 }
 ```
 
@@ -667,11 +667,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Solution-ID}' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Solution-ID}' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -682,34 +682,34 @@ Select status code
 
 ```
 {  
-  "active_solution": {  
-    "summary": "Active solution with full details",  
-    "value": {  
-      "id": "1234567890123456",  
-      "name": "E-commerce Integration Solution",  
-      "status": "ACTIVE",  
-      "status_for_pending_request": "NONE",  
-      "owner_app": {  
-        "id": "9876543210987654",  
-        "name": "Solution Partner App"  
-      },  
-      "owner_permissions": [  
-        "MANAGE",  
-        "DEVELOP",  
-        "MANAGE_TEMPLATES",  
-        "VIEW_COST"  
-      ]  
-    }  
-  },  
-  "draft_solution": {  
-    "summary": "Draft solution with minimal details",  
-    "value": {  
-      "id": "2345678901234567",  
-      "name": "Customer Support Solution",  
-      "status": "DRAFT",  
-      "status_for_pending_request": "NONE"  
-    }  
-  }  
+  "active_solution": {  
+    "summary": "Active solution with full details",  
+    "value": {  
+      "id": "1234567890123456",  
+      "name": "E-commerce Integration Solution",  
+      "status": "ACTIVE",  
+      "status_for_pending_request": "NONE",  
+      "owner_app": {  
+        "id": "9876543210987654",  
+        "name": "Solution Partner App"  
+      },  
+      "owner_permissions": [  
+        "MANAGE",  
+        "DEVELOP",  
+        "MANAGE_TEMPLATES",  
+        "VIEW_COST"  
+      ]  
+    }  
+  },  
+  "draft_solution": {  
+    "summary": "Draft solution with minimal details",  
+    "value": {  
+      "id": "2345678901234567",  
+      "name": "Customer Support Solution",  
+      "status": "DRAFT",  
+      "status_for_pending_request": "NONE"  
+    }  
+  }  
 }
 ```
 

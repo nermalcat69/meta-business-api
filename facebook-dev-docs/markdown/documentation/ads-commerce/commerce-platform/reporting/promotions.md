@@ -82,7 +82,7 @@ https://graph.facebook.com/v25.0/<ORDER_ID>/payments
 | Attribute | Type | Description |
 | --- | --- | --- |
 | `transaction_type` | `string` | Type of transaction. Allowed values are: `SALE` or `REFUND`. |
-| `transaction_date` | `string` | Order’s latest update datetime in [ISO 8601 format⁠](https://en.wikipedia.org/wiki/ISO_8601). |
+| `transaction_date` | `string` | Order's latest update datetime in [ISO 8601 format⁠](https://en.wikipedia.org/wiki/ISO_8601). |
 | `transfer_id` | `string` |  |
 | `processing_fee` | [`currency_amount`](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/reporting/promotions#currency_amount) | Processing fee |
 | `net_payment_amount` | [`currency_amount`](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/reporting/promotions#currency_amount) | Net payment amount |
@@ -110,112 +110,110 @@ https://graph.facebook.com/v25.0/<ORDER_ID>/payments
 
 | Attribute | Type | Description |
 | --- | --- | --- |
-| `amount` | `string` | Amount in decimal format, eg. “5.5”. |
+| `amount` | `string` | Amount in decimal format, eg. "5.5". |
 | `currency` | `string` | [Three digit ISO-4217-3 code](https://developers.facebook.com/documentation/ads-commerce/marketing-api/currencies) for the purchase, e.g. USD. |
 
 ### Sample Response
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "id": "2381232183",  
-      "subtotal": {  
-        "items": {  
-          "amount": "40.00",  
-          "currency": "USD"  
-        },  
-        "shipping": {  
-          "amount": "0.00",  
-          "currency": "USD"  
-        }  
-      },  
-      "tax": {  
-        "amount": "0.06",  
-        "currency": "USD"  
-      },  
-      "tax_remitted": true,  
-      "total_amount": {  
-        "amount": "44.06",  
-        "currency": "USD"  
-      },  
-      "shipments": {  
-        "data": [  
-          {  
-            "id": "2121312213",  
-            "external_shipment_id": "shopify-shipment-1"  
-          },  
-          {  
-            "id": "2121312213",  
-            "external_shipment_id": "shopify-shipment-2"  
-          }  
-        ]  
-      },  
-      "transaction_details": {  
-        "data": [  
-          {  
-            "transaction_type": "SALE",  
-            "transaction_date": "2019-01-03T09:16:21+00:00",  
-            "transfer_id": "po_1DqSkwFN7vzsfPbcs4aFsknN",  
-            "processing_fee": {  
-              "amount": "-0.33",  
-              "currency": "USD"  
-            },  
-            "net_payment_amount": {  
-              "amount": "0.67",  
-              "currency": "USD"  
-            }  
-          },  
-          {  
-            "transaction_type": "REFUND",  
-            "transaction_date": "2019-01-09T06:18:50+00:00",  
-            "processing_fee": {  
-              "amount": "0.33",  
-              "currency": "USD"  
-            },  
-            "net_payment_amount": {  
-              "amount": "-0.67",  
-              "currency": "USD"  
-            },  
-            "tax_rate": "8.25%",  
-            "tax_details": {  
-              "data": [  
-                {  
-                  "tax_category": "FBMP_OTHER_TAXABLE",  
-                  "jurisdiction": "CALIFORNIA",  
-                  "imposition": "Sales and Use Tax",  
-                  "item_tax_rate": "6%",  
-                  "item_tax_amount": {  
-                    "amount": "0.06",  
-                    "currency": "USD"  
-                  }  
-                },  
-                {  
-                  "tax_category": "FBMP_OTHER_TAXABLE",  
-                  "jurisdiction": "ALAMEDA",  
-                  "imposition": "Local Sales and Use Tax",  
-                  "item_tax_rate": "1.25%",  
-                  "item_tax_amount": {  
-                    "amount": "0.01",  
-                    "currency": "USD"  
-                  }  
-                }, // and more  
-              ]  
-            }  
-          }  
-        ]  
-      }  
-    }  
-  ],  
-  "paging": {  
-    "cursors": {  
-      "before": "--sanitized_key--",  
-      "after": "--sanitized_key--"  
-    }  
-  }  
+  "data": [  
+    {  
+      "id": "2381232183",  
+      "subtotal": {  
+        "items": {  
+          "amount": "40.00",  
+          "currency": "USD"  
+        },  
+        "shipping": {  
+          "amount": "0.00",  
+          "currency": "USD"  
+        }  
+      },  
+      "tax": {  
+        "amount": "0.06",  
+        "currency": "USD"  
+      },  
+      "tax_remitted": true,  
+      "total_amount": {  
+        "amount": "44.06",  
+        "currency": "USD"  
+      },  
+      "shipments": {  
+        "data": [  
+          {  
+            "id": "2121312213",  
+            "external_shipment_id": "shopify-shipment-1"  
+          },  
+          {  
+            "id": "2121312213",  
+            "external_shipment_id": "shopify-shipment-2"  
+          }  
+        ]  
+      },  
+      "transaction_details": {  
+        "data": [  
+          {  
+            "transaction_type": "SALE",  
+            "transaction_date": "2019-01-03T09:16:21+00:00",  
+            "transfer_id": "po_1DqSkwFN7vzsfPbcs4aFsknN",  
+            "processing_fee": {  
+              "amount": "-0.33",  
+              "currency": "USD"  
+            },  
+            "net_payment_amount": {  
+              "amount": "0.67",  
+              "currency": "USD"  
+            }  
+          },  
+          {  
+            "transaction_type": "REFUND",  
+            "transaction_date": "2019-01-09T06:18:50+00:00",  
+            "processing_fee": {  
+              "amount": "0.33",  
+              "currency": "USD"  
+            },  
+            "net_payment_amount": {  
+              "amount": "-0.67",  
+              "currency": "USD"  
+            },  
+            "tax_rate": "8.25%",  
+            "tax_details": {  
+              "data": [  
+                {  
+                  "tax_category": "FBMP_OTHER_TAXABLE",  
+                  "jurisdiction": "CALIFORNIA",  
+                  "imposition": "Sales and Use Tax",  
+                  "item_tax_rate": "6%",  
+                  "item_tax_amount": {  
+                    "amount": "0.06",  
+                    "currency": "USD"  
+                  }  
+                },  
+                {  
+                  "tax_category": "FBMP_OTHER_TAXABLE",  
+                  "jurisdiction": "ALAMEDA",  
+                  "imposition": "Local Sales and Use Tax",  
+                  "item_tax_rate": "1.25%",  
+                  "item_tax_amount": {  
+                    "amount": "0.01",  
+                    "currency": "USD"  
+                  }  
+                }, // and more  
+              ]  
+            }  
+          }  
+        ]  
+      }  
+    }  
+  ],  
+  "paging": {  
+    "cursors": {  
+      "before": "--sanitized_key--",  
+      "after": "--sanitized_key--"  
+    }  
+  }  
 }
-```
 ```
 
 ## Learn More

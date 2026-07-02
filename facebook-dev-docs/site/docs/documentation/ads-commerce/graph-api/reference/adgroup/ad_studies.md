@@ -24,7 +24,7 @@ With Facebook's ads tools such as [Ads Manager⁠](https://www.facebook.com/ads/
 
 ### Targeting DSA Regulated Locations (European Union)
 
-To create or copy an ad which is in an ad set targeted in the European Union’s Digital Services Act (DSA) regulated locations, please set the payor/beneficiary information first. For your convenience, if the `default_dsa_payor` and `default_dsa_beneficiary` are set in an ad account, during the copying process, even if the original ad set does not set payor or beneficiary, it will be filled with saved default values. For more information on copying ads that target DSA regulated locations in the EU, see the [Ad Copies reference documentation](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/adgroup/copies#targeting-dsa-regulated-locations--european-union-).
+To create or copy an ad which is in an ad set targeted in the European Union's Digital Services Act (DSA) regulated locations, please set the payor/beneficiary information first. For your convenience, if the `default_dsa_payor` and `default_dsa_beneficiary` are set in an ad account, during the copying process, even if the original ad set does not set payor or beneficiary, it will be filled with saved default values. For more information on copying ads that target DSA regulated locations in the EU, see the [Ad Copies reference documentation](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/adgroup/copies#targeting-dsa-regulated-locations--european-union-).
 
 ### Targeting Youth in European Union (EU), European Economic Area (EEA), and Switzerland
 
@@ -90,17 +90,17 @@ PHP Business SDKPython Business SDKcURL
 ---
 
 ```
-use FacebookAds\Object\AdAccount;  
-use FacebookAds\Object\Fields\AdFields;  
+use FacebookAds\Object\AdAccount;  
+use FacebookAds\Object\Fields\AdFields;  
   
-$account = new AdAccount($account_id);  
-$ads = $account->getAds(array(  
-  AdFields::NAME,  
+$account = new AdAccount($account_id);  
+$ads = $account->getAds(array(  
+  AdFields::NAME,  
 ));  
   
-// Outputs names of Ads.  
-foreach ($ads as $ad) {  
-  echo $ad->name;  
+// Outputs names of Ads.  
+foreach ($ads as $ad) {  
+  echo $ad->name;  
 }
 ```
 
@@ -126,17 +126,17 @@ PHP Business SDKPython Business SDKcURL
 ---
 
 ```
-use FacebookAds\Object\AdSet;  
-use FacebookAds\Object\Fields\AdSetFields;  
+use FacebookAds\Object\AdSet;  
+use FacebookAds\Object\Fields\AdSetFields;  
   
-$adset = new AdSet($adset_id);  
-$ads = $adset->getAds(array(  
-  AdFields::NAME,  
+$adset = new AdSet($adset_id);  
+$ads = $adset->getAds(array(  
+  AdFields::NAME,  
 ));  
   
-// Outputs names of Ads .  
-foreach ($ads as $ad) {  
-  echo $ad->name;  
+// Outputs names of Ads .  
+foreach ($ads as $ad) {  
+  echo $ad->name;  
 }
 ```
 
@@ -149,8 +149,8 @@ HTTPPHP SDKJavaScript SDKAndroid SDKiOS SDKcURL
 ---
 
 ```
-GET /v25.0/<ADGROUP_ID>/?fields=id%2Cname HTTP/1.1  
-Host: graph.facebook.com
+GET /v25.0/<ADGROUP_ID>/?fields=id%2Cname HTTP/1.1  
+Host: graph.facebook.com
 ```
 
 Try it in [Graph API Explorer](https://developers.facebook.com/tools/explorer/?method=GET&path=%3CADGROUP_ID%3E%2F%3Ffields%3Did%252Cname&version=v25.0)
@@ -163,7 +163,7 @@ If you want to learn how to use the Graph API, read our [Using Graph API guide](
 | --- | --- |
 | `date_preset` *enum{today, yesterday, this\_month, last\_month, this\_quarter, maximum, data\_maximum, last\_3d, last\_7d, last\_14d, last\_28d, last\_30d, last\_90d, last\_week\_mon\_sun, last\_week\_sun\_sat, last\_quarter, last\_year, this\_week\_mon\_today, this\_week\_sun\_today, this\_year}* | Date Preset |
 | `review_feedback_breakdown` *boolean* | **Default value:** `false`  review\_feedback\_breakdown |
-| `time_range` *{‘since’:YYYY-MM-DD,’until’:YYYY-MM-DD}* | Time Range. Note if time range is invalid, it will be ignored.  ---   `since` *datetime* A date in the format of "YYYY-MM-DD", which means from the beginning midnight of that day.  `until` *datetime* A date in the format of "YYYY-MM-DD", which means to the beginning midnight of the following day.  Show child parameters |
+| `time_range` *{'since':YYYY-MM-DD,'until':YYYY-MM-DD}* | Time Range. Note if time range is invalid, it will be ignored.  ---   `since` *datetime* A date in the format of "YYYY-MM-DD", which means from the beginning midnight of that day.  `until` *datetime* A date in the format of "YYYY-MM-DD", which means to the beginning midnight of the following day.  Show child parameters |
 
 #### Fields
 
@@ -357,8 +357,8 @@ HTTPPHP SDKJavaScript SDKAndroid SDKiOS SDKcURL
 ---
 
 ```
-POST /v25.0/act_<AD_ACCOUNT_ID>/ads HTTP/1.1  
-Host: graph.facebook.com  
+POST /v25.0/act_<AD_ACCOUNT_ID>/ads HTTP/1.1  
+Host: graph.facebook.com  
   
 name=My+Ad&adset_id=%3CAD_SET_ID%3E&creative=%7B%22creative_id%22%3A%22%3CCREATIVE_ID%3E%22%7D&status=PAUSED
 ```
@@ -371,15 +371,15 @@ If you want to learn how to use the Graph API, read our [Using Graph API guide](
 
 | Parameter | Description |
 | --- | --- |
-| `ad_schedule_end_time` *datetime* | An optional parameter that defines the end time of an individual ad. If no end time is defined, the ad will run on the campaign’s schedule.  This parameter is only available for sales and app promotion campaigns. |
-| `ad_schedule_start_time` *datetime* | An optional parameter that defines the start time of an individual ad. If no start time is defined, the ad will run on the campaign’s schedule.  This parameter is only available for sales and app promotion campaigns. |
+| `ad_schedule_end_time` *datetime* | An optional parameter that defines the end time of an individual ad. If no end time is defined, the ad will run on the campaign's schedule.  This parameter is only available for sales and app promotion campaigns. |
+| `ad_schedule_start_time` *datetime* | An optional parameter that defines the start time of an individual ad. If no start time is defined, the ad will run on the campaign's schedule.  This parameter is only available for sales and app promotion campaigns. |
 | `adlabels` *list<Object>* | Ad labels associated with this ad |
 | `adset_id` *int64* | The ID of the ad set, required on creation. |
 | `adset_spec` *Ad set spec* | The ad set spec for this ad. When the spec is provided, adset\_id field is not required. |
 | `audience_id` *string* | The ID of the audience. |
 | `bid_amount` *integer* | **Deprecated.** We no longer allow setting the `bid_amount` value on an ad. Please set `bid_amount` for the ad set. |
 | `conversion_domain` *string* | The domain where conversions happen. Required to create or update an ad in a campaign that shares data with a pixel. This field will be auto-populated for existing ads by inferring from destination URLs . Note that this field should contain only the first and second level domains, and not the full URL. For example `facebook.com`. |
-| `creative` *AdCreative* | This field is required for create. The ID or creative spec of the ad creative to be used by this ad. You can read more about creatives [here](https://developers.facebook.com/docs/marketing-api/adcreative). You may supply the ID within an object as follows:  `{"creative_id": <CREATIVE_ID>}` or creative spec as follow:  `{"creative": {\"name\": \"<NAME>\", \"object_story_spec\": <SPEC>}}`  required  supports emoji |
+| `creative` *AdCreative* | This field is required for create. The ID or creative spec of the ad creative to be used by this ad. You can read more about creatives [here](https://developers.facebook.com/docs/marketing-api/adcreative). You may supply the ID within an object as follows:  `{"creative_id": <CREATIVE_ID>}` or creative spec as follow:  `{"creative": {\"name\": \"<NAME>\", \"object_story_spec\": <SPEC>}​}`  required  supports emoji |
 | `creative_asset_groups_spec` *string (CreativeAssetGroupsSpec)* | creative\_asset\_groups\_spec  supports emoji |
 | `date_format` *string* | The format of the date. |
 | `display_sequence` *int64* | The sequence of the ad within the same campaign |
@@ -496,8 +496,8 @@ HTTPPHP SDKJavaScript SDKAndroid SDKiOS SDKcURL
 ---
 
 ```
-DELETE /v25.0/<ADGROUP_ID>/ HTTP/1.1  
-Host: graph.facebook.com
+DELETE /v25.0/<ADGROUP_ID>/ HTTP/1.1  
+Host: graph.facebook.com
 ```
 
 Try it in [Graph API Explorer](https://developers.facebook.com/tools/explorer/?method=DELETE&path=%3CADGROUP_ID%3E%2F&version=v25.0)

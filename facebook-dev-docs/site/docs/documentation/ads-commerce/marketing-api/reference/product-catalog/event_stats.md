@@ -20,8 +20,8 @@ HTTPPHP SDKJavaScript SDKAndroid SDKiOS SDK
 ---
 
 ```
-GET /v25.0/{product-catalog-id}/dpa_eligible_ad_accounts HTTP/1.1  
-Host: graph.facebook.com
+GET /v25.0/{product-catalog-id}/dpa_eligible_ad_accounts HTTP/1.1  
+Host: graph.facebook.com
 ```
 
 Try it in [Graph API Explorer](https://developers.facebook.com/tools/explorer/?method=GET&path=%7Bproduct-catalog-id%7D%2Fdpa_eligible_ad_accounts&version=v25.0)

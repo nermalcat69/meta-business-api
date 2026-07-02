@@ -10,30 +10,28 @@ Updated: Nov 21, 2025
 Postback buttons allow you to define a payload that will be sent to your webhook whenever a user clicks the button. This can enable a feature that allows for automated chat responses with clients. To get started, familiarize yourself with the data that we will send your webhook on postback button click:
 
 ```
-```
 {  
-  "field": "messaging_postbacks",  
-  "value": {  
-    "sender": {  
-      "user_ref": "USER_REF_ID"  
-    },  
-    "recipient": {  
-      "id": "PAGE_ID"  
-    },  
-    "timestamp": "1527459824",  
-    "postback": {  
-      "mid": "m_MESSAGE_ID",  
-      "title": "TITLE_FOR_THE_CTA",  
-      "payload": "USER_DEFINED_PAYLOAD",  
-      "referral": {  
-        "ref": "USER_DEFINED_REFERRAL_PARAM",  
-        "source": "SHORT_URL",  
-        "type": "OPEN_THREAD"  
-      }  
-    }  
-  }  
+  "field": "messaging_postbacks",  
+  "value": {  
+    "sender": {  
+      "user_ref": "USER_REF_ID"  
+    },  
+    "recipient": {  
+      "id": "PAGE_ID"  
+    },  
+    "timestamp": "1527459824",  
+    "postback": {  
+      "mid": "m_MESSAGE_ID",  
+      "title": "TITLE_FOR_THE_CTA",  
+      "payload": "USER_DEFINED_PAYLOAD",  
+      "referral": {  
+        "ref": "USER_DEFINED_REFERRAL_PARAM",  
+        "source": "SHORT_URL",  
+        "type": "OPEN_THREAD"  
+      }  
+    }  
+  }  
 }
-```
 ```
 
 Reference the following table to understand what each of the above fields is referring to:
@@ -54,7 +52,7 @@ Reference the following table to understand what each of the above fields is ref
 Follow these steps to set up and enable your own webhook to start working with postback messages:
 
 * You will need to [setup a webhook](https://developers.facebook.com/documentation/business-messaging/messenger-platform/webhooks) to respond to the payload that we send when the button is clicked.
-* Open your app on the [developers’ app page](https://developers.facebook.com/apps/)
+* Open your app on the [developers' app page](https://developers.facebook.com/apps/)
 * On the left-hand side select `Webhooks`.
 * Click the `Select product` dropdown and choose `Page`.
 * Fill in your webhook information and click `Verify and save`.

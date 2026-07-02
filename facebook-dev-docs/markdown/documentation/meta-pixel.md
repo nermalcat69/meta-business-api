@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/meta-pixel
 
 Updated: Nov 15, 2023
 
-The Meta Pixel is a snippet of JavaScript code that allows you to track visitor activity on your website. It works by loading a small library of functions which you can use whenever a site visitor takes an action (called an **event**) that you want to track (called a **conversion**). [Tracked conversions](https://developers.facebook.com/documentation/meta-pixel/implementation/conversion-tracking) appear in the [Ads Manager⁠](https://www.facebook.com/adsmanager) where they can be used to measure the effectiveness of your ads, to define [custom audiences](https://developers.facebook.com/documentation/meta-pixel/implementation/custom-audiences) for ad targeting, for [Advantage+ catalog ads](https://developers.facebook.com/docs/facebook-pixel/implementation/dynamic-ads) campaigns, and to analyze that effectiveness of your website’s conversion funnels.
+The Meta Pixel is a snippet of JavaScript code that allows you to track visitor activity on your website. It works by loading a small library of functions which you can use whenever a site visitor takes an action (called an **event**) that you want to track (called a **conversion**). [Tracked conversions](https://developers.facebook.com/documentation/meta-pixel/implementation/conversion-tracking) appear in the [Ads Manager⁠](https://www.facebook.com/adsmanager) where they can be used to measure the effectiveness of your ads, to define [custom audiences](https://developers.facebook.com/documentation/meta-pixel/implementation/custom-audiences) for ad targeting, for [Advantage+ catalog ads](https://developers.facebook.com/docs/facebook-pixel/implementation/dynamic-ads) campaigns, and to analyze that effectiveness of your website's conversion funnels.
 
 The Meta Pixel can collect the following data:
 
@@ -15,7 +15,7 @@ The Meta Pixel can collect the following data:
 * **Pixel-specific Data** – Includes Pixel ID and the Facebook Cookie.
 * **Button Click Data** – Includes any buttons clicked by site visitors, the labels of those buttons and any pages visited as a result of the button clicks.
 * **Optional Values** – Developers and marketers can optionally choose to send additional information about the visit through Custom Data events. Example custom data events are [conversion value, page type and more](https://developers.facebook.com/documentation/meta-pixel/implementation/custom-audiences).
-* **Form Field Names** – Includes website field names like `email`, `address`, `quantity`, etc., for when you purchase a product or service. We don’t capture field values unless you include them as part of [Advanced Matching](https://developers.facebook.com/documentation/meta-pixel/advanced/advanced-matching) or optional values.
+* **Form Field Names** – Includes website field names like `email`, `address`, `quantity`, etc., for when you purchase a product or service. We don't capture field values unless you include them as part of [Advanced Matching](https://developers.facebook.com/documentation/meta-pixel/advanced/advanced-matching) or optional values.
 
 ## Documentation Contents
 
@@ -38,4 +38,4 @@ Solutions to common problems, troubleshooting tips, and tools.
 ## Learn more
 
 * Track User activity in a mobile app using [Facebook App Events](https://developers.facebook.com/documentation/app-events)
-* [Apple’s iOS 14 Requirements for Meta Pixel⁠](https://www.facebook.com/business/help/721422165168355)
+* [Apple's iOS 14 Requirements for Meta Pixel⁠](https://www.facebook.com/business/help/721422165168355)

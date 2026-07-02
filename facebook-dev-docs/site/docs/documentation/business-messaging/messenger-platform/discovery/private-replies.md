@@ -19,7 +19,7 @@ The format for an `m.me` link is as follows where `PAGE-NAME` is the Facebook Pa
 http://m.me/PAGE-NAME
 ```
 
-When a person click an `m.me` link, they will be redirected to either a new conversation with your business or an exist conversation if the person has messaged your business in the past. A default message will appear in the conversation stating: “You have entered this conversation by following a link. We’ve let PAGE-NAME know you’re here.”
+When a person click an `m.me` link, they will be redirected to either a new conversation with your business or an exist conversation if the person has messaged your business in the past. A default message will appear in the conversation stating: "You have entered this conversation by following a link. We've let PAGE-NAME know you're here."
 
 You can add the `text` parameter to include a customized message as well.
 
@@ -47,7 +47,7 @@ http://m.me/PAGE-NAME?ref=REF-PARAMETER-INFORMATION
 
 ### QR Codes
 
-`m.me` links with `ref` parameters can be embedded into QR Codes. QR compatible codes can be scanned with a phone’s native camera. When scanned they will open the Messenger app and the message conversation with your business.
+`m.me` links with `ref` parameters can be embedded into QR Codes. QR compatible codes can be scanned with a phone's native camera. When scanned they will open the Messenger app and the message conversation with your business.
 
 #### QR Code Example
 
@@ -110,9 +110,9 @@ This guide assumes you have read the [Messenger Platform Overview](https://devel
 
 You will need:
 
-* Advanced Access for the app that is linked to your business’ Facebook Page
+* Advanced Access for the app that is linked to your business' Facebook Page
 * A [Get Started Button](https://developers.facebook.com/documentation/business-messaging/messenger-platform/discovery/welcome-screen) for your Messenger experience for new conversations
-* The app linked to your business’ Facebook Page must be subscribed to the `messaging_postbacks` and `messaging_referrals` webhooks fields
+* The app linked to your business' Facebook Page must be subscribed to the `messaging_postbacks` and `messaging_referrals` webhooks fields
 
 ### Limitations
 
@@ -147,36 +147,32 @@ You can register a new topic by following these steps:
 **Step 1.** Send yourself a recurring notification opt in request with the topic to a person who has a role on your app. We recommend adding the payload to indicate this is to register your topic.
 
 ```
-```
-curl -X POST -H "Content-Type: application/json" -d '{  
-  "recipient":{  
-    "id":"PSID"  
-  },  
-  "message":{  
-    "attachment":{  
-      "type":"template",  
-      "payload":{  
-         "template_type":"notification_messages",  
-          "title":"TITLE",  
-          "payload": "Registering a new topic: TOPIC-NAME",  
-          "notification_messages_frequency": MESSAGE-FREQUENCY,  
-      }  
-    }  
-  }  
-}' "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/messages?access_token=PAGE-ACCESS-TOKEN"
-```
+curl -X POST -H "Content-Type: application/json" -d '{  
+  "recipient":{  
+    "id":"PSID"  
+  },  
+  "message":{  
+    "attachment":{  
+      "type":"template",  
+      "payload":{  
+         "template_type":"notification_messages",  
+          "title":"TITLE",  
+          "payload": "Registering a new topic: TOPIC-NAME",  
+          "notification_messages_frequency": MESSAGE-FREQUENCY,  
+      }  
+    }  
+  }  
+}' "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/messages?access_token=PAGE-ACCESS-TOKEN"
 ```
 
 On success, your app receives the following JSON response:
 
 ```
-```
 {  
-        "recipient": {  
-          "id":"PSID",  
-          "message_id":"MESSAGE-ID",  
+        "recipient": {  
+          "id":"PSID",  
+          "message_id":"MESSAGE-ID",  
 }
-```
 ```
 
 **Step 2.** Make sure to click the opt in button in the conversation. We will send you an optin webhook notification. Your topic is now registered and ready for public use.
@@ -190,22 +186,18 @@ When registering a topic, if you send yourself an optin request but do not click
 *Formatted for readability.*
 
 ```
-```
-curl -X POST "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/notification_messages_dev_support  
-    ?recipient={  
-        "notification_messages_token": "NOTIFICATION-MESSAGES-TOKEN"  
-    }  
-    &developer_action=ENABLE_FOLLOWUP_MESSAGE  
-    &access_token=PAGE-ACCESS-TOKEN"
-```
+curl -X POST "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/notification_messages_dev_support  
+    ?recipient={  
+        "notification_messages_token": "NOTIFICATION-MESSAGES-TOKEN"  
+    }  
+    &developer_action=ENABLE_FOLLOWUP_MESSAGE  
+    &access_token=PAGE-ACCESS-TOKEN"
 ```
 
 On success, your app will receive the following JSON response:
 
 ```
-```
-{ "success": true }
-```
+{ "success": true }
 ```
 
 ### `messaging_optins` Webhook Notification
@@ -213,30 +205,28 @@ On success, your app will receive the following JSON response:
 When you receive a webhook notification it will contain information from a person who is starting a conversation with your business or from a person who has an existing conversation with your business.
 
 ```
-```
 {  
-  "sender": {  
-    "id": "PSID",  
-  },  
-  "recipient": {  
-    "id": "PAGE-ID",  
-  },  
-  "timestamp": "TIMESTAMP",  
-  "optin": {  
-    "type": "notification_messages",  
-    "title": "TITLE-FOR-NOTIFICATION-MESSAGE",  
-    "ref": "REF-PARAMETER-INFORMATION",  
-    "payload": "",  
-    "source":"SHORTLINK"  
-    "notification_messages_token": "NOTIFICATION-MESSAGES-TOKEN",  
-    "notification_messages_topic": "RECURRING-NOTIFICATION-TOPIC",  
-    "notification_messages_frequency": "MESSAGE-FREQUENCY",  
-    "notification_messages_timezone": "TIMEZONE-ID",  
-    "token_expiry_timestamp": "TIMESTAMP",  
-    "user_token_status": "TOKEN-STATUS"  
-    }  
+  "sender": {  
+    "id": "PSID",  
+  },  
+  "recipient": {  
+    "id": "PAGE-ID",  
+  },  
+  "timestamp": "TIMESTAMP",  
+  "optin": {  
+    "type": "notification_messages",  
+    "title": "TITLE-FOR-NOTIFICATION-MESSAGE",  
+    "ref": "REF-PARAMETER-INFORMATION",  
+    "payload": "",  
+    "source":"SHORTLINK"  
+    "notification_messages_token": "NOTIFICATION-MESSAGES-TOKEN",  
+    "notification_messages_topic": "RECURRING-NOTIFICATION-TOPIC",  
+    "notification_messages_frequency": "MESSAGE-FREQUENCY",  
+    "notification_messages_timezone": "TIMEZONE-ID",  
+    "token_expiry_timestamp": "TIMESTAMP",  
+    "user_token_status": "TOKEN-STATUS"  
+    }  
 }
-```
 ```
 
 ## `m.me` Reference
@@ -257,5 +247,5 @@ When you receive a webhook notification it will contain information from a perso
 
 * See the [Referral Parameters page⁠](https://www.originalcoastclothing.com/referral-parameters) on [Original Coast Clothing Sample Guide](https://developers.facebook.com/docs/messenger-platform/getting-started/sample-apps/original-coast-clothing)
 * Visit the [`messaging_optins` reference](https://developers.facebook.com/documentation/business-messaging/messenger-platform/webhooks/webhook-events/messaging_optins)
-* Visit the [`messaging_postbacks` reference](https://developers.facebook.com/documentation/business-messaging/messenger-platform/webhooks/webhook-events/messaging_postbacks) for more information about this webhook’s fields
-* Visit the [`messaging_referrals` reference](https://developers.facebook.com/documentation/business-messaging/messenger-platform/webhooks/webhook-events/messaging_referrals) for more information about this webhook’s fields
+* Visit the [`messaging_postbacks` reference](https://developers.facebook.com/documentation/business-messaging/messenger-platform/webhooks/webhook-events/messaging_postbacks) for more information about this webhook's fields
+* Visit the [`messaging_referrals` reference](https://developers.facebook.com/documentation/business-messaging/messenger-platform/webhooks/webhook-events/messaging_referrals) for more information about this webhook's fields

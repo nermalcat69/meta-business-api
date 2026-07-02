@@ -22,7 +22,7 @@ Updated: Jun 30, 2026
 
 #### Unsubscribe API
 
-* Added support for unsubscribing matched users from a Page’s marketing messages audience by phone, email, PSID, or subscriber token.
+* Added support for unsubscribing matched users from a Page's marketing messages audience by phone, email, PSID, or subscriber token.
 * This endpoint unsubscribes users at the Page level and is different from removing users from a Custom Audience.
 
 [`POST /act_<AD_ACCOUNT_ID>/message_campaign`](https://developers.facebook.com/documentation/business-messaging/messenger-platform/marketing-messages-on-messenger/send-messages#step-1-create-a-marketing-messages-campaign)
@@ -53,7 +53,7 @@ Updated: Jun 30, 2026
 
 #### Pixel ID Returned in Campaign Query
 
-* Added support for querying the pixel associated with a marketing messages campaign through `adset{promoted_object{pixel_id}}`.
+* Added support for querying the pixel associated with a marketing messages campaign through `adset{promoted_object{pixel_id}​}`.
 * Partners can use this field to confirm whether a campaign has a Meta Pixel configured for offsite conversion attribution.
 
 [`GET /<MESSAGE_CAMPAIGN_ID>/insights`](https://developers.facebook.com/documentation/business-messaging/messenger-platform/marketing-messages-on-messenger/measure-performance#insights-on-offsite-conversions)
@@ -119,8 +119,8 @@ Updated: Jun 30, 2026
 
 #### Partner Billing Onboarding Flow Launched
 
-* Launched a new [Partner Billing Flow (Flow 3)](https://developers.facebook.com/documentation/business-messaging/messenger-platform/marketing-messages-on-messenger/onboard-businesses#flow-3-partner-billing-flow-suat) for the Marketing Message API for Messenger, allowing partners to bill marketing message sends to their own ad account instead of the client’s.
-* The flow uses the same SUAT and `paid_marketing_messages` permission as Flow 1 (Business Portfolio Flow). After the client completes login, the partner connects their own ad account to the client’s Business Integration System User (BISU) by calling the new `POST https://api.facebook.com/system_accounts/<BISU_ID>/asset-connections` endpoint.
+* Launched a new [Partner Billing Flow (Flow 3)](https://developers.facebook.com/documentation/business-messaging/messenger-platform/marketing-messages-on-messenger/onboard-businesses#flow-3-partner-billing-flow-suat) for the Marketing Message API for Messenger, allowing partners to bill marketing message sends to their own ad account instead of the client's.
+* The flow uses the same SUAT and `paid_marketing_messages` permission as Flow 1 (Business Portfolio Flow). After the client completes login, the partner connects their own ad account to the client's Business Integration System User (BISU) by calling the new `POST https://api.facebook.com/system_accounts/<BISU_ID>/asset-connections` endpoint.
 * Requires the `business_management` permission in addition to the standard MAPI-D permissions; complete App Review for `business_management` before serving clients with this flow.
 * See the [updated onboarding documentation](https://developers.facebook.com/documentation/business-messaging/messenger-platform/marketing-messages-on-messenger/onboard-businesses#flow-3-partner-billing-flow-suat) for full setup instructions, including the asset-connections endpoint call pattern (host, version, body format).
 
@@ -176,14 +176,14 @@ Updated: Jun 30, 2026
 #### Frequency Capping Now Enforced on All Marketing Messages
 
 * Marketing message frequency caps are now enabled and enforcing on all sends. Three independent rules are applied:
-  * Weekly cap: A message is blocked if the user’s marketing-message-to-organic-threads ratio exceeds 20% over the trailing 7 days (unless the user received zero marketing messages that week).
-  * Daily cap: A message is blocked if the user’s marketing-message-to-organic-threads ratio exceeds 40% over the trailing 1 day (unless the user received zero marketing messages that day).
-  * Minimum organic threads: A message is blocked if the user has not had a minimum number of organic conversation threads between consecutive marketing messages (unless the user’s last organic activity was more than 7 days ago).
+  * Weekly cap: A message is blocked if the user's marketing-message-to-organic-threads ratio exceeds 20% over the trailing 7 days (unless the user received zero marketing messages that week).
+  * Daily cap: A message is blocked if the user's marketing-message-to-organic-threads ratio exceeds 40% over the trailing 1 day (unless the user received zero marketing messages that day).
+  * Minimum organic threads: A message is blocked if the user has not had a minimum number of organic conversation threads between consecutive marketing messages (unless the user's last organic activity was more than 7 days ago).
 * Messages that exceed frequency caps will be blocked and the API will return one of the following error codes:
   * WEEKLY\_MM\_LOAD\_CAP\_REACHED — the weekly cap was exceeded.
   * DAILY\_MM\_LOAD\_CAP\_REACHED — the daily cap was exceeded.
   * MIN\_ORGANIC\_THREAD\_NOT\_REACHED — the minimum organic threads requirement was not met.
-* Applications should handle these error codes and avoid immediately retrying the same recipient, as the cap will remain in effect until the user’s organic messaging activity changes.
+* Applications should handle these error codes and avoid immediately retrying the same recipient, as the cap will remain in effect until the user's organic messaging activity changes.
 
 #### Daily-Budget Campaign End-Time Bug Fix
 
@@ -265,7 +265,7 @@ Updated: Jun 30, 2026
 #### Region Deny Rule for Campaign Creation
 
 * Campaign creation is now blocked for ad accounts in non-supported regions at the message campaign, message set, and message level.
-* Each layer returns a clear “region not supported” error instead of failing silently or returning a generic error.
+* Each layer returns a clear "region not supported" error instead of failing silently or returning a generic error.
 
 ## March 19, 2026
 
@@ -319,7 +319,7 @@ Updated: Jun 30, 2026
 
 #### Coupon Code Greeting Personalization Enabled
 
-* Personalization macros (e.g., `{{first_name}}`) are now enabled on the coupon-code pre-message greeting for coupon-template marketing messages.
+* Personalization macros (e.g., `{​{first_name}​}`) are now enabled on the coupon-code pre-message greeting for coupon-template marketing messages.
 
 ## March 5, 2026
 
@@ -350,7 +350,7 @@ Updated: Jun 30, 2026
 #### Personalized Greetings for Freeform Messages
 
 * Freeform templates now support adding a greeting which shows up as a separate message before the marketing message.
-* Businesses can use this greeting to create a more engaging conversational experience, as well as make use of the `{{first_name}}`, `{{last_name}}`, and `{{full_name}}` macros.
+* Businesses can use this greeting to create a more engaging conversational experience, as well as make use of the `{​{first_name}​}`, `{​{last_name}​}`, and `{​{full_name}​}` macros.
 * For implementation details please see the [documentation](https://developers.facebook.com/documentation/business-messaging/messenger-platform/marketing-messages-on-messenger/api-reference/generic).
 
 ## November 20, 2025
@@ -367,7 +367,7 @@ Updated: Jun 30, 2026
 #### Webhooks for Message Deliveries and Clicks
 
 * The Marketing Message API for Messenger now supports webhooks for message delivery and click events.
-* The new [message delivery webhook](https://developers.facebook.com/documentation/business-messaging/messenger-platform/marketing-messages-on-messenger/send-messages#webhook-message-delivery-notification) notifies your application when a marketing message is successfully delivered to at least one user’s Messenger client.
+* The new [message delivery webhook](https://developers.facebook.com/documentation/business-messaging/messenger-platform/marketing-messages-on-messenger/send-messages#webhook-message-delivery-notification) notifies your application when a marketing message is successfully delivered to at least one user's Messenger client.
 * The [click webhook](https://developers.facebook.com/documentation/business-messaging/messenger-platform/marketing-messages-on-messenger/send-messages#webhook-message-click-notification) sends a notification when a user clicks on a marketing message, enabling real-time tracking of user engagement.
 
 #### Disable Usage of Postback Buttons With Video Attachment
@@ -443,7 +443,7 @@ Updated: Jun 30, 2026
 
 #### Postback Support
 
-* We have enabled postback support for Marketing Messages ensuring that a user’s action on a marketing message button will be sent back to the message thread.
+* We have enabled postback support for Marketing Messages ensuring that a user's action on a marketing message button will be sent back to the message thread.
 * To enable postback, clients can setup a webhook and add it onto their app and when the button is clicked an event will be sent to that
   webhook
 
@@ -453,7 +453,7 @@ Updated: Jun 30, 2026
 
 #### Add personalization macros
 
-* Enable personalization macros to the title and subtitle fields for all formats. `{{first_name}}`, `{{last_name}}`, and `{{full_name}}` can be added into the `title` and `subtitle` strings to enable personalized marketing messages. For carousel, each element can have a personalized `title` and `subtitle`. Buttons do not have personalization enabled.
+* Enable personalization macros to the title and subtitle fields for all formats. `{​{first_name}​}`, `{​{last_name}​}`, and `{​{full_name}​}` can be added into the `title` and `subtitle` strings to enable personalized marketing messages. For carousel, each element can have a personalized `title` and `subtitle`. Buttons do not have personalization enabled.
 
 ## September 8, 2025
 
@@ -479,7 +479,7 @@ Updated: Jun 30, 2026
 
 [`POST /act_<AD_ACCOUNT_ID>/messages`](https://developers.facebook.com/documentation/business-messaging/messenger-platform/marketing-messages-on-messenger/send-messages)
 
-#### Fix Missing Marketing Message From Page’s Inbox
+#### Fix Missing Marketing Message From Page's Inbox
 
 * Due to privacy reasons, marketing messages sent to custom audience subscribers were not be visible to the page after delivery.
 * Once the user responds to these messages, these messages will now become visible to the page.
@@ -518,7 +518,7 @@ Updated: Jun 30, 2026
 
 #### Custom Audience Segmentation For Subscription Tokens
 
-* When uploading a list of subscribers via `/<CUSTOM_AUDIENCE_ID>/users` in the [Custom Audience API](https://developers.facebook.com/documentation/business-messaging/messenger-platform/marketing-messages-on-messenger/get-subscription-tokens#custom-audience-api), the corresponding Custom Audience ID(s) will be included in the subscription token’s `custom_audience_ids` field. Note that a single subscription token can be associated with multiple custom audience uploads.
+* When uploading a list of subscribers via `/<CUSTOM_AUDIENCE_ID>/users` in the [Custom Audience API](https://developers.facebook.com/documentation/business-messaging/messenger-platform/marketing-messages-on-messenger/get-subscription-tokens#custom-audience-api), the corresponding Custom Audience ID(s) will be included in the subscription token's `custom_audience_ids` field. Note that a single subscription token can be associated with multiple custom audience uploads.
 * You can filter subscription tokens by one or more Custom Audience IDs using the optional `custom_audience_ids` query parameter on the `/<PAGE_ID>/notification_message_tokens` endpoint.
 * To safeguard user privacy, the `/<PAGE_ID>/notification_message_tokens` endpoint will only return subscription tokens for a given Custom Audience if there are 100 or more matched users in that audience upload. If fewer than 100 users match, tokens for that Custom Audience will be excluded from the response.
 

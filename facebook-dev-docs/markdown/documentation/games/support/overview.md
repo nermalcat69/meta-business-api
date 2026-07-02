@@ -18,7 +18,7 @@ Monetization Manager lets you:
 * Analyze placement-level performance to identify optimization opportunities
 * Manage ad placement settings without changing your game code
 
-Audience Network delivers ads from Facebook’s advertiser base into your game. Monetization Manager is the dashboard where you control how those ads are configured and how they perform.
+Audience Network delivers ads from Facebook's advertiser base into your game. Monetization Manager is the dashboard where you control how those ads are configured and how they perform.
 
 ## How to Access Monetization Manager
 
@@ -46,7 +46,7 @@ Monetization Manager supports the following ad formats for Instant Games:
 
 * In Monetization Manager, click **Create Placement**.
 * Select the ad format (interstitial, rewarded video, or banner).
-* Give the placement a descriptive name (e.g., “Between Levels Interstitial” or “Extra Life Rewarded Video”).
+* Give the placement a descriptive name (e.g., "Between Levels Interstitial" or "Extra Life Rewarded Video").
 * Configure placement settings such as refresh intervals and capping.
 * Save the placement and note the **Placement ID**.
 
@@ -92,7 +92,7 @@ A low fill rate means that ad requests are going unfilled, and you are missing o
 
 * **Ensure your game is available in regions with strong advertiser demand.** Fill rates tend to be higher in North America, Western Europe, and other markets with large advertising ecosystems.
 * **Avoid requesting ads too frequently.** If you request ads faster than the network can fill them, your fill rate will drop. Space out requests appropriately.
-* **Pre-load ads.** Use the SDK’s preloading functions to request ads in advance, so they are ready to display when the player reaches a natural break point.
+* **Pre-load ads.** Use the SDK's preloading functions to request ads in advance, so they are ready to display when the player reaches a natural break point.
 * **Check for SDK errors.** If your ad request code has issues, requests may fail before reaching the ad network. Review your integration for errors.
 
 ### Maximize eCPM
@@ -119,7 +119,7 @@ If you are experiencing consistently low fill rates, consider the following:
 * **Ad request timing**: Make sure you are preloading ads well before you need to display them. Requesting an ad and immediately trying to show it may not leave enough time for the network to fill the request.
 * **Placement configuration**: Verify that your placement IDs are correct and that placements are enabled in Monetization Manager.
 * **SDK version**: Ensure you are using the latest version of the Instant Games SDK, which includes the most up-to-date Audience Network integration.
-* **App review status**: Your app must be approved and in compliance with Facebook’s policies to receive ads. Check for any policy violations in the App Dashboard.
+* **App review status**: Your app must be approved and in compliance with Facebook's policies to receive ads. Check for any policy violations in the App Dashboard.
 * **Test mode**: If you are testing in development mode, fill rates may be artificially low. Test with live ads (on a limited basis) to get accurate fill rate data.
 
 ## Related Resources

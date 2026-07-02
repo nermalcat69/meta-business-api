@@ -21,11 +21,11 @@ You will need the following permissions for your ad account:
 
 ## Export marketing mix modeling data
 
-Marketing mix modeling data is retrieved as an asynchronous CSV export. Send a `POST` to the `/insights` endpoint with `breakdowns=mmm` and `export_format=csv`. The call returns a `report_run_id`; once the job finishes, download the results from the report run’s `async_report_url` field. The CSV uses column names that match those in Ads Manager.
+Marketing mix modeling data is retrieved as an asynchronous CSV export. Send a `POST` to the `/insights` endpoint with `breakdowns=mmm` and `export_format=csv`. The call returns a `report_run_id`; once the job finishes, download the results from the report run's `async_report_url` field. The CSV uses column names that match those in Ads Manager.
 
 **Note:** A request with `breakdowns=mmm` that does not include `export_format=csv` returns an error. The legacy flow of reading results from `GET /<report_run_id>/insights` is no longer supported—marketing mix modeling results are delivered only as a CSV file.
 
-The Insights API uses default values for parameters you don’t specify. We recommend setting the `time_range` or `date_preset` parameter, and using `time_increment` to control granularity.
+The Insights API uses default values for parameters you don't specify. We recommend setting the `time_range` or `date_preset` parameter, and using `time_increment` to control granularity.
 
 **Note:** The `time_increment` can be set to 1 day (i.e., `1`), otherwise `all_time` will be used by default.
 
@@ -45,9 +45,7 @@ curl -X POST \
 The endpoint responds with the report run ID:
 
 ```
-```
-{ "report_run_id": "<REPORT_RUN_ID>" }
-```
+{ "report_run_id": "<REPORT_RUN_ID>" }
 ```
 
 ### 2. Poll for completion
@@ -70,13 +68,13 @@ curl -X GET \
 
 Follow the returned `async_report_url` to download the CSV file.
 
-**Note:** If you open the URL directly and the download fails with the error “Sorry, this content isn’t available right now”, manually append your access token as a parameter by adding `&access_token=<ACCESS_TOKEN>` to the end of the URL.
+**Note:** If you open the URL directly and the download fails with the error "Sorry, this content isn't available right now", manually append your access token as a parameter by adding `&access_token=<ACCESS_TOKEN>` to the end of the URL.
 
 For more information about the Insights API and how to onboard to the Marketing API, see the [Insights API Quickstart](https://developers.facebook.com/documentation/ads-commerce/marketing-api/insights).
 
 ## Querying at the Business Manager Level
 
-A common use case is to retrieve marketing mix modeling data for a single Business Manager. This operation isn’t directly supported because the Insights API works on the ad account level and below.
+A common use case is to retrieve marketing mix modeling data for a single Business Manager. This operation isn't directly supported because the Insights API works on the ad account level and below.
 
 To download data for a Business Manager you first need to query available ad accounts with the `/owned_ad_accounts` and `/client_ad_accounts` endpoints. Then iterate over the returned individual ad account IDs to query the marketing mix modeling data for each ad account.
 
@@ -121,7 +119,7 @@ We recommend leveraging the Marketing Mix Modeling Data Export in Ads Reporting 
 
 Marketing mix modeling requests always run as asynchronous CSV export jobs (see [Export marketing mix modeling data](https://developers.facebook.com/documentation/ads-commerce/marketing-api/guides/lift-studies#export-marketing-mix-modeling-data) above). The `POST` returns a `report_run_id`; query it for `async_status` and, once the job completes, download the results from `async_report_url`. **Note:** Some requests can still time out even as an asynchronous job—narrow the `time_range` and use `filtering` to reduce the result size. For more information, see [Insights API Asynchronous Jobs](https://developers.facebook.com/documentation/ads-commerce/marketing-api/insights/best-practices#asynchronous).
 
-You may encounter slightly different column header mappings and column header ordering than the Marketing Mix Modeling Data Export in Ads Reporting. You also have full flexibility to join the marketing mix modeling breakdown’s default data with other tables queried from the API.
+You may encounter slightly different column header mappings and column header ordering than the Marketing Mix Modeling Data Export in Ads Reporting. You also have full flexibility to join the marketing mix modeling breakdown's default data with other tables queried from the API.
 
 | Column Index | Default Column Headers from Marketing Mix Modeling Breakdown |
 | --- | --- |

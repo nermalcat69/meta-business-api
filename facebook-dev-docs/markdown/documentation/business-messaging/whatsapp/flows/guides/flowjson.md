@@ -43,38 +43,38 @@ This is the top level title of a page.
 
 | Parameter | Description |
 | --- | --- |
-| `type` *string* | **Required.** “TextHeading” |
-| `text` *string* | **Required.** Dynamic “${data.text}” |
-| `visible` *boolean* | Dynamic “${data.is\_visible}” Default: True |
+| `type` *string* | **Required.** "TextHeading" |
+| `text` *string* | **Required.** Dynamic "${data.text}" |
+| `visible` *boolean* | Dynamic "${data.is\_visible}" Default: True |
 
 ### Subheading
 
 | Parameter | Description |
 | --- | --- |
-| `type _string_` **(required)** | “TextSubheading” |
-| `text _string_` **(required)** | Dynamic “${data.text}” |
-| `visible _boolean_` | Dynamic “${data.is\_visible}”   Default: True |
+| `type _string_` **(required)** | "TextSubheading" |
+| `text _string_` **(required)** | Dynamic "${data.text}" |
+| `visible _boolean_` | Dynamic "${data.is\_visible}"   Default: True |
 
 ### Body
 
 | Parameter | Description |
 | --- | --- |
 | `type _string_` **(required)** | TextBody |
-| `text _string_` **(required)** | Dynamic “${data.text}” |
-| `font-weight _enum_` | {‘bold’,’italic’,’bold\_italic’,’normal’}   Dynamic “${data.font\_weight}” |
-| `strikethrough _boolean_` | Dynamic “${data.strikethrough}” |
-| `visible _boolean_` | Dynamic “${data.is\_visible}”   Default: True |
+| `text _string_` **(required)** | Dynamic "${data.text}" |
+| `font-weight _enum_` | {'bold','italic','bold\_italic','normal'}   Dynamic "${data.font\_weight}" |
+| `strikethrough _boolean_` | Dynamic "${data.strikethrough}" |
+| `visible _boolean_` | Dynamic "${data.is\_visible}"   Default: True |
 | `markdown _boolean_` | Default: False  Requires Flow JSON V5.1+ |
 
 ### Caption
 
 | Parameter | Description |
 | --- | --- |
-| `type _string_` **(required)** | “TextCaption” |
-| `text _string_` **(required)** | Dynamic “${data.text}” |
-| `font-weight _enum_` | {‘bold’,’italic’,’bold\_italic’,’normal’}   Dynamic “${data.font\_weight}” |
-| `strikethrough _boolean_` | Dynamic “${data.strikethrough}” |
-| `visible _boolean_` | Dynamic “${data.is\_visible}”   Default: True |
+| `type _string_` **(required)** | "TextCaption" |
+| `text _string_` **(required)** | Dynamic "${data.text}" |
+| `font-weight _enum_` | {'bold','italic','bold\_italic','normal'}   Dynamic "${data.font\_weight}" |
+| `strikethrough _boolean_` | Dynamic "${data.strikethrough}" |
+| `visible _boolean_` | Dynamic "${data.is\_visible}"   Default: True |
 | `markdown _boolean_` | Default: False  Requires Flow JSON V5.1+ |
 
 ### Limits and restrictions
@@ -91,27 +91,23 @@ Supported starting with Flow JSON version 5.1
 In Flow JSON V5.1 `TextBody` and `TextCaption` also support a limited markdown syntax. To enable this capability, set the property `markdown=true`. The `markdown=true` property instructs WhatsApp Flows to enable markdown syntax within these components.
 
 ```
-```
 {  
-   "type": "TextBody",  
-   "markdown": true,  
-   "text": [  
-     "This text is ~~***really important***~~"  
-   ]  
+   "type": "TextBody",  
+   "markdown": true,  
+   "text": [  
+     "This text is ~~***really important***~~"  
+   ]  
 }
-```
 ```
 
 ```
-```
 {  
-   "type": "TextCaption",  
-   "markdown": true,  
-   "text": [  
-     "This text is ~~***really important***~~"  
-   ]  
+   "type": "TextCaption",  
+   "markdown": true,  
+   "text": [  
+     "This text is ~~***really important***~~"  
+   ]  
 }
-```
 ```
 
 For comparison purposes, the following preview shows how the text components look next to one another:
@@ -240,9 +236,9 @@ Flow JSON 5.1 introduces a new component - `RichText`. The goal of the component
 
 | Parameter | Description |
 | --- | --- |
-| `type _string_` **(required)** | “RichText” |
-| `_string | string array_` **(required)** *string | string array* | Dynamic “${data.text}” |
-| `visible _boolean_` | Dynamic “${data.is\_visible}”   Default: True |
+| `type _string_` **(required)** | "RichText" |
+| `_string | string array_` **(required)** *string | string array* | Dynamic "${data.text}" |
+| `visible _boolean_` | Dynamic "${data.is\_visible}"   Default: True |
 
 `RichText` component utilizes a select subset of the `Markdown` specification. It adheres strictly to standard `Markdown` syntax without introducing any custom modifications. Content created for the `RichText` component is fully compatible with standard `Markdown` documents.
 
@@ -262,54 +258,48 @@ The current syntax supports only `Heading (h1)` and `Subheading (h2)`. The parse
 
 | Flow JSON | Flow Component |
 | --- | --- |
-| ```  ``` {    "type": "RichText",    "text": [      "# Heading level 1"    ] } ``` ``` | `TextHeading` |
-| ```  ``` {    "type": "RichText",    "text": [      "## Heading level 2"    ] } ``` ``` | `TextSubheading` |
-| ```  ``` {        "type": "RichText",        "text": [          "### Heading level 3",         "#### Heading level 4",          "##### Heading level 5",         "###### Heading level 6"        ]     } ``` ``` | `TextBody` |
+| ``` {    "type": "RichText",    "text": [      "# Heading level 1"    ] } ``` | `TextHeading` |
+| ``` {    "type": "RichText",    "text": [      "## Heading level 2"    ] } ``` | `TextSubheading` |
+| ``` {        "type": "RichText",        "text": [          "### Heading level 3",         "#### Heading level 4",          "##### Heading level 5",         "###### Heading level 6"        ]     } ``` | `TextBody` |
 
 #### Paragraphs
 
 To create paragraphs, split your text into different array items:
 
 ```
-```
 {  
-       "type": "RichText",  
-       "text": [  
-         "Paragraph 1",  
-        "Paragraph 2"  
-       ]  
-    }
-```
+       "type": "RichText",  
+       "text": [  
+         "Paragraph 1",  
+        "Paragraph 2"  
+       ]  
+    }
 ```
 
 or add a blank line in your markdown document that you bind using dynamic binding syntax `${data.your_dynamic_field}`
 
 ```
-```
-# Heading 1  
-Paragraph 1  
+# Heading 1  
+Paragraph 1  
   
-Paragraph 2
-```
+Paragraph 2
 ```
 
 ```
-```
 {  
-       "type": "RichText",  
-       "text": "${data.text}"  
-    }
-```
+       "type": "RichText",  
+       "text": "${data.text}"  
+    }
 ```
 
 #### Text formatting
 
 | Flow JSON | Flow Component |
 | --- | --- |
-| ```  ``` {    "type": "RichText",    "text": [      "Let's make a **bold** statement"    ] } ``` ``` | `TextBody (bold)` |
-| ```  ``` {    "type": "RichText",    "text": [      "Let's make this text *italic*"    ] } ``` ``` | `TextBody (italic)` |
-| ```  ``` {    "type": "RichText",    "text": [      "Let's make this text ~~Strikethrough~~"    ] } ``` ``` | `TextBody (strikethrough)` |
-| ```  ``` {    "type": "RichText",    "text": [      "This text is ~~***really important***~~"    ] } ``` ``` | `TextBody (bold-italic-strikethrough)` |
+| ``` {    "type": "RichText",    "text": [      "Let's make a **bold** statement"    ] } ``` | `TextBody (bold)` |
+| ``` {    "type": "RichText",    "text": [      "Let's make this text *italic*"    ] } ``` | `TextBody (italic)` |
+| ``` {    "type": "RichText",    "text": [      "Let's make this text ~~Strikethrough~~"    ] } ``` | `TextBody (strikethrough)` |
+| ``` {    "type": "RichText",    "text": [      "This text is ~~***really important***~~"    ] } ``` | `TextBody (bold-italic-strikethrough)` |
 
 #### Lists
 
@@ -317,20 +307,18 @@ You can organize items into ordered and unordered lists. At the moment, only sin
 
 | Flow JSON | Flow Component |
 | --- | --- |
-| ```  ``` {    "type": "RichText",    "text": [      "1. Item 1",      "2. Item 2",      "3. Item 3"    ] } ``` ``` | `OrderedList` (not available as standalone component) |
-| ```  ``` {    "type": "RichText",    "text": [      "- Item 1",      "- Item 2",      "- Item 3"    ] } ``` ```  ```  ``` {    "type": "RichText",    "text": [      "+ Item 1",      "+ Item 2",      "+ Item 3"    ] } ``` ``` | `UnorderedList` (not available as standalone component) |
+| ``` {    "type": "RichText",    "text": [      "1. Item 1",      "2. Item 2",      "3. Item 3"    ] } ``` | `OrderedList` (not available as standalone component) |
+| ``` {    "type": "RichText",    "text": [      "- Item 1",      "- Item 2",      "- Item 3"    ] } ```  ``` {    "type": "RichText",    "text": [      "+ Item 1",      "+ Item 2",      "+ Item 3"    ] } ``` | `UnorderedList` (not available as standalone component) |
 
 #### Images
 
 You can also include images in the content. Please note, external URIs are not supported and you can only include base64 inline images
 
 ```
-```
 {  
-   "type": "RichText",  
-   "text": ["![Image alt text](data:image/png;base64,<base64 content>)"]  
+   "type": "RichText",  
+   "text": ["![Image alt text](data:image/png;base64,<base64 content>)"]  
 }
-```
 ```
 
 **Recommended image formats:**
@@ -344,21 +332,19 @@ You can also include images in the content. Please note, external URIs are not s
 To create a link, enclose the link text in brackets and then follow it immediately with the URL in parentheses
 
 ```
-```
 {  
-   "type": "RichText",  
-   "text": [  
-     "[WhatsApp Flows let you build rich, interactive screens](https://business.whatsapp.com/products/whatsapp-flows)"  
-   ]  
+   "type": "RichText",  
+   "text": [  
+     "[WhatsApp Flows let you build rich, interactive screens](https://business.whatsapp.com/products/whatsapp-flows)"  
+   ]  
 }
-```
 ```
 
 #### Tables
 
 |  |  |
 | --- | --- |
-| To add a table, use three or more hyphens (---) to create each column’s header, and use pipes ( | ) to separate each column. For compatibility, you should also add a pipe on either end of the row. |
+| To add a table, use three or more hyphens (---) to create each column's header, and use pipes ( | ) to separate each column. For compatibility, you should also add a pipe on either end of the row. |
 
 Cell content can be combined with the following syntax:
 
@@ -367,41 +353,37 @@ Cell content can be combined with the following syntax:
 * Links
 
 ```
-```
 {  
-   "type": "RichText",  
-   "text": [  
-     "\| Column Header 1     \| Column Header 2                                             \|",  
-     "\| -------------       \|  -------------                                              \|",  
-     "\| **Bold** text 1     \| [Link](<URI>)                                               |",  
-     "| **Bold** text 1     | ![Image alt text](data:image/png;base64,<base64 content>)   |"  
-   ]  
+   "type": "RichText",  
+   "text": [  
+     "\| Column Header 1     \| Column Header 2                                             \|",  
+     "\| -------------       \|  -------------                                              \|",  
+     "\| **Bold** text 1     \| [Link](<URI>)                                               |",  
+     "| **Bold** text 1     | ![Image alt text](data:image/png;base64,<base64 content>)   |"  
+   ]  
 }
-```
 ```
 
 **Width of the columns:**
 
-Width of the column is based on the Header content size. Markdown specification doesn’t provide a specific syntax for controlling a column width. If you want to make a certain column wider, simply add additional content to the header:
+Width of the column is based on the Header content size. Markdown specification doesn't provide a specific syntax for controlling a column width. If you want to make a certain column wider, simply add additional content to the header:
 
 ```
-```
 {  
-   "type": "RichText",  
-   "text": [  
-     "| Column Header 1 - Extended width  | Column Header 2       |",  
-     "| -------------                     |  -------------        |",  
-     "| **Bold** text 1                   | Cell text 2           |"  
-   ]  
+   "type": "RichText",  
+   "text": [  
+     "| Column Header 1 - Extended width  | Column Header 2       |",  
+     "| -------------                     |  -------------        |",  
+     "| **Bold** text 1                   | Cell text 2           |"  
+   ]  
 }
-```
 ```
 
 #### Working with large texts
 
 If your text content for markdown has a limited size, you can incorporate it as a static text as shown in all examples above. However, if your text is large and you expect to update it often on your server, send it as a part of dynamic data. This improves overall readability of the JSON and allows you to always load up-to-date text from your server.
 
-**Please note:** These examples use the array text property for static cases since it’s easier to read. However the components support both types: `Array of strings` and `string`. Your markdown can be sent as a normal string, you don’t need to convert it to an array of strings.
+**Please note:** These examples use the array text property for static cases since it's easier to read. However the components support both types: `Array of strings` and `string`. Your markdown can be sent as a normal string, you don't need to convert it to an array of strings.
 
 Flow JSON
 
@@ -519,7 +501,7 @@ Managed by the business. Learn more [Learn more](https://developers.facebook.com
 
 * Supported starting with Flow JSON version 5.1
 
-Here is the quick overview of the syntax that’s supported by RichText, TextBody, and TextCaption components
+Here is the quick overview of the syntax that's supported by RichText, TextBody, and TextCaption components
 
 | Syntax | RichText | TextBody | TextCaption |
 | --- | --- | --- | --- |
@@ -674,33 +656,33 @@ Managed by the business. Learn more [Learn more](https://developers.facebook.com
 
 | Parameter | Description |
 | --- | --- |
-| `type _string_` **(required)** | “TextInput” |
-| `label _string_` **(required)** | Dynamic “${data.label}” |
-| `input-type _enum_` | {‘text’,’number’,’email’, ‘password’, ‘passcode’, ‘phone’} |
-| `pattern _string_` | When specified, it is a regular expression which the input’s value must match for the value to pass.  * Supported starting with Flow JSON version 6.2 * Supported with input-type= {'text', 'number', 'password', 'passcode'} * Expects a raw regex string (e.g., hello, not /hello/). * When using the pattern field, helper-text is mandatory. * For input-type= {'number', 'passcode' }, a base regular expression is applied before the pattern validator, ensuring both validations are performed. |
-| `required _boolean_` | Dynamic “${data.is\_required}” |
-| `min-chars _string_` | Dynamic “${data.min\_chars}” |
-| `max-chars _string_` | Dynamic “${data.max\_chars}”.   Default value is 80 characters. |
-| `helper-text _string_` | Dynamic “${data.helper\_text}” |
+| `type _string_` **(required)** | "TextInput" |
+| `label _string_` **(required)** | Dynamic "${data.label}" |
+| `input-type _enum_` | {'text','number','email', 'password', 'passcode', 'phone'} |
+| `pattern _string_` | When specified, it is a regular expression which the input's value must match for the value to pass.  * Supported starting with Flow JSON version 6.2 * Supported with input-type= {'text', 'number', 'password', 'passcode'} * Expects a raw regex string (e.g., hello, not /hello/). * When using the pattern field, helper-text is mandatory. * For input-type= {'number', 'passcode' }, a base regular expression is applied before the pattern validator, ensuring both validations are performed. |
+| `required _boolean_` | Dynamic "${data.is\_required}" |
+| `min-chars _string_` | Dynamic "${data.min\_chars}" |
+| `max-chars _string_` | Dynamic "${data.max\_chars}".   Default value is 80 characters. |
+| `helper-text _string_` | Dynamic "${data.helper\_text}" |
 | `name _string_` **(required)** |  |
-| `visible _boolean_` | Dynamic “${data.is\_visible}”   Default: True |
-| `init-value _string_` | Dynamic “${data.init-value}”   Only available when component is outside Form component  Optional Form * Supported starting with Flow JSON version 4.0 |
-| `error-message _string_` | Dynamic “${data.error-message}”   Only available when component is outside Form component  Optional Form * Supported starting with Flow JSON version 4.0 |
+| `visible _boolean_` | Dynamic "${data.is\_visible}"   Default: True |
+| `init-value _string_` | Dynamic "${data.init-value}"   Only available when component is outside Form component  Optional Form * Supported starting with Flow JSON version 4.0 |
+| `error-message _string_` | Dynamic "${data.error-message}"   Only available when component is outside Form component  Optional Form * Supported starting with Flow JSON version 4.0 |
 
 ### TextArea
 
 | Parameter | Description |
 | --- | --- |
-| `type _string_` **(required)** | “TextArea” |
-| `label _string_` **(required)** | Dynamic “${data.label}” |
-| `required _boolean_` | Dynamic “${data.is\_required}” |
-| `max-length _string_` | Dynamic “${data.max\_length}”   Default value is 600 characters. |
+| `type _string_` **(required)** | "TextArea" |
+| `label _string_` **(required)** | Dynamic "${data.label}" |
+| `required _boolean_` | Dynamic "${data.is\_required}" |
+| `max-length _string_` | Dynamic "${data.max\_length}"   Default value is 600 characters. |
 | `name _string_` **(required)** |  |
-| `helper-text _string_` | Dynamic “${data.helper\_text}” |
-| `enabled _boolean_` | Dynamic “${data.is\_enabled}” |
-| `visible _boolean_` | Dynamic “${data.is\_visible}”   Default: True |
-| `init-value _string_` | Dynamic “${data.init-value}”   Only available when component is outside Form component  Optional Form * Supported starting with Flow JSON version 4.0 |
-| `error-message _string_` | Dynamic “${data.error-message}”   Only available when component is outside Form component  Optional Form * Supported starting with Flow JSON version 4.0 |
+| `helper-text _string_` | Dynamic "${data.helper\_text}" |
+| `enabled _boolean_` | Dynamic "${data.is\_enabled}" |
+| `visible _boolean_` | Dynamic "${data.is\_visible}"   Default: True |
+| `init-value _string_` | Dynamic "${data.init-value}"   Only available when component is outside Form component  Optional Form * Supported starting with Flow JSON version 4.0 |
+| `error-message _string_` | Dynamic "${data.error-message}"   Only available when component is outside Form component  Optional Form * Supported starting with Flow JSON version 4.0 |
 
 ### Limits and restrictions
 
@@ -881,20 +863,20 @@ CheckboxGroup component allows users to pick multiple selections from a list of 
 
 | Parameter | Description |
 | --- | --- |
-| `type _string_` **(required)** | “CheckboxGroup” |
-| `data-source _array_` **(required)** | Dynamic “${data.data\_source}”  **Flow JSON versions before 5.0:** * *Array< id: String, title: String, description: String, metadata: String, enabled: Boolean>*  **Flow JSON versions after 5.0:** * *Array< id: String, title: String, description: String, metadata: String, enabled: Boolean, image: Base64 of an image, alt-text: string, color: 6-digit hex color string >*  **Flow JSON versions after 6.0:** * *Array< id: String, title: String, description: String, metadata: String, enabled: Boolean, image: Base64 of an image, alt-text: string, color: 6-digit hex color string, on-select-action: {name: 'update\_data', payload: {...}}, on-unselect-action: {name: 'update\_data', payload: {...}} >* |
+| `type _string_` **(required)** | "CheckboxGroup" |
+| `data-source _array_` **(required)** | Dynamic "${data.data\_source}"  **Flow JSON versions before 5.0:** * *Array< id: String, title: String, description: String, metadata: String, enabled: Boolean>*  **Flow JSON versions after 5.0:** * *Array< id: String, title: String, description: String, metadata: String, enabled: Boolean, image: Base64 of an image, alt-text: string, color: 6-digit hex color string >*  **Flow JSON versions after 6.0:** * *Array< id: String, title: String, description: String, metadata: String, enabled: Boolean, image: Base64 of an image, alt-text: string, color: 6-digit hex color string, on-select-action: {name: 'update\_data', payload: {...}​}, on-unselect-action: {name: 'update\_data', payload: {...}​} >* |
 | `name _string_` **(required)** |  |
-| `min-selected-items _int_` | Dynamic “${data.min\_selected\_items}” |
-| `max-selected-items _int_` | Dynamic “${data.max\_selected\_items}” |
-| `enabled _boolean_` | Dynamic “${data.is\_enabled}” |
-| `label _string_` | Dynamic “${data.label}”  * Flow JSON versions before 4.0: **optional** * Flow JSON versions after 4.0: **required** |
-| `required _boolean_` | Dynamic “${data.is\_required}” |
-| `visible _boolean_` | Dynamic “${data.is\_visible}”   Default: True |
+| `min-selected-items _int_` | Dynamic "${data.min\_selected\_items}" |
+| `max-selected-items _int_` | Dynamic "${data.max\_selected\_items}" |
+| `enabled _boolean_` | Dynamic "${data.is\_enabled}" |
+| `label _string_` | Dynamic "${data.label}"  * Flow JSON versions before 4.0: **optional** * Flow JSON versions after 4.0: **required** |
+| `required _boolean_` | Dynamic "${data.is\_required}" |
+| `visible _boolean_` | Dynamic "${data.is\_visible}"   Default: True |
 | `on-select-action _action_` | `data_exchange` and `update_data` are supported.  **update\_data** * Supported starting with Flow JSON version 6.0 |
-| `description _string_` | Dynamic “${data.description}”  * Supported starting with Flow JSON version 4.0 |
-| `init-value _array<string>` | Dynamic “${data.init-value}”   Only available when component is outside Form component  * Supported starting with Flow JSON version 4.0 |
-| `error-message _string_` | Dynamic “${data.error-message}”   Only available when component is outside Form component  * Supported starting with Flow JSON version 4.0 |
-| `media-size _enum_` | {‘regular’, ‘large’}  Dynamic “${data.media-size}”  * Supported starting with Flow JSON version 5.0 |
+| `description _string_` | Dynamic "${data.description}"  * Supported starting with Flow JSON version 4.0 |
+| `init-value _array<string>` | Dynamic "${data.init-value}"   Only available when component is outside Form component  * Supported starting with Flow JSON version 4.0 |
+| `error-message _string_` | Dynamic "${data.error-message}"   Only available when component is outside Form component  * Supported starting with Flow JSON version 4.0 |
+| `media-size _enum_` | {'regular', 'large'}  Dynamic "${data.media-size}"  * Supported starting with Flow JSON version 5.0 |
 
 Images in WebP format are not supported on iOS versions prior to iOS 14.
 
@@ -1180,7 +1162,7 @@ For the `data-source` field, you can declare it dynamically or statically.
 
 ### Static example
 
-This static example hardcodes the respective `id`’s and `title`’s for the `data-source` field.
+This static example hardcodes the respective `id`'s and `title`'s for the `data-source` field.
 
 Flow JSON
 
@@ -1454,18 +1436,18 @@ Managed by the business. Learn more [Learn more](https://developers.facebook.com
 
 | Parameter | Description |
 | --- | --- |
-| `type _string_` **(required)** | “RadioButtonsGroup” |
-| `data-source _array_` **(required)** | Dynamic “${data.data\_source}”  **Flow JSON versions before 5.0:** * *Array< id: String, title: String, description: String, metadata: String, enabled: Boolean>*  **Flow JSON versions after 5.0:** * *Array< id: String, title: String, description: String, metadata: String, enabled: Boolean, image: Base64 of an image, alt-text: string, color: 6-digit hex color string >*  **Flow JSON versions after 6.0:** * *Array< id: String, title: String, description: String, metadata: String, enabled: Boolean, image: Base64 of an image, alt-text: string, color: 6-digit hex color string, on-select-action: {name: 'update\_data', payload: {...}}, on-unselect-action: {name: 'update\_data', payload: {...}} >* |
+| `type _string_` **(required)** | "RadioButtonsGroup" |
+| `data-source _array_` **(required)** | Dynamic "${data.data\_source}"  **Flow JSON versions before 5.0:** * *Array< id: String, title: String, description: String, metadata: String, enabled: Boolean>*  **Flow JSON versions after 5.0:** * *Array< id: String, title: String, description: String, metadata: String, enabled: Boolean, image: Base64 of an image, alt-text: string, color: 6-digit hex color string >*  **Flow JSON versions after 6.0:** * *Array< id: String, title: String, description: String, metadata: String, enabled: Boolean, image: Base64 of an image, alt-text: string, color: 6-digit hex color string, on-select-action: {name: 'update\_data', payload: {...}​}, on-unselect-action: {name: 'update\_data', payload: {...}​} >* |
 | `name _string_` **(required)** |  |
-| `enabled _boolean_` | Dynamic “${data.is\_enabled}” |
-| `label _string_` | Dynamic “${data.label}”  * Flow JSON versions before 4.0: **optional** * Flow JSON versions after 4.0: **required** |
-| `required _boolean_` | Dynamic “${data.is\_required}” |
-| `visible _boolean_` | Dynamic “${data.is\_visible}”   Default: True |
+| `enabled _boolean_` | Dynamic "${data.is\_enabled}" |
+| `label _string_` | Dynamic "${data.label}"  * Flow JSON versions before 4.0: **optional** * Flow JSON versions after 4.0: **required** |
+| `required _boolean_` | Dynamic "${data.is\_required}" |
+| `visible _boolean_` | Dynamic "${data.is\_visible}"   Default: True |
 | `on-select-action _action_` | `data_exchange` and `update_data` are supported.  **update\_data** * Supported starting with Flow JSON version 6.0 |
-| `description _string_` | Dynamic “${data.description}”  * Supported starting with Flow JSON version 4.0 |
-| `init-value _array<string>` | Dynamic “${data.init-value}”   Only available when component is outside Form component  * Supported starting with Flow JSON version 4.0 |
-| `error-message _string_` | Dynamic “${data.error-message}”   Only available when component is outside Form component  * Supported starting with Flow JSON version 4.0 |
-| `media-size _enum_` | {‘regular’, ‘large’}  Dynamic “${data.media-size}”  * Supported starting with Flow JSON version 5.0 |
+| `description _string_` | Dynamic "${data.description}"  * Supported starting with Flow JSON version 4.0 |
+| `init-value _array<string>` | Dynamic "${data.init-value}"   Only available when component is outside Form component  * Supported starting with Flow JSON version 4.0 |
+| `error-message _string_` | Dynamic "${data.error-message}"   Only available when component is outside Form component  * Supported starting with Flow JSON version 4.0 |
+| `media-size _enum_` | {'regular', 'large'}  Dynamic "${data.media-size}"  * Supported starting with Flow JSON version 5.0 |
 
 Images in WebP format are not supported on iOS versions prior to iOS 14.
 
@@ -1751,7 +1733,7 @@ For the `data-source` field, you can declare it dynamically or statically.
 
 ### Static example
 
-This static example hardcodes the respective `id`’s and `title`’s for the `data-source` field.
+This static example hardcodes the respective `id`'s and `title`'s for the `data-source` field.
 
 Flow JSON
 
@@ -2015,12 +1997,12 @@ Managed by the business. Learn more [Learn more](https://developers.facebook.com
 
 | Parameter | Description |
 | --- | --- |
-| `type _string_` **(required)** | “Footer” |
-| `label _string_` **(required)** | Dynamic “${data.label}” |
-| `left-caption _string_` | Dynamic “${data.left\_caption}”  Can set left-caption **and** right-caption **or** only center-caption, but not all 3 at once |
-| `center-caption _string_` | Dynamic “${data.center\_caption}”  Can set center-caption **or** left-caption **and** right-caption, but not all 3 at once |
-| `right-caption _string_` | Dynamic “${data.right\_caption}”  Can set right-caption **and** left-caption **or** only center-caption, but not all 3 at once |
-| `enabled _boolean_` | Dynamic “${data.is\_enabled}” |
+| `type _string_` **(required)** | "Footer" |
+| `label _string_` **(required)** | Dynamic "${data.label}" |
+| `left-caption _string_` | Dynamic "${data.left\_caption}"  Can set left-caption **and** right-caption **or** only center-caption, but not all 3 at once |
+| `center-caption _string_` | Dynamic "${data.center\_caption}"  Can set center-caption **or** left-caption **and** right-caption, but not all 3 at once |
+| `right-caption _string_` | Dynamic "${data.right\_caption}"  Can set right-caption **and** left-caption **or** only center-caption, but not all 3 at once |
+| `enabled _boolean_` | Dynamic "${data.is\_enabled}" |
 | `on-click-action _action_` **(required)** | Action |
 
 Flow JSON
@@ -2151,13 +2133,13 @@ Managed by the business. Learn more [Learn more](https://developers.facebook.com
 
 | Parameter | Description |
 | --- | --- |
-| `type _string_` **(required)** | “OptIn” |
-| `label _string_` **(required)** | Dynamic “${data.label}” |
-| `required _boolean_` | Dynamic “${data.is\_required}” |
+| `type _string_` **(required)** | "OptIn" |
+| `label _string_` **(required)** | Dynamic "${data.label}" |
+| `required _boolean_` | Dynamic "${data.is\_required}" |
 | `name _string_` **(required)** |  |
-| `on-click-action _action_` | Action that is executed on clicking “Read more”.  “Read more” is only visible when an on-click-action is specified.  Allowed values are `data_exchange` and `navigate`. From Flow JSON version 6.0 and later, allowed values are `data_exchange`, `navigate` and `open_url`. |
-| `visible _boolean_` | Dynamic “${data.is\_visible}”   Default: True |
-| `init-value _boolean_` | Dynamic “${data.init-value}”   Only available when component is outside Form component  Optional Form * Supported starting with Flow JSON version 4.0 |
+| `on-click-action _action_` | Action that is executed on clicking "Read more".  "Read more" is only visible when an on-click-action is specified.  Allowed values are `data_exchange` and `navigate`. From Flow JSON version 6.0 and later, allowed values are `data_exchange`, `navigate` and `open_url`. |
+| `visible _boolean_` | Dynamic "${data.is\_visible}"   Default: True |
+| `init-value _boolean_` | Dynamic "${data.init-value}"   Only available when component is outside Form component  Optional Form * Supported starting with Flow JSON version 4.0 |
 
 ### Example
 
@@ -2285,16 +2267,16 @@ Managed by the business. Learn more [Learn more](https://developers.facebook.com
 
 | Parameter | Description |
 | --- | --- |
-| `type _string_` **(required)** | “Dropdown” |
+| `type _string_` **(required)** | "Dropdown" |
 | `label _string_` **(required)** |  |
-| `data-source _array_` **(required)** | Dynamic “${data.data\_source}”  **Flow JSON versions before 5.0:** * *Array< id: String, title: String, description: String, metadata: String, enabled: Boolean>*  **Flow JSON versions after 5.0:** * *Array< id: String, title: String, description: String, metadata: String, enabled: Boolean, image: Base64 of an image, alt-text: string, color: 6-digit hex color string >*  **Flow JSON versions after 6.0:** * *Array< id: String, title: String, description: String, metadata: String, enabled: Boolean, image: Base64 of an image, alt-text: string, color: 6-digit hex color string, on-select-action: {name: 'update\_data', payload: {...}}, on-unselect-action: {name: 'update\_data', payload: {...}} >* |
+| `data-source _array_` **(required)** | Dynamic "${data.data\_source}"  **Flow JSON versions before 5.0:** * *Array< id: String, title: String, description: String, metadata: String, enabled: Boolean>*  **Flow JSON versions after 5.0:** * *Array< id: String, title: String, description: String, metadata: String, enabled: Boolean, image: Base64 of an image, alt-text: string, color: 6-digit hex color string >*  **Flow JSON versions after 6.0:** * *Array< id: String, title: String, description: String, metadata: String, enabled: Boolean, image: Base64 of an image, alt-text: string, color: 6-digit hex color string, on-select-action: {name: 'update\_data', payload: {...}​}, on-unselect-action: {name: 'update\_data', payload: {...}​} >* |
 | `required _boolean_` |  |
-| `enabled _boolean_` | Dynamic “${data.is\_enabled}” |
-| `required _boolean_` | Dynamic “${data.is\_required}” |
-| `visible _boolean_` | Dynamic “${data.is\_visible}”   Default: True |
+| `enabled _boolean_` | Dynamic "${data.is\_enabled}" |
+| `required _boolean_` | Dynamic "${data.is\_required}" |
+| `visible _boolean_` | Dynamic "${data.is\_visible}"   Default: True |
 | `on-select-action _action_` | `data_exchange` and `update_data` are supported.  **update\_data** * Supported starting with Flow JSON version 6.0 |
-| `init-value _string_` | Dynamic “${data.init-value}”   Only available when component is outside Form component |
-| `error-message _string_` | Dynamic “${data.error-message}”   Only available when component is outside Form component |
+| `init-value _string_` | Dynamic "${data.init-value}"   Only available when component is outside Form component |
+| `error-message _string_` | Dynamic "${data.error-message}"   Only available when component is outside Form component |
 
 Images in WebP format are not supported on iOS versions prior to iOS 14.
 
@@ -2542,7 +2524,7 @@ For the `data-source` field, you can declare it dynamically or statically.
 
 ### Static example
 
-This static example hardcodes the respective `id`’s and `title`’s for the `data-source` field.
+This static example hardcodes the respective `id`'s and `title`'s for the `data-source` field.
 
 Flow JSON
 
@@ -2794,10 +2776,10 @@ Managed by the business. Learn more [Learn more](https://developers.facebook.com
 
 | Parameter | Description |
 | --- | --- |
-| `type _string_` **(required)** | “EmbeddedLink” |
-| `text _string_` **(required)** | Dynamic “${data.text}” |
+| `type _string_` **(required)** | "EmbeddedLink" |
+| `text _string_` **(required)** | Dynamic "${data.text}" |
 | `on-click-action _action_` **(required)** | Action  Allowed values are `data_exchange` and `navigate`. From Flow JSON version 6.0 and later, allowed values are `data_exchange`, `navigate` and `open_url`. |
-| `visible _boolean_` | Dynamic “${data.is\_visible}”   Default: True |
+| `visible _boolean_` | Dynamic "${data.is\_visible}"   Default: True |
 
 Flow JSON
 
@@ -2924,28 +2906,28 @@ Managed by the business. Learn more [Learn more](https://developers.facebook.com
 
 The DatePicker component allows users to input dates through an intuitive date selection interface.
 
-Before Flow JSON version 5.0, the DatePicker doesn’t support scenarios where the business and the end user are in different
+Before Flow JSON version 5.0, the DatePicker doesn't support scenarios where the business and the end user are in different
 time zones. Only use the component if you plan to send your Flows to users in a specific
 time zone. For details, please refer to section
 [Guidelines for Usage](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/flowjson#datepicker-guidelines)  
   
-Starting from Flow JSON version 5.0, the DatePicker has been updated to use a formatted date string in the format “YYYY-MM-DD”, such as “2024-10-21”,
+Starting from Flow JSON version 5.0, the DatePicker has been updated to use a formatted date string in the format "YYYY-MM-DD", such as "2024-10-21",
 for setting and retrieving date values. This update makes the date values of the date picker unrelated to time zones, allowing businesses to send messages and collect dates from users in any time zone.
 
 | Parameter | Description |
 | --- | --- |
-| `type _string_` **(required)** | “DatePicker” |
-| `label _string_` **(required)** | Dynamic “${data.label}” |
-| `min-date` *String (timestamp in milliseconds)* | Dynamic “${data.min\_date}”. Please refer to section [Guidelines for Usage](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/flowjson#datepicker-guidelines) |
-| `max-date` *String (timestamp in milliseconds)* | Dynamic “${data.max\_date}”. Please refer to section [Guidelines for Usage](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/flowjson#datepicker-guidelines) |
+| `type _string_` **(required)** | "DatePicker" |
+| `label _string_` **(required)** | Dynamic "${data.label}" |
+| `min-date` *String (timestamp in milliseconds)* | Dynamic "${data.min\_date}". Please refer to section [Guidelines for Usage](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/flowjson#datepicker-guidelines) |
+| `max-date` *String (timestamp in milliseconds)* | Dynamic "${data.max\_date}". Please refer to section [Guidelines for Usage](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/flowjson#datepicker-guidelines) |
 | `name _string_` **(required)** |  |
-| `unavailable-dates` *Array < timestamp in milliseconds: String >* | Dynamic “${data.unavailable\_dates}”. Please refer to section [Guidelines for Usage](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/flowjson#datepicker-guidelines) |
-| `visible _boolean_` | Dynamic “${data.is\_visible}”   Default: True |
-| `helper-text _string_` | Dynamic “${data.helper\_text}” |
-| `enabled _boolean_` | Dynamic “${data.is\_enabled}”   Default: True |
+| `unavailable-dates` *Array < timestamp in milliseconds: String >* | Dynamic "${data.unavailable\_dates}". Please refer to section [Guidelines for Usage](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/flowjson#datepicker-guidelines) |
+| `visible _boolean_` | Dynamic "${data.is\_visible}"   Default: True |
+| `helper-text _string_` | Dynamic "${data.helper\_text}" |
+| `enabled _boolean_` | Dynamic "${data.is\_enabled}"   Default: True |
 | `on-select-action _action_` | Only `data_exchange` is supported. |
-| `init-value _string_` | Dynamic “${data.init-value}”   Only available when component is outside Form component  Optional Form * Supported starting with Flow JSON version 4.0 |
-| `error-message _string_` | Dynamic “${data.error-message}”   Only available when component is outside Form component  Optional Form * Supported starting with Flow JSON version 4.0 |
+| `init-value _string_` | Dynamic "${data.init-value}"   Only available when component is outside Form component  Optional Form * Supported starting with Flow JSON version 4.0 |
+| `error-message _string_` | Dynamic "${data.error-message}"   Only available when component is outside Form component  Optional Form * Supported starting with Flow JSON version 4.0 |
 
 The payload sent to a data channel business endpoint is a string that shows the timestamp in milliseconds.
 
@@ -3092,11 +3074,11 @@ For example, if you are a business based in India who wants to collect a date in
 
 **Component Integration**
 
-DatePicker will read the timestamps in `min-dates`, `max-dates` and `unavailable-dates` fields and convert it to the end user’s local date for displaying on the UI. In the previous example, a user in India will see dates from `21 March 2024` to `25 March 2024` in the DatePicker component.
+DatePicker will read the timestamps in `min-dates`, `max-dates` and `unavailable-dates` fields and convert it to the end user's local date for displaying on the UI. In the previous example, a user in India will see dates from `21 March 2024` to `25 March 2024` in the DatePicker component.
 
 **Processing User Selection**
 
-Businesses will receive a UTC timestamp, which should be converted back to the business’s local time zone. Importantly, businesses should focus solely on the date portion of the resulting timestamp, disregarding the time portion. Focusing on the date portion ensures that the date remains consistent with the user’s selection. Unfortunately, this conversion will only work correctly when the business and user are in the same time zone.
+Businesses will receive a UTC timestamp, which should be converted back to the business's local time zone. Importantly, businesses should focus solely on the date portion of the resulting timestamp, disregarding the time portion. Focusing on the date portion ensures that the date remains consistent with the user's selection. Unfortunately, this conversion will only work correctly when the business and user are in the same time zone.
 
 For example, if you receive a timestamp `1711013400000` then convert it to your local timezone and extract the date. If you are in IST, the timestamp will convert to `21 March 2024 15:00 IST`, and you should treat `21st March 2024` as the user selected date.
 
@@ -3112,7 +3094,7 @@ If you need to send flow messages to users in time zones different from yours de
 
 ### Start from flow JSON version 5.0
 
-DatePicker component has been updated to use a formatted date string in the format “YYYY-MM-DD”, such as “2024-10-21”, for setting and retrieving date values. This update makes the date values of the date picker unrelated to time zones, allowing businesses to send messages and collect dates from users in any time zone in a consistent manner.
+DatePicker component has been updated to use a formatted date string in the format "YYYY-MM-DD", such as "2024-10-21", for setting and retrieving date values. This update makes the date values of the date picker unrelated to time zones, allowing businesses to send messages and collect dates from users in any time zone in a consistent manner.
 
 ### Limits and restrictions
 
@@ -3130,25 +3112,25 @@ The CalendarPicker component allows users to select a single date or a range of 
 
 | Parameter | Description |
 | --- | --- |
-| `type _string_` **(required)** | “CalendarPicker” |
+| `type _string_` **(required)** | "CalendarPicker" |
 | `name _string_` **(required)** |  |
-| `title _string_` | Dynamic “${data.title}”   Only available when ‘mode’ is set to ‘range’ |
-| `description _string_` | Dynamic “${data.description}”   Only available when ‘mode’ is set to ‘range’ |
-| `label _string_` **(required)** | Dynamic “${data.label}”   When ‘mode’ is set to ‘range’ the value should be in ‘{“start-date”: String, “end-date”: String}’ format |
-| `helper-text _string_` | Dynamic “${data.helper\_text}”   When ‘mode’ is set to ‘range’ the value should be in ‘{“start-date”: String, “end-date”: String}’ format |
-| `required _boolean_` | Dynamic “${data.is\_required}”   Default: False   When ‘mode’ is set to ‘range’ the value should be in ‘{“start-date”: Boolean, “end-date”: Boolean}’ format |
-| `visible _boolean_` | Dynamic “${data.is\_visible}”   Default: True |
-| `enabled _boolean_` | Dynamic “${data.is\_enabled}”   Default: True |
-| `mode _enum_` | {“single”, “range”}   Dynamic “${data.mode}”   Default: “single”   Allows to select one date in ‘single’ mode or start and end dates in ‘range’ mode |
-| `min-date _string_` | Dynamic “${data.min\_date}”   Formatted date string in the format “YYYY-MM-DD”   Disallows selecting dates before specified min-date |
-| `max-date _string_` | Dynamic “${data.max\_date}”   Formatted date string in the format “YYYY-MM-DD”   Disallows selecting dates after specified max-date |
-| `unavailable-dates _array<string>` | Dynamic “${data.unavailable\_dates}”   Formatted date strings in the format “YYYY-MM-DD”   Disallows selecting specific dates, should be in the range between min-date and max-date if specified |
-| `include-days` *Array<enum>* | {“Mon”, “Tue”, “Wed”, “Thu”, “Fri”, “Sat”, “Sun”}   Dynamic “${data.include\_days}”   Default: all weekdays - [“Mon”, “Tue”, “Wed”, “Thu”, “Fri”, “Sat”, “Sun”]   Enables specific weekdays, for example to enable only working days Monday through Friday and disallow selecting Saturdays and Sundays |
-| `min-days _int_` | Dynamic “${data.min\_days}”   Available only in ‘range’ mode to set the minimum number of days between start and end dates |
-| `max-days _int_` | Dynamic “${data.max\_days}”   Available only in ‘range’ mode to set the maximum number of days between start and end dates |
-| `on-select-action _action_` | Only ‘data\_exchange’ is supported.   Payload that is sent to a data channel business endpoint is a string in “YYYY-MM-DD” format for ‘single’ mode or dictionary in {“start-date”:”YYYY-MM-DD”,”end-date”:”YYYY-MM-DD”} format for ‘range’ mode |
-| `init-value _string_` | Dynamic “${data.init-value}”   When ‘mode’ is set to ‘range’ the value should be in ‘{“start-date”: String, “end-date”: String}’ format   Only available when component is outside Form component |
-| `error-message _string_` | Dynamic “${data.error-message}”   When ‘mode’ is set to ‘range’ the value should be in ‘{“start-date”: String, “end-date”: String}’ format   Only available when component is outside Form component |
+| `title _string_` | Dynamic "${data.title}"   Only available when 'mode' is set to 'range' |
+| `description _string_` | Dynamic "${data.description}"   Only available when 'mode' is set to 'range' |
+| `label _string_` **(required)** | Dynamic "${data.label}"   When 'mode' is set to 'range' the value should be in '{"start-date": String, "end-date": String}' format |
+| `helper-text _string_` | Dynamic "${data.helper\_text}"   When 'mode' is set to 'range' the value should be in '{"start-date": String, "end-date": String}' format |
+| `required _boolean_` | Dynamic "${data.is\_required}"   Default: False   When 'mode' is set to 'range' the value should be in '{"start-date": Boolean, "end-date": Boolean}' format |
+| `visible _boolean_` | Dynamic "${data.is\_visible}"   Default: True |
+| `enabled _boolean_` | Dynamic "${data.is\_enabled}"   Default: True |
+| `mode _enum_` | {"single", "range"}   Dynamic "${data.mode}"   Default: "single"   Allows to select one date in 'single' mode or start and end dates in 'range' mode |
+| `min-date _string_` | Dynamic "${data.min\_date}"   Formatted date string in the format "YYYY-MM-DD"   Disallows selecting dates before specified min-date |
+| `max-date _string_` | Dynamic "${data.max\_date}"   Formatted date string in the format "YYYY-MM-DD"   Disallows selecting dates after specified max-date |
+| `unavailable-dates _array<string>` | Dynamic "${data.unavailable\_dates}"   Formatted date strings in the format "YYYY-MM-DD"   Disallows selecting specific dates, should be in the range between min-date and max-date if specified |
+| `include-days` *Array<enum>* | {"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"}   Dynamic "${data.include\_days}"   Default: all weekdays - ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]   Enables specific weekdays, for example to enable only working days Monday through Friday and disallow selecting Saturdays and Sundays |
+| `min-days _int_` | Dynamic "${data.min\_days}"   Available only in 'range' mode to set the minimum number of days between start and end dates |
+| `max-days _int_` | Dynamic "${data.max\_days}"   Available only in 'range' mode to set the maximum number of days between start and end dates |
+| `on-select-action _action_` | Only 'data\_exchange' is supported.   Payload that is sent to a data channel business endpoint is a string in "YYYY-MM-DD" format for 'single' mode or dictionary in {"start-date":"YYYY-MM-DD","end-date":"YYYY-MM-DD"} format for 'range' mode |
+| `init-value _string_` | Dynamic "${data.init-value}"   When 'mode' is set to 'range' the value should be in '{"start-date": String, "end-date": String}' format   Only available when component is outside Form component |
+| `error-message _string_` | Dynamic "${data.error-message}"   When 'mode' is set to 'range' the value should be in '{"start-date": String, "end-date": String}' format   Only available when component is outside Form component |
 
 ### Examples
 
@@ -3430,13 +3412,13 @@ Managed by the business. Learn more [Learn more](https://developers.facebook.com
 
 | Parameter | Description |
 | --- | --- |
-| `type _string_` **(required)** | “Image” |
-| `src _string_` **(required)** | Base64 of an image.   Dynamic “${data.src}” |
-| `width _int_` | Dynamic “${data.width}” |
-| `height _int_` | Dynamic “${data.height}” |
+| `type _string_` **(required)** | "Image" |
+| `src _string_` **(required)** | Base64 of an image.   Dynamic "${data.src}" |
+| `width _int_` | Dynamic "${data.width}" |
+| `height _int_` | Dynamic "${data.height}" |
 | `scale-type _string_` | `cover` or `contain`  Default value: `contain` |
-| `aspect-ratio` *Number* | Default value: 1   Dynamic “${data.aspect\_ratio}” |
-| `alt-text _string_` | Alternative Text is for the accessibility feature, for example Talkback and Voice over   Dynamic “${data.alt\_text}” |
+| `aspect-ratio` *Number* | Default value: 1   Dynamic "${data.aspect\_ratio}" |
+| `alt-text _string_` | Alternative Text is for the accessibility feature, for example Talkback and Voice over   Dynamic "${data.alt\_text}" |
 
 ### Image scale types
 
@@ -3549,10 +3531,10 @@ Supported starting with Flow JSON version 4.0
 
 | Parameter | Description |
 | --- | --- |
-| `type _string_` **(required)** | “If” |
+| `type _string_` **(required)** | "If" |
 | `condition _string_` **(required)** | Boolean expression, it allows both dynamic and static data. Check section below for more info. |
-| `then` **(required)** *Array of Components* | The components that will be rendered when `condition` is `true`. Allowed components: “TextHeading”, “TextSubheading”, “TextBody”, “TextCaption”, “CheckboxGroup”, “DatePicker”, “Dropdown”, “EmbeddedLink”, “Footer”, “Image”, “OptIn”, “RadioButtonsGroup”, “Switch”, “TextArea”, “TextInput” and “If”\*. It is allowed to nest up to 3 “If” components.  From V7.1 ChipsSelector is also allowed together with all the previous listed components. |
-| `else` *Array of Components* | The components that will be rendered when `condition` is `false`. Allowed components: “TextHeading”, “TextSubheading”, “TextBody”, “TextCaption”, “CheckboxGroup”, “DatePicker”, “Dropdown”, “EmbeddedLink”, “Footer”, “Image”, “OptIn”, “RadioButtonsGroup”, “Switch”, “TextArea”, “TextInput” and “If”\*. It is allowed to nest up to 3 “If” components.  From V7.1 ChipsSelector is also allowed together with all the previous listed components. |
+| `then` **(required)** *Array of Components* | The components that will be rendered when `condition` is `true`. Allowed components: "TextHeading", "TextSubheading", "TextBody", "TextCaption", "CheckboxGroup", "DatePicker", "Dropdown", "EmbeddedLink", "Footer", "Image", "OptIn", "RadioButtonsGroup", "Switch", "TextArea", "TextInput" and "If"\*. It is allowed to nest up to 3 "If" components.  From V7.1 ChipsSelector is also allowed together with all the previous listed components. |
+| `else` *Array of Components* | The components that will be rendered when `condition` is `false`. Allowed components: "TextHeading", "TextSubheading", "TextBody", "TextCaption", "CheckboxGroup", "DatePicker", "Dropdown", "EmbeddedLink", "Footer", "Image", "OptIn", "RadioButtonsGroup", "Switch", "TextArea", "TextInput" and "If"\*. It is allowed to nest up to 3 "If" components.  From V7.1 ChipsSelector is also allowed together with all the previous listed components. |
 
 ### Supported operators
 
@@ -3713,11 +3695,11 @@ The table below show examples of limitations and validation errors that will be 
 
 | Scenario | Validation error shown |
 | --- | --- |
-| * `Given` there is a footer component inside `then` * `And` `else` is not defined * `When` validating the flow * `Then` it should show a validation error | Missing Footer inside one of the if branches. Branch “else” should exist and contain one Footer. |
+| * `Given` there is a footer component inside `then` * `And` `else` is not defined * `When` validating the flow * `Then` it should show a validation error | Missing Footer inside one of the if branches. Branch "else" should exist and contain one Footer. |
 | * `Given` there is a footer component inside `then` * `And` there is no footer inside `else` * `When` validating the flow * `Then` it should show a validation error | Missing Footer inside one of the if branches. |
 | * `Given` there is no footer component inside `then` * `And` there is a footer inside `else` * `When` validating the flow * `Then` it should show a validation error | Missing Footer inside one of the if branches. |
 | * `Given` there is a footer component inside `then` * `And` there is a footer component inside `else` * `And` there is a footer component outside the `If` * `When` validating the flow * `Then` it should show a validation error | You can only have 1 Footer component per screen. |
-| * `Given` there is an empty array defined for `then` * `When` validating the flow * `Then` it should show a validation error | Invalid value found at: “$root/screens/path\_to\_your\_component/then” due to empty array. It should contain at least one component. |
+| * `Given` there is an empty array defined for `then` * `When` validating the flow * `Then` it should show a validation error | Invalid value found at: "$root/screens/path\_to\_your\_component/then" due to empty array. It should contain at least one component. |
 
 ## Switch
 
@@ -3725,9 +3707,9 @@ Supported starting with Flow JSON version 4.0
 
 | Parameter | Description |
 | --- | --- |
-| `type _string_` **(required)** | “Switch” |
+| `type _string_` **(required)** | "Switch" |
 | `value _string_` **(required)** | A variable that will have its value evaluated during runtime. Example   * `${data.animal}` |
-| `cases` **(required)** *Map of Array of Components* | Each property is a key (string) that maps to an Array of Components. When the `value` matches the key, it renders its array of components. Allowed components: “TextHeading”, “TextSubheading”, “TextBody”, “TextCaption”, “CheckboxGroup”, “DatePicker”, “Dropdown”, “EmbeddedLink”, “Footer”, “Image”, “OptIn”, “RadioButtonsGroup”, “TextArea”, “TextInput”.  From V7.1 ChipsSelector is also allowed together with all the previous listed components. |
+| `cases` **(required)** *Map of Array of Components* | Each property is a key (string) that maps to an Array of Components. When the `value` matches the key, it renders its array of components. Allowed components: "TextHeading", "TextSubheading", "TextBody", "TextCaption", "CheckboxGroup", "DatePicker", "Dropdown", "EmbeddedLink", "Footer", "Image", "OptIn", "RadioButtonsGroup", "TextArea", "TextInput".  From V7.1 ChipsSelector is also allowed together with all the previous listed components. |
 
 ### Example
 
@@ -3869,7 +3851,7 @@ The table below show examples of limitations and validation errors that will be 
 
 | Scenario | Validation error shown |
 | --- | --- |
-| * `Given` there is a `Switch` component * `And` its `cases` property is empty * `When` validating the flow * `Then` it should show a validation error | Invalid empty property found at: “$root/screens/path\_to\_your\_component/cases”. |
+| * `Given` there is a `Switch` component * `And` its `cases` property is empty * `When` validating the flow * `Then` it should show a validation error | Invalid empty property found at: "$root/screens/path\_to\_your\_component/cases". |
 
 ## Media upload
 
@@ -3883,12 +3865,12 @@ The NavigationList component allows users to navigate effectively between differ
 
 | Parameter | Description |
 | --- | --- |
-| `type _string_` **(required)** | “NavigationList” |
+| `type _string_` **(required)** | "NavigationList" |
 | `name _string_` **(required)** |  |
-| `list-items` **(required)** *array* | Dynamic “${data.list\_items}” |
-| `label _string_` | Dynamic “${data.label}” |
-| `description _string_` | Dynamic “${data.description}” |
-| `media-size _enum_` | {‘regular’,’large’}   Default: ‘regular’   Dynamic “${data.media-size}” |
+| `list-items` **(required)** *array* | Dynamic "${data.list\_items}" |
+| `label _string_` | Dynamic "${data.label}" |
+| `description _string_` | Dynamic "${data.description}" |
+| `media-size _enum_` | {'regular','large'}   Default: 'regular'   Dynamic "${data.media-size}" |
 | `on-click-action` *action* | `data_exchange` and `navigate` are supported. |
 
 Each item in the list of items supports the following properties:
@@ -4267,18 +4249,18 @@ Supported starting with Flow JSON version 6.3
 
 | Parameter | Description |
 | --- | --- |
-| `type _string_` **(required)** | “ChipsSelector” |
-| `data-source _array_` **(required)** | Dynamic “${data.data\_source}”  * *Array< id: String, title: String, enabled: Boolean, on-select-action: {name: 'update\_data', payload: {...}}, on-unselect-action: {name: 'update\_data', payload: {...}} >* |
+| `type _string_` **(required)** | "ChipsSelector" |
+| `data-source _array_` **(required)** | Dynamic "${data.data\_source}"  * *Array< id: String, title: String, enabled: Boolean, on-select-action: {name: 'update\_data', payload: {...}​}, on-unselect-action: {name: 'update\_data', payload: {...}​} >* |
 | `name _string_` **(required)** |  |
-| `min-selected-items _int_` | Dynamic “${data.min\_selected\_items}” |
-| `max-selected-items _int_` | Dynamic “${data.max\_selected\_items}” |
-| `enabled _boolean_` | Dynamic “${data.is\_enabled}” |
-| `label _string_` **(required)** | Dynamic “${data.label}” |
-| `required _boolean_` | Dynamic “${data.is\_required}” |
-| `visible _boolean_` | Dynamic “${data.is\_visible}”   Default: True |
-| `description _string_` | Dynamic “${data.description}” |
-| `init-value _array<string>` | Dynamic “${data.init-value}”   Only available when component is outside Form component |
-| `error-message _string_` | Dynamic “${data.error-message}”   Only available when component is outside Form component |
+| `min-selected-items _int_` | Dynamic "${data.min\_selected\_items}" |
+| `max-selected-items _int_` | Dynamic "${data.max\_selected\_items}" |
+| `enabled _boolean_` | Dynamic "${data.is\_enabled}" |
+| `label _string_` **(required)** | Dynamic "${data.label}" |
+| `required _boolean_` | Dynamic "${data.is\_required}" |
+| `visible _boolean_` | Dynamic "${data.is\_visible}"   Default: True |
+| `description _string_` | Dynamic "${data.description}" |
+| `init-value _array<string>` | Dynamic "${data.init-value}"   Only available when component is outside Form component |
+| `error-message _string_` | Dynamic "${data.error-message}"   Only available when component is outside Form component |
 
 If `on-unselect-action` is not added, `on-select-action` will continue to handle both selection and unselection events. However, if `on-unselect-action` is defined, it will exclusively handle unselection, while `on-select-action` will be used solely for selection.
 
@@ -4430,10 +4412,10 @@ Supported from Flows v7.1+.
 
 | Parameter | Description |
 | --- | --- |
-| `type _string_` **(required)** | “ImageCarousel” |
-| `images` **(required)** *array* | Dynamic “${data.images}” |
-| `aspect-ratio _string_` | Either “4:3” or “16:9”. Default: “4:3”. |
-| `scale-type _string_` | Either “contain” or “cover”. Default: “contain”. |
+| `type _string_` **(required)** | "ImageCarousel" |
+| `images` **(required)** *array* | Dynamic "${data.images}" |
+| `aspect-ratio _string_` | Either "4:3" or "16:9". Default: "4:3". |
+| `scale-type _string_` | Either "contain" or "cover". Default: "contain". |
 
 Each item in the list of images supports the following properties:
 
@@ -5057,17 +5039,15 @@ Managed by the business. Learn more [Learn more](https://developers.facebook.com
 Provide `"on-select-action"` to the `DatePicker` component so you can execute the call to the business server. In the `payload`, you can pass any data you want to the business server to understand the type of request.
 
 ```
-```
 {  
-   "on-select-action":{  
-      "name":"data_exchange",  
-      "payload":{  
-         "date":"${form.date}",  
-         "component_action":"update_date"  
-      }  
-   }  
+   "on-select-action":{  
+      "name":"data_exchange",  
+      "payload":{  
+         "date":"${form.date}",  
+         "component_action":"update_date"  
+      }  
+   }  
 }
-```
 ```
 
 Flow JSON
@@ -5198,7 +5178,7 @@ Managed by the business. Learn more [Learn more](https://developers.facebook.com
 
 In this example, send the value of the field `date` to the action payload, and also add some static data `"component_action": "update_date"` to help the server recognize the type of request. There is no strict format here; you can choose whatever works for your case.
 
-Now when you try to select a date, a `data_exchange` request will be executed. The server may return the data that can change the UI. For now, your Flow doesn’t expect or use any data from the server. Fix it by first defining the data model that you expect for a screen.
+Now when you try to select a date, a `data_exchange` request will be executed. The server may return the data that can change the UI. For now, your Flow doesn't expect or use any data from the server. Fix it by first defining the data model that you expect for a screen.
 
 ## Step 4 - Define a server data model
 
@@ -5207,32 +5187,28 @@ Declare a `data` property for the screen outlining the data that you expect to r
 It should have the following model. The `__example__` field is mock data used to display the data within the web preview.
 
 ```
-```
 {  
-    "available_slots": {  
-        "type": "array",  
-        "items": {  
-            "type": "object",  
-            "properties": { "id": {"type": "string"}, "title": {"type": "string"} }  
-        },  
-        "__example__": [ {"id": "1", "title": "08:00"}, {"id": "2", "title": "09:00"} ]  
-    }  
+    "available_slots": {  
+        "type": "array",  
+        "items": {  
+            "type": "object",  
+            "properties": { "id": {"type": "string"}, "title": {"type": "string"} }  
+        },  
+        "__example__": [ {"id": "1", "title": "08:00"}, {"id": "2", "title": "09:00"} ]  
+    }  
 }
-```
 ```
 
 It means that the expected payload to be returned from server can look like the following:
 
 ```
-```
 {  
-    "version": "3.0",  
-    "screen": "BOOKING",  
-    "data": {  
-       "available_slots": [ {"id": "1", "title": "08:00"}, {"id": "2", "title": "09:00"} ]  
-    }  
+    "version": "3.0",  
+    "screen": "BOOKING",  
+    "data": {  
+       "available_slots": [ {"id": "1", "title": "08:00"}, {"id": "2", "title": "09:00"} ]  
+    }  
 }
-```
 ```
 
 So your Flow JSON now should look like the following:
@@ -5365,7 +5341,7 @@ Managed by the business. Learn more [Learn more](https://developers.facebook.com
 
 ## Step 5 - Control visibility of the component
 
-Now, when you select a date in `DatePicker`, the application will send a request to the business server to get available time slots. However, you don’t want a `Dropdown` to be visible until there is data to display. How can you hide it?
+Now, when you select a date in `DatePicker`, the application will send a request to the business server to get available time slots. However, you don't want a `Dropdown` to be visible until there is data to display. How can you hide it?
 
 For this purpose, you can use the `visible` attribute on `Dropdown` and connect it with server data. The business server can control the visibility of the component based on a set condition.
 
@@ -5377,7 +5353,7 @@ So, you need to make the following changes:
 
 **Update your code:**
 
-*NOTE: The current version of the playground doesn’t support endpoint requests*
+*NOTE: The current version of the playground doesn't support endpoint requests*
 
 Flow JSON
 
@@ -5497,4 +5473,4 @@ Managed by the business. Learn more [Learn more](https://developers.facebook.com
 
 ## Summary
 
-You now have a dynamic component set up. If you’re facing any challenges, you can ask a question on the developer forum.
+You now have a dynamic component set up. If you're facing any challenges, you can ask a question on the developer forum.

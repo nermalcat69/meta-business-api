@@ -7,9 +7,9 @@ source_url: https://developers.facebook.com/documentation/javascript/reference
 
 Updated: May 23, 2018
 
-In this tutorial, you’ll learn how to incorporate the [Facebook SDK for JavaScript](https://developers.facebook.com/documentation/javascript/quickstart) with other JavaScript modules using RequireJS. Ordinarily, the JavaScript SDK isn’t compatible with the [Asynchronous Module Definition⁠](http://requirejs.org/docs/whyamd.html) (AMD) design pattern, so this tutorial covers writing a shim to provide the FB object created by the SDK.
+In this tutorial, you'll learn how to incorporate the [Facebook SDK for JavaScript](https://developers.facebook.com/documentation/javascript/quickstart) with other JavaScript modules using RequireJS. Ordinarily, the JavaScript SDK isn't compatible with the [Asynchronous Module Definition⁠](http://requirejs.org/docs/whyamd.html) (AMD) design pattern, so this tutorial covers writing a shim to provide the FB object created by the SDK.
 
-This tutorial assumes you’re familiar with RequireJS and JavaScript modules. [Find out more about RequireJS⁠](http://requirejs.org/).
+This tutorial assumes you're familiar with RequireJS and JavaScript modules. [Find out more about RequireJS⁠](http://requirejs.org/).
 
 ## Configuration
 

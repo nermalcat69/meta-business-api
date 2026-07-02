@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/rest-api/overview
 
 Updated: Mar 16, 2026
 
-The Meta REST API is a modern, flexible, and developer-friendly way to build and integrate with Meta’s diverse platforms.
+The Meta REST API is a modern, flexible, and developer-friendly way to build and integrate with Meta's diverse platforms.
 
 ## What is the Meta REST API?
 
@@ -17,13 +17,13 @@ Built on the OpenAPI standard, this framework provides a consistent, predictable
 
 ## Why use the Meta REST API?
 
-Meta’s ecosystem has expanded beyond the social graph into messaging, virtual reality, AI, and more. To support this growth and improve your developer experience, the REST API framework offers:
+Meta's ecosystem has expanded beyond the social graph into messaging, virtual reality, AI, and more. To support this growth and improve your developer experience, the REST API framework offers:
 
 * **Contract-driven approach** for enhanced schema stability and better documentation
 * **Alignment with industry standards** for easier adoption and interoperability
 * **Simplified integration** to accelerate your development cycles
 
-The framework is already powering new Meta products, including the [Llama API⁠](https://www.llama.com/products/llama-api/) for large language models and [Fediverse⁠](https://engineering.fb.com/2024/03/21/networking-traffic/threads-has-entered-the-fediverse/), expanding Meta’s capabilities in AI.
+The framework is already powering new Meta products, including the [Llama API⁠](https://www.llama.com/products/llama-api/) for large language models and [Fediverse⁠](https://engineering.fb.com/2024/03/21/networking-traffic/threads-has-entered-the-fediverse/), expanding Meta's capabilities in AI.
 
 ## What to expect
 

@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/business-messaging/wha
 
 Updated: May 21, 2026
 
-“No Storage” is a custom configuration of Cloud API [local storage](https://developers.facebook.com/documentation/business-messaging/whatsapp/local-storage), where the data in-transit is kept for up to an hour in Meta data centers and the data is not persisted at rest (that is to say, not in Meta data centers nor in AWS In-Country stores).
+"No Storage" is a custom configuration of Cloud API [local storage](https://developers.facebook.com/documentation/business-messaging/whatsapp/local-storage), where the data in-transit is kept for up to an hour in Meta data centers and the data is not persisted at rest (that is to say, not in Meta data centers nor in AWS In-Country stores).
 
 * Outgoing/incoming messages are stored for a maximum of 1 hour in Meta data centers.
 * Outgoing/incoming media blobs are stored for a maximum of 1 hour in Meta data centers.
@@ -30,18 +30,16 @@ When the No Storage feature is enabled, message content is not stored at rest fo
 Enable the feature before registration using the [Settings API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/settings-api#post-version-phone-number-id-settings).
 
 ```
-```
-curl 'https://graph.facebook.com/<API_VERSION>/<BUSINESS_PHONE_NUMBER_ID>/settings' \  
--H 'Content-Type: application/json' \  
--H 'Authorization: Bearer <ACCESS_TOKEN>' \  
--d '  
+curl 'https://graph.facebook.com/<API_VERSION>/<BUSINESS_PHONE_NUMBER_ID>/settings' \  
+-H 'Content-Type: application/json' \  
+-H 'Authorization: Bearer <ACCESS_TOKEN>' \  
+-d '  
 {  
-  "storage_configuration": {  
-    "status": "NO_STORAGE_ENABLED",  
-    "retention_minutes": 60  
-  }  
+  "storage_configuration": {  
+    "status": "NO_STORAGE_ENABLED",  
+    "retention_minutes": 60  
+  }  
 }'
-```
 ```
 
 Currently, only the `60` value is allowed for the `retention_minutes` parameter, as it is the only retention duration we are supporting.
@@ -51,18 +49,16 @@ Currently, only the `60` value is allowed for the `retention_minutes` parameter,
 Enable the feature within the [Register API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/register-api#post-version-phone-number-id-register) registration request.
 
 ```
-```
-curl 'https://graph.facebook.com/<API_VERSION>/<BUSINESS_PHONE_NUMBER_ID>/settings' \  
--H 'Content-Type: application/json' \  
--H 'Authorization: Bearer <ACCESS_TOKEN>' \  
--d '  
+curl 'https://graph.facebook.com/<API_VERSION>/<BUSINESS_PHONE_NUMBER_ID>/settings' \  
+-H 'Content-Type: application/json' \  
+-H 'Authorization: Bearer <ACCESS_TOKEN>' \  
+-d '  
 {  
-  "messaging_product": "whatsapp",  
-  "pin": "123456",  
-  "tier": "test",  
-  "meta_store_retention_minutes": 60  
+  "messaging_product": "whatsapp",  
+  "pin": "123456",  
+  "tier": "test",  
+  "meta_store_retention_minutes": 60  
 }'
-```
 ```
 
 * Currently only the 60 value is allowed for the meta\_store\_retention\_minutes parameter as it is the only retention duration we are supporting.
@@ -75,10 +71,8 @@ To disable No Storage, you must de-register the business phone number using the 
 ### Example deregister syntax
 
 ```
-```
-curl -X POST 'https://graph.facebook.com/<API_VERSION>/<BUSINESS_PHONE_NUMBER_ID>/deregister' \  
--H 'Authorization: Bearer <ACCESS_TOKEN>'
-```
+curl -X POST 'https://graph.facebook.com/<API_VERSION>/<BUSINESS_PHONE_NUMBER_ID>/deregister' \  
+-H 'Authorization: Bearer <ACCESS_TOKEN>'
 ```
 
 ## Override outgoing media TTL
@@ -88,17 +82,15 @@ The default 1-hour TTL for No Storage-enabled business phone numbers also applie
 ### Example syntax
 
 ```
-```
-curl 'https://graph.facebook.com/<API_VERSION>/<BUSINESS_PHONE_NUMBER_ID>/media' \  
--H 'Content-Type: application/json' \  
--H 'Authorization: Bearer <ACCESS_TOKEN>' \  
--d '  
+curl 'https://graph.facebook.com/<API_VERSION>/<BUSINESS_PHONE_NUMBER_ID>/media' \  
+-H 'Content-Type: application/json' \  
+-H 'Authorization: Bearer <ACCESS_TOKEN>' \  
+-d '  
 {  
-  "messaging_product": "whatsapp",  
-  "file": "file=<FILE_NAME>;type=<FILE_MIME_TYPE>",  
-  "ttl_minutes": "120"  
+  "messaging_product": "whatsapp",  
+  "file": "file=<FILE_NAME>;type=<FILE_MIME_TYPE>",  
+  "ttl_minutes": "120"  
 }'
-```
 ```
 
 * `ttl_minutes` range is from 1 hour (`60`) to 30 days (`43200`).
@@ -113,38 +105,36 @@ In the case of WhatsApp client decryption failures, we will stop attempting to d
 #### Example payload
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [{  
-    "id": "102290129340398",  
-    "changes": [{  
-      "field": "messages",  
-      "value": {  
-        "messaging_product": "whatsapp",  
-        "metadata": {  
-          "display_phone_number": "15550783881",  
-          "phone_number_id": "106540352242922"  
-        },  
-        "statuses": [{  
-          "id": "wamid.HBgMNDQ3ODI1MDYzOTQxFQIAERgSN0MzMTg0Nzk2RkMwOEQ5NTQ2AA==",  
-          "status": "failed",  
-          "timestamp": "1712597457",  
-          "recipient_id": "16505551234",  
-          "errors": [{  
-              "code": 131036,  
-              "title": "Message failed to be delivered on at least one of the user's device",  
-              "message": "Message failed to be delivered on at least one of the user's device",  
-              "error_data": {  
-                "details": "Message payload not found"  
-              }  
-            }]  
-        }]  
-      }  
-    }]  
-  }]  
+  "object": "whatsapp_business_account",  
+  "entry": [{  
+    "id": "102290129340398",  
+    "changes": [{  
+      "field": "messages",  
+      "value": {  
+        "messaging_product": "whatsapp",  
+        "metadata": {  
+          "display_phone_number": "15550783881",  
+          "phone_number_id": "106540352242922"  
+        },  
+        "statuses": [{  
+          "id": "wamid.HBgMNDQ3ODI1MDYzOTQxFQIAERgSN0MzMTg0Nzk2RkMwOEQ5NTQ2AA==",  
+          "status": "failed",  
+          "timestamp": "1712597457",  
+          "recipient_id": "16505551234",  
+          "errors": [{  
+              "code": 131036,  
+              "title": "Message failed to be delivered on at least one of the user's device",  
+              "message": "Message failed to be delivered on at least one of the user's device",  
+              "error_data": {  
+                "details": "Message payload not found"  
+              }  
+            }]  
+        }]  
+      }  
+    }]  
+  }]  
 }
-```
 ```
 
 Notes:
@@ -157,30 +147,28 @@ Notes:
 By default, Cloud API retries for up to 7 days to deliver incoming [messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/messages#incoming-messages) webhooks. For No Storage-enabled business phone numbers, if we fail to deliver an incoming message webhook, we will drop it and instead send an [errors messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/messages/errors) webhook with error code `131035`:
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [{  
-    "id": "102290129340398",  
-    "changes": [{  
-      "field": "messages",  
-      "value": {  
-        "messaging_product": "whatsapp",  
-        "metadata": {  
-          "display_phone_number": "15550783881",  
-          "phone_number_id": "106540352242922"  
-        },  
-        "errors": [{  
-            "code": 131035,  
-            "title": "Webhook could not be delivered within data retention limit",  
-            "message": "Webhook could not be delivered within data retention limit",  
-            "error_data": {  
-              "details": "Webhook could not be delivered within data retention limit"  
-            }  
-          }]  
-      }  
-    }]  
-  }]  
+  "object": "whatsapp_business_account",  
+  "entry": [{  
+    "id": "102290129340398",  
+    "changes": [{  
+      "field": "messages",  
+      "value": {  
+        "messaging_product": "whatsapp",  
+        "metadata": {  
+          "display_phone_number": "15550783881",  
+          "phone_number_id": "106540352242922"  
+        },  
+        "errors": [{  
+            "code": 131035,  
+            "title": "Webhook could not be delivered within data retention limit",  
+            "message": "Webhook could not be delivered within data retention limit",  
+            "error_data": {  
+              "details": "Webhook could not be delivered within data retention limit"  
+            }  
+          }]  
+      }  
+    }]  
+  }]  
 }
-```
 ```

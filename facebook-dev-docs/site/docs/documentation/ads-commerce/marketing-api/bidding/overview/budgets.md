@@ -13,7 +13,7 @@ In the Facebook ad auction, Facebook evaluates your `bid_strategy`, `bid_amount`
 
 Meta consolidated the Reach and Impressions optimizations into a single optimization.
 
-In the API, selecting the Reach optimization will return the value of “Impressions” in `optimization_goal` and with the advertiser’s frequency control setting.
+In the API, selecting the Reach optimization will return the value of "Impressions" in `optimization_goal` and with the advertiser's frequency control setting.
 
 Bidding and Optimization core concepts include:
 
@@ -21,14 +21,14 @@ Bidding and Optimization core concepts include:
 * [**Optimization Goals**](https://developers.facebook.com/documentation/ads-commerce/marketing-api/bidding/overview/budgets#opt) - Advertising goals you want to achieve when Facebook delivers your ads.
 * [**Budgets**](https://developers.facebook.com/documentation/ads-commerce/marketing-api/bidding/overview/budgets)
 * [**Pacing and Scheduling**](https://developers.facebook.com/documentation/ads-commerce/marketing-api/bidding/overview/pacing-and-scheduling) - How your ads budget is spent over time.
-* [**Campaign Budget Optimization**](https://developers.facebook.com/docs/marketing-api/bidding/guides/campaign-budget-optimization) - A way of optimizing the distribution of a campaign budget across your campaign’s ad sets.
+* [**Campaign Budget Optimization**](https://developers.facebook.com/docs/marketing-api/bidding/guides/campaign-budget-optimization) - A way of optimizing the distribution of a campaign budget across your campaign's ad sets.
 * [**Billing Events**](https://developers.facebook.com/documentation/ads-commerce/marketing-api/bidding/overview/billing-events) - Events you want to pay for such as impressions, clicks, or various actions.
 
 ## Bid setup
 
 When you choose your bid:
 
-* Set `bid_amount` to the maximum amount you’re willing to pay for your advertising objective.
+* Set `bid_amount` to the maximum amount you're willing to pay for your advertising objective.
 * Decide whether to optimize for return on ad spend or for the number of results.
 
 You can also set `objective` and `billing_event` but neither directly impacts `bid_amount` or your effective bid. If a `bid_amount` is set, your actual cost per result is usually around or less than `bid_amount`, depending on your [**Bid Strategies**](https://developers.facebook.com/documentation/ads-commerce/marketing-api/bidding/overview/bid-strategy).
@@ -47,7 +47,7 @@ However, to spend $10.00 **for each app install**, use these settings:
 
 ## Optimization goals
 
-Define advertising goals you want to achieve when Facebook delivers your ads. Facebook uses your [ad set](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-campaign)’s `optimization_goal` to decide which people get your ad. For example with `APP_INSTALLS`, Facebook delivers your ad to people who are more likely to install your app.
+Define advertising goals you want to achieve when Facebook delivers your ads. Facebook uses your [ad set](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-campaign)'s `optimization_goal` to decide which people get your ad. For example with `APP_INSTALLS`, Facebook delivers your ad to people who are more likely to install your app.
 
 `optimization_goal` defaults to a goal associated with your `objective`. For example, if `objective` is `APP_INSTALLS`, `optimization_goal` defaults to `APP_INSTALLS`.
 
@@ -82,6 +82,6 @@ Certain [campaign `objectives`](https://developers.facebook.com/documentation/ad
 
 The following answers address common questions about bidding and optimization goals.
 
-**What events does ‘POST\_ENGAGEMENT’ cover?**
+**What events does 'POST\_ENGAGEMENT' cover?**
 
 Most actions in an ad, including link clicks, app installs, video viewing over a certain period, tag photo, like, comment, share, and so on.

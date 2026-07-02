@@ -11,9 +11,9 @@ This document shows you how to programmatically add Private Replies to your mess
 
 ## How it works
 
-Private Replies allows your app user to send a single message to an Instagram user who commented on the app user’s Instagram professional account post, ads post, reel, or live story.
+Private Replies allows your app user to send a single message to an Instagram user who commented on the app user's Instagram professional account post, ads post, reel, or live story.
 
-When your webhook server receives a `comments` or `live_comments` event notification, you can use the comment ID to send a private reply directly to the Instagram user who published the comment. This reply will be delivered to the Instagram user’s **Inbox** folder, if the Instagram user follows the Instagram professional account, or to the Instagram user’s **Request** folder, if the Instagram user does not follow the account.
+When your webhook server receives a `comments` or `live_comments` event notification, you can use the comment ID to send a private reply directly to the Instagram user who published the comment. This reply will be delivered to the Instagram user's **Inbox** folder, if the Instagram user follows the Instagram professional account, or to the Instagram user's **Request** folder, if the Instagram user does not follow the account.
 
 Private replies can be sent within 7 days of when the comment was created, excepting Instagram Live for which you a private reply can only be sent during the live broadcast. The message will contain a link to the post that the Instagram user commented on.
 
@@ -62,21 +62,19 @@ cURLAndroid SDKObjective-CJava SDK
 ---
 
 ```
-curl -i -X POST "https://graph.facebook.com/<PAGE_ID>/messages  
-  ?recipient: { comment_id: <COMMENT_ID> }  
-  &message: { "text": "Thanks for reaching out, how can I help?" }  
-  &access_token=<PAGE_ACCESS_TOKEN>"
+curl -i -X POST "https://graph.facebook.com/<PAGE_ID>/messages  
+  ?recipient: { comment_id: <COMMENT_ID> }  
+  &message: { "text": "Thanks for reaching out, how can I help?" }  
+  &access_token=<PAGE_ACCESS_TOKEN>"
 ```
 
 On success, your app will receive the following response:
 
 ```
-```
 {  
-  "recipient_id": "526...",   // The Instagram-scoped ID  
-  "message_id": "aWdfZ..."    // The message ID for your private reply  
+  "recipient_id": "526...",   // The Instagram-scoped ID  
+  "message_id": "aWdfZ..."    // The message ID for your private reply  
 }
-```
 ```
 
 ## See also

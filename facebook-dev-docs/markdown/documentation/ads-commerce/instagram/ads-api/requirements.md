@@ -153,30 +153,28 @@ curl -G \
 Sample Response
 
 ```
-```
 {  
-  "interactive_components_spec": {  
-    "components": [  
-      {  
-        "position_spec": {  
-          "x": 0.5,  
-          "y": 0.5  
-        },  
-        "type": "PRODUCT_TAG",  
-        "product_tag_spec": {  
-          "product_id": "4382881195057752"  
-        }  
-      }  
-    ]  
-  },  
-  "id": "23862467608880374"  
+  "interactive_components_spec": {  
+    "components": [  
+      {  
+        "position_spec": {  
+          "x": 0.5,  
+          "y": 0.5  
+        },  
+        "type": "PRODUCT_TAG",  
+        "product_tag_spec": {  
+          "product_id": "4382881195057752"  
+        }  
+      }  
+    ]  
+  },  
+  "id": "23862467608880374"  
 }
-```
 ```
 
 ### Automated tagging for static ads
 
-This feature automatically tags best-matched products from the your product catalog when you create ads using single images or carousel images you’ve uploaded and applies the relevant product tags to ads.
+This feature automatically tags best-matched products from the your product catalog when you create ads using single images or carousel images you've uploaded and applies the relevant product tags to ads.
 
 The automated tagging ad system detects matches in two ways:
 
@@ -188,16 +186,14 @@ If product tags are specified in the `interactive_components_spec` parameter, th
 **Note:** This feature is enabled by default. Set `enroll_status` to `opt_out` in the `interactive_components_spec` parameter to opt out of the feature per product item.
 
 ```
-```
-"interactive_components_spec": {  
-  "components": [  
-    {  
-      "type": "product_tag",  
-      "enroll_status": "opt_out"  
-    }  
-  ]  
+"interactive_components_spec": {  
+  "components": [  
+    {  
+      "type": "product_tag",  
+      "enroll_status": "opt_out"  
+    }  
+  ]  
 }
-```
 ```
 
 **Note:** You cannot set `enroll_status` and `product_tag_spec` at the same time; it will return an error.

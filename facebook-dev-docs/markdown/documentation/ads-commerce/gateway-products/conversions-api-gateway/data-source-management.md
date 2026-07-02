@@ -11,9 +11,9 @@ Updated: Feb 2, 2025
 
 ### Monitoring for a Host Account
 
-#### Check an account’s status
+#### Check an account's status
 
-If your system hosts multiple accounts, you can check any account’s connection status in the **Account status** column in the **Overview** section. An Active status indicates that the account’s status is normal. A Deactivated status means the account is deactivated and any pixels connected to this account are not sending events to the Conversions API.
+If your system hosts multiple accounts, you can check any account's connection status in the **Account status** column in the **Overview** section. An Active status indicates that the account's status is normal. A Deactivated status means the account is deactivated and any pixels connected to this account are not sending events to the Conversions API.
 
 ![Manage accounts screen showing the Account status column with Test Client 1 marked Active and Test Client 2 Deactivated.](https://scontent.fdel27-7.fna.fbcdn.net/v/t39.2365-6/457156552_1198778867928772_8826596737965316357_n.png?_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=nXrIJlkYUSYQ7kNvwGknjOb&_nc_oc=AdrcOFH-JgXtMC4jJ9QhOhu-NAfxl_tSLRS4_u-fJbvJs0BDr2qNoRAWidKHfqA0k7wZDsDMFlrsmlelkgn_kN3Y&_nc_zt=14&_nc_ht=scontent.fdel27-7.fna&_nc_gid=GgkD3SOGpaViX0Ym8AChEg&_nc_ss=7b289&oh=00_AQDurRxdh03jGyGLqjlRqf2nHxwtFxe-y6n2-W3eZTtuWA&oe=6A60846F)
 
@@ -33,7 +33,7 @@ Clicking on **View details** will show more information about the event. Use the
 
 #### Check the Event Match Quality (EMQ)
 
-In Meta Events Manager, select the dataset associated with Meta Pixel that is sending the event you want to monitor. The Event Match Quality (EMQ) will then be shown. An EMQ designation of “Good” or “Great” is considered to be optimal. Select **View Details** and then the **Event Matching** tab for more information on the customer information parameters that are received through the server events, and refer to the [Troubleshooting steps](https://developers.facebook.com/documentation/ads-commerce/gateway-products/troubleshooting-guide) on ways of improving EMQ.
+In Meta Events Manager, select the dataset associated with Meta Pixel that is sending the event you want to monitor. The Event Match Quality (EMQ) will then be shown. An EMQ designation of "Good" or "Great" is considered to be optimal. Select **View Details** and then the **Event Matching** tab for more information on the customer information parameters that are received through the server events, and refer to the [Troubleshooting steps](https://developers.facebook.com/documentation/ads-commerce/gateway-products/troubleshooting-guide) on ways of improving EMQ.
 
 ![Events Manager Event quality view showing an Event Match Quality score of 6.6/10 with recommendations and shared parameter coverage.](https://scontent.fdel27-7.fna.fbcdn.net/v/t39.2365-6/475755312_3933604320219855_8047919449733439077_n.png?_nc_cat=105&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=2RN_rsWlLjwQ7kNvwGB5Kgp&_nc_oc=AdqQtbifMW28V-Iq_c-boz6Dz5SQ-k6AGDw3o18AZ0UFEgwEANABcUZbZsQiVH-_tPmVNxNh3g8gtMlEdbrHxn4o&_nc_zt=14&_nc_ht=scontent.fdel27-7.fna&_nc_gid=GgkD3SOGpaViX0Ym8AChEg&_nc_ss=7b289&oh=00_AQAdtSIREF5eE7HsOukiDsHQmTZ3ihFHC9bA2mzK7E8a4g&oe=6A606AC8)
 
@@ -45,7 +45,7 @@ In the Conversions API Gateway UI, check the volume of events received from the 
 
 #### Check the Meta Pixel connection to the Conversions API Gateway (troubleshooting step)
 
-Verify in your browser’s developer tools that the Meta Pixel is effectively transmitting the user events to the Conversions API Gateway through a successful call to `https://<Conversions API Gateway Endpoint>/events`.
+Verify in your browser's developer tools that the Meta Pixel is effectively transmitting the user events to the Conversions API Gateway through a successful call to `https://<Conversions API Gateway Endpoint>/events`.
 
 ## See Also
 

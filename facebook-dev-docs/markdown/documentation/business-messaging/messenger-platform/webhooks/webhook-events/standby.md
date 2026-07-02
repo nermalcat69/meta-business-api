@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/business-messaging/mes
 
 Updated: Oct 8, 2024
 
-This event will be sent to your webhook when a user provides feedback on a message on Messenger. Users provide feedback by clicking the “thumbs up”/”thumbs down” buttons or by pressing the “Good response”/”Bad response” buttons. You can subscribe to this callback by selecting the `response_feedback` field when setting up your webhook.
+This event will be sent to your webhook when a user provides feedback on a message on Messenger. Users provide feedback by clicking the "thumbs up"/"thumbs down" buttons or by pressing the "Good response"/"Bad response" buttons. You can subscribe to this callback by selecting the `response_feedback` field when setting up your webhook.
 
 By subscribing to the `response_feedback` field for a particular page, all messages sent by your app on behalf of that page will have the response feedback options in the message thread. If you do not want those options in the thread, you can unsubscribe from the webhook field.
 

@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/conversio
 
 Updated: Jun 28, 2026
 
-For optimal ad performance, we recommend that advertisers implement the Conversions API alongside their Meta Pixel. We call this a “redundant setup” and detail more about this recommended approach [here](https://developers.facebook.com/documentation/ads-commerce/conversions-api/guides/end-to-end-implementation#pick-your-integration-type).
+For optimal ad performance, we recommend that advertisers implement the Conversions API alongside their Meta Pixel. We call this a "redundant setup" and detail more about this recommended approach [here](https://developers.facebook.com/documentation/ads-commerce/conversions-api/guides/end-to-end-implementation#pick-your-integration-type).
 
 When advertisers use a redundant setup, they must set up a deduplication method to ensure that the ad delivery system is able to differentiate between distinct and overlapping events. This document describes multiple deduplication method options to help Facebook deduplicate your events.
 
@@ -29,8 +29,8 @@ For this approach, the `event_id` parameter is added to your events from both th
 
 We determine if events are identical based on their **ID** and **name**. So, for an event to be deduplicated:
 
-* In corresponding events, a Meta Pixel’s `eventID` must match the Conversion API’s `event_id`.
-* In corresponding events, a Meta Pixel’s `event` must match the Conversion API’s `event_name`.
+* In corresponding events, a Meta Pixel's `eventID` must match the Conversion API's `event_id`.
+* In corresponding events, a Meta Pixel's `event` must match the Conversion API's `event_name`.
 
 Once the events are received, we employ a number of strategies to deduplicate between the events which may help improve optimization and measurement. If server and browser events do not differ meaningfully in their content, we generally prefer the event that is received first.
 
@@ -82,9 +82,7 @@ For better matching, we need accurate information from your events coming throug
   * An image Pixel tag with the `eid` parameter
 
     ```
-    ```
-    <img src="https://www.facebook.com/tr?id=PIXEL_ID&ev=Purchase&eid=EVENT_ID"/>
-    ```
+    <img src="https://www.facebook.com/tr?id=PIXEL_ID&ev=Purchase&eid=EVENT_ID"/>
     ```If the event you are sharing does not contain parameters such as value and currency, you can set it up as follows:
 
   ```

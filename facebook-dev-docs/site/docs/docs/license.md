@@ -75,7 +75,7 @@ License data is provided as a CSV file. The file can have any name. There are tw
 | Postal\_Code | No | string | Postal code. | Max 12 chars | 94016 |
 | Phone\_Numbers | At least one must be provided: Phone\_Numbers, Email\_Addresses, or Website\_URLs. | string | Phone numbers registered on the license. | Semicolon-delimited; E.164 format; max 16 chars each (includes + prefix) | +15551234567;+15559876543 |
 | Email\_Addresses | At least one must be provided: Phone\_Numbers, Email\_Addresses, or Website\_URLs. | string | Email addresses registered on the license. | Semicolon-delimited; max 254 chars each | jane.doe@gmail.com;info@firm.com |
-| Website\_URLs | At least one must be provided: Phone\_Numbers, Email\_Addresses, or Website\_URLs. | string | Websites registered on the license. Must be prepended with “http://” or “https://”. | Semicolon-delimited; max 2000 chars each | https://www.example.com;https://www.example2.com |
+| Website\_URLs | At least one must be provided: Phone\_Numbers, Email\_Addresses, or Website\_URLs. | string | Websites registered on the license. Must be prepended with "http://" or "https://". | Semicolon-delimited; max 2000 chars each | https://www.example.com;https://www.example2.com |
 
 To prevent impersonation, fraud, and abuse on Meta's advertising platforms, a connection check is essential. The uploaded financial license data must provide at least one of the following for each license: phone numbers, email addresses, or website URLs to perform this check. This ensures that the advertiser attempting to advertise is using a license connected to the entity in the verification.
 

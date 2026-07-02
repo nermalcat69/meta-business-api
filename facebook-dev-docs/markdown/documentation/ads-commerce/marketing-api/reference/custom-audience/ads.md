@@ -7,11 +7,11 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/marketing
 
 Updated: Dec 19, 2025
 
-Beginning September 2, 2025, we will start to roll out more proactive restrictions on custom audiences that may suggest information not permitted under our terms. For example, any custom audience or lookalike audience suggesting specific health conditions (e.g., “arthritis”, “diabetes”) or financial status (e.g., “credit score”, “high income”) will be flagged and prevented from being used to run ad campaigns.
+Beginning September 2, 2025, we will start to roll out more proactive restrictions on custom audiences that may suggest information not permitted under our terms. For example, any custom audience or lookalike audience suggesting specific health conditions (e.g., "arthritis", "diabetes") or financial status (e.g., "credit score", "high income") will be flagged and prevented from being used to run ad campaigns.
 
 **What these restrictions mean for your campaigns:**
 
-* You won’t be able to use flagged custom audiences when creating new campaigns.
+* You won't be able to use flagged custom audiences when creating new campaigns.
 * If you have an active campaign using flagged custom audiences, you should edit or pause it and choose a different audience to avoid performance and delivery issues.
 
 **For API developers:**
@@ -33,67 +33,61 @@ If one or more custom or lookalike audience is flagged with an `operation_status
 Attempting to edit a flagged custom audience without changing the custom audience fields listed in the `fields_violating_integrity_policy` field will result in an error.
 
 ```
-```
 {  
-  "error": {  
-    "message": "Invalid parameter",  
-    "code": 100,  
-    "error_subcode": 1713231,  
-    "error_user_title": "Update Restricted Fields and Rule",  
-    "error_user_msg": "This custom audience has integrity restrictions. To continue, you must update the restricted fields and the rule in your current edit",  
-  },  
+  "error": {  
+    "message": "Invalid parameter",  
+    "code": 100,  
+    "error_subcode": 1713231,  
+    "error_user_title": "Update Restricted Fields and Rule",  
+    "error_user_msg": "This custom audience has integrity restrictions. To continue, you must update the restricted fields and the rule in your current edit",  
+  },  
 }
-```
 ```
 
 Attempting to edit a flagged lookalike audience or customer file custom audience (DFCA) will result in an error.
 
 ```
-```
 {  
-  "error": {  
-    "message": "Invalid parameter",  
-    "code": 100,  
-    "error_subcode": 1713228,  
-    "error_user_title": "Custom Audience Cannot Be Edited",  
-    "error_user_msg": "This audience cannot be edited due to integrity restrictions. Please appeal the restrictions or create a new audience",  
-  },  
+  "error": {  
+    "message": "Invalid parameter",  
+    "code": 100,  
+    "error_subcode": 1713228,  
+    "error_user_title": "Custom Audience Cannot Be Edited",  
+    "error_user_msg": "This audience cannot be edited due to integrity restrictions. Please appeal the restrictions or create a new audience",  
+  },  
 }
-```
 ```
 
 **Example**
 
 ```
-```
 {  
-"account_id": "<OWNER_ACCOUNT_ID>",  
-"approximate_count": 5000,  
-"approximate_count_lower_bound": 4900,  
-"approximate_count_upper_bound": 5100,  
-"customer_file_source": "USER_PROVIDED_ONLY",  
-"description": "Audience Description",  
-"fields_violating_integrity_policy": ["<FIELD>", ...],  
-"id": "<CUSTOM_AUDIENCE_ID>",  
-"name": "Audience Name",  
-"operation_status": {  
-"code": 471,  
-"description": "The custom audience or lookalike is blocked because it suggests the use of information (e.g., health, financial) not allowed under Meta's terms, and is restricted from running ads. Review the audience and remove prohibited information, or choose a different one."  
+"account_id": "<OWNER_ACCOUNT_ID>",  
+"approximate_count": 5000,  
+"approximate_count_lower_bound": 4900,  
+"approximate_count_upper_bound": 5100,  
+"customer_file_source": "USER_PROVIDED_ONLY",  
+"description": "Audience Description",  
+"fields_violating_integrity_policy": ["<FIELD>", ...],  
+"id": "<CUSTOM_AUDIENCE_ID>",  
+"name": "Audience Name",  
+"operation_status": {  
+"code": 471,  
+"description": "The custom audience or lookalike is blocked because it suggests the use of information (e.g., health, financial) not allowed under Meta's terms, and is restricted from running ads. Review the audience and remove prohibited information, or choose a different one."  
 },  
-"retention_days": 0,  
-"subtype": "CUSTOM",  
-"time_created": 1755083743,  
-"time_updated": 1755083943,  
-"time_content_updated": 1755083943,  
-"owner_account_info": {  
-"account_id": "<OWNER_ACCOUNT_ID>",  
-"account_name": "Account Name",  
-"business_id": "<OWNER_BUSINESS_ID>",  
-"business_name": "Business Name"  
+"retention_days": 0,  
+"subtype": "CUSTOM",  
+"time_created": 1755083743,  
+"time_updated": 1755083943,  
+"time_content_updated": 1755083943,  
+"owner_account_info": {  
+"account_id": "<OWNER_ACCOUNT_ID>",  
+"account_name": "Account Name",  
+"business_id": "<OWNER_BUSINESS_ID>",  
+"business_name": "Business Name"  
 },  
 ...  
 }
-```
 ```
 
 #### To resolve flagged audiences
@@ -102,21 +96,21 @@ If your custom or lookalike audiences are flagged, consider these options.
 
 To resolve flagged custom audiences:
 
-* **Review flagged audiences**: Use Audience Manager to review your custom audience along with other information included in an audience, and remove any information that is not allowed under [Meta’s terms⁠](https://www.facebook.com/legal/terms/businesstools/).
+* **Review flagged audiences**: Use Audience Manager to review your custom audience along with other information included in an audience, and remove any information that is not allowed under [Meta's terms⁠](https://www.facebook.com/legal/terms/businesstools/).
 * **Create new or choose different audiences**: Alternatively, you can create a new custom audience or choose a different existing custom audience and make sure that it does not include information not allowed under our terms and use that to run campaigns.
 
 To resolve flagged lookalike audiences:
 
 * **Resolve issues with the underlying custom audience**: If the underlying custom audience (also known as the seed audience) of your lookalike audience is flagged, you will need to resolve the issue with the underlying custom audience on which the lookalike audience is built. Please refer to the preceding section on how to resolve flagged custom audiences.
-* **Create new audiences**: Consider developing new lookalike audiences and make sure that they don’t include information that is not allowed under our terms.
+* **Create new audiences**: Consider developing new lookalike audiences and make sure that they don't include information that is not allowed under our terms.
 
 ##### Request a review
 
-If you believe your custom audience or lookalike audience has been flagged in error and doesn’t include non-permitted information, you can request a review via Ads Manager under the campaigns table or, or in Audience Manager by clicking on individual audiences and under the summary tab of the impacted audience.
+If you believe your custom audience or lookalike audience has been flagged in error and doesn't include non-permitted information, you can request a review via Ads Manager under the campaigns table or, or in Audience Manager by clicking on individual audiences and under the summary tab of the impacted audience.
 
 ## Reading
 
-Custom audiences are designed to provide advertisers the ability to target their ads to a specific set of people with whom they have already established a relationship on and off Facebook. Advertisers may choose to define audiences by email address, Facebook User IDs, phone numbers, names, date of birth, gender, locations, [app user IDs](https://developers.facebook.com/docs/app-ads/targeting/mobile-advertiser-ids), Apple’s Advertising Identifier (IDFA), [Android’s advertising ID⁠](https://developers.google.com/ads/#apps) or by a combination of rules used to identify users who took specific actions on their website.
+Custom audiences are designed to provide advertisers the ability to target their ads to a specific set of people with whom they have already established a relationship on and off Facebook. Advertisers may choose to define audiences by email address, Facebook User IDs, phone numbers, names, date of birth, gender, locations, [app user IDs](https://developers.facebook.com/docs/app-ads/targeting/mobile-advertiser-ids), Apple's Advertising Identifier (IDFA), [Android's advertising ID⁠](https://developers.google.com/ads/#apps) or by a combination of rules used to identify users who took specific actions on their website.
 
 When utilizing Facebook User IDs please ensure you comply with [Facebook Platform Terms](https://developers.facebook.com/terms) and [Developer Policies](https://developers.facebook.com/devpolicy). You must accept the [Custom Audience Terms of Service](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference/custom-audience-terms-of-service) in order to use custom audiences. You can query which terms have been accepted by checking the `tos_accepted` field of a given ad account. See [Ad Account](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-account) for more information.
 
@@ -254,8 +248,8 @@ HTTPPHP SDKJavaScript SDKAndroid SDKiOS SDKcURL
 ---
 
 ```
-POST /v25.0/<CUSTOM_AUDIENCE_ID>/ HTTP/1.1  
-Host: graph.facebook.com  
+POST /v25.0/<CUSTOM_AUDIENCE_ID>/ HTTP/1.1  
+Host: graph.facebook.com  
   
 name=Updated+Name+for+CA
 ```
@@ -326,8 +320,8 @@ HTTPPHP SDKJavaScript SDKAndroid SDKiOS SDKcURL
 ---
 
 ```
-DELETE /v25.0/<CUSTOM_AUDIENCE_ID>/ HTTP/1.1  
-Host: graph.facebook.com
+DELETE /v25.0/<CUSTOM_AUDIENCE_ID>/ HTTP/1.1  
+Host: graph.facebook.com
 ```
 
 Try it in [Graph API Explorer](https://developers.facebook.com/tools/explorer/?method=DELETE&path=%3CCUSTOM_AUDIENCE_ID%3E%2F&version=v25.0)

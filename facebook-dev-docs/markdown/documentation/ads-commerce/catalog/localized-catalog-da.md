@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/catalog/l
 
 Updated: Sep 24, 2025
 
-This document contains the lists of supported fields grouped by item type. Please note that the notation used here reflects how the fields are called in feed files. For example,a CSV feed file can have columns named ‘image[0].url’, ‘image[1].url’, ‘applink.android\_url’, etc. By comparison, in Batch API, catalog item data is hierarchically organized in a JSON object, for example:
+This document contains the lists of supported fields grouped by item type. Please note that the notation used here reflects how the fields are called in feed files. For example,a CSV feed file can have columns named 'image[0].url', 'image[1].url', 'applink.android\_url', etc. By comparison, in Batch API, catalog item data is hierarchically organized in a JSON object, for example:
 
 ```
 {
@@ -56,7 +56,7 @@ This document contains the lists of supported fields grouped by item type. Pleas
 
 To localize any applink fields, you must provide all of them. Learn more about [product deep links](https://developers.facebook.com/documentation/ads-commerce/catalog/guides/product-deep-links).
 
-To localize an image, you must use the `image[0].url`, `image[0].tag[0]` nested image fields. The `image_link` field isn’t supported for localization.
+To localize an image, you must use the `image[0].url`, `image[0].tag[0]` nested image fields. The `image_link` field isn't supported for localization.
 
 For reference, see the [main list of fields for products](https://developers.facebook.com/documentation/ads-commerce/catalog/reference#da-commerce).
 

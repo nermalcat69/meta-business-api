@@ -63,9 +63,9 @@ This screen provides a summary of the permissions the business customer is grant
 
 ### Success screen
 
-This screen indicates that all of the business customer’s assets (business portfolio, WhatsApp Business Account, phone number display profile, and business phone number) were successfully created and associated.
+This screen indicates that all of the business customer's assets (business portfolio, WhatsApp Business Account, phone number display profile, and business phone number) were successfully created and associated.
 
-When the customer clicks Finish, a message event is triggered containing the customer’s WhatsApp Business Account ID and business phone number ID, which you must use to onboard the customer to the platform.
+When the customer clicks Finish, a message event is triggered containing the customer's WhatsApp Business Account ID and business phone number ID, which you must use to onboard the customer to the platform.
 
 ![Success screen confirming the account is connected and the Business and WhatsApp Account assets were created, with a Finish button.](https://scontent.oculuscdn.com/v/t64.5771-25/499299365_1297004592575186_7011001686527044778_n.png?_nc_cat=104&ccb=1-7&_nc_sid=e280be&_nc_ohc=xsd4nqSJVGkQ7kNvwHyGNBx&_nc_oc=Adp4fR8YGWRUa28Lpceol8o9LbK3TDrxUcH6D3O2a3R0ionWa_u-Um52cn8ETV0iR0rbVAr65XKvCvMTWhVulf3B&_nc_zt=3&_nc_ht=scontent.oculuscdn.com&_nc_ss=7b2a8&oh=00_AQDNAcg3n28VIbU9cGTgqsjbC5TbcdXv-COHZhmsUHFh5w&oe=6A605E6E)
 
@@ -129,6 +129,6 @@ This screen presents the terms and conditions that the business customer must ac
 
 ### Success screen
 
-This screen indicates that the Coexistence onboarding completed successfully. When the customer clicks Finish, a message event is triggered containing the customer’s WhatsApp Business Account ID and business phone number ID, which you must use to onboard the customer to the platform.
+This screen indicates that the Coexistence onboarding completed successfully. When the customer clicks Finish, a message event is triggered containing the customer's WhatsApp Business Account ID and business phone number ID, which you must use to onboard the customer to the platform.
 
 ![Coexistence success screen confirming the account is connected and the Business asset was created, with a Finish button.](https://scontent.oculuscdn.com/v/t64.5771-25/499299365_1649509376198400_2742425130304284765_n.png?_nc_cat=105&ccb=1-7&_nc_sid=e280be&_nc_ohc=g-TItxsvVXQQ7kNvwGgpu8D&_nc_oc=Adq2qkMJw9_TFKP6USbl__CvUojfit67a5uJz3Am5d76KfIYacNzYCMu9m-ajp-cDlrgBcYnG7oqKMrz2OGnrua3&_nc_zt=3&_nc_ht=scontent.oculuscdn.com&_nc_ss=7b2a8&oh=00_AQAyZ1vIkkXtVT47cTqR5xV1Vg0U7SIpnv-JZ8tIVw3Lbg&oe=6A604226)

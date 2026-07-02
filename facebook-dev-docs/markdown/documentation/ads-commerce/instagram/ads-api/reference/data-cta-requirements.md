@@ -19,7 +19,7 @@ We have a 2200 character limit on captions for ads targeting Instagram only, and
 
 #### Aspect Ratio
 
-Instagram’s recommended aspect ratio for both image and video in Instagram stream is 1:1. We recommend square images and videos to utilize the maximum area on mobile devices. Instagram stream also supports images and videos with:
+Instagram's recommended aspect ratio for both image and video in Instagram stream is 1:1. We recommend square images and videos to utilize the maximum area on mobile devices. Instagram stream also supports images and videos with:
 
 * 1.91:1 aspect ratio
 * 4:5 aspect ratio
@@ -27,7 +27,7 @@ Instagram’s recommended aspect ratio for both image and video in Instagram str
 
 #### Size
 
-We require all images and videos to have at least a 600px width, independent of the ad’s placement. However, our recommended numbers for images can change by placement:
+We require all images and videos to have at least a 600px width, independent of the ad's placement. However, our recommended numbers for images can change by placement:
 
 | Placement | Image Size Recommendation |
 | --- | --- |

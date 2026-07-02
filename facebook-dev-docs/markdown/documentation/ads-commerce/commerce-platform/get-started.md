@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/commerce-
 
 Updated: Jun 16, 2025
 
-**NOTE**: This document will be deprecated on **September 4, 2025**. On that date, Shops checkout will no longer be available on Facebook and Instagram. Buyers will instead be sent to sellers’ own websites for checkout.
+**NOTE**: This document will be deprecated on **September 4, 2025**. On that date, Shops checkout will no longer be available on Facebook and Instagram. Buyers will instead be sent to sellers' own websites for checkout.
 
 When you set up a Shop in Commerce Manager, Facebook creates or connects a few accounts and assets together to form your commerce presence. We recommend to learn and understand their roles and relationships to build a successful commerce integration.
 

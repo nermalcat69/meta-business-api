@@ -49,7 +49,7 @@ curl \
   -F 'promoted_object={"pixel_id": "<PIXEL_ID>", "custom_event_type": "PURCHASE"}'
   -F 'billing_event=IMPRESSIONS'
   -F 'bid_strategy=LOWEST_COST_WITHOUT_CAP'
-  -F 'targeting={"geo_locations": {"countries": ["US"]}}'
+  -F 'targeting={"geo_locations": {"countries": ["US"]}​}'
   -F 'start_time=2019-04-02'
   -F 'end_time=2019-04-09'
   -F 'access_token=<ACCESS_TOKEN>'
@@ -58,7 +58,7 @@ curl \
 
 If you use `asset_feed_spec` with an ad set optimized for `APP_INSTALLS`, specify `link_url`, such as `https://www.example.com`. The `link_url`**must be the same as**`object_store_url` in `promoted_object`. Provide only one `link_url` parameter in `asset_feed_spec`.
 
-`asset_feed_spec` provides creative for [Dynamic Creative](https://developers.facebook.com/docs/marketing-api/dynamic-creative/overview), [Placement Asset Customization](https://developers.facebook.com/documentation/ads-commerce/marketing-api/dynamic-creative/placement-asset-customization), [Multi-Language Ads](https://developers.facebook.com/documentation/ads-commerce/marketing-api/multi-language-ads), and [Segment Asset Customization](https://developers.facebook.com/docs/marketing-api/dynamic-creative/segment-asset-customization). The spec’s format is different for each solution.
+`asset_feed_spec` provides creative for [Dynamic Creative](https://developers.facebook.com/docs/marketing-api/dynamic-creative/overview), [Placement Asset Customization](https://developers.facebook.com/documentation/ads-commerce/marketing-api/dynamic-creative/placement-asset-customization), [Multi-Language Ads](https://developers.facebook.com/documentation/ads-commerce/marketing-api/multi-language-ads), and [Segment Asset Customization](https://developers.facebook.com/docs/marketing-api/dynamic-creative/segment-asset-customization). The spec's format is different for each solution.
 
 ## Step 2: Provide the ad creative
 

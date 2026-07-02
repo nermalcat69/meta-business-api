@@ -73,11 +73,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Solution-ID}/accept' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Solution-ID}/accept' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -88,7 +88,7 @@ Select status code
 
 ```
 {  
-  "success": true  
+  "success": true  
 }
 ```
 
@@ -580,11 +580,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Solution-ID}/accept' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Solution-ID}/accept' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -595,7 +595,7 @@ Select status code
 
 ```
 {  
-  "success": true  
+  "success": true  
 }
 ```
 

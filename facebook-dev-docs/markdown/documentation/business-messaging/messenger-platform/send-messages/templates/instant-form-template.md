@@ -48,65 +48,63 @@ An image action opens a URL or sends a postback. Set `type` to `web_url` or `pos
 | `type` | String | The action type. Must be `web_url` or `postback`. |
 | `url` | String | The URL to open when the image is tapped. Required when `type` is `web_url`. Not allowed when `type` is `postback`. |
 | `payload` | String | The payload sent to your webhook in a [`messaging_postbacks`](https://developers.facebook.com/documentation/business-messaging/messenger-platform/webhooks/webhook-events/messaging_postbacks) event when the image is tapped. Required when `type` is `postback`. Not allowed when `type` is `web_url`. |
-| `text` | String | The text shown in the conversation as the recipient’s reply when the image is tapped. Required when `type` is `postback`. Not allowed when `type` is `web_url`. |
+| `text` | String | The text shown in the conversation as the recipient's reply when the image is tapped. Required when `type` is `postback`. Not allowed when `type` is `web_url`. |
 
 ## Sample request
 
 The following request sends a grid of four images. The first image is featured as the hero image and opens a URL when tapped, the second sends a postback, and the remaining images have no action.
 
 ```
-```
-curl -X POST -H "Content-Type: application/json" -d '{  
-  "recipient": {  
-    "id": "<PSID>"  
-  },  
-  "message": {  
-    "attachment": {  
-      "type": "template",  
-      "payload": {  
-        "template_type": "image_grid",  
-        "elements": [  
-          {  
-            "title": "Spring collection",  
-            "subtitle": "Tap an item to learn more",  
-            "images": [  
-              {  
-                "url": "https://www.example.com/images/jacket.jpg",  
-                "is_hero_image": true,  
-                "action": {  
-                  "type": "web_url",  
-                  "url": "https://www.example.com/products/jacket"  
-                }  
-              },  
-              {  
-                "url": "https://www.example.com/images/boots.jpg",  
-                "action": {  
-                  "type": "postback",  
-                  "payload": "PRODUCT_BOOTS",  
-                  "text": "Tell me about the hiking boots"  
-                }  
-              },  
-              {  
-                "url": "https://www.example.com/images/hat.jpg"  
-              },  
-              {  
-                "url": "https://www.example.com/images/gloves.jpg"  
-              }  
-            ],  
-            "buttons": [  
-              {  
-                "type": "web_url",  
-                "url": "https://www.example.com/shop",  
-                "title": "View all"  
-              }  
-            ]  
-          }  
-        ]  
-      }  
-    }  
-  }  
-}' "https://graph.facebook.com/<API_VERSION>/<PAGE_ID>/messages?access_token=<PAGE_ACCESS_TOKEN>"
-```
+curl -X POST -H "Content-Type: application/json" -d '{  
+  "recipient": {  
+    "id": "<PSID>"  
+  },  
+  "message": {  
+    "attachment": {  
+      "type": "template",  
+      "payload": {  
+        "template_type": "image_grid",  
+        "elements": [  
+          {  
+            "title": "Spring collection",  
+            "subtitle": "Tap an item to learn more",  
+            "images": [  
+              {  
+                "url": "https://www.example.com/images/jacket.jpg",  
+                "is_hero_image": true,  
+                "action": {  
+                  "type": "web_url",  
+                  "url": "https://www.example.com/products/jacket"  
+                }  
+              },  
+              {  
+                "url": "https://www.example.com/images/boots.jpg",  
+                "action": {  
+                  "type": "postback",  
+                  "payload": "PRODUCT_BOOTS",  
+                  "text": "Tell me about the hiking boots"  
+                }  
+              },  
+              {  
+                "url": "https://www.example.com/images/hat.jpg"  
+              },  
+              {  
+                "url": "https://www.example.com/images/gloves.jpg"  
+              }  
+            ],  
+            "buttons": [  
+              {  
+                "type": "web_url",  
+                "url": "https://www.example.com/shop",  
+                "title": "View all"  
+              }  
+            ]  
+          }  
+        ]  
+      }  
+    }  
+  }  
+}' "https://graph.facebook.com/<API_VERSION>/<PAGE_ID>/messages?access_token=<PAGE_ACCESS_TOKEN>"
 ```
 
 ## Sample response
@@ -123,7 +121,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 Each image in the grid can have a single tap `action`:
 
 * **`web_url`** — Opens the specified `url` in the Messenger webview when the image is tapped. See the [URL button](https://developers.facebook.com/documentation/business-messaging/messenger-platform/send-messages/buttons/url) reference for related behavior.
-* **`postback`** — Sends the `payload` to your webhook in a [`messaging_postbacks`](https://developers.facebook.com/documentation/business-messaging/messenger-platform/webhooks/webhook-events/messaging_postbacks) event when the image is tapped, and posts `text` into the conversation as the recipient’s reply. See the [Postback button](https://developers.facebook.com/documentation/business-messaging/messenger-platform/send-messages/buttons/postback) reference for related behavior.
+* **`postback`** — Sends the `payload` to your webhook in a [`messaging_postbacks`](https://developers.facebook.com/documentation/business-messaging/messenger-platform/webhooks/webhook-events/messaging_postbacks) event when the image is tapped, and posts `text` into the conversation as the recipient's reply. See the [Postback button](https://developers.facebook.com/documentation/business-messaging/messenger-platform/send-messages/buttons/postback) reference for related behavior.
 
 Images without an `action` are not tappable.
 
@@ -133,4 +131,4 @@ Images without an `action` are not tappable.
 * Provide 2 to 6 images. The grid layout adapts to the number of images you send.
 * Use `is_hero_image` to draw attention to your most important image.
 * Add a per-image `action` when tapping different images should do different things — for example, each product image opening its own product page (`web_url`), or each image sending a different reply to your webhook so you can respond (`postback`).
-* Keep text short. The grid’s `title` is limited to 45 characters and its `subtitle` to 80 characters.
+* Keep text short. The grid's `title` is limited to 45 characters and its `subtitle` to 80 characters.

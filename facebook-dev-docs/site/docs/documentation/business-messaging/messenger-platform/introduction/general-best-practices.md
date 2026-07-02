@@ -14,7 +14,7 @@ Our [Developer Policies](https://developers.facebook.com/devpolicy) apply to Mes
 
 The following is an overview of standard messaging, message tag, and news messaging policies. For complete details on applicable policies, see the [Platform Terms](https://developers.facebook.com/terms) and [Developer Policies](https://developers.facebook.com/devpolicy).
 
-* **Standard Messaging** — Businesses have up to 24 hours to respond to a user. Messages sent within the 24-hour window may contain promotional content. People expect businesses to respond quickly, and businesses that respond to users in a timely manner achieve better outcomes. Responding to people’s messages as soon as possible is highly encouraged.
+* **Standard Messaging** — Businesses have up to 24 hours to respond to a user. Messages sent within the 24-hour window may contain promotional content. People expect businesses to respond quickly, and businesses that respond to users in a timely manner achieve better outcomes. Responding to people's messages as soon as possible is highly encouraged.
 * **Message Tags** — Enable businesses to send important and personally relevant 1:1 updates to users outside the 24-hour standard messaging window. A number of message tags are available to support certain use cases. Some tags are available on both Messenger Platform and IG Messaging API, while others are applicable only to Messenger Platform. The message tags include a Human Agent tag that allows businesses to manually respond to user messages within a 7-day period. Learn more [here](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/send-api).
 * **One-time Notification** — Enable businesses to request a user to send one follow-up message after the 24-hour messaging window has ended. Learn more [here](https://developers.facebook.com/docs/messenger-platform/send-messages/one-time-notification). One-time notifications are not available for IG Messaging API.
 * **News messaging** — Only Pages registered with the [News Page Index (NPI)⁠](https://www.facebook.com/help/publisher/316333835842972) are allowed to send non-promotional news messages. News messaging is not available for IG Messaging API.
@@ -33,9 +33,9 @@ Automated chat experiences that serve the following groups should pay special at
 * California market or California users
 * German market or German users
 
-Disclosures may include but are not limited to: “I’m the [Page Name] bot,”“You are interacting with an automated experience,” “You are talking to a bot,” or “I am an automated chatbot.”
+Disclosures may include but are not limited to: "I'm the [Page Name] bot,""You are interacting with an automated experience," "You are talking to a bot," or "I am an automated chatbot."
 
-Even where not legally required, we recommend informing users when they’re interacting with an automated chat as best practice, as this helps manage user expectations about their interaction with your messaging experience.
+Even where not legally required, we recommend informing users when they're interacting with an automated chat as best practice, as this helps manage user expectations about their interaction with your messaging experience.
 
 Visit our [Developer Policies](https://developers.facebook.com/devpolicy/#messengerplatform) for more information.
 
@@ -60,7 +60,7 @@ Message tags enable sending important and personally relevant updates to users o
 
 ## One-time notification
 
-Messenger Platform’s [One-Time Notification API (Beta)](https://developers.facebook.com/docs/messenger-platform/send-messages/one-time-notification) allows a page to send a time-sensitive and personally relevant notification for use cases (such as back-in-stock alerts) where someone has explicitly requested to receive a one-time follow-up message. Once the user asks to be notified, the page receives a token equivalent to a permission to send a single message to the user. The token can only be used once and expires within 1 year of creation. Learn more [here](https://developers.facebook.com/docs/messenger-platform/send-messages/one-time-notification). One-time Notification is not available for IG Messaging API.
+Messenger Platform's [One-Time Notification API (Beta)](https://developers.facebook.com/docs/messenger-platform/send-messages/one-time-notification) allows a page to send a time-sensitive and personally relevant notification for use cases (such as back-in-stock alerts) where someone has explicitly requested to receive a one-time follow-up message. Once the user asks to be notified, the page receives a token equivalent to a permission to send a single message to the user. The token can only be used once and expires within 1 year of creation. Learn more [here](https://developers.facebook.com/docs/messenger-platform/send-messages/one-time-notification). One-time Notification is not available for IG Messaging API.
 
 ## Private replies
 
@@ -68,13 +68,13 @@ When users create a post comment or a visitor post on a Page, [Private Replies](
 
 ## News messaging
 
-News messages allow news publishers to send regular news updates to their subscribers in Messenger. This feature is only available for registered news Pages under the [News Page Index (NPI)⁠](https://www.facebook.com/help/publisher/316333835842972) and is not available for Instagram Messaging API. Pages registered with the News Page Index don’t need to apply for news messaging permission.
+News messages allow news publishers to send regular news updates to their subscribers in Messenger. This feature is only available for registered news Pages under the [News Page Index (NPI)⁠](https://www.facebook.com/help/publisher/316333835842972) and is not available for Instagram Messaging API. Pages registered with the News Page Index don't need to apply for news messaging permission.
 
 News messaging applies to news content only, and must not be used for promotional content, including but not limited to subscription offers, deals, coupons, discounts, or content produced by or that promotes a third party (such as branded content or affiliate marketing). To send news messages, NPI-registered pages need to use the `NON_PROMOTIONAL_SUBSCRIPTION` message tag. Use of news messaging outside of these approved use cases may result in restrictions on your ability to send news messages.
 
 ## Sponsored messaging
 
-[Sponsored Messages](https://developers.facebook.com/documentation/business-messaging/messenger-platform/discovery) allow businesses to reengage with people who have an open conversation with their Page in Messenger. Sponsored messages can be sent outside the 24-hour standard messaging window and can include both promotional and non-promotional content. Sponsored messages are annotated in the conversation with the word “Sponsored” above the message.
+[Sponsored Messages](https://developers.facebook.com/documentation/business-messaging/messenger-platform/discovery) allow businesses to reengage with people who have an open conversation with their Page in Messenger. Sponsored messages can be sent outside the 24-hour standard messaging window and can include both promotional and non-promotional content. Sponsored messages are annotated in the conversation with the word "Sponsored" above the message.
 
 Sponsored message content must comply with [advertising policies⁠](https://www.facebook.com/policies/ads/). For more information on sending sponsored messages, see [Sponsored messages](https://developers.facebook.com/documentation/business-messaging/messenger-platform/discovery). Sponsored messages are not available for IG Messaging API.
 
@@ -84,23 +84,23 @@ To ensure the best user experience possible, the Messenger Platform requires aut
 
 ### Responsiveness policy
 
-* Automated bots must respond to **any and all input** from the user. “Any input” is defined as freeform text, quick replies, CTA buttons, and persistent menu clicks. The Get Started (welcome screen) button is excluded from this requirement.
+* Automated bots must respond to **any and all input** from the user. "Any input" is defined as freeform text, quick replies, CTA buttons, and persistent menu clicks. The Get Started (welcome screen) button is excluded from this requirement.
 * Automated bots that have disabled the composer must still respond to any other available inputs.
-* Automated bots must respond to user input **within 30 seconds**. This ensures your bot’s experience feels like a continuous conversation.
+* Automated bots must respond to user input **within 30 seconds**. This ensures your bot's experience feels like a continuous conversation.
 
 ### Which bots does this apply to?
 
-The Messenger Platform’s responsiveness policy applies to all bots that are identified as “automated” (not “hybrid” or “human”) that are submitted for approval via the App Dashboard.
+The Messenger Platform's responsiveness policy applies to all bots that are identified as "automated" (not "hybrid" or "human") that are submitted for approval via the App Dashboard.
 
 Messenger Platform categorizes bots into three types depending on how the bot communicates with its audience. When your bot was launched on Messenger, you, or another page admin defined your bot type in the App Dashboard or Discover submission form:
 
-* **Automated bots:** All responses from the bot are programmed ahead of time. The bot doesn’t require any manual intervention in order to function. For example, a bot that provides news and weather updates.
-* **Manual Reply:** All responses from the bot are provided by live representatives. For example, a bot for a business that communicates with its customers through third-party CRM software. People who message the bot don’t get a response until someone from the business responds manually.
+* **Automated bots:** All responses from the bot are programmed ahead of time. The bot doesn't require any manual intervention in order to function. For example, a bot that provides news and weather updates.
+* **Manual Reply:** All responses from the bot are provided by live representatives. For example, a bot for a business that communicates with its customers through third-party CRM software. People who message the bot don't get a response until someone from the business responds manually.
 * **Hybrid bots:** Bots that incorporate both automated and human interactions. For example, a bot for an airline that lets you check your flight status instantly (automated) but can also connect you to a customer service representative to make changes to your reservation (human).
 
 ## Accepting Page Contact Terms to use Custom Labels
 
-In order to use the Custom Labels API, businesses (Page admins) need to accept the *Page Contact Terms*. These terms describe Meta’s data practices for the Custom Labels created by the business.
+In order to use the Custom Labels API, businesses (Page admins) need to accept the *Page Contact Terms*. These terms describe Meta's data practices for the Custom Labels created by the business.
 
 Follow these steps to prepare for this requirement and avoid any business disruption:
 
@@ -108,7 +108,7 @@ Follow these steps to prepare for this requirement and avoid any business disrup
 
 *[Partner to translate as appropriate]**Hi Page name, to use labels that sync with your Facebook Page Inbox, you must first accept the Page Contact Terms. You can continue to create, update, and delete labels once you have accepted these terms.*
 
-* Call the custom labels endpoint. If the Page hasn’t accepted the terms, the API call returns an error with a link to the Page Contact Terms. When the API returns an error, you can surface a pop-up in your tool as suggested in step 1. The Page needs to accept the Page Contact Terms only once when they are using labels via your platform.
+* Call the custom labels endpoint. If the Page hasn't accepted the terms, the API call returns an error with a link to the Page Contact Terms. When the API returns an error, you can surface a pop-up in your tool as suggested in step 1. The Page needs to accept the Page Contact Terms only once when they are using labels via your platform.
 
 ## Policy violation notifications
 
@@ -121,9 +121,9 @@ If your bot is found to be in violation of the responsiveness policy, all Page a
 ### Responding to policy violations
 
 * If your bot is intended to provide an automated experience, adhere to the [responsiveness requirements](https://developers.facebook.com/documentation/business-messaging/messenger-platform/introduction/general-best-practices#responsiveness_policy).
-* If your bot is a [hybrid or human experience](https://developers.facebook.com/documentation/business-messaging/messenger-platform/introduction/general-best-practices#what_bots), update your bot’s response setting in **Page Settings** > **Advanced Messaging**.
+* If your bot is a [hybrid or human experience](https://developers.facebook.com/documentation/business-messaging/messenger-platform/introduction/general-best-practices#what_bots), update your bot's response setting in **Page Settings** > **Advanced Messaging**.
 
-If you don’t respond or make the appropriate changes within 7 days, your bot’s ability to send messages may be limited. If you have questions after being notified, respond via the Page Support Inbox. Expect a response within 3 business days.
+If you don't respond or make the appropriate changes within 7 days, your bot's ability to send messages may be limited. If you have questions after being notified, respond via the Page Support Inbox. Expect a response within 3 business days.
 
 ## Platform terms and community standards
 

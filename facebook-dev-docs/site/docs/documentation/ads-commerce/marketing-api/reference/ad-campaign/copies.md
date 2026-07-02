@@ -24,8 +24,8 @@ HTTPPHP SDKJavaScript SDKAndroid SDKiOS SDK
 ---
 
 ```
-GET /v25.0/{ad-set-id}/copies HTTP/1.1  
-Host: graph.facebook.com
+GET /v25.0/{ad-set-id}/copies HTTP/1.1  
+Host: graph.facebook.com
 ```
 
 Try it in [Graph API Explorer](https://developers.facebook.com/tools/explorer/?method=GET&path=%7Bad-set-id%7D%2Fcopies&version=v25.0)
@@ -39,7 +39,7 @@ If you want to learn how to use the Graph API, read our [Using Graph API guide](
 | `date_preset` *enum{today, yesterday, this\_month, last\_month, this\_quarter, maximum, data\_maximum, last\_3d, last\_7d, last\_14d, last\_28d, last\_30d, last\_90d, last\_week\_mon\_sun, last\_week\_sun\_sat, last\_quarter, last\_year, this\_week\_mon\_today, this\_week\_sun\_today, this\_year}* | Preset date range used to aggregate insights metrics |
 | `effective_status` *list<enum{ACTIVE, PAUSED, DELETED, PENDING\_REVIEW, DISAPPROVED, PREAPPROVED, PENDING\_BILLING\_INFO, CAMPAIGN\_PAUSED, ARCHIVED, ADSET\_PAUSED, IN\_PROCESS, WITH\_ISSUES}>* | Filter adsets by effective status |
 | `is_completed` *boolean* | Filter adsets by completed status |
-| `time_range` *{‘since’:YYYY-MM-DD,’until’:YYYY-MM-DD}* | Time range used to aggregate insights metrics  ---   `since` *datetime* A date in the format of "YYYY-MM-DD", which means from the beginning midnight of that day.  `until` *datetime* A date in the format of "YYYY-MM-DD", which means to the beginning midnight of the following day.  Show child parameters |
+| `time_range` *{'since':YYYY-MM-DD,'until':YYYY-MM-DD}* | Time range used to aggregate insights metrics  ---   `since` *datetime* A date in the format of "YYYY-MM-DD", which means from the beginning midnight of that day.  `until` *datetime* A date in the format of "YYYY-MM-DD", which means to the beginning midnight of the following day.  Show child parameters |
 
 #### Fields
 

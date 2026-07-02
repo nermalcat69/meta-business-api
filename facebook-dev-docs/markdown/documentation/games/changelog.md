@@ -11,7 +11,7 @@ Updated: Mar 3, 2026
 
 ## What was Cross Play?
 
-Cross Play was a framework that allowed games to work across multiple Facebook gaming platforms -- Instant Games, Cloud Games, and native (mobile/PC) platforms -- with a unified player identity. It provided a single identity system so that a player’s progress, social connections, and game state could persist regardless of which platform the player used.
+Cross Play was a framework that allowed games to work across multiple Facebook gaming platforms -- Instant Games, Cloud Games, and native (mobile/PC) platforms -- with a unified player identity. It provided a single identity system so that a player's progress, social connections, and game state could persist regardless of which platform the player used.
 
 With Cross Play, a developer could build a game that ran as an Instant Game on mobile, as a Cloud Game for high-fidelity streaming, and as a native app, all sharing the same player account, progress, and social graph.
 
@@ -30,7 +30,7 @@ At the core of Cross Play was a unified identity system. When a player logged in
 Cross Play provided an abstraction layer that handled platform-specific differences:
 
 * **Authentication**: A single login flow that worked across Instant Games (web-based), Cloud Games (streamed), and native apps.
-* **Social graph**: Consistent access to the player’s gaming friends across all platforms.
+* **Social graph**: Consistent access to the player's gaming friends across all platforms.
 * **Entitlements**: Virtual goods and purchases made on one platform could be accessible on others.
 * **Leaderboards and achievements**: Shared across all platform versions of the game.
 
@@ -53,7 +53,7 @@ Cross Play was archived primarily because the platforms it was designed to bridg
 
 ## Historical overview
 
-* **2019-2020**: Cross Play was introduced alongside the Cloud Games program to provide a unified gaming experience across Facebook’s multiple gaming platforms.
+* **2019-2020**: Cross Play was introduced alongside the Cloud Games program to provide a unified gaming experience across Facebook's multiple gaming platforms.
 * **2020-2021**: A limited number of developers integrated Cross Play to offer their games on multiple Facebook gaming platforms simultaneously.
 * **2022**: Following the discontinuation of Cloud Games, Cross Play was archived.
 

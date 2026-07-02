@@ -30,7 +30,7 @@ Some templates use a special component that requires or excludes additional comp
 
 ### Coupon code templates
 
-[Coupon code templates](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/marketing-templates/coupon-templates) are marketing templates that display a single copy code button. When tapped, the code is copied to the customer’s clipboard.
+[Coupon code templates](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/marketing-templates/coupon-templates) are marketing templates that display a single copy code button. When tapped, the code is copied to the customer's clipboard.
 
 ![WhatsApp coupon code template from Markt offering code WHYNOT for 30% off, with Copy code and Start shopping buttons and a Code copied confirmation](https://scontent.fdel1-2.fna.fbcdn.net/v/t39.2365-6/365756533_1756280054770140_7287687181799037425_n.png?_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=bEHM8_rWfVEQ7kNvwG6UzAz&_nc_oc=Adqdar1a10zy3-i4biG4JidFu7dZ1Meptdw7Z7A5gv_Ms-CTTbOU2UBZDHL7zyFzJqZNRb3TxiNpZuijlfiMUiXZ&_nc_zt=14&_nc_ht=scontent.fdel1-2.fna&_nc_gid=KrSJm3i5fSaHFTXGcBJn8Q&_nc_ss=7b2a8&oh=00_AQAmyQOL9i9Q0PAR9sjLBrPHjuC0fw2jyExh12v8SzkSbg&oe=6A6051A5)
 
@@ -72,7 +72,7 @@ Some templates use a special component that requires or excludes additional comp
 
 ## Per-user marketing template message limits
 
-WhatsApp may limit the number of marketing template messages a person receives from any business in a given period of time, starting with delivering fewer marketing conversations to those users who are less likely to engage with them. In most WhatsApp markets, this is determined based on a number of factors, including a dynamic view of an individual’s marketing message read rate.
+WhatsApp may limit the number of marketing template messages a person receives from any business in a given period of time, starting with delivering fewer marketing conversations to those users who are less likely to engage with them. In most WhatsApp markets, this is determined based on a number of factors, including a dynamic view of an individual's marketing message read rate.
 
 Refer to [per-user marketing template message limits](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/marketing-templates/per-user-limits) document for more information.
 

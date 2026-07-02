@@ -7,11 +7,11 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/commerce-
 
 Updated: Jun 8, 2026
 
-Onboarding to Shops is a necessary step to enable sellers to integrate into Meta Commerce. Seamless onboarding ensures that the seller’s products are up-to-date, order information is properly synchronized, easy to reconcile on a quarterly or annual basis, and banking and payout information are set up properly for timely payouts and reporting.
+Onboarding to Shops is a necessary step to enable sellers to integrate into Meta Commerce. Seamless onboarding ensures that the seller's products are up-to-date, order information is properly synchronized, easy to reconcile on a quarterly or annual basis, and banking and payout information are set up properly for timely payouts and reporting.
 
 As a third-party platform/solutions provider:
 
-* You will need to onboard your sellers onto Meta Commerce using Facebook Business Extension (FBE). This typically entails implementing a login flow where your third-party website or mobile application prompts the seller to enter their Facebook or Instagram credentials. Depending on the nature of the integration you’re building, the seller also selects Meta assets that your app needs to access, such as Instagram accounts or product catalogs. At the end of this flow, an access token is generated for you to store and use when making API calls on behalf of that seller. This token can be used to create a system user within the business’ system. This is a more permanent solution to having programmatic capabilities in a business’ system without the worry of user churn.
+* You will need to onboard your sellers onto Meta Commerce using Facebook Business Extension (FBE). This typically entails implementing a login flow where your third-party website or mobile application prompts the seller to enter their Facebook or Instagram credentials. Depending on the nature of the integration you're building, the seller also selects Meta assets that your app needs to access, such as Instagram accounts or product catalogs. At the end of this flow, an access token is generated for you to store and use when making API calls on behalf of that seller. This token can be used to create a system user within the business' system. This is a more permanent solution to having programmatic capabilities in a business' system without the worry of user churn.
 * You will need the access token for each shop (i.e. seller you support) that is selling on Facebook and Instagram channels.
 
 ## Requirements
@@ -47,7 +47,7 @@ Once set up, any of your businesses can start an FBE onboarding flow either with
 Create entry points to FBE where the user selects, manages, or creates their assets (e.g. business, catalog, shops, pixel, etc.). These entry points can take one of these forms:
 
 * **[Business Login](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/partners/docs/facebook-business-extension/fbe/get-started/business-login)** (aka Facebook Login) – Allows businesses to initiate their connection from your platform using a button placed on your site.
-* **[Business Apps](https://developers.facebook.com/docs/facebook-business-extension/fbe/get-started/business-apps)** – Allows businesses to initiate their connection from a Meta Surface. To enable this flow and have your app listed on Meta’s Business Apps, you must provide a custom authentication UI on your site. This UI must allow the user to select their business and then redirect them back to the Meta flow with the selected information.
+* **[Business Apps](https://developers.facebook.com/docs/facebook-business-extension/fbe/get-started/business-apps)** – Allows businesses to initiate their connection from a Meta Surface. To enable this flow and have your app listed on Meta's Business Apps, you must provide a custom authentication UI on your site. This UI must allow the user to select their business and then redirect them back to the Meta flow with the selected information.
 
 #### Example
 
@@ -98,14 +98,14 @@ client_id=<FB_APP_ID>
 }
 ```
 
-Depending on your setup of choice, you can get business’ access token for later steps in multiple ways:
+Depending on your setup of choice, you can get business' access token for later steps in multiple ways:
 
 * **Business Login** – As with a normal Facebook Login, the end of this flow returns an access\_token, which you use to get more assets (e.g. Pixel ID, page ID, and Instagram Business ID)
 * **Business Apps** – via [Webhooks](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/partners/catalog-integration#fbe-install-webhooks).
 
 ### Step 2: Set Up FBE\_install Webhooks
 
-Webhooks are **required for all partners which want to be listed in the App Store**. If you don’t plan to have your app in the app store, then you can choose to ignore this section or revisit it later. Meta fires webhook events each time one of your businesses installs, modifies, or uninstalls FBE. Each time a webhook event is received, it’s expected that your app will consume this event and understand what assets the business has modified, added, or removed from their connection with your app. Your app’s behavior should update based on the most current connected assets. **We highly recommend that you implement and test your subscription to our webhook**.
+Webhooks are **required for all partners which want to be listed in the App Store**. If you don't plan to have your app in the app store, then you can choose to ignore this section or revisit it later. Meta fires webhook events each time one of your businesses installs, modifies, or uninstalls FBE. Each time a webhook event is received, it's expected that your app will consume this event and understand what assets the business has modified, added, or removed from their connection with your app. Your app's behavior should update based on the most current connected assets. **We highly recommend that you implement and test your subscription to our webhook**.
 
 To set up a webhook:
 
@@ -144,9 +144,9 @@ Upon receiving an uninstall notification, you need to:
 You can get information about businesses connected to your platform through FBE via [one (or both) of the two following methods](https://developers.facebook.com/docs/facebook-business-extension/fbe/guides/get-features#gather-ids-for-api-endpoints-and-business-configurations):
 
 * **Webhook**—**Required** for all partners that want to be listed in the App Store. With a webhook setup, the details of businesses onboarding or editing via FBE will be received via the **webhook payload** from the webhook setup in [Step 2](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/partners/catalog-integration#fbe-install-webhooks).
-* **MBE Installs API endpoint**—**Recommended** for self-hosted businesses. For any business that has installed MBE, you can query their basic installation information using the `fbe_installs` endpoint. Using a business’ access token and external business ID, you can call the MBE Installs API endpoint for [detailed information about their setup](https://developers.facebook.com/docs/facebook-business-extension/fbe/guides/get-features#fbe-installation-api).
+* **MBE Installs API endpoint**—**Recommended** for self-hosted businesses. For any business that has installed MBE, you can query their basic installation information using the `fbe_installs` endpoint. Using a business' access token and external business ID, you can call the MBE Installs API endpoint for [detailed information about their setup](https://developers.facebook.com/docs/facebook-business-extension/fbe/guides/get-features#fbe-installation-api).
 
-You must set up at least one of these methods. It’s needed to get a business’ asset IDs to properly configure the relevant features for the business.
+You must set up at least one of these methods. It's needed to get a business' asset IDs to properly configure the relevant features for the business.
 
 #### Example: FBE Installs API Call
 
@@ -156,9 +156,9 @@ curl -i -X GET \   "https://graph.facebook.com/<version>/fbe_business/fbe_instal
 
 ### Step 4: Fetch the System User Token
 
-After a user installs FBE, the extension generates an employee [system user](https://developers.facebook.com/docs/marketing-api/system-users) on the client’s Business Manager. Note that this system user is no longer visible in Business Manager, but exists on the backend. Naming for this new system user follows the schema `{App Name} System User (FBE)`.
+After a user installs FBE, the extension generates an employee [system user](https://developers.facebook.com/docs/marketing-api/system-users) on the client's Business Manager. Note that this system user is no longer visible in Business Manager, but exists on the backend. Naming for this new system user follows the schema `{App Name} System User (FBE)`.
 
-That system user token and API access is not associated with a single person. This is extremely useful in case employees leave companies or deactivate their profiles. If you receive a user access token through a webhook or the Business Login after a FBE install, you can use that same token to get the Business Manager’s system user access token.
+That system user token and API access is not associated with a single person. This is extremely useful in case employees leave companies or deactivate their profiles. If you receive a user access token through a webhook or the Business Login after a FBE install, you can use that same token to get the Business Manager's system user access token.
 
 To do that, make the following API call:
 

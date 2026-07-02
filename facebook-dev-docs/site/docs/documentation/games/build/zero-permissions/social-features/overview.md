@@ -9,9 +9,9 @@ Updated: Apr 21, 2026
 
 If your game exists on multiple platforms — for example, as both an Instant Game and a native mobile app or Canvas Game — your players may have separate identities on each platform. The cross-play management tool in the App Dashboard lets you link these apps together so you can identify the same player across platforms and provide a seamless experience.
 
-Once you link your apps, you can use `FBInstant.player.getAssociatedAppsASIDAsync()` in your Instant Game to retrieve the player’s Application-Scoped IDs (ASIDs) for each linked app. This allows you to look up their existing account on your backend and merge their progress.
+Once you link your apps, you can use `FBInstant.player.getAssociatedAppsASIDAsync()` in your Instant Game to retrieve the player's Application-Scoped IDs (ASIDs) for each linked app. This allows you to look up their existing account on your backend and merge their progress.
 
-On the native app side, you can use the `ids_for_business` endpoint with the `instant_game_player_id` field to retrieve the player’s Instant Games Player ID. See [Player Identification Post Migration](https://developers.facebook.com/documentation/games/build/zero-permissions/onboarding-and-migration/player-identification-post-migration) for details on using `ids_for_business`.
+On the native app side, you can use the `ids_for_business` endpoint with the `instant_game_player_id` field to retrieve the player's Instant Games Player ID. See [Player Identification Post Migration](https://developers.facebook.com/documentation/games/build/zero-permissions/onboarding-and-migration/player-identification-post-migration) for details on using `ids_for_business`.
 
 ## Prerequisites
 
@@ -49,7 +49,7 @@ For applications using the older developer console, you will see the **Cross-pla
 
 Click the card to begin linking apps. A dropdown will appear showing all apps in your business portfolio that are eligible to be linked.
 
-> **Note:** If your app does not have a business assigned, you will see a warning: “You do not have a business ID assigned to this application.” Assign a business to your app in the App Dashboard before proceeding.
+> **Note:** If your app does not have a business assigned, you will see a warning: "You do not have a business ID assigned to this application." Assign a business to your app in the App Dashboard before proceeding.
 
 Select one or more apps from the dropdown. Only apps that are not already linked to another Instant Game will appear.
 
@@ -72,32 +72,30 @@ After submission, the card will display a list of all linked apps along with the
 
 ## Retrieve player identifiers across platforms
 
-After linking your apps, you can use `FBInstant.player.getAssociatedAppsASIDAsync()` in your Instant Game to retrieve the player’s ASIDs for each linked off-platform app.
+After linking your apps, you can use `FBInstant.player.getAssociatedAppsASIDAsync()` in your Instant Game to retrieve the player's ASIDs for each linked off-platform app.
 
 ```
-```
 FBInstant.player.getAssociatedAppsASIDAsync()  
-  .then(function(associatedASIDs) {  
-    // associatedASIDs is an array of objects:  
-    // [{appID: '123', asid: 'abc'}, {appID: '456', asid: 'xyz'}]  
-    associatedASIDs.forEach(function(entry) {  
-      // Use entry.appID and entry.asid to match the player  
-      // to their account in your backend for that app.  
-      console.log(entry.appID, entry.asid);  
-    });  
-  });
-```
+  .then(function(associatedASIDs) {  
+    // associatedASIDs is an array of objects:  
+    // [{appID: '123', asid: 'abc'}, {appID: '456', asid: 'xyz'}]  
+    associatedASIDs.forEach(function(entry) {  
+      // Use entry.appID and entry.asid to match the player  
+      // to their account in your backend for that app.  
+      console.log(entry.appID, entry.asid);  
+    });  
+  });
 ```
 
 If the player has no linked apps, the API returns an empty array.
 
-On the native app side, you can use the `ids_for_business` endpoint with the `instant_game_player_id` field to retrieve the player’s Instant Games Player ID. See [Player Identification Post Migration](https://developers.facebook.com/documentation/games/build/zero-permissions/onboarding-and-migration/player-identification-post-migration) for details on using `ids_for_business`.
+On the native app side, you can use the `ids_for_business` endpoint with the `instant_game_player_id` field to retrieve the player's Instant Games Player ID. See [Player Identification Post Migration](https://developers.facebook.com/documentation/games/build/zero-permissions/onboarding-and-migration/player-identification-post-migration) for details on using `ids_for_business`.
 
 ## Troubleshooting
 
 | Issue | Solution |
 | --- | --- |
 | Cross-play management card is not visible | Verify that your app is a Canvas Game or an Instant Game with associated apps. Testers cannot access this tool — you must be an administrator or developer. |
-| “No business ID assigned” warning | Assign a business to your app in the App Dashboard under **Settings** > **Basic**. |
+| "No business ID assigned" warning | Assign a business to your app in the App Dashboard under **Settings** > **Basic**. |
 | No apps appear in the dropdown | All apps in your business portfolio may already be linked. You can only link apps that you have admin or developer access to and that are not already associated with another Instant Game. |
 | `getAssociatedAppsASIDAsync()` returns an empty array | Verify that you have linked apps in the cross-play management tool and that the player has played the linked app. |

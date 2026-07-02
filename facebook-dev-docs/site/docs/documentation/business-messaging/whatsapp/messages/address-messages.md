@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/business-messaging/wha
 
 Updated: May 21, 2026
 
-Service messages are free-form messages that you can send to WhatsApp users during a [customer service window](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/address-messages#customer-service-windows). You send them using the [Messages API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/message-api) (part of the [Cloud API](https://developers.facebook.com/documentation/business-messaging/whatsapp/about-the-platform#whatsapp-cloud-api)). Unlike template messages, service messages do not require pre-approval — you can compose and send them as needed in response to a WhatsApp user’s message or call.
+Service messages are free-form messages that you can send to WhatsApp users during a [customer service window](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/address-messages#customer-service-windows). You send them using the [Messages API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/message-api) (part of the [Cloud API](https://developers.facebook.com/documentation/business-messaging/whatsapp/about-the-platform#whatsapp-cloud-api)). Unlike template messages, service messages do not require pre-approval — you can compose and send them as needed in response to a WhatsApp user's message or call.
 
 Service messages can only be sent via the Messages API. To message WhatsApp users outside of a customer service window, use template messages instead. See [Marketing messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/overview), [Utility messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/utility-templates/utility-templates), or [Authentication messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/authentication-templates/authentication-templates) to learn about template-based messaging.
 
@@ -49,7 +49,7 @@ You can send the following types of service messages during an open customer ser
 
 ![WhatsApp image message showing a photo of a succulent being trimmed, with the caption The best succulent ever?](https://scontent.fdel1-6.fna.fbcdn.net/v/t39.2365-6/439831684_1373893986606126_2007013942518250478_n.png?_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=iZqOl-H3tjIQ7kNvwF9jJG-&_nc_oc=Adp4lNYiEaPNRp4jYieQ1Cycn4RF9v9kemfiz1RW8ITIrYsWymtzHplvtsE8SF7HF-2KUp-2X_wlsOUtD6lLJolh&_nc_zt=14&_nc_ht=scontent.fdel1-6.fna&_nc_gid=2veO3lbw27RqIb3K_nGeBA&_nc_ss=7b2a8&oh=00_AQAn21fAZoM0OybXWd2CcyvwzDxH3sZxiAWenQoaaEmFZA&oe=6A604B4C)
 
-[Interactive CTA URL button messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/interactive-cta-url-messages) allow you to map any URL to a button, so you don’t have to include lengthy or obscure raw URLs in the message body.
+[Interactive CTA URL button messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/interactive-cta-url-messages) allow you to map any URL to a button, so you don't have to include lengthy or obscure raw URLs in the message body.
 
 ![WhatsApp interactive CTA URL button message with a Lucky Shrub header image and a See Dates button](https://scontent.fdel1-7.fna.fbcdn.net/v/t39.2365-6/499710913_741192228581303_6833492513238538123_n.png?_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=1R-MLJOqgYAQ7kNvwGsZR4X&_nc_oc=Ado74MLlfHbRF5_hShMqRGQTCbhYK2_03TR3XcReLUu8JgACdmAQ_J2YOc3ruL6_qV8AOOS4Bv-xwPyXF4WcoCZK&_nc_zt=14&_nc_ht=scontent.fdel1-7.fna&_nc_gid=2veO3lbw27RqIb3K_nGeBA&_nc_ss=7b2a8&oh=00_AQC4bO9cLZYVyvvxo0daqofO7jFtBCNvxhImoPYTY9AJbA&oe=6A606E4A)
 
@@ -75,7 +75,7 @@ For details, see the [WhatsApp Flows](https://developers.facebook.com/docs/whats
 
 ![WhatsApp interactive reply buttons message about a gardening workshop with Change and Cancel buttons](https://scontent.fdel1-3.fna.fbcdn.net/v/t39.2365-6/440770231_408356378658790_997875267478158577_n.png?_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=U5l4D9WsdpYQ7kNvwHoPdDF&_nc_oc=AdoUq_7-MPH_h6hGSexHD36IAzVCGlhjfrR-XrOoeT6skSax12OysnyA4TfyzCq-EgvSfzWLgYFP4aDRbsaTLlZ-&_nc_zt=14&_nc_ht=scontent.fdel1-3.fna&_nc_gid=2veO3lbw27RqIb3K_nGeBA&_nc_ss=7b2a8&oh=00_AQBmmdcyCyEhMkFP0T4TRCYVdtuJXTD-6GaF9EcMSBeY1w&oe=6A604D98)
 
-[Location messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/location-messages) allow you to send a location’s latitude and longitude coordinates to a WhatsApp user.
+[Location messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/location-messages) allow you to send a location's latitude and longitude coordinates to a WhatsApp user.
 
 ![WhatsApp location message showing a map with a pin for Philz Coffee and its street address](https://scontent.fdel1-1.fna.fbcdn.net/v/t39.2365-6/440739359_451301924241746_5496230692221042707_n.png?_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=5eOCTFL_O4oQ7kNvwHzqU1h&_nc_oc=AdpGP6ICevWp_-nNocrZI3SEgClJoJeXZmdFVKSsixl_NgEmNRn6ZrQqkwDyCsrDzeuMNTL126GQSst0CiPVvW3E&_nc_zt=14&_nc_ht=scontent.fdel1-1.fna&_nc_gid=2veO3lbw27RqIb3K_nGeBA&_nc_ss=7b2a8&oh=00_AQDyHzBNItuvxy7_koaN0i9vuwEzx4YaWTWmLXrR_tIYVA&oe=6A605614)
 
@@ -108,7 +108,7 @@ Guidelines for sending high-quality messages:
 * Avoid sending too many messages per day.
 * Optimize your messages for content and length.
 
-Your business phone number’s status, [quality rating⁠](https://www.facebook.com/business/help/896873687365001), and [messaging limits](https://developers.facebook.com/documentation/business-messaging/whatsapp/messaging-limits) are displayed in the [WhatsApp Manager⁠](https://business.facebook.com/wa/manage/home/) > **Account tools** > **Phone numbers** panel.
+Your business phone number's status, [quality rating⁠](https://www.facebook.com/business/help/896873687365001), and [messaging limits](https://developers.facebook.com/documentation/business-messaging/whatsapp/messaging-limits) are displayed in the [WhatsApp Manager⁠](https://business.facebook.com/wa/manage/home/) > **Account tools** > **Phone numbers** panel.
 
 ![WhatsApp Manager Phone numbers panel under Account tools showing status, quality rating, and messaging limit](https://scontent.fdel1-6.fna.fbcdn.net/v/t39.2365-6/532273545_1018217176902582_4720629988037795374_n.png?_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=861gdYmrNikQ7kNvwE3YGuj&_nc_oc=AdpLjSGfG3j0mJAB0Vfifadi3l-e746p6g4gAVaFk9cpJk23aaaUsXh39Y1bH1SdSxRPJNPJMn1rJ-6R7rzYN_t7&_nc_zt=14&_nc_ht=scontent.fdel1-6.fna&_nc_gid=2veO3lbw27RqIb3K_nGeBA&_nc_ss=7b2a8&oh=00_AQAXG819L8SF31cbpquChte84xjd9-NX23G1ulnzjb_lyA&oe=6A607234)
 
@@ -119,32 +119,28 @@ Numbers with high traffic commonly experience quality changes within short inter
 All send message requests use the [Messages API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/message-api#post-version-phone-number-id-messages):
 
 ```
-```
-POST /<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/messages
-```
+POST /<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/messages
 ```
 
 The post body varies depending on the [type of message](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/address-messages#message-types) you want to send, but the payload uses the following common syntax:
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "recipient_type": "<RECIPIENT_TYPE>",  
-  "to": "<WHATSAPP_USER_PHONE_NUMBER>",  
-  "type": "<MESSAGE_TYPE>",  
-  "<MESSAGE_TYPE>": {<MESSAGE_CONTENTS>}  
+  "messaging_product": "whatsapp",  
+  "recipient_type": "<RECIPIENT_TYPE>",  
+  "to": "<WHATSAPP_USER_PHONE_NUMBER>",  
+  "type": "<MESSAGE_TYPE>",  
+  "<MESSAGE_TYPE>": {<MESSAGE_CONTENTS>}  
 }
 ```
-```
 
-The `type` property value in the post body payload indicates the [type of message](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/address-messages#message-types) to send, and a property matching that type must be included that describes the message’s contents.
+The `type` property value in the post body payload indicates the [type of message](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/address-messages#message-types) to send, and a property matching that type must be included that describes the message's contents.
 
 The `recipient_type` property can be either `individual` for 1:1 messaging, or `group` for group messages.
 
 See the [Groups API documentation](https://developers.facebook.com/documentation/business-messaging/whatsapp/groups) for details.
 
-For example, this is a request to send a [text message](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/text-messages) to a WhatsApp user. Note that `type` is set to `text`, and a `text` object follows, which describes the message’s contents:
+For example, this is a request to send a [text message](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/text-messages) to a WhatsApp user. Note that `type` is set to `text`, and a `text` object follows, which describes the message's contents:
 
 ```
 curl 'https://graph.facebook.com/v25.0/106540352242922/messages' \
@@ -174,24 +170,22 @@ The API returns the following JSON response when it successfully accepts your se
 ### Response syntax
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "contacts": [  
-    {  
-      "input": "<WHATSAPP_USER_PHONE_NUMBER>",  
-      "wa_id": "<WHATSAPP_USER_ID>"  
-    }  
-  ],  
-  "messages": [  
-    {  
-      "id": "<WHATSAPP_MESSAGE_ID>",  
-      "group_id": "<GROUP_ID>", <!-- Only included if messaging a group -->  
-      "message_status": "<PACING_STATUS>" <!-- Only included if sending a template -->  
-    }  
-  ]  
+  "messaging_product": "whatsapp",  
+  "contacts": [  
+    {  
+      "input": "<WHATSAPP_USER_PHONE_NUMBER>",  
+      "wa_id": "<WHATSAPP_USER_ID>"  
+    }  
+  ],  
+  "messages": [  
+    {  
+      "id": "<WHATSAPP_MESSAGE_ID>",  
+      "group_id": "<GROUP_ID>", <!-- Only included if messaging a group -->  
+      "message_status": "<PACING_STATUS>" <!-- Only included if sending a template -->  
+    }  
+  ]  
 }
-```
 ```
 
 ### Response contents
@@ -200,8 +194,8 @@ The API returns the following JSON response when it successfully accepts your se
 | --- | --- | --- |
 | `<GROUP_ID>`  *String* | The string identifier of a group made using the Groups API.  This field shows when messages are sent, received, or read from a group.  [Learn more about the Groups API](https://developers.facebook.com/documentation/business-messaging/whatsapp/groups) | `Y2FwaV9ncm91cDoxNzA1NTU1MDEzOToxMjAzNjM0MDQ2OTQyMzM4MjAZD` |
 | `<PACING_STATUS>`  *String* | Indicates [template pacing](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-pacing) status. The `message_status` property is only included in responses when sending a [template message](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview) that uses a template that is being paced. | `wamid.HBgLMTY0NjcwNDM1OTUVAgARGBI4MjZGRDA0OUE2OTQ3RkEyMzcA` |
-| `<WHATSAPP_USER_PHONE_NUMBER>`  *String* | WhatsApp user’s WhatsApp phone number. May not match `wa_id` value. | `+16505551234` |
-| `<WHATSAPP_USER_ID>`  *String* | WhatsApp user’s WhatsApp ID. May not match `input` value. | `16505551234` |
+| `<WHATSAPP_USER_PHONE_NUMBER>`  *String* | WhatsApp user's WhatsApp phone number. May not match `wa_id` value. | `+16505551234` |
+| `<WHATSAPP_USER_ID>`  *String* | WhatsApp user's WhatsApp ID. May not match `input` value. | `16505551234` |
 | `<WHATSAPP_MESSAGE_ID>`  *String* | WhatsApp Message ID. This ID appears in associated **messages** webhooks, such as sent, read, and delivered webhooks. | `wamid.HBgLMTY0NjcwNDM1OTUVAgARGBI4MjZGRDA0OUE2OTQ3RkEyMzcA` |
 
 ## Commerce messages
@@ -210,7 +204,7 @@ Commerce messages are interactive messages used in conjunction with a product ca
 
 ## Read receipts
 
-You can let a WhatsApp user know you have read their message by [marking it as read](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/mark-message-as-read), which causes two blue check marks (called “read receipts”) to appear below the user’s message:
+You can let a WhatsApp user know you have read their message by [marking it as read](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/mark-message-as-read), which causes two blue check marks (called "read receipts") to appear below the user's message:
 
 ![WhatsApp message with two blue check marks labeled Read receipt next to the timestamp](https://scontent.fdel1-1.fna.fbcdn.net/v/t39.2365-6/491643461_603380552708521_8284248965365504291_n.png?_nc_cat=105&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=EWzKYi7ugCwQ7kNvwFV_SGN&_nc_oc=Ado3mt1Aap3sSU9nAIUnsV0k3mDlyJUv-IEja3BiZnUYgXqCenI8xtM1nGsNVV_3byZu6dKMLuQLgvjDumy03qlI&_nc_zt=14&_nc_ht=scontent.fdel1-1.fna&_nc_gid=2veO3lbw27RqIb3K_nGeBA&_nc_ss=7b2a8&oh=00_AQBT597m09HNO06EZvJcVHlE4bb8hWOVoHJJCBY6RKRl6w&oe=6A6043F0)
 
@@ -236,7 +230,7 @@ Messages sent to WhatsApp users trigger **messages** webhooks, so be sure to sub
 
 Plus signs (`+`), hyphens (`-`), parenthesis (`(`,`)`), and spaces are supported in send message requests.
 
-We highly recommend that you include both the plus sign and country calling code when sending a message to a customer. If the plus sign is omitted, your business phone number’s country calling code is prepended to the customer’s phone number. This can result in undelivered or misdelivered messages.
+We highly recommend that you include both the plus sign and country calling code when sending a message to a customer. If the plus sign is omitted, your business phone number's country calling code is prepended to the customer's phone number. This can result in undelivered or misdelivered messages.
 
 For example, if your business is in India (country calling code `91`) and you send a message to the following customer phone number in various formats:
 
@@ -253,7 +247,7 @@ Note: For Brazil and Mexico, the extra added prefix of the phone number may be m
 
 If you are using a link (`link`) to a media asset on your server (as opposed to the ID (`id`) of an asset you have uploaded to the Meta servers), the Cloud API internally caches the asset for 10 minutes. The cached asset is reused in subsequent send message requests if the link in subsequent payloads is the same as the link in the initial payload.
 
-If you don’t want the cached asset reused in a subsequent message within the 10 minute time period, append a random query string to the asset link in the new send message request payload. The Cloud API treats this as a new asset, fetches it from your server, and caches it for 10 minutes.
+If you don't want the cached asset reused in a subsequent message within the 10 minute time period, append a random query string to the asset link in the new send message request payload. The Cloud API treats this as a new asset, fetches it from your server, and caches it for 10 minutes.
 
 For example:
 

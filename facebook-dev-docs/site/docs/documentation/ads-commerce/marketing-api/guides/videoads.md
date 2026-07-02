@@ -47,11 +47,11 @@ https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/ads
 
 ### Limits
 
-There are limits on the creative’s text, image size, image aspect ratio and other aspects of the creative. See the [Ads Guide⁠](https://www.facebook.com/business/ads-guide).
+There are limits on the creative's text, image size, image aspect ratio and other aspects of the creative. See the [Ads Guide⁠](https://www.facebook.com/business/ads-guide).
 
 ### Read
 
-In the Ads API, each field you want to retrieve needs to be asked for explicitly, except for `id`. Each object’s [Reference](https://developers.facebook.com/docs/reference/ads-api/adcreative#read) has a section for reading back the object and lists what fields are readable. For the creative, the readable fields are the same as those specified when you created the object, plus `id`.
+In the Ads API, each field you want to retrieve needs to be asked for explicitly, except for `id`. Each object's [Reference](https://developers.facebook.com/docs/reference/ads-api/adcreative#read) has a section for reading back the object and lists what fields are readable. For the creative, the readable fields are the same as those specified when you created the object, plus `id`.
 
 ```
 curl -G \
@@ -64,9 +64,9 @@ https://graph.facebook.com/v25.0/<CREATIVE_ID>
 
 A placement is where Facebook shows your ad, such as on Feed on desktop, Feed on a mobile device or on the right column. See [Ads Product Guide⁠](https://www.facebook.com/business/ads-guide/).
 
-Run ads across the full range of available placements. Facebook’s ad auction delivers ad impressions to the placement most likely to drive campaign results at the lowest possible cost.
+Run ads across the full range of available placements. Facebook's ad auction delivers ad impressions to the placement most likely to drive campaign results at the lowest possible cost.
 
-To use this optimization, leave this field blank. You can also select specific placements in an ad set’s `target_spec`.
+To use this optimization, leave this field blank. You can also select specific placements in an ad set's `target_spec`.
 
 This example has a Page post ad. The available placements are Mobile Feed, Desktop Feed and Right column of Facebook. In the API, see [Placement Options](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference/advanced-targeting#placement). If you choose `desktopfeed` and `rightcolumn` as the `page_type`, the ad runs on Desktop Feed and Right column placements. Any ad created below this ad set has only the desktop placement.
 
@@ -147,7 +147,7 @@ curl -G \
 https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/generatepreviews
 ```
 
-The response is an iframe that’s valid for 24 hours.
+The response is an iframe that's valid for 24 hours.
 
 ## See more
 

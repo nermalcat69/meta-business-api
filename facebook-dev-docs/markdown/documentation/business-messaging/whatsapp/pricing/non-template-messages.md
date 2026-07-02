@@ -14,7 +14,7 @@ This document explains how pricing works on the WhatsApp Business Platform.
 Effective July 1, 2025, Meta charges on a **per-message basis**:
 
 * You are only charged when a [template message](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview) is delivered (`"type":"template"`).
-* Rates vary based on the template’s [category](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/non-template-messages#message-template-categories) and the recipient WhatsApp phone number’s [country calling code](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/non-template-messages#country-calling-codes).
+* Rates vary based on the template's [category](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/non-template-messages#message-template-categories) and the recipient WhatsApp phone number's [country calling code](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/non-template-messages#country-calling-codes).
 
 Meta charges businesses in the following ways:
 
@@ -55,7 +55,7 @@ In the example below, a business sends 4 messages to a WhatsApp user but is only
 | Hour | Action | Rate | Reason |
 | --- | --- | --- | --- |
 | 0 | You send a marketing template message to a WhatsApp user, promoting your new product. | Marketing | All marketing template messages are charged. |
-| 2 | The user messages you about the product.  This opens a 24 hour [customer service window](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/send-messages#customer-service-windows) (“CSW”). | - | Messages sent from a WhatsApp user to a business are not charged. |
+| 2 | The user messages you about the product.  This opens a 24 hour [customer service window](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/send-messages#customer-service-windows) ("CSW"). | - | Messages sent from a WhatsApp user to a business are not charged. |
 | 3 | You send a [text message](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/text-messages) to the user (`"type":"text"`), describing the product in more detail. | None | All non-template messages are free within an open customer service window. |
 | 4 | The user purchases the product and you send them a utility template confirming their order. | None | The CSW is still open, and utility templates sent within an open CSW are free. |
 | 26 | The CSW closes, which means you can no longer send non-template messages. | - | 24 hours have passed since the user last messaged you. |
@@ -70,7 +70,7 @@ To better enable our customers to plan and prepare for pricing updates, the foll
 
 | Type of pricing update | Examples | Minimum advance notice |
 | --- | --- | --- |
-| **Rate card update** | Updating the [rate](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/non-template-messages#rates) for a given market–product  Updating the volume tiers for a given market–product (utility and authentication only)  Moving a market from one [pricing region](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/non-template-messages#country-calling-codes) (for example, “Other”) to another or to be standalone on the rate card | 1 month |
+| **Rate card update** | Updating the [rate](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/non-template-messages#rates) for a given market–product  Updating the volume tiers for a given market–product (utility and authentication only)  Moving a market from one [pricing region](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/non-template-messages#country-calling-codes) (for example, "Other") to another or to be standalone on the rate card | 1 month |
 | **Pricing model add-on** | Our July 1, 2025, introduction of new [volume tiers](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/non-template-messages#volume-tiers) for utility and authentication messages | 3 months |
 | **Pricing model change** | Our July 1, 2025 update to our pricing model, from conversation-based pricing to per-message pricing | 6 months |
 
@@ -107,7 +107,7 @@ Below represents future updates to our rates. See our [rate cards](https://devel
 
 #### Rate card updates effective October 1, 2026
 
-To give customers more than 1-month notice – more time to plan and prepare – Meta is sharing pricing updates launching October 1, 2026 by June 1, 2026. Consistent with July 1, 2026, Meta will move additional markets out of their respective “Rest Of” pricing region to be standalone on rate cards. Below are at least the markets Meta will move out, and the corresponding updates to rates. Meta will announce to-be rates no later than September 1, 2026, per the [pricing calendar](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing#pricing-calendar).
+To give customers more than 1-month notice – more time to plan and prepare – Meta is sharing pricing updates launching October 1, 2026 by June 1, 2026. Consistent with July 1, 2026, Meta will move additional markets out of their respective "Rest Of" pricing region to be standalone on rate cards. Below are at least the markets Meta will move out, and the corresponding updates to rates. Meta will announce to-be rates no later than September 1, 2026, per the [pricing calendar](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing#pricing-calendar).
 
 * Bangladesh\*, Iraq\*, Nepal\*, Sri Lanka\* – Lower utility and authentication rates, plus a new authentication-international rate that is higher vs. the current regional authentication rate
 * Kazakhstan\*, Kuwait\*, Morocco\*, Oman\*, Ukraine\* – Higher utility and authentication rates, plus a new authentication-international rate that is higher vs. the current regional authentication rate
@@ -118,7 +118,7 @@ To give customers more than 1-month notice – more time to plan and prepare –
 
 *Effective July 1, 2026, as of 9am PT* – Only partners and directly-integrated clients whose Sold-To country is Brazil in [Billing Hub⁠](https://business.facebook.com/billing_hub/legal_entities) (eligible customers) can create new WhatsApp Business accounts (WABAs) in BRL (Brazilian Reals). Learn more about billing localization for Brazil [here⁠](https://www.facebook.com/business/help/4344414845795884).
 
-Per-message rates in BRL are now published [below](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/non-template-messages#updates-to-rate-cards). Charges from any BRL WABA will be invoiced in BRL by Meta’s local entity in Brazil, Facebook Brasil.
+Per-message rates in BRL are now published [below](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/non-template-messages#updates-to-rate-cards). Charges from any BRL WABA will be invoiced in BRL by Meta's local entity in Brazil, Facebook Brasil.
 
 As a reminder, eligible customers must ensure all WABAs in their business portfolio are migrated to BRL by June 30, 2027 to avoid disruptions, since as of July 1, 2027 Meta will no longer deliver the messages of non-BRL WABAs of eligible customers. To make this migration process easier and faster, use the [WABA Currency Migration APIs](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/change-billing-currency), which are available as of June 1, 2026.
 
@@ -159,7 +159,7 @@ Eligible customers must ensure all WABAs in their business portfolio are migrate
   * Mexico – Lower marketing rates.
   * United Arab Emirates – Higher marketing message rate.
   * Argentina, Egypt, Saudi Arabia – Lower utility and authentication rates.
-  * Zimbabwe is mapped to our “Rest of Africa” region vs. “Other”. Messages delivered to WhatsApp users with a +263 country calling code (Zimbabwe) will be charged “Rest of Africa” rates.
+  * Zimbabwe is mapped to our "Rest of Africa" region vs. "Other". Messages delivered to WhatsApp users with a +263 country calling code (Zimbabwe) will be charged "Rest of Africa" rates.
 * Effective July 1, 2025 – Lower utility and authentication message rates across several markets, to ensure pricing is on-par to alternate channels for these use cases. Marketing conversation rates became marketing message rates.
 * Effective April 1, 2025 – Lowered [authentication-international conversation rates](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/authentication-international-rates) for Egypt, Nigeria, Pakistan, and South Africa.
 * Effective February 1, 2025 – Lowered [authentication conversation rates](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing#rates) for Egypt, Malaysia, Nigeria, Pakistan, Saudi Arabia, South Africa, and the United Arab Emirates.
@@ -193,7 +193,7 @@ You can unlock lower utility and authentication rates based on the number of mes
 
 ### Tiering accrual
 
-* **Messages are aggregated at the business portfolio level, across all WhatsApp Business accounts (WABAs) owned by the portfolio** — To determine what tier rates may apply in a given month for a given market–category pair, Meta aggregates messages across all of a business portfolio’s WABAs for each market-category pair (e.g., Brazil–authentication, Brazil–utility, India–authentication, and so on).
+* **Messages are aggregated at the business portfolio level, across all WhatsApp Business accounts (WABAs) owned by the portfolio** — To determine what tier rates may apply in a given month for a given market–category pair, Meta aggregates messages across all of a business portfolio's WABAs for each market-category pair (e.g., Brazil–authentication, Brazil–utility, India–authentication, and so on).
 * **Only messages that are charged count toward the tiers** — Thus, the following messages do not count:
   * Utility templates delivered to WhatsApp users within an open customer service window.
   * Utility templates delivered within a [free entry point window](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/non-template-messages#free-entry-point-windows).
@@ -222,7 +222,7 @@ Example 1: A business that sends a total of B authentication messages in a month
 Example 2: A business that starts to be charged our authentication-international rates on the 15th day of the month:
 
 * Day 1 to 14 of that month: Volume tiers apply on the authentication rate.
-* Day 15 onward of that month: Volume tiers apply on the authentication-international rate, with messages continuing to accrue in that month. For example, if a business has already reached the Tier 2, the business would be charged Tier 2’s authentication-international rate:
+* Day 15 onward of that month: Volume tiers apply on the authentication-international rate, with messages continuing to accrue in that month. For example, if a business has already reached the Tier 2, the business would be charged Tier 2's authentication-international rate:
 
 Example 3: A business has 3 WABAs sending authentication messages to India. For WABA A, it is still July 31 based on their timezone. For WABAs B and C, it is already August 1 based on their timezone. For July, the business is already being charged Tier Rate 1.
 
@@ -241,41 +241,39 @@ Starting October 1, 2025, an [account\_update](https://developers.facebook.com/d
 Example webhook:
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "102290129340398",  
-      "time": 1743451903,  
-      "changes": [  
-        {  
-          "value": {  
-            "volume_tier_info": {  
-                "tier_update_time": 1743451903,  
-                "pricing_category": "UTILITY",  
-                "tier": "25000001:50000000",  
-                "effective_month": "2025-11",  
-                "region": "India"  
-            },  
-            "event": "VOLUME_BASED_PRICING_TIER_UPDATE"  
-          },  
-          "field": "account_update"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "102290129340398",  
+      "time": 1743451903,  
+      "changes": [  
+        {  
+          "value": {  
+            "volume_tier_info": {  
+                "tier_update_time": 1743451903,  
+                "pricing_category": "UTILITY",  
+                "tier": "25000001:50000000",  
+                "effective_month": "2025-11",  
+                "region": "India"  
+            },  
+            "event": "VOLUME_BASED_PRICING_TIER_UPDATE"  
+          },  
+          "field": "account_update"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 * `tier_update_time` tells when your WABA reached a higher volume tier (Unix timestamp).
 * `pricing_category` tells you the template category for which your new volume tier rate applies.
-* `tier` tells you the new volume tier’s lower and upper bounds.
+* `tier` tells you the new volume tier's lower and upper bounds.
 * `effective_month` tells you the month in which your new volume tier rate is in effect.
 * `region` tells you the WhatsApp user country/region for which your new volume tier rate applies.
 
-Note that it’s possible for multiple [account\_update](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/account_update) webhooks to be triggered that describe the same tier switch event. In these cases, use the webhook with the smaller `tier_update_time` Unix timestamp as the official webhook.
+Note that it's possible for multiple [account\_update](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/account_update) webhooks to be triggered that describe the same tier switch event. In these cases, use the webhook with the smaller `tier_update_time` Unix timestamp as the official webhook.
 
 ### Tiering analytics
 
@@ -286,14 +284,12 @@ You can get [volume tier information](https://developers.facebook.com/documentat
 Non-template messages, which can only be sent within an open [customer service window](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/send-messages#customer-service-windows), are free. These messages will have `type` set to `free_customer_service` in the `pricing` object of status [messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/messages/status) webhooks:
 
 ```
-```
-"pricing": {  
-  "billable": false,  
-  "pricing_model": "PMP",  
-  "type": "free_customer_service",  
-  "category": "service"  
+"pricing": {  
+  "billable": false,  
+  "pricing_model": "PMP",  
+  "type": "free_customer_service",  
+  "category": "service"  
 }
-```
 ```
 
 ## Free utility template messages
@@ -301,26 +297,24 @@ Non-template messages, which can only be sent within an open [customer service w
 Utility template messages sent within an open [customer service window](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/send-messages#customer-service-windows) are free. These messages will have `type` set to `free_customer_service` and `category` set to `utility` in the `pricing` object of status [messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/messages/status) webhooks:
 
 ```
-```
-"pricing": {  
-  "billable": false,  
-  "pricing_model": "PMP",  
-  "type": "free_customer_service",  
-  "category": "utility"  
+"pricing": {  
+  "billable": false,  
+  "pricing_model": "PMP",  
+  "type": "free_customer_service",  
+  "category": "utility"  
 }
-```
 ```
 
 ### Edge case
 
-If you send a message to a WhatsApp user prior to July 1, 2025 (which is when Meta switched from conversation-based pricing to per-message pricing), a utility conversation is opened between you and a user that spans the switch to per-message pricing (the conversation was opened before the switch but won’t close until after the switch). In this case, utility templates sent to the user after the switch while the conversation is open will be free, but attributed to the open conversation. In status [messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/messages/status) webhooks, these messages will have a `pricing_model` of `CBP` and the utility conversation ID will be assigned to `conversation.id`. Once the conversation closes, subsequent utility messages will use per-message pricing, which will be reflected in new webhooks.
+If you send a message to a WhatsApp user prior to July 1, 2025 (which is when Meta switched from conversation-based pricing to per-message pricing), a utility conversation is opened between you and a user that spans the switch to per-message pricing (the conversation was opened before the switch but won't close until after the switch). In this case, utility templates sent to the user after the switch while the conversation is open will be free, but attributed to the open conversation. In status [messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/messages/status) webhooks, these messages will have a `pricing_model` of `CBP` and the utility conversation ID will be assigned to `conversation.id`. Once the conversation closes, subsequent utility messages will use per-message pricing, which will be reflected in new webhooks.
 
 ## Free entry point windows
 
 If a WhatsApp user messages you via a Click to WhatsApp Ad or Facebook Page Call-to-Action button using a device running our Android or iOS app (our desktop and web apps are not supported):
 
 * A 24-hour [customer service window](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/send-messages#customer-service-windows) is opened (as normal).
-* If you respond within 24 hours using any type of message, the message will be free, and a Free Entry Point (“FEP”) window will be opened, starting from the time when you responded.
+* If you respond within 24 hours using any type of message, the message will be free, and a Free Entry Point ("FEP") window will be opened, starting from the time when you responded.
 
 FEP windows remain open for 72 hours. While open, you can send any type of message to the user at no charge. Note, however, that the customer service window is independent of the FEP window, so if the customer service window closes, you will only be able to send template messages.
 
@@ -330,7 +324,7 @@ Starting in 2026, businesses integrated into Marketing Messages API for WhatsApp
 
 ## New pricing policy for AI Providers leveraging WhatsApp Business Platform
 
-Click [here](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/ai-providers) to learn more about our new pricing policy for “AI Providers” leveraging WhatsApp Business Platform, which is effective February 16, 2026, and updated as of May 12, 2026.
+Click [here](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/ai-providers) to learn more about our new pricing policy for "AI Providers" leveraging WhatsApp Business Platform, which is effective February 16, 2026, and updated as of May 12, 2026.
 
 ## Analytics
 
@@ -341,14 +335,12 @@ Use the [pricing\_analytics field](https://developers.facebook.com/documentation
 Billable messages have `type` set to `regular` in the `pricing` object of status [messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/messages/status) webhooks:
 
 ```
-```
-"pricing": {  
-  "billable": true,  
-  "pricing_model": "PMP",  
-  "type": "regular",  
-  "category": "<PRICING_CATEGORY>"  
+"pricing": {  
+  "billable": true,  
+  "pricing_model": "PMP",  
+  "type": "regular",  
+  "category": "<PRICING_CATEGORY>"  
 }
-```
 ```
 
 The `<PRICING_CATEGORY>` tells you what rate was applied (for example, `marketing`). See the status messages webhook reference for a list of possible values.

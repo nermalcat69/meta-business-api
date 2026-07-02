@@ -81,13 +81,13 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Pre-Verified-Phone-Number-ID}/request_code' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "code_method": "SMS",  
-  "language": "en_US"  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Pre-Verified-Phone-Number-ID}/request_code' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "code_method": "SMS",  
+  "language": "en_US"  
 }'
 ```
 
@@ -99,12 +99,12 @@ Select status code
 
 ```
 {  
-  "success_response": {  
-    "summary": "Successful code request",  
-    "value": {  
-      "success": true  
-    }  
-  }  
+  "success_response": {  
+    "summary": "Successful code request",  
+    "value": {  
+      "success": true  
+    }  
+  }  
 }
 ```
 
@@ -636,13 +636,13 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Pre-Verified-Phone-Number-ID}/request_code' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "code_method": "SMS",  
-  "language": "en_US"  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Pre-Verified-Phone-Number-ID}/request_code' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "code_method": "SMS",  
+  "language": "en_US"  
 }'
 ```
 
@@ -654,12 +654,12 @@ Select status code
 
 ```
 {  
-  "success_response": {  
-    "summary": "Successful code request",  
-    "value": {  
-      "success": true  
-    }  
-  }  
+  "success_response": {  
+    "summary": "Successful code request",  
+    "value": {  
+      "success": true  
+    }  
+  }  
 }
 ```
 

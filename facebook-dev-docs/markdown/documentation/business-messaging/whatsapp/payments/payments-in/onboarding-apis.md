@@ -20,7 +20,7 @@ The integration model you use depends on your payment gateway. The two models di
 
 | User experience | UPI Intent Mode | Payment Gateway Deep Integration Mode |
 | --- | --- | --- |
-| **Native support for “Other payment methods”**  For example: NetBanking, cards, wallets | ❌  Alternative: Send payment links | ✅ |
+| **Native support for "Other payment methods"**  For example: NetBanking, cards, wallets | ❌  Alternative: Send payment links | ✅ |
 | **Native support for UPI Intent** | ✅ | ✅ |
 | **Native Payment Status Notification** | ❌ | ✅ |
 
@@ -41,7 +41,7 @@ The integration model you use depends on your payment gateway. The two models di
 
 ### UPI Intent mode
 
-* **Find out VPA IDs, MCC, and PC** for your business from the merchant’s payment gateway.
+* **Find out VPA IDs, MCC, and PC** for your business from the merchant's payment gateway.
 * **Access to payment gateway API docs**:
 * UPI Intent S2S calls
 * Webhook configuration for payment status
@@ -55,5 +55,5 @@ The integration model you use depends on your payment gateway. The two models di
 
 ## Support
 
-* In case you run into an issue, reach out to [direct support⁠](https://business.facebook.com/direct-support/). Make sure to choose the correct case type: **“WaBiz: Business Payments API”** so you get a faster resolution.
+* In case you run into an issue, reach out to [direct support⁠](https://business.facebook.com/direct-support/). Make sure to choose the correct case type: **"WaBiz: Business Payments API"** so you get a faster resolution.
 * [Sign up for office hours⁠](https://outlook.office365.com/owa/calendar/WhatsappBusinessPaymentsIndiaOfficeHourse@meta.com/bookings/?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR4UQ_4RWjyK5cyb-80o5sdB4D2az3WEaGX9cKZfrGb3TntBtDXAFpih-rhZWg_aem_yIIVrXZkiojzUvd3lqmPhQ). *Make sure to write down your issues in the form provided.*

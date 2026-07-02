@@ -27,7 +27,7 @@ The URL button is supported for use with the following:
 
 ## Messenger Extensions SDK — required domain allowlisting
 
-To display a webpage with the [Messenger Extensions SDK](https://developers.facebook.com/documentation/business-messaging/messenger-platform/webview/extensions) enabled in the Messenger webview you **must** allowlist the domain, including sub-domain, in the [`whitelisted_domains` property of your bot’s Messenger Profile](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/messenger-profile-api/domain-whitelisting). This ensures that only trusted domains have access to user information available via SDK functions.
+To display a webpage with the [Messenger Extensions SDK](https://developers.facebook.com/documentation/business-messaging/messenger-platform/webview/extensions) enabled in the Messenger webview you **must** allowlist the domain, including sub-domain, in the [`whitelisted_domains` property of your bot's Messenger Profile](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/messenger-profile-api/domain-whitelisting). This ensures that only trusted domains have access to user information available via SDK functions.
 
 For more information on allowlisting domains, see the [`whitelisted_domains` reference](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/messenger-profile-api/domain-whitelisting).
 
@@ -40,7 +40,7 @@ For more information on allowlisting domains, see the [`whitelisted_domains` ref
 | `url` | String | The URL opened in a mobile browser when the button is tapped. Must use HTTPS protocol if `messenger_extensions` is `true`. |
 | `webview_height_ratio` | String | *Optional.* Height of the webview. Valid values: `compact`, `tall`, `full`. Defaults to `full`. |
 | `messenger_extensions` | Boolean | *Optional.* Must be `true` if using Messenger Extensions. |
-| `fallback_url` | String | *Optional.* The URL to use on clients that don’t support [Messenger Extensions](https://developers.facebook.com/documentation/business-messaging/messenger-platform/webview). If not defined, the client uses the `url` as the fallback. May only be specified if `messenger_extensions` is `true`. |
+| `fallback_url` | String | *Optional.* The URL to use on clients that don't support [Messenger Extensions](https://developers.facebook.com/documentation/business-messaging/messenger-platform/webview). If not defined, the client uses the `url` as the fallback. May only be specified if `messenger_extensions` is `true`. |
 | `webview_share_button` | String | *Optional.* Set to `hide` to disable the share button in the webview (for sensitive info). This does not affect any shares initiated by you using Extensions. |
 
 ## Sample request

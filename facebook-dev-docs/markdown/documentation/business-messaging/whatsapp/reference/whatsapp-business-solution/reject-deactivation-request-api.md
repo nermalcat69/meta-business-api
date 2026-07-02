@@ -65,11 +65,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Solution-ID}/access_token' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Solution-ID}/access_token' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -80,13 +80,13 @@ Select status code
 
 ```
 {  
-  "active_token": {  
-    "summary": "Active granular BISU access token",  
-    "value": {  
-      "access_token": "YOUR_GRANULAR_BISU_ACCESS_TOKEN",  
-      "expires_at": 1735689600  
-    }  
-  }  
+  "active_token": {  
+    "summary": "Active granular BISU access token",  
+    "value": {  
+      "access_token": "YOUR_GRANULAR_BISU_ACCESS_TOKEN",  
+      "expires_at": 1735689600  
+    }  
+  }  
 }
 ```
 
@@ -588,11 +588,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Solution-ID}/access_token' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Solution-ID}/access_token' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -603,13 +603,13 @@ Select status code
 
 ```
 {  
-  "active_token": {  
-    "summary": "Active granular BISU access token",  
-    "value": {  
-      "access_token": "YOUR_GRANULAR_BISU_ACCESS_TOKEN",  
-      "expires_at": 1735689600  
-    }  
-  }  
+  "active_token": {  
+    "summary": "Active granular BISU access token",  
+    "value": {  
+      "access_token": "YOUR_GRANULAR_BISU_ACCESS_TOKEN",  
+      "expires_at": 1735689600  
+    }  
+  }  
 }
 ```
 

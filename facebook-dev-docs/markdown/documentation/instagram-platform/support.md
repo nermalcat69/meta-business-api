@@ -29,11 +29,9 @@ Refresh a long-lived accesstoken that is at least 24 hours old but has not expir
 ### Request Syntax
 
 ```
-```
-GET https://graph.instagram.com/refresh_access_token  
-  ?grant_type=ig_refresh_token  
-  &access_token=<LONG_LIVED_ACCESS_TOKENS>
-```
+GET https://graph.instagram.com/refresh_access_token  
+  ?grant_type=ig_refresh_token  
+  &access_token=<LONG_LIVED_ACCESS_TOKENS>
 ```
 
 ### Query String Parameters
@@ -50,13 +48,11 @@ Include the following query string parameters to augment the request.
 A JSON-formatted object containing the following properties and values.
 
 ```
-```
 {  
-  "access_token": "<ACCESS_TOKEN>",  
-  "token_type": "<TOKEN_TYPE>",  
-  "expires_in": <EXPIRES_IN>  
+  "access_token": "<ACCESS_TOKEN>",  
+  "token_type": "<TOKEN_TYPE>",  
+  "expires_in": <EXPIRES_IN>  
 }
-```
 ```
 
 **Response Contents**
@@ -72,22 +68,18 @@ A JSON-formatted object containing the following properties and values.
 #### Request
 
 ```
-```
-curl -X GET \  
-  'https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=F4RVB...'
-```
+curl -X GET \  
+  'https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=F4RVB...'
 ```
 
 #### Response
 
 ```
-```
 {  
-  "access_token": "c3oxd...",  
-  "token_type": "bearer",  
-  "expires_in": 5183944  
+  "access_token": "c3oxd...",  
+  "token_type": "bearer",  
+  "expires_in": 5183944  
 }
-```
 ```
 
 ## Updating

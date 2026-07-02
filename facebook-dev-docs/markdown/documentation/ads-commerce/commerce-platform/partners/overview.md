@@ -7,9 +7,9 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/commerce-
 
 Updated: Nov 21, 2025
 
-Meta’s Shops initiative helps businesses of all sizes connect directly with their customers on Meta technologies, get new customers, and ultimately sell more products.
+Meta's Shops initiative helps businesses of all sizes connect directly with their customers on Meta technologies, get new customers, and ultimately sell more products.
 
-A large majority of these businesses already use existing tools and apps to run their ecommerce websites, including managing their online presence across a variety of channels. Meta’s Commerce APIs enable sellers to extend their presence to Meta’s Shops product through deep integrations with Meta’s own commerce product offerings (Shops, Shop Ads, and so on).
+A large majority of these businesses already use existing tools and apps to run their ecommerce websites, including managing their online presence across a variety of channels. Meta's Commerce APIs enable sellers to extend their presence to Meta's Shops product through deep integrations with Meta's own commerce product offerings (Shops, Shop Ads, and so on).
 
 We encourage you to read the partner integration guide offerings thoroughly and to integrate with as many elements of our Commerce APIs as possible; ideally with all of the ones relevant to your use case. This should lead to lead to stronger business outcomes for the businesses you support.
 

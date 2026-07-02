@@ -9,7 +9,7 @@ Updated: Aug 25, 2021
 
 ## Reading
 
-Setup Quality exposes feedback on the given Pixel’s Conversions API setup based on computed aggregated metrics, which is calculated based on previous events sent by the calling Partner.
+Setup Quality exposes feedback on the given Pixel's Conversions API setup based on computed aggregated metrics, which is calculated based on previous events sent by the calling Partner.
 
 #### Example
 

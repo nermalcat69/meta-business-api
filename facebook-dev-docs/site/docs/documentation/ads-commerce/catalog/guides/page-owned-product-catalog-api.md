@@ -26,11 +26,9 @@ curl -X POST \
 ### Response:
 
 ```
-```
 {  
-    "id": "{PRODUCT_FEED_ID}",  
+    "id": "{PRODUCT_FEED_ID}",  
 }
-```
 ```
 
 #### Note:
@@ -64,11 +62,9 @@ curl -X POST \
 ### Response:
 
 ```
-```
 {  
-    "id": "{UPLOAD_SESSION_ID}",  
+    "id": "{UPLOAD_SESSION_ID}",  
 }
-```
 ```
 
 ### Data file

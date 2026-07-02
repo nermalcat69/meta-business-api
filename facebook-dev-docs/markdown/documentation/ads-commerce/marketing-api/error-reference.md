@@ -29,7 +29,7 @@ This error occurs when you attempt to access a resource that does not exist or h
 
 The Marketing API enforces [rate limits](https://developers.facebook.com/documentation/ads-commerce/marketing-api/overview/rate-limiting) to prevent abuse. Exceeding these limits results in error messages indicating that you have made too many requests in a short time. Use exponential back-off strategies to slow down request rates after you hit the limit.
 
-To optimize performance and avoid hitting rate limits, create a queue system for API requests. This allows for controlled pacing of requests, ensuring compliance with the API’s limits without sacrificing performance.
+To optimize performance and avoid hitting rate limits, create a queue system for API requests. This allows for controlled pacing of requests, ensuring compliance with the API's limits without sacrificing performance.
 
 ### Caching strategies
 

@@ -28,24 +28,22 @@ Before you record a call, make sure:
 Add a `recording` object to your [business-initiated call request body](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/business-initiated-calls#part-2-your-business-initiates-a-new-call-to-the-whatsapp-user):
 
 ```
-```
-POST /<PHONE_NUMBER_ID>/calls  
+POST /<PHONE_NUMBER_ID>/calls  
 {  
-  "messaging_product": "whatsapp",  
-  "to": "14085551234",  
-  "recipient": "US.13491208655302741918",  
-  "action": "connect",  
-  "session": {  
-    "sdp_type": "offer",  
-    "sdp": "<<RFC 8866 SDP>>"  
-  },  
-  "recording": {  
-    "status": "ENABLED",  
-    "purpose": "quality assurance",  
-    "announcement_language": "en_US"  
-  }  
+  "messaging_product": "whatsapp",  
+  "to": "14085551234",  
+  "recipient": "US.13491208655302741918",  
+  "action": "connect",  
+  "session": {  
+    "sdp_type": "offer",  
+    "sdp": "<<RFC 8866 SDP>>"  
+  },  
+  "recording": {  
+    "status": "ENABLED",  
+    "purpose": "quality assurance",  
+    "announcement_language": "en_US"  
+  }  
 }
-```
 ```
 
 **Usernames and business-scoped user IDs:** The `recipient` field lets you identify the WhatsApp user by their BSUID instead of, or in addition to, their phone number in `to`. For details, see [Business-scoped user IDs](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#business-scoped-user-id).
@@ -55,23 +53,21 @@ POST /<PHONE_NUMBER_ID>/calls
 Add the same `recording` object when you accept an incoming call:
 
 ```
-```
-POST /<PHONE_NUMBER_ID>/calls  
+POST /<PHONE_NUMBER_ID>/calls  
 {  
-  "messaging_product": "whatsapp",  
-  "call_id": "wacid.ABGGFjFVU2AfAgo6V",  
-  "action": "accept",  
-  "session": {  
-    "sdp_type": "answer",  
-    "sdp": "<<RFC 8866 SDP>>"  
-  },  
-  "recording": {  
-    "status": "ENABLED",  
-    "purpose": "quality assurance",  
-    "announcement_language": "en_US"  
-  }  
+  "messaging_product": "whatsapp",  
+  "call_id": "wacid.ABGGFjFVU2AfAgo6V",  
+  "action": "accept",  
+  "session": {  
+    "sdp_type": "answer",  
+    "sdp": "<<RFC 8866 SDP>>"  
+  },  
+  "recording": {  
+    "status": "ENABLED",  
+    "purpose": "quality assurance",  
+    "announcement_language": "en_US"  
+  }  
 }
-```
 ```
 
 To accept an incoming call without recording it, either omit the `recording` field entirely or send it with `"status": "DISABLED"`.
@@ -80,7 +76,7 @@ To accept an incoming call without recording it, either omit the `recording` fie
 
 Before any audio is recorded, the Calling API mixes a spoken announcement into both your business and the WhatsApp user audio streams. The announcement is generated from the `purpose` string you provide and the `announcement_language` you select, for example:
 
-> *“The audio of this call will be recorded for the following purpose: <your purpose string>.”*
+> *"The audio of this call will be recorded for the following purpose: <your purpose string>."*
 
 The recording starts only after the announcement has finished playing. A participant who does not consent can decline by terminating the call before or during the announcement.
 
@@ -102,10 +98,10 @@ The following `announcement_language` values have a localized announcement. The 
 | --- | --- | --- |
 | English | `en` (also `en_US`, `en_AU`, `en_CA`, `en_GB`, `en_IN`, `en_NZ`) | The audio of this call will be recorded for the following purpose: |
 | Dutch | `nl` | De audio van dit gesprek wordt voor het volgende doeleinde opgenomen: |
-| French | `fr` | L’audio de cet appel sera enregistré aux fins suivantes : |
+| French | `fr` | L'audio de cet appel sera enregistré aux fins suivantes : |
 | German | `de` | Dieser Anruf wird zu folgenden Zwecken aufgezeichnet: |
 | Hindi | `hi` | इस कॉल के ऑडियो को इस उद्देश्य के लिए रिकॉर्ड किया जाएगा: |
-| Italian | `it` | L’audio di questa chiamata verrà registrato per il seguente scopo: |
+| Italian | `it` | L'audio di questa chiamata verrà registrato per il seguente scopo: |
 | Kannada | `kn` | ಈ ಕರೆಯ ಆಡಿಯೊವನ್ನು ಈ ಕೆಳಗಿನ ಉದ್ದೇಶಕ್ಕಾಗಿ ರೆಕಾರ್ಡ್ ಮಾಡಲಾಗುತ್ತದೆ: |
 | Portuguese (Brazil) | `pt` | O áudio desta ligação será gravado para a seguinte finalidade: |
 | Spanish (Latin America) | `es` | El audio de esta llamada se grabará con el siguiente propósito: |
@@ -124,7 +120,7 @@ Recording and [transcription](https://developers.facebook.com/documentation/busi
 
 When you enable both on the same call, participants hear a single combined announcement instead of two:
 
-> *“The audio of this call will be recorded and transcribed for the following purpose: <your purpose string>.”*
+> *"The audio of this call will be recorded and transcribed for the following purpose: <your purpose string>."*
 
 The combined announcement is localized using the same `announcement_language` values as the individual announcements:
 
@@ -132,10 +128,10 @@ The combined announcement is localized using the same `announcement_language` va
 | --- | --- | --- |
 | English | `en` (also `en_US`, `en_AU`, `en_CA`, `en_GB`, `en_IN`, `en_NZ`) | The audio of this call will be recorded and transcribed for the following purpose: |
 | Dutch | `nl` | De audio van dit gesprek wordt opgenomen en getranscribeerd voor het volgende doeleinde: |
-| French | `fr` | L’audio de cet appel sera enregistré et transcrit aux fins suivantes : |
+| French | `fr` | L'audio de cet appel sera enregistré et transcrit aux fins suivantes : |
 | German | `de` | Dieser Anruf wird zu folgenden Zwecken aufgezeichnet und transkribiert: |
 | Hindi | `hi` | इस कॉल के ऑडियो को इस उद्देश्य के लिए रिकॉर्ड और ट्रांसक्राइब किया जाएगा: |
-| Italian | `it` | L’audio di questa chiamata verrà registrato e trascritto per il seguente scopo: |
+| Italian | `it` | L'audio di questa chiamata verrà registrato e trascritto per il seguente scopo: |
 | Kannada | `kn` | ಈ ಕರೆಯ ಆಡಿಯೋವನ್ನು ರೆಕಾರ್ಡ್ ಮಾಡಲಾಗುತ್ತದೆ ಮತ್ತು ಕೆಳಗಿನ ಉದ್ದೇಶಕ್ಕಾಗಿ ಲಿಪ್ಯಂತರಿಸಲಾಗುತ್ತದೆ: |
 | Portuguese (Brazil) | `pt` | O áudio desta ligação será gravado e transcrito para a seguinte finalidade: |
 | Spanish (Latin America) | `es` | El audio de esta llamada se grabará y transcribirá con el siguiente propósito: |
@@ -150,47 +146,45 @@ When both objects are present, the `announcement_language` and `purpose` from th
 After the call ends and post-processing finishes (typically under one minute), the Calling API sends a `call_recording_available` event under the existing `calls` webhook field:
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "<WABA_ID>",  
-      "changes": [  
-        {  
-          "field": "calls",  
-          "value": {  
-            "messaging_product": "whatsapp",  
-            "metadata": {  
-              "phone_number_id": "<BUSINESS_PHONE_NUMBER_ID>",  
-              "display_phone_number": "<BUSINESS_DISPLAY_PHONE_NUMBER>"  
-            },  
-            "calls": [  
-              {  
-                "id": "wacid.HBgLMTQxMjYxMzYyNTMVAgASGCBGO...",  
-                "from": "<USER_PHONE_NUMBER>",  
-                "from_user_id": "<BSUID>",  
-                "from_parent_user_id": "<PARENT_BSUID>",  
-                "timestamp": "1728932177",  
-                "event": "call_recording_available",  
-                "call_recording": {  
-                  "type": "audio",  
-                  "audio": {  
-                    "id": "1002764438271669",  
-                    "sha256": "Y9vvGyeo3n76ptkXu3CwDBsnzbRFqpjHskQdMGSVqas=",  
-                    "mime_type": "audio/ogg; codecs=opus",  
-                    "url": "https://lookaside.fbsbx.com/whatsapp_business/attachments/?mid=133..."  
-                  }  
-                }  
-              }  
-            ]  
-          }  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "<WABA_ID>",  
+      "changes": [  
+        {  
+          "field": "calls",  
+          "value": {  
+            "messaging_product": "whatsapp",  
+            "metadata": {  
+              "phone_number_id": "<BUSINESS_PHONE_NUMBER_ID>",  
+              "display_phone_number": "<BUSINESS_DISPLAY_PHONE_NUMBER>"  
+            },  
+            "calls": [  
+              {  
+                "id": "wacid.HBgLMTQxMjYxMzYyNTMVAgASGCBGO...",  
+                "from": "<USER_PHONE_NUMBER>",  
+                "from_user_id": "<BSUID>",  
+                "from_parent_user_id": "<PARENT_BSUID>",  
+                "timestamp": "1728932177",  
+                "event": "call_recording_available",  
+                "call_recording": {  
+                  "type": "audio",  
+                  "audio": {  
+                    "id": "1002764438271669",  
+                    "sha256": "Y9vvGyeo3n76ptkXu3CwDBsnzbRFqpjHskQdMGSVqas=",  
+                    "mime_type": "audio/ogg; codecs=opus",  
+                    "url": "https://lookaside.fbsbx.com/whatsapp_business/attachments/?mid=133..."  
+                  }  
+                }  
+              }  
+            ]  
+          }  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ### `call_recording` fields
@@ -199,7 +193,7 @@ After the call ends and post-processing finishes (typically under one minute), t
 | --- | --- | --- |
 | `type` | *String* | Media type of the recording. Currently always `audio`. |
 | `audio.id` | *String* | Media asset ID. Use the [Media API](https://developers.facebook.com/docs/whatsapp/cloud-api/reference/media) to [retrieve the media URL](https://developers.facebook.com/docs/whatsapp/cloud-api/reference/media#retrieve-media-url) for download. |
-| `audio.sha256` | *String* | Base64-encoded SHA-256 hash of the recording. Use it to verify the downloaded file’s integrity. |
+| `audio.sha256` | *String* | Base64-encoded SHA-256 hash of the recording. Use it to verify the downloaded file's integrity. |
 | `audio.mime_type` | *String* | MIME type of the recording, for example `audio/ogg; codecs=opus`. |
 | `audio.url` | *String* | A short-lived download URL. Issue an authenticated GET request with your access token to download the asset. |
 

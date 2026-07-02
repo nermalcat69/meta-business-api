@@ -46,13 +46,13 @@ In addition to the settings above, you can also change the following:
 | `hide_cta` | `data-hide-cta` | Hide the custom call to action button (if available) | `false` |
 | `small_header` | `data-small-header` | Use the small header instead | `false` |
 | `adapt_container_width` | `data-adapt-container-width` | Try to fit inside the container width | `true` |
-| `lazy` | `data-lazy` | `true` means use the browser’s lazy-loading mechanism by setting the `loading="lazy"` iframe attribute. The effect is that the browser does not render the plugin if it’s not close to the viewport and might never be seen. Can be one of `true` or `false` (default). | `false` |
+| `lazy` | `data-lazy` | `true` means use the browser's lazy-loading mechanism by setting the `loading="lazy"` iframe attribute. The effect is that the browser does not render the plugin if it's not close to the viewport and might never be seen. Can be one of `true` or `false` (default). | `false` |
 
 ---
 
 #### Deprecated Attributes
 
-* The attribute `data-show-posts` is deprecated. Please use the attribute `tabs`/`data-tabs` and use the value `timeline` to show posts from the Page’s timeline.
+* The attribute `data-show-posts` is deprecated. Please use the attribute `tabs`/`data-tabs` and use the value `timeline` to show posts from the Page's timeline.
 
 ## Adding the Page Plugin to a Website
 
@@ -128,7 +128,7 @@ The plugin will by default adapt to the `width` of its parent container **on pag
 </div>
 ```
 
-If the `width` of the parent element is bigger than the Page plugin’s `width` it will maintain the value defined in `data-width`:
+If the `width` of the parent element is bigger than the Page plugin's `width` it will maintain the value defined in `data-width`:
 
 ```
 <div style="width: 600px;">
@@ -155,11 +155,11 @@ The Page plugin works with responsive, fluid and static layouts. You can use med
 * The plugin will determine its `width` **on page load**
 * It will **not** react changes to the [box model⁠](http://www.w3schools.com/css/css_boxmodel.asp) **after page load**.
 
-If you want to adjust the plugin’s `width` on window resize, you manually need to rerender the plugin.
+If you want to adjust the plugin's `width` on window resize, you manually need to rerender the plugin.
 
-## Show Friend’s Faces
+## Show Friend's Faces
 
-Show who likes your Page with real people’s profile images rather than just a number. People visting your Page will see a count of friends that like the Page as well as their profile photos.
+Show who likes your Page with real people's profile images rather than just a number. People visting your Page will see a count of friends that like the Page as well as their profile photos.
 
 This option can be activated by checking `Show Friend's Faces` in the configurator.
 

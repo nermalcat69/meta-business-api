@@ -7,11 +7,11 @@ source_url: https://developers.facebook.com/documentation/business-messaging/wha
 
 Updated: May 21, 2026
 
-This page is specific to “AI Providers” using the WhatsApp Business Platform. This does NOT change how Meta charges all other businesses using the WhatsApp Business Platform. Refer to the [pricing page](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing).
+This page is specific to "AI Providers" using the WhatsApp Business Platform. This does NOT change how Meta charges all other businesses using the WhatsApp Business Platform. Refer to the [pricing page](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing).
 
 ### Who this applies to
 
-This is specific to “AI Providers” using the WhatsApp Business Platform, as defined in our [Terms of Service⁠](https://www.whatsapp.com/legal/business-solution-terms/?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR7BJaZyorPqDBLmVDioj2rMeaUkp8GKtnNov3rJyAy4Oa92zSiX6iQPmZ1xkg_aem_Cr16znizwZuNbT8d25pTTg) updated on January 15, 2026: Providers and developers of artificial intelligence or machine learning technologies, such as large language models, generative artificial intelligence platforms, general-purpose artificial intelligence assistants, or similar technologies who provide certain services on WhatsApp Business Platform.
+This is specific to "AI Providers" using the WhatsApp Business Platform, as defined in our [Terms of Service⁠](https://www.whatsapp.com/legal/business-solution-terms/?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR7BJaZyorPqDBLmVDioj2rMeaUkp8GKtnNov3rJyAy4Oa92zSiX6iQPmZ1xkg_aem_Cr16znizwZuNbT8d25pTTg) updated on January 15, 2026: Providers and developers of artificial intelligence or machine learning technologies, such as large language models, generative artificial intelligence platforms, general-purpose artificial intelligence assistants, or similar technologies who provide certain services on WhatsApp Business Platform.
 
 This does **NOT** change how or what Meta charges all other businesses using the WhatsApp Business Platform. Meta will continue to charge these businesses as outlined in the [pricing explainer](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing#cloud-api-and-marketing-messages-api-for-whatsapp). This includes *not* being charged for non-template messages sent in an open customer service window. This also does not change the mechanics of the [customer service window](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/send-messages#customer-service-windows).
 
@@ -19,17 +19,17 @@ This does **NOT** change how or what Meta charges all other businesses using the
 
 *Specifically for third-party AI Providers:*
 
-* Effective January 15, 2026, WhatsApp’s [Terms of Service update⁠](https://www.whatsapp.com/legal/business-solution-terms/?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR7BJaZyorPqDBLmVDioj2rMeaUkp8GKtnNov3rJyAy4Oa92zSiX6iQPmZ1xkg_aem_Cr16znizwZuNbT8d25pTTg) “AI Providers” are only permitted to offer general-purpose AI assistants on the WhatsApp Business Platform where Meta is legally required to permit this use case.
-* Effective February 16, 2026, in countries where Meta is legally required to support AI Providers’ usage of the WhatsApp Business Platform, Meta will charge AI Providers for non-template messages sent to WhatsApp users in these countries.
+* Effective January 15, 2026, WhatsApp's [Terms of Service update⁠](https://www.whatsapp.com/legal/business-solution-terms/?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR7BJaZyorPqDBLmVDioj2rMeaUkp8GKtnNov3rJyAy4Oa92zSiX6iQPmZ1xkg_aem_Cr16znizwZuNbT8d25pTTg) "AI Providers" are only permitted to offer general-purpose AI assistants on the WhatsApp Business Platform where Meta is legally required to permit this use case.
+* Effective February 16, 2026, in countries where Meta is legally required to support AI Providers' usage of the WhatsApp Business Platform, Meta will charge AI Providers for non-template messages sent to WhatsApp users in these countries.
 
 ### What and where Meta will charge
 
-Effective May 13, 2026 as of 12 AM local WABA timezone, Meta will **no longer** charge “AI Providers” for non-template messages delivered to users in certain markets, per below.
+Effective May 13, 2026 as of 12 AM local WABA timezone, Meta will **no longer** charge "AI Providers" for non-template messages delivered to users in certain markets, per below.
 
 *Effective February 16, 2026* – Meta will charge for:
 
 * Each non-template message (`"type":"text", "type":"image"`, and so on)
-* Delivered from an “AI Provider”
+* Delivered from an "AI Provider"
 * To a user in a market where Meta is legally required to permit AI Providers to use the WhatsApp Business Platform
 
 Markets and effective dates (updated as of May 12, 2026):
@@ -107,7 +107,7 @@ The Pricing Analytics API will include a new `<PRICING_CATEGORY>` value of `AI_B
 
 ### Webhooks
 
-The [webhooks](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing#webhooks) will reflect the `<PRICING_CATEGORY>` for these non-template messages from “AI Providers” as `general_purpose_ai`.
+The [webhooks](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing#webhooks) will reflect the `<PRICING_CATEGORY>` for these non-template messages from "AI Providers" as `general_purpose_ai`.
 
 Billable messages have `type` set to `regular` in the pricing object of status [messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/messages/status) webhooks:
 

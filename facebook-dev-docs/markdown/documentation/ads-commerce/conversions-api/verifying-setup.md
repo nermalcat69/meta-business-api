@@ -7,9 +7,9 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/conversio
 
 Updated: Feb 6, 2026
 
-Once you have completed the prerequisites on the [Get Started](https://developers.facebook.com/documentation/ads-commerce/conversions-api/get-started) page, use this page to learn how to send events and use the Test Events tool. Once you’ve sent an event, [verify your setup](https://developers.facebook.com/documentation/ads-commerce/conversions-api/verifying-setup).
+Once you have completed the prerequisites on the [Get Started](https://developers.facebook.com/documentation/ads-commerce/conversions-api/get-started) page, use this page to learn how to send events and use the Test Events tool. Once you've sent an event, [verify your setup](https://developers.facebook.com/documentation/ads-commerce/conversions-api/verifying-setup).
 
-The Conversions API is based on Facebook’s [Marketing API](https://developers.facebook.com/documentation/ads-commerce/marketing-api), which was built on top of our [Graph API](https://developers.facebook.com/docs/graph-api). Marketing and Graph APIs have different version deprecation schedules. Our release cycle is aligned with the [Graph API](https://developers.facebook.com/docs/graph-api/changelog), so every version is supported for at least two years. This exception is only valid for the Conversions API.
+The Conversions API is based on Facebook's [Marketing API](https://developers.facebook.com/documentation/ads-commerce/marketing-api), which was built on top of our [Graph API](https://developers.facebook.com/docs/graph-api). Marketing and Graph APIs have different version deprecation schedules. Our release cycle is aligned with the [Graph API](https://developers.facebook.com/docs/graph-api/changelog), so every version is supported for at least two years. This exception is only valid for the Conversions API.
 
 [Conversions API: Overview](https://developers.facebook.com/documentation/ads-commerce/conversions-api)
 
@@ -19,7 +19,7 @@ Web, app, and physical store events shared using the Conversions API require spe
 
 ## Send Requests
 
-To send new events, make a `POST` request to this API’s `/events` edge from this path: `https://graph.facebook.com/{API_VERSION}/{PIXEL_ID}/events?access_token={TOKEN}`. When you post to this edge, Facebook creates new server events.
+To send new events, make a `POST` request to this API's `/events` edge from this path: `https://graph.facebook.com/{API_VERSION}/{PIXEL_ID}/events?access_token={TOKEN}`. When you post to this edge, Facebook creates new server events.
 
 ```
 curl -X POST \
@@ -167,29 +167,27 @@ The Test Events tool generates a test ID. Send the test ID as a `test_event_code
 
 Events sent with `test_event_code` are not dropped. They flow into Events Manager and are used for targeting and ads measurement purposes.
 
-Here’s an example of how the request should be structured:
+Here's an example of how the request should be structured:
 
-```
 ```
 {  
-   "data": [  
-      {  
-         "event_name": "ViewContent",  
-         "event_time": 1764975551,  
-         "event_id": "event.id.123",  
-         "event_source_url": "http:\/\/jaspers-market.com",  
-         "user_data": {  
-            "client_ip_address": "1.2.3.4",  
-            "client_user_agent": "test user agent"  
-         }  
-      }  
-   ],  
-   "test_event_code": "TEST123"  
+   "data": [  
+      {  
+         "event_name": "ViewContent",  
+         "event_time": 1764975551,  
+         "event_id": "event.id.123",  
+         "event_source_url": "http:\/\/jaspers-market.com",  
+         "user_data": {  
+            "client_ip_address": "1.2.3.4",  
+            "client_user_agent": "test user agent"  
+         }  
+      }  
+   ],  
+   "test_event_code": "TEST123"  
 }
 ```
-```
 
-Here’s an example of how the request appears in Graph API Explorer:
+Here's an example of how the request appears in Graph API Explorer:
 
 You can generate this test payload using the [**Payload Helper tool**](https://developers.facebook.com/documentation/ads-commerce/conversions-api/payload-helper). Please note that the test event code is only for testing payload.
 
@@ -280,7 +278,7 @@ Learn more about [Data Processing Options](https://developers.facebook.com/docum
 
 ## API Limits
 
-The Marketing API has its own rate-limiting logic and is excluded from all the [Graph API rate limitations](https://developers.facebook.com/docs/graph-api/overview/rate-limiting). So if you make a Marketing API call, it won’t be calculated into the Graph API throttling.
+The Marketing API has its own rate-limiting logic and is excluded from all the [Graph API rate limitations](https://developers.facebook.com/docs/graph-api/overview/rate-limiting). So if you make a Marketing API call, it won't be calculated into the Graph API throttling.
 
 There is no specific rate limit for the Conversions API. Conversions API calls are counted as Marketing API calls. The only limitation is that you can send us up to 1,000 events at a time. See [Send Requests](https://developers.facebook.com/documentation/ads-commerce/conversions-api/using-the-api#send) for more information.
 
@@ -328,7 +326,7 @@ Java >= 8
 
 #### Migration Example: PHP
 
-For systems that already use the Business SDK, you just need to reference the new CAPIGatewayIngressRequest and attach it to the eventRequest’s customEndpoint object.
+For systems that already use the Business SDK, you just need to reference the new CAPIGatewayIngressRequest and attach it to the eventRequest's customEndpoint object.
 
 ```
 // this is the standard event request that we attach events to
@@ -342,7 +340,7 @@ $event_request->execute()
 
 #### Migration Example: Java
 
-For systems that already use the Business SDK, you just need to reference the new CAPIGatewayIngressRequest and attach it to the eventRequest’s customEndpoint object.
+For systems that already use the Business SDK, you just need to reference the new CAPIGatewayIngressRequest and attach it to the eventRequest's customEndpoint object.
 
 ```
 // this is the standard event request that we attach events to

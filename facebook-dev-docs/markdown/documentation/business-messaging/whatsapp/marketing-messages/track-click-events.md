@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/business-messaging/wha
 
 Updated: May 21, 2026
 
-Using Marketing Messages API for WhatsApp, you can integrate your marketing messages with events, allowing you to measure the rate and cost at which a Marketing message sent via Marketing Messages API for WhatsApp leads to a downfunnel event like “purchase” on your website or app.
+Using Marketing Messages API for WhatsApp, you can integrate your marketing messages with events, allowing you to measure the rate and cost at which a Marketing message sent via Marketing Messages API for WhatsApp leads to a downfunnel event like "purchase" on your website or app.
 
 Conversion measurement is built on the same events that you can send to Meta when using Ads, making it seamless for businesses who are already integrated with Events for Ads purposes (for example, via Pixel or Conversions API for websites, or Meta SDK in their mobile app), to leverage the same reporting automatically with no setup.
 
@@ -15,13 +15,13 @@ If a business is using both marketing messages on Marketing Messages API for Wha
 
 ## Understanding linked ad entities
 
-When a business registers for Marketing Messages API for WhatsApp, read-only Ad accounts are created under their business portfolio, which are synced to each WhatsApp Business Account under the same portfolio. Note that marketing messages are separate and distinct from Ads - the use of “Ads” terminology below represents the use of Ads entities as technical constructs only.
+When a business registers for Marketing Messages API for WhatsApp, read-only Ad accounts are created under their business portfolio, which are synced to each WhatsApp Business Account under the same portfolio. Note that marketing messages are separate and distinct from Ads - the use of "Ads" terminology below represents the use of Ads entities as technical constructs only.
 
 No action is needed on the part of the business or partner - these linked read-only Ad accounts are kept in sync with any changes made to Marketing templates, so that any new or updated marketing templates are reflected by their linked ad entity.
 
 Linking Marketing templates to Ad accounts provides several benefits:
 
-**Common UI and API for marketing teams:** Businesses can view their Marketing Messages API for WhatsApp marketing campaigns and campaign metrics as “Campaigns” in Ads Manager’s “Marketing Messages” tab, and via API using the Marketing API “[Insights API](https://developers.facebook.com/documentation/ads-commerce/marketing-api/insights)”. Using these interfaces helps a business’ marketing teams view their Ads and Marketing message campaigns using common interfaces and terminology, instead of viewing Ad campaigns in one place and marketing campaigns sent via WhatsApp in another.
+**Common UI and API for marketing teams:** Businesses can view their Marketing Messages API for WhatsApp marketing campaigns and campaign metrics as "Campaigns" in Ads Manager's "Marketing Messages" tab, and via API using the Marketing API "[Insights API](https://developers.facebook.com/documentation/ads-commerce/marketing-api/insights)". Using these interfaces helps a business' marketing teams view their Ads and Marketing message campaigns using common interfaces and terminology, instead of viewing Ad campaigns in one place and marketing campaigns sent via WhatsApp in another.
 
 * **New metrics:** The Ads Manager UI and Insights API report new Conversion metrics (for example, Web, App) that Cloud API and the Business Management API do not support. When Marketing template messages sent via MM API for WhatsApp lead to Conversion events (for example, add to cart, purchase) that a business reports from their website or app, these conversion events are attributed to the Marketing message and are shown in metrics, leading to a better understanding of Marketing message ROI. Reporting events is done via integration with Pixel or Conversions API for Web and App Events and the Meta SDK.
 
@@ -40,7 +40,7 @@ Linking Marketing templates to Ad accounts provides several benefits:
 
 In order to measure Conversion events, Marketing Messages API for WhatsApp automatically syncs Marketing templates to corresponding Ads entities (Campaigns, Message sets, and Ads) with configurations that allow for Conversion reporting of an assumed objective.
 
-This linking process happens automatically, to reduce the integration complexity of Marketing Messages API for WhatsApp for businesses. For those familiar with Meta’s Ads ecosystem, note that these Campaign and Ad Set parameters will not change how messages are delivered via Marketing Messages API for WhatsApp - they are only set so that reported events can be correctly attributed.
+This linking process happens automatically, to reduce the integration complexity of Marketing Messages API for WhatsApp for businesses. For those familiar with Meta's Ads ecosystem, note that these Campaign and Ad Set parameters will not change how messages are delivered via Marketing Messages API for WhatsApp - they are only set so that reported events can be correctly attributed.
 
 The following table shows how Marketing templates are mapped to Ads entities.
 
@@ -77,7 +77,7 @@ Some short-link and redirect services can interfere with conversion measurement 
 * Before sending, Meta appends a click ID to the short link: `https://www.example.com/jaspersmarket?fbclid=xyz789`
 * When the user clicks, the short-link service redirects to your site but drops the query string, sending the user to: `https://www.jaspersmarket.com/checkout?campaign=whatsapp_template` (missing `fbclid=xyz789`)
 
-The click ID is not preserved through the redirect, which can reduce Meta’s ability to attribute conversions to the originating click.
+The click ID is not preserved through the redirect, which can reduce Meta's ability to attribute conversions to the originating click.
 
 ### URL parameter ordering issues
 
@@ -107,7 +107,7 @@ When a user taps a deep link, Android:
 * Creates an implicit Intent.
 * Delivers it to the target Activity (often via `onCreate()` and/or `onNewIntent()`), where the app must read the full URL (including query parameters).
 
-Android passes the URL, but your app must explicitly capture and persist attribution parameters. If you don’t, they can be effectively “lost” after the first screen.
+Android passes the URL, but your app must explicitly capture and persist attribution parameters. If you don't, they can be effectively "lost" after the first screen.
 
 Attribution parameters like `fbclid` can be stripped, cached incorrectly, or not passed through as expected due to one or more of:
 
@@ -179,7 +179,7 @@ Once a business is reporting events via Pixel or Conversions API, the following 
 
 When a user clicks a CTA URL in a Marketing Messages API for WhatsApp message and performs any of the above events, Meta will automatically attribute the conversion event to the MM API for WhatsApp Campaign, and make those analytics available to you or your Partner via the Insights API, which your Partner may surface on their own reporting surfaces that you are accustomed to using.
 
-Note that if this conversion event is also being used to measure the efficacy of Ads on Facebook or Instagram, Meta will attribute the conversion to the ‘last touch’ interaction of the user. For example, if a user arrives at your website via an ad on Facebook, and then closes their browser window and later that day returns to your website via clicking a link from a MM API for WhatsApp message and purchases an item, that purchase conversion event will be attributed to the MM API for WhatsApp campaign (and not the ad on Facebook) as the most recent interaction.
+Note that if this conversion event is also being used to measure the efficacy of Ads on Facebook or Instagram, Meta will attribute the conversion to the 'last touch' interaction of the user. For example, if a user arrives at your website via an ad on Facebook, and then closes their browser window and later that day returns to your website via clicking a link from a MM API for WhatsApp message and purchases an item, that purchase conversion event will be attributed to the MM API for WhatsApp campaign (and not the ad on Facebook) as the most recent interaction.
 
 ## Measure app conversions with Meta SDK or Conversions API
 
@@ -213,7 +213,7 @@ Businesses can capture App conversion events in 3 ways. See [Conversions API for
 
 * If your app is using Meta SDK, [upgrade](https://developers.facebook.com/documentation/android/upgrading-4x) your SDK version to Meta Android SDK v17.0.2 or above. Note iOS app measurement is currently not supported.
 * If your app is using a supported Mobile Measurement Partner (MMP), check with your MMP to get your app ready.
-* If your app is using Conversions API, learn how to [send campaign\_ids parameters with app events](https://developers.facebook.com/documentation/ads-commerce/conversions-api/parameters/app-data#campaign-ids). To get campaign\_ids, you’ll need to parse `campaign_ids` from `al_applink_data parameters` from the deep link that the user clicked from.
+* If your app is using Conversions API, learn how to [send campaign\_ids parameters with app events](https://developers.facebook.com/documentation/ads-commerce/conversions-api/parameters/app-data#campaign-ids). To get campaign\_ids, you'll need to parse `campaign_ids` from `al_applink_data parameters` from the deep link that the user clicked from.
 
 Example deep link:
 

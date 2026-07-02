@@ -48,11 +48,9 @@ Scheduled feeds do not support uploads more frequently than once per hour. If yo
 ### Response
 
 ```
-```
 {  
-  "id": {PRODUCT_FEED_ID}  
+  "id": {PRODUCT_FEED_ID}  
 }
-```
 ```
 
 ## Perform a one-time direct upload
@@ -113,17 +111,15 @@ https://graph.facebook.com/v25.0/<PRODUCT_FEED_ID>/uploads
 ### Sample response
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "id": "{UPLOAD_SESSION_ID}}",  
-      "start_time": "2019-07-15T12:38:36+0000",  
-      "end_time": "2019-07-15T12:38:47+0000"  
-    }  
-  ]  
+  "data": [  
+    {  
+      "id": "{UPLOAD_SESSION_ID}​}",  
+      "start_time": "2019-07-15T12:38:36+0000",  
+      "end_time": "2019-07-15T12:38:47+0000"  
+    }  
+  ]  
 }
-```
 ```
 
 Then, use the value returned in the `id` field to retrieve **a sampling** of errors and warnings.
@@ -141,47 +137,45 @@ https://graph.facebook.com/v25.0/<UPLOAD_SESSION_ID>/errors
 A `fatal` severity here means the item cannot be ingested by Meta; a `warning` severity means the recommended attributes are missing or malformed. In the case of a `warning`, Meta omits the problematic field and proceeds with mutating the other fields.
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "id": 1510567479166488,  
-      "summary": "A required field is missing: price.",  
-      "description": "Products need to have prices to run in ads. Include a price for each product in your data feed file and upload it again. Prices must include cost and an ISO currency code (for example: 10 USD instead of $10 for American dollars).",  
-      "severity": "fatal",  
-      "samples": {  
-        "data": [  
-          {  
-            "row_number": 2,  
-            "retailer_id": "yj9bpbpub5t8t22kgbq6",  
-            "id": "1677559492523068"  
-          },  
-          {  
-            "row_number": 5,  
-            "retailer_id": "ujn33tvbyv2vmdpo7ecb",  
-            "id": "1529743440653137"  
-          }  
-        ]  
-      }  
-    },  
-    {  
-      "id": 275241589314958,  
-      "summary": "GTIN is incorrectly formatted",  
-      "description": "Check that the GTIN (Global Trade Identification Number) for each of your products is in the correct format. Accepted types include UPC, EAN, JAN, and ISBN.",  
-      "severity": "warning",  
-      "samples": {  
-        "data": [  
-          {  
-            "row_number": 4,  
-            "retailer_id": "bxwb1pho9o43uxjxikcg",  
-            "id": "538700559625644"  
-          }  
-        ]  
-      }  
-    }  
-  ]  
+  "data": [  
+    {  
+      "id": 1510567479166488,  
+      "summary": "A required field is missing: price.",  
+      "description": "Products need to have prices to run in ads. Include a price for each product in your data feed file and upload it again. Prices must include cost and an ISO currency code (for example: 10 USD instead of $10 for American dollars).",  
+      "severity": "fatal",  
+      "samples": {  
+        "data": [  
+          {  
+            "row_number": 2,  
+            "retailer_id": "yj9bpbpub5t8t22kgbq6",  
+            "id": "1677559492523068"  
+          },  
+          {  
+            "row_number": 5,  
+            "retailer_id": "ujn33tvbyv2vmdpo7ecb",  
+            "id": "1529743440653137"  
+          }  
+        ]  
+      }  
+    },  
+    {  
+      "id": 275241589314958,  
+      "summary": "GTIN is incorrectly formatted",  
+      "description": "Check that the GTIN (Global Trade Identification Number) for each of your products is in the correct format. Accepted types include UPC, EAN, JAN, and ISBN.",  
+      "severity": "warning",  
+      "samples": {  
+        "data": [  
+          {  
+            "row_number": 4,  
+            "retailer_id": "bxwb1pho9o43uxjxikcg",  
+            "id": "538700559625644"  
+          }  
+        ]  
+      }  
+    }  
+  ]  
 }
-```
 ```
 
 ## Download a full product feed errors report
@@ -200,11 +194,9 @@ curl -X POST \
 ### Response
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 In case the report is not ready, repeat the last call after a few seconds. You can then download the report itself.
@@ -221,17 +213,15 @@ https://graph.facebook.com/v25.0/<UPLOAD_SESSION_ID>
 ### Response
 
 ```
-```
 {  
-  "error_report": {  
-    "report_status": "WRITE_FINISHED",  
-    "file_handle": "{link-to-the-file-location}"  
-  },  
-  "id": "493476498092860"  
+  "error_report": {  
+    "report_status": "WRITE_FINISHED",  
+    "file_handle": "{link-to-the-file-location}"  
+  },  
+  "id": "493476498092860"  
 }
-```
 ```
 
 Find a URL that you can download with a tool such as wget or curl. The downloaded file contains the full error report.
 
-If you get the error: “Cannot access an object not managed by the business owning this app”, please make sure that the app you’re using belongs to the business (Business Settings > Account > Apps).
+If you get the error: "Cannot access an object not managed by the business owning this app", please make sure that the app you're using belongs to the business (Business Settings > Account > Apps).

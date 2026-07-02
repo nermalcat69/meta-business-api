@@ -17,9 +17,9 @@ Flows with an endpoint must meet both reliability and performance requirements. 
 
 A Node.js endpoint example is available that you can clone to create your own endpoint and quickly prototype your flow. Follow the instructions in the README.md file to get started. You can clone the [example code from GitHub⁠](https://github.com/WhatsApp/WhatsApp-Flows-Tools/tree/main/examples/endpoint/nodejs/basic) and run it in any environment you prefer.
 
-### “Book an Appointment” endpoint example
+### "Book an Appointment" endpoint example
 
-Endpoint code is also available that can be used along with the [“Book an Appointment” flow JSON template](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/gettingstarted) to complete the flow from start to finish. Follow the instructions in the README.md file to get started. You can clone the [example code from GitHub⁠](https://github.com/WhatsApp/WhatsApp-Flows-Tools/tree/main/examples/endpoint/nodejs/book-appointment) and run it in any environment you prefer.
+Endpoint code is also available that can be used along with the ["Book an Appointment" flow JSON template](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/gettingstarted) to complete the flow from start to finish. Follow the instructions in the README.md file to get started. You can clone the [example code from GitHub⁠](https://github.com/WhatsApp/WhatsApp-Flows-Tools/tree/main/examples/endpoint/nodejs/book-appointment) and run it in any environment you prefer.
 
 ## Set up an endpoint
 
@@ -32,7 +32,7 @@ Setting up an endpoint consists of the following steps:
 * [Implement Payload Encryption/Decryption](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/flows-templates#encrypt).
 * Link the endpoint to your flow:
   * specify `data_api_version` in the Flow JSON and configure endpoint url, see [reference](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/flowjson#top-level-flow-json-properties) for more details.
-  * if the Flow was created through WhatsApp Manager, connect Meta App to it in “Edit Flow” page, see [Flow Builder UI](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/gettingstarted#flows-builder) for more details.
+  * if the Flow was created through WhatsApp Manager, connect Meta App to it in "Edit Flow" page, see [Flow Builder UI](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/gettingstarted#flows-builder) for more details.
 
 After setting up an endpoint, implement its logic to handle requests:
 
@@ -70,13 +70,11 @@ The body of each request contains the encrypted payload and has the following fo
 **Sample Endpoint Request**
 
 ```
-```
 {  
-    "encrypted_flow_data": "<ENCRYPTED_FLOW_DATA>",  
-    "encrypted_aes_key": "<ENCRYPTED_AES_KEY>",  
-    "initial_vector": "<INITIAL_VECTOR>"  
+    "encrypted_flow_data": "<ENCRYPTED_FLOW_DATA>",  
+    "encrypted_aes_key": "<ENCRYPTED_AES_KEY>",  
+    "initial_vector": "<INITIAL_VECTOR>"  
 }
-```
 ```
 
 | Parameter | Description |
@@ -94,20 +92,18 @@ If a request cannot be decrypted, the endpoint should return HTTP 421 response s
 **Sample Endpoint Response**
 
 ```
-```
-curl -i -H "Content-Type: application/json" -X POST -d '{  
+curl -i -H "Content-Type: application/json" -X POST -d '{  
 "encrypted_flow_data":"4Wor0bpfvrNqnkH+XQZLn3HnU2Zi7hG\\/UHjISS93Fzn9J7youssaLeXlNUH",  
 "encrypted_aes_key":"<ufA0fXD1WzMS4f2aCyr2JI4KtV2X+puen78fLjjt7mI+NqITDCypLOlc2MLc0899ApX5FZI78Yp5ZObEvR\\/3SiOo04aOLAcZ5SGlqcQLL1npaHoTZCBkExjDr0+5F7w+a18hLCByc00nuDoVZvX7qKAYTwDJw==.>",  
 "initial_vector":"<G\\/1rq1naEOMR4TJHFvIs\\/Q==.>"  
-}' 'https://business.com/testing_flow'  
+}' 'https://business.com/testing_flow'  
   
-HTTP/2 200  
-content-type: text/plain  
-content-length: 232  
-date: Wed, 06 Jul 2022 14:03:03 GMT  
+HTTP/2 200  
+content-type: text/plain  
+content-length: 232  
+date: Wed, 06 Jul 2022 14:03:03 GMT  
   
 yZcJQaH3AqfzKgjn64vAcASaJrOMN27S6CESyU68WN/cDCP6abskoMa/pPjszXGKyyh/23lw84HW6ZilMfU6KL3j5AWwOx6GWNwtq8Aj7gz/Y7R+LccmJWxKo2UccMu5xJlduIFlFlOS1gAnOwKrk8wpuprsi4jAOspw3xO2uh3J883aC/csu/MhRPiYCaGGy/tTNvVDmb2Gw1WXFmpvLsZ/SBrgG0cDQJjQzpTO
-```
 ```
 
 ## Implement endpoint logic
@@ -143,26 +139,24 @@ The decrypted payload of the data exchange request has the following format.
 **Sample Data Exchange Request Payload**
 
 ```
-```
 {  
-    "version": "<VERSION>",  
-    "action": "<ACTION_NAME>",  
-    "screen": "<SCREEN_NAME>",  
-    "data": {  
-      "prop_1": "value_1",  
-       …  
-      "prop_n": "value_n"  
-    },  
-   "flow_token": "<FLOW-TOKEN>"  
+    "version": "<VERSION>",  
+    "action": "<ACTION_NAME>",  
+    "screen": "<SCREEN_NAME>",  
+    "data": {  
+      "prop_1": "value_1",  
+       …  
+      "prop_n": "value_n"  
+    },  
+   "flow_token": "<FLOW-TOKEN>"  
 }
-```
 ```
 
 | Parameter | Description |
 | --- | --- |
 | `version`  *string* | **Required.** Value must be set to `3.0`. |
-| `screen`  *string* | **Required.** If `action` is set to `INIT` or `BACK`, this field may not be populated. (Note: “SUCCESS” is a reserved name and no screens can use it.) |
-| `action`  *string* | **Required.** Defines the type of the request. For a data exchange request, the value depends on what triggered it:   * `INIT` if the request is triggered when opening the Flow * `BACK` if the request is triggered when pressing “back” * `data_exchange` if the request is triggered when submitting the screen |
+| `screen`  *string* | **Required.** If `action` is set to `INIT` or `BACK`, this field may not be populated. (Note: "SUCCESS" is a reserved name and no screens can use it.) |
+| `action`  *string* | **Required.** Defines the type of the request. For a data exchange request, the value depends on what triggered it:   * `INIT` if the request is triggered when opening the Flow * `BACK` if the request is triggered when pressing "back" * `data_exchange` if the request is triggered when submitting the screen |
 | `data`  *object* | **Required.** An object passing arbitrary key-value data as a JSON object. If `action` is set to `INIT` or `BACK`, this field may not be populated.  `<key>` *string, boolean, number, object, array* - `<value>` |
 | `flow_token`  *string* | **Required.** A Flow token generated and sent by you as part of the Flow message.  The flow token is similar to a session identifier commonly used in web applications. Generate it using established best practices (for example, it should not be predictable) to ensure the security of data exchanges with an endpoint. |
 | `flow_token_signature`  *string* | Please note that flow\_token\_signature will only be sent with flows version >= 7.3 and data\_api\_version >=4.0.  A Flow token signature is generated and sent by flows as part of the data exchange request payload.  The flow\_token\_signature is a JSON Web Token (JWT) created by flows to securely sign the flow token using the Meta app secret as the secret key. You can choose to use this signature to verify the authenticity of the flow token. (see [Flow token Signature](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/flows-templates#enhanced-endpoint-security) for more details) |
@@ -174,17 +168,15 @@ After the request is received and decrypted, your business logic processes the r
 The following response payload is what the data channel needs to send back to the WhatsApp client during each data exchange, except the last one:
 
 ```
-```
 {  
-    "screen": "<SCREEN_NAME>",  
-    "data": {  
-      "property_1": "value_1",  
-       ...  
-      "property_n": "value_n",  
-      "error_message": "<ERROR-MESSAGE>"  
-    }  
+    "screen": "<SCREEN_NAME>",  
+    "data": {  
+      "property_1": "value_1",  
+       ...  
+      "property_n": "value_n",  
+      "error_message": "<ERROR-MESSAGE>"  
+    }  
 }
-```
 ```
 
 If the data channel cannot process the request due to bad input, handle it gracefully by including an optional `error_message` in the `data` object as part of the response.
@@ -201,20 +193,18 @@ This redirects the user to `<SCREEN_NAME>` and triggers a snackbar error with th
 To trigger flow completion, send the following response to the data exchange request:
 
 ```
-```
 {  
-    "screen": "SUCCESS",  
-    "data": {  
-        "extension_message_response": {  
-            "params": {  
-                "flow_token": "<FLOW_TOKEN>",  
-                "optional_param1": "<value1>",  
-                "optional_param2": "<value2>"  
-            }  
-        }  
-    }  
+    "screen": "SUCCESS",  
+    "data": {  
+        "extension_message_response": {  
+            "params": {  
+                "flow_token": "<FLOW_TOKEN>",  
+                "optional_param1": "<value1>",  
+                "optional_param2": "<value2>"  
+            }  
+        }  
+    }  
 }
-```
 ```
 
 | Parameter | Description |
@@ -238,17 +228,15 @@ If you send a bad response payload to the WhatsApp client, you receive a payload
 **Sample Error Notification Request Payload**
 
 ```
-```
 {  
-    "version": "<VERSION>",  
-    "flow_token": "<FLOW-TOKEN>",  
-    "action": "data_exchange | INIT",  
-    "data": {  
-        "error": "<ERROR-KEY>",  
-        "error_message": "<ERROR-MESSAGE>"  
-    }  
+    "version": "<VERSION>",  
+    "flow_token": "<FLOW-TOKEN>",  
+    "action": "data_exchange | INIT",  
+    "data": {  
+        "error": "<ERROR-KEY>",  
+        "error_message": "<ERROR-MESSAGE>"  
+    }  
 }
-```
 ```
 
 | Parameter | Description |
@@ -264,13 +252,11 @@ If you send a bad response payload to the WhatsApp client, you receive a payload
 Send the following response payload to indicate that error notification was acknowledged:
 
 ```
-```
 {  
-    "data": {  
-        "acknowledged": true  
-    }  
+    "data": {  
+        "acknowledged": true  
+    }  
 }
-```
 ```
 
 ### Health check request
@@ -280,12 +266,10 @@ Endpoints should be able to respond to health check requests. WhatsApp may perio
 **Sample Health Check Request Payload**
 
 ```
-```
 {  
-    "version": "3.0",  
-    "action": "ping"  
+    "version": "3.0",  
+    "action": "ping"  
 }
-```
 ```
 
 You should generate the following response payload:
@@ -293,13 +277,11 @@ You should generate the following response payload:
 **Health Check Response Payload**
 
 ```
-```
 {  
-    "data": {  
-        "status": "active"  
-    }  
+    "data": {  
+        "status": "active"  
+    }  
 }
-```
 ```
 
 ## Request signature validation
@@ -310,7 +292,7 @@ You can verify that request is coming from Meta by checking signature which is g
 
 **Signature and Header Format**
 
-Meta signs all endpoint requests with a **SHA256** signature and includes the signature in the request’s `X-Hub-Signature-256` header, preceded with `sha256=`.
+Meta signs all endpoint requests with a **SHA256** signature and includes the signature in the request's `X-Hub-Signature-256` header, preceded with `sha256=`.
 
 To validate the signature:
 
@@ -348,18 +330,18 @@ The incoming request body is encrypted. Decrypt it first, then encrypt the serve
 
 You can find code examples of decryption/encryption in various programming languages in the [Code Examples](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/flows-templates#code-examples) section.
 
-For data\_api\_version “3.0” you should follow the instructions below to decrypt request payload:
+For data\_api\_version "3.0" you should follow the instructions below to decrypt request payload:
 
 * extract payload encryption key from `encrypted_aes_key` field:
   * decode base64-encoded field content to byte array;
   * decrypt resulting byte array with the private key corresponding to the [uploaded](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/flows-templates#upload_public_key) public key using RSA/ECB/OAEPWithSHA-256AndMGF1Padding algorithm with SHA256 as a hash function for MGF1;
-  * as a result, you’ll get a 128-bit payload encryption key.
+  * as a result, you'll get a 128-bit payload encryption key.
 * decrypt request payload from `encrypted_flow_data` field:
   * decode base64-encoded field content to get encrypted byte array;
   * decrypt encrypted byte array using AES-GCM algorithm, payload encryption key and initialization vector passed in `initial_vector` field (which is base64-encoded as well and should be decoded first). Note that the 128-bit authentication tag for the AES-GCM algorithm is appended to the end of the encrypted array.
   * result of above step is UTF-8 encoded clear request payload.
 
-For data\_api\_version “3.0” you should follow the instructions below to encrypt the response:
+For data\_api\_version "3.0" you should follow the instructions below to encrypt the response:
 
 * encode response payload string to response byte array using UTF-8
 * prepare initialization vector for response encryption by inverting all bits of the initialization vector used for request payload encryption (XOR each byte with `0xFF`)
@@ -373,7 +355,7 @@ For data\_api\_version “3.0” you should follow the instructions below to enc
 
 ### Handling decryption errors
 
-If you can’t decrypt a request, you should send appropriate HTTP response code to force mobile client to re-download public key and retry the query. See [endpoint error codes](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/reference/error-codes#endpoint_error_codes) for additional details.
+If you can't decrypt a request, you should send appropriate HTTP response code to force mobile client to re-download public key and retry the query. See [endpoint error codes](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/reference/error-codes#endpoint_error_codes) for additional details.
 
 ### Code examples
 
@@ -383,7 +365,7 @@ The below code examples are only meant to demonstrate the encryption/decryption 
 
 ### Python Django example
 
-Here’s a full code sample to handle a request with decryption/encryption in Python with Django framework. Note that the response is sent as a plain text string.
+Here's a full code sample to handle a request with decryption/encryption in Python with Django framework. Note that the response is sent as a plain text string.
 
 ```
 import json
@@ -473,7 +455,7 @@ def encrypt_response(response, aes_key, iv):
 
 ### Node.js Express example
 
-Here’s a full code sample to handle a request with decryption/encryption in NodeJS with Express framework. Note that the response is sent as a plain text string.
+Here's a full code sample to handle a request with decryption/encryption in NodeJS with Express framework. Note that the response is sent as a plain text string.
 
 ```
 import express from "express";
@@ -582,7 +564,7 @@ app.listen(PORT, () => {
 
 ### PHP Slim example
 
-Here’s a full code sample to handle a request with decryption/encryption in PHP with Slim framework. Note that the response is sent as a plain text string.
+Here's a full code sample to handle a request with decryption/encryption in PHP with Slim framework. Note that the response is sent as a plain text string.
 
 ```
 <?php
@@ -674,7 +656,7 @@ $app->run();
 
 ### Java example
 
-Here’s a full code sample to handle a request with decryption/encryption in Java 8+ using simple-json library:
+Here's a full code sample to handle a request with decryption/encryption in Java 8+ using simple-json library:
 
 Please note that this example requires private key to be in unencrypted PKCS8 format, which is normally indicated by `-----BEGIN PRIVATE KEY-----` at the beginning of the file.
 
@@ -753,7 +735,7 @@ public class App {
                 final byte[] initial_vector = Base64.getDecoder().decode((String) requestJson.get("initial_vector"));
                 final DecryptionInfo decryptionInfo = decryptRequestPayload(encrypted_flow_data, encrypted_aes_key, initial_vector);
                 final JSONObject clearRequestData = (JSONObject) parser.parse(decryptionInfo.clearPayload);
-                final String clearResponse = String.format("{\"screen\":\"SCREEN_NAME\",\"data\":{\"some_key\":\"some_value\"}}");
+                final String clearResponse = String.format("{\"screen\":\"SCREEN_NAME\",\"data\":{\"some_key\":\"some_value\"}​}");
                 response = encryptAndEncodeResponse(clearResponse, decryptionInfo.clearAesKey, flipIv(initial_vector));
                 responseCode = 200;
             } catch (Exception ex) {
@@ -823,7 +805,7 @@ public class App {
 
 ### C# example
 
-Here’s a full code sample to handle a request with decryption/encryption in C#. Note that the response is sent as a plain text string. [View the full project code on GitHub.⁠](https://github.com/WhatsApp/WhatsApp-Flows-Tools/tree/main/examples/endpoint/csharp/FlowsEndpoint)
+Here's a full code sample to handle a request with decryption/encryption in C#. Note that the response is sent as a plain text string. [View the full project code on GitHub.⁠](https://github.com/WhatsApp/WhatsApp-Flows-Tools/tree/main/examples/endpoint/csharp/FlowsEndpoint)
 
 ```
 using System.Security.Cryptography;
@@ -961,7 +943,7 @@ public class PasswordFinder : IPasswordFinder
 
 ### Go example
 
-Here’s a full code sample to handle a request with decryption/encryption in Go. Note that the response is sent as a plain text string.[View the full project code on GitHub.⁠](https://github.com/WhatsApp/WhatsApp-Flows-Tools/tree/main/examples/endpoint/go/flows-endpoint)
+Here's a full code sample to handle a request with decryption/encryption in Go. Note that the response is sent as a plain text string.[View the full project code on GitHub.⁠](https://github.com/WhatsApp/WhatsApp-Flows-Tools/tree/main/examples/endpoint/go/flows-endpoint)
 
 ```
 package main

@@ -38,7 +38,7 @@ Media URLs are valid for 5 minutes after retrieval.
 
 ## GET /{Version}/{Media-ID}
 
-To retrieve your media’s URL, make a GET call to `/{{Media-ID}}`. Use the returned URL to download the media file. Note that clicking this URL (i.e. performing a generic GET) will not return the media; you must include an access token. For more information, see [Download Media](https://developers.facebook.com/docs/business-messaging/whatsapp/business-phone-numbers/media#download-media).
+To retrieve your media's URL, make a GET call to `/{​{Media-ID}​}`. Use the returned URL to download the media file. Note that clicking this URL (i.e. performing a generic GET) will not return the media; you must include an access token. For more information, see [Download Media](https://developers.facebook.com/docs/business-messaging/whatsapp/business-phone-numbers/media#download-media).
 
 You can also use the optional query `?phone_number_id` for `Retrieve Media URL` and `Delete Media`. This parameter checks to make sure the media belongs to the phone number before retrieval or deletion.
 
@@ -59,11 +59,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Media-ID}' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Media-ID}' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -74,16 +74,16 @@ Select status code
 
 ```
 {  
-  "Retrieve Media URL": {  
-    "value": {  
-      "file_size": "303833",  
-      "id": "2621233374848975",  
-      "messaging_product": "whatsapp",  
-      "mime_type": "image/jpeg",  
-      "sha256": "<HASH>",  
-      "url": "<URL>"  
-    }  
-  }  
+  "Retrieve Media URL": {  
+    "value": {  
+      "file_size": "303833",  
+      "id": "2621233374848975",  
+      "messaging_product": "whatsapp",  
+      "mime_type": "image/jpeg",  
+      "sha256": "<HASH>",  
+      "url": "<URL>"  
+    }  
+  }  
 }
 ```
 
@@ -119,7 +119,7 @@ Responses
 
 ---
 
-To retrieve your media’s URL, make a GET call to `/{{Media-ID}}`. Use the returned URL to download the media file. Note that clicking this URL (i.e. performing a generic GET) will not return the media; you must include an access token. For more information, see [Download Media](https://developers.facebook.com/docs/business-messaging/whatsapp/business-phone-numbers/media#download-media).
+To retrieve your media's URL, make a GET call to `/{​{Media-ID}​}`. Use the returned URL to download the media file. Note that clicking this URL (i.e. performing a generic GET) will not return the media; you must include an access token. For more information, see [Download Media](https://developers.facebook.com/docs/business-messaging/whatsapp/business-phone-numbers/media#download-media).
 
 You can also use the optional query `?phone_number_id` for `Retrieve Media URL` and `Delete Media`. This parameter checks to make sure the media belongs to the phone number before retrieval or deletion.
 
@@ -168,11 +168,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Media-ID}' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Media-ID}' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -183,16 +183,16 @@ Select status code
 
 ```
 {  
-  "Retrieve Media URL": {  
-    "value": {  
-      "file_size": "303833",  
-      "id": "2621233374848975",  
-      "messaging_product": "whatsapp",  
-      "mime_type": "image/jpeg",  
-      "sha256": "<HASH>",  
-      "url": "<URL>"  
-    }  
-  }  
+  "Retrieve Media URL": {  
+    "value": {  
+      "file_size": "303833",  
+      "id": "2621233374848975",  
+      "messaging_product": "whatsapp",  
+      "mime_type": "image/jpeg",  
+      "sha256": "<HASH>",  
+      "url": "<URL>"  
+    }  
+  }  
 }
 ```
 
@@ -220,11 +220,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request DELETE \  
-  --url 'https://graph.facebook.com/{Version}/{Media-ID}' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request DELETE \  
+  --url 'https://graph.facebook.com/{Version}/{Media-ID}' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -235,11 +235,11 @@ Select status code
 
 ```
 {  
-  "Delete Media": {  
-    "value": {  
-      "success": true  
-    }  
-  }  
+  "Delete Media": {  
+    "value": {  
+      "success": true  
+    }  
+  }  
 }
 ```
 
@@ -307,11 +307,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request DELETE \  
-  --url 'https://graph.facebook.com/{Version}/{Media-ID}' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request DELETE \  
+  --url 'https://graph.facebook.com/{Version}/{Media-ID}' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -322,11 +322,11 @@ Select status code
 
 ```
 {  
-  "Delete Media": {  
-    "value": {  
-      "success": true  
-    }  
-  }  
+  "Delete Media": {  
+    "value": {  
+      "success": true  
+    }  
+  }  
 }
 ```
 

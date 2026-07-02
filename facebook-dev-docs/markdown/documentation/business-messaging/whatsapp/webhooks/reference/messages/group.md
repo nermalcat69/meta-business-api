@@ -17,39 +17,37 @@ This reference describes trigger events and payload contents for the WhatsApp Bu
 ## Syntax
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "<WHATSAPP_BUSINESS_ACCOUNT_ID>",  
-      "changes": [  
-        {  
-          "value": {  
-            "messaging_product": "whatsapp",  
-            "metadata": {  
-              "display_phone_number": "<BUSINESS_DISPLAY_PHONE_NUMBER>",  
-              "phone_number_id": "<BUSINESS_PHONE_NUMBER_ID>"  
-            },  
-            "errors": [  
-              {  
-                "code": <ERROR_CODE>,  
-                "title": "<ERROR_TITLE>",  
-                "message": "<ERROR_MESSAGE>",  
-                "error_data": {  
-                  "details": "<ERROR_DETAILS>"  
-                },  
-                "href": "<ERROR_CODES_URL>"  
-              }  
-            ]  
-          },  
-          "field": "messages"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "<WHATSAPP_BUSINESS_ACCOUNT_ID>",  
+      "changes": [  
+        {  
+          "value": {  
+            "messaging_product": "whatsapp",  
+            "metadata": {  
+              "display_phone_number": "<BUSINESS_DISPLAY_PHONE_NUMBER>",  
+              "phone_number_id": "<BUSINESS_PHONE_NUMBER_ID>"  
+            },  
+            "errors": [  
+              {  
+                "code": <ERROR_CODE>,  
+                "title": "<ERROR_TITLE>",  
+                "message": "<ERROR_MESSAGE>",  
+                "error_data": {  
+                  "details": "<ERROR_DETAILS>"  
+                },  
+                "href": "<ERROR_CODES_URL>"  
+              }  
+            ]  
+          },  
+          "field": "messages"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ## Parameters
@@ -68,37 +66,35 @@ This reference describes trigger events and payload contents for the WhatsApp Bu
 ## Example
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "102290129340398",  
-      "changes": [  
-        {  
-          "value": {  
-            "messaging_product": "whatsapp",  
-            "metadata": {  
-              "display_phone_number": "15550783881",  
-              "phone_number_id": "106540352242922"  
-            },  
-            "errors": [  
-              {  
-                "code": 130429,  
-                "title": "Rate limit hit",  
-                "message": "Rate limit hit",  
-                "error_data": {  
-                  "details": "Message failed to send because there were too many messages sent from this phone number in a short period of time"  
-                },  
-                "href": "/documentation/business-messaging/whatsapp/support/error-codes"  
-              }  
-            ]  
-          },  
-          "field": "messages"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "102290129340398",  
+      "changes": [  
+        {  
+          "value": {  
+            "messaging_product": "whatsapp",  
+            "metadata": {  
+              "display_phone_number": "15550783881",  
+              "phone_number_id": "106540352242922"  
+            },  
+            "errors": [  
+              {  
+                "code": 130429,  
+                "title": "Rate limit hit",  
+                "message": "Rate limit hit",  
+                "error_data": {  
+                  "details": "Message failed to send because there were too many messages sent from this phone number in a short period of time"  
+                },  
+                "href": "/documentation/business-messaging/whatsapp/support/error-codes"  
+              }  
+            ]  
+          },  
+          "field": "messages"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```

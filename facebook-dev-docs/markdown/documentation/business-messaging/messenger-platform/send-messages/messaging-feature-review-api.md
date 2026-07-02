@@ -11,7 +11,7 @@ App Events help you understand and track key events that take place in your Mess
 
 ## Prerequisites
 
-Before you can begin, you’ll need to register your bot with Meta. See our [Messenger Platform Quick Start Guide](https://developers.facebook.com/documentation/business-messaging/messenger-platform/getting-started/quick-start) to learn more.
+Before you can begin, you'll need to register your bot with Meta. See our [Messenger Platform Quick Start Guide](https://developers.facebook.com/documentation/business-messaging/messenger-platform/getting-started/quick-start) to learn more.
 
 ## Automatic event logging
 
@@ -53,17 +53,15 @@ The following example demonstrates how to log a **purchase** event.
 #### Sample request
 
 ```
-```
-curl -X POST \  
-  "https://graph.facebook.com/<APP_ID>/activities" \  
-  -F 'event=CUSTOM_APP_EVENTS' \  
-  -F 'custom_events=[{"_eventName":"fb_mobile_purchase","_valueToSum":55.22,"fb_currency":"USD"}]' \  
-  -F 'advertiser_tracking_enabled=1' \  
-  -F 'application_tracking_enabled=1' \  
-  -F 'extinfo=["mb1"]' \  
-  -F 'page_id=<PAGE_ID>' \  
-  -F 'page_scoped_user_id=<PSID>'
-```
+curl -X POST \  
+  "https://graph.facebook.com/<APP_ID>/activities" \  
+  -F 'event=CUSTOM_APP_EVENTS' \  
+  -F 'custom_events=[{"_eventName":"fb_mobile_purchase","_valueToSum":55.22,"fb_currency":"USD"}]' \  
+  -F 'advertiser_tracking_enabled=1' \  
+  -F 'application_tracking_enabled=1' \  
+  -F 'extinfo=["mb1"]' \  
+  -F 'page_id=<PAGE_ID>' \  
+  -F 'page_scoped_user_id=<PSID>'
 ```
 
 #### Sample response
@@ -71,9 +69,7 @@ curl -X POST \
 On success, your app will receive the following response:
 
 ```
-```
-{"success": true}
-```
+{"success": true}
 ```
 
 ## Lead event example
@@ -83,17 +79,15 @@ The following example demonstrates how to log a **lead** event.
 #### Sample request
 
 ```
-```
-curl -X POST \  
-  "https://graph.facebook.com/<APP_ID>/activities" \  
-  -F 'event=CUSTOM_APP_EVENTS' \  
-  -F 'custom_events=[{"_eventName":"lead_submitted"}]' \  
-  -F 'advertiser_tracking_enabled=1' \  
-  -F 'application_tracking_enabled=1' \  
-  -F 'extinfo=["mb1"]' \  
-  -F 'page_id=<PAGE_ID>' \  
-  -F 'page_scoped_user_id=<PSID>'
-```
+curl -X POST \  
+  "https://graph.facebook.com/<APP_ID>/activities" \  
+  -F 'event=CUSTOM_APP_EVENTS' \  
+  -F 'custom_events=[{"_eventName":"lead_submitted"}]' \  
+  -F 'advertiser_tracking_enabled=1' \  
+  -F 'application_tracking_enabled=1' \  
+  -F 'extinfo=["mb1"]' \  
+  -F 'page_id=<PAGE_ID>' \  
+  -F 'page_scoped_user_id=<PSID>'
 ```
 
 #### Sample response
@@ -101,9 +95,7 @@ curl -X POST \
 On success, your app will receive the following response:
 
 ```
-```
-{"success": true}
-```
+{"success": true}
 ```
 
 ## See also

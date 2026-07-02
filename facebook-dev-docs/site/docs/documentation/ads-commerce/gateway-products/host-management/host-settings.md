@@ -25,7 +25,7 @@ To add a custom domain to the Blocked websites list, click on the **Add** button
 
 ![Block website dialog with an Enter website domain field for adding a domain to block, plus Cancel and Block buttons.](https://scontent.fdel27-4.fna.fbcdn.net/v/t39.2365-6/475694476_640141671873421_1925165837356720095_n.png?_nc_cat=105&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=vMiB42tpmLgQ7kNvwFRMEEw&_nc_oc=AdqJEbqURQYd0SvlmP93txBBzcQugAsaC8ys5vR2pWI0UvEHng6Pc-qUuBJCoRKoNfc6_IjtS7XK_zxGWF1t13V3&_nc_zt=14&_nc_ht=scontent.fdel27-4.fna&_nc_gid=3vX4zqgkeuWhOimMZDW2qA&_nc_ss=7b289&oh=00_AQALZFzjHMEbq0U_ncSh10pRYlZK6NEihVIqWN_P_Ql1kA&oe=6A6096EF)
 
-Click on **Block**; the entered domain will appear in the Blocked websites list. When you set a domain to “blocked”, events received by your Gateway Product instance from that domain won’t be sent from your instance to the associated data destination.
+Click on **Block**; the entered domain will appear in the Blocked websites list. When you set a domain to "blocked", events received by your Gateway Product instance from that domain won't be sent from your instance to the associated data destination.
 
 ## See Also
 

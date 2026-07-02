@@ -36,7 +36,7 @@ curl -G -X GET \
 | --- | --- |
 | `id`  numeric string | The ID of the async request.  Also known as the `ASYNC_SESSION_ID`. |
 | `status`  enum string | The status of the async job.  **Values:**   * `UNKNOWN` * `NOT_STARTED` * `IN_PROGRESS` * `COMPLETED` * `FAILED` |
-| `result`  string | The result as returned by the async job.  For details, look at the corresponding API call’s success and failure responses. |
+| `result`  string | The result as returned by the async job.  For details, look at the corresponding API call's success and failure responses. |
 
 ## Polling best practices
 

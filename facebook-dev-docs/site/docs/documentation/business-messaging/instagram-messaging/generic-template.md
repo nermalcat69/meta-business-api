@@ -9,7 +9,7 @@ Updated: Jun 24, 2026
 
 This document contains the requirements for sending freeform messages from your Instagram Professional account to your customers or people interested in your account using the Messenger Platform from Meta.
 
-**Note:** If your app users don’t have a Facebook Page linked to their Instagram professional account, learn more about building an app with [the Instagram API with Instagram Login](https://developers.facebook.com/docs/instagram/platform/instagram-api).
+**Note:** If your app users don't have a Facebook Page linked to their Instagram professional account, learn more about building an app with [the Instagram API with Instagram Login](https://developers.facebook.com/docs/instagram/platform/instagram-api).
 
 You can send a freeform message that contains:
 
@@ -56,11 +56,9 @@ Message text must be UTF-8 and be 1,000 bytes or less. Links must be valid forma
 *Formatted for readability.*
 
 ```
-```
-curl -i -X POST \  
-  "https://graph.facebook.com/<API_VERSION>/me/messages?access_token=<PAGE_ACCESS_TOKEN>" \  
-  --data 'recipient={"id":"IGSID"}&message={"text":"TEXT-OR-LINK"}'
-```
+curl -i -X POST \  
+  "https://graph.facebook.com/<API_VERSION>/me/messages?access_token=<PAGE_ACCESS_TOKEN>" \  
+  --data 'recipient={"id":"IGSID"}&message={"text":"TEXT-OR-LINK"}'
 ```
 
 **Sample API response**
@@ -68,12 +66,10 @@ curl -i -X POST \
 Upon success, your app receives the following JSON response:
 
 ```
-```
 {  
-  "recipient_id": "IGSID",  
-  "message_id": "MESSAGE-ID"  
+  "recipient_id": "IGSID",  
+  "message_id": "MESSAGE-ID"  
 }
-```
 ```
 
 ## Send an image
@@ -85,23 +81,21 @@ To send an image, send a `POST` request to the `/me/messages` endpoint with the 
 *Formatted for readability.*
 
 ```
-```
-curl -X POST "https://graph.facebook.com/<API_VERSION>/me/messages?access_token=<PAGE_ACCESS_TOKEN>" \  
-     -H "Content-Type: application/json" \  
-     -d '{  
-           "recipient":{  
-               "id":"<IGSID>"  
-           },  
-           "message":{  
-              "attachment": {  
-                 "type":"image",  
-                 "payload":{  
-                   "url":"<IMAGE_URL>"  
-                 }  
-              }  
-           }  
-         }'
-```
+curl -X POST "https://graph.facebook.com/<API_VERSION>/me/messages?access_token=<PAGE_ACCESS_TOKEN>" \  
+     -H "Content-Type: application/json" \  
+     -d '{  
+           "recipient":{  
+               "id":"<IGSID>"  
+           },  
+           "message":{  
+              "attachment": {  
+                 "type":"image",  
+                 "payload":{  
+                   "url":"<IMAGE_URL>"  
+                 }  
+              }  
+           }  
+         }'
 ```
 
 ### Sample request: Sending multiple images with image URL
@@ -109,34 +103,32 @@ curl -X POST "https://graph.facebook.com/<API_VERSION>/me/messages?access_tok
 *Formatted for readability.*
 
 ```
-```
-curl -X POST "https://graph.facebook.com/<API_VERSION>/me/messages?access_token=<PAGE_ACCESS_TOKEN>" \  
-     -H "Content-Type: application/json" \  
-     -d '{  
-           "recipient":{  
-               "id":"<IGSID>"  
-           },  
-           "message":{  
-              "attachments":[  
-                 {  
-                   "type":"image",  
-                   "payload":{  
-                     "url":"<IMAGE_URL>"  
-                   }  
-                 },  
-                 {  
-                   "type":"image",  
-                   "payload":{  
-                     "url":"<IMAGE_URL>"  
-                   }  
-                 },  
-                 {  
-                    ...  
-                 }  
-              ]  
-           }  
-         }'
-```
+curl -X POST "https://graph.facebook.com/<API_VERSION>/me/messages?access_token=<PAGE_ACCESS_TOKEN>" \  
+     -H "Content-Type: application/json" \  
+     -d '{  
+           "recipient":{  
+               "id":"<IGSID>"  
+           },  
+           "message":{  
+              "attachments":[  
+                 {  
+                   "type":"image",  
+                   "payload":{  
+                     "url":"<IMAGE_URL>"  
+                   }  
+                 },  
+                 {  
+                   "type":"image",  
+                   "payload":{  
+                     "url":"<IMAGE_URL>"  
+                   }  
+                 },  
+                 {  
+                    ...  
+                 }  
+              ]  
+           }  
+         }'
 ```
 
 ### Sample request: Sending multiple images with attachment ID
@@ -146,34 +138,32 @@ The same images can be uploaded using the [Attachment Upload API](https://develo
 *Formatted for readability.*
 
 ```
-```
-curl -X POST "https://graph.facebook.com/<API_VERSION>/me/messages?access_token=<PAGE_ACCESS_TOKEN>" \  
-     -H "Content-Type: application/json" \  
-     -d '{  
-           "recipient":{  
-               "id":"<IGSID>"  
-           },  
-           "message":{  
-              "attachments":[  
-                 {  
-                   "type":"image",  
-                   "payload":{  
-                     "attachment_id":"<attachment_ID>"  
-                   }  
-                 },  
-                 {  
-                   "type":"image",  
-                   "payload":{  
-                     "attachment_id":"<attachment_ID>"  
-                   }  
-                 },  
-                 {  
-                    ...  
-                 }  
-              ]  
-           }  
-         }'
-```
+curl -X POST "https://graph.facebook.com/<API_VERSION>/me/messages?access_token=<PAGE_ACCESS_TOKEN>" \  
+     -H "Content-Type: application/json" \  
+     -d '{  
+           "recipient":{  
+               "id":"<IGSID>"  
+           },  
+           "message":{  
+              "attachments":[  
+                 {  
+                   "type":"image",  
+                   "payload":{  
+                     "attachment_id":"<attachment_ID>"  
+                   }  
+                 },  
+                 {  
+                   "type":"image",  
+                   "payload":{  
+                     "attachment_id":"<attachment_ID>"  
+                   }  
+                 },  
+                 {  
+                    ...  
+                 }  
+              ]  
+           }  
+         }'
 ```
 
 **Sample API responses**
@@ -181,12 +171,10 @@ curl -X POST "https://graph.facebook.com/<API_VERSION>/me/messages?access_tok
 Upon success, your app receives the following JSON response:
 
 ```
-```
 {  
-  "recipient_id": "IGSID",  
-  "message_id": "MESSAGE-ID"  
+  "recipient_id": "IGSID",  
+  "message_id": "MESSAGE-ID"  
 }
-```
 ```
 
 ## Send a published post
@@ -200,17 +188,15 @@ Your business must own the media you send in the message.
 *Formatted for readability.*
 
 ```
-```
-curl -i -X POST \  
-  "https://graph.facebook.com/<API_VERSION>/me/messages?access_token=<PAGE_ACCESS_TOKEN>" \  
-  --data 'recipient={"id":"IGSID"}&message={  
-      "attachment":  
-        {  
-          "type":"MEDIA_SHARE",  
-          "payload":{"id":"POST-ID"}  
-        }  
+curl -i -X POST \  
+  "https://graph.facebook.com/<API_VERSION>/me/messages?access_token=<PAGE_ACCESS_TOKEN>" \  
+  --data 'recipient={"id":"IGSID"}&message={  
+      "attachment":  
+        {  
+          "type":"MEDIA_SHARE",  
+          "payload":{"id":"POST-ID"}  
+        }  
 }'
-```
 ```
 
 **Sample API response**
@@ -218,12 +204,10 @@ curl -i -X POST \
 Upon success, your app receives the following JSON response:
 
 ```
-```
 {  
-  "recipient_id": "IGSID",  
-  "message_id": "MESSAGE-ID"  
+  "recipient_id": "IGSID",  
+  "message_id": "MESSAGE-ID"  
 }
-```
 ```
 
 ## Send a sticker
@@ -235,16 +219,14 @@ To send a heart sticker, send a `POST` request to the `/PAGE-ID/messages` endpoi
 *Formatted for readability.*
 
 ```
-```
-curl -i -X POST \  
-  "https://graph.facebook.com/<API_VERSION>/me/messages?access_token=<PAGE_ACCESS_TOKEN>" \  
-  --data 'recipient={"id":"IGSID"}&message={  
-      "attachment":  
-        {  
-          "type":"like_heart"  
-        }  
+curl -i -X POST \  
+  "https://graph.facebook.com/<API_VERSION>/me/messages?access_token=<PAGE_ACCESS_TOKEN>" \  
+  --data 'recipient={"id":"IGSID"}&message={  
+      "attachment":  
+        {  
+          "type":"like_heart"  
+        }  
 }'
-```
 ```
 
 **Sample API response**
@@ -252,12 +234,10 @@ curl -i -X POST \
 Upon success, your app receives the following JSON response:
 
 ```
-```
 {  
-  "recipient_id": "IGSID",  
-  "message_id": "MESSAGE-ID"  
+  "recipient_id": "IGSID",  
+  "message_id": "MESSAGE-ID"  
 }
-```
 ```
 
 ## React to a message
@@ -269,14 +249,12 @@ To send a reaction, send a `POST` request to the `/PAGE-ID/messages` endpoint wi
 *Formatted for readability.*
 
 ```
-```
-curl -i -X POST \  
-  "https://graph.facebook.com/<API_VERSION>/me/messages?access_token=<PAGE_ACCESS_TOKEN>" \  
-  --data 'recipient={"id":"IGSID"}&sender_action=react&payload={  
-      "message_id":"MESSAGE-ID",  
-      "reaction":"love"  
+curl -i -X POST \  
+  "https://graph.facebook.com/<API_VERSION>/me/messages?access_token=<PAGE_ACCESS_TOKEN>" \  
+  --data 'recipient={"id":"IGSID"}&sender_action=react&payload={  
+      "message_id":"MESSAGE-ID",  
+      "reaction":"love"  
 }'
-```
 ```
 
 ### Unreact to a message
@@ -288,13 +266,11 @@ To remove a reaction from a message, send a `POST` request to the `/PAGE-ID/mess
 *Formatted for readability.*
 
 ```
-```
-curl -i -X POST \  
-  "https://graph.facebook.com/<API_VERSION>/me/messages?access_token=<PAGE_ACCESS_TOKEN>" \  
-  --data 'recipient={"id":"IGSID"}&sender_action="unreact"&payload={  
-      "message_id":"MESSAGE-ID"  
+curl -i -X POST \  
+  "https://graph.facebook.com/<API_VERSION>/me/messages?access_token=<PAGE_ACCESS_TOKEN>" \  
+  --data 'recipient={"id":"IGSID"}&sender_action="unreact"&payload={  
+      "message_id":"MESSAGE-ID"  
 }'
-```
 ```
 
 **Sample API response**
@@ -302,11 +278,9 @@ curl -i -X POST \
 Upon success, your app receives the following JSON response for react and unreact requests:
 
 ```
-```
 {  
-  "recipient_id": "IGSID"  
+  "recipient_id": "IGSID"  
 }
-```
 ```
 
 ## Send a reply
@@ -320,34 +294,30 @@ You can send a text message, media message, template message as a reply to a mes
 *Formatted for readability.*
 
 ```
-```
-curl -X POST "https://graph.facebook.com/<API_VERSION>/me/messages?access_token=<PAGE_ACCESS_TOKEN>" \  
-     -H "Content-Type: application/json" \  
-     -d '{  
-           "recipient":{  
-               "id":"<IGSID>"  
-           },  
-           "message":{  
-              "text": "TEXT"  
-           },  
-           "reply_to": {  
-              "mid": "<MESSAGE_ID>"  
-           }  
-         }'
-```
+curl -X POST "https://graph.facebook.com/<API_VERSION>/me/messages?access_token=<PAGE_ACCESS_TOKEN>" \  
+     -H "Content-Type: application/json" \  
+     -d '{  
+           "recipient":{  
+               "id":"<IGSID>"  
+           },  
+           "message":{  
+              "text": "TEXT"  
+           },  
+           "reply_to": {  
+              "mid": "<MESSAGE_ID>"  
+           }  
+         }'
 ```
 
 **Sample API response**
 
-Upon success, your app receives the following JSON response with the recipient’s ID and the message ID:
+Upon success, your app receives the following JSON response with the recipient's ID and the message ID:
 
 ```
-```
 {  
-  "recipient_id": "IGSID",  
-  "message_id": "MESSAGE-ID"  
+  "recipient_id": "IGSID",  
+  "message_id": "MESSAGE-ID"  
 }
-```
 ```
 
 ## Next steps

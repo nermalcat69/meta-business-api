@@ -37,7 +37,7 @@ schedule: {"day_of_week":"FRIDAY","hour":17,"interval_count":1,"interval":"DAILY
 
 ## Update an Individual Item
 
-Update an individual item’s data in real time. Include the updated fields in an `HTTP POST`, where `retailer_id` is the item ID from your feed. Base64url-encode the `retailer_id`.
+Update an individual item's data in real time. Include the updated fields in an `HTTP POST`, where `retailer_id` is the item ID from your feed. Base64url-encode the `retailer_id`.
 
 ```
 https://graph.facebook.com/catalog:{CATALOG_ID}:{base64urlencode(retailer_id)}
@@ -45,13 +45,13 @@ https://graph.facebook.com/catalog:{CATALOG_ID}:{base64urlencode(retailer_id)}
 
 See mutable fields in [Products, Reference](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-catalog/products#Creating).
 
-**Do not provide item feeds with individual item updates, creation, or deletion with the API.** This can disrupt any updates or deletes of items you created with the API because Meta doesn’t track these with the feed.
+**Do not provide item feeds with individual item updates, creation, or deletion with the API.** This can disrupt any updates or deletes of items you created with the API because Meta doesn't track these with the feed.
 
 ## Schedule data feed fetches
 
-Scheduled feeds don’t support uploads more frequently than once per hour. If you need to update inventory faster, use the [Direct Upload API](https://developers.facebook.com/documentation/ads-commerce/catalog#direct-upload-product-feed).
+Scheduled feeds don't support uploads more frequently than once per hour. If you need to update inventory faster, use the [Direct Upload API](https://developers.facebook.com/documentation/ads-commerce/catalog#direct-upload-product-feed).
 
-If you’re using the Marketing API to create and manage your feeds, send an API request with details for the update schedule you want to create:
+If you're using the Marketing API to create and manage your feeds, send an API request with details for the update schedule you want to create:
 
 ```
 curl \
@@ -72,7 +72,7 @@ Meta fetches item feeds from your system on a schedule you define. There are two
 
 For example: `update_schedule` with frequency `HOURLY` and a replace `schedule` with frequency `DAILY`.
 
-Set up an `update_schedule` with only changed data in the data feed file for faster processing of the feed. An `update_schedule` is particularly useful for holiday sales and faster price and availability updates. Mark items as “out of stock” rather than deleting them from the feed so that Meta can retarget the user with similar available items.
+Set up an `update_schedule` with only changed data in the data feed file for faster processing of the feed. An `update_schedule` is particularly useful for holiday sales and faster price and availability updates. Mark items as "out of stock" rather than deleting them from the feed so that Meta can retarget the user with similar available items.
 
 ```
 curl \

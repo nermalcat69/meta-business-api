@@ -9,7 +9,7 @@ Updated: Jun 24, 2026
 
 The current version of the Marketing API is v25.0.
 
-Facebook’s platform has a core and extended [versioning](https://developers.facebook.com/docs/apps/versions) model. With Marketing API versioning, Meta releases all breaking changes in a new version. Multiple versions of Marketing APIs or SDKs can exist at the same time with different functionality in each version.
+Facebook's platform has a core and extended [versioning](https://developers.facebook.com/docs/apps/versions) model. With Marketing API versioning, Meta releases all breaking changes in a new version. Multiple versions of Marketing APIs or SDKs can exist at the same time with different functionality in each version.
 
 Developers should understand in advance when a Marketing API or SDK will change. While you have a 90-day grace period to adopt changes, how, and when to move to the new version is your choice.
 
@@ -19,7 +19,7 @@ When a new version of the Marketing API releases, Meta continues to support the 
 
 For example, Marketing API v17.0 was released on May 23, 2023, and Marketing API v16.0 expired on February 6, 2024, which provided at least 90 days to move over to the new version.
 
-Here is a sample timeline. Note that Meta may not always release a new version at the end of the 90-day grace period of the previous version’s deprecation. In the example, v16.0 was deprecated some time before v18.0 was released:
+Here is a sample timeline. Note that Meta may not always release a new version at the end of the 90-day grace period of the previous version's deprecation. In the example, v16.0 was deprecated some time before v18.0 was released:
 
 ![A sample timeline showing Marketing API version release and deprecation dates, with v16.0 deprecated some time before v18.0 was released.](https://scontent.fdel1-1.fna.fbcdn.net/v/t39.2365-6/585914168_1369493434909307_6773574852233726692_n.png?_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=VAz0kMSJBngQ7kNvwG0uiWN&_nc_oc=AdofwhogQQ8uSzjRbK1yzYRdqDAjV2zsf5CFcKifoNtQt57gewDMBxMpjeU1tfesz3zBNEdyAp7C63Q1TkQ7AoC6&_nc_zt=14&_nc_ht=scontent.fdel1-1.fna&_nc_gid=f3I_vKHaMQZ9igocv-EKWA&_nc_ss=7b289&oh=00_AQD0I_MqA-SnGzp7uNE1hQYFvdmvDlabTYFg5nHY1ZH57g&oe=6A606A7B)
 
@@ -65,7 +65,7 @@ You can activate and deactivate available migrations in the [App Dashboard](http
 
 ### Temporary client-side activation of migrations
 
-Instead of activating the migration in your App Dashboard or via the Marketing API, it’s possible to add a special flag to your Marketing API calls that sets the migration. The flag is called `migrations_override` and requires you to specify a JSON blob that describes what migrations you want to turn on or off. For example, if you were making a raw call you could pass:
+Instead of activating the migration in your App Dashboard or via the Marketing API, it's possible to add a special flag to your Marketing API calls that sets the migration. The flag is called `migrations_override` and requires you to specify a JSON blob that describes what migrations you want to turn on or off. For example, if you were making a raw call you could pass:
 
 ```
 https://graph.facebook.com/path?
@@ -74,7 +74,7 @@ https://graph.facebook.com/path?
 
 Using the `migrations_override` flag, you can call the new Marketing API through client updates instead of having to get all callers to update to calling the new Marketing API at the same time. The flag is also useful for debugging.
 
-The names for these migrations are found in the `migrations` field of the [`/app` node](https://developers.facebook.com/documentation/ads-commerce/marketing-api/overview/rate-limiting#manage-migrations-via-graph-api), which represents your app’s configuration.
+The names for these migrations are found in the `migrations` field of the [`/app` node](https://developers.facebook.com/documentation/ads-commerce/marketing-api/overview/rate-limiting#manage-migrations-via-graph-api), which represents your app's configuration.
 
 ## Version auto-upgrade
 
@@ -103,7 +103,7 @@ To check endpoints affected at each version, please refer to the [Marketing API 
 
 ### Version schedules
 
-**What if I don’t specify a version for the Marketing API?**
+**What if I don't specify a version for the Marketing API?**
 
 We refer to this as an **unversioned** call. Unversioned calls are invalid and will fail when made against Marketing API endpoints.
 
@@ -119,7 +119,7 @@ For example:
 * If your app was created after v17.0 was released, it will be able to make calls to v17.0 until the expiration date of that version, and any subsequent versions (v18.0, etc) until their expiration dates. After v17.0 has been deprecated, calls to v17.0 will fail.
 * Your app will not be able to make calls to v16.0, since 1) that was before your app was created and 2) that version is deprecated and calls to v16.0 may fail or be upgraded to the next available version.
 
-If an app was not used - to make any Marketing API calls or requests - after being created, it will not have the ability to use those versions if any newer version is launched. Here’s another example to explain this:
+If an app was not used - to make any Marketing API calls or requests - after being created, it will not have the ability to use those versions if any newer version is launched. Here's another example to explain this:
 
 * If your app was created while v16.0 was the latest version available, but not used until after v17.0 had launched, it will only be to use v17.0, and not v16.0.
 * If your app was created while v16.0 was the latest version available, and then used before v17.0 had launched, it will still be able to use v16.0 even after the launch of v17.0.
@@ -141,7 +141,7 @@ With migrations, you set migration on or off in App Dashboard, as described in t
 https://graph.facebook.com/v{n}/{request-path}
 ```
 
-You can know what behavior to expect out without having to manually visit your app’s migration panel.
+You can know what behavior to expect out without having to manually visit your app's migration panel.
 
 ### Version auto-upgrade
 
@@ -149,7 +149,7 @@ You can know what behavior to expect out without having to manually visit your a
 
 The upgrade will apply on any deprecated version to the next available version. This means hypothetically if your app is making calls to v15.0 after v16.0 is deprecated, the call will also be upgraded to v17.0 if the endpoint is not listed as affected endpoint on both v16.0 and v17.0.
 
-**Does this mean developers don’t need to do anything during version deprecation?**
+**Does this mean developers don't need to do anything during version deprecation?**
 
 No. We highly encourage developers to perform version upgrades before a version gets deprecated for the following reasons
 

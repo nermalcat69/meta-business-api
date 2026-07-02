@@ -54,7 +54,7 @@ Requests made by your app are counted against the number of calls your app can m
 
 ## High-volume messaging
 
-If your app user’s Page or Instagram Professional account sends or receives a high volume of messages, the inbox can no longer display or send new messages until the volume decreases.
+If your app user's Page or Instagram Professional account sends or receives a high volume of messages, the inbox can no longer display or send new messages until the volume decreases.
 
 ### Messenger
 
@@ -69,4 +69,4 @@ If an Instagram Professional account sends and receives more than 72,000 message
 Banners are displayed in the conversation indicating the limit has been reached. These banners stop showing when the message volume decreases.
 
 * **Your Message May Be Delayed** -- Your message may take longer than usual to be delivered because [your-account-name] is receiving a large number of messages.
-* **Your Message Wasn’t Delivered** -- Your message wasn’t delivered because [your-account-name] is receiving a large number of messages. Please try again later.
+* **Your Message Wasn't Delivered** -- Your message wasn't delivered because [your-account-name] is receiving a large number of messages. Please try again later.

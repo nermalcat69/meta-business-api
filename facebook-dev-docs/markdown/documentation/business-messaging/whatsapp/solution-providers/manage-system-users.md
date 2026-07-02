@@ -41,33 +41,29 @@ POST /<WHATSAPP_BUSINESS_ACCOUNT_ID>/phone_numbers
 ### Post body
 
 ```
-```
 {  
-  "cc": "<CC>",  
-  "phone_number": "<PHONE_NUMBER>",  
-  "verified_name": "<VERIFIED_NAME>"  
+  "cc": "<CC>",  
+  "phone_number": "<PHONE_NUMBER>",  
+  "verified_name": "<VERIFIED_NAME>"  
 }
-```
 ```
 
 ### Body properties
 
 | Placeholder | Description | Example Value |
 | --- | --- | --- |
-| `<CC>`  *String* | **Required.**  The phone number’s country calling code. | `1` |
+| `<CC>`  *String* | **Required.**  The phone number's country calling code. | `1` |
 | `<PHONE_NUMBER>`  *String* | **Required.**  The phone number, with or without the country calling code. | `15551234` |
-| `<VERIFIED_NAME>`  *String* | **Required.**  The phone number’s [display name⁠](https://www.facebook.com/business/help/338047025165344). | `Lucky Shrub` |
+| `<VERIFIED_NAME>`  *String* | **Required.**  The phone number's [display name⁠](https://www.facebook.com/business/help/338047025165344). | `Lucky Shrub` |
 
 ### Response
 
 Upon success, the API returns a business phone number ID. Capture this ID for use in the next step.
 
 ```
-```
 {  
-  "id": "<ID>"  
+  "id": "<ID>"  
 }
-```
 ```
 
 ### Response properties
@@ -92,11 +88,9 @@ curl 'https://graph.facebook.com/v25.0/102290129340398/phone_numbers' \
 ### Example response
 
 ```
-```
 {  
-  "id": "110200345501442"  
+  "id": "110200345501442"  
 }
-```
 ```
 
 ## Step 2: Request a verification code
@@ -121,11 +115,9 @@ POST /<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/request_code
 ### Response
 
 ```
-```
 {  
-  "success": <SUCCESS>  
+  "success": <SUCCESS>  
 }
-```
 ```
 
 ### Response properties
@@ -144,11 +136,9 @@ curl -X POST 'https://graph.facebook.com/v25.0/110200345501442/request_code?code
 ### Example response
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 ### Example SMS delivery
@@ -156,9 +146,7 @@ curl -X POST 'https://graph.facebook.com/v25.0/110200345501442/request_code?code
 Example of an SMS message in English containing a verification code, delivered to a business phone number:
 
 ```
-```
-WhatsApp code 123-830
-```
+WhatsApp code 123-830
 ```
 
 ## Step 3: Verify the number
@@ -181,11 +169,9 @@ POST /<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/verify_code
 ### Response
 
 ```
-```
 {  
-  "success": <SUCCESS>  
+  "success": <SUCCESS>  
 }
-```
 ```
 
 ### Response properties
@@ -204,11 +190,9 @@ curl -X POST 'https://graph.facebook.com/v25.0/110200345501442/verify_code?code=
 ### Example response
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 ## Step 4: Register the number
@@ -224,30 +208,26 @@ POST /<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/register
 ### Post body
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "pin": "<PIN>"  
+  "messaging_product": "whatsapp",  
+  "pin": "<PIN>"  
 }
-```
 ```
 
 ### Body properties
 
 | Placeholder | Description | Example Value |
 | --- | --- | --- |
-| `<PIN>`  *String* | **Required.**  If the verified business phone number already has two-step verification enabled, set this value to the number’s 6-digit two-step verification PIN. If you do not recall the PIN, you can [update](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-phone-numbers/two-step-verification#updating-verification-code) it.  If the verified business phone number does not have two-step verification enabled, set this value to a 6-digit number. This 6-digit number becomes the business phone number’s two-step verification PIN. | `123456` |
+| `<PIN>`  *String* | **Required.**  If the verified business phone number already has two-step verification enabled, set this value to the number's 6-digit two-step verification PIN. If you do not recall the PIN, you can [update](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-phone-numbers/two-step-verification#updating-verification-code) it.  If the verified business phone number does not have two-step verification enabled, set this value to a 6-digit number. This 6-digit number becomes the business phone number's two-step verification PIN. | `123456` |
 
 ### Response
 
 Upon success, the API responds with `true`, indicating successful registration.
 
 ```
-```
 {  
-  "success": <SUCCESS>  
+  "success": <SUCCESS>  
 }
-```
 ```
 
 ### Response properties
@@ -272,9 +252,7 @@ curl 'https://graph.facebook.com/v25.0/110200345501442/register' \
 ### Example response
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```

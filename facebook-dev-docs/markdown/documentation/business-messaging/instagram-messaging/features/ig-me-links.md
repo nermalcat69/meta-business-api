@@ -18,98 +18,90 @@ Ice Breakers are currently not available on desktop.
 ## Setting ice breakers
 
 ```
-```
-    curl -X POST -H "Content-Type: application/json" -d '{  
-     "platform": "instagram",  
-     "ice_breakers":[  
-       {  
-          "call_to_actions":[  
-             {  
-                "question":"<QUESTION>",  
-                "payload":"<PAYLOAD>"  
-             },  
-             {  
-                "question":"<QUESTION>",  
-                "payload":"<PAYLOAD>"  
-             }  
-          ],  
-          "locale":"default" // default locale is REQUIRED  
-       },  
-       {  
-          "call_to_actions":[  
-             {  
-                "question":"<QUESTION>",  
-                "payload":"<PAYLOAD>"  
-             },  
-             {  
-                "question":"<QUESTION>",  
-                "payload":"<PAYLOAD>"  
-             }  
-          ],  
-          "locale":"en_GB"  
-       }  
-    ]  
-}' "https://graph.facebook.com/v11.0/me/messenger_profile?platform=instagram&access_token=<PAGE_ACCESS_TOKEN>"
-```
+    curl -X POST -H "Content-Type: application/json" -d '{  
+     "platform": "instagram",  
+     "ice_breakers":[  
+       {  
+          "call_to_actions":[  
+             {  
+                "question":"<QUESTION>",  
+                "payload":"<PAYLOAD>"  
+             },  
+             {  
+                "question":"<QUESTION>",  
+                "payload":"<PAYLOAD>"  
+             }  
+          ],  
+          "locale":"default" // default locale is REQUIRED  
+       },  
+       {  
+          "call_to_actions":[  
+             {  
+                "question":"<QUESTION>",  
+                "payload":"<PAYLOAD>"  
+             },  
+             {  
+                "question":"<QUESTION>",  
+                "payload":"<PAYLOAD>"  
+             }  
+          ],  
+          "locale":"en_GB"  
+       }  
+    ]  
+}' "https://graph.facebook.com/v11.0/me/messenger_profile?platform=instagram&access_token=<PAGE_ACCESS_TOKEN>"
 ```
 
 ## Getting ice breakers
 
 ```
-```
-curl -X GET "https://graph.facebook.com/v11.0/me/messenger_profile?fields=ice_breakers&platform=instagram&access_token=<PAGE_ACCESS_TOKEN>"
-```
+curl -X GET "https://graph.facebook.com/v11.0/me/messenger_profile?fields=ice_breakers&platform=instagram&access_token=<PAGE_ACCESS_TOKEN>"
 ```
 
 ```
-```
 {  
-   "data": [  
-        {  
-          "call_to_actions" : [  
-               {  
-                "question": "<QUESTION>",  
-                "payload": "<PAYLOAD>",  
+   "data": [  
+        {  
+          "call_to_actions" : [  
+               {  
+                "question": "<QUESTION>",  
+                "payload": "<PAYLOAD>",  
   
-               },  
-               {  
-                "question": "<QUESTION>",  
-                "payload": "<PAYLOAD>",  
+               },  
+               {  
+                "question": "<QUESTION>",  
+                "payload": "<PAYLOAD>",  
   
-               },  
-          ],  
-          "locale": "<LOCALE>",  
-      },  
-      {  
-          "call_to_actions" : [  
-               {  
-                "question": "<QUESTION>",  
-                "payload": "<PAYLOAD>",  
+               },  
+          ],  
+          "locale": "<LOCALE>",  
+      },  
+      {  
+          "call_to_actions" : [  
+               {  
+                "question": "<QUESTION>",  
+                "payload": "<PAYLOAD>",  
   
-               },  
-               {  
-                "question": "<QUESTION>",  
-                "payload": "<PAYLOAD>",  
+               },  
+               {  
+                "question": "<QUESTION>",  
+                "payload": "<PAYLOAD>",  
   
-               },  
-          ],  
-          "locale": "<LOCALE>",  
-      }  
-   ]  
+               },  
+          ],  
+          "locale": "<LOCALE>",  
+      }  
+   ]  
 }
-```
 ```
 
 ## Deleting ice breakers
 
 ```
-```
-curl -X DELETE -H "Content-Type: application/json" -d '{  
-  "fields": [  
-    "ice_breakers",  
-  ]  
-}' "https://graph.facebook.com/v11.0/me/messenger_profile?platform=instagram&access_token=%lt;PAGE_ACCESS_TOKEN>"
-```
+curl -X DELETE -H "Content-Type: application/json" -d '{  
+  "fields": [  
+    "ice_breakers",  
+  ]  
+}' "https://graph.facebook.com/v11.0/me/messenger_profile?platform=instagram&access_token=%lt;PAGE_ACCESS_TOKEN>"
 ```
 
 ## Webhook event

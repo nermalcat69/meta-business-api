@@ -31,7 +31,7 @@ Before you generate an access token, make sure you have completed these steps:
 * Click the **Generate token** button.
 * Copy and save your token.
 
-Make sure to copy the generated token as you won’t be able to access it again. If you lose the token, you will need to generate a new one.
+Make sure to copy the generated token as you won't be able to access it again. If you lose the token, you will need to generate a new one.
 
 ## Option 2: Generate the token using an API
 

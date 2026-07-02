@@ -11,7 +11,7 @@ Updated: Dec 5, 2025
 | --- | --- |
 | \*Object Type: string or array of strings | Hashing is recommended\* |
 
-External ID is a string that represents a user on an advertiser’s system, like loyalty membership IDs, user IDs, and external cookie IDs. You can send one or more `external_id`s for a given event and we try to match it to someone on Facebook.
+External ID is a string that represents a user on an advertiser's system, like loyalty membership IDs, user IDs, and external cookie IDs. You can send one or more `external_id`s for a given event and we try to match it to someone on Facebook.
 
 External IDs can be sent via multiple channels, including browser Pixel, Conversions API, and Offline Conversions API (OCAPI). You must be consistent across channels. For example, if you send a browser Pixel event with `external_id` set to `123`, your Conversions API event for that same user should also have `external_id` set to `123`.
 
@@ -54,11 +54,11 @@ The `external_id` to specific user matches expire periodically. We recommend tha
 
 ### Example - Partner Use Case
 
-Leverage `external_id` to report conversions that happen on a partner’s website. In that case, the process looks like this:
+Leverage `external_id` to report conversions that happen on a partner's website. In that case, the process looks like this:
 
-* User is on your website and clicks on your partner’s website.
+* User is on your website and clicks on your partner's website.
 * You send a Pixel event an `external_id` to Facebook. To your partner, you send a redirect request including `external_id`.
-* User completes a conversion on your partner’s website.
+* User completes a conversion on your partner's website.
 * Your partner sends you conversion information, including `external_id`. Your partner does not have to share any sensitive information.
 * You send us another event, including the new conversion information and the respective `external_id`.
 

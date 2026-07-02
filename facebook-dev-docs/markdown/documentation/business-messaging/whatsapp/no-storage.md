@@ -34,7 +34,7 @@ A limited set of metadata attributes is also stored with the message content. Th
 
 ## Phone number storage via contact information requests
 
-If your business has enabled the [contact book](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#contact-book) feature and a WhatsApp user shares their contact information by tapping the share contact information button, Meta extracts the user’s phone number from the shared contact card (vCard) and stores it in your contact book. The contact book is hosted on Meta data centers, regardless of your local storage configuration. Only the phone number is extracted and stored; no other vCard data is retained on Meta data centers beyond the standard data-in-use period. Contact book retention policies apply to this data, and you can disable the contact book feature from that page.
+If your business has enabled the [contact book](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#contact-book) feature and a WhatsApp user shares their contact information by tapping the share contact information button, Meta extracts the user's phone number from the shared contact card (vCard) and stores it in your contact book. The contact book is hosted on Meta data centers, regardless of your local storage configuration. Only the phone number is extracted and stored; no other vCard data is retained on Meta data centers beyond the standard data-in-use period. Contact book retention policies apply to this data, and you can disable the contact book feature from that page.
 
 ## Available regions
 
@@ -58,18 +58,16 @@ Use the [**Settings API**](https://developers.facebook.com/documentation/busines
 #### Request syntax
 
 ```
-```
-curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/settings' \  
--H 'Content-Type: application/json' \  
--H 'Authorization: Bearer <ACCESS_TOKEN>' \  
--d '  
+curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/settings' \  
+-H 'Content-Type: application/json' \  
+-H 'Authorization: Bearer <ACCESS_TOKEN>' \  
+-d '  
 {  
-  "storage_configuration": {  
-    "status": "IN_COUNTRY_STORAGE_ENABLED",  
-    "data_localization_region": "<COUNTRY_CODE>"  
-  }  
+  "storage_configuration": {  
+    "status": "IN_COUNTRY_STORAGE_ENABLED",  
+    "data_localization_region": "<COUNTRY_CODE>"  
+  }  
 }'
-```
 ```
 
 Set `<COUNTRY_CODE>` to the [country code](https://developers.facebook.com/documentation/business-messaging/whatsapp/no-storage#available-regions) of the country where data-at-rest should be stored.
@@ -92,11 +90,9 @@ curl 'https://graph.facebook.com/v25.0/106540352242922/settings' \
 #### Example response
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 ### Step 2: Register the number
@@ -106,16 +102,14 @@ Use the [**Register API**](https://developers.facebook.com/documentation/busines
 #### Request syntax
 
 ```
-```
-curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/register' \  
--H 'Content-Type: application/json' \  
--H 'Authorization: Bearer <ACCESS_TOKEN>' \  
--d '  
+curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/register' \  
+-H 'Content-Type: application/json' \  
+-H 'Authorization: Bearer <ACCESS_TOKEN>' \  
+-d '  
 {  
-  "messaging_product": "whatsapp",  
-  "pin": "<TWO_STEP_PIN>"  
+  "messaging_product": "whatsapp",  
+  "pin": "<TWO_STEP_PIN>"  
 }'
-```
 ```
 
 Set `<TWO_STEP_PIN>` to the desired two-step verification PIN for the business phone number.
@@ -136,11 +130,9 @@ curl 'https://graph.facebook.com/v25.0/106540352242922/register' \
 #### Example response
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 ## Get local storage settings
@@ -155,14 +147,12 @@ curl 'https://graph.facebook.com/v25.0/179776755229976/settings' \
 This request returns a [node that represents the local storage settings](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/settings-api) on the business phone number. For example:
 
 ```
-```
 {  
-  "storage_configuration": {  
-    "status": "IN_COUNTRY_STORAGE_ENABLED",  
-    "data_localization_region": "BR"  
-  }  
+  "storage_configuration": {  
+    "status": "IN_COUNTRY_STORAGE_ENABLED",  
+    "data_localization_region": "BR"  
+  }  
 }
-```
 ```
 
 ## Disable local storage
@@ -172,17 +162,15 @@ Use the [**Settings API**](https://developers.facebook.com/documentation/busines
 #### Request syntax
 
 ```
-```
-curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/settings' \  
--H 'Content-Type: application/json' \  
--H 'Authorization: Bearer <ACCESS_TOKEN>' \  
--d '  
+curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/settings' \  
+-H 'Content-Type: application/json' \  
+-H 'Authorization: Bearer <ACCESS_TOKEN>' \  
+-d '  
 {  
-  "storage_configuration": {  
-    "status": "IN_COUNTRY_STORAGE_DISABLED"  
-  }  
+  "storage_configuration": {  
+    "status": "IN_COUNTRY_STORAGE_DISABLED"  
+  }  
 }'
-```
 ```
 
 #### Example request
@@ -202,11 +190,9 @@ curl 'https://graph.facebook.com/v25.0/106540352242922/settings' \
 #### Example response
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 ## Enable local storage using v20 and older
@@ -285,8 +271,8 @@ In all these scenarios, use the [Register API](https://developers.facebook.com/d
 
 **Q. Are there any migration risks? Any downtime associated with this?**
 
-No migration risks. Downtime is typically less than five minutes and you don’t need to re-verify the business phone number.
+No migration risks. Downtime is typically less than five minutes and you don't need to re-verify the business phone number.
 
 **Q. Is there any downtime associated with enabling local storage for a business phone number?**
 
-If a business phone number is already registered, you need to deregister and re-register the phone number with local storage enabled. This process typically takes less than five minutes. You don’t need to re-verify the business phone number during this process.
+If a business phone number is already registered, you need to deregister and re-register the phone number with local storage enabled. This process typically takes less than five minutes. You don't need to re-verify the business phone number during this process.

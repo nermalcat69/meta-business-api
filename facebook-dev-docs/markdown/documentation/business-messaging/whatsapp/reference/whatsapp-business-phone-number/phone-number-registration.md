@@ -74,11 +74,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/deregister' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/deregister' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -89,12 +89,12 @@ Select status code
 
 ```
 {  
-  "successful_deregistration": {  
-    "summary": "Successful phone number deregistration",  
-    "value": {  
-      "success": true  
-    }  
-  }  
+  "successful_deregistration": {  
+    "summary": "Successful phone number deregistration",  
+    "value": {  
+      "success": true  
+    }  
+  }  
 }
 ```
 
@@ -655,11 +655,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/deregister' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/deregister' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -670,12 +670,12 @@ Select status code
 
 ```
 {  
-  "successful_deregistration": {  
-    "summary": "Successful phone number deregistration",  
-    "value": {  
-      "success": true  
-    }  
-  }  
+  "successful_deregistration": {  
+    "summary": "Successful phone number deregistration",  
+    "value": {  
+      "success": true  
+    }  
+  }  
 }
 ```
 

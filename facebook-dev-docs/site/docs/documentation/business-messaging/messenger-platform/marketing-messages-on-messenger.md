@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/business-messaging/mes
 
 Updated: Jun 17, 2026
 
-Quick replies provide a way to present a set of up to 13 buttons in-conversation that contain a title and optional image, and appear prominently above the composer. You can also use quick replies to request a person’s location, email address, and phone number.
+Quick replies provide a way to present a set of up to 13 buttons in-conversation that contain a title and optional image, and appear prominently above the composer. You can also use quick replies to request a person's location, email address, and phone number.
 
 ![Messenger conversation showing quick reply buttons above the composer](https://scontent.fdel1-6.fna.fbcdn.net/v/t39.2365-6/653704888_1459945669197416_1856728963803525854_n.png?_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=sCJ-CLbf4_cQ7kNvwH4lagl&_nc_oc=AdoBsZimZaXEmTsjuc2xqKnSJvUnqN4XEPc_6BrqdxlaChN_vB9DpgWQtmcDEiTELCGN0z_yVPbSwW37k_ljduNK&_nc_zt=14&_nc_ht=scontent.fdel1-6.fna&_nc_gid=xnHKMkf7qmr38HoBia9O6Q&_nc_ss=7b289&oh=00_AQBqXwHzdblQJnUE2WfVbbLMYTLelp3OObWq-j1Wi58eTw&oe=6A606A9E)
 
@@ -72,14 +72,12 @@ Text quick replies may also be sent with an optional image that appears as an ic
 ### Syntax
 
 ```
-```
 {  
-  "content_type": "text",  
-  "title": "<BUTTON_TEXT>",  
-  "image_url": "http://example.com/img/red.png",  
-  "payload": "<DEVELOPER_DEFINED_PAYLOAD>"  
+  "content_type": "text",  
+  "title": "<BUTTON_TEXT>",  
+  "image_url": "http://example.com/img/red.png",  
+  "payload": "<DEVELOPER_DEFINED_PAYLOAD>"  
 }
-```
 ```
 
 ### Webhook event
@@ -120,18 +118,16 @@ The `text` property of the event corresponds to the title of the quick reply. Th
 
 ## User phone number quick reply
 
-The user phone number quick reply allows you to ask a user for their phone number. When sent, the Messenger Platform automatically pre-fills the displayed quick reply with the phone number from the user’s profile information.
+The user phone number quick reply allows you to ask a user for their phone number. When sent, the Messenger Platform automatically pre-fills the displayed quick reply with the phone number from the user's profile information.
 
-If the user’s profile does not have a phone number, the quick reply is not shown. You do not receive the phone number until the user taps the quick reply. Choosing the quick reply transmits the information once and does not constitute permission to access the information in the future.
+If the user's profile does not have a phone number, the quick reply is not shown. You do not receive the phone number until the user taps the quick reply. Choosing the quick reply transmits the information once and does not constitute permission to access the information in the future.
 
 ### Syntax
 
 ```
-```
 {  
-  "content_type": "user_phone_number"  
+  "content_type": "user_phone_number"  
 }
-```
 ```
 
 ### Webhook event
@@ -139,51 +135,47 @@ If the user’s profile does not have a phone number, the quick reply is not sho
 When the user taps the quick reply, the phone number is passed in the `payload` attribute of the `messages` webhook event.
 
 ```
-```
 {  
-  "object": "page",  
-  "entry": [  
-    {  
-      "id": "<PAGE_ID>",  
-      "time": 1502905976963,  
-      "messaging": [  
-        {  
-          "sender": {  
-            "id": "<SENDER_PSID>"  
-          },  
-          "recipient": {  
-            "id": "<PAGE_ID>"  
-          },  
-          "timestamp": 1502905976377,  
-          "message": {  
-            "quick_reply": {  
-              "payload": "<PHONE_NUMBER>"  
-            },  
-            "mid": "<MESSAGE_ID>",  
-            "text": "<PHONE_NUMBER>"  
-          }  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "page",  
+  "entry": [  
+    {  
+      "id": "<PAGE_ID>",  
+      "time": 1502905976963,  
+      "messaging": [  
+        {  
+          "sender": {  
+            "id": "<SENDER_PSID>"  
+          },  
+          "recipient": {  
+            "id": "<PAGE_ID>"  
+          },  
+          "timestamp": 1502905976377,  
+          "message": {  
+            "quick_reply": {  
+              "payload": "<PHONE_NUMBER>"  
+            },  
+            "mid": "<MESSAGE_ID>",  
+            "text": "<PHONE_NUMBER>"  
+          }  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ## User email quick reply
 
-The user email quick reply allows you to ask a user for their email. When sent, the Messenger Platform automatically pre-fills the displayed quick reply with the email from the user’s profile information.
+The user email quick reply allows you to ask a user for their email. When sent, the Messenger Platform automatically pre-fills the displayed quick reply with the email from the user's profile information.
 
-If the user’s profile does not have an email address, the quick reply is not shown. The bot does not receive the email until the user taps the quick reply. Choosing the quick reply transmits the information once and does not constitute permission to access the information in the future.
+If the user's profile does not have an email address, the quick reply is not shown. The bot does not receive the email until the user taps the quick reply. Choosing the quick reply transmits the information once and does not constitute permission to access the information in the future.
 
 ### Syntax
 
 ```
-```
 {  
-  "content_type": "user_email"  
+  "content_type": "user_email"  
 }
-```
 ```
 
 ### Webhook event
@@ -191,35 +183,33 @@ If the user’s profile does not have an email address, the quick reply is not s
 When the user taps the quick reply, the email address is passed in the `payload` attribute of the `messages` webhook event.
 
 ```
-```
 {  
-  "object": "page",  
-  "entry": [  
-    {  
-      "id": "<PAGE_ID>",  
-      "time": 1502905976963,  
-      "messaging": [  
-        {  
-          "sender": {  
-            "id": "<SENDER_PSID>"  
-          },  
-          "recipient": {  
-            "id": "<PAGE_ID>"  
-          },  
-          "timestamp": 1502905976377,  
-          "message": {  
-            "quick_reply": {  
-              "payload": "<EMAIL_ADDRESS>"  
-            },  
-            "mid": "<MESSAGE_ID>",  
-            "text": "<EMAIL_ADDRESS>"  
-          }  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "page",  
+  "entry": [  
+    {  
+      "id": "<PAGE_ID>",  
+      "time": 1502905976963,  
+      "messaging": [  
+        {  
+          "sender": {  
+            "id": "<SENDER_PSID>"  
+          },  
+          "recipient": {  
+            "id": "<PAGE_ID>"  
+          },  
+          "timestamp": 1502905976377,  
+          "message": {  
+            "quick_reply": {  
+              "payload": "<EMAIL_ADDRESS>"  
+            },  
+            "mid": "<MESSAGE_ID>",  
+            "text": "<EMAIL_ADDRESS>"  
+          }  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ## Best practices

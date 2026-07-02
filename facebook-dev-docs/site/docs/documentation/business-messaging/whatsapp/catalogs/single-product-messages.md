@@ -39,7 +39,7 @@ Users who have placed an order can see the contents of the order by tapping the 
 
 ## URL buttons
 
-To send users to your website, use **URL** buttons instead of **View** buttons. When a WhatsApp user taps a URL button to buy a product, the URL mapped to the button is loaded in the device’s default web browser, which takes the user out of the WhatsApp client experience. URL button flows can be useful when you want to load the product in your mobile checkout page where users can add promo codes and find related products.
+To send users to your website, use **URL** buttons instead of **View** buttons. When a WhatsApp user taps a URL button to buy a product, the URL mapped to the button is loaded in the device's default web browser, which takes the user out of the WhatsApp client experience. URL button flows can be useful when you want to load the product in your mobile checkout page where users can add promo codes and find related products.
 
 With URL button flows, order placement happens outside of the WhatsApp client, so WhatsApp does not trigger order webhooks for URL-button flows.
 
@@ -121,12 +121,12 @@ curl -X POST "https://graph.facebook.com/v23.0/<WHATSAPP_BUSINESS_ACCOUNT_ID>/me
 
 | Placeholder | Description | Example Value |
 | --- | --- | --- |
-| `<MESSAGE_BODY_TEXT>`  *String* | **Required.**  Message body text. Supports variables.  Maximum 1024 characters. | `Rare succulents for sale! {{1}}, add these unique plants to your collection.` |
+| `<MESSAGE_BODY_TEXT>`  *String* | **Required.**  Message body text. Supports variables.  Maximum 1024 characters. | `Rare succulents for sale! {​{1}​}, add these unique plants to your collection.` |
 | `<MESSAGE_BODY_TEXT_VARIABLE_EXAMPLE>`  *String* | **Required if message body text string uses variables.**  Message body text example variable string(s). Number of strings must match the number of variable placeholders in the message body text string.  If message body text uses a single variable, `body_text` value can be a string, otherwise it must be an array containing an array of strings. | `Pablo` |
 | `<TEMPLATE_LANGUAGE>`  *String* | **Required.**  Template [language and locale code](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/supported-languages). | `en_US` |
 | `<TEMPLATE_NAME>`  *String* | **Required.**  Template name.  Maximum 512 characters. | `carousel_template_product_cards_v1` |
 | `<URL_BUTTON_LABEL_TEXT>`  *String* | **Required if using a URL button.**  URL button label text.  25 characters maximum. | `Buy now` |
-| `<URL_BUTTON_URL>`  *String* | **Required if using a URL button.**  URL to be loaded in the device’s default web browser when the WhatsApp user taps the button.  Supports 1 variable. Variable placeholder must be appended to the end of the URL string.  Maximum 2000 characters. | `https://www.luckyshrub.com/rare-succulents/{{1}}` |
+| `<URL_BUTTON_URL>`  *String* | **Required if using a URL button.**  URL to be loaded in the device's default web browser when the WhatsApp user taps the button.  Supports 1 variable. Variable placeholder must be appended to the end of the URL string.  Maximum 2000 characters. | `https://www.luckyshrub.com/rare-succulents/{​{1}​}` |
 | `<URL_BUTTON_URL_VARIABLE_EXAMPLE>`  *String* | **Required if URL button URL uses a variable.**  URL button URL example variable string.  Maximum 2000 characters. | `BUDDHA` |
 
 ### Example request
@@ -145,7 +145,7 @@ curl 'https://graph.facebook.com/v25.0/161311403722088/message_templates' \
   "components": [
     {
       "type": "body",
-      "text": "Rare succulents for sale! {{1}}, add these unique plants to your collection. All three of these rare succulents are available for purchase on our website, and they come with a 100% satisfaction guarantee. Whether you're a seasoned succulent enthusiast or just starting your plant collection, these rare succulents are sure to impress. Shop now and add some unique and beautiful plants to your collection!",
+      "text": "Rare succulents for sale! {​{1}​}, add these unique plants to your collection. All three of these rare succulents are available for purchase on our website, and they come with a 100% satisfaction guarantee. Whether you're a seasoned succulent enthusiast or just starting your plant collection, these rare succulents are sure to impress. Shop now and add some unique and beautiful plants to your collection!",
       "example": {
         "body_text": "Pablo"
       }
@@ -265,7 +265,7 @@ curl -X POST "https://graph.facebook.com/v23.0/<WHATSAPP_BUSINESS_PHONE_NUMBER_I
 
 ### Example request
 
-This example request sends an approved template named `carousel_template_product_cards_v1`. It supplies a single body text variable value (which the template requires) and three product cards. Each card identifies where it should appear in the carousel (card\_index), as well as the product ID and catalog ID where the card’s product details (such as title, description, and price) can be found.
+This example request sends an approved template named `carousel_template_product_cards_v1`. It supplies a single body text variable value (which the template requires) and three product cards. Each card identifies where it should appear in the carousel (card\_index), as well as the product ID and catalog ID where the card's product details (such as title, description, and price) can be found.
 
 ```
 curl 'https://graph.facebook.com/v25.0/179776755229976/messages' \

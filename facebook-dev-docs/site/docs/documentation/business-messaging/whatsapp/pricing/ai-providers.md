@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/business-messaging/wha
 
 Updated: May 21, 2026
 
-Specific countries have an **authentication-international** rate in our [rate cards](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing#rate-cards). If you send an authentication template message to a WhatsApp user whose country calling code is for a country that has an authentication-international rate, the delivered message will be billed the country’s authentication–international rate if:
+Specific countries have an **authentication-international** rate in our [rate cards](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing#rate-cards). If you send an authentication template message to a WhatsApp user whose country calling code is for a country that has an authentication-international rate, the delivered message will be billed the country's authentication–international rate if:
 
 * your business is [eligible](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/ai-providers#eligibility) for authentication-international rates
 * your business is based in another country (see [Primary Business Location](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/ai-providers#primary-business-location))
@@ -51,15 +51,13 @@ Start times are business- and country-specific timestamps. They indicate when ne
 
 Start times are set when your business is first deemed eligible for authentication-international rates, and are 30 days from your eligibility date, so you will always have 30 days notice before the authentication-international rate applies.
 
-Start times are included in your [eligibility email](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/ai-providers#eligibility-email) and [webhooks](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/ai-providers#webhooks). You can also get these times by requesting the `auth_international_rate_eligibility` field on any of your business’s WhatsApp Business Accounts:
+Start times are included in your [eligibility email](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/ai-providers#eligibility-email) and [webhooks](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/ai-providers#webhooks). You can also get these times by requesting the `auth_international_rate_eligibility` field on any of your business's WhatsApp Business Accounts:
 
 ### Request
 
 ```
-```
-curl 'https://graph.facebook.com/<API_VERSION>/<WABA_ID>?fields=auth_international_rate_eligibility' \  
--H 'Authorization: <ACCESS_TOKEN>'
-```
+curl 'https://graph.facebook.com/<API_VERSION>/<WABA_ID>?fields=auth_international_rate_eligibility' \  
+-H 'Authorization: <ACCESS_TOKEN>'
 ```
 
 ### Request parameters
@@ -75,19 +73,17 @@ curl 'https://graph.facebook.com/<API_VERSION>/<WABA_ID>?fields=auth_internatio
 Upon success:
 
 ```
-```
 {  
-  "id": "<WABA_ID>",  
-  "auth_international_rate_eligibility": {  
-    "start_time": <START_TIME>,  
-    "exception_countries": [  
-      <EXCEPTION_COUNTRY>,  
-      <EXCEPTION_COUNTRY>,  
-      ...  
-    ]  
-  }  
+  "id": "<WABA_ID>",  
+  "auth_international_rate_eligibility": {  
+    "start_time": <START_TIME>,  
+    "exception_countries": [  
+      <EXCEPTION_COUNTRY>,  
+      <EXCEPTION_COUNTRY>,  
+      ...  
+    ]  
+  }  
 }
-```
 ```
 
 ### Response parameters
@@ -105,7 +101,7 @@ Your primary business location is the country where your business is based. It w
 The following publicly-available information is used to determine where your business is based:
 
 * Where your business may be publicly-traded and listed
-* Your business’s corporate structure (where a parent or may be based or publicly-traded)
+* Your business's corporate structure (where a parent or may be based or publicly-traded)
 
 We will attempt to determine where your business is based when:
 
@@ -129,33 +125,31 @@ Note that if your primary business location status is not verified but you are p
 To set or edit your primary business location:
 
 * [Navigate to Business Settings by clicking here⁠](https://business.facebook.com/settings/info?edit_pbl=true)
-* Select the country of the business’s primary location of operation from the dropdown, or enter it in the text field. Note that this is the location where your business has its headquarters and maintains its bookkeeping records.
+* Select the country of the business's primary location of operation from the dropdown, or enter it in the text field. Note that this is the location where your business has its headquarters and maintains its bookkeeping records.
 * Click **Next**
 * Answer the questions on the screen. These answers will help Meta verify your primary business location.
 * Click **Next**
 * Click **Submit for review**
 
-*Note: You won’t be able to make any changes while your verification is under review.*
+*Note: You won't be able to make any changes while your verification is under review.*
 
 ### Primary business location status
 
 The **Primary Business Location** field in the Business Manager will also display a status:
 
-* **Verified** — We have verified your business’s primary location.
-* **Pending verification** — We are in the process of determining your business’s primary location.
+* **Verified** — We have verified your business's primary location.
+* **Pending verification** — We are in the process of determining your business's primary location.
 * **Rejected** — We disagreed with the country you designated, based on publicly available information and what you included when you edited your location. You can manually edit your location again and include different information as part of your submission.
 
 ### Get your location via API
 
-You can use the API to see if your business’s primary business location is set by requesting the `primary_business_location` field on your WhatsApp Business Account (WABA):
+You can use the API to see if your business's primary business location is set by requesting the `primary_business_location` field on your WhatsApp Business Account (WABA):
 
 #### Request
 
 ```
-```
-curl 'https://graph.facebook.com/<API_VERSION>/<WABA_ID>?fields=primary_business_location' \  
--H 'Authorization: Bearer <ACCESS_TOKEN>'
-```
+curl 'https://graph.facebook.com/<API_VERSION>/<WABA_ID>?fields=primary_business_location' \  
+-H 'Authorization: Bearer <ACCESS_TOKEN>'
 ```
 
 ### Response:
@@ -163,12 +157,10 @@ curl 'https://graph.facebook.com/<API_VERSION>/<WABA_ID>?fields=primary_busines
 Upon success:
 
 ```
-```
 {  
-  "id": "<WABA_ID>",  
-  "primary_business_location": "<COUNTRY_CODE>"  
+  "id": "<WABA_ID>",  
+  "primary_business_location": "<COUNTRY_CODE>"  
 }
-```
 ```
 
 * `<WABA_ID>` — WhatsApp Business Account ID.
@@ -201,38 +193,36 @@ In the following examples, assume this scenario:
 Requesting the `auth_international_rate_eligibility` field on WABA 12345 returns:
 
 ```
-```
 {  
-  "id": "12345",  
-  "auth_international_rate_eligibility": {  
-    "start_time": 1717225200, // Indicates country A start time: June 1, 2024  
-    "exception_countries": [  
-      {  
-        "country_code": "B",  
-        "start_time": 1719817200 // Indicates country B start time: July 1, 2024  
-      }  
-    ]  
-  }  
+  "id": "12345",  
+  "auth_international_rate_eligibility": {  
+    "start_time": 1717225200, // Indicates country A start time: June 1, 2024  
+    "exception_countries": [  
+      {  
+        "country_code": "B",  
+        "start_time": 1719817200 // Indicates country B start time: July 1, 2024  
+      }  
+    ]  
+  }  
 }
-```
 ```
 
 Country C is not represented in the response because it does not have an authentication-international rate.
 
 ### Scenario 1
 
-The business’s primary business location is country C.
+The business's primary business location is country C.
 
 * The authentication-international rate applies for country A on June 1, 2024.
 * The authentication-international rate applies for country B on July 1, 2024.
 
 ### Scenario 2
 
-The business’s primary business location is country B.
+The business's primary business location is country B.
 
 * The authentication-international rate applies for country A on June 1, 2024.
 
-The authentication-international rate for country B does not apply because the business’s primary business location is also country B.
+The authentication-international rate for country B does not apply because the business's primary business location is also country B.
 
 ## Webhooks
 
@@ -243,34 +233,32 @@ An `account_update` webhook will be triggered if your business is deemed eligibl
 Please see [Rate cards](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing#rate-cards) for the list of countries with authentication-international rates.
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "<WABA_ID>",  
-      "time": <WEBHOOK_SENT_TIMESTAMP>,  
-      "changes": [  
-        {  
-          "field": "account_update",  
-          "value": {  
-            "auth_international_rate_eligibility": {  
-              "exception_countries": [  
-                {  
-                  "country_code": "<EXCEPTION_COUNTRY_CODE>",  
-                  "start_time": <EXCEPTION_START_TIME>  
-                }  
-              ],  
-              "start_time": <START_TIME>  
-            },  
-            "event": "AUTH_INTL_PRICE_ELIGIBILITY_UPDATE"  
-          }  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "<WABA_ID>",  
+      "time": <WEBHOOK_SENT_TIMESTAMP>,  
+      "changes": [  
+        {  
+          "field": "account_update",  
+          "value": {  
+            "auth_international_rate_eligibility": {  
+              "exception_countries": [  
+                {  
+                  "country_code": "<EXCEPTION_COUNTRY_CODE>",  
+                  "start_time": <EXCEPTION_START_TIME>  
+                }  
+              ],  
+              "start_time": <START_TIME>  
+            },  
+            "event": "AUTH_INTL_PRICE_ELIGIBILITY_UPDATE"  
+          }  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 * `<WABA_ID>` — WhatsApp Business Account ID.
@@ -281,29 +269,27 @@ Please see [Rate cards](https://developers.facebook.com/documentation/business-m
 
 ### Primary business location update webhook
 
-Subscribe to the `account_update` webhook to be notified when the business’s [primary business location](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/ai-providers#primary-business-location) is set. If we are able to determine the country where your business is based, we will set your location to that country and trigger an `account_update` webhook with the country’s two-character country code assigned to the `BUSINESS_PRIMARY_LOCATION_COUNTRY_UPDATE` property.
+Subscribe to the `account_update` webhook to be notified when the business's [primary business location](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/ai-providers#primary-business-location) is set. If we are able to determine the country where your business is based, we will set your location to that country and trigger an `account_update` webhook with the country's two-character country code assigned to the `BUSINESS_PRIMARY_LOCATION_COUNTRY_UPDATE` property.
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "<WABA_ID>",  
-      "time": <TIMESTAMP>,  
-      "changes": [  
-        {  
-          "field": "account_update",  
-          "value": {  
-            "country": "<COUNTRY_CODE>",  
-            "event": "BUSINESS_PRIMARY_LOCATION_COUNTRY_UPDATE"  
-          }  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "<WABA_ID>",  
+      "time": <TIMESTAMP>,  
+      "changes": [  
+        {  
+          "field": "account_update",  
+          "value": {  
+            "country": "<COUNTRY_CODE>",  
+            "event": "BUSINESS_PRIMARY_LOCATION_COUNTRY_UPDATE"  
+          }  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 * `<WABA_ID>` — WhatsApp Business Account ID.
@@ -315,14 +301,12 @@ Subscribe to the `account_update` webhook to be notified when the business’s [
 If an authentication template message is billed the authentication-international rate, the `pricing` object in status [messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/messages/status) webhooks will have `category` set to `authentication_international`.
 
 ```
-```
-"pricing": {  
-"billable": true,  
-"pricing_model": "PMP",  
-"type": "regular",  
-"category": "authentication_international"  
+"pricing": {  
+"billable": true,  
+"pricing_model": "PMP",  
+"type": "regular",  
+"category": "authentication_international"  
 }
-```
 ```
 
 ## Examples

@@ -29,22 +29,20 @@ The Send API allows you to save an asset that is sent with a message, as an alte
 ### Save from URL
 
 ```
-```
 {  
-  "recipient": {  
-    "id": "<PSID>"  
-  },  
-  "message": {  
-    "attachment": {  
-      "type": "<ASSET_TYPE>",  
-      "payload": {  
-        "url": "<ASSET_URL>",  
-        "is_reusable": true  
-      }  
-    }  
-  }  
+  "recipient": {  
+    "id": "<PSID>"  
+  },  
+  "message": {  
+    "attachment": {  
+      "type": "<ASSET_TYPE>",  
+      "payload": {  
+        "url": "<ASSET_URL>",  
+        "is_reusable": true  
+      }  
+    }  
+  }  
 }
-```
 ```
 
 ### Save from file
@@ -54,7 +52,7 @@ Submit your message request as form data, and specify the file location in the `
 ```
 curl  \
   -F 'recipient={"id":"<PSID>"}' \
-  -F 'message={"attachment":{"type":"<ASSET_TYPE>", "payload":{"is_reusable":true}}}' \
+  -F 'message={"attachment":{"type":"<ASSET_TYPE>", "payload":{"is_reusable":true}​}}' \
   -F 'filedata=@/tmp/shirt.png;type=image/png' \
   "https://graph.facebook.com/v25.0/me/messages?access_token=<PAGE_ACCESS_TOKEN>"
 ```
@@ -64,13 +62,11 @@ curl  \
 Use the returned `attachment_id` to attach the asset to future messages. This ID is private and only the Page that originally sent the attachment can reuse it.
 
 ```
-```
 {  
-  "recipient_id": "1254444444682919",  
-  "message_id": "m_AG5Hz2Uq7tuwNEhXfYYKj8mJEM_QPpz5jdCK48PnKAjSdjfipqxqMvK8ma6AC8fplwlqLP_5cgXIbu7I3rBN0P",  
-  "attachment_id": "687799999980546"  
+  "recipient_id": "1254444444682919",  
+  "message_id": "m_AG5Hz2Uq7tuwNEhXfYYKj8mJEM_QPpz5jdCK48PnKAjSdjfipqxqMvK8ma6AC8fplwlqLP_5cgXIbu7I3rBN0P",  
+  "attachment_id": "687799999980546"  
 }
-```
 ```
 
 ## Save with the Attachment Upload API
@@ -102,7 +98,7 @@ Submit your request as form data, and specify the file location in the `filedata
 ```
 curl  \
   -F 'recipient={"id":"<PSID>"}' \
-  -F 'message={"attachment":{"type":"<ASSET_TYPE>", "payload":{"is_reusable":true}}}' \
+  -F 'message={"attachment":{"type":"<ASSET_TYPE>", "payload":{"is_reusable":true}​}}' \
   -F 'filedata=@/tmp/shirt.png;type=image/png' \
   "https://graph.facebook.com/v25.0/me/messages?access_token=<PAGE_ACCESS_TOKEN>"
 ```
@@ -110,11 +106,9 @@ curl  \
 ### Response
 
 ```
-```
 {  
-  "attachment_id":"1857777774821032"  
+  "attachment_id":"1857777774821032"  
 }
-```
 ```
 
 ## Send a saved asset
@@ -144,7 +138,7 @@ curl -X POST "https://graph.facebook.com/<LATEST_API_VERSION>/<PAGE_ID>/messages
 
 You can upload media and send it in a single API request. This avoids the 90-day attachment ID expiration since the attachment is not saved for reuse.
 
-Do **not** set `is_reusable` to `true` when uploading and sending in one step. Attachments in the user’s message thread are always private.
+Do **not** set `is_reusable` to `true` when uploading and sending in one step. Attachments in the user's message thread are always private.
 
 ```
 curl -X POST "https://graph.facebook.com/<LATEST_API_VERSION>/<PAGE_ID>/messages" \

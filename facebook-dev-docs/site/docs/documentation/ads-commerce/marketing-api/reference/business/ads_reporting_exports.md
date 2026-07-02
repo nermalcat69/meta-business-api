@@ -20,8 +20,8 @@ HTTPPHP SDKJavaScript SDKAndroid SDKiOS SDK
 ---
 
 ```
-GET /v25.0/{business-id}/ads_custom_pivots_preview HTTP/1.1  
-Host: graph.facebook.com
+GET /v25.0/{business-id}/ads_custom_pivots_preview HTTP/1.1  
+Host: graph.facebook.com
 ```
 
 Try it in [Graph API Explorer](https://developers.facebook.com/tools/explorer/?method=GET&path=%7Bbusiness-id%7D%2Fads_custom_pivots_preview&version=v25.0)
@@ -37,7 +37,7 @@ If you want to learn how to use the Graph API, read our [Using Graph API guide](
 | `dimensions` *array<string>* | dimensions |
 | `group_name` *string* | group\_name |
 | `sorting` *array<JSON object>* | sorting  ---   `field` *string* field  required  `direction` *enum {asc, desc}* **Default value:** `"desc"` direction  Show child parameters |
-| `time_range` *{‘since’:YYYY-MM-DD,’until’:YYYY-MM-DD}* | The time range  ---   `since` *datetime* A date in the format of "YYYY-MM-DD", which means from the beginning midnight of that day.  `until` *datetime* A date in the format of "YYYY-MM-DD", which means to the beginning midnight of the following day.  Show child parameters |
+| `time_range` *{'since':YYYY-MM-DD,'until':YYYY-MM-DD}* | The time range  ---   `since` *datetime* A date in the format of "YYYY-MM-DD", which means from the beginning midnight of that day.  `until` *datetime* A date in the format of "YYYY-MM-DD", which means to the beginning midnight of the following day.  Show child parameters |
 
 #### Fields
 

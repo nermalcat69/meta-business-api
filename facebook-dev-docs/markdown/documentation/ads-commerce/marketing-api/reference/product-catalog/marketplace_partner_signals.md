@@ -9,7 +9,7 @@ Updated: Feb 10, 2026
 
 ## Reading
 
-You can’t perform this operation on this endpoint.
+You can't perform this operation on this endpoint.
 
 ## Creating
 
@@ -80,14 +80,14 @@ You can't perform this operation on this endpoint.
 
 | Field | Description |
 | --- | --- |
-| handles | An array of strings, containing either 0 or 1 value. An empty array means that nothing has been ingested. This value can be passed to the [/check\_batch\_request\_status](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-catalog/check_batch_request_status) endpoint to get the status of the request’s processing. |
+| handles | An array of strings, containing either 0 or 1 value. An empty array means that nothing has been ingested. This value can be passed to the [/check\_batch\_request\_status](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-catalog/check_batch_request_status) endpoint to get the status of the request's processing. |
 | validation\_status | An array of `ValidationStatus` objects (see below) |
 
 A `ValidationStatus` object has the following fields:
 
 | Field | Description |
 | --- | --- |
-| retailer\_id | Row identifier from one of the records in the ‘requests’ parameter |
+| retailer\_id | Row identifier from one of the records in the 'requests' parameter |
 | errors | An array of `Error` objects (see below) |
 | warnings | An array of `Error` objects (see below) |
 

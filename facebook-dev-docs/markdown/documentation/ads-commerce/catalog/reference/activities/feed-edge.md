@@ -63,12 +63,12 @@ Aggregated information about the edge, such as counts. Specify `summary=true` as
 
 ## Creating
 
-You can’t perform this operation on this edge. To create product sets, use the [Product Set](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-set) node.
+You can't perform this operation on this edge. To create product sets, use the [Product Set](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-set) node.
 
 ## Updating
 
-You can’t perform this operation on this edge. To update product sets, use the [Product Set](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-set) node.
+You can't perform this operation on this edge. To update product sets, use the [Product Set](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-set) node.
 
 ## Deleting
 
-You can’t perform this operation on this edge. To delete product sets, use the [Product Set](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-set) node.
+You can't perform this operation on this edge. To delete product sets, use the [Product Set](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-set) node.

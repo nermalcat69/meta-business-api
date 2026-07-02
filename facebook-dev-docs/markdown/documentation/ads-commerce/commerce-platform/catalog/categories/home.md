@@ -21,8 +21,8 @@ Include these attributes to enrich your product details page (PDP) and help buye
 | `size`  *string* | Clothing & Accessories, Sporting Goods | Size as it appears on the label. Includes generic sizes, such as `Small` and `One Size`. Includes numeric sizes, such as `2`, `4`. Sample values: `Small`, `Medium`, `Large`, `2`, `4`, `6`, `One Size`. |
 | `height`  *string* | Boots | Height of the product. The first part is the number. The second part is one of the accepted units: mm, cm, m, in, ft. Sample values: `5 in`, `2 ft`, `2.5 ft`. |
 | `length`  *string* | Socks, Socks & Tights, Casual shirts, Dress shirts, Sporting Goods | Length of the product. The first part is the number. The second part is one of the accepted units: mm, cm, m, in, ft. Sample values: `5 in`, `2 ft`, `2.5 ft`. |
-| `width`  *string* | Belts, Ties, Men’s shoes, Women’s shoes, Sporting Goods | Width of the product. The first part is the number. The second part is one of the accepted units: mm, cm, m, in, ft. Sample values: `5 in`, `2 ft`, `2.5 ft`. |
-| `pattern`  *string* | Women’s clothing, Men’s clothing, Boys’ Accessories, Unisex Accessories & Clothing, Shoes | Recurring design, pattern, or motif on your item. Sample values: `Plaid`, `Polka Dot`, `Gingham`, `Chevron`. |
+| `width`  *string* | Belts, Ties, Men's shoes, Women's shoes, Sporting Goods | Width of the product. The first part is the number. The second part is one of the accepted units: mm, cm, m, in, ft. Sample values: `5 in`, `2 ft`, `2.5 ft`. |
+| `pattern`  *string* | Women's clothing, Men's clothing, Boys' Accessories, Unisex Accessories & Clothing, Shoes | Recurring design, pattern, or motif on your item. Sample values: `Plaid`, `Polka Dot`, `Gingham`, `Chevron`. |
 
 ## Additional attributes
 
@@ -45,7 +45,7 @@ For Google Product Category mapping, see [Apparel & Accessories](https://develop
 | `denim_features`  *list of strings* | Features, embellishments, and finishes, specific to jeans. Sample values: `Distressed`, `Wrinkled`, `Ripped`, `Embroidered`, `Raw Hem`.   * To provide multiple values using a single feed `denim_features` field, the acceptable input format is `'Distressed', 'Wrinkled', 'Ripped', 'Embroidered', 'Raw Hem'`. |
 | `inseam`  *string* | Numeric size of the inseam for items, such as pants, jeans, and leggings. Does not include generic sizes, such as `Small`. The first part is the number. The second part is one of the accepted units: mm, cm, m, in, ft. Sample values: `30 in`, `34 in`, `80 cm`, `86 cm`. |
 | `is_costume`  *boolean* | Indicates if the item is intended to be worn as a costume. Sample values: `Yes`, `No`. |
-| `is_outfit_set`  *boolean* | Indicates if the product has 2 or more different items that come as part of a matching or outfit set, such as “matching shirt and pants” or “bra and underwear set”. Sample values: `Yes`, `No`. |
+| `is_outfit_set`  *boolean* | Indicates if the product has 2 or more different items that come as part of a matching or outfit set, such as "matching shirt and pants" or "bra and underwear set". Sample values: `Yes`, `No`. |
 | `jean_wash`  *string* | Post-process wash treatment that may alter color or texture of denim products. Sample values: `Acid Wash`, `Dark Wash`, `Vintage Wash`. |
 | `neckline`  *string* | Neckline or neck style of the item. Sample values: `Crew Neck`, `Sweetheart`, `V-Neck`, `Boat Neck`, `Turtleneck`. |
 | `pant_fit`  *string* | General fit style of pants. Also applies to jeans. Sample values: `Relaxed`, `Slim`, `Curvy`, `Cigarette`, `Boyfriend`. |

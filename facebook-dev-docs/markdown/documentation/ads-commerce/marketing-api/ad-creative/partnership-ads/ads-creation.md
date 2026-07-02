@@ -18,7 +18,7 @@ With account-level permissioning, you can:
 
 ## Before you begin
 
-Perform all operations against your brand’s Facebook Page ID. All endpoints support batch processing and use:
+Perform all operations against your brand's Facebook Page ID. All endpoints support batch processing and use:
 
 * Base URL: `https://api.facebook.com/partnership-ads/fb-account-level-permissions`
 * Authorization: All endpoints require an `Authorization: Bearer` token in the request header.
@@ -29,7 +29,7 @@ Perform all operations against your brand’s Facebook Page ID. All endpoints su
 
 ## Retrieve account-level permissions
 
-Retrieve a list of account-level partnership ad permissions for your brand’s Facebook Page with filtering by status, partner, direction, and pagination.
+Retrieve a list of account-level partnership ad permissions for your brand's Facebook Page with filtering by status, partner, direction, and pagination.
 
 ### Parameters
 
@@ -37,7 +37,7 @@ Retrieve a list of account-level partnership ad permissions for your brand’s F
 | --- | --- |
 | `status`  array of integers | **Optional.**  Filters the response by status type. **Values:**   * `1`: `PENDING_APPROVAL` * `2`, `7`: `APPROVED` * `3`: `REJECTED` * `4`: `REVOKED` * `5`: `SELF_REMOVED` * `6`: `CANCELED` |
 | `partner_page_ids`  array of integers | **Optional.**  Filters the response by specific partner Facebook Page IDs. |
-| `permission_direction`  string | **Optional.** Filters the response by permission direction. **Values:**   * `sent` — Your brand’s Page sent this request to a potential creator. * `received` — Your brand’s Page received this request from another potential Facebook brand or creator. |
+| `permission_direction`  string | **Optional.** Filters the response by permission direction. **Values:**   * `sent` — Your brand's Page sent this request to a potential creator. * `received` — Your brand's Page received this request from another potential Facebook brand or creator. |
 | `offset`  integer | **Optional.**  Number of records to skip for pagination, with a minimum value of 0. |
 | `limit`  integer | **Optional.**  Maximum number of permissions to return, with a maximum of 1000. |
 
@@ -53,24 +53,22 @@ curl -X GET \
 ### Example response (200 OK)
 
 ```
-```
 [  
-  {  
-    "id": <PERMISSION_ID>,  
-    "partner_page_id": <PARTNER_PAGE_ID>,  
-    "status": 1,  
-    "created_at": "<TIMESTAMP>",  
-    "permission_direction": "sent"  
-  },  
-  {  
-    "id": <PERMISSION_ID>,  
-    "partner_page_id": <PARTNER_PAGE_ID>,  
-    "status": 2,  
-    "created_at": "<TIMESTAMP>",  
-    "permission_direction": "received"  
-  }  
+  {  
+    "id": <PERMISSION_ID>,  
+    "partner_page_id": <PARTNER_PAGE_ID>,  
+    "status": 1,  
+    "created_at": "<TIMESTAMP>",  
+    "permission_direction": "sent"  
+  },  
+  {  
+    "id": <PERMISSION_ID>,  
+    "partner_page_id": <PARTNER_PAGE_ID>,  
+    "status": 2,  
+    "created_at": "<TIMESTAMP>",  
+    "permission_direction": "received"  
+  }  
 ]
-```
 ```
 
 ## Manage account-level permissions
@@ -85,13 +83,13 @@ The `action` field contains the different types of operation to be performed on 
 
 * **send-request** — Send a new request to a creator Page. You can only perform this action if no prior request exists or if an existing request is not active.
 * **cancel-request** — Cancel an already sent request that has not yet been accepted by the creator. Canceling a request lets you rescind incorrect requests.
-* **remove-permission** — Deactivate an existing “approved” request. Removing the permission revokes your authorization to create partnership ads with the linked creator.
+* **remove-permission** — Deactivate an existing "approved" request. Removing the permission revokes your authorization to create partnership ads with the linked creator.
 
 #### Received request actions
 
 * **accept-request** — Accept a pending request from another brand or creator Page.
 * **reject-request** — Reject a pending request.
-* **remove-permission** — Deactivate an existing “approved” request. Removing the permission ensures that the partner Page can no longer use any of your content for creating partnership ads.
+* **remove-permission** — Deactivate an existing "approved" request. Removing the permission ensures that the partner Page can no longer use any of your content for creating partnership ads.
 
 ### Examples
 
@@ -111,19 +109,17 @@ curl -X POST \
 ##### Response (200 OK)
 
 ```
-```
 [  
-  {  
-    "partner_page_id": <PARTNER_PAGE_ID>,  
-    "alp_permission_id": <PERMISSION_ID>,  
-    "alp_permission_status": 1,  
-    "status": "success"  
-  }  
+  {  
+    "partner_page_id": <PARTNER_PAGE_ID>,  
+    "alp_permission_id": <PERMISSION_ID>,  
+    "alp_permission_status": 1,  
+    "status": "success"  
+  }  
 ]
 ```
-```
 
-An `alp_permission_status` of `1` indicates the permission is now in **Pending Approval**, awaiting the creator’s acceptance.
+An `alp_permission_status` of `1` indicates the permission is now in **Pending Approval**, awaiting the creator's acceptance.
 
 #### Accepting an incoming permission request
 
@@ -141,16 +137,14 @@ curl -X POST \
 ##### Response (200 OK)
 
 ```
-```
 [  
-  {  
-    "partner_page_id": <PARTNER_PAGE_ID>,  
-    "alp_permission_id": <PERMISSION_ID>,  
-    "alp_permission_status": 2,  
-    "status": "success"  
-  }  
+  {  
+    "partner_page_id": <PARTNER_PAGE_ID>,  
+    "alp_permission_id": <PERMISSION_ID>,  
+    "alp_permission_status": 2,  
+    "status": "success"  
+  }  
 ]
-```
 ```
 
 An `alp_permission_status` of `2` confirms the permission is now **Approved**.
@@ -171,16 +165,14 @@ curl -X POST \
 ##### Response (200 OK)
 
 ```
-```
 [  
-  {  
-    "partner_page_id": <PARTNER_PAGE_ID>,  
-    "alp_permission_id": <PERMISSION_ID>,  
-    "alp_permission_status": 3,  
-    "status": "success"  
-  }  
+  {  
+    "partner_page_id": <PARTNER_PAGE_ID>,  
+    "alp_permission_id": <PERMISSION_ID>,  
+    "alp_permission_status": 3,  
+    "status": "success"  
+  }  
 ]
-```
 ```
 
 An `alp_permission_status` of `3` confirms that the permission has been **Rejected**.
@@ -201,16 +193,14 @@ curl -X POST \
 ##### Response (200 OK)
 
 ```
-```
 [  
-  {  
-    "partner_page_id": <PARTNER_PAGE_ID>,  
-    "alp_permission_id": <PERMISSION_ID>,  
-    "alp_permission_status": 4,  
-    "status": "success"  
-  }  
+  {  
+    "partner_page_id": <PARTNER_PAGE_ID>,  
+    "alp_permission_id": <PERMISSION_ID>,  
+    "alp_permission_status": 4,  
+    "status": "success"  
+  }  
 ]
-```
 ```
 
 An `alp_permission_status` of `4` confirms the permission has been **Revoked**.
@@ -231,16 +221,14 @@ curl -X POST \
 ##### Response (200 OK)
 
 ```
-```
 [  
-  {  
-    "partner_page_id": <PARTNER_PAGE_ID>,  
-    "alp_permission_id": <PERMISSION_ID>,  
-    "alp_permission_status": 6,  
-    "status": "success"  
-  }  
+  {  
+    "partner_page_id": <PARTNER_PAGE_ID>,  
+    "alp_permission_id": <PERMISSION_ID>,  
+    "alp_permission_status": 6,  
+    "status": "success"  
+  }  
 ]
-```
 ```
 
 An `alp_permission_status` of `6` confirms the permission has been **Canceled** and can no longer be accepted by the creator.
@@ -265,28 +253,26 @@ curl -X POST \
 ##### Response (200 OK)
 
 ```
-```
 [  
-  {  
-    "partner_page_id": <PARTNER_PAGE_ID1>,  
-    "alp_permission_id": <PERMISSION_ID1>,  
-    "alp_permission_status": 1,  
-    "status": "success"  
-  },  
-  {  
-    "partner_page_id": <PARTNER_PAGE_ID2>,  
-    "alp_permission_id": <PERMISSION_ID2>,  
-    "alp_permission_status": 2,  
-    "status": "success"  
-  },  
-  {  
-    "partner_page_id": <PARTNER_PAGE_ID3>,  
-    "status": "failure",  
-    "error_code": 404,  
-    "error_message": "No active permission found for this partner."  
-  }  
+  {  
+    "partner_page_id": <PARTNER_PAGE_ID1>,  
+    "alp_permission_id": <PERMISSION_ID1>,  
+    "alp_permission_status": 1,  
+    "status": "success"  
+  },  
+  {  
+    "partner_page_id": <PARTNER_PAGE_ID2>,  
+    "alp_permission_id": <PERMISSION_ID2>,  
+    "alp_permission_status": 2,  
+    "status": "success"  
+  },  
+  {  
+    "partner_page_id": <PARTNER_PAGE_ID3>,  
+    "status": "failure",  
+    "error_code": 404,  
+    "error_message": "No active permission found for this partner."  
+  }  
 ]
-```
 ```
 
 ## Best practices

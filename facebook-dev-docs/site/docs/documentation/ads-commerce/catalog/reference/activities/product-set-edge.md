@@ -28,7 +28,7 @@ Host: graph.facebook.com
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| `filter` | string | **Optional**. JSON-encoded WCA filter rule for filtering activities. For example: `{"activity_category":{"eq":"Tour"}}`. See [Product Set](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-set) for the full list of filter operators. |
+| `filter` | string | **Optional**. JSON-encoded WCA filter rule for filtering activities. For example: `{"activity_category":{"eq":"Tour"}​}`. See [Product Set](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-set) for the full list of filter operators. |
 | `summary` | boolean | **Optional**. When `true`, includes a `summary` object with `total_count` in the response. |
 | `limit` | integer | **Optional**. Maximum number of items to return per page. |
 | `before` | string | **Optional**. Cursor for backward pagination. |
@@ -136,8 +136,8 @@ Content-Type: application/json
 
 ## Updating
 
-You can’t perform this operation on this edge. To update individual activity items, use the [Activities](https://developers.facebook.com/documentation/ads-commerce/catalog/reference/activities#updating) node.
+You can't perform this operation on this edge. To update individual activity items, use the [Activities](https://developers.facebook.com/documentation/ads-commerce/catalog/reference/activities#updating) node.
 
 ## Deleting
 
-You can’t perform this operation on this edge. To delete individual activity items, use the [Activities](https://developers.facebook.com/documentation/ads-commerce/catalog/reference/activities#deleting) node.
+You can't perform this operation on this edge. To delete individual activity items, use the [Activities](https://developers.facebook.com/documentation/ads-commerce/catalog/reference/activities#deleting) node.

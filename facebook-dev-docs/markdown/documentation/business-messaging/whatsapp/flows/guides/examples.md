@@ -80,7 +80,7 @@ The health check allows users to verify that the endpoint health check ping requ
 
 Endpoint health check is accessible from the Flow Builder, from the three dot menu in the top right corner of the screen. Select **Setup** under the **Endpoint** section. In the modal select **Health check** step and click on **Run Check** button to trigger the check.
 
-Health check triggers a ping against the provided endpoint URI and if there’s an error, the health check returns detailed error and resolution information.
+Health check triggers a ping against the provided endpoint URI and if there's an error, the health check returns detailed error and resolution information.
 
 It detects various issues such as:
 

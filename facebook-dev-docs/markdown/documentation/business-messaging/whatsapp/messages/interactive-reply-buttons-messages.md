@@ -29,65 +29,63 @@ This is the same message, but using quick-reply buttons instead of URL buttons:
 ## Request syntax
 
 ```
-```
-curl 'https://graph.facebook.com/<API_VERSION>/<BUSINESS_PHONE_NUMBER_ID>/messages' \  
--H 'Content-Type: application/json' \  
--H 'Authorization: Bearer <ACCESS_TOKEN>' \  
--d '  
+curl 'https://graph.facebook.com/<API_VERSION>/<BUSINESS_PHONE_NUMBER_ID>/messages' \  
+-H 'Content-Type: application/json' \  
+-H 'Authorization: Bearer <ACCESS_TOKEN>' \  
+-d '  
 {  
-  "messaging_product": "whatsapp",  
-  "recipient_type": "individual",  
-  "to": "<USER_PHONE_NUMBER>",  
-  "type": "interactive",  
-  "interactive": {  
-    "type": "carousel",  
-    "body": {  
-      "text": "<MESSAGE_BODY_TEXT>"  
-    },  
-    "action": {  
+  "messaging_product": "whatsapp",  
+  "recipient_type": "individual",  
+  "to": "<USER_PHONE_NUMBER>",  
+  "type": "interactive",  
+  "interactive": {  
+    "type": "carousel",  
+    "body": {  
+      "text": "<MESSAGE_BODY_TEXT>"  
+    },  
+    "action": {  
   
-      <!-- First card object -->  
-      "cards": [  
-        {  
-          "card_index": <CARD_INDEX>,  
-          "type": "cta_url",  
-          "header": {  
-            "type": "<HEADER_TYPE>",  
-            "<HEADER_TYPE>": {  
-              "link": "<MEDIA_ASSET_URL>"  
-            }  
-          },  
+      <!-- First card object -->  
+      "cards": [  
+        {  
+          "card_index": <CARD_INDEX>,  
+          "type": "cta_url",  
+          "header": {  
+            "type": "<HEADER_TYPE>",  
+            "<HEADER_TYPE>": {  
+              "link": "<MEDIA_ASSET_URL>"  
+            }  
+          },  
   
-          <!-- Card body text is optional -->  
-          "body": {  
-            "text": "<CARD_BODY_TEXT>"  
-          },  
+          <!-- Card body text is optional -->  
+          "body": {  
+            "text": "<CARD_BODY_TEXT>"  
+          },  
   
-          "action": {  
-            <!-- Only if using a URL button -->  
-            "name": "cta_url",  
-            "parameters": {  
-              "display_text": "<URL_BUTTON_LABEL>",  
-              "url": "<URL_BUTTON_URL>"  
-            }  
-            <!-- Only if using one or more quick-reply buttons -->  
-            "buttons": [  
-              {  
-                "type": "quick_reply",  
-                "quick_reply": {  
-                  "id": "<QUICK_REPLY_BUTTON_ID>",  
-                  "title": "<QUICK_REPLY_BUTTON_LABEL>"  
-                }  
-              },  
-              <!-- Additional quick-reply buttons would follow -->  
-          }  
-        },  
-        <!-- Additional card objects would follow -->  
-      ]  
-    }  
-  }  
+          "action": {  
+            <!-- Only if using a URL button -->  
+            "name": "cta_url",  
+            "parameters": {  
+              "display_text": "<URL_BUTTON_LABEL>",  
+              "url": "<URL_BUTTON_URL>"  
+            }  
+            <!-- Only if using one or more quick-reply buttons -->  
+            "buttons": [  
+              {  
+                "type": "quick_reply",  
+                "quick_reply": {  
+                  "id": "<QUICK_REPLY_BUTTON_ID>",  
+                  "title": "<QUICK_REPLY_BUTTON_LABEL>"  
+                }  
+              },  
+              <!-- Additional quick-reply buttons would follow -->  
+          }  
+        },  
+        <!-- Additional card objects would follow -->  
+      ]  
+    }  
+  }  
 }'
-```
 ```
 
 ## Request parameters
@@ -105,7 +103,7 @@ curl 'https://graph.facebook.com/<API_VERSION>/<BUSINESS_PHONE_NUMBER_ID>/messa
 | `<QUICK_REPLY_BUTTON_ID>`  *String* | **Required if using a quick-reply button.**   Quick-reply button ID. Maximum 256 characters. | `learn-blue-echeveria` |
 | `<QUICK_REPLY_BUTTON_LABEL>`  *String* | **Required if using a quick-reply button.**   Quick-reply button label text. Maximum 20 characters. | `Learn more` |
 | `<URL_BUTTON_LABEL>`  *String* | **Required if using a URL button.**   URL button label text. Maximum 20 characters. | `Buy now` |
-| `<URL_BUTTON_URL>`  *String* | **Required if using a URL button.**   URL to load in the device’s default web browser when tapped by the user. | `https://shop.luckyshrub.com/latest/blue-echeveria` |
+| `<URL_BUTTON_URL>`  *String* | **Required if using a URL button.**   URL to load in the device's default web browser when tapped by the user. | `https://shop.luckyshrub.com/latest/blue-echeveria` |
 | `<USER_PHONE_NUMBER>`  *String* | **Required.**   WhatsApp user phone number. | `16505551234` |
 
 ## Example requests
@@ -115,88 +113,86 @@ curl 'https://graph.facebook.com/<API_VERSION>/<BUSINESS_PHONE_NUMBER_ID>/messa
 This example request sends a media carousel message composed of 3 cards, each with an image header, card body text, and a URL button.
 
 ```
-```
-curl 'https://graph.facebook.com/v23.0/106540352242922/messages' \  
--H 'Content-Type: application/json' \  
--H 'Authorization: Bearer EAAJB...' \  
--d '  
+curl 'https://graph.facebook.com/v23.0/106540352242922/messages' \  
+-H 'Content-Type: application/json' \  
+-H 'Authorization: Bearer EAAJB...' \  
+-d '  
 {  
-  "messaging_product": "whatsapp",  
-  "recipient_type": "individual",  
-  "to": "16505551234",  
-  "type": "interactive",  
-  "interactive": {  
-    "type": "carousel",  
-    "body": {  
-      "text": "Of course! Here are three of our latest arrivals, each under $25:"  
-    },  
-    "action": {  
-      "cards": [  
-        {  
-          "card_index": 0,  
-          "type": "cta_url",  
-          "header": {  
-            "type": "image",  
-            "image": {  
-              "link": "https://www.luckyshrub.com/assets/blue-echeveria.jpeg"  
-            }  
-          },  
-          "body": {  
-            "text": "*Blue Echeveria*\n\nA rosette-shaped succulent with powdery blue leaves, perfect for brightening up any space."  
-          },  
-          "action": {  
-            "name": "cta_url",  
-            "parameters": {  
-              "display_text": "Buy now",  
-              "url": "https://shop.luckyshrub.com/latest/blue-echeveria"  
-            }  
-          }  
-        },  
-        {  
-          "card_index": 1,  
-          "type": "cta_url",  
-          "header": {  
-            "type": "image",  
-            "image": {  
-              "link": "https://www.luckyshrub.com/assets/zebra-haworthia.jpeg"  
-            }  
-          },  
-          "body": {  
-            "text": "*Zebra Haworthia*\n\nStriking white stripes on deep green leaves give this compact succulent a bold, modern look."  
-          },  
-          "action": {  
-            "name": "cta_url",  
-            "parameters": {  
-              "display_text": "Buy now",  
-              "url": "https://shop.luckyshrub.com/latest/zebra-haworthia"  
-            }  
-          }  
-        },  
-        {  
-          "card_index": 2,  
-          "type": "cta_url",  
-          "header": {  
-            "type": "image",  
-            "image": {  
-              "link": "https://www.luckyshrub.com/assets/panda-plant.jpeg"  
-            }  
-          },  
-          "body": {  
-            "text": "*Panda Plant*\n\nSoft, fuzzy leaves with chocolate-brown edges—adorable and easy to care for."  
-          },  
-          "action": {  
-            "name": "cta_url",  
-            "parameters": {  
-              "display_text": "Buy now",  
-              "url": "https://shop.luckyshrub.com/latest/panda-plant"  
-            }  
-          }  
-        }  
-      ]  
-    }  
-  }  
+  "messaging_product": "whatsapp",  
+  "recipient_type": "individual",  
+  "to": "16505551234",  
+  "type": "interactive",  
+  "interactive": {  
+    "type": "carousel",  
+    "body": {  
+      "text": "Of course! Here are three of our latest arrivals, each under $25:"  
+    },  
+    "action": {  
+      "cards": [  
+        {  
+          "card_index": 0,  
+          "type": "cta_url",  
+          "header": {  
+            "type": "image",  
+            "image": {  
+              "link": "https://www.luckyshrub.com/assets/blue-echeveria.jpeg"  
+            }  
+          },  
+          "body": {  
+            "text": "*Blue Echeveria*\n\nA rosette-shaped succulent with powdery blue leaves, perfect for brightening up any space."  
+          },  
+          "action": {  
+            "name": "cta_url",  
+            "parameters": {  
+              "display_text": "Buy now",  
+              "url": "https://shop.luckyshrub.com/latest/blue-echeveria"  
+            }  
+          }  
+        },  
+        {  
+          "card_index": 1,  
+          "type": "cta_url",  
+          "header": {  
+            "type": "image",  
+            "image": {  
+              "link": "https://www.luckyshrub.com/assets/zebra-haworthia.jpeg"  
+            }  
+          },  
+          "body": {  
+            "text": "*Zebra Haworthia*\n\nStriking white stripes on deep green leaves give this compact succulent a bold, modern look."  
+          },  
+          "action": {  
+            "name": "cta_url",  
+            "parameters": {  
+              "display_text": "Buy now",  
+              "url": "https://shop.luckyshrub.com/latest/zebra-haworthia"  
+            }  
+          }  
+        },  
+        {  
+          "card_index": 2,  
+          "type": "cta_url",  
+          "header": {  
+            "type": "image",  
+            "image": {  
+              "link": "https://www.luckyshrub.com/assets/panda-plant.jpeg"  
+            }  
+          },  
+          "body": {  
+            "text": "*Panda Plant*\n\nSoft, fuzzy leaves with chocolate-brown edges—adorable and easy to care for."  
+          },  
+          "action": {  
+            "name": "cta_url",  
+            "parameters": {  
+              "display_text": "Buy now",  
+              "url": "https://shop.luckyshrub.com/latest/panda-plant"  
+            }  
+          }  
+        }  
+      ]  
+    }  
+  }  
 }'
-```
 ```
 
 ### Quick-reply buttons example
@@ -204,140 +200,136 @@ curl 'https://graph.facebook.com/v23.0/106540352242922/messages' \
 This example request sends a media carousel message composed of 3 cards, each with an image header, card body text, and two quick-reply buttons.
 
 ```
-```
-curl 'https://graph.facebook.com/v23.0/106540352242922/messages' \  
--H 'Content-Type: application/json' \  
--H 'Authorization: Bearer EAAJB...' \  
--d '  
+curl 'https://graph.facebook.com/v23.0/106540352242922/messages' \  
+-H 'Content-Type: application/json' \  
+-H 'Authorization: Bearer EAAJB...' \  
+-d '  
 {  
-  "messaging_product": "whatsapp",  
-  "recipient_type": "individual",  
-  "to": "16505551234",  
-  "type": "interactive",  
-  "interactive": {  
-    "type": "carousel",  
-    "body": {  
-      "text": "Of course! Here are three of our latest arrivals, each under $25:"  
-    },  
-    "action": {  
-      "cards": [  
-        {  
-          "card_index": 0,  
-          "type": "cta_url",  
-          "header": {  
-            "type": "image",  
-            "image": {  
-              "link": "https://www.luckyshrub.com/assets/blue-echeveria.jpeg"  
-            }  
-          },  
-          "body": {  
-            "text": "*Blue Echeveria*\n\nA rosette-shaped succulent with powdery blue leaves, perfect for brightening up any space."  
-          },  
-          "action": {  
-            "buttons": [  
-              {  
-                "type": "quick_reply",  
-                "quick_reply": {  
-                  "id": "learn-blue-echeveria",  
-                  "title": "Learn more"  
-                }  
-              },  
-              {  
-                "type": "quick_reply",  
-                "quick_reply": {  
-                  "id": "fav-blue-echeveria",  
-                  "title": "Add to favorites"  
-                }  
-              }  
-            ]  
-          }  
-        },  
-        {  
-          "card_index": 1,  
-          "type": "cta_url",  
-          "header": {  
-            "type": "image",  
-            "image": {  
-              "link": "https://www.luckyshrub.com/assets/zebra-haworthia.jpeg"  
-            }  
-          },  
-          "body": {  
-            "text": "*Zebra Haworthia*\n\nStriking white stripes on deep green leaves give this compact succulent a bold, modern look."  
-          },  
-          "action": {  
-            "buttons": [  
-              {  
-                "type": "quick_reply",  
-                "quick_reply": {  
-                  "id": "learn-zebra-haworthia",  
-                  "title": "Learn more"  
-                }  
-              },  
-              {  
-                "type": "quick_reply",  
-                "quick_reply": {  
-                  "id": "fav-zebra-haworthia",  
-                  "title": "Add to favorites"  
-                }  
-              }  
-            ]  
-          }  
-        },  
-        {  
-          "card_index": 2,  
-          "type": "cta_url",  
-          "header": {  
-            "type": "image",  
-            "image": {  
-              "link": "https://www.luckyshrub.com/assets/panda-plant.jpeg"  
-            }  
-          },  
-          "body": {  
-            "text": "*Panda Plant*\n\nSoft, fuzzy leaves with chocolate-brown edges—adorable and easy to care for."  
-          },  
-          "action": {  
-            "buttons": [  
-              {  
-                "type": "quick_reply",  
-                "quick_reply": {  
-                  "id": "learn-panda-plant",  
-                  "title": "Learn more"  
-                }  
-              },  
-              {  
-                "type": "quick_reply",  
-                "quick_reply": {  
-                  "id": "fav-panda-plant",  
-                  "title": "Add to favorites"  
-                }  
-              }  
-            ]  
-          }  
-        }  
-      ]  
-    }  
-  }  
+  "messaging_product": "whatsapp",  
+  "recipient_type": "individual",  
+  "to": "16505551234",  
+  "type": "interactive",  
+  "interactive": {  
+    "type": "carousel",  
+    "body": {  
+      "text": "Of course! Here are three of our latest arrivals, each under $25:"  
+    },  
+    "action": {  
+      "cards": [  
+        {  
+          "card_index": 0,  
+          "type": "cta_url",  
+          "header": {  
+            "type": "image",  
+            "image": {  
+              "link": "https://www.luckyshrub.com/assets/blue-echeveria.jpeg"  
+            }  
+          },  
+          "body": {  
+            "text": "*Blue Echeveria*\n\nA rosette-shaped succulent with powdery blue leaves, perfect for brightening up any space."  
+          },  
+          "action": {  
+            "buttons": [  
+              {  
+                "type": "quick_reply",  
+                "quick_reply": {  
+                  "id": "learn-blue-echeveria",  
+                  "title": "Learn more"  
+                }  
+              },  
+              {  
+                "type": "quick_reply",  
+                "quick_reply": {  
+                  "id": "fav-blue-echeveria",  
+                  "title": "Add to favorites"  
+                }  
+              }  
+            ]  
+          }  
+        },  
+        {  
+          "card_index": 1,  
+          "type": "cta_url",  
+          "header": {  
+            "type": "image",  
+            "image": {  
+              "link": "https://www.luckyshrub.com/assets/zebra-haworthia.jpeg"  
+            }  
+          },  
+          "body": {  
+            "text": "*Zebra Haworthia*\n\nStriking white stripes on deep green leaves give this compact succulent a bold, modern look."  
+          },  
+          "action": {  
+            "buttons": [  
+              {  
+                "type": "quick_reply",  
+                "quick_reply": {  
+                  "id": "learn-zebra-haworthia",  
+                  "title": "Learn more"  
+                }  
+              },  
+              {  
+                "type": "quick_reply",  
+                "quick_reply": {  
+                  "id": "fav-zebra-haworthia",  
+                  "title": "Add to favorites"  
+                }  
+              }  
+            ]  
+          }  
+        },  
+        {  
+          "card_index": 2,  
+          "type": "cta_url",  
+          "header": {  
+            "type": "image",  
+            "image": {  
+              "link": "https://www.luckyshrub.com/assets/panda-plant.jpeg"  
+            }  
+          },  
+          "body": {  
+            "text": "*Panda Plant*\n\nSoft, fuzzy leaves with chocolate-brown edges—adorable and easy to care for."  
+          },  
+          "action": {  
+            "buttons": [  
+              {  
+                "type": "quick_reply",  
+                "quick_reply": {  
+                  "id": "learn-panda-plant",  
+                  "title": "Learn more"  
+                }  
+              },  
+              {  
+                "type": "quick_reply",  
+                "quick_reply": {  
+                  "id": "fav-panda-plant",  
+                  "title": "Add to favorites"  
+                }  
+              }  
+            ]  
+          }  
+        }  
+      ]  
+    }  
+  }  
 }'
-```
 ```
 
 ## Example response
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "contacts": [  
-    {  
-      "input": "+16505551234",  
-      "wa_id": "16505551234"  
-    }  
-  ],  
-  "messages": [  
-    {  
-      "id": "wamid.HBgLMTY0NjcwNDM1OTUVAgARGBI1RjQyNUE3NEYxMzAzMzQ5MkEA"  
-    }  
-  ]  
+  "messaging_product": "whatsapp",  
+  "contacts": [  
+    {  
+      "input": "+16505551234",  
+      "wa_id": "16505551234"  
+    }  
+  ],  
+  "messages": [  
+    {  
+      "id": "wamid.HBgLMTY0NjcwNDM1OTUVAgARGBI1RjQyNUE3NEYxMzAzMzQ5MkEA"  
+    }  
+  ]  
 }
-```
 ```

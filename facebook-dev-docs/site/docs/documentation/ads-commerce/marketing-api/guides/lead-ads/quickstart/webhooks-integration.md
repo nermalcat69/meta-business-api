@@ -62,12 +62,12 @@ curl \
   -F 'object_story_spec={
     "page_id": "<PAGE_ID>",
     "template_data": {
-      "call_to_action": {"type":"SIGN_UP","value":{"lead_gen_form_id":"<FORM_ID>"}},
-      "description": "Description {{product.description}}",
+      "call_to_action": {"type":"SIGN_UP","value":{"lead_gen_form_id":"<FORM_ID>"}​},
+      "description": "Description {​{product.description}​}",
       "link": "<LINK>",
-      "message": "Test {{product.name | titleize}}",
+      "message": "Test {​{product.name | titleize}​}",
       "multi_share_end_card": false,
-      "name": "Headline {{product.price}}"
+      "name": "Headline {​{product.price}​}"
     }
   }' \
   -F 'product_set_id=<PRODUCT_SET_ID>' \

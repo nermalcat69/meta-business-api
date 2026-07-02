@@ -7,14 +7,14 @@ source_url: https://developers.facebook.com/documentation/business-messaging/mes
 
 Updated: Jun 21, 2026
 
-This guide discusses how a business using your app can increase their number of subscribers. A subscription token represents a person who has subscribed, opted in to receiving marketing messages from a business’ Facebook Page. This guide shows how to increase a business’ number of subscribers using the following options:
+This guide discusses how a business using your app can increase their number of subscribers. A subscription token represents a person who has subscribed, opted in to receiving marketing messages from a business' Facebook Page. This guide shows how to increase a business' number of subscribers using the following options:
 
 * [Custom Audience API](https://developers.facebook.com/documentation/business-messaging/messenger-platform/marketing-messages-on-messenger/faq#custom-audience-api)
 * [Click to Messenger ads](https://developers.facebook.com/documentation/business-messaging/messenger-platform/marketing-messages-on-messenger/faq#click-to-messenger-ads)
 * [Opt-in Requests](https://developers.facebook.com/documentation/business-messaging/messenger-platform/marketing-messages-on-messenger/faq#opt-in-requests)
 * [Organic Automations](https://developers.facebook.com/documentation/business-messaging/messenger-platform/marketing-messages-on-messenger/faq#organic-automations)
 
-You can also use the [Unsubscribe API](https://developers.facebook.com/documentation/business-messaging/messenger-platform/marketing-messages-on-messenger/faq#unsubscribe-api) to unsubscribe matched users from a Page’s marketing messages audience.
+You can also use the [Unsubscribe API](https://developers.facebook.com/documentation/business-messaging/messenger-platform/marketing-messages-on-messenger/faq#unsubscribe-api) to unsubscribe matched users from a Page's marketing messages audience.
 
 ## Growing your audience options
 
@@ -28,7 +28,7 @@ Send a `POST` request to the `act_<AD_ACCOUNT_ID>/customaudiences` endpoint with
 
 * `customer_file_source` – set to `USER_PROVIDED_ONLY`
 * `description` – set to the description of the custom audience
-* `marketing_message_channels` – set to an object with `MESSENGER` set to the business’ Facebook Page ID
+* `marketing_message_channels` – set to an object with `MESSENGER` set to the business' Facebook Page ID
 * `name` – set to the name of the custom audience
 * `subscription_info` – set to an array with `"MESSENGER"` as the only item
 * `subtype` – set to `CUSTOM`
@@ -39,42 +39,38 @@ Send a `POST` request to the `act_<AD_ACCOUNT_ID>/customaudiences` endpoint with
 *Formatted for readability.*
 
 ```
-```
-curl -X POST "https://graph.facebook.com/<API_VERSION>/act_<AD_ACCOUNT_ID>/customaudiences" \  
-     -H "Authorization: Bearer <SYSTEM_USER_ACCESS_TOKEN>" \  
-     -H "Content-Type: application/json" \  
-     -d '{  
-           "subtype": "CUSTOM",  
-           "customer_file_source": "USER_PROVIDED_ONLY",  
-           "name": "<CUSTOM_AUDIENCE_NAME>",  
-           "description": "<CUSTOM_AUDIENCE_DESCRIPTION>",  
-           "use_for_products": ["MARKETING_MESSAGES"],  
-           "subscription_info": ["MESSENGER"],  
-           "marketing_message_channels": {  
-             "MESSENGER":  "<PAGE_ID>"  
-           }  
-        }'
-```
+curl -X POST "https://graph.facebook.com/<API_VERSION>/act_<AD_ACCOUNT_ID>/customaudiences" \  
+     -H "Authorization: Bearer <SYSTEM_USER_ACCESS_TOKEN>" \  
+     -H "Content-Type: application/json" \  
+     -d '{  
+           "subtype": "CUSTOM",  
+           "customer_file_source": "USER_PROVIDED_ONLY",  
+           "name": "<CUSTOM_AUDIENCE_NAME>",  
+           "description": "<CUSTOM_AUDIENCE_DESCRIPTION>",  
+           "use_for_products": ["MARKETING_MESSAGES"],  
+           "subscription_info": ["MESSENGER"],  
+           "marketing_message_channels": {  
+             "MESSENGER":  "<PAGE_ID>"  
+           }  
+        }'
 ```
 
 On success, your app receives a JSON object with a custom audience ID.
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "id": "<CUSTOM_AUDIENCE_ID>"  
-    }  
-  ]  
+  "data": [  
+    {  
+      "id": "<CUSTOM_AUDIENCE_ID>"  
+    }  
+  ]  
 }
-```
 ```
 
 #### Step 2: Upload users to Custom Audience
 
 After creating a custom audience, you can upload custom information to match with Facebook users. Every user that is matched in the upload will be given a subscription token.
-You can add an unlimited number of records to an audience, but only up to 10000 at a time. Changes to your Custom Audiences don’t happen immediately and can take up to 24 hours. Match rates range from 20% to 70%, depending on factors such as the quality of the list and the type of identifiers provided.
+You can add an unlimited number of records to an audience, but only up to 10000 at a time. Changes to your Custom Audiences don't happen immediately and can take up to 24 hours. Match rates range from 20% to 70%, depending on factors such as the quality of the list and the type of identifiers provided.
 
 To safeguard user privacy, the `/<PAGE_ID>/notification_message_tokens` endpoint will only return subscription tokens for a given Custom Audience if there are 100 or more matched users in the upload. If fewer than 100 users match, tokens for that Custom Audience will be excluded from the response.
 
@@ -89,56 +85,52 @@ Send a POST request to the `/<CUSTOM_AUDIENCE_ID>/users` endpoint with the follo
 #### Sample request
 
 ```
-```
-curl -X POST "https://graph.facebook.com/<API_VERSION>/<CUSTOM_AUDIENCE_ID>/users" \  
-     -H "Authorization: Bearer <SYSTEM_USER_ACCESS_TOKEN>" \  
-     -H "Content-Type: application/json" \  
-     -d '{  
-           "payload": {  
-              "schema":[  
-                "EMAIL",  
-                "PHONE",  
-                "FN",  
-                "LN",  
-              ]  
-              "data":  
-              [  
-                [  
-                  "<HASHED_EMAIL>",  
-                  "<HASHED_PHONE>",  
-                  "<HASHED_FIRST_NAME>",  
-                  "<HASHED_LAST_NAME>"  
-                ],  
-                [  
-                  "<HASHED_EMAIL>",  
-                  "<HASHED_PHONE>",  
-                  "<HASHED_FIRST_NAME>",  
-                  "<HASHED_LAST_NAME>"  
-                ],  
-                [  
-                  "<HASHED_EMAIL>",  
-                  "<HASHED_PHONE>",  
-                  "<HASHED_FIRST_NAME>",  
-                  "<HASHED_LAST_NAME>"  
-                ],  
-              ]  
-            }  
-        }'
-```
+curl -X POST "https://graph.facebook.com/<API_VERSION>/<CUSTOM_AUDIENCE_ID>/users" \  
+     -H "Authorization: Bearer <SYSTEM_USER_ACCESS_TOKEN>" \  
+     -H "Content-Type: application/json" \  
+     -d '{  
+           "payload": {  
+              "schema":[  
+                "EMAIL",  
+                "PHONE",  
+                "FN",  
+                "LN",  
+              ]  
+              "data":  
+              [  
+                [  
+                  "<HASHED_EMAIL>",  
+                  "<HASHED_PHONE>",  
+                  "<HASHED_FIRST_NAME>",  
+                  "<HASHED_LAST_NAME>"  
+                ],  
+                [  
+                  "<HASHED_EMAIL>",  
+                  "<HASHED_PHONE>",  
+                  "<HASHED_FIRST_NAME>",  
+                  "<HASHED_LAST_NAME>"  
+                ],  
+                [  
+                  "<HASHED_EMAIL>",  
+                  "<HASHED_PHONE>",  
+                  "<HASHED_FIRST_NAME>",  
+                  "<HASHED_LAST_NAME>"  
+                ],  
+              ]  
+            }  
+        }'
 ```
 
 On success, your app receives a JSON object with the number of valid and invalid entries. A job will run asynchronously to match the customer information to Facebook users and create the subscription tokens.
 
 ```
-```
 {  
-  "audience_id": "<CUSTOM_AUDIENCE_ID>",  
-  "num_received": 3,  
-  "num_invalid_entries": 0,  
-  "invalid_entry_samples": {  
-  }  
+  "audience_id": "<CUSTOM_AUDIENCE_ID>",  
+  "num_received": 3,  
+  "num_invalid_entries": 0,  
+  "invalid_entry_samples": {  
+  }  
 }
-```
 ```
 
 #### Step 3: Remove users from Custom Audience
@@ -171,16 +163,14 @@ To delete subscriber records from a Custom Audience, send a `DELETE` request to 
 On success, your app receives a JSON object with the number of valid and invalid entries.
 
 ```
-```
-  {  
-    "audience_id": "<CUSTOM_AUDIENCE_ID>",  
-    "session_id": "<SESSION_ID>",  
-    "num_received": 2,  
-    "num_invalid_entries": 0,  
-    "invalid_entry_samples": {  
-    }  
-  }
-```
+  {  
+    "audience_id": "<CUSTOM_AUDIENCE_ID>",  
+    "session_id": "<SESSION_ID>",  
+    "num_received": 2,  
+    "num_invalid_entries": 0,  
+    "invalid_entry_samples": {  
+    }  
+  }
 ```
 
 #### Step 4: Webhook notification for uploaded customer rows matching process
@@ -190,21 +180,19 @@ Each time a batch of uploaded customer rows matching process completes, a notifi
 #### Sample payload
 
 ```
-```
 {  
-   "field": "marketing_messages_subscriber_upload_status",  
-   "app_id": 12313123123123,  
-   "page_id": 134141414124123,  
-   "custom_audience_id": 140984918491243,  
-   "ad_account_id": 12348141984909088,  
-   "timestamp": 41412414141,  
-   "num_rows": 1000,  
-   "business_id": 12313123123123,  
-   "approximate_count_lower_bound": 105,  
-   "approximate_count_upper_bound": 120,  
-   "batch_uploading_status": "SUCCESS"  
+   "field": "marketing_messages_subscriber_upload_status",  
+   "app_id": 12313123123123,  
+   "page_id": 134141414124123,  
+   "custom_audience_id": 140984918491243,  
+   "ad_account_id": 12348141984909088,  
+   "timestamp": 41412414141,  
+   "num_rows": 1000,  
+   "business_id": 12313123123123,  
+   "approximate_count_lower_bound": 105,  
+   "approximate_count_upper_bound": 120,  
+   "batch_uploading_status": "SUCCESS"  
 }
-```
 ```
 
 #### Field reference
@@ -248,11 +236,9 @@ filtering=%5B%7B%22field%22%3A%22data_source.subtype%22%2C%22operator%22%3A%22IN
 #### Sample request
 
 ```
-```
-curl -X GET "https://graph.facebook.com/<API_VERSION>/act_<AD_ACCOUNT_ID>/customaudiences?fields=id,name,messenger_marketing_messages_page&filtering=%5B%7B%22field%22%3A%22data_source.subtype%22%2C%22operator%22%3A%22IN%22%2C%22value%22%3A%5B1010%5D%7D%5D" \  
-     -H "Authorization: Bearer <SYSTEM_USER_ACCESS_TOKEN>" \  
-     -H "Content-Type: application/json"
-```
+curl -X GET "https://graph.facebook.com/<API_VERSION>/act_<AD_ACCOUNT_ID>/customaudiences?fields=id,name,messenger_marketing_messages_page&filtering=%5B%7B%22field%22%3A%22data_source.subtype%22%2C%22operator%22%3A%22IN%22%2C%22value%22%3A%5B1010%5D%7D%5D" \  
+     -H "Authorization: Bearer <SYSTEM_USER_ACCESS_TOKEN>" \  
+     -H "Content-Type: application/json"
 ```
 
 ### Option 2: Click to Messenger ads
@@ -265,7 +251,7 @@ Visit our Marketing API documentation to learn more about [Ads that Click to Mes
 
 ### Option 3: Opt-in Requests
 
-A customer, or potential customer, must first send a message via Messenger to the business’ Facebook Page. This event triggers a webhook notification that is sent to your server. This webhook notification contains a Page-scoped ID (PSID) that represents the customer. Your app then uses this PSID to send the customer an opt-in request from the business’ Facebook Page.
+A customer, or potential customer, must first send a message via Messenger to the business' Facebook Page. This event triggers a webhook notification that is sent to your server. This webhook notification contains a Page-scoped ID (PSID) that represents the customer. Your app then uses this PSID to send the customer an opt-in request from the business' Facebook Page.
 
 Visit our Messenger Platform documentation to learn ways to [send opt-in requests](https://developers.facebook.com/docs/messenger-platform/marketing-messages#request-permission-to-send-marketing-messages).
 
@@ -273,54 +259,50 @@ Visit our Messenger Platform documentation to learn ways to [send opt-in request
 
 The following is an example of an opt-in request.
 
-Send a `POST` request to the `/<PAGE_ID>/messages` endpoint, where `<PAGE_ID>` is the ID for the business’s Facebook Page, and include the following properties:
+Send a `POST` request to the `/<PAGE_ID>/messages` endpoint, where `<PAGE_ID>` is the ID for the business's Facebook Page, and include the following properties:
 
-* `recipient` – an object with `id` set to the customer’s PSID
-* `page` – set to the business’ Facebook Page ID
+* `recipient` – an object with `id` set to the customer's PSID
+* `page` – set to the business' Facebook Page ID
 * `message.attachment` – an object with the following parameters:
   * `type` – set to `template`
   * `payload` – an object set to the message content and any additional information to be sent in the webhooks information
     * `template_type` – set to `notification_messages`
-    * `notification_messages_timezone` – set to the customer’s time zone
+    * `notification_messages_timezone` – set to the customer's time zone
     * `title` – set to the message title
     * `image_url` – set to the url for the image in the message
     * `payload` – set to any addition webhook information
 
 ```
-```
-curl -X POST "https://graph.facebook.com/<API_VERSION>/<PAGE_ID>/messages" \  
-     -H "Authorization: Bearer <PAGE_ACCESS_TOKEN>" \  
-     -Header "Content-Type: application/json" \  
-     -d '{  
-           "recipient": { "id": "<PSID>" },  
-           "page": "<PAGE_ID>",  
-           "message": {  
-             "attachment": {  
-               "type": "template",  
-               "payload": {  
-                 "template_type": "notification_messages",  
-                 "notification_messages_timezone": "<CUSTOMERS_TIME_ZONE>",  
-                 "title": "<MESSAGE_TITLE>",  
-                 "image_url": "<IMAGE_URL>",  
-                 "payload": "<ADDITIONAL_WEBHOOK_INFORMATION>"  
-               }  
-             }  
-           }  
-        }'
-```
+curl -X POST "https://graph.facebook.com/<API_VERSION>/<PAGE_ID>/messages" \  
+     -H "Authorization: Bearer <PAGE_ACCESS_TOKEN>" \  
+     -Header "Content-Type: application/json" \  
+     -d '{  
+           "recipient": { "id": "<PSID>" },  
+           "page": "<PAGE_ID>",  
+           "message": {  
+             "attachment": {  
+               "type": "template",  
+               "payload": {  
+                 "template_type": "notification_messages",  
+                 "notification_messages_timezone": "<CUSTOMERS_TIME_ZONE>",  
+                 "title": "<MESSAGE_TITLE>",  
+                 "image_url": "<IMAGE_URL>",  
+                 "payload": "<ADDITIONAL_WEBHOOK_INFORMATION>"  
+               }  
+             }  
+           }  
+        }'
 ```
 
-On success, your app receives a JSON response with the recipient’s PSID and message ID.
+On success, your app receives a JSON response with the recipient's PSID and message ID.
 
-```
 ```
 {  
-   "recipient": {  
-       "id":"<PSID>",  
-       "message_id":"<MESSAGE_ID>",  
-   }  
+   "recipient": {  
+       "id":"<PSID>",  
+       "message_id":"<MESSAGE_ID>",  
+   }  
 }
-```
 ```
 
 Visit the Messenger Platform documentation to learn more about [available message attachment properties](https://developers.facebook.com/docs/messenger-platform/marketing-messages#request-permission-to-send-marketing-messages).
@@ -332,26 +314,24 @@ When a customer opts in, the `messaging_optin` webhook event is triggered and a 
 ##### Webhook notification payload
 
 ```
-```
 {  
-  "sender": {  
-    "id": "<PSID>",  
-  },  
-  "recipient": {  
-    "id": "<PAGE-ID>",  
-  },  
-  "timestamp": "<TIMESTAMP>}",  
-  "optin": {  
-    "type": "notification_messages",  
-      "payload": "<ADDITIONAL-WEBHOOK-INFORMATION>",  
-      "notification_messages_token": "<SUBSCRIPTION_TOKEN_ID>",   // Subscription token  
-      "notification_messages_timezone": "<TIMEZONE-ID>",  
-      "user_token_status": "<TOKEN-STATUS>"  
-      "notification_messages_status": "<MESSAGE-STATUS>",  
-      "title": "<TITLE-FOR-THE-NOTIFICATION>"  
-    }  
+  "sender": {  
+    "id": "<PSID>",  
+  },  
+  "recipient": {  
+    "id": "<PAGE-ID>",  
+  },  
+  "timestamp": "<TIMESTAMP>}",  
+  "optin": {  
+    "type": "notification_messages",  
+      "payload": "<ADDITIONAL-WEBHOOK-INFORMATION>",  
+      "notification_messages_token": "<SUBSCRIPTION_TOKEN_ID>",   // Subscription token  
+      "notification_messages_timezone": "<TIMEZONE-ID>",  
+      "user_token_status": "<TOKEN-STATUS>"  
+      "notification_messages_status": "<MESSAGE-STATUS>",  
+      "title": "<TITLE-FOR-THE-NOTIFICATION>"  
+    }  
 }
-```
 ```
 
 ### Option 4: Organic Automations
@@ -361,9 +341,9 @@ Development for the Business Settings page to enable and disable the automations
 Enabling organic automations during the business onboarding flow helps boost user engagement and streamline communication. Currently, two automation types are available:
 
 * High-Intent Comments:  
-  When a user comments on a business’s public Facebook post with one of six key intents—Purchase, Price, Payment, Product Inquiry, or Appointment Booking—they’re automatically prompted to sign up for updates and promotions through Messenger.
+  When a user comments on a business's public Facebook post with one of six key intents—Purchase, Price, Payment, Product Inquiry, or Appointment Booking—they're automatically prompted to sign up for updates and promotions through Messenger.
 * Stale Thread Follow-Up (No Reply in 48 Hours):  
-  If a Messenger conversation between a business’s Facebook Page and a user goes inactive (no replies for 48 hours), the user will receive a prompt inviting them to sign up for updates and promotions via Messenger.
+  If a Messenger conversation between a business's Facebook Page and a user goes inactive (no replies for 48 hours), the user will receive a prompt inviting them to sign up for updates and promotions via Messenger.
 
 These automations make it easy for businesses to re-engage interested users and nurture leads, creating more opportunities for meaningful connections.
 
@@ -373,9 +353,9 @@ These automations make it easy for businesses to re-engage interested users and 
 
 ## Unsubscribe API
 
-To unsubscribe users from a Page’s marketing messages audience, send a `POST` request to the `/<PAGE_ID>/messaging_customer_base/unsubscribe` endpoint. Use the Page access token generated through your Marketing Messages API for Messenger app. No new credentials are needed for this endpoint.
+To unsubscribe users from a Page's marketing messages audience, send a `POST` request to the `/<PAGE_ID>/messaging_customer_base/unsubscribe` endpoint. Use the Page access token generated through your Marketing Messages API for Messenger app. No new credentials are needed for this endpoint.
 
-This endpoint unsubscribes matched users from the Page’s marketing messages audience. Removing a user from a Custom Audience is different from unsubscribing the user from the Page’s marketing messages audience. The `DELETE /<CUSTOM_AUDIENCE_ID>/users` endpoint removes users only from the specified Custom Audience, while this endpoint unsubscribes matched users at the Page level.
+This endpoint unsubscribes matched users from the Page's marketing messages audience. Removing a user from a Custom Audience is different from unsubscribing the user from the Page's marketing messages audience. The `DELETE /<CUSTOM_AUDIENCE_ID>/users` endpoint removes users only from the specified Custom Audience, while this endpoint unsubscribes matched users at the Page level.
 
 The `data` parameter is required and must be a non-empty array of rows. Each row must use one of the following identifier combinations:
 
@@ -418,11 +398,9 @@ curl -X POST "https://graph.facebook.com/<API_VERSION>/<PAGE_ID>/messaging_custo
 On success, your app receives a JSON object that includes `invalid_rows_count`, the number of rows that were not processed because they used invalid identifiers, invalid identifier combinations, or incorrectly formatted values.
 
 ```
-```
 {  
-  "invalid_rows_count": 0  
+  "invalid_rows_count": 0  
 }
-```
 ```
 
 ## Best practices

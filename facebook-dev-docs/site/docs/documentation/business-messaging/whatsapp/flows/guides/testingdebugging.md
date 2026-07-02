@@ -11,15 +11,15 @@ These are guidelines to optimize both the WhatsApp Flows user and developer expe
 
 ## Setup
 
-### Flows shouldn’t be long
+### Flows shouldn't be long
 
 Users should enter flows aiming to complete a task as quickly as possible, with tasks taking no longer than 5 minutes to complete.
 
-### Don’t have more than one task per screen
+### Don't have more than one task per screen
 
 Screens with too many tasks may look messy and overwhelm the user. If the flow needs the user to complete multiple tasks, split them across several screens.
 
-### Don’t use too many components per screen
+### Don't use too many components per screen
 
 Too many components will make your screens look messy and may overwhelm users. It will also take longer to load.
 
@@ -144,7 +144,7 @@ Some flows may need login screens to complete tasks. However, there are factors 
 
 #### Use only when necessary
 
-Including a login screen may discourage some users, so try to only use them when absolutely necessary. If you do need one, set the expectations for users so it doesn’t come as a surprise.
+Including a login screen may discourage some users, so try to only use them when absolutely necessary. If you do need one, set the expectations for users so it doesn't come as a surprise.
 
 #### Orientation within flow
 
@@ -156,15 +156,15 @@ The placement of login screens is key. If they are too early in the flow, users 
 
 ### Navigation
 
-* Always set expectations for how long it will take to complete a task, for example, “It should only take a few minutes to complete.”
-* Help the user know where they are in the flow by using short, concise action-oriented screen titles, such as “Book appointment.”
-* Use screen titles to show progress where possible, for example, “Question 1 of 3.”
+* Always set expectations for how long it will take to complete a task, for example, "It should only take a few minutes to complete."
+* Help the user know where they are in the flow by using short, concise action-oriented screen titles, such as "Book appointment."
+* Use screen titles to show progress where possible, for example, "Question 1 of 3."
 * End the flow with a summary screen, especially if there have been multiple steps, so users can review and complete the task with clarity.
 
 ### Opt-in
 
 * It should be clear what the user is consenting to.
-* You should try to include a “Read more” CTA which links to the relevant information, for example, Terms and Conditions.
+* You should try to include a "Read more" CTA which links to the relevant information, for example, Terms and Conditions.
 
 ![Sign up screen with a Terms and Conditions opt-in checkbox and 'Read more' link opening the full terms screen](https://scontent.fdel1-1.fna.fbcdn.net/v/t39.2365-6/651719810_1459945465864103_6134028857871079489_n.png?_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=oZ6KGMRelv4Q7kNvwFMXrhv&_nc_oc=AdrO22ta_C3qKvfQ2Uf_e7yqwCaKvKn1KOZQbYMstoRxNhmCO80Alq68S8y65ThCoK5SHfp0W674-QNAqvBY4eIj&_nc_zt=14&_nc_ht=scontent.fdel1-1.fna&_nc_gid=02Z6DVaYT1d70Mnzda3rjg&_nc_ss=7b289&oh=00_AQA1li2WB1icQfrRi6cbODFjeJ6QVM2vnJN4p7FIKYwOCA&oe=6A605511)
 
@@ -184,7 +184,7 @@ The last screen should clearly tell the user what will happen when they end the 
 
 #### Keep the size of the completion payload minimal
 
-Include only user-input data in the Flow’s completion payload, and keep the payload size to a minimum. Avoid leveraging the completion payload to send base64 images.
+Include only user-input data in the Flow's completion payload, and keep the payload size to a minimum. Avoid leveraging the completion payload to send base64 images.
 
 #### Confirm flow completion
 
@@ -204,5 +204,5 @@ As of Flows version 5.1, upon submitting a Flow, a user will be able to access a
 * Make sure your content follows a simple, clear hierarchy using a heading, body, and captions
 * Do not repeat content unnecessarily, for example:
 
-  * “Complete registration”
-  * “Complete registration below”
+  * "Complete registration"
+  * "Complete registration below"

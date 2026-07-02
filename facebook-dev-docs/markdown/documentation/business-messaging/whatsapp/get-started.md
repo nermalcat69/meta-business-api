@@ -36,7 +36,7 @@ Conversations are opened when you send a message to a customer under the followi
 
 ### Marketing, Utility, and Authentication Conversations
 
-When you send an approved marketing, utility, or authentication template to a customer, we check if an open conversation matching the template’s **category** already exists between you and the customer. If one exists, no new conversation is opened. If one does not exist, a new **conversation of that category** is opened, lasting 24 hours.
+When you send an approved marketing, utility, or authentication template to a customer, we check if an open conversation matching the template's **category** already exists between you and the customer. If one exists, no new conversation is opened. If one does not exist, a new **conversation of that category** is opened, lasting 24 hours.
 
 For example:
 
@@ -104,7 +104,7 @@ For example, if the customer messages you via a Click to WhatsApp Ad at 10am and
 
 ## Rates
 
-Rates vary based on conversation category and country/region rate. You can download the rate card below that corresponds to your WhatsApp Business Account’s currency to see our rates by country/region for each conversation category.
+Rates vary based on conversation category and country/region rate. You can download the rate card below that corresponds to your WhatsApp Business Account's currency to see our rates by country/region for each conversation category.
 
 These rates apply for any conversation opened on or after June 1, 2023 at 12:00 AM, based on WhatsApp Business Account time zone.
 
@@ -160,7 +160,7 @@ To support these efforts, we have made the following updates:
 
 ### Country calling codes
 
-Charges for conversations are based on the country of the user’s phone number. We rely on your customer’s country calling code and network prefix (area code) to determine their country. The table below shows how we map country codes to countries or regions. If a country is not listed below, it maps to Other.
+Charges for conversations are based on the country of the user's phone number. We rely on your customer's country calling code and network prefix (area code) to determine their country. The table below shows how we map country codes to countries or regions. If a country is not listed below, it maps to Other.
 
 | Markets | Calling Code   (and network prefix if applicable) |
 | --- | --- |

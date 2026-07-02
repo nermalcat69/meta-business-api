@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/business-messaging/wha
 
 Updated: Jun 30, 2026
 
-Your business phone number’s profile displays additional information such as address, website, and description. You can add this information when you register your phone number. You can also update the profile later via WhatsApp Manager or the API.
+Your business phone number's profile displays additional information such as address, website, and description. You can add this information when you register your phone number. You can also update the profile later via WhatsApp Manager or the API.
 
 ![Screenshot of a WhatsApp business profile displaying company information](https://scontent.fdel1-5.fna.fbcdn.net/v/t39.2365-6/507476070_1379105613180336_7510619276605653298_n.png?_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=INURczQph-QQ7kNvwHiT5yz&_nc_oc=AdqwX6icnGcCbT-t_iym3cix6uEBIx8bvUKWn6Z5J693JbMlz5_vkS3frT9hbCT5G0bS6SszW98CA_jYxHJ2nPEX&_nc_zt=14&_nc_ht=scontent.fdel1-5.fna&_nc_gid=NavInLPST44RBI80xN0Heg&_nc_ss=7b2a8&oh=00_AQCSLdf8qkWcLkJHU9zb7EavR7pLcHbsW7a4XSzA7UZTlg&oe=6A6062DD)
 
@@ -38,24 +38,22 @@ curl 'https://graph.facebook.com/v25.0/106540352242922/whatsapp_business_profile
 Upon success:
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "about": "Succulent specialists!",  
-      "address": "1 Hacker Way, Menlo Park, CA 94025",  
-      "description": "At Lucky Shrub, we specialize in providing a...",  
-      "email": "lucky@luckyshrub.com",  
-      "profile_picture_url": "https://pps.whatsapp.net/v/t61.24...",  
-      "websites": [  
-        "https://www.luckyshrub.com/"  
-      ],  
-      "vertical": "RETAIL",  
-      "messaging_product": "whatsapp"  
-    }  
-  ]  
+  "data": [  
+    {  
+      "about": "Succulent specialists!",  
+      "address": "1 Hacker Way, Menlo Park, CA 94025",  
+      "description": "At Lucky Shrub, we specialize in providing a...",  
+      "email": "lucky@luckyshrub.com",  
+      "profile_picture_url": "https://pps.whatsapp.net/v/t61.24...",  
+      "websites": [  
+        "https://www.luckyshrub.com/"  
+      ],  
+      "vertical": "RETAIL",  
+      "messaging_product": "whatsapp"  
+    }  
+  ]  
 }
-```
 ```
 
 ## Update your profile via the API
@@ -85,11 +83,9 @@ curl 'https://graph.facebook.com/v25.0/106540352242922/whatsapp_business_profile
 Upon success:
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 ### Field notes

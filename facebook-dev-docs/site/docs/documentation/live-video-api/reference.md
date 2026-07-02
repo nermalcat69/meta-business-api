@@ -21,12 +21,12 @@ Yes! Please check out our [list of media solutions partners](https://developers.
 
 You can begin using the Live API immediately. However, if you want to create a full production quality stream with multiple cameras and graphics, it can take 1-2 weeks or longer, depending on App Review.
 
-**How long does it take for the Live stream to populate on Facebook? How do I know when it’s up?**
+**How long does it take for the Live stream to populate on Facebook? How do I know when it's up?**
 
-There’s about a 4-5 second delay from when you go live to when your video shows on Facebook.
-You’ll know it’s up when you see the video playing on your test (or public) page.
+There's about a 4-5 second delay from when you go live to when your video shows on Facebook.
+You'll know it's up when you see the video playing on your test (or public) page.
 
-**I’m having trouble getting my live stream set up. Who can I reach out to for help?**
+**I'm having trouble getting my live stream set up. Who can I reach out to for help?**
 
 If you are having issues with your live streams, please refer to our [guides](https://developers.facebook.com/documentation/live-video-api) to make sure that you are using our API correctly. We also recommend reviewing our [video specifications](https://developers.facebook.com/documentation/live-video-api/reference) to ensure that your settings are best suited for a quality live stream. If you believe you have run into a bug, you can send it directly to our [Bug Tool](https://developers.facebook.com/bugs) and an engineer will get back to you.
 
@@ -55,9 +55,9 @@ cURLAndroid SDKObjective-CJava SDKPHP SDK
 ---
 
 ```
-curl -i -X POST \  
- "https://graph.facebook.com/{your-live-video-id}  
-   ?embeddable=true&access_token={your-access-token}"
+curl -i -X POST \  
+ "https://graph.facebook.com/{your-live-video-id}  
+   ?embeddable=true&access_token={your-access-token}"
 ```
 
 To get the embedded HTML, send a `GET /{live_video_id}?fields=embed_html` request. Use a Page or User access token with the same permissions as are required when creating a live video.
@@ -69,24 +69,22 @@ cURLAndroid SDKObjective-CJava SDKPHP SDK
 ---
 
 ```
-curl -i -X GET \  
- "https://graph.facebook.com/{your-live_video_id}  
-   ?fields=embed_html  
-   &access_token={your-access-token}"
+curl -i -X GET \  
+ "https://graph.facebook.com/{your-live_video_id}  
+   ?fields=embed_html  
+   &access_token={your-access-token}"
 ```
 
 #### Sample Response
 
 ```
-```
 {  
-  "embed_html": "<iframe src=\"https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fyourpage%2Fvideos%2F{your-page-id}%2F&width=0\" width=\"0\" height=\"0\" style=\"border:none;overflow:hidden\" scrolling=\"no\" frameborder=\"0\" allowTransparency=\"true\" allowFullScreen=\"true\"></iframe>",  
-  "id": "{your-live-video-id}"  
+  "embed_html": "<iframe src=\"https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fyourpage%2Fvideos%2F{your-page-id}%2F&width=0\" width=\"0\" height=\"0\" style=\"border:none;overflow:hidden\" scrolling=\"no\" frameborder=\"0\" allowTransparency=\"true\" allowFullScreen=\"true\"></iframe>",  
+  "id": "{your-live-video-id}"  
 }
 ```
-```
 
-**I am trying to view my live video on mobile web, but it’s not showing up. Is this a bug?**
+**I am trying to view my live video on mobile web, but it's not showing up. Is this a bug?**
 
 No, this is the expected behavior. We do not currently support watching live videos on mobile web until they are VODs (Videos On Demand). However, if you want to watch a live video on mobile web that has been embedded into another site, you will be redirected to the Facebook app to watch.
 
@@ -98,7 +96,7 @@ There are a few reasons why this may have happened. Here are a few of the most c
 * You, or another author of your page, may have deleted the live video. If a live video has been manually deleted, it cannot be recovered.
 * Your video may have been flagged automatically for IP violation. If this occurs, Facebook will send you an email that contains a link for you to review the takedown and resubmit the video for review by our Policy team.
 
-**My live video is still showing up as “is live” even though it ended a while ago. What happened?**
+**My live video is still showing up as "is live" even though it ended a while ago. What happened?**
 
 This occurs when the broadcast does not start sealing or processing after signaling the end of the live video. Be sure you have sent a `POST` request with the `end_live_video` parameter. If this occurs again, please file a bug in our [bug tool](https://developers.facebook.com/bugs), and be sure to include your video ID.
 
@@ -106,15 +104,15 @@ This occurs when the broadcast does not start sealing or processing after signal
 
 Check our [list of error codes](https://developers.facebook.com/documentation/live-video-api/reference#error-codes) to best understand your issue.
 
-**The audio on my Facebook Live video has begun to either skip and chatter or drop out completely. What’s going on?**
+**The audio on my Facebook Live video has begun to either skip and chatter or drop out completely. What's going on?**
 
-Audio distortion can occur when Facebook receives a video stream with distorted audio or after we’ve received the frames but before we re-encode for broadcast. A possible reason for this type of error is that the bitrate used is higher than what the connection between your broadcasting endpoint and Facebook servers can sustain. If that happens, or if there’s a packet lost, some of the video or audio track won’t be received correctly, and this can cause audio distortion.
+Audio distortion can occur when Facebook receives a video stream with distorted audio or after we've received the frames but before we re-encode for broadcast. A possible reason for this type of error is that the bitrate used is higher than what the connection between your broadcasting endpoint and Facebook servers can sustain. If that happens, or if there's a packet lost, some of the video or audio track won't be received correctly, and this can cause audio distortion.
 
 **Why are the video and audio out of sync on my live video?**
 
 Audio/Visual sync issues may occur when a live broadcast is delivered with limited bandwidth to the client, or the client does not have the bandwidth to view it live. Additionally, if the stream received by the Facebook server is out of sync, then the live video will also be out of sync. Be sure to check recording and encoding hardware for potential places in which the audio could be misaligned with the video.
 
-**I’m trying to stream video without audio. Why doesn’t it work?**
+**I'm trying to stream video without audio. Why doesn't it work?**
 
 The Live Video API requires audio. If you attempt to stream video only, the stream ends.
 
@@ -124,7 +122,7 @@ Your live feed may drop due to an encoder failure or poor network connectivity. 
 
 **Can I geo-gate my live videos?**
 
-Yes, you can geo-gate (restrict who can see your video depending on the viewer’s location). See [Audience Targeting](https://developers.facebook.com/documentation/live-video-api/audience-targeting#audience-targeting) to learn how.
+Yes, you can geo-gate (restrict who can see your video depending on the viewer's location). See [Audience Targeting](https://developers.facebook.com/documentation/live-video-api/audience-targeting#audience-targeting) to learn how.
 
 **Is there a way to go Live worldwide and only block a few countries?**
 
@@ -136,29 +134,29 @@ Yes, videos taken down for [copyright violation](https://developers.facebook.com
 
 **Can live videos be boosted?**
 
-No. Unfortunately, live videos can’t be boosted at this time.
+No. Unfortunately, live videos can't be boosted at this time.
 
 **Can I add closed captions to my live video?**
 
 Currently there is no endpoint for creating closed captions. However, you can add closed captions to LiveVideo broadcasts after they have ended, or you can add closed captions to your live video stream as it streams to our servers using the CEA-608 closed captions standard.
 
-To add captions to a LiveVideo that has ended (i.e, has a status of VOD) refer to our [“How do I add captions to my Page’s video?”⁠](https://www.facebook.com/help/509746615868430) help topic. To add captions using the CEA-608 standard refer to our [Closed Captions guide⁠](https://scontent.xx.fbcdn.net/v/t39.8562-6/66086585_1127049914146262_5362522782250827776_n.pdf?_nc_cat=100&_nc_oc=AQm3L0t0m2ocSI-XCKkQ9LNn5CAJkBBCycb08K7pV4vrciaiuoXIgxNhOLBUmUZGpszaWk0amp0j4gTz4h0NOThp&_nc_ht=scontent.xx&oh=d84156fcd98df14aa421ac23e79774c1&oe=5DBE965C).
+To add captions to a LiveVideo that has ended (i.e, has a status of VOD) refer to our ["How do I add captions to my Page's video?"⁠](https://www.facebook.com/help/509746615868430) help topic. To add captions using the CEA-608 standard refer to our [Closed Captions guide⁠](https://scontent.xx.fbcdn.net/v/t39.8562-6/66086585_1127049914146262_5362522782250827776_n.pdf?_nc_cat=100&_nc_oc=AQm3L0t0m2ocSI-XCKkQ9LNn5CAJkBBCycb08K7pV4vrciaiuoXIgxNhOLBUmUZGpszaWk0amp0j4gTz4h0NOThp&_nc_ht=scontent.xx&oh=d84156fcd98df14aa421ac23e79774c1&oe=5DBE965C).
 
 **Can I add third-party ads to my live stream?**
 
-It is against Facebook’s live video policy to include third-party ads in live streams. For example, please do not include bumpers, pre-roll, mid-roll, or post-roll.
+It is against Facebook's live video policy to include third-party ads in live streams. For example, please do not include bumpers, pre-roll, mid-roll, or post-roll.
 
 **Can I add pre-recorded video to a live post?**
 
-We encourage all live broadcasts to exclusively contain live content so as to preserve the integrity of the viewer’s experience. However, there are unique cases in which cutting to a pre-recorded clip makes sense, similar to how a news show might show previously recorded content on live TV.
+We encourage all live broadcasts to exclusively contain live content so as to preserve the integrity of the viewer's experience. However, there are unique cases in which cutting to a pre-recorded clip makes sense, similar to how a news show might show previously recorded content on live TV.
 
 **Is it possible to show the same live video on multiple pages at one time?**
 
-Yes, refer to our [Crossposting](https://developers.facebook.com/documentation/live-video-api/guides/crossposting) guide and [How do I crosspost another Page’s video?⁠](https://www.facebook.com/help/1306792669361145) Help Center topic to learn how. Comments and reactions are shown only in the original Page.
+Yes, refer to our [Crossposting](https://developers.facebook.com/documentation/live-video-api/guides/crossposting) guide and [How do I crosspost another Page's video?⁠](https://www.facebook.com/help/1306792669361145) Help Center topic to learn how. Comments and reactions are shown only in the original Page.
 
 **Why am I not showing up on the live map?**
 
-To appear on the Live Map, you must set your video’s location by using the [`place` parameter](https://developers.facebook.com/docs/graph-api/reference/live-video#Updating) in a `POST /{live_video_id}` request.
+To appear on the Live Map, you must set your video's location by using the [`place` parameter](https://developers.facebook.com/docs/graph-api/reference/live-video#Updating) in a `POST /{live_video_id}` request.
 
 **How do I reset a persistent key?**
 

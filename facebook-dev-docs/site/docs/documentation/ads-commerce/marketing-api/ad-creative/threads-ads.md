@@ -22,11 +22,11 @@ The available creative types for each support `objective`. More creative types a
 
 For a `LINK_CLICKS` or `CONVERSIONS` ads, you can provide a `call_to_action` (CTA) in the `link_data` or `video_data` field to define the action button below the ad.
 
-* If you use `link_data`, and if `call_to_action` is not specified, a default `call_to_action` appears. Its `link` value is from the `link` field of the `link_data` above, and the default CTA `type` is “LEARN\_MORE”.
+* If you use `link_data`, and if `call_to_action` is not specified, a default `call_to_action` appears. Its `link` value is from the `link` field of the `link_data` above, and the default CTA `type` is "LEARN\_MORE".
 * If you define a `call_to_action` explicitly, `link` value must be the same as `link` value for `link_data` above. You can provide `caption` as the displayed URL.
 * If you use `video_data`, the `call_to_action` is required.
 
-For a `MOBILE_APP_INSTALLS` or `MOBILE_APP_ENGAGEMENT` ads, the `call_to_action` field in the `link_data` or `video_data`is required. The links must point to an app’s Apple App Store or Google Play URL. [Deep linking](https://developers.facebook.com/docs/ads-for-apps/mobile-app-ads#deep-linking) is also supported. If `link_data` is used, the `link` in `call_to_action` must be the same as the `link` of the `link_data` above.
+For a `MOBILE_APP_INSTALLS` or `MOBILE_APP_ENGAGEMENT` ads, the `call_to_action` field in the `link_data` or `video_data`is required. The links must point to an app's Apple App Store or Google Play URL. [Deep linking](https://developers.facebook.com/docs/ads-for-apps/mobile-app-ads#deep-linking) is also supported. If `link_data` is used, the `link` in `call_to_action` must be the same as the `link` of the `link_data` above.
 
 For a `VIDEO_VIEWS` ads, the `description` and `video_data` field is optional. Either the `image_hash` or `image_url` fields must be provided.
 
@@ -45,42 +45,42 @@ PHP Business SDKPython Business SDKcURL
 ---
 
 ```
-use FacebookAds\Object\AdCreative;  
-use FacebookAds\Object\AdCreativeLinkData;  
-use FacebookAds\Object\Fields\AdCreativeLinkDataFields;  
-use FacebookAds\Object\AdCreativeObjectStorySpec;  
-use FacebookAds\Object\Fields\AdCreativeObjectStorySpecFields;  
-use FacebookAds\Object\Fields\AdCreativeFields;  
+use FacebookAds\Object\AdCreative;  
+use FacebookAds\Object\AdCreativeLinkData;  
+use FacebookAds\Object\Fields\AdCreativeLinkDataFields;  
+use FacebookAds\Object\AdCreativeObjectStorySpec;  
+use FacebookAds\Object\Fields\AdCreativeObjectStorySpecFields;  
+use FacebookAds\Object\Fields\AdCreativeFields;  
   
-$link_data = new AdCreativeLinkData();  
+$link_data = new AdCreativeLinkData();  
 $link_data->setData(array(  
-  AdCreativeLinkDataFields::IMAGE_CROPS => array(  
-    '100x100'=> array(array(200,90),array(900,790)),  
-    '191x100'=> array(array(0,200),array(1146,800))  
-  );  
-  AdCreativeLinkDataFields::MESSAGE => 'Great looking SXT handbags in store. #prettybag',  
-  AdCreativeLinkDataFields::LINK => 'http://example.com',  
-  AdCreativeLinkDataFields::IMAGE_HASH => '<IMAGE_HASH>',  
-  AdCreativeLinkDataFields::CALL_TO_ACTION => array(  
-    'type' => 'LEARN_MORE',  
-    'value' =>array(  
-      'link' => 'http://example.com',  
-    )  
-  ),  
+  AdCreativeLinkDataFields::IMAGE_CROPS => array(  
+    '100x100'=> array(array(200,90),array(900,790)),  
+    '191x100'=> array(array(0,200),array(1146,800))  
+  );  
+  AdCreativeLinkDataFields::MESSAGE => 'Great looking SXT handbags in store. #prettybag',  
+  AdCreativeLinkDataFields::LINK => 'http://example.com',  
+  AdCreativeLinkDataFields::IMAGE_HASH => '<IMAGE_HASH>',  
+  AdCreativeLinkDataFields::CALL_TO_ACTION => array(  
+    'type' => 'LEARN_MORE',  
+    'value' =>array(  
+      'link' => 'http://example.com',  
+    )  
+  ),  
 ));  
   
-$object_story_spec = new AdCreativeObjectStorySpec();  
+$object_story_spec = new AdCreativeObjectStorySpec();  
 $object_story_spec->setData(array(  
-  AdCreativeObjectStorySpecFields::PAGE_ID => <PAGE_ID>,  
-  AdCreativeObjectStorySpecFields::instagram_user_id => <IG_USER_ID>,  
-  AdCreativeObjectStorySpecFields::LINK_DATA => $link_data,  
+  AdCreativeObjectStorySpecFields::PAGE_ID => <PAGE_ID>,  
+  AdCreativeObjectStorySpecFields::instagram_user_id => <IG_USER_ID>,  
+  AdCreativeObjectStorySpecFields::LINK_DATA => $link_data,  
 ));  
   
-$creative = new AdCreative(null, 'act_<AD_ACCOUNT_ID>');  
+$creative = new AdCreative(null, 'act_<AD_ACCOUNT_ID>');  
   
 $creative->setData(array(  
-  AdCreativeFields::NAME => 'Instagram only creative',  
-  AdCreativeFields::OBJECT_STORY_SPEC => $object_story_spec,  
+  AdCreativeFields::NAME => 'Instagram only creative',  
+  AdCreativeFields::OBJECT_STORY_SPEC => $object_story_spec,  
 ));  
   
 $creative->create();
@@ -88,17 +88,17 @@ $creative->create();
 
 ### Link Ads Image Overlay
 
-Instagram link ads with `objective` set to `LINK_CLICKS` or `CONVERSIONS` show your Facebook Page name and “display url” on a one-tap image overlay. This appears when a user click on an ad’s image. If a link ad uses video creative, this overlay does not display.
+Instagram link ads with `objective` set to `LINK_CLICKS` or `CONVERSIONS` show your Facebook Page name and "display url" on a one-tap image overlay. This appears when a user click on an ad's image. If a link ad uses video creative, this overlay does not display.
 
-For `MOBILE_APP_INSTALLS` and `MOBILE_APP_ENGAGEMENT` ad ads, we show an advertisers Facebook Page name and “View in App Store” for iOS ads or “View in Play Store” for Android ads.
+For `MOBILE_APP_INSTALLS` and `MOBILE_APP_ENGAGEMENT` ad ads, we show an advertisers Facebook Page name and "View in App Store" for iOS ads or "View in Play Store" for Android ads.
 
-The “display url” for a link ad is the the `link` value in the `link_data`, unless you provide `caption` in the `link_data`. If the link is not user friendly, such as “http://tracking.com/redirect=client.com”, you should set `caption` to `client.com`, which displays in the overlay instead of the `link`.
+The "display url" for a link ad is the the `link` value in the `link_data`, unless you provide `caption` in the `link_data`. If the link is not user friendly, such as "http://tracking.com/redirect=client.com", you should set `caption` to `client.com`, which displays in the overlay instead of the `link`.
 
 ## Instagram Stories
 
 Ads creative for Instagram Stories only allow `photo_data`, `video_data`, and `link_data`. Among them `photo_data` can be used for only `REACH` objective, `link_data` can be used for only `LINK_CLICKS` objective, and `video_data` can be used for all the `REACH`, `VIDEO_VIEWS`, or `LINK_CLICKS` objective.
 
-As branding ads (`REACH` and `VIDEO_VIEWS`) in Instagram Stories only show an advertiser’s Instagram account name and profile picture, you cannot set all other visible fields, including message, title, link, caption, and so on. If `link` is specified in `video_data`, a CTA button will also be shown.
+As branding ads (`REACH` and `VIDEO_VIEWS`) in Instagram Stories only show an advertiser's Instagram account name and profile picture, you cannot set all other visible fields, including message, title, link, caption, and so on. If `link` is specified in `video_data`, a CTA button will also be shown.
 
 Direct response ads (`LINK_CLICKS`, `CONVERSIONS`, and `APP_INSTALLS`) shows a CTA button. You can specify the `call_to_action` of the `link_data` or `video_data`. If the `call_to_action` is not specified in `link_data`, Instagram will show a `Learn More` button with the `link` value of `link_data`. Certain CTA types are not supported, including `Donate`, `Donate Now`, `Save`, `Call Now`, and `Get Directions`. Other fields like message and title are still not used for Instagram Stories direct response ads.
 

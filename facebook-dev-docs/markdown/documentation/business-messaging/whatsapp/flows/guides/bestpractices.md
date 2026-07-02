@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/business-messaging/wha
 
 Updated: Jun 16, 2026
 
-It is important to monitor your Flow’s health and address any problems as they are discovered by WhatsApp. In order to do this, subscribe to and monitor the [flow webhooks](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/flowswebhooks).
+It is important to monitor your Flow's health and address any problems as they are discovered by WhatsApp. In order to do this, subscribe to and monitor the [flow webhooks](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/flowswebhooks).
 
 You will receive multiple alert webhooks before the Flow becomes **Throttled** or **Blocked**. See **Quality system overview** below for more information.
 
@@ -30,9 +30,9 @@ If any of these metrics deteriorate significantly, WhatsApp may throttle or bloc
 
 ![Flow state diagram with bidirectional arrows between Published (green), Throttled (yellow) and Blocked (red)](https://scontent.fdel1-6.fna.fbcdn.net/v/t39.2365-6/653704952_1459945535864096_8460257605962487773_n.png?_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=rUHND0uEG80Q7kNvwFTWve0&_nc_oc=AdoULH6Y5xrVl1vAsb0CJosTG7oQMjTUqxDRLUYWnnPGp5xZn2fs8QN2NQ2xZCMAbQXKomQc13mKjpE9YtWnHXRK&_nc_zt=14&_nc_ht=scontent.fdel1-6.fna&_nc_gid=5NjU25_7lWNydiElQ3Yiyg&_nc_ss=7b289&oh=00_AQCJHOpIk_Pveh29utCAY0Fl61qmIbgfLxVBOrxqbopdxA&oe=6A605EB8)
 
-When a Flow’s endpoint metrics begin deteriorating, the Flow status will first move to **Throttled**. Only if metrics deteriorate further is it moved to **Blocked**.
+When a Flow's endpoint metrics begin deteriorating, the Flow status will first move to **Throttled**. Only if metrics deteriorate further is it moved to **Blocked**.
 
-Once a Flow’s endpoint recovers, it will move first from **Blocked** to **Throttled**, and then from **Throttled** back to **Published**.
+Once a Flow's endpoint recovers, it will move first from **Blocked** to **Throttled**, and then from **Throttled** back to **Published**.
 
 ## How to get your Flow back to a Published state
 
@@ -47,17 +47,17 @@ Once a Flow’s endpoint recovers, it will move first from **Blocked** to **Thro
   * **Error rate alert**
     * Review the errors listed in the alert and check the [error codes reference guide](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/reference/error-codes#error-types-reported-via-webhook-alerts-or-propagated-back-to-endpoint) for possible resolutions.
 
-Once you have fixed your endpoint, WhatsApp monitoring automatically detects the changes and the Flow’s state is updated.
+Once you have fixed your endpoint, WhatsApp monitoring automatically detects the changes and the Flow's state is updated.
 
 ## Publishing checks
 
 | Check | Details | How to resolve |
 | --- | --- | --- |
 | Is there a phone number connected to WhatsApp Business account? | There needs to be verified phone number connected to WhatsApp Business account. | You need to [add a phone number](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-phone-numbers/phone-numbers) to your WhatsApp Business account before you can send or publish a flow. |
-| Is a signed Flow’s public key uploaded to a phone number? | User needs to upload signed Flow public key to a phone number | You need to [upload and sign a public key](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/implementingyourflowendpoint#upload_public_key) to a phone number before you can send or publish a Flow. |
+| Is a signed Flow's public key uploaded to a phone number? | User needs to upload signed Flow public key to a phone number | You need to [upload and sign a public key](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/implementingyourflowendpoint#upload_public_key) to a phone number before you can send or publish a Flow. |
 | Is data channel URI set? |  | You need to [set the data\_channel\_uri property](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/flowjson#top-level-flow-json-properties) before you can send or publish a Flow. |
 | Does the Flow have an application linked to it? |  | You need to [connect a Meta app](https://developers.facebook.com/docs/development/create-an-app) to the Flow before you can publish it. |
 | Does the Flow have a valid Flow JSON? |  | You need to verify that the Flow has a [valid Flow JSON](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/flowjson) before publishing. |
-| Are Flow JSON and Data API versions valid? | Versions could become [frozen or expired](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/versioning). | You need to verify that you’re using valid versions before you publish a new Flow. You can check the list of currently available versions in the [changelog](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/changelogs). |
-| Is an endpoint available and responding to health check requests? |  | You need to verify that the endpoint is available and that you’ve implemented a [health check](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/implementingyourflowendpoint#health_check_request) before publishing. |
+| Are Flow JSON and Data API versions valid? | Versions could become [frozen or expired](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/versioning). | You need to verify that you're using valid versions before you publish a new Flow. You can check the list of currently available versions in the [changelog](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/changelogs). |
+| Is an endpoint available and responding to health check requests? |  | You need to verify that the endpoint is available and that you've implemented a [health check](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/implementingyourflowendpoint#health_check_request) before publishing. |
 | Is WhatsApp Business account subscribed to the Flows webhooks? | Flow webhooks are the main way you can find out about production issues affecting your customers. | You need to verify that your WhatsApp Business account is subscribed to [Flows webhooks](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/flowswebhooks#subscribe-to-webhooks). |

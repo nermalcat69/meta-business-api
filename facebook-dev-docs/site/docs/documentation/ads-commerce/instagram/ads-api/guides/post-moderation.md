@@ -18,7 +18,7 @@ Before you start, you need the following:
 
 ### Limitations
 
-* If a reminder ad’s ad set has an end date, it must be after the start date of the reminder ad’s Instagram upcoming event.
+* If a reminder ad's ad set has an end date, it must be after the start date of the reminder ad's Instagram upcoming event.
 * A reminder ad will stop delivering once its event is in the past.
 * Not all ad campaign objectives or ad set optimization goals support reminders. For example supported ad campaign objectives and ad set optimization goals include:
   * `objective: OUTCOME_ENGAGEMENT` & `optimization_goal=REMINDERS_SET`
@@ -53,15 +53,13 @@ curl -X POST "https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/campaigns" \
 
 ### Response
 
-On success, your app receives the following JSON response with the created ad campaign’s ID:
+On success, your app receives the following JSON response with the created ad campaign's ID:
 
-```
 ```
 {  
   
-  "id": "<AD_CAMPAIGN_ID>"  
+  "id": "<AD_CAMPAIGN_ID>"  
 }
-```
 ```
 
 ## Step 2: Create an Ad Set
@@ -92,15 +90,13 @@ curl -X POST "https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/adsets" \
 
 ### Response
 
-On success, your app receives the following JSON response with the created ad set’s ID:
+On success, your app receives the following JSON response with the created ad set's ID:
 
-```
 ```
 {  
   
-  "id": "<AD_SET_ID>"  
+  "id": "<AD_SET_ID>"  
 }
-```
 ```
 
 ## Step 3: Create an Ad Creative with an Upcoming Event
@@ -153,14 +149,12 @@ curl -X POST "https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/adcreatives" 
 
 ### Response
 
-On success, your app receives the following JSON response with the created ad creative’s ID:
+On success, your app receives the following JSON response with the created ad creative's ID:
 
 ```
-```
 {  
-  "id": "<AD_CREATIVE_ID>"  
+  "id": "<AD_CREATIVE_ID>"  
 }
-```
 ```
 
 ## Step 4: Create an Ad
@@ -189,12 +183,10 @@ curl -X POST "https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/ads" \
 
 ### Response
 
-On success, your app receives the following JSON response with the created ad’s ID:
+On success, your app receives the following JSON response with the created ad's ID:
 
 ```
-```
 {  
-  "id": "<AD_ID>"  
+  "id": "<AD_ID>"  
 }
-```
 ```

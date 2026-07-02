@@ -20,8 +20,8 @@ HTTPPHP SDKJavaScript SDKAndroid SDKiOS SDK
 ---
 
 ```
-GET /v25.0/{business-user-id}/assigned_creative_folders HTTP/1.1  
-Host: graph.facebook.com
+GET /v25.0/{business-user-id}/assigned_creative_folders HTTP/1.1  
+Host: graph.facebook.com
 ```
 
 Try it in [Graph API Explorer](https://developers.facebook.com/tools/explorer/?method=GET&path=%7Bbusiness-user-id%7D%2Fassigned_creative_folders&version=v25.0)

@@ -15,7 +15,7 @@ Before you start, please review these recommendations and guidelines:
 
 * If you manage multiple catalogs for different businesses or want an agency to access your catalogs, you may need to set up [Business Manager⁠](https://business.facebook.com/home/accounts?business_id=117943258886315).
 * The `catalog_management` permission grants your app the ability to create, read, update, and delete business-owned product catalogs of which the user is an admin. This permission grants access to related endpoints. By default, your app may only have access to product catalogs that are owned by admins and developers of the app when in developer mode. See [Catalog Management Reference](https://developers.facebook.com/docs/facebook-login/permissions#reference-catalog_management).
-* For a commerce catalog, before buyers can purchase items from you, you’ll need to upload your products information into a [catalog](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/catalog/overview). Learn how to create a new ecommerce catalog using the [Commerce Manager⁠](https://business.facebook.com/products/catalogs/new).
+* For a commerce catalog, before buyers can purchase items from you, you'll need to upload your products information into a [catalog](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/catalog/overview). Learn how to create a new ecommerce catalog using the [Commerce Manager⁠](https://business.facebook.com/products/catalogs/new).
 * The `business_management` permission is required to update your catalog.
 * To use the [Catalog Batch API](https://developers.facebook.com/docs/marketing-api/businessmanager/assets#product_catalog), you need the appropriate [Marketing API Access Level](https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/authorization#limits) and must accept the [Terms of Service⁠](https://business.facebook.com/legal/product_catalog_terms/) by creating your first catalog through [Business Manager⁠](https://business.facebook.com/). See [Catalog Reference](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-catalog).
 
@@ -30,7 +30,7 @@ Learn more about [how to use catalog fields](https://developers.facebook.com/doc
 
 ## Step 2: Choose a product category
 
-Provide **at least one category** for your items to help customers understand what type of item you’re selling:
+Provide **at least one category** for your items to help customers understand what type of item you're selling:
 
 * [Google Product Category](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/catalog/categories#google-prod-cat)
 * [Facebook Product Category](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/catalog/categories#fb-prod-cat)
@@ -65,5 +65,5 @@ See [Schedule your feed uploads](https://developers.facebook.com/documentation/a
 * [Best Practices, Commerce Catalog](https://developers.facebook.com/documentation/ads-commerce/catalog/best-practices)
 * [FAQs: Advantage+ Catalog Ads](https://developers.facebook.com/documentation/ads-commerce/marketing-api/advantage-catalog-ads/faq)
 * [Purchase Protection policies and requirements⁠](https://www.facebook.com/policies/purchase_protection)
-* [Google’s product taxonomy⁠](https://www.google.com/basepages/producttype/taxonomy-with-ids.en-US.txt)
+* [Google's product taxonomy⁠](https://www.google.com/basepages/producttype/taxonomy-with-ids.en-US.txt)
 * [Tax calculations](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/best-practices/ship-fulfillment#tax-override-api)

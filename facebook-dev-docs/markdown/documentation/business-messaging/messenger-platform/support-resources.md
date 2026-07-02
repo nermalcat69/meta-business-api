@@ -40,7 +40,7 @@ The Messenger Platform offers many ways for you to create unique experiences in 
 
 Once your Messenger app is in production, lots of unexpected things can occur. Make sure you know what is happening with your app by updating the following notification settings:
 
-* Email notifications: Check that your [email notification settings⁠](https://www.facebook.com/settings?tab=notifications&section=email) are correct. If your email address is incorrect, you will miss important updates about your Messenger app. You should select “All notifications, except the ones you unsubscribe from”.
+* Email notifications: Check that your [email notification settings⁠](https://www.facebook.com/settings?tab=notifications&section=email) are correct. If your email address is incorrect, you will miss important updates about your Messenger app. You should select "All notifications, except the ones you unsubscribe from".
 * Policy enforcement events: Subscribe your app to receive [`messaging_policy_enforcement` webhook events](https://developers.facebook.com/documentation/business-messaging/messenger-platform/webhooks/webhook-events/messaging_policy_enforcement). You receive notifications here if your Messenger app violates a [Platform policy](https://developers.facebook.com/devpolicy#messengerplatform).
 
 ### Ensure people can onboard smoothly
@@ -48,7 +48,7 @@ Once your Messenger app is in production, lots of unexpected things can occur. M
 Your onboarding flow has a huge impact on whether a person on Messenger will choose to interact with your Messenger app. To ensure the best experience for people who are new to your app, take advantage of these key features of the [welcome screen](https://developers.facebook.com/documentation/business-messaging/messenger-platform/discovery/welcome-screen):
 
 * [Get Started Button](https://developers.facebook.com/documentation/business-messaging/messenger-platform/introduction/conversation-components#get_started_button): Ensure your app sends a brief welcome message when it receives the `messaging_postbacks` event from the get started button. This message should introduce newcomers to your Messenger app and outline the features it has to offer.
-* [Greeting text](https://developers.facebook.com/documentation/business-messaging/messenger-platform/discovery/welcome-screen#set_greeting): The greeting text is your first opportunity to present what your app has to offer and establish the style and ‘voice’ of your brand. You should also take advantage of the personalization template strings to engage the person by name.
+* [Greeting text](https://developers.facebook.com/documentation/business-messaging/messenger-platform/discovery/welcome-screen#set_greeting): The greeting text is your first opportunity to present what your app has to offer and establish the style and 'voice' of your brand. You should also take advantage of the personalization template strings to engage the person by name.
 
 ### Test your Messenger app
 
@@ -63,7 +63,7 @@ Here is a short list of things you should test for before making your Messenger 
 
 ### Drive people to your Page
 
-The Messenger Platform provides lots of ways for people to discover your experience. Use the Platform’s [discovery and re-engagement features](https://developers.facebook.com/documentation/business-messaging/messenger-platform/discovery) to get your app in front of a lot of people on Messenger. Here are some options available to you:
+The Messenger Platform provides lots of ways for people to discover your experience. Use the Platform's [discovery and re-engagement features](https://developers.facebook.com/documentation/business-messaging/messenger-platform/discovery) to get your app in front of a lot of people on Messenger. Here are some options available to you:
 
 * [Click to Messenger ads](https://developers.facebook.com/docs/messenger-platform/discovery/ads): Gain exposure for your app in Facebook, Instagram, and Messenger with ads that open new conversations with your Messenger app.
 * [m.me Link](https://developers.facebook.com/documentation/business-messaging/messenger-platform/discovery/m-me-links): A shortened URL that redirects users to your Messenger. You can use it on your website, email newsletters, and even add a `ref` parameter to add context into the conversation.

@@ -11,7 +11,7 @@ This API can be used to update commerce merchant settings (CMS) details, such as
 
 ## Prerequisites
 
-To perform requests to this API, you’ll need to provide the CMS ID. Also, the checkout config is only available for merchants with a partner integration already set up.
+To perform requests to this API, you'll need to provide the CMS ID. Also, the checkout config is only available for merchants with a partner integration already set up.
 
 ## POST Endpoint
 
@@ -21,7 +21,7 @@ Make a `POST` request to:
 https://graph.facebook.com/{graph_api_version}/{COMMERCE_MERCHANT_SETTINGS_ID}
 ```
 
-* {graph\_api\_version}: The Graph API version (for example, “v20.0”)
+* {graph\_api\_version}: The Graph API version (for example, "v20.0")
 * {COMMERCE\_MERCHANT\_SETTINGS\_ID}: Your commerce merchant settings ID retrieved from `GET fbe_business/fbe_installs?fbe_external_business_id=<external_business_id>`. More details about how to retrieve this ID is available in this [documentation](https://developers.facebook.com/docs/facebook-business-extension/fbe/guides/get-features#parsing-webhook-at-uninstall).
 
 ### Parameters
@@ -31,8 +31,8 @@ https://graph.facebook.com/{graph_api_version}/{COMMERCE_MERCHANT_SETTINGS_ID}
 | `access_token`  type: `string` | **Required**  A valid Graph API access token |
 | `merchant_status`  type: `string` | **Optional.**  Determines the current status for this merchant. Can be set to `externally_disabled` using this API. |
 | `privacy_policy_localized`  type: `object` | **Optional.**  Determines the language-specific privacy policy:   * `url` (string) **required**: The privacy policy URL * `locale` (string) **required**: The privacy policy locale, such as: `en` (English). Note: locale follows BCP 47 format. |
-| `korea_ftc_listing`  type: `string` | **Optional.**  The URL link to the seller’s Korea Fair Trade Commission (FTC) listing page. |
-| `checkout_config`  type: `object` | **Optional.**  Configures the web checkout experience for merchants. This parameter requires a partner integration to be already set up.   * `checkout_url` (string) **required**: URL pointing to the merchant’s checkout page. * `country_code` (string) **required**: Country code indicating which country this checkout config applies to. |
+| `korea_ftc_listing`  type: `string` | **Optional.**  The URL link to the seller's Korea Fair Trade Commission (FTC) listing page. |
+| `checkout_config`  type: `object` | **Optional.**  Configures the web checkout experience for merchants. This parameter requires a partner integration to be already set up.   * `checkout_url` (string) **required**: URL pointing to the merchant's checkout page. * `country_code` (string) **required**: Country code indicating which country this checkout config applies to. |
 
 ### Sample cURL Request
 
@@ -61,7 +61,7 @@ Make a `GET` request to:
 https://graph.facebook.com/{graph_api_version}/{COMMERCE_MERCHANT_SETTINGS_ID}
 ```
 
-* {graph\_api\_version}: The Graph API version (for example, “v20.0”)
+* {graph\_api\_version}: The Graph API version (for example, "v20.0")
 * {COMMERCE\_MERCHANT\_SETTINGS\_ID}: Your commerce merchant settings ID retrieved from `GET fbe_business/fbe_installs?fbe_external_business_id=<external_business_id>`. More details about how to retrieve this ID is available in this [documentation](https://developers.facebook.com/docs/facebook-business-extension/fbe/guides/get-features#parsing-webhook-at-uninstall).
 
 ### Fields

@@ -32,7 +32,7 @@ You need to set up your ad campaigns using the general ad setup:
 To create a multi-media ad with multiple images, send a `POST` request to the `/act_<AD_ACCOUNT_ID>/ads` endpoint. Your request must include:
 
 * `creative` — an inline creative containing:
-  * `object_story_spec` — with `page_id` and [`link_data`](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-creative-link-data) referencing the primary image via `image_hash` (the hash of an image in your ad account’s image library)
+  * `object_story_spec` — with `page_id` and [`link_data`](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-creative-link-data) referencing the primary image via `image_hash` (the hash of an image in your ad account's image library)
   * `media_sourcing_spec` — with an `images` array containing all image assets. Each image requires `hash`, `source` set to `"multi_media"`, and `opt_in_status` set to `"opt_in"` to enable related media features.
 
 The primary image referenced in `object_story_spec.link_data.image_hash` must also appear in the `media_sourcing_spec.images` array.
@@ -78,11 +78,9 @@ curl -X POST "https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/ads" \
 On success, your app receives a JSON response with the ad ID.
 
 ```
-```
 {  
-  "id": "<AD_ID>"  
+  "id": "<AD_ID>"  
 }
-```
 ```
 
 ## Create a multi-media ad with multiple videos
@@ -144,11 +142,9 @@ curl -X POST "https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/ads" \
 On success, your app receives a JSON response with the ad ID.
 
 ```
-```
 {  
-  "id": "<AD_ID>"  
+  "id": "<AD_ID>"  
 }
-```
 ```
 
 ## Create a multi-media ad with mixed media
@@ -201,11 +197,9 @@ curl -X POST "https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/ads" \
 On success, your app receives a JSON response with the ad ID.
 
 ```
-```
 {  
-  "id": "<AD_ID>"  
+  "id": "<AD_ID>"  
 }
-```
 ```
 
 ## Add text customizations
@@ -273,11 +267,9 @@ curl -X POST "https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/ads" \
 On success, your app receives a JSON response with the ad ID.
 
 ```
-```
 {  
-  "id": "<AD_ID>"  
+  "id": "<AD_ID>"  
 }
-```
 ```
 
 ## Add destination customizations
@@ -339,11 +331,9 @@ curl -X POST "https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/ads" \
 On success, your app receives a JSON response with the ad ID.
 
 ```
-```
 {  
-  "id": "<AD_ID>"  
+  "id": "<AD_ID>"  
 }
-```
 ```
 
 ## Add placement customizations
@@ -403,11 +393,9 @@ curl -X POST "https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/ads" \
 On success, your app receives a JSON response with the ad ID.
 
 ```
-```
 {  
-  "id": "<AD_ID>"  
+  "id": "<AD_ID>"  
 }
-```
 ```
 
 ## Add image crop customizations
@@ -472,11 +460,9 @@ curl -X POST "https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/ads" \
 On success, your app receives a JSON response with the ad ID.
 
 ```
-```
 {  
-  "id": "<AD_ID>"  
+  "id": "<AD_ID>"  
 }
-```
 ```
 
 ## Create a multi-media ad with combined customizations
@@ -576,11 +562,9 @@ curl -X POST "https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/ads" \
 On success, your app receives a JSON response with the ad ID.
 
 ```
-```
 {  
-  "id": "<AD_ID>"  
+  "id": "<AD_ID>"  
 }
-```
 ```
 
 ## Read a multi-media ad
@@ -599,77 +583,75 @@ curl -G \
 ### Response
 
 ```
-```
 {  
-  "creative": {  
-    "media_sourcing_spec": {  
-      "images": [  
-        {  
-          "hash": "<IMAGE_HASH_1>",  
-          "source": "multi_media",  
-          "opt_in_status": "opt_in",  
-          "text_customizations": {  
-            "titles": [{"text": "Summer Collection Now Live"}],  
-            "bodies": [{"text": "Shop our latest summer styles"}],  
-            "descriptions": [{"text": "Free shipping on orders over $50"}]  
-          },  
-          "destination_customizations": [  
-            {  
-              "url": "https://www.example.com/summer",  
-              "display_url": "example.com/summer"  
-            }  
-          ],  
-          "placement_customizations": [  
-            {  
-              "publisher_platform": "facebook",  
-              "placement_exclusions": ["right_hand_column"]  
-            }  
-          ],  
-          "image_crops": [  
-            {  
-              "type": "manual",  
-              "crop_spec": {  
-                "100x100": [[316, 0], [1472, 1156]]  
-              }  
-            }  
-          ]  
-        },  
-        {  
-          "hash": "<IMAGE_HASH_2>",  
-          "source": "multi_media",  
-          "opt_in_status": "opt_in"  
-        }  
-      ],  
-      "videos": [  
-        {  
-          "video_id": "<VIDEO_ID_1>",  
-          "original_video_id": "<VIDEO_ID_1>",  
-          "source": "multi_media",  
-          "opt_in_status": "opt_in",  
-          "thumbnail_source": "generated_default",  
-          "thumbnail_url": "https://example.com/thumbnail.jpg",  
-          "text_customizations": {  
-            "titles": [{"text": "Watch Our Latest Video"}],  
-            "bodies": [{"text": "See what is new this season"}]  
-          }  
-        }  
-      ],  
-      "titles": [  
-        {"text": "Global Headline 1"},  
-        {"text": "Global Headline 2"}  
-      ],  
-      "bodies": [  
-        {"text": "Global primary text 1"},  
-        {"text": "Global primary text 2"}  
-      ],  
-      "descriptions": [  
-        {"text": "Global description"}  
-      ]  
-    }  
-  },  
-  "id": "<AD_ID>"  
+  "creative": {  
+    "media_sourcing_spec": {  
+      "images": [  
+        {  
+          "hash": "<IMAGE_HASH_1>",  
+          "source": "multi_media",  
+          "opt_in_status": "opt_in",  
+          "text_customizations": {  
+            "titles": [{"text": "Summer Collection Now Live"}],  
+            "bodies": [{"text": "Shop our latest summer styles"}],  
+            "descriptions": [{"text": "Free shipping on orders over $50"}]  
+          },  
+          "destination_customizations": [  
+            {  
+              "url": "https://www.example.com/summer",  
+              "display_url": "example.com/summer"  
+            }  
+          ],  
+          "placement_customizations": [  
+            {  
+              "publisher_platform": "facebook",  
+              "placement_exclusions": ["right_hand_column"]  
+            }  
+          ],  
+          "image_crops": [  
+            {  
+              "type": "manual",  
+              "crop_spec": {  
+                "100x100": [[316, 0], [1472, 1156]]  
+              }  
+            }  
+          ]  
+        },  
+        {  
+          "hash": "<IMAGE_HASH_2>",  
+          "source": "multi_media",  
+          "opt_in_status": "opt_in"  
+        }  
+      ],  
+      "videos": [  
+        {  
+          "video_id": "<VIDEO_ID_1>",  
+          "original_video_id": "<VIDEO_ID_1>",  
+          "source": "multi_media",  
+          "opt_in_status": "opt_in",  
+          "thumbnail_source": "generated_default",  
+          "thumbnail_url": "https://example.com/thumbnail.jpg",  
+          "text_customizations": {  
+            "titles": [{"text": "Watch Our Latest Video"}],  
+            "bodies": [{"text": "See what is new this season"}]  
+          }  
+        }  
+      ],  
+      "titles": [  
+        {"text": "Global Headline 1"},  
+        {"text": "Global Headline 2"}  
+      ],  
+      "bodies": [  
+        {"text": "Global primary text 1"},  
+        {"text": "Global primary text 2"}  
+      ],  
+      "descriptions": [  
+        {"text": "Global description"}  
+      ]  
+    }  
+  },  
+  "id": "<AD_ID>"  
 }
-```
 ```
 
 ## See also

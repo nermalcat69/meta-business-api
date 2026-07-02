@@ -46,7 +46,7 @@ Updated: Feb 6, 2026
 | Field | Description |
 | --- | --- |
 | `filterStatus` *Boolean* | The status of the data filter indicates if the filter is active or not. |
-| `blockedEventTypes`  [*String*] | A list of blocked event type names. The blocked events won’t be processed by the data pipeline. |
+| `blockedEventTypes`  [*String*] | A list of blocked event type names. The blocked events won't be processed by the data pipeline. |
 
 ### PipelineDestinationFilter
 
@@ -55,7 +55,7 @@ Updated: Feb 6, 2026
 | `id` *ID* | Unique id of the created gateway data pipeline. |
 | `destinationId` *ID* | Unique identifier of the data destination. |
 | `destinationFilterStatus` *Boolean* | The status of the pipeline destination filter indicates if the filter is active or not. |
-| `destinationFilterBlockedEventTypes`  [*String*] | A list of blocked event type names. The blocked events won’t be processed by the data destination in the specific data pipeline. |
+| `destinationFilterBlockedEventTypes`  [*String*] | A list of blocked event type names. The blocked events won't be processed by the data destination in the specific data pipeline. |
 
 ### GatewayPixelConfig
 

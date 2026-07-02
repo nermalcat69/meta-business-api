@@ -21,7 +21,7 @@ You can track and measure these app events in two ways:
 * **Use our [codeless setup tool⁠](https://www.facebook.com/business/help/1634426896605026)
   in Facebook's Events Manager.** This is a simple tool for setting up events without implementing code. You can interact with app screen elements such as buttons, images, or links to define event names. As people navigate through the app and interact with these UI elements, events are sent to Facebook.
 
-* **Install your app event code manually.** Follow the steps below for your app’s platform:
+* **Install your app event code manually.** Follow the steps below for your app's platform:
   * [App Events for Android](https://developers.facebook.com/documentation/app-events/getting-started-app-events-android#7--add-app-events)
   * [App Events for iOS](https://developers.facebook.com/documentation/app-events/getting-started-app-events-ios#add-events)
   * [App Events for Web](https://developers.facebook.com/documentation/app-events/getting-started-app-events-web#4--add-app-events)

@@ -14,7 +14,7 @@ Use this guide to set up your catalog for localization. See also how to [Set Up 
 * You must create a language or country **override data feed** that will contain only the fields (with values) you wish to change.
 * You must include an `id` field in your *override data feed*. The `id` for each item must match an `id` in one of your main catalog data feeds and/or the content ID from your pixel.
 * You must include an `override` field.
-  * For a country override feed, enter the ISO codes of the countries for which you want to provide localized information. The value in the ‘override’ column should be a [supported ISO country code⁠](https://www.facebook.com/business/help/2144286692311411). (see also [standard ISO country codes⁠](https://www.iso.org/obp/ui/#search).)
+  * For a country override feed, enter the ISO codes of the countries for which you want to provide localized information. The value in the 'override' column should be a [supported ISO country code⁠](https://www.facebook.com/business/help/2144286692311411). (see also [standard ISO country codes⁠](https://www.iso.org/obp/ui/#search).)
   * For a language override feed, enter the ISO codes of the languages for which you want to provide localized information. The value in the `override` column should be a [supported ISO language code⁠](https://www.facebook.com/business/help/2144286692311411). (see also [standard ISO language codes⁠](https://www.iso.org/iso-639-language-codes.html).)
 * You can only localize (override) specific fields, not all of them. See [Supported Fields — Localized Catalogs](https://developers.facebook.com/documentation/ads-commerce/catalog/reference#loc-cat-fields) for a list of supported catalog fields.
 * Make sure that product images satisfy catalog [requirements⁠](https://www.facebook.com/business/help/686259348512056).
@@ -47,7 +47,7 @@ You can provide localized properties for your catalog items, using additional ty
 | --- | --- | --- |
 | Country Feed | Contains overrides for specified countries. You can create and upload country feeds using the Commerce Manager or [via the API](https://developers.facebook.com/documentation/ads-commerce/catalog/localized-catalog/localized-catalog-setup/overrides-api#upload-via-api). See [supported feed format](https://developers.facebook.com/documentation/ads-commerce/catalog/localized-catalog/localized-catalog-setup/overrides-api#feed-format-country). | An item can have different prices in different countries. |
 | Language Feed | Contains translations for specific fields. You can create and upload language feeds using the Commerce Manager or [via the API](https://developers.facebook.com/documentation/ads-commerce/catalog/localized-catalog/localized-catalog-setup/overrides-api#upload-via-api). See [supported feed format](https://developers.facebook.com/documentation/ads-commerce/catalog/localized-catalog/localized-catalog-setup/overrides-api#feed-format-lang). | An item can have different descriptions in different languages. |
-| Language and Country Feed | Intended for advanced use cases where a country feed or language feed is not enough to describe the localization of your items. A language and country feed should only be used for fields that are absolutely necessary.  You can only create a language and country feed via the API, but you can modify and upload the feed from the Commerce Manager or [via the API](https://developers.facebook.com/documentation/ads-commerce/catalog/localized-catalog/localized-catalog-setup/overrides-api#upload-via-api). The Commerce Manager provides details about each country and language setup.  **Note**: To localize a field for both language and country, the value in the `override` column should be a [supported ISO language code⁠](https://www.facebook.com/business/help/2144286692311411) and a [supported ISO country code⁠](https://www.facebook.com/business/help/2144286692311411), separated by a ‘|’ character, for example, `en_XX|US` | Your product URLs may depend on both the viewer language and country.  For example: http://www.mysite.com/ca/item12345?lang=fr *Or*  http://www.mysite.com/ca/fr/item12345  You can define localized fields for a limit of 350 language and country pairs, per catalog item. |
+| Language and Country Feed | Intended for advanced use cases where a country feed or language feed is not enough to describe the localization of your items. A language and country feed should only be used for fields that are absolutely necessary.  You can only create a language and country feed via the API, but you can modify and upload the feed from the Commerce Manager or [via the API](https://developers.facebook.com/documentation/ads-commerce/catalog/localized-catalog/localized-catalog-setup/overrides-api#upload-via-api). The Commerce Manager provides details about each country and language setup.  **Note**: To localize a field for both language and country, the value in the `override` column should be a [supported ISO language code⁠](https://www.facebook.com/business/help/2144286692311411) and a [supported ISO country code⁠](https://www.facebook.com/business/help/2144286692311411), separated by a '|' character, for example, `en_XX|US` | Your product URLs may depend on both the viewer language and country.  For example: http://www.mysite.com/ca/item12345?lang=fr *Or*  http://www.mysite.com/ca/fr/item12345  You can define localized fields for a limit of 350 language and country pairs, per catalog item. |
 
 ### Feed Formats
 
@@ -75,7 +75,7 @@ FB_product_1234; en_XX ; Everyone's favorite American Apparel T-shirt. The t-shi
 
 #### Language and Country Feed
 
-**Example** - This feed contains ‘language and country’ localizations for French speakers in the U.S. (`fr_XX|US`) and French speakers in Canada (`fr_XX|CA`).
+**Example** - This feed contains 'language and country' localizations for French speakers in the U.S. (`fr_XX|US`) and French speakers in Canada (`fr_XX|CA`).
 
 ```
 id; override; url; delete
@@ -87,9 +87,9 @@ FB_product_1234; fr_XX|CA; http://ca.example.com/fr/product_1234; false
 
 When selecting which localized information to show to a user, we check the feed contents in this order:
 
-* Language and country feed values for the user’s spoken languages and home country
-* Language feed values for the user’s spoken languages
-* Country feed values for user’s home country
+* Language and country feed values for the user's spoken languages and home country
+* Language feed values for the user's spoken languages
+* Country feed values for user's home country
 
 ## Step 3: Upload Language and Country Feeds
 
@@ -163,7 +163,7 @@ curl \
 
 To remove localized information from an item:
 
-* Specify a ‘delete’ column in your country or language feed.
+* Specify a 'delete' column in your country or language feed.
 * Set the value to `true`.
 
 The localization for that product is then removed.

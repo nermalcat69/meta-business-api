@@ -30,7 +30,7 @@ WhatsApp Flows allows you to indicate the following versions:
 
 Adapting the guidance provided by Semantic Versioning (see [semver.org⁠](https://semver.org/)), version numbers adhere to the following rules:
 
-* Major versions are incremented whenever there is a “breaking change”. A “breaking change” is one where existing code will not function as expected given the same inputs as before (e.g., a field being removed or functional behavior being altered).
+* Major versions are incremented whenever there is a "breaking change". A "breaking change" is one where existing code will not function as expected given the same inputs as before (e.g., a field being removed or functional behavior being altered).
 * Minor versions are incremented for any other material change where existing inputs continue to function as expected (e.g., adding new paremeters or functionality that does not affect existing behavior).
 * Later versions (higher version numbers) will include all features and functionality present in previous versions unless explicitly marked as deprecated.
 * Version numbers are incremented separately, not as a single decimal number. For example the version after `1.9` is `1.10` (not `2.0`).
@@ -52,13 +52,13 @@ The following is an example timeline of changes made to an API using the `{major
 ### Early Release Versions
 
 * The early release versions are intended to allow early integration and once all the client devices suport the version, we will remove early release designation from the version.
-* Versions marked as “early release” work in the same way as standard versions, with only difference being that they are not yet supported across all the client devices. This means that some of the Flow messages with this version might not be deliverable to all the client devices (the [131026 Message Undeliverable error](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/error-codes#other-errors) will be returned in the webhook)
+* Versions marked as "early release" work in the same way as standard versions, with only difference being that they are not yet supported across all the client devices. This means that some of the Flow messages with this version might not be deliverable to all the client devices (the [131026 Message Undeliverable error](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/error-codes#other-errors) will be returned in the webhook)
 
 ## Version support and lifecycle
 
 In the process of improving functionality and responding to external requirements, versions may be frozen or expired after launch.
 
-To minimize upgrading effort for Flow developers, the goal is to support viable versions and provide notice for migration when a version’s state changes.
+To minimize upgrading effort for Flow developers, the goal is to support viable versions and provide notice for migration when a version's state changes.
 
 ### States
 
@@ -73,7 +73,7 @@ The changelog documentation page will be updated with dates for new versions and
 
 In general, the period before freeze or expiry will be 90 days from the release of a new version - but not all versions will start the freeze notice when a new version is introduced.
 
-Circumstances may require that a version be frozen or expired in less than 90 days, and the “freezing” period may be skipped entirely in cases where a version needs to expire as soon as possible.
+Circumstances may require that a version be frozen or expired in less than 90 days, and the "freezing" period may be skipped entirely in cases where a version needs to expire as soon as possible.
 
 Please refer to the [changelog](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/changelogs) for details of available versions and freeze/expiry dates.
 

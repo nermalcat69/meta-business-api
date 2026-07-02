@@ -26,15 +26,15 @@ Make sure that you are using an [admin system user of the parent (marketplace) B
 
 ## Seller onboarding and pages
 
-**What Page should a seller use for advertising? Does the marketplace need to request access to the seller’s Page?**
+**What Page should a seller use for advertising? Does the marketplace need to request access to the seller's Page?**
 
 It depends on which Page the seller is using for advertising. Generally, there are 3 Pages a seller can use for advertising:
 
-* The seller’s own official Page
-* The marketplace’s official Page
+* The seller's own official Page
+* The marketplace's official Page
 * The newly created Page for the seller partnership through the Managed Partner Ads Seller Business Creation API
 
-The marketplace can expose these Pages on their platform to sellers to choose for advertising. If sellers choose their own official Page for advertising, the marketplace can request access to the Page via the [`client_ad_accounts` endpoint](https://developers.facebook.com/docs/marketing-api/business-asset-management/guides/business-to-business#b2b-request). If sellers choose the marketplace’s official Page or the newly created Page during seller onboarding, the marketplace automatically gets access to this Page.
+The marketplace can expose these Pages on their platform to sellers to choose for advertising. If sellers choose their own official Page for advertising, the marketplace can request access to the Page via the [`client_ad_accounts` endpoint](https://developers.facebook.com/docs/marketing-api/business-asset-management/guides/business-to-business#b2b-request). If sellers choose the marketplace's official Page or the newly created Page during seller onboarding, the marketplace automatically gets access to this Page.
 
 **Is it possible to skip Page creation during seller onboarding?**
 
@@ -44,7 +44,7 @@ To do so, set the `skip_partner_page_creation` field to true when [onboarding a 
 
 **What are the Page-related parameters used for?**
 
-* `partner_facebook_page_url` is the seller’s identity Page for integrity checks purpose.
+* `partner_facebook_page_url` is the seller's identity Page for integrity checks purpose.
 * `page_profile_image_url`, `page_name`, and `seller_external_website_url` are used to create an advertising Page for the seller to use in an ad campaign.
 * `page_profile_image_url` and `page_name` are optional, and default values will be used if not specified. Marketplaces/sellers are encouraged to pass in `page_profile_image_url` and `page_name` values of their own for potential better campaign performance.
 
@@ -110,13 +110,13 @@ You can set [the `spend_cap` field of the ad account](https://developers.faceboo
 
 **If the credit of a child Business Manager is a certain amount, will it be able to create a campaign with a lifetime\_budget more than this amount?**
 
-This is possible. Sellers can set the ad campaign’s `lifetime_budget` to be more than the child Business Manager credit line. Normally a credit line is settled/reset monthly.
+This is possible. Sellers can set the ad campaign's `lifetime_budget` to be more than the child Business Manager credit line. Normally a credit line is settled/reset monthly.
 
 Ad campaign(s) getting paused is a bad experience for sellers. It is recommended to provide basic checks and alerts to sellers if they set a `lifetime_budget` greater than the credit line of the child Business Manager.
 
 **What currency should be provided for credit allocation and ad account creation?**
 
-Credit allocation to the seller’s Business Manager should always be USD. However, for ad account currency, one can specify any supported currency, and this will be the same currency used for monthly invoicing.
+Credit allocation to the seller's Business Manager should always be USD. However, for ad account currency, one can specify any supported currency, and this will be the same currency used for monthly invoicing.
 
 Refer to the `credit_limit` (must be USD) and `ad_account_currency` (any supported currency) parameters in the [Seller Business Creation API](https://developers.facebook.com/documentation/ads-commerce/marketing-api/collaborative-ads/managed-partner-ads/reference#seller-business-creation-api).
 
@@ -160,4 +160,4 @@ In general, you may want to pull the insights hourly or a few times a day. You m
 
 **How can you reduce cross conversion between sellers?**
 
-You may consider using catalog URL links that are specific for Managed Partner Ads in the template. When the system recognises these URLs, it would hide links to other sellers on this seller’s product pages.
+You may consider using catalog URL links that are specific for Managed Partner Ads in the template. When the system recognises these URLs, it would hide links to other sellers on this seller's product pages.

@@ -7,11 +7,11 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/marketing
 
 Updated: Apr 28, 2026
 
-Beginning September 2, 2025, we will start to roll out more proactive restrictions on custom audiences that may suggest information not permitted under our terms. For example, any custom audience or lookalike audience suggesting specific health conditions (e.g., “arthritis”, “diabetes”) or financial status (e.g., “credit score”, “high income”) will be flagged and prevented from being used to run ad campaigns.
+Beginning September 2, 2025, we will start to roll out more proactive restrictions on custom audiences that may suggest information not permitted under our terms. For example, any custom audience or lookalike audience suggesting specific health conditions (e.g., "arthritis", "diabetes") or financial status (e.g., "credit score", "high income") will be flagged and prevented from being used to run ad campaigns.
 
 **What these restrictions mean for your campaigns:**
 
-* You won’t be able to use flagged custom audiences when creating new campaigns.
+* You won't be able to use flagged custom audiences when creating new campaigns.
 * If you have an active campaign using flagged custom audiences, you should edit or pause it and choose a different audience to avoid performance and delivery issues.
 
 **For API developers:**
@@ -20,13 +20,13 @@ Beginning September 2, 2025, we will start to roll out more proactive restrictio
 
 More information on this update and how to resolve flagged custom audiences can be found [here⁠](https://www.facebook.com/business/help/1055828013359808).
 
-The Marketing API allows you to build target Custom Audiences from customer information. This includes email addresses, phone numbers, names, dates of birth, gender, locations, [App User IDs](https://developers.facebook.com/docs/graph-api/reference/user), [Page Scoped User IDs](https://developers.facebook.com/docs/app-events/bots-for-messenger), Apple’s Advertising Identifier (IDFA), or [Android Advertising ID⁠](https://developer.android.com/google/play-services/id.html).
+The Marketing API allows you to build target Custom Audiences from customer information. This includes email addresses, phone numbers, names, dates of birth, gender, locations, [App User IDs](https://developers.facebook.com/docs/graph-api/reference/user), [Page Scoped User IDs](https://developers.facebook.com/docs/app-events/bots-for-messenger), Apple's Advertising Identifier (IDFA), or [Android Advertising ID⁠](https://developer.android.com/google/play-services/id.html).
 
-As the owner of your business’s data, you are responsible for creating and managing this data. This includes information from your Customer Relationship Management (CRM) systems. To create audiences, you must share your data in a hashed format to maintain privacy. See [Hashing and Normalizing Data](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/audience-rules#hash). Meta compares this with our hashed data to see if we should add someone on Facebook to your ad’s audience.
+As the owner of your business's data, you are responsible for creating and managing this data. This includes information from your Customer Relationship Management (CRM) systems. To create audiences, you must share your data in a hashed format to maintain privacy. See [Hashing and Normalizing Data](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/audience-rules#hash). Meta compares this with our hashed data to see if we should add someone on Facebook to your ad's audience.
 
-You can add an unlimited number of records to an audience, but only up to 10000 at a time. Changes to your Custom Audiences don’t happen immediately and usually take up to 24 hours. The number of records you request to remove and/or the number of Custom Audiences your account contains will increase the amount of time it takes to process this request.
+You can add an unlimited number of records to an audience, but only up to 10000 at a time. Changes to your Custom Audiences don't happen immediately and usually take up to 24 hours. The number of records you request to remove and/or the number of Custom Audiences your account contains will increase the amount of time it takes to process this request.
 
-To improve how advertisers create and manage their audiences, Customer File Custom Audiences that have not been used in any active ad sets in over two years will be flagged for deletion on a rolling basis. You will need to provide us with your instructions before we take any action. Once audiences are moved to the “Expiring Audience” stage and flagged, you will need to provide your instructions by either using the flagged audience in an active ad set, which we will consider an instruction to retain the audience, or by deciding not to use the flagged audience in an active ad set, which we will consider an instruction to delete the audience. For more information, see the [Custom Audiences Overview](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/overview#custom-audiences-deletion) documentation.
+To improve how advertisers create and manage their audiences, Customer File Custom Audiences that have not been used in any active ad sets in over two years will be flagged for deletion on a rolling basis. You will need to provide us with your instructions before we take any action. Once audiences are moved to the "Expiring Audience" stage and flagged, you will need to provide your instructions by either using the flagged audience in an active ad set, which we will consider an instruction to retain the audience, or by deciding not to use the flagged audience in an active ad set, which we will consider an instruction to delete the audience. For more information, see the [Custom Audiences Overview](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/overview#custom-audiences-deletion) documentation.
 
 If you share conversion events using the [**Conversions API**](https://developers.facebook.com/documentation/ads-commerce/conversions-api), you can create a [website custom audience](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/website-custom-audiences) without additional data uploads. However, you can continue uploading supported customer information to create a Customer File Custom Audience.
 
@@ -55,7 +55,7 @@ https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/customaudiences
 | `name`  string | Custom Audience name |
 | `description`  string | Custom Audience description |
 | `subtype`  string | Type of Custom Audience |
-| `audience_labels`  string | Choose a label that describes this audience. Labels may be used to find audiences for your ads more effectively. [About audience labels⁠](https://www.facebook.com/business/help/706325895111530).  **Engaged audiences:**   * `QUALIFIED_LEADS` — Leads that meet your qualification criteria. * `DISQUALIFIED_LEADS` — Leads that don’t meet your qualification criteria. * `APP_USERS` — People that are currently using your app. * `TRIAL_USERS` — People who started a trial of your product. * `ENGAGED_USERS` — People that showed interest but are not customers.   **Customers:**   * `HIGH_VALUE_CUSTOMERS` — Customers you consider valuable to your business. * `LOW_VALUE_CUSTOMERS` — Customers who are of low or negative value to your business. * `AT_RISK` — Customers who are showing signs of disengaging or churning. * `DISENGAGED` — Customers who have not made a purchase recently or stopped subscribing. * `CUSTOMERS` — Your existing customers. |
+| `audience_labels`  string | Choose a label that describes this audience. Labels may be used to find audiences for your ads more effectively. [About audience labels⁠](https://www.facebook.com/business/help/706325895111530).  **Engaged audiences:**   * `QUALIFIED_LEADS` — Leads that meet your qualification criteria. * `DISQUALIFIED_LEADS` — Leads that don't meet your qualification criteria. * `APP_USERS` — People that are currently using your app. * `TRIAL_USERS` — People who started a trial of your product. * `ENGAGED_USERS` — People that showed interest but are not customers.   **Customers:**   * `HIGH_VALUE_CUSTOMERS` — Customers you consider valuable to your business. * `LOW_VALUE_CUSTOMERS` — Customers who are of low or negative value to your business. * `AT_RISK` — Customers who are showing signs of disengaging or churning. * `DISENGAGED` — Customers who have not made a purchase recently or stopped subscribing. * `CUSTOMERS` — Your existing customers. |
 
 ### Step 2: Specify a list of users
 
@@ -70,7 +70,7 @@ Use a `POST` API call to the `/{audience_id}/users` endpoint to specify the list
 
 #### Data processing options for US users
 
-If you want to enable Limited Data Use for people in California via customer list custom audiences on or after June 1, 2023, you must upload new audiences or [update your existing audiences](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/custom-audiences) with the Limited Data Use flag. Regularly update and maintain your audiences and people’s Limited Data Use statuses as needed.
+If you want to enable Limited Data Use for people in California via customer list custom audiences on or after June 1, 2023, you must upload new audiences or [update your existing audiences](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/custom-audiences) with the Limited Data Use flag. Regularly update and maintain your audiences and people's Limited Data Use statuses as needed.
 
 Please note that a Limited Data Use flag applied to a user in one audience will not automatically carry over to different audiences. In the same way advertisers must manage each of their existing customer list custom audiences separately by the criteria they select, the Limited Data Use flag must be applied separately to each audience they leverage for their advertising.
 
@@ -144,8 +144,8 @@ To enable LDU and manually specify the location:
 | --- | --- |
 | `session_id`  positive 64-bit integer | **Required**  Identifier used to track the session. This number **must** be generated by the advertiser and unique within a specific ad account. |
 | `batch_seq`  positive integer | **Required**  Number to identify the request listed in the current session. This number **must** be sequential and start from `1`. |
-| `last_batch_flag`  boolean | **Required**  Indicate to our systems that all batches for the ongoing Replace session have been provided. When set to `true`, the current request is the last one from the current session, and we don’t accept any further batches for that session. If you don’t send this flag, we automatically terminate the session 90 minutes after we receive your first batch. Any batch received after 90 minutes is also discarded. **You must mark the last request to let Meta know that this is the last batch.** |
-| `estimated_num_total`  integer | **Optional**  Estimated total number of users to be uploaded in this session. This field is used to improve this session’s processing. |
+| `last_batch_flag`  boolean | **Required**  Indicate to our systems that all batches for the ongoing Replace session have been provided. When set to `true`, the current request is the last one from the current session, and we don't accept any further batches for that session. If you don't send this flag, we automatically terminate the session 90 minutes after we receive your first batch. Any batch received after 90 minutes is also discarded. **You must mark the last request to let Meta know that this is the last batch.** |
+| `estimated_num_total`  integer | **Optional**  Estimated total number of users to be uploaded in this session. This field is used to improve this session's processing. |
 
 #### Response
 
@@ -167,7 +167,7 @@ These are errors that may be received when creating custom audiences.
 
 | Error Code | Error Subcode | Description | Resolution |
 | --- | --- | --- | --- |
-| 1 |  | Please reduce the amount of data you’re asking for, then retry your request | This relates to the limit of data to return in an API response. While there is no specific maximum limit, the best practice is to use a limit of 20 with pagination. |
+| 1 |  | Please reduce the amount of data you're asking for, then retry your request | This relates to the limit of data to return in an API response. While there is no specific maximum limit, the best practice is to use a limit of 20 with pagination. |
 | 100 | 1713098 | Invalid rule JSON format | Check the JSON format and parameters for issues, and retry the call. |
 | 200 | 1870050 | Permissions error | Check that the ad account is linked to the Meta Business Suite account. |
 | 200 | 1870090 | Custom Audience Terms Not Accepted | Follow the Terms of Service guidelines for custom audiences, specifically for the business the account is acting on behalf of or a shared ad account. To sign the contracts for the original business, a user has to switch to an ad account not acting on behalf of or owned by the business they need to accept. |
@@ -220,7 +220,7 @@ https://graph.facebook.com/<API_VERSION>/act_<AD_ACCOUNT_ID>/usersofanyaudience
 
 ## Multi-key matching
 
-To increase the match rate for your records, provide multiple keys in an array of individual keys; for example, [`EXTERN_ID`, `LN`, `FN`, `EMAIL`]. While you don’t need to hash `EXTERN_ID`, you must hash all personally identifying information, such as emails and names. For details, see [Hashing and Normalizing Data](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/audience-rules#hash).
+To increase the match rate for your records, provide multiple keys in an array of individual keys; for example, [`EXTERN_ID`, `LN`, `FN`, `EMAIL`]. While you don't need to hash `EXTERN_ID`, you must hash all personally identifying information, such as emails and names. For details, see [Hashing and Normalizing Data](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/audience-rules#hash).
 
 You can provide some or all multi-keys for a record.
 
@@ -292,7 +292,7 @@ curl -X POST \
 
 ### Hashing and normalization for multi-key
 
-You must hash data as `SHA256`; we don’t support other hashing mechanisms. This is required for all data except [External Identifiers](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/audience-rules#external_identifiers), [App User IDs](https://developers.facebook.com/docs/graph-api/reference/user), [Page Scoped User IDs](https://developers.facebook.com/docs/app-events/bots-for-messenger) and Mobile Advertiser IDs.
+You must hash data as `SHA256`; we don't support other hashing mechanisms. This is required for all data except [External Identifiers](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/audience-rules#external_identifiers), [App User IDs](https://developers.facebook.com/docs/graph-api/reference/user), [Page Scoped User IDs](https://developers.facebook.com/docs/app-events/bots-for-messenger) and Mobile Advertiser IDs.
 
 Before you hash your data, normalize it so we can handle it. **Only First name (`FN`) and Last Name (`LN`) support special characters and non-Roman alphabets. For the best match results, provide the Roman alphabet translation with no special characters.**
 
@@ -329,11 +329,11 @@ Provide `SHA256` values for normalized keys and `HEX` representations of this va
 
 You can match people for an audience with your own identifiers, known as External Identifiers (`EXTERN_ID`). This can be any unique ID from the advertiser, such as loyalty membership IDs, user IDs, and external cookie IDs.
 
-While you don’t need to hash this ID, you must hash all Personally Identifying Information (PII) that you send with the `EXTERN_ID`s.
+While you don't need to hash this ID, you must hash all Personally Identifying Information (PII) that you send with the `EXTERN_ID`s.
 
 For better matching, you should also use the exact format when you send the IDs. For example, if you choose to hash using SHA256, make sure to use the same hashed value.
 
-You can use these IDs as individual keys to delete people from Custom Audiences or create new Custom Audiences. This way you don’t need to re-upload any other matching keys. If you tag someone with hashed personal information and `EXTERN_ID`, we give `EXTERN_ID` lower precedence when we match them with people on Facebook.
+You can use these IDs as individual keys to delete people from Custom Audiences or create new Custom Audiences. This way you don't need to re-upload any other matching keys. If you tag someone with hashed personal information and `EXTERN_ID`, we give `EXTERN_ID` lower precedence when we match them with people on Facebook.
 
 The data retention period for `EXTERN_ID` is 90 days.
 
@@ -393,7 +393,7 @@ The `/<CUSTOM_AUDIENCE_ID>/usersreplace` endpoint allows you to perform 2 action
 * Completely remove existing users from a specific audience.
 * Replace those users with a new set of users.
 
-Using the `/<CUSTOM_AUDIENCE_ID>/usersreplace` endpoint allows you to automatically delete all existing users rather than having to upload a list of users you want to delete. **This endpoint does not reset your ad set’s [learning phase⁠](https://www.facebook.com/business/help/112167992830700) when an audience is part of active ad sets unlike POST or DELETE API calls to the [`/<CUSTOM_AUDIENCE_ID>/users` endpoint](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/custom-audience/users).**
+Using the `/<CUSTOM_AUDIENCE_ID>/usersreplace` endpoint allows you to automatically delete all existing users rather than having to upload a list of users you want to delete. **This endpoint does not reset your ad set's [learning phase⁠](https://www.facebook.com/business/help/112167992830700) when an audience is part of active ad sets unlike POST or DELETE API calls to the [`/<CUSTOM_AUDIENCE_ID>/users` endpoint](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/custom-audience/users).**
 
 The Replace Users API only works with audiences that meet the following requirements:
 
@@ -405,17 +405,17 @@ The Replace Users API only works with audiences that meet the following requirem
 
 Before you start a replace process, do the following:
 
-* Make sure your audience’s `operation_status` is `Normal`.
+* Make sure your audience's `operation_status` is `Normal`.
 
 You cannot perform a replace operation if there is one already being executed.
 
-* Don’t add or remove users via `/<CUSTOM_AUDIENCE_ID>/users` during an ongoing replace operation via `/<CUSTOM_AUDIENCE_ID>/usersreplace`. If you try performing a second replace operation before the first is completed, you will receive a message indicating a replace operation is already in progress.
-* The maximum duration window for 1 replace session is 90 minutes. The API will reject any batches for a session received after 90 minutes from the time the session started. If you need to send batches for a duration longer than 90 minutes, wait until the replace operation for that session is done, then use the `/<CUSTOM_AUDIENCE>/users` endpoint’s add operation for the rest of your uploads.
+* Don't add or remove users via `/<CUSTOM_AUDIENCE_ID>/users` during an ongoing replace operation via `/<CUSTOM_AUDIENCE_ID>/usersreplace`. If you try performing a second replace operation before the first is completed, you will receive a message indicating a replace operation is already in progress.
+* The maximum duration window for 1 replace session is 90 minutes. The API will reject any batches for a session received after 90 minutes from the time the session started. If you need to send batches for a duration longer than 90 minutes, wait until the replace operation for that session is done, then use the `/<CUSTOM_AUDIENCE>/users` endpoint's add operation for the rest of your uploads.
 * When using multi-batch uploads with session IDs, the schema defined in the first batch must be maintained consistently across all subsequent batches in that session, and changing the schema mid-session will result in errors.
 * Once your audience is ready, specify the list of users you want to replace with your custom audience using a `POST` call to `/<CUSTOM_AUDIENCE_ID>/usersreplace`.
 
-  * Once you start the replacement progress, your audience’s `operation_status` switches to `replace_in_progress`.
-  * If your replacement operation is incomplete, your audience’s `operation_status` switches to `replace_error`.
+  * Once you start the replacement progress, your audience's `operation_status` switches to `replace_in_progress`.
+  * If your replacement operation is incomplete, your audience's `operation_status` switches to `replace_error`.
   * If an `operation_status` of 471 is returned, the custom audience has been flagged for integrity reasons.
 
 ### Sample request
@@ -445,8 +445,8 @@ You can include the following parameters in your `POST` call to `/<CUSTOM_AUDIEN
 
 | Name | Description |
 | --- | --- |
-| `session`  JSON object | **Required.**  Used to track if a specific batch of users has been uploaded. Must include a session ID and batch information. See [Session Fields](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/audience-rules#session-fields).  You can add up to 10,000 people to an audience at a given time. If you have more than 10,000 people, split your session into multiple batches, which should all have 1 session ID.  Example:  ```  ``` {   'session_id':9778993,   'batch_seq':10,   'last_batch_flag':true,   'estimated_num_total':99996 } ``` ``` |
-| `payload`  JSON object | **Required.**  Used to provide the information you want to be uploaded to your audience. Must include `schema` and `data`. See [Payload Fields](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/audience-rules#payload-fields) for more information.  Example:  ```  ``` {   "schema":"EMAIL",   "data":[     ["<HASHED_EMAIL>"],     ["<HASHED_EMAIL>"],     ["<HASHED_EMAIL>"]   ] } ``` ``` |
+| `session`  JSON object | **Required.**  Used to track if a specific batch of users has been uploaded. Must include a session ID and batch information. See [Session Fields](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/audience-rules#session-fields).  You can add up to 10,000 people to an audience at a given time. If you have more than 10,000 people, split your session into multiple batches, which should all have 1 session ID.  Example:  ``` {   'session_id':9778993,   'batch_seq':10,   'last_batch_flag':true,   'estimated_num_total':99996 } ``` |
+| `payload`  JSON object | **Required.**  Used to provide the information you want to be uploaded to your audience. Must include `schema` and `data`. See [Payload Fields](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/audience-rules#payload-fields) for more information.  Example:  ``` {   "schema":"EMAIL",   "data":[     ["<HASHED_EMAIL>"],     ["<HASHED_EMAIL>"],     ["<HASHED_EMAIL>"]   ] } ``` |
 
 #### `session` object fields
 
@@ -455,13 +455,13 @@ You can include the following parameters in your `POST` call to `/<CUSTOM_AUDIEN
 | `session_id`  64-bit integer | **Required.**  Used to track the session. You must generate this identifier and the number must be unique within the same ad account. |
 | `batch_seq`  integer | **Required. Must start at `1`.**  A new replace session starts when we receive a `batch_seq` of `1`. Avoid sending duplicate batches with a sequence of `1` for a given `session_id`.  Labeling the first batch is important; the rest of the batches of a session can be duplicates or any number except `1` because we use this parameter to identify the start of the session. All non-first batches for a session should be sent after the first batch. Consider the first batch as a trigger/pre-step for the replace operation. |
 | `last_batch_flag`  Boolean | **Optional.**  Indicates all batches for the ongoing replace session have been provided. When set to true, no further batches are accepted for that session. If you do not set this flag, the session is automatically terminated 90 minutes after the first batch is received. Any batch received after 90 minutes is also discarded. |
-| `estimated_num_total`  integer | **Optional.**  Estimated total number of users to be uploaded in this session. Used by our system to improve a session’s processing. |
+| `estimated_num_total`  integer | **Optional.**  Estimated total number of users to be uploaded in this session. Used by our system to improve a session's processing. |
 
 #### `payload` object fields
 
 | Name | Description |
 | --- | --- |
-| `schema`  string or JSON string array | **Required.**  Specify what type of information you will provide. It can be a single key or multi-key from this list:   * `EMAIL` * `PHONE` * `GEN` * `DOBY` * `DOBM` * `DOBD` * `LN` * `FN` * `FI` * `CT` * `ST` * `ZIP` * `COUNTRY` * `MADID` * `["hash1", "hash2", ...]`   Example:  ```  ``` ["PHONE", "LN", "FN", "ZIP", "DOBYM"] ``` ``` |
+| `schema`  string or JSON string array | **Required.**  Specify what type of information you will provide. It can be a single key or multi-key from this list:   * `EMAIL` * `PHONE` * `GEN` * `DOBY` * `DOBM` * `DOBD` * `LN` * `FN` * `FI` * `CT` * `ST` * `ZIP` * `COUNTRY` * `MADID` * `["hash1", "hash2", ...]`   Example:  ``` ["PHONE", "LN", "FN", "ZIP", "DOBYM"] ``` |
 | `data`  JSON array | **Required.**  List of data corresponding to the schema.  Examples:   * If the schema is `"EMAIL"`, the data should be a list of email `sha256` hashes. * If the schema is a list of hashes as in the previous example, the data should be like `"phone_hash_value"`, `"LN_FN_ZIP_DOBYM"`. |
 
 Once you make your `POST` request, you get a response with the following fields:
@@ -480,16 +480,16 @@ All errors returned from the `/{custom-sudience-id}/usersreplace` endpoint have 
 
 | Error SubCode | Description | What To Do |
 | --- | --- | --- |
-| 1870145 | Audience Update In Progress | You can’t replace a customer list custom audience that is in the process of being updated. Wait for the audience availability to become “Normal” and try again. |
-| 1870158 | Replace Session Timed Out | You’ve reached the 90-minute time limit for your replace batch session. Your customer list custom audience will be replaced with what you’ve uploaded so far. To add more to the custom audience, wait until the replace process is finished, and then use the `ADD` operation. |
+| 1870145 | Audience Update In Progress | You can't replace a customer list custom audience that is in the process of being updated. Wait for the audience availability to become "Normal" and try again. |
+| 1870158 | Replace Session Timed Out | You've reached the 90-minute time limit for your replace batch session. Your customer list custom audience will be replaced with what you've uploaded so far. To add more to the custom audience, wait until the replace process is finished, and then use the `ADD` operation. |
 | 1870147 | Invalid Upload Batch for Replace | The first `batch_seq` was not detected. You must start your `batch_seq` at integer `1`. |
 | 1870159 | Replace Session Finished | This replace operation is already finished because you uploaded a batch with `last_batch_flag==true`. To add additional batches to the custom audience, wait until the replace process is finished, and then use the `ADD` operation. |
 | 1870148 | Something Went Wrong | Your customer list was not fully updated. If your audience size is significantly different than expected, consider trying again. |
-| 1870144 | DFCA Size Not Supported For Replace | You can’t replace a customer list customer audience that has a size of 100 million or more. |
+| 1870144 | DFCA Size Not Supported For Replace | You can't replace a customer list customer audience that has a size of 100 million or more. |
 
 ## FAQ
 
-**What is the recommended maximum value of “limit” that should be used in the /customaudiences endpoint?**
+**What is the recommended maximum value of "limit" that should be used in the /customaudiences endpoint?**
 
 The `limit` field is the maximum number of objects that may be returned in an API call. There is no specific maximum value of the `limit` parameter when querying the custom audience endpoints.
 
@@ -512,9 +512,9 @@ No.
 
 Currently, there are no restrictions on the `customer_file_source` field when creating a custom audience using the Marketing API.
 
-**How do you resolve the “Custom Audience Terms Not Accepted” error?**
+**How do you resolve the "Custom Audience Terms Not Accepted" error?**
 
-The “Custom Audience Terms Not Accepted” error typically occurs when attempting to create or use a custom audience on Meta’s advertising platform without accepting the necessary terms and conditions or when accepting the terms and conditions for an ad account on behalf of or shared with different businesses.
+The "Custom Audience Terms Not Accepted" error typically occurs when attempting to create or use a custom audience on Meta's advertising platform without accepting the necessary terms and conditions or when accepting the terms and conditions for an ad account on behalf of or shared with different businesses.
 
 Please see the [Custom Audiences Terms of Service](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference/custom-audience-terms-of-service) document for more information on accepting the terms of service while checking the special use cases of shared ad accounts or on behalf of ad accounts.
 

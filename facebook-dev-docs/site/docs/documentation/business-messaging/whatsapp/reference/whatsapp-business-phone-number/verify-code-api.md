@@ -59,11 +59,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/settings' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/settings' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -74,68 +74,68 @@ Select status code
 
 ```
 {  
-  "Basic settings response": {  
-    "value": {  
-      "calling": {  
-        "status": "enabled",  
-        "call_icon_visibility": "visible",  
-        "ip_addresses": {  
-          "default": [  
-            "157.240.0.1",  
-            "157.240.0.2"  
-          ]  
-        },  
-        "callback_permission_status": "enabled",  
-        "video": {  
-          "status": "enabled"  
-        }  
-      },  
-      "payload_encryption": {  
-        "status": "disabled"  
-      },  
-      "storage_configuration": {  
-        "status": "default"  
-      }  
-    }  
-  },  
-  "Settings with SIP and encryption": {  
-    "value": {  
-      "calling": {  
-        "status": "enabled",  
-        "call_icon_visibility": "visible",  
-        "ip_addresses": {  
-          "default": [  
-            "157.240.0.1",  
-            "157.240.0.2"  
-          ]  
-        },  
-        "callback_permission_status": "enabled",  
-        "srtp_key_exchange_protocol": "DTLS-SRTP",  
-        "sip": {  
-          "status": "enabled",  
-          "servers": [  
-            {  
-              "app_id": "12345",  
-              "hostname": "sip.whatsapp.com",  
-              "port": 5060  
-            }  
-          ]  
-        },  
-        "video": {  
-          "status": "enabled"  
-        }  
-      },  
-      "payload_encryption": {  
-        "status": "enabled",  
-        "client_encryption_key_fingerprint": "SHA256:abcd1234...",  
-        "cloud_encryption_key": "eyJhbGc..."  
-      },  
-      "storage_configuration": {  
-        "status": "in_country_storage_enabled",  
-        "data_localization_region": "us"  
-      }  
-    }  
-  }  
+  "Basic settings response": {  
+    "value": {  
+      "calling": {  
+        "status": "enabled",  
+        "call_icon_visibility": "visible",  
+        "ip_addresses": {  
+          "default": [  
+            "157.240.0.1",  
+            "157.240.0.2"  
+          ]  
+        },  
+        "callback_permission_status": "enabled",  
+        "video": {  
+          "status": "enabled"  
+        }  
+      },  
+      "payload_encryption": {  
+        "status": "disabled"  
+      },  
+      "storage_configuration": {  
+        "status": "default"  
+      }  
+    }  
+  },  
+  "Settings with SIP and encryption": {  
+    "value": {  
+      "calling": {  
+        "status": "enabled",  
+        "call_icon_visibility": "visible",  
+        "ip_addresses": {  
+          "default": [  
+            "157.240.0.1",  
+            "157.240.0.2"  
+          ]  
+        },  
+        "callback_permission_status": "enabled",  
+        "srtp_key_exchange_protocol": "DTLS-SRTP",  
+        "sip": {  
+          "status": "enabled",  
+          "servers": [  
+            {  
+              "app_id": "12345",  
+              "hostname": "sip.whatsapp.com",  
+              "port": 5060  
+            }  
+          ]  
+        },  
+        "video": {  
+          "status": "enabled"  
+        }  
+      },  
+      "payload_encryption": {  
+        "status": "enabled",  
+        "client_encryption_key_fingerprint": "SHA256:abcd1234...",  
+        "cloud_encryption_key": "eyJhbGc..."  
+      },  
+      "storage_configuration": {  
+        "status": "in_country_storage_enabled",  
+        "data_localization_region": "us"  
+      }  
+    }  
+  }  
 }
 ```
 
@@ -450,11 +450,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/settings' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/settings' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -465,68 +465,68 @@ Select status code
 
 ```
 {  
-  "Basic settings response": {  
-    "value": {  
-      "calling": {  
-        "status": "enabled",  
-        "call_icon_visibility": "visible",  
-        "ip_addresses": {  
-          "default": [  
-            "157.240.0.1",  
-            "157.240.0.2"  
-          ]  
-        },  
-        "callback_permission_status": "enabled",  
-        "video": {  
-          "status": "enabled"  
-        }  
-      },  
-      "payload_encryption": {  
-        "status": "disabled"  
-      },  
-      "storage_configuration": {  
-        "status": "default"  
-      }  
-    }  
-  },  
-  "Settings with SIP and encryption": {  
-    "value": {  
-      "calling": {  
-        "status": "enabled",  
-        "call_icon_visibility": "visible",  
-        "ip_addresses": {  
-          "default": [  
-            "157.240.0.1",  
-            "157.240.0.2"  
-          ]  
-        },  
-        "callback_permission_status": "enabled",  
-        "srtp_key_exchange_protocol": "DTLS-SRTP",  
-        "sip": {  
-          "status": "enabled",  
-          "servers": [  
-            {  
-              "app_id": "12345",  
-              "hostname": "sip.whatsapp.com",  
-              "port": 5060  
-            }  
-          ]  
-        },  
-        "video": {  
-          "status": "enabled"  
-        }  
-      },  
-      "payload_encryption": {  
-        "status": "enabled",  
-        "client_encryption_key_fingerprint": "SHA256:abcd1234...",  
-        "cloud_encryption_key": "eyJhbGc..."  
-      },  
-      "storage_configuration": {  
-        "status": "in_country_storage_enabled",  
-        "data_localization_region": "us"  
-      }  
-    }  
-  }  
+  "Basic settings response": {  
+    "value": {  
+      "calling": {  
+        "status": "enabled",  
+        "call_icon_visibility": "visible",  
+        "ip_addresses": {  
+          "default": [  
+            "157.240.0.1",  
+            "157.240.0.2"  
+          ]  
+        },  
+        "callback_permission_status": "enabled",  
+        "video": {  
+          "status": "enabled"  
+        }  
+      },  
+      "payload_encryption": {  
+        "status": "disabled"  
+      },  
+      "storage_configuration": {  
+        "status": "default"  
+      }  
+    }  
+  },  
+  "Settings with SIP and encryption": {  
+    "value": {  
+      "calling": {  
+        "status": "enabled",  
+        "call_icon_visibility": "visible",  
+        "ip_addresses": {  
+          "default": [  
+            "157.240.0.1",  
+            "157.240.0.2"  
+          ]  
+        },  
+        "callback_permission_status": "enabled",  
+        "srtp_key_exchange_protocol": "DTLS-SRTP",  
+        "sip": {  
+          "status": "enabled",  
+          "servers": [  
+            {  
+              "app_id": "12345",  
+              "hostname": "sip.whatsapp.com",  
+              "port": 5060  
+            }  
+          ]  
+        },  
+        "video": {  
+          "status": "enabled"  
+        }  
+      },  
+      "payload_encryption": {  
+        "status": "enabled",  
+        "client_encryption_key_fingerprint": "SHA256:abcd1234...",  
+        "cloud_encryption_key": "eyJhbGc..."  
+      },  
+      "storage_configuration": {  
+        "status": "in_country_storage_enabled",  
+        "data_localization_region": "us"  
+      }  
+    }  
+  }  
 }
 ```
 
@@ -555,18 +555,18 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/settings' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "calling": {  
-    "status": "enabled",  
-    "call_icon_visibility": "visible",  
-    "video": {  
-      "status": "enabled"  
-    }  
-  }  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/settings' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "calling": {  
+    "status": "enabled",  
+    "call_icon_visibility": "visible",  
+    "video": {  
+      "status": "enabled"  
+    }  
+  }  
 }'
 ```
 
@@ -578,11 +578,11 @@ Select status code
 
 ```
 {  
-  "Settings updated successfully": {  
-    "value": {  
-      "success": true  
-    }  
-  }  
+  "Settings updated successfully": {  
+    "value": {  
+      "success": true  
+    }  
+  }  
 }
 ```
 
@@ -791,18 +791,18 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/settings' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "calling": {  
-    "status": "enabled",  
-    "call_icon_visibility": "visible",  
-    "video": {  
-      "status": "enabled"  
-    }  
-  }  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/settings' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "calling": {  
+    "status": "enabled",  
+    "call_icon_visibility": "visible",  
+    "video": {  
+      "status": "enabled"  
+    }  
+  }  
 }'
 ```
 
@@ -814,11 +814,11 @@ Select status code
 
 ```
 {  
-  "Settings updated successfully": {  
-    "value": {  
-      "success": true  
-    }  
-  }  
+  "Settings updated successfully": {  
+    "value": {  
+      "success": true  
+    }  
+  }  
 }
 ```
 

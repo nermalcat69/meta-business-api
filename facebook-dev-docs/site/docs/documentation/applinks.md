@@ -18,7 +18,7 @@ You can make your existing web content discoverable to mobile clients that suppo
 Some libraries to help you implement App Links quickly.
 
 **[Samples Apps on GitHub⁠](https://github.com/AppLinks/Samples?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR4pv75TAH7vLM6p18VRtyd-D30DEikq-jRxTZnKgjG_dcrX3mw3TxLIUeYpJQ_aem_W3ZBl6WUIj-huxVUI4Kn_w)**  
-We’ve provided a few sample apps that you can use as a basis to modify your app to support App Links.
+We've provided a few sample apps that you can use as a basis to modify your app to support App Links.
 
 **[Best Practices](https://developers.facebook.com/docs/applinks/best-practices)**  
 Learn best practices for setting up App Links.

@@ -16,11 +16,11 @@ This document provides an overview of the audience targeting options offered by 
 
 ## Custom Audiences
 
-Beginning September 2, 2025, we will start to roll out more proactive restrictions on custom audiences that may suggest information not permitted under our terms. For example, any custom audience or lookalike audience suggesting specific health conditions (e.g., “arthritis”, “diabetes”) or financial status (e.g., “credit score”, “high income”) will be flagged and prevented from being used to run ad campaigns.
+Beginning September 2, 2025, we will start to roll out more proactive restrictions on custom audiences that may suggest information not permitted under our terms. For example, any custom audience or lookalike audience suggesting specific health conditions (e.g., "arthritis", "diabetes") or financial status (e.g., "credit score", "high income") will be flagged and prevented from being used to run ad campaigns.
 
 **What these restrictions mean for your campaigns:**
 
-* You won’t be able to use flagged custom audiences when creating new campaigns.
+* You won't be able to use flagged custom audiences when creating new campaigns.
 * If you have an active campaign using flagged custom audiences, you should edit or pause it and choose a different audience to avoid performance and delivery issues.
 
 **For API developers:**
@@ -41,7 +41,7 @@ The [`ads_management`](https://developers.facebook.com/docs/permissions/referenc
 
 #### [Customer File Custom Audiences](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/custom-audiences)
 
-Build target Custom Audiences from customer information. This includes email addresses, phone numbers, names, dates of birth, gender, locations, [App User IDs](https://developers.facebook.com/docs/graph-api/reference/user), [Page Scoped User IDs](https://developers.facebook.com/docs/app-events/bots-for-messenger), Apple’s Advertising Identifier (IDFA), or [Android Advertising ID⁠](https://developer.android.com/google/play-services/id.html).
+Build target Custom Audiences from customer information. This includes email addresses, phone numbers, names, dates of birth, gender, locations, [App User IDs](https://developers.facebook.com/docs/graph-api/reference/user), [Page Scoped User IDs](https://developers.facebook.com/docs/app-events/bots-for-messenger), Apple's Advertising Identifier (IDFA), or [Android Advertising ID⁠](https://developer.android.com/google/play-services/id.html).
 
 #### [Engagement Custom Audiences](https://developers.facebook.com/docs/marketing-api/audiences-api/engagement)
 
@@ -49,7 +49,7 @@ Build audiences based on people who engaged with your content on Facebook or Ins
 
 #### [Mobile App Custom Audiences](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/mobile-app-custom-audiences)
 
-Build audiences based on peoples’ actions in your app that meet your criteria. This solution uses logged named events through our [Facebook SDKs](https://developers.facebook.com/docs/app-ads/sdk), [App Events API](https://developers.facebook.com/docs/app-events), or via [Mobile Measurement Partners](https://developers.facebook.com/docs/app-ads/measuring/measurement-partners).
+Build audiences based on peoples' actions in your app that meet your criteria. This solution uses logged named events through our [Facebook SDKs](https://developers.facebook.com/docs/app-ads/sdk), [App Events API](https://developers.facebook.com/docs/app-events), or via [Mobile Measurement Partners](https://developers.facebook.com/docs/app-ads/measuring/measurement-partners).
 
 #### [Website Custom Audiences](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/website-custom-audiences)
 
@@ -65,7 +65,7 @@ Dynamic Ads enables you to show people ads based on their cross-device purchasin
 
 #### [Lookalike Audiences](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/lookalike-audiences)
 
-Target people most like your already established customers. Lookalike audiences take several sets of people as “seeds” then Facebook builds an audience of similar people. You can use lookalikes for any business objective — targeting people similar to your customers for fan acquisition, site registration, off-Facebook purchases, coupon claims, or simply to drive awareness of a brand.
+Target people most like your already established customers. Lookalike audiences take several sets of people as "seeds" then Facebook builds an audience of similar people. You can use lookalikes for any business objective — targeting people similar to your customers for fan acquisition, site registration, off-Facebook purchases, coupon claims, or simply to drive awareness of a brand.
 
 ### Sharing a Custom Audience
 
@@ -73,11 +73,11 @@ You may choose to share your Custom Audience with another business, such as a pa
 
 ### Custom Audiences deletion
 
-For all advertisers beginning June 8, 2021, and going forward, we will automatically be moving audiences to the “Expiring Audience” stage once they have been inactive for over two years. This means that once an audience meets the threshold of not being used in an active ad set for over two years, it will be automatically flagged as an “Expiring Audience”, and the `delete_time` field will be marked with the estimated deletion time (i.e., 90 days from the time of flagging) when the audience is scheduled to be deleted.
+For all advertisers beginning June 8, 2021, and going forward, we will automatically be moving audiences to the "Expiring Audience" stage once they have been inactive for over two years. This means that once an audience meets the threshold of not being used in an active ad set for over two years, it will be automatically flagged as an "Expiring Audience", and the `delete_time` field will be marked with the estimated deletion time (i.e., 90 days from the time of flagging) when the audience is scheduled to be deleted.
 
 You will then be able to either proactively delete the audience or use the audience in an active ad set to prevent deletion. You can see which of your audiences are in the expiring stage at any time by filtering on their `operation_status` or `delete_time` fields.
 
-For [Customer List Custom Audiences](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/custom-audiences), specifically, you will need to provide us with your instructions before we take any action. Once audiences are moved to the “Expiring Audience” stage and flagged, you will need to provide your instructions by either using the flagged audience in an active ad set, which we will consider an instruction to retain the audience, or by deciding not to use the flagged audience in an active ad set, which we will consider an instruction to delete the audience.
+For [Customer List Custom Audiences](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/custom-audiences), specifically, you will need to provide us with your instructions before we take any action. Once audiences are moved to the "Expiring Audience" stage and flagged, you will need to provide your instructions by either using the flagged audience in an active ad set, which we will consider an instruction to retain the audience, or by deciding not to use the flagged audience in an active ad set, which we will consider an instruction to delete the audience.
 
 #### Custom Audience
 
@@ -143,7 +143,7 @@ Any Custom Audience, Lookalike Audience, or Saved Audience which has not been us
 
 **Is there any action I can take to prevent my flagged audiences from being deleted on the planned deletion date?**
 
-If you do not wish for the identified audiences to be deleted, you will be required to include the audiences marked as “Expiring Audience” in an active ad set prior to the deletion date shown in the `delete_time` field, which is 90 days after the audience is flagged, to keep it from being deleted.
+If you do not wish for the identified audiences to be deleted, you will be required to include the audiences marked as "Expiring Audience" in an active ad set prior to the deletion date shown in the `delete_time` field, which is 90 days after the audience is flagged, to keep it from being deleted.
 
 For [Customer List Custom Audiences](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/custom-audiences), specifically, you will need to provide us with your instructions by either using the flagged audience in an active ad set, which we will consider an instruction to retain the audience, or by deciding not to use the flagged audience in an active ad set, which we will consider an instruction to delete the audience.
 

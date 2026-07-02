@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/marketing
 
 Updated: Jan 14, 2025
 
-Advantage+ Creative is for ads using a single image, single video, carousel, catalog, or existing post. It automatically creates multiple variations of your ad and shows a personalized variation to each Account Center account based on what they’re most likely to respond to.
+Advantage+ Creative is for ads using a single image, single video, carousel, catalog, or existing post. It automatically creates multiple variations of your ad and shows a personalized variation to each Account Center account based on what they're most likely to respond to.
 
 You can create ads with Advantage+ Creative to help drive performance and deliver more tailored ads to each Account Center account.
 

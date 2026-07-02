@@ -268,64 +268,62 @@ https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/adcreatives
 **Example** — Threads Feed Setup
 
 ```
-```
-curl -X POST \  
-  -F 'object_story_spec={  
-    "page_id": "<PAGE_ID>",  
-    "instagram_user_id": "<IG_USER_ID>",  
-    "threads_user_id" : "<THREADS_USER_ID>",  
-  }' \  
-  -F 'asset_feed_spec={  
-    "videos": [{  
-      "adlabels": [{"name": "labelfb"}],  
-      "video_id": "<VIDEO_ID>"  
-    },  
-    {  
-      "adlabels": [{"name": "labelig"}],  
-      "video_id": "<VIDEO_ID>"  
-    },  
-    {  
-      "adlabels": [{"name": "labelthreads"}],  
-      "video_id": "<VIDEO_ID>"  
-    }],  
-    "bodies": [{"text": "Begin Your Adventure"}],  
-    "link_urls": [{  
-      "website_url": "<WEBSITE_URL>",  
-      "display_url": "<DISPLAY_URL>"  
-    }],  
-    "titles": [{"text": "Level Up"}],  
-    "ad_formats": ["SINGLE_VIDEO"],  
-    "call_to_action_types": ["WATCH_MORE"],  
-    "descriptions": [{"text": "Description"}],  
-    "asset_customization_rules": [{  
-      "customization_spec": {  
-        "publisher_platforms": ["instagram"],  
-        "instagram_positions": ["stream"]  
-      },  
-      "video_label": {  
-        "name": "labelig"  
-      }  
-    },  
-    {  
-      "customization_spec": {  
-        "publisher_platforms": ["threads"],  
-        "threads_positions": ["threads_stream"]  
-      },  
-      "video_label": {  
-        "name": "labelthreads"  
-      }  
-    },  
-    {  
-      "customization_spec": {},  
-      "video_label": {  
-        "name": "labelfb"  
-      }  
-    }],  
-    "optimization_type": "PLACEMENT"  
-  }' \  
-  -F 'access_token=<ACCESS_TOKEN>' \  
+curl -X POST \  
+  -F 'object_story_spec={  
+    "page_id": "<PAGE_ID>",  
+    "instagram_user_id": "<IG_USER_ID>",  
+    "threads_user_id" : "<THREADS_USER_ID>",  
+  }' \  
+  -F 'asset_feed_spec={  
+    "videos": [{  
+      "adlabels": [{"name": "labelfb"}],  
+      "video_id": "<VIDEO_ID>"  
+    },  
+    {  
+      "adlabels": [{"name": "labelig"}],  
+      "video_id": "<VIDEO_ID>"  
+    },  
+    {  
+      "adlabels": [{"name": "labelthreads"}],  
+      "video_id": "<VIDEO_ID>"  
+    }],  
+    "bodies": [{"text": "Begin Your Adventure"}],  
+    "link_urls": [{  
+      "website_url": "<WEBSITE_URL>",  
+      "display_url": "<DISPLAY_URL>"  
+    }],  
+    "titles": [{"text": "Level Up"}],  
+    "ad_formats": ["SINGLE_VIDEO"],  
+    "call_to_action_types": ["WATCH_MORE"],  
+    "descriptions": [{"text": "Description"}],  
+    "asset_customization_rules": [{  
+      "customization_spec": {  
+        "publisher_platforms": ["instagram"],  
+        "instagram_positions": ["stream"]  
+      },  
+      "video_label": {  
+        "name": "labelig"  
+      }  
+    },  
+    {  
+      "customization_spec": {  
+        "publisher_platforms": ["threads"],  
+        "threads_positions": ["threads_stream"]  
+      },  
+      "video_label": {  
+        "name": "labelthreads"  
+      }  
+    },  
+    {  
+      "customization_spec": {},  
+      "video_label": {  
+        "name": "labelfb"  
+      }  
+    }],  
+    "optimization_type": "PLACEMENT"  
+  }' \  
+  -F 'access_token=<ACCESS_TOKEN>' \  
 https://graph.facebook.com/v23.0/act_<AD_ACCOUNT_ID>/adcreatives
-```
 ```
 
 See [all available options for Asset Feed Spec](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-creative/asset-feed-spec/options).

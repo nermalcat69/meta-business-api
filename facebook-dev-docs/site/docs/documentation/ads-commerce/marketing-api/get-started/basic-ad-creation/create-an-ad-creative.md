@@ -19,7 +19,7 @@ curl -X POST \
   -F 'name=My Ad Set' \
   -F 'campaign_id=<CAMPAIGN_ID>' \
   -F 'daily_budget=1000' \
-  -F 'targeting={"geo_locations":{"countries":["US"]}}' \
+  -F 'targeting={"geo_locations":{"countries":["US"]}​}' \
   -F 'access_token=<ACCESS_TOKEN>'
 ```
 

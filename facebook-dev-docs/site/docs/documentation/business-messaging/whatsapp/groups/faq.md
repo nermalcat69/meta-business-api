@@ -9,9 +9,9 @@ Updated: May 21, 2026
 
 ## Per-message pricing on Groups API
 
-Groups API uses Cloud API’s [per-message pricing model](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing#per-message-pricing) to determine if a given message is billable. However, **you are charged each time a billable message is delivered to someone in the group.**
+Groups API uses Cloud API's [per-message pricing model](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing#per-message-pricing) to determine if a given message is billable. However, **you are charged each time a billable message is delivered to someone in the group.**
 
-For example, if you send a (billable) marketing template message to a group with 5 WhatsApp users and it is delivered to all 5 users, you would be charged for 5 delivered messages at the going marketing message rate for each recipient’s country calling code.
+For example, if you send a (billable) marketing template message to a group with 5 WhatsApp users and it is delivered to all 5 users, you would be charged for 5 delivered messages at the going marketing message rate for each recipient's country calling code.
 
 If the message was delivered to only 4 of the 5 users, you would only be charged for the 4 delivered messages.
 

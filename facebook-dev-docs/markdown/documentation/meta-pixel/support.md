@@ -9,7 +9,7 @@ Updated: Apr 14, 2026
 
 We deprecated the Conversion Tracking Pixel in February, 2017, and it is no longer available for use. Start using the new Meta Pixel today — a single Pixel for more powerful advertising and measurement. For additional information about how to transition from the Conversion Tracking Pixel to the Meta Pixel, see [Advertiser Help Center, Meta Pixel⁠](https://www.facebook.com/business/help/651294705016616).
 
-If you use the Custom Audience Pixel or Conversion Tracking Pixel, you’ll want to migrate to the Meta Pixel. To start, get the new Pixel code:
+If you use the Custom Audience Pixel or Conversion Tracking Pixel, you'll want to migrate to the Meta Pixel. To start, get the new Pixel code:
 
 [Get the Pixel](https://www.facebook.com/ads/manager/pixel)
 
@@ -131,4 +131,4 @@ src="https://www.facebook.com/tr?id=FB_PIXEL_ID&ev=Purchase&cd[value]=0.00&cd[cu
 src="https://www.facebook.com/tr?id=FB_PIXEL_ID&ev=CustomEvent&cd[value]=0.00&cd[currency]=USD"/>
 ```
 
-In this example we use the `track` value to indicate we’re logging a standard event of type `Purchase` and we use `trackCustom` to track the custom events we define for use in Custom Audiences and custom conversions.
+In this example we use the `track` value to indicate we're logging a standard event of type `Purchase` and we use `trackCustom` to track the custom events we define for use in Custom Audiences and custom conversions.

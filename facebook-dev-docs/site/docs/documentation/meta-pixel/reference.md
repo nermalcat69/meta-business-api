@@ -15,7 +15,7 @@ If you are new to the Meta Pixel, or are having trouble tracking conversions, us
 
 ### Why does my URL show a 404 browser error instead of redirecting to the correct webpage when the ClickID is added?
 
-* When using URL Shortener Services and vanity URL’s, the click ID is added to the URL, however, the “`&`” is changed to a “`?`”, `&fbclid={facebook-click-id}` to `?fbclid={facebook-click-id}`, or vice versa causing the URL to break.
+* When using URL Shortener Services and vanity URL's, the click ID is added to the URL, however, the "`&`" is changed to a "`?`", `&fbclid={facebook-click-id}` to `?fbclid={facebook-click-id}`, or vice versa causing the URL to break.
 
 ### Why are my query string parameters, such as Click ID, missing in the URL?
 
@@ -26,7 +26,7 @@ Because these issues are happening on the webpage outside of Facebook, please wo
 
 ### Does the Meta Pixel impact website performance?
 
-The Meta Pixel is loaded asynchronously and does not block the display of the web page. Because all advertisers use the same Pixel script, the Pixel code will be already be in the browser’s cache If a user has visited any website with the Pixel installed.
+The Meta Pixel is loaded asynchronously and does not block the display of the web page. Because all advertisers use the same Pixel script, the Pixel code will be already be in the browser's cache If a user has visited any website with the Pixel installed.
 
 ## Learn More
 

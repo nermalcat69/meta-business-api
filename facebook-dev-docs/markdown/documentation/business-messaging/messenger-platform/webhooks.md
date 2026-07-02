@@ -39,7 +39,7 @@ This sample app leverages the following features:
 
 ## Deploy this experience on Messenger
 
-By the end of this guide, you’ll have a full Messenger app running on your server, answering messages from your test Page.
+By the end of this guide, you'll have a full Messenger app running on your server, answering messages from your test Page.
 
 ### Before You Start
 
@@ -141,15 +141,15 @@ Send a message to your Page from Facebook or in Messenger, if your webhook recei
 
 ### Make a Code Change
 
-Let’s edit the file **locales/en\_US.json**, replacing the message under get\_started.welcome and change it from “Hi {{userFirstName}}! Welcome to Original Coast Clothing...” to something else.
+Let's edit the file **locales/en\_US.json**, replacing the message under get\_started.welcome and change it from "Hi {​{userFirstName}​}! Welcome to Original Coast Clothing..." to something else.
 
-Back on the first terminal, every time you change the code, you’ll need to restart the NodeJS server. Let’s stop the server with Ctrl-C and run it again, to reload the new code.
+Back on the first terminal, every time you change the code, you'll need to restart the NodeJS server. Let's stop the server with Ctrl-C and run it again, to reload the new code.
 
 ```
 node app.js
 ```
 
-Open your Messenger and message your Page the word “Hi”, you should get the new message.
+Open your Messenger and message your Page the word "Hi", you should get the new message.
 
 ## Heroku Setup
 

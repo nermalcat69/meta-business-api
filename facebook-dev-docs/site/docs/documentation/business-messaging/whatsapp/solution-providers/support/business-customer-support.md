@@ -50,7 +50,7 @@ All [High quality](https://developers.facebook.com/documentation/business-messag
 
 The duplicated templates will be subjected to [Template Categorization Guidelines](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-categorization) checks to ensure that the templates are correctly categorized. This may result in some of the duplicated templates being `REJECTED`.
 
-If the destination WABA cannot accommodate all of the new templates, WhatsApp duplicates as many as possible until the destination WABA’s template limit has been reached. Un-duplicated templates must be re-created and submitted for approval if they are to be used by the destination WABA.
+If the destination WABA cannot accommodate all of the new templates, WhatsApp duplicates as many as possible until the destination WABA's template limit has been reached. Un-duplicated templates must be re-created and submitted for approval if they are to be used by the destination WABA.
 
 Note that the quality ratings of templates will **NOT** be migrated. All migrated templates will start with an `UNKNOWN` rating. The `UNKNOWN` rating will remain for the **first 24 hours**, after which a new rating will be generated if sufficient data is available.
 
@@ -88,12 +88,12 @@ Not Migrated:
 
 ## Before you start
 
-To be eligible for migration, a business’s assets must meet the following criteria:
+To be eligible for migration, a business's assets must meet the following criteria:
 
 | Asset | Requirements for Migration |
 | --- | --- |
-| Phone number | * Must be currently registered with the source WABA. * If two-step verification was ever enabled for this number, the source WABA owner needs to [disable it](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-phone-numbers/phone-numbers#disabling-two-step-verification).   The phone number’s owner is responsible for reaching out to the source WABA’s owner. |
-| Source WABA | * Must have Business Verification completed and approved. * WABA’s review status must be `Approved`. |
+| Phone number | * Must be currently registered with the source WABA. * If two-step verification was ever enabled for this number, the source WABA owner needs to [disable it](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-phone-numbers/phone-numbers#disabling-two-step-verification).   The phone number's owner is responsible for reaching out to the source WABA's owner. |
+| Source WABA | * Must have Business Verification completed and approved. * WABA's review status must be `Approved`. |
 | Destination WABA | * Must have Business Verification and WABA review completed and approved. * Must have a [payment method⁠](https://www.facebook.com/business/help/1684730811624773) set up. |
 | Webhooks | **Phone numbers on Cloud API only**  At least one app must be subscribed to webhooks for the destination WABA. See [Webhooks in Cloud API](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/overview). |
 
@@ -108,8 +108,8 @@ The type of destination WABA determines what needs to be done for the account to
 | Type of WABA | Considerations for Solution Partners performing migration |
 | --- | --- |
 | Existing WABA | Confirm that the existing (destination) WABA has a payment method set up.  If the source WABA is on Cloud API, make sure at least one app is subscribed to webhooks for the destination WABA. |
-| New WABA created by a Solution Partner messaging for a client | When creating a new WABA in the Meta Business Suite, a Solution Partner must:   * Enter an Account Name for the client (WABA Name) * Select a [payment method⁠](https://www.facebook.com/business/help/1684730811624773?id=2129163877102343) * Select **Client’s Account** in the **Messaging for** field, and * Enter the client’s Meta Business Suite ID — see [Find Your Business ID in Business Manager⁠](https://www.facebook.com/business/help/1181250022022158?id=180505742745347).   Solution Partners can then instruct their clients to accept the **Messaging For** request sent in Meta Business Suite. To guide your clients, see [Create Your WhatsApp Business Account With WhatsApp Solution Partners⁠](https://www.facebook.com/business/help/524220081677109). Once the request has been accepted, the destination WABA is ready for phone migration.  If the source WABA is on Cloud API, make sure at least one app is subscribed to webhooks for the destination WABA. |
-| New WABA created by a client and shared with a Solution Partner via Embedded Signup | This type of WABA is created once a client goes through the Embedded Signup flow on the Solution Partner’s website. To guide your clients, see [Create Your WhatsApp Business Account With WhatsApp Solution Partners, Embedded Signup⁠](https://www.facebook.com/business/help/524220081677109). During the Embedded Signup flow, instruct the client to:   * Select the same business as the one that owns their existing WABA. * Do not add a phone number via signup flow — you will use the migration API for this. Clients can finish the Embedded Signup flow after creating their WhatsApp Business account.   Use Embedded Signup APIs to [get the WABA created by the client](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/manage-accounts#get-list-of-shared-wabas), [add system users](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#system-user-access-tokens), and [set up a payment method for the WABA](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/share-and-revoke-credit-lines#sharing-your-credit-line).  Since the WABA is already shared with the Solution Partner, the WABA is ready for phone migration. **Reminder:** The migration only happens if the client’s business has completed Business Verification.  If the source WABA is on Cloud API, make sure at least one app is subscribed to webhooks for the destination WABA. |
+| New WABA created by a Solution Partner messaging for a client | When creating a new WABA in the Meta Business Suite, a Solution Partner must:   * Enter an Account Name for the client (WABA Name) * Select a [payment method⁠](https://www.facebook.com/business/help/1684730811624773?id=2129163877102343) * Select **Client's Account** in the **Messaging for** field, and * Enter the client's Meta Business Suite ID — see [Find Your Business ID in Business Manager⁠](https://www.facebook.com/business/help/1181250022022158?id=180505742745347).   Solution Partners can then instruct their clients to accept the **Messaging For** request sent in Meta Business Suite. To guide your clients, see [Create Your WhatsApp Business Account With WhatsApp Solution Partners⁠](https://www.facebook.com/business/help/524220081677109). Once the request has been accepted, the destination WABA is ready for phone migration.  If the source WABA is on Cloud API, make sure at least one app is subscribed to webhooks for the destination WABA. |
+| New WABA created by a client and shared with a Solution Partner via Embedded Signup | This type of WABA is created once a client goes through the Embedded Signup flow on the Solution Partner's website. To guide your clients, see [Create Your WhatsApp Business Account With WhatsApp Solution Partners, Embedded Signup⁠](https://www.facebook.com/business/help/524220081677109). During the Embedded Signup flow, instruct the client to:   * Select the same business as the one that owns their existing WABA. * Do not add a phone number via signup flow — you will use the migration API for this. Clients can finish the Embedded Signup flow after creating their WhatsApp Business account.   Use Embedded Signup APIs to [get the WABA created by the client](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/manage-accounts#get-list-of-shared-wabas), [add system users](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#system-user-access-tokens), and [set up a payment method for the WABA](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/share-and-revoke-credit-lines#sharing-your-credit-line).  Since the WABA is already shared with the Solution Partner, the WABA is ready for phone migration. **Reminder:** The migration only happens if the client's business has completed Business Verification.  If the source WABA is on Cloud API, make sure at least one app is subscribed to webhooks for the destination WABA. |
 
 ### Source WABA deletion
 
@@ -117,7 +117,7 @@ If you plan on deleting the source WABA after completing migration, verify that 
 
 ## Get started
 
-All migration calls are made to the endpoint with the destination WABA’s ID. Phone migration is always initiated by the Solution Partner or business that owns the destination WABA.
+All migration calls are made to the endpoint with the destination WABA's ID. Phone migration is always initiated by the Solution Partner or business that owns the destination WABA.
 
 ### Step 1: Disable two-step verification
 
@@ -151,11 +151,9 @@ curl -X POST \
 A successful API call returns:
 
 ```
-```
 {  
-  "id": "<PHONE_NUMBER_ID>"  
+  "id": "<PHONE_NUMBER_ID>"  
 }
-```
 ```
 
 ### Step 3: Verify phone ownership
@@ -179,7 +177,7 @@ curl -X POST \
   -d 'access_token=<ACCESS_TOKEN>'
 ```
 
-If your API call returns `success: true`, you should get your code via the selected `code_method` to the phone number being migrated — it may take a few minutes for the code to be delivered. The phone number’s owner needs to provide this code before you can verify the code.
+If your API call returns `success: true`, you should get your code via the selected `code_method` to the phone number being migrated — it may take a few minutes for the code to be delivered. The phone number's owner needs to provide this code before you can verify the code.
 
 To verify the code, use the [Verify Code API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/verify-code-api#post-version-phone-number-id-verify-code). Specify the following field:
 

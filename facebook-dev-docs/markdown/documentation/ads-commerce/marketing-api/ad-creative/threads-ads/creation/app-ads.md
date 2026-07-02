@@ -31,7 +31,7 @@ To create a [template creative](https://developers.facebook.com/documentation/ad
 | Name | Description of Threads Behavior |
 | --- | --- |
 | `child_attachments`  ([Advantage+ Catalog Ad Creation](https://developers.facebook.com/documentation/ads-commerce/marketing-api/advantage-catalog-ads/get-started#build-a-template-creative)) | Static cards appearing before all Advantage+ catalog ads will cause the ad to not be delivered to Threads. Ads with the static card appearing after the ads will still deliver to Threads. |
-| `preferred_video_tags`  ([Advantage+ Catalog Ad Creation](https://developers.facebook.com/documentation/ads-commerce/marketing-api/advantage-catalog-ads/get-started#build-a-template-creative)) | Won’t be used as Threads Advantage+ catalog ads will not render catalog product videos and will always default to catalog product images. |
+| `preferred_video_tags`  ([Advantage+ Catalog Ad Creation](https://developers.facebook.com/documentation/ads-commerce/marketing-api/advantage-catalog-ads/get-started#build-a-template-creative)) | Won't be used as Threads Advantage+ catalog ads will not render catalog product videos and will always default to catalog product images. |
 | `format_option`  ([Allow product video](https://developers.facebook.com/documentation/ads-commerce/marketing-api/advantage-catalog-ads/allow-product-video#create-ads-with-product-video)) | When the format is `single_video`, the ad will deliver on Threads as a single image. When the format is `carousel_slideshows` all items in the slideshow will render as static images instead. When the format is `collection_video`, all items in the slideshow will render as static images instead. The `carousel_images_single_item` and `carousel_images_multi_items` formats will be rendered as expected (as static image and image carousel, respectively). |
 | `media_type_automation`  ([Allow product video](https://developers.facebook.com/documentation/ads-commerce/marketing-api/advantage-catalog-ads/allow-product-video#create-ads-with-product-video)) | Even when `media_type_automation` is set to `OPT_IN`, Threads Advantage+ catalog ads will not render catalog product videos and will always default to catalog product images. |
 
@@ -47,10 +47,10 @@ curl \
     "threads_user_id": "<THREADS_USER_ID>",
     "page_id": "<PAGE_ID>",
     "template_data": {
-      "description": "Description {{product.description}}",
+      "description": "Description {​{product.description}​}",
       "link": "<LINK>",
-      "message": "Test {{product.name | titleize}}",
-      "name": "Headline {{product.price}}"
+      "message": "Test {​{product.name | titleize}​}",
+      "name": "Headline {​{product.price}​}"
     }
   }' \
   -F 'product_set_id=<PRODUCT_SET_ID>' \
@@ -63,11 +63,9 @@ https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/adcreatives
 The response to this call is the ID of a new Advantage+ catalog ads template creative.
 
 ```
-```
 {  
-  "id":"<AD_CREATIVE_ID>"  
+  "id":"<AD_CREATIVE_ID>"  
 }
-```
 ```
 
 ## Learn more

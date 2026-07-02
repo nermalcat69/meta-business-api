@@ -29,7 +29,7 @@ To get a list of Messaging Account IDs that have been shared with your business 
 | --- | --- | --- | --- |
 | **Phase 1 — General availability** | H2 2026 | All versions | Optional. If omitted, Meta determines the correct Messaging Account from the app making the request. |
 | **Phase 2 — New Graph API version** | H1 2027 | Newest version | **Required** when your app has access to more than one Messaging Account on the same WhatsApp Account. Meta rejects calls that omit `messaging_account_id`. |
-|  |  | Older versions | Still optional. Meta attempts to resolve the correct Messaging Account from your app’s association and returns an error if unable to. |
+|  |  | Older versions | Still optional. Meta attempts to resolve the correct Messaging Account from your app's association and returns an error if unable to. |
 | **Phase 3 — Mandatory transition** | H1 2028 | All versions | All Messages API versions require `messaging_account_id` for multi-Messaging Account setups. |
 
 ## Example syntax
@@ -37,22 +37,20 @@ To get a list of Messaging Account IDs that have been shared with your business 
 To charge a specific Messaging Account, include `messaging_account_id` in the request body:
 
 ```
-```
-curl -X POST \  
-  'https://graph.facebook.com/v22.0/<BUSINESS_PHONE_NUMBER_ID>/messages' \  
-  -H 'Authorization: Bearer <ACCESS_TOKEN>' \  
-  -H 'Content-Type: application/json' \  
-  -d '{  
-    "messaging_product": "whatsapp",  
-    "to": "<WHATSAPP_USER_PHONE_NUMBER>",  
-    "messaging_account_id": "<MESSAGING_ACCOUNT_ID>",  
-    "type": "template",  
-    "template": {  
-      "name": "<TEMPLATE_NAME>",  
-      "language": { "code": "<LANGUAGE_CODE>" }  
-    }  
-  }'
-```
+curl -X POST \  
+  'https://graph.facebook.com/v22.0/<BUSINESS_PHONE_NUMBER_ID>/messages' \  
+  -H 'Authorization: Bearer <ACCESS_TOKEN>' \  
+  -H 'Content-Type: application/json' \  
+  -d '{  
+    "messaging_product": "whatsapp",  
+    "to": "<WHATSAPP_USER_PHONE_NUMBER>",  
+    "messaging_account_id": "<MESSAGING_ACCOUNT_ID>",  
+    "type": "template",  
+    "template": {  
+      "name": "<TEMPLATE_NAME>",  
+      "language": { "code": "<LANGUAGE_CODE>" }  
+    }  
+  }'
 ```
 
 ## Billing and receipts
@@ -62,11 +60,9 @@ curl -X POST \
 Use the Messaging Account API to check which payment method is attached to a Messaging Account:
 
 ```
-```
-curl -X GET \  
-  'https://graph.facebook.com/v22.0/<MESSAGING_ACCOUNT_ID>?fields=primary_funding_id' \  
-  -H 'Authorization: Bearer <ACCESS_TOKEN>'
-```
+curl -X GET \  
+  'https://graph.facebook.com/v22.0/<MESSAGING_ACCOUNT_ID>?fields=primary_funding_id' \  
+  -H 'Authorization: Bearer <ACCESS_TOKEN>'
 ```
 
 If `primary_funding_id` is absent, the Messaging Account has no payment method attached and cannot send paid messages.

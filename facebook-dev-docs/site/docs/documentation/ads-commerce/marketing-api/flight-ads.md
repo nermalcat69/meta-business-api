@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/marketing
 
 Updated: Jun 26, 2026
 
-In a [static hotel feed](https://developers.facebook.com/documentation/ads-commerce/marketing-api/hotel-ads/catalog), you provide a single price for each hotel. This price can’t vary based on check-in date, length of stay, or room type. To display more accurate prices in your ads based on these variables, use dynamic (date-specific) pricing to provide prices for individual combinations of date, room type, and length of stay. Once you upload the pricing data, you can use [hotel template tags](https://developers.facebook.com/documentation/ads-commerce/marketing-api/hotel-ads/template-tags) to display these prices in your ads.
+In a [static hotel feed](https://developers.facebook.com/documentation/ads-commerce/marketing-api/hotel-ads/catalog), you provide a single price for each hotel. This price can't vary based on check-in date, length of stay, or room type. To display more accurate prices in your ads based on these variables, use dynamic (date-specific) pricing to provide prices for individual combinations of date, room type, and length of stay. Once you upload the pricing data, you can use [hotel template tags](https://developers.facebook.com/documentation/ads-commerce/marketing-api/hotel-ads/template-tags) to display these prices in your ads.
 
 Use [batch upload room types and pricing data](https://developers.facebook.com/documentation/ads-commerce/marketing-api/flight-ads#batch-upload) to share pricing details with Facebook.
 
@@ -28,7 +28,7 @@ If you use batch upload, limit uploads to 50 MB per file, approximately 50,000 i
 
 Upload one or more files with room types using the [Hotel Rooms Batch API](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-catalog/hotel_rooms_batch).
 
-**Note**: If you don’t have different room types, you can skip this step.
+**Note**: If you don't have different room types, you can skip this step.
 
 ```
 curl \

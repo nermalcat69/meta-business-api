@@ -9,7 +9,7 @@ Updated: Jun 28, 2026
 
 **Embedded signup v2 will be deprecated on October 15, 2026.** Migrate your integration to [v4](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/version-4) before that date to avoid disruption. See [Versions](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/versions) for the full upgrade path.
 
-This document describes how to use the [Client WhatsApp Business Accounts API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/business/client-whatsapp-business-accounts-api), [Owned WhatsApp Business Accounts API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/business/owned-whatsapp-business-accounts), and [WhatsApp Business Account API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/whatsapp-business-account-api) to manage your clients’ WhatsApp Business accounts.
+This document describes how to use the [Client WhatsApp Business Accounts API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/business/client-whatsapp-business-accounts-api), [Owned WhatsApp Business Accounts API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/business/owned-whatsapp-business-accounts), and [WhatsApp Business Account API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/whatsapp-business-account-api) to manage your clients' WhatsApp Business accounts.
 
 The API calls on this page use the `whatsapp_business_management` permission to access WABAs not owned by your business. If your app lacks **Advanced access** for this permission, these calls return error code `200`. See [App Review](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/app-review) to request **Advanced access**.
 
@@ -35,40 +35,38 @@ curl \
 ### Sample response
 
 ```
-```
 {  
-  "data" : {  
-    "app_id" : "670843887433847",  
-    "application" : "JaspersMarket",  
-    "data_access_expires_at" : 1672092840,  
-    "expires_at" : 1665090000,  
-    "granular_scopes" : [  
-      {  
-        "scope" : "whatsapp_business_management",  
-        "target_ids" : [  
-          "102289599326934", // ID of newest WABA to grant app whatsapp_business_management  
-          "101569239400667"  
-        ]  
-      },  
-      {  
-        "scope" : "whatsapp_business_messaging",  
-        "target_ids" : [  
-          "102289599326934",  
-          "101569239400667"  
-        ]  
-      }  
-    ],  
-    "is_valid" : true,  
-    "scopes" : [  
-       "whatsapp_business_management",  
-       "whatsapp_business_messaging",  
-       "public_profile"  
-    ],  
-    "type" : "USER",  
-    "user_id" : "10222270944537964"  
-  }  
+  "data" : {  
+    "app_id" : "670843887433847",  
+    "application" : "JaspersMarket",  
+    "data_access_expires_at" : 1672092840,  
+    "expires_at" : 1665090000,  
+    "granular_scopes" : [  
+      {  
+        "scope" : "whatsapp_business_management",  
+        "target_ids" : [  
+          "102289599326934", // ID of newest WABA to grant app whatsapp_business_management  
+          "101569239400667"  
+        ]  
+      },  
+      {  
+        "scope" : "whatsapp_business_messaging",  
+        "target_ids" : [  
+          "102289599326934",  
+          "101569239400667"  
+        ]  
+      }  
+    ],  
+    "is_valid" : true,  
+    "scopes" : [  
+       "whatsapp_business_management",  
+       "whatsapp_business_messaging",  
+       "public_profile"  
+    ],  
+    "type" : "USER",  
+    "user_id" : "10222270944537964"  
+  }  
 }
-```
 ```
 
 Each object in the `granular_scopes` array identifies the IDs of every WABA that has granted your app a given permission (`scope`). IDs for the most recently onboarded WABAs appear first, so capture the first ID in the `target_ids` array for the `whatsapp_business_management` scope.
@@ -98,32 +96,30 @@ curl \
 ### Sample response
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "id": "1906385232743451",  
-      "name": "My WhatsApp Business Account",  
-      "currency": "USD",  
-      "timezone_id": "1",  
-      "message_template_namespace": "abcdefghijk_12lmnop"  
-    },  
-    {  
-      "id": "1972385232742141",  
-      "name": "My Regional Account",  
-      "currency": "INR",  
-      "timezone_id": "5",  
-      "message_template_namespace": "12abcdefghijk_34lmnop"  
-    }  
-  ],  
-  "paging": {  
-    "cursors": {  
-      "before": "abcdefghij",  
-      "after": "klmnopqr"  
-    }  
-  }  
+  "data": [  
+    {  
+      "id": "1906385232743451",  
+      "name": "My WhatsApp Business Account",  
+      "currency": "USD",  
+      "timezone_id": "1",  
+      "message_template_namespace": "abcdefghijk_12lmnop"  
+    },  
+    {  
+      "id": "1972385232742141",  
+      "name": "My Regional Account",  
+      "currency": "INR",  
+      "timezone_id": "5",  
+      "message_template_namespace": "12abcdefghijk_34lmnop"  
+    }  
+  ],  
+  "paging": {  
+    "cursors": {  
+      "before": "abcdefghij",  
+      "after": "klmnopqr"  
+    }  
+  }  
 }
-```
 ```
 
 ## Understanding shared WABAs
@@ -154,21 +150,21 @@ Your clients onboarding via Embedded Signup can see and do the following:
 
 You cannot disable what your clients can see or do, or customize their views.
 
-Your clients can visit [Manage your WhatsApp Solution Partner’s permissions⁠](https://www.facebook.com/business/help/861444384718867) for more information.
+Your clients can visit [Manage your WhatsApp Solution Partner's permissions⁠](https://www.facebook.com/business/help/861444384718867) for more information.
 
 ### Notifications
 
 You receive relevant notifications via webhooks and through Meta Business Suite when:
 
 * A client shares a WABA.
-* Messaging limits or quality rating changes for a client’s WABA.
+* Messaging limits or quality rating changes for a client's WABA.
 * A phone number display name or a template is approved.
 
-If a client leaves the Embedded Signup flow before completing it, the client may have shared the WABA but the phone number’s certificate may not be ready. Without a ready certificate, you cannot register the number for API use. Reach out to the client to help them complete the Embedded Signup flow.
+If a client leaves the Embedded Signup flow before completing it, the client may have shared the WABA but the phone number's certificate may not be ready. Without a ready certificate, you cannot register the number for API use. Reach out to the client to help them complete the Embedded Signup flow.
 
 ## Get list of owned WhatsApp Business accounts
 
-Use the [Owned WhatsApp Business Accounts API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/business/owned-whatsapp-business-accounts) to [get a list of the WABAs](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/business/owned-whatsapp-business-accounts#get-version-business-id-owned-whatsapp-business-accounts) that your business owns. For the request, use your system user’s access token.
+Use the [Owned WhatsApp Business Accounts API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/business/owned-whatsapp-business-accounts) to [get a list of the WABAs](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/business/owned-whatsapp-business-accounts#get-version-business-id-owned-whatsapp-business-accounts) that your business owns. For the request, use your system user's access token.
 
 ### Request syntax
 
@@ -187,32 +183,30 @@ curl \
 ### Sample response
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "id": "1906385232743451",  
-      "name": "My WhatsApp Business Account",  
-      "currency": "USD",  
-      "timezone_id": "1",  
-      "message_template_namespace": "abcdefghijk_12lmnop"  
-    },  
-    {  
-      "id": "1972385232742141",  
-      "name": "My Regional Account",  
-      "currency": "INR",  
-      "timezone_id": "5",  
-      "message_template_namespace": "12abcdefghijk_34lmnop"  
-    }  
-  ],  
-  "paging": {  
-    "cursors": {  
-      "before": "abcdefghij",  
-      "after": "klmnopqr"  
-    }  
-  }  
+  "data": [  
+    {  
+      "id": "1906385232743451",  
+      "name": "My WhatsApp Business Account",  
+      "currency": "USD",  
+      "timezone_id": "1",  
+      "message_template_namespace": "abcdefghijk_12lmnop"  
+    },  
+    {  
+      "id": "1972385232742141",  
+      "name": "My Regional Account",  
+      "currency": "INR",  
+      "timezone_id": "5",  
+      "message_template_namespace": "12abcdefghijk_34lmnop"  
+    }  
+  ],  
+  "paging": {  
+    "cursors": {  
+      "before": "abcdefghij",  
+      "after": "klmnopqr"  
+    }  
+  }  
 }
-```
 ```
 
 ## Filter WABAs by creation time
@@ -239,15 +233,13 @@ The `filtering` value can be an array containing a single object comprised of th
 ### Sample object
 
 ```
-```
 [  
-  {  
-    "field" : "creation_time",  
-    "operator" : "GREATER_THAN",  
-    "value" : "1604962813"  
-  }  
+  {  
+    "field" : "creation_time",  
+    "operator" : "GREATER_THAN",  
+    "value" : "1604962813"  
+  }  
 ]
-```
 ```
 
 ### Sample request
@@ -305,37 +297,35 @@ curl \
 ### Sample response
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "id": "1906385232743451",  
-      "name": "My WhatsApp Business Account",  
-      "currency": "USD",  
-      "timezone_id": "1",  
-      "message_template_namespace": "abcdefghijk_12lmnop"  
-    },  
-    {  
-      "id": "1972385232742141",  
-      "name": "My Regional Account",  
-      "currency": "INR",  
-      "timezone_id": "5",  
-      "message_template_namespace": "12abcdefghijk_34lmnop"  
-    }  
-  ],  
-  "paging": {  
-    "cursors": {  
-      "before": "abcdefghij",  
-      "after": "klmnopqr"  
-    }  
-  }  
+  "data": [  
+    {  
+      "id": "1906385232743451",  
+      "name": "My WhatsApp Business Account",  
+      "currency": "USD",  
+      "timezone_id": "1",  
+      "message_template_namespace": "abcdefghijk_12lmnop"  
+    },  
+    {  
+      "id": "1972385232742141",  
+      "name": "My Regional Account",  
+      "currency": "INR",  
+      "timezone_id": "5",  
+      "message_template_namespace": "12abcdefghijk_34lmnop"  
+    }  
+  ],  
+  "paging": {  
+    "cursors": {  
+      "before": "abcdefghij",  
+      "after": "klmnopqr"  
+    }  
+  }  
 }
-```
 ```
 
 ## Retrieve WABA review status
 
-Use the [WhatsApp Business Account API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/whatsapp-business-account-api) to [get a WhatsApp Business account’s review status](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/whatsapp-business-account-api#get-version-waba-id) by requesting the `account_review_status` field.
+Use the [WhatsApp Business Account API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/whatsapp-business-account-api) to [get a WhatsApp Business account's review status](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/whatsapp-business-account-api#get-version-waba-id) by requesting the `account_review_status` field.
 
 ### Request syntax
 
@@ -355,12 +345,10 @@ curl \
 ### Sample response
 
 ```
-```
 {  
-  "account_review_status": "APPROVED",  
-  "id": "1111111111111"  
+  "account_review_status": "APPROVED",  
+  "id": "1111111111111"  
 }
-```
 ```
 
 The `account_review_status` property can have one of the following values: `PENDING`, `APPROVED`, and `REJECTED`.

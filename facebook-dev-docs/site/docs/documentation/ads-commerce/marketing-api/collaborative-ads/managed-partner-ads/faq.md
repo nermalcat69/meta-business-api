@@ -19,7 +19,7 @@ Use this API to look up the Business ID for a given seller or `vendor_id`.
 
 ### Access token type
 
-To call this API, use the access token created by an admin system user that belongs to the parent Business Manager (the marketplace’s Meta Business Suite).
+To call this API, use the access token created by an admin system user that belongs to the parent Business Manager (the marketplace's Meta Business Suite).
 
 #### Sample `GET` request
 
@@ -42,12 +42,12 @@ curl -X GET \
 Use this API to retrieve seller metadata of a Managed Partner Ads seller child business. The metadata from the API response includes:
 
 * Managed Partner Ads assets: page, ad account, payment method
-* Seller’s custom template info
+* Seller's custom template info
 * Seller business info: name
 
 ### Access token type
 
-To call this API, use the access token created by an admin system user that belongs to the parent Business Manager (the marketplace’s Meta Business Suite).
+To call this API, use the access token created by an admin system user that belongs to the parent Business Manager (the marketplace's Meta Business Suite).
 
 ### Business ID type
 
@@ -148,23 +148,23 @@ curl \
 
 ## Update seller business configuration API
 
-Use this API to update a seller’s business information. You can update a seller’s business information, like external website URL or email address, and/or their Managed Partner Ads assets, like active ad account or an ad creation custom campaign template. See [Available Parameters](https://developers.facebook.com/documentation/ads-commerce/marketing-api/collaborative-ads/managed-partner-ads/faq#update-seller-available-parameters) for more information.
+Use this API to update a seller's business information. You can update a seller's business information, like external website URL or email address, and/or their Managed Partner Ads assets, like active ad account or an ad creation custom campaign template. See [Available Parameters](https://developers.facebook.com/documentation/ads-commerce/marketing-api/collaborative-ads/managed-partner-ads/faq#update-seller-available-parameters) for more information.
 
-To create and get a Seller’s Business, see [Seller Business Creation API](https://developers.facebook.com/documentation/ads-commerce/marketing-api/collaborative-ads/managed-partner-ads/api-guide/mpa-ads). To find the Business ID of existing seller, see [Lookup Seller Business API](https://developers.facebook.com/documentation/ads-commerce/marketing-api/collaborative-ads/managed-partner-ads/faq#lookup-seller-business).
+To create and get a Seller's Business, see [Seller Business Creation API](https://developers.facebook.com/documentation/ads-commerce/marketing-api/collaborative-ads/managed-partner-ads/api-guide/mpa-ads). To find the Business ID of existing seller, see [Lookup Seller Business API](https://developers.facebook.com/documentation/ads-commerce/marketing-api/collaborative-ads/managed-partner-ads/faq#lookup-seller-business).
 
 ### Access token type
 
-To call this API, use the access token that belongs to each individual child Business Manager (the seller’s Meta Business Suite).
+To call this API, use the access token that belongs to each individual child Business Manager (the seller's Meta Business Suite).
 
 ### Available parameters
 
 | Field | Description |
 | --- | --- |
-| `seller_external_website_url`  type: string | **Optional.**  Seller’s external website URL. |
+| `seller_external_website_url`  type: string | **Optional.**  Seller's external website URL. |
 | `seller_email_address`  type: string | **Optional.**  A unique email address value. |
-| `active_page_id`  type: string | **Optional.**  Seller’s Page ID to run campaign. |
-| `active_ad_account_id`  type: string | **Optional.**  Seller’s active ad account. |
-| `template`  type: JSON | **Optional.**  Seller’s Custom Template. [Sample](https://developers.facebook.com/documentation/ads-commerce/marketing-api/collaborative-ads/managed-partner-ads/faq#custom-template-sample) |
+| `active_page_id`  type: string | **Optional.**  Seller's Page ID to run campaign. |
+| `active_ad_account_id`  type: string | **Optional.**  Seller's active ad account. |
+| `template`  type: JSON | **Optional.**  Seller's Custom Template. [Sample](https://developers.facebook.com/documentation/ads-commerce/marketing-api/collaborative-ads/managed-partner-ads/faq#custom-template-sample) |
 
 #### Sample `POST` request
 
@@ -218,20 +218,20 @@ curl \
 
 | Error Code | Error Subcode | Description |
 | --- | --- | --- |
-| 1800002 | 2310138 | The business name {invalid\_business\_name} is not a valid name. Consider using {business\_name} instead. Business names must meet Facebook’s business name requirements. |
-| 1800004 | 2310127 | Remove or update the following invalid country codes listed for the partner’s registration countries: [{invalid\_registration\_country\_codes}]. |
-| 1800010 | 2310167 | You’re attempting to use a managed partner ads (MPA) API to update ads for a business that has not onboarded to MPA. Check the business being used, or use a different API. |
+| 1800002 | 2310138 | The business name {invalid\_business\_name} is not a valid name. Consider using {business\_name} instead. Business names must meet Facebook's business name requirements. |
+| 1800004 | 2310127 | Remove or update the following invalid country codes listed for the partner's registration countries: [{invalid\_registration\_country\_codes}]. |
+| 1800010 | 2310167 | You're attempting to use a managed partner ads (MPA) API to update ads for a business that has not onboarded to MPA. Check the business being used, or use a different API. |
 | 1800301 | 2310129 | You entered an invalid Facebook page URL {page\_url} for this partner. Check the link or enter a new one. |
 | 1800302 | 2310130 | The Facebook Page you entered {page\_url} belongs to your business. Enter a Facebook Page that belongs to the partner. |
-| 1800303 | 2310132 | You entered a Page {page\_url} that is linked to another partner. Check the link or enter a new URL for the partner’s Facebook Page. |
-| 1800304 | 2310131 | You’ll need to select another Page for this partner because the one you selected cannot be used with managed partner ads. |
+| 1800303 | 2310132 | You entered a Page {page\_url} that is linked to another partner. Check the link or enter a new URL for the partner's Facebook Page. |
+| 1800304 | 2310131 | You'll need to select another Page for this partner because the one you selected cannot be used with managed partner ads. |
 | 1800403 | 2310072 | The template config belonging to this seller is invalid. |
 
 ## Using Templates
 
-A template is an asset configured and used by the marketplace in the Managed Partner Ads service. Templates contain details and settings, or “components”, that control the seller campaigns run by the marketplace on the seller’s behalf.
+A template is an asset configured and used by the marketplace in the Managed Partner Ads service. Templates contain details and settings, or "components", that control the seller campaigns run by the marketplace on the seller's behalf.
 
-Template’s components include ad sets and ads, which include information like targeting, ad creative, formats, and more. There are four components required for each campaign template:
+Template's components include ad sets and ads, which include information like targeting, ad creative, formats, and more. There are four components required for each campaign template:
 
 * Ad set component for prospecting
 * Ad component
@@ -250,7 +250,7 @@ There are two types of templates, default and custom:
 | Configurable properties | Facebook automatically configures the ad sets and ads for the default template. The budget split can be specified for retargeting and prospecting ad goals. The marketplace can specify the primary text and UTM parameters. | Stores configurations from campaigns previously created in Ads Manager. Along with this, budget split for retargeting and prospecting ad goals can be specified for each seller. |
 | Scope | Every marketplace has a default template, which is a global asset, ready for use with any and all seller campaigns, at any time. | Only one custom campaign template at a time is permitted per seller. The marketplace can change the custom template to contain different ad set and/or ad component anytime. |
 | Advantage | Allows marketplaces to set common settings to be applied to all seller campaigns. | Allows the marketplace to configure a broad set of campaign parameters and details that could support special promotions, seasonal campaigns, sales events, and other occasions that require special settings. Additionally, storing campaign configurations helps marketplaces manage and scale their seller campaigns with minimal effort. |
-| Campaign creation | [Use the main campaign creation instructions](https://developers.facebook.com/documentation/ads-commerce/marketing-api/collaborative-ads/managed-partner-ads/api-guide/mpa-ads). To create and run seller’s ads using the default template, set the `use_marketplace_template` field to `true`. | [Use the main campaign creation instructions](https://developers.facebook.com/documentation/ads-commerce/marketing-api/collaborative-ads/managed-partner-ads/api-guide/mpa-ads). To create and run seller’s ads using the custom template, set the `use_seller_template` field to `true`. |
+| Campaign creation | [Use the main campaign creation instructions](https://developers.facebook.com/documentation/ads-commerce/marketing-api/collaborative-ads/managed-partner-ads/api-guide/mpa-ads). To create and run seller's ads using the default template, set the `use_marketplace_template` field to `true`. | [Use the main campaign creation instructions](https://developers.facebook.com/documentation/ads-commerce/marketing-api/collaborative-ads/managed-partner-ads/api-guide/mpa-ads). To create and run seller's ads using the custom template, set the `use_seller_template` field to `true`. |
 
 ### Requirements for Custom Templates
 
@@ -261,7 +261,7 @@ Retargeting ad set, prospecting ad set and ad components must be available to ad
 The campaigns used for template creation must be associated with a Collaborative Ads ad account, and have the following settings:
 
 * Campaign objective must be Catalog Sales.
-* In Ads Manager, budget Optimization must be toggled on at the campaign level, with ‘Lowest Cost’ bid strategy.
+* In Ads Manager, budget Optimization must be toggled on at the campaign level, with 'Lowest Cost' bid strategy.
 * Ad format must be carousel with no static overlays, images or videos.
 
 ### Custom Template Flow
@@ -305,7 +305,7 @@ This feature aims to provide scalability by enabling marketplaces to apply templ
 
 * *If the selected sellers have no existing custom templates*, select the four template components, and specify the spend limit percentage for Prospecting and Retargeting. By default, the spend limit is split equally between the two ad sets.
 * *If the selected sellers have had custom templates previously applied*, select all, one, or some of the template components to replace for selected sellers. The spend limit percentage for Ad Sets can be overridden for sellers by switching on the toggle.
-* *If the selected sellers are a mix of sellers with and without custom templates*, a modal is displayed to select either ‘Sellers with no custom templates’ or ‘Sellers with custom template’ for the next step. Based on the selection, a modal from the two previous options is displayed.
+* *If the selected sellers are a mix of sellers with and without custom templates*, a modal is displayed to select either 'Sellers with no custom templates' or 'Sellers with custom template' for the next step. Based on the selection, a modal from the two previous options is displayed.
 
 Finalize by clicking on **Save**. The selected template components will be applied to selected sellers.
 
@@ -336,4 +336,4 @@ Use the [Update Seller Business Configuration API](https://developers.facebook.c
 
 #### Step 3: Create Your Campaign
 
-[Use the main campaign creation instructions](https://developers.facebook.com/documentation/ads-commerce/marketing-api/collaborative-ads/managed-partner-ads/api-guide/mpa-ads) to create and run seller’s ads with the specified parameters and previously applied custom template. To use the custom campaign template applied to that seller, set `use_seller_template` to `true`.
+[Use the main campaign creation instructions](https://developers.facebook.com/documentation/ads-commerce/marketing-api/collaborative-ads/managed-partner-ads/api-guide/mpa-ads) to create and run seller's ads with the specified parameters and previously applied custom template. To use the custom campaign template applied to that seller, set `use_seller_template` to `true`.

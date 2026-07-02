@@ -14,7 +14,7 @@ There are some differences between Facebook and Instagram carousel ads. These di
 * `multi_share_optimized` has no effect on Instagram. If more than 5 attachments are provided, the first 5 will be used, based on the order of them in the ad creative creation.
 * `multi_share_end_card` has no effect on Instagram. End cards are not available on Instagram.
 * Each attachment must have `link` specified, which is the destination of the image click.
-* Each attachment has a Call To Action button. You can either specify it, or Instagram will default it to “Learn more” and link to the `link` setting of the attachment.
+* Each attachment has a Call To Action button. You can either specify it, or Instagram will default it to "Learn more" and link to the `link` setting of the attachment.
 * The `caption` field can be used to specify the display url. If not specified, the `link` url will be used.
 * Each carousel card has one image or video and a Call To Action button, and there is one message from `message` setting in the `link_data`. The `name` of each attachment is also shown, between the image or video and the message. The `description` field of the `link_data` and of each child attachment are ignored.
 
@@ -32,7 +32,7 @@ There are some differences between Facebook and Instagram carousel ads. These di
 
 ## Stories
 
-For Instagram Stories, you can create a carousel with up to ten images or videos. By default, the number of cards is tailored and varies to optimize for performance. A user may see one, two or three cards before seeing the option to “Expand Story”. Stories Carousel limitations differ depending on how you have decided to place your ads.
+For Instagram Stories, you can create a carousel with up to ten images or videos. By default, the number of cards is tailored and varies to optimize for performance. A user may see one, two or three cards before seeing the option to "Expand Story". Stories Carousel limitations differ depending on how you have decided to place your ads.
 
 For standalone Instagram Stories placement, you can choose to have a fixed number of cards, with a maximum of 3 cards displayed before the option to expand the story. This feature is setup inside `carousel_delivery_mode`. Within this field, there are two options:
 
@@ -52,82 +52,78 @@ Other placement differences:
 For example, to create an Instagram Stories carousel:
 
 ```
-```
-curl \  
-  -F 'name=Sample Creative' \  
-  -F 'object_story_spec={  
-    "instagram_user_id": <IG_USER_ID>, \  
-    "link_data": {  
-      "child_attachments": [  
-        {  
-          "description": "$8.99",  
-          "image_hash": "<IMAGE_HASH>",  
-          "link": "https:\/\/www.link.com\/product1",  
-          "name": "Product 1",  
-          "video_id": "<VIDEO_ID>"  
-        },  
-        {  
-          "description": "$9.99",  
-          "image_hash": "<IMAGE_HASH>",  
-          "link": "https:\/\/www.link.com\/product2",  
-          "name": "Product 2",  
-          "video_id": "<VIDEO_ID>"  
-        },  
-        {  
-          "description": "$10.99",  
-          "image_hash": "<IMAGE_HASH>",  
-          "link": "https:\/\/www.link.com\/product3",  
-          "name": "Product 3"  
-        }  
-      ],  
-      "link": "<URL>"  
-    }, \  
-    "page_id": "<PAGE_ID>" \  
-  }' \  
-  -F 'access_token=<ACCESS_TOKEN>' \  
-  https://graph.facebook.com/<LATEST_API_VERSION>/act_<AD_ACCOUNT_ID>/adcreatives
-```
+curl \  
+  -F 'name=Sample Creative' \  
+  -F 'object_story_spec={  
+    "instagram_user_id": <IG_USER_ID>, \  
+    "link_data": {  
+      "child_attachments": [  
+        {  
+          "description": "$8.99",  
+          "image_hash": "<IMAGE_HASH>",  
+          "link": "https:\/\/www.link.com\/product1",  
+          "name": "Product 1",  
+          "video_id": "<VIDEO_ID>"  
+        },  
+        {  
+          "description": "$9.99",  
+          "image_hash": "<IMAGE_HASH>",  
+          "link": "https:\/\/www.link.com\/product2",  
+          "name": "Product 2",  
+          "video_id": "<VIDEO_ID>"  
+        },  
+        {  
+          "description": "$10.99",  
+          "image_hash": "<IMAGE_HASH>",  
+          "link": "https:\/\/www.link.com\/product3",  
+          "name": "Product 3"  
+        }  
+      ],  
+      "link": "<URL>"  
+    }, \  
+    "page_id": "<PAGE_ID>" \  
+  }' \  
+  -F 'access_token=<ACCESS_TOKEN>' \  
+  https://graph.facebook.com/<LATEST_API_VERSION>/act_<AD_ACCOUNT_ID>/adcreatives
 ```
 
 To create a carousel with `fixed_num_cards`:
 
 ```
-```
-curl -X POST \  
-  -F 'object_story_spec={  
-      "instagram_user_id": "<IG_USER_ID>",  
-      "page_id": "<PAGE_ID>",  
-      "link_data": {  
-        "child_attachments": [  
-          {  
-            "link": "<LINK>"  
-            "image_hash": "<IMAGE_HASH>",  
-            "image_crops": [],  
-          },  
-          {  
-            "link": "<LINK>",  
-            "image_hash": "<IMAGE_HASH>",  
-            "image_crops": {}  
-          },  
-          {  
-            "link": "<LINK>",  
-            "image_hash": "<IMAGE_HASH>",  
-            "image_crops": {}  
-          }  
-        ],  
-        "message": "<MESSAGE>",  
-        "multi_share_end_card": false,  
-        "multi_share_optimized": false,  
-        "picture": "<PICTURE>"  
-      }  
-    }  
-' \  
-  -F 'portrait_customizations={  
-    carousel_delivery_mode: "fixed_num_cards"  
-  }' \  
-  -F 'access_token=<ACCESS_TOKEN>' \  
-  https://graph.facebook.com/<LATEST_API_VERSION>/act_<AD_ACCOUNT_ID>/adcreatives
-```
+curl -X POST \  
+  -F 'object_story_spec={  
+      "instagram_user_id": "<IG_USER_ID>",  
+      "page_id": "<PAGE_ID>",  
+      "link_data": {  
+        "child_attachments": [  
+          {  
+            "link": "<LINK>"  
+            "image_hash": "<IMAGE_HASH>",  
+            "image_crops": [],  
+          },  
+          {  
+            "link": "<LINK>",  
+            "image_hash": "<IMAGE_HASH>",  
+            "image_crops": {}  
+          },  
+          {  
+            "link": "<LINK>",  
+            "image_hash": "<IMAGE_HASH>",  
+            "image_crops": {}  
+          }  
+        ],  
+        "message": "<MESSAGE>",  
+        "multi_share_end_card": false,  
+        "multi_share_optimized": false,  
+        "picture": "<PICTURE>"  
+      }  
+    }  
+' \  
+  -F 'portrait_customizations={  
+    carousel_delivery_mode: "fixed_num_cards"  
+  }' \  
+  -F 'access_token=<ACCESS_TOKEN>' \  
+  https://graph.facebook.com/<LATEST_API_VERSION>/act_<AD_ACCOUNT_ID>/adcreatives
 ```
 
 Instant Experience elements are **not supported** for the Carousel ad format.

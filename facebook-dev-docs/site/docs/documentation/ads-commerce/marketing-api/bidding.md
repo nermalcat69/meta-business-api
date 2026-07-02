@@ -30,65 +30,57 @@ If you do not include `format_transformation_spec` in the creative spec, the sys
 To opt in to a single transformation:
 
 ```
-```
-"format_transformation_spec": [  
-  {  
-    "format": "da_collection",  
-    "data_source": ["catalog"]  
-  }  
+"format_transformation_spec": [  
+  {  
+    "format": "da_collection",  
+    "data_source": ["catalog"]  
+  }  
 ]
-```
 ```
 
 To opt in to multiple transformations, include an entry for each one:
 
 ```
-```
-"format_transformation_spec": [  
-  {  
-    "format": "carousel",  
-    "data_source": ["catalog"]  
-  },  
-  {  
-    "format": "sa_collection",  
-    "data_source": ["catalog"]  
-  },  
-  {  
-    "format": "video_slideshow",  
-    "data_source": ["site_links"]  
-  }  
+"format_transformation_spec": [  
+  {  
+    "format": "carousel",  
+    "data_source": ["catalog"]  
+  },  
+  {  
+    "format": "sa_collection",  
+    "data_source": ["catalog"]  
+  },  
+  {  
+    "format": "video_slideshow",  
+    "data_source": ["site_links"]  
+  }  
 ]
-```
 ```
 
 To opt out of a specific transformation, set its `data_source` to `none`:
 
 ```
-```
-"format_transformation_spec": [  
-  {  
-    "format": "carousel",  
-    "data_source": ["catalog"]  
-  },  
-  {  
-    "format": "sa_collection",  
-    "data_source": ["none"]  
-  }  
+"format_transformation_spec": [  
+  {  
+    "format": "carousel",  
+    "data_source": ["catalog"]  
+  },  
+  {  
+    "format": "sa_collection",  
+    "data_source": ["none"]  
+  }  
 ]
-```
 ```
 
 Leave the `data_source` field empty to opt in to all available data sources for that transformation:
 
 ```
-```
-"format_transformation_spec": [  
-  {  
-    "format": "carousel",  
-    "data_source": []  
-  }  
+"format_transformation_spec": [  
+  {  
+    "format": "carousel",  
+    "data_source": []  
+  }  
 ]
-```
 ```
 
 ## Advantage+ catalog ads carousel to collection
@@ -370,17 +362,15 @@ https://graph.facebook.com/v25.0/<CREATIVE_ID>
 ### Example response
 
 ```
-```
 {  
-  "format_transformation_spec": [  
-    {  
-      "data_source": ["catalog"],  
-      "format": "da_collection"  
-    }  
-  ],  
-  "id": "<AD_CREATIVE_ID>"  
+  "format_transformation_spec": [  
+    {  
+      "data_source": ["catalog"],  
+      "format": "da_collection"  
+    }  
+  ],  
+  "id": "<AD_CREATIVE_ID>"  
 }
-```
 ```
 
 ## See also

@@ -84,7 +84,7 @@ To create an ad set, send a `POST` request to the `act_ad_account_id/adsets` end
 * `name` set to the name for your ad set
 * `optimization_goal` set to `LEAD_GENERATION`, or `QUALITY_LEAD`
 * `destination_type` set to `ON_AD`
-* `promoted_object` – set to the ID for your business’ Facebook Page
+* `promoted_object` – set to the ID for your business' Facebook Page
 * `status` set to `PAUSED`
 
 **Note:** If you have set up a CRM data source and choose `QUALITY_LEAD` as an optimization goal, you may add the `pixel_id` to the `promoted_object` for further optimization on quality. Note that you do not need to supply a `pixel_rule` alongside the `pixel_id`.
@@ -208,8 +208,8 @@ curl -X POST "https://graph.facebook.com/v25.0/PAGE_ID/leadgen_forms" \
 In addition to the typical question types shown in the [Create a Lead Form section]{#create-a-lead-form}, you can add more specialized question types for the following use cases:
 
 * [Appointment Scheduling](https://developers.facebook.com/documentation/ads-commerce/marketing-api/guides/lead-ads/create#appointment-scheduling) - An appointment scheduling question renders a date and time selector with a limited hour selection and a confirmation message below the question.
-* [National or Government ID](https://developers.facebook.com/documentation/ads-commerce/marketing-api/guides/lead-ads/create#national-id) – A national ID question renders a question based on a person’s country and validates the format of the ID entered.
-* [Store Locator](https://developers.facebook.com/documentation/ads-commerce/marketing-api/guides/lead-ads/create#store-locator) - A store locator question renders a store locator selector based on a person’s zip code or postal code input.
+* [National or Government ID](https://developers.facebook.com/documentation/ads-commerce/marketing-api/guides/lead-ads/create#national-id) – A national ID question renders a question based on a person's country and validates the format of the ID entered.
+* [Store Locator](https://developers.facebook.com/documentation/ads-commerce/marketing-api/guides/lead-ads/create#store-locator) - A store locator question renders a store locator selector based on a person's zip code or postal code input.
 
 #### Appointment Scheduling
 
@@ -217,7 +217,6 @@ An appointment scheduling question renders a date and time selector with a limit
 
 To add an appointment scheduling question, add a question object with the `type` parameter set to `DATE_TIME`. Optionally, you can also add a confirmation message in the `inline_context` parameter that will be rendered directly below the question field for further context, if needed.
 
-```
 ```
 ...
            "questions": "[
@@ -228,27 +227,25 @@ To add an appointment scheduling question, add a question object with the `type`
                },
 ...
 ```
-```
 
 #### National ID
 
-A national ID question renders a question based on a person’s country and validates the format of the ID entered. This question can be rendered for the following countries:
+A national ID question renders a question based on a person's country and validates the format of the ID entered. This question can be rendered for the following countries:
 
-* Argentina – {“type”: “`ID_AR_DNI`”}
+* Argentina – {"type": "`ID_AR_DNI`"}
 * Brazil – `ID_CPF`
 * Chile – `ID_CL_RUT`
 * Colombia – `ID_CO_CC`
 * Ecuador – `ID_EC_CI`
 * Peru – `ID_PE_DNI`
 
-To add a national ID question, add a question object with the `type` parameter set to the person’s country type.
+To add a national ID question, add a question object with the `type` parameter set to the person's country type.
 
 #### Limitations
 
 * You can only ask for a single National ID in any given form and are only able to target people in their corresponding country. For example, if you ask for `DNI` from Peru, your target audience must be limited to Peru. Only ads that match these criteria are approved.
 * Validation checks for a valid format; it does not verify that the ID actually belongs to a real person.
 
-```
 ```
 ...
            "questions": "[
@@ -257,18 +254,16 @@ To add a national ID question, add a question object with the `type` parameter s
                },
 ...
 ```
-```
 
 #### Store Locator
 
-A store locator question renders a store locator selector based on a person’s zip code or postal code input.
+A store locator question renders a store locator selector based on a person's zip code or postal code input.
 
 You will need to set up a Store Pages Structure to use this question. Learn how in
 [Set Up a Store Pages Structure on Facebook – Meta Business Help Center⁠](https://www.facebook.com/business/help/799893063819520)
 
 To add a store locator question, add a question object with the `type` parameter set to `STORE_LOOKUP` and the `context_provider_type` parameter to `LOCATION_MANAGER`.
 
-```
 ```
 ...
            "questions": "[
@@ -278,7 +273,6 @@ To add a store locator question, add a question object with the `type` parameter
                 "context_provider_type": "LOCATION_MANAGER"
                },
 ...
-```
 ```
 
 ### Advanced Form Settings
@@ -345,18 +339,16 @@ To filter out organic leads, add the `block_display_for_non_targeted_viewer` par
 On success your app will receive a JSON response containing the ID for your form to be used when creating your ad.
 
 ```
-```
 {
   "id": "leadgen_form_id",
 }
-```
 ```
 
 #### Gated Content
 
 Reward consumers with a file download after submitting their lead. This file download will appear as a call-to-action button on your thank you page.
 
-To add this feature, you must add the `upload_gated_file` parameter to your form with the file that you’d like to upload.
+To add this feature, you must add the `upload_gated_file` parameter to your form with the file that you'd like to upload.
 
 In addition, you must create a thank you page using the `thank_you_page` parameter. Within the `thank_you_page` parameter, set `button_type` to `VIEW_ON_FACEBOOK`.
 
@@ -382,11 +374,9 @@ In addition, you must create a thank you page using the `thank_you_page` paramet
 On success, your app will receive a JSON response containing the ID for your form to be used when creating your ad.
 
 ```
-```
 {
   "id": "leadgen_form_id",
 }
-```
 ```
 
 ## Step 4. Create an Ad Creative
@@ -445,7 +435,6 @@ You can create a [carousel](https://developers.facebook.com/documentation/ads-co
 You can only specify the same `<FORM_ID>` for all child attachments.
 
 ```
-```
 curl \
   -F 'object_story_spec={
     "page_id": "<PAGE_ID>",
@@ -457,31 +446,30 @@ curl \
         {
           "link": "http:\/\/www.google.com",
           "image_hash": "<IMAGE_HASH>",
-          "call_to_action": {"type":"SIGN_UP","value":{"lead_gen_form_id":"<FORM_ID>"}}
+          "call_to_action": {"type":"SIGN_UP","value":{"lead_gen_form_id":"<FORM_ID>"}​}
         },
         {
           "link": "http:\/\/www.google.com",
           "image_hash": "<IMAGE_HASH>",
-          "call_to_action": {"type":"SIGN_UP","value":{"lead_gen_form_id":"<FORM_ID>"}}
+          "call_to_action": {"type":"SIGN_UP","value":{"lead_gen_form_id":"<FORM_ID>"}​}
         },
         {
           "link": "http:\/\/www.google.com",
           "image_hash": "<IMAGE_HASH>",
-          "call_to_action": {"type":"SIGN_UP","value":{"lead_gen_form_id":"<FORM_ID>"}}
+          "call_to_action": {"type":"SIGN_UP","value":{"lead_gen_form_id":"<FORM_ID>"}​}
         },
         {
           "link": "http:\/\/www.google.com",
           "image_hash": "<IMAGE_HASH>",
-          "call_to_action": {"type":"SIGN_UP","value":{"lead_gen_form_id":"<FORM_ID>"}}
+          "call_to_action": {"type":"SIGN_UP","value":{"lead_gen_form_id":"<FORM_ID>"}​}
         }
       ],
       "multi_share_optimized": true,
-      "call_to_action": {"type":"SIGN_UP","value":{"lead_gen_form_id":"<FORM_ID>"}}
+      "call_to_action": {"type":"SIGN_UP","value":{"lead_gen_form_id":"<FORM_ID>"}​}
     }
   }' \
   -F 'access_token=<ACCESS_TOKEN>' \
   https://graph.facebook.com/LATEST-API-VERSION/act_<AD_ACCOUNT_ID>/adcreatives
-```
 ```
 
 ### With a Video
@@ -644,9 +632,9 @@ On success your app will receive a JSON response containing a list of questions.
 
 You can only archive a lead form since deleting is not supported. Once a form is archived:
 
-* The form won’t appear (by default) in the Forms Library
-* You can’t use an archived form in an ad, attempting to do so can generate an error via the API.
-* Archived forms won’t be available during ad creation for CF or PE.
+* The form won't appear (by default) in the Forms Library
+* You can't use an archived form in an ad, attempting to do so can generate an error via the API.
+* Archived forms won't be available during ad creation for CF or PE.
 
 To archive a specific lead gen form, send a `POST` request to the `/`***`page_id`***`/`***`leadgen_form_id`*** endpoint with the following parameters:
 

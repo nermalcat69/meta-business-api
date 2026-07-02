@@ -22,22 +22,20 @@ curl -G \
 **Response**
 
 ```
-```
 {"data":[{"ads_running_or_in_review_count":2}]}
-```
 ```
 
 For information on managing ad volume, see [About Managing Ad Volume⁠](https://www.facebook.com/business/help/2720085414702598).
 
 ## View running or in review status
 
-To determine if an ad is running or in review, the system checks `effective_status`, then `configured_status`, and the ad account’s status:
+To determine if an ad is running or in review, the system checks `effective_status`, then `configured_status`, and the ad account's status:
 
 * If an ad has `effective_status` of `1` - `active`, it is considered in *running or in review* state.
 * If an ad has `configured_status` of `active` and `effective_status` of `9` - `pending review` or `17` - `pending processing`, it is considered *running* or *in review*.
 * The ad can be *running* or *in review* only if the ad account status is in `1` - `active`, `8` - `pending settlement`, or `9` - `in grace period`.
 
-Whether an ad is running or in review is also determined based on the ad set’s schedule:
+Whether an ad is running or in review is also determined based on the ad set's schedule:
 
 * If start time is before current time, and current time is before end time, then the ad is considered running or in review.
 * If start time is before current time and the ad set has no end time, it is also considered running or in review.
@@ -60,26 +58,24 @@ curl -G \
 **Response**
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "ads_running_or_in_review_count": 0,  
-      "current_account_ads_running_or_in_review_count": 0,  
-      "actor_id": "<ACTOR_ID_1>",  
-      "recommendations": [  
-      ]  
-    },  
-    {  
-      "ads_running_or_in_review_count": 2,  
-      "current_account_ads_running_or_in_review_count": 2,  
-      "actor_id": "<ACTOR_ID_2>",  
-      "recommendations": [  
-      ]  
-    }  
-  ],  
+  "data": [  
+    {  
+      "ads_running_or_in_review_count": 0,  
+      "current_account_ads_running_or_in_review_count": 0,  
+      "actor_id": "<ACTOR_ID_1>",  
+      "recommendations": [  
+      ]  
+    },  
+    {  
+      "ads_running_or_in_review_count": 2,  
+      "current_account_ads_running_or_in_review_count": 2,  
+      "actor_id": "<ACTOR_ID_2>",  
+      "recommendations": [  
+      ]  
+    }  
+  ],  
 }
-```
 ```
 
 Use `page_id` to get the ad limits for a specific page:
@@ -94,19 +90,17 @@ curl -G \
 **Response**
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "ads_running_or_in_review_count": 2,  
-      "current_account_ads_running_or_in_review_count": 2,  
-      "actor_id": "<ACTOR_ID>",  
-      "recommendations": [  
-      ]  
-    }  
-  ],  
+  "data": [  
+    {  
+      "ads_running_or_in_review_count": 2,  
+      "current_account_ads_running_or_in_review_count": 2,  
+      "actor_id": "<ACTOR_ID>",  
+      "recommendations": [  
+      ]  
+    }  
+  ],  
 }
-```
 ```
 
 ### Supported fields

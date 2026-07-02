@@ -7,19 +7,19 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/conversio
 
 Updated: Jun 30, 2026
 
-The open-source parameter builder library’s core functions require interaction with the cookie. Please make sure you’ve read through the cookie interaction section before proceeding.
+The open-source parameter builder library's core functions require interaction with the cookie. Please make sure you've read through the cookie interaction section before proceeding.
 
 ## Manage cookie interaction
 
 The parameter builder library may read and store cookies based on the API calls.
 
-Parameter builder client-side SDK contains APIs to automatically save cookies when triggered. The server-side SDK can’t write cookies, but it is recommended that advertisers save the suggested cookie list from returned APIs.
+Parameter builder client-side SDK contains APIs to automatically save cookies when triggered. The server-side SDK can't write cookies, but it is recommended that advertisers save the suggested cookie list from returned APIs.
 
-Please check the usage below for each API. With regard to the user’s cookie and consent, please refer to the [Meta Business Tools Terms⁠](https://www.facebook.com/legal/technology_terms) for details.
+Please check the usage below for each API. With regard to the user's cookie and consent, please refer to the [Meta Business Tools Terms⁠](https://www.facebook.com/legal/technology_terms) for details.
 
 ### Integration with cookie consent
 
-Businesses can implement code that creates a banner and requires affirmative consent (for example, an “I agree” checkbox at the top of the page) to allow cookie saving actions through the parameter builder library. If you already have a system in place that addresses this need, such as a tag manager, you can make this code optional.
+Businesses can implement code that creates a banner and requires affirmative consent (for example, an "I agree" checkbox at the top of the page) to allow cookie saving actions through the parameter builder library. If you already have a system in place that addresses this need, such as a tag manager, you can make this code optional.
 
 ## Quick start guide
 

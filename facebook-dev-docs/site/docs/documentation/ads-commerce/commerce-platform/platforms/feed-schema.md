@@ -27,7 +27,7 @@ There are two ways to onboard new partner: manual or via commerce manager redire
 
 * Test CMS is fully onboarded to Facebook shop.
 * Admin of the Facebook shop can see the shop with products.
-* Test CMS is linked to the platform app for OMS: when placing orders the order status is “Pending acknowledgment” and not transition into “Pending”.
+* Test CMS is linked to the platform app for OMS: when placing orders the order status is "Pending acknowledgment" and not transition into "Pending".
 
 Specific check for each path are
 

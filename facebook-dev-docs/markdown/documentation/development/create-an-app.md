@@ -36,11 +36,11 @@ Get urgent updates that may require an action from you to prevent your app from 
 | App Status | Alerts about changes in app status including when the app is made public or removed | * Email * [Alerts](https://developers.facebook.com/documentation/development/create-an-app/app-dashboard#alerts) panel |
 | API Rate Limiting | Alerts about nearing and hitting the rate limit for API requests | * Email * [Alerts](https://developers.facebook.com/documentation/development/create-an-app/app-dashboard#alerts) panel |
 | Moratoriums & Restrictions | Alerts about moratoriums/restrictions placed on your app | * Email * [Alerts](https://developers.facebook.com/documentation/development/create-an-app/app-dashboard#alerts) panel |
-| Privacy Policy | Updates on the status of your app’s privacy policy URL | * Email * [Alerts](https://developers.facebook.com/documentation/development/create-an-app/app-dashboard#alerts) panel |
-| App URLs | Updates on the status of your app’s URLs | * Email * [Alerts](https://developers.facebook.com/documentation/development/create-an-app/app-dashboard#alerts) panel |
+| Privacy Policy | Updates on the status of your app's privacy policy URL | * Email * [Alerts](https://developers.facebook.com/documentation/development/create-an-app/app-dashboard#alerts) panel |
+| App URLs | Updates on the status of your app's URLs | * Email * [Alerts](https://developers.facebook.com/documentation/development/create-an-app/app-dashboard#alerts) panel |
 | Webhooks | Alerts about your existing Webhooks subscriptions | * Email * [Alerts](https://developers.facebook.com/documentation/development/create-an-app/app-dashboard#alerts) panel |
 | Version Deprecation | Alerts about a version upgrade affecting your app | * Email * [Alerts](https://developers.facebook.com/documentation/development/create-an-app/app-dashboard#alerts) panel |
-| App No Platform | Updates on your app’s platforms | * Email * [Alerts](https://developers.facebook.com/documentation/development/create-an-app/app-dashboard#alerts) panel |
+| App No Platform | Updates on your app's platforms | * Email * [Alerts](https://developers.facebook.com/documentation/development/create-an-app/app-dashboard#alerts) panel |
 
 #### Conversations
 
@@ -66,16 +66,16 @@ Get updates about Facebook platform products you use.
 | Login & API Errors | Alerts about when your app throws errors during login or for other API calls | * Email * [Alerts](https://developers.facebook.com/documentation/development/create-an-app/app-dashboard#alerts) panel |
 | Audience Network | Alerts about your ad placements with Audience Network | * Email * [Alerts](https://developers.facebook.com/documentation/development/create-an-app/app-dashboard#alerts) panel |
 | Analytics | Get data and trends for your apps | * Email |
-| Marketing API | Alerts about your app’s integration with the Marketing API | * Email * [Alerts](https://developers.facebook.com/documentation/development/create-an-app/app-dashboard#alerts) panel |
+| Marketing API | Alerts about your app's integration with the Marketing API | * Email * [Alerts](https://developers.facebook.com/documentation/development/create-an-app/app-dashboard#alerts) panel |
 | Open Graph | Open Graph approval status updates | * Email * [Alerts](https://developers.facebook.com/documentation/development/create-an-app/app-dashboard#alerts) panel |
 | Payments | Alerts about canvas payment and payout updates | * Email * [Alerts](https://developers.facebook.com/documentation/development/create-an-app/app-dashboard#alerts) panel |
 | Platform Announcements | New products, events, surveys and more | * Email |
 | Gameroom Native | Updates on Gameroom Native changes | * Email * [Alerts](https://developers.facebook.com/documentation/development/create-an-app/app-dashboard#alerts) panel |
-| Profile Plus API | Alerts about your app’s integration with the Profile Plus API | * Email * [Alerts](https://developers.facebook.com/documentation/development/create-an-app/app-dashboard#alerts) panel |
+| Profile Plus API | Alerts about your app's integration with the Profile Plus API | * Email * [Alerts](https://developers.facebook.com/documentation/development/create-an-app/app-dashboard#alerts) panel |
 
 #### Blog & Docs updates
 
-Get updates on blog posts and documentation you’re subscribed to.
+Get updates on blog posts and documentation you're subscribed to.
 
 | Blogs & Docs Notifications | Description | Available Delivery Methods |
 | --- | --- | --- |
@@ -89,7 +89,7 @@ Get updates on blog posts and documentation you’re subscribed to.
 
 #### Developer Community Forum
 
-Get updates on developer community forums you’re subscribed to.
+Get updates on developer community forums you're subscribed to.
 
 | Developer Community Forum Notifications | Description | Available Delivery Methods |
 | --- | --- | --- |
@@ -124,4 +124,4 @@ Choose your preferred programming language from the dropdown menu, and click **S
 
 The **Community Profile** tab displays information related to your [Developer Community Forum](https://developers.facebook.com/community/) profile such as your profile picture, display name, earned badges, and leaderboard points.
 
-You can also see questions you’ve asked and answered and the forum questions you’re following. New questions can be submitted to the Developer Community Forum by clicking on the **Ask a Question** button.
+You can also see questions you've asked and answered and the forum questions you're following. New questions can be submitted to the Developer Community Forum by clicking on the **Ask a Question** button.

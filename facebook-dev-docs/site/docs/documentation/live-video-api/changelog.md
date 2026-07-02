@@ -127,8 +127,8 @@ Error messages will be sent via RTMP then will persist through to the Graph API.
 
 | Code | Subcode | Message | Type | Mitigation messaging |
 | --- | --- | --- | --- | --- |
-| 200 | 1363120 | Permissions error | OAuthException | You’re not eligible to go live  Your profile needs to be at least 60 days old before you can go live on Facebook. Learn more at https://www.facebook.com/business/help/167417030499767?id=1123223941353904 |
-| 200 | 1363144 | Permissions error | OAuthException | You’re not eligible to go live  You need at least 100 followers before you can go live from your profile. Learn more at https://www.facebook.com/business/help/167417030499767?id=1123223941353904 |
+| 200 | 1363120 | Permissions error | OAuthException | You're not eligible to go live  Your profile needs to be at least 60 days old before you can go live on Facebook. Learn more at https://www.facebook.com/business/help/167417030499767?id=1123223941353904 |
+| 200 | 1363144 | Permissions error | OAuthException | You're not eligible to go live  You need at least 100 followers before you can go live from your profile. Learn more at https://www.facebook.com/business/help/167417030499767?id=1123223941353904 |
 
 ## Get Support
 

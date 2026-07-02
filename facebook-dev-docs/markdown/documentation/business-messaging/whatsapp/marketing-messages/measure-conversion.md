@@ -11,7 +11,7 @@ Onboarding to the Marketing Messages API for WhatsApp (MM API for WhatsApp) lets
 
 When a business registers for the MM API for WhatsApp, Meta creates linked read-only ad accounts and links each to the marketing templates under the business portfolio.
 
-These linked read-only ad accounts allow a business to fetch their MM API for WhatsApp insights from the Marketing API “Insights API”.
+These linked read-only ad accounts allow a business to fetch their MM API for WhatsApp insights from the Marketing API "Insights API".
 
 These linked read-only ad accounts stay in sync with marketing templates, so changes to marketing templates are reflected in the linked read-only ad accounts.
 
@@ -45,12 +45,10 @@ curl 'https://graph.facebook.com/v25.0/25002526842541/?fields=marketing_messages
 **Example response**
 
 ```
-```
 {  
-  "marketing_messages_onboarding_status": "ELIGIBLE",  
-  "id": "25002526842541"  
+  "marketing_messages_onboarding_status": "ELIGIBLE",  
+  "id": "25002526842541"  
 }
-```
 ```
 
 You can also use the [Client WhatsApp Business Accounts API](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/business/client_whatsapp_business_accounts) with the following filtering to get a list of all eligible WABAs that have been shared with you.
@@ -58,16 +56,14 @@ You can also use the [Client WhatsApp Business Accounts API](https://developers.
 **Request syntax**
 
 ```
-```
-GET /<BUSINESS_PORTFOLIO_ID>/client_whatsapp_business_accounts  
-  ?filtering=[  
-    {  
-      'field':'marketing_messages_onboarding_status',  
-      'operator':'IN',  
-      'value':['ELIGIBLE']  
-    }  
-  ]
-```
+GET /<BUSINESS_PORTFOLIO_ID>/client_whatsapp_business_accounts  
+  ?filtering=[  
+    {  
+      'field':'marketing_messages_onboarding_status',  
+      'operator':'IN',  
+      'value':['ELIGIBLE']  
+    }  
+  ]
 ```
 
 **Example request**
@@ -80,18 +76,16 @@ curl -g 'https://graph.facebook.com/v25.0/19502398688333/client_whatsapp_busines
 **Example response**
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "id": "46302397361990",  
-      "name": "San Andreas Roofing",  
-      "timezone_id": "1",  
-      "message_template_namespace": "93d3e793_8a4f_49c4_b903_fd72aac80f71"  
-    }  
-  ]  
+  "data": [  
+    {  
+      "id": "46302397361990",  
+      "name": "San Andreas Roofing",  
+      "timezone_id": "1",  
+      "message_template_namespace": "93d3e793_8a4f_49c4_b903_fd72aac80f71"  
+    }  
+  ]  
 }
-```
 ```
 
 ### Checking eligibility status (alternative)
@@ -101,17 +95,13 @@ This field will be deprecated in version 24.0. Use the [`marketing_messages_onbo
 You can use the [WhatsApp Business Account API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/whatsapp-business-account-api#get-version-waba-id) and request the [`marketing_messages_lite_api_status`](https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/measure-conversion#check-waba-onboarding-status-and-eligibility) field to get eligibility status, but this field will be deprecated at a future date, so use the [`marketing_messages_onboarding_status` field](https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/onboarding#eligibility-requirements) instead.
 
 ```
-```
-GET /<WHATSAPP_BUSINESS_ACCOUNT_ID>?fields=marketing_messages_lite_api_status
-```
+GET /<WHATSAPP_BUSINESS_ACCOUNT_ID>?fields=marketing_messages_lite_api_status
 ```
 
 For partner-managed WABAs, businesses can find eligible WABAs using the following endpoint:
 
 ```
-```
-GET /<BUSINESS_ID>/client_whatsapp_business_accounts?fields=marketing_messages_lite_api_status
-```
+GET /<BUSINESS_ID>/client_whatsapp_business_accounts?fields=marketing_messages_lite_api_status
 ```
 
 See the [WhatsApp Business Account API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/whatsapp-business-account-api#get-version-waba-id) reference for a list of returnable values and their meanings.
@@ -127,24 +117,20 @@ Use the [Business API](https://developers.facebook.com/documentation/ads-commerc
 **Example request**
 
 ```
-```
-curl "https://graph.facebook.com/v24.0/52002526842524351/?fields=marketing_messages_onboarding_status" \  
--H 'Authorization: Bearer EAAAl...'
-```
+curl "https://graph.facebook.com/v24.0/52002526842524351/?fields=marketing_messages_onboarding_status" \  
+-H 'Authorization: Bearer EAAAl...'
 ```
 
 **Example response**
 
 ```
-```
 {  
-  "marketing_messages_onboarding_status":  
-   {  
-      "status": "TERM_OF_SERVICE_SIGNED",  
-      "time": "2025-10-07"  
-   }  
+  "marketing_messages_onboarding_status":  
+   {  
+      "status": "TERM_OF_SERVICE_SIGNED",  
+      "time": "2025-10-07"  
+   }  
 }
-```
 ```
 
 Use the [WhatsApp Business Account API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/whatsapp-business-account-api#get-version-waba-id) and request the `owner_business_info` field to check the onboarding status of the WABA.
@@ -157,27 +143,23 @@ Use the [WhatsApp Business Account API](https://developers.facebook.com/document
 **Example request**
 
 ```
-```
-curl GET "https://graph.facebook.com/v24.0/69843579834234?fields=owner_business_info" \  
--H 'Authorization: Bearer EAAAl...'
-```
+curl GET "https://graph.facebook.com/v24.0/69843579834234?fields=owner_business_info" \  
+-H 'Authorization: Bearer EAAAl...'
 ```
 
 **Example response**
 
 ```
-```
 {  
-  "owner_business_info": {  
-    "name": "WhatsApp PaidSend Testing",  
-    "id": "<BM_ID>",  
-    "marketing_messages_onboarding_status": {  
-     "status": "TERM_OF_SERVICE_SIGNED" | "REQUEST_SENT" | "NOT_STARTED"  
-     "time": "2025-08-13"  
-    }  
-  },  
+  "owner_business_info": {  
+    "name": "WhatsApp PaidSend Testing",  
+    "id": "<BM_ID>",  
+    "marketing_messages_onboarding_status": {  
+     "status": "TERM_OF_SERVICE_SIGNED" | "REQUEST_SENT" | "NOT_STARTED"  
+     "time": "2025-08-13"  
+    }  
+  },  
 }
-```
 ```
 
 ## Register a phone number on Cloud API
@@ -214,8 +196,8 @@ If you are unable to access your WhatsApp Manager, see [find your business portf
 If your business directly integrates with Cloud API without a partner, follow the instructions below to accept the Terms of Service and onboard to MM API for WhatsApp.
 
 * Navigate to the **[App Dashboard](https://developers.facebook.com/apps)** > **WhatsApp** > **Quickstart** panel.
-* On the **Quickstart** page, locate the “Improve ROI with Marketing Messages API for WhatsApp” card and click the “Get started” button.
-* Click on “Continue to integration guide” to accept the Terms of Service
+* On the **Quickstart** page, locate the "Improve ROI with Marketing Messages API for WhatsApp" card and click the "Get started" button.
+* Click on "Continue to integration guide" to accept the Terms of Service
 
 ![App Dashboard Quickstart page with the Improve ROI with Marketing Messages API for WhatsApp card highlighted](https://scontent.fdel1-1.fna.fbcdn.net/v/t39.2365-6/476020445_3647418092312679_4465719704295641193_n.png?_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=yWP1VLqdaI0Q7kNvwG33Arl&_nc_oc=AdrH3aPJZBsNZW0SU6xIFRsL9aNhEOkq_pRxlI9Twpm0iVyIvAeyfNymcjdYCv6h-HWgN2K9KGA10nPyLatfsYTz&_nc_zt=14&_nc_ht=scontent.fdel1-1.fna&_nc_gid=v6Ct_-RnjdZM6n9ge9_TAg&_nc_ss=7b2a8&oh=00_AQAICZWx_LqPkLu05G-8hyiAXgRXoooX7HW3wEhnHch4-A&oe=6A60550B)
 
@@ -223,7 +205,7 @@ If your business directly integrates with Cloud API without a partner, follow th
 
 ## Sharing event activity
 
-Once your business is onboarded, message status events (delivery status, read, clicked) will automatically be shared with Meta as part of event activity. Meta does not sell your or your subscribers’ data; this data is used solely to optimize the performance of marketing campaigns.
+Once your business is onboarded, message status events (delivery status, read, clicked) will automatically be shared with Meta as part of event activity. Meta does not sell your or your subscribers' data; this data is used solely to optimize the performance of marketing campaigns.
 
 ### Manage via WhatsApp Account settings
 
@@ -240,54 +222,50 @@ Use the Marketing Messages API to send a message to a WhatsApp user.
 ### Request syntax
 
 ```
-```
-curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/marketing_messages' \  
--H 'Content-Type: application/json' \  
--H 'Authorization: Bearer <ACCESS_TOKEN>' \  
--d '  
+curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/marketing_messages' \  
+-H 'Content-Type: application/json' \  
+-H 'Authorization: Bearer <ACCESS_TOKEN>' \  
+-d '  
 {  
-  "messaging_product": "whatsapp",  
-  "recipient_type": "individual",  
-  "to": "<WHATSAPP_USER_PHONE_NUMBER>",  
-  "message_activity_sharing": "<BOOLEAN>",  
-  "type": "<MESSAGE_TYPE",  
-  "<MESSAGE_TYPE":"<MESSAGE_CONTENTS>"  
+  "messaging_product": "whatsapp",  
+  "recipient_type": "individual",  
+  "to": "<WHATSAPP_USER_PHONE_NUMBER>",  
+  "message_activity_sharing": "<BOOLEAN>",  
+  "type": "<MESSAGE_TYPE",  
+  "<MESSAGE_TYPE":"<MESSAGE_CONTENTS>"  
 }
-```
 ```
 
 ## Receive MM API for WhatsApp Terms of Service signed webhook (preferred)
 
 Note: The ToS event value will be available from September 8th, 2025. Refer to the legacy webhook below.
 
-When the MM API for WhatsApp Terms of Service (ToS) is signed for a business, a new [`account_update`](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/account_update) webhook will be sent for each WhatsApp Business account (WABA) under your business portfolio. The webhook indicates that the WABA’s business has successfully accepted the MM API for WhatsApp ToS. When the webhook is triggered, your WABA will be allowed to send messages through MM API for WhatsApp.
+When the MM API for WhatsApp Terms of Service (ToS) is signed for a business, a new [`account_update`](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/account_update) webhook will be sent for each WhatsApp Business account (WABA) under your business portfolio. The webhook indicates that the WABA's business has successfully accepted the MM API for WhatsApp ToS. When the webhook is triggered, your WABA will be allowed to send messages through MM API for WhatsApp.
 
 You can use the included business portfolio ID and WABA ID to verify compliance and begin sending messages, or trigger subsequent onboarding actions as needed. This webhook is the preferred webhook to track MM API for WhatsApp onboarding and eligibility status.
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "<SOLUTION_PROVIDER_BUSINESS_ID>",  
-      "time": "<WEBHOOK_TIMESTAMP>",  
-      "changes": [  
-        {  
-          "field": "account_update",  
-          "value": {  
-            "event": "MM_LITE_TERMS_SIGNED",  
-            "waba_info": {  
-              "owner_business_id": "<BUSINESS_PORTFOLIO_ID>",  
-              "waba_id": "<WABA_ID>"  
-            }  
-          }  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "<SOLUTION_PROVIDER_BUSINESS_ID>",  
+      "time": "<WEBHOOK_TIMESTAMP>",  
+      "changes": [  
+        {  
+          "field": "account_update",  
+          "value": {  
+            "event": "MM_LITE_TERMS_SIGNED",  
+            "waba_info": {  
+              "owner_business_id": "<BUSINESS_PORTFOLIO_ID>",  
+              "waba_id": "<WABA_ID>"  
+            }  
+          }  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ## Receive onboarding completion webhook (Legacy)
@@ -299,28 +277,26 @@ Note: This webhook is considered legacy for MM API for WhatsApp onboarding. Plea
 Important: The `ad_account_linked` webhook event will no longer be fired since partners will not receive access to ad accounts.
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "<WABA_ID>",  
-      "time": "<WEBHOOK_TIMESTAMP>",  
-      "changes": [  
-        {  
-          "field": "account_update",  
-          "value": {  
-            "event": "AD_ACCOUNT_LINKED",  
-            "waba_info": {  
-              "waba_id": "<WABA_ID>",  
-              "ad_account_id": "<AD_ACCOUNT_ID>",  
-              "owner_business_id": "<BUSINESS_PORTFOLIO_ID>"  
-            }  
-          }  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "<WABA_ID>",  
+      "time": "<WEBHOOK_TIMESTAMP>",  
+      "changes": [  
+        {  
+          "field": "account_update",  
+          "value": {  
+            "event": "AD_ACCOUNT_LINKED",  
+            "waba_info": {  
+              "waba_id": "<WABA_ID>",  
+              "ad_account_id": "<AD_ACCOUNT_ID>",  
+              "owner_business_id": "<BUSINESS_PORTFOLIO_ID>"  
+            }  
+          }  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```

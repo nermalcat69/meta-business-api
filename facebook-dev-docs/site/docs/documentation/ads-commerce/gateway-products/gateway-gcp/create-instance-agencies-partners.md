@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/gateway-p
 
 Updated: Apr 30, 2026
 
-Conversions API Gateway and Signals Gateway on Google Cloud Platform (GCP) run in hosts’ own GCP account. The installation automatically creates software and infrastructure that uses Google Cloud Run, Cloud Storage, and Cloud Build. No coding experience is necessary.
+Conversions API Gateway and Signals Gateway on Google Cloud Platform (GCP) run in hosts' own GCP account. The installation automatically creates software and infrastructure that uses Google Cloud Run, Cloud Storage, and Cloud Build. No coding experience is necessary.
 
 This guide can help an agency, partner, reseller, or advertiser create and manage their Conversions API Gateway or Signals Gateway instances.
 

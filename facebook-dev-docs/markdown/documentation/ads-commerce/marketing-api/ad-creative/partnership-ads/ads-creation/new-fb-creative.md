@@ -27,7 +27,7 @@ Review the [requirements](https://developers.facebook.com/documentation/ads-comm
 
 **Being deprecated:** Meta is deprecating the `/partnership-ads/{sponsor-page-id}/advertisable-posts` endpoint in favor of the [Advertisable Content Discovery API](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-creative/partnership-ads/content-discovery-api) and will be removed on December 1, 2026. The new endpoint returns both Facebook posts and Instagram media from a single unified endpoint, with more filtering options, sorting, field expansion, and organic insights. Migrate to the Advertisable Content Discovery API before December 1, 2026.
 
-To find all the posts that you are tagged in that are available to be used in an ad, send a `GET` request to the `/partnership-ads/{sponsor-page-id}/advertisable-posts` endpoint where `{sponsor-page-id}` is the delegate Facebook Page ID for your brand’s Facebook Page.
+To find all the posts that you are tagged in that are available to be used in an ad, send a `GET` request to the `/partnership-ads/{sponsor-page-id}/advertisable-posts` endpoint where `{sponsor-page-id}` is the delegate Facebook Page ID for your brand's Facebook Page.
 
 ### Parameters
 
@@ -35,7 +35,7 @@ To find all the posts that you are tagged in that are available to be used in an
 | --- | --- |
 | `ad_code` | **Optional.**  The ad code shared by the creator you are working with. |
 | `Authorization` | **Required.**  Bearer token for the authentication header. |
-| `creator_page_id` | **Optional** for Facebook partnership ads.  To find branded content for a specific creator for your brand, include the `creator_page_id` field set to the creator’s Facebook Page ID. |
+| `creator_page_id` | **Optional** for Facebook partnership ads.  To find branded content for a specific creator for your brand, include the `creator_page_id` field set to the creator's Facebook Page ID. |
 | `creator_username` | **Optional.**  To find branded content from a specific creator for your brand, include the `creator_username` field set to the username of the creator. |
 | `only_fetch_allowlisted` | **Optional.**  Only retrieve media from creators that have been allowlisted.  **Note:** The default value is `false` to allow you to fetch more data and for API performance. |
 | `permalinks` | **Optional.**  An array of Facebook post permalinks. Get these permalinks from the creator you work with.  **Example:** `['https://www.facebook.com/59961010139648/posts/pfbid02oBGjW2VuqvGomxTS6yHmdNKdjEerWn5zFgXWV4RRAibDkbWaYJAH9HEmrwgZnWFvl/','https://www.facebook.com/59961010139648/videos/17902564192200/']` |
@@ -59,38 +59,36 @@ curl -i -X GET \
 Upon success, your app will receive a list of posts containing the post IDs, eligibility errors (if any), permalinks, whether you have permissions to boost the posts, and the owner IDs of the posts that can be used in ads.
 
 ```
-```
 [  
-  {  
-    "post_id": 48602429468091,  
-    "owner_page_id": 31202392748498,  
-    "permalink": "https://www.facebook.com/59961010139648/posts/pfbid02oBGjW2VuqvGomxTS6yHmdNKdjEerWn5zFgXWV4RRAibDkbWaYJAH9HEmrwgZnWFvl/",  
-    "has_permission_for_partnership_ad": true,  
-    "eligibility_errors": []  
-  },  
-  {  
-    "post_id": 17902564192200,  
-    "owner_page_id": 31202392748498,  
-    "permalink": "https://www.facebook.com/59961010139648/videos/17902564192200/",  
-    "has_permission_for_partnership_ad": true,  
-    "eligibility_errors": []  
-  },  
-  {  
-    "post_id": 44102421656818,  
-    "owner_page_id": 31202392748498,  
-    "permalink": "https://www.facebook.com/59961010139648/videos/44102421656818/",  
-    "has_permission_for_partnership_ad": true,  
-    "eligibility_errors": []  
-  },  
-  {  
-    "post_id": 30902420582901,  
-    "owner_page_id": 31202392748498,  
-    "permalink": "https://www.facebook.com/59961010139648/videos/30902420582901/",  
-    "has_permission_for_partnership_ad": true,  
-    "eligibility_errors": ["Reels that use copyrighted music can't be boosted as ads."]  
-  }  
+  {  
+    "post_id": 48602429468091,  
+    "owner_page_id": 31202392748498,  
+    "permalink": "https://www.facebook.com/59961010139648/posts/pfbid02oBGjW2VuqvGomxTS6yHmdNKdjEerWn5zFgXWV4RRAibDkbWaYJAH9HEmrwgZnWFvl/",  
+    "has_permission_for_partnership_ad": true,  
+    "eligibility_errors": []  
+  },  
+  {  
+    "post_id": 17902564192200,  
+    "owner_page_id": 31202392748498,  
+    "permalink": "https://www.facebook.com/59961010139648/videos/17902564192200/",  
+    "has_permission_for_partnership_ad": true,  
+    "eligibility_errors": []  
+  },  
+  {  
+    "post_id": 44102421656818,  
+    "owner_page_id": 31202392748498,  
+    "permalink": "https://www.facebook.com/59961010139648/videos/44102421656818/",  
+    "has_permission_for_partnership_ad": true,  
+    "eligibility_errors": []  
+  },  
+  {  
+    "post_id": 30902420582901,  
+    "owner_page_id": 31202392748498,  
+    "permalink": "https://www.facebook.com/59961010139648/videos/30902420582901/",  
+    "has_permission_for_partnership_ad": true,  
+    "eligibility_errors": ["Reels that use copyrighted music can't be boosted as ads."]  
+  }  
 ]
-```
 ```
 
 ## Create an ad creative
@@ -102,11 +100,11 @@ Upon success, your app will receive a list of posts containing the post IDs, eli
 | `branded_content`  JSON object | An object containing information about the partnership ad.   * `facebook_boost_post_access_token` — A Facebook partnership ad code to create the ad. * `ad_format` — Sets the identities to display in the ad.   **Values:**   * `1` *(default)*: Renders both provided identities. This is the default value if nothing is passed in. * `2`: Renders only the first identity provided. * `3`: Allows the system to automatically optimize for the most performant option between single identity (`2`) and dual identity (`1`). **Note:** Dynamic header optimization currently only optimizes on Instagram. |
 | `facebook_branded_content`  JSON object | An object containing the required parameters for Facebook partnership ads. |
 | `instagram_branded_content`  JSON object | An object containing the required parameters for Instagram partnership ads. |
-| `object_story_id`  string | A combination of the creator’s Facebook delegate Page ID and post ID delimited by an underscore ( \_ ). Use this parameter when creating ads from Facebook content.  **Example:** `"<CREATOR_PAGE_ID>_<CREATOR_POST_ID>"` |
+| `object_story_id`  string | A combination of the creator's Facebook delegate Page ID and post ID delimited by an underscore ( \_ ). Use this parameter when creating ads from Facebook content.  **Example:** `"<CREATOR_PAGE_ID>_<CREATOR_POST_ID>"` |
 
 ### Using the Facebook post ID
 
-Using a Facebook post ID requires the `object_story_id` parameter, which is a combination of the creator’s Facebook Page ID and Facebook post ID.
+Using a Facebook post ID requires the `object_story_id` parameter, which is a combination of the creator's Facebook Page ID and Facebook post ID.
 
 #### Example request
 
@@ -131,11 +129,9 @@ curl -X POST \
 Upon success, your app will receive the ad creative ID to use in the ad.
 
 ```
-```
 {  
-  "id": "<CREATIVE_ID>"  
+  "id": "<CREATIVE_ID>"  
 }
-```
 ```
 
 ### Using a Facebook partnership ad code
@@ -165,11 +161,9 @@ curl -X POST \
 Upon success, your app will receive the ad creative ID to use in the ad.
 
 ```
-```
 {  
-  "id": "<CREATIVE_ID>"  
+  "id": "<CREATIVE_ID>"  
 }
-```
 ```
 
 ## Create an ad
@@ -193,18 +187,16 @@ curl -X POST \
 Upon success, your app will receive the ad ID.
 
 ```
-```
 {  
-  "id": "<AD_ID>"  
+  "id": "<AD_ID>"  
 }
-```
 ```
 
 You can use this ad ID to [publish your ad](https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started#book-ad).
 
 ## Comments moderation
 
-You can moderate comments on a partnership ad using the `/{comment-id}` endpoint’s `is_hidden` parameter. Comment moderation works even when another Page created the post, without needing the creator to take action.
+You can moderate comments on a partnership ad using the `/{comment-id}` endpoint's `is_hidden` parameter. Comment moderation works even when another Page created the post, without needing the creator to take action.
 
 **Note:** Comment moderation is only available for comments on Page posts.
 
@@ -224,9 +216,7 @@ curl -X POST \
 ### Example response
 
 ```
-```
 {  
-  "success":true  
+  "success":true  
 }
-```
 ```

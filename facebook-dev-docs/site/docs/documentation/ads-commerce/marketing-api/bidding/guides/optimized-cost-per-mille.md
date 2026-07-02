@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/marketing
 
 Updated: Oct 7, 2025
 
-Ad set budget sharing allows you to share up to 20% of your daily budget with other ad sets to improve performance for campaigns not using a campaign budget. This allows you to control budgets for each ad set while adjusting up to 20% of your ad sets’ spend up or down in real time, depending on when more opportunities are available to improve your campaign’s overall performance.
+Ad set budget sharing allows you to share up to 20% of your daily budget with other ad sets to improve performance for campaigns not using a campaign budget. This allows you to control budgets for each ad set while adjusting up to 20% of your ad sets' spend up or down in real time, depending on when more opportunities are available to improve your campaign's overall performance.
 
 With ad set budget sharing, you can:
 
@@ -60,12 +60,10 @@ You can read `is_adset_budget_sharing_enabled` field by making read request to [
 ### Example
 
 ```
-```
-curl -X GET \  
-  -d 'fields="is_adset_budget_sharing_enabled"' \  
-  -d 'access_token=<ACCESS_TOKEN>' \  
-  https://graph.facebook.com/v23.0/<CAMPAIGN_ID>/
-```
+curl -X GET \  
+  -d 'fields="is_adset_budget_sharing_enabled"' \  
+  -d 'access_token=<ACCESS_TOKEN>' \  
+  https://graph.facebook.com/v23.0/<CAMPAIGN_ID>/
 ```
 
 If you want to learn how to use the Graph API, read our Using [Graph API guide](https://developers.facebook.com/docs/graph-api/overview).
@@ -90,21 +88,19 @@ If you want to learn how to use the Graph API, read our Using [Graph API guide](
 
 ## Creating
 
-You can enable ad set budget sharing during the [campaign creation](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-campaign-group#Creating) by passing in True to the `is_adset_budget_sharing_enabled` field. Starting with v24.0+, you must pass either “True” or “False” to this field if you plan on setting a budget at the adset level, meaning you are not passing in the campaign budget during the campaign creation. Passing in “True” to that field will turn on the optimization. You do not need to pass this field if you are using a campaign budget, meaning you set either `daily_budget` or `lifetime_budget` at the campaign level.
+You can enable ad set budget sharing during the [campaign creation](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-campaign-group#Creating) by passing in True to the `is_adset_budget_sharing_enabled` field. Starting with v24.0+, you must pass either "True" or "False" to this field if you plan on setting a budget at the adset level, meaning you are not passing in the campaign budget during the campaign creation. Passing in "True" to that field will turn on the optimization. You do not need to pass this field if you are using a campaign budget, meaning you set either `daily_budget` or `lifetime_budget` at the campaign level.
 
 ### Example
 
 ```
-```
-curl -X POST \  
-  -F 'name="My campaign"' \  
-  -F 'objective="OUTCOME_TRAFFIC"' \  
-  -F 'status="PAUSED"' \  
-  -F 'is_adset_budget_sharing_enabled="True"' \  
-  -F 'special_ad_categories=[]' \  
-  -F 'access_token=<ACCESS_TOKEN>' \  
-  https://graph.facebook.com/v23.0/act_<AD_ACCOUNT_ID>/campaigns
-```
+curl -X POST \  
+  -F 'name="My campaign"' \  
+  -F 'objective="OUTCOME_TRAFFIC"' \  
+  -F 'status="PAUSED"' \  
+  -F 'is_adset_budget_sharing_enabled="True"' \  
+  -F 'special_ad_categories=[]' \  
+  -F 'access_token=<ACCESS_TOKEN>' \  
+  https://graph.facebook.com/v23.0/act_<AD_ACCOUNT_ID>/campaigns
 ```
 
 If you want to learn how to use the Graph API, read our Using [Graph API guide](https://developers.facebook.com/docs/graph-api/overview).
@@ -138,12 +134,10 @@ It will return the campaign ID.
 Turning on ad set budget sharing midflight is currently not supported. However, you can turn it off midflight by updating the [campaign](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-campaign-group#Updating) with `is_adset_budget_sharing_enabled` field set to False.
 
 ```
-```
-curl -X POST \  
-  -F 'is_adset_budget_sharing_enabled="False"' \  
-  -F 'access_token=<ACCESS_TOKEN>' \  
-  https://graph.facebook.com/v23.0/<CAMPAIGN_ID>/
-```
+curl -X POST \  
+  -F 'is_adset_budget_sharing_enabled="False"' \  
+  -F 'access_token=<ACCESS_TOKEN>' \  
+  https://graph.facebook.com/v23.0/<CAMPAIGN_ID>/
 ```
 
 If you want to learn how to use the Graph API, read our Using [Graph API guide](https://developers.facebook.com/docs/graph-api/overview).

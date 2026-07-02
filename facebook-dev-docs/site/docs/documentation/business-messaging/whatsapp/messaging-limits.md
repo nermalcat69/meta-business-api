@@ -9,13 +9,13 @@ Updated: May 21, 2026
 
 Template pacing is a mechanism that allows time for customers to provide early feedback on templates. This identifies and [pauses templates](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-pausing) that have received poor feedback or engagement, giving you enough time to adjust their contents before they are sent to too many customers, thereby reducing the likelihood of negative feedback impacting your business.
 
-Template pacing is valid for marketing and utility templates. Newly created templates, paused templates that are unpaused, and templates that may have been created previously but don’t have a `GREEN` quality rating are potentially subject to pacing. Template quality history — for example, low quality resulting in a template pause — is one of the primary reasons for template pacing and you may see other templates get paced.
+Template pacing is valid for marketing and utility templates. Newly created templates, paused templates that are unpaused, and templates that may have been created previously but don't have a `GREEN` quality rating are potentially subject to pacing. Template quality history — for example, low quality resulting in a template pause — is one of the primary reasons for template pacing and you may see other templates get paced.
 
 When a template is paced, messages will be sent normally until an unspecified threshold is reached. Once this threshold is reached, subsequent messages using that template will be held to allow enough time for customer feedback. Once Meta receives a good quality signal, subsequent messages using that template will be scaled to the entire target audience. If Meta receives a bad quality signal, subsequent messages using that template will be dropped, giving you the opportunity to adjust content, targeting, and similar factors.
 
 ## Utility template pacing
 
-Utility templates are subject to pacing only if you have had a utility template paused. Once a utility template has been paused, newly created templates, paused templates that are unpaused, and templates that may have been created previously but don’t have a `GREEN` quality rating are potentially subject to pacing for the next 7 days.
+Utility templates are subject to pacing only if you have had a utility template paused. Once a utility template has been paused, newly created templates, paused templates that are unpaused, and templates that may have been created previously but don't have a `GREEN` quality rating are potentially subject to pacing for the next 7 days.
 
 ## API behavior
 
@@ -23,11 +23,11 @@ The immediate response from the messages endpoint will indicate if the message w
 
 * Cloud API will always include a `message_status` property that will have a value of `accepted` for messages that are processed, and `held_for_quality_assessment` for messages that are held. Messages that are accepted will trigger the `sent` and `delivered` webhooks when they are actually sent (this is the same behavior that existed before pacing). A full example response can be found in the Cloud API docs.
 
-If the feedback is positive and changes the template’s quality rating to high quality, the held messages will be released and sent normally. The `message_template_quality_update` will send the quality update and the `messages` webhook will send the sent and delivered updates.
+If the feedback is positive and changes the template's quality rating to high quality, the held messages will be released and sent normally. The `message_template_quality_update` will send the quality update and the `messages` webhook will send the sent and delivered updates.
 
-If the feedback is negative and changes the template’s quality to low quality:
+If the feedback is negative and changes the template's quality to low quality:
 
-* The template’s `status` will be set to `PAUSED`
+* The template's `status` will be set to `PAUSED`
 * A `message_template_status_update` will be sent with an event value of `paused`
 * Each held message will be dropped and trigger a `messages` webhook with `"status":"failed"` and `"code":"132015"` (Cloud API users).
 * A `message_template_quality_update` webhook will be triggered with the quality change

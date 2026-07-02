@@ -33,15 +33,15 @@ To learn more about these quantity types, see [Product Life Cycle](https://devel
 
 ## Out-of-Stock Products
 
-As people purchase products on your Facebook Shop or Instagram Shopping account, the quantity value is decremented. When this value reaches `0`, we mark the product as ‘Out-of-Stock’ and restrict anyone from purchasing additional units. You should do a best-effort attempt at restocking your products regularly as ‘Out-of-Stock’ products negatively affect the user experience and your brand perception.
+As people purchase products on your Facebook Shop or Instagram Shopping account, the quantity value is decremented. When this value reaches `0`, we mark the product as 'Out-of-Stock' and restrict anyone from purchasing additional units. You should do a best-effort attempt at restocking your products regularly as 'Out-of-Stock' products negatively affect the user experience and your brand perception.
 
-If a buyer finds an Out-of-Stock product, we try our best to switch the Product Details page to a variant that has units ‘In-Stock’ based on the quantity value of the product’s variant in your catalog.
+If a buyer finds an Out-of-Stock product, we try our best to switch the Product Details page to a variant that has units 'In-Stock' based on the quantity value of the product's variant in your catalog.
 
 ![Mobile Product Details page for a training shoe with a Select Size panel listing sizes marked Out of Stock or In Stock](https://scontent.fdel27-2.fna.fbcdn.net/v/t39.2365-6/66018740_1122484737949257_3754940583764819968_n.png?_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=Fv6gp_9PqXQQ7kNvwFolyPx&_nc_oc=Adp9yMAQqqTCr1sahGNXmfu2QR6aS16HSSD4dfIOVZ_VfRShtDqJx5Lx2imSnBc0nyRhgIWhf_AQWlCzRulY8WVz&_nc_zt=14&_nc_ht=scontent.fdel27-2.fna&_nc_gid=BI9fudqk1V7A_0oNASyLFA&_nc_ss=7b289&oh=00_AQAt1VOATuP6bxaXloMCoXPs83JG_ZFlIvbQDGNR5Y-bvg&oe=6A60714C)
 
 ## Discontinued Products
 
-When a product is discontinued, you may be tempted to simply delete it from your catalog. **We don’t recommend this.**
+When a product is discontinued, you may be tempted to simply delete it from your catalog. **We don't recommend this.**
 
 Deleting products from your catalog may cause undesirable effects, such as product tags and images disappearing. **We strongly recommend that you only delete products after a significant time has passed (months)**.
 
@@ -61,7 +61,7 @@ After orders are acknowledged, there is a 30 minute buffer to allow you to proce
 
 ## Over-selling
 
-To scale the Commerce Platform to thousands of merchants, we’ve made a conscious decision to not support synchronous quantity management. As a consequence, we don’t support making atomic purchase transactions coupled with decrementing stock levels in **your warehouse**. If your quantity to sell is shared across multiple channels, you may unexpectedly over-sell products on Facebook or Instagram. This could happen for fast-selling products available in limited quantity.
+To scale the Commerce Platform to thousands of merchants, we've made a conscious decision to not support synchronous quantity management. As a consequence, we don't support making atomic purchase transactions coupled with decrementing stock levels in **your warehouse**. If your quantity to sell is shared across multiple channels, you may unexpectedly over-sell products on Facebook or Instagram. This could happen for fast-selling products available in limited quantity.
 
 When you cannot fulfill orders due to over-selling situations, you should initiate a [cancellation⁠](https://www.facebook.com/business/help/2184004921867702) and set the `reason_code` to `OUT_OF_STOCK`.
 
@@ -92,12 +92,12 @@ For products that sell at a normal pace, or those with deep quantity, the risk o
 
 ### Fast-Selling Products
 
-For fast-selling products, with shallow or very dynamic quantity, you may want to update volatile fields such as `quantity_to_sell_on_facebook` in a more timely basis. You can use the Items Batch API for this purpose. Here’s a general strategy that you can follow:
+For fast-selling products, with shallow or very dynamic quantity, you may want to update volatile fields such as `quantity_to_sell_on_facebook` in a more timely basis. You can use the Items Batch API for this purpose. Here's a general strategy that you can follow:
 
 * Configure a scheduled feed for daily/hourly updates. This feed should contain all mandatory catalog fields, and omit volatile fields such as `quantity_to_sell_on_facebook`. The purpose of this feed is to update fields that are more static in nature, and defer the updates of volatile fields using the Items Batch API.
 * Use the **Items Batch API** to update volatile fields such as `quantity_to_sell_on_facebook` when the value changes in your backend, or at a fixed frequency. It is important that the fields updated using this technique are not included in your feed for consistency reasons.
 
-Here’s an example of updates using the Items Batch API:
+Here's an example of updates using the Items Batch API:
 
 ```
 curl \

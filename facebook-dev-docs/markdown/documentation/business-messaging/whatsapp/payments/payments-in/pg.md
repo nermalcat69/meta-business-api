@@ -14,7 +14,7 @@ Enhanced Payment Links is a feature that transforms existing payment gateway URL
 It converts existing payment links into an in-app checkout flow - no changes to your payment backend, reconciliation, or callback setup are required. When a supported payment link is sent through a message template, it automatically renders as a structured payment bubble featuring:
 
 * **Amount and currency** clearly displayed
-* **“Pay Now” CTA** for seamless checkout
+* **"Pay Now" CTA** for seamless checkout
 * **In-app checkout** via UPI Intent or hosted payment page
 
 This feature significantly improves payment conversion rates by reducing checkout friction and increasing consumer trust.
@@ -33,7 +33,7 @@ On supported WhatsApp versions, the payment link renders as an enhanced bubble:
 * **In-App Checkout**:
   * *UPI*: Direct app-switch to UPI apps (Google Pay, PhonePe, Paytm, etc.)
   * *Other methods*: In-app browser for cards, net banking, or wallets
-* **Automatic Status Updates**: The payment card automatically updates to reflect the payment status on completion or expiry, and disables the “Pay Now” button to prevent duplicate payments.
+* **Automatic Status Updates**: The payment card automatically updates to reflect the payment status on completion or expiry, and disables the "Pay Now" button to prevent duplicate payments.
 
 ## Prerequisites
 
@@ -66,10 +66,10 @@ The following diagram illustrates the end-to-end flow, from sending an Enhanced 
 * **Generate payment link** - Your server calls the payment gateway API (Razorpay, PayU, or Cashfree) to create a payment link for the transaction.
 * **Receive payment link URL** - The payment gateway returns a URL (for example, `https://rzp.io/i/abc123XYZ`).
 * **Send template message** - Your server sends a template message via the Cloud API or your BSP, embedding the dynamic portion of the payment link (the suffix) in the button component.
-* **Message delivered on WhatsApp** - The consumer receives an enhanced payment bubble with the amount, currency, and a “Pay Now” button for in-app checkout.
-* **Consumer completes payment** - The consumer taps “Pay Now” and pays via UPI apps, cards, net banking, or wallets within WhatsApp.
+* **Message delivered on WhatsApp** - The consumer receives an enhanced payment bubble with the amount, currency, and a "Pay Now" button for in-app checkout.
+* **Consumer completes payment** - The consumer taps "Pay Now" and pays via UPI apps, cards, net banking, or wallets within WhatsApp.
 * **Payment gateway sends callback to merchant** - Your existing webhook endpoint receives the payment status callback with the same payload format as before. No changes to your webhook URL, payload handling, or reconciliation logic are needed.
-* **WhatsApp updates the payment card** - The payment card automatically reflects the payment status (success, or expiry) and disables the “Pay Now” button to prevent duplicate payments. This happens independently and requires no merchant action.
+* **WhatsApp updates the payment card** - The payment card automatically reflects the payment status (success, or expiry) and disables the "Pay Now" button to prevent duplicate payments. This happens independently and requires no merchant action.
 
 ## Template Requirements
 
@@ -105,7 +105,7 @@ Button:
 
 ### Dynamic URL Prefix Configuration
 
-When creating your template, the dynamic URL button requires a **URL prefix** that matches your payment gateway’s domain. Use one of the following prefixes based on your PG:
+When creating your template, the dynamic URL button requires a **URL prefix** that matches your payment gateway's domain. Use one of the following prefixes based on your PG:
 
 #### Razorpay
 
@@ -145,7 +145,7 @@ When creating your template, the dynamic URL button requires a **URL prefix** th
 
 ### Generating Payment Links
 
-Refer to your payment gateway’s documentation:
+Refer to your payment gateway's documentation:
 
 * **Razorpay**: [Create Payment Link (API)⁠](https://razorpay.com/docs/api/payments/payment-links/create-standard/?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR411Hm3OQVk-IA1keJrs53DkMRDRVxRjwIu80MbBYBBS6H0ddKC2EIL2cffqg_aem_W_yAGUjdbVVZHjTRqiV9YQ)[Dashboard⁠](https://razorpay.com/docs/payments/payment-links/create/?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR5BDBNis-WtphCB_DUQostqjZvI4stmKVZInwoZUV-S6pj0Kb0sJbazp0vo8A_aem_vvUuXnnpV8HeG1VtjjNAcQ)
 * **PayU**: [Payment Links⁠](https://docs.payu.in/reference/create-payment-links?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR44c3RXf1-nO0s9KlwHj43-0ETkDwBa_NNHyBsO0hDgP0A3qqR4WoeUAdFTVQ_aem_28Muvjl9lU6sjjRIbtyCTw)
@@ -208,28 +208,26 @@ In this example, if the template URL prefix is https://pg.io/i/, the final URL b
 The payment link suffix is passed in the button component:
 
 ```
-```
 {  
-  "type": "button",  
-  "sub_type": "url",  
-  "index": "0",  
-  "parameters": [  
-    {  
-      "type": "text",  
-      "text": "{PAYMENT_LINK_SUFFIX}"  
-    }  
-  ]  
+  "type": "button",  
+  "sub_type": "url",  
+  "index": "0",  
+  "parameters": [  
+    {  
+      "type": "text",  
+      "text": "{PAYMENT_LINK_SUFFIX}"  
+    }  
+  ]  
 }
-```
 ```
 
 | Field | Type | Description |
 | --- | --- | --- |
-| type | string | Must be “button” |
-| sub\_type | string | Must be “url” |
-| index | string | Button index, “0” for the first button |
-| parameters[].type | string | Must be “text” |
-| parameters[].text | string | The dynamic portion of the payment link URL (appended to the template’s URL prefix) |
+| type | string | Must be "button" |
+| sub\_type | string | Must be "url" |
+| index | string | Button index, "0" for the first button |
+| parameters[].type | string | Must be "text" |
+| parameters[].text | string | The dynamic portion of the payment link URL (appended to the template's URL prefix) |
 
 ## Payment Reconciliation and Callbacks
 
@@ -262,18 +260,18 @@ No additional reporting setup is required. WhatsApp provides visibility into lin
 | **Set reasonable expiry** | 24-48 hours balances conversion and security |
 | **Include context** | Add amount and order details in the message body |
 | **One button only** | Multiple buttons are not supported |
-| **Match URL prefix** | Ensure template URL prefix matches your PG’s link format |
+| **Match URL prefix** | Ensure template URL prefix matches your PG's link format |
 
 ## Limitations
 
 * Only **one payment link** per template message
 * **No header** components allowed
 * **Single button** required
-* Enhanced rendering depends on recipient’s WhatsApp version
+* Enhanced rendering depends on recipient's WhatsApp version
 * Currently available for **India** only
-* **Payment metrics behavior**: Enhanced Payment Links create a UPI intent on every “Pay now” tap. This means:
+* **Payment metrics behavior**: Enhanced Payment Links create a UPI intent on every "Pay now" tap. This means:
   * Total payment attempt counts will be higher than pre-EPL
-  * Expired intents are reported as failures, which may inflate failure rates (for example, Razorpay webhooks for expired UPI intents: “Payment was unsuccessful as you could not complete it in time”)
+  * Expired intents are reported as failures, which may inflate failure rates (for example, Razorpay webhooks for expired UPI intents: "Payment was unsuccessful as you could not complete it in time")
   * **Recommendation**: Exclude payment expiry errors when calculating your success metrics.
 
 ## Troubleshooting
@@ -284,8 +282,8 @@ No additional reporting setup is required. WhatsApp provides visibility into lin
 | --- | --- |
 | WABA allowlisted? | Confirm with your BSP or Meta representative |
 | Supported PG? | Must be Razorpay, PayU, or Cashfree |
-| URL prefix correct? | Template URL prefix must match your PG’s supported formats |
-| Link active? | Verify link hasn’t expired |
+| URL prefix correct? | Template URL prefix must match your PG's supported formats |
+| Link active? | Verify link hasn't expired |
 | Template compliant? | No header, single dynamic URL button |
 
 > **Note**: If your template gets miscategorized, you can appeal the assigned category. See the [Template Categorization Guide](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-categorization) for details on the appeal process. To avoid categorization uncertainty altogether, consider using a [**Utility Template**](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-library) from the template library, this ensures correct categorization and provides guidance on template content structure.
@@ -294,7 +292,7 @@ No additional reporting setup is required. WhatsApp provides visibility into lin
 
 * **Direct API users or Meta Managed Businesses**: Contact your Meta representative
 * **BSP partners**: Reach out to your BSP for integration support
-* **Payment gateway issues**: Consult your PG’s documentation or support team
+* **Payment gateway issues**: Consult your PG's documentation or support team
 
 ---
 

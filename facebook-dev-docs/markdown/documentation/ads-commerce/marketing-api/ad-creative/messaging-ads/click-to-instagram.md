@@ -15,7 +15,7 @@ Ads that click to Messenger send people that click on your ads directly into con
 
 Ads that click to Messenger support ads with an image, a video, a carousel, or a slideshow. You can also include call prompts in your ad.
 
-If you’re interested in creating ads that send people to Instagram or WhatsApp chats, see [Ads that Click to Instagram](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-creative/messaging-ads/click-to-instagram) or [Ads that Click to WhatsApp](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-creative/messaging-ads/click-to-whatsapp) for guidance. You can also create ads that pick the destination the user is most likely to respond from, see [Ads that Click to Multidestination](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-creative/messaging-ads/click-to-multidestination) for more information.
+If you're interested in creating ads that send people to Instagram or WhatsApp chats, see [Ads that Click to Instagram](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-creative/messaging-ads/click-to-instagram) or [Ads that Click to WhatsApp](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-creative/messaging-ads/click-to-whatsapp) for guidance. You can also create ads that pick the destination the user is most likely to respond from, see [Ads that Click to Multidestination](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-creative/messaging-ads/click-to-multidestination) for more information.
 
 ### Ad Creation Overview
 
@@ -63,7 +63,7 @@ To create your ad campaign send a `POST` request to the `act_ad_account_id/campa
 | `access_token` | Your Page access token |
 | `buying_type` | Set to `AUCTION` (the default) for Messenger Ads for Leads |
 | `name` *string* | The name for your ad campaign |
-| `objective` *enum* | Campaign’s objective. `OUTCOME_TRAFFIC` for CTS. `OUTCOME_LEADS` for Messenger Ads for Leads. `OUTCOME_ENGAGEMENT`, `OUTCOME_SALES`, and `OUTCOME_TRAFFIC` for general CTM Ads. |
+| `objective` *enum* | Campaign's objective. `OUTCOME_TRAFFIC` for CTS. `OUTCOME_LEADS` for Messenger Ads for Leads. `OUTCOME_ENGAGEMENT`, `OUTCOME_SALES`, and `OUTCOME_TRAFFIC` for general CTM Ads. |
 | `special_ad_categories` *array[enum]* | `NONE` or [a comma separated list of Meta ad categories](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-account/campaigns#parameters-2) |
 | `status` *array[enum]* | `PAUSED` – the campaign is not ready yet |
 
@@ -108,7 +108,7 @@ To create an ad set, send a `POST` request to the `act_ad_account_id/adsets` end
 * `destination_type` set to `MESSENGER`
 * `name`
 * `optimization_goal` set to `CONVERSATIONS`, `IMPRESSIONS`, or `LEAD_GENERATION` or `QUALITY_LEAD` for lead ads
-* `promoted_object` – set to the ID for your business’ Facebook Page.
+* `promoted_object` – set to the ID for your business' Facebook Page.
 * `status` set to `PAUSED`
 * `targeting`
 
@@ -124,7 +124,7 @@ To create an ad set, send a `POST` request to the `act_ad_account_id/adsets` end
 | `destination_type`*string* | Must be `MESSENGER` for Messenger Ads for Leads. **Required for Messenger Ads for Leads** |
 | `name` *string* | The name of your ad set |
 | `optimization_goal`*enum* | Can be either `CONVERSATIONS` or `CONVERSIONS` for CTM or CTS. Can be either `LEAD_GENERATION` or `QUALITY_LEAD` for Messenger Ads for Leads. |
-| `promoted_object`*enum* | Set to the ID for your business’ Facebook Page ID. **Required for Lead Ads for Messenger**   * If you have set up a   [CRM data source](https://developers.facebook.com/docs/marketing-api/conversions-api/guides/crm-integration) and choose `QUALITY_LEAD` as an optimization goal, you may add the `pixel_id` to the `promoted_object` for further optimization on quality. Note that you do not need to supply a `pixel_rule` alongside with the `pixel_id`. |
+| `promoted_object`*enum* | Set to the ID for your business' Facebook Page ID. **Required for Lead Ads for Messenger**   * If you have set up a   [CRM data source](https://developers.facebook.com/docs/marketing-api/conversions-api/guides/crm-integration) and choose `QUALITY_LEAD` as an optimization goal, you may add the `pixel_id` to the `promoted_object` for further optimization on quality. Note that you do not need to supply a `pixel_rule` alongside with the `pixel_id`. |
 | `status`*enum* | `PAUSED` |
 | `targeting` *object* | [An object that defines the audience](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference/advanced-targeting) to whom you want to show your ads |
 
@@ -190,7 +190,7 @@ To create an ad creative, send a `POST` request to the `/act_ad_account_id/adcre
 | Parameter | Value |
 | --- | --- |
 | `access_token` | Your Page access token. **Required** |
-| `name` | The name for your ad creative. For example, “Click to Messenger for September”, etc. **Required** |
+| `name` | The name for your ad creative. For example, "Click to Messenger for September", etc. **Required** |
 | [`object_story_spec`](https://developers.facebook.com/docs/marketing-api/reference/ad-creative-object-story-spec) | An object containing information about a message. **Required for Click to Messenger or Click to Subscribe ads**   * [`link_data`](https://developers.facebook.com/docs/marketing-api/reference/ad-creative-link-data)  – An object defining a message with a template or carousel * [`page_id`](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-creative)  – **Required.** The ID for the Facebook Page sending the message * [`photo_data`](https://developers.facebook.com/docs/marketing-api/reference/ad-creative-photo-data)  – An object defining a message with an image * [`text_data`](https://developers.facebook.com/docs/marketing-api/reference/ad-creative-text-data)  – An object defining a message with text only * [`video_data`](https://developers.facebook.com/docs/marketing-api/reference/ad-creative-video-data)  – An object defining a message with a video |
 | `privacy_url` | Set to the URL for your privacy policy. **Required for Messenger Ads for Leads** |
 
@@ -305,7 +305,7 @@ For more information about messaging app flows, refer to [Welcome message flows]
 
 ### Filling out Page Welcome Message
 
-The default message that a customer sees is “Hello! Can I get more info on this?”. You can create more tailored user experiences for your ads that click to Messenger by customizing your ads’ greeting message, icebreakers, and autofill messages in the `page_welcome_message` field under `object_story_spec`.
+The default message that a customer sees is "Hello! Can I get more info on this?". You can create more tailored user experiences for your ads that click to Messenger by customizing your ads' greeting message, icebreakers, and autofill messages in the `page_welcome_message` field under `object_story_spec`.
 
 For more information about icebreakers, see the [`ice_breakers` reference](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/messenger-profile-api/ice-breakers).
 
@@ -333,7 +333,7 @@ Create the `page_welcome_message` object to add icebreakers with a greeting mess
         {"title":"Can I see a menu?", "response":"This is a response 2"},
         {"title":"Where are you located?", "response":"This is a response 3"}],
       "quick_replies":[],
-      "text":"Hi {{user_first_name}}! Please let us know how we can help you."}
+      "text":"Hi {​{user_first_name}​}! Please let us know how we can help you."}
   },
   "user_edit":false,
   "surface":"visual_editor_new"
@@ -416,7 +416,7 @@ Before you can create ad creatives for Messenger Ads for Leads you must accept
 
 * A **welcome message** that greets people after they tap on your ad and let them know what your business has to offer
 * **Questions** that gather information about whether the person is a lead. This can include questions about interests, location, and contact information such as email and phone number.
-* A **confirmation message** that allows you to thank people for their answers and let them know what happens next. You can find your new lead in Ads Manager, your Page’s publishing tool or in your CRM.
+* A **confirmation message** that allows you to thank people for their answers and let them know what happens next. You can find your new lead in Ads Manager, your Page's publishing tool or in your CRM.
 * A **Privacy Policy** since you will be collecting customer information.
 
 #### Limitations
@@ -444,9 +444,9 @@ The following message template includes your `template_name`, your `privacy_url`
 | `answers` *array of strings* | A list of answers for a question. **Required for `reply_type: QUICK_REPLIES`.** |
 | `message` *string* | The text for a particular step. For example, a welcome message, question, directive, confirmation or disqualification message. **Required** |
 | `next_step_ids` *array of `step_id`s* | The next step, or possible steps, in the list of questions. Can not point to a previous question in the list. Can be dependent on the answer given. For example, if a person answers a question with a disqualifier then the next step will be the disqualifying step but if the answer is a qualifier then the next step will be the next question in the list of questions. |
-| `prefill_type` *enum{ `CITY`, `EMAIL`, `PHONE` }* | If an answer if is prefilled with a person’s information, such as if a person has already shared their email or phone number with your business. |
+| `prefill_type` *enum{ `CITY`, `EMAIL`, `PHONE` }* | If an answer if is prefilled with a person's information, such as if a person has already shared their email or phone number with your business. |
 | `reminder_text` *string* | Text for the person answering the questions reminding them to complete the form |
-| `reply_type` *enum{ `NONE`, `PREFILL`, `QUICK_REPLIES` }* | If `reply_type` is set to ‘PREFILL’ then the sizes of step\_list[x].next\_step\_ids and step\_list[x].answers must match |
+| `reply_type` *enum{ `NONE`, `PREFILL`, `QUICK_REPLIES` }* | If `reply_type` is set to 'PREFILL' then the sizes of step\_list[x].next\_step\_ids and step\_list[x].answers must match |
 | `step_id` *string* | The ID for step to allow you to order the questions and messages.For example, if you have a list of 6 steps, `0` is your welcome message, while `1` thru `3` are your questions, `4` is your confirmation, and `5` is your disqualification message. |
 | `step_type` *enum{ `CONFIRMATION`, `DISQUALIFY`, `INTRO`, `QUESTION`  }* | The type of step such as a question or introduction message. An **INTRO** and **CONFIRMATION** step are **required** |
 
@@ -667,7 +667,7 @@ curl -i -X POST \
   "https://graph.facebook.com/v25.0/act_<AD_ACCOUNT>/adcreatives
   ?object_story_id=<postOwnerID_postID>
   &instagram_user_id=<IG_USER_ID>
-  &call_to_action="{'type':MESSAGE_PAGE,'value':{'app_destination':'MESSENGER'}}"
+  &call_to_action="{'type':MESSAGE_PAGE,'value':{'app_destination':'MESSENGER'}​}"
   &access_token=<ACCESS_TOKEN>"
 ```
 
@@ -677,7 +677,7 @@ Where `object_story_id` is the post ID in the format of `postOwnerID_postID` and
 
 #### What is click to messenger with product extensions
 
-Product extensions(the “Show product” feature in Meta Ads Manager) is an Advantage+ creative optimization that showcases products from your catalog below your static single media when it’s likely to improve performance. This document shows you how to use product extensions features for Click-to-Messenger ads. If you want to learn how to add product extensions for non-click-to-messenger ads, please refer to this page.
+Product extensions(the "Show product" feature in Meta Ads Manager) is an Advantage+ creative optimization that showcases products from your catalog below your static single media when it's likely to improve performance. This document shows you how to use product extensions features for Click-to-Messenger ads. If you want to learn how to add product extensions for non-click-to-messenger ads, please refer to this page.
 
 #### Reference
 

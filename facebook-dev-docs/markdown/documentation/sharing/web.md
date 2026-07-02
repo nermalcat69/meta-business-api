@@ -23,7 +23,7 @@ The Sharing SDK for Android is a component of the [Facebook SDK for Android](htt
 
 To use the Facebook Sharing SDK in your project, make it a dependency in Maven.
 
-* In your project, open **your\_app | Gradle Scripts | build.gradle (Project)** and add the following repository to the `buildscript { repositories {}}` section:
+* In your project, open **your\_app | Gradle Scripts | build.gradle (Project)** and add the following repository to the `buildscript { repositories {}​}` section:
 
   ```
   mavenCentral()
@@ -35,7 +35,7 @@ To use the Facebook Sharing SDK in your project, make it a dependency in Maven.
   ```
 * Build your project.
 * Get your Facebook App ID properly configured and linked to your Android app.
-  * If you don’t have a Facebook App ID for your app yet, see [Facebook SDK Quick Start for Android](https://developers.facebook.com/documentation/android/getting-started#quick-start).
+  * If you don't have a Facebook App ID for your app yet, see [Facebook SDK Quick Start for Android](https://developers.facebook.com/documentation/android/getting-started#quick-start).
   * Find your Facebook App ID on the [Apps](https://developers.facebook.com/apps) page of the developer portal and then see [Add Your Facebook App ID and Client Token](https://developers.facebook.com/documentation/android/getting-started#app_id).
 * Generate an Android development key hash and add it to the **Sample Apps** page of your [developer settings](https://developers.facebook.com/settings/developer/sample-app/). For details, see [Create a Development Key Hash](https://developers.facebook.com/documentation/android/getting-started#create_hash) and [Running Sample Apps](https://developers.facebook.com/documentation/android/getting-started#samples).
 * Add a `ContentProvider` to your `AndroidManifest.xml` file and set `{APP_ID}` to your app ID:
@@ -64,7 +64,7 @@ When people share links from your app to Facebook, it includes a `contentURL` wi
 
 ![Share to Facebook dialog for a link, next to the published post showing the link preview card](https://scontent.fdel27-5.fna.fbcdn.net/v/t39.2365-6/672167470_1484143300110986_1286404854647138328_n.png?_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=Jb6nTmfweEkQ7kNvwEX7HXS&_nc_oc=AdrTNFdfLEdBZ9HKDoyRhvTqOcpH2Gp9Di3QkCupVtXLxXKe6kCP93wKJsK0FBewzz9imB4UAi77rZMMj6pmqGzn&_nc_zt=14&_nc_ht=scontent.fdel27-5.fna&_nc_gid=Zb3OGuOiy6sqo9L8Lrm96A&_nc_ss=7b289&oh=00_AQAaTtGwoqbMr8K10So3gKVFnobp-imcBfIEpZ9g4onqEQ&oe=6A608521)
 
-Here’s an example of how you can trigger the share:
+Here's an example of how you can trigger the share:
 
 ```
 ShareLinkContent content = new ShareLinkContent.Builder()
@@ -74,7 +74,7 @@ ShareLinkContent content = new ShareLinkContent.Builder()
 
 To preview a link share to Google Play or the App Store, enter your URL into the [Sharing Debugger](https://developers.facebook.com/tools/debug/).
 
-If your app share contains a link to any app on Google Play or the App Store, the description and image included in the share will be ignored. Instead, we will scrape the store directly for that app’s title and image (and if there is no image, the share won’t include one).
+If your app share contains a link to any app on Google Play or the App Store, the description and image included in the share will be ignored. Instead, we will scrape the store directly for that app's title and image (and if there is no image, the share won't include one).
 
 ### Photos
 
@@ -167,7 +167,7 @@ shareButton.setShareContent(content);
 
 ### Share Dialog
 
-The Share dialog switches to the native Facebook for Android app, then returns control to your app after a post is published. Depending on the SDK you’re using, people may need tap the back arrow icon to return to your app. If the Facebook app is not installed, the Share dialog automatically falls back to the web-based dialog.
+The Share dialog switches to the native Facebook for Android app, then returns control to your app after a post is published. Depending on the SDK you're using, people may need tap the back arrow icon to return to your app. If the Facebook app is not installed, the Share dialog automatically falls back to the web-based dialog.
 
 ```
 ShareDialog.show(activityOrFragment, content);
@@ -200,7 +200,7 @@ if (ShareDialog.canShow(ShareLinkContent.class)) {
 }
 ```
 
-Finally call the SDK’s `callbackManager` in your `onActivityResult` to handle the response:
+Finally call the SDK's `callbackManager` in your `onActivityResult` to handle the response:
 
 ```
 @Override
@@ -210,11 +210,11 @@ protected void onActivityResult(final int requestCode, final int resultCode, fin
 }
 ```
 
-If you are using AndroidX activities or fragments, you don’t have to override `onActivityResult`.
+If you are using AndroidX activities or fragments, you don't have to override `onActivityResult`.
 
 ### Message Dialog
 
-The Message dialog switches to the native Messenger for Android app, then returns control to your app after a post is published. Depending on the SDK you’re using, people may need tap the back arrow icon to return to your app.
+The Message dialog switches to the native Messenger for Android app, then returns control to your app after a post is published. Depending on the SDK you're using, people may need tap the back arrow icon to return to your app.
 
 ```
 MessageDialog.show(activityOrFragment, content);
@@ -239,9 +239,9 @@ ShareLinkContent content = new ShareLinkContent.Builder()
 
 ### Built-In Share Fallbacks
 
-In past versions of the Facebook SDK for Android, your app had to check for a native, installed Facebook app before it could open the Share Dialog. If the person didn’t have the app installed, you had to provide your own code to call a fallback dialog.
+In past versions of the Facebook SDK for Android, your app had to check for a native, installed Facebook app before it could open the Share Dialog. If the person didn't have the app installed, you had to provide your own code to call a fallback dialog.
 
-Now the SDK automatically checks for the native Facebook app. If it isn’t installed, the SDK switches people to their default browser and opens the [Feed Dialog](https://developers.facebook.com/documentation/sharing/reference/feed-dialog).
+Now the SDK automatically checks for the native Facebook app. If it isn't installed, the SDK switches people to their default browser and opens the [Feed Dialog](https://developers.facebook.com/documentation/sharing/reference/feed-dialog).
 
 ### App Links
 

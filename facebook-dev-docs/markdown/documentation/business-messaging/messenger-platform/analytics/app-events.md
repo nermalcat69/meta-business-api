@@ -25,7 +25,7 @@ To view metrics for a Facebook Page you own or can perform the `ANALYZE` task on
   * `read_insights`
 * Standard Access
 
-To view metrics for a Facebook Page you don’t own or cannot perform the `ANALYZE` task on, your app needs:
+To view metrics for a Facebook Page you don't own or cannot perform the `ANALYZE` task on, your app needs:
 
 * The Page ID for the Facebook Page for which you want to view metrics
   * For Instagram messaging this will be the Facebook Page linked to the Instagram Professional account
@@ -50,42 +50,38 @@ To read information for one or more metrics, send a `GET` request to the `/<PAGE
 *Formatted for readability.*
 
 ```
-```
-curl -X GET "https://graph.facebook.com/<LATEST_API_VERSION>/<PAGE_ID>/insights  
-    ?metric=page_messages_new_conversations_unique,page_messages_blocked_conversations_unique  
-    &access_token=<PAGE_ACCESS_TOKEN>"
-```
+curl -X GET "https://graph.facebook.com/<LATEST_API_VERSION>/<PAGE_ID>/insights  
+    ?metric=page_messages_new_conversations_unique,page_messages_blocked_conversations_unique  
+    &access_token=<PAGE_ACCESS_TOKEN>"
 ```
 
 On success your app will receive the following JSON response:
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "name": "page_messages_new_conversations_unique",  
-      "period": "day",  
-      "values": [  
-        {  
-          "value": "42",  
-          "end_time": "1665175977"  
-        },  
-      ]  
-    },  
-    {  
-      "name": "page_messages_blocked_conversations_unique",  
-      "period": "day",  
-      "values": [  
-        {  
-          "value": "0",  
-          "end_time": "1665175977"  
-        },  
-      ]  
-    }  
-  ],  
+  "data": [  
+    {  
+      "name": "page_messages_new_conversations_unique",  
+      "period": "day",  
+      "values": [  
+        {  
+          "value": "42",  
+          "end_time": "1665175977"  
+        },  
+      ]  
+    },  
+    {  
+      "name": "page_messages_blocked_conversations_unique",  
+      "period": "day",  
+      "values": [  
+        {  
+          "value": "0",  
+          "end_time": "1665175977"  
+        },  
+      ]  
+    }  
+  ],  
 }
-```
 ```
 
 ### Total over range sample request
@@ -95,35 +91,31 @@ The following example finds the total number of new, unique conversations over a
 *Formatted for readability.*
 
 ```
-```
-curl -i -X GET "https://graph.facebook.com/<LATEST_API_VERSION>/<PAGE_ID>/insights/  
-    ?metric=page_messages_new_conversations_unique  
-    &since=<UNIX_TIMESTAMP_START>  
-    &until=<UNIX_TIMESTAMP_STOP>  
-    &period=total_over_range  
-    &access_token=<PAGE_ACCESS_TOKEN>"
-```
+curl -i -X GET "https://graph.facebook.com/<LATEST_API_VERSION>/<PAGE_ID>/insights/  
+    ?metric=page_messages_new_conversations_unique  
+    &since=<UNIX_TIMESTAMP_START>  
+    &until=<UNIX_TIMESTAMP_STOP>  
+    &period=total_over_range  
+    &access_token=<PAGE_ACCESS_TOKEN>"
 ```
 
 On success your app will receive the following JSON response with the number of new, unique conversations and the end of the time range:
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "name": "page_messages_new_conversations_unique",  
-      "period": "total_over_range",  
-      "values": [  
-        {  
-          "value": 27,  
-          "end_time": "1665175977"  
-        }  
-      ],  
-    }  
-  ]  
+  "data": [  
+    {  
+      "name": "page_messages_new_conversations_unique",  
+      "period": "total_over_range",  
+      "values": [  
+        {  
+          "value": 27,  
+          "end_time": "1665175977"  
+        }  
+      ],  
+    }  
+  ]  
 }
-```
 ```
 
 ### Breakdown sample request
@@ -131,69 +123,65 @@ On success your app will receive the following JSON response with the number of 
 The following example finds the total number of recurring notifications tokens over a specific period of time and grouped by topic and frequency.
 
 ```
-```
-curl -i -X GET "https://graph.facebook.com/<LATEST_API_VERSION>/<PAGE_ID>/insights/  
-    ?metric=recurring_notifications_tokens  
-    &since=<UNIX_TIMESTAMP_START>  
-    &until=<UNIX_TIMESTAMP_STOP>  
-    &period=total_over_range  
-    &breakdown=recurring_notifications_topic,recurring_notifications_frequency  
-    &access_token=<PAGE_ACCESS_TOKEN>"
-```
+curl -i -X GET "https://graph.facebook.com/<LATEST_API_VERSION>/<PAGE_ID>/insights/  
+    ?metric=recurring_notifications_tokens  
+    &since=<UNIX_TIMESTAMP_START>  
+    &until=<UNIX_TIMESTAMP_STOP>  
+    &period=total_over_range  
+    &breakdown=recurring_notifications_topic,recurring_notifications_frequency  
+    &access_token=<PAGE_ACCESS_TOKEN>"
 ```
 
-On success your app will receive the following JSON response with tokens grouped by topic, “newproducts” and “10percentsale”, and message frequency available for each topic, “daily”, “weekly”, and “monthly” for “newproducts” and “daily” and “weekly” for “10percentsale”:
+On success your app will receive the following JSON response with tokens grouped by topic, "newproducts" and "10percentsale", and message frequency available for each topic, "daily", "weekly", and "monthly" for "newproducts" and "daily" and "weekly" for "10percentsale":
 
-```
 ```
 {  
-  "data": [  
-    {  
-      "name": "recurring_notifications_tokens",  
-      "period": "total_over_range",  
-      "values": [  
-        {  
-          "value": 3,  
-          "end_time": "1665175977",  
-          "recurring_notifications_topic": "newproducts",  
-          "recurring_notifications_frequency": "daily"  
-        },  
-        {  
-          "value": 15,  
-          "end_time": "1665175977",  
-          "recurring_notifications_topic": "newproducts",  
-          "recurring_notifications_frequency": "weekly"  
-        },  
-        {  
-          "value": 8,  
-          "end_time": "1665175977",  
-          "recurring_notifications_topic": "newproducts",  
-          "recurring_notifications_frequency": "monthly"  
-        },  
-        {  
-          "value": 17,  
-          "end_time": "1665175977",  
-          "recurring_notifications_topic": "10percentsale",  
-          "recurring_notifications_frequency": "daily"  
-        },  
-        {  
-          "value": 14,  
-          "end_time": "1665175977",  
-          "recurring_notifications_topic": "10percentsale",  
-          "recurring_notifications_frequency": "weekly"  
-        },  
-      ]  
-    }  
-  ]  
+  "data": [  
+    {  
+      "name": "recurring_notifications_tokens",  
+      "period": "total_over_range",  
+      "values": [  
+        {  
+          "value": 3,  
+          "end_time": "1665175977",  
+          "recurring_notifications_topic": "newproducts",  
+          "recurring_notifications_frequency": "daily"  
+        },  
+        {  
+          "value": 15,  
+          "end_time": "1665175977",  
+          "recurring_notifications_topic": "newproducts",  
+          "recurring_notifications_frequency": "weekly"  
+        },  
+        {  
+          "value": 8,  
+          "end_time": "1665175977",  
+          "recurring_notifications_topic": "newproducts",  
+          "recurring_notifications_frequency": "monthly"  
+        },  
+        {  
+          "value": 17,  
+          "end_time": "1665175977",  
+          "recurring_notifications_topic": "10percentsale",  
+          "recurring_notifications_frequency": "daily"  
+        },  
+        {  
+          "value": 14,  
+          "end_time": "1665175977",  
+          "recurring_notifications_topic": "10percentsale",  
+          "recurring_notifications_frequency": "weekly"  
+        },  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ## Insights parameters
 
 | Parameter | Description |
 | --- | --- |
-| `breakdown` | Dimensions by which the response is grouped. May be one or more of the following:  | Name | Description | | --- | --- | | `campaign_id` | View your data by campaign ID number. Examples are “abc123”, “Summer messaging campaign”, and “Spring sale 2” | | `engagement_source` | View your data by the type of engagement with recurring notifications. Examples are primary and secondary CTA ID (which CTA was clicked on) | | `message_type` | View your data by the type of message your business sent. Examples are Marketing messages | | `messaging_channel` | View your data by the channel used to deliver messages to users. Examples are Messenger and Instagram | | `recurring_notifications_entry_point` | View your data by the entry point into recurring notifications. Examples are In-thread, CTM ads, Checkbox plugin, m.me or ig.me links, and Facebook Page | | `recurring_notifications_frequency` | View your data by the frequency allowed by the recurring notifications opt-in. Examples are Daily, Weekly, and Monthly | | `recurring_notifications_topic` | View your data by the recurring notifications topic. Examples are Promotional messages, Product launches, and Deals | |
+| `breakdown` | Dimensions by which the response is grouped. May be one or more of the following:  | Name | Description | | --- | --- | | `campaign_id` | View your data by campaign ID number. Examples are "abc123", "Summer messaging campaign", and "Spring sale 2" | | `engagement_source` | View your data by the type of engagement with recurring notifications. Examples are primary and secondary CTA ID (which CTA was clicked on) | | `message_type` | View your data by the type of message your business sent. Examples are Marketing messages | | `messaging_channel` | View your data by the channel used to deliver messages to users. Examples are Messenger and Instagram | | `recurring_notifications_entry_point` | View your data by the entry point into recurring notifications. Examples are In-thread, CTM ads, Checkbox plugin, m.me or ig.me links, and Facebook Page | | `recurring_notifications_frequency` | View your data by the frequency allowed by the recurring notifications opt-in. Examples are Daily, Weekly, and Monthly | | `recurring_notifications_topic` | View your data by the recurring notifications topic. Examples are Promotional messages, Product launches, and Deals | |
 | `date_preset` | Relative date range which can be used instead of `since` and `until`. May be `last_week`, `last_month`, `last_quarter`, and more. [See more values in the Page Insights guide.](https://developers.facebook.com/docs/graph-api/reference/v15.0/insights#parameters) |
 | `metric` | **Required.** A comma-separated [list of metrics](https://developers.facebook.com/documentation/business-messaging/messenger-platform/analytics/app-events#metrics) to return |
 | `period` | The aggregation provided within the since/until or date\_preset range. The `total_over_range` value gives a single value for the metric over the given date range. May be `day`, `week`, `month`, `days_28`, or `total_over_range`. |
@@ -216,7 +204,7 @@ The following metrics are available via the Messaging Insights API:
 | `page_messages_sent` | The number of marketing messages your business Page sent to customers.   Possible `breakdown` Values:   * `campaign_id` * `message_type` * `messaging_channel` * `recurring_notifications_topic`   This metric is in development. |
 | `page_messages_total_messaging_connections` | The number of people your business can send messages to.   This metric shows the number of people who have ever sent a message to your business on Messenger, not including people who have blocked or reported your business on Messenger. There may be some constraints on your ability to send messages to connections, such as limitations on how many messages you can send during certain timeframes. This metric also only includes connections made since October 2016, when data became available. |
 | `page_messages_with_business_outcomes` | The number of messaging connections with at least one order created.   This metric is in development. |
-| `recurring_notifications_tokens` | The number of times an account has subscribed to receive marketing messages from your business. If an account has subscribed to multiple topics, it will be counted again for each topic.   How it’s calculated: This metric counts the number of times accounts agreed to receive recurring messages minus the number of times accounts unsubscribed.   Possible `breakdown` Values:   * `messaging_channel` * `recurring_notifications_frequency` * `recurring_notifications_topic`   This metric is in development. |
+| `recurring_notifications_tokens` | The number of times an account has subscribed to receive marketing messages from your business. If an account has subscribed to multiple topics, it will be counted again for each topic.   How it's calculated: This metric counts the number of times accounts agreed to receive recurring messages minus the number of times accounts unsubscribed.   Possible `breakdown` Values:   * `messaging_channel` * `recurring_notifications_frequency` * `recurring_notifications_topic`   This metric is in development. |
 
 Learn more about
 [metrics in development.⁠](https://www.facebook.com/business/help/metrics-labeling#estimated)

@@ -27,9 +27,9 @@ If you are using the media represented by `effective_instagram_media_id`, you on
 
 Ad creatives with `instagram_user_id` have two fields called `instagram_permalink_url` and `effective_instagram_media_id`.
 
-With `instagram_permalink_url`, you can get a URL for a corresponding Instagram post and can see user interactions with the ad post. Because you see this post on a website instead of the mobile Instagram app, it is not exactly what people viewing your ad see. It does not have “Sponsored” or Call To Action, nor it shows Carousel ads with multiple images.
+With `instagram_permalink_url`, you can get a URL for a corresponding Instagram post and can see user interactions with the ad post. Because you see this post on a website instead of the mobile Instagram app, it is not exactly what people viewing your ad see. It does not have "Sponsored" or Call To Action, nor it shows Carousel ads with multiple images.
 
-To get an ad creative’s `instagram_permalink_url` and `effective_instagram_media_id`:
+To get an ad creative's `instagram_permalink_url` and `effective_instagram_media_id`:
 
 ```
 curl -G \
@@ -50,24 +50,22 @@ curl -G \
 The response includes only non-organic comments:
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "id": "1234",  
-      "text": "Where can I get it?"  
-    }  
-    {  
-      "id": "5678",  
-      "text": "This is nice.",  
+  "data": [  
+    {  
+      "id": "1234",  
+      "text": "Where can I get it?"  
+    }  
+    {  
+      "id": "5678",  
+      "text": "This is nice.",  
   
-    }  
-  ],  
-  "paging": {  
-    ...  
-  }  
+    }  
+  ],  
+  "paging": {  
+    ...  
+  }  
 }
-```
 ```
 
 ## Use Instagram Graph API for Comments

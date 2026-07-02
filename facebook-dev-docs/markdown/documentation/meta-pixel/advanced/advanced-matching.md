@@ -21,7 +21,7 @@ In this scenario, what would be the best recommendation to consolidate these mul
 
 The two following examples demonstrate instances where there may be unexpected behavior or extraneous Pixel events firing. This firing could skew reporting and yield undesirable results when working with multiple codes.
 
-Consider the scenario where Agency A wants to track a Purchase in Pixel A and Agency B wants to track a custom event (Step4) on Pixel B. They’ve installed two base codes on the same page to fire when it loads.
+Consider the scenario where Agency A wants to track a Purchase in Pixel A and Agency B wants to track a custom event (Step4) on Pixel B. They've installed two base codes on the same page to fire when it loads.
 
 ### Example: Two Pixels in Two Base Codes
 
@@ -48,7 +48,7 @@ The following code is installed:
 </script>
 ```
 
-You expect Purchase events to be captured in Pixel A and Step4 to be captured in Pixel B; however, this isn’t the case. The end result is summarized in the table:
+You expect Purchase events to be captured in Pixel A and Step4 to be captured in Pixel B; however, this isn't the case. The end result is summarized in the table:
 
 | Pixel | PageView Event | Purchase Event | Step4 Event |
 | --- | --- | --- | --- |
@@ -123,6 +123,6 @@ The following snippet selectively fires events on each Pixel by specifying the s
 
 ## Takeaways
 
-Understanding the behavioral differences among track, `trackSingle` or `trackSingleCustom` is important when there’s a possibility of multiple Pixels interacting on your page.
+Understanding the behavioral differences among track, `trackSingle` or `trackSingleCustom` is important when there's a possibility of multiple Pixels interacting on your page.
 
-Using these new capabilities allows accurate tracking for multiple Pixels and ensures there’s no conflicting or unexpected behavior when events are defined to fire.
+Using these new capabilities allows accurate tracking for multiple Pixels and ensures there's no conflicting or unexpected behavior when events are defined to fire.

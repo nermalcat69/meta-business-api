@@ -19,28 +19,26 @@ For media templates you must either:
 To send a message with an attachment you must first upload your image/video using the [`attachment upload api`](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/attachment-upload-api). After successfully uploading an attachment that contains your image/video you should receive an attachment\_id, record that and use in the payload below.
 
 ```
-```
 {  
-  "message_id": "<MESSAGE_ID>",  
-  "messenger_delivery_data": {  
-    "subscription_token": "<SUBSCRIPTION_TOKEN>"  
-  },  
-  "message":{  
-    "attachment": {  
-      "type": "template",  
-      "payload": {  
-         "template_type": "media",  
-         "elements": [  
-            {  
-               "media_type": "image",  
-               "attachment_id": "<ATTACHMENT_ID>"  
-            }  
-         ]  
-      }  
-    }  
-  }  
+  "message_id": "<MESSAGE_ID>",  
+  "messenger_delivery_data": {  
+    "subscription_token": "<SUBSCRIPTION_TOKEN>"  
+  },  
+  "message":{  
+    "attachment": {  
+      "type": "template",  
+      "payload": {  
+         "template_type": "media",  
+         "elements": [  
+            {  
+               "media_type": "image",  
+               "attachment_id": "<ATTACHMENT_ID>"  
+            }  
+         ]  
+      }  
+    }  
+  }  
 }
-```
 ```
 
 ## Sending a media template with a URL
@@ -48,7 +46,7 @@ To send a message with an attachment you must first upload your image/video usin
 To get the Facebook URL for an image or video, do the following:
 
 * Click the image or video thumbnail to open the full-size view.
-* Copy the URL from your browser’s address bar. Facebook URLs should be in the following base format:
+* Copy the URL from your browser's address bar. Facebook URLs should be in the following base format:
 
 | Media Type | Media Source | URL Format |
 | --- | --- | --- |
@@ -60,28 +58,26 @@ To get the Facebook URL for an image or video, do the following:
 After retrieving a valid facebook URL you can use it in the below payload.
 
 ```
-```
 {  
-  "message_id": "<MESSAGE_ID>",  
-  "messenger_delivery_data": {  
-    "subscription_token": "<SUBSCRIPTION_TOKEN>"  
-  },  
-  "message":{  
-    "attachment": {  
-      "type": "template",  
-      "payload": {  
-         "template_type": "media",  
-         "elements": [  
-            {  
-               "media_type": "image",  
-               "url": "<FACEBOOK_URL>"  
-            }  
-         ]  
-      }  
-    }  
-  }  
+  "message_id": "<MESSAGE_ID>",  
+  "messenger_delivery_data": {  
+    "subscription_token": "<SUBSCRIPTION_TOKEN>"  
+  },  
+  "message":{  
+    "attachment": {  
+      "type": "template",  
+      "payload": {  
+         "template_type": "media",  
+         "elements": [  
+            {  
+               "media_type": "image",  
+               "url": "<FACEBOOK_URL>"  
+            }  
+         ]  
+      }  
+    }  
+  }  
 }
-```
 ```
 
 ## Adding a button
@@ -89,19 +85,17 @@ After retrieving a valid facebook URL you can use it in the below payload.
 Optionally, buttons may also be attached to the media template. You can add up to 3 buttons to a media template message, similar to generic template.
 
 ```
-```
-    "elements": [  
-   {  
-      "media_type": "image",  
-      "url": "<MEDIA_URL>",  
-      "buttons": [  
-         {  
-            "type": "web_url",  
-            "url": "<WEB_URL>",  
-            "title": "View Website",  
-         }  
-      ]  
-   }  
+    "elements": [  
+   {  
+      "media_type": "image",  
+      "url": "<MEDIA_URL>",  
+      "buttons": [  
+         {  
+            "type": "web_url",  
+            "url": "<WEB_URL>",  
+            "title": "View Website",  
+         }  
+      ]  
+   }  
 ]
-```
 ```

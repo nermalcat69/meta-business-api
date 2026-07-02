@@ -7,14 +7,14 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/marketing
 
 Updated: Jun 16, 2026
 
-Reservation enables you to plan and buy your campaigns with a fixed cost, offering optimized reach and controlled ad frequency while helping you forecast your campaign’s performance. This is similar to how people traditionally buy TV ads. This is a specialized, advanced option that most advertisers will only use if they want high assurance their ads reach a certain number of Accounts Center accounts.
+Reservation enables you to plan and buy your campaigns with a fixed cost, offering optimized reach and controlled ad frequency while helping you forecast your campaign's performance. This is similar to how people traditionally buy TV ads. This is a specialized, advanced option that most advertisers will only use if they want high assurance their ads reach a certain number of Accounts Center accounts.
 
 Reservation works across ad types and devices. Since Meta targets based on real people, not cookies, Meta can more accurately predict reach and control frequency across devices.
 
 ## Restrictions
 
-* Available for certain ad accounts. Check an [ad account’s](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-account#read) `CAN_USE_REACH_AND_FREQUENCY` parameter.
-* The ad set’s `stop_time` must be within 180 days of a prediction.
+* Available for certain ad accounts. Check an [ad account's](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-account#read) `CAN_USE_REACH_AND_FREQUENCY` parameter.
+* The ad set's `stop_time` must be within 180 days of a prediction.
 * Accounts also have country-based limitations; check with a `GET` API call to `https://graph.facebook.com/<API_VERSION>/act_<AD_ACCOUNT_ID>?fields=rf_spec`.
 * Only set one country at a time in `target_spec`.
 * No minimal iOS versions for `user_os`, such as `iOS_ver_2.0_and_above`.
@@ -61,9 +61,9 @@ Results look like this:
 
 ## Create predictions
 
-Predictions contain the number of Accounts Center accounts your ad can reach in a date range based on a given reach, frequency, audience, and budget. Reservation estimates can help you simulate your campaign’s lifetime results and will adjust based on your objective, budget, audience, formats, and placements, brand safety, performance goal and frequency control settings.
+Predictions contain the number of Accounts Center accounts your ad can reach in a date range based on a given reach, frequency, audience, and budget. Reservation estimates can help you simulate your campaign's lifetime results and will adjust based on your objective, budget, audience, formats, and placements, brand safety, performance goal and frequency control settings.
 
-Edits to a reservation campaign are possible after booking, but once the campaign is running, you cannot edit or pause it except to switch out your ad creatives. If you only edit an ad’s creative, your prediction won’t change. You may delete the campaign to cancel and stop it, but will need to re-book the campaign, where you may receive a new CPM and prediction on campaign outcomes. Only book campaigns you intend to run. For testing, limit your reservations to the smallest size and length; be certain you cancel them since this is real ads inventory that Meta reserves for you.
+Edits to a reservation campaign are possible after booking, but once the campaign is running, you cannot edit or pause it except to switch out your ad creatives. If you only edit an ad's creative, your prediction won't change. You may delete the campaign to cancel and stop it, but will need to re-book the campaign, where you may receive a new CPM and prediction on campaign outcomes. Only book campaigns you intend to run. For testing, limit your reservations to the smallest size and length; be certain you cancel them since this is real ads inventory that Meta reserves for you.
 
 ### Limits
 
@@ -100,7 +100,7 @@ This shows possible `status` results in `reachfrequencyprediction`. Initial limi
 | 9 | FAIL | Ad set end date too far in future |
 | 10 | FAIL | Frequency cap not specified |
 | 11 | FAIL | Ad placement not supported, such as mixed RHS and Feed |
-| 12 | FAIL | Ad set dates issues (start time and/or end time): Start time in past, not midnight, or not full day. End time in past, exceeds 90 days of start time or doesn’t end after 6AM. |
+| 12 | FAIL | Ad set dates issues (start time and/or end time): Start time in past, not midnight, or not full day. End time in past, exceeds 90 days of start time or doesn't end after 6AM. |
 | 13 | FAIL | Targeted country not yet supported |
 | 14 | FAIL | Ad set dates include blackout days |
 | 15 | FAIL | Insufficient inventory, unable to reserve. See Reserving a Prediction. |
@@ -112,7 +112,7 @@ This shows possible `status` results in `reachfrequencyprediction`. Initial limi
 | 21 | FAIL | Ads inventory changed significantly enough for inaccurate prediction. |
 | 23 | FAIL | Frequency cap interval not supported in target country. |
 | 24 | FAIL | Holdout Lift Study ad set under account or campaign group not consistent with reservation prediction. |
-| 25 | FAIL | Frequency cap can’t exceed the number of days your campaign runs. |
+| 25 | FAIL | Frequency cap can't exceed the number of days your campaign runs. |
 | 26 | FAILURE\_EMPTY\_AUDIENCE | Selected audience empty and unusable. |
 | 27 | FAIL | No modification allowed on your running campaign. |
 | 28 | FAIL | Cannot modify running campaign created with Insertion Order. |
@@ -122,14 +122,14 @@ This shows possible `status` results in `reachfrequencyprediction`. Initial limi
 | 32 | FAIL | Lift study for account or campaign group ends before campaign ends. |
 | 35 | FAIL | Cannot set Reservation campaign start time to be in the past. |
 | 36 | FAIL | Please make sure the duration of the Reservation ad set is longer than one day and the campaign start/end time is valid. |
-| 37 | FAIL | The objective isn’t supported by Audience Network with the reservation buying type. |
-| 39 | FAIL | Selected placements combination can’t be used when buying with reservation. |
-| 40 | FAIL | Specific mobile OS versions can’t be targeted with the reservation buying type. |
-| 41 | FAIL | Friends of connections can’t be targeted with the reservation buying type. |
+| 37 | FAIL | The objective isn't supported by Audience Network with the reservation buying type. |
+| 39 | FAIL | Selected placements combination can't be used when buying with reservation. |
+| 40 | FAIL | Specific mobile OS versions can't be targeted with the reservation buying type. |
+| 41 | FAIL | Friends of connections can't be targeted with the reservation buying type. |
 | 42 | FAIL | Reservation campaigns are not able to run when Audience Network is selected as the only placement. Please select the Audience Network placement with either Facebook Feed or Instagram Feed as additional placements. |
-| 44 | FAIL | Reservation doesn’t support Facebook Story. |
+| 44 | FAIL | Reservation doesn't support Facebook Story. |
 | 45 | FAIL | To use Facebook Stories as a placement, please also select either Facebook Feeds or Instagram Stories. |
-| 50 | FAIL | Selected placements combination can’t be used when buying with Reservation. For Reservation IO buying, please ensure the objective is Video Views. Otherwise, to use Facebook In-Stream, please select the Facebook Feeds placement. |
+| 50 | FAIL | Selected placements combination can't be used when buying with Reservation. For Reservation IO buying, please ensure the objective is Video Views. Otherwise, to use Facebook In-Stream, please select the Facebook Feeds placement. |
 | 53 | FAIL | The in-stream video placement is available only for audiences in the US, the UK, Australia, New Zealand, Ireland, Thailand, Mexico, Peru, France, Germany, Argentina, Colombia, Spain, Chile, Ecuador, Dominican Republic, Guatemala, Bolivia, Honduras, El Salvador, Norway, Sweden, the Netherlands, Belgium, Poland, Portugal, Denmark, India, Malaysia, the Philippines, Indonesia, and Vietnam. To continue, edit your audience to include only people in those countries. |
 | 60 | FAIL | To use Facebook Marketplace, please select the Facebook Feeds placement. |
 | 66 | FAIL | Facebook Right Column Placement Cannot Be Combined with Other Placements. |
@@ -142,7 +142,7 @@ Provide your Prediction ID and its data as input to create a new ID which serves
 
 **If the reservation succeeds, Meta temporarily reserves the inventory for you. You have *approximately* one hour after the reservation to assign an *ad* to an ad set.**
 
-If the hourly limit for reservation requests is exceeded, you’ll see the following error code and message: **613: Calls to this API have exceeded the rate limit.**
+If the hourly limit for reservation requests is exceeded, you'll see the following error code and message: **613: Calls to this API have exceeded the rate limit.**
 
 ### Reserve
 
@@ -210,12 +210,12 @@ The following are limits on the ad set:
 * Instagram placement options: `stream`, `story`, `explore`, `explore_home` and `reels`. If placement includes `instagram`, you must use `destination_ids`, not `destination_id`. The `destination_ids` field should contain the Facebook Page ID used as `destination_id`, plus the Instagram account ID.
 * Either Custom Audience or Partner Categories but not both
 * Website Custom Audiences, fan, or video engagement-exclusion targeting are not permitted.
-* Ad set’s `promoted_object` must match the prediction’s `destination_id`. For page posts, it must be the page ID specified and for app ads, it must match the app ID specified.
+* Ad set's `promoted_object` must match the prediction's `destination_id`. For page posts, it must be the page ID specified and for app ads, it must match the app ID specified.
 * [Standard and Scheduled Ads Pacing](https://developers.facebook.com/docs/marketing-api/adset/pacing) supported, while accelerated delivery not.
 
 Meta charges reservation campaigns on actual impressions delivered. If the campaign start time passes and the ad set lacks active ads, the campaign fails to deliver and no charges apply. Meta releases remaining inventory, however Meta may penalize the ad account for repeat occurrences.
 
-When you create a campaign using Meta’s reservation buying type you are agreeing to pay the proposed costs for the advertising inventory you reserve. If you want to change your audience size or ad frequency, then your costs will also change. You can make these changes any time before your campaign starts. You can edit your ad creative until your campaign starts.
+When you create a campaign using Meta's reservation buying type you are agreeing to pay the proposed costs for the advertising inventory you reserve. If you want to change your audience size or ad frequency, then your costs will also change. You can make these changes any time before your campaign starts. You can edit your ad creative until your campaign starts.
 
 ### Manage ads
 
@@ -223,13 +223,13 @@ Reservation ad sets may contain multiple ads; you can add more ads at any point.
 
 ### Detach predictions, modify ad sets
 
-You can make edits or pause your reservation campaign before it starts. Once the campaign has started, you can only edit your ad creative, your budget or extend the end date. If you only edit an ad’s creative, your prediction won’t change.
+You can make edits or pause your reservation campaign before it starts. Once the campaign has started, you can only edit your ad creative, your budget or extend the end date. If you only edit an ad's creative, your prediction won't change.
 
 If you change your budget or end date, this may generate a new prediction for your campaign which you will see in reservation estimates.
 
 You cannot pause your reservation campaign after it starts, but you can delete the campaign to cancel your campaign at any time.
 
-To pause or edit a set after it starts, see [Pausing or Restarting Running Ad Sets](https://developers.facebook.com/documentation/ads-commerce/marketing-api/bidding-and-optimization/bid-multiplier#pausing_running_adset) and [Editing Running Ad Sets](https://developers.facebook.com/documentation/ads-commerce/marketing-api/bidding-and-optimization/bid-multiplier#editing_running_adset). To delete an active set, see [Ad Set, Reference](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-campaign). You’ll be charged for any impressions delivered.
+To pause or edit a set after it starts, see [Pausing or Restarting Running Ad Sets](https://developers.facebook.com/documentation/ads-commerce/marketing-api/bidding-and-optimization/bid-multiplier#pausing_running_adset) and [Editing Running Ad Sets](https://developers.facebook.com/documentation/ads-commerce/marketing-api/bidding-and-optimization/bid-multiplier#editing_running_adset). To delete an active set, see [Ad Set, Reference](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-campaign). You'll be charged for any impressions delivered.
 
 Note, to avoid potential failures, Meta strongly discourages deleting all ads when a reservation ad set is live.
 
@@ -278,7 +278,7 @@ After a new prediction is created and reserved, you can attach `reachfrequencypr
 
 ## Reuse reserved audiences
 
-If you cancel a reservation it frees reserved inventory for other advertisers. However, you can reuse an audience from a previously reserved prediction if you aren’t already using it. This enables us to take into account additional inventory to create a prediction, without you having to cancel an existing reservation.
+If you cancel a reservation it frees reserved inventory for other advertisers. However, you can reuse an audience from a previously reserved prediction if you aren't already using it. This enables us to take into account additional inventory to create a prediction, without you having to cancel an existing reservation.
 
 Include `rf_prediction_id_to_share` when you create a reservation. This is the ID of a previous prediction. This invalidates the previous reservation, so you can use this inventory for your newly created reservation.
 
@@ -290,7 +290,7 @@ You can rotate ads in the ad set you are using. You do not need to detach the re
 
 You can design a sequence of ads that deliver in order. First create the ad set and ads. Then specify the sequence at the ad set level in `creative_sequence`. Each individual ad in this ad set may not appear, appear once, or appear multiple times in the sequence.
 
-If `creative_sequence` array length is zero, then you’re using no sequencing. If the length is not zero, you should make it equal to `frequency_cap` in `rf_prediction_id`. If the length is larger than `frequency_cap`, Meta truncates the last several ads from the array. If the length is less than `frequency_cap`, Meta recursively auto-fills the array by repeating the sequence from the beginning. To make results clear, set the length of `creative_sequence` to the same amount as `frequency_cap`.
+If `creative_sequence` array length is zero, then you're using no sequencing. If the length is not zero, you should make it equal to `frequency_cap` in `rf_prediction_id`. If the length is larger than `frequency_cap`, Meta truncates the last several ads from the array. If the length is less than `frequency_cap`, Meta recursively auto-fills the array by repeating the sequence from the beginning. To make results clear, set the length of `creative_sequence` to the same amount as `frequency_cap`.
 
 Each ad in the sequence has `ACTIVE`, `PENDING_REVIEW`, or `CREDIT_CARD_NEEDED` status. A particular ad in the sequence will only be delivered to a user if all the preceding ads in the sequence have been delivered. Ads not included in the `creative_sequence` will not be delivered.
 
@@ -325,7 +325,7 @@ Reservation helps you plan and book awareness and engagement campaigns, optimizi
 | 1487671 | Direct transition from one prediction to another for an ad set is not allowed. |
 | 1487244 | Ad set Update Failed - reason should be given in response |
 | 1487672 | Failed to assign prediction to ad set. |
-| 1487680 | You don’t have permission to use reservation ad sets. |
+| 1487680 | You don't have permission to use reservation ad sets. |
 
 ## Examples
 
@@ -412,7 +412,7 @@ Poll the following endpoint via HTTP GET requests to retrieve the status until i
 https://graph.facebook.com/<API_VERSION>/<PREDICTION_ID>?fields=status
 ```
 
-If the status is `1` (successful), then this can be attached to an ad set. Let’s set up your campaign structure by creating a campaign, an ad set, a creative, an ad, and assigning the reservation to the ad set.
+If the status is `1` (successful), then this can be attached to an ad set. Let's set up your campaign structure by creating a campaign, an ad set, a creative, an ad, and assigning the reservation to the ad set.
 
 Create an ad campaign:
 

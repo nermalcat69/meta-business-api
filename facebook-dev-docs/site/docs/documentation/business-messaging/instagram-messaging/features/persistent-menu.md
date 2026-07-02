@@ -119,7 +119,7 @@ The `messaging_postback` webhook event follows this format:
 
 #### 2. New thread + message send
 
-If you have configured Icebreakers for your Instagram Account and the user doesn’t tap on an Icebreaker, and chooses to send a message via the composer, your app receives the `messages` webhook event which includes the passed referral parameter.
+If you have configured Icebreakers for your Instagram Account and the user doesn't tap on an Icebreaker, and chooses to send a message via the composer, your app receives the `messages` webhook event which includes the passed referral parameter.
 
 The `messages` webhook event follows this format:
 

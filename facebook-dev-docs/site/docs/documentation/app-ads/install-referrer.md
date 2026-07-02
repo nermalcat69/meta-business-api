@@ -110,24 +110,22 @@ The data structure response received from the `install_referrer` after deseriali
 ### Example JSON Response
 
 ```
-```
 {  
-  is_ct=1,  
-  actual_timestamp=123,  
-  install_referrer={  
-    utm_campaign = fb4a,  
-    utm_content: {  
-      source: {  
-        data: “7fb9bd76…”, // encrypted attribution information  
-        nonce: “1234” // nonce from encryption  
-      },  
-      a: <app_id>,  
-      t: <timestamp>  
-    }  
-    utm_source : “apps.facebook.com” //OR “apps.instagram.com”  
-  }  
+  is_ct=1,  
+  actual_timestamp=123,  
+  install_referrer={  
+    utm_campaign = fb4a,  
+    utm_content: {  
+      source: {  
+        data: "7fb9bd76…", // encrypted attribution information  
+        nonce: "1234" // nonce from encryption  
+      },  
+      a: <app_id>,  
+      t: <timestamp>  
+    }  
+    utm_source : "apps.facebook.com" //OR "apps.instagram.com"  
+  }  
 }
-```
 ```
 
 #### Sample data after decrypting `install_referrer.utm_content.source`
@@ -158,13 +156,13 @@ If GPIR ad campaign metadata is available, you should follow your existing GPIR 
 
 You can remove duplicated data using the data returned in `install_referrer` since the values are the same for a install or campaign for CT across Meta install referrer and GPIR.
 
-For VT and cross session CT, use Meta install referral data since GPIR doesn’t support it.
+For VT and cross session CT, use Meta install referral data since GPIR doesn't support it.
 
 If GPIR ad campaign metadata data is absent, you deduplicate data based on whether you work with a mobile measurement partner (MMP) or not.
 
 ### Deduplication with MMP
 
-The mobile measurement partner (MMP) has access to row level attribution data for installs that don’t have a winning ad network, either due to being attributed to Meta or organic installs. You can check whether there is an install referrer provided via the Meta install referrer. If yes, you can consider the install is driven by Meta, and provided install referrer data is the ad campaign metadata for the install.
+The mobile measurement partner (MMP) has access to row level attribution data for installs that don't have a winning ad network, either due to being attributed to Meta or organic installs. You can check whether there is an install referrer provided via the Meta install referrer. If yes, you can consider the install is driven by Meta, and provided install referrer data is the ad campaign metadata for the install.
 
 ### Deduplication without MMP
 

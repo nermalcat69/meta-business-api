@@ -9,7 +9,7 @@ Updated: Jun 21, 2026
 
 This page has guidance on how to delete a seller from managed partner ads.
 
-**Note:** Businesses that sell their products through marketplaces or retailers are referred to as sellers. Once you onboard a seller into managed partner ads, they are considered a managed partner. For simplicity, this page will use “seller” to also refer to managed partners (that is, onboarded sellers).
+**Note:** Businesses that sell their products through marketplaces or retailers are referred to as sellers. Once you onboard a seller into managed partner ads, they are considered a managed partner. For simplicity, this page will use "seller" to also refer to managed partners (that is, onboarded sellers).
 
 A seller with active ad campaigns **CANNOT** be deleted.
 
@@ -64,10 +64,10 @@ The API returns the response immediately with an `ASYNC_SESSION_ID`. While the r
 
 | Name | Description |
 | --- | --- |
-| `appsecret_proof`  string | **Required.**  The hex string to prove the ownership of the provided access token. The `appsecret_proof` should be generated from the marketplace’s access token and app secret. |
+| `appsecret_proof`  string | **Required.**  The hex string to prove the ownership of the provided access token. The `appsecret_proof` should be generated from the marketplace's access token and app secret. |
 | `child_business_external_id`  string | **Required**, unless `child_business_id` is provided.  Each marketplace should pass a **unique ID** for each seller. The name of the field on the marketplaces side is `vendor_id`. |
-| `child_business_id`  string | **Required**, unless `child_business_external_id` is provided.  The seller’s Meta Business Suite ID. |
-| `marketplace_bm_id`  string | **Required.**  The marketplace’s Meta Business Suite ID.  See [Find your Business ID in Meta Business Suite⁠](https://www.facebook.com/business/help/1181250022022158?id=180505742745347) for more information. |
+| `child_business_id`  string | **Required**, unless `child_business_external_id` is provided.  The seller's Meta Business Suite ID. |
+| `marketplace_bm_id`  string | **Required.**  The marketplace's Meta Business Suite ID.  See [Find your Business ID in Meta Business Suite⁠](https://www.facebook.com/business/help/1181250022022158?id=180505742745347) for more information. |
 
 ### Response
 

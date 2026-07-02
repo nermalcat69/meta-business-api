@@ -9,10 +9,10 @@ Updated: May 21, 2026
 
 Conversion Lift Measurement is currently limited. Please contact your Meta Representative for information about obtaining access.
 
-Create and run an experiment to measure your Facebook campaign’s efficiency. Determine what ads strategy drives the most business impact.
+Create and run an experiment to measure your Facebook campaign's efficiency. Determine what ads strategy drives the most business impact.
 See [Ad Study, Reference](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-study).
 
-When you create a lift study, you create a randomized **test group** of Accounts Center accounts that see your ads and **control group** who don’t see your ads.
+When you create a lift study, you create a randomized **test group** of Accounts Center accounts that see your ads and **control group** who don't see your ads.
 
 ![Lift study flow: an audience splits into a test group that sees an ad impression and a control group with no impression, then conversions are compared to measure lift.](https://scontent.fdel1-2.fna.fbcdn.net/v/t39.2365-6/592889582_1378922867299697_5005161518965841022_n.png?_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=vVZ2ATcs1kQQ7kNvwEIlKDu&_nc_oc=AdruIy6V2V2C95AlatrOXyh3oC2-4blW-QWui-vx2eqvAmNpC2mJdaAWAY9qoz489H6cFUKaCMdg6F39sol8fspD&_nc_zt=14&_nc_ht=scontent.fdel1-2.fna&_nc_gid=ys2_0IOSMuIeZrH2SzdPzA&_nc_ss=7b289&oh=00_AQB5hW4TEVyvSjsIQrB9gUJWZWSmbdZZfX8gapPrazb_iA&oe=6A605F36)
 
@@ -39,19 +39,19 @@ cURL
 ---
 
 ```
-curl \  
-  -F 'name="new study"' \  
-  -F 'description="description of my study"' \  
-  -F 'start_time=1435622400' \  
-  -F 'end_time=1436918400' \  
-  -F 'cooldown_start_time=1433116800' \  
-  -F 'observation_end_time=1438300800' \  
-  -F 'viewers=[<USER_ID1>, <USER_ID2>]' \  
-  -F 'type=LIFT' \  
-  -F 'cells=[{name:"test group",description:"description of my test group",treatment_percentage:90,control_percentage:10,adaccounts:[<ACCOUNT_ID1>,<ACCOUNT_ID2>]}]' \  
-  -F 'objectives=[{name:"new objective",is_primary:true,type:"CONVERSIONS",applications:[{id:<APP_ID>}]}]' \  
-  -F 'access_token=<ACCESS_TOKEN>' \  
-  'https://graph.facebook.com/<API_VERSION>/<BUSINESS_ID>/ad_studies'
+curl \  
+  -F 'name="new study"' \  
+  -F 'description="description of my study"' \  
+  -F 'start_time=1435622400' \  
+  -F 'end_time=1436918400' \  
+  -F 'cooldown_start_time=1433116800' \  
+  -F 'observation_end_time=1438300800' \  
+  -F 'viewers=[<USER_ID1>, <USER_ID2>]' \  
+  -F 'type=LIFT' \  
+  -F 'cells=[{name:"test group",description:"description of my test group",treatment_percentage:90,control_percentage:10,adaccounts:[<ACCOUNT_ID1>,<ACCOUNT_ID2>]}]' \  
+  -F 'objectives=[{name:"new objective",is_primary:true,type:"CONVERSIONS",applications:[{id:<APP_ID>}]}]' \  
+  -F 'access_token=<ACCESS_TOKEN>' \  
+  'https://graph.facebook.com/<API_VERSION>/<BUSINESS_ID>/ad_studies'
 ```
 
 To create a new study, provide the following:
@@ -59,11 +59,11 @@ To create a new study, provide the following:
 | Parameter | Description |
 | --- | --- |
 | `name` | Name of study. |
-| `description` | Brief description of the study’s purpose. |
+| `description` | Brief description of the study's purpose. |
 | `cooldown_start_time` | **Deprecated**. Facebook still delivers during the time between `observation_end_time` and `end_time`. If you use `cooldown_start_time`, you should now set this time using `start_time`. |
 | `start_time` | Start time of campaign active period. **Study start time must be in the future**. |
 | `end_time` | End time of campaign active period. |
-| `observation_end_time` | End of the *post test conversion window*. During this window (that is, between `end_time` and `observation_end_time`), all Facebook ads (including ones added to this study) are delivered normally to both the test and the control group, but no new users will be opportunity logged. Facebook will continue to match conversions during this period to users in their respective groups. If you don’t need a *post test conversion window* for your study, set this to `end_time`. |
+| `observation_end_time` | End of the *post test conversion window*. During this window (that is, between `end_time` and `observation_end_time`), all Facebook ads (including ones added to this study) are delivered normally to both the test and the control group, but no new users will be opportunity logged. Facebook will continue to match conversions during this period to users in their respective groups. If you don't need a *post test conversion window* for your study, set this to `end_time`. |
 | `cells` | Cells in study that define test and control groups. |
 | `objectives` | Objectives of the study. See [Defining Study Objective](https://developers.facebook.com/documentation/ads-commerce/marketing-api/guides/split-testing#objective). |
 | `viewers` | Share this study to a list of Facebook user IDs. |
@@ -95,9 +95,9 @@ cURL
 ---
 
 ```
-curl -G \  
-  -d 'access_token=<ACCESS_TOKEN>' \  
-  'https://graph.facebook.com/<API_VERSION>/<STUDY_ID>/cells'
+curl -G \  
+  -d 'access_token=<ACCESS_TOKEN>' \  
+  'https://graph.facebook.com/<API_VERSION>/<STUDY_ID>/cells'
 ```
 
 **Example** - Update or modify cell information and treatment and control percentages by providing the cell ID in `cells`
@@ -109,10 +109,10 @@ cURL
 ---
 
 ```
-curl \  
-  -F 'cells=[{id:<CELL_ID>,treatment_percentage:80,control_percentage:20}]' \  
-  -F 'access_token=<ACCESS_TOKEN>' \  
-  'https://graph.facebook.com/<API_VERSION>/<STUDY_ID>'
+curl \  
+  -F 'cells=[{id:<CELL_ID>,treatment_percentage:80,control_percentage:20}]' \  
+  -F 'access_token=<ACCESS_TOKEN>' \  
+  'https://graph.facebook.com/<API_VERSION>/<STUDY_ID>'
 ```
 
 **Example** - Read all the studies that you created at `ad_studies` for your business
@@ -124,9 +124,9 @@ cURL
 ---
 
 ```
-curl -G \  
-  -d 'access_token=<ACCESS_TOKEN>' \  
-  'https://graph.facebook.com/<API_VERSION>/<BUSINESS_ID>/ad_studies'
+curl -G \  
+  -d 'access_token=<ACCESS_TOKEN>' \  
+  'https://graph.facebook.com/<API_VERSION>/<BUSINESS_ID>/ad_studies'
 ```
 
 You can also see all studies associated with your ad account by making a `GET` request at `{ad-account-ID/include_all_studies=true}` with your access token.
@@ -142,19 +142,19 @@ cURL
 ---
 
 ```
-curl \  
-  -F 'name="new study"' \  
-  -F 'description="description of my study"' \  
-  -F 'start_time=1435622400' \  
-  -F 'end_time=1436918400' \  
-  -F 'cooldown_start_time=1433116800' \  
-  -F 'observation_end_time=1438300800' \  
-  -F 'viewers=[<USER_ID1>, <USER_ID2>]' \  
-  -F 'type=LIFT' \  
-  -F 'cells=[{name:"group A",description:"description of group A",treatment_percentage:50,control_percentage:20,campaigns:[<CAMPAIGN_ID1>]},{name:"group B",description:"description of group B",treatment_percentage:20,control_percentage:10,campaigns:[<CAMPAIGN_ID2>]}]' \  
-  -F 'objectives=[{name:"new objective",is_primary:true,type:"CONVERSIONS",applications:[{id:<APP_ID>}]}]' \  
-  -F 'access_token=<ACCESS_TOKEN>' \  
-  'https://graph.facebook.com/<API_VERSION>/<BUSINESS_ID>/ad_studies'
+curl \  
+  -F 'name="new study"' \  
+  -F 'description="description of my study"' \  
+  -F 'start_time=1435622400' \  
+  -F 'end_time=1436918400' \  
+  -F 'cooldown_start_time=1433116800' \  
+  -F 'observation_end_time=1438300800' \  
+  -F 'viewers=[<USER_ID1>, <USER_ID2>]' \  
+  -F 'type=LIFT' \  
+  -F 'cells=[{name:"group A",description:"description of group A",treatment_percentage:50,control_percentage:20,campaigns:[<CAMPAIGN_ID1>]},{name:"group B",description:"description of group B",treatment_percentage:20,control_percentage:10,campaigns:[<CAMPAIGN_ID2>]}]' \  
+  -F 'objectives=[{name:"new objective",is_primary:true,type:"CONVERSIONS",applications:[{id:<APP_ID>}]}]' \  
+  -F 'access_token=<ACCESS_TOKEN>' \  
+  'https://graph.facebook.com/<API_VERSION>/<BUSINESS_ID>/ad_studies'
 ```
 
 `control_percentage` determines the holdout for each test group respective to the total population. For example, you have a study with two test groups: group A is 50% treatment with 20% control and group B is 20% treatment with 10% control. This results in ~28.6%, or 20%/70% of the population in group A, to be control users and ~33.3%, or 10%/30% of the population in group B, to be control users.
@@ -176,10 +176,10 @@ cURL
 ---
 
 ```
-curl \  
-  -F 'cells=[{id:<CELL_ID1>,treatment_percentage:60,control_percentage:10},{name:"group C",description:"replacing group B",treatment_percentage:25,control_percentage:5,campaigns:[<CAMPAIGN_ID3>]}]' \  
-  -F 'access_token=<ACCESS_TOKEN>' \  
-  'https://graph.facebook.com/<API_VERSION>/<STUDY_ID>'
+curl \  
+  -F 'cells=[{id:<CELL_ID1>,treatment_percentage:60,control_percentage:10},{name:"group C",description:"replacing group B",treatment_percentage:25,control_percentage:5,campaigns:[<CAMPAIGN_ID3>]}]' \  
+  -F 'access_token=<ACCESS_TOKEN>' \  
+  'https://graph.facebook.com/<API_VERSION>/<STUDY_ID>'
 ```
 
 ## Define advertising objectives
@@ -195,19 +195,19 @@ cURL
 ---
 
 ```
-curl \  
-  -F 'name="new study"' \  
-  -F 'description="description of my study"' \  
-  -F 'start_time=1435622400' \  
-  -F 'end_time=1436918400' \  
-  -F 'cooldown_start_time=1433116800' \  
-  -F 'observation_end_time=1438300800' \  
-  -F 'viewers=[<USER_ID1>, <USER_ID2>]' \  
-  -F 'type=LIFT' \  
-  -F 'cells=[{name:"test group",description:"description of my test group",treatment_percentage:90,control_percentage:10,adaccounts:[<ACCOUNT_ID1>,<ACCOUNT_ID2>]}]' \  
-  -F 'objectives=[{name:"new objective",is_primary:true,type:"CONVERSIONS",applications:[{id:<APP_ID>}]}]' \  
-  -F 'access_token=<ACCESS_TOKEN>' \  
-  'https://graph.facebook.com/<API_VERSION>/<BUSINESS_ID>/ad_studies'
+curl \  
+  -F 'name="new study"' \  
+  -F 'description="description of my study"' \  
+  -F 'start_time=1435622400' \  
+  -F 'end_time=1436918400' \  
+  -F 'cooldown_start_time=1433116800' \  
+  -F 'observation_end_time=1438300800' \  
+  -F 'viewers=[<USER_ID1>, <USER_ID2>]' \  
+  -F 'type=LIFT' \  
+  -F 'cells=[{name:"test group",description:"description of my test group",treatment_percentage:90,control_percentage:10,adaccounts:[<ACCOUNT_ID1>,<ACCOUNT_ID2>]}]' \  
+  -F 'objectives=[{name:"new objective",is_primary:true,type:"CONVERSIONS",applications:[{id:<APP_ID>}]}]' \  
+  -F 'access_token=<ACCESS_TOKEN>' \  
+  'https://graph.facebook.com/<API_VERSION>/<BUSINESS_ID>/ad_studies'
 ```
 
 | Name | Description | Data Sources |
@@ -244,24 +244,24 @@ cURL
 ---
 
 ```
-curl \  
-  -F 'name="another study"' \  
-  -F 'description="description of another study"' \  
-  -F 'start_time=1435622400' \  
-  -F 'end_time=1436918400' \  
-  -F 'cooldown_start_time=1433116800' \  
-  -F 'observation_end_time=1438300800' \  
-  -F 'viewers=[<USER_ID1>, <USER_ID2>]' \  
-  -F 'type=LIFT' \  
-  -F 'cells=[{name:"test group",description:"description of my test group",treatment_percentage:90,control_percentage:10,adaccounts:[<ACCOUNT_ID1>,<ACCOUNT_ID2>]}]' \  
-  -F 'objectives=[{name:"first objective objective",is_primary:true,type:"CONVERSIONS",applications:[{id:<APP_ID1>},{id:<APP_ID2>}]},{name:"second  objective",type:"CONVERSIONS",applications:[{id:<APP_ID3>,event_names:["fb_mobile_purchase"]}],adspixels:[{id:<FB_PIXEL_ID>,event_names:["fb_pixel_purchase","fb_pixel_lead"]}]}]' \  
-  -F 'access_token=<ACCESS_TOKEN>' \  
-  'https://graph.facebook.com/<API_VERSION>/<BUSINESS_ID>/ad_studies'
+curl \  
+  -F 'name="another study"' \  
+  -F 'description="description of another study"' \  
+  -F 'start_time=1435622400' \  
+  -F 'end_time=1436918400' \  
+  -F 'cooldown_start_time=1433116800' \  
+  -F 'observation_end_time=1438300800' \  
+  -F 'viewers=[<USER_ID1>, <USER_ID2>]' \  
+  -F 'type=LIFT' \  
+  -F 'cells=[{name:"test group",description:"description of my test group",treatment_percentage:90,control_percentage:10,adaccounts:[<ACCOUNT_ID1>,<ACCOUNT_ID2>]}]' \  
+  -F 'objectives=[{name:"first objective objective",is_primary:true,type:"CONVERSIONS",applications:[{id:<APP_ID1>},{id:<APP_ID2>}]},{name:"second  objective",type:"CONVERSIONS",applications:[{id:<APP_ID3>,event_names:["fb_mobile_purchase"]}],adspixels:[{id:<FB_PIXEL_ID>,event_names:["fb_pixel_purchase","fb_pixel_lead"]}]}]' \  
+  -F 'access_token=<ACCESS_TOKEN>' \  
+  'https://graph.facebook.com/<API_VERSION>/<BUSINESS_ID>/ad_studies'
 ```
 
 You can update, add, and remove objectives in a study by doing so at the study level similar to modifying test groups. To update an existing objective, refer to its ID in the `objectives` object. To add a new objective, provide a new objective object. To remove an objective, simply omit it from the `objectives` parameter when you update it.
 
-**Example** - Update an objective’s `applications` measurement sources and remove its `adspixels` measurement sources
+**Example** - Update an objective's `applications` measurement sources and remove its `adspixels` measurement sources
 
 Select language
 
@@ -270,10 +270,10 @@ cURL
 ---
 
 ```
-curl \  
-  -F 'objectives=[{id:<OBJECTIVE_ID>,name:"new objective name",applications:[{id:<APP_ID>}],adspixels:[]}]' \  
-  -F 'access_token=<ACCESS_TOKEN>' \  
-  'https://graph.facebook.com/<API_VERSION>/<STUDY_ID>'
+curl \  
+  -F 'objectives=[{id:<OBJECTIVE_ID>,name:"new objective name",applications:[{id:<APP_ID>}],adspixels:[]}]' \  
+  -F 'access_token=<ACCESS_TOKEN>' \  
+  'https://graph.facebook.com/<API_VERSION>/<STUDY_ID>'
 ```
 
 **Example** - Read objectives for a study
@@ -285,22 +285,22 @@ cURL
 ---
 
 ```
-curl -G \  
-  -d 'access_token=<ACCESS_TOKEN>' \  
-  'https://graph.facebook.com/<API_VERSION>/<STUDY_OBJECTIVE_ID>?fields=results&breakdowns=["cell_id"]'
+curl -G \  
+  -d 'access_token=<ACCESS_TOKEN>' \  
+  'https://graph.facebook.com/<API_VERSION>/<STUDY_OBJECTIVE_ID>?fields=results&breakdowns=["cell_id"]'
 ```
 
 ## Reporting
 
 ### Retrieve objectives
 
-All “buyers” metrics will show up for studies started before the cut-off date 7/13/2021. Studies started after 7/13 will not have “buyers” metrics and breakdown by gender, age, and country. This change will impact fields below that start with “buyers” (`buyers_test`, `buyers_control_scaled2`, and so on).
+All "buyers" metrics will show up for studies started before the cut-off date 7/13/2021. Studies started after 7/13 will not have "buyers" metrics and breakdown by gender, age, and country. This change will impact fields below that start with "buyers" (`buyers_test`, `buyers_control_scaled2`, and so on).
 
 Note also that you need to use the `cell_id` breakdown in order to get cell level results.
 
-A study’s objectives are defined during the study setup. See the [setup guide](https://developers.facebook.com/documentation/ads-commerce/marketing-api/guides/lift-studies#objective) on how to define your study’s objectives
+A study's objectives are defined during the study setup. See the [setup guide](https://developers.facebook.com/documentation/ads-commerce/marketing-api/guides/lift-studies#objective) on how to define your study's objectives
 
-You can read the objectives that were created for a study by making a `GET` call to the study’s `objectives` edge.
+You can read the objectives that were created for a study by making a `GET` call to the study's `objectives` edge.
 
 Select language
 
@@ -309,9 +309,9 @@ cURL
 ---
 
 ```
-curl -G \  
-  -d 'access_token=<ACCESS_TOKEN>' \  
-  'https://graph.facebook.com/<API_VERSION>/<STUDY_OBJECTIVE_ID>?fields=results&breakdowns=["cell_id"]'
+curl -G \  
+  -d 'access_token=<ACCESS_TOKEN>' \  
+  'https://graph.facebook.com/<API_VERSION>/<STUDY_OBJECTIVE_ID>?fields=results&breakdowns=["cell_id"]'
 ```
 
 For more details on objectives, refer to the [Ad Study Objective](https://developers.facebook.com/docs/marketing-api/reference/ad-study-objective) reference documentation.
@@ -331,9 +331,9 @@ cURL
 ---
 
 ```
-curl -G \  
-  -d 'access_token=<ACCESS_TOKEN>' \  
-  'https://graph.facebook.com/<API_VERSION>/<STUDY_OBJECTIVE_ID>?fields=results&breakdowns=["cell_id"]'
+curl -G \  
+  -d 'access_token=<ACCESS_TOKEN>' \  
+  'https://graph.facebook.com/<API_VERSION>/<STUDY_OBJECTIVE_ID>?fields=results&breakdowns=["cell_id"]'
 ```
 
 The resulting data is a JSON object, containing metrics name and values strings. Please refer to Facebook [Lift Metrics Glossary⁠](https://www.facebook.com/business/help/1092662031214127).
@@ -423,9 +423,9 @@ cURL
 ---
 
 ```
-curl -G \  
-  -d 'access_token=<ACCESS_TOKEN>' \  
-  'https://graph.facebook.com/<API_VERSION>/<STUDY_OBJECTIVE_ID>?fields=results&breakdowns=["cell_id"]'
+curl -G \  
+  -d 'access_token=<ACCESS_TOKEN>' \  
+  'https://graph.facebook.com/<API_VERSION>/<STUDY_OBJECTIVE_ID>?fields=results&breakdowns=["cell_id"]'
 ```
 
 The following are the available breakdown dimensions:
@@ -495,18 +495,18 @@ cURL
 ---
 
 ```
-curl \  
-  -F 'name="new partner study"' \  
-  -F 'description="description of my partner study"' \  
-  -F 'start_time=1435622400' \  
-  -F 'end_time=1436918400' \  
-  -F 'cells=[{name:"test group",description:"description of my test group",treatment_percentage:90,control_percentage:10,adaccounts:[<ACCOUNT_ID1>,<ACCOUNT_ID2>]}]' \  
-  -F 'iso_country="us"' \  
-  -F 'estimated_budget=400000' \  
-  -F 'estimated_reach=600000' \  
-  -F 'estimated_impressions=1200000' \  
-  -F 'access_token=<ACCESS_TOKEN>' \  
-  'https://graph.facebook.com/<API_VERSION>/<BUSINESS_ID>/partner_ad_studies'
+curl \  
+  -F 'name="new partner study"' \  
+  -F 'description="description of my partner study"' \  
+  -F 'start_time=1435622400' \  
+  -F 'end_time=1436918400' \  
+  -F 'cells=[{name:"test group",description:"description of my test group",treatment_percentage:90,control_percentage:10,adaccounts:[<ACCOUNT_ID1>,<ACCOUNT_ID2>]}]' \  
+  -F 'iso_country="us"' \  
+  -F 'estimated_budget=400000' \  
+  -F 'estimated_reach=600000' \  
+  -F 'estimated_impressions=1200000' \  
+  -F 'access_token=<ACCESS_TOKEN>' \  
+  'https://graph.facebook.com/<API_VERSION>/<BUSINESS_ID>/partner_ad_studies'
 ```
 
 After the study creation, you may only update `name`, `description`, `start_time`, `end_time`, and `cells` by making a `POST` call to the Study ID. The update rules are the same as regular lift studies.
@@ -526,7 +526,7 @@ cURL
 ---
 
 ```
-curl -G \  
-      -d 'access_token=<ACCESS_TOKEN>' \  
-      'https://graph.facebook.com/<API_VERSION>/<STUDY_OBJECTIVE_ID>?fields=results&ds=2020-03-01'
+curl -G \  
+      -d 'access_token=<ACCESS_TOKEN>' \  
+      'https://graph.facebook.com/<API_VERSION>/<STUDY_OBJECTIVE_ID>?fields=results&ds=2020-03-01'
 ```

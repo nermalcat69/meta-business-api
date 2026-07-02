@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/business-messaging/mes
 
 Updated: Jun 17, 2026
 
-The log out button triggers the account unlinking flow, which unlinks the message recipient’s identity on Messenger from their account on your site.
+The log out button triggers the account unlinking flow, which unlinks the message recipient's identity on Messenger from their account on your site.
 
 For more on using the log out button for account unlinking, see [Account linking](https://developers.facebook.com/documentation/business-messaging/messenger-platform/identity/account-linking).
 

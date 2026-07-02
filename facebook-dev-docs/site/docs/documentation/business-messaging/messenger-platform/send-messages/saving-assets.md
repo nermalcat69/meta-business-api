@@ -14,14 +14,12 @@ This guide explains how to display your actions in a conversation to let message
 To display the action for a sender in the conversation, send a `POST` request to the [`/PAGE-ID/messages` endpoint](https://developers.facebook.com/docs/graph-api/reference/page/messages) with the `sender_action` parameter set to `typing_on`.
 
 ```
-```
-curl -X POST -H "Content-Type: application/json" -d '{  
-  "recipient":{  
-    "id":"<PSID>"  
-  },  
-  "sender_action":"typing_on"  
-}' "https://graph.facebook.com/VERSION/PAGE-ID/messages?access_token=PAGE-ACCESS_TOKEN;"
-```
+curl -X POST -H "Content-Type: application/json" -d '{  
+  "recipient":{  
+    "id":"<PSID>"  
+  },  
+  "sender_action":"typing_on"  
+}' "https://graph.facebook.com/VERSION/PAGE-ID/messages?access_token=PAGE-ACCESS_TOKEN;"
 ```
 
 ## React or unreact to a message
@@ -47,12 +45,10 @@ curl -X POST -H "Content-Type: application/json" -d '{
   }' "https://graph.facebook.com/v25.0/me/messages?access_token={PAGE_ACCESS_TOKEN}"
 ```
 
-On success, your app will receive the following JSON response with the recipient’s ID and the message ID.
+On success, your app will receive the following JSON response with the recipient's ID and the message ID.
 
 ```
-```
-{ "recipient_id": "PAGE-SCOPED-ID" }
-```
+{ "recipient_id": "PAGE-SCOPED-ID" }
 ```
 
 ### Limitations

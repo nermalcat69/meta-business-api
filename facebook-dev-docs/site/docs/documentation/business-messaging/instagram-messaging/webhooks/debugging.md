@@ -33,7 +33,7 @@ Providing verification details is optional. If you do want to provide this infor
 
 ### Platform settings
 
-Set the platform to **Website** (click the **Add Platform** button if you haven’t set a platform yet) and use your business’s website URL.
+Set the platform to **Website** (click the **Add Platform** button if you haven't set a platform yet) and use your business's website URL.
 
 ### Credentials
 

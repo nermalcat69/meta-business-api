@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/business-messaging/mes
 
 Updated: May 7, 2024
 
-Apart from [Click To Messenger Ads](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-creative/messaging-ads/click-to-messenger), there are ads that help you ask automated questions to generate leads or potential clients. These ads can be displayed on Facebook and Instagram to find customers who are interested in your business’s products or services.
+Apart from [Click To Messenger Ads](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-creative/messaging-ads/click-to-messenger), there are ads that help you ask automated questions to generate leads or potential clients. These ads can be displayed on Facebook and Instagram to find customers who are interested in your business's products or services.
 
 * [Customer Experience](https://developers.facebook.com/documentation/business-messaging/messenger-platform/discovery/m-me-links#userexperience)
 * [Follow up on Leads using Messenger Platform](https://developers.facebook.com/documentation/business-messaging/messenger-platform/discovery/m-me-links#follow_on_leads_with_apps)
@@ -63,15 +63,15 @@ In the **Advanced** Tab of the **Message Template** select *Connect An App*. Thi
 
 ***Allow connected app to interrupt:*** This checkbox setting allows the selected app to get *message webhooks* during the lead generation process as well as use Send API to interrupt the lead generation flow. Note that when an app interrupts the lead generation flow, the action is treated as a takeover. When the ad is interrupted it will be prevented from recording the complete lead signal that is used for ad delivery optimization.
 
-***Send lead summary to connected app:*** This checkbox setting allows the selected app to get a *message webhook* with the information collected during lead submission process. This feature is meant for apps that can’t process the referal webhook that already contains this information and that is sent by default.
+***Send lead summary to connected app:*** This checkbox setting allows the selected app to get a *message webhook* with the information collected during lead submission process. This feature is meant for apps that can't process the referal webhook that already contains this information and that is sent by default.
 
 ### Using Keywords to end automated questions
 
 This optional advanced feature is intended for businesses that support customer care over Messenger. It can assist customers who want to stop the lead generation flow to get customer support.
 
-Stop keywords like ‘agent’, ‘support’, ‘stop’, ‘customer care’ can be set on the ad. If the potential customer messages any of those keywords or phrases (case insensitive). The lead generation flow will be interrupted, and the thread control will be released back to the business.
+Stop keywords like 'agent', 'support', 'stop', 'customer care' can be set on the ad. If the potential customer messages any of those keywords or phrases (case insensitive). The lead generation flow will be interrupted, and the thread control will be released back to the business.
 
-If an App is connected to the Page, the stop message will be sent to the App as a message webhook. This allows the App to respond to the user’s request.
+If an App is connected to the Page, the stop message will be sent to the App as a message webhook. This allows the App to respond to the user's request.
 
 The **Confirmation message** will be triggered if a keyword to end the lead generation flow is detected. This message will not be sent to apps as a message webhook although the trigger keyword will trigger as a message webhook event.
 
@@ -179,7 +179,7 @@ The change in thread control will trigger webhooks to apps subscribed to the `me
 
 Apps are installed from the app website using [Facebook Login](https://developers.facebook.com/documentation/facebook-login) and granting pages\_messaging permission to a particular Page. Authorized Apps will show up in **Page settings** inside **Advanced messaging**.
 
-**I can’t see my app in the connect app drop down**
+**I can't see my app in the connect app drop down**
 
 Only Authorized Apps for the Page will show up. You can see Authorized apps in **Page settings** inside **Advanced messaging**.Apps are installed from the app website using [Facebook Login](https://developers.facebook.com/documentation/facebook-login) and granting pages\_messaging permission to a particular Page.
 

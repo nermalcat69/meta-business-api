@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/commerce-
 
 Updated: Feb 11, 2025
 
-**Note:** At any point if Shopify happens to update any of the fields you’ve included in your update-feed, then the information will be overridden
+**Note:** At any point if Shopify happens to update any of the fields you've included in your update-feed, then the information will be overridden
 
 ## Create Your Update Feed File
 

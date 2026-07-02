@@ -23,7 +23,7 @@ The WhatsApp user controls when your business can call them by [granting call pe
 
 Before you get started with business-initiated calling, ensure that:
 
-* You [subscribe](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/create-webhook-endpoint#configure-webhooks) to the “calls” webhook field
+* You [subscribe](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/create-webhook-endpoint#configure-webhooks) to the "calls" webhook field
 * You [enable the Calling APIs on your business phone number](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/call-settings)
 
 Lastly, **before you can call a WhatsApp user, you must obtain their permission to do so.**
@@ -189,14 +189,12 @@ Either you or the WhatsApp user can terminate the call at any time.
 Use the [Calls API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/calling-api) with the following request body to terminate the call:
 
 ```
-```
-POST <PHONE_NUMBER_ID>/calls  
+POST <PHONE_NUMBER_ID>/calls  
 {  
-  "messaging_product": "whatsapp",  
-  "call_id": "wacid.HBgLMTIxODU1NTI4MjgVAgARGCAyODRQIAFRoA", // The WhatsApp call ID  
-  "action" : "terminate"  
+  "messaging_product": "whatsapp",  
+  "call_id": "wacid.HBgLMTIxODU1NTI4MjgVAgARGCAyODRQIAFRoA", // The WhatsApp call ID  
+  "action" : "terminate"  
 }
-```
 ```
 
 If there are no errors, you receive a success response:
@@ -297,12 +295,12 @@ POST <PHONE_NUMBER_ID>/calls
 | Parameter | Description | Sample Value |
 | --- | --- | --- |
 | `to`  *Integer* | **Required** (unless `recipient` is provided)  The number being called (callee). The user can be identified by phone number (`to`), BSUID (`recipient`), or both. If you include both, `to` takes precedence.  [Learn more about formatting phone numbers in Cloud API](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-phone-numbers/phone-numbers)  [Learn how business-scoped user IDs apply to business-initiated call requests](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#businesses-initiated-call-requests) | `"17863476655"` |
-| `recipient`  *String* | **Optional**  The WhatsApp user’s business-scoped user ID (BSUID) or parent BSUID. Use this instead of, or in addition to, `to`. If you include both, `to` takes precedence.  [Learn more about business-scoped user IDs](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#business-scoped-user-id) | `"US.13491208655302741918"` |
+| `recipient`  *String* | **Optional**  The WhatsApp user's business-scoped user ID (BSUID) or parent BSUID. Use this instead of, or in addition to, `to`. If you include both, `to` takes precedence.  [Learn more about business-scoped user IDs](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#business-scoped-user-id) | `"US.13491208655302741918"` |
 | `action`  *String* | **Required**  The action being taken on the given call ID.  Values can be `connect` | `pre_accept` | `accept` | `reject` | `terminate` | `"connect"` |
-| `session`  *JSON object* | **Optional**  Contains the session description protocol (SDP) type and description language.  Requires two values:  `sdp_type` — (*String*) **Required**  “offer”, to indicate SDP offer  `sdp` — (*String*) **Required**  The SDP info of the device on the other end of the call. The SDP must be compliant with [RFC 8866⁠](https://datatracker.ietf.org/doc/html/rfc8866?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR5oi7-_dtdsPdT8yveuXaPzHDAFOiY_rkEuSJd1eHMqF3t6QQ_rCf88wxSBsA_aem_k6Wph4fS8kYDJqAR2k7_5Q).  [Learn more about Session Description Protocol (SDP)⁠](https://www.rfc-editor.org/rfc/rfc8866.html?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR4G883r_f8OxuBN4Ug2aWo3tRDVPu6JtxWg9T734Z5waARzxf7VGfEehXYlFw_aem_sWjiUmtGyV3tjOHfK_Nwxg)  [View example SDP structures](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/reference#sdp-overview-and-sample-sdp-structures) | ``` "session" : { "sdp_type" : "offer", "sdp" : "<<RFC 8866 SDP>>" } ``` |
-| `biz_opaque_callback_data`  *String* | **Optional**  An arbitrary string you can pass in that is useful for tracking and logging purposes.  Any app subscribed to the “calls” webhook field on your WhatsApp Business account can receive this string, as it is included in the `calls` object within the subsequent [Call Terminate Webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/business-initiated-calls#call-terminate-webhook) payload.  Cloud API does not process this field.  Maximum 512 characters | `"0fS5cePMok"` |
+| `session`  *JSON object* | **Optional**  Contains the session description protocol (SDP) type and description language.  Requires two values:  `sdp_type` — (*String*) **Required**  "offer", to indicate SDP offer  `sdp` — (*String*) **Required**  The SDP info of the device on the other end of the call. The SDP must be compliant with [RFC 8866⁠](https://datatracker.ietf.org/doc/html/rfc8866?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR5oi7-_dtdsPdT8yveuXaPzHDAFOiY_rkEuSJd1eHMqF3t6QQ_rCf88wxSBsA_aem_k6Wph4fS8kYDJqAR2k7_5Q).  [Learn more about Session Description Protocol (SDP)⁠](https://www.rfc-editor.org/rfc/rfc8866.html?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR4G883r_f8OxuBN4Ug2aWo3tRDVPu6JtxWg9T734Z5waARzxf7VGfEehXYlFw_aem_sWjiUmtGyV3tjOHfK_Nwxg)  [View example SDP structures](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/reference#sdp-overview-and-sample-sdp-structures) | ``` "session" : { "sdp_type" : "offer", "sdp" : "<<RFC 8866 SDP>>" } ``` |
+| `biz_opaque_callback_data`  *String* | **Optional**  An arbitrary string you can pass in that is useful for tracking and logging purposes.  Any app subscribed to the "calls" webhook field on your WhatsApp Business account can receive this string, as it is included in the `calls` object within the subsequent [Call Terminate Webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/business-initiated-calls#call-terminate-webhook) payload.  Cloud API does not process this field.  Maximum 512 characters | `"0fS5cePMok"` |
 
-**Usernames and business-scoped user IDs:** When initiating a call, you can identify the recipient by phone number (`to`), BSUID (`recipient`), or both; the user’s phone number may be omitted if a `recipient` is provided. For details, see [Business-scoped user IDs](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#business-scoped-user-id).
+**Usernames and business-scoped user IDs:** When initiating a call, you can identify the recipient by phone number (`to`), BSUID (`recipient`), or both; the user's phone number may be omitted if a `recipient` is provided. For details, see [Business-scoped user IDs](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#business-scoped-user-id).
 
 #### Success response
 
@@ -391,7 +389,7 @@ Possible errors that can occur:
 
 With all Calling API webhooks, there is a `"calls"` object inside the `"value"` object of the webhook response. The `"calls"` object contains metadata about the call that is used to action on each call placed or received by your business.
 
-To receive Calling API webhooks, subscribe to the “calls” webhook field.
+To receive Calling API webhooks, subscribe to the "calls" webhook field.
 
 [Learn more about Cloud API webhooks here](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/messages/status)
 
@@ -465,16 +463,16 @@ Once you receive the Call Connect webhook, you can apply the `SDP Answer` receiv
 | `event`  *String* | The calling event that this webhook is notifying the subscriber of |
 | `timestamp`  *String* | The UNIX timestamp of the webhook event |
 | `direction`  *String* | The direction of the call being made.  Can contain either:  `BUSINESS_INITIATED`, for calls initiated by your business.  `USER_INITIATED`, for calls initiated by a WhatsApp user. |
-| `session`  *JSON object* | **Optional**  Contains the session description protocol (SDP) type and description language.  Requires two values:  `sdp_type` — (*String*) **Required**  “offer”, to indicate SDP offer  `sdp` — (*String*) **Required**  The SDP info of the device on the other end of the call. The SDP must be compliant with [RFC 8866⁠](https://datatracker.ietf.org/doc/html/rfc8866?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR4G883r_f8OxuBN4Ug2aWo3tRDVPu6JtxWg9T734Z5waARzxf7VGfEehXYlFw_aem_sWjiUmtGyV3tjOHfK_Nwxg).  [Learn more about Session Description Protocol (SDP)⁠](https://www.rfc-editor.org/rfc/rfc8866.html?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR516SvNTWneWJ1BRyPN_AUwkutE4mEG3HfgWLNwp2vKQNk5dxI0lA9ItJirSg_aem_0fRiwIWcHro6u8toSKri-Q)  [View example SDP structures](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/reference#sdp-overview-and-sample-sdp-structures) |
+| `session`  *JSON object* | **Optional**  Contains the session description protocol (SDP) type and description language.  Requires two values:  `sdp_type` — (*String*) **Required**  "offer", to indicate SDP offer  `sdp` — (*String*) **Required**  The SDP info of the device on the other end of the call. The SDP must be compliant with [RFC 8866⁠](https://datatracker.ietf.org/doc/html/rfc8866?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR4G883r_f8OxuBN4Ug2aWo3tRDVPu6JtxWg9T734Z5waARzxf7VGfEehXYlFw_aem_sWjiUmtGyV3tjOHfK_Nwxg).  [Learn more about Session Description Protocol (SDP)⁠](https://www.rfc-editor.org/rfc/rfc8866.html?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR516SvNTWneWJ1BRyPN_AUwkutE4mEG3HfgWLNwp2vKQNk5dxI0lA9ItJirSg_aem_0fRiwIWcHro6u8toSKri-Q)  [View example SDP structures](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/reference#sdp-overview-and-sample-sdp-structures) |
 | `contacts`  *JSON object* | `profile.name` — The display name of the callee.  `profile.username` — **Optional.** The username of the user, if the user has adopted a username.  `wa_id` — The WhatsApp ID of the callee. May be omitted if the user has adopted a username and the phone number cannot be included.  `user_id` — The [BSUID](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#business-scoped-user-id) of the WhatsApp user.  `parent_user_id` — **Optional.** The [parent BSUID](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#parent-business-scoped-user-ids) of the WhatsApp user. Only included if parent BSUIDs are enabled. |
 
-**Usernames and business-scoped user IDs:** The Call connect webhook may include `to_user_id`, `to_parent_user_id`, and `contacts` fields containing the user’s BSUID and username; the user’s phone number may be omitted. For details, see [Business-scoped user IDs](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#business-scoped-user-id).
+**Usernames and business-scoped user IDs:** The Call connect webhook may include `to_user_id`, `to_parent_user_id`, and `contacts` fields containing the user's BSUID and username; the user's phone number may be omitted. For details, see [Business-scoped user IDs](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#business-scoped-user-id).
 
 ### Call status webhook
 
 WhatsApp sends this webhook during the following calling events:
 
-* Ringing: When the WhatsApp user’s client device begins ringing
+* Ringing: When the WhatsApp user's client device begins ringing
 * Accepted: When the WhatsApp user accepts the call
 * Rejected: When the WhatsApp user rejects the call. You also receive the call terminate webhook when the user rejects the call.
 
@@ -527,7 +525,7 @@ The webhook structure here is similar to the Status webhooks used for the Cloud 
 | `status`  *String* | The current call status.  Possible values:  `RINGING`: Business initiated call is ringing the user  `ACCEPTED`: Business initiated call is accepted by the user  `REJECTED`: Business initiated call is rejected by the user |
 | `biz_opaque_callback_data`  *String* | Arbitrary string your business passes into the call for tracking and logging purposes.  Will only be returned if provided through [Initiate New Call API requests](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/business-initiated-calls#initiate-a-new-call) |
 
-**Usernames and business-scoped user IDs:** The Call status webhook may include `recipient_user_id` and `recipient_parent_user_id` fields containing the user’s BSUID; the user’s phone number (`recipient_id`) may be omitted. For details, see [Business-scoped user IDs](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#business-scoped-user-id).
+**Usernames and business-scoped user IDs:** The Call status webhook may include `recipient_user_id` and `recipient_parent_user_id` fields containing the user's BSUID; the user's phone number (`recipient_id`) may be omitted. For details, see [Business-scoped user IDs](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#business-scoped-user-id).
 
 ### Call terminate webhook
 
@@ -613,11 +611,11 @@ WhatsApp sends a webhook notification whenever the call is terminated for any re
 | `errors.code`  *Integer* | The `errors` object is present only for failed calls when there is error information available. Code is one of the [calling error codes](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/troubleshooting#calling-error-codes) |
 | `contacts`  *JSON object* | `profile.name` — The display name of the callee.  `profile.username` — **Optional.** The username of the user, if the user has adopted a username.  `wa_id` — The WhatsApp ID of the callee. May be omitted if the user has adopted a username and the phone number cannot be included.  `user_id` — The [BSUID](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#business-scoped-user-id) of the WhatsApp user.  `parent_user_id` — **Optional.** The [parent BSUID](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#parent-business-scoped-user-ids) of the WhatsApp user. Only included if parent BSUIDs are enabled. |
 
-**Usernames and business-scoped user IDs:** The Call terminate webhook may include `to_user_id`, `to_parent_user_id`, and `contacts` fields containing the user’s BSUID and username; the user’s phone number may be omitted. For details, see [Business-scoped user IDs](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#business-scoped-user-id).
+**Usernames and business-scoped user IDs:** The Call terminate webhook may include `to_user_id`, `to_parent_user_id`, and `contacts` fields containing the user's BSUID and username; the user's phone number may be omitted. For details, see [Business-scoped user IDs](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#business-scoped-user-id).
 
 ## SDP overview and sample structures
 
-Session Description Protocol (SDP) is a text-based format used to describe the characteristics of multimedia sessions, such as voice and video calls, in real-time communication applications. SDP provides a standardized way to describe the session’s media streams. The SDP description includes media type, codecs, protocols, and parameters for establishing and managing the session.
+Session Description Protocol (SDP) is a text-based format used to describe the characteristics of multimedia sessions, such as voice and video calls, in real-time communication applications. SDP provides a standardized way to describe the session's media streams. The SDP description includes media type, codecs, protocols, and parameters for establishing and managing the session.
 
 In the context of WebRTC, SDP is used to negotiate the media parameters between the sender and receiver, enabling them to agree on the specifics of the media exchange.
 

@@ -23,7 +23,7 @@ To create a template with a button mapped to an Android deep link:
 * In the **Buttons** section, click the **+ Add buttons** dropdown menu and select **Visit website**.
 * Check the **Track app conversions** checkbox to reveal the deep link fields (pictured below).
 * Complete each field using its tooltip or [form field](https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/send-marketing-messages#form-fields) descriptions below as guidance.
-* Add any additional components you’d like your template to use, name your template, and submit it for approval.
+* Add any additional components you'd like your template to use, name your template, and submit it for approval.
 
 Note that you can also use the **Manage templates** panel to edit an existing template and add a deep link-mapped button, but the template must pass template review again.
 
@@ -34,7 +34,7 @@ Note that you can also use the **Manage templates** panel to edit an existing te
 | Field label | Description | Example value |
 | --- | --- | --- |
 | Android deep link | **Required.** Android deep link URI. | luckyshrub://deals/`summer_solstice` |
-| Android fallback URL | **Optional.** Fallback URL. If the WhatsApp client cannot load the deep link URI, the WhatsApp client loads this URL in the device’s default web browser.  If omitted, the WhatsApp client loads the URL specified in the Website URL field instead. | https://www.luckyshrub.com/deals/`summer_solstice` |
+| Android fallback URL | **Optional.** Fallback URL. If the WhatsApp client cannot load the deep link URI, the WhatsApp client loads this URL in the device's default web browser.  If omitted, the WhatsApp client loads the URL specified in the Website URL field instead. | https://www.luckyshrub.com/deals/`summer_solstice` |
 | Button Text | **Required.** Button label text. Maximum 25 characters. | View deal |
 | Meta app ID | **Required.** This is a list of the Meta app(s) associated with your business portfolio. Select the app whose access token you will use to send the template. | Lucky Shrub (634974688087057) |
 | Type of Action | **Required.**  Must be set to **Visit website**. | Visit website |
@@ -56,43 +56,41 @@ Template components can vary based on your needs. This example syntax creates a 
 * **URL button**, mapped to a deep link URI and fallback URL
 
 ```
-```
-'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_ACCOUNT_ID>/message_templates' \  
--H 'Content-Type: application/json' \  
--H 'Authorization: Bearer <ACCESS_TOKEN>' \  
--d '  
+'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_ACCOUNT_ID>/message_templates' \  
+-H 'Content-Type: application/json' \  
+-H 'Authorization: Bearer <ACCESS_TOKEN>' \  
+-d '  
 {  
-  "name": "<TEMPLATE_NAME>",  
-  "language": "<TEMPLATE_LANGUAGE>",  
-  "category": "marketing",  
-  "components": [  
-    {  
-      "type": "header",  
-      "format": "text",  
-      "text": "<HEADER_TEXT>"  
-    },  
-    {  
-      "type": "body",  
-      "text": "<BODY_TEXT>"  
-    },  
-    {  
-      "type": "buttons",  
-      "buttons": [  
-        {  
-          "type": "url",  
-          "text": "<BUTTON_LABEL_TEXT>",  
-          "url": "<BUTTON_URL>",  
-          "app_deep_link": {  
-            "meta_app_id": <META_APP_ID>,  
-            "android_deep_link": "<ANDROID_DEEP_LINK>",  
-            "android_fallback_playstore_url": "<FALLBACK_URL>"  
-          }  
-        }  
-      ]  
-    }  
-  ]  
+  "name": "<TEMPLATE_NAME>",  
+  "language": "<TEMPLATE_LANGUAGE>",  
+  "category": "marketing",  
+  "components": [  
+    {  
+      "type": "header",  
+      "format": "text",  
+      "text": "<HEADER_TEXT>"  
+    },  
+    {  
+      "type": "body",  
+      "text": "<BODY_TEXT>"  
+    },  
+    {  
+      "type": "buttons",  
+      "buttons": [  
+        {  
+          "type": "url",  
+          "text": "<BUTTON_LABEL_TEXT>",  
+          "url": "<BUTTON_URL>",  
+          "app_deep_link": {  
+            "meta_app_id": <META_APP_ID>,  
+            "android_deep_link": "<ANDROID_DEEP_LINK>",  
+            "android_fallback_playstore_url": "<FALLBACK_URL>"  
+          }  
+        }  
+      ]  
+    }  
+  ]  
 }'
-```
 ```
 
 ### Request parameters
@@ -104,8 +102,8 @@ Template components can vary based on your needs. This example syntax creates a 
 | `<API_VERSION>`*String* | **Optional.** Graph API [version](https://developers.facebook.com/docs/graph-api/guides/versioning). | `v22.0` |
 | `<BODY_TEXT>`*String* | **Required if using a body component.** Template body text. Variables are supported. Maximum 1024 characters. | `Beat the heat with our sizzling summer deals on succulents! At Lucky Shrub, we...` |
 | `<BUTTON_LABEL_TEXT>`*String* | **Required if using a URL button component.** Button label text. Maximum 25 characters. | `View Deals` |
-| `<BUTTON_URL>`*String* | **Required if using a URL button component.** URL of a website that the WhatsApp client loads in the device’s default web browser when the user taps the button. For deep links, the WhatsApp client uses this website URL only if the WhatsApp user taps the button on a non-Android device. | `https://www.luckyshrub.com/deals/summer/` |
-| `<FALLBACK_URL>`*String* | **Required if using a URL button mapped to a deep link.** URL of a website that the WhatsApp client loads in the device’s default web browser when the user taps the button but the client cannot load the Android deep link URI. | `https://www.luckyshrub.com/deals/summer/` |
+| `<BUTTON_URL>`*String* | **Required if using a URL button component.** URL of a website that the WhatsApp client loads in the device's default web browser when the user taps the button. For deep links, the WhatsApp client uses this website URL only if the WhatsApp user taps the button on a non-Android device. | `https://www.luckyshrub.com/deals/summer/` |
+| `<FALLBACK_URL>`*String* | **Required if using a URL button mapped to a deep link.** URL of a website that the WhatsApp client loads in the device's default web browser when the user taps the button but the client cannot load the Android deep link URI. | `https://www.luckyshrub.com/deals/summer/` |
 | `<HEADER_TEXT>`*String* | **Required if using a text header component.** Template header text string. Supports up to 1 parameter. If this string contains a parameter, you must include an `example` property. Maximum 60 characters. | `Sizzling Summer Deals at Lucky Shrub` |
 | `<META_APP_ID>`*Integer* | **Required if using a URL button mapped to a deep link.** Your Meta app ID. | `634974688087057` |
 | `<TEMPLATE_LANGUAGE>`*String* | **Required.** Template [language and locale code](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/supported-languages). | `en_US` |
@@ -115,43 +113,41 @@ Template components can vary based on your needs. This example syntax creates a 
 ## Example request
 
 ```
-```
-curl 'https://graph.facebook.com/v22.0/102290129340398/message_templates' \  
--H 'Content-Type: application/json' \  
--H 'Authorization: Bearer EAAJB...' \  
--d '  
+curl 'https://graph.facebook.com/v22.0/102290129340398/message_templates' \  
+-H 'Content-Type: application/json' \  
+-H 'Authorization: Bearer EAAJB...' \  
+-d '  
 {  
-  "name": "summer_deals_deep_link_v1",  
-  "language": "en_US",  
-  "category": "marketing",  
-  "components": [  
-    {  
-      "type": "header",  
-      "format": "text",  
-      "text": "Sizzling Summer Deals at Lucky Shrub"  
-    },  
-    {  
-      "type": "body",  
-      "text": "Beat the heat with our sizzling summer deals on succulents! At Lucky Shrub, we're passionate about bringing a touch of greenery to your life. Our succulents are not only low-maintenance and easy to care for, but they also add a pop of color and style to any room. Use the button below to see our Summer Steals!"  
-    },  
-    {  
-      "type": "buttons",  
-      "buttons": [  
-        {  
-          "type": "url",  
-          "text": "View Deals",  
-          "url": "https://www.luckyshrub.com/deals/summer/",  
-          "app_deep_link": {  
-            "meta_app_id": 634974688087057,  
-            "android_deep_link": "luckyshrub://deals/summer/",  
-            "android_fallback_playstore_url": "https://www.luckyshrub.com/deals/summer/"  
-          }  
-        }  
-      ]  
-    }  
-  ]  
+  "name": "summer_deals_deep_link_v1",  
+  "language": "en_US",  
+  "category": "marketing",  
+  "components": [  
+    {  
+      "type": "header",  
+      "format": "text",  
+      "text": "Sizzling Summer Deals at Lucky Shrub"  
+    },  
+    {  
+      "type": "body",  
+      "text": "Beat the heat with our sizzling summer deals on succulents! At Lucky Shrub, we're passionate about bringing a touch of greenery to your life. Our succulents are not only low-maintenance and easy to care for, but they also add a pop of color and style to any room. Use the button below to see our Summer Steals!"  
+    },  
+    {  
+      "type": "buttons",  
+      "buttons": [  
+        {  
+          "type": "url",  
+          "text": "View Deals",  
+          "url": "https://www.luckyshrub.com/deals/summer/",  
+          "app_deep_link": {  
+            "meta_app_id": 634974688087057,  
+            "android_deep_link": "luckyshrub://deals/summer/",  
+            "android_fallback_playstore_url": "https://www.luckyshrub.com/deals/summer/"  
+          }  
+        }  
+      ]  
+    }  
+  ]  
 }'
-```
 ```
 
 ## Viewing metrics

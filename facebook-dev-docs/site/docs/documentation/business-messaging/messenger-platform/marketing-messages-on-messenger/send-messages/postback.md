@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/business-messaging/mes
 
 Updated: Nov 19, 2025
 
-Quick replies provide a way to present a set of up to 13 buttons in-conversation that contain a title and optional image, and appear prominently above the composer. You can also use quick replies to request a person’s location, email address, and phone number.
+Quick replies provide a way to present a set of up to 13 buttons in-conversation that contain a title and optional image, and appear prominently above the composer. You can also use quick replies to request a person's location, email address, and phone number.
 
 ![Two Messenger chats with Quick Reply buttons: 'Pick a size' (Small, Medium, Large) and 'Pick a color' (Red, Green)](https://scontent.fdel1-6.fna.fbcdn.net/v/t39.2365-6/653704888_1459945669197416_1856728963803525854_n.png?_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=sCJ-CLbf4_cQ7kNvwH4lagl&_nc_oc=AdoBsZimZaXEmTsjuc2xqKnSJvUnqN4XEPc_6BrqdxlaChN_vB9DpgWQtmcDEiTELCGN0z_yVPbSwW37k_ljduNK&_nc_zt=14&_nc_ht=scontent.fdel1-6.fna&_nc_gid=p-mUGOgkboEw3ZsISsnLFw&_nc_ss=7b289&oh=00_AQCx2iieoSTfbZCl1pJBTBTiA_8AOHmH5pJ5cUMxy5X9Cg&oe=6A606A9E)
 
@@ -26,53 +26,51 @@ The following quick reply types are supported:
 * [Email](https://developers.facebook.com/documentation/business-messaging/messenger-platform/marketing-messages-on-messenger/send-messages/postback#email)
 
 ```
-```
 {  
-  "message_id": "<MESSAGE_ID>",  
-  "messenger_delivery_data": {  
-    "subscription_token": "<SUBSCRIPTION_TOKEN>"  
-  },  
-  "message":{  
-   "quick_replies":[  
-      {  
-        "content_type":"text",  
-        "title":"Red",  
-        "payload":"{POSTBACK_PAYLOAD}",  
-        "image_url":"http://example.com/img/red.png"  
-      },{  
-        "content_type":"text",  
-        "title":"Green",  
-        "payload":"{POSTBACK_PAYLOAD}",  
-        "image_url":"http://example.com/img/green.png"  
-      }  
-    ]  
-    "attachment":{  
-      "type":"template",  
-      "payload":{  
-        "template_type":"generic",  
-        "elements":[  
-           {  
-            "title":"Welcome!",  
-            "image_url":"<IMAGE_URL>",  
-            "subtitle":"We have the right hat for everyone.",  
-            "buttons":[  
-              {  
-                "type":"web_url",  
-                "url":"<BUTTON_URL>",  
-                "title":"View Website"  
-              },{  
-                "type":"postback",  
-                "title":"Start Chatting",  
-                "payload":"<PAYLOAD_WEBHOOK>"  
-              }  
-            ]  
-          }  
-        ]  
-      }  
-    }  
-  }  
+  "message_id": "<MESSAGE_ID>",  
+  "messenger_delivery_data": {  
+    "subscription_token": "<SUBSCRIPTION_TOKEN>"  
+  },  
+  "message":{  
+   "quick_replies":[  
+      {  
+        "content_type":"text",  
+        "title":"Red",  
+        "payload":"{POSTBACK_PAYLOAD}",  
+        "image_url":"http://example.com/img/red.png"  
+      },{  
+        "content_type":"text",  
+        "title":"Green",  
+        "payload":"{POSTBACK_PAYLOAD}",  
+        "image_url":"http://example.com/img/green.png"  
+      }  
+    ]  
+    "attachment":{  
+      "type":"template",  
+      "payload":{  
+        "template_type":"generic",  
+        "elements":[  
+           {  
+            "title":"Welcome!",  
+            "image_url":"<IMAGE_URL>",  
+            "subtitle":"We have the right hat for everyone.",  
+            "buttons":[  
+              {  
+                "type":"web_url",  
+                "url":"<BUTTON_URL>",  
+                "title":"View Website"  
+              },{  
+                "type":"postback",  
+                "title":"Start Chatting",  
+                "payload":"<PAYLOAD_WEBHOOK>"  
+              }  
+            ]  
+          }  
+        ]  
+      }  
+    }  
+  }  
 }
-```
 ```
 
 ### Webhook Event
@@ -115,9 +113,9 @@ The `text` property of the event will correspond to the title of the Quick Reply
 
 ![Messenger conversation asking the user for their phone number, with a pre-filled phone number Quick Reply button below](https://scontent.fdel1-4.fna.fbcdn.net/v/t39.2365-6/23417458_1117232598379764_7436715136921894912_n.png?_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=NV_0B1qm7L0Q7kNvwEaXO7i&_nc_oc=AdqIX5v59YhyZUXRdLv6BQDNCA1QyNtHJokjcllqUUnmNK5PIfSKjx8XdKvTx59bbuDD4g-oZM182aZMqOVdOvgv&_nc_zt=14&_nc_ht=scontent.fdel1-4.fna&_nc_gid=p-mUGOgkboEw3ZsISsnLFw&_nc_ss=7b289&oh=00_AQAs_r1qqBaE0TsrnK-BTux2fE4hMFH0POGYIWA3r1TBzw&oe=6A60696B)
 
-The user phone number quick reply allows you to ask a user for their phone number. When the phone number quick reply is sent, the Messenger Platform will automatically pre-fill the displayed quick reply with the phone number from the user’s profile information.
+The user phone number quick reply allows you to ask a user for their phone number. When the phone number quick reply is sent, the Messenger Platform will automatically pre-fill the displayed quick reply with the phone number from the user's profile information.
 
-If the user’s profile does not have a phone number, the quick reply will not be shown.
+If the user's profile does not have a phone number, the quick reply will not be shown.
 
 The bot will not receive the phone number until the user clicks the quick reply.
 
@@ -169,9 +167,9 @@ When the user taps the quick reply, the phone number will be passed in the `payl
 
 ![Messenger conversation asking the user to send their email, with a pre-filled email address Quick Reply button below](https://scontent.fdel1-9.fna.fbcdn.net/v/t39.2365-6/27807597_203144990422079_3327502058327638016_n.png?_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=GrD8Owhsz4MQ7kNvwGsrH-s&_nc_oc=Adrx_wdPwqZGUZ-Ao9J5rCydmAQ4ilsZpnrtetFa8-gHYZ-iC--S_k56m0YM0Ak2nRNEyEy-6jhcmNkApNMB4E1T&_nc_zt=14&_nc_ht=scontent.fdel1-9.fna&_nc_gid=p-mUGOgkboEw3ZsISsnLFw&_nc_ss=7b289&oh=00_AQAifdF1DBEPD2Bttj_3dpwBTiRupvC5eIhINZAwjcOg4Q&oe=6A6061FA)
 
-The user email quick reply allows you to ask a user for their email. When the email quick reply is sent, the Messenger Platform will automatically pre-fill the displayed quick reply with the email from the user’s profile information.
+The user email quick reply allows you to ask a user for their email. When the email quick reply is sent, the Messenger Platform will automatically pre-fill the displayed quick reply with the email from the user's profile information.
 
-If the user’s profile does not have an email address, the quick reply will not be shown.
+If the user's profile does not have an email address, the quick reply will not be shown.
 
 The bot will not receive the email until the user clicks the quick reply.
 
@@ -224,8 +222,8 @@ When the user taps the quick reply, the email address will be passed in the `pay
 | Property | Type | Description |
 | --- | --- | --- |
 | `content_type` | String | Must be one of the following   * `text`: Sends a text button * `user_phone_number`: Sends a button allowing recipient to send the phone number associated with their account. * `user_email`: Sends a button allowing recipient to send the email associated with their account. |
-| `title` | String | Required if `content_type` is ‘text’. The text to display on the quick reply button. 20 character limit. |
-| `payload` | String, Number | Required if `content_type` is ‘text’. Custom data that will be sent back to you via the `messaging_postbacks` webhook event. 1000 character limit.   May be set to an empty string if `image_url` is set. |
+| `title` | String | Required if `content_type` is 'text'. The text to display on the quick reply button. 20 character limit. |
+| `payload` | String, Number | Required if `content_type` is 'text'. Custom data that will be sent back to you via the `messaging_postbacks` webhook event. 1000 character limit.   May be set to an empty string if `image_url` is set. |
 | `image_url` | String | ***Optional.*** URL of image to display on the quick reply button for text quick replies. Image should be a minimum of 24px x 24px. Larger images will be automatically cropped and resized.   Required if `title` is an empty string. |
 
 ## Best Practices
@@ -234,4 +232,4 @@ When the user taps the quick reply, the email address will be passed in the `pay
 
 ✅ Be brief — long quick replies will be truncated.
 
-❌ Don’t use for actions you’d like to be permanent: quick replies disappear after the next message.
+❌ Don't use for actions you'd like to be permanent: quick replies disappear after the next message.

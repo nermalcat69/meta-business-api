@@ -7,10 +7,10 @@ source_url: https://developers.facebook.com/documentation/business-messaging/wha
 
 Updated: May 21, 2026
 
-When creating a new template, or managing existing ones, it’s important to understand how WhatsApp categorizes your template for pricing purposes.
+When creating a new template, or managing existing ones, it's important to understand how WhatsApp categorizes your template for pricing purposes.
 
 * Consider template category guidelines before creating a new template
-* Stay updated on your template’s approval status after template creation
+* Stay updated on your template's approval status after template creation
 * Learn about automatic category updates to templates in production
 
 ***This information is also available in PDF form in our [Message templates category guidelines explainer PDF](https://scontent.fdel1-5.fna.fbcdn.net/v/t39.8562-6/522646671_1032957015586071_352200442705405080_n.pdf?_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=b8d81d&_nc_ohc=SMtLwymewH8Q7kNvwG33ouu&_nc_oc=AdpRkI6ckP_rwI0POak93Yr_Yd1yVGz5iOMg7HjVUAy6uPkRFMWuBxNU972omhn3-p3_C3VW4PLKXDo5jPqps023&_nc_zt=14&_nc_ht=scontent.fdel1-5.fna&_nc_gid=hPtVsi8sYfE8CIx0GZpJ0Q&_nc_ss=7b2a8&oh=00_AQAb2KGJab9eRM2N5tSo3udHIrP5OD6wt5h8dhf1KkOXGw&oe=6A4BECE2).***
@@ -21,7 +21,7 @@ Our template category guidelines define the category of message templates. Messa
 
 * **Marketing templates** – Enable businesses to achieve a wide range of goals, from generating awareness to driving sales and retargeting customers.
 * **Utility templates** – Enable businesses to follow up on user actions or requests, since these messages are typically triggered by user actions.
-* **Authentication templates** – Enable businesses to verify a user’s identity, potentially at various steps of the customer journey.
+* **Authentication templates** – Enable businesses to verify a user's identity, potentially at various steps of the customer journey.
 
 ### Marketing template guidelines
 
@@ -30,17 +30,17 @@ Marketing templates are the most flexible. They enable businesses to achieve a w
 The following templates are also considered marketing:
 
 * Templates with mixed content (for example, both utility and marketing, such as an order update with a promo or a feedback survey with promotional content).
-* Templates where contents are unclear (for example, where contents are only “{{1}}” or “Congratulations!”).
+* Templates where contents are unclear (for example, where contents are only "{​{1}​}" or "Congratulations!").
 
 *Note: Examples are illustrative only. Templates that contain similar content, or the example text above, might be categorized differently based on the exact content.*
 
 | Message Objective | Business Goal | Example Templates |
 | --- | --- | --- |
-| **Awareness** | Generate awareness of your business, products, or services among customers who have subscribed to receive messages from your business on WhatsApp. | * Did you know? We installed a {{new\_tower}} in your area so you can enjoy a better network experience. To learn more, visit our site. * {{Diwali}} is around the corner! Join us at {{location}} on {{date}} to celebrate with friends and family. For more details about our event, click below. * Looking for a getaway this fall? Our newest resort just opened in {{location}}: the perfect place to relax and unwind. |
-| **Sales** | Send promotional offers to customers related to sales events, coupons, or other content intended to drive sales or renewals. | * As a thank you for your last order, please enjoy {{15}}% off your next order. Use code {{loyal15}} at checkout. Visit our site here below. * We are actively seeking {{donations}} to meet our fundraising goal of {{amount}}. Support our cause and contribute now! * Upgrade to our {{premium\_cabin}} to enjoy new benefits, like {{more\_legroom}} and {{priority\_boarding}}. Click below or log into our app to upgrade. * You have been {{pre\_approved}} for our {{credit\_card}}! Enjoy an introductory {{apr\_rate}} if you apply via your personalized link below. |
-| **Retargeting** | Promote or recommend offers, products, or services; attempt to renew subscriptions; or other calls to action to users who might have visited your website, used your app or engaged with you. These are marketing even if requested by users. | * Your subscription will expire on {{date}}! Renew today to save {{discount}}. * You left {{items}} in your cart! Don’t worry, we saved them. Checkout now below. * Your loan application is {{pending\_approval}}! Please log in to pick up where you left off. * We found a {{car}} that meets your saved search. Log in to our app to view. * We apologize for the delay in your {{package}} delivery. We have deposited a {{credit}} to your account, available immediately. |
-| **App Promotion** | Request customers to install or take a specific action with your app. | * Did you know? You can now {{checkout}} in our app. Download it below to use our streamlined experience. * Thank you for using our app. We noticed you have not used our {{latest\_feature}}. Click below to learn more about how this benefits you! * In-app only: {{20}}% off this week! Use code {{summer\_promo}} to save on select styles. * Hi {{name}}, your friend {{name}} recently joined our community. Send them a welcome message in our app today: {{URL}}. |
-| **Build Customer Relationships** | Strengthen customer relationships through personalized messages or by prompting new conversations. | * {{Name}}, did you think we’d forget? No way! {{Happy\_birthday}}! We wish you the best in the year ahead. * As we approach the end of the year, we reflect on what drives us: {{Name}}. Thank you for being a {{valued\_customer}}. We look forward to continuing to serve you. * Hello, I am the new {{virtual\_assistant}}. I can help you discover products or provide support. Please reach out if I can help! |
+| **Awareness** | Generate awareness of your business, products, or services among customers who have subscribed to receive messages from your business on WhatsApp. | * Did you know? We installed a {​{new\_tower}​} in your area so you can enjoy a better network experience. To learn more, visit our site. * {​{Diwali}​} is around the corner! Join us at {​{location}​} on {​{date}​} to celebrate with friends and family. For more details about our event, click below. * Looking for a getaway this fall? Our newest resort just opened in {​{location}​}: the perfect place to relax and unwind. |
+| **Sales** | Send promotional offers to customers related to sales events, coupons, or other content intended to drive sales or renewals. | * As a thank you for your last order, please enjoy {​{15}​}% off your next order. Use code {​{loyal15}​} at checkout. Visit our site here below. * We are actively seeking {​{donations}​} to meet our fundraising goal of {​{amount}​}. Support our cause and contribute now! * Upgrade to our {​{premium\_cabin}​} to enjoy new benefits, like {​{more\_legroom}​} and {​{priority\_boarding}​}. Click below or log into our app to upgrade. * You have been {​{pre\_approved}​} for our {​{credit\_card}​}! Enjoy an introductory {​{apr\_rate}​} if you apply via your personalized link below. |
+| **Retargeting** | Promote or recommend offers, products, or services; attempt to renew subscriptions; or other calls to action to users who might have visited your website, used your app or engaged with you. These are marketing even if requested by users. | * Your subscription will expire on {​{date}​}! Renew today to save {​{discount}​}. * You left {​{items}​} in your cart! Don't worry, we saved them. Checkout now below. * Your loan application is {​{pending\_approval}​}! Please log in to pick up where you left off. * We found a {​{car}​} that meets your saved search. Log in to our app to view. * We apologize for the delay in your {​{package}​} delivery. We have deposited a {​{credit}​} to your account, available immediately. |
+| **App Promotion** | Request customers to install or take a specific action with your app. | * Did you know? You can now {​{checkout}​} in our app. Download it below to use our streamlined experience. * Thank you for using our app. We noticed you have not used our {​{latest\_feature}​}. Click below to learn more about how this benefits you! * In-app only: {​{20}​}% off this week! Use code {​{summer\_promo}​} to save on select styles. * Hi {​{name}​}, your friend {​{name}​} recently joined our community. Send them a welcome message in our app today: {​{URL}​}. |
+| **Build Customer Relationships** | Strengthen customer relationships through personalized messages or by prompting new conversations. | * {​{Name}​}, did you think we'd forget? No way! {​{Happy\_birthday}​}! We wish you the best in the year ahead. * As we approach the end of the year, we reflect on what drives us: {​{Name}​}. Thank you for being a {​{valued\_customer}​}. We look forward to continuing to serve you. * Hello, I am the new {​{virtual\_assistant}​}. I can help you discover products or provide support. Please reach out if I can help! |
 
 ### Utility template guidelines
 
@@ -51,30 +51,30 @@ Utility templates are typically triggered by a user action or request. For a tem
 
 | Message Objective | Business Goal | Example Templates |
 | --- | --- | --- |
-| **Opt-In Management on WhatsApp** | Confirm opt-in to receive messages on WhatsApp as a follow-up to opt-in collected via other channels (for example, website, email), or confirm opt-out. | * Thanks for confirming opt-in! You’ll now receive notifications via WhatsApp. * Thank you for confirming your opt-out preference. You will no longer receive messages from us on WhatsApp. |
-| **Order Management** | Confirm, update, or cancel an order or transaction with a customer, using specific order or transaction details in the body of your message.  *These messages should not promote, recommend, upsell, or cross-sell products; include offers; or attempt to secure renewals.* | * Thank you! Your order {{order\_number}} is confirmed. We will let you know once your package is on its way. * Hooray! Your package from order {{order\_number}} is on its way. Your tracking number is {{tracking\_ID}} and expected delivery date is {{date}}. * Unfortunately, one item from your order {{number}} is backordered. We will follow up with an estimated ship date. If you wish to cancel and receive a refund, please click below. * We have received your item from order {{order\_number}}. Your refund for ${{amount}} has been processed. Thank you for your business. |
-| **Account Alerts or Updates** | Send important or time-sensitive updates or alerts or other information specific to purchased or subscribed products/services.  *These messages should not promote, recommend, upsell, or cross-sell products; include offers; or attempt to secure renewals.* | * Daily update for account ending in {{four\_digit\_number}}: Your available balance is {{amount}}. * Reminder: Your monthly payment for {{service}} will be billed on {{date}} to the {{card}} you have saved on file. * You only have {{number}} minutes remaining in your plan. Remember to top up your account by {{date}} to avoid disruptions. * To finish setting up your {{new\_profile}}, you need to upload a {{photo}}. Please click below to upload. * Please note, we have updated our {{Customer\_service}} phone number to {{number}}. Please save this and call if we can be of support. |
-| **Feedback Surveys** | Collect feedback on previous orders, transactions, or engagements with customers.  *Specificity of the order or interaction to which these relate is necessary. A general/generic survey or request for feedback will not be approved as utility.* | * We have delivered your order {{order\_number}}! Please let us know if there was any issue by reaching out below. * Your feedback ensures we continually {{improve}}. Please click below to share your thoughts on your {{recent visit}} at our {{store}} location. Thank you in advance! * You chatted with us {{online}} recently about order {{order\_number}}. How was your experience? Click below to fill out a short survey. |
-| **Continue a Conversation on WhatsApp** | Send a message to begin an interaction on WhatsApp that began in another channel.  *These messages should not be initiated without a user having requested the conversation to be moved to WhatsApp.* | * Hi! I see you requested support via our {{online\_chat}}. I am the virtual assistant on WhatsApp. How can I help? * Hi {{name}}, we are following up on your call with customer service on {{issue}}. Your case has progressed to the next step. Please log into your account to continue. |
+| **Opt-In Management on WhatsApp** | Confirm opt-in to receive messages on WhatsApp as a follow-up to opt-in collected via other channels (for example, website, email), or confirm opt-out. | * Thanks for confirming opt-in! You'll now receive notifications via WhatsApp. * Thank you for confirming your opt-out preference. You will no longer receive messages from us on WhatsApp. |
+| **Order Management** | Confirm, update, or cancel an order or transaction with a customer, using specific order or transaction details in the body of your message.  *These messages should not promote, recommend, upsell, or cross-sell products; include offers; or attempt to secure renewals.* | * Thank you! Your order {​{order\_number}​} is confirmed. We will let you know once your package is on its way. * Hooray! Your package from order {​{order\_number}​} is on its way. Your tracking number is {​{tracking\_ID}​} and expected delivery date is {​{date}​}. * Unfortunately, one item from your order {​{number}​} is backordered. We will follow up with an estimated ship date. If you wish to cancel and receive a refund, please click below. * We have received your item from order {​{order\_number}​}. Your refund for ${​{amount}​} has been processed. Thank you for your business. |
+| **Account Alerts or Updates** | Send important or time-sensitive updates or alerts or other information specific to purchased or subscribed products/services.  *These messages should not promote, recommend, upsell, or cross-sell products; include offers; or attempt to secure renewals.* | * Daily update for account ending in {​{four\_digit\_number}​}: Your available balance is {​{amount}​}. * Reminder: Your monthly payment for {​{service}​} will be billed on {​{date}​} to the {​{card}​} you have saved on file. * You only have {​{number}​} minutes remaining in your plan. Remember to top up your account by {​{date}​} to avoid disruptions. * To finish setting up your {​{new\_profile}​}, you need to upload a {​{photo}​}. Please click below to upload. * Please note, we have updated our {​{Customer\_service}​} phone number to {​{number}​}. Please save this and call if we can be of support. |
+| **Feedback Surveys** | Collect feedback on previous orders, transactions, or engagements with customers.  *Specificity of the order or interaction to which these relate is necessary. A general/generic survey or request for feedback will not be approved as utility.* | * We have delivered your order {​{order\_number}​}! Please let us know if there was any issue by reaching out below. * Your feedback ensures we continually {​{improve}​}. Please click below to share your thoughts on your {​{recent visit}​} at our {​{store}​} location. Thank you in advance! * You chatted with us {​{online}​} recently about order {​{order\_number}​}. How was your experience? Click below to fill out a short survey. |
+| **Continue a Conversation on WhatsApp** | Send a message to begin an interaction on WhatsApp that began in another channel.  *These messages should not be initiated without a user having requested the conversation to be moved to WhatsApp.* | * Hi! I see you requested support via our {​{online\_chat}​}. I am the virtual assistant on WhatsApp. How can I help? * Hi {​{name}​}, we are following up on your call with customer service on {​{issue}​}. Your case has progressed to the next step. Please log into your account to continue. |
 
 For a utility template to be deemed essential or critical to the user, it must reflect one of the use cases below and must also be non-promotional (not containing any promotional or persuasive intent).
 
 | Use Case Category | Use Case | Example that meets definition of "essential or critical to the user" |
 | --- | --- | --- |
-| **Public Safety** | Severe weather | There is a {{tornado}} alert in your area. We recommend you remain indoors until {{time}} today. |
-| **Public Safety** | Crisis response | We activated support services for the {{crisis}} in the {{zip code}} area. Live updates on our site, available below. |
-| **Public Service** | Health awareness | Stay up-to-date with your health. Stop by {{location}} by {{time}} to get your free COVID-19 {{vaccine}}. Bring your {{vaccination\_card}} and identification document. |
-| **Public Service** | Health emergency | The {{city}} has just declared a health emergency because of {{issue}}. We will follow up with more details once available. |
-| **Public Service** | Voting registration | To vote on {{date}}, please ensure your voter {{registration card}} is active. Please click the URL below to understand steps required to renew, if needed. Please disregard this message if your {{registration card}} will be active. |
-| **Public Service** | Disbursements | Your {{welfare}} disbursement balance is {{amount}}. Kindly note it will expire on {{date}}. |
-| **Public Disruption** | System outages | We have detected a system outage that impacts zip code {{code}}. We expect to restore service by {{time\_and\_date}}. We apologize for the inconvenience. |
-| **Public Disruption** | Operational disruption | This is to notify you that {{trains}} at our {{location}} station are halted because of {{issue}}. Please avoid the area as we work to rectify. |
-| **Account or Product Protection** | Fraud awareness | We have detected an increase in {{ATM fraud}}. To protect your card ending in {{1234}}, please consider updating your PIN. Click below to see the step-by-step. |
-| **Account or Product Protection** | Product recalls | The {{product}} you ordered on {{date}} has been recalled. Please click below to let us know how you would like to proceed. |
-| **Account or Product Protection** | Warranty alerts | Thank you for your purchase of {{product}}. Your warranty is active as of {{date}}. Our {{product manuals}} are below, for your reference. |
-| **Legal/Regulatory Compliance** | Identity compliance | This is to notify you that you need to upgrade to a {{updated\_identification\_card}} by {{date}}. To avoid any inconveniences when traveling, please ensure you make an appointment at your local {{office}}. |
-| **Legal/Regulatory Compliance** | Privacy disclosures | We updated our privacy policy on {{date}}. Please click the button below to learn more. |
-| **Legal/Regulatory Compliance** | Warranty alerts | Thank you for your purchase of {{product}}. Your warranty is active as of {{date}}. Our {{product manuals}} are below, for your reference. |
+| **Public Safety** | Severe weather | There is a {​{tornado}​} alert in your area. We recommend you remain indoors until {​{time}​} today. |
+| **Public Safety** | Crisis response | We activated support services for the {​{crisis}​} in the {​{zip code}​} area. Live updates on our site, available below. |
+| **Public Service** | Health awareness | Stay up-to-date with your health. Stop by {​{location}​} by {​{time}​} to get your free COVID-19 {​{vaccine}​}. Bring your {​{vaccination\_card}​} and identification document. |
+| **Public Service** | Health emergency | The {​{city}​} has just declared a health emergency because of {​{issue}​}. We will follow up with more details once available. |
+| **Public Service** | Voting registration | To vote on {​{date}​}, please ensure your voter {​{registration card}​} is active. Please click the URL below to understand steps required to renew, if needed. Please disregard this message if your {​{registration card}​} will be active. |
+| **Public Service** | Disbursements | Your {​{welfare}​} disbursement balance is {​{amount}​}. Kindly note it will expire on {​{date}​}. |
+| **Public Disruption** | System outages | We have detected a system outage that impacts zip code {​{code}​}. We expect to restore service by {​{time\_and\_date}​}. We apologize for the inconvenience. |
+| **Public Disruption** | Operational disruption | This is to notify you that {​{trains}​} at our {​{location}​} station are halted because of {​{issue}​}. Please avoid the area as we work to rectify. |
+| **Account or Product Protection** | Fraud awareness | We have detected an increase in {​{ATM fraud}​}. To protect your card ending in {​{1234}​}, please consider updating your PIN. Click below to see the step-by-step. |
+| **Account or Product Protection** | Product recalls | The {​{product}​} you ordered on {​{date}​} has been recalled. Please click below to let us know how you would like to proceed. |
+| **Account or Product Protection** | Warranty alerts | Thank you for your purchase of {​{product}​}. Your warranty is active as of {​{date}​}. Our {​{product manuals}​} are below, for your reference. |
+| **Legal/Regulatory Compliance** | Identity compliance | This is to notify you that you need to upgrade to a {​{updated\_identification\_card}​} by {​{date}​}. To avoid any inconveniences when traveling, please ensure you make an appointment at your local {​{office}​}. |
+| **Legal/Regulatory Compliance** | Privacy disclosures | We updated our privacy policy on {​{date}​}. Please click the button below to learn more. |
+| **Legal/Regulatory Compliance** | Warranty alerts | Thank you for your purchase of {​{product}​}. Your warranty is active as of {​{date}​}. Our {​{product manuals}​} are below, for your reference. |
 
 ### Authentication template guidelines
 
@@ -98,11 +98,11 @@ Authentication templates are our most restrictive, so for a template to be class
 
 | Message Objective | Business Goal | Example Templates |
 | --- | --- | --- |
-| **Authentication** | Authenticate users with one-time passcodes, potentially at multiple steps in the login process (for example, account verification, account recovery, integrity challenges). | * {{123456}} is your verification code. |
+| **Authentication** | Authenticate users with one-time passcodes, potentially at multiple steps in the login process (for example, account verification, account recovery, integrity challenges). | * {​{123456}​} is your verification code. |
 
 ## How WhatsApp assigns a category during template creation
 
-When you create a template, you indicate the template’s category, based on the guidelines above. WhatsApp validates the category you indicated per the contents of the template and the [guidelines](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-comparison#template-category-guidelines). The template is then created and its status is set to one of the statuses below, based on the outcome of the validation process.
+When you create a template, you indicate the template's category, based on the guidelines above. WhatsApp validates the category you indicated per the contents of the template and the [guidelines](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-comparison#template-category-guidelines). The template is then created and its status is set to one of the statuses below, based on the outcome of the validation process.
 
 a. When you create a template and it is approved, you can request a review up to 60 days from the creation date.
 
@@ -114,11 +114,11 @@ b. For utility templates that may be updated to marketing, you can request a rev
 
 **Status updates** — An email and WhatsApp Manager alert will inform you that the template was approved, and a [message\_template\_status\_update](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/message_template_status_update) webhook will be triggered with the event property set to `APPROVED`.
 
-Effective April 9, 2025, If you selected `UTILITY` as the template’s category and WhatsApp determined it should be `MARKETING`, **the template is approved as `MARKETING`**. In WhatsApp Manager, you will see the screen below. When using the API, the behavior will be as outlined above. You can request a review up to 60 days from the date the category was updated.
+Effective April 9, 2025, If you selected `UTILITY` as the template's category and WhatsApp determined it should be `MARKETING`, **the template is approved as `MARKETING`**. In WhatsApp Manager, you will see the screen below. When using the API, the behavior will be as outlined above. You can request a review up to 60 days from the date the category was updated.
 
 ![WhatsApp Manager dialog stating submitting this template will update its category to marketing, with Cancel and Submit buttons](https://scontent.fdel1-6.fna.fbcdn.net/v/t39.2365-6/489819773_1204274457885205_9034566102399816972_n.png?_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=h7Md0vwoVZwQ7kNvwH80yZ6&_nc_oc=AdrkAjFjYMGsC-FfBUjoAmVJLUjDxqeIFx9tpmSzOcFN7En0O9XI0ADbMwpnVl3btOOTlDPYqqe3t9CnIoQ-AMcZ&_nc_zt=14&_nc_ht=scontent.fdel1-6.fna&_nc_gid=hPtVsi8sYfE8CIx0GZpJ0Q&_nc_ss=7b2a8&oh=00_AQDp-bwQt4434d78FnyaXKr-RtB30BZbblVtUbLscHlNng&oe=6A605528)
 
-Effective April 9, 2025 – The `allow_category_change` property during template creation. Previously, if set to `true` in a template creation request, this allowed us to update a template’s category to `marketing`, if `marketing` to be its category was determined to be its category per its content and the guidelines. This is now the default behavior.
+Effective April 9, 2025 – The `allow_category_change` property during template creation. Previously, if set to `true` in a template creation request, this allowed us to update a template's category to `marketing`, if `marketing` to be its category was determined to be its category per its content and the guidelines. This is now the default behavior.
 
 ### Pending status
 
@@ -135,14 +135,14 @@ Effective April 9, 2025 – The `allow_category_change` property during template
 If your message template is rejected, you have the following options:
 
 * [Create a new message template](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview) via WhatsApp Manager or the API.
-* [Edit the template’s category](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-management#edit-templates), and resubmit for approval.
+* [Edit the template's category](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-management#edit-templates), and resubmit for approval.
 * [Request a review](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-comparison#how-to-request-a-category-review).
 
 ### Duplicated templates from phone number migration
 
 All eligible templates are automatically duplicated in the destination WABA and category checks will be performed to ensure that all duplicated templates are correctly categorized.
 
-## How WhatsApp updates a template’s category after initial approval
+## How WhatsApp updates a template's category after initial approval
 
 July 1, 2024 — To ensure templates on the platform are correctly categorized per the template category guidelines, WhatsApp introduced a recurring process to identify and update approved templates that should be of a different category, per the template category guidelines.
 
@@ -166,7 +166,7 @@ Automatic category updates can apply to approved templates only that were not in
 *This process was introduced on October 1, 2024*
 
 * **Notice period** — Advance notice is provided.
-* **Template category** — There is no change in the template’s category.
+* **Template category** — There is no change in the template's category.
 * **Template status** — On the first day of the following month, the template status is changed to `REJECTED` and can no longer be used to send messages.
 
 ### **How you are notified**
@@ -175,20 +175,20 @@ Automatic category updates can apply to approved templates only that were not in
 
 | Advanced notification of category updates | Description |
 | --- | --- |
-| *Via Email* | * An email will be sent to any people in the business’ portfolio with ‘full control’ of the WhatsApp Business account (WABA). * The email will contain a link to the WhatsApp Manager > Message Templates > Manage Templates panel. * Templates whose categories will be updated will have an “information” icon beside their name. Hovering over the icon will display the category it will be updated to, and the date when it will be updated. * For templates that will be rejected, the icon will display |
-| *Via Webhook* | A [template\_category\_update](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/template_category_update) webhook will be triggered for each template whose category will be updated, with a `correct_category` property in the payload set to what the template’s category should be. The `new_category` property also exists in the payload indicating the template’s current category. |
+| *Via Email* | * An email will be sent to any people in the business' portfolio with 'full control' of the WhatsApp Business account (WABA). * The email will contain a link to the WhatsApp Manager > Message Templates > Manage Templates panel. * Templates whose categories will be updated will have an "information" icon beside their name. Hovering over the icon will display the category it will be updated to, and the date when it will be updated. * For templates that will be rejected, the icon will display |
+| *Via Webhook* | A [template\_category\_update](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/template_category_update) webhook will be triggered for each template whose category will be updated, with a `correct_category` property in the payload set to what the template's category should be. The `new_category` property also exists in the payload indicating the template's current category. |
 | *Via WhatsApp Manager* | * The WhatsApp Manager > Message Templates > Manage Templates panel will display a banner with a link to a downloadable CSV identifying these templates. * [Business Support⁠](https://business.facebook.com/business-support-home/) will list the name and current category of these templates, as well as the categories they will be updated to. |
 
 | Notification when action is taken | Description |
 | --- | --- |
 | *Via Email* | * An email will be sent to any people in the business portfolio who have been granted full control of the WABA that owns the templates whose categories have been updated. * The email will highlight the number of templates whose categories were updated, and will include a link to the WhatsApp Manager > Message Templates > Manage Templates panel where the name and new category of these templates, as well as the categories before automatic update will be listed. It also includes a link to [Business Support⁠](https://business.facebook.com/business-support-home/). |
-| *Via Webhook* | A [template\_category\_update](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/template_category_update) webhook will be triggered for each template whose category has been updated. The `new_category` property will indicate the template’s new category and the `previous_category` property will indicate the template’s category before automatic update. |
+| *Via Webhook* | A [template\_category\_update](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/template_category_update) webhook will be triggered for each template whose category has been updated. The `new_category` property will indicate the template's new category and the `previous_category` property will indicate the template's category before automatic update. |
 
 ### For templates approved as **marketing or utility**, but should actually be **authentication**
 
 | Advanced notification of category updates | Description |
 | --- | --- |
-| *Via Email* | * An email will be sent to any people in the business portfolio who have been granted full control of the WABA that owns the templates whose categories have been updated. * The email will contain a link to the WhatsApp Manager > Message Templates > Manage Templates panel. * Templates whose status will be updated to `REJECTED` will be updated will have an “information” icon beside their name. Hovering over the icon will display the date when the template will be rejected. |
+| *Via Email* | * An email will be sent to any people in the business portfolio who have been granted full control of the WABA that owns the templates whose categories have been updated. * The email will contain a link to the WhatsApp Manager > Message Templates > Manage Templates panel. * Templates whose status will be updated to `REJECTED` will be updated will have an "information" icon beside their name. Hovering over the icon will display the date when the template will be rejected. |
 | *Via Webhook* | * A [template\_category\_update](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/template_category_update) webhook will be triggered for each template which will be rejected. |
 | *Via WhatsApp Manager* | * The WhatsApp Manager > Message Templates > Manage Templates panel will display a banner with a link to a downloadable CSV identifying these templates. [Business Support⁠](https://business.facebook.com/business-support-home/) will list these as well. |
 
@@ -199,12 +199,12 @@ Automatic category updates can apply to approved templates only that were not in
 
 ### Your options in this process
 
-When you receive notice that a template’s category will be updated or a template will be rejected, you can:
+When you receive notice that a template's category will be updated or a template will be rejected, you can:
 
 * Create a new template
 * For **utility templates** that will be updated to **marketing**:
   * You can [request a review](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-comparison#how-to-request-a-category-review):
-    * If the review is approved – The template’s category will not be updated as previously notified.
+    * If the review is approved – The template's category will not be updated as previously notified.
     * If the review is not approved – The template will be updated to marketing, as previously notified.
 * For **marketing or utility templates** that will be **rejected**:
   * You cannot request a review.
@@ -218,27 +218,25 @@ When you receive notice that a template’s category will be updated or a templa
 
 You can use the [Message Templates API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/message-template-api#get-version-waba-id-message-templates) to get the list of templates that have been or will be updated.
 
-Request the `category` and `correct_category` fields, which will return the IDs of all of the WABA’s templates, and each template’s `category` and `correct_category` values. You can then compare these values:
+Request the `category` and `correct_category` fields, which will return the IDs of all of the WABA's templates, and each template's `category` and `correct_category` values. You can then compare these values:
 
 ```
-```
-GET /<WHATSAPP_BUSINESS_ID>/message_templates?fields=category,correct_category
-```
+GET /<WHATSAPP_BUSINESS_ID>/message_templates?fields=category,correct_category
 ```
 
-* If the values match (for example, they are both `MARKETING`), the template’s category has already been updated with the `correct_category` value.
-* If they mismatch and the `correct_category` is not an empty string or null (for example, category is `UTILITY` but `correct_category` is `MARKETING`), the template’s category will be updated on the first day of the next month with the `correct_category` value.
+* If the values match (for example, they are both `MARKETING`), the template's category has already been updated with the `correct_category` value.
+* If they mismatch and the `correct_category` is not an empty string or null (for example, category is `UTILITY` but `correct_category` is `MARKETING`), the template's category will be updated on the first day of the next month with the `correct_category` value.
 * If the `correct_category` value is an empty string or null, the template has not been impacted.
 
 ### Via WhatsApp Manager
 
-The WhatsApp Manager’s Manage Templates panel identifies any templates whose categories will be updated.
+The WhatsApp Manager's Manage Templates panel identifies any templates whose categories will be updated.
 
 ## How to update a template category or request a category review
 
 This process has been in effect since June 2023, when the marketing, utility, and authentication template categories were introduced.
 
-### Edit your template’s category
+### Edit your template's category
 
 #### Via API
 
@@ -265,7 +263,7 @@ You can request Meta to review the category of your template if:
 * It is categorized as `UTILITY` or `MARKETING` and status is `REJECTED`
 * It is categorized as `MARKETING` and status is `APPROVED`
 
-Possible outcomes after you submit a request of your template’s category:
+Possible outcomes after you submit a request of your template's category:
 
 * Review is approved – The category will be updated. A [template\_category\_update](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/template_category_update) webhook will be triggered. The `new_category` property in the webhook payload will indicate its new category.
 * Review is rejected – The category will not change.
@@ -290,7 +288,7 @@ In the Business Support sidebar, click **Template category Updates**, and then t
 
 ### How to view template category decisions
 
-**If the template category change is not approved**: The template can be viewed in Business Support under the **Template category updates** > **Unchanged** tab. The template’s category will change to the correct category during an automatic category update.
+**If the template category change is not approved**: The template can be viewed in Business Support under the **Template category updates** > **Unchanged** tab. The template's category will change to the correct category during an automatic category update.
 
 ![Business Support Template category updates Unchanged tab showing a Utility template with Rejected asset status](https://scontent.fdel1-5.fna.fbcdn.net/v/t39.2365-6/573009027_1027592439465357_7694481853741097993_n.png?_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=XjiPftDfVuEQ7kNvwEGDFQZ&_nc_oc=AdrgMJxh6f0PmWVgHi1QZoi-Bzcrb1CkS-dHVnryJ3z-EzqMQ56m3GOOpfmoxvojjKQPXw6whrmkCfNRBdVhduck&_nc_zt=14&_nc_ht=scontent.fdel1-5.fna&_nc_gid=hPtVsi8sYfE8CIx0GZpJ0Q&_nc_ss=7b2a8&oh=00_AQB8xDiCgIwVSrKCIexXwk4s65ChkS22neEmWFJpgn8WZQ&oe=6A604177)
 
@@ -325,23 +323,21 @@ You are notified of enforcement actions through the following channels:
 When a WABA is enforced for utility template miscategorization, a webhook is sent via the `whatsapp_business_account` subscription. All enforcement events share this structure:
 
 ```
-```
 {  
-  "field": "account_update",  
-  "value": {  
-    "event": "ACCOUNT_RESTRICTION",  
-    "violation_info": {  
-      "violation_type": "<violation_type>"  
-    },  
-    "restriction_info": [  
-      {  
-        "restriction_type": "<restriction_type>",  
-        "expiration": "<unix_timestamp>"  
-      }  
-    ]  
-  }  
+  "field": "account_update",  
+  "value": {  
+    "event": "ACCOUNT_RESTRICTION",  
+    "violation_info": {  
+      "violation_type": "<violation_type>"  
+    },  
+    "restriction_info": [  
+      {  
+        "restriction_type": "<restriction_type>",  
+        "expiration": "<unix_timestamp>"  
+      }  
+    ]  
+  }  
 }
-```
 ```
 
 `restriction_info` is only present when an active restriction is being applied (rate limits, utility template suspensions). It is omitted for warnings and recovery events.

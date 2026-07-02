@@ -71,11 +71,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Application-ID}/connected_client_businesses' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Application-ID}/connected_client_businesses' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -86,44 +86,44 @@ Select status code
 
 ```
 {  
-  "multiple_businesses": {  
-    "summary": "Multiple connected client businesses",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "1234567890123456",  
-          "name": "Example Client Business A"  
-        },  
-        {  
-          "id": "2345678901234567",  
-          "name": "Example Client Business B"  
-        }  
-      ],  
-      "paging": {  
-        "cursors": {  
-          "after": "QVFIUjNpUWpVWmRBd0Rn"  
-        },  
-        "next": "https://graph.facebook.com/v25.0/1234567890/connected_client_businesses?after=QVFIUjNpUWpVWmRBd0Rn"  
-      }  
-    }  
-  },  
-  "single_business": {  
-    "summary": "Single connected client business",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "1234567890123456",  
-          "name": "Example Client Business"  
-        }  
-      ]  
-    }  
-  },  
-  "empty_response": {  
-    "summary": "No connected client businesses",  
-    "value": {  
-      "data": []  
-    }  
-  }  
+  "multiple_businesses": {  
+    "summary": "Multiple connected client businesses",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "1234567890123456",  
+          "name": "Example Client Business A"  
+        },  
+        {  
+          "id": "2345678901234567",  
+          "name": "Example Client Business B"  
+        }  
+      ],  
+      "paging": {  
+        "cursors": {  
+          "after": "QVFIUjNpUWpVWmRBd0Rn"  
+        },  
+        "next": "https://graph.facebook.com/v25.0/1234567890/connected_client_businesses?after=QVFIUjNpUWpVWmRBd0Rn"  
+      }  
+    }  
+  },  
+  "single_business": {  
+    "summary": "Single connected client business",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "1234567890123456",  
+          "name": "Example Client Business"  
+        }  
+      ]  
+    }  
+  },  
+  "empty_response": {  
+    "summary": "No connected client businesses",  
+    "value": {  
+      "data": []  
+    }  
+  }  
 }
 ```
 
@@ -695,11 +695,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Application-ID}/connected_client_businesses' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Application-ID}/connected_client_businesses' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -710,44 +710,44 @@ Select status code
 
 ```
 {  
-  "multiple_businesses": {  
-    "summary": "Multiple connected client businesses",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "1234567890123456",  
-          "name": "Example Client Business A"  
-        },  
-        {  
-          "id": "2345678901234567",  
-          "name": "Example Client Business B"  
-        }  
-      ],  
-      "paging": {  
-        "cursors": {  
-          "after": "QVFIUjNpUWpVWmRBd0Rn"  
-        },  
-        "next": "https://graph.facebook.com/v25.0/1234567890/connected_client_businesses?after=QVFIUjNpUWpVWmRBd0Rn"  
-      }  
-    }  
-  },  
-  "single_business": {  
-    "summary": "Single connected client business",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "1234567890123456",  
-          "name": "Example Client Business"  
-        }  
-      ]  
-    }  
-  },  
-  "empty_response": {  
-    "summary": "No connected client businesses",  
-    "value": {  
-      "data": []  
-    }  
-  }  
+  "multiple_businesses": {  
+    "summary": "Multiple connected client businesses",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "1234567890123456",  
+          "name": "Example Client Business A"  
+        },  
+        {  
+          "id": "2345678901234567",  
+          "name": "Example Client Business B"  
+        }  
+      ],  
+      "paging": {  
+        "cursors": {  
+          "after": "QVFIUjNpUWpVWmRBd0Rn"  
+        },  
+        "next": "https://graph.facebook.com/v25.0/1234567890/connected_client_businesses?after=QVFIUjNpUWpVWmRBd0Rn"  
+      }  
+    }  
+  },  
+  "single_business": {  
+    "summary": "Single connected client business",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "1234567890123456",  
+          "name": "Example Client Business"  
+        }  
+      ]  
+    }  
+  },  
+  "empty_response": {  
+    "summary": "No connected client businesses",  
+    "value": {  
+      "data": []  
+    }  
+  }  
 }
 ```
 

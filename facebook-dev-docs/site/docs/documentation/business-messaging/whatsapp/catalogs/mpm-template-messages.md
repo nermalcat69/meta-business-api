@@ -21,8 +21,8 @@ Multi-product messages are interactive messages that display up to 30 products f
 
 Customers who receive Multi-Product Messages can perform three main actions:
 
-* View products: Customers can see a list of products. Whenever a customer clicks on a specific item, the product’s latest info is fetched and the product displays in a Product Detail Page (PDP) format. Currently, PDPs only support product images — any videos or GIFs added to the product won’t be displayed in the PDP.
-* Add products to a cart: Whenever a user adds a product to the shopping cart, the item’s latest info is fetched. If there has been a state change on any of the items, a dialog saying “One or more items in your cart have been updated” is displayed. See [Product updates](https://developers.facebook.com/documentation/business-messaging/whatsapp/catalogs/share-products#product-updates) for more information. A cart persists in a chat thread between you and your customer until the cart is sent to you — see [Shopping cart experience](https://developers.facebook.com/documentation/business-messaging/whatsapp/catalogs/share-products#shopping-cart-experience) for details.
+* View products: Customers can see a list of products. Whenever a customer clicks on a specific item, the product's latest info is fetched and the product displays in a Product Detail Page (PDP) format. Currently, PDPs only support product images — any videos or GIFs added to the product won't be displayed in the PDP.
+* Add products to a cart: Whenever a user adds a product to the shopping cart, the item's latest info is fetched. If there has been a state change on any of the items, a dialog saying "One or more items in your cart have been updated" is displayed. See [Product updates](https://developers.facebook.com/documentation/business-messaging/whatsapp/catalogs/share-products#product-updates) for more information. A cart persists in a chat thread between you and your customer until the cart is sent to you — see [Shopping cart experience](https://developers.facebook.com/documentation/business-messaging/whatsapp/catalogs/share-products#shopping-cart-experience) for details.
 * Send a shopping cart to you: After adding all needed items, customers can send their cart to you. After that, you can define the next steps, such as requesting delivery info or giving payment options.
 
 If your customer has multiple devices linked to their account, Multi-Product Messages are synced between devices. However, the shopping cart is local to each specific device. See [Shopping cart experience](https://developers.facebook.com/documentation/business-messaging/whatsapp/catalogs/share-products#shopping-cart-experience) for details.
@@ -33,7 +33,7 @@ Currently, Multi-Product Messages can be received on the following platforms:
 * Android: 2.21.9.15
 * Web: The web client supports this feature.
 
-If the customer’s app version does not support Multi-Product Messages, they instead receive a message explaining that delivery failed because they are using an outdated version of WhatsApp. You also receive a webhook notification indicating the message was unable to be delivered due to the customer using an outdated version of WhatsApp.
+If the customer's app version does not support Multi-Product Messages, they instead receive a message explaining that delivery failed because they are using an outdated version of WhatsApp. You also receive a webhook notification indicating the message was unable to be delivered due to the customer using an outdated version of WhatsApp.
 
 ## Expected behavior
 
@@ -67,7 +67,7 @@ Combining the features with navigation tools like Natural Language Processing (N
 
 #### Personal
 
-Populated dynamically so can be personalized to the customer or situation. For example, you can show a Multi-Product Message of a customer’s most frequently ordered items.
+Populated dynamically so can be personalized to the customer or situation. For example, you can show a Multi-Product Message of a customer's most frequently ordered items.
 
 #### Business outcomes
 
@@ -92,54 +92,52 @@ To send a Multi-Product Message, assemble an `interactive` object of type `produ
 
 | Required Components | Optional Components |
 | --- | --- |
-| * Header Object — Header’s type must be set to text. Remember to add a text object with the desired content. * Body Object * Action Object — Must include catalog\_id and sections.   * Sections must be an array of objects describing each section using title and product\_items.     * Each section’s product\_items value must be an array describing each product in the section using product\_retailer\_id and the product’s stock keeping unit (SKU) number. | * Footer Object |
+| * Header Object — Header's type must be set to text. Remember to add a text object with the desired content. * Body Object * Action Object — Must include catalog\_id and sections.   * Sections must be an array of objects describing each section using title and product\_items.     * Each section's product\_items value must be an array describing each product in the section using product\_retailer\_id and the product's stock keeping unit (SKU) number. | * Footer Object |
 
 See [Messages, Interactive Object](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/message-api) for full information. By the end of the process, the interactive object should look something like this:
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "recipient_type": "individual",  
-  "to": "PHONE_NUMBER",  
-  "type": "interactive",  
-  "interactive": {  
-    "type": "product_list",  
-    "header":{  
-      "type": "text",  
-      "text": "HEADER_CONTENT"  
-    },  
-    "body": {  
-      "text": "BODY_CONTENT"  
-    },  
-    "footer": {  
-      "text": "FOOTER_CONTENT"  
-    },  
-    "action": {  
-      "catalog_id": "CATALOG_ID",  
-      "sections": [  
-        {  
-          "title": "SECTION_TITLE",  
-          "product_items": [  
-            { "product_retailer_id": "PRODUCT-SKU" },  
-            { "product_retailer_id": "PRODUCT-SKU" }  
-            ...  
-          ]  
+  "messaging_product": "whatsapp",  
+  "recipient_type": "individual",  
+  "to": "PHONE_NUMBER",  
+  "type": "interactive",  
+  "interactive": {  
+    "type": "product_list",  
+    "header":{  
+      "type": "text",  
+      "text": "HEADER_CONTENT"  
+    },  
+    "body": {  
+      "text": "BODY_CONTENT"  
+    },  
+    "footer": {  
+      "text": "FOOTER_CONTENT"  
+    },  
+    "action": {  
+      "catalog_id": "CATALOG_ID",  
+      "sections": [  
+        {  
+          "title": "SECTION_TITLE",  
+          "product_items": [  
+            { "product_retailer_id": "PRODUCT-SKU" },  
+            { "product_retailer_id": "PRODUCT-SKU" }  
+            ...  
+          ]  
   
-        },  
-        {  
-          "title": "SECTION_TITLE",  
-          "product_items": [  
-            { "product_retailer_id": "PRODUCT-SKU" },  
-            { "product_retailer_id": "PRODUCT-SKU" }  
-            ...  
-          ]  
-        }  
-      ]  
-    }  
-  }  
+        },  
+        {  
+          "title": "SECTION_TITLE",  
+          "product_items": [  
+            { "product_retailer_id": "PRODUCT-SKU" },  
+            { "product_retailer_id": "PRODUCT-SKU" }  
+            ...  
+          ]  
+        }  
+      ]  
+    }  
+  }  
 }
-```
 ```
 
 #### Missing items
@@ -176,16 +174,14 @@ For all available parameters, see [Reference, Messages](https://developers.faceb
 Use the [Messages API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/message-api#post-version-phone-number-id-messages) to send the JSON object you have assembled in steps 1 and 2. If your message is sent successfully, you get the following response:
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "contacts": [{  
-      "input": "PHONE_NUMBER",  
-      "wa_id": "WHATSAPP_ID"  
-    }],  
-  "messages": [{  
-      "id": "wamid.ID"  
-    }]  
+  "messaging_product": "whatsapp",  
+  "contacts": [{  
+      "input": "PHONE_NUMBER",  
+      "wa_id": "WHATSAPP_ID"  
+    }],  
+  "messages": [{  
+      "id": "wamid.ID"  
+    }]  
 }
-```
 ```

@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/instagram-platform/ins
 
 Updated: Mar 18, 2026
 
-Identify captions, comments, and IG Media in which an Instagram Business or Creator’s alias has been tagged or @mentioned.
+Identify captions, comments, and IG Media in which an Instagram Business or Creator's alias has been tagged or @mentioned.
 
 ## Requirements
 
@@ -17,7 +17,7 @@ You will need the following:
 
 #### Access Level
 
-* Advanced Access if your app serves Instagram Professional accounts you don’t own or manage
+* Advanced Access if your app serves Instagram Professional accounts you don't own or manage
 * Standard Access if your app serves Instagram Professional accounts you own or manage and have added to your app in the App Dashboard
 
 #### Base URL

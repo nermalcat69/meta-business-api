@@ -22,7 +22,7 @@ Go to [Meta for Developers](https://developers.facebook.com/apps) and click **My
 
 Use access tokens backed by a [system user](https://developers.facebook.com/docs/marketing-api/businessmanager/systemuser) to access the Commerce API. An access token obtained from a typical user can be invalidated after a period of time, or if that user changes their Facebook password.
 
-* If you’ve not done so already, [add your app to your Meta Business Suite⁠](https://www.facebook.com/business/help/2199735813629697?id=420299598837059).
+* If you've not done so already, [add your app to your Meta Business Suite⁠](https://www.facebook.com/business/help/2199735813629697?id=420299598837059).
 * [Add system users to your Meta Business Suite⁠](https://www.facebook.com/business/help/503306463479099?id=2190812977867143). You can also use an existing system user in your business.
 
 ## Step 3: Assign assets
@@ -34,7 +34,7 @@ Use access tokens backed by a [system user](https://developers.facebook.com/docs
 * The Facebook Page backing your test commerce account
 * The catalog connected to your test commerce account
 
-You can only use the system user’s access token to access assets assigned to the system user. Once you set up your production commerce account, make sure that you also assign the system user to the relevant assets.
+You can only use the system user's access token to access assets assigned to the system user. Once you set up your production commerce account, make sure that you also assign the system user to the relevant assets.
 
 ## Step 4: Generate a system user access token
 
@@ -61,4 +61,4 @@ By default, your shop is configured to automatically move new orders to the `IN_
 * Place test orders on your shop using the [App Dashboard](https://developers.facebook.com/apps/).
 * Begin managing your orders placed in your test commerce account using the [Order Management API](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/order-management).
 * Once you demonstrate your integration on a test account, submit your app for [App Review](https://developers.facebook.com/docs/commerce-platform/setup/app-review) to manage a real commerce account.
-* If you are a platform that builds integration for your sellers, you need to build an onboarding flow that automates steps [2](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/app-dashboard#create_system_user) to [5](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/app-dashboard#create_pat) so that you can make API calls on the seller’s behalf. Learn more about [Platform Integration](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/platforms) and [Seller Onboarding](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/platforms/onboarding).
+* If you are a platform that builds integration for your sellers, you need to build an onboarding flow that automates steps [2](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/app-dashboard#create_system_user) to [5](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/app-dashboard#create_pat) so that you can make API calls on the seller's behalf. Learn more about [Platform Integration](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/platforms) and [Seller Onboarding](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/platforms/onboarding).

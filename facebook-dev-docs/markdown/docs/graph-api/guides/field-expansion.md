@@ -102,21 +102,21 @@ GET graph.facebook.com/me?fields=posts.limit(5){message}
 We can then extend this a bit more and for each post object, we get the text and privacy setting of each post. By default the `privacy` field returns an object that contains information about five key:value pairs, `allow`, `deny`, `description`, `friends`, and `value`. In this query we only want one returned, the `value` key:value pair.
 
 ```
-GET graph.facebook.com/me?fields=posts.limit(5){message,privacy{value}}
+GET graph.facebook.com/me?fields=posts.limit(5){message,privacy{value}​}
 ```
 
 Now we can extend it again by retrieving the name of each photo, the picture URL, and the people tagged:
 
 ```
 GET graph.facebook.com
-/me?fields=albums.limit(5){name, photos.limit(2){name, picture, tags.limit(2)}},posts.limit(5)
+/me?fields=albums.limit(5){name, photos.limit(2){name, picture, tags.limit(2)}​},posts.limit(5)
 ```
 
 Let's look at an example using cursor-based pagination:
 
 ```
 GET graph.facebook.com
-/me?fields=albums.limit(5){name,photos.limit(2).after(MTAyMTE1OTQwNDc2MDAxNDkZD){name,picture,tags.limit(2)}},posts.limit(5)
+/me?fields=albums.limit(5){name,photos.limit(2).after(MTAyMTE1OTQwNDc2MDAxNDkZD){name,picture,tags.limit(2)}​},posts.limit(5)
 ```
 
 You can see how field expansion can work across nodes, edges, and fields to return really complex data in a single request.

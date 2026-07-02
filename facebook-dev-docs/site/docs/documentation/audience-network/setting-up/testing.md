@@ -168,9 +168,9 @@ For Rewarded Video:
 
 ## Step 3: Load an Ad
 
-Once the `RewardedVideoAd` is instantiated, the next step is to load an ad. That’s done by calling the `loadAd` method.
+Once the `RewardedVideoAd` is instantiated, the next step is to load an ad. That's done by calling the `loadAd` method.
 
-In the example shown above, here’s how to initiate the loading of the ad:
+In the example shown above, here's how to initiate the loading of the ad:
 
 ```
 ...
@@ -180,7 +180,7 @@ this.rewardedVideoAd.LoadAd();
 
 ## Step 4: Showing the Ad
 
-Finally, after the ad is loaded, you can call the `Show` method to render the rewarded video ad on the screen. For example you can create a function for `ShowRewardedVideo`, and call this function when it’s time to show the ad:
+Finally, after the ad is loaded, you can call the `Show` method to render the rewarded video ad on the screen. For example you can create a function for `ShowRewardedVideo`, and call this function when it's time to show the ad:
 
 ```
 public void ShowRewardedVideo()
@@ -196,7 +196,7 @@ public void ShowRewardedVideo()
 
 ## Server Side Reward Validation
 
-This is optional! You don’t have to implement server side reward validation to make use of rewarded video ads.
+This is optional! You don't have to implement server side reward validation to make use of rewarded video ads.
 This is only required if you decide to validate rewards on your own server to improve the security by introducing a validation step at your own server.
 Please provide your publisher end point to your Facebook representative in order to enable this feature.
 
@@ -215,7 +215,7 @@ If you manage your user rewards server-side, then Facebook offers a solution for
   * `RewardedVideoAdDidSucceed` - triggered only if a 200 response was received during step 3.
   * `RewardedVideoAdDidFail` - triggered if a non 200 response was received during step 3.
 
-An example of the URL which will hit your publisher end point, from Facebook’s server:
+An example of the URL which will hit your publisher end point, from Facebook's server:
 https://www.your\_end\_point.com/?token=APP\_SECRET&puid=USER\_ID&pc=REWARD\_ID&ptid=UNIQUE\_TRANSACTION\_ID
 
 The workflow will look like this:
@@ -294,4 +294,4 @@ Follow our guides for integrating different Ad Formats in your Unity app:
 * [Native Ads](https://developers.facebook.com/docs/audience-network/unity/native)
 * [Native Banner Ads](https://developers.facebook.com/docs/audience-network/unity/native-banner)
 
-Once you’re ready to go live with your app and monetize, [submit your app for review](https://developers.facebook.com/documentation/audience-network/setting-up/platform-setup#onboarding) after ensuring it it complies with [Audience Network policies](https://developers.facebook.com/documentation/audience-network/optimization/best-practices/an-policy) and the [Facebook community standards⁠](https://www.facebook.com/communitystandards).
+Once you're ready to go live with your app and monetize, [submit your app for review](https://developers.facebook.com/documentation/audience-network/setting-up/platform-setup#onboarding) after ensuring it it complies with [Audience Network policies](https://developers.facebook.com/documentation/audience-network/optimization/best-practices/an-policy) and the [Facebook community standards⁠](https://www.facebook.com/communitystandards).

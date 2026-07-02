@@ -7,11 +7,11 @@ source_url: https://developers.facebook.com/documentation/business-messaging/wha
 
 Updated: May 21, 2026
 
-If you are a Solution Partner and are part of an active [multi-partner solution](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/multi-partner-solutions), you can designate a WABA as *eligible* for the solution (the “destination solution”). This sends a Meta Business Suite request to the client who owns the WABA. The client can then use the Meta Business Suite to accept and confirm the request.
+If you are a Solution Partner and are part of an active [multi-partner solution](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/multi-partner-solutions), you can designate a WABA as *eligible* for the solution (the "destination solution"). This sends a Meta Business Suite request to the client who owns the WABA. The client can then use the Meta Business Suite to accept and confirm the request.
 
 Confirmation associates the WABA with the destination solution, thereby granting permissions (already defined on the destination solution) to any Tech Providers who are part of it.
 
-If you’re unsure of the WABA’s ownership model, request the `ownership_type` field on the WABA ID. A value of `ON_BEHALF_OF` indicates you own the WABA, while `CLIENT_OWNED` indicates that your client owns the WABA.
+If you're unsure of the WABA's ownership model, request the `ownership_type` field on the WABA ID. A value of `ON_BEHALF_OF` indicates you own the WABA, while `CLIENT_OWNED` indicates that your client owns the WABA.
 
 ## Requirements
 
@@ -21,20 +21,18 @@ If you’re unsure of the WABA’s ownership model, request the `ownership_type`
 
 ## Step 1: Designate the WABA as solution eligible
 
-Use the [POST /<WHATSAPP\_BUSINESS\_ACCOUNT>/set\_solution\_migration\_intent](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/set-solution-migration-intent-api#Creating) endpoint to tag the business customer’s WABA for migration. This generates a [migration intent](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/migration-intent-api), which indicates your intent to migrate the WABA.
+Use the [POST /<WHATSAPP\_BUSINESS\_ACCOUNT>/set\_solution\_migration\_intent](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/set-solution-migration-intent-api#Creating) endpoint to tag the business customer's WABA for migration. This generates a [migration intent](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/migration-intent-api), which indicates your intent to migrate the WABA.
 
 ### Request
 
 ```
-```
-curl 'https://graph.facebook.com/<API_VERSION>/<WABA_ID>/set_solution_migration_intent' \  
--H 'Content-Type: application/json' \  
--H 'Authorization: Bearer <BUSINESS_TOKEN>' \  
--d '  
+curl 'https://graph.facebook.com/<API_VERSION>/<WABA_ID>/set_solution_migration_intent' \  
+-H 'Content-Type: application/json' \  
+-H 'Authorization: Bearer <BUSINESS_TOKEN>' \  
+-d '  
 {  
-  "solution_id": "<DESTINATION_MULTI-PARTNER_SOLUTION_ID>"  
+  "solution_id": "<DESTINATION_MULTI-PARTNER_SOLUTION_ID>"  
 }'
-```
 ```
 
 ### Response
@@ -42,11 +40,9 @@ curl 'https://graph.facebook.com/<API_VERSION>/<WABA_ID>/set_solution_migration
 Upon success:
 
 ```
-```
 {  
-  "id": "<MIGRATION_INTENT_ID>"  
+  "id": "<MIGRATION_INTENT_ID>"  
 }
-```
 ```
 
 In addition, Meta sends a confirmation request to the client who owns the WABA.

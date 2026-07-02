@@ -11,12 +11,12 @@ Updated: Feb 10, 2026
 
 ### Overview
 
-Conversions API Gateway and Signals Gateway control plane API is a set of GraphQL APIs exposed from the Gateway instance. It allows developers to programmatically manage accounts, data sources and other configurations of a “Gateway Products” Conversions API Gateway or Signals Gateway instance. Partners can integrate the API to build into their advertiser-facing UI and offer their advertisers a seamless onboarding and management flow.
+Conversions API Gateway and Signals Gateway control plane API is a set of GraphQL APIs exposed from the Gateway instance. It allows developers to programmatically manage accounts, data sources and other configurations of a "Gateway Products" Conversions API Gateway or Signals Gateway instance. Partners can integrate the API to build into their advertiser-facing UI and offer their advertisers a seamless onboarding and management flow.
 
 Potential use cases:
 
-* Advertisers onboard to Gateway Products using the partner’s UI and perform follow-up actions through the Gateway Product admin settings. This requires partial integration of the control plane API.
-* Advertisers perform all actions on the partner’s UI, including onboarding to Gateway Products and follow-up actions. It can be a good use case for partners who do not want to expose the Gateway Products UI but still want to provide a Gateway Products as a service for the advertisers. This requires full integration of the control plane API.
+* Advertisers onboard to Gateway Products using the partner's UI and perform follow-up actions through the Gateway Product admin settings. This requires partial integration of the control plane API.
+* Advertisers perform all actions on the partner's UI, including onboarding to Gateway Products and follow-up actions. It can be a good use case for partners who do not want to expose the Gateway Products UI but still want to provide a Gateway Products as a service for the advertisers. This requires full integration of the control plane API.
 
 Refer to the section below for more details on integration steps.
 
@@ -61,7 +61,7 @@ Copy and save the generated secret key. You will not be able to view it again.
 
 ![Create a new secret key dialog at the Generate secret key step showing the generated API secret key with a Copy button](https://scontent.fdel27-7.fna.fbcdn.net/v/t39.2365-6/474148739_2041086379693626_6925113833124726706_n.png?_nc_cat=105&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=BJ0RFN5vBJwQ7kNvwHOlcTb&_nc_oc=AdobfJzxk8f1B2c1TRS6-qqK1G_YT4_zRDYVBrKT7u36gMo_rhINWaswDuZw1BODhdUWBWUtKY4hDFf_OFOQs1bR&_nc_zt=14&_nc_ht=scontent.fdel27-7.fna&_nc_gid=A7ljCHS0lT5u5qLhPsTkig&_nc_ss=7b289&oh=00_AQAdR3MZKCokVcKCogdnCHst8fLQfG31kPA5ETDwSAGYGw&oe=6A606EA3)
 
-To remove an API account, click Delete API account. Kindly note that the action is not reversible and can potentially cause disruptions to any advertiser’s applications or services using the API.
+To remove an API account, click Delete API account. Kindly note that the action is not reversible and can potentially cause disruptions to any advertiser's applications or services using the API.
 
 ![Manage API accounts page listing the TestClient1 API account with a Delete API account button](https://scontent.fdel27-8.fna.fbcdn.net/v/t39.2365-6/474039778_4083692535284230_3930329005111351168_n.png?_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=dc_tZZ8-HfwQ7kNvwElCw07&_nc_oc=Adrsi6VRw2TaLiZFVB1SeBDn1EoMHH4fFQroqC5JHHdUp34Wg26KOvfmYSksQYCXY12swChksU6MJ3mriYynOrq-&_nc_zt=14&_nc_ht=scontent.fdel27-8.fna&_nc_gid=A7ljCHS0lT5u5qLhPsTkig&_nc_ss=7b289&oh=00_AQCVKBTt89H9AVyFCTHiIA8oHAtMjJc0bynwfkwRORZRkg&oe=6A606D67)
 
@@ -69,10 +69,10 @@ To remove an API account, click Delete API account. Kindly note that the action 
 
 A use case based on partial integration:
 
-* The advertiser opts in for Gateway Product service using the partner’s UI.
+* The advertiser opts in for Gateway Product service using the partner's UI.
 * Partner generates an invitation link which can be used by the advertiser to set up a password and complete Gateway Product account creation.
 * The advertiser uses functionalities on Gateway Product UI to perform actions such as data source management as well as account user, domain and routing management.
-* Partner retrieves the advertiser’s account usage and bills accordingly.
+* Partner retrieves the advertiser's account usage and bills accordingly.
 
 A high-level user flow may look like below:
 
@@ -88,10 +88,10 @@ To achieve the above, the partner can integrate a subset of control plane API, i
 
 A use case based on full integration:
 
-* The advertiser opts in for Gateway Product service using the partner’s UI.
-* Partner onboards the advertiser’s Gateway Product account and receives permission to manage the account; the advertiser authorizes the partner using the Meta Business Extension (MBE) or manual token generation.
-* The advertiser can perform data source management as well as account user, domain and routing management in the partner’s UI.
-* Partner retrieves the advertiser’s account usage and bills accordingly.
+* The advertiser opts in for Gateway Product service using the partner's UI.
+* Partner onboards the advertiser's Gateway Product account and receives permission to manage the account; the advertiser authorizes the partner using the Meta Business Extension (MBE) or manual token generation.
+* The advertiser can perform data source management as well as account user, domain and routing management in the partner's UI.
+* Partner retrieves the advertiser's account usage and bills accordingly.
 
 A high-level user flow may look like below:
 
@@ -105,11 +105,11 @@ Partners have the following two authentication options for Meta Pixels not manag
 
 #### Option 1 - Meta Business Extension (MBE)
 
-Before you start, you’ll need to:
+Before you start, you'll need to:
 
 Complete [all the requirements](https://developers.facebook.com/docs/facebook-business-extension/fbe/get-started/pixel-capi-onboarding#before-you-start) for implementing MBE.
 
-MBE provides an endpoint to retrieve system user access tokens created in the advertiser’s Business Manager. Partners may follow up to [Step 4 of the MBE integration guide](https://developers.facebook.com/docs/facebook-business-extension/fbe/get-started#integration-setup). Ensure that you:
+MBE provides an endpoint to retrieve system user access tokens created in the advertiser's Business Manager. Partners may follow up to [Step 4 of the MBE integration guide](https://developers.facebook.com/docs/facebook-business-extension/fbe/get-started#integration-setup). Ensure that you:
 
 Ensure that you:
 

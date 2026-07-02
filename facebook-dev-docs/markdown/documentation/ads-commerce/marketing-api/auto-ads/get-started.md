@@ -7,17 +7,17 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/marketing
 
 Updated: Jun 26, 2026
 
-Facebook’s automotive ads use cross-device intent signals to automatically promote relevant vehicles from your inventory with unique creatives on Facebook. Automotive inventory ads are a vertical solution for the automotive industry that includes a custom creative format, data models, and ads delivery optimization important for automotive clients.
+Facebook's automotive ads use cross-device intent signals to automatically promote relevant vehicles from your inventory with unique creatives on Facebook. Automotive inventory ads are a vertical solution for the automotive industry that includes a custom creative format, data models, and ads delivery optimization important for automotive clients.
 
-Facebook’s automotive model ads use cross-device intent signals to automatically promote relevant vehicle models and offers on Facebook. A vehicle models and offers catalog consists of information about the offers, corresponding vehicles, and markets/regions where the offer is valid.
+Facebook's automotive model ads use cross-device intent signals to automatically promote relevant vehicle models and offers on Facebook. A vehicle models and offers catalog consists of information about the offers, corresponding vehicles, and markets/regions where the offer is valid.
 
 ## How it works
 
-Meta matches the vehicles from your catalog with people whose activity on and off Facebook suggests they’re interested. Meta determines which vehicle to display by evaluating intent signals from people who are both on and off the Facebook apps and those who demonstrate similar characteristics. To see an example of what an automotive inventory looks like, contact your Facebook representative.
+Meta matches the vehicles from your catalog with people whose activity on and off Facebook suggests they're interested. Meta determines which vehicle to display by evaluating intent signals from people who are both on and off the Facebook apps and those who demonstrate similar characteristics. To see an example of what an automotive inventory looks like, contact your Facebook representative.
 
 ## How to measure success
 
-Optimize for automotive detail pages and cost per action that your Meta Pixel measures. Compare this performance against website conversion ads, or, if you’re currently using automotive inventory ads, compare with those campaigns.
+Optimize for automotive detail pages and cost per action that your Meta Pixel measures. Compare this performance against website conversion ads, or, if you're currently using automotive inventory ads, compare with those campaigns.
 
 ## See also
 

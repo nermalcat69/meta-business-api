@@ -10,7 +10,7 @@ Updated: Sep 17, 2025
 To run ads on Instagram, you need an Instagram Account ID. We recommend that you get that ID through a [Business Manager setup](https://developers.facebook.com/documentation/ads-commerce/instagram/ads-api/guides/ig-accounts-with-business-manager). But you can also use Facebook Pages. You have two options:
 
 * [Page-Connected Instagram Accounts](https://developers.facebook.com/documentation/ads-commerce/instagram/ads-api/guides/mixed-placements-ads#via_page): Connect the Instagram account to a Facebook Page. This is a simple option for small businesses.
-* [Page-Backed Instagram Accounts](https://developers.facebook.com/documentation/ads-commerce/instagram/ads-api/guides/mixed-placements-ads#pbia): Create a “shadow” Instagram account backed by a Facebook Page.
+* [Page-Backed Instagram Accounts](https://developers.facebook.com/documentation/ads-commerce/instagram/ads-api/guides/mixed-placements-ads#pbia): Create a "shadow" Instagram account backed by a Facebook Page.
 
 ## Page-Connected Instagram Accounts
 
@@ -38,7 +38,7 @@ The result contains one Instagram account object, including fields like `id`, `u
 You can use any ad accounts, either owned by an individual or by a business, as far as you have access, to create ads for page-connected Instagram accounts. You have the following limitations:
 
 * You need to have at least an `advertiser` role on the related Page but no role is needed on the Instagram account.
-* When you provide ad creative, you should provide an `instagram_user_id` and a `page_id`. If `instagram_user_id` is the Instagram account id of a page-connected Instagram account, you must use the page’s ID as `page_id`. You cannot use a page-connected account with another page in ad creative.
+* When you provide ad creative, you should provide an `instagram_user_id` and a `page_id`. If `instagram_user_id` is the Instagram account id of a page-connected Instagram account, you must use the page's ID as `page_id`. You cannot use a page-connected account with another page in ad creative.
 
 A page can have only one page-connected Instagram account, as well as only one [Page-backed Instagram account](https://developers.facebook.com/documentation/ads-commerce/instagram/ads-api/guides/mixed-placements-ads#pbia).
 
@@ -46,7 +46,7 @@ A page can have only one page-connected Instagram account, as well as only one [
 
 You typically create Instagram accounts to run ads with these accounts, post or comment with that profile, and build your community organically. Some advertisers do not want to create and maintain Instagram accounts for simplicity, or they may want to deliver ads and organic content by different Instagram accounts.
 
-In this case, you can use Page-backed Instagram accounts (PBIA). You can create these accounts with the API and use them to create ads on Instagram. This approach functions as if you are running ads for a Facebook Page, however we create a “shadow” Instagram account to run those ads.
+In this case, you can use Page-backed Instagram accounts (PBIA). You can create these accounts with the API and use them to create ads on Instagram. This approach functions as if you are running ads for a Facebook Page, however we create a "shadow" Instagram account to run those ads.
 
 ### Create PBIA
 
@@ -89,9 +89,9 @@ The `page_id` of your ad creative must be for page associated with this PBIA.
 
 When you use an ad account not owned by a business via Business Manager, if a page has a page-connected Instagram account, you cannot use its PBIA to create ads. You must use that page-connected Instagram account. When you create ads for an ad account owned by a business, this restriction does not apply.
 
-This Instagram account has the same name and profile picture as the related page. If someone changes the page name or profile picture, we automatically update the “shadow” Instagram account.
+This Instagram account has the same name and profile picture as the related page. If someone changes the page name or profile picture, we automatically update the "shadow" Instagram account.
 
-**You cannot login to this Instagram account to manage posts.** To see or manage “comments” and “likes” of your ad posts, you can:
+**You cannot login to this Instagram account to manage posts.** To see or manage "comments" and "likes" of your ad posts, you can:
 
 * Get the `instagram_permalink_url` [from your ad creative](https://developers.facebook.com/documentation/ads-commerce/marketing-api/guides/instagramads/get-started#adpreview), then view the ad post. You cannot add post or comment with this PBIA profile.
 * Use [Ads Manager⁠](https://business.facebook.com/adsmanager/manage) to see comments and delete comments of the ad post.

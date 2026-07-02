@@ -35,118 +35,112 @@ The following images show how the order details message with Pix appears in What
 #### Endpoint
 
 ```
-```
-POST /{PHONE_NUMBER_ID}/messages
-```
+POST /{PHONE_NUMBER_ID}/messages
 ```
 
 #### Payload example
 
 ```
-```
 {  
-  "recipient_type": "individual",  
-  "to": "<PHONE_NUMBER>",  
-  "type": "interactive",  
-  "interactive": {  
-    "type": "order_details",  
-    "body": {  
-      "text": "Your message content"  
-    },  
-    "action": {  
-      "name": "review_and_pay",  
-      "parameters": {  
-        "reference_id": "unique-reference-id",  
-        "type": "digital-goods",  
-        "payment_type": "br",  
-        "payment_settings": [  
-          {  
-            "type": "pix_dynamic_code",  
-            "pix_dynamic_code": {  
-              "code": "00020101021226700014br.gov.bcb.pix2548pix.example.com...",  
-              "merchant_name": "Account holder name",  
-              "key": "39580525000189",  
-              "key_type": "CNPJ"  
-            }  
-          }  
-        ],  
-        "currency": "BRL",  
-        "total_amount": {  
-          "value": 50000,  
-          "offset": 100  
-        },  
-        "order": {  
-          "status": "pending",  
-          "tax": {  
-            "value": 0,  
-            "offset": 100,  
-            "description": "optional text"  
-          },  
-          "items": [  
-            {  
-              "retailer_id": "1234567",  
-              "name": "Cake",  
-              "amount": {  
-                "value": 50000,  
-                "offset": 100  
-              },  
-              "quantity": 1  
-            }  
-          ],  
-          "subtotal": {  
-            "value": 50000,  
-            "offset": 100  
-          }  
-        }  
-      }  
-    }  
-  }  
+  "recipient_type": "individual",  
+  "to": "<PHONE_NUMBER>",  
+  "type": "interactive",  
+  "interactive": {  
+    "type": "order_details",  
+    "body": {  
+      "text": "Your message content"  
+    },  
+    "action": {  
+      "name": "review_and_pay",  
+      "parameters": {  
+        "reference_id": "unique-reference-id",  
+        "type": "digital-goods",  
+        "payment_type": "br",  
+        "payment_settings": [  
+          {  
+            "type": "pix_dynamic_code",  
+            "pix_dynamic_code": {  
+              "code": "00020101021226700014br.gov.bcb.pix2548pix.example.com...",  
+              "merchant_name": "Account holder name",  
+              "key": "39580525000189",  
+              "key_type": "CNPJ"  
+            }  
+          }  
+        ],  
+        "currency": "BRL",  
+        "total_amount": {  
+          "value": 50000,  
+          "offset": 100  
+        },  
+        "order": {  
+          "status": "pending",  
+          "tax": {  
+            "value": 0,  
+            "offset": 100,  
+            "description": "optional text"  
+          },  
+          "items": [  
+            {  
+              "retailer_id": "1234567",  
+              "name": "Cake",  
+              "amount": {  
+                "value": 50000,  
+                "offset": 100  
+              },  
+              "quantity": 1  
+            }  
+          ],  
+          "subtotal": {  
+            "value": 50000,  
+            "offset": 100  
+          }  
+        }  
+      }  
+    }  
+  }  
 }
-```
 ```
 
 #### Simplified payload example
 
-You can send a simplified order details message without the `order` object. This is useful when you don’t need to send itemized product details and only need to collect the total payment amount.
+You can send a simplified order details message without the `order` object. This is useful when you don't need to send itemized product details and only need to collect the total payment amount.
 
 ```
-```
 {  
-  "recipient_type": "individual",  
-  "to": "<PHONE_NUMBER>",  
-  "type": "interactive",  
-  "interactive": {  
-    "type": "order_details",  
-    "body": {  
-      "text": "Your message content"  
-    },  
-    "action": {  
-      "name": "review_and_pay",  
-      "parameters": {  
-        "reference_id": "unique-reference-id",  
-        "type": "digital-goods",  
-        "payment_type": "br",  
-        "payment_settings": [  
-          {  
-            "type": "pix_dynamic_code",  
-            "pix_dynamic_code": {  
-              "code": "00020101021226700014br.gov.bcb.pix2548pix.example.com...",  
-              "merchant_name": "Account holder name",  
-              "key": "39580525000189",  
-              "key_type": "CNPJ"  
-            }  
-          }  
-        ],  
-        "currency": "BRL",  
-        "total_amount": {  
-          "value": 50000,  
-          "offset": 100  
-        }  
-      }  
-    }  
-  }  
+  "recipient_type": "individual",  
+  "to": "<PHONE_NUMBER>",  
+  "type": "interactive",  
+  "interactive": {  
+    "type": "order_details",  
+    "body": {  
+      "text": "Your message content"  
+    },  
+    "action": {  
+      "name": "review_and_pay",  
+      "parameters": {  
+        "reference_id": "unique-reference-id",  
+        "type": "digital-goods",  
+        "payment_type": "br",  
+        "payment_settings": [  
+          {  
+            "type": "pix_dynamic_code",  
+            "pix_dynamic_code": {  
+              "code": "00020101021226700014br.gov.bcb.pix2548pix.example.com...",  
+              "merchant_name": "Account holder name",  
+              "key": "39580525000189",  
+              "key_type": "CNPJ"  
+            }  
+          }  
+        ],  
+        "currency": "BRL",  
+        "total_amount": {  
+          "value": 50000,  
+          "offset": 100  
+        }  
+      }  
+    }  
+  }  
 }
-```
 ```
 
 #### Parameters object

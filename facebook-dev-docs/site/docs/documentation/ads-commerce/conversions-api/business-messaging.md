@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/conversio
 
 Updated: Jan 5, 2026
 
-The Conversions API is Meta’s recommended integration method for sending offline and physical store events to Meta for use in ad measurement, attribution, and targeting. This page details how to send offline events via a Conversions API direct or partner integration.
+The Conversions API is Meta's recommended integration method for sending offline and physical store events to Meta for use in ad measurement, attribution, and targeting. This page details how to send offline events via a Conversions API direct or partner integration.
 
 ## Prerequisites
 
@@ -19,14 +19,14 @@ Datasets allow advertisers to connect and manage event data from web, app, store
 
 * Meta Pixel (website events)
 * App Events API (app events, including Facebook SDK for iOS or Android, mobile measurement partners (MMPs))
-* Offline Conversions API (Meta’s legacy API for offline events)
+* Offline Conversions API (Meta's legacy API for offline events)
 * Messaging Events API (messaging events)
 
 Datasets enable you to view all customer activities from a single interface. They also allow you to reduce the effort to build and maintain multiple API integrations.
 
 In Events Manager, advertisers have different [options⁠](https://www.facebook.com/business/help/5270377362999582?id=490360542427371) to create a dataset depending on their starting point. Or you can [create a brand new dataset⁠](https://www.facebook.com/business/help/5818684664831465?id=490360542427371) in Events Manager by linking during offline event set creation or through an existing mobile app or during messaging event set creation information. Note that linking a dataset to an application is required before sending mobile app events to the Conversions API and only one application can be linked to a dataset. See more [details⁠](https://www.facebook.com/business/help/768703235046938?locale=en_US) and instructions [here⁠](https://www.facebook.com/business/help/750785952855662?id=490360542427371).
 
-You can make the `GET` call to [https://graph.facebook.com/v16.0/{ads-pixel-id}/?fields=is\_consolidated\_container](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ads-pixel) to detect if the advertiser’s dataset is consolidated and thus eligible for passing offline events using the Conversions API.
+You can make the `GET` call to [https://graph.facebook.com/v16.0/{ads-pixel-id}/?fields=is\_consolidated\_container](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ads-pixel) to detect if the advertiser's dataset is consolidated and thus eligible for passing offline events using the Conversions API.
 
 ### Permissions
 
@@ -120,7 +120,7 @@ curl -X POST \
   https://graph.facebook.com/v15.0/<DATASET_ID>/events
 ```
 
-We recommend uploading in real time or on a daily basis for optimal optimization results so that offline data can be effectively matched against the performance of any ads you’re running.
+We recommend uploading in real time or on a daily basis for optimal optimization results so that offline data can be effectively matched against the performance of any ads you're running.
 
 The [`event_time`](https://developers.facebook.com/documentation/ads-commerce/conversions-api/parameters/server-event#event-time) can be up to 7 days before you send an event to Meta. If any `event_time` in `data` is greater than 7 days in the past, we return an error for the entire request and process no events. For offline and physical store events with `physical_store` as `action_source`, you should upload transactions within 62 days of the conversion.
 
@@ -128,7 +128,7 @@ The data you upload is processed in real time so you can usually view results as
 
 ### 3. Set Up Deduplication
 
-Unlike [deduplication set up across Conversions API and Meta Pixel events](https://developers.facebook.com/documentation/ads-commerce/conversions-api/deduplicate-pixel-and-server-events), offline events can be deduplicated against other offline events only. We support two methods of deduplication: **order\_id** based or **user** based. The deduplication uses the combination of fields: `dataset_id`, `event_time`, `event_name`, `item_number`, and the key field based on method in the given event’s payload.
+Unlike [deduplication set up across Conversions API and Meta Pixel events](https://developers.facebook.com/documentation/ads-commerce/conversions-api/deduplicate-pixel-and-server-events), offline events can be deduplicated against other offline events only. We support two methods of deduplication: **order\_id** based or **user** based. The deduplication uses the combination of fields: `dataset_id`, `event_time`, `event_name`, `item_number`, and the key field based on method in the given event's payload.
 
 The default deduplication uses **order\_id** with a combination of the fields above. If **order\_id** is not present in the payload, the **user** based deduplication logic will be used.
 

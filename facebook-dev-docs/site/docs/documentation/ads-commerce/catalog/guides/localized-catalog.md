@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/catalog/g
 
 Updated: Sep 17, 2020
 
-You can optionally set metadata tags in your product feed files. Setting these tags enables Facebook to attribute catalogs using this feed to your app. Once a catalog is attributed to your app, you don’t need to include the metadata tags in subsequent feed uploads to that catalog.
+You can optionally set metadata tags in your product feed files. Setting these tags enables Facebook to attribute catalogs using this feed to your app. Once a catalog is attributed to your app, you don't need to include the metadata tags in subsequent feed uploads to that catalog.
 
 Include the following elements as space-delimited comments at the top of TSV/CSV (tab-separated and comma-separated) feeds or inside a `metadata` tag in your XML feeds:
 

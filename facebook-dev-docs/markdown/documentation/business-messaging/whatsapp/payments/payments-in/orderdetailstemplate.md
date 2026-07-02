@@ -74,19 +74,19 @@ To send an `order_details` message, businesses must assemble an interactive obje
 
 | Object | Description |
 | --- | --- |
-| `type`  object | **Required.**  Must be “order\_details”. |
+| `type`  object | **Required.**  Must be "order\_details". |
 | `header`  object | **Optional.**  Header content displayed on top of a message. If a header is not provided, the API uses an image of the first available product as the header |
 | `body`  object | **Required.**  An object with the body of the message. The object contains the following field:  `text` string   * **Required** if `body` is present. The content of the message. Emojis and markdown are supported. Maximum length is 1024 characters |
 | `footer`  object | **Optional.**  An object with the footer of the message. The object contains the following fields:  `text` string   * **Required** if `footer` is present. The footer content. Emojis, markdown, and links are supported. Maximum length is 60 characters |
-| `action`  object | **Required.**  An action object you want the user to perform after reading the message. This action object contains the following fields:  `name` string   * **Required**. Must be “review\_and\_pay”   `parameters` object   * See [Parameters Object](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-in/orderdetailstemplate#paramobject) for information |
+| `action`  object | **Required.**  An action object you want the user to perform after reading the message. This action object contains the following fields:  `name` string   * **Required**. Must be "review\_and\_pay"   `parameters` object   * See [Parameters Object](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-in/orderdetailstemplate#paramobject) for information |
 
 #### Parameters object
 
 | Object | Description |
 | --- | --- |
-| `reference_id`  string | **Required.**  Unique identifier for the order or invoice provided by the business. It is case sensitive and cannot be an empty string and can only contain English letters, numbers, underscores, dashes, or dots, and should not exceed 35 characters.  The reference\_id must be unique for each order\_details message for a given business. If there is a need to send multiple order\_details messages for the same order, it is recommended to include a sequence number in the reference\_id (for example, “BM345A-12”) to ensure reference\_id uniqueness. |
+| `reference_id`  string | **Required.**  Unique identifier for the order or invoice provided by the business. It is case sensitive and cannot be an empty string and can only contain English letters, numbers, underscores, dashes, or dots, and should not exceed 35 characters.  The reference\_id must be unique for each order\_details message for a given business. If there is a need to send multiple order\_details messages for the same order, it is recommended to include a sequence number in the reference\_id (for example, "BM345A-12") to ensure reference\_id uniqueness. |
 | `type`  object | **Required.**  The type of goods being paid for in this order. Current supported options are `digital-goods` and `physical-goods`. |
-| `beneficiaries`  array | **Required for shipped physical-goods.**  An array of beneficiaries for this order. A beneficiary is an intended recipient for shipping the physical goods in the order. It contains the following fields:  Note: Beneficiary information isn’t shown to users but is needed for legal and compliance reasons.  `name` string   * **Required.** Name of the individual or business receiving the physical goods. Cannot exceed 200 characters   `address_line1` string   * **Required.** Shipping address (Door/Tower Number, Street Name, and so on). Cannot exceed 100 characters   `address_line2` string   * **Optional.** Shipping address (Landmark, Area, and so on). Cannot exceed 100 characters   `city` string   * **Required.** Name of the city.   `state` string   * **Required.** Name of the state.   `country` string   * **Required.** Must be “India”.   `postal_code` string   * **Required.** 6-digit zipcode of shipping address. |
+| `beneficiaries`  array | **Required for shipped physical-goods.**  An array of beneficiaries for this order. A beneficiary is an intended recipient for shipping the physical goods in the order. It contains the following fields:  Note: Beneficiary information isn't shown to users but is needed for legal and compliance reasons.  `name` string   * **Required.** Name of the individual or business receiving the physical goods. Cannot exceed 200 characters   `address_line1` string   * **Required.** Shipping address (Door/Tower Number, Street Name, and so on). Cannot exceed 100 characters   `address_line2` string   * **Optional.** Shipping address (Landmark, Area, and so on). Cannot exceed 100 characters   `city` string   * **Required.** Name of the city.   `state` string   * **Required.** Name of the state.   `country` string   * **Required.** Must be "India".   `postal_code` string   * **Required.** 6-digit zipcode of shipping address. |
 | `currency` | **Required.**  The currency for this order. Currently the only supported value is `INR`. |
 | `total_amount`  object | **Required.**  The `total_amount` object contains the following fields:  `offset` integer   * **Required.** Must be `100` for `INR`.   `value` integer   * **Required.** Positive integer representing the amount value multiplied by offset. For example, ₹12.34 has value 1234.   `total_amount.value` must be equal to `order.subtotal.value` + `order.tax.value` + `order.shipping.value` - `order.discount.value`.  UPI transactions are limited to ₹5,00,000. For higher amounts, set `enabled_payment_options` to `["web"]`. See [Restrict Available Payment Options](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-in/orderdetailstemplate#restrict-available-payment-options). |
 | `payment_settings`  object | **Required.**  See [Payment Settings object](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-in/orderdetailstemplate#paymentsettingsobject) for more information. |
@@ -96,8 +96,8 @@ To send an `order_details` message, businesses must assemble an interactive obje
 
 | Object | Description |
 | --- | --- |
-| `type`  string | **Required.**  Must be set to **“payment\_gateway”** |
-| `payment_gateway`  object | **Required.**  An object that describes payment account information:  `type` string   * **Required.** Unique identifier for an item in the order. You must set this to **“billdesk”** or **“razorpay”** or **“payu”** or **zaakpay**, if you have linked your BillDesk, Razorpay, PayU, or Zaakpay payment gateway to accept payments   `configuration_name` string   * **Required.** The name of the pre-configured payment configuration to use for this order and must not exceed 60 characters. This value must match with a payment configuration set up on the Meta Business Suite.   When `configuration_name` is invalid, the customer will be unable to pay for their order. You should conduct extensive testing of this setup during the integration phase.  `billdesk/razorpay/payu/zaakpay` object   * **Optional.** For merchants/partners that want to use additional\_info1/7(for BillDesk), notes and receipt(for Razorpay) and UDF fields(for PayU) and extra1/2(for Zaakpay), they can now pass these values in Order Details message, and WhatsApp uses these to create transaction/order at respective PGs.   Please refer [Payment Gateway specific UDF object](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-in/orderdetailstemplate#paymentsettingsudfobject) for more information. |
+| `type`  string | **Required.**  Must be set to **"payment\_gateway"** |
+| `payment_gateway`  object | **Required.**  An object that describes payment account information:  `type` string   * **Required.** Unique identifier for an item in the order. You must set this to **"billdesk"** or **"razorpay"** or **"payu"** or **zaakpay**, if you have linked your BillDesk, Razorpay, PayU, or Zaakpay payment gateway to accept payments   `configuration_name` string   * **Required.** The name of the pre-configured payment configuration to use for this order and must not exceed 60 characters. This value must match with a payment configuration set up on the Meta Business Suite.   When `configuration_name` is invalid, the customer will be unable to pay for their order. You should conduct extensive testing of this setup during the integration phase.  `billdesk/razorpay/payu/zaakpay` object   * **Optional.** For merchants/partners that want to use additional\_info1/7(for BillDesk), notes and receipt(for Razorpay) and UDF fields(for PayU) and extra1/2(for Zaakpay), they can now pass these values in Order Details message, and WhatsApp uses these to create transaction/order at respective PGs.   Please refer [Payment Gateway specific UDF object](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-in/orderdetailstemplate#paymentsettingsudfobject) for more information. |
 
 #### BillDesk, RazorPay, PayU, and Zaakpay fields
 
@@ -116,8 +116,8 @@ You can now pass `notes`, `receipt`, and `udf` fields in Order Details message a
 | Object | Description |
 | --- | --- |
 | `status`  string | **Required.**  Only supported value in the `order_details` message is `pending`.  In an `order_status` message, `status` can be: `pending`, `captured`, or `failed`. |
-| `type` string | **Optional.**  Only supported value is `quick_pay`. When this field is passed in, WhatsApp hides the “Review and Pay” button and only shows the “Pay Now” button in the order details bubble. |
-| `items`  object | **Required.**  An object with the list of items for this order, containing the following fields:  `retailer_id` string   * **Optional.** Content ID for an item in the order from your catalog.   `name` string   * **Required.** The item’s name to be displayed to the user. Cannot exceed 60 characters   `image` object   * **Optional.** Custom image for the item to be displayed to the user. See [item image object](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-in/orderdetailstemplate#item_image_object) for information   Using this image field will limit the items array to a maximum of 10 items and this cannot be used with `retailer_id` or `catalog_id`.  `amount` amount object with value and offset -- refer total amount field above   * **Required.** The price per item   `sale_amount` amount object   * **Optional.** The discounted price per item. This should be less than the original amount. If included, this field is used to calculate the subtotal amount.   `quantity` integer   * **Required.** The number of items in this order. This field must be an integer, not a decimal.   `country_of_origin` string   * **Required** if `catalog_id` is not present. The country of origin of the product   `importer_name` string   * **Required** if `catalog_id` is not present. Name of the importer company   `importer_adress` string   * **Required** if `catalog_id` is not present. Address of importer company |
+| `type` string | **Optional.**  Only supported value is `quick_pay`. When this field is passed in, WhatsApp hides the "Review and Pay" button and only shows the "Pay Now" button in the order details bubble. |
+| `items`  object | **Required.**  An object with the list of items for this order, containing the following fields:  `retailer_id` string   * **Optional.** Content ID for an item in the order from your catalog.   `name` string   * **Required.** The item's name to be displayed to the user. Cannot exceed 60 characters   `image` object   * **Optional.** Custom image for the item to be displayed to the user. See [item image object](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-in/orderdetailstemplate#item_image_object) for information   Using this image field will limit the items array to a maximum of 10 items and this cannot be used with `retailer_id` or `catalog_id`.  `amount` amount object with value and offset -- refer total amount field above   * **Required.** The price per item   `sale_amount` amount object   * **Optional.** The discounted price per item. This should be less than the original amount. If included, this field is used to calculate the subtotal amount.   `quantity` integer   * **Required.** The number of items in this order. This field must be an integer, not a decimal.   `country_of_origin` string   * **Required** if `catalog_id` is not present. The country of origin of the product   `importer_name` string   * **Required** if `catalog_id` is not present. Name of the importer company   `importer_adress` string   * **Required** if `catalog_id` is not present. Address of importer company |
 | `subtotal`  object | **Required.**  The value **must be equal** to sum of `order.amount.value` \* `order.amount.quantity`. Refer to `total_amount` description for explanation of `offset` and `value` fields  The following fields are part of the `subtotal` object:  `offset` integer   * **Required.** Must be `100` for `INR`   `value` integer   * **Required.** Positive integer representing the amount value multiplied by offset. For example, ₹12.34 has value 1234 |
 | `tax`  object | **Required.**  The tax information for this order which contains the following fields:  `offset` integer   * **Required.** Must be `100` for `INR`   `value` integer   * **Required.** Positive integer representing the amount value multiplied by offset. For example, ₹12.34 has value 1234   `description` string   * **Optional.** Max character limit is 60 characters |
 | `shipping`  object | **Optional.**  The shipping cost of the order. The object contains the following fields:  `offset` integer   * **Required.** Must be `100` for `INR`   `value` integer   * **Required.** Positive integer representing the amount value multiplied by offset. For example, ₹12.34 has value 1234   `description` string   * **Optional.** Max character limit is 60 characters |
@@ -136,101 +136,99 @@ The `parameters` value is a stringified JSON object.
 By the end, the interactive object should look something like this for a BillDesk catalog-based integration:
 
 ```
-```
 {  
-  "interactive": {  
-    "type": "order_details",  
-    "header": {  
-      "type": "image",  
-      "image": {  
-        "link": "http(s)://the-url",  
-        "provider": {  
-          "name": "provider-name"  
-        }  
-      }  
-    },  
-    "body": {  
-      "text": "your-text-body-content"  
-    },  
-    "footer": {  
-      "text": "your-text-footer-content"  
-    },  
-    "action": {  
-      "name": "review_and_pay",  
-      "parameters": {  
-        "reference_id": "reference-id-value",  
-        "type": "digital-goods",  
-        "payment_settings": [  
-          {  
-            "type": "payment_gateway",  
-            "payment_gateway": {  
-              "type": "billdesk",  
-              "configuration_name": "payment-config-id",  
-              "billdesk": {  
-                "additional_info1": "additional_info1-value",  
-                "additional_info2": "additional_info2-value",  
-                "additional_info3": "additional_info3-value",  
-                "additional_info4": "additional_info4-value",  
-                "additional_info5": "additional_info5-value",  
-                "additional_info6": "additional_info6-value",  
-                "additional_info7": "additional_info7-value"  
-              }  
-            }  
-          }  
-        ],  
-        "currency": "INR",  
-        "total_amount": {  
-          "value": 21000,  
-          "offset": 100  
-        },  
-        "order": {  
-          "status": "pending",  
-          "catalog_id": "the-catalog_id",  
-          "expiration": {  
-            "timestamp": "utc_timestamp_in_seconds",  
-            "description": "cancellation-explanation"  
-          },  
-          "items": [  
-            {  
-              "retailer_id": "1234567",  
-              "name": "Product name, for example bread",  
-              "amount": {  
-                "value": 10000,  
-                "offset": 100  
-              },  
-              "quantity": 1,  
-              "sale_amount": {  
-                "value": 100,  
-                "offset": 100  
-              }  
-            }  
-          ],  
-          "subtotal": {  
-            "value": 20000,  
-            "offset": 100  
-          },  
-          "tax": {  
-            "value": 1000,  
-            "offset": 100,  
-            "description": "optional_text"  
-          },  
-          "shipping": {  
-            "value": 1000,  
-            "offset": 100,  
-            "description": "optional_text"  
-          },  
-          "discount": {  
-            "value": 1000,  
-            "offset": 100,  
-            "description": "optional_text",  
-            "discount_program_name": "optional_text"  
-          }  
-        }  
-      }  
-    }  
-  }  
+  "interactive": {  
+    "type": "order_details",  
+    "header": {  
+      "type": "image",  
+      "image": {  
+        "link": "http(s)://the-url",  
+        "provider": {  
+          "name": "provider-name"  
+        }  
+      }  
+    },  
+    "body": {  
+      "text": "your-text-body-content"  
+    },  
+    "footer": {  
+      "text": "your-text-footer-content"  
+    },  
+    "action": {  
+      "name": "review_and_pay",  
+      "parameters": {  
+        "reference_id": "reference-id-value",  
+        "type": "digital-goods",  
+        "payment_settings": [  
+          {  
+            "type": "payment_gateway",  
+            "payment_gateway": {  
+              "type": "billdesk",  
+              "configuration_name": "payment-config-id",  
+              "billdesk": {  
+                "additional_info1": "additional_info1-value",  
+                "additional_info2": "additional_info2-value",  
+                "additional_info3": "additional_info3-value",  
+                "additional_info4": "additional_info4-value",  
+                "additional_info5": "additional_info5-value",  
+                "additional_info6": "additional_info6-value",  
+                "additional_info7": "additional_info7-value"  
+              }  
+            }  
+          }  
+        ],  
+        "currency": "INR",  
+        "total_amount": {  
+          "value": 21000,  
+          "offset": 100  
+        },  
+        "order": {  
+          "status": "pending",  
+          "catalog_id": "the-catalog_id",  
+          "expiration": {  
+            "timestamp": "utc_timestamp_in_seconds",  
+            "description": "cancellation-explanation"  
+          },  
+          "items": [  
+            {  
+              "retailer_id": "1234567",  
+              "name": "Product name, for example bread",  
+              "amount": {  
+                "value": 10000,  
+                "offset": 100  
+              },  
+              "quantity": 1,  
+              "sale_amount": {  
+                "value": 100,  
+                "offset": 100  
+              }  
+            }  
+          ],  
+          "subtotal": {  
+            "value": 20000,  
+            "offset": 100  
+          },  
+          "tax": {  
+            "value": 1000,  
+            "offset": 100,  
+            "description": "optional_text"  
+          },  
+          "shipping": {  
+            "value": 1000,  
+            "offset": 100,  
+            "description": "optional_text"  
+          },  
+          "discount": {  
+            "value": 1000,  
+            "offset": 100,  
+            "description": "optional_text",  
+            "discount_program_name": "optional_text"  
+          }  
+        }  
+      }  
+    }  
+  }  
 }
-```
 ```
 
 The `parameters` value is a stringified JSON object.
@@ -238,98 +236,96 @@ The `parameters` value is a stringified JSON object.
 By the end, the interactive object should look something like this for a RazorPay catalog-based integration:
 
 ```
-```
 {  
-  "interactive": {  
-    "type": "order_details",  
-    "header": {  
-      "type": "image",  
-      "image": {  
-        "link": "http(s)://the-url",  
-        "provider": {  
-          "name": "provider-name"  
-        }  
-      }  
-    },  
-    "body": {  
-      "text": "your-text-body-content"  
-    },  
-    "footer": {  
-      "text": "your-text-footer-content"  
-    },  
-    "action": {  
-      "name": "review_and_pay",  
-      "parameters": {  
-        "reference_id": "reference-id-value",  
-        "type": "digital-goods",  
-        "payment_settings": [  
-          {  
-            "type": "payment_gateway",  
-            "payment_gateway": {  
-              "type": "razorpay",  
-              "configuration_name": "payment-config-id",  
-              "razorpay": {  
-                "receipt": "receipt-value",  
-                "notes": {  
-                  "key1": "value1"  
-                }  
-              }  
-            }  
-          }  
-        ],  
-        "currency": "INR",  
-        "total_amount": {  
-          "value": 21000,  
-          "offset": 100  
-        },  
-        "order": {  
-          "status": "pending",  
-          "catalog_id": "the-catalog_id",  
-          "expiration": {  
-            "timestamp": "utc_timestamp_in_seconds",  
-            "description": "cancellation-explanation"  
-          },  
-          "items": [  
-            {  
-              "retailer_id": "1234567",  
-              "name": "Product name, for example bread",  
-              "amount": {  
-                "value": 10000,  
-                "offset": 100  
-              },  
-              "quantity": 1,  
-              "sale_amount": {  
-                "value": 100,  
-                "offset": 100  
-              }  
-            }  
-          ],  
-          "subtotal": {  
-            "value": 20000,  
-            "offset": 100  
-          },  
-          "tax": {  
-            "value": 1000,  
-            "offset": 100,  
-            "description": "optional_text"  
-          },  
-          "shipping": {  
-            "value": 1000,  
-            "offset": 100,  
-            "description": "optional_text"  
-          },  
-          "discount": {  
-            "value": 1000,  
-            "offset": 100,  
-            "description": "optional_text",  
-            "discount_program_name": "optional_text"  
-          }  
-        }  
-      }  
-    }  
-  }  
+  "interactive": {  
+    "type": "order_details",  
+    "header": {  
+      "type": "image",  
+      "image": {  
+        "link": "http(s)://the-url",  
+        "provider": {  
+          "name": "provider-name"  
+        }  
+      }  
+    },  
+    "body": {  
+      "text": "your-text-body-content"  
+    },  
+    "footer": {  
+      "text": "your-text-footer-content"  
+    },  
+    "action": {  
+      "name": "review_and_pay",  
+      "parameters": {  
+        "reference_id": "reference-id-value",  
+        "type": "digital-goods",  
+        "payment_settings": [  
+          {  
+            "type": "payment_gateway",  
+            "payment_gateway": {  
+              "type": "razorpay",  
+              "configuration_name": "payment-config-id",  
+              "razorpay": {  
+                "receipt": "receipt-value",  
+                "notes": {  
+                  "key1": "value1"  
+                }  
+              }  
+            }  
+          }  
+        ],  
+        "currency": "INR",  
+        "total_amount": {  
+          "value": 21000,  
+          "offset": 100  
+        },  
+        "order": {  
+          "status": "pending",  
+          "catalog_id": "the-catalog_id",  
+          "expiration": {  
+            "timestamp": "utc_timestamp_in_seconds",  
+            "description": "cancellation-explanation"  
+          },  
+          "items": [  
+            {  
+              "retailer_id": "1234567",  
+              "name": "Product name, for example bread",  
+              "amount": {  
+                "value": 10000,  
+                "offset": 100  
+              },  
+              "quantity": 1,  
+              "sale_amount": {  
+                "value": 100,  
+                "offset": 100  
+              }  
+            }  
+          ],  
+          "subtotal": {  
+            "value": 20000,  
+            "offset": 100  
+          },  
+          "tax": {  
+            "value": 1000,  
+            "offset": 100,  
+            "description": "optional_text"  
+          },  
+          "shipping": {  
+            "value": 1000,  
+            "offset": 100,  
+            "description": "optional_text"  
+          },  
+          "discount": {  
+            "value": 1000,  
+            "offset": 100,  
+            "description": "optional_text",  
+            "discount_program_name": "optional_text"  
+          }  
+        }  
+      }  
+    }  
+  }  
 }
-```
 ```
 
 The `parameters` value is a stringified JSON object.
@@ -337,247 +333,243 @@ The `parameters` value is a stringified JSON object.
 For a PayU non-catalog based integration i.e. when catalog-id is not present, an example payload looks as follows:
 
 ```
-```
 {  
-  "interactive": {  
-    "type": "order_details",  
-    "header": {  
-      "type": "image",  
-      "image": {  
-        "link": "your-media-url-link"  
-      }  
-    },  
-    "body": {  
-      "text": "your-text-body-content"  
-    },  
-    "footer": {  
-      "text": "your-text-footer-content"  
-    },  
-    "action": {  
-      "name": "review_and_pay",  
-      "parameters": {  
-        "reference_id": "reference-id-value",  
-        "type": "digital-goods",  
-        "payment_settings": [  
-          {  
-            "type": "payment_gateway",  
-            "payment_gateway": {  
-              "type": "payu",  
-              "configuration_name": "payment-config-id",  
-              "payu": {  
-                "udf1": "value1",  
-                "udf2": "value2",  
-                "udf3": "value3",  
-                "udf4": "value4"  
-              }  
-            }  
-          }  
-        ],  
-        "currency": "INR",  
-        "total_amount": {  
-          "value": 21000,  
-          "offset": 100  
-        },  
-        "order": {  
-          "status": "pending",  
-          "expiration": {  
-            "timestamp": "utc_timestamp_in_seconds",  
-            "description": "cancellation-explanation"  
-          },  
-          "items": [  
-            {  
-              "name": "Product name, for example bread",  
-              "amount": {  
-                "value": 10000,  
-                "offset": 100  
-              },  
-              "quantity": 1,  
-              "sale_amount": {  
-                "value": 100,  
-                "offset": 100  
-              },  
-              "country_of_origin": "country-of-origin",  
-              "importer_name": "name-of-importer-business",  
-              "importer_address": {  
-                "address_line1": "B8/733 nand nagri",  
-                "address_line2": "police station",  
-                "city": "East Delhi",  
-                "zone_code": "DL",  
-                "postal_code": "110093",  
-                "country_code": "IN"  
-              }  
-            },  
-            {  
-              "name": "Product name, for example bread",  
-              "amount": {  
-                "value": 10000,  
-                "offset": 100  
-              },  
-              "quantity": 1,  
-              "sale_amount": {  
-                "value": 100,  
-                "offset": 100  
-              },  
-              "country_of_origin": "country-of-origin",  
-              "importer_name": "name-of-importer-business",  
-              "importer_address": {  
-                "address_line1": "B8/733 nand nagri",  
-                "address_line2": "police station",  
-                "city": "East Delhi",  
-                "zone_code": "DL",  
-                "postal_code": "110093",  
-                "country_code": "IN"  
-              }  
-            }  
-          ],  
-          "subtotal": {  
-            "value": 20000,  
-            "offset": 100  
-          },  
-          "tax": {  
-            "value": 1000,  
-            "offset": 100,  
-            "description": "optional_text"  
-          },  
-          "shipping": {  
-            "value": 1000,  
-            "offset": 100,  
-            "description": "optional_text"  
-          },  
-          "discount": {  
-            "value": 1000,  
-            "offset": 100,  
-            "description": "optional_text",  
-            "discount_program_name": "optional_text"  
-          }  
-        }  
-      }  
-    }  
-  }  
+  "interactive": {  
+    "type": "order_details",  
+    "header": {  
+      "type": "image",  
+      "image": {  
+        "link": "your-media-url-link"  
+      }  
+    },  
+    "body": {  
+      "text": "your-text-body-content"  
+    },  
+    "footer": {  
+      "text": "your-text-footer-content"  
+    },  
+    "action": {  
+      "name": "review_and_pay",  
+      "parameters": {  
+        "reference_id": "reference-id-value",  
+        "type": "digital-goods",  
+        "payment_settings": [  
+          {  
+            "type": "payment_gateway",  
+            "payment_gateway": {  
+              "type": "payu",  
+              "configuration_name": "payment-config-id",  
+              "payu": {  
+                "udf1": "value1",  
+                "udf2": "value2",  
+                "udf3": "value3",  
+                "udf4": "value4"  
+              }  
+            }  
+          }  
+        ],  
+        "currency": "INR",  
+        "total_amount": {  
+          "value": 21000,  
+          "offset": 100  
+        },  
+        "order": {  
+          "status": "pending",  
+          "expiration": {  
+            "timestamp": "utc_timestamp_in_seconds",  
+            "description": "cancellation-explanation"  
+          },  
+          "items": [  
+            {  
+              "name": "Product name, for example bread",  
+              "amount": {  
+                "value": 10000,  
+                "offset": 100  
+              },  
+              "quantity": 1,  
+              "sale_amount": {  
+                "value": 100,  
+                "offset": 100  
+              },  
+              "country_of_origin": "country-of-origin",  
+              "importer_name": "name-of-importer-business",  
+              "importer_address": {  
+                "address_line1": "B8/733 nand nagri",  
+                "address_line2": "police station",  
+                "city": "East Delhi",  
+                "zone_code": "DL",  
+                "postal_code": "110093",  
+                "country_code": "IN"  
+              }  
+            },  
+            {  
+              "name": "Product name, for example bread",  
+              "amount": {  
+                "value": 10000,  
+                "offset": 100  
+              },  
+              "quantity": 1,  
+              "sale_amount": {  
+                "value": 100,  
+                "offset": 100  
+              },  
+              "country_of_origin": "country-of-origin",  
+              "importer_name": "name-of-importer-business",  
+              "importer_address": {  
+                "address_line1": "B8/733 nand nagri",  
+                "address_line2": "police station",  
+                "city": "East Delhi",  
+                "zone_code": "DL",  
+                "postal_code": "110093",  
+                "country_code": "IN"  
+              }  
+            }  
+          ],  
+          "subtotal": {  
+            "value": 20000,  
+            "offset": 100  
+          },  
+          "tax": {  
+            "value": 1000,  
+            "offset": 100,  
+            "description": "optional_text"  
+          },  
+          "shipping": {  
+            "value": 1000,  
+            "offset": 100,  
+            "description": "optional_text"  
+          },  
+          "discount": {  
+            "value": 1000,  
+            "offset": 100,  
+            "description": "optional_text",  
+            "discount_program_name": "optional_text"  
+          }  
+        }  
+      }  
+    }  
+  }  
 }
-```
 ```
 
 For a Zaakpay non-catalog based integration i.e. when catalog-id is not present, an example payload looks as follows:
 
 ```
-```
 {  
-  "interactive": {  
-    "type": "order_details",  
-    "header": {  
-      "type": "image",  
-      "image": {  
-        "link": "your-media-url-link"  
-      }  
-    },  
-    "body": {  
-      "text": "your-text-body-content"  
-    },  
-    "footer": {  
-      "text": "your-text-footer-content"  
-    },  
-    "action": {  
-      "name": "review_and_pay",  
-      "parameters": {  
-        "reference_id": "reference-id-value",  
-        "type": "digital-goods",  
-        "payment_settings": [  
-          {  
-            "type": "payment_gateway",  
-            "payment_gateway": {  
-              "type": "zaakpay",  
-              "configuration_name": "payment-config-id",  
-              "zaakpay": {  
-                "extra1": "value1",  
-                "extra2": "value2"  
-              }  
-            }  
-          }  
-        ],  
-        "currency": "INR",  
-        "total_amount": {  
-          "value": 21000,  
-          "offset": 100  
-        },  
-        "order": {  
-          "status": "pending",  
-          "expiration": {  
-            "timestamp": "utc_timestamp_in_seconds",  
-            "description": "cancellation-explanation"  
-          },  
-          "items": [  
-            {  
-              "name": "Product name, for example bread",  
-              "amount": {  
-                "value": 10000,  
-                "offset": 100  
-              },  
-              "quantity": 1,  
-              "sale_amount": {  
-                "value": 100,  
-                "offset": 100  
-              },  
-              "country_of_origin": "country-of-origin",  
-              "importer_name": "name-of-importer-business",  
-              "importer_address": {  
-                "address_line1": "B8/733 nand nagri",  
-                "address_line2": "police station",  
-                "city": "East Delhi",  
-                "zone_code": "DL",  
-                "postal_code": "110093",  
-                "country_code": "IN"  
-              }  
-            },  
-            {  
-              "name": "Product name, for example bread",  
-              "amount": {  
-                "value": 10000,  
-                "offset": 100  
-              },  
-              "quantity": 1,  
-              "sale_amount": {  
-                "value": 100,  
-                "offset": 100  
-              },  
-              "country_of_origin": "country-of-origin",  
-              "importer_name": "name-of-importer-business",  
-              "importer_address": {  
-                "address_line1": "B8/733 nand nagri",  
-                "address_line2": "police station",  
-                "city": "East Delhi",  
-                "zone_code": "DL",  
-                "postal_code": "110093",  
-                "country_code": "IN"  
-              }  
-            }  
-          ],  
-          "subtotal": {  
-            "value": 20000,  
-            "offset": 100  
-          },  
-          "tax": {  
-            "value": 1000,  
-            "offset": 100,  
-            "description": "optional_text"  
-          },  
-          "shipping": {  
-            "value": 1000,  
-            "offset": 100,  
-            "description": "optional_text"  
-          },  
-          "discount": {  
-            "value": 1000,  
-            "offset": 100,  
-            "description": "optional_text",  
-            "discount_program_name": "optional_text"  
-          }  
-        }  
-      }  
-    }  
-  }  
+  "interactive": {  
+    "type": "order_details",  
+    "header": {  
+      "type": "image",  
+      "image": {  
+        "link": "your-media-url-link"  
+      }  
+    },  
+    "body": {  
+      "text": "your-text-body-content"  
+    },  
+    "footer": {  
+      "text": "your-text-footer-content"  
+    },  
+    "action": {  
+      "name": "review_and_pay",  
+      "parameters": {  
+        "reference_id": "reference-id-value",  
+        "type": "digital-goods",  
+        "payment_settings": [  
+          {  
+            "type": "payment_gateway",  
+            "payment_gateway": {  
+              "type": "zaakpay",  
+              "configuration_name": "payment-config-id",  
+              "zaakpay": {  
+                "extra1": "value1",  
+                "extra2": "value2"  
+              }  
+            }  
+          }  
+        ],  
+        "currency": "INR",  
+        "total_amount": {  
+          "value": 21000,  
+          "offset": 100  
+        },  
+        "order": {  
+          "status": "pending",  
+          "expiration": {  
+            "timestamp": "utc_timestamp_in_seconds",  
+            "description": "cancellation-explanation"  
+          },  
+          "items": [  
+            {  
+              "name": "Product name, for example bread",  
+              "amount": {  
+                "value": 10000,  
+                "offset": 100  
+              },  
+              "quantity": 1,  
+              "sale_amount": {  
+                "value": 100,  
+                "offset": 100  
+              },  
+              "country_of_origin": "country-of-origin",  
+              "importer_name": "name-of-importer-business",  
+              "importer_address": {  
+                "address_line1": "B8/733 nand nagri",  
+                "address_line2": "police station",  
+                "city": "East Delhi",  
+                "zone_code": "DL",  
+                "postal_code": "110093",  
+                "country_code": "IN"  
+              }  
+            },  
+            {  
+              "name": "Product name, for example bread",  
+              "amount": {  
+                "value": 10000,  
+                "offset": 100  
+              },  
+              "quantity": 1,  
+              "sale_amount": {  
+                "value": 100,  
+                "offset": 100  
+              },  
+              "country_of_origin": "country-of-origin",  
+              "importer_name": "name-of-importer-business",  
+              "importer_address": {  
+                "address_line1": "B8/733 nand nagri",  
+                "address_line2": "police station",  
+                "city": "East Delhi",  
+                "zone_code": "DL",  
+                "postal_code": "110093",  
+                "country_code": "IN"  
+              }  
+            }  
+          ],  
+          "subtotal": {  
+            "value": 20000,  
+            "offset": 100  
+          },  
+          "tax": {  
+            "value": 1000,  
+            "offset": 100,  
+            "description": "optional_text"  
+          },  
+          "shipping": {  
+            "value": 1000,  
+            "offset": 100,  
+            "description": "optional_text"  
+          },  
+          "discount": {  
+            "value": 1000,  
+            "offset": 100,  
+            "description": "optional_text",  
+            "discount_program_name": "optional_text"  
+          }  
+        }  
+      }  
+    }  
+  }  
 }
-```
 ```
 
 ### Step 2: Add common message parameters
@@ -585,17 +577,15 @@ For a Zaakpay non-catalog based integration i.e. when catalog-id is not present,
 Once the interactive object is complete, append the other parameters that make a message: `recipient_type`, `to`, and `type`. Remember to set the `type` to `interactive`.
 
 ```
-```
 {  
-   "messaging_product": "whatsapp",  
-   "recipient_type": "individual",  
-   "to": "PHONE_NUMBER",  
-   "type": "interactive",  
-   "interactive": {  
-     // interactive object here  
-   }  
- }
-```
+   "messaging_product": "whatsapp",  
+   "recipient_type": "individual",  
+   "to": "PHONE_NUMBER",  
+   "type": "interactive",  
+   "interactive": {  
+     // interactive object here  
+   }  
+ }
 ```
 
 These are [parameters common to all message types](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/send-messages#requests).
@@ -605,25 +595,23 @@ These are [parameters common to all message types](https://developers.facebook.c
 Make a POST call to the [`/[PHONE_NUMBER_ID]/messages`](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/message-api) endpoint with the `JSON` object you have assembled. If your message is sent successfully, you get the following response:
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "contacts": [ {  
-      "input": "[PHONE_NUMBER_ID]",  
-      "wa_id": "[PHONE_NUMBER_ID]"  
-  } ],  
-  "messages": [ {  
-      "id": "wamid.HBgLMTY1MDUwNzY1MjAVAgARGBI5QTNDQTVCM0Q0Q0Q2RTY3RTcA"  
-  } ]  
+  "messaging_product": "whatsapp",  
+  "contacts": [ {  
+      "input": "[PHONE_NUMBER_ID]",  
+      "wa_id": "[PHONE_NUMBER_ID]"  
+  } ],  
+  "messages": [ {  
+      "id": "wamid.HBgLMTY1MDUwNzY1MjAVAgARGBI5QTNDQTVCM0Q0Q0Q2RTY3RTcA"  
+  } ]  
 }
-```
 ```
 
 For all errors that can be returned and guidance on how to handle them, see [WhatsApp Cloud API, Error Codes](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/error-codes).
 
 #### Product experience
 
-The customer receives an `order_details` message similar to the one below (left). When they click on “Review and Pay”, it opens up the order details screen as shown below (middle). Customer can then pay for their order using “Continue” button that opens up a bottom sheet with the payment options (right).
+The customer receives an `order_details` message similar to the one below (left). When they click on "Review and Pay", it opens up the order details screen as shown below (middle). Customer can then pay for their order using "Continue" button that opens up a bottom sheet with the payment options (right).
 
 ![WhatsApp chat with Jasper's Market showing an order details bubble with total and a Review and pay button](https://scontent.fdel1-9.fna.fbcdn.net/v/t39.2365-6/560571516_1339317914593526_2781071619819376161_n.jpg?_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=Jo1iDuyogrQQ7kNvwHz-aQ3&_nc_oc=AdoN-7B-tfeC6wbWqN87PVr8AWAQlkSM_55i0NKLpiwNASdjmYvSCcZ3C4-c37O4uk5DydeGeIDRYMz0XXfunMx-&_nc_zt=14&_nc_ht=scontent.fdel1-9.fna&_nc_gid=kzhwbTjra5tR5p18kYBzrg&_nc_ss=7b2a8&oh=00_AQDdXtHc1sXUfMwr1fkcrNBNiPdyMCTPI1CEUhbku5sWgA&oe=6A604E9C)
 
@@ -633,13 +621,13 @@ The customer receives an `order_details` message similar to the one below (left)
 
 ### Step 4: Receive webhook about transaction status
 
-Businesses receive updates via [messages webhooks](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/messages) when the status of the user-initiated transaction changes in a status of type “payment”. It contains the following fields:
+Businesses receive updates via [messages webhooks](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/messages) when the status of the user-initiated transaction changes in a status of type "payment". It contains the following fields:
 
 | Object | Description |
 | --- | --- |
 | `id`  string | **Required.**  Webhook ID for the notification. |
 | `recipient_id`  string | **Required.**  WhatsApp ID of the customer. |
-| `type`  string | **Required.**  For payment status update webhooks, type is “payment”. |
+| `type`  string | **Required.**  For payment status update webhooks, type is "payment". |
 | `status`  string | **Required.**  `captured`/`pending`: `captured` - when the payment is successfully completed, `pending` when the user attempted but yet to receive success transactions signal |
 | `payment`  object | **Required.**  Contains the following field:  `reference_id` string   * Unique reference ID for the order sent in `order_details` message.    `amount` object * Has value and offset fields corresponding to total amount that user has paid.    `currency`  string * currency is always INR.    `transaction`  object   Transaction attempt for this payment. Transaction object contains the following fields: * `id` string   **Required.** The alpha-numeric payment gateway order ID. * `pg_transaction_id` string   **Optional.** The alpha-numeric payment gateway payment ID. * `type` string   **Required.** The payment type for this transactions. Only, `billdesk`, `razorpay`, `payu`, or `zaakpay` are supported. * `status` string   **Required.** The status of the transaction. Can be one of `pending` or `success` or `failed`. * `created_timestamp` integer   **Required.** Time when transaction was created in epoch seconds. * `updated_timestamp` integer   **Required.** Time when transaction was last updated in epoch seconds. * `method` object (**Optional.** the payment method information might not be available for failed payments) * `type` string   **Required.** Describes the type of payment method used by consumer to pay for the order. Can be one of `upi` or `card` or `wallet` or `netbanking`. * `error` object (**Optional.** the payment error details might not be available for all payments attempts) * `code` string   **Required.** Describes the payment failure reason that is generated by payment gateway and Meta returns this to partners. * `reason` string   **Required.** Describes the payment failure reason in plain text that is generated by payment gateway and Meta returns this to partners.    `additional_info1-7` string **Optional.** * Only sent for billdesk payment gateway when the value is sent in order details message. Each of the keys additional\_info1-4 has string values in them.    `notes`  object **Optional.** * Only sent for razorpay payment gateway when the value is sent in order details message. This contains key-value pair as passed in the Order Details message.    `receipt` string **Optional.** * Only sent for razorpay payment gateway when the value is sent in order details message.    `udf1-4` string **Optional.** * Only sent for payu payment gateway when the value is sent in order details message. Each of the keys udf1-4 has string values in them.   `extra1-2` string **Optional.**   * Only sent for zaakpay payment gateway when the value is sent in order details message. Each of the keys extra1-2 has string values in them.    `refunds` array **Optional.**   The list of refunds for this order. Each refund object contains the following fields:   * `id` string   **Required.** The alpha-numeric ID of the refund. * `amount` object   **Required.** The total amount of the refund. * `speed_processed` string   **Required.** Speed by which refund was processed. Can be one of `instant` or `normal`. * `status` string   **Required.** The status of the refund. Can be one of `pending`, `success` or `failed`. * `created_timestamp` integer   **Required.** Time when refund was created in epoch seconds. * `updated_timestamp` integer   **Required.** Time when refund was last updated in epoch seconds. |
 | `timestamp`  string | **Required.**  Timestamp for the webhook. |
@@ -647,84 +635,82 @@ Businesses receive updates via [messages webhooks](https://developers.facebook.c
 Here is an example status webhook of type `payment`:
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [{  
-    "id": "WHATSAPP-BUSINESS-ACCOUNT-ID",  
-    "changes": [{  
-      "value": {  
-         "messaging_product": "whatsapp",  
-         "metadata": {  
-           "display_phone_number": "[PHONE_NUMBER]",  
-           "phone_number_id": "[PHONE_NUMBER_ID]"  
-         },  
-         "contacts": [{...}],  
-         "errors": [{...}],  
-         "messages": [{...}],  
-         "statuses": [{  
-            "id": "gBGGFlB5YjhvAgnhuF1qIUvCo7A",  
-            "recipient_id": "[PHONE_NUMBER]",  
-            "type": "payment",  
-            "status": "[TRANSACTION_STATUS]",  
-            "payment": {  
-               "reference_id": "[REFERENCE_ID]",  
-               "amount": {  
-                 "value": 21000,  
-                 "offset": 100  
-               },  
-               "transaction": {  
-                 "id": "[PG-ORDER-ID]",  
-                 "pg_transaction_id": "[PG-PAYMENT-ID]",  
-                 "type": "billdesk/razorpay/payu/zaakpay",  
-                 "status": "success/failed",  
-                 "created_timestamp": "CREATED_TIMESTAMP",  
-                 "updated_timestamp": "UPDATED_TIMESTAMP",  
-                 "method": {  
-                   "type": "upi/card/netbanking/wallet"  
-                 },  
-                 "error": {  
-                   "code": "pg-generated-error-code",  
-                   "reason": "pg-generated-descriptive-reason"  
-                 }  
-               },  
-               "currency": "INR",  
-               "receipt": "receipt-value",  
-               "notes": {  
-                 "key1": "value1",  
-                 "key2": "value2"  
-               },  
-               "udf1": "udf1-value",  
-               "udf2": "udf2-value",  
-               "udf3": "udf3-value",  
-               "udf4": "udf4-value",  
-               "additional_info1": "additional_info1-value",  
-               "additional_info2": "additional_info2-value",  
-               "additional_info3": "additional_info3-value",  
-               "additional_info4": "additional_info4-value",  
-               "additional_info5": "additional_info5-value",  
-               "additional_info6": "additional_info6-value",  
-               "additional_info7": "additional_info7-value",  
-               "refunds": [{  
-                 "id": "[REFUND-ID]",  
-                 "amount": {  
-                   "value": 100,  
-                   "offset": 100  
-                 },  
-                 "speed_processed": "instant/normal",  
-                 "status": "success",  
-                 "created_timestamp": "CREATED_TIMESTAMP",  
-                 "updated_timestamp": "UPDATED_TIMESTAMP"  
-              }]  
-            },  
-            "timestamp": "notification_timestamp"  
-         }]  
-      },  
-      "field": "messages"  
-    }]  
-  }]  
+  "object": "whatsapp_business_account",  
+  "entry": [{  
+    "id": "WHATSAPP-BUSINESS-ACCOUNT-ID",  
+    "changes": [{  
+      "value": {  
+         "messaging_product": "whatsapp",  
+         "metadata": {  
+           "display_phone_number": "[PHONE_NUMBER]",  
+           "phone_number_id": "[PHONE_NUMBER_ID]"  
+         },  
+         "contacts": [{...}],  
+         "errors": [{...}],  
+         "messages": [{...}],  
+         "statuses": [{  
+            "id": "gBGGFlB5YjhvAgnhuF1qIUvCo7A",  
+            "recipient_id": "[PHONE_NUMBER]",  
+            "type": "payment",  
+            "status": "[TRANSACTION_STATUS]",  
+            "payment": {  
+               "reference_id": "[REFERENCE_ID]",  
+               "amount": {  
+                 "value": 21000,  
+                 "offset": 100  
+               },  
+               "transaction": {  
+                 "id": "[PG-ORDER-ID]",  
+                 "pg_transaction_id": "[PG-PAYMENT-ID]",  
+                 "type": "billdesk/razorpay/payu/zaakpay",  
+                 "status": "success/failed",  
+                 "created_timestamp": "CREATED_TIMESTAMP",  
+                 "updated_timestamp": "UPDATED_TIMESTAMP",  
+                 "method": {  
+                   "type": "upi/card/netbanking/wallet"  
+                 },  
+                 "error": {  
+                   "code": "pg-generated-error-code",  
+                   "reason": "pg-generated-descriptive-reason"  
+                 }  
+               },  
+               "currency": "INR",  
+               "receipt": "receipt-value",  
+               "notes": {  
+                 "key1": "value1",  
+                 "key2": "value2"  
+               },  
+               "udf1": "udf1-value",  
+               "udf2": "udf2-value",  
+               "udf3": "udf3-value",  
+               "udf4": "udf4-value",  
+               "additional_info1": "additional_info1-value",  
+               "additional_info2": "additional_info2-value",  
+               "additional_info3": "additional_info3-value",  
+               "additional_info4": "additional_info4-value",  
+               "additional_info5": "additional_info5-value",  
+               "additional_info6": "additional_info6-value",  
+               "additional_info7": "additional_info7-value",  
+               "refunds": [{  
+                 "id": "[REFUND-ID]",  
+                 "amount": {  
+                   "value": 100,  
+                   "offset": 100  
+                 },  
+                 "speed_processed": "instant/normal",  
+                 "status": "success",  
+                 "created_timestamp": "CREATED_TIMESTAMP",  
+                 "updated_timestamp": "UPDATED_TIMESTAMP"  
+              }]  
+            },  
+            "timestamp": "notification_timestamp"  
+         }]  
+      },  
+      "field": "messages"  
+    }]  
+  }]  
 }
-```
 ```
 
 For more information about other statuses, see [Messages Webhooks](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/messages).
@@ -734,9 +720,7 @@ For more information about other statuses, see [Messages Webhooks](https://devel
 After receiving the payment status webhook, or at any time, the business can look up the status of the payment for the order. To do that, businesses must make a GET call to the payments endpoint as shown here:
 
 ```
-```
-GET <PHONE_NUMBER_ID>/payments/<PAYMENT_CONFIGURATION>/<REFERENCE_ID>
-```
+GET <PHONE_NUMBER_ID>/payments/<PAYMENT_CONFIGURATION>/<REFERENCE_ID>
 ```
 
 where `payment_configuration` and `reference_id` are same as that sent in the `order_details` message.
@@ -766,79 +750,75 @@ Businesses should expect a response in the same HTTP session (not in a webhook n
 An example successful response looks like this:
 
 ```
-```
 {  
-  "payments": [{  
-    "reference_id": "reference-id-value",  
-    "status": "status-of-payment",  
-    "currency": "INR",  
-    "amount": {  
-      "value": 21000,  
-      "offset": 100  
-    },  
-    "transactions": [  
-      {  
-        "id": "[PG-ORDER-ID]",  
-        "pg_transaction_id": "[PG-TXN-ID]",  
-        "type": "billdesk/razorpay/payu/zaakpay",  
-        "status": "success/failed",  
-        "created_timestamp": "CREATED_TIMESTAMP",  
-        "updated_timestamp": "UPDATED_TIMESTAMP",  
-        "method": {  
-           "type": "upi/card/netbanking/wallet"  
-        },  
-        "error": {  
-           "code": "pg-generated-error-code",  
-           "reason": "pg-generated-descriptive-reason"  
-        },  
-        "refunds": [  
-          {  
-            "id": "[REFUND-ID]",  
-            "amount": {  
-              "value": 100,  
-              "offset": 100  
-            },  
-            "speed_processed": "instant/normal",  
-            "status": "success",  
-            "created_timestamp": "CREATED_TIMESTAMP",  
-            "updated_timestamp": "UPDATED_TIMESATMP"  
-          }  
-        ]  
-      }  
-    ],  
-    "receipt": "receipt-value",  
-    "notes": {  
-      "key1": "value1",  
-      "key2": "value2"  
-    },  
-    "udf1": "udf1-value",  
-    "udf2": "udf2-value",  
-    "udf3": "udf3-value",  
-    "udf4": "udf4-value",  
-    "additional_info1": "additional_info1-value",  
-    "additional_info2": "additional_info2-value",  
-    "additional_info3": "additional_info3-value",  
-    "additional_info4": "additional_info4-value",  
-    "additional_info5": "additional_info5-value",  
-    "additional_info6": "additional_info6-value",  
-    "additional_info7": "additional_info7-value"  
-  }]  
+  "payments": [{  
+    "reference_id": "reference-id-value",  
+    "status": "status-of-payment",  
+    "currency": "INR",  
+    "amount": {  
+      "value": 21000,  
+      "offset": 100  
+    },  
+    "transactions": [  
+      {  
+        "id": "[PG-ORDER-ID]",  
+        "pg_transaction_id": "[PG-TXN-ID]",  
+        "type": "billdesk/razorpay/payu/zaakpay",  
+        "status": "success/failed",  
+        "created_timestamp": "CREATED_TIMESTAMP",  
+        "updated_timestamp": "UPDATED_TIMESTAMP",  
+        "method": {  
+           "type": "upi/card/netbanking/wallet"  
+        },  
+        "error": {  
+           "code": "pg-generated-error-code",  
+           "reason": "pg-generated-descriptive-reason"  
+        },  
+        "refunds": [  
+          {  
+            "id": "[REFUND-ID]",  
+            "amount": {  
+              "value": 100,  
+              "offset": 100  
+            },  
+            "speed_processed": "instant/normal",  
+            "status": "success",  
+            "created_timestamp": "CREATED_TIMESTAMP",  
+            "updated_timestamp": "UPDATED_TIMESATMP"  
+          }  
+        ]  
+      }  
+    ],  
+    "receipt": "receipt-value",  
+    "notes": {  
+      "key1": "value1",  
+      "key2": "value2"  
+    },  
+    "udf1": "udf1-value",  
+    "udf2": "udf2-value",  
+    "udf3": "udf3-value",  
+    "udf4": "udf4-value",  
+    "additional_info1": "additional_info1-value",  
+    "additional_info2": "additional_info2-value",  
+    "additional_info3": "additional_info3-value",  
+    "additional_info4": "additional_info4-value",  
+    "additional_info5": "additional_info5-value",  
+    "additional_info6": "additional_info6-value",  
+    "additional_info7": "additional_info7-value"  
+  }]  
 }
-```
 ```
 
 Shown here is an example for a generic error:
 
 ```
-```
 {  
-  "errors": [{  
-    "code": 500,  
-    "title": "Generic error",  
-    "details": "System error. Please try again."  
-  }]  
+  "errors": [{  
+    "code": 500,  
+    "title": "Generic error",  
+    "details": "System error. Please try again."  
+  }]  
 }
-```
 ```
 
 #### Response by payment stage
@@ -848,109 +828,103 @@ The response payload varies depending on the payment stage. Below are examples f
 **No payment attempted** — The user has not yet attempted payment. Only order-level fields are returned; the `transactions` array is not present.
 
 ```
-```
 {  
-  "payments": [  
-    {  
-      "reference_id": "<your_reference_id>",  
-      "status": "pending",  
-      "amount": {  
-        "offset": 100,  
-        "value": 1000  
-      },  
-      "currency": "INR"  
-    }  
-  ]  
+  "payments": [  
+    {  
+      "reference_id": "<your_reference_id>",  
+      "status": "pending",  
+      "amount": {  
+        "offset": 100,  
+        "value": 1000  
+      },  
+      "currency": "INR"  
+    }  
+  ]  
 }
-```
 ```
 
 **Payment successful** — The user completed payment and the payment gateway confirmed capture. The `transactions` array contains the successful transaction with payment method details.
 
 ```
-```
 {  
-  "payments": [  
-    {  
-      "reference_id": "<your_reference_id>",  
-      "status": "captured",  
-      "amount": {  
-        "offset": 100,  
-        "value": 1000  
-      },  
-      "currency": "INR",  
-      "transactions": [  
-        {  
-          "id": "<order_id>",  
-          "pg_transaction_id": "<payment_id>",  
-          "type": "razorpay",  
-          "status": "success",  
-          "created_timestamp": 1772129215,  
-          "updated_timestamp": 1772129215,  
-          "amount": {  
-            "offset": 100,  
-            "value": 1000  
-          },  
-          "order_amount": {  
-            "offset": 100,  
-            "value": 1000  
-          },  
-          "currency": "INR",  
-          "method": {  
-            "type": "upi"  
-          }  
-        }  
-      ]  
-    }  
-  ]  
+  "payments": [  
+    {  
+      "reference_id": "<your_reference_id>",  
+      "status": "captured",  
+      "amount": {  
+        "offset": 100,  
+        "value": 1000  
+      },  
+      "currency": "INR",  
+      "transactions": [  
+        {  
+          "id": "<order_id>",  
+          "pg_transaction_id": "<payment_id>",  
+          "type": "razorpay",  
+          "status": "success",  
+          "created_timestamp": 1772129215,  
+          "updated_timestamp": 1772129215,  
+          "amount": {  
+            "offset": 100,  
+            "value": 1000  
+          },  
+          "order_amount": {  
+            "offset": 100,  
+            "value": 1000  
+          },  
+          "currency": "INR",  
+          "method": {  
+            "type": "upi"  
+          }  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 **Payment failed** — The user attempted payment but it failed. The overall payment status remains `pending` (the order is still awaiting successful payment), but the `transactions` array contains the failed attempt with error details.
 
 ```
-```
 {  
-  "payments": [  
-    {  
-      "reference_id": "<your_reference_id>",  
-      "status": "pending",  
-      "amount": {  
-        "offset": 100,  
-        "value": 1000  
-      },  
-      "currency": "INR",  
-      "transactions": [  
-        {  
-          "id": "<order_id>",  
-          "pg_transaction_id": "<payment_id>",  
-          "type": "razorpay",  
-          "status": "failed",  
-          "created_timestamp": 1772129329,  
-          "updated_timestamp": 1772129329,  
-          "amount": {  
-            "offset": 100,  
-            "value": 1000  
-          },  
-          "order_amount": {  
-            "offset": 100,  
-            "value": 1000  
-          },  
-          "currency": "INR",  
-          "method": {  
-            "type": "upi"  
-          },  
-          "error": {  
-            "code": "BAD_REQUEST_ERROR",  
-            "reason": "incorrect_pin"  
-          }  
-        }  
-      ]  
-    }  
-  ]  
+  "payments": [  
+    {  
+      "reference_id": "<your_reference_id>",  
+      "status": "pending",  
+      "amount": {  
+        "offset": 100,  
+        "value": 1000  
+      },  
+      "currency": "INR",  
+      "transactions": [  
+        {  
+          "id": "<order_id>",  
+          "pg_transaction_id": "<payment_id>",  
+          "type": "razorpay",  
+          "status": "failed",  
+          "created_timestamp": 1772129329,  
+          "updated_timestamp": 1772129329,  
+          "amount": {  
+            "offset": 100,  
+            "value": 1000  
+          },  
+          "order_amount": {  
+            "offset": 100,  
+            "value": 1000  
+          },  
+          "currency": "INR",  
+          "method": {  
+            "type": "upi"  
+          },  
+          "error": {  
+            "code": "BAD_REQUEST_ERROR",  
+            "reason": "incorrect_pin"  
+          }  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ### Step 6: Update order status
@@ -960,39 +934,37 @@ Businesses *must* send updates to their order using the `order_status` message i
 To notify the customer with updates to an order, you can send an `interactive` message of type `order_status` as shown below.
 
 ```
-```
 {  
-  "recipient_type": "individual",  
-  "to": "whatsapp-id",  
-  "type": "interactive",  
-  "interactive": {  
-    "type": "order_status",  
-    "body": {  
-      "text": "your-text-body-content"  
-    },  
-    "action": {  
-      "name": "review_order",  
-      "parameters": {  
-        "reference_id": "reference-id-value",  
-        "order": {  
-          "status": "processing | partially_shipped | shipped | completed | canceled",  
-          "description": "optional-text"  
-        }  
-      }  
-    }  
-  }  
+  "recipient_type": "individual",  
+  "to": "whatsapp-id",  
+  "type": "interactive",  
+  "interactive": {  
+    "type": "order_status",  
+    "body": {  
+      "text": "your-text-body-content"  
+    },  
+    "action": {  
+      "name": "review_order",  
+      "parameters": {  
+        "reference_id": "reference-id-value",  
+        "order": {  
+          "status": "processing | partially_shipped | shipped | completed | canceled",  
+          "description": "optional-text"  
+        }  
+      }  
+    }  
+  }  
 }
-```
 ```
 
 The following table describes the fields in the `order_status` interactive message:
 
 | Object | Description |
 | --- | --- |
-| `type`  string | **Required.** Must be “order\_status” |
+| `type`  string | **Required.** Must be "order\_status" |
 | `body`  object | **Required.**  An object with the body of the message. The object contains the following field:  `text` string   * **Required** if `body` is present. The content of the message. Emojis and markdown are supported. Maximum length is 1024 characters. |
 | `footer`  object | **Optional.**  An object with the footer of the message. The object contains the following field:  `text` string   * **Required** if `footer` is present. The footer content. Emojis, markdown, and links are supported. Maximum length is 60 characters. |
-| `action`  object | **Required.**  An action object you want the user to perform after reading the message. This action object contains the following fields:  `name` string   * **Required**. Must be “review\_order”.   `parameters` object   * See [Parameters Object](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-in/orderdetailstemplate#paramobject-orderstatus) for information. |
+| `action`  object | **Required.**  An action object you want the user to perform after reading the message. This action object contains the following fields:  `name` string   * **Required**. Must be "review\_order".   `parameters` object   * See [Parameters Object](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-in/orderdetailstemplate#paramobject-orderstatus) for information. |
 
 #### Parameters object
 
@@ -1040,13 +1012,13 @@ Order status transitions are restricted for consistency of consumer experience. 
 
 ![Order status transition diagram: pending to processing, shipped, or partially-shipped, then to completed or canceled](https://scontent.fdel1-5.fna.fbcdn.net/v/t39.2365-6/564186195_1339318097926841_2291536531212610046_n.jpg?_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=8u7e7F6VelAQ7kNvwEd9rA-&_nc_oc=Adp7zMTG2lXftTAkRGFR23JIXuCIJIFaVVmKXKmjq_Ul9Ug5SiX8y1BjsFKMOUd-eaxT-TIW2OwUvEbrqPIaloPa&_nc_zt=14&_nc_ht=scontent.fdel1-5.fna&_nc_gid=kzhwbTjra5tR5p18kYBzrg&_nc_ss=7b2a8&oh=00_AQAvVwSuiT4tiqIcIVq1vs3VBNbtvYkZZRh5ypxqw6vOwA&oe=6A6076AD)
 
-Upon sending an `order_status` message with an invalid transition, you will receive an error webhook with the error code `2046` and message “New order status was not correctly transitioned.”
+Upon sending an `order_status` message with an invalid transition, you will receive an error webhook with the error code `2046` and message "New order status was not correctly transitioned."
 
 #### Canceling an order
 
-An order can be `canceled` by sending an `order_status` message with the status `canceled`. The customer cannot pay for an order that is canceled. The customer receives an `order_status` message and order details page is updated to show that the order is canceled and the “Continue” button removed. The *optional* text shown below “Order canceled” on the order details page can be specified using the `description` field in the `order_status` message.
+An order can be `canceled` by sending an `order_status` message with the status `canceled`. The customer cannot pay for an order that is canceled. The customer receives an `order_status` message and order details page is updated to show that the order is canceled and the "Continue" button removed. The *optional* text shown below "Order canceled" on the order details page can be specified using the `description` field in the `order_status` message.
 
-An order can be canceled only if the user has not already paid for the order. If the user has paid and you send an `order_status` message with `canceled` status, you will receive an error webhook with error code `2047` and message “Could not change order status to ‘canceled’”.
+An order can be canceled only if the user has not already paid for the order. If the user has paid and you send an `order_status` message with `canceled` status, you will receive an error webhook with error code `2047` and message "Could not change order status to 'canceled'".
 
 ### Step 7: Reconcile payments
 
@@ -1057,18 +1029,16 @@ WhatsApp does not support payment reconciliations. Businesses should use their p
 Business can initiate a refund for an order. To do that, businesses must make a POST call to the `/[PHONE_NUMBER_ID]/payments_refund` endpoint with the following `JSON` object:
 
 ```
-```
 {  
-  "reference_id": "reference-id-value",  
-  "speed": "normal",  
-  "payment_config_id": "payment-config-id",  
-  "amount": {  
-    "currency": "INR",  
-    "value": "100",  
-    "offset": "100"  
-  }  
+  "reference_id": "reference-id-value",  
+  "speed": "normal",  
+  "payment_config_id": "payment-config-id",  
+  "amount": {  
+    "currency": "INR",  
+    "value": "100",  
+    "offset": "100"  
+  }  
 }
-```
 ```
 
 The following table describes the fields in the refunds endpoint request object:
@@ -1091,50 +1061,46 @@ Businesses should expect a response in the same HTTP session (not in a webhook n
 An example successful response looks like this:
 
 ```
-```
 {  
-  "id": "refund-id",  
-  "status": "pending",  
-  "speed_processed": "normal"  
+  "id": "refund-id",  
+  "status": "pending",  
+  "speed_processed": "normal"  
 }
-```
 ```
 
 ## Merchant preferred UPI payment method
 
-Now merchants can specify up to one UPI Payment app to show up in checkout flow. Merchant preferred payment app will be shown on top of the list of available UPI apps in the “Choose payment method” screen. To enable this capability, partners must specify the external app-id in the Order Details or order-invoice message.
+Now merchants can specify up to one UPI Payment app to show up in checkout flow. Merchant preferred payment app will be shown on top of the list of available UPI apps in the "Choose payment method" screen. To enable this capability, partners must specify the external app-id in the Order Details or order-invoice message.
 
 Note: This feature is available on consumer apps on and above version: 2.24.21.0
 
 ### Updates to order details payload
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "interactive": {  
-    "action": {  
-      "name": "review_and_pay",  
-      "parameters": {  
-        "payment_settings": [  
-           {  
-             "type": "payment_gateway",  
-             "payment_gateway": {  
-               "preferred_payment_methods": [  
-                 {  
-                   "method": "Application-ID"  
-                 }  
-               ]  
-             }  
-           }  
+  "messaging_product": "whatsapp",  
+  "interactive": {  
+    "action": {  
+      "name": "review_and_pay",  
+      "parameters": {  
+        "payment_settings": [  
+           {  
+             "type": "payment_gateway",  
+             "payment_gateway": {  
+               "preferred_payment_methods": [  
+                 {  
+                   "method": "Application-ID"  
+                 }  
+               ]  
+             }  
+           }  
   
-        ],  
-      "order": ..  
-      }  
-    }  
-  }  
+        ],  
+      "order": ..  
+      }  
+    }  
+  }  
 }
-```
 ```
 
 ### List of supported apps:
@@ -1153,34 +1119,32 @@ Note: This feature is available on consumer apps on and above version: 2.24.21.0
 
 Merchants can specify which payment options to show in checkout flow between UPI and Web options. This will allow merchants to enable only UPI or credit card(any PG available option) to accept payments for invoices.
 
-UPI transactions are limited to ₹5,00,000. For higher amounts, set `enabled_payment_options` to `["web"]` to use your payment gateway’s web checkout. Payments with UPI enabled above this limit will fail.
+UPI transactions are limited to ₹5,00,000. For higher amounts, set `enabled_payment_options` to `["web"]` to use your payment gateway's web checkout. Payments with UPI enabled above this limit will fail.
 
 Note: This feature is available on consumer apps on and above version: 2.24.22.4
 
 ### Updates to order details payload
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "interactive": {  
-    "action": {  
-      "name": "review_and_pay",  
-      "parameters": {  
-        "payment_settings": [  
-           {  
-             "type": "payment_gateway",  
-             "payment_gateway": {  
-                "enabled_payment_options": ["upi"/"web"]  
-             }  
-           }  
-        ],  
-      "order": ...  
-      }  
-    }  
-  }  
+  "messaging_product": "whatsapp",  
+  "interactive": {  
+    "action": {  
+      "name": "review_and_pay",  
+      "parameters": {  
+        "payment_settings": [  
+           {  
+             "type": "payment_gateway",  
+             "payment_gateway": {  
+                "enabled_payment_options": ["upi"/"web"]  
+             }  
+           }  
+        ],  
+      "order": ...  
+      }  
+    }  
+  }  
 }
-```
 ```
 
 ### List of payment options
@@ -1201,80 +1165,72 @@ To use this feature which is in alpha testing, please reach out to Meta payments
 ### Updates to order details payload to support TPV for Razorpay merchants
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "interactive": {  
-    "action": {  
-      "name": "review_and_pay",  
-      "parameters": {  
-        "payment_settings": [  
-          {  
-            "type": "razorpay",  
-            "razorpay": {  
-              "encrypted_payment_gateway_data": "encrypted-data"  
-            }  
-          }  
-        ],  
-        "order": {}  
-      }  
-    }  
-  }  
+  "messaging_product": "whatsapp",  
+  "interactive": {  
+    "action": {  
+      "name": "review_and_pay",  
+      "parameters": {  
+        "payment_settings": [  
+          {  
+            "type": "razorpay",  
+            "razorpay": {  
+              "encrypted_payment_gateway_data": "encrypted-data"  
+            }  
+          }  
+        ],  
+        "order": {}  
+      }  
+    }  
+  }  
 }
-```
 ```
 
 The raw value before encryption should look something like the following:
 
 ```
-```
 {  
-  "bank_account": {  
-    "account_number": "account-no",  
-    "name": "consumer-cbs-name",  
-    "ifsc": "ifsc-code"  
-  }  
+  "bank_account": {  
+    "account_number": "account-no",  
+    "name": "consumer-cbs-name",  
+    "ifsc": "ifsc-code"  
+  }  
 }
-```
 ```
 
 ### Updates to order details payload to support TPV for PayU merchants
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "interactive": {  
-    "action": {  
-      "name": "review_and_pay",  
-      "parameters": {  
-        "payment_settings": [  
-          {  
-            "type": "payu",  
-            "payu": {  
-              "encrypted_payment_gateway_data": "encrypted-data"  
-            }  
-          }  
-        ],  
-        "order": {}  
-      }  
-    }  
-  }  
+  "messaging_product": "whatsapp",  
+  "interactive": {  
+    "action": {  
+      "name": "review_and_pay",  
+      "parameters": {  
+        "payment_settings": [  
+          {  
+            "type": "payu",  
+            "payu": {  
+              "encrypted_payment_gateway_data": "encrypted-data"  
+            }  
+          }  
+        ],  
+        "order": {}  
+      }  
+    }  
+  }  
 }
-```
 ```
 
 The raw value before encryption should look like the following:
 
 ```
-```
 {  
-  "beneficiaryDetail" : {  
-    "beneficiaryAccountNumber" : "account_number1|account_number2",  
-    "ifscCode" : "ifsc1|ifsc2"  
-  }  
+  "beneficiaryDetail" : {  
+    "beneficiaryAccountNumber" : "account_number1|account_number2",  
+    "ifscCode" : "ifsc1|ifsc2"  
+  }  
 }
-```
 ```
 
 Note please closely work with Meta and Payment Gateway teams(RazorPay or PayU) to unlock this feature as this is still in alpha testing phase.
@@ -1289,4 +1245,4 @@ Businesses should comply with local security and regulatory requirements in Indi
 * Ensure the merchant is verified and WABA contact is marked with a verified check.
 * Verify the WABA is mapped to appropriate merchant initiated messaging tier(1k, 10k, and 100k per day)
 * Merchant should list the customer support information in the profile screen in case consumer wants to report any issues.
-* Migrate to “payment\_settings” in place of “payment\_type” and “payment\_configuration”. This is the recommended way, and gives access to features likes “notes” and “udf” fields. For an example, [view the payloads above](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-in/orderdetailstemplate#step-1).
+* Migrate to "payment\_settings" in place of "payment\_type" and "payment\_configuration". This is the recommended way, and gives access to features likes "notes" and "udf" fields. For an example, [view the payloads above](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-in/orderdetailstemplate#step-1).

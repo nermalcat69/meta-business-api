@@ -11,11 +11,11 @@ Use these guides to help you perform common actions with your Instagram Ads.
 
 ### [Set Up Instagram Accounts On Business Manager](https://developers.facebook.com/documentation/ads-commerce/instagram/ads-api/guides/ig-accounts-with-business-manager)
 
-Connect your Instagram account to Facebook’s Business Manager. Learn how to get your Instagram account ID.
+Connect your Instagram account to Facebook's Business Manager. Learn how to get your Instagram account ID.
 
 ### [Set Up Instagram Accounts With Pages](https://developers.facebook.com/documentation/ads-commerce/instagram/ads-api/guides/pages-ig-account)
 
-Connect your Instagram account to a Facebook page. Or create a “shadow” Instagram account to run your ads. Learn how to get your Instagram account ID.
+Connect your Instagram account to a Facebook page. Or create a "shadow" Instagram account to run your ads. Learn how to get your Instagram account ID.
 
 ### [Add Call-To-Action](https://developers.facebook.com/documentation/ads-commerce/instagram/ads-api/guides/call-to-action)
 

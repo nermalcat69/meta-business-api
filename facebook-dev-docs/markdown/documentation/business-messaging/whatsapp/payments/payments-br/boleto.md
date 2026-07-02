@@ -42,104 +42,100 @@ POST /{PHONE_NUMBER_ID}/messages
 #### Payload example
 
 ```
-```
 {  
-  "recipient_type": "individual",  
-  "to": "<PHONE_NUMBER>",  
-  "type": "interactive",  
-  "interactive": {  
-    "type": "order_details",  
-    "body": {  
-      "text": "Your message content"  
-    },  
-    "action": {  
-      "name": "review_and_pay",  
-      "parameters": {  
-        "reference_id": "unique-reference-id",  
-        "type": "digital-goods",  
-        "payment_type": "br",  
-        "payment_settings": [  
-          {  
-            "type": "payment_link",  
-            "payment_link": {  
-              "uri": "https://my-payment-link-url"  
-            }  
-          }  
-        ],  
-        "currency": "BRL",  
-        "total_amount": {  
-          "value": 50000,  
-          "offset": 100  
-        },  
-        "order": {  
-          "status": "pending",  
-          "tax": {  
-            "value": 0,  
-            "offset": 100,  
-            "description": "optional text"  
-          },  
-          "items": [  
-            {  
-              "retailer_id": "1234567",  
-              "name": "Cake",  
-              "amount": {  
-                "value": 50000,  
-                "offset": 100  
-              },  
-              "quantity": 1  
-            }  
-          ],  
-          "subtotal": {  
-            "value": 50000,  
-            "offset": 100  
-          }  
-        }  
-      }  
-    }  
-  }  
+  "recipient_type": "individual",  
+  "to": "<PHONE_NUMBER>",  
+  "type": "interactive",  
+  "interactive": {  
+    "type": "order_details",  
+    "body": {  
+      "text": "Your message content"  
+    },  
+    "action": {  
+      "name": "review_and_pay",  
+      "parameters": {  
+        "reference_id": "unique-reference-id",  
+        "type": "digital-goods",  
+        "payment_type": "br",  
+        "payment_settings": [  
+          {  
+            "type": "payment_link",  
+            "payment_link": {  
+              "uri": "https://my-payment-link-url"  
+            }  
+          }  
+        ],  
+        "currency": "BRL",  
+        "total_amount": {  
+          "value": 50000,  
+          "offset": 100  
+        },  
+        "order": {  
+          "status": "pending",  
+          "tax": {  
+            "value": 0,  
+            "offset": 100,  
+            "description": "optional text"  
+          },  
+          "items": [  
+            {  
+              "retailer_id": "1234567",  
+              "name": "Cake",  
+              "amount": {  
+                "value": 50000,  
+                "offset": 100  
+              },  
+              "quantity": 1  
+            }  
+          ],  
+          "subtotal": {  
+            "value": 50000,  
+            "offset": 100  
+          }  
+        }  
+      }  
+    }  
+  }  
 }
-```
 ```
 
 #### Simplified payload example
 
-You can send a simplified order details message without the `order` object. Sending a simplified order details message is useful when you don’t need to send itemized product details and only need to collect the total payment amount.
+You can send a simplified order details message without the `order` object. Sending a simplified order details message is useful when you don't need to send itemized product details and only need to collect the total payment amount.
 
 ```
-```
 {  
-  "recipient_type": "individual",  
-  "to": "<PHONE_NUMBER>",  
-  "type": "interactive",  
-  "interactive": {  
-    "type": "order_details",  
-    "body": {  
-      "text": "Your message content"  
-    },  
-    "action": {  
-      "name": "review_and_pay",  
-      "parameters": {  
-        "reference_id": "unique-reference-id",  
-        "type": "digital-goods",  
-        "payment_type": "br",  
-        "payment_settings": [  
-          {  
-            "type": "payment_link",  
-            "payment_link": {  
-              "uri": "https://my-payment-link-url"  
-            }  
-          }  
-        ],  
-        "currency": "BRL",  
-        "total_amount": {  
-          "value": 50000,  
-          "offset": 100  
-        }  
-      }  
-    }  
-  }  
+  "recipient_type": "individual",  
+  "to": "<PHONE_NUMBER>",  
+  "type": "interactive",  
+  "interactive": {  
+    "type": "order_details",  
+    "body": {  
+      "text": "Your message content"  
+    },  
+    "action": {  
+      "name": "review_and_pay",  
+      "parameters": {  
+        "reference_id": "unique-reference-id",  
+        "type": "digital-goods",  
+        "payment_type": "br",  
+        "payment_settings": [  
+          {  
+            "type": "payment_link",  
+            "payment_link": {  
+              "uri": "https://my-payment-link-url"  
+            }  
+          }  
+        ],  
+        "currency": "BRL",  
+        "total_amount": {  
+          "value": 50000,  
+          "offset": 100  
+        }  
+      }  
+    }  
+  }  
 }
-```
 ```
 
 #### Parameters object
@@ -159,7 +155,7 @@ You can send a simplified order details message without the `order` object. Send
 
 | **Field Name** | **Optional?** | **Type** | **Description** |
 | --- | --- | --- | --- |
-| `uri` | Required | String | The Payment Link’s `uri` that the web browser opens when the user taps the Payment Link CTA button. |
+| `uri` | Required | String | The Payment Link's `uri` that the web browser opens when the user taps the Payment Link CTA button. |
 
 ### 2. Send an order status update
 

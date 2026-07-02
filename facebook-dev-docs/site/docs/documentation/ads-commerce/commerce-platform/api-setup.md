@@ -13,7 +13,7 @@ Note: Test commerce accounts are only available for sellers in the US.
 
 ## How it Works
 
-* **Test accounts don’t process payouts or charge credit cards in checkout**. Once created, a test account cannot be converted to a regular account.
+* **Test accounts don't process payouts or charge credit cards in checkout**. Once created, a test account cannot be converted to a regular account.
 * **You can test API calls in your test accounts without incurring payment or payout**.
 * **You can only create a limited number of test accounts under one Business Manager**. Some features of regular commerce accounts are not available in test accounts.
 * **You can omit the following information and can place test orders in the account**:
@@ -25,7 +25,7 @@ Instagram channel is not yet available in test accounts. Test with orders from y
 
 ## Step 1: Create a New Test Account
 
-[Test accounts](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/api-setup#how-it-works) are designed to quickly ramp up on the Facebook Commerce platform. It’s a great way for you to learn how to set up Commerce Manager and start building an integration with your ecommerce platform or order management system (OMS):
+[Test accounts](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/api-setup#how-it-works) are designed to quickly ramp up on the Facebook Commerce platform. It's a great way for you to learn how to set up Commerce Manager and start building an integration with your ecommerce platform or order management system (OMS):
 
 * Go to [Commerce Manager⁠](https://www.facebook.com/commerce_manager/onboarding_landing) and click **Create a Test Shop**.
 * Follow the prompts to complete the setup.
@@ -34,7 +34,7 @@ Instagram channel is not yet available in test accounts. Test with orders from y
 
 ## Step 2: Add Products
 
-After setting up the test account, you are returned to your account’s home page.
+After setting up the test account, you are returned to your account's home page.
 
 * Learn how to navigate [Commerce Manager⁠](https://www.facebook.com/business/help/703150963581848?id=533228987210412).
 * Under the **Catalog** tab, [add some products⁠](https://www.facebook.com/business/help/384041892421495?id=725943027795860), manually or by uploading a product feed file.
@@ -52,7 +52,7 @@ A Shop attached to a test commerce account is only visible to the admins of the 
 
 ## Step 4: Manage Orders
 
-Once you place a test order, it’s visible in your Commerce Manager, where you can [find and manage orders⁠](https://www.facebook.com/business/help/342148919898320?id=454668378692696) placed in your test Page Shop:
+Once you place a test order, it's visible in your Commerce Manager, where you can [find and manage orders⁠](https://www.facebook.com/business/help/342148919898320?id=454668378692696) placed in your test Page Shop:
 
 * List orders
 * Mark orders as shipped, provide a tracking number

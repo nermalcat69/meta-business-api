@@ -54,11 +54,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{group_id}/join_requests' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{group_id}/join_requests' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Header Parameters
@@ -172,11 +172,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{group_id}/join_requests' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{group_id}/join_requests' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 ---
@@ -198,11 +198,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{group_id}/join_requests' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{group_id}/join_requests' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -213,7 +213,7 @@ Select status code
 
 ```
 {  
-  "messaging_product": "\"whatsapp\""  
+  "messaging_product": "\"whatsapp\""  
 }
 ```
 
@@ -410,11 +410,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{group_id}/join_requests' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{group_id}/join_requests' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -425,7 +425,7 @@ Select status code
 
 ```
 {  
-  "messaging_product": "\"whatsapp\""  
+  "messaging_product": "\"whatsapp\""  
 }
 ```
 
@@ -448,11 +448,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request DELETE \  
-  --url 'https://graph.facebook.com/{Version}/{group_id}/join_requests' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request DELETE \  
+  --url 'https://graph.facebook.com/{Version}/{group_id}/join_requests' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -463,7 +463,7 @@ Select status code
 
 ```
 {  
-  "messaging_product": "\"whatsapp\""  
+  "messaging_product": "\"whatsapp\""  
 }
 ```
 
@@ -660,11 +660,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request DELETE \  
-  --url 'https://graph.facebook.com/{Version}/{group_id}/join_requests' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request DELETE \  
+  --url 'https://graph.facebook.com/{Version}/{group_id}/join_requests' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -675,7 +675,7 @@ Select status code
 
 ```
 {  
-  "messaging_product": "\"whatsapp\""  
+  "messaging_product": "\"whatsapp\""  
 }
 ```
 

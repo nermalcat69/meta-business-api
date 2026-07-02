@@ -15,7 +15,7 @@ See [About branded content on Facebook, Instagram, and Threads⁠](https://www.f
 
 You will need to:
 
-* Comply with Meta’s [Branded Content Policy⁠](https://www.facebook.com/policies/brandedcontent) and [Ads Policy⁠](https://www.facebook.com/policies/ads/restricted_content).
+* Comply with Meta's [Branded Content Policy⁠](https://www.facebook.com/policies/brandedcontent) and [Ads Policy⁠](https://www.facebook.com/policies/ads/restricted_content).
 * Have a verified Facebook Page or Profile.
 * Use the Marketing API or Ads Manager to create branded content posts.
 * Tag your brand partner in the posts using the branded content tool or Marketing API.
@@ -40,11 +40,9 @@ curl -X POST \
 ### Example response
 
 ```
-```
 {  
-  "id":"<POST_ID>"  
+  "id":"<POST_ID>"  
 }
-```
 ```
 
 ## Post photos
@@ -69,11 +67,9 @@ curl -X POST \
 ### Example response
 
 ```
-```
 {  
-  "id":"<POST_ID>"  
+  "id":"<POST_ID>"  
 }
-```
 ```
 
 ## Post a Video
@@ -101,11 +97,9 @@ curl -X POST \
 ### Example response
 
 ```
-```
 {  
-  "success":true  
+  "success":true  
 }
-```
 ```
 
 ## Live Video
@@ -141,16 +135,14 @@ curl -X POST \
 ### Example response
 
 ```
-```
 {  
-  "success":true  
+  "success":true  
 }
-```
 ```
 
 ## Comments moderation
 
-You can moderate comments on branded content posts using the `/{comment-id}` endpoint’s `is_hidden` parameter. The `is_hidden` parameter lets you moderate comments even when the post was created by another Page, without needing the creator to take action.
+You can moderate comments on branded content posts using the `/{comment-id}` endpoint's `is_hidden` parameter. The `is_hidden` parameter lets you moderate comments even when the post was created by another Page, without needing the creator to take action.
 
 **Note:** This is only available for comments on Page posts.
 
@@ -170,9 +162,7 @@ curl -X POST \
 ### Example response
 
 ```
-```
 {  
-  "success":true  
+  "success":true  
 }
-```
 ```

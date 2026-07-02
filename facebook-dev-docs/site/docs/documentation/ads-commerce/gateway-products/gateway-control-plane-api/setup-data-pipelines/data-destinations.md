@@ -503,7 +503,7 @@ mutation deleteDataSourceMutation(
 
 ### Generate Gateway Pixel Data Source Header Code
 
-The request to generate the Gateway Pixel header code snippet that is added to the header section of the advertiser’s website.
+The request to generate the Gateway Pixel header code snippet that is added to the header section of the advertiser's website.
 
 #### Schema
 

@@ -20,8 +20,8 @@ HTTPPHP SDKJavaScript SDKAndroid SDKiOS SDKcURL
 ---
 
 ```
-GET /v25.0/<PIXEL_ID>/?fields=code HTTP/1.1  
-Host: graph.facebook.com
+GET /v25.0/<PIXEL_ID>/?fields=code HTTP/1.1  
+Host: graph.facebook.com
 ```
 
 Try it in [Graph API Explorer](https://developers.facebook.com/tools/explorer/?method=GET&path=%3CPIXEL_ID%3E%2F%3Ffields%3Dcode&version=v25.0)
@@ -88,8 +88,8 @@ HTTPPHP SDKJavaScript SDKAndroid SDKiOS SDKcURL
 ---
 
 ```
-POST /v25.0/act_<AD_ACCOUNT_ID>/adspixels HTTP/1.1  
-Host: graph.facebook.com  
+POST /v25.0/act_<AD_ACCOUNT_ID>/adspixels HTTP/1.1  
+Host: graph.facebook.com  
   
 name=My+WCA+Pixel
 ```

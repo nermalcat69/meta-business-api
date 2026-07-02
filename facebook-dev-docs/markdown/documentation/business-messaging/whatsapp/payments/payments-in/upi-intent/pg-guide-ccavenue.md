@@ -19,16 +19,16 @@ In terms of integrating with the WA P2M product, this document covers the reques
 
 ### Setup
 
-To authenticate with BillDesk’s API, a client must be created and an authentication method must be selected between HMAC and JavaScript Object Signing and Encryption (JOSE) with JOSE being the preferred method. These methods are used to encrypt/decrypt the request/response from BillDesk’s APIs.
+To authenticate with BillDesk's API, a client must be created and an authentication method must be selected between HMAC and JavaScript Object Signing and Encryption (JOSE) with JOSE being the preferred method. These methods are used to encrypt/decrypt the request/response from BillDesk's APIs.
 
-To simplify the explanation, the following examples will only address the body of final payload that will ultimately be included in the final object required for successful authentication with their API. It is important to consult BillDesk’s documentation for guidance on how this final object must be structured.
+To simplify the explanation, the following examples will only address the body of final payload that will ultimately be included in the final object required for successful authentication with their API. It is important to consult BillDesk's documentation for guidance on how this final object must be structured.
 
 You must have the following details before you can proceed:
 
 * Client ID and secret key from BillDesk
 * Details from the payment configuration you already configured on the WhatsApp Business Account
   * Merchant category code
-  * Merchant’s VPA
+  * Merchant's VPA
 * Merchant Name
 
 ### Initiate payment API
@@ -36,31 +36,29 @@ You must have the following details before you can proceed:
 #### Sample request to `POST` to https://pguat.billdesk.io/payments/ve1\_2/transactions/create
 
 ```
-```
 {  
-  "mercid": "BDMERCHANTID",  
-  "orderid": "UPIODR00000004",  
-  "amount": "2.00",  
-  "currency": "356",  
-  "bankid": "ICW",  
-  "txn_process_type": "intent",  
-  "itemcode": "DIRECT",  
-  "payment_method_type": "upi",  
-  "wa_mc": "0743",  
-  "wa_vpa": "billdesk@hdfcbank",  
-  "wa_txnid": "H477676443",  
-  "wa_mercname": "SIDDHIVINK",  
-  "additional_info": {  
-    "additional_info1": "Details1",  
-    "additional_info2": "Details2"  
-  },  
-  "device": {  
-    "init_channel": "app",  
-    "ip": "124.124.1.1",  
-    "user_agent": "App/22.6.74 Platform/19.5.0"  
-  }  
+  "mercid": "BDMERCHANTID",  
+  "orderid": "UPIODR00000004",  
+  "amount": "2.00",  
+  "currency": "356",  
+  "bankid": "ICW",  
+  "txn_process_type": "intent",  
+  "itemcode": "DIRECT",  
+  "payment_method_type": "upi",  
+  "wa_mc": "0743",  
+  "wa_vpa": "billdesk@hdfcbank",  
+  "wa_txnid": "H477676443",  
+  "wa_mercname": "SIDDHIVINK",  
+  "additional_info": {  
+    "additional_info1": "Details1",  
+    "additional_info2": "Details2"  
+  },  
+  "device": {  
+    "init_channel": "app",  
+    "ip": "124.124.1.1",  
+    "user_agent": "App/22.6.74 Platform/19.5.0"  
+  }  
 }
-```
 ```
 
 | Parameters | Description |
@@ -83,37 +81,35 @@ You must have the following details before you can proceed:
 #### Sample response
 
 ```
-```
 {  
-  "objectid": "transaction",  
-  "transactionid": "X7890477676443",  
-  "orderid": "UPIODR00000004",  
-  "mercid": "BDMERCID",  
-  "transaction_date": "2022-03-18T11:50:27+05:30",  
-  "amount": "2.00",  
-  "surcharge": "0.00",  
-  "discount": "0.00",  
-  "charge_amount": "2.00",  
-  "currency": "356",  
-  "additional_info": {  
-    "additional_info1": "Details1",  
-    "additional_info2": "Details2"  
-  },  
-  "txn_process_type": "intent",  
-  "bankid": "ICW",  
-  "itemcode": "DIRECT",  
-  "auth_status": "0002",  
-  "transaction_error_code": "TRP0000",  
-  "transaction_error_desc": "Transaction Pending ",  
-  "transaction_error_type": "pending",  
-  "payment_method_type": "upi",  
-  "wa_mc": "7399",  
-  "wa_vpa": "billdesk@hdfcbank",  
-  "wa_txnid": "H477676443",  
-  "wa_mercname": "SIDDHIVINK",  
-  "intent": "dXBpOi8vcGF5P3BhPWJpbGxkZXNrQGhkZmNiYW5rJnBuPVNJRERISVZJTksmbWM9NjMwMCZ0cj1YSEQ1MDQ3NzY3NjQ0MyZ0bj1QYXkmYW09Mi4wMCZtYWwMCZjdT1JTlI="  
+  "objectid": "transaction",  
+  "transactionid": "X7890477676443",  
+  "orderid": "UPIODR00000004",  
+  "mercid": "BDMERCID",  
+  "transaction_date": "2022-03-18T11:50:27+05:30",  
+  "amount": "2.00",  
+  "surcharge": "0.00",  
+  "discount": "0.00",  
+  "charge_amount": "2.00",  
+  "currency": "356",  
+  "additional_info": {  
+    "additional_info1": "Details1",  
+    "additional_info2": "Details2"  
+  },  
+  "txn_process_type": "intent",  
+  "bankid": "ICW",  
+  "itemcode": "DIRECT",  
+  "auth_status": "0002",  
+  "transaction_error_code": "TRP0000",  
+  "transaction_error_desc": "Transaction Pending ",  
+  "transaction_error_type": "pending",  
+  "payment_method_type": "upi",  
+  "wa_mc": "7399",  
+  "wa_vpa": "billdesk@hdfcbank",  
+  "wa_txnid": "H477676443",  
+  "wa_mercname": "SIDDHIVINK",  
+  "intent": "dXBpOi8vcGF5P3BhPWJpbGxkZXNrQGhkZmNiYW5rJnBuPVNJRERISVZJTksmbWM9NjMwMCZ0cj1YSEQ1MDQ3NzY3NjQ0MyZ0bj1QYXkmYW09Mi4wMCZtYWwMCZjdT1JTlI="  
 }
-```
 ```
 
 ### Parse the response
@@ -132,7 +128,7 @@ BillDesk will post a transaction object to the return URL (`ru`) you specified i
 
 | Key | Data type | Description |
 | --- | --- | --- |
-| objectid (Mandatory) | string | String representing the object’s type. This value will be fixed as transaction |
+| objectid (Mandatory) | string | String representing the object's type. This value will be fixed as transaction |
 | transactionid | string | Unique transaction ID generated by BillDesk for the transaction |
 | orderid | string | Unique orderid generated by the merchant for the transaction |
 | mercid | string | Unique identifier as defined by BillDesk for each merchant |

@@ -11,13 +11,13 @@ Identity is central to creating a personalized Messenger experience. The Messeng
 
 ## User profile
 
-Use a Page-scoped ID (PSID) to retrieve a person’s profile information — such as name and profile picture — to personalize the conversation.
+Use a Page-scoped ID (PSID) to retrieve a person's profile information — such as name and profile picture — to personalize the conversation.
 
 [Learn more →](https://developers.facebook.com/documentation/business-messaging/messenger-platform/identity/user-profile)
 
 ## Account linking
 
-Use your web-based login flow to authenticate a person’s identity and link it with their Messenger account. This lets you securely access existing customer data to provide a richer conversation experience.
+Use your web-based login flow to authenticate a person's identity and link it with their Messenger account. This lets you securely access existing customer data to provide a richer conversation experience.
 
 [Learn more →](https://developers.facebook.com/documentation/business-messaging/messenger-platform/identity/account-linking)
 

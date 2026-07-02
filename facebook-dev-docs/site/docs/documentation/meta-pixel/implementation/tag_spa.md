@@ -7,11 +7,11 @@ source_url: https://developers.facebook.com/documentation/meta-pixel/implementat
 
 Updated: Jan 27, 2022
 
-If you are [tracking conversions](https://developers.facebook.com/documentation/meta-pixel/implementation/conversion-tracking), you can segment your website visitors into groups based on the actions they have taken on your website. These groups are called **custom audiences**. Once you have defined a custom audience, you can [optimize your ad sets⁠](https://www.facebook.com/business/help/1082085278508457) to target other Facebook users who match that audience’s criteria.
+If you are [tracking conversions](https://developers.facebook.com/documentation/meta-pixel/implementation/conversion-tracking), you can segment your website visitors into groups based on the actions they have taken on your website. These groups are called **custom audiences**. Once you have defined a custom audience, you can [optimize your ad sets⁠](https://www.facebook.com/business/help/1082085278508457) to target other Facebook users who match that audience's criteria.
 
 ### Requirements
 
-* The Pixel’s [base code](https://developers.facebook.com/documentation/meta-pixel/get-started#base-code) must already be installed and tracking [standard events](https://developers.facebook.com/documentation/meta-pixel/implementation/conversion-tracking#standard-events), [custom events](https://developers.facebook.com/documentation/meta-pixel/implementation/conversion-tracking#custom-events), or [custom conversions](https://developers.facebook.com/documentation/meta-pixel/implementation/conversion-tracking#custom-conversions).
+* The Pixel's [base code](https://developers.facebook.com/documentation/meta-pixel/get-started#base-code) must already be installed and tracking [standard events](https://developers.facebook.com/documentation/meta-pixel/implementation/conversion-tracking#standard-events), [custom events](https://developers.facebook.com/documentation/meta-pixel/implementation/conversion-tracking#custom-events), or [custom conversions](https://developers.facebook.com/documentation/meta-pixel/implementation/conversion-tracking#custom-conversions).
 * You must have access to the [Facebook Ads Manager⁠](https://www.facebook.com/adsmanager).
 
 ## Defining Custom Audiences

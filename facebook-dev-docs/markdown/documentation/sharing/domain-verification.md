@@ -23,12 +23,12 @@ The `og:image` tag can be used to specify the URL of the image that appears when
 
 ![Facebook Feed link share with a small thumbnail image beside the link, shown when the shared image is smaller than 600 by 315 pixels](https://scontent.fdel27-3.fna.fbcdn.net/v/t39.2365-6/673966197_1484143280110988_4312042089058901080_n.png?_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=G2xamP2ahIgQ7kNvwEoBWK5&_nc_oc=AdrjSe_fKM7pil35YiLY58aoVEIvalVCpWvlxYeIVCFUJtFBrhNq_F6RCVNdcN45rMflSlZyV1_l44ElXTHrRBcB&_nc_zt=14&_nc_ht=scontent.fdel27-3.fna&_nc_gid=MsDp32SVmM0_FX5CKew-5Q&_nc_ss=7b289&oh=00_AQC-V-AaAelCIMeauVWfidsHn6QovSkYDAw_B0G07siKsg&oe=6A6085DC)
 
-* We’ve also re-designed link page posts so that the aspect ratio for images is the same across desktop and mobile Feed. Try to keep your images as close to 1.91:1 aspect ratio as possible to display the full image in Feed without any cropping.
+* We've also re-designed link page posts so that the aspect ratio for images is the same across desktop and mobile Feed. Try to keep your images as close to 1.91:1 aspect ratio as possible to display the full image in Feed without any cropping.
 * Our crawler only accepts **gzip** and **deflate** encodings, so make sure your server uses the right encoding.
 
 ## Pre-caching images
 
-When content is shared for the first time, the [Facebook crawler](https://developers.facebook.com/documentation/sharing/webmasters/web-crawlers) will scrape and cache the metadata from the URL shared. The crawler has to see an image at least once before it can be rendered. This means that the first person who shares a piece of content won’t see a rendered image:
+When content is shared for the first time, the [Facebook crawler](https://developers.facebook.com/documentation/sharing/webmasters/web-crawlers) will scrape and cache the metadata from the URL shared. The crawler has to see an image at least once before it can be rendered. This means that the first person who shares a piece of content won't see a rendered image:
 
 ![Like confirmation popup with an empty comment box and no rendered preview image, shown to the first person to share an uncached URL](https://scontent.fdel27-9.fna.fbcdn.net/v/t39.2365-6/671838361_1484143306777652_34685882123893159_n.jpg?_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=vWxfTROVjQQQ7kNvwFt83Ul&_nc_oc=AdrInroYcEUSC5KbxhCPqpzLlySec3UMhUN_zipO42K4bpJn-LPnk_r5yL5qiHeb-pifLHN9am12ttIEXSzqPq2i&_nc_zt=14&_nc_ht=scontent.fdel27-9.fna&_nc_gid=MsDp32SVmM0_FX5CKew-5Q&_nc_ss=7b289&oh=00_AQCw8voKdXuRvFfVWbCBtcFIn-MJLTLIK_BQuQX01cDM8Q&oe=6A6083FD)
 
@@ -42,14 +42,14 @@ There are three ways to avoid this and have images render on the first Like or S
 
 ## Updating images
 
-We cache all images referenced based on each image’s URL, so if you replace an image:
+We cache all images referenced based on each image's URL, so if you replace an image:
 
-* **Use a new URL for the new image** or the image won’t be updated
-* Don’t remove old images, as there maybe existing stories that reference the old image
+* **Use a new URL for the new image** or the image won't be updated
+* Don't remove old images, as there maybe existing stories that reference the old image
 * Follow the instructions in the section [above](https://developers.facebook.com/documentation/sharing/domain-verification#precaching) to ensure that the new image has been downloaded by our crawler.
 
 Note that updating the image for a URL will not automatically update the preview for old shares. To do this, you must refresh the share as described [here](https://developers.facebook.com/documentation/sharing/webmasters/faq#faq_1131343433556264).
 
 ## Troubleshooting
 
-If you have any problems with images not being displayed correctly for a URL, try plugging in the **image URL** in the [Sharing Debugger](https://developers.facebook.com/tools/debug) for any errors. If you think there’s an issue on our side, consider [filing a bug report](https://developers.facebook.com/support/bugs/) to us.
+If you have any problems with images not being displayed correctly for a URL, try plugging in the **image URL** in the [Sharing Debugger](https://developers.facebook.com/tools/debug) for any errors. If you think there's an issue on our side, consider [filing a bug report](https://developers.facebook.com/support/bugs/) to us.

@@ -31,28 +31,26 @@ curl -i -X GET "https://graph.facebook.com/<LATEST_API_VERSION>/me/messaging_fea
 ## Sample response
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "feature": "subscription_messaging",  
-      "status": "rejected"  
-    },  
-    {  
-      "feature": "gender",  
-      "status": "pending"  
-    },  
-    {  
-      "feature": "locale",  
-      "status": "limited"  
-    },  
-    {  
-      "feature": "time_zone",  
-      "status": "approved"  
-    }  
-  ]  
+  "data": [  
+    {  
+      "feature": "subscription_messaging",  
+      "status": "rejected"  
+    },  
+    {  
+      "feature": "gender",  
+      "status": "pending"  
+    },  
+    {  
+      "feature": "locale",  
+      "status": "limited"  
+    },  
+    {  
+      "feature": "time_zone",  
+      "status": "approved"  
+    }  
+  ]  
 }
-```
 ```
 
 ## Response properties

@@ -10,7 +10,7 @@ Updated: May 19, 2026
 Meta believes in the principle of data portability. If you share data with one service, you should be able to move it to another. This gives people choice and enables developers to innovate and compete.
 Data portability requires common standards, which is why we support standard data transfer formats and are [Data Transfer Initiative (DTI)⁠](https://dtinit.org/?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR4dBA1g1-fPnm_4tgAE5sPyS8jORKfWqqktdeoC3ApIhwJZedpEUu6IeymDCA_aem_0EMDFr9f5dZmypIpCqz8xQ) partners, building our data portability solutions using open-source software such as the [Data Transfer Project⁠](https://github.com/dtinit/data-transfer-project?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR4WiRTAxis9lSVJI5AlIamwvLGSJP0IVJM6XOQDUvl9-FmjVWQNytBV_8K8EQ_aem_7J9joaipMPh5OJrPMwXLUQ).
 
-Following onboarding via the Developer Portal, developers can list their platform as a destination on Meta’s **Export Your Information (EYI)** tool. Follow our [Onboarding Guide](https://developers.facebook.com/documentation/data-portability/onboarding-guide) to learn how.
+Following onboarding via the Developer Portal, developers can list their platform as a destination on Meta's **Export Your Information (EYI)** tool. Follow our [Onboarding Guide](https://developers.facebook.com/documentation/data-portability/onboarding-guide) to learn how.
 
 ## Documentation Contents
 
@@ -48,8 +48,8 @@ Learn about the specific terminology used in data portability.
 
 ### [Support](https://developers.facebook.com/documentation/data-portability/support)
 
-Learn about how to get in touch with Meta’s data portability team.
+Learn about how to get in touch with Meta's data portability team.
 
 ### [Changelog](https://developers.facebook.com/docs/data-portability/changelog)
 
-Learn about the most recent changes to Meta’s data portability tools.
+Learn about the most recent changes to Meta's data portability tools.

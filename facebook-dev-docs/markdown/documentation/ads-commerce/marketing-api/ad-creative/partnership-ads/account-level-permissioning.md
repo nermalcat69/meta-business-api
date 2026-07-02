@@ -56,15 +56,13 @@ curl -G \
 If successful, the API returns a list of approved creators, filtered by the user IDs provided.
 
 ```
-```
 {  
- "data": [  
-  {  
-    "id": "<USER_ID>"  
-  }  
- ]  
+ "data": [  
+  {  
+    "id": "<USER_ID>"  
+  }  
+ ]  
 }
-```
 ```
 
 ### Update the creator approval list
@@ -89,11 +87,9 @@ curl -X POST \
 #### Example response
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 **Note:** The API returns `false` if one or more user IDs fail to update; in that case it adds no user IDs to the approval list.
@@ -120,11 +116,9 @@ curl -X DELETE\
 #### Example response
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 **Note:** The API returns `false` if one or more user IDs fail to delete; in that case it removes no user IDs from the approval list.
@@ -148,11 +142,9 @@ curl -G \
 #### Example response
 
 ```
-```
 {  
-  "approved": <BUSINESS_ACCOUNT_ID1, BUSINESS_ACCOUNT_ID2, ...> // list of business account IDs  
+  "approved": <BUSINESS_ACCOUNT_ID1, BUSINESS_ACCOUNT_ID2, ...> // list of business account IDs  
 }
-```
 ```
 
 If successful, the API returns a comma-separated list of approved business account IDs.
@@ -182,11 +174,9 @@ curl -X POST \
 #### Example response
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 **Note:** The API returns `false` on error and does not grant permission to the brand partner.

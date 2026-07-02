@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/instagram-platform/ref
 
 Updated: Mar 3, 2025
 
-Represents a collection of [IG Media](https://developers.facebook.com/documentation/instagram-platform/reference/instagram-media) objects in which your app user’s [Instagram professional account](https://developers.facebook.com/documentation/instagram-platform/instagram-graph-api/reference/ig-user) has been tagged by another Instagram user.
+Represents a collection of [IG Media](https://developers.facebook.com/documentation/instagram-platform/reference/instagram-media) objects in which your app user's [Instagram professional account](https://developers.facebook.com/documentation/instagram-platform/instagram-graph-api/reference/ig-user) has been tagged by another Instagram user.
 
 ## Creating
 
@@ -46,7 +46,7 @@ Include the following query string parameters to augment the request.
 
 | Key | Value |
 | --- | --- |
-| `access_token` **Required** *String* | The app user’s Instagram User Access Token. |
+| `access_token` **Required** *String* | The app user's Instagram User Access Token. |
 | `fields` *Comma-separated list* | A comma-separated list of [Fields](https://developers.facebook.com/documentation/instagram-platform/reference/me#fields) and [Edges](https://developers.facebook.com/documentation/instagram-platform/reference/me#edges) you want included in the response. If omitted, default fields will be returned. |
 
 ### Fields
@@ -62,12 +62,10 @@ Use the `fields` query string parameter to specify Edges you want included on an
 A JSON-formatted object containing [IG Media](https://developers.facebook.com/documentation/instagram-platform/reference/instagram-media) objects.
 
 ```
-```
 {  
-  "<FIELD>":"<VALUE>",  
-  ...  
+  "<FIELD>":"<VALUE>",  
+  ...  
 }
-```
 ```
 
 ### Pagination

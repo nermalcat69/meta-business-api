@@ -13,32 +13,30 @@ The button template sends a text message with up to three attached buttons. This
 * [postback](https://developers.facebook.com/documentation/business-messaging/messenger-platform/marketing-messages-on-messenger/send-messages/postback)
 
 ```
-```
 {  
-  "message_id": "<MESSAGE_ID>",  
-  "messenger_delivery_data": {  
-    "subscription_token": "<SUBSCRIPTION_TOKEN>"  
-  },  
-  "message": {  
-    "attachment": {  
-      "type": "template",  
-      "payload": {  
-        "template_type": "button",  
-        "text": "Welcome!",  
-        "buttons":[  
-          {  
-            "type":"web_url",  
-            "url":"<BUTTON_URL>",  
-            "title":"View Website"  
-          },{  
-            "type":"postback",  
-            "title":"Start Chatting",  
-            "payload":"<PAYLOAD_WEBHOOK>"  
-          }  
-        ]  
-      }  
-    }  
-  }  
+  "message_id": "<MESSAGE_ID>",  
+  "messenger_delivery_data": {  
+    "subscription_token": "<SUBSCRIPTION_TOKEN>"  
+  },  
+  "message": {  
+    "attachment": {  
+      "type": "template",  
+      "payload": {  
+        "template_type": "button",  
+        "text": "Welcome!",  
+        "buttons":[  
+          {  
+            "type":"web_url",  
+            "url":"<BUTTON_URL>",  
+            "title":"View Website"  
+          },{  
+            "type":"postback",  
+            "title":"Start Chatting",  
+            "payload":"<PAYLOAD_WEBHOOK>"  
+          }  
+        ]  
+      }  
+    }  
+  }  
 }
-```
 ```

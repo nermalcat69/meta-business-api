@@ -18,8 +18,8 @@ Include these attributes to enrich your product details page (PDP) and help buye
 | Attribute and Type | Categories (Note, for some attributes not all sub-categories apply.) | Description |
 | --- | --- | --- |
 | `material`  *string* | Jewelry, Watches & Accessories | Primary material(s) of your item. Sample values: `Leather`, `Silicone`, `Stainless steel`, and so on.  Provide this attribute for all products where a color, size or material variation exists |
-| `size`  *string* | Engagement jewelry, Fine & Fashion Jewelry | Overall dimensions of the item. Used only for products that don’t have a more specific size attribute, such as `ring_size` or `chain_length`. Sample values: `6`, `7`, `8`, `Small`, `Medium`, `Large`. |
-| `gemstone`  *List of strings* | Jewelry & Watches | Type of gemstone(s) in your item. Sample values: `Diamond`, `Turquoise`, `Ruby`, `Emerald`, `Sapphire`.   To provide multiple values using a single feed scent field, the acceptable input format is ‘Diamond’, ‘Turquoise’, ‘Ruby’, ‘Emerald’, ‘Sapphire’. |
+| `size`  *string* | Engagement jewelry, Fine & Fashion Jewelry | Overall dimensions of the item. Used only for products that don't have a more specific size attribute, such as `ring_size` or `chain_length`. Sample values: `6`, `7`, `8`, `Small`, `Medium`, `Large`. |
+| `gemstone`  *List of strings* | Jewelry & Watches | Type of gemstone(s) in your item. Sample values: `Diamond`, `Turquoise`, `Ruby`, `Emerald`, `Sapphire`.   To provide multiple values using a single feed scent field, the acceptable input format is 'Diamond', 'Turquoise', 'Ruby', 'Emerald', 'Sapphire'. |
 
 ## Additional Attributes
 
@@ -49,7 +49,7 @@ For Google Product Category mapping, see [Apparel & Accessories](https://develop
 | `metal_stamp_or_purity`  Type: string | Metal purity of your item. Sometimes this is indicated or stamped directly onto jewelry items. Sample values: `14k`, `22k`, `925 Sterling`. |
 | `occasion`  Type: list of strings | Type of special occasion(s) for which your item is intended or specialized. Sample values: `Anniversary`, `Wedding`, `Graduation`.   * To provide multiple values using a single feed `occasion` field, the acceptable input format is `'Bridesmaid', 'Wedding', 'Graduation', 'Halloween', 'Work'`. * To provide multiple values with one value per feed field, use feed field names, such as `occasion[0], occasion[1]`. For example, the acceptable attribute value input format for fields such as this is `Bridesmaid`. |
 | `plating_material`  Type: string | Type of metal or material which your item is plated or covered with. Sample values: `Silver`, `Gold`, `Platinum`. |
-| `size_system`  Type: string | Size system used by your item; usually corresponds to the country. Sample values: `US`, `UK`, `EU`, ‘DE’, `FR`, `CN`, `IT`, `BR`, `MEX`, `AU`. |
+| `size_system`  Type: string | Size system used by your item; usually corresponds to the country. Sample values: `US`, `UK`, `EU`, 'DE', `FR`, `CN`, `IT`, `BR`, `MEX`, `AU`. |
 | `standard_features`  Type: list of strings | Standard features related to the item. Sample value: `Resizable`. |
 | `total_gemstone_weight`  Type: integer | Total combined weight or mass of all stones in the piece of jewelry. Measured in carats. Sample values: `1.29`, `0.70`. |
 
@@ -60,7 +60,7 @@ For Google Product Category mapping, see [Apparel & Accessories](https://develop
 | Attribute and Type | Description |
 | --- | --- |
 | `activity`  Type: list of strings | Particular sport or activity for which your item is intended. Multiple values accepted. Sample values: `Yoga`, `Sailing`, `Diving`, `Running`.   * To provide multiple values using a single feed `activity` field, the acceptable input format is `'Yoga', 'Sailing', 'Diving', 'Running'`. * To provide multiple values with one value per feed field, use feed field names, such as `activity[0], activity[1]`. For example, the acceptable attribute value input format for fields such as this is `Yoga`. |
-| `battery_life`  Type: string | Maximum run time or life of the item’s battery. The first part is the number. The second part is one of the accepted units: s, m, h, d. Sample values: `8 d`, `12 h`, `24 h`. |
+| `battery_life`  Type: string | Maximum run time or life of the item's battery. The first part is the number. The second part is one of the accepted units: s, m, h, d. Sample values: `8 d`, `12 h`, `24 h`. |
 | `display_technology`  Type: string | Type of technology that powers the display. Sample values: `Analog`, `Digital`, `LED`, `LCD`. |
 | `gemstone_cut`  Type: list of strings | Style in which the gemstone(s) of your item have been cut and their general shape. Sample values: `Asscher`, `Heart`, `Baguette`, `Marquis`, `Oval`, `Brilliant`, `Round`, `Square`, `Princess`.   * To provide multiple values using a single feed `gemstone_cut` field, the acceptable input format is `'Asscher', 'Heart', 'Baguette', 'Marquis', 'Oval', 'Brilliant', 'Round', 'Square', 'Princess'`. * To provide multiple values with one value per feed field, use feed field names, such as `gemstone_cut[0], gemstone_cut[1]`. For example, the acceptable attribute value input format for fields such as this is `Asscher`. |
 | `gemstone_weight`  Type: float | Total weight or mass of the individual gemstone. Measured in carats. Sample values: `1.29`, `0.70`. |

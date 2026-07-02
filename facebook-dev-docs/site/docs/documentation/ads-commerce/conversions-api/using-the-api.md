@@ -11,11 +11,11 @@ Updated: Jun 28, 2026
 
 **No code changes are needed.**
 
-Tier labels have been updated: “Standard Access” is now **Limited Access**, and “Advanced Access” is now **Full Access**. The revised qualification threshold for Full Access has been reduced from 1,500 to **500 Marketing API calls** in the past 15 days. The underlying permission identifier remains the same, and existing access levels are preserved automatically. Learn more in the [Marketing API Access Tier documentation](https://developers.facebook.com/docs/features-reference#marketing-api-access-tier).
+Tier labels have been updated: "Standard Access" is now **Limited Access**, and "Advanced Access" is now **Full Access**. The revised qualification threshold for Full Access has been reduced from 1,500 to **500 Marketing API calls** in the past 15 days. The underlying permission identifier remains the same, and existing access levels are preserved automatically. Learn more in the [Marketing API Access Tier documentation](https://developers.facebook.com/docs/features-reference#marketing-api-access-tier).
 
 This page describes the process of implementing the Conversions API and details implementation prerequisites. If you are a third-party partner offering Conversions API functionalities for advertisers, there are [different requirements](https://developers.facebook.com/documentation/ads-commerce/conversions-api/set-up-conversions-api-as-a-platform) to get started.
 
-If your business has a firewall for outbound requests, see [Crawler IPs and User Agents](https://developers.facebook.com/docs/sharing/webmasters/crawler#identify) to get Facebook’s IP addresses. Be aware that the list of addresses changes often.
+If your business has a firewall for outbound requests, see [Crawler IPs and User Agents](https://developers.facebook.com/docs/sharing/webmasters/crawler#identify) to get Facebook's IP addresses. Be aware that the list of addresses changes often.
 
 Web, app, and physical store events shared using the Conversions API require specific parameters. The list of [required parameters is available here](https://developers.facebook.com/documentation/ads-commerce/conversions-api/parameters).
 
@@ -38,11 +38,11 @@ The primary focus of this developer documentation is building direct integration
 
 ### Pixel ID
 
-You must obtain a [Pixel ID⁠](https://www.facebook.com/business/help/952192354843755?id=1205376682832142) to use the Conversions API. If you’ve already set up a Pixel for your website, use the same Pixel ID for your browser and server events.
+You must obtain a [Pixel ID⁠](https://www.facebook.com/business/help/952192354843755?id=1205376682832142) to use the Conversions API. If you've already set up a Pixel for your website, use the same Pixel ID for your browser and server events.
 
 ### Meta Business Suite
 
-You also need a [Meta Business Suite⁠](https://business.facebook.com/) to use the API. Meta Business Suite helps advertisers integrate Facebook marketing efforts across their business and with external partners. If you don’t have a Meta Business Suite yet, see the Help Center article on [how to Create a Meta Business Suite⁠](https://www.facebook.com/business/help/1710077379203657).
+You also need a [Meta Business Suite⁠](https://business.facebook.com/) to use the API. Meta Business Suite helps advertisers integrate Facebook marketing efforts across their business and with external partners. If you don't have a Meta Business Suite yet, see the Help Center article on [how to Create a Meta Business Suite⁠](https://www.facebook.com/business/help/1710077379203657).
 
 ### Access token
 
@@ -75,7 +75,7 @@ Once you have your token, click on the **Manage Integrations** button in the Ove
 
 If you already have your own [app](https://developers.facebook.com/docs/apps) and your own [system user](https://developers.facebook.com/docs/marketing-api/system-users/create-retrieve-update), you can generate your token inside [Meta Business Suite⁠](https://business.facebook.com/). To do that:
 
-**Step 1** - Go to your Business’ **Settings**.
+**Step 1** - Go to your Business' **Settings**.
 
 **Step 2** - Assign a Pixel to your system user (you also have an option to create a new system user at this stage).
 

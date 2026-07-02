@@ -9,7 +9,7 @@ Updated: Sep 19, 2024
 
 ## Reading
 
-You can’t perform this operation on this endpoint.
+You can't perform this operation on this endpoint.
 
 ## Creating
 
@@ -65,10 +65,10 @@ soft_desc_challenge_localized_auth_amount: int32,
 | 3979 | You have exceeded the number of allowed ad accounts for your Business Manager at this time. |
 | 3980 | One or more of the ad accounts in your Business Manager are currently in bad standing or in review. All of your accounts must be in good standing in order to create new ad accounts. |
 | 415 | Two factor authentication required. User have to enter a code from SMS or TOTP code generator to pass 2fac. This could happen when accessing a 2fac-protected asset like a page that is owned by a 2fac-protected business manager. |
-| 3902 | There was a technical issue and your new ad account wasn’t created. Please try again. |
+| 3902 | There was a technical issue and your new ad account wasn't created. Please try again. |
 | 457 | The session has an invalid origin |
 | 190 | Invalid OAuth 2.0 Access Token |
-| 23007 | This credit card can’t be set as your account’s primary payment method, because your account is set up to be billed after your ads have delivered. This setup can’t be changed. Please try a different card or payment method. |
+| 23007 | This credit card can't be set as your account's primary payment method, because your account is set up to be billed after your ads have delivered. This setup can't be changed. Please try a different card or payment method. |
 
 ---
 

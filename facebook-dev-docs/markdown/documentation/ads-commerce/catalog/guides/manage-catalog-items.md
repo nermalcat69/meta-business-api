@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/catalog/g
 
 Updated: Jun 26, 2026
 
-There are multiple types of catalog items that correspond to different types of objects that can be advertised and/or sold on Meta technologies. Depending on the value of a catalog’s [vertical field](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-catalog#fields), there are some restrictions as to which item types can or cannot be created.
+There are multiple types of catalog items that correspond to different types of objects that can be advertised and/or sold on Meta technologies. Depending on the value of a catalog's [vertical field](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-catalog#fields), there are some restrictions as to which item types can or cannot be created.
 
 For example, you cannot add an item of type `HOTEL` to a catalog with vertical=`commerce`. The table below summarizes the possible options.
 

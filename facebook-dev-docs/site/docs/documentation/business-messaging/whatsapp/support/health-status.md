@@ -11,7 +11,7 @@ Meta provides a [WhatsApp Business API Status page⁠](https://status.fb.com/wha
 
 If you are having issues with the platform, it is important to check this page first to determine if the problem is on our end or if it is your business implementation, hardware, or your network. If we report no known issues with the services and you are experiencing issues then contact [Direct Support](https://developers.facebook.com/documentation/business-messaging/whatsapp/support#enterprise-developer-support) to determine and resolve your issues.
 
-To stay up to date on the platform’s performance, subscribe to the status page through the **RSS Feed** button on the WhatsApp Business API Status Page itself. See [RSS Feed](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/health-status#rss-feed) for more information.
+To stay up to date on the platform's performance, subscribe to the status page through the **RSS Feed** button on the WhatsApp Business API Status Page itself. See [RSS Feed](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/health-status#rss-feed) for more information.
 
 The status page provides the following features:
 
@@ -85,16 +85,14 @@ Click this button to see the history from the past seven days of any issues that
 
 #### RSS feed
 
-Click this button to subscribe to the RSS feed for WhatsApp Business Platform service status. You’ll need to use your browser or third-party application to subscribe to the RSS feed.
+Click this button to subscribe to the RSS feed for WhatsApp Business Platform service status. You'll need to use your browser or third-party application to subscribe to the RSS feed.
 
 ## Availability
 
 Cloud API is considered available unless it has been unable to send or receive messages for at least 10 consecutive minutes.
 
 ```
-```
-Availability =  100 * (A - B)/A
-```
+Availability =  100 * (A - B)/A
 ```
 
 Where:
@@ -106,12 +104,12 @@ Where:
 
 Cloud API computes latency across inbound and outbound messages, which are defined as follows:
 
-* **Outbound**: Time from when our servers receive a send message request from the business to when the message is ready to be transmitted to the WhatsApp user’s device from our servers.
-* **Inbound**: Time from when we receive a message from a WhatsApp user to when our systems make the first attempt to send a corresponding [messages webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/messages) to the WhatsApp Business account’s callback URL.
+* **Outbound**: Time from when our servers receive a send message request from the business to when the message is ready to be transmitted to the WhatsApp user's device from our servers.
+* **Inbound**: Time from when we receive a message from a WhatsApp user to when our systems make the first attempt to send a corresponding [messages webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/messages) to the WhatsApp Business account's callback URL.
 
 The following messages and processes are excluded from latency computations:
 
-* Time spent fetching assets (image, videos, and so on) hosted on Meta servers (assets hosted on business’s servers are excluded from computation).
+* Time spent fetching assets (image, videos, and so on) hosted on Meta servers (assets hosted on business's servers are excluded from computation).
 * Messages held in queues when the receiver is not connected.
 * Messages held in queues while awaiting spam and scam checks.
 * Messages status webhooks (sent, delivered, read, and so on).

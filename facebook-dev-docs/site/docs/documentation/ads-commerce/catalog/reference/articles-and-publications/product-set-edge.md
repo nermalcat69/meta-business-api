@@ -28,7 +28,7 @@ Host: graph.facebook.com
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| `filter` | string | **Optional**. JSON-encoded WCA filter rule for filtering articles and publications. For example: `{"publication_category":{"eq":"Book"}}`. See [Product Set](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-set) for the full list of filter operators. |
+| `filter` | string | **Optional**. JSON-encoded WCA filter rule for filtering articles and publications. For example: `{"publication_category":{"eq":"Book"}​}`. See [Product Set](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-set) for the full list of filter operators. |
 | `summary` | boolean | **Optional**. When `true`, includes a `summary` object with `total_count` in the response. |
 | `limit` | integer | **Optional**. Maximum number of items to return per page. |
 | `before` | string | **Optional**. Cursor for backward pagination. |
@@ -99,8 +99,8 @@ For the full list of supported fields, see the [Articles and Publications node �
 
 ## Updating
 
-You can’t update items from the Articles and Publications edge directly. To update individual article or publication items, use the [Articles and Publications](https://developers.facebook.com/docs/marketing-api/catalog/reference/articles-and-publications#updating) node.
+You can't update items from the Articles and Publications edge directly. To update individual article or publication items, use the [Articles and Publications](https://developers.facebook.com/docs/marketing-api/catalog/reference/articles-and-publications#updating) node.
 
 ## Deleting
 
-You can’t delete items from the Articles and Publications edge directly. To delete individual article or publication items, use the [Articles and Publications](https://developers.facebook.com/docs/marketing-api/catalog/reference/articles-and-publications#deleting) node.
+You can't delete items from the Articles and Publications edge directly. To delete individual article or publication items, use the [Articles and Publications](https://developers.facebook.com/docs/marketing-api/catalog/reference/articles-and-publications#deleting) node.

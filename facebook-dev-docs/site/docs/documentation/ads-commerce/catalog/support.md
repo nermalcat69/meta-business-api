@@ -29,7 +29,7 @@ To create inventory, use the [Feed API, Reference, Advantage+ Catalog Ads](https
 
 ### Scheduled feeds
 
-**Scheduled feeds don’t support uploads more frequently than once per hour**. If you need to update inventory faster, use the [Direct Upload API](https://developers.facebook.com/documentation/ads-commerce/catalog/guides#direct-upload-feed).
+**Scheduled feeds don't support uploads more frequently than once per hour**. If you need to update inventory faster, use the [Direct Upload API](https://developers.facebook.com/documentation/ads-commerce/catalog/guides#direct-upload-feed).
 
 ### Seller onboarding
 
@@ -40,7 +40,7 @@ Set up your catalog during [seller onboarding](https://developers.facebook.com/d
 * The `id`, `title`, `description`, `price`, `inventory`, `link`, `image_link` fields should be provided.
 * The `gtin` or `mpn` plus `brand` fields should be provided.
 * The `rich_text_description` (preferably) or `description` fields should be provided, well formatted (no extra spacing, punctuation is correct), and informative (may contain information on item size, volume, origin, and so on).
-* Ensure that the variant field’s (such as `size` or `color`) value is provided for **every product variant** sharing a common `item_group_id`, even those that are out of stock.
+* Ensure that the variant field's (such as `size` or `color`) value is provided for **every product variant** sharing a common `item_group_id`, even those that are out of stock.
 
 ### Format
 

@@ -45,7 +45,7 @@ This tab shows the following information:
 
 ## Verifying that events are matched to users with high accuracy
 
-When your events are matched to people with a Facebook account, your events can be better utilized for ad attribution and optimization. In Events Manager, you can monitor Event Match Quality, a measure of how effective your server event’s customer information parameters may be at matching events to a Facebook account.
+When your events are matched to people with a Facebook account, your events can be better utilized for ad attribution and optimization. In Events Manager, you can monitor Event Match Quality, a measure of how effective your server event's customer information parameters may be at matching events to a Facebook account.
 
 Event Match Quality is scored from 1 to 10. You can monitor Event Match Quality in two ways:
 

@@ -13,15 +13,15 @@ Premium Options create stronger partnerships between retailers and brands who us
 
 ### Category targeting
 
-[Extended Audience Retargeting⁠](https://www.facebook.com/business/help/3025590151045930?id=1321866301271922) allows brands and advertisers to target ads to category-level audiences made up of people who viewed or added to cart products in the category to which the brand’s products belong.
+[Extended Audience Retargeting⁠](https://www.facebook.com/business/help/3025590151045930?id=1321866301271922) allows brands and advertisers to target ads to category-level audiences made up of people who viewed or added to cart products in the category to which the brand's products belong.
 
 ### Basket insights
 
-[Basket Insights⁠](https://www.facebook.com/business/help/935433177034005?id=1321866301271922) provide information about the categories of other purchases bought along with the product featured in the brand or advertiser’s ad.
+[Basket Insights⁠](https://www.facebook.com/business/help/935433177034005?id=1321866301271922) provide information about the categories of other purchases bought along with the product featured in the brand or advertiser's ad.
 
 ### Retailer custom audiences
 
-[Retailer Custom Audiences⁠](https://www.facebook.com/business/help/541293860470628?id=1321866301271922) enable retailers to share audiences with built-in domain protection for the brands and advertisers they collaborate with. Domain protection restricts the audiences for use by brand partners only and drives traffic from the campaigns exclusively to the retailer’s website.
+[Retailer Custom Audiences⁠](https://www.facebook.com/business/help/541293860470628?id=1321866301271922) enable retailers to share audiences with built-in domain protection for the brands and advertisers they collaborate with. Domain protection restricts the audiences for use by brand partners only and drives traffic from the campaigns exclusively to the retailer's website.
 
 ## Retrieve the premium options
 
@@ -59,7 +59,7 @@ curl -i -X GET \
 | `business_id`  numeric string or integer | **Required.**  ID for the business the catalog or vendor is in. |
 | `catalog_segment_id`  numeric string or integer | **Optional.**  ID of the catalog segment to update. Either this field or the `vendor_id` field is required. |
 | `vendor_id`  string | **Optional.**  ID of the vendor to update. Either this field or the `catalog_segment_id` field is required. |
-| `partner_business_id`  numeric string or integer | **Required.**  ID of the partner’s business to retrieve. |
+| `partner_business_id`  numeric string or integer | **Required.**  ID of the partner's business to retrieve. |
 
 ### Response
 
@@ -119,7 +119,7 @@ curl -i -X POST \
 | `business_id`  numeric string or integer | **Required.**  ID for the business the catalog or vendor is in. |
 | `catalog_segment_id`  numeric string or integer | **Optional.**  ID of the catalog segment to update. Either this field or the `vendor_id` field is required. |
 | `vendor_id`  string | **Optional.**  ID of the vendor to update. Either this field or the `catalog_segment_id` field is required. |
-| `partner_business_id`  numeric string or integer | **Required.**  ID of the partner’s business to retrieve. |
+| `partner_business_id`  numeric string or integer | **Required.**  ID of the partner's business to retrieve. |
 | `enable_extended_audience_retargeting`  Boolean | **Required.**  Enable or disable extended audience retargeting. |
 | `enable_basket_insight`  Boolean | **Required.** Enable or disable basket insights. |
 | `retailer_custom_audience_config`  JSON object   {`audience_id`: array of strings} | **Required.**  Contains the list of `audience_ids` to share this catalog segment with. To disable sharing, enter an empty array.  **Example:** `{'audience_id':[AUDIENCE_IDs]}` |

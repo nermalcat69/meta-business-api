@@ -25,7 +25,7 @@ With Marketing API you can create, measure, and optimize ads on Threads in the m
 
 ## Step 1: Get a Threads account ID
 
-You need to know your Threads account’s ID before you start creating ads. Depending on your account’s type, you have different ways of getting an account ID:
+You need to know your Threads account's ID before you start creating ads. Depending on your account's type, you have different ways of getting an account ID:
 
 * [Instagram-associated Threads account](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-creative/threads-ads#instagram-associated-threads-accounts) — Set up a connection from the Threads app via the OAuth flow and by [getting the Threads account ID](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-creative/threads-ads#get-the-instagram-associated-threads-account-id). Save the returned ID to use in your ads.
 * [Instagram-backed Threads account](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-creative/threads-ads#instagram-backed-threads-accounts) — [Set up the Threads account using the API](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-creative/threads-ads#create-an-instagram-backed-threads-account), then [get the Threads account ID](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-creative/threads-ads#get-the-instagram-backed-threads-account-id). Save the returned ID to use in your ads.

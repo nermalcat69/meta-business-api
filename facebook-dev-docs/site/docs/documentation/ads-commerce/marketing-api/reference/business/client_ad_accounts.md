@@ -9,7 +9,7 @@ Updated: Aug 20, 2019
 
 ## Reading
 
-You can’t perform this operation on this endpoint.
+You can't perform this operation on this endpoint.
 
 ## Creating
 

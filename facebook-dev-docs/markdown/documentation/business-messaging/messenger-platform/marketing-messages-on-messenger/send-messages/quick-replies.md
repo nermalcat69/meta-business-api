@@ -17,7 +17,7 @@ The `act_<AD_ACCOUNT_ID>/messages` endpoint is used to create and send marketing
 
 ### Before you start
 
-This guide assumes that you have created a [configuration, invoked the login dialog in your app, tested the login flow](https://developers.facebook.com/documentation/business-messaging/messenger-platform/marketing-messages-on-messenger/onboard-businesses) and obtained [a business’ list of subscription tokens](https://developers.facebook.com/documentation/business-messaging/messenger-platform/marketing-messages-on-messenger/get-subscription-tokens).
+This guide assumes that you have created a [configuration, invoked the login dialog in your app, tested the login flow](https://developers.facebook.com/documentation/business-messaging/messenger-platform/marketing-messages-on-messenger/onboard-businesses) and obtained [a business' list of subscription tokens](https://developers.facebook.com/documentation/business-messaging/messenger-platform/marketing-messages-on-messenger/get-subscription-tokens).
 
 The Marketing Message API for Messenger is available exclusively to [**tech providers**](https://developers.facebook.com/docs/development/release/tech-providers) with an existing app that has successfully completed [Meta App Review](https://developers.facebook.com/docs/app-review) for the following permissions:
 
@@ -69,10 +69,10 @@ Send a `POST` request to the `act_<AD_ACCOUNT_ID>/message_campaign` endpoint wit
 
 | Parameter | Description |
 | --- | --- |
-| `daily_budget` | Set to the average amount, in cents, that the business is willing to spend per day. If you provide `daily_budget`, it must be greater than 0.   * **Weekly Cap**: Your total spend in any calendar week (Sunday to Saturday) will never exceed 7 times your daily budget. * **Flexibility**: On some days, you may spend up to 75% more than your daily budget. For example, if your daily budget is $100, you may spend up to $175 on a single day, so long as you haven’t hit the Weekly Cap. * **The Daily Budget is an average, not a strict daily cap.**   For more details about daily budgets, refer to the [Help Center⁠](https://www.facebook.com/business/help/190490051321426?id=629338044106215). |
+| `daily_budget` | Set to the average amount, in cents, that the business is willing to spend per day. If you provide `daily_budget`, it must be greater than 0.   * **Weekly Cap**: Your total spend in any calendar week (Sunday to Saturday) will never exceed 7 times your daily budget. * **Flexibility**: On some days, you may spend up to 75% more than your daily budget. For example, if your daily budget is $100, you may spend up to $175 on a single day, so long as you haven't hit the Weekly Cap. * **The Daily Budget is an average, not a strict daily cap.**   For more details about daily budgets, refer to the [Help Center⁠](https://www.facebook.com/business/help/190490051321426?id=629338044106215). |
 | `lifetime_budget` | Set to the total amount, in cents, that the business is willing to spend on the campaign. If you provide `lifetime_budget`, it must be greater than 0.   * The total amount you want to spend over the entire duration of your campaign.   For more details about lifetime budgets, refer to the [Help Center⁠](https://www.facebook.com/business/help/190490051321426?id=629338044106215). |
-| `name` | Set to the campaign’s name. |
-| `page_id` | Set to the business’ Facebook Page ID that is sending messages. |
+| `name` | Set to the campaign's name. |
+| `page_id` | Set to the business' Facebook Page ID that is sending messages. |
 | `pixel_id` | Optional. Set to the Meta Pixel ID to use for offsite conversion attribution. The pixel must be active and accessible by the ad account or business.  If `pixel_id` is not provided and the ad account has exactly one active accessible pixel, Meta may use that pixel for attribution. If the ad account has no active pixels or more than one active pixel, the campaign is still created without pixel tracking. To avoid ambiguity, provide `pixel_id` explicitly when you want offsite conversion attribution. |
 | `start_time` | Optional. Datetime strings or Unix timestamp Default: Current time if it is not passed. The time the campaign should begin delivering. Must be now or in the future and within 30 days of the current time. |
 | `end_time` | Optional. Datetime strings or Unix timestamp Default: For lifetime budget → start\_time + 30 days; daily budget → none. The time the campaign should automatically stop delivering. Must be after start\_time. |
@@ -112,14 +112,12 @@ This sample provides `lifetime_budget`. To let Meta set an estimated daily budge
 On success, your app receives a JSON object containing the message campaign ID, which will be used for sending messages in step 3. If Meta sets an estimated daily budget cap or detects that your provided budget is below an estimated budget reference, the response may include `info` or `warning`.
 
 ```
-```
 {  
-  "id": "<MESSAGE_CAMPAIGN_ID>"  
+  "id": "<MESSAGE_CAMPAIGN_ID>"  
 }
 ```
-```
 
-If you are familiar with Meta’s Marketing API, this endpoint is similar to a combination of the [`campaigns` and `adsets` endpoints](https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/basic-ad-creation).
+If you are familiar with Meta's Marketing API, this endpoint is similar to a combination of the [`campaigns` and `adsets` endpoints](https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/basic-ad-creation).
 
 Guidance for minimum lifetime budget:
 
@@ -144,26 +142,24 @@ For `message_payload`, use the payload from above.
 curl -X GET \
      -H "Authorization: Bearer <SYSTEM_USER_ACCESS_TOKEN>" \
         "https://graph.facebook.com/<API_VERSION>/`act_<AD_ACCOUNT_ID>/generatepreviews
-          ?ad_format=MESSENGER_MARKETING_MESSAGES_MEDIA&creative={"marketing_message_structured_spec":{},"object_story_spec":{"page_id":<PAGE_ID>,"link_data":{}}}&message=<MESSAGE_PAYLOAD>"
+          ?ad_format=MESSENGER_MARKETING_MESSAGES_MEDIA&creative={"marketing_message_structured_spec":{},"object_story_spec":{"page_id":<PAGE_ID>,"link_data":{}​}}&message=<MESSAGE_PAYLOAD>"
 ```
 
 On success, your app receives a JSON object containing an iframe that, when clicked, displays how your message attachment looks.
 
 ```
-```
 {  
-  "data": [  
-    {  
-"body": "<iframe src=\"https://business.facebook.com/ads/api/preview_iframe.php?d=AQJlIRwQZEB3DV_-9n9Vb7-OXjwuI8tfX-md415ofVW34Lm2fJKx5-e8KinQU7b15t8J5aWQMvd_uv6yZ7XfNtPbJeGWsZoqh7AgvVKKr60cISQMHlRdCOUNKfzSKIBNbkCj-GScUH7XoI16u0LK6EiMgARt9Idn4Ojob58Vtr6ehE6p1VNz3usdjd8OcTf5Tn2oN1s-NDRcSSM_6Dhue7rBif_4upZQ88uUePP6y4WwTYe8N4aVUYphxDT2hnoMoioMX18gzqQ40MibOtvOwbK16EYaajefdzNxi24ptBgXb7B4R_btrz5d3aKeqRN4ZEQhTzYXdmO_I_NZuLUl5n8He0by8mLNQOFNGeMOWvO-H-bOi7vKnubv7fGu3lp0WiAXhY-QTtLASsTU3puD5nbY2-59gND3HKVFnFNtGA95ndRUfrviqlMzDXKNMaRZIX-J0rk-HYPuE9B8z1xV2j-Q&t=AQLPJ9fLVIxT7JDnNo8\" width=\"274\" height=\"213\" scrolling=\"yes\" style=\"border: none;\"><\<iframe>"  
-    }  
-  ]  
+  "data": [  
+    {  
+"body": "<iframe src=\"https://business.facebook.com/ads/api/preview_iframe.php?d=AQJlIRwQZEB3DV_-9n9Vb7-OXjwuI8tfX-md415ofVW34Lm2fJKx5-e8KinQU7b15t8J5aWQMvd_uv6yZ7XfNtPbJeGWsZoqh7AgvVKKr60cISQMHlRdCOUNKfzSKIBNbkCj-GScUH7XoI16u0LK6EiMgARt9Idn4Ojob58Vtr6ehE6p1VNz3usdjd8OcTf5Tn2oN1s-NDRcSSM_6Dhue7rBif_4upZQ88uUePP6y4WwTYe8N4aVUYphxDT2hnoMoioMX18gzqQ40MibOtvOwbK16EYaajefdzNxi24ptBgXb7B4R_btrz5d3aKeqRN4ZEQhTzYXdmO_I_NZuLUl5n8He0by8mLNQOFNGeMOWvO-H-bOi7vKnubv7fGu3lp0WiAXhY-QTtLASsTU3puD5nbY2-59gND3HKVFnFNtGA95ndRUfrviqlMzDXKNMaRZIX-J0rk-HYPuE9B8z1xV2j-Q&t=AQLPJ9fLVIxT7JDnNo8\" width=\"274\" height=\"213\" scrolling=\"yes\" style=\"border: none;\"><\<iframe>"  
+    }  
+  ]  
 }
-```
 ```
 
 ## Step 3. Send a marketing message
 
-When a business’ customer or potential customer opts in to receive marketing messages from the business, your app receives a subscription token ID. Each subscriber is assigned only one subscription token ID, which represents the relationship between the subscriber and the business’s Facebook Page.
+When a business' customer or potential customer opts in to receive marketing messages from the business, your app receives a subscription token ID. Each subscriber is assigned only one subscription token ID, which represents the relationship between the subscriber and the business's Facebook Page.
 
 If your app has sent marketing messages using the [Marketing Messages API in Messenger](https://developers.facebook.com/docs/messenger-platform/marketing-messages), all subscription token IDs acquired previously can be used in this new API.
 
@@ -201,15 +197,13 @@ curl -X POST "https://graph.facebook.com/<API_VERSION>/act_<AD_ACCOUNT_ID>/messa
 On success, your app receives the following JSON object with `success` set to `true` and a `marketing_message_tracking_id` for tracking this message-sending request in subsequent webhook notifications.
 
 ```
-```
 {  
-  "success": true,  
-  "marketing_message_tracking_id": "98ecd977-245a-4ec0-a8e0-8b8ecaad8030"  
+  "success": true,  
+  "marketing_message_tracking_id": "98ecd977-245a-4ec0-a8e0-8b8ecaad8030"  
 }
 ```
-```
 
-If you are familiar with Meta’s Marketing API, this endpoint is similar to the [`ads` endpoint](https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/basic-ad-creation).
+If you are familiar with Meta's Marketing API, this endpoint is similar to the [`ads` endpoint](https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/basic-ad-creation).
 
 ### Complete example
 
@@ -261,17 +255,15 @@ When a marketing message fails to be delivered from a page to a user, a notifica
 #### Sample payload
 
 ```
-```
 {  
-   "app_id": 12313123123123,  
-   "business_id": 134141414124123,  
-   "page_id": 140984918491243,  
-   "messenger_subscription_token": "12348141984909088",  
-   "timestamp": 41412414141,  
-   "error_message": "Unknown Error",  
-   "message_id": "124141414124"  
+   "app_id": 12313123123123,  
+   "business_id": 134141414124123,  
+   "page_id": 140984918491243,  
+   "messenger_subscription_token": "12348141984909088",  
+   "timestamp": 41412414141,  
+   "error_message": "Unknown Error",  
+   "message_id": "124141414124"  
 }
-```
 ```
 
 #### Field reference
@@ -293,19 +285,17 @@ When a marketing message has been sent from the page to a user, a notification i
 #### Sample payload
 
 ```
-```
 {  
-  "field": "marketing_message_echoes",  
-  "recipient_id": 123123123123,  
-  "page_id": 140984918491243,  
-  "app_id": 12313123123123,  
-  "timestamp": 41412414141,  
-  "mid": "mid.$c12312312312312",  
-  "marketing_message_tracking_id": "98ecd977-245a-4ec0-a8e0-8b8ecaad8030",  
-  "messenger_subscription_token": "12348141984909088",  
-  "message_id": "124141414124"  
+  "field": "marketing_message_echoes",  
+  "recipient_id": 123123123123,  
+  "page_id": 140984918491243,  
+  "app_id": 12313123123123,  
+  "timestamp": 41412414141,  
+  "mid": "mid.$c12312312312312",  
+  "marketing_message_tracking_id": "98ecd977-245a-4ec0-a8e0-8b8ecaad8030",  
+  "messenger_subscription_token": "12348141984909088",  
+  "message_id": "124141414124"  
 }
-```
 ```
 
 #### Field reference
@@ -317,7 +307,7 @@ When a marketing message has been sent from the page to a user, a notification i
 | `page_id` | The page ID |
 | `app_id` | The application ID |
 | `timestamp` | Timestamp when the error happened |
-| `mid` | ID representing a Messenger’s message.  *Note: This field will be invisible if the subscriber is acquired from the [Custom Audience API](https://developers.facebook.com/documentation/business-messaging/messenger-platform/marketing-messages-on-messenger/grow-marketing-messages-audience#custom-audience-api) method.* |
+| `mid` | ID representing a Messenger's message.  *Note: This field will be invisible if the subscriber is acquired from the [Custom Audience API](https://developers.facebook.com/documentation/business-messaging/messenger-platform/marketing-messages-on-messenger/grow-marketing-messages-audience#custom-audience-api) method.* |
 | `marketing_message_tracking_id` | A unique identifier for tracking marketing message requests. |
 | `messenger_subscription_token` | The `subscription_token` of the recipient who has opted in to receiving marketing messages. |
 | `message_id` | The ID of the marketing message campaign |
@@ -329,19 +319,17 @@ When a marketing message has been delivered from the page to a user, a notificat
 #### Sample payload
 
 ```
-```
 {  
-  "field": "marketing_message_deliveries",  
-  "recipient_id": 123123123123,  
-  "page_id": 140984918491243,  
-  "app_id": 12313123123123,  
-  "timestamp": 41412414141,  
-  "mid": "mid.$c12312312312312",  
-  "marketing_message_tracking_id": "98ecd977-245a-4ec0-a8e0-8b8ecaad8030",  
-  "messenger_subscription_token": "12348141984909088",  
-  "message_id": "124141414124"  
+  "field": "marketing_message_deliveries",  
+  "recipient_id": 123123123123,  
+  "page_id": 140984918491243,  
+  "app_id": 12313123123123,  
+  "timestamp": 41412414141,  
+  "mid": "mid.$c12312312312312",  
+  "marketing_message_tracking_id": "98ecd977-245a-4ec0-a8e0-8b8ecaad8030",  
+  "messenger_subscription_token": "12348141984909088",  
+  "message_id": "124141414124"  
 }
-```
 ```
 
 #### Field reference
@@ -353,7 +341,7 @@ When a marketing message has been delivered from the page to a user, a notificat
 | `page_id` | The page ID |
 | `app_id` | The application ID |
 | `timestamp` | Timestamp when the error happened |
-| `mid` | ID representing a Messenger’s message.  *Note: This field will be invisible if the subscriber is acquired from the [Custom Audience API](https://developers.facebook.com/documentation/business-messaging/messenger-platform/marketing-messages-on-messenger/grow-marketing-messages-audience#custom-audience-api) method.* |
+| `mid` | ID representing a Messenger's message.  *Note: This field will be invisible if the subscriber is acquired from the [Custom Audience API](https://developers.facebook.com/documentation/business-messaging/messenger-platform/marketing-messages-on-messenger/grow-marketing-messages-audience#custom-audience-api) method.* |
 | `marketing_message_tracking_id` | A unique identifier for tracking marketing message requests. |
 | `messenger_subscription_token` | The `subscription_token` of the recipient who has opted in to receiving marketing messages. |
 | `message_id` | The ID of the marketing message campaign |
@@ -365,18 +353,16 @@ When a user reads a marketing message, a notification is sent to apps subscribed
 #### Sample payload
 
 ```
-```
 {  
-  "field": "marketing_message_reads",  
-  "recipient_id": 123123123123,  
-  "page_id": 140984918491243,  
-  "app_id": 12313123123123,  
-  "timestamp": 41412414141,  
-  "marketing_message_tracking_id": "98ecd977-245a-4ec0-a8e0-8b8ecaad8030",  
-  "messenger_subscription_token": "12348141984909088",  
-  "message_id": "124141414124"  
+  "field": "marketing_message_reads",  
+  "recipient_id": 123123123123,  
+  "page_id": 140984918491243,  
+  "app_id": 12313123123123,  
+  "timestamp": 41412414141,  
+  "marketing_message_tracking_id": "98ecd977-245a-4ec0-a8e0-8b8ecaad8030",  
+  "messenger_subscription_token": "12348141984909088",  
+  "message_id": "124141414124"  
 }
-```
 ```
 
 #### Field reference
@@ -398,17 +384,15 @@ When a user clicks a marketing message, a notification is sent to apps subscribe
 #### Sample payload
 
 ```
-```
 {  
-  "field": "marketing_message_clicks",  
-  "recipient_id": 123123123123,  
-  "page_id": 140984918491243,  
-  "timestamp": 41412414141,  
-  "mid": "mid.$c12312312312312",  
-  "messenger_subscription_token": "12348141984909088",  
-  "message_id": "124141414124"  
+  "field": "marketing_message_clicks",  
+  "recipient_id": 123123123123,  
+  "page_id": 140984918491243,  
+  "timestamp": 41412414141,  
+  "mid": "mid.$c12312312312312",  
+  "messenger_subscription_token": "12348141984909088",  
+  "message_id": "124141414124"  
 }
-```
 ```
 
 #### Field reference
@@ -419,13 +403,13 @@ When a user clicks a marketing message, a notification is sent to apps subscribe
 | `recipient_id` | The Page-scoped ID for the person who received a message from your business  *Note: This field will be invisible if the subscriber is acquired from the [Custom Audience API](https://developers.facebook.com/documentation/business-messaging/messenger-platform/marketing-messages-on-messenger/grow-marketing-messages-audience#custom-audience-api) method.* |
 | `page_id` | The page ID |
 | `timestamp` | Timestamp when the error happened |
-| `mid` | ID representing a Messenger’s message.  *Note: This field will be invisible if the subscriber is acquired from the [Custom Audience API](https://developers.facebook.com/documentation/business-messaging/messenger-platform/marketing-messages-on-messenger/grow-marketing-messages-audience#custom-audience-api) method.* |
+| `mid` | ID representing a Messenger's message.  *Note: This field will be invisible if the subscriber is acquired from the [Custom Audience API](https://developers.facebook.com/documentation/business-messaging/messenger-platform/marketing-messages-on-messenger/grow-marketing-messages-audience#custom-audience-api) method.* |
 | `messenger_subscription_token` | The `subscription_token` of the recipient who has opted in to receiving marketing messages. |
 | `message_id` | The ID of the marketing message campaign |
 
 ## Get all campaigns
 
-Use Meta’s Marketing API `<AD_ACCOUNT_ID>/ads` endpoint to get a list of all marketing messages campaigns for a business.
+Use Meta's Marketing API `<AD_ACCOUNT_ID>/ads` endpoint to get a list of all marketing messages campaigns for a business.
 
 Send a `GET` request to the `<AD_ACCOUNT_ID>/ads` endpoint and include the `fields` parameter with the following fields:
 
@@ -457,30 +441,28 @@ curl -X GET \
 On success your app receives a JSON object with basic information about the marketing messaging campaign and message sent during the campaign.
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "id": "<MESSAGE_ID>",  
-      "adset": {  
-        "name": "<ADSET_NAME>",  
-        "lifetime_budget": "<LIFETIME_BUDGET>",  
-        "daily_budget": "<DAILY_BUDGET>",  
-        "start_time": "<START_TIME>",  
-        "end_time": "<END_TIME>",  
-        "id": "<ADSET_ID>"  
-      },  
-      "campaign": {  
-        "name": "<MESSAGE_CAMPAIGN_NAME>",  
-        "is_message_campaign": true,  
-        "is_direct_send_campaign": true,  
-        "id": "<MESSAGE_CAMPAIGN_ID>"  
-      }  
-    },  
-  ...  
-  ]  
+  "data": [  
+    {  
+      "id": "<MESSAGE_ID>",  
+      "adset": {  
+        "name": "<ADSET_NAME>",  
+        "lifetime_budget": "<LIFETIME_BUDGET>",  
+        "daily_budget": "<DAILY_BUDGET>",  
+        "start_time": "<START_TIME>",  
+        "end_time": "<END_TIME>",  
+        "id": "<ADSET_ID>"  
+      },  
+      "campaign": {  
+        "name": "<MESSAGE_CAMPAIGN_NAME>",  
+        "is_message_campaign": true,  
+        "is_direct_send_campaign": true,  
+        "id": "<MESSAGE_CAMPAIGN_ID>"  
+      }  
+    },  
+  ...  
+  ]  
 }
-```
 ```
 
 ### Get a campaign
@@ -509,32 +491,30 @@ curl -X GET \
           ?fields=id,
                   campaign{name},
                   creative{actor_id},
-                  adset{name,lifetime_budget,daily_budget,start_time,end_time,promoted_object{pixel_id}}"
+                  adset{name,lifetime_budget,daily_budget,start_time,end_time,promoted_object{pixel_id}​}"
 ```
 
 On success, your app receives a JSON object with basic information about the marketing messaging campaign and message sent during the campaign.
 
 ```
-```
 {  
-  "id": "<MESSAGE_CAMPAIGN_ID>",  
-  "campaign": {  
-    "name": "<MESSAGE_CAMPAIGN_NAME>"  
-  },  
-  "adset": {  
-    "lifetime_budget": "<LIFETIME_BUDGET>",  
-    "daily_budget": "<DAILY_BUDGET>",  
-    "start_time": "<START_TIME>",  
-    "end_time": "<END_TIME>",  
-    "promoted_object": {  
-      "pixel_id": "<PIXEL_ID>"  
-    }  
-  },  
-  "creative": {  
-    "actor_id": "<PAGE_ID>"  
-  }  
+  "id": "<MESSAGE_CAMPAIGN_ID>",  
+  "campaign": {  
+    "name": "<MESSAGE_CAMPAIGN_NAME>"  
+  },  
+  "adset": {  
+    "lifetime_budget": "<LIFETIME_BUDGET>",  
+    "daily_budget": "<DAILY_BUDGET>",  
+    "start_time": "<START_TIME>",  
+    "end_time": "<END_TIME>",  
+    "promoted_object": {  
+      "pixel_id": "<PIXEL_ID>"  
+    }  
+  },  
+  "creative": {  
+    "actor_id": "<PAGE_ID>"  
+  }  
 }
-```
 ```
 
 ## Delete a marketing messages campaign
@@ -551,11 +531,9 @@ curl -X DELETE "https://graph.facebook.com/<API_VERSION>/<MESSAGE_CAMPAIGN_ID>" 
 On success, your app receives a JSON object with `success` set to `true`.
 
 ```
-```
 {  
-   "success": bool  
+   "success": bool  
 }
-```
 ```
 
 ## Delivery estimation
@@ -573,7 +551,7 @@ To get a delivery estimation, send a `GET` request to the `/act_<AD_ACCOUNT_ID>/
   * `estimate_cost_upper_bound` – The upper bound of the estimated message cost in ad account currency
   * `estimate_cost_lower_bound` – The lower bound of the estimated message cost in ad account currency
 * `is_direct_send_campaign` – set to `true`
-* `promoted_object` – set to an object with `page_id` set to the business’ Facebook Page ID
+* `promoted_object` – set to an object with `page_id` set to the business' Facebook Page ID
 * `targeting_spec` – set to an object with the following properties:
 * `publisher_platforms` – set to an array with `"messenger"`
 * `messenger_positions` – set to an array with `"marketing_messages"`
@@ -594,18 +572,16 @@ curl -X GET  "https://graph.facebook.com/<API_VERSION>/act_<AD_ACCOUNT_ID>/messa
 On success your app receives a JSON object with both delivery and cost estimates:
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "estimate_delivery_upper_bound": <UPPER_BOUND_ESTIMATED_NUMBER_API_CALLS>,  
-      "estimate_delivery_lower_bound": <LOWER_BOUND_ESTIMATED_NUMBER_API_CALLS>,  
-      "estimate_cost_upper_bound": <UPPER_BOUND_ESTIMATED_COST>,  
-      "estimate_cost_lower_bound": <LOWER_BOUND_ESTIMATED_COST>  
-    }  
-  ]  
+  "data": [  
+    {  
+      "estimate_delivery_upper_bound": <UPPER_BOUND_ESTIMATED_NUMBER_API_CALLS>,  
+      "estimate_delivery_lower_bound": <LOWER_BOUND_ESTIMATED_NUMBER_API_CALLS>,  
+      "estimate_cost_upper_bound": <UPPER_BOUND_ESTIMATED_COST>,  
+      "estimate_cost_lower_bound": <LOWER_BOUND_ESTIMATED_COST>  
+    }  
+  ]  
 }
-```
 ```
 
 #### Notes
@@ -615,4 +591,4 @@ On success your app receives a JSON object with both delivery and cost estimates
 
 ## Next steps
 
-You’ve sent messages, now it’s time to [measure their performance](https://developers.facebook.com/documentation/business-messaging/messenger-platform/marketing-messages-on-messenger/measure-performance).
+You've sent messages, now it's time to [measure their performance](https://developers.facebook.com/documentation/business-messaging/messenger-platform/marketing-messages-on-messenger/measure-performance).

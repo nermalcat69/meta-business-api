@@ -38,15 +38,15 @@ To manually update your catalog feed, see [Upload Items to a Catalog with a Data
 
 To add new product to your current feed:
 
-* Add a new column called “shipping\_profile\_reference\_id” to your product feed.
+* Add a new column called "shipping\_profile\_reference\_id" to your product feed.
 * Add your newly created shipping profiles as a value for this column.
 * Work with your PE to learn how to add a new product to your feed.
 
 ## Remove a Shipping Profile from an Item
 
-To *undo* setting a shipping profile on an item, set the `shipping_profile_reference_id`’s column value to `-1`.
+To *undo* setting a shipping profile on an item, set the `shipping_profile_reference_id`'s column value to `-1`.
 
-This removes all shipping profile settings on the item and causes the item to obey your shop’s default shipping profile settings.
+This removes all shipping profile settings on the item and causes the item to obey your shop's default shipping profile settings.
 
 ## Learn More
 

@@ -457,7 +457,7 @@ meta ads creative create --name "Summer Sale" --image ./banner.jpg \
 | Option | Required | Description |
 | --- | --- | --- |
 | `--name` | Yes | Ad creative name |
-| `--page-id` | Yes | Facebook Business Page ID to use as the ad’s identity |
+| `--page-id` | Yes | Facebook Business Page ID to use as the ad's identity |
 | `--image` | No | Path to an image file |
 | `--video` | No | Path to a video file |
 | `--body` | No | Primary text / ad copy |

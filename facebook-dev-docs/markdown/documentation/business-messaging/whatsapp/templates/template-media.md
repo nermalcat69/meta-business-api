@@ -31,15 +31,13 @@ To archive templates through the API, send a `POST` request to the `/<WABA_ID>/m
 ### Request syntax
 
 ```
-```
-curl -X POST 'https://api.facebook.com/<WABA_ID>/message_templates/archive' \  
--H 'Authorization: Bearer <ACCESS_TOKEN>' \  
--H 'Content-Type: application/json' \  
--d '  
+curl -X POST 'https://api.facebook.com/<WABA_ID>/message_templates/archive' \  
+-H 'Authorization: Bearer <ACCESS_TOKEN>' \  
+-H 'Content-Type: application/json' \  
+-d '  
 {  
-  "hsm_ids": ["<TEMPLATE_ID_1>", "<TEMPLATE_ID_2>"]  
+  "hsm_ids": ["<TEMPLATE_ID_1>", "<TEMPLATE_ID_2>"]  
 }'
-```
 ```
 
 ### Parameters
@@ -52,14 +50,12 @@ curl -X POST 'https://api.facebook.com/<WABA_ID>/message_templates/archive' 
 ### Example response
 
 ```
-```
 {  
-  "archived_templates": ["<TEMPLATE_ID_1>"],  
-  "failed_templates": {  
-    "<TEMPLATE_ID_2>": "Only approved or rejected templates can be archived"  
-  }  
+  "archived_templates": ["<TEMPLATE_ID_1>"],  
+  "failed_templates": {  
+    "<TEMPLATE_ID_2>": "Only approved or rejected templates can be archived"  
+  }  
 }
-```
 ```
 
 ## Unarchive templates
@@ -75,15 +71,13 @@ Unarchiving a template resets its inactivity clock. If you unarchive a template,
 ### Request syntax
 
 ```
-```
-curl -X POST 'https://api.facebook.com/<WABA_ID>/message_templates/unarchive' \  
--H 'Authorization: Bearer <ACCESS_TOKEN>' \  
--H 'Content-Type: application/json' \  
--d '  
+curl -X POST 'https://api.facebook.com/<WABA_ID>/message_templates/unarchive' \  
+-H 'Authorization: Bearer <ACCESS_TOKEN>' \  
+-H 'Content-Type: application/json' \  
+-d '  
 {  
-  "hsm_ids": ["<TEMPLATE_ID_1>", "<TEMPLATE_ID_2>"]  
+  "hsm_ids": ["<TEMPLATE_ID_1>", "<TEMPLATE_ID_2>"]  
 }'
-```
 ```
 
 ### Parameters
@@ -96,14 +90,12 @@ curl -X POST 'https://api.facebook.com/<WABA_ID>/message_templates/unarchive'
 ### Example response
 
 ```
-```
 {  
-  "unarchived_templates": ["<TEMPLATE_ID_1>"],  
-  "failed_templates": {  
-    "<TEMPLATE_ID_2>": "Template is not archived"  
-  }  
+  "unarchived_templates": ["<TEMPLATE_ID_1>"],  
+  "failed_templates": {  
+    "<TEMPLATE_ID_2>": "Template is not archived"  
+  }  
 }
-```
 ```
 
 ## Post-archival deletion

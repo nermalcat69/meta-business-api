@@ -72,8 +72,8 @@ Help Center payout guides.
 
 #### [Terms of Use⁠](https://opensource.facebook.com/legal/terms/)
 
-Terms of use for Facebook’s open source SDKs
+Terms of use for Facebook's open source SDKs
 
 #### [Privacy Policy⁠](https://opensource.facebook.com/legal/privacy/)
 
-Privacy policy for Facebook’s open source SDKs
+Privacy policy for Facebook's open source SDKs

@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/instagram-platform/ins
 
 Updated: Apr 22, 2026
 
-You can use the Instagram Graph API to create and manage [Instagram Shopping Product Tags⁠](https://help.instagram.com/2022466637835789) on an Instagram Business’s [IG Media](https://developers.facebook.com/documentation/instagram-platform/reference/instagram-media).
+You can use the Instagram Graph API to create and manage [Instagram Shopping Product Tags⁠](https://help.instagram.com/2022466637835789) on an Instagram Business's [IG Media](https://developers.facebook.com/documentation/instagram-platform/reference/instagram-media).
 
 **Note:** Beginning August 10, 2023, some businesses without checkout-enabled Shops will no longer be able to tag their products using the Content Publishing API. This will impact both API and native interfaces, and will remove tags to products from previous posts.Customers will still be able to tag products from Shops with checkout enabled on Facebook and Instagram. You can still refer to `shopping_product_tag_eligibility` field to check if an Instagram account is eligible to tag their products using Content Publishing API.
 
@@ -28,16 +28,16 @@ The general flow for tagging products is:
 
 ## Requirements
 
-* Refer to each endpoint’s reference document to determine which permissions, features, and [User](https://developers.facebook.com/documentation/facebook-login/guides/access-tokens#usertokens) access tokens are required for each operation.
+* Refer to each endpoint's reference document to determine which permissions, features, and [User](https://developers.facebook.com/documentation/facebook-login/guides/access-tokens#usertokens) access tokens are required for each operation.
 * The Instagram Business account (IG User) that owns the IG Media (to be tagged) must have an approved [Instagram Shop⁠](https://help.instagram.com/1187859655048322/) with a product catalog containing products. In-app and external Instagram Shop [checkout methods⁠](https://www.facebook.com/business/help/449169642911614) are supported.
 * The app user must have an [admin role⁠](https://www.facebook.com/business/help/442345745885606) on the [Business Manager⁠](https://business.facebook.com/) that owns the Instagram Shop whose products are being used to tag media.
 * In order to request [App Review](https://developers.facebook.com/docs/app-review) approval for the [`instagram_shopping_tag_products`](https://developers.facebook.com/docs/permissions/reference/instagram_shopping_tag_products) and [`catalog_management`](https://developers.facebook.com/docs/permissions/reference/catalog_management) permissions, which are required by several product tagging endpoints, your app must be associated with a [verified business](https://developers.facebook.com/documentation/development/release/business-verification).
 
 ## Endpoints
 
-* [`GET /{ig-user-id}`](https://developers.facebook.com/documentation/instagram-platform/instagram-graph-api/reference/ig-user#read) — Check the app user’s tagging eligibility.
-* [`GET /{ig-user-id}/available_catalogs`](https://developers.facebook.com/documentation/instagram-platform/instagram-graph-api/reference/ig-user/available_catalogs#reading) — Get a list of the app user’s product catalogs.
-* [`GET /{ig-user-id}/catalog_product_search`](https://developers.facebook.com/documentation/instagram-platform/instagram-graph-api/reference/ig-user/catalog_product_search#reading) — Get a list of tag eligible products in the app user’s catalog.
+* [`GET /{ig-user-id}`](https://developers.facebook.com/documentation/instagram-platform/instagram-graph-api/reference/ig-user#read) — Check the app user's tagging eligibility.
+* [`GET /{ig-user-id}/available_catalogs`](https://developers.facebook.com/documentation/instagram-platform/instagram-graph-api/reference/ig-user/available_catalogs#reading) — Get a list of the app user's product catalogs.
+* [`GET /{ig-user-id}/catalog_product_search`](https://developers.facebook.com/documentation/instagram-platform/instagram-graph-api/reference/ig-user/catalog_product_search#reading) — Get a list of tag eligible products in the app user's catalog.
 * [`POST /{ig-user-id}/media`](https://developers.facebook.com/documentation/instagram-platform/instagram-graph-api/reference/ig-user/media#creating) — Create a tagged media container (step 1 of publishing process).
 * [`POST /{ig-user-id}/media_publish`](https://developers.facebook.com/documentation/instagram-platform/instagram-graph-api/reference/ig-user/media_publish) — Publish a tagged media container (step 2 of publishing process).
 * [`GET /{ig-media-id}/product_tags`](https://developers.facebook.com/documentation/instagram-platform/instagram-graph-api/reference/ig-media/product_tags#reading) — Get tags on published IG Media.
@@ -54,7 +54,7 @@ Request the `shopping_product_tag_eligibility` field on the [IG User](https://de
 GET /{ig-user-id}?fields=shopping_product_tag_eligibility
 ```
 
-Returns `true` if the Instagram Business account has been associated with a [Business Manager’s⁠](https://business.facebook.com/) approved Instagram Shop, otherwise returns `false`.
+Returns `true` if the Instagram Business account has been associated with a [Business Manager's⁠](https://business.facebook.com/) approved Instagram Shop, otherwise returns `false`.
 
 #### Sample Request
 
@@ -66,17 +66,15 @@ curl -i -X GET \
 #### Sample Response
 
 ```
-```
 {  
-  "shopping_product_tag_eligibility": true,  
-  "id": "90010177253934"  
+  "shopping_product_tag_eligibility": true,  
+  "id": "90010177253934"  
 }
-```
 ```
 
 ## Get Catalogs
 
-Use the [IG User Available Catalogs](https://developers.facebook.com/documentation/instagram-platform/instagram-graph-api/reference/ig-user/available_catalogs) endpoint to get the Instagram Business account’s product catalog.
+Use the [IG User Available Catalogs](https://developers.facebook.com/documentation/instagram-platform/instagram-graph-api/reference/ig-user/available_catalogs) endpoint to get the Instagram Business account's product catalog.
 
 ```
 GET /{ig-user-id}/available_catalogs
@@ -103,28 +101,26 @@ curl -i -X GET \
 #### Sample Response
 
 ```
-```
 {  
-  "available_catalogs": {  
-    "data": [  
-      {  
-        "catalog_id": "960179311066902",  
-        "catalog_name": "Jay's Favorite Snacks",  
-        "shop_name": "Jay's Bespoke",  
-        "product_count": 11  
-      }  
-    ]  
-  },  
-  "id": "90010177253934"  
+  "available_catalogs": {  
+    "data": [  
+      {  
+        "catalog_id": "960179311066902",  
+        "catalog_name": "Jay's Favorite Snacks",  
+        "shop_name": "Jay's Bespoke",  
+        "product_count": 11  
+      }  
+    ]  
+  },  
+  "id": "90010177253934"  
 }
-```
 ```
 
 ## Get Eligible Products
 
 Use the [IG User Catalog Product Search](https://developers.facebook.com/documentation/instagram-platform/instagram-graph-api/reference/ig-user/catalog_product_search) endpoint to get a collection of products in the catalog that can be used to tag media. Product variants are supported.
 
-Although the API will not return an error when publishing a post tagged with an unapproved product, the tag will not appear on the published post until the product has been approved. Therefore, we recommend that you only allow your app users to publish posts with tags whose products have a `review_status` of `approved`. This field is returned for each product by default when you get an app user’s eligible products.
+Although the API will not return an error when publishing a post tagged with an unapproved product, the tag will not appear on the published post until the product has been approved. Therefore, we recommend that you only allow your app users to publish posts with tags whose products have a `review_status` of `approved`. This field is returned for each product by default when you get an app user's eligible products.
 
 ```
 GET /{ig-user-id}/catalog_product_search
@@ -133,17 +129,17 @@ GET /{ig-user-id}/catalog_product_search
 #### Parameters
 
 * `catalog_id` — **(required)** Catalog ID.
-* `q` — A string to search for in each product’s name, or a product’s SKU number (the **Content ID** column in the catalog management interface). If no string is specified, all tag-eligible products will be returned.
+* `q` — A string to search for in each product's name, or a product's SKU number (the **Content ID** column in the catalog management interface). If no string is specified, all tag-eligible products will be returned.
 
 Returns an object containing an array of tag-eligible products and their metadata. Supports [cursor-based pagination](https://developers.facebook.com/docs/graph-api/results#cursors). Responses can include the following product fields:
 
 * `image_url` — Product image URL.
-* `is_checkout_flow` — If `true`, product can be purchased directly in the Instagram app. If `false`, product must be purchased in the app user’s app/website.
+* `is_checkout_flow` — If `true`, product can be purchased directly in the Instagram app. If `false`, product must be purchased in the app user's app/website.
 * `merchant_id` — Merchant ID.
 * `product_id` — Product ID.
 * `product_name` — Product name.
 * `retailer_id` — Retailer ID.
-* `review_status` — Review status. Values can be `approved`, `outdated`, `pending`, `rejected`. An approved product can appear in the app user’s [Instagram Shop⁠](https://help.instagram.com/1187859655048322/), but an approved status does not indicate product availability (e.g, the product could be out of stock). Only tags associated with products that have a `review_status` of `approved` can appear on published posts.
+* `review_status` — Review status. Values can be `approved`, `outdated`, `pending`, `rejected`. An approved product can appear in the app user's [Instagram Shop⁠](https://help.instagram.com/1187859655048322/), but an approved status does not indicate product availability (e.g, the product could be out of stock). Only tags associated with products that have a `review_status` of `approved` can appear on published posts.
 * `product_variants` — Product IDs (`product_id`) and variant names (`variant_name`) of [product variants](https://developers.facebook.com/documentation/ads-commerce/catalog/guides/product-variants).
 
 #### Sample Request
@@ -156,30 +152,28 @@ curl -i -X GET \
 #### Sample Response
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "product_id": 3231775643511089,  
-      "merchant_id": 90010177253934,  
-      "product_name": "Gummy Wombats",  
-      "image_url": "https://scont...",  
-      "retailer_id": "oh59p9vzei",  
-      "review_status": "approved",  
-      "is_checkout_flow": true,  
-      "product_variants": [  
-            {  
-              "product_id": 5209223099160494  
-            },  
-            {  
-              "product_id": 7478222675582505,  
-              "variant_name": "Green Gummy Wombats"  
-            }  
-          ]  
-    }  
-  ]  
+  "data": [  
+    {  
+      "product_id": 3231775643511089,  
+      "merchant_id": 90010177253934,  
+      "product_name": "Gummy Wombats",  
+      "image_url": "https://scont...",  
+      "retailer_id": "oh59p9vzei",  
+      "review_status": "approved",  
+      "is_checkout_flow": true,  
+      "product_variants": [  
+            {  
+              "product_id": 5209223099160494  
+            },  
+            {  
+              "product_id": 7478222675582505,  
+              "variant_name": "Green Gummy Wombats"  
+            }  
+          ]  
+    }  
+  ]  
 }
-```
 ```
 
 ## Create a Tagged Container for Images or Videos
@@ -195,7 +189,7 @@ POST /{ig-user-id}/media
 * `image_url` — (**required** for images only) The path to the image. Your image must be on a public server.
 * `user_tags` — (images only) An array of public usernames and x/y coordinates for any public Instagram users who you want to tag in the image. The array must be formatted in JSON and contain a `username`, `x`, and `y` property. For example, `[{username:'natgeo',x:0.5,y:1.0}]`. `x` and `y` values must be floats that originate from the top-left of the image, with a range of `0.0`–`1.0`. Tagged users will receive a notification when the media is published.
 * `video_url` — (**required** for videos only) The path to the video. Your video must be on a public server.
-* `thumb_offset` — (videos only) The location, in milliseconds, of the frame for the video’s cover thumbnail image. The default value is `0`, which is the first frame of the video.
+* `thumb_offset` — (videos only) The location, in milliseconds, of the frame for the video's cover thumbnail image. The default value is `0`, which is the first frame of the video.
 * `product_tags` — (**required**) An array of objects specifying the product tags to add to the image or video. You can specify up to 20 tags for photo and video feed posts and up to 20 tags total per carousel post (up to 5 per carousel slide).
   * The tags and product IDs must be unique.
   * Tags for out-of-stock products are supported.
@@ -216,26 +210,22 @@ curl -i -X POST \
 For reference, here is the HTML-decoded POST payload string:
 
 ```
-```
 https://graph.facebook.com/v12.0/90010177253934/media?image_url=https://upl...&location_id=7640348500  
 &product_tags=[  
-  {  
-    product_id:'3231775643511089',  
-    x: 0.5,  
-    y: 0.8  
-  }  
+  {  
+    product_id:'3231775643511089',  
+    x: 0.5,  
+    y: 0.8  
+  }  
 ]&access_token=EAAOc...
-```
 ```
 
 #### Sample Response
 
 ```
-```
 {  
-  "id": "17969578066508312"  
+  "id": "17969578066508312"  
 }
-```
 ```
 
 ## Create a Tagged Container for Reels
@@ -250,7 +240,7 @@ POST /{ig-user-id}/media
 
 * `media_type` — You must specify the media type `REELS`.
 * `video_url` — The path to the video for the Reel. Your video must be on a public server. Your video must meet the [Reels Specifications](https://developers.facebook.com/documentation/instagram-platform/instagram-graph-api/reference/ig-user/media#reel-specifications).
-* `thumb_offset` — The location, in milliseconds, of the frame for the video’s cover thumbnail image. The default value is `0`, which is the first frame of the video.
+* `thumb_offset` — The location, in milliseconds, of the frame for the video's cover thumbnail image. The default value is `0`, which is the first frame of the video.
 * `caption` — The caption for the Reel.
 * `product_tags` — (**required**) An array of objects specifying the product tags to add to the Reel. You can specify up to 30 tags, and the tags and product IDs must be unique. Tags for out-of-stock products are supported. Each object should have the following information:
   \* `product_id` — (**required**) Product ID.
@@ -270,24 +260,20 @@ curl -i -X POST \
 For reference, here is the HTML-decoded POST payload string:
 
 ```
-```
 https://graph.facebook.com/v12.0/90010177253934/media?media_type=REELS&video_url=https://upl...  
 &product_tags=[  
-  {  
-    product_id:'3231775643511089'  
-  }  
+  {  
+    product_id:'3231775643511089'  
+  }  
 ]&access_token=EAAOc...
-```
 ```
 
 #### Sample Response
 
 ```
-```
 {  
-  "id": "17969578066508312"  
+  "id": "17969578066508312"  
 }
-```
 ```
 
 ## Publish a Tagged Media Container
@@ -314,11 +300,9 @@ curl -i -X POST \
 #### Sample Response
 
 ```
-```
 {  
-  "id": "90010778325754"  
+  "id": "90010778325754"  
 }
-```
 ```
 
 ## Get Tags On Media
@@ -343,7 +327,7 @@ Returns an array of product tags and their metadata on an [IG Media](https://dev
 * `outdated` — Product was approved but has been edited and requires reapproval.
 * `""` — No review status.
 * `no_review` — No review status.
-* `is_checkout` — If `true`, product can be purchased directly through the Instagram app. If `false`, product can only be purchased on the merchant’s website.
+* `is_checkout` — If `true`, product can be purchased directly through the Instagram app. If `false`, product can only be purchased on the merchant's website.
 * `stripped_price_string` — Product short price string (price displayed in constrained spaces, such as `$100` instead of `100 USD`).
 * `string_sale_price_string` — Product sale price.
 * `x` — A float that indicates percentage distance from left edge of media image. Value within `0.0`–`1.0` range.
@@ -359,24 +343,22 @@ curl -i -X GET \
 #### Sample Response
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "product_id": 3231775643511089,  
-      "merchant_id": 90010177253934,  
-      "name": "Gummy Wombats",  
-      "price_string": "$3.50",  
-      "image_url": "https://scont...",  
-      "review_status": "approved",  
-      "is_checkout": true,  
-      "stripped_price_string": "$3.50",  
-      "x": 0.5,  
-      "y": 0.80000001192093  
-    }  
-  ]  
+  "data": [  
+    {  
+      "product_id": 3231775643511089,  
+      "merchant_id": 90010177253934,  
+      "name": "Gummy Wombats",  
+      "price_string": "$3.50",  
+      "image_url": "https://scont...",  
+      "review_status": "approved",  
+      "is_checkout": true,  
+      "stripped_price_string": "$3.50",  
+      "x": 0.5,  
+      "y": 0.80000001192093  
+    }  
+  ]  
 }
-```
 ```
 
 ## Tag Existing Media
@@ -390,11 +372,11 @@ POST /{ig-media-id}/product_tags
 #### Parameters
 
 * `updated_tags` — (**required**) An array of objects specifying which product tags to tag the image or video with (maximum of 20 for Feed posts, maximum of 30 for Reels; tags and product IDs must be unique). Each object should have the following information:
-* `product_id` — (**required**) Product ID. If the IG Media has not been tagged with this ID the tag will be added to the IG Media. If the media has already been tagged with this ID, the tag’s display coordinates will be updated.
+* `product_id` — (**required**) Product ID. If the IG Media has not been tagged with this ID the tag will be added to the IG Media. If the media has already been tagged with this ID, the tag's display coordinates will be updated.
 * `x` — (images only, **required**) A float that indicates percentage distance from left edge of the published media image. Value must be within `0.0`–`1.0` range.
 * `y` — (images only, **required**) A float that indicates percentage distance from top edge of the published media image. Value must be within `0.0`–`1.0` range.
 
-Tagging media is additive until the tag limit has been reached (20 for Feed posts, 30 for Reels). If the targeted media has already been tagged by a product in the request, the old tag’s `x` and `y` values will be updated with their new values (a new tag will not be added).
+Tagging media is additive until the tag limit has been reached (20 for Feed posts, 30 for Reels). If the targeted media has already been tagged by a product in the request, the old tag's `x` and `y` values will be updated with their new values (a new tag will not be added).
 
 Returns `true` if able to update the product, otherwise returns `false`.
 
@@ -408,25 +390,21 @@ curl -i -X POST \
 For reference, here is the HTML-decoded POST payload string:
 
 ```
-```
 https://graph.facebook.com/v12.0/90010778325754/product_tags?updated_tags=[  
-  {  
-    product_id:'3859448974125379',  
-    x: 0.5,  
-    y: 0.8  
-  }  
+  {  
+    product_id:'3859448974125379',  
+    x: 0.5,  
+    y: 0.8  
+  }  
 ]&access_token=EAAOc...
-```
 ```
 
 #### Sample Response
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 ## Appeal Product Rejection
@@ -455,11 +433,9 @@ curl -i -X POST \
 #### Sample Response
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 ## Get Appeal Status
@@ -496,17 +472,15 @@ curl -i -X GET \
 #### Sample Response
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "product_id": 4029274203846188,  
-      "review_status": "approved",  
-      "eligible_for_appeal": false  
-    }  
-  ]  
+  "data": [  
+    {  
+      "product_id": 4029274203846188,  
+      "review_status": "approved",  
+      "eligible_for_appeal": false  
+    }  
+  ]  
 }
-```
 ```
 
 ## Carousels

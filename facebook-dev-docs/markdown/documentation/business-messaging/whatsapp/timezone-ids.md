@@ -39,14 +39,12 @@ curl 'https://graph.facebook.com/v25.0/106540352242922/message_qrdls' \
 ### Example response
 
 ```
-```
 {  
-  "code": "4O4YGZEG3RIVE1",  
-  "prefilled_message": "Cyber Monday 1",  
-  "deep_link_url": "https://wa.me/message/4O4YGZEG3RIVE1",  
-  "qr_image_url": "https://scontent-iad3-2.xx.fbcdn.net/..."  
+  "code": "4O4YGZEG3RIVE1",  
+  "prefilled_message": "Cyber Monday 1",  
+  "deep_link_url": "https://wa.me/message/4O4YGZEG3RIVE1",  
+  "qr_image_url": "https://scontent-iad3-2.xx.fbcdn.net/..."  
 }
-```
 ```
 
 ## Get a list of QR codes and short links
@@ -63,22 +61,20 @@ curl 'https://graph.facebook.com/v25.0/106540352242922/message_qrdls' \
 ### Example response
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "code": "4O4YGZEG3RIVE1",  
-      "prefilled_message": "Cyber Monday",  
-      "deep_link_url": "https://wa.me/message/4O4YGZEG3RIVE1"  
-    },  
-    {  
-      "code": "WOMVT6TJ2BP7A1",  
-      "prefilled_message": "Tell me more about your production workshop",  
-      "deep_link_url": "https://wa.me/message/WOMVT6TJ2BP7A1"  
-    }  
-  ]  
+  "data": [  
+    {  
+      "code": "4O4YGZEG3RIVE1",  
+      "prefilled_message": "Cyber Monday",  
+      "deep_link_url": "https://wa.me/message/4O4YGZEG3RIVE1"  
+    },  
+    {  
+      "code": "WOMVT6TJ2BP7A1",  
+      "prefilled_message": "Tell me more about your production workshop",  
+      "deep_link_url": "https://wa.me/message/WOMVT6TJ2BP7A1"  
+    }  
+  ]  
 }
-```
 ```
 
 ## Get a QR code
@@ -95,17 +91,15 @@ curl 'https://graph.facebook.com/v25.0/106540352242922/message_qrdls/4O4YGZEG3RI
 ### Example response
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "code": "4O4YGZEG3RIVE1",  
-      "prefilled_message": "Cyber Monday",  
-      "deep_link_url": "https://wa.me/message/4O4YGZEG3RIVE1"  
-    }  
-  ]  
+  "data": [  
+    {  
+      "code": "4O4YGZEG3RIVE1",  
+      "prefilled_message": "Cyber Monday",  
+      "deep_link_url": "https://wa.me/message/4O4YGZEG3RIVE1"  
+    }  
+  ]  
 }
-```
 ```
 
 ## Update a QR code
@@ -130,13 +124,11 @@ curl 'https://graph.facebook.com/v25.0/106540352242922/message_qrdls' \
 ### Example response
 
 ```
-```
 {  
-  "code": "4O4YGZEG3RIVE1",  
-  "prefilled_message": "Cyber Tuesday",  
-  "deep_link_url": "https://wa.me/message/4O4YGZEG3RIVE1"  
+  "code": "4O4YGZEG3RIVE1",  
+  "prefilled_message": "Cyber Tuesday",  
+  "deep_link_url": "https://wa.me/message/4O4YGZEG3RIVE1"  
 }
-```
 ```
 
 ## Delete QR code
@@ -153,11 +145,9 @@ curl -X DELETE 'https://graph.facebook.com/v25.0/106540352242922/message_qrdls/4
 ### Example response
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 ## Prefilled messages
@@ -168,7 +158,7 @@ QR codes and short links can be programmed to populate a prefilled message. Pref
 
 | User Scenario | Expected Behavior |
 | --- | --- |
-| User tries to access a code or link that has been deleted. | User sees an error message saying “This QR code [short link] has expired.” |
+| User tries to access a code or link that has been deleted. | User sees an error message saying "This QR code [short link] has expired." |
 | User scans the QR code or types in the short link of a business they previously blocked. | User gets a prompt asking if they would like to unblock the business to continue messaging them. |
 | User clicks a short link on a desktop browser. | Desktop client launches with message populated in chat thread. If there is no client installed, user is prompted to install it. |
 

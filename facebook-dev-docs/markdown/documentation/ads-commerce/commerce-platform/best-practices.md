@@ -59,7 +59,7 @@ curl -X GET -G \
 
 | Value | Description |
 | --- | --- |
-| `item_level` | Discount is applied to each target product item included at checkout (e.g., a $5.00 discount targeting all footwear would deduct $5.00 for each pair of shoes in a user’s shopping cart at checkout.) |
+| `item_level` | Discount is applied to each target product item included at checkout (e.g., a $5.00 discount targeting all footwear would deduct $5.00 for each pair of shoes in a user's shopping cart at checkout.) |
 | `order_level` | Discount is applied per merchant order and distributed across the target items (e.g., a coupon for $10 off an entire order). |
 
 #### Sample Request

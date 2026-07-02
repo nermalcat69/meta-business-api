@@ -9,7 +9,7 @@ Updated: May 9, 2023
 
 Provide deep links in your feed following the [App Links](https://developers.facebook.com/docs/applinks) specification. Deep link information in your feed takes precedence over any information Facebook collects with App Links metadata with our web crawler.
 
-If you already have deep link information from App Links, you don’t need to specify this data. Facebook uses information from App Links to display the correct deep link. To display deep links in your ads, see [Advantage+ Catalog Ads, Ad Template](https://developers.facebook.com/docs/marketing-api/dynamic-product-ads/ads-management#adtemplate).
+If you already have deep link information from App Links, you don't need to specify this data. Facebook uses information from App Links to display the correct deep link. To display deep links in your ads, see [Advantage+ Catalog Ads, Ad Template](https://developers.facebook.com/docs/marketing-api/dynamic-product-ads/ads-management#adtemplate).
 
 For iOS, only provide iPhone **or** iPad app information if they are different from the general iOS app.
 

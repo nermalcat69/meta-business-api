@@ -43,10 +43,8 @@ Use the **debug\_token** endpoint to see which permissions the token granter has
 ### Request syntax
 
 ```
-```
-curl 'https://graph.facebook.com/<API_VERSION>/debug_token?input_token=<ACCESS_TOKEN_TO_CHECK>' \  
--H 'Authorization: Bearer <ACCESS_TOKEN>'
-```
+curl 'https://graph.facebook.com/<API_VERSION>/debug_token?input_token=<ACCESS_TOKEN_TO_CHECK>' \  
+-H 'Authorization: Bearer <ACCESS_TOKEN>'
 ```
 
 ### Response syntax
@@ -54,30 +52,28 @@ curl 'https://graph.facebook.com/<API_VERSION>/debug_token?input_token=<ACCESS_
 Granted permissions are assigned to the `scopes` property.
 
 ```
-```
 {  
-    "data": {  
-        "app_id": "634974688087057",  
-        "type": "SYSTEM_USER",  
-        "application": "Lucky Shrub",  
-        "data_access_expires_at": 0,  
-        "expires_at": 0,  
-        "is_valid": true,  
-        "issued_at": 1712099387,  
-        "scopes": [  
-            "whatsapp_business_management",  
-            "whatsapp_business_messaging"  
-        ],  
-        "granular_scopes": [  
-            {  
-                "scope": "whatsapp_business_management"  
-            },  
-            {  
-                "scope": "whatsapp_business_messaging"  
-            }  
-        ],  
-        "user_id": "104169029247128"  
-    }  
+    "data": {  
+        "app_id": "634974688087057",  
+        "type": "SYSTEM_USER",  
+        "application": "Lucky Shrub",  
+        "data_access_expires_at": 0,  
+        "expires_at": 0,  
+        "is_valid": true,  
+        "issued_at": 1712099387,  
+        "scopes": [  
+            "whatsapp_business_management",  
+            "whatsapp_business_messaging"  
+        ],  
+        "granular_scopes": [  
+            {  
+                "scope": "whatsapp_business_management"  
+            },  
+            {  
+                "scope": "whatsapp_business_messaging"  
+            }  
+        ],  
+        "user_id": "104169029247128"  
+    }  
 }
-```
 ```

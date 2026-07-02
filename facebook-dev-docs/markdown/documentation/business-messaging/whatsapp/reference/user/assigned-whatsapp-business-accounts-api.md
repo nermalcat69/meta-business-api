@@ -79,11 +79,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Message-History-ID}/events' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Message-History-ID}/events' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -94,85 +94,85 @@ Select status code
 
 ```
 {  
-  "message_history_events": {  
-    "summary": "Message history events with delivery status occurrences",  
-    "value": {  
-      "data": [  
-        {  
-          "cursor": "MTAxNTExOTQ1MjAwNzI5NDE=",  
-          "node": {  
-            "id": "2345678901234567",  
-            "delivery_status": "SENT",  
-            "occurrence_timestamp": 1640995200,  
-            "status_timestamp": 1640995205,  
-            "application": {  
-              "id": "9876543210987654",  
-              "name": "WhatsApp Business API Client"  
-            }  
-          }  
-        },  
-        {  
-          "cursor": "MTAxNTExOTQ1MjAwNzI5NDI=",  
-          "node": {  
-            "id": "3456789012345678",  
-            "delivery_status": "DELIVERED",  
-            "occurrence_timestamp": 1640995260,  
-            "status_timestamp": 1640995265,  
-            "application": {  
-              "id": "9876543210987654",  
-              "name": "WhatsApp Business API Client"  
-            }  
-          }  
-        },  
-        {  
-          "cursor": "MTAxNTExOTQ1MjAwNzI5NDM=",  
-          "node": {  
-            "id": "4567890123456789",  
-            "delivery_status": "READ",  
-            "occurrence_timestamp": 1640995320,  
-            "status_timestamp": 1640995325,  
-            "application": {  
-              "id": "9876543210987654",  
-              "name": "WhatsApp Business API Client"  
-            }  
-          }  
-        }  
-      ],  
-      "paging": {  
-        "cursors": {  
-          "after": "MTAxNTExOTQ1MjAwNzI5NDM=",  
-          "before": "MTAxNTExOTQ1MjAwNzI5NDE="  
-        },  
-        "next": "https://graph.facebook.com/v25.0/1234567890123456/events?after=MTAxNTExOTQ1MjAwNzI5NDM"  
-      }  
-    }  
-  },  
-  "filtered_by_status": {  
-    "summary": "Message history events filtered by delivery status",  
-    "value": {  
-      "data": [  
-        {  
-          "cursor": "MTAxNTExOTQ1MjAwNzI5NDI=",  
-          "node": {  
-            "id": "3456789012345678",  
-            "delivery_status": "DELIVERED",  
-            "occurrence_timestamp": 1640995260,  
-            "status_timestamp": 1640995265,  
-            "application": {  
-              "id": "9876543210987654",  
-              "name": "WhatsApp Business API Client"  
-            }  
-          }  
-        }  
-      ],  
-      "paging": {  
-        "cursors": {  
-          "after": "MTAxNTExOTQ1MjAwNzI5NDI=",  
-          "before": "MTAxNTExOTQ1MjAwNzI5NDI="  
-        }  
-      }  
-    }  
-  }  
+  "message_history_events": {  
+    "summary": "Message history events with delivery status occurrences",  
+    "value": {  
+      "data": [  
+        {  
+          "cursor": "MTAxNTExOTQ1MjAwNzI5NDE=",  
+          "node": {  
+            "id": "2345678901234567",  
+            "delivery_status": "SENT",  
+            "occurrence_timestamp": 1640995200,  
+            "status_timestamp": 1640995205,  
+            "application": {  
+              "id": "9876543210987654",  
+              "name": "WhatsApp Business API Client"  
+            }  
+          }  
+        },  
+        {  
+          "cursor": "MTAxNTExOTQ1MjAwNzI5NDI=",  
+          "node": {  
+            "id": "3456789012345678",  
+            "delivery_status": "DELIVERED",  
+            "occurrence_timestamp": 1640995260,  
+            "status_timestamp": 1640995265,  
+            "application": {  
+              "id": "9876543210987654",  
+              "name": "WhatsApp Business API Client"  
+            }  
+          }  
+        },  
+        {  
+          "cursor": "MTAxNTExOTQ1MjAwNzI5NDM=",  
+          "node": {  
+            "id": "4567890123456789",  
+            "delivery_status": "READ",  
+            "occurrence_timestamp": 1640995320,  
+            "status_timestamp": 1640995325,  
+            "application": {  
+              "id": "9876543210987654",  
+              "name": "WhatsApp Business API Client"  
+            }  
+          }  
+        }  
+      ],  
+      "paging": {  
+        "cursors": {  
+          "after": "MTAxNTExOTQ1MjAwNzI5NDM=",  
+          "before": "MTAxNTExOTQ1MjAwNzI5NDE="  
+        },  
+        "next": "https://graph.facebook.com/v25.0/1234567890123456/events?after=MTAxNTExOTQ1MjAwNzI5NDM"  
+      }  
+    }  
+  },  
+  "filtered_by_status": {  
+    "summary": "Message history events filtered by delivery status",  
+    "value": {  
+      "data": [  
+        {  
+          "cursor": "MTAxNTExOTQ1MjAwNzI5NDI=",  
+          "node": {  
+            "id": "3456789012345678",  
+            "delivery_status": "DELIVERED",  
+            "occurrence_timestamp": 1640995260,  
+            "status_timestamp": 1640995265,  
+            "application": {  
+              "id": "9876543210987654",  
+              "name": "WhatsApp Business API Client"  
+            }  
+          }  
+        }  
+      ],  
+      "paging": {  
+        "cursors": {  
+          "after": "MTAxNTExOTQ1MjAwNzI5NDI=",  
+          "before": "MTAxNTExOTQ1MjAwNzI5NDI="  
+        }  
+      }  
+    }  
+  }  
 }
 ```
 
@@ -830,11 +830,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Message-History-ID}/events' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Message-History-ID}/events' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -845,85 +845,85 @@ Select status code
 
 ```
 {  
-  "message_history_events": {  
-    "summary": "Message history events with delivery status occurrences",  
-    "value": {  
-      "data": [  
-        {  
-          "cursor": "MTAxNTExOTQ1MjAwNzI5NDE=",  
-          "node": {  
-            "id": "2345678901234567",  
-            "delivery_status": "SENT",  
-            "occurrence_timestamp": 1640995200,  
-            "status_timestamp": 1640995205,  
-            "application": {  
-              "id": "9876543210987654",  
-              "name": "WhatsApp Business API Client"  
-            }  
-          }  
-        },  
-        {  
-          "cursor": "MTAxNTExOTQ1MjAwNzI5NDI=",  
-          "node": {  
-            "id": "3456789012345678",  
-            "delivery_status": "DELIVERED",  
-            "occurrence_timestamp": 1640995260,  
-            "status_timestamp": 1640995265,  
-            "application": {  
-              "id": "9876543210987654",  
-              "name": "WhatsApp Business API Client"  
-            }  
-          }  
-        },  
-        {  
-          "cursor": "MTAxNTExOTQ1MjAwNzI5NDM=",  
-          "node": {  
-            "id": "4567890123456789",  
-            "delivery_status": "READ",  
-            "occurrence_timestamp": 1640995320,  
-            "status_timestamp": 1640995325,  
-            "application": {  
-              "id": "9876543210987654",  
-              "name": "WhatsApp Business API Client"  
-            }  
-          }  
-        }  
-      ],  
-      "paging": {  
-        "cursors": {  
-          "after": "MTAxNTExOTQ1MjAwNzI5NDM=",  
-          "before": "MTAxNTExOTQ1MjAwNzI5NDE="  
-        },  
-        "next": "https://graph.facebook.com/v25.0/1234567890123456/events?after=MTAxNTExOTQ1MjAwNzI5NDM"  
-      }  
-    }  
-  },  
-  "filtered_by_status": {  
-    "summary": "Message history events filtered by delivery status",  
-    "value": {  
-      "data": [  
-        {  
-          "cursor": "MTAxNTExOTQ1MjAwNzI5NDI=",  
-          "node": {  
-            "id": "3456789012345678",  
-            "delivery_status": "DELIVERED",  
-            "occurrence_timestamp": 1640995260,  
-            "status_timestamp": 1640995265,  
-            "application": {  
-              "id": "9876543210987654",  
-              "name": "WhatsApp Business API Client"  
-            }  
-          }  
-        }  
-      ],  
-      "paging": {  
-        "cursors": {  
-          "after": "MTAxNTExOTQ1MjAwNzI5NDI=",  
-          "before": "MTAxNTExOTQ1MjAwNzI5NDI="  
-        }  
-      }  
-    }  
-  }  
+  "message_history_events": {  
+    "summary": "Message history events with delivery status occurrences",  
+    "value": {  
+      "data": [  
+        {  
+          "cursor": "MTAxNTExOTQ1MjAwNzI5NDE=",  
+          "node": {  
+            "id": "2345678901234567",  
+            "delivery_status": "SENT",  
+            "occurrence_timestamp": 1640995200,  
+            "status_timestamp": 1640995205,  
+            "application": {  
+              "id": "9876543210987654",  
+              "name": "WhatsApp Business API Client"  
+            }  
+          }  
+        },  
+        {  
+          "cursor": "MTAxNTExOTQ1MjAwNzI5NDI=",  
+          "node": {  
+            "id": "3456789012345678",  
+            "delivery_status": "DELIVERED",  
+            "occurrence_timestamp": 1640995260,  
+            "status_timestamp": 1640995265,  
+            "application": {  
+              "id": "9876543210987654",  
+              "name": "WhatsApp Business API Client"  
+            }  
+          }  
+        },  
+        {  
+          "cursor": "MTAxNTExOTQ1MjAwNzI5NDM=",  
+          "node": {  
+            "id": "4567890123456789",  
+            "delivery_status": "READ",  
+            "occurrence_timestamp": 1640995320,  
+            "status_timestamp": 1640995325,  
+            "application": {  
+              "id": "9876543210987654",  
+              "name": "WhatsApp Business API Client"  
+            }  
+          }  
+        }  
+      ],  
+      "paging": {  
+        "cursors": {  
+          "after": "MTAxNTExOTQ1MjAwNzI5NDM=",  
+          "before": "MTAxNTExOTQ1MjAwNzI5NDE="  
+        },  
+        "next": "https://graph.facebook.com/v25.0/1234567890123456/events?after=MTAxNTExOTQ1MjAwNzI5NDM"  
+      }  
+    }  
+  },  
+  "filtered_by_status": {  
+    "summary": "Message history events filtered by delivery status",  
+    "value": {  
+      "data": [  
+        {  
+          "cursor": "MTAxNTExOTQ1MjAwNzI5NDI=",  
+          "node": {  
+            "id": "3456789012345678",  
+            "delivery_status": "DELIVERED",  
+            "occurrence_timestamp": 1640995260,  
+            "status_timestamp": 1640995265,  
+            "application": {  
+              "id": "9876543210987654",  
+              "name": "WhatsApp Business API Client"  
+            }  
+          }  
+        }  
+      ],  
+      "paging": {  
+        "cursors": {  
+          "after": "MTAxNTExOTQ1MjAwNzI5NDI=",  
+          "before": "MTAxNTExOTQ1MjAwNzI5NDI="  
+        }  
+      }  
+    }  
+  }  
 }
 ```
 

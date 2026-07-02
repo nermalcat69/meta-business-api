@@ -49,39 +49,35 @@ You can add a text attachment to a post by making a request to the `POST /{threa
 #### Example request
 
 ```
-```
-curl -i -X POST \  
-  -d "media_type=TEXT" \  
-  -d "text=<TEXT>" \  
-  -d "access_token=<ACCESS_TOKEN>" \  
-  -d "text_attachment=  
-    {  
-      "plaintext": "Lengthy plain text for the text attachment.",  
-      "link_attachment_url": "<LINK_URL>",  
-      "text_with_styling_info":[  
-        {  
-          "offset": 0,  
-          "length": 7,  
-          "styling_info":["bold","italic"]  
-        },  
-        {  
-          "offset": 7,  
-          "length": 10,  
-          "styling_info":["highlight"]  
-        }]  
-    }" \  
+curl -i -X POST \  
+  -d "media_type=TEXT" \  
+  -d "text=<TEXT>" \  
+  -d "access_token=<ACCESS_TOKEN>" \  
+  -d "text_attachment=  
+    {  
+      "plaintext": "Lengthy plain text for the text attachment.",  
+      "link_attachment_url": "<LINK_URL>",  
+      "text_with_styling_info":[  
+        {  
+          "offset": 0,  
+          "length": 7,  
+          "styling_info":["bold","italic"]  
+        },  
+        {  
+          "offset": 7,  
+          "length": 10,  
+          "styling_info":["highlight"]  
+        }]  
+    }" \  
 "https://graph.threads.net/v1.0/<THREADS_USER_ID>/threads"
-```
 ```
 
 #### Example response
 
 ```
-```
 {  
-  "id": "<THREADS_MEDIA_CONTAINER_ID>"  
+  "id": "<THREADS_MEDIA_CONTAINER_ID>"  
 }
-```
 ```
 
 ### Step 2: Publish the media container
@@ -101,37 +97,33 @@ Make a request to the `GET /{threads-user-id}/threads` or `GET /{threads-media-i
 ### Example request
 
 ```
-```
-curl -i -X GET \  
-  -d "access_token=<ACCESS_TOKEN>" \  
-  -d "fields=id,text_attachment" \  
+curl -i -X GET \  
+  -d "access_token=<ACCESS_TOKEN>" \  
+  -d "fields=id,text_attachment" \  
 "https://graph.threads.net/v1.0/<THREADS_MEDIA_ID>
-```
 ```
 
 ### Example response
 
 ```
-```
 {  
-  "id": "<THREADS_MEDIA_ID>",  
-  "text_attachment": {  
-    "plaintext": "Lengthy plaintext for the text attachment.",  
-    "link_attachment_url": "<LINK_URL>",  
-    "text_with_styling_info": [  
-      {  
-        "offset": 0,  
-        "length": 7,  
-        "styling_info":["bold","italic"]  
-      },  
-      {  
-        "offset": 7,  
-        "length": 10,  
-        "styling_info":["highlight"]  
-      }]  
-  }  
+  "id": "<THREADS_MEDIA_ID>",  
+  "text_attachment": {  
+    "plaintext": "Lengthy plaintext for the text attachment.",  
+    "link_attachment_url": "<LINK_URL>",  
+    "text_with_styling_info": [  
+      {  
+        "offset": 0,  
+        "length": 7,  
+        "styling_info":["bold","italic"]  
+      },  
+      {  
+        "offset": 7,  
+        "length": 10,  
+        "styling_info":["highlight"]  
+      }]  
+  }  
 }
-```
 ```
 
 ## Learn More

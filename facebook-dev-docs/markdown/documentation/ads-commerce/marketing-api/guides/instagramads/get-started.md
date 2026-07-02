@@ -30,4 +30,4 @@ Use the API to access posts, add new comments, check the comments by viewers, an
 ## Resources
 
 * [Advertising on Instagram⁠](https://business.instagram.com/advertising/)
-* [Instagram Ads Beginner’s Guide⁠](https://www.facebook.com/business/help/2265970220185807?id=332010350818053)
+* [Instagram Ads Beginner's Guide⁠](https://www.facebook.com/business/help/2265970220185807?id=332010350818053)

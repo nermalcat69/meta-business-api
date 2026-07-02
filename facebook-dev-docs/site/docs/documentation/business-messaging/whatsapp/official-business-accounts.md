@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/business-messaging/wha
 
 Updated: Jun 16, 2026
 
-You must provide a display name when [registering](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-phone-numbers/registration) a business phone number. The display name appears in your business phone number’s WhatsApp profile:
+You must provide a display name when [registering](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-phone-numbers/registration) a business phone number. The display name appears in your business phone number's WhatsApp profile:
 
 ![WhatsApp business profile showing the display name](https://scontent.fdel1-3.fna.fbcdn.net/v/t39.2365-6/507127951_698062976515521_2852142619234157074_n.png?_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=OEXjN1KZ_koQ7kNvwGo9uYD&_nc_oc=AdrmYK1PBt8JAxazY5ihSKbg9z9fPkSp67ri4bV0W_Kxy-8w-WCe-NxOC7QHQE7Ea03iJJj9adq1KbuWLjioZc01&_nc_zt=14&_nc_ht=scontent.fdel1-3.fna&_nc_gid=muDo4BZJ5FVArXmCyUgMdA&_nc_ss=7b2a8&oh=00_AQA-CiM8D4hJiDP86ApfYbrPB86MW6lnW4o6vxutxGnZOg&oe=6A605BE9)
 
@@ -19,7 +19,7 @@ See our [Display name guidelines for the WhatsApp Business Platform⁠](https://
 
 ## Display name verification
 
-When you reach a [higher messaging limit](https://developers.facebook.com/documentation/business-messaging/whatsapp/messaging-limits), your business phone number’s display name automatically undergoes verification based on the [display name guidelines⁠](https://www.facebook.com/business/help/757569725593362). When the process completes, a [phone\_number\_name\_update](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/phone_number_name_update) webhook and Meta Business Suite notification are triggered.
+When you reach a [higher messaging limit](https://developers.facebook.com/documentation/business-messaging/whatsapp/messaging-limits), your business phone number's display name automatically undergoes verification based on the [display name guidelines⁠](https://www.facebook.com/business/help/757569725593362). When the process completes, a [phone\_number\_name\_update](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/phone_number_name_update) webhook and Meta Business Suite notification are triggered.
 
 If your display name is approved, the webhook has `decision` set to `APPROVED`, and the `name_status` field on your business phone number is set to `APPROVED`.
 
@@ -27,13 +27,13 @@ If your display name is rejected, the webhook has `decision` set to `REJECTED`, 
 
 ## View display name in WhatsApp Manager
 
-Your business phone number’s display name appears in the **Name** column in the [WhatsApp Manager⁠](https://business.facebook.com/latest/whatsapp_manager/) > **Account tools** > **Phone numbers** panel.
+Your business phone number's display name appears in the **Name** column in the [WhatsApp Manager⁠](https://business.facebook.com/latest/whatsapp_manager/) > **Account tools** > **Phone numbers** panel.
 
 ## Get display name and display name status via API
 
 Request the `verified_name` and `name_status` field on your WhatsApp Business Phone Number ID to get its display name and display name status. See the [WhatsApp Business Phone Number API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/whatsapp-business-account-phone-number-api#get-version-phone-number-id) reference for a list of returnable values and their meanings.
 
-The `verified_name` value doesn’t indicate whether the display name is approved. It represents the display name string that undergoes verification when eligible. The `name_status` field indicates its approval status.
+The `verified_name` value doesn't indicate whether the display name is approved. It represents the display name string that undergoes verification when eligible. The `name_status` field indicates its approval status.
 
 ### Example request
 
@@ -47,13 +47,11 @@ curl 'https://graph.facebook.com/v25.0/106540352242922?fields=verified_name%2Cna
 Upon success:
 
 ```
-```
 {  
-  "verified_name": "Lucky Shrub",  
-  "name_status": "APPROVED",  
-  "id": "106540352242922"  
+  "verified_name": "Lucky Shrub",  
+  "name_status": "APPROVED",  
+  "id": "106540352242922"  
 }
-```
 ```
 
 ## Update display names
@@ -91,11 +89,9 @@ curl -X POST 'https://graph.facebook.com/v25.0/106540352242922?new_display_name=
 Upon success:
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 Upon success, your display name undergoes [display name verification](https://developers.facebook.com/documentation/business-messaging/whatsapp/official-business-accounts#display-name-verification). To check the verification status, request the `new_display_name` and `new_name_status` fields on your business phone number ID:
@@ -112,16 +108,14 @@ curl 'https://graph.facebook.com/v25.0/106540352242922?fields=new_display_name,n
 Upon success:
 
 ```
-```
 {  
-  "new_display_name": "New Lucky Shrub",  
-  "new_name_status": "PENDING_REVIEW",  
-  "id": "106540352242922"  
+  "new_display_name": "New Lucky Shrub",  
+  "new_name_status": "PENDING_REVIEW",  
+  "id": "106540352242922"  
 }
 ```
-```
 
-When your updated display name is approved, your business phone number’s `verified_name` and `name_status` fields update to reflect your new display name and name status, and [phone\_number\_name\_update](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/phone_number_name_update) webhooks are triggered. You must then [re-register the phone number](https://developers.facebook.com/documentation/business-messaging/whatsapp/official-business-accounts#re-register-after-display-name-approval). Re-registering before approval has no effect.
+When your updated display name is approved, your business phone number's `verified_name` and `name_status` fields update to reflect your new display name and name status, and [phone\_number\_name\_update](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/phone_number_name_update) webhooks are triggered. You must then [re-register the phone number](https://developers.facebook.com/documentation/business-messaging/whatsapp/official-business-accounts#re-register-after-display-name-approval). Re-registering before approval has no effect.
 
 ## Re-register after display name approval
 
@@ -152,11 +146,9 @@ curl 'https://graph.facebook.com/v25.0/106540352242922/register' \
 Upon success:
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 ## Learn more

@@ -63,9 +63,7 @@ Below this page you will find examples of different message requests that can be
 For all templates the following request URI will be used:
 
 ```
-```
 https://graph.facebook.com/v24.0/act_<AD_ACCOUNT_ID>/messages?access_token={PAGE_ACCESS_TOKEN}
-```
 ```
 
 ## API Errors
@@ -93,8 +91,8 @@ https://graph.facebook.com/v24.0/act_<AD_ACCOUNT_ID>/messages?access_token={PAGE
 | 2300018 | Failed to save the message attachment. Please verify the attachment is valid and try again. |
 | 2300019 | The app has not accepted the terms of service for using Marketing Messages API for Messenger. Please go to the app dashboard -> Messenger -> Messenger API Settings to accept the terms of service. |
 | 2300020 | The pacing type for direct send is invalid. |
-| 2300021 | When media\_type is ‘video’, a video\_id must be provided. |
-| 2300022 | When media\_type is ‘image’, an image\_url must be provided. |
+| 2300021 | When media\_type is 'video', a video\_id must be provided. |
+| 2300022 | When media\_type is 'image', an image\_url must be provided. |
 | 2300023 | The button type is invalid. Valid button types are: web\_url. |
 | 2300024 | Button URL cannot be empty when provided. |
 | 2300025 | Button title cannot be empty. |
@@ -112,29 +110,29 @@ https://graph.facebook.com/v24.0/act_<AD_ACCOUNT_ID>/messages?access_token={PAGE
 | 2300039 | Lack of the permission for the page. |
 | 2300040 | This feature is not currently available. |
 | 2300041 | The campaign is not ready for message delivery. Please try again later. |
-| 2300042 | The recipient can’t receive any more marketing messages at this time. Please see the ‘F-Caps for Marketing Messages on Messenger’ section below for more detail. |
-| 2300043 | The recipient can’t receive any more marketing messages at this time. Please see the ‘F-Caps for Marketing Messages on Messenger’ section below for more detail. |
-| 2300044 | The recipient can’t receive any more marketing messages at this time. Please see the ‘F-Caps for Marketing Messages on Messenger’ section below for more detail. |
+| 2300042 | The recipient can't receive any more marketing messages at this time. Please see the 'F-Caps for Marketing Messages on Messenger' section below for more detail. |
+| 2300043 | The recipient can't receive any more marketing messages at this time. Please see the 'F-Caps for Marketing Messages on Messenger' section below for more detail. |
+| 2300044 | The recipient can't receive any more marketing messages at this time. Please see the 'F-Caps for Marketing Messages on Messenger' section below for more detail. |
 | 2300046 | Multiple image URLs are not supported in carousel format. Use single image URLs for each carousel element instead. |
 | 2300047 | Message param cannot contain both multiple images and single image parameters. Please use only one image format. |
 | 2300048 | Only one hero image is allowed in the message param. Please mark only one image as the hero image. |
 | 2300052 | This person is not available right now. |
-| 2300053 | This campaign has reached its lifetime budget, so your message couldn’t be sent. Increase the lifetime budget or create a new campaign to continue. |
-| 2300054 | This campaign has reached its daily budget, so your message couldn’t be sent today. It will resume tomorrow, or you can increase the daily budget to send more messages per day. |
-| 2300055 | Your message couldn’t be sent right now. Come back and try again in about 30 minutes. |
-| 2300056 | Your account has reached its total spending limit, so your message couldn’t be sent. Increase or reset your spending limit in payment settings (and add funds if you use prepaid). |
-| 2300057 | Your message couldn’t be sent right now. Try again later. |
-| 2300058 | Your prepaid balance has run out, so your message couldn’t be sent. Add funds to your account to continue. |
+| 2300053 | This campaign has reached its lifetime budget, so your message couldn't be sent. Increase the lifetime budget or create a new campaign to continue. |
+| 2300054 | This campaign has reached its daily budget, so your message couldn't be sent today. It will resume tomorrow, or you can increase the daily budget to send more messages per day. |
+| 2300055 | Your message couldn't be sent right now. Come back and try again in about 30 minutes. |
+| 2300056 | Your account has reached its total spending limit, so your message couldn't be sent. Increase or reset your spending limit in payment settings (and add funds if you use prepaid). |
+| 2300057 | Your message couldn't be sent right now. Try again later. |
+| 2300058 | Your prepaid balance has run out, so your message couldn't be sent. Add funds to your account to continue. |
 | 2300059 | Your business stored balance is too low to send messages right now. Add funds to your stored balance and try again. |
-| 2300060 | Your message couldn’t be sent right now. Try again later. |
-| 2300061 | Your message couldn’t be sent right now. Come back and try again in about 30 minutes. |
-| 2300062 | Your message couldn’t be sent right now. Try again in about 30 minutes. |
-| 2300063 | We’re unable to process your request at this time. Come back and try again later. |
+| 2300060 | Your message couldn't be sent right now. Try again later. |
+| 2300061 | Your message couldn't be sent right now. Come back and try again in about 30 minutes. |
+| 2300062 | Your message couldn't be sent right now. Try again in about 30 minutes. |
+| 2300063 | We're unable to process your request at this time. Come back and try again later. |
 | 2300064 | The message creative is already in use by another campaign. |
 | 2300065 | The page ID is required but was not provided in the request. |
 | 2300066 | The page has not signed the Marketing Messages on Messenger Terms of Service. Please complete the onboarding process for the page and try again. |
 | 2300067 | The ad account has not signed the Marketing Messages on Messenger Terms of Service. Please complete the onboarding process for the ad account and try again. |
-| 2300068 | We’re unable to process your request at this time. Come back and try again later. |
+| 2300068 | We're unable to process your request at this time. Come back and try again later. |
 | 2300069 | The required Terms of Service have not been signed. Please complete the onboarding process and try again. |
 | 2300070 | The targeting options provided are invalid. |
 | 2300071 | The message creative contains invalid aliases. |
@@ -152,7 +150,7 @@ https://graph.facebook.com/v24.0/act_<AD_ACCOUNT_ID>/messages?access_token={PAGE
 
 ### What is it?
 
-Frequency caps (F-caps) are automated limits that help ensure people don’t receive too many marketing messages in a given period of time. The limits can apply both:
+Frequency caps (F-caps) are automated limits that help ensure people don't receive too many marketing messages in a given period of time. The limits can apply both:
 
 * Across all businesses (overall marketing message load), and
 * From the same business (repeat messaging over time)

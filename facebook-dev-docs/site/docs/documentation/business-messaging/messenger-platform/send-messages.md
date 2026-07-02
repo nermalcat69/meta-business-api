@@ -63,9 +63,7 @@ curl -X POST \
 In response, your app will receive a flow ID.
 
 ```
-```
 {"flow_id":"123456789"}
-```
 ```
 
 ### Parameters
@@ -88,21 +86,17 @@ A flow that is currently connected to an advertisement cannot be updated. Check 
 ### Sample request
 
 ```
-```
-curl -X POST\  
--F 'flow_id="123456789"'\  
--F 'eligible_platforms=["messenger", "instagram"]' \  
--F 'name="Driver sign up - updated"' \  
+curl -X POST\  
+-F 'flow_id="123456789"'\  
+-F 'eligible_platforms=["messenger", "instagram"]' \  
+-F 'name="Driver sign up - updated"' \  
 "https://graph.facebook.com/v14.0/{PAGE-ID}/welcome_message_flows?access_token={ACCESS-TOKEN}"
-```
 ```
 
 In response, your app will receive a success message or the appropriate error message.
 
 ```
-```
 {"success":true}
-```
 ```
 
 ### Parameters
@@ -125,54 +119,50 @@ To get a list of flows for the page, send a `GET` request to `graph.facebook.com
 #### Sample request
 
 ```
-```
-curl -X GET \  
+curl -X GET \  
 "https://graph.facebook.com/v14.0/{PAGE-ID}/welcome_message_flows?access_token={ACCESS-TOKEN}"
-```
 ```
 
 On success, your app will receive a list of flows created for that particular app.
 
 ```
-```
 [  
-  {  
-    "id":"123456789",  
-    "name":"Driver Sign up",  
-    "welcome_message":"<JSON String>",  
-    "eligible_platforms": ["instagram", "messenger"],  
-    "last_update_time":"2023-09-01T05:20:38+0000",  
-    "is_used_in_ad": false // indicates whether or not a flow is used in an ad  
-  },  
-  {  
-    "id":"4362",  
-    "name":"Basic Triage",  
-    "welcome_message":"<JSON String>",  
-    "eligible_platforms": ["instagram"],  
-    "last_update_time":"2023-08-25T08:21:48+0000",  
-    "is_used_in_ad": true  
-  },  
-  {  
-    "id":"234564",  
-    "name":"Appointment Schedule",  
-    "welcome_message":"<JSON String>",  
-    "eligible_platforms": ["messenger"],  
-    "last_update_time":"2023-08-20T07:43:00+0000",  
-    "is_used_in_ad": true  
-  }  
-  ...  
-  ...  
-  ...,  
-  {  
-    "id":"6987565",  
-    "name":"Car Leads",  
-    "welcome_message":"<JSON String>",  
-    "eligible_platforms": ["instagram", "messenger"],  
-    "last_update_time":"2023-07-21T05:21:48+0000",  
-    "is_used_in_ad": false  
-  },  
+  {  
+    "id":"123456789",  
+    "name":"Driver Sign up",  
+    "welcome_message":"<JSON String>",  
+    "eligible_platforms": ["instagram", "messenger"],  
+    "last_update_time":"2023-09-01T05:20:38+0000",  
+    "is_used_in_ad": false // indicates whether or not a flow is used in an ad  
+  },  
+  {  
+    "id":"4362",  
+    "name":"Basic Triage",  
+    "welcome_message":"<JSON String>",  
+    "eligible_platforms": ["instagram"],  
+    "last_update_time":"2023-08-25T08:21:48+0000",  
+    "is_used_in_ad": true  
+  },  
+  {  
+    "id":"234564",  
+    "name":"Appointment Schedule",  
+    "welcome_message":"<JSON String>",  
+    "eligible_platforms": ["messenger"],  
+    "last_update_time":"2023-08-20T07:43:00+0000",  
+    "is_used_in_ad": true  
+  }  
+  ...  
+  ...  
+  ...,  
+  {  
+    "id":"6987565",  
+    "name":"Car Leads",  
+    "welcome_message":"<JSON String>",  
+    "eligible_platforms": ["instagram", "messenger"],  
+    "last_update_time":"2023-07-21T05:21:48+0000",  
+    "is_used_in_ad": false  
+  },  
 ]
-```
 ```
 
 ### Get a specific flow
@@ -182,28 +172,24 @@ To get a specific flow, send a `GET` request to `graph.facebook.com/v14.0/PAGE-I
 #### Sample request
 
 ```
-```
-curl -X GET \  
--F 'flow_id="123456789"'  
+curl -X GET \  
+-F 'flow_id="123456789"'  
 "https://graph.facebook.com/v14.0/{PAGE-ID}/welcome_message_flows?access_token={ACCESS-TOKEN}"
-```
 ```
 
 On success, your app will receive the flow in JSON format.
 
 ```
-```
 [  
-  {  
-    "id":"123456789",  
-    "name":"Driver Sign up",  
-    "welcome_message":"<JSON String>",  
-    "eligible_platforms": ["instagram", "messenger"],  
-    "last_update_time":"2023-09-01T05:20:38+0000",  
-    "is_used_in_ad": false  
-  },  
+  {  
+    "id":"123456789",  
+    "name":"Driver Sign up",  
+    "welcome_message":"<JSON String>",  
+    "eligible_platforms": ["instagram", "messenger"],  
+    "last_update_time":"2023-09-01T05:20:38+0000",  
+    "is_used_in_ad": false  
+  },  
 ]
-```
 ```
 
 #### Parameters
@@ -222,19 +208,15 @@ A flow that is currently connected to an advertisement cannot be deleted. Check 
 ### Sample request
 
 ```
-```
-curl -X DELETE \  
--F 'flow_id="1234567890"'  
+curl -X DELETE \  
+-F 'flow_id="1234567890"'  
 "https://graph.facebook.com/v14.0/{PAGE-ID}/welcome_message_flows?access_token={ACCESS-TOKEN}"
-```
 ```
 
 In response, your app will receive a success message or the appropriate error message.
 
 ```
-```
 {"success":true}
-```
 ```
 
 ### Parameters
@@ -272,17 +254,15 @@ Once welcome message flows have been successfully submitted over the API, the fl
 In the ad creative, the flow ID can be set as follows:
 
 ```
-```
 {  
-  "name": "creative",  
-  "object_story_spec": {...},  
-  "asset_feed_spec": {  
-    "additional_data": {  
-      "partner_app_welcome_message_flow_id": "<FLOW_ID_RETURNED_FROM_POST_REQUEST>"  
-    }  
-  }  
+  "name": "creative",  
+  "object_story_spec": {...},  
+  "asset_feed_spec": {  
+    "additional_data": {  
+      "partner_app_welcome_message_flow_id": "<FLOW_ID_RETURNED_FROM_POST_REQUEST>"  
+    }  
+  }  
 }
-```
 ```
 
 For more information about messaging ads, please refer to [Messaging Ads](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-creative/messaging-ads) in the Marketing API documentation.

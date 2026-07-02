@@ -9,7 +9,7 @@ Updated: Jun 16, 2026
 
 ## Support
 
-If you’re stuck on something with WhatsApp Flows, start here to get help. Use this page to share feedback.
+If you're stuck on something with WhatsApp Flows, start here to get help. Use this page to share feedback.
 
 ### [Direct support](https://developers.facebook.com/documentation/business-messaging/whatsapp/support)
 

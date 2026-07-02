@@ -9,7 +9,7 @@ Updated: Jan 21, 2026
 
 ## Prerequisites
 
-Before you can deploy Conversions API Gateway or Signals Gateway, you’ll need the following properties and access:
+Before you can deploy Conversions API Gateway or Signals Gateway, you'll need the following properties and access:
 
 * Admin access for a cloud provider service (for example, AWS or GCP).
 * Admin access to the Meta Pixel. Follow [these instructions⁠](https://www.facebook.com/business/help/279059996069252?id=2042840805783715) to update the access if needed.
@@ -18,7 +18,7 @@ Before you can deploy Conversions API Gateway or Signals Gateway, you’ll need 
 
 ### Cloud account isolation
 
-Businesses can choose to deploy one of the “Gateway Products” Conversions API Gateway or Signals Gateway on their existing third-party cloud account, or on a new cloud account separated from their main assets. Both options provide infrastructure isolation, as Gateway Products are designed to have no interaction with business’ server-side assets. Gateway Products are provisioned within the default Virtual Private Cloud network (VPC).
+Businesses can choose to deploy one of the "Gateway Products" Conversions API Gateway or Signals Gateway on their existing third-party cloud account, or on a new cloud account separated from their main assets. Both options provide infrastructure isolation, as Gateway Products are designed to have no interaction with business' server-side assets. Gateway Products are provisioned within the default Virtual Private Cloud network (VPC).
 
 ### Allowed network traffic
 
@@ -26,7 +26,7 @@ To function correctly, Gateway Products require the following inbound and outbou
 
 | Source | Destination | Protocol/Port | Description |
 | --- | --- | --- | --- |
-| Gateway Product instance | 0.0.0.0/0 | All | Allow outbound connection to the internet from Gateway Product to pass events to Meta and download packages from external repositories such as:   * Download software in Docker Containers from ECR * Send logs to AWS Cloudformation Logs * If opted-in to System Health Information data transmission, periodically send system status data about your business’ use/operation of its Gateway Product installation to Meta for monitoring and troubleshooting problems. * Communicate with AWS EKS service |
+| Gateway Product instance | 0.0.0.0/0 | All | Allow outbound connection to the internet from Gateway Product to pass events to Meta and download packages from external repositories such as:   * Download software in Docker Containers from ECR * Send logs to AWS Cloudformation Logs * If opted-in to System Health Information data transmission, periodically send system status data about your business' use/operation of its Gateway Product installation to Meta for monitoring and troubleshooting problems. * Communicate with AWS EKS service |
 | 0.0.0.0/0 | Gateway Product instance | TCP/80 | Allow inbound HTTP connection to Gateway Products  *This port is automatically redirected to TCP/443* |
 | 0.0.0.0/0 | Gateway Product instance | TCP/443 | Allow inbound HTTPS connection to Gateway Products  *Used by browsers to send events through websockets secure (WSS) or HTTPS* |
 

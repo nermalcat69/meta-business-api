@@ -73,6 +73,6 @@ There are other breakdown combinations which include `publisher_platform, platfo
 
 ### Tracking Tags
 
-View tags are not publicly available. If we permit view tags by an approved vendor on Facebook mobile campaigns, we also allow them for Instagram ads. You can use [Ad creative’s](https://developers.facebook.com/docs/marketing-api/adcreative) `url_tag` field with Instagram ads.
+View tags are not publicly available. If we permit view tags by an approved vendor on Facebook mobile campaigns, we also allow them for Instagram ads. You can use [Ad creative's](https://developers.facebook.com/docs/marketing-api/adcreative) `url_tag` field with Instagram ads.
 
-You can use third-party tracking tags for Instagram ads, however note do not optimize ads delivery for third-party tracking tools. To make sure that the third party tracking tool can track Instagram ads properly, use [Ad creative’s](https://developers.facebook.com/docs/marketing-api/adcreative) `url_tag` field with `utm_source=instagram`.
+You can use third-party tracking tags for Instagram ads, however note do not optimize ads delivery for third-party tracking tools. To make sure that the third party tracking tool can track Instagram ads properly, use [Ad creative's](https://developers.facebook.com/docs/marketing-api/adcreative) `url_tag` field with `utm_source=instagram`.

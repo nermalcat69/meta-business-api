@@ -21,27 +21,25 @@ Send detailed network metrics to Meta after each call. This API allows a busines
 | `audio_stats` *Dictionary of string to mixed values* | This field will contain a dictionary with the fields requested from that RTC stats report. A script is provided that takes the RTC status report and returns the dictionary of requested values. You can then populate this field using the returned dictionary.  The dictionary will be required to have the following values  1) `call_ended_time` (Unix Timestamp)  2) `jitter` (float)  3) `packets_lost` (int)  4) `packets_received` (int)  5) `round_trip_time_ms` (float)  6) `jitter_buffer_delay_ms` (float)  7) `concealed_samples` (int)  8) `silent_concealed_samples` (int)  9) `total_samples_duration_ms` (float) |
 
 ```
-```
-POST /<PAGE_ID>/call_metrics  
+POST /<PAGE_ID>/call_metrics  
 {  
-  "platform": "messenger",  
-  "call_id": "c_M5YPhGE5jm0L_PMQdScLlYJlR7tU_f0rgXinCqnTQ",  
-  "end_call_reason": "Hangup_Call",  
-  "end_call_subreason": "Conversation was finished",  
-  "call_ended_time": 123456,  
-  "first_audio_packet_received_time": 12345,  
-  "audio_stats": {  
-    "jitter_sec": 0.01,  
-    "packets_lost": 0,  
-    "packets_received": 1000,  
-    "round_trip_time_sec": 10.5,  
-    "jitter_buffer_delay_sec": 4000.5,  
-    "concealed_samples": 2000,  
-    "silent_concealed_samples": 16000,  
-    "total_samples_duration_sec": 316.5  
-  },  
+  "platform": "messenger",  
+  "call_id": "c_M5YPhGE5jm0L_PMQdScLlYJlR7tU_f0rgXinCqnTQ",  
+  "end_call_reason": "Hangup_Call",  
+  "end_call_subreason": "Conversation was finished",  
+  "call_ended_time": 123456,  
+  "first_audio_packet_received_time": 12345,  
+  "audio_stats": {  
+    "jitter_sec": 0.01,  
+    "packets_lost": 0,  
+    "packets_received": 1000,  
+    "round_trip_time_sec": 10.5,  
+    "jitter_buffer_delay_sec": 4000.5,  
+    "concealed_samples": 2000,  
+    "silent_concealed_samples": 16000,  
+    "total_samples_duration_sec": 316.5  
+  },  
 }
-```
 ```
 
 ### Example response
@@ -51,11 +49,9 @@ POST /<PAGE_ID>/call_metrics
 | `success` *boolean* | `true` if data was successfully submitted; `false` otherwise |
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 ### Error response

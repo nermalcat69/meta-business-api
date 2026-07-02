@@ -19,7 +19,7 @@ Users can then choose one option, and WhatsApp sends their selection as a reply:
 
 ![WhatsApp chat showing the interactive list message followed by the user reply with their selected option](https://scontent.fdel1-7.fna.fbcdn.net/v/t39.2365-6/440751989_956441365805448_2344471884869029846_n.png?_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=PeZ5ubJ0WKEQ7kNvwHMGKX2&_nc_oc=AdoI2rh8lPuYxxjUPqwNSR-U9-X0WXKJmQSDZmHSozrXVCYJVF9RLEeDJEQchaCMxkWDSFfxQTrmFVDO3RXNaVky&_nc_zt=14&_nc_ht=scontent.fdel1-7.fna&_nc_gid=Ki-WZhDS-yLZBeKjAXO17A&_nc_ss=7b2a8&oh=00_AQAnb2AsqGKl36QRjeTc3JUE48aI5YETlCvk-7_xMB2U5w&oe=6A606293)
 
-Selecting an option triggers a webhook, which identifies the user’s selected option.
+Selecting an option triggers a webhook, which identifies the user's selected option.
 
 Interactive list messages support up to 10 sections, with up to 10 rows for all sections combined, and can include an optional header and footer.
 
@@ -28,48 +28,46 @@ Interactive list messages support up to 10 sections, with up to 10 rows for all 
 Use the [Messages API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/message-api#post-version-phone-number-id-messages) to send an interactive list message to a WhatsApp user.
 
 ```
-```
-curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/messages' \  
--H 'Content-Type: application/json' \  
--H 'Authorization: Bearer <ACCESS_TOKEN>' \  
--d '  
+curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/messages' \  
+-H 'Content-Type: application/json' \  
+-H 'Authorization: Bearer <ACCESS_TOKEN>' \  
+-d '  
 {  
-  "messaging_product": "whatsapp",  
-  "recipient_type": "individual",  
-  "to": "<WHATSAPP_USER_PHONE_NUMBER>",  
-  "type": "interactive",  
-  "interactive": {  
-    "type": "list",  
-    "header": {  
-      "type": "text",  
-      "text": "<MESSAGE_HEADER_TEXT>"  
-    },  
-    "body": {  
-      "text": "<MESSAGE_BODY_TEXT>"  
-    },  
-    "footer": {  
-      "text": "<MESSAGE_FOOTER_TEXT>"  
-    },  
-    "action": {  
-      "button": "<BUTTON_TEXT>",  
-      "sections": [  
-        {  
-          "title": "<SECTION_TITLE_TEXT>",  
-          "rows": [  
-            {  
-              "id": "<ROW_ID>",  
-              "title": "<ROW_TITLE_TEXT>",  
-              "description": "<ROW_DESCRIPTION_TEXT>"  
-            }  
-            <!-- Additional rows would go here -->  
-          ]  
-        }  
-        <!-- Additional sections would go here -->  
-      ]  
-    }  
-  }  
+  "messaging_product": "whatsapp",  
+  "recipient_type": "individual",  
+  "to": "<WHATSAPP_USER_PHONE_NUMBER>",  
+  "type": "interactive",  
+  "interactive": {  
+    "type": "list",  
+    "header": {  
+      "type": "text",  
+      "text": "<MESSAGE_HEADER_TEXT>"  
+    },  
+    "body": {  
+      "text": "<MESSAGE_BODY_TEXT>"  
+    },  
+    "footer": {  
+      "text": "<MESSAGE_FOOTER_TEXT>"  
+    },  
+    "action": {  
+      "button": "<BUTTON_TEXT>",  
+      "sections": [  
+        {  
+          "title": "<SECTION_TITLE_TEXT>",  
+          "rows": [  
+            {  
+              "id": "<ROW_ID>",  
+              "title": "<ROW_TITLE_TEXT>",  
+              "description": "<ROW_DESCRIPTION_TEXT>"  
+            }  
+            <!-- Additional rows would go here -->  
+          ]  
+        }  
+        <!-- Additional sections would go here -->  
+      ]  
+    }  
+  }  
 }'
-```
 ```
 
 ## Request parameters
@@ -157,22 +155,20 @@ curl 'https://graph.facebook.com/v25.0/106540352242922/messages' \
 ## Example response
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "contacts": [  
-    {  
-      "input": "+16505551234",  
-      "wa_id": "16505551234"  
-    }  
-  ],  
-  "messages": [  
-    {  
-      "id": "wamid.HBgLMTY0NjcwNDM1OTUVAgARGBI1RjQyNUE3NEYxMzAzMzQ5MkEA"  
-    }  
-  ]  
+  "messaging_product": "whatsapp",  
+  "contacts": [  
+    {  
+      "input": "+16505551234",  
+      "wa_id": "16505551234"  
+    }  
+  ],  
+  "messages": [  
+    {  
+      "id": "wamid.HBgLMTY0NjcwNDM1OTUVAgARGBI1RjQyNUE3NEYxMzAzMzQ5MkEA"  
+    }  
+  ]  
 }
-```
 ```
 
 ## Webhooks
@@ -180,54 +176,52 @@ curl 'https://graph.facebook.com/v25.0/106540352242922/messages' \
 When a WhatsApp user selects an option and sends their message, WhatsApp triggers a **messages** webhook identifying the ID (`id`) of the option they chose.
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "102290129340398",  
-      "changes": [  
-        {  
-          "value": {  
-            "messaging_product": "whatsapp",  
-            "metadata": {  
-              "display_phone_number": "15550783881",  
-              "phone_number_id": "106540352242922"  
-            },  
-            "contacts": [  
-              {  
-                "profile": {  
-                  "name": "Pablo Morales"  
-                },  
-                "wa_id": "16505551234"  
-              }  
-            ],  
-            "messages": [  
-              {  
-                "context": {  
-                  "from": "15550783881",  
-                  "id": "wamid.HBgLMTY0NjcwNDM1OTUVAgARGBIwMjg0RkMxOEMyMkNEQUFFRDgA"  
-                },  
-                "from": "16505551234",  
-                "id": "wamid.HBgLMTY0NjcwNDM1OTUVAgASGBQzQTZDMzFGRUFBQjlDMzIzMzlEQwA=",  
-                "timestamp": "1712595443",  
-                "type": "interactive",  
-                "interactive": {  
-                  "type": "list_reply",  
-                  "list_reply": {  
-                    "id": "priority_express",  
-                    "title": "Priority Mail Express",  
-                    "description": "Next Day to 2 Days"  
-                  }  
-                }  
-              }  
-            ]  
-          },  
-          "field": "messages"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "102290129340398",  
+      "changes": [  
+        {  
+          "value": {  
+            "messaging_product": "whatsapp",  
+            "metadata": {  
+              "display_phone_number": "15550783881",  
+              "phone_number_id": "106540352242922"  
+            },  
+            "contacts": [  
+              {  
+                "profile": {  
+                  "name": "Pablo Morales"  
+                },  
+                "wa_id": "16505551234"  
+              }  
+            ],  
+            "messages": [  
+              {  
+                "context": {  
+                  "from": "15550783881",  
+                  "id": "wamid.HBgLMTY0NjcwNDM1OTUVAgARGBIwMjg0RkMxOEMyMkNEQUFFRDgA"  
+                },  
+                "from": "16505551234",  
+                "id": "wamid.HBgLMTY0NjcwNDM1OTUVAgASGBQzQTZDMzFGRUFBQjlDMzIzMzlEQwA=",  
+                "timestamp": "1712595443",  
+                "type": "interactive",  
+                "interactive": {  
+                  "type": "list_reply",  
+                  "list_reply": {  
+                    "id": "priority_express",  
+                    "title": "Priority Mail Express",  
+                    "description": "Next Day to 2 Days"  
+                  }  
+                }  
+              }  
+            ]  
+          },  
+          "field": "messages"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```

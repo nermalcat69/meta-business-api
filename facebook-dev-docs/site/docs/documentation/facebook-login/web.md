@@ -14,10 +14,8 @@ The following are commonly encountered problems and solutions for the Facebook L
 I get the native login dialog permissions, but the person is not authenticated. The logcat exception error returned looks like:
 
 ```
-```
-...W/fb4a:fb:OrcaServiceQueue(504): com.facebook.orca.protocol.base.ApiException:  
-   remote_app_id does not match stored id
-```
+...W/fb4a:fb:OrcaServiceQueue(504): com.facebook.orca.protocol.base.ApiException:  
+   remote_app_id does not match stored id
 ```
 
 or,
@@ -25,14 +23,12 @@ or,
 I see a non-native login dialog that includes an error that looks like:
 
 ```
-```
-...App is Misconfigured for facebook login...
-```
+...App is Misconfigured for facebook login...
 ```
 
 If you are having trouble with your login dialog, here are some things to try:
 
-* If you don’t have openssl, install it for [Windows⁠](http://www.slproweb.com/products/Win32OpenSSL.html) or [MAC⁠](http://www.openssl.org/source/).
+* If you don't have openssl, install it for [Windows⁠](http://www.slproweb.com/products/Win32OpenSSL.html) or [MAC⁠](http://www.openssl.org/source/).
 * Be sure you have [signed your Android app⁠](https://developer.android.com/studio/publish/app-signing).
 
 ## My key hash is invalid.
@@ -40,7 +36,7 @@ If you are having trouble with your login dialog, here are some things to try:
 If you are having trouble with your key hash, here are some things to try:
 
 * When you add a new key hash to the [App Dashboard](https://developers.facebook.com/apps) be sure to **Save Changes**.
-* The password you entered is incorrect. The default Keystore password: “android”.
+* The password you entered is incorrect. The default Keystore password: "android".
 * Copy and paste the key hash you sent to Facebook to the [App Dashboard](https://developers.facebook.com/apps) and **Save Changes** and make this change to `onCreate()` in your main activity:
 
   ```

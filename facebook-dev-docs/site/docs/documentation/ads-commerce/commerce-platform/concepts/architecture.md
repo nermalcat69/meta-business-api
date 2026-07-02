@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/commerce-
 
 Updated: Dec 29, 2020
 
-As noted in the [Seller’s Journey](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/concepts/user-experience#seller-journey), when selling directly on Facebook or Instagram, a seller can manage accounts, orders, reporting, and [customer communications](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/communication) in Commerce Manager. Among these tasks, [order management](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/order-management) and [financial reporting](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/reporting) can be automated by building an API integration with Facebook’s [Commerce API](https://developers.facebook.com/docs/commerce-api).
+As noted in the [Seller's Journey](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/concepts/user-experience#seller-journey), when selling directly on Facebook or Instagram, a seller can manage accounts, orders, reporting, and [customer communications](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/communication) in Commerce Manager. Among these tasks, [order management](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/order-management) and [financial reporting](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/reporting) can be automated by building an API integration with Facebook's [Commerce API](https://developers.facebook.com/docs/commerce-api).
 
 This diagram illustrates these tasks and the data exchanged via a typical API integration.
 

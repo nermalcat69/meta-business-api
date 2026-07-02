@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/conversio
 
 Updated: Aug 25, 2025
 
-The Conversions API enables advertisers to send web, app, physical store and business messaging events to Meta through a single endpoint rather than across multiple sources. This consolidation reduces the number of integrations an advertiser’s tech stack must maintain and brings web, app, physical store, and business messaging events into Meta Events Manager through a single dataset.
+The Conversions API enables advertisers to send web, app, physical store and business messaging events to Meta through a single endpoint rather than across multiple sources. This consolidation reduces the number of integrations an advertiser's tech stack must maintain and brings web, app, physical store, and business messaging events into Meta Events Manager through a single dataset.
 
 This documentation provides guidance for integrating app events to the Conversions API.
 
@@ -21,14 +21,14 @@ Datasets allow advertisers to connect and manage event data from web, app, store
 
 * Meta Pixel (website events)
 * App Events API (app events, including Facebook SDK for iOS or Android, mobile measurement partners (MMPs))
-* Offline Conversions API (Meta’s legacy API for offline events)
+* Offline Conversions API (Meta's legacy API for offline events)
 * Messaging Events API (messaging events)
 
 Datasets enable you to view all customer activities from a single interface. They also allow you to reduce the effort to build and maintain multiple API integrations.
 
 In Events Manager, advertisers have different [options⁠](https://www.facebook.com/business/help/5270377362999582?id=490360542427371) to create a dataset depending on their starting point. Or you can [create a brand new dataset⁠](https://www.facebook.com/business/help/5818684664831465?id=490360542427371) in Events Manager by linking during offline event set creation or through an existing mobile app or during messaging event set creation information. Note that linking a dataset to an application is required before sending mobile app events to the Conversions API and only one application can be linked to a dataset. See more [details⁠](https://www.facebook.com/business/help/768703235046938?locale=en_US) and instructions [here⁠](https://www.facebook.com/business/help/750785952855662?id=490360542427371).
 
-You can make the `GET` call to [https://graph.facebook.com/v16.0/{ads-pixel-id}/is\_consolidated\_container](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ads-pixel) to detect if the advertiser’s dataset is consolidated and thus eligible for passing app events via the Conversions API.
+You can make the `GET` call to [https://graph.facebook.com/v16.0/{ads-pixel-id}/is\_consolidated\_container](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ads-pixel) to detect if the advertiser's dataset is consolidated and thus eligible for passing app events via the Conversions API.
 
 ### 2. Permissions
 
@@ -43,7 +43,7 @@ You can make the `GET` call to [https://graph.facebook.com/v16.0/{ads-pixel-id}/
 
 In Events Manager, there are two ways to link your app with a dataset:
 
-* Select the **Data Sources** tab, find your app’s **Setting** tab and perform the linking.
+* Select the **Data Sources** tab, find your app's **Setting** tab and perform the linking.
 * Select the **Data Sources** tab, in the **Overview** tab of your app, use the **Link to dataset** button in the **All Activity** section.
 
 Once you complete the linking, the dataset includes the connected app.
@@ -65,7 +65,7 @@ You can refer [here](https://developers.facebook.com/documentation/ads-commerce/
 | Parameter | Description |
 | --- | --- |
 | `advertiser_tracking_enabled`  boolean | **Required for app events**  Use this field to specify ATT permission on an iOS 14.5+ device. Set to `0` for disabled or `1` for enabled. |
-| `application_tracking_enabled`  boolean | **Optional**  A person can choose to enable ad tracking on an app level. Your SDK should allow an app developer to put an opt-out setting into their app. Use this field to specify the person’s choice. Use `0` for disabled, `1` for enabled. |
+| `application_tracking_enabled`  boolean | **Optional**  A person can choose to enable ad tracking on an app level. Your SDK should allow an app developer to put an opt-out setting into their app. Use this field to specify the person's choice. Use `0` for disabled, `1` for enabled. |
 | `extinfo`  object  Expand the row to view the full list of `extinfo` values. | **Required for app events**  Extended device information, such as screen width and height. This parameter is an array. Separate the values with commas. When using `extinfo`, **all values are required and must be in the order indexed below**. If a value is missing, fill with an empty string as a placeholder.  Note:   * `version` must be `a2` for Android * `version` must be `i2` for iOS |
 | ↳ `0`  string | **Required**  extinfo version  Example: `i2` |
 | ↳ `1`  string | app package name  Example: `com.facebook.sdk.samples.hellofacebook` |
@@ -109,7 +109,7 @@ You can refer [here](https://developers.facebook.com/documentation/ads-commerce/
 
 In summary, the app events shared using the Conversions API **will require** the following data parameters:
 
-* [`action_source`](https://developers.facebook.com/documentation/ads-commerce/conversions-api/parameters/server-event#action-source): Must be set to ‘app’. (By using the Conversions API, you agree that the `action_source` parameter is accurate to the best of your knowledge)
+* [`action_source`](https://developers.facebook.com/documentation/ads-commerce/conversions-api/parameters/server-event#action-source): Must be set to 'app'. (By using the Conversions API, you agree that the `action_source` parameter is accurate to the best of your knowledge)
 * `event_id`: Required for the deduplication setup, see details in the **Set up deduplication for multiple channels** section.
 * [`advertiser_tracking_enabled`](https://developers.facebook.com/docs/graph-api/reference/application/activities)
 * [`extinfo`](https://developers.facebook.com/docs/graph-api/reference/application/activities)

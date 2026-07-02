@@ -17,7 +17,7 @@ You can categorize call permission request templates as either `MARKETING` or `U
 
 * Only templates categorized as `MARKETING` or `UTILITY` can include a call permission request component.
 * You must include body text, and it must not be empty.
-* You can’t combine the call permission request component with other interactive components.
+* You can't combine the call permission request component with other interactive components.
 
 ## Create a call permission request template
 
@@ -61,7 +61,7 @@ curl -X POST \
 | --- | --- | --- |
 | `<ACCESS_TOKEN>`  *String* | **Required.**  [System token](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#system-user-access-tokens) or [business token](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#business-integration-system-user-access-tokens). | `EAAA...` |
 | `<API_VERSION>`  *String* | **Optional.**  Graph API version. | v25.0 |
-| `<BODY_TEXT>`  *String* | **Required.**  Body text string. Supports named parameters in `{{parameter_name}}` format.  Maximum 1024 characters. | `Hi {{first_name}}, as a Lucky Shrub VIP, get a first look at our rare new succulents before anyone else. Can we give you a quick call?` |
+| `<BODY_TEXT>`  *String* | **Required.**  Body text string. Supports named parameters in `{​{parameter_name}​}` format.  Maximum 1024 characters. | `Hi {​{first_name}​}, as a Lucky Shrub VIP, get a first look at our rare new succulents before anyone else. Can we give you a quick call?` |
 | `<CATEGORY>`  *Enum* | **Required.**  Template category. Must be `MARKETING` or `UTILITY`. | `MARKETING` |
 | `<EXAMPLE_PARAM_VALUE>`  *String* | **Required if body text uses named parameters.**  Example value for the named parameter. | `Pablo` |
 | `<PARAM_NAME>`  *String* | **Required if body text uses named parameters.**  Name of the parameter, matching the placeholder in the body text. | `first_name` |
@@ -84,7 +84,7 @@ curl -X POST \
     "components": [
       {
         "type": "body",
-        "text": "Hi {{first_name}}, as a Lucky Shrub VIP, get a first look at our rare new succulents before anyone else. Can we give you a quick call?",
+        "text": "Hi {​{first_name}​}, as a Lucky Shrub VIP, get a first look at our rare new succulents before anyone else. Can we give you a quick call?",
         "example": {
           "body_text_named_params": [
             {
@@ -104,13 +104,11 @@ curl -X POST \
 ### Example response
 
 ```
-```
 {  
-  "id": "546151681022936",  
-  "status": "PENDING",  
-  "category": "MARKETING"  
+  "id": "546151681022936",  
+  "status": "PENDING",  
+  "category": "MARKETING"  
 }
-```
 ```
 
 ## Send a call permission request template
@@ -201,21 +199,19 @@ curl -X POST \
 ### Example response
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "contacts": [  
-    {  
-      "input": "+15551234567",  
-      "wa_id": "15551234567"  
-    }  
-  ],  
-  "messages": [  
-    {  
-      "id": "wamid.HBgLMTMyMzI4NjU2NzgVAgARGBJBQzRBRDBEMDEwQzVBM0M0QkIA",  
-      "message_status": "accepted"  
-    }  
-  ]  
+  "messaging_product": "whatsapp",  
+  "contacts": [  
+    {  
+      "input": "+15551234567",  
+      "wa_id": "15551234567"  
+    }  
+  ],  
+  "messages": [  
+    {  
+      "id": "wamid.HBgLMTMyMzI4NjU2NzgVAgARGBJBQzRBRDBEMDEwQzVBM0M0QkIA",  
+      "message_status": "accepted"  
+    }  
+  ]  
 }
-```
 ```

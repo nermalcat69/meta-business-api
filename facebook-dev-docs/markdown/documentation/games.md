@@ -21,7 +21,7 @@ If you are new to Instant Games, we recommend following these steps:
 * **See the player journey** — Review [The Player Journey](https://developers.facebook.com/documentation/games/overview/player-journey) to understand how players discover, play, and return to games on Facebook.
 * **Build your first game** — Follow the [Quick Start](https://developers.facebook.com/documentation/games/build/quick-start) guide to create a simple game and see it running on the platform.
 * **Launch to the world** — Use the [Launch](https://developers.facebook.com/documentation/games/launch/overview) section to set up your app, pass reviews, and release your game to players.
-* **Grow and monetize** — Explore the [Acquire](https://developers.facebook.com/documentation/games/acquire/overview), [Retain](https://developers.facebook.com/documentation/games/retain/overview), and [Monetize](https://developers.facebook.com/documentation/games/monetize/overview) sections to maximize your game’s reach and revenue.
+* **Grow and monetize** — Explore the [Acquire](https://developers.facebook.com/documentation/games/acquire/overview), [Retain](https://developers.facebook.com/documentation/games/retain/overview), and [Monetize](https://developers.facebook.com/documentation/games/monetize/overview) sections to maximize your game's reach and revenue.
 
 ## Documentation Structure
 

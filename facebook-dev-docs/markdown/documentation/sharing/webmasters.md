@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/sharing/webmasters
 
 Updated: Jun 30, 2026
 
-This document describes how you optimize web-hosted content that people share to Facebook, regardless of whether it’s shared from the desktop or mobile web or a mobile app.
+This document describes how you optimize web-hosted content that people share to Facebook, regardless of whether it's shared from the desktop or mobile web or a mobile app.
 
 This document provides info about:
 
@@ -18,17 +18,17 @@ This document provides info about:
 
 ## Open Graph Markup
 
-Most content is shared to Facebook as a URL, so it’s important that you mark up your website with Open Graph tags to take control over how your content appears on Facebook. For your website to be shared correctly by our crawler, your server must also use the **gzip** and **deflate** encodings.
+Most content is shared to Facebook as a URL, so it's important that you mark up your website with Open Graph tags to take control over how your content appears on Facebook. For your website to be shared correctly by our crawler, your server must also use the **gzip** and **deflate** encodings.
 
 Without these Open Graph tags, the [Facebook Crawler](https://developers.facebook.com/documentation/sharing/webmasters/web-crawlers) uses internal heuristics to make a best guess about the title, description, and preview image for your content. Designate this info explicitly with Open Graph tags to ensure the highest quality posts on Facebook.
 
-Here’s an example of content formatted with Open Graph tags for optimal display on Facebook:
+Here's an example of content formatted with Open Graph tags for optimal display on Facebook:
 
 ![Facebook Feed post preview of a New York Times article with headline, description, and image from Open Graph tags](https://scontent.fdel27-2.fna.fbcdn.net/v/t39.2365-6/671761306_1484143283444321_5010292080375569703_n.png?_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=uUE64p-41WsQ7kNvwEQvf0C&_nc_oc=AdpBdL_-AIIMNsyn9Ei8zp2pXfmnwCPo_olNJ8ejBeL4TNNTM6ZP66t9hhYd-MIzEKbjv73cKGTyXrBRbtEGyUaY&_nc_zt=14&_nc_ht=scontent.fdel27-2.fna&_nc_gid=6dz1cfP0MXnYJh0j6VTWrg&_nc_ss=7b289&oh=00_AQAdEo9fXCJ78UeqtdKgmgOu2sK3UupcAeNV1jYd9-O0yA&oe=6A60761E)
 
 ### Markup Example
 
-For example, here’s how to mark up an article, news story or blog post with `og:type="article"` and several additional properties:
+For example, here's how to mark up an article, news story or blog post with `og:type="article"` and several additional properties:
 
 ```
 <meta property="og:url"                content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html" />
@@ -56,7 +56,7 @@ You may also want to add two additional tags to improve distribution of your con
 
 | Tag | Description |
 | --- | --- |
-| `og:type` | The type of media of your content. This tag impacts how your content shows up in Feed. If you don’t specify a type,the default is `website`. Each URL should be a single object, so multiple `og:type` values are not possible. Find the full list of object types in [Object Types Reference⁠](http://ogp.me/#types) |
+| `og:type` | The type of media of your content. This tag impacts how your content shows up in Feed. If you don't specify a type,the default is `website`. Each URL should be a single object, so multiple `og:type` values are not possible. Find the full list of object types in [Object Types Reference⁠](http://ogp.me/#types) |
 | `og:locale` | The locale of the resource. Defaults to `en_US`. You can also use `og:locale:alternate` if you have other available language translations available. Learn about the locales we support in our [documentation on localization](https://developers.facebook.com/documentation/javascript/internationalization#locales). |
 
 The full list of standard object properties is in our [Object Properties Reference](https://developers.facebook.com/docs/sharing/opengraph/object-properties#standard).
@@ -107,12 +107,12 @@ Use this set of properties for content that contains more than one image. See [S
 
 | Meta tag | Description |
 | --- | --- |
-| `og:image` | URL for the image. To update an image after it’s been published, use a new URL for the new image. **Images are cached based on the URL and won’t be updated unless the URL changes.** |
+| `og:image` | URL for the image. To update an image after it's been published, use a new URL for the new image. **Images are cached based on the URL and won't be updated unless the URL changes.** |
 | `og:image:url` | Equivalent to `og:image` |
 | `og:image:secure_url` | https:// URL for the image |
 | `og:image:type` | MIME type of the image. One of `image/jpeg`, `image/gif` or `image/png` |
-| `og:image:width` | Width of image in pixels. Specify height and width for your image to ensure that the image loads properly the first time it’s shared. |
-| `og:image:height` | Height of image in pixels. Specify height and width for your image to ensure that the image loads properly the first time it’s shared. |
+| `og:image:width` | Width of image in pixels. Specify height and width for your image to ensure that the image loads properly the first time it's shared. |
+| `og:image:height` | Height of image in pixels. Specify height and width for your image to ensure that the image loads properly the first time it's shared. |
 
 ### 3D Assets
 

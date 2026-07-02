@@ -7,9 +7,9 @@ source_url: https://developers.facebook.com/documentation/meta-pixel/get-started
 
 Updated: Jan 27, 2022
 
-Collaborative Ads allows producers, such as consumer-packaged goods advertisers, to run ad campaigns to drive people to seller platforms. Such platforms include online retailer websites or apps and those that can measure, retarget, and optimize towards people who have interacted with the producers’ products on the seller platforms. **Access to the Collaborative Ads features is provided on a limited basis only. Please contact your Facebook Representative.**
+Collaborative Ads allows producers, such as consumer-packaged goods advertisers, to run ad campaigns to drive people to seller platforms. Such platforms include online retailer websites or apps and those that can measure, retarget, and optimize towards people who have interacted with the producers' products on the seller platforms. **Access to the Collaborative Ads features is provided on a limited basis only. Please contact your Facebook Representative.**
 
-To use Collaborative Ads features, the seller needs to implement the following required standard events and parameters. If you’re unfamiliar with Pixel events and parameters, see [how to set up conversion tracking for Pixel](https://developers.facebook.com/documentation/meta-pixel/implementation/conversion-tracking) first.
+To use Collaborative Ads features, the seller needs to implement the following required standard events and parameters. If you're unfamiliar with Pixel events and parameters, see [how to set up conversion tracking for Pixel](https://developers.facebook.com/documentation/meta-pixel/implementation/conversion-tracking) first.
 
 ## Required Standard Events
 
@@ -29,7 +29,7 @@ The seller platform needs to provide the following standard events:
 | `content_ids` | array of strings | Product IDs associated with the event, such as SKUs. (Product Group ID is not supported.) Example: `['ABC123', 'XYZ789']` |
 | `content_type` | String | Must be `"product"`.  Note: `"product_group"` and other values are not supported. |
 | `currency` | string | Currency for the value specified in [ISO 4217⁠](https://en.wikipedia.org/wiki/ISO_4217) currency code.  Example: `'USD'`, `'GBP'` |
-| `value` | integer or float | Value of a user performing this event to the business.   * For `ViewContent`, the value of an item. * For `AddToCart`, the value of new items added to cart at once. It’s not the current total basket value. * For `Purchase`, the total basket value, including other fees, such as shipping fee and tax.       Example: `21.5` |
+| `value` | integer or float | Value of a user performing this event to the business.   * For `ViewContent`, the value of an item. * For `AddToCart`, the value of new items added to cart at once. It's not the current total basket value. * For `Purchase`, the total basket value, including other fees, such as shipping fee and tax.       Example: `21.5` |
 
 ## Examples
 

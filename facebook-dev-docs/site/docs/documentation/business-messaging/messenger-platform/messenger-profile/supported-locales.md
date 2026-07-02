@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/business-messaging/mes
 
 Updated: Jan 11, 2024
 
-Commands are tappable keywords that a user can invoke at any time to perform specific actions within the Messenger experience. Users can invoke multiple commands in a single message. For example, if your travel assistant supports commands such as **flights** and **hotels**, a message from a user might be, “Help me book **flights** and **hotels** to Mexico for the last week of December.” Messenger automatically highlights the commands in the composer as the user taps them. These commands then trigger a [webhook](https://developers.facebook.com/documentation/business-messaging/messenger-platform/webhooks/webhook-events/messages) to send the list of commands invoked by the user. Only the command name(s) will be sent to your app via webhook. Your app can then use the webhook as confirmation of the user’s intent to run a command, and parse the message text appropriately.
+Commands are tappable keywords that a user can invoke at any time to perform specific actions within the Messenger experience. Users can invoke multiple commands in a single message. For example, if your travel assistant supports commands such as **flights** and **hotels**, a message from a user might be, "Help me book **flights** and **hotels** to Mexico for the last week of December." Messenger automatically highlights the commands in the composer as the user taps them. These commands then trigger a [webhook](https://developers.facebook.com/documentation/business-messaging/messenger-platform/webhooks/webhook-events/messages) to send the list of commands invoked by the user. Only the command name(s) will be sent to your app via webhook. Your app can then use the webhook as confirmation of the user's intent to run a command, and parse the message text appropriately.
 
 ![Messenger Commands menu listing flights, hotels, currency, and weather above the composer](https://scontent.fdel1-4.fna.fbcdn.net/v/t39.2365-6/643444790_1445181547340495_1812315071955543768_n.png?_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=RIP_W-w9OgMQ7kNvwFZyTIN&_nc_oc=Adp29_gqf5h8q-dvGEAazd1mU1xTQTPoCIkm8DAn-1rrDPJtY39PDlSiO5fWTOZYXHa_OWYFAhOTQ-6AVdOT8qv-&_nc_zt=14&_nc_ht=scontent.fdel1-4.fna&_nc_gid=ZLvo22fdTQ8oscI7BcYA3w&_nc_ss=7b289&oh=00_AQA7sxuRsF4zeU4e5yakZebH1u3UTbz3YMLxzHdPsxglRw&oe=6A606F8C)
 
@@ -19,7 +19,7 @@ Users can invoke commands in three ways, as seen in the screenshots above:
 
 * From the Commands menu, which is a static menu accessed by tapping a hamburger menu icon next to the composer
 * By typing a forward slash or @ in the composer
-* From a “popover” above the composer, which is a bubble with a single command that will show up when the user types a word that is also a command supported by your Messenger experience
+* From a "popover" above the composer, which is a bubble with a single command that will show up when the user types a word that is also a command supported by your Messenger experience
 
 The Commands menu appears automatically when you set up Commands. No further action is needed on your part.
 
@@ -28,57 +28,53 @@ A key difference between Commands and the Persistent Menu is that tapping a Pers
 ## `commands` Format
 
 ```
-```
-"commands": [  
-  {  
-    "locale": "default",  
-    "commands": [  
-      {  
-        "name": "flights",  
-        "description": "Find real-time flights and fares"  
-      },  
-      {  
-        "name": "hotels",  
-        "description": "Find real-time hotel rooms and rates"  
-      },  
-      {  
-        "name": "currency",  
-        "description": "Find real-time currency exchange rates"  
-      },  
-      {  
-        "name": "weather",  
-        "description": "Find real-time weather reports and forecasts"  
-      }  
-    ]  
-  }  
+"commands": [  
+  {  
+    "locale": "default",  
+    "commands": [  
+      {  
+        "name": "flights",  
+        "description": "Find real-time flights and fares"  
+      },  
+      {  
+        "name": "hotels",  
+        "description": "Find real-time hotel rooms and rates"  
+      },  
+      {  
+        "name": "currency",  
+        "description": "Find real-time currency exchange rates"  
+      },  
+      {  
+        "name": "weather",  
+        "description": "Find real-time weather reports and forecasts"  
+      }  
+    ]  
+  }  
 ]
-```
 ```
 
 ## Localization
 
-You may provide default and localized commands, to be displayed based on the user’s locale. To do this, specify a separate object in the `commands` array for each locale. To specify the locale for each object, set the `locale` property to a [supported locale](https://developers.facebook.com/documentation/business-messaging/messenger-platform/messenger-profile/supported-locales):
+You may provide default and localized commands, to be displayed based on the user's locale. To do this, specify a separate object in the `commands` array for each locale. To specify the locale for each object, set the `locale` property to a [supported locale](https://developers.facebook.com/documentation/business-messaging/messenger-platform/messenger-profile/supported-locales):
 
 ```
-```
-"commands": [  
-  {  
-    "locale": "default",  
-    "commands": [...]  
-  },  
-  {  
-    "locale": "zh_CN",  
-    "commands": [...]  
-  }  
+"commands": [  
+  {  
+    "locale": "default",  
+    "commands": [...]  
+  },  
+  {  
+    "locale": "zh_CN",  
+    "commands": [...]  
+  }  
 ]
-```
 ```
 
 ## Properties
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `locale` | String | Locale of the `commands` array. The corresponding array of commands will be displayed when the user’s locale matches the provided locale.   You must at least specify commands for the default locale, which will be displayed if no provided locale matches the user’s locale.   See the [list of supported locales](https://developers.facebook.com/documentation/business-messaging/messenger-platform/messenger-profile/supported-locales) |
+| `locale` | String | Locale of the `commands` array. The corresponding array of commands will be displayed when the user's locale matches the provided locale.   You must at least specify commands for the default locale, which will be displayed if no provided locale matches the user's locale.   See the [list of supported locales](https://developers.facebook.com/documentation/business-messaging/messenger-platform/messenger-profile/supported-locales) |
 | `commands` | Array<`command`> | An array of commands to display to users in the provided locale.   The array should contain a minimum of 1 and a maximum of 100 commands. |
 
 ### `command` object
@@ -99,37 +95,35 @@ curl -X GET "https://graph.facebook.com/v25.0/me/messenger_profile?fields=comman
 ### Example response
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "commands": [  
-        {  
-          "locale": "default",  
-          "commands": [  
-            {  
-              "name": "flights",  
-              "description": "Find real-time flights and fares"  
-            },  
-            {  
-              "name": "hotels",  
-              "description": "Find real-time hotel rooms and rates"  
-            },  
-            {  
-              "name": "currency",  
-              "description": "Find real-time currency exchange rates"  
-            },  
-            {  
-              "name": "weather",  
-              "description": "Find real-time weather reports and forecasts"  
-            }  
-          ]  
-        }  
-      ]  
-    }  
-  ]  
+  "data": [  
+    {  
+      "commands": [  
+        {  
+          "locale": "default",  
+          "commands": [  
+            {  
+              "name": "flights",  
+              "description": "Find real-time flights and fares"  
+            },  
+            {  
+              "name": "hotels",  
+              "description": "Find real-time hotel rooms and rates"  
+            },  
+            {  
+              "name": "currency",  
+              "description": "Find real-time currency exchange rates"  
+            },  
+            {  
+              "name": "weather",  
+              "description": "Find real-time weather reports and forecasts"  
+            }  
+          ]  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ### Example POST request
@@ -167,11 +161,9 @@ curl -X POST -H "Content-Type: application/json" -d '{
 ### Example response
 
 ```
-```
 {  
-    "result": "success"  
+    "result": "success"  
 }
-```
 ```
 
 ## Rate Limit

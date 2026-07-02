@@ -9,7 +9,7 @@ Updated: Sep 24, 2025
 
 Meta no longer supports Handover Protocol for Messenger and all the businesses are migrated to Conversation Routing. Conversation Routing is backwards compatible with most of the Handover Protocol API and functionalities and expected to function without any interruptions.
 
-Conversation Routing allows Meta to route conversations between your business and customers, or prospective customers, to the app that you have specified to respond in the conversation. This routing allows your business to create rich conversations with people and to minimize API calls to Meta’s servers.
+Conversation Routing allows Meta to route conversations between your business and customers, or prospective customers, to the app that you have specified to respond in the conversation. This routing allows your business to create rich conversations with people and to minimize API calls to Meta's servers.
 
 This document shows you how to configure your apps for Conversation Routing.
 
@@ -52,7 +52,7 @@ Before you can pass conversations between apps, you need the following:
 * A Meta Ad Account
 * The Meta app ID for your default app
 * The Meta app ID for your marketing app
-* Connect all apps to your business’ Facebook Page
+* Connect all apps to your business' Facebook Page
 * The person requesting the Page access token must have Admin access or be able to perform the `MANAGE` task on a Classic Facebook Page, Facebook access (New Pages Experience) for the Facebook Page, or Full control via the Business Settings
 * A server to receive Meta Webhooks notifications. We recommend setting up a separate endpoint on your server for each app.
 * Subscribe all apps to the following webhooks topics:
@@ -88,7 +88,7 @@ The application responsible for responding to a specific user-business conversat
 
 ## Entry Point Routing
 
-Entry point routing enables you to route conversations to specific apps based on a user’s entry point. You can configure these routes on the Conversation Routing tab of your Facebook Page’s settings.
+Entry point routing enables you to route conversations to specific apps based on a user's entry point. You can configure these routes on the Conversation Routing tab of your Facebook Page's settings.
 
 | Entry Point | How to Configure |
 | --- | --- |
@@ -161,32 +161,28 @@ We show you how to:
 You can pass thread control to a specific app by setting `app_id` and `control_type` fields in `thread_control`.
 
 ```
-```
-curl -X POST -H "Content-Type: application/json" -d '{  
-  "messaging_type": "RESPONSE",  
-  "thread_control": {  
-  "app_id": "<APPLICATION_ID>",  
-  "control_type": "pass"  
-  },  
-  "recipient": {  
-  "id": "<PSID>"  
-  },  
-  "message": {  
-  "text" : "Let me transfer you to our live agent"  
-  }  
-}' "https://graph.facebook.com/v12.0/me/messages?access_token=<ACCESS_TOKEN>"
-```
+curl -X POST -H "Content-Type: application/json" -d '{  
+  "messaging_type": "RESPONSE",  
+  "thread_control": {  
+  "app_id": "<APPLICATION_ID>",  
+  "control_type": "pass"  
+  },  
+  "recipient": {  
+  "id": "<PSID>"  
+  },  
+  "message": {  
+  "text" : "Let me transfer you to our live agent"  
+  }  
+}' "https://graph.facebook.com/v12.0/me/messages?access_token=<ACCESS_TOKEN>"
 ```
 
 On success, your app receives the following JSON object with the recipient ID and the message ID.
 
 ```
-```
 {  
-  "recipient_id":"<PSID>",  
-  "message_id":"MESSAGE-ID"  
+  "recipient_id":"<PSID>",  
+  "message_id":"MESSAGE-ID"  
 }
-```
 ```
 
 #### Release Thread Control
@@ -194,31 +190,27 @@ On success, your app receives the following JSON object with the recipient ID an
 You can release thread control to the default application by setting up `control_type` fields in `thread_control`.
 
 ```
-```
-curl -X POST -H "Content-Type: application/json" -d '{  
-  "messaging_type": "RESPONSE",  
-  "thread_control": {  
-  "control_type": "release"  
-  },  
-  "recipient": {  
-  "id": "<PSID>"  
-  },  
-  "message": {  
-  "text" : "Let me transfer you to our live agent"  
-  }  
-}' "https://graph.facebook.com/v12.0/me/messages?access_token=<ACCESS_TOKEN>"
-```
+curl -X POST -H "Content-Type: application/json" -d '{  
+  "messaging_type": "RESPONSE",  
+  "thread_control": {  
+  "control_type": "release"  
+  },  
+  "recipient": {  
+  "id": "<PSID>"  
+  },  
+  "message": {  
+  "text" : "Let me transfer you to our live agent"  
+  }  
+}' "https://graph.facebook.com/v12.0/me/messages?access_token=<ACCESS_TOKEN>"
 ```
 
 On success, your app receives the following JSON object with the recipient ID and the message ID.
 
 ```
-```
 {  
-  "recipient_id":"<PSID>",  
-  "message_id":"MESSAGE-ID"  
+  "recipient_id":"<PSID>",  
+  "message_id":"MESSAGE-ID"  
 }
-```
 ```
 
 | Parameter | Description |
@@ -236,23 +228,19 @@ When your app requires hand over the conversation to another application, to bet
 Note: To pass control to an Inbox, set `target_app_id` to **263902037430900** for the Page Inbox and **1217981644879628** for the Instagram Inbox.
 
 ```
-```
-curl -X POST "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/pass_thread_control  
-  ?recipient={id:PSID}  
-  &target_app_id=APP-GETTING-CONTROL  
-  &metadata=Information about the conversation  
-  &access_token=PAGE-ACCESS-TOKEN"
-```
+curl -X POST "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/pass_thread_control  
+  ?recipient={id:PSID}  
+  &target_app_id=APP-GETTING-CONTROL  
+  &metadata=Information about the conversation  
+  &access_token=PAGE-ACCESS-TOKEN"
 ```
 
 On success, your app will receive the following response:
 
 ```
-```
 {  
-  "success" : true  
+  "success" : true  
 }
-```
 ```
 
 Control of the conversation has been passed to application specified in the request.
@@ -260,22 +248,20 @@ Control of the conversation has been passed to application specified in the requ
 #### Example Webhooks Notification
 
 ```
-```
 {  
-  "sender":{  
-     "id":"PSID"   // The Page-scoped ID for the person who sent the message to the Page  
-  },  
-  "recipient":{  
-     "id":"PAGE-ID"  
-  },  
-  "timestamp":UNIX-TIMESTAMP,  
-  "pass_thread_control":{  
-     "previous_owner_app_id":"APP-RELEASING-CONTROL",  
-      "new_owner_app_id": APP-GETTING-CONTROL,  
-      "metadata":"Information about the conversation"  
-  }  
+  "sender":{  
+     "id":"PSID"   // The Page-scoped ID for the person who sent the message to the Page  
+  },  
+  "recipient":{  
+     "id":"PAGE-ID"  
+  },  
+  "timestamp":UNIX-TIMESTAMP,  
+  "pass_thread_control":{  
+     "previous_owner_app_id":"APP-RELEASING-CONTROL",  
+      "new_owner_app_id": APP-GETTING-CONTROL,  
+      "metadata":"Information about the conversation"  
+  }  
 }
-```
 ```
 
 #### Release Thread Control
@@ -287,12 +273,10 @@ To release control of a conversation, send a `POST` request to `/PAGE-ID/release
 #### Sample API Request
 
 ```
-```
-curl -X POST "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/release_thread_control  
-  ?recipient={id:PSID}  
-  &metadata=Information about the conversation  
-  &access_token=PAGE-ACCESS-TOKEN"
-```
+curl -X POST "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/release_thread_control  
+  ?recipient={id:PSID}  
+  &metadata=Information about the conversation  
+  &access_token=PAGE-ACCESS-TOKEN"
 ```
 
 #### Example API Response
@@ -300,11 +284,9 @@ curl -X POST "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/release_t
 On success, your app will receive the following response
 
 ```
-```
 {  
-  "success" : true  
+  "success" : true  
 }
-```
 ```
 
 Control of the conversation status will change to idle after successful invocation of the request.
@@ -316,12 +298,10 @@ If a conversation is idle, or your app is the Primary Receiver, you can send a `
 #### Sample API Request
 
 ```
-```
-curl -X POST -H "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/take_thread_control  
-  ?recipient={id:ID}  
-  &metadata=Information about the conversation  
-  &access_token=PAGE_ACCESS_TOKEN"
-```
+curl -X POST -H "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/take_thread_control  
+  ?recipient={id:ID}  
+  &metadata=Information about the conversation  
+  &access_token=PAGE_ACCESS_TOKEN"
 ```
 
 #### Example API Response
@@ -329,11 +309,9 @@ curl -X POST -H "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/take_
 On success, your app will receive the following response
 
 ```
-```
 {  
-  "success" : true  
+  "success" : true  
 }
-```
 ```
 
 #### Example Webhooks Notification
@@ -341,22 +319,20 @@ On success, your app will receive the following response
 Any apps subscribed to the `messaging_handover` webhook field will receive a notification with the ID for the person who sent the message, the ID for the Facebook Page or Instagram Professional account that received the message, the ID for the previous app that controlled the conversation, the ID for the app that now controls the conversation, and any metadata about the conversation that was sent in the API request that triggered the webhook.
 
 ```
-```
 {  
-  "sender":{  
-  "id":"ID"  
-  },  
-  "recipient":{  
-  "id":"ID"  
-  },  
-  "timestamp":UNIX-TIMESTAMP,  
-  "take_thread_control":{  
-  "previous_owner_app_id":"PREVIOUS-OWNER-APP-ID",  
-  "new_owner_app_id": "NEW-OWNER-APP-ID",  
-  "metadata":"Information about the conversation"  
-  }  
+  "sender":{  
+  "id":"ID"  
+  },  
+  "recipient":{  
+  "id":"ID"  
+  },  
+  "timestamp":UNIX-TIMESTAMP,  
+  "take_thread_control":{  
+  "previous_owner_app_id":"PREVIOUS-OWNER-APP-ID",  
+  "new_owner_app_id": "NEW-OWNER-APP-ID",  
+  "metadata":"Information about the conversation"  
+  }  
 }
-```
 ```
 
 #### Request Thread Control
@@ -366,12 +342,10 @@ To request control of a conversation from another app, send a `POST` request to 
 #### Sample API Request
 
 ```
-```
-curl -X POST "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/request_thread_control  
-  ?recipient={id:PSID}  
-  &metadata=Information about the conversation  
-  &access_token=PAGE-ACCESS-TOKEN"
-```
+curl -X POST "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/request_thread_control  
+  ?recipient={id:PSID}  
+  &metadata=Information about the conversation  
+  &access_token=PAGE-ACCESS-TOKEN"
 ```
 
 #### Example API Response
@@ -379,11 +353,9 @@ curl -X POST "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/request_t
 On success, your app will receive the following response
 
 ```
-```
 {  
-  "success" : true  
+  "success" : true  
 }
-```
 ```
 
 #### Extend Thread Control
@@ -395,12 +367,10 @@ To extend control of the conversation, send a `POST` request to `/PAGE-ID/extend
 #### Sample API Request
 
 ```
-```
-curl -X POST "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/extend_thread_control  
-  ?recipient={id:PSID}  
-  &duration=86400   //Length of time, in seconds  
-  &access_token=PAGE-ACCESS-TOKEN"
-```
+curl -X POST "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/extend_thread_control  
+  ?recipient={id:PSID}  
+  &duration=86400   //Length of time, in seconds  
+  &access_token=PAGE-ACCESS-TOKEN"
 ```
 
 #### Example API Response
@@ -408,11 +378,9 @@ curl -X POST "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/extend_th
 On success, your app will receive the following response
 
 ```
-```
 {  
-  "success" : true  
+  "success" : true  
 }
-```
 ```
 
 #### Find the App Control
@@ -422,11 +390,9 @@ You can find the app that currently controls the conversation by sending a `GET`
 #### Sample API Request
 
 ```
-```
-curl -X GET "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/thread_owner  
-  ?recipient=PSID  
-  &access_token=PAGE-ACCESS-TOKEN"
-```
+curl -X GET "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/thread_owner  
+  ?recipient=PSID  
+  &access_token=PAGE-ACCESS-TOKEN"
 ```
 
 #### Example API Response
@@ -435,18 +401,16 @@ curl -X GET "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/thread_own
 * If the thread is not idle, you will receive the expiration timestamp in the API response, otherwise, you will receive an empty API response
 
 ```
-```
 {  
-  "data": [  
-  {  
-    "thread_owner": {  
-      "app_id": APP-ID,  
-      "expiration": UNIX-TIMESTAMP  
-    }  
-  }  
-  ]  
+  "data": [  
+  {  
+    "thread_owner": {  
+      "app_id": APP-ID,  
+      "expiration": UNIX-TIMESTAMP  
+    }  
+  }  
+  ]  
 }
-```
 ```
 
 #### Messaging Feature Status API
@@ -456,24 +420,20 @@ You can use the Messaging Feature Status API to check the Conversation Routing s
 #### Sample API Request
 
 ```
-```
-curl -X GET "https://graph.facebook.com/v12.0/me?fields=messaging_feature_status&access_token=<ACCESS_TOKEN>"
-```
+curl -X GET "https://graph.facebook.com/v12.0/me?fields=messaging_feature_status&access_token=<ACCESS_TOKEN>"
 ```
 
 #### Example API Response
 
 ```
-```
 {  
-  "messaging_feature_status": {  
-  "hop_v2": false,  
-  "msgr_multi_app": true,  
-  "ig_multi_app": false  
-  },  
-  "id": "<page_id>"  
+  "messaging_feature_status": {  
+  "hop_v2": false,  
+  "msgr_multi_app": true,  
+  "ig_multi_app": false  
+  },  
+  "id": "<page_id>"  
 }
-```
 ```
 
 ## See Also

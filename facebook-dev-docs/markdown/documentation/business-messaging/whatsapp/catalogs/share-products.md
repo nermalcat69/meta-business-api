@@ -26,10 +26,8 @@ When the cart is disabled, customers can see products and their details, but car
 ### Request syntax
 
 ```
-```
-POST /<BUSINESS_PHONE_NUMBER_ID>/whatsapp_commerce_settings  
-  ?is_cart_enabled=<IS_CART_ENABLED>
-```
+POST /<BUSINESS_PHONE_NUMBER_ID>/whatsapp_commerce_settings  
+  ?is_cart_enabled=<IS_CART_ENABLED>
 ```
 
 ### Parameters
@@ -49,11 +47,9 @@ curl -X POST 'https://graph.facebook.com/v25.0/106850078877666/whatsapp_commerce
 ### Sample response
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 ## Enable or disable catalog
@@ -71,10 +67,8 @@ If you disable the catalog, wa.me links to your catalog, as well as the **View c
 ### Request syntax
 
 ```
-```
-POST /<BUSINESS_PHONE_NUMBER_ID>/whatsapp_commerce_settings  
-  ?is_catalog_visible=<IS_CATALOG_VISIBLE>
-```
+POST /<BUSINESS_PHONE_NUMBER_ID>/whatsapp_commerce_settings  
+  ?is_catalog_visible=<IS_CATALOG_VISIBLE>
 ```
 
 ### Parameters
@@ -94,23 +88,19 @@ curl -X POST 'https://graph.facebook.com/v25.0/106850078877666/whatsapp_commerce
 ### Sample response
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 ## Get commerce settings
 
-Use the [Commerce Settings API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/phone-number-api) to get an individual business phone number’s commerce settings.
+Use the [Commerce Settings API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/phone-number-api) to get an individual business phone number's commerce settings.
 
 ### Request syntax
 
 ```
-```
-GET /<BUSINESS_PHONE_NUMBER_ID>/whatsapp_commerce_settings
-```
+GET /<BUSINESS_PHONE_NUMBER_ID>/whatsapp_commerce_settings
 ```
 
 ### Parameters
@@ -129,15 +119,13 @@ curl -X GET 'https://graph.facebook.com/v25.0/106850078877666/whatsapp_commerce_
 ### Sample response
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "is_cart_enabled": true,  
-      "is_catalog_visible": true,  
-      "id": "727705352028726"  
-    }  
-  ]  
+  "data": [  
+    {  
+      "is_cart_enabled": true,  
+      "is_catalog_visible": true,  
+      "id": "727705352028726"  
+    }  
+  ]  
 }
-```
 ```

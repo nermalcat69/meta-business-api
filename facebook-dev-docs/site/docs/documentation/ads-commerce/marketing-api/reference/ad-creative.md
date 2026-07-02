@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/marketing
 
 Updated: Jun 18, 2021
 
-Get information on key updates to an ad account and ad objects associated with it. Please note that this API returns **one week’s data by default**. Information returned includes major account status changes, updates made to budget, campaign, targeting, audiences and so on.
+Get information on key updates to an ad account and ad objects associated with it. Please note that this API returns **one week's data by default**. Information returned includes major account status changes, updates made to budget, campaign, targeting, audiences and so on.
 
 ## Reading
 

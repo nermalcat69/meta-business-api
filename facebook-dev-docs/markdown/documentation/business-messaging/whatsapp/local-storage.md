@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/business-messaging/wha
 
 Updated: Jun 16, 2026
 
-This page describes how Meta provides Cloud API as a standalone service for businesses to message users at scale via WhatsApp. Meta also offers additional optional services that businesses can choose to use with Cloud API. For example, a business can leverage Meta’s AI capabilities to converse with customers via Cloud API. When a business chooses to use these services, different terms could apply. Please consult the applicable documentation for additional details on how Meta processes data for these services.
+This page describes how Meta provides Cloud API as a standalone service for businesses to message users at scale via WhatsApp. Meta also offers additional optional services that businesses can choose to use with Cloud API. For example, a business can leverage Meta's AI capabilities to converse with customers via Cloud API. When a business chooses to use these services, different terms could apply. Please consult the applicable documentation for additional details on how Meta processes data for these services.
 
 ## Message flows
 
@@ -15,7 +15,7 @@ When a user sends a message to a business that uses Cloud API, the message trave
 
 WhatsApp acts as the transport channel. WhatsApp protects users by detecting unusual messaging patterns (like a business trying to message all users) and collecting spam reports from users. Cloud API, operated by Meta, acts as the intermediary between WhatsApp and businesses using Cloud API. In other words, those businesses have designated Cloud API to operate on their behalf.
 
-To the extent any data protection or privacy law applicable to you recognizes the concepts of “data processor” or “service provider” as defined within those laws, Meta, in providing Cloud API service, acts as a data processor/service provider on behalf of the business. Cloud API will only use the messages it processes on behalf of and at the instruction of the business, unless otherwise directed. Cloud API will not automatically use WhatsApp messages to inform the ads that a person sees.
+To the extent any data protection or privacy law applicable to you recognizes the concepts of "data processor" or "service provider" as defined within those laws, Meta, in providing Cloud API service, acts as a data processor/service provider on behalf of the business. Cloud API will only use the messages it processes on behalf of and at the instruction of the business, unless otherwise directed. Cloud API will not automatically use WhatsApp messages to inform the ads that a person sees.
 
 For further detail on message flows and encryption, see the [WhatsApp Encryption Overview technical whitepaper⁠](https://www.whatsapp.com/security/WhatsApp-Security-Whitepaper.pdf?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR7GhB_XgcYsMt-Avc1YGJ41Fy7gFBKcLKSc42jIJfGn9OPclNUvBSjQGuEW_A_aem_R6oiqBs6qlmMwuvdB8xTBQ).
 
@@ -29,7 +29,7 @@ All data collected, stored, and accessed by Cloud API is controlled and monitore
 
 **User Data.** Cloud API uses identifiers as sources or destinations of individual messages; as such, Cloud API deletes them within 30 days of the last status update (sent, delivered, read) of a message, unless otherwise directed.
 
-For a more detailed resource on Cloud API’s storage and processing of data, see the [Meta Business Messaging Compliance Center⁠](https://www.facebook.com/business/business-messaging/compliance/), which includes Cloud API’s certifications and compliance documentation.
+For a more detailed resource on Cloud API's storage and processing of data, see the [Meta Business Messaging Compliance Center⁠](https://www.facebook.com/business/business-messaging/compliance/), which includes Cloud API's certifications and compliance documentation.
 
 ## FAQs
 
@@ -59,7 +59,7 @@ We have obtained SOC 2 Type II and ISO 27001 reports. Please visit our [Meta Bus
 
 **How does Cloud API comply with regional data protection laws (such as GDPR, LGPD, and PDPB)?**
 
-Meta takes data protection and people’s privacy very seriously and we comply with applicable legal, industry, and regulatory requirements governing data protection, as well as industry best practices. Cloud API customers must meet their own obligations under data protection laws, such as the General Data Protection Regulation (GDPR). Please visit our [Meta Business Messaging Compliance Center⁠](https://www.facebook.com/business/business-messaging/compliance) to learn more.
+Meta takes data protection and people's privacy very seriously and we comply with applicable legal, industry, and regulatory requirements governing data protection, as well as industry best practices. Cloud API customers must meet their own obligations under data protection laws, such as the General Data Protection Regulation (GDPR). Please visit our [Meta Business Messaging Compliance Center⁠](https://www.facebook.com/business/business-messaging/compliance) to learn more.
 
 **What does Meta and WhatsApp do to make sure the transfer of data from the E.U. and/or the UK to the US is compliant?**
 

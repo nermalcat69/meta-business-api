@@ -34,7 +34,7 @@ Review the [requirements](https://developers.facebook.com/documentation/ads-comm
 
 ![Flowchart of boosting branded content: creator tags advertiser, advertiser fetches media by permalink to create an ad](https://scontent.fdel1-2.fna.fbcdn.net/v/t39.2365-6/654270161_1459945245864125_1846858090693466565_n.png?_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=jNqCsq6H8Q0Q7kNvwGsJIfK&_nc_oc=AdoRwS7zOBWM1Hs3J-mDhwQS07daFItCoGRYSixAt95k31guG4UFcjl7HDqcSvOv9CLe0eOlZvmiaJJoeXhkIQ0N&_nc_zt=14&_nc_ht=scontent.fdel1-2.fna&_nc_gid=KaXUQFtk4TlKDe0wq8I3uA&_nc_ss=7b289&oh=00_AQCXPpxa69qLgKhiO_-NWgbnJBshAS2jVpF0uUSchnOzag&oe=6A60668A)
 
-To find all the media that you are tagged in that is available to be used in an ad, send a `GET` request to the `/{instagram-id}/branded_content_advertisable_medias` endpoint where the `{instagram-id}` is your brand’s Instagram professional account ID.
+To find all the media that you are tagged in that is available to be used in an ad, send a `GET` request to the `/{instagram-id}/branded_content_advertisable_medias` endpoint where the `{instagram-id}` is your brand's Instagram professional account ID.
 
 ### Parameters
 
@@ -65,51 +65,49 @@ curl -i -X GET \
 A successful request returns a list of media containing the media IDs, eligibility errors (if any), permalinks, whether you have permissions to boost the posts and owner ID of the media that can be used in ads.
 
 ```
-```
 {  
- "data": [  
-   {  
-     "eligibility_errors": [  
-        "Cannot use Reels containing tappable elements can't be used for ads. Choose a different post to create an ad."  
-      ],  
-      "recommended_campaign_objectives": [  
-        "OUTCOME_ENGAGEMENT",  
-        "OUTCOME_TRAFFIC",  
-        "OUTCOME_LEADS"  
-      ],  
-      "has_permission_for_partnership_ad":true,  
-      "owner_id": "16502228360082",  
-      "permalink": "https://www.instagram.com/reel/CzboAd3R91-/",  
-      "id": "16502230933174"  
-    },  
-    {  
-      "owner_id": "90010135660647",  
-      "permalink": "https://www.instagram.com/p/CywLmKWu6Zs/",  
-      "id": "90013017840068",  
-      "has_permission_for_partnership_ad":true  
-    },  
-    {  
-      "owner_id": "90010489752294",  
-      "permalink": "https://www.instagram.com/p/CyWe6-ExB7p/",  
-      "id": "90012928652981",  
-      "has_permission_for_partnership_ad":false  
-    },  
-    {  
-      "eligibility_errors": [  
-        "Can't use GIF stickers. Remove or choose a different sticker."  
-      ],  
-      "owner_id": "90010135660647",  
-      "permalink": "https://www.instagram.com/reel/CyEb6q4OuoN/",  
-      "id": "90012872006248"  
-    },  
-  ...  
- ],  
- "paging": {  
-    "cursors": {  
-      "before": "QVFIUkR6amZAhLVVVWGpfTlRBenRsOUJCQ3lR==",  
-      "after": "QVFIUlhBX1hoQzI4SkVFaTRoeEpTdEpJMFdIUh=="  
-    }}
-```
+ "data": [  
+   {  
+     "eligibility_errors": [  
+        "Cannot use Reels containing tappable elements can't be used for ads. Choose a different post to create an ad."  
+      ],  
+      "recommended_campaign_objectives": [  
+        "OUTCOME_ENGAGEMENT",  
+        "OUTCOME_TRAFFIC",  
+        "OUTCOME_LEADS"  
+      ],  
+      "has_permission_for_partnership_ad":true,  
+      "owner_id": "16502228360082",  
+      "permalink": "https://www.instagram.com/reel/CzboAd3R91-/",  
+      "id": "16502230933174"  
+    },  
+    {  
+      "owner_id": "90010135660647",  
+      "permalink": "https://www.instagram.com/p/CywLmKWu6Zs/",  
+      "id": "90013017840068",  
+      "has_permission_for_partnership_ad":true  
+    },  
+    {  
+      "owner_id": "90010489752294",  
+      "permalink": "https://www.instagram.com/p/CyWe6-ExB7p/",  
+      "id": "90012928652981",  
+      "has_permission_for_partnership_ad":false  
+    },  
+    {  
+      "eligibility_errors": [  
+        "Can't use GIF stickers. Remove or choose a different sticker."  
+      ],  
+      "owner_id": "90010135660647",  
+      "permalink": "https://www.instagram.com/reel/CyEb6q4OuoN/",  
+      "id": "90012872006248"  
+    },  
+  ...  
+ ],  
+ "paging": {  
+    "cursors": {  
+      "before": "QVFIUkR6amZAhLVVVWGpfTlRBenRsOUJCQ3lR==",  
+      "after": "QVFIUlhBX1hoQzI4SkVFaTRoeEpTdEpJMFdIUh=="  
+    }​}
 ```
 
 ### Recommended creator content
@@ -189,7 +187,7 @@ curl -i -X GET \
 
 ### Using the Instagram media ID
 
-Send a `POST` request to the `/act_{ad-account-id}/adcreatives` endpoint with the `object_id` field set to your brand’s Facebook Page ID and the `source_instagram_media_id` field set to the Instagram post ID for the branded content you want to use in your ad.
+Send a `POST` request to the `/act_{ad-account-id}/adcreatives` endpoint with the `object_id` field set to your brand's Facebook Page ID and the `source_instagram_media_id` field set to the Instagram post ID for the branded content you want to use in your ad.
 
 #### Example request
 
@@ -222,7 +220,7 @@ A successful request returns the ad creative ID to use in the ad.
 
 ### Using a partnership ad code
 
-Send a `POST` request to the `/act_{ad-account-id}/adcreatives` endpoint with the `object_id` field set to your brand’s Facebook Page ID for your brand and the `instagram_boost_post_access_token` provided by the creator.
+Send a `POST` request to the `/act_{ad-account-id}/adcreatives` endpoint with the `object_id` field set to your brand's Facebook Page ID for your brand and the `instagram_boost_post_access_token` provided by the creator.
 
 ![Flowchart of partnership ad code flow: creator generates a code on the IG app and shares it so the advertiser can create an ad](https://scontent.fdel1-3.fna.fbcdn.net/v/t39.2365-6/651919738_1459945319197451_2066363227463647763_n.png?_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=_bP7OmRahmsQ7kNvwF5fImc&_nc_oc=AdohSyvWYhdn71YGa8TnYDVD3KoNJf1ooo73IIgB8mDaWI2h3rEDpOBmvJnQ1KxgW9BPPxvQR7QoVHfMxiTqVnDQ&_nc_zt=14&_nc_ht=scontent.fdel1-3.fna&_nc_gid=KaXUQFtk4TlKDe0wq8I3uA&_nc_ss=7b289&oh=00_AQCVX6M9XF4O1rFIYC9qxKhWoPjdTMn-TrcAbVtQwMfNSw&oe=6A6075DD)
 
@@ -289,7 +287,7 @@ You can use this ad ID to [publish your ad](https://developers.facebook.com/docu
 
 ### Uploading an Instagram video to Facebook
 
-If you are working on boosting video media, you might encounter the error “Instagram Video Must Be Uploaded To Facebook”.
+If you are working on boosting video media, you might encounter the error "Instagram Video Must Be Uploaded To Facebook".
 
 If you have the partnership ad code, you can use the following workaround using the `partnership_ad_ad_code` parameter to upload the video asset to the Facebook video ad library, instead of resorting to source file information:
 
@@ -312,4 +310,4 @@ A successful request returns an ID for the video.
 }
 ```
 
-If you don’t have a partnership ad code, refer to the [Ad Videos documentation](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-account/advideos).
+If you don't have a partnership ad code, refer to the [Ad Videos documentation](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-account/advideos).

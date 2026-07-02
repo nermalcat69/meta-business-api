@@ -28,7 +28,7 @@ Host: graph.facebook.com
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| `filter` | string | **Optional**. JSON-encoded WCA (Whole Catalog Attribute) filter rule for apps and software. For example: `{"app_category":{"eq":"Games"}}`. See [Product Set](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-set) for the full list of filter operators. |
+| `filter` | string | **Optional**. JSON-encoded WCA (Whole Catalog Attribute) filter rule for apps and software. For example: `{"app_category":{"eq":"Games"}​}`. See [Product Set](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-set) for the full list of filter operators. |
 | `summary` | boolean | **Optional**. When `true`, includes a `summary` object with `total_count` in the response. |
 | `limit` | integer | **Optional**. Maximum number of items to return per page. |
 | `before` | string | **Optional**. Cursor for backward pagination. |
@@ -99,8 +99,8 @@ For the full list of supported fields, see the [Apps and Software node — Field
 
 ## Updating
 
-You can’t perform this operation on this node. To update individual app or software items, use the [Apps and Software](https://developers.facebook.com/documentation/ads-commerce/catalog/reference/apps-and-software#updating) node.
+You can't perform this operation on this node. To update individual app or software items, use the [Apps and Software](https://developers.facebook.com/documentation/ads-commerce/catalog/reference/apps-and-software#updating) node.
 
 ## Deleting
 
-You can’t perform this operation on this node. To delete individual app or software items, use the [Apps and Software](https://developers.facebook.com/documentation/ads-commerce/catalog/reference/apps-and-software#deleting) node.
+You can't perform this operation on this node. To delete individual app or software items, use the [Apps and Software](https://developers.facebook.com/documentation/ads-commerce/catalog/reference/apps-and-software#deleting) node.

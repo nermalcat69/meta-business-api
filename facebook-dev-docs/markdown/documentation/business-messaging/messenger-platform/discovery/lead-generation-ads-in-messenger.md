@@ -21,11 +21,11 @@ Lead Generation Ads in Messenger allows your business to display ads on Facebook
 
 ### [Facebook Page⁠](https://www.facebook.com/business/help/1626883224209011)
 
-The Send Message button on your business’ Facebook Page allows people to send your business a message while visiting your Page.
+The Send Message button on your business' Facebook Page allows people to send your business a message while visiting your Page.
 
 ### [Private Replies](https://developers.facebook.com/documentation/business-messaging/messenger-platform/discovery/private-replies)
 
-Private Replies allows your business to send a message on Messenger to a person who has published a visitor post or comment on your business’ Facebook Page.
+Private Replies allows your business to send a message on Messenger to a person who has published a visitor post or comment on your business' Facebook Page.
 
 ### Search on Messenger
 
@@ -43,7 +43,7 @@ The Checkbox Plugin renders a checkbox in forms on your website to allow people 
 
 ### [Message Us Plugin](https://developers.facebook.com/docs/messenger-platform/discovery/message-us-plugin)
 
-The Message Us Plugin renders a button on your business’ website that opens a conversation with your business on Messenger.
+The Message Us Plugin renders a button on your business' website that opens a conversation with your business on Messenger.
 
 ### [Send to Messenger Plugin](https://developers.facebook.com/documentation/business-messaging/messenger-platform/discovery)
 
@@ -53,7 +53,7 @@ The Send to Messenger Plugin renders a button on your website that allows a pers
 
 ### [m.me Links](https://developers.facebook.com/documentation/business-messaging/messenger-platform/discovery/m-me-links)
 
-`m.me` Links is a URL service operated by Meta that redirects people to Messenger where they can start conversations with your business’ Facebook Page. You can use them on your business’ website, email newsletters, QR codes, and more.
+`m.me` Links is a URL service operated by Meta that redirects people to Messenger where they can start conversations with your business' Facebook Page. You can use them on your business' website, email newsletters, QR codes, and more.
 
 ### [Login Connect with Messenger](https://developers.facebook.com/documentation/facebook-login/login-connect)
 

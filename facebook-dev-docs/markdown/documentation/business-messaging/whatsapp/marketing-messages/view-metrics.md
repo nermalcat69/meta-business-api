@@ -21,40 +21,38 @@ Meta delivers a webhook payload when a WhatsApp user clicks the body or call-to-
 To receive this webhook, subscribe to the `whatsapp_business_account` webhook topic. Meta delivers the webhook payload on the `messages` field, as shown below:
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "<WHATSAPP_BUSINESS_ACCOUNT_ID>",  
-      "changes": [  
-        {  
-          "value": {  
-            "messaging_product": "whatsapp",  
-            "metadata": {  
-              "display_phone_number": "<BUSINESS_DISPLAY_PHONE_NUMBER>",  
-              "phone_number_id": "<BUSINESS_PHONE_NUMBER_ID>"  
-            },  
-            "user_actions": [  
-              {  
-                "action_type": "marketing_messages_link_click",  
-                "timestamp": "<time_of_click>",  
-                "marketing_messages_link_click_data": {  
-                  "click_component": "cta" | "body",  
-                  "product_id": "sku_id",  
-                  "click_id": "click_id",  
-                  "tracking_token": "example_token"  
-                }  
-              }  
-            ]  
-          },  
-          "field": "messages"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "<WHATSAPP_BUSINESS_ACCOUNT_ID>",  
+      "changes": [  
+        {  
+          "value": {  
+            "messaging_product": "whatsapp",  
+            "metadata": {  
+              "display_phone_number": "<BUSINESS_DISPLAY_PHONE_NUMBER>",  
+              "phone_number_id": "<BUSINESS_PHONE_NUMBER_ID>"  
+            },  
+            "user_actions": [  
+              {  
+                "action_type": "marketing_messages_link_click",  
+                "timestamp": "<time_of_click>",  
+                "marketing_messages_link_click_data": {  
+                  "click_component": "cta" | "body",  
+                  "product_id": "sku_id",  
+                  "click_id": "click_id",  
+                  "tracking_token": "example_token"  
+                }  
+              }  
+            ]  
+          },  
+          "field": "messages"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 | Field Name | Field Type | Field Description |

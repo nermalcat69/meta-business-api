@@ -58,14 +58,12 @@ Create a group with an initial group invite link:
 ### Request body
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "subject": "<GROUP_SUBJECT>",  
-  "description": "<GROUP_DESCRIPTION>",  
-  "join_approval_mode": "<JOIN_APPROVAL_MODE>"  
+  "messaging_product": "whatsapp",  
+  "subject": "<GROUP_SUBJECT>",  
+  "description": "<GROUP_DESCRIPTION>",  
+  "join_approval_mode": "<JOIN_APPROVAL_MODE>"  
 }
-```
 ```
 
 ### Request parameters
@@ -83,15 +81,15 @@ A `group_lifecycle_update` webhook is triggered.
 
 #### Group create succeed
 
-[View the “Group create succeed” sample webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/groups/webhooks#group-create-succeed)
+[View the "Group create succeed" sample webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/groups/webhooks#group-create-succeed)
 
 #### Group create fail
 
-[View the “Group create fail” sample webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/groups/webhooks#group-create-fail)
+[View the "Group create fail" sample webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/groups/webhooks#group-create-fail)
 
 #### User joins group using invite link
 
-[View the “User joins group using invite link” sample webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/groups/webhooks#user-joined-group-using-invite-link-succeed)
+[View the "User joins group using invite link" sample webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/groups/webhooks#user-joined-group-using-invite-link-succeed)
 
 ## Groups with join requests
 
@@ -116,24 +114,22 @@ When a WhatsApp user joins the group using a join request, a [`group_participant
 Upon success:
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "join_request_id": "<JOIN_REQUEST_ID>",  
-      "wa_id": "<WHATSAPP_USER_ID>",  
-      "creation_timestamp": "<JOIN_REQUEST_CREATION_TIMESTAMP">  
-    },  
-    //Additional join request objects would follow, if any  
-  ],  
-  "paging": {  
-    "cursors": {  
-      "before": "<BEFORE_CURSOR>",  
-      "after": "<AFTER_CURSOR>"  
-    }  
-  }  
+  "data": [  
+    {  
+      "join_request_id": "<JOIN_REQUEST_ID>",  
+      "wa_id": "<WHATSAPP_USER_ID>",  
+      "creation_timestamp": "<JOIN_REQUEST_CREATION_TIMESTAMP">  
+    },  
+    //Additional join request objects would follow, if any  
+  ],  
+  "paging": {  
+    "cursors": {  
+      "before": "<BEFORE_CURSOR>",  
+      "after": "<AFTER_CURSOR>"  
+    }  
+  }  
 }
-```
 ```
 
 #### Response parameters
@@ -155,15 +151,13 @@ Upon success:
 #### Request body
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "join_requests": [  
-    "<JOIN_REQUEST_ID>",  
-    // Additional join request IDs would go here, if approving in bulk  
-  ]  
+  "messaging_product": "whatsapp",  
+  "join_requests": [  
+    "<JOIN_REQUEST_ID>",  
+    // Additional join request IDs would go here, if approving in bulk  
+  ]  
 }
-```
 ```
 
 #### Request parameters
@@ -177,43 +171,41 @@ Upon success:
 Upon success, the API will respond with the following JSON payload, and WhatsApp users whose join requests were approved will be able to access the group when tapping the invite link.
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "approved_join_requests": [  
-    "<JOIN_REQUEST_ID>",  
-    // Additional join request IDs would go here, it approved in bulk  
-  ],  
+  "messaging_product": "whatsapp",  
+  "approved_join_requests": [  
+    "<JOIN_REQUEST_ID>",  
+    // Additional join request IDs would go here, it approved in bulk  
+  ],  
   
-  //Only included if unable to approve one or more join requests  
+  //Only included if unable to approve one or more join requests  
   
-  "failed_join_requests": [  
-    {  
-      "join_request_id": "<JOIN_REQUEST_ID>",  
-      "errors": [  
-        {  
-          "code": "<ERROR_CODE>",  
-          "message": "<ERROR_MESSAGE>",  
-          "title": "<ERROR_TITLE>",  
-          "error_data": {  
-            "details": "<ERROR_DETAILS>"  
-          }  
-        }  
-      ]  
-    }  
-  ],  
-  "errors": [  
-    {  
-      "code": "<ERROR_CODE>",  
-      "message": "<ERROR_MESSAGE>",  
-      "title": "<ERROR_TITLE>",  
-      "error_data": {  
-        "details": "<ERROR_DETAILS>"  
-      }  
-    }  
-  ]  
+  "failed_join_requests": [  
+    {  
+      "join_request_id": "<JOIN_REQUEST_ID>",  
+      "errors": [  
+        {  
+          "code": "<ERROR_CODE>",  
+          "message": "<ERROR_MESSAGE>",  
+          "title": "<ERROR_TITLE>",  
+          "error_data": {  
+            "details": "<ERROR_DETAILS>"  
+          }  
+        }  
+      ]  
+    }  
+  ],  
+  "errors": [  
+    {  
+      "code": "<ERROR_CODE>",  
+      "message": "<ERROR_MESSAGE>",  
+      "title": "<ERROR_TITLE>",  
+      "error_data": {  
+        "details": "<ERROR_DETAILS>"  
+      }  
+    }  
+  ]  
 }
-```
 ```
 
 #### Response parameters
@@ -230,7 +222,7 @@ Upon success, the API will respond with the following JSON payload, and WhatsApp
 
 A `group_participants_update` webhook is triggered.
 
-[View the “User accepts join request” sample webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/groups/webhooks#user-accepts-or-cancels-join-request)
+[View the "User accepts join request" sample webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/groups/webhooks#user-accepts-or-cancels-join-request)
 
 ### Reject join requests
 
@@ -241,15 +233,13 @@ A `group_participants_update` webhook is triggered.
 #### Request body
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "join_requests": [  
-    "<JOIN_REQUEST_ID>",  
-    //Additional join request IDs would go here, it rejecting in bulk  
-  ]  
+  "messaging_product": "whatsapp",  
+  "join_requests": [  
+    "<JOIN_REQUEST_ID>",  
+    //Additional join request IDs would go here, it rejecting in bulk  
+  ]  
 }
-```
 ```
 
 #### Request parameters
@@ -264,42 +254,40 @@ A `group_participants_update` webhook is triggered.
 Upon success, the API will respond with the following JSON payload, and the WhatsApp user will see the **Request to join** button again when accessing the group invite link.
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "rejected_join_requests": [  
-    "<JOIN_REQUEST_ID>",  
-    //Additional join request IDs would go here, it rejecting in bulk  
-  ],  
+  "messaging_product": "whatsapp",  
+  "rejected_join_requests": [  
+    "<JOIN_REQUEST_ID>",  
+    //Additional join request IDs would go here, it rejecting in bulk  
+  ],  
   
-  //Only included if unable to reject one or more join requests  
-  "failed_join_requests": [  
-    {  
-      "join_request_id": "<JOIN_REQUEST_ID>",  
-      "errors": [  
-        {  
-          "code": "<ERROR_CODE>",  
-          "message": "<ERROR_MESSAGE>",  
-          "title": "<ERROR_TITLE>",  
-          "error_data": {  
-            "details": "<ERROR_DETAILS>"  
-          }  
-        }  
-      ]  
-    }  
-  ],  
-  "errors": [  
-    {  
-      "code": "<ERROR_CODE>",  
-      "message": "<ERROR_MESSAGE>",  
-      "title": "<ERROR_TITLE>",  
-      "error_data": {  
-        "details": "<ERROR_DETAILS>"  
-      }  
-    }  
-  ]  
+  //Only included if unable to reject one or more join requests  
+  "failed_join_requests": [  
+    {  
+      "join_request_id": "<JOIN_REQUEST_ID>",  
+      "errors": [  
+        {  
+          "code": "<ERROR_CODE>",  
+          "message": "<ERROR_MESSAGE>",  
+          "title": "<ERROR_TITLE>",  
+          "error_data": {  
+            "details": "<ERROR_DETAILS>"  
+          }  
+        }  
+      ]  
+    }  
+  ],  
+  "errors": [  
+    {  
+      "code": "<ERROR_CODE>",  
+      "message": "<ERROR_MESSAGE>",  
+      "title": "<ERROR_TITLE>",  
+      "error_data": {  
+        "details": "<ERROR_DETAILS>"  
+      }  
+    }  
+  ]  
 }
-```
 ```
 
 #### Response parameters
@@ -337,12 +325,10 @@ For each endpoint, you will need your group ID in order to get or reset a link f
 #### Response body
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "invite_link": "https://chat.whatsapp.com/<LINK_ID>"  
+  "messaging_product": "whatsapp",  
+  "invite_link": "https://chat.whatsapp.com/<LINK_ID>"  
 }
-```
 ```
 
 Note that `invite_link` always begins with the prefix `https://chat.whatsapp.com/`. The only variable portion is `<LINK_ID>`.
@@ -356,22 +342,18 @@ Note that `invite_link` always begins with the prefix `https://chat.whatsapp.com
 #### Request body
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
+  "messaging_product": "whatsapp",  
 }
-```
 ```
 
 #### Response body
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "invite_link": "https://chat.whatsapp.com/<LINK_ID>"  
+  "messaging_product": "whatsapp",  
+  "invite_link": "https://chat.whatsapp.com/<LINK_ID>"  
 }
-```
 ```
 
 ## Send group invite link template message
@@ -398,7 +380,7 @@ You can query template libraries applicable to group invite links using the requ
 
 [Read more about finding and adding the template to your WABA via the API](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-library#using-the-api)
 
-Template approval may require up to 24 hours. You’ll be able to send messages with this template after its approval.
+Template approval may require up to 24 hours. You'll be able to send messages with this template after its approval.
 
 #### Step 2. Send the template message
 
@@ -419,35 +401,33 @@ When you provide the group ID in the API request, it will be automatically trans
 ### Request body
 
 ```
-```
-curl --location 'https://graph.facebook.com/<API_VERSION>/<BUSINESS_PHONE_NUMBER_ID>/messages?access_token=' \  
-      --header 'Content-Type: application/json' \  
-      --data '{  
-        "messaging_product": "whatsapp",  
-        "to": "<WHATSAPP_USER_PHONE_NUMBER>",  
-        "type": "template",  
-        "template": {  
-          "name": "<TEMPLATE_NAME>",  
-          "language": {  
-            "code": "<TEMPLATE_LANGUAGE>"  
-          },  
-          "components": [  
-            {  
-              "type": "body",  
-              "parameters": [  
-                {  
-                  "type": "group_id",  
-                  "group_id": "<GROUP_ID>"  
-                },  
-                {  
-                  ...additional parameters  
-                }  
-              ]  
-            }  
-          ]  
-        }  
-      }'
-```
+curl --location 'https://graph.facebook.com/<API_VERSION>/<BUSINESS_PHONE_NUMBER_ID>/messages?access_token=' \  
+      --header 'Content-Type: application/json' \  
+      --data '{  
+        "messaging_product": "whatsapp",  
+        "to": "<WHATSAPP_USER_PHONE_NUMBER>",  
+        "type": "template",  
+        "template": {  
+          "name": "<TEMPLATE_NAME>",  
+          "language": {  
+            "code": "<TEMPLATE_LANGUAGE>"  
+          },  
+          "components": [  
+            {  
+              "type": "body",  
+              "parameters": [  
+                {  
+                  "type": "group_id",  
+                  "group_id": "<GROUP_ID>"  
+                },  
+                {  
+                  ...additional parameters  
+                }  
+              ]  
+            }  
+          ]  
+        }  
+      }'
 ```
 
 [Learn more about Template Library](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-library)
@@ -456,7 +436,7 @@ curl --location 'https://graph.facebook.com/<API_VERSION>/<BUSINESS_PHONE_NUMB
 
 #### User joins group using invite link
 
-[View the “User joins group using invite link” sample webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/groups/webhooks#user-joined-group-using-invite-link-succeed)
+[View the "User joins group using invite link" sample webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/groups/webhooks#user-joined-group-using-invite-link-succeed)
 
 ## Delete group
 
@@ -478,11 +458,11 @@ A `group_lifecycle_update` webhook is triggered.
 
 #### Delete group succeed
 
-[View the “Delete group succeed” sample webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/groups/webhooks#delete-group-succeed)
+[View the "Delete group succeed" sample webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/groups/webhooks#delete-group-succeed)
 
 #### Delete group fails
 
-[View the “Delete group fails” sample webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/groups/webhooks#delete-group-fails)
+[View the "Delete group fails" sample webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/groups/webhooks#delete-group-fails)
 
 ## Remove group participants
 
@@ -497,16 +477,14 @@ Use this endpoint to remove participants from the group.
 ### Request body
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "participants": [  
-    { "user": "<WHATSAPP_USER_PHONE_NUMBER> or <WHATSAPP_USER_ID>" },  
-    { "user": "<WHATSAPP_USER_PHONE_NUMBER> or <WHATSAPP_USER_ID>"" },  
-    ...  
-  ]  
+  "messaging_product": "whatsapp",  
+  "participants": [  
+    { "user": "<WHATSAPP_USER_PHONE_NUMBER> or <WHATSAPP_USER_ID>" },  
+    { "user": "<WHATSAPP_USER_PHONE_NUMBER> or <WHATSAPP_USER_ID>"" },  
+    ...  
+  ]  
 }
-```
 ```
 
 ### Request properties
@@ -521,7 +499,7 @@ A `group_participants_update` webhook is triggered.
 
 #### Group participant leaves
 
-[View the “Group participant leaves” sample webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/groups/webhooks#delete-group-succeed)
+[View the "Group participant leaves" sample webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/groups/webhooks#delete-group-succeed)
 
 ## Get group info
 
@@ -555,26 +533,24 @@ Use this endpoint to retrieve metadata about a single group.
 ### Sample response
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "id": "<GROUP_ID>",  
-  "subject": "<SUBJECT>",  
-  "creation_timestamp": "<TIMESTAMP>",  
-  "suspended": "<SUSPENDED>",  
-  "description": "<DESCRIPTION>",  
-  "total_participant_count": "<TOTAL_PARTICIPANT_COUNT>",  
-  "participants": [  
-    {  
-      "wa_id": "<WA_ID>"  
-    },  
-    {  
-      "wa_id": "<WA_ID>"  
-    }  
-  ],  
-  "join_approval_mode": "<JOIN_APPROVAL_MODE>"  
+  "messaging_product": "whatsapp",  
+  "id": "<GROUP_ID>",  
+  "subject": "<SUBJECT>",  
+  "creation_timestamp": "<TIMESTAMP>",  
+  "suspended": "<SUSPENDED>",  
+  "description": "<DESCRIPTION>",  
+  "total_participant_count": "<TOTAL_PARTICIPANT_COUNT>",  
+  "participants": [  
+    {  
+      "wa_id": "<WA_ID>"  
+    },  
+    {  
+      "wa_id": "<WA_ID>"  
+    }  
+  ],  
+  "join_approval_mode": "<JOIN_APPROVAL_MODE>"  
 }
-```
 ```
 
 ## Get active groups
@@ -588,11 +564,9 @@ Use this endpoint to retrieve a list of active groups for a given business phone
 ### Query parameters
 
 ```
-```
-?limit=<LIMIT>, // Optional  
-&after=<AFTER_CURSOR>, // Optional  
-&before=<BEFORE_CURSOR> // Optional
-```
+?limit=<LIMIT>, // Optional  
+&after=<AFTER_CURSOR>, // Optional  
+&before=<BEFORE_CURSOR> // Optional
 ```
 
 | Parameter | Description |
@@ -604,25 +578,23 @@ Use this endpoint to retrieve a list of active groups for a given business phone
 ### Response object
 
 ```
-```
 {  
-  "data": {  
-    "groups": [  
-      {"id": "GROUP_ID", "subject": SUBJECT, "created_at": "TIMESTAMP"},  
-      {"id": "GROUP_ID", "subject": SUBJECT, "created_at": "TIMESTAMP"}  
-      …  
-    ]  
-  },  
-  "paging": {  
-    "cursors": {  
-      "after": "MTAxNTExOTQ1MjAwNzI5NDE=",  
-      "before": "NDMyNzQyODI3OTQw"  
-    },  
-    "previous": "https://graph.facebook.com/VERSION/PHONE_NUMBER_ID/groups?limit=10&before=NDMyNzQyODI3OTQw",  
-    "next": "https://graph.facebook.com/VERSION/PHONE_NUMBER_ID/groups?limit=25&after=MTAxNTExOTQ1MjAwNzI5NDE="  
-  }  
+  "data": {  
+    "groups": [  
+      {"id": "GROUP_ID", "subject": SUBJECT, "created_at": "TIMESTAMP"},  
+      {"id": "GROUP_ID", "subject": SUBJECT, "created_at": "TIMESTAMP"}  
+      …  
+    ]  
+  },  
+  "paging": {  
+    "cursors": {  
+      "after": "MTAxNTExOTQ1MjAwNzI5NDE=",  
+      "before": "NDMyNzQyODI3OTQw"  
+    },  
+    "previous": "https://graph.facebook.com/VERSION/PHONE_NUMBER_ID/groups?limit=10&before=NDMyNzQyODI3OTQw",  
+    "next": "https://graph.facebook.com/VERSION/PHONE_NUMBER_ID/groups?limit=25&after=MTAxNTExOTQ1MjAwNzI5NDE="  
+  }  
 }
-```
 ```
 
 ### Response parameters
@@ -634,7 +606,7 @@ Use this endpoint to retrieve a list of active groups for a given business phone
 
 ## Update group settings
 
-Use this webhook to update your group’s subject, description, and photo.
+Use this webhook to update your group's subject, description, and photo.
 
 ### Request syntax
 
@@ -643,14 +615,12 @@ Use this webhook to update your group’s subject, description, and photo.
 ### Request body
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "subject": "<GROUP_SUBJECT>",  
-  "profile_picture_file": "<FILE_PATH>",  
-  "description": "<GROUP_DESCRIPTION>"  
+  "messaging_product": "whatsapp",  
+  "subject": "<GROUP_SUBJECT>",  
+  "profile_picture_file": "<FILE_PATH>",  
+  "description": "<GROUP_DESCRIPTION>"  
 }
-```
 ```
 
 ### Request properties
@@ -669,21 +639,21 @@ A `group_settings_update` webhook is triggered.
 
 #### Group settings update succeed
 
-[View the “Group settings update succeed” sample webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/groups/webhooks#group-settings-update-succeed).
+[View the "Group settings update succeed" sample webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/groups/webhooks#group-settings-update-succeed).
 
 #### Group settings update partial fail
 
-[View the “Group settings update partial fail” sample webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/groups/webhooks#group-settings-update-partial-fail).
+[View the "Group settings update partial fail" sample webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/groups/webhooks#group-settings-update-partial-fail).
 
 #### Group settings update total fail
 
-[View the “Group settings update total fail” sample webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/groups/webhooks#group-settings-update-total-fail).
+[View the "Group settings update total fail" sample webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/groups/webhooks#group-settings-update-total-fail).
 
 ## Group message status webhooks
 
 When you send a message to a group, you receive a status **messages** webhook when the message is delivered or read by group participants.
 
-Status webhooks for individual group participants may be aggregated into a single webhook containing multiple `status` objects in the `statuses` array. However, aggregation is not guaranteed. If multiple participants’ statuses are generated at approximately the same time, they may be combined into a single webhook. If statuses are generated at different times, you may receive separate webhooks for each participant.
+Status webhooks for individual group participants may be aggregated into a single webhook containing multiple `status` objects in the `statuses` array. However, aggregation is not guaranteed. If multiple participants' statuses are generated at approximately the same time, they may be combined into a single webhook. If statuses are generated at different times, you may receive separate webhooks for each participant.
 
 Each webhook only ever references a single message sent to a single group and a single status type (for example, `delivered`). Statuses for different messages, groups, or status types are never combined into a single webhook.
 

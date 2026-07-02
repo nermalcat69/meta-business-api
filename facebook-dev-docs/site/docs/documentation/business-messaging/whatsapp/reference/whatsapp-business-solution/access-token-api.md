@@ -68,11 +68,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Solution-ID}/accept_deactivation_request' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Solution-ID}/accept_deactivation_request' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -83,14 +83,14 @@ Select status code
 
 ```
 {  
-  "id": "12345678901234567",  
-  "name": "Sample Business Solution Partnership",  
-  "status": "DEACTIVATED",  
-  "status_for_pending_request": "NONE",  
-  "owner_permissions": [  
-    "DEVELOP",  
-    "MANAGE"  
-  ]  
+  "id": "12345678901234567",  
+  "name": "Sample Business Solution Partnership",  
+  "status": "DEACTIVATED",  
+  "status_for_pending_request": "NONE",  
+  "owner_permissions": [  
+    "DEVELOP",  
+    "MANAGE"  
+  ]  
 }
 ```
 
@@ -629,11 +629,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Solution-ID}/accept_deactivation_request' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Solution-ID}/accept_deactivation_request' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -644,14 +644,14 @@ Select status code
 
 ```
 {  
-  "id": "12345678901234567",  
-  "name": "Sample Business Solution Partnership",  
-  "status": "DEACTIVATED",  
-  "status_for_pending_request": "NONE",  
-  "owner_permissions": [  
-    "DEVELOP",  
-    "MANAGE"  
-  ]  
+  "id": "12345678901234567",  
+  "name": "Sample Business Solution Partnership",  
+  "status": "DEACTIVATED",  
+  "status_for_pending_request": "NONE",  
+  "owner_permissions": [  
+    "DEVELOP",  
+    "MANAGE"  
+  ]  
 }
 ```
 

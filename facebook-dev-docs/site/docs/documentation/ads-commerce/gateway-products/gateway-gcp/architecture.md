@@ -28,7 +28,7 @@ In the step to select cloud provider, please select Google Cloud Platform.
 
 ![Cloud setup step showing four-part setup instructions to install Conversions API Gateway on Google Cloud Platform, including launching Cloud Shell and copying the install command](https://scontent.fdel27-7.fna.fbcdn.net/v/t39.2365-6/486867875_1365962017771811_7952408039409839316_n.png?_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=oHljKz1CmP0Q7kNvwHVF3pV&_nc_oc=AdrZrKTGJNffpR7VWtO_0YlOuhPnlwxN_5eJROzI0p8XM4DmcQB02et4W2dOXi0v8h9wz7Hp-aIzv4XdoRzN5lxk&_nc_zt=14&_nc_ht=scontent.fdel27-7.fna&_nc_gid=s7j6k64F415VCSQtmk55ug&_nc_ss=7b289&oh=00_AQD4hxxmhI1hEJamvT8bRkTQJsSomnJkUbl9NnHmdQkJ4w&oe=6A608C05)
 
-* Open the Cloud Shell by clicking on the ‘Open Google Cloud Platform’ button. You will be asked to confirm to open the Cloud Shell session as shown below. Click Confirm to open the Cloud Shell session.
+* Open the Cloud Shell by clicking on the 'Open Google Cloud Platform' button. You will be asked to confirm to open the Cloud Shell session as shown below. Click Confirm to open the Cloud Shell session.
 
 ![Open in Cloud Shell confirmation dialog noting the session runs the official Google cloudshell image in Ephemeral mode, with Cancel and Confirm options](https://scontent.fdel27-8.fna.fbcdn.net/v/t39.2365-6/485659781_1192395102486539_6213839925066220866_n.png?_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=3UzSbZT3EqEQ7kNvwEKcbtd&_nc_oc=AdotaOhSreb-h9XDEeWG5mDsoRlI6Uhu4UiZATVQMPrJUBambNCf9mKnPzMqymJjh3saGNJWHW-j4RmbQKM7c-32&_nc_zt=14&_nc_ht=scontent.fdel27-8.fna&_nc_gid=s7j6k64F415VCSQtmk55ug&_nc_ss=7b289&oh=00_AQAc_W4bDsLeVrskFjv1jzetrrxRkD_P_LLKMYT4lXt6zw&oe=6A609718)
 

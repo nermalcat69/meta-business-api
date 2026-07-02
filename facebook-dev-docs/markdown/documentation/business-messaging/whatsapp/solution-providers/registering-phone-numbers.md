@@ -39,7 +39,7 @@ This section provides Solution Partners with instructions for managing client ph
 
 ### Getting phone numbers
 
-Use the [Phone Numbers API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/phone-number-management-api#get-version-waba-id-phone-numbers) to get a list of business phone numbers on a client’s WABA.
+Use the [Phone Numbers API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/phone-number-management-api#get-version-waba-id-phone-numbers) to get a list of business phone numbers on a client's WABA.
 
 #### Request
 
@@ -89,7 +89,7 @@ A phone number **must** be registered up to 14 days after going through the Embe
 
 ### Get phone metadata
 
-The [Phone Numbers API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/phone-number-management-api#get-version-waba-id-phone-numbers) allows you to see the status of a phone number’s display name and other metadata.
+The [Phone Numbers API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/phone-number-management-api#get-version-waba-id-phone-numbers) allows you to see the status of a phone number's display name and other metadata.
 
 #### Example request
 
@@ -131,7 +131,7 @@ To find the ID of a WhatsApp Business Account, go to [**Business Manager**⁠](h
 
 ### Get phone number OTP status
 
-To see if a phone number has been verified via OTP (one-time password), check that number’s `code_verification_status` field. Use the [Phone Numbers API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/phone-number-management-api#get-version-waba-id-phone-numbers) to get phone numbers on the WABA:
+To see if a phone number has been verified via OTP (one-time password), check that number's `code_verification_status` field. Use the [Phone Numbers API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/phone-number-management-api#get-version-waba-id-phone-numbers) to get phone numbers on the WABA:
 
 ```
 curl -i -X GET \
@@ -150,7 +150,7 @@ The response includes the `code_verification_status` with one of the following o
 ]
 ```
 
-Alternatively, you can get the status by calling a phone number’s ID:
+Alternatively, you can get the status by calling a phone number's ID:
 
 ```
 curl -i -X GET \
@@ -158,7 +158,7 @@ curl -i -X GET \
   ?access_token=<ACCESS_TOKEN>"
 ```
 
-Use the [WhatsApp Business Account > Phone Numbers](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/phone-number-management-api#Reading) endpoint to get a phone number’s ID. See [Retrieve Phone Numbers](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-phone-numbers/phone-numbers#get-all-phone-numbers) for usage details.
+Use the [WhatsApp Business Account > Phone Numbers](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/phone-number-management-api#Reading) endpoint to get a phone number's ID. See [Retrieve Phone Numbers](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-phone-numbers/phone-numbers#get-all-phone-numbers) for usage details.
 
 ### Filter phone numbers by account mode
 

@@ -13,7 +13,7 @@ The retailer or marketing partner should share a catalog segment with the brand 
 
 An advertiser essentially runs a [Advantage+ catalog ads](https://developers.facebook.com/docs/marketing-api/dynamic-ads) campaign for catalog sales with a product catalog. Therefore they can use standard Facebook ads reports which now include metrics related to the catalog segment.
 
-In addition, you can use product-level reporting and retailer-level reporting to show only the brand’s purchases to the brand advertiser.
+In addition, you can use product-level reporting and retailer-level reporting to show only the brand's purchases to the brand advertiser.
 
 ## High-Level Steps
 
@@ -37,7 +37,7 @@ In addition, you can use product-level reporting and retailer-level reporting to
 
 To complete this step, your app needs [`business_management`](https://developers.facebook.com/docs/permissions/reference/business_management) and [`catalog_management`](https://developers.facebook.com/docs/permissions/reference/catalog_management) permissions.
 
-Currently, this is not supported via API, and must be completed via UI. To start this process, click ‘Become a Retail Partner’ in the [Collaborative Ads Retailer Directory⁠](https://www.facebook.com/collaborative_ads/retailer_directory/).
+Currently, this is not supported via API, and must be completed via UI. To start this process, click 'Become a Retail Partner' in the [Collaborative Ads Retailer Directory⁠](https://www.facebook.com/collaborative_ads/retailer_directory/).
 
 ### Step 2: Create Catalog Segment
 
@@ -47,7 +47,7 @@ Create a catalog segment from one of your existing catalogs. The segment must co
 
 To create a catalog segment via API, make a `POST` request to the [`owned_product_catalogs` edge](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/business/owned_product_catalogs#Creating). The following fields are required for catalog segment creation:
 
-* `parent_catalog_id`: The parent catalog from which your segment was created. This catalog needs to be Collaborative Ads compliant. You can find your catalog’s status in Commerce Manager.
+* `parent_catalog_id`: The parent catalog from which your segment was created. This catalog needs to be Collaborative Ads compliant. You can find your catalog's status in Commerce Manager.
 * `catalog_segment_filter`: A JSON-encoded rule used to create the catalog segment.
 
 ### Step 3: Share Catalog Segment
@@ -100,7 +100,7 @@ If your brand has not accepted the Terms of Service for the new shared business,
 After receiving the shared asset, the business admin user needs to:
 
 * Go to the [Collaboration Center⁠](https://www.facebook.com/collaboration_center).
-* Select the business you’re accepting Terms of Service for.
+* Select the business you're accepting Terms of Service for.
 * Select **Partners** from the left side navigation.
 * Click the **Accept assets** button to begin the acceptance workflow.
 
@@ -138,7 +138,7 @@ There are four fields which you can normally set with [Advantage+ catalog ads](h
 
 * `multi_share_end_card` is set to `false` by default and you cannot change
 * You cannot change `description` in `template_data`
-* `template_url_spec` which you can use for deeplink URLs must point to merchant’s website
+* `template_url_spec` which you can use for deeplink URLs must point to merchant's website
 * [Custom tracking specs](https://developers.facebook.com/documentation/ads-commerce/marketing-api/tracking-specs) are disabled
 
 ### Step 3: View Reports
@@ -174,12 +174,12 @@ The `action_converted_product_id` breakdown is not supported on the ad account l
 | Metric | Description |
 | --- | --- |
 | `catalog_segment_value` | Value from conversion events, including a breakdown of purchases, add-to-carts and view products for the catalog segment at each ad object level. |
-| `catalog_segment_value_omni_purchase_roas` | Total return on ad spend (ROAS) from purchases of items shared between Brand and Retailer. This number is based on information received from one or more Retailer’ connected Facebook Business Tools. The amount is attributed to your ads. |
-| `catalog_segment_value_website_purchase_roas` | Total return on ad spend (ROAS) from website purchases of items shared between Brand and Retailer. This number is based on information received from one or more Retailers’ connected Facebook Business Tools. The amount is attributed to your ads. |
-| `catalog_segment_value_mobile_purchase_roas` | The total return on ad spend (ROAS) from mobile app purchases of items shared between Brand and Retailer. This number is based on information received from one or more Retailers’ connected Facebook Business Tools. The amount is attributed to your ads. |
+| `catalog_segment_value_omni_purchase_roas` | Total return on ad spend (ROAS) from purchases of items shared between Brand and Retailer. This number is based on information received from one or more Retailer' connected Facebook Business Tools. The amount is attributed to your ads. |
+| `catalog_segment_value_website_purchase_roas` | Total return on ad spend (ROAS) from website purchases of items shared between Brand and Retailer. This number is based on information received from one or more Retailers' connected Facebook Business Tools. The amount is attributed to your ads. |
+| `catalog_segment_value_mobile_purchase_roas` | The total return on ad spend (ROAS) from mobile app purchases of items shared between Brand and Retailer. This number is based on information received from one or more Retailers' connected Facebook Business Tools. The amount is attributed to your ads. |
 | `catalog_segment_actions` | Similar to `catalog_segment_value`, when using this metric a breakdown of actions is given for the catalog segment at each ad object level. |
-| `converted_product_value` | Value of conversions driven by your ads for a given product ID. This number is recorded by your Retailer partner’s Pixel or App SDK.   The API only returns Product IDs —see [`/{product-item-id}`](https://developers.facebook.com/docs/marketing-api/reference/product-item) for information. If you want to get brand names as well, please use Ads Manager. |
-| `converted_product_quantity` | Quantity of conversions driven by your ads for a given product ID. This number is recorded by your Retailer partner’s Pixel or App SDK.   The API only returns Product IDs —see [`/{product-item-id}`](https://developers.facebook.com/docs/marketing-api/reference/product-item) for information. If you want to get brand names as well, please use Ads Manager. |
+| `converted_product_value` | Value of conversions driven by your ads for a given product ID. This number is recorded by your Retailer partner's Pixel or App SDK.   The API only returns Product IDs —see [`/{product-item-id}`](https://developers.facebook.com/docs/marketing-api/reference/product-item) for information. If you want to get brand names as well, please use Ads Manager. |
+| `converted_product_quantity` | Quantity of conversions driven by your ads for a given product ID. This number is recorded by your Retailer partner's Pixel or App SDK.   The API only returns Product IDs —see [`/{product-item-id}`](https://developers.facebook.com/docs/marketing-api/reference/product-item) for information. If you want to get brand names as well, please use Ads Manager. |
 
 ### Breakdowns
 

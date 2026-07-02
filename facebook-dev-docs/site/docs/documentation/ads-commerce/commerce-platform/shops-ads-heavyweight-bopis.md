@@ -23,7 +23,7 @@ Shops ads for omni-channel business is designed to provide a seamless shopping e
   * Display all product images, rich descriptions, pricing/discount, and variants for buyers to consider.
 * Once the buyer likes the products, they can either add items to cart or check out directly.
   * The buyer will be shown the location of stores nearby.
-* When the buyer clicks on checkout, Meta will load the products into the advertiser’s website cart and present a payment/checkout page to proceed with the transaction in the in-app browser.
+* When the buyer clicks on checkout, Meta will load the products into the advertiser's website cart and present a payment/checkout page to proceed with the transaction in the in-app browser.
   * The buyer will need to pick the store to pick up the order from.
   * The buyer will need to enter additional information such as pick up time.
 * The buyer can complete the checkout in the in-app browser . The checkout experience is the same as someone checking out products on your website using a mobile web browser.
@@ -73,18 +73,18 @@ There is also an option to add a feed that can be managed dynamically with [thes
   * Within the selected catalog, click on the **Data Sources** tab from the top navigation menu.
   * This will take you to the page where you can manage data feeds and other data sources for your catalog.
 * Add a New Data Feed:
-  * Click on the **Add Items** button and select “Data Feed” as the upload method.
+  * Click on the **Add Items** button and select "Data Feed" as the upload method.
   * Choose the type of data feed you want to create (for example, Google Sheets, CSV file, etc.).
   * Follow the prompts to set up your data feed, including scheduling updates if desired.
 * Map the Data Field:
-  * Once your data feed is created, you’ll need to map the new data field to an existing attribute in your catalog.
+  * Once your data feed is created, you'll need to map the new data field to an existing attribute in your catalog.
   * Click on the **Mapping** tab within the data feed settings.
   * Select the attribute you want to map the new data field to from the dropdown menu.
   * Enter the exact name of the column header from your data feed that corresponds to this attribute.
-    * **IMPORTANT**: You need to add a new field named `product_delivery_methods` with accepted values [“shipping”, “local\_pickup”] per product, in your product feed.
+    * **IMPORTANT**: You need to add a new field named `product_delivery_methods` with accepted values ["shipping", "local\_pickup"] per product, in your product feed.
 * Save Changes:
   * After mapping the data field, click **Save** to apply the changes.
-  * Your new data field should now be added to your seller’s catalog and ready for use in product listings.
+  * Your new data field should now be added to your seller's catalog and ready for use in product listings.
 
 ### Option 2: Using Manual Upload
 

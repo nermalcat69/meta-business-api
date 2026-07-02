@@ -39,24 +39,22 @@ You can create a new published Flow in a single request by specifying the `flow_
 **Sample Request**
 
 ```
-```
-curl -X POST '{BASE-URL}/{WABA-ID}/flows' \  
---header 'Authorization: Bearer {ACCESS-TOKEN}' \  
---header "Content-Type: application/json" \  
---data '{  
-  "name": "My first flow",  
-  "categories": [ "OTHER" ],  
-  "flow_json" : "{\"version\":\"5.0\",\"screens\":[{\"id\":\"WELCOME_SCREEN\",\"layout\":{\"type\":\"SingleColumnLayout\",\"children\":[{\"type\":\"TextHeading\",\"text\":\"Hello World\"},{\"type\":\"Footer\",\"label\":\"Complete\",\"on-click-action\":{\"name\":\"complete\",\"payload\":{}}}]},\"title\":\"Welcome\",\"terminal\":true,\"success\":true,\"data\":{}}]}",  
-  "publish" : true  
+curl -X POST '{BASE-URL}/{WABA-ID}/flows' \  
+--header 'Authorization: Bearer {ACCESS-TOKEN}' \  
+--header "Content-Type: application/json" \  
+--data '{  
+  "name": "My first flow",  
+  "categories": [ "OTHER" ],  
+  "flow_json" : "{\"version\":\"5.0\",\"screens\":[{\"id\":\"WELCOME_SCREEN\",\"layout\":{\"type\":\"SingleColumnLayout\",\"children\":[{\"type\":\"TextHeading\",\"text\":\"Hello World\"},{\"type\":\"Footer\",\"label\":\"Complete\",\"on-click-action\":{\"name\":\"complete\",\"payload\":{}​}}]},\"title\":\"Welcome\",\"terminal\":true,\"success\":true,\"data\":{}​}]}",  
+  "publish" : true  
 }'
-```
 ```
 
 | Parameter | Description | Optional |
 | --- | --- | --- |
 | `name`*string* | Flow name |  |
 | `categories`*array* | A list of Flow categories. Multiple values are possible, but at least one is required. Choose the values which represent your business use case. The list of values:   * `SIGN_UP` * `SIGN_IN` * `APPOINTMENT_BOOKING` * `LEAD_GENERATION` * `CONTACT_US` * `CUSTOMER_SUPPORT` * `SURVEY` * `OTHER` |  |
-| `flow_json`*string* | Flow’s JSON encoded as string. | ✓ |
+| `flow_json`*string* | Flow's JSON encoded as string. | ✓ |
 | `publish`*boolean* | Indicates whether Flow should also get published. Only works if `flow_json` is also provided with valid Flow JSON. | ✓ |
 | `clone_flow_id`*string* | ID of source Flow to clone. You must have permission to access the specified Flow. | ✓ |
 | `endpoint_uri`*string* | The URL of the WA Flow Endpoint. Starting from Flow JSON version 3.0 this property should be specified only via API. Do not provide this field if you are cloning a Flow with Flow JSON version below 3.0. | ✓ |
@@ -64,49 +62,45 @@ curl -X POST '{BASE-URL}/{WABA-ID}/flows' \
 **Sample Response**
 
 ```
-```
 {  
-   "id": "<Flow-ID>"  
-   "success": true,  
-   "validation_errors": [  
-    {  
-      "error": "INVALID_PROPERTY_VALUE" ,  
-      "error_type": "FLOW_JSON_ERROR",  
-      "message": "Invalid value found for property 'type'.",  
-      "line_start": 10,  
-      "line_end": 10,  
-      "column_start": 21,  
-      "column_end": 34,  
-      "pointers": [  
-       {  
-         "line_start": 10,  
-         "line_end": 10,  
-         "column_start": 21,  
-         "column_end": 34,  
-         "path": "screens [0]. layout.children [0].type"  
-       }  
-      ]  
-    }  
-  ]  
+   "id": "<Flow-ID>"  
+   "success": true,  
+   "validation_errors": [  
+    {  
+      "error": "INVALID_PROPERTY_VALUE" ,  
+      "error_type": "FLOW_JSON_ERROR",  
+      "message": "Invalid value found for property 'type'.",  
+      "line_start": 10,  
+      "line_end": 10,  
+      "column_start": 21,  
+      "column_end": 34,  
+      "pointers": [  
+       {  
+         "line_start": 10,  
+         "line_end": 10,  
+         "column_start": 21,  
+         "column_end": 34,  
+         "path": "screens [0]. layout.children [0].type"  
+       }  
+      ]  
+    }  
+  ]  
 }
 ```
-```
 
-### Updating Flow’s metadata
+### Updating Flow's metadata
 
 After you have created your Flow, you can update the name or categories using the update request.
 
 **Sample Request**
 
 ```
-```
-curl -X POST '{BASE-URL}/{FLOW-ID}' \  
---header 'Authorization: Bearer {ACCESS-TOKEN}' \  
---header "Content-Type: application/json" \  
---data '{  
-  "name": "New flow name"  
+curl -X POST '{BASE-URL}/{FLOW-ID}' \  
+--header 'Authorization: Bearer {ACCESS-TOKEN}' \  
+--header "Content-Type: application/json" \  
+--data '{  
+  "name": "New flow name"  
 }'
-```
 ```
 
 | Parameter | Description | Optional |
@@ -119,27 +113,23 @@ curl -X POST '{BASE-URL}/{FLOW-ID}' \
 **Sample Response**
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
 ```
-```
 
-### Updating a Flow’s Flow JSON
+### Updating a Flow's Flow JSON
 
 To update Flow JSON for a specified Flow, use this request. Note that the file must be attached as form-data.
 
 **Sample Request**
 
 ```
-```
-curl -X POST '{BASE-URL}/{FLOW_ID}/assets' \  
---header 'Authorization: Bearer {ACCESS-TOKEN}' \  
---form 'file=@"/path/to/file";type=application/json' \  
---form 'name="flow.json"' \  
---form 'asset_type="FLOW_JSON"' # file must be attached as form-data
-```
+curl -X POST '{BASE-URL}/{FLOW_ID}/assets' \  
+--header 'Authorization: Bearer {ACCESS-TOKEN}' \  
+--form 'file=@"/path/to/file";type=application/json' \  
+--form 'name="flow.json"' \  
+--form 'asset_type="FLOW_JSON"' # file must be attached as form-data
 ```
 
 | Parameter | Description | Optional |
@@ -153,31 +143,29 @@ curl -X POST '{BASE-URL}/{FLOW_ID}/assets' \
 Every update request will return validation errors in the Flow JSON, if any.
 
 ```
-```
 {  
-  "success": true,  
-  "validation_errors": [  
-    {  
-      "error": "INVALID_PROPERTY_VALUE" ,  
-      "error_type": "FLOW_JSON_ERROR",  
-      "message": "Invalid value found for property 'type'.",  
-      "line_start": 10,  
-      "line_end": 10,  
-      "column_start": 21,  
-      "column_end": 34,  
-      "pointers": [  
-       {  
-         "line_start": 10,  
-         "line_end": 10,  
-         "column_start": 21,  
-         "column_end": 34,  
-         "path": "screens [0]. layout.children [0].type"  
-       }  
-      ]  
-    }  
-  ]  
+  "success": true,  
+  "validation_errors": [  
+    {  
+      "error": "INVALID_PROPERTY_VALUE" ,  
+      "error_type": "FLOW_JSON_ERROR",  
+      "message": "Invalid value found for property 'type'.",  
+      "line_start": 10,  
+      "line_end": 10,  
+      "column_start": 21,  
+      "column_end": 34,  
+      "pointers": [  
+       {  
+         "line_start": 10,  
+         "line_end": 10,  
+         "column_start": 21,  
+         "column_end": 34,  
+         "path": "screens [0]. layout.children [0].type"  
+       }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ### Visualizing and interacting with your Flow using the Web Preview
@@ -189,32 +177,26 @@ The final screens will render slightly differently for the end user. Always test
 **Sample Request**
 
 ```
-```
-curl '{BASE-URL}/{FLOW-ID}?fields=preview.invalidate(false)' \  
---header 'Authorization: Bearer {ACCESS-TOKEN}'
-```
+curl '{BASE-URL}/{FLOW-ID}?fields=preview.invalidate(false)' \  
+--header 'Authorization: Bearer {ACCESS-TOKEN}'
 ```
 
 **Sample Response**
 
 ```
-```
 {  
-  "preview": {  
-    "preview_url": "https://business.facebook.com/wa/manage/flows/550.../preview/?token=b9d6....",  
-    "expires_at": "2023-05-21T11:18:09+0000"  
-  },  
-  "id": "flow-1"  
+  "preview": {  
+    "preview_url": "https://business.facebook.com/wa/manage/flows/550.../preview/?token=b9d6....",  
+    "expires_at": "2023-05-21T11:18:09+0000"  
+  },  
+  "id": "flow-1"  
 }
-```
 ```
 
 The `preview_url` can also be embedded as an iframe into an existing website using the following code (replace url with the one returned by the API):
 
 ```
-```
-<iframe src="https://business.facebook.com/wa/manage/flows/550.../preview/?token=b9d6...." width="430" height="800" ></iframe>
-```
+<iframe src="https://business.facebook.com/wa/manage/flows/550.../preview/?token=b9d6...." width="430" height="800" ></iframe>
 ```
 
 | Field | Description |
@@ -228,7 +210,7 @@ The following parameters can be added to the generated URL to configure the inte
 | --- | --- |
 | interactive *boolean* | If `true`, the preview will run in interactive mode. Defaults to `false`. |
 | flow\_token *string* | The `flow_token` will be sent as part of each request. You should always verify that token on your server to block any other unexpected requests. Required for Flows with endpoint. See [Sending a Flow](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/sendingaflow). |
-| flow\_action *navigate | data\_exchange* | First action when Flow starts. `data_exchange` if it will make a request to the endpoint, or `navigate` if it won’t (this will also require `flow_action_payload` to be provided).  See [Sending a Flow](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/sendingaflow). |
+| flow\_action *navigate | data\_exchange* | First action when Flow starts. `data_exchange` if it will make a request to the endpoint, or `navigate` if it won't (this will also require `flow_action_payload` to be provided).  See [Sending a Flow](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/sendingaflow). |
 | flow\_action\_payload *string* | Initial screen data in JSON format, escaped using [encodeURIComponent⁠](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent). Required if `flow_action` is `navigate`. Should be omitted otherwise.  See [Sending a Flow](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/sendingaflow). |
 | phone\_number *string* | Phone number that will be used to send the Flow, from which the public key will be used to encrypt the request payload. Required for Flows with endpoint.  See [Sending a Flow](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/sendingaflow). |
 | debug *string* | Show actions in a separate panel while interacting with the preview.  It will be ignored if `interactive` is not `true`. |
@@ -236,9 +218,7 @@ The following parameters can be added to the generated URL to configure the inte
 **Sample URL**
 
 ```
-```
 https://business.facebook.com/wa/manage/flows/550.../preview/?token=b9d6...&interactive=true&flow_action=navigate&flow_action_payload=%7B%22screen%22%3A%22FIRST_SCREEN%22%2C%22data%22%3A%7B%22screen_heading%22%3A%22hello%20world%22%7D%7D&debug=true
-```
 ```
 
 ### Deleting a Flow
@@ -248,20 +228,16 @@ While a Flow is in `DRAFT` status, it can be deleted. Use this request for that 
 **Sample Request**
 
 ```
-```
-curl -X DELETE '{BASE-URL}/{FLOW-ID}' \  
---header 'Authorization: Bearer {ACCESS-TOKEN}'
-```
+curl -X DELETE '{BASE-URL}/{FLOW-ID}' \  
+--header 'Authorization: Bearer {ACCESS-TOKEN}'
 ```
 
 **Sample Response**
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 ### Retrieving a List of Flows
@@ -271,61 +247,55 @@ To retrieve a list of Flows under a WhatsApp Business account (WABA), use the fo
 **Sample Request**
 
 ```
-```
-curl '{BASE-URL}/{WABA-ID}/flows' \  
---header 'Authorization: Bearer {ACCESS-TOKEN}'
-```
+curl '{BASE-URL}/{WABA-ID}/flows' \  
+--header 'Authorization: Bearer {ACCESS-TOKEN}'
 ```
 
 **Sample Response**
 
 ```
-```
 {  
-    "data": [  
-    {  
-        "id": "flow-1",  
-        "name": "flow 1",  
-        "status": "DRAFT",  
-        "categories": [ "CONTACT_US" ],  
-        "validation_errors": []  
-    },  
-    {  
-        "id": "flow-2",  
-        "name": "flow 2",  
-        "status": "PUBLISHED",  
-        "categories": [ "SURVEY" ],  
-        "validation_errors": []  
-    },  
-    {  
-        "id": "flow-3",  
-        "name": "flow 3",  
-        "status": "DRAFT",  
-        "categories": [ "LEAD_GENERATION" ],  
-        "validation_errors": []  
-    }  
-    ],  
-    "paging": {  
-        "cursors": {  
-            "before": "QVFI...",  
-            "after": "QVFI..."  
-        }  
-    }  
+    "data": [  
+    {  
+        "id": "flow-1",  
+        "name": "flow 1",  
+        "status": "DRAFT",  
+        "categories": [ "CONTACT_US" ],  
+        "validation_errors": []  
+    },  
+    {  
+        "id": "flow-2",  
+        "name": "flow 2",  
+        "status": "PUBLISHED",  
+        "categories": [ "SURVEY" ],  
+        "validation_errors": []  
+    },  
+    {  
+        "id": "flow-3",  
+        "name": "flow 3",  
+        "status": "DRAFT",  
+        "categories": [ "LEAD_GENERATION" ],  
+        "validation_errors": []  
+    }  
+    ],  
+    "paging": {  
+        "cursors": {  
+            "before": "QVFI...",  
+            "after": "QVFI..."  
+        }  
+    }  
 }
-```
 ```
 
 ### Retrieving Flow details
 
-This request will return a single Flow’s details. By default it will return the fields `id`,`name`, `status`, `categories`, `validation_errors`. You can request other fields by using the `fields` param in the request. The request example below includes all possible fields.
+This request will return a single Flow's details. By default it will return the fields `id`,`name`, `status`, `categories`, `validation_errors`. You can request other fields by using the `fields` param in the request. The request example below includes all possible fields.
 
 **Sample Request**
 
 ```
-```
-curl '{BASE-URL}/{FLOW-ID}?fields=id,name,categories,preview,status,validation_errors,json_version,data_api_version,endpoint_uri,whatsapp_business_account,application,health_status' \  
---header 'Authorization: Bearer {ACCESS-TOKEN}'
-```
+curl '{BASE-URL}/{FLOW-ID}?fields=id,name,categories,preview,status,validation_errors,json_version,data_api_version,endpoint_uri,whatsapp_business_account,application,health_status' \  
+--header 'Authorization: Bearer {ACCESS-TOKEN}'
 ```
 
 To check that a flow can be used with a specific phone number, you can use the optional `health_status.phone_number(PHONE_NUMBER_ID)` parameter.
@@ -333,68 +303,66 @@ To check that a flow can be used with a specific phone number, you can use the o
 **Sample Response**
 
 ```
-```
 {  
-  "id": "<Flow-ID>",  
-  "name": "<Flow-Name>",  
-  "status": "DRAFT",  
-  "categories": [ "LEAD_GENERATION" ],  
-  "validation_errors": [],  
-  "json_version": "3.0",  
-  "data_api_version": "3.0",  
-  "endpoint_uri": "https://example.com",  
-  "preview": {  
-    "preview_url": "https://business.facebook.com/wa/manage/flows/55000..../preview/?token=b9d6.....",  
-    "expires_at": "2023-05-21T11:18:09+0000"  
-  },  
-  "whatsapp_business_account": {  
-    ...  
-  },  
-  "application": {  
-    ...  
-  },  
-  "health_status": {  
-    "can_send_message": "BLOCKED",  
-    "entities": [  
-      {  
-        "entity_type": "FLOW",  
-        "id": "<Flow-ID>",  
-        "can_send_message": "BLOCKED",  
-        "errors": [  
-          {  
-            "error_code": 131000,  
-            "error_description": "endpoint_uri: You need to set the endpoint URI before you can send or publish a flow.",  
-            "possible_solution": "/documentation/business-messaging/whatsapp/flows/guides/flowjson#top-level-flow-json-properties"  
-          },  
-          {  
-            "error_code": 131000,  
-            "error_description": "app_check: You need to connect a Meta app to the flow before you can send or publish it.",  
-            "possible_solution": "/docs/development/create-an-app"  
-          }  
-        ]  
-      },  
-      {  
-        "entity_type": "WABA",  
-        "id": "<WABA-ID>",  
-        "can_send_message": "AVAILABLE"  
-      },  
-      {  
-        "entity_type": "BUSINESS",  
-        "id": "<Business-ID>",  
-        "can_send_message": "AVAILABLE"  
-      },  
-      {  
-        "entity_type": "APP",  
-        "id": "<App-ID>",  
-        "can_send_message": "LIMITED",  
-        "additional_info": [  
-          "Your app is not subscribed to the message webhook. This means you will not receive any messages sent to your phone number."  
-        ]  
-      }  
-    ]  
-  }  
+  "id": "<Flow-ID>",  
+  "name": "<Flow-Name>",  
+  "status": "DRAFT",  
+  "categories": [ "LEAD_GENERATION" ],  
+  "validation_errors": [],  
+  "json_version": "3.0",  
+  "data_api_version": "3.0",  
+  "endpoint_uri": "https://example.com",  
+  "preview": {  
+    "preview_url": "https://business.facebook.com/wa/manage/flows/55000..../preview/?token=b9d6.....",  
+    "expires_at": "2023-05-21T11:18:09+0000"  
+  },  
+  "whatsapp_business_account": {  
+    ...  
+  },  
+  "application": {  
+    ...  
+  },  
+  "health_status": {  
+    "can_send_message": "BLOCKED",  
+    "entities": [  
+      {  
+        "entity_type": "FLOW",  
+        "id": "<Flow-ID>",  
+        "can_send_message": "BLOCKED",  
+        "errors": [  
+          {  
+            "error_code": 131000,  
+            "error_description": "endpoint_uri: You need to set the endpoint URI before you can send or publish a flow.",  
+            "possible_solution": "/documentation/business-messaging/whatsapp/flows/guides/flowjson#top-level-flow-json-properties"  
+          },  
+          {  
+            "error_code": 131000,  
+            "error_description": "app_check: You need to connect a Meta app to the flow before you can send or publish it.",  
+            "possible_solution": "/docs/development/create-an-app"  
+          }  
+        ]  
+      },  
+      {  
+        "entity_type": "WABA",  
+        "id": "<WABA-ID>",  
+        "can_send_message": "AVAILABLE"  
+      },  
+      {  
+        "entity_type": "BUSINESS",  
+        "id": "<Business-ID>",  
+        "can_send_message": "AVAILABLE"  
+      },  
+      {  
+        "entity_type": "APP",  
+        "id": "<App-ID>",  
+        "can_send_message": "LIMITED",  
+        "additional_info": [  
+          "Your app is not subscribed to the message webhook. This means you will not receive any messages sent to your phone number."  
+        ]  
+      }  
+    ]  
+  }  
 }
-```
 ```
 
 | Field | Description | Returned by default |
@@ -413,44 +381,40 @@ To check that a flow can be used with a specific phone number, you can use the o
 | `application`*object* | The Facebook developer application used to create the Flow initially. |  |
 | `health_status`*object* | A summary of the Flows health status.  When you attempt to send a Flow, multiple nodes are involved, including the app, the business portfolio that owns or has claimed it, a WABA and Flow.  Each of these nodes can have one of the following health statuses assigned to the `can_send_message` property:   * `AVAILABLE`: Indicates that the node meets all requirements. * `LIMITED`: Indicates that the node meets requirements, but has some limitations. If a given node has this value, [additional info](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/health-status#additional-info-property) will be included. * `BLOCKED`: Indicates that the node does not meet one or more messaging requirements. If a given node has this value, the [errors property](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/health-status#errors-property) will be included which describes the error and a possible solution.   **Flow node**  The Flow node will have the `can_send_message` property set to:   * `LIMITED`: If published Flow is in [`THROTTLED` state](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/healthmonitoring). * `BLOCKED`:   * If unpublished Flow has one of the [publishing checks](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/healthmonitoring#publishing-checks) failing.   * If published Flow is in `BLOCKED` or `DEPRECATED` [state](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/healthmonitoring).   For more details about other nodes and rest of the properties see [Messaging Health Status page](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/health-status#messaging-health-status-2). |  |
 
-### Retrieving a Flow’s list of assets
+### Retrieving a Flow's list of assets
 
 Returns all assets attached to a specified Flow.
 
 **Sample Request**
 
 ```
-```
-curl '{BASE-URL}/{FLOW-ID}/assets' \  
---header 'Authorization: Bearer {ACCESS-TOKEN}'
-```
+curl '{BASE-URL}/{FLOW-ID}/assets' \  
+--header 'Authorization: Bearer {ACCESS-TOKEN}'
 ```
 
 **Sample Response**
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "name": "flow.json",  
-      "asset_type": "FLOW_JSON",  
-      "download_url": "https://scontent.xx.fbcdn.net/m1/v/t0.57323-24/An_Hq0jnfJ..."  
-    }  
-  ],  
-  "paging": {  
-    "cursors": {  
-      "before": "QVFIU...",  
-      "after": "QVFIU..."  
-    }  
-  }  
+  "data": [  
+    {  
+      "name": "flow.json",  
+      "asset_type": "FLOW_JSON",  
+      "download_url": "https://scontent.xx.fbcdn.net/m1/v/t0.57323-24/An_Hq0jnfJ..."  
+    }  
+  ],  
+  "paging": {  
+    "cursors": {  
+      "before": "QVFIU...",  
+      "after": "QVFIU..."  
+    }  
+  }  
 }
-```
 ```
 
 ### Publishing a Flow
 
-This request updates the status of the Flow to “PUBLISHED”. You can either edit this flow in the future and turn it back to the “DRAFT” state, or create a new flow by specifying the existing Flow ID as the `clone_flow_id` parameter. For more details, visit the [Lifecycle of a Flow](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/lifecycle) page.
+This request updates the status of the Flow to "PUBLISHED". You can either edit this flow in the future and turn it back to the "DRAFT" state, or create a new flow by specifying the existing Flow ID as the `clone_flow_id` parameter. For more details, visit the [Lifecycle of a Flow](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/lifecycle) page.
 
 You can publish your Flow once you have ensured that:
 
@@ -463,20 +427,16 @@ You can publish your Flow once you have ensured that:
 **Sample Request**
 
 ```
-```
-curl -X POST '{BASE-URL}/{FLOW-ID}/publish' \  
---header 'Authorization: Bearer {ACCESS-TOKEN}'
-```
+curl -X POST '{BASE-URL}/{FLOW-ID}/publish' \  
+--header 'Authorization: Bearer {ACCESS-TOKEN}'
 ```
 
 **Sample Response**
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 ### Deprecating a Flow
@@ -486,25 +446,21 @@ Once a Flow is published, it cannot be modified or deleted, but can be marked as
 **Sample Request**
 
 ```
-```
-curl -X POST '{BASE-URL}/{FLOW-ID}/deprecate' \  
---header 'Authorization: Bearer {ACCESS-TOKEN}'
-```
+curl -X POST '{BASE-URL}/{FLOW-ID}/deprecate' \  
+--header 'Authorization: Bearer {ACCESS-TOKEN}'
 ```
 
 **Sample Response**
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 ### Migrate Flows
 
-Migrate Flows from one WhatsApp Business account (WABA) to another. Migration doesn’t move the source Flows, it creates copies of them with the same names in the destination WABA.
+Migrate Flows from one WhatsApp Business account (WABA) to another. Migration doesn't move the source Flows, it creates copies of them with the same names in the destination WABA.
 
 **Notes:**
 
@@ -517,11 +473,9 @@ Migrate Flows from one WhatsApp Business account (WABA) to another. Migration do
 #### Request syntax
 
 ```
-```
-curl -X POST '{BASE-URL}/<DESTINATION_WABA_ID>/migrate_flows?source_waba_id=<SOURCE_WABA_ID>  
-&source_flow_names=<SOURCE_FLOW_NAMES>' \  
---header 'Authorization: Bearer {ACCESS-TOKEN}'
-```
+curl -X POST '{BASE-URL}/<DESTINATION_WABA_ID>/migrate_flows?source_waba_id=<SOURCE_WABA_ID>  
+&source_flow_names=<SOURCE_FLOW_NAMES>' \  
+--header 'Authorization: Bearer {ACCESS-TOKEN}'
 ```
 
 **Parameters**
@@ -530,29 +484,27 @@ curl -X POST '{BASE-URL}/<DESTINATION_WABA_ID>/migrate_flows?source_waba_id=<
 | --- | --- | --- |
 | `<DESTINATION_WABA_ID>`*WhatsApp Business Account ID* | **Required.**  Destination WhatsApp Business account ID. | `104996122399160` |
 | `<SOURCE_WABA_ID>`*WhatsApp Business Account ID* | **Required.**  Source WhatsApp Business account ID. | `102290129340398` |
-| `<SOURCE_FLOW_NAMES>` *Array* | **Optional.**  List of specific Flow names to migrate. If not specified, it will migrate all flows in source WABA. Only 100 Flows can be migrated in a request. | [ “appointment-booking”, “lead-gen” ] |
+| `<SOURCE_FLOW_NAMES>` *Array* | **Optional.**  List of specific Flow names to migrate. If not specified, it will migrate all flows in source WABA. Only 100 Flows can be migrated in a request. | [ "appointment-booking", "lead-gen" ] |
 
 #### Response
 
 ```
-```
 {  
-  "migrated_flows": [  
-    {  
-      "source_name": "appointment-booking",  
-      "source_id": "1234",  
-      "migrated_id": "5678"  
-    }  
-  ],  
-  "failed_flows": [  
-    {  
-      "source_name": "lead-gen",  
-      "error_code": "4233041",  
-      "error_message": "Flows Migration Error: Flow with the same name exists in destination WABA."  
-    }  
-  ]  
+  "migrated_flows": [  
+    {  
+      "source_name": "appointment-booking",  
+      "source_id": "1234",  
+      "migrated_id": "5678"  
+    }  
+  ],  
+  "failed_flows": [  
+    {  
+      "source_name": "lead-gen",  
+      "error_code": "4233041",  
+      "error_message": "Flows Migration Error: Flow with the same name exists in destination WABA."  
+    }  
+  ]  
 }
-```
 ```
 
 ## Troubleshooting

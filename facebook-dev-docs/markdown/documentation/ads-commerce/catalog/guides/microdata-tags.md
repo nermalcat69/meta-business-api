@@ -40,7 +40,7 @@ When executing the API call, you may encounter one or more of the following issu
 | CATALOG\_NOT\_CONNECTED\_TO\_EVENT\_SOURCE | Catalog not connected to Meta Pixel or app SDK | Connect your catalog to a Meta Pixel or app SDK to use it for ads. | [Learn how to connect⁠](https://www.facebook.com/business/help/1044262445604547) a Meta Pixel or Facebook SDK to a catalog in Commerce Manager. |
 | DELETED\_ITEM | Deleted items still interacting with website | Add deleted products back to increase match rate. | Add deleted products back to your catalog. |
 | INVALID\_CONTENT\_ID | Invalid content IDs | Check that content IDs are correctly formatted with no extra numbers or symbols. | Check your content IDs. |
-| MISSING\_EVENT | No purchase events received in last 7 days | Check that pixel is set up correctly and sending events from website. | Use Meta pixel helper to check if you’re sending the correct event from your website. |
+| MISSING\_EVENT | No purchase events received in last 7 days | Check that pixel is set up correctly and sending events from website. | Use Meta pixel helper to check if you're sending the correct event from your website. |
 | NO\_CONTENT\_ID | Missing content IDs | Include one or more unique IDs for item or product group in code. | Check your code. |
 
 ## Response
@@ -82,8 +82,8 @@ subtitle: "Fix these issues first to increase your match rate.",
 | Name | Type | Description |
 | --- | --- | --- |
 | `data` | array | An array containing one object with information about the issues. |
-| `type` | string | The type of issue, which is “EVENT\_SOURCE\_ISSUES”. |
-| `severity` | string | The severity of the issue, which can be either “MUST\_FIX” or “WARNING”. |
+| `type` | string | The type of issue, which is "EVENT\_SOURCE\_ISSUES". |
+| `severity` | string | The severity of the issue, which can be either "MUST\_FIX" or "WARNING". |
 | `title` | string | A brief description of the issue. |
 | `subtitle` | string | Additional information about the issue. |
 | `error_code` | integer | A unique identifier for the error. |

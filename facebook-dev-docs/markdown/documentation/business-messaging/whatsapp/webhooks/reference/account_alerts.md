@@ -9,11 +9,11 @@ Updated: Jun 28, 2026
 
 Meta sends webhooks to the callback URL set on your app, but you can override this by designating an alternate callback URL for the WhatsApp Business account (WABA) or business phone number.
 
-When a [supported field](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/account_alerts#supported-webhook-fields) triggers a webhook, the system first checks if your app has designated an alternate callback URL for the business phone number associated with the event. If the business phone number has an alternate callback URL, the system sends the webhook there. If the phone number has no alternate, the system checks if the WABA associated with the number has an alternate callback URL. If the WABA has an alternate callback URL, the system sends the webhook there. If the WABA also has no alternate, the webhook falls back to your app’s callback URL.
+When a [supported field](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/account_alerts#supported-webhook-fields) triggers a webhook, the system first checks if your app has designated an alternate callback URL for the business phone number associated with the event. If the business phone number has an alternate callback URL, the system sends the webhook there. If the phone number has no alternate, the system checks if the WABA associated with the number has an alternate callback URL. If the WABA has an alternate callback URL, the system sends the webhook there. If the WABA also has no alternate, the webhook falls back to your app's callback URL.
 
 ## Supported webhook fields
 
-The override applies only to the following webhook field types. For field types not listed here, Meta always sends webhooks to your app’s default callback URL.
+The override applies only to the following webhook field types. For field types not listed here, Meta always sends webhooks to your app's default callback URL.
 
 * `messages`
 * `message_echoes`
@@ -29,7 +29,7 @@ The override applies only to the following webhook field types. For field types 
 * `history`
 * `account_settings_update`
 
-> **Note:** Template webhooks (`message_template_status_update`, `message_template_quality_update`, `message_template_components_update`, `template_category_update`) and account-level webhooks (`account_update`, `account_review_update`, `account_alerts`) do not support callback overrides. Meta always delivers these webhooks to your app’s default callback URL.
+> **Note:** Template webhooks (`message_template_status_update`, `message_template_quality_update`, `message_template_components_update`, `template_category_update`) and account-level webhooks (`account_update`, `account_review_update`, `account_alerts`) do not support callback overrides. Meta always delivers these webhooks to your app's default callback URL.
 
 ## Requirements
 
@@ -42,20 +42,16 @@ Use the [Subscribed Apps API](https://developers.facebook.com/documentation/busi
 ### Request syntax
 
 ```
-```
-POST /<WABA_ID>/subscribed_apps
-```
+POST /<WABA_ID>/subscribed_apps
 ```
 
 ### Post body
 
 ```
-```
 {  
-  "override_callback_uri":"<WABA_ALT_CALLBACK_URL>",  
-  "verify_token":"<WABA_ALT_CALLBACK_URL_TOKEN>"  
+  "override_callback_uri":"<WABA_ALT_CALLBACK_URL>",  
+  "verify_token":"<WABA_ALT_CALLBACK_URL_TOKEN>"  
 }
-```
 ```
 
 ### Body parameters
@@ -70,11 +66,9 @@ POST /<WABA_ID>/subscribed_apps
 Upon success:
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 ### Example request
@@ -94,11 +88,9 @@ curl -X POST \
 ### Example response
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 ## Get WABA alternate callback
@@ -108,20 +100,18 @@ Use the [Subscribed Apps API](https://developers.facebook.com/documentation/busi
 ### Example response
 
 ```
-```
 {  
-  "data" : [  
-    {  
-      "whatsapp_business_api_data" : {  
-        "id" : "670843887433847",  
-        "link" : "https://www.facebook.com/games/?app_id=67084...",  
-        "name" : "Lucky Shrub"  
-      },  
-      "override_callback_uri" : "https://my-waba-alternate-callback.com/webhook"  
-    }  
-  ]  
+  "data" : [  
+    {  
+      "whatsapp_business_api_data" : {  
+        "id" : "670843887433847",  
+        "link" : "https://www.facebook.com/games/?app_id=67084...",  
+        "name" : "Lucky Shrub"  
+      },  
+      "override_callback_uri" : "https://my-waba-alternate-callback.com/webhook"  
+    }  
+  ]  
 }
-```
 ```
 
 ## Delete WABA alternate callback
@@ -135,22 +125,18 @@ Use the [WhatsApp Business Phone Number API](https://developers.facebook.com/doc
 ### Request syntax
 
 ```
-```
-POST /<BUSINESS_PHONE_NUMBER_ID>
-```
+POST /<BUSINESS_PHONE_NUMBER_ID>
 ```
 
 ### Post body
 
 ```
-```
 {  
-  "webhook_configuration": {  
-    "override_callback_uri": "<PHONE_ALT_CALLBACK_URL>",  
-    "verify_token": "<PHONE_ALT_CALLBACK_URL_TOKEN>"  
-  }  
+  "webhook_configuration": {  
+    "override_callback_uri": "<PHONE_ALT_CALLBACK_URL>",  
+    "verify_token": "<PHONE_ALT_CALLBACK_URL_TOKEN>"  
+  }  
 }
-```
 ```
 
 ### Body parameters
@@ -165,11 +151,9 @@ POST /<BUSINESS_PHONE_NUMBER_ID>
 Upon success:
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 ### Example request
@@ -190,11 +174,9 @@ curl -X POST 'https://graph.facebook.com/v25.0/106540352242922' \
 ### Example response
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 ## Get phone number alternate callback
@@ -204,10 +186,8 @@ Use the [WhatsApp Business Phone Number API](https://developers.facebook.com/doc
 ### Request syntax
 
 ```
-```
-GET /<BUSINESS_PHONE_NUMBER_ID>  
-  ?fields=webhook_configuration
-```
+GET /<BUSINESS_PHONE_NUMBER_ID>  
+  ?fields=webhook_configuration
 ```
 
 ### Response
@@ -215,16 +195,14 @@ GET /<BUSINESS_PHONE_NUMBER_ID>
 Upon success:
 
 ```
-```
 {  
-  "webhook_configuration": {  
-    "phone_number": "<PHONE_ALT_CALLBACK_URL>",  
-    "whatsapp_business_account": "<WABA_ALT_CALLBACK_URL>",  
-    "application": "<APP_CALLBACK_URL>"  
-  },  
-  "id": "106540352242922"  
+  "webhook_configuration": {  
+    "phone_number": "<PHONE_ALT_CALLBACK_URL>",  
+    "whatsapp_business_account": "<WABA_ALT_CALLBACK_URL>",  
+    "application": "<APP_CALLBACK_URL>"  
+  },  
+  "id": "106540352242922"  
 }
-```
 ```
 
 The `whatsapp_business_account` property is only included if the WABA associated with the business phone number also has an alternate callback URL set.
@@ -239,28 +217,24 @@ curl 'https://graph.facebook.com/v25.0/106540352242922?fields=webhook_configurat
 ### Example response
 
 ```
-```
 {  
-  "webhook_configuration": {  
-    "phone_number": "https://my-phone-alternate-callback.com/webhook",  
-    "whatsapp_business_account": "https://my-waba-alternate-callback.com/webhook",  
-    "application": "https://my-production-callback.com/webhook"  
-  },  
-  "id": "106540352242922"  
+  "webhook_configuration": {  
+    "phone_number": "https://my-phone-alternate-callback.com/webhook",  
+    "whatsapp_business_account": "https://my-waba-alternate-callback.com/webhook",  
+    "application": "https://my-production-callback.com/webhook"  
+  },  
+  "id": "106540352242922"  
 }
-```
 ```
 
 ## Delete phone number alternate callback
 
-To delete a business phone number’s alternate callback URL, use the [WhatsApp Business Phone Number API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/whatsapp-business-account-phone-number-api#post-version-phone-number-id) with the `override_callback_uri` property set to an empty string:
+To delete a business phone number's alternate callback URL, use the [WhatsApp Business Phone Number API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/whatsapp-business-account-phone-number-api#post-version-phone-number-id) with the `override_callback_uri` property set to an empty string:
 
 ```
-```
 {  
-  "webhook_configuration": {  
-    "override_callback_uri": ""  
-  }  
+  "webhook_configuration": {  
+    "override_callback_uri": ""  
+  }  
 }
-```
 ```

@@ -76,6 +76,25 @@ def normalize_text(text: str) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
+def flatten_nested_pre(container):
+    """Collapse <pre><div><pre>...</pre></div></pre> wrappers down to a single
+    <pre>. markdownify emits one ``` fence per <pre> tag, so nested <pre>s
+    produce two adjacent opening fences (parsed as an empty code block) and
+    leak the real code as raw text afterwards -- which then breaks Vue's SFC
+    compiler on any bare `<PLACEHOLDER>`-style token in that code.
+    """
+    for pre in container.find_all("pre"):
+        inner = pre.find("pre")
+        if inner is not None:
+            inner_copy = inner.extract()
+            pre.replace_with(inner_copy)
+    for pre in container.find_all("pre"):
+        text = pre.get_text()
+        if "\xa0" in text:
+            for node in pre.find_all(string=True):
+                node.replace_with(node.replace("\xa0", " "))
+
+
 def main():
     html_files = []
     for docroot in DOC_ROOTS:
@@ -154,9 +173,27 @@ def main():
     converted = 0
     for rec in to_convert:
         container = rec["container"]
+        flatten_nested_pre(container)
         unwrap_fb_redirects(container)
         body_md = md(str(container), heading_style="ATX", bullets="*")
         body_md = re.sub(r"\n{3,}", "\n\n", body_md).strip()
+        # Literal "{{ }}" (template-tag docs, Handlebars-style examples, etc.)
+        # reads as Vue mustache interpolation once VitePress renders this
+        # Markdown to HTML -- and that happens even inside inline code spans,
+        # which VitePress does not wrap in v-pre (only fenced code blocks get
+        # that treatment). A zero-width space splits the delimiter so Vue's
+        # compiler never sees "{{"/"}}" while remaining invisible to readers.
+        body_md = body_md.replace("{{", "{​{").replace("}}", "}​}")
+        # Curly/smart quotes next to braces inside table cells crash Vue's
+        # SFC compiler at build time (rollup: "Unexpected character '‘'"),
+        # apparently from how it hoists static table-cell text. Straight
+        # quotes render identically for readers and sidestep the crash.
+        body_md = (
+            body_md.replace("‘", "'")
+            .replace("’", "'")
+            .replace("“", '"')
+            .replace("”", '"')
+        )
 
         frontmatter = (
             "---\n"

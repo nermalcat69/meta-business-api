@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce
 
 Updated: Jun 24, 2026
 
-Facebook’s automotive ads use cross-device intent signals to automatically show vehicles from your inventory, automatically generating a creative for each vehicle, on Facebook. Automotive ads are a vertical solution for the automotive industry that includes a custom creative format, data models, and ads delivery optimization important for automotive clients.
+Facebook's automotive ads use cross-device intent signals to automatically show vehicles from your inventory, automatically generating a creative for each vehicle, on Facebook. Automotive ads are a vertical solution for the automotive industry that includes a custom creative format, data models, and ads delivery optimization important for automotive clients.
 
 ## Common uses
 
@@ -21,7 +21,7 @@ If any of the following scenarios apply to you, use [automotive inventory ads](h
 
 ### Automotive model ads
 
-Facebook’s [automotive model ads](https://developers.facebook.com/documentation/ads-commerce/marketing-api/auto-ads/guides/aoa) use cross-device intent signals to automatically promote relevant vehicle models and offers on Facebook and Instagram. A vehicle models and offers catalog consists of information about the offers, corresponding vehicles, and markets/regions where the offer is valid.
+Facebook's [automotive model ads](https://developers.facebook.com/documentation/ads-commerce/marketing-api/auto-ads/guides/aoa) use cross-device intent signals to automatically promote relevant vehicle models and offers on Facebook and Instagram. A vehicle models and offers catalog consists of information about the offers, corresponding vehicles, and markets/regions where the offer is valid.
 
 ## Documentation contents
 

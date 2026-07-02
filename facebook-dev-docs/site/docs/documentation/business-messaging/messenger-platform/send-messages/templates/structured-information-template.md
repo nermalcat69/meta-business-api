@@ -21,11 +21,11 @@ https://graph.facebook.com/v25.0/me/messages?access_token={PAGE_ACCESS_TOKEN}
 | --- | --- | --- |
 | `template_type` | String | Must be `receipt`. |
 | `sharable` | Boolean | *Optional.* Set to `true` to enable the native share button in Messenger for the template message. Defaults to `false`. |
-| `recipient_name` | String | The recipient’s name. |
-| `merchant_name` | String | *Optional.* The merchant’s name. If present, the `merchant_name` value is shown as logo text. |
+| `recipient_name` | String | The recipient's name. |
+| `merchant_name` | String | *Optional.* The merchant's name. If present, the `merchant_name` value is shown as logo text. |
 | `order_number` | String | The order number. Must be unique. |
 | `currency` | String | The currency of the payment. |
-| `payment_method` | String | The payment method used. Provide enough information for the end user to identify which payment method and account they used. This can be a custom string, such as “Visa 1234”. |
+| `payment_method` | String | The payment method used. Provide enough information for the end user to identify which payment method and account they used. This can be a custom string, such as "Visa 1234". |
 | `timestamp` | String | *Optional.* Timestamp of the order in seconds. |
 | `elements` | Array | *Optional.* Array of a maximum of 100 `element` objects that describe items in the order. Sort order of the elements is not guaranteed. |
 | `address` | Object | *Optional.* The shipping address of the order. See `address` properties below. |

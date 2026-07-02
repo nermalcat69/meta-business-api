@@ -13,9 +13,9 @@ Zero-tap authentication templates allow your users to receive one-time passwords
 
 When a user in your app requests a password or code and you deliver it using a zero-tap authentication template, the WhatsApp client simply broadcasts the included password or code and your app can capture it immediately with a broadcast receiver.
 
-From your user’s perspective, they request a password or code in your app and it appears in your app automatically. If your app user happens to check the message in the WhatsApp client, they will only see a message displaying the default fixed text: *< code > is your verification code.*
+From your user's perspective, they request a password or code in your app and it appears in your app automatically. If your app user happens to check the message in the WhatsApp client, they will only see a message displaying the default fixed text: *< code > is your verification code.*
 
-Like one-tap autofill button authentication templates, when the WhatsApp client receives the template message containing the user’s password or code, we perform a series of eligibility checks. If the message fails this check and we are unable to broadcast the password or code, the message will display either a one-tap autofill button or a copy code button. For this reason, when you create a zero-tap authentication template, you must include a one-tap autofill and copy code button in your post body payload, even if the user may never see one of these buttons.
+Like one-tap autofill button authentication templates, when the WhatsApp client receives the template message containing the user's password or code, we perform a series of eligibility checks. If the message fails this check and we are unable to broadcast the password or code, the message will display either a one-tap autofill button or a copy code button. For this reason, when you create a zero-tap authentication template, you must include a one-tap autofill and copy code button in your post body payload, even if the user may never see one of these buttons.
 
 Note: The OTP Android SDK features a simplified workflow for implementing one-tap and zero-tap authentication templates. You can learn how to use it below.
 
@@ -42,46 +42,44 @@ Use the [Message Templates API](https://developers.facebook.com/documentation/bu
 ### Request syntax
 
 ```
-```
-curl -X POST "https://graph.facebook.com/v19.0/<WHATSAPP_BUSINESS_ACCOUNT_ID>/message_templates" \  
-  -H "Authorization: Bearer <ACCESS_TOKEN>" \  
-  -H "Content-Type: application/json" \  
-  -d '  
-  {  
-    "name": "<TEMPLATE_NAME>",  
-    "language": "<TEMPLATE_LANGUAGE>",  
-    "category": "authentication",  
-    "message_send_ttl_seconds": <TIME_TO_LIVE>,  
-    "components": [  
-      {  
-        "type": "body",  
-        "add_security_recommendation": <SECURITY_RECOMMENDATION>  
-      },  
-      {  
-        "type": "footer",  
-        "code_expiration_minutes": <CODE_EXPIRATION>  
-      },  
-      {  
-        "type": "buttons",  
-        "buttons": [  
-          {  
-            "type": "otp",  
-            "otp_type": "zero_tap",  
-            "text": "<COPY_CODE_BUTTON_TEXT>",  
-            "autofill_text": "<AUTOFILL_BUTTON_TEXT>",  
-            "zero_tap_terms_accepted": <TERMS_ACCEPTED>,  
-            "supported_apps": [  
-              {  
-                "package_name": "<PACKAGE_NAME>",  
-                "signature_hash": "<SIGNATURE_HASH>"  
-              }  
-            ]  
-          }  
-        ]  
-      }  
-    ]  
-  }'
-```
+curl -X POST "https://graph.facebook.com/v19.0/<WHATSAPP_BUSINESS_ACCOUNT_ID>/message_templates" \  
+  -H "Authorization: Bearer <ACCESS_TOKEN>" \  
+  -H "Content-Type: application/json" \  
+  -d '  
+  {  
+    "name": "<TEMPLATE_NAME>",  
+    "language": "<TEMPLATE_LANGUAGE>",  
+    "category": "authentication",  
+    "message_send_ttl_seconds": <TIME_TO_LIVE>,  
+    "components": [  
+      {  
+        "type": "body",  
+        "add_security_recommendation": <SECURITY_RECOMMENDATION>  
+      },  
+      {  
+        "type": "footer",  
+        "code_expiration_minutes": <CODE_EXPIRATION>  
+      },  
+      {  
+        "type": "buttons",  
+        "buttons": [  
+          {  
+            "type": "otp",  
+            "otp_type": "zero_tap",  
+            "text": "<COPY_CODE_BUTTON_TEXT>",  
+            "autofill_text": "<AUTOFILL_BUTTON_TEXT>",  
+            "zero_tap_terms_accepted": <TERMS_ACCEPTED>,  
+            "supported_apps": [  
+              {  
+                "package_name": "<PACKAGE_NAME>",  
+                "signature_hash": "<SIGNATURE_HASH>"  
+              }  
+            ]  
+          }  
+        ]  
+      }  
+    ]  
+  }'
 ```
 
 Note that in your template creation request the button type is designated as `otp`, but upon creation the button type will be set to `url`. You can confirm this by performing a GET request on a newly created authentication template and analyzing its components.
@@ -90,15 +88,15 @@ Note that in your template creation request the button type is designated as `ot
 
 | Placeholder | Description | Example Value |
 | --- | --- | --- |
-| `<AUTOFILL_BUTTON_TEXT>`  *String* | **Optional.**  Zero-tap autofill button label text.  If omitted, the autofill text will default to a pre-set value, localized to the template’s language. For example, “Autofill” for English (US).  Maximum 25 characters. | `Autofill` |
-| `<COPY_CODE_BUTTON_TEXT>`  *String* | **Optional.**  Copy code button label text.  If the message fails the [eligibility check](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/authentication-templates/copy-code-button-authentication-templates#eligibility-check) and displays a copy code button, the button will use this text label.  If omitted, and the message fails the eligibility check and displays a copy code button, the text will default to a pre-set value localized to the template’s language. For example, `Copy Code` for English (US).  Maximum 25 characters. | `Copy Code` |
+| `<AUTOFILL_BUTTON_TEXT>`  *String* | **Optional.**  Zero-tap autofill button label text.  If omitted, the autofill text will default to a pre-set value, localized to the template's language. For example, "Autofill" for English (US).  Maximum 25 characters. | `Autofill` |
+| `<COPY_CODE_BUTTON_TEXT>`  *String* | **Optional.**  Copy code button label text.  If the message fails the [eligibility check](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/authentication-templates/copy-code-button-authentication-templates#eligibility-check) and displays a copy code button, the button will use this text label.  If omitted, and the message fails the eligibility check and displays a copy code button, the text will default to a pre-set value localized to the template's language. For example, `Copy Code` for English (US).  Maximum 25 characters. | `Copy Code` |
 | `<CODE_EXPIRATION>`  *Integer* | **Optional.**  Indicates the number of minutes the password or code is valid.  If included, the code expiration warning and this value will be displayed in the delivered message. If the message fails the [eligibility check](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/authentication-templates/copy-code-button-authentication-templates#eligibility-check) and displays a one-tap autofill button, the button will be disabled in the delivered message the indicated number of minutes from when the message was sent.  If omitted, the code expiration warning will not be displayed in the delivered message. If the message fails the eligibility check and displays a one-tap autofill button, the button will be disabled 10 minutes from when the message was sent.  Minimum 1, maximum 90. | `5` |
-| `<PACKAGE_NAME>`  *String* | **Required.**  Your Android app’s package name.  The string must have at least two segments (one or more dots), and each segment must start with a letter.  All characters must be alphanumeric or an underscore (`a-zA-Z0-9_`).  If using Graph API version 20.0 or older, you can define your app’s package name outside of the `supported_apps` array, but this is not recommended. See [Supported Apps](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/authentication-templates/copy-code-button-authentication-templates#supported-apps) below.  Maximum 224 characters. | `com.example.luckyshrub` |
+| `<PACKAGE_NAME>`  *String* | **Required.**  Your Android app's package name.  The string must have at least two segments (one or more dots), and each segment must start with a letter.  All characters must be alphanumeric or an underscore (`a-zA-Z0-9_`).  If using Graph API version 20.0 or older, you can define your app's package name outside of the `supported_apps` array, but this is not recommended. See [Supported Apps](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/authentication-templates/copy-code-button-authentication-templates#supported-apps) below.  Maximum 224 characters. | `com.example.luckyshrub` |
 | `<SECURITY_RECOMMENDATION>`  *Boolean* | **Optional.**  Set to `true` if you want the template to include the fixed string, For your security, do not share this code. Set to `false` to exclude the string. | `true` |
-| `<SIGNATURE_HASH>`  *String* | **Required.**  Your app signing key hash. See [App Signing Key Hash](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/authentication-templates/copy-code-button-authentication-templates#app-signing-key-hash) below.  All characters must be either alphanumeric, `+`, `/`, or `=` (`a-zA-Z0-9+/=`).  If using Graph API version 20.0 or older, you can define your app’s signature hash outside of the `supported_apps` array, but this is not recommended. See [Supported Apps](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/authentication-templates/copy-code-button-authentication-templates#supported-apps) below.  Must be exactly 11 characters. | `K8a/AINcGX7` |
+| `<SIGNATURE_HASH>`  *String* | **Required.**  Your app signing key hash. See [App Signing Key Hash](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/authentication-templates/copy-code-button-authentication-templates#app-signing-key-hash) below.  All characters must be either alphanumeric, `+`, `/`, or `=` (`a-zA-Z0-9+/=`).  If using Graph API version 20.0 or older, you can define your app's signature hash outside of the `supported_apps` array, but this is not recommended. See [Supported Apps](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/authentication-templates/copy-code-button-authentication-templates#supported-apps) below.  Must be exactly 11 characters. | `K8a/AINcGX7` |
 | `<TEMPLATE_LANGUAGE>`  *String* | **Required.**  Template [language and locale code](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/supported-languages). | `en_US` |
 | `<TEMPLATE_NAME>`  *String* | **Required.**  Template name.  Maximum 512 characters. | `zero_tap_auth_template` |
-| `<TERMS_ACCEPTED>`  *Boolean* | **Required.**  Set to `true` to indicate that you understand that your use of zero-tap authentication is subject to the WhatsApp Business Terms of Service, and that it’s your responsibility to ensure your customers expect that the code will be automatically filled in on their behalf when they choose to receive the zero-tap code through WhatsApp.  If set to `false`, the template will **not** be created as you need to accept zero-tap terms before creating zero-tap enabled message templates. | `true` |
+| `<TERMS_ACCEPTED>`  *Boolean* | **Required.**  Set to `true` to indicate that you understand that your use of zero-tap authentication is subject to the WhatsApp Business Terms of Service, and that it's your responsibility to ensure your customers expect that the code will be automatically filled in on their behalf when they choose to receive the zero-tap code through WhatsApp.  If set to `false`, the template will **not** be created as you need to accept zero-tap terms before creating zero-tap enabled message templates. | `true` |
 | `<TIME_TO_LIVE>`  *Integer* | **Optional.**  Authentication message time-to-live value, in seconds. See [Time-To-Live](https://developers.facebook.com/whatsapp/business-management-api/time-to-live). | `60` |
 
 ### Example request
@@ -147,22 +145,20 @@ curl 'https://graph.facebook.com/v25.0/102290129340398/message_templates' \
 ### Example response
 
 ```
-```
 {  
-  "id": "594425479261596",  
-  "status": "PENDING",  
-  "category": "AUTHENTICATION"  
+  "id": "594425479261596",  
+  "status": "PENDING",  
+  "category": "AUTHENTICATION"  
 }
-```
 ```
 
 ## App signing key hash
 
 You must include your app signing key hash in your post body.
 
-To calculate your hash, follow Google’s instructions for [computing your app’s hash string⁠](https://developers.google.com/identity/sms-retriever/verify?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR4G883r_f8OxuBN4Ug2aWo3tRDVPu6JtxWg9T734Z5waARzxf7VGfEehXYlFw_aem_sWjiUmtGyV3tjOHfK_Nwxg#computing_your_apps_hash_string).
+To calculate your hash, follow Google's instructions for [computing your app's hash string⁠](https://developers.google.com/identity/sms-retriever/verify?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR4G883r_f8OxuBN4Ug2aWo3tRDVPu6JtxWg9T734Z5waARzxf7VGfEehXYlFw_aem_sWjiUmtGyV3tjOHfK_Nwxg#computing_your_apps_hash_string).
 
-Alternatively, if you follow Google’s instructions and download your app signing key certificate (step 1), you can use your certificate with the [sms\_retriever\_hash\_v9.sh⁠](http://tinyurl.com/43bkdrdt?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR7WlgU2D_nYpi9cfvPiwHW3pAcJ4ioAXwByWSEi00HO80ot2z93xPB4iJDu-w_aem_adl3wSgC9B3Pu089VwUlWQ) shell script to compute the hash. For example:
+Alternatively, if you follow Google's instructions and download your app signing key certificate (step 1), you can use your certificate with the [sms\_retriever\_hash\_v9.sh⁠](http://tinyurl.com/43bkdrdt?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR7WlgU2D_nYpi9cfvPiwHW3pAcJ4ioAXwByWSEi00HO80ot2z93xPB4iJDu-w_aem_adl3wSgC9B3Pu089VwUlWQ) shell script to compute the hash. For example:
 
 ```
 ./sms_retriever_hash_v9.sh --package "com.example.myapplication" --keystore ~/.android/debug.keystore
@@ -173,45 +169,41 @@ Alternatively, if you follow Google’s instructions and download your app signi
 The `supported_apps` array allows you define pairs of app package names and signing key hashes for up to 5 apps. This can be useful if you have different app builds and want each of them to be able to initiate the handshake:
 
 ```
-```
-"buttons": [  
-  {  
-    "type": "otp",  
-    ...  
-    "supported_apps": [  
-      {  
-        "package_name": "<PACKAGE_NAME_1>",  
-        "signature_hash": "<SIGNATURE_HASH_1>"  
-      },  
-      {  
-        "package_name": "<PACKAGE_NAME_2>",  
-        "signature_hash": "<SIGNATURE_HASH_2>"  
-      },  
-      ...  
-    ]  
-  }  
+"buttons": [  
+  {  
+    "type": "otp",  
+    ...  
+    "supported_apps": [  
+      {  
+        "package_name": "<PACKAGE_NAME_1>",  
+        "signature_hash": "<SIGNATURE_HASH_1>"  
+      },  
+      {  
+        "package_name": "<PACKAGE_NAME_2>",  
+        "signature_hash": "<SIGNATURE_HASH_2>"  
+      },  
+      ...  
+    ]  
+  }  
 ]
 ```
-```
 
-Alternatively, if you are using Graph API version 20.0 or older and have only a single app, you can define the app’s package name and signing key hash as `buttons` object properties, but this is not recommended as we will stop supporting this method starting with version 21.0:
+Alternatively, if you are using Graph API version 20.0 or older and have only a single app, you can define the app's package name and signing key hash as `buttons` object properties, but this is not recommended as we will stop supporting this method starting with version 21.0:
 
 ```
-```
-"buttons": [  
-  {  
-    "type": "otp",  
-    ...  
-    "package_name": "<PACKAGE_NAME>",  
-    "signature_hash": "<SIGNATURE_HASH>"  
-  }  
+"buttons": [  
+  {  
+    "type": "otp",  
+    ...  
+    "package_name": "<PACKAGE_NAME>",  
+    "signature_hash": "<SIGNATURE_HASH>"  
+  }  
 ]
-```
 ```
 
 ## Handshake
 
-You must signal to the WhatsApp client to expect imminent delivery of a password or code. You can do this by initiating a “handshake”.
+You must signal to the WhatsApp client to expect imminent delivery of a password or code. You can do this by initiating a "handshake".
 
 A handshake is an Android intent and public class that you implement but that the WhatsApp client can start.
 
@@ -223,15 +215,15 @@ If you do not initiate the handshake before sending the message, or the message 
 
 The WhatsApp client performs the following checks when it receives an authentication template message. If any check fails, it will attempt to display the one-tap autofill button in the message. If unable to do so, it will fall back to a copy code button.
 
-* The handshake was initiated no more than 10 minutes ago (or no more than the number of minutes indicated by the template’s `code_expiration_minutes` property, if present).
+* The handshake was initiated no more than 10 minutes ago (or no more than the number of minutes indicated by the template's `code_expiration_minutes` property, if present).
 * The package name in the message (defined in the `package_name` property in the `components` array upon template creation) matches the package name set on the intent. The match is determined through the `getCreatorPackage` method called in the `PendingIntent` object provided by your application. See [One-Tap Autofill Button Class](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/authentication-templates/copy-code-button-authentication-templates#one-tap-autofill-button-activity-class).
-* The app signing key hash in the message (defined in the `signature_hash` property in the components array upon template creation) matches your installed app’s signing key hash.
+* The app signing key hash in the message (defined in the `signature_hash` property in the components array upon template creation) matches your installed app's signing key hash.
 * Your app has defined a one-tap autofill button activity and class to receive the password or code.
 * Your app has defined a zero-tap broadcast receiver and class to receive the password or code.
 
 ### Android notifications
 
-Android notifications indicating receipt of a WhatsApp authentication template message will only appear on the user’s Android device if:
+Android notifications indicating receipt of a WhatsApp authentication template message will only appear on the user's Android device if:
 
 * The user is logged into the WhatsApp app or WhatsApp Business app with the phone number (account) that the message was sent to.
 * The user is logged into your app.
@@ -453,12 +445,10 @@ You can check WhatsApp installation before offering WhatsApp as an option if you
 First, you need to add the following to your `AndroidManifest.xml` file:
 
 ```
-```
 <queries>  
-    <package android:name="com.whatsapp"/>  
-    <package android:name="com.whatsapp.w4b"/>  
+    <package android:name="com.whatsapp"/>  
+    <package android:name="com.whatsapp.w4b"/>  
 </queries>
-```
 ```
 
 Instantiate the `WhatsAppOtpHandler` object:
@@ -500,78 +490,74 @@ Use the [Messages API](https://developers.facebook.com/documentation/business-me
 ### Request syntax
 
 ```
-```
-curl -X POST "https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/messages" \  
-  -H "Authorization: Bearer <ACCESS_TOKEN>" \  
-  -H "Content-Type: application/json" \  
-  -d '  
+curl -X POST "https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/messages" \  
+  -H "Authorization: Bearer <ACCESS_TOKEN>" \  
+  -H "Content-Type: application/json" \  
+  -d '  
 {  
-    "messaging_product": "whatsapp",  
-    "recipient_type": "individual",  
-    "to": "<CUSTOMER_PHONE_NUMBER>",  
-    "type": "template",  
-    "template": {  
-      "name": "<TEMPLATE_NAME>",  
-      "language": {  
-        "code": "<TEMPLATE_LANGUAGE_CODE>"  
-      },  
-      "components": [  
-        {  
-          "type": "body",  
-          "parameters": [  
-            {  
-              "type": "text",  
-              "text": "<ONE-TIME PASSWORD>"  
-            }  
-          ]  
-        },  
-        {  
-          "type": "button",  
-          "sub_type": "url",  
-          "index": "0",  
-          "parameters": [  
-            {  
-              "type": "text",  
-              "text": "<ONE-TIME PASSWORD>"  
-            }  
-          ]  
-        }  
-      ]  
-    }  
-  }'
-```
+    "messaging_product": "whatsapp",  
+    "recipient_type": "individual",  
+    "to": "<CUSTOMER_PHONE_NUMBER>",  
+    "type": "template",  
+    "template": {  
+      "name": "<TEMPLATE_NAME>",  
+      "language": {  
+        "code": "<TEMPLATE_LANGUAGE_CODE>"  
+      },  
+      "components": [  
+        {  
+          "type": "body",  
+          "parameters": [  
+            {  
+              "type": "text",  
+              "text": "<ONE-TIME PASSWORD>"  
+            }  
+          ]  
+        },  
+        {  
+          "type": "button",  
+          "sub_type": "url",  
+          "index": "0",  
+          "parameters": [  
+            {  
+              "type": "text",  
+              "text": "<ONE-TIME PASSWORD>"  
+            }  
+          ]  
+        }  
+      ]  
+    }  
+  }'
 ```
 
 ### Request parameters
 
 | Placeholder | Description | Sample Value |
 | --- | --- | --- |
-| `<CUSTOMER_PHONE_NUMBER>` | The customer’s WhatsApp phone number. | `12015553931` |
+| `<CUSTOMER_PHONE_NUMBER>` | The customer's WhatsApp phone number. | `12015553931` |
 | `<ONE-TIME PASSWORD>` | The one-time password or verification code to be delivered to the customer.  Note that this value must appear twice in the payload.  Maximum 15 characters. | `J$FpnYnP` |
-| `<TEMPLATE_LANGUAGE_CODE>` | The template’s [language and locale code](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/supported-languages). | `en_US` |
-| `<TEMPLATE_NAME>` | The template’s name. | `verification_code` |
+| `<TEMPLATE_LANGUAGE_CODE>` | The template's [language and locale code](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/supported-languages). | `en_US` |
+| `<TEMPLATE_NAME>` | The template's name. | `verification_code` |
 
 ### Response
 
 Upon success, the API will respond with:
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "contacts": [  
-    {  
-      "input": "<INPUT>",  
-      "wa_id": "<WA_ID>"  
-    }  
-  ],  
-  "messages": [  
-    {  
-      "id": "<ID>"  
-    }  
-  ]  
+  "messaging_product": "whatsapp",  
+  "contacts": [  
+    {  
+      "input": "<INPUT>",  
+      "wa_id": "<WA_ID>"  
+    }  
+  ],  
+  "messages": [  
+    {  
+      "id": "<ID>"  
+    }  
+  ]  
 }
-```
 ```
 
 ### Response parameters
@@ -580,7 +566,7 @@ Upon success, the API will respond with:
 | --- | --- | --- |
 | `<INPUT>`  *String* | The customer phone number that the message was sent to. This may not match `wa_id`. | `+16315551234` |
 | `<WA_ID>`  *String* | WhatsApp ID of the customer who the message was sent to. This may not match `input`. | `+16315551234` |
-| `<ID>`  *String* | WhatsApp message ID. You can use the ID listed after “wamid.” to track your message status. | `wamid.HBgLMTY1MDM4Nzk0MzkVAgARGBI3N0EyQUJDMjFEQzZCQUMzODMA` |
+| `<ID>`  *String* | WhatsApp message ID. You can use the ID listed after "wamid." to track your message status. | `wamid.HBgLMTY1MDM4Nzk0MzkVAgARGBI3N0EyQUJDMjFEQzZCQUMzODMA` |
 
 ### Example request
 
@@ -627,20 +613,18 @@ curl -L 'https://graph.facebook.com/v25.0/105954558954427/messages' \
 ### Example response
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "contacts": [  
-    {  
-      "input": "12015553931",  
-      "wa_id": "12015553931"  
-    }  
-  ],  
-  "messages": [  
-    {  
-      "id": "wamid.HBgLMTY1MDM4Nzk0MzkVAgARGBI4Qzc5QkNGNTc5NTMyMDU5QzEA"  
-    }  
-  ]  
+  "messaging_product": "whatsapp",  
+  "contacts": [  
+    {  
+      "input": "12015553931",  
+      "wa_id": "12015553931"  
+    }  
+  ],  
+  "messages": [  
+    {  
+      "id": "wamid.HBgLMTY1MDM4Nzk0MzkVAgARGBI4Qzc5QkNGNTc5NTMyMDU5QzEA"  
+    }  
+  ]  
 }
-```
 ```

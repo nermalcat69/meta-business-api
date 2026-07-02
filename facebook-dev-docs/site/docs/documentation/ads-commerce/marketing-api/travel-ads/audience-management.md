@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/marketing
 
 Updated: Nov 6, 2025
 
-Automatically promote your travel inventory on Facebook. Facebook’s travel ads leverage cross-device intent signals to automatically promote relevant travel options from your inventory with unique creatives on Facebook.
+Automatically promote your travel inventory on Facebook. Facebook's travel ads leverage cross-device intent signals to automatically promote relevant travel options from your inventory with unique creatives on Facebook.
 
 Travel ads supports **[Hotel Ads](https://developers.facebook.com/documentation/ads-commerce/marketing-api/hotel-ads)**, **[Flight Ads](https://developers.facebook.com/docs/marketing-api/dynamic-ads-for-flights)**, and **[Destination Ads](https://developers.facebook.com/documentation/ads-commerce/marketing-api/destination-ads)**.
 
@@ -94,13 +94,13 @@ Travel ads **does not support inline dynamic audience targeting specs in the Ad 
 
 ## Step 3. Create Ad Creative
 
-You can use **template tags** in your [ad creatives](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-creative) for Travel ads. When Facebook displays your ad, we replace template tags with someone’s actual travel choices. You can use template tags in the ad itself and in the URL someone sees once they click the ad.
+You can use **template tags** in your [ad creatives](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-creative) for Travel ads. When Facebook displays your ad, we replace template tags with someone's actual travel choices. You can use template tags in the ad itself and in the URL someone sees once they click the ad.
 
 * [Template Tags for Hotels](https://developers.facebook.com/documentation/ads-commerce/marketing-api/hotel-ads/template-tags)
 * [Template Tags for Destinations](https://developers.facebook.com/documentation/ads-commerce/marketing-api/destination-ads/template-tags)
 * [Template Tags for Flights](https://developers.facebook.com/documentation/ads-commerce/marketing-api/flight-ads/template-tags)
 
-Use the `template_url_spec` field to specify the URL that appears after someone clicks the ad. If you don’t provide it, or we can’t derive it when we render an ad, we display the URL from the catalog. **For Flight Ads, this field is required if you don’t provide a URL in the catalog**.
+Use the `template_url_spec` field to specify the URL that appears after someone clicks the ad. If you don't provide it, or we can't derive it when we render an ad, we display the URL from the catalog. **For Flight Ads, this field is required if you don't provide a URL in the catalog**.
 
 You can show a single item or a carousel with multiple items. For single-item ads, you can show multiple images of the same item in the carousel, assuming your catalog contains multiple images for each item. You can also display static cards in combination with dynamic cards. For more information about creative options, see [Advantage+ Catalog Ads, Building a Creative Template](https://developers.facebook.com/docs/marketing-api/dynamic-product-ads/ads-management#adtemplate).
 
@@ -114,19 +114,19 @@ curl \
     "template_data": {
       "additional_image_index": 0,
       "call_to_action": {"type":"BOOK_TRAVEL"},
-      "description": "{{hotel.description}}",
+      "description": "{​{hotel.description}​}",
       "link": "<LINK>",
-      "message": "Book your upcoming stay in {{hotel.city}}",
-      "name": "{{hotel.name | titleize}}"
+      "message": "Book your upcoming stay in {​{hotel.city}​}",
+      "name": "{​{hotel.name | titleize}​}"
     }
   }' \
   -F 'template_url_spec={
     "config": {"app_id":"123456789012345"},
     "ios": {
-      "url": "example:\/\/home\/hotel?id={{hotel.hotel_id | urlencode}}&startDate={{trip.checkin_date date_format:Y-m-d | urlencode}}&endDate={{trip.checkout_date date_format:Y-m-d | urlencode}}"
+      "url": "example:\/\/home\/hotel?id={​{hotel.hotel_id | urlencode}​}&startDate={​{trip.checkin_date date_format:Y-m-d | urlencode}​}&endDate={​{trip.checkout_date date_format:Y-m-d | urlencode}​}"
     },
     "web": {
-      "url": "http:\/\/www.example.com\/hotel?id={{hotel.hotel_id | urlencode}}&startDate={{trip.checkin_date date_format:Y-m-d | urlencode}}&endDate={{trip.checkout_date date_format:Y-m-d | urlencode}}"
+      "url": "http:\/\/www.example.com\/hotel?id={​{hotel.hotel_id | urlencode}​}&startDate={​{trip.checkin_date date_format:Y-m-d | urlencode}​}&endDate={​{trip.checkout_date date_format:Y-m-d | urlencode}​}"
     }
   }' \
   -F 'product_set_id=<PRODUCT_SET_ID>' \
@@ -139,36 +139,34 @@ https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/adcreatives
 To upsell options, such as seat selection or priority boarding, to an audience that purchased flights:
 
 * Provide an audience by including only `PURCHASE` events.
-* (Preferred) In the ad creative’s `recommender_settings`, specify `PURCHASE` events to recommend ads.
+* (Preferred) In the ad creative's `recommender_settings`, specify `PURCHASE` events to recommend ads.
 
 ```
-```
-curl \  
-  -F 'name=Advantage+ Catalog Ad Template Creative Up-sell Sample' \  
-  -F 'object_story_spec={  
-    "page_id": "<PAGE_ID>",  
-    "template_data": {  
-      "additional_image_index": 0,  
-      "call_to_action": {"type":"LEARN_MORE"},  
-      "description": "{{flight.description}}",  
-      "link": "<LINK>",  
-      "message": "Book extra leg room on your flight from {{flight.origin_city}} to {{flight.destination_city}}",  
-    }  
-  }' \  
-  -F 'template_url_spec={  
-    "config": {"app_id":"<APP_ID>"},  
-    "ios": {  
-      "url": "example:\/\/home\/flight?id={{flight.origin_airport}}&startDate={{trip.departing_departure_date date_format:Y-m-d | urlencode}}&endDate={{trip.returning_departure_date date_format:Y-m-d | urlencode}}"  
-    },  
-    "web": {  
-      "url": "http:\/\/www.example.com\/flight?id={{flight.origin_airport}}&startDate={{trip.checkin_date date_format:Y-m-d | urlencode}}&endDate={{trip.returning_departure_date date_format:Y-m-d | urlencode}}"  
-    }  
-  }' \  
-  -F 'product_set_id=<FLIGHT_SET_ID>' \  
-  -F 'recommender_settings'={"preferred_events":["Purchase"]}\  
-  -F 'access_token=<ACCESS_TOKEN>' \  
-  https://graph.facebook.com/VERSION/act_<AD_ACCOUNT_ID>/adcreatives
-```
+curl \  
+  -F 'name=Advantage+ Catalog Ad Template Creative Up-sell Sample' \  
+  -F 'object_story_spec={  
+    "page_id": "<PAGE_ID>",  
+    "template_data": {  
+      "additional_image_index": 0,  
+      "call_to_action": {"type":"LEARN_MORE"},  
+      "description": "{​{flight.description}​}",  
+      "link": "<LINK>",  
+      "message": "Book extra leg room on your flight from {​{flight.origin_city}​} to {​{flight.destination_city}​}",  
+    }  
+  }' \  
+  -F 'template_url_spec={  
+    "config": {"app_id":"<APP_ID>"},  
+    "ios": {  
+      "url": "example:\/\/home\/flight?id={​{flight.origin_airport}​}&startDate={​{trip.departing_departure_date date_format:Y-m-d | urlencode}​}&endDate={​{trip.returning_departure_date date_format:Y-m-d | urlencode}​}"  
+    },  
+    "web": {  
+      "url": "http:\/\/www.example.com\/flight?id={​{flight.origin_airport}​}&startDate={​{trip.checkin_date date_format:Y-m-d | urlencode}​}&endDate={​{trip.returning_departure_date date_format:Y-m-d | urlencode}​}"  
+    }  
+  }' \  
+  -F 'product_set_id=<FLIGHT_SET_ID>' \  
+  -F 'recommender_settings'={"preferred_events":["Purchase"]}\  
+  -F 'access_token=<ACCESS_TOKEN>' \  
+  https://graph.facebook.com/VERSION/act_<AD_ACCOUNT_ID>/adcreatives
 ```
 
 ### Overlay Design
@@ -199,32 +197,30 @@ Learn more about [how to add overlays⁠](https://www.facebook.com/business/help
 #### Example—Price Overlay with Strikethrough for a Hotel Ad
 
 ```
-```
-curl \  
-  -F 'name=Test Templates in Overlay' \  
-  -F 'object_story_spec={  
-    "page_id": "<PAGE_ID>",  
-    "template_data": {  
-      "description": "Description",  
-      "link": "<LINK>",  
-      "name": "Name: {{hotel.name}}",  
-      "message" : "Come visit {{hotel.city}}!",  
-      "image_overlay_spec": {  
-        "overlay_template":"pill_with_text",  
-        "text_font":"droid_serif_regular",  
-        "text_type":"strikethrough_price",  
-        "position":"top_left",  
-        "theme_color":"background_e50900_text_ffffff",  
-        "float_with_margin":"true",  
-        "text_template_tags": ["{{hotel.price round}}", "{{hotel.sale_price round}}"],  
-      }  
-    }  
-  }' \  
-  -F 'product_set_id=<PRODUCT_SET_ID>' \  
-  -F 'template_url=http://www.example.com' \  
-  -F 'access_token=<ACCESS_TOKEN>' \  
-  https://graph.facebook.com/v2.10/act_897427477067185/adcreatives
-```
+curl \  
+  -F 'name=Test Templates in Overlay' \  
+  -F 'object_story_spec={  
+    "page_id": "<PAGE_ID>",  
+    "template_data": {  
+      "description": "Description",  
+      "link": "<LINK>",  
+      "name": "Name: {​{hotel.name}​}",  
+      "message" : "Come visit {​{hotel.city}​}!",  
+      "image_overlay_spec": {  
+        "overlay_template":"pill_with_text",  
+        "text_font":"droid_serif_regular",  
+        "text_type":"strikethrough_price",  
+        "position":"top_left",  
+        "theme_color":"background_e50900_text_ffffff",  
+        "float_with_margin":"true",  
+        "text_template_tags": ["{​{hotel.price round}​}", "{​{hotel.sale_price round}​}"],  
+      }  
+    }  
+  }' \  
+  -F 'product_set_id=<PRODUCT_SET_ID>' \  
+  -F 'template_url=http://www.example.com' \  
+  -F 'access_token=<ACCESS_TOKEN>' \  
+  https://graph.facebook.com/v2.10/act_897427477067185/adcreatives
 ```
 
 ## Step 4. Create Ad
@@ -266,8 +262,8 @@ https://graph.facebook.com/v25.0/<CREATIVE_ID>/previews
 | Field Name & Type | Description |
 | --- | --- |
 | `product_item_ids`  type: `array[string]` | * **Hotel**: List of hotel FBID or Base64url-encoded hotel ID tokens. Each token is of the form `hotel_catalog:{catalog_id}:{base64urlencode(hotel_id)}` * **Destination**: List of destination FBID or Base64url-encoded destination ID tokens. Each token is of the form `destination_catalog:{catalog_id}:{base64urlencode(destination_id)}` * **Flight**: Flight FBID or Base64url-encoded flight ID token. Each token is of the form `flight_catalog:{catalog_id}:{base64urlencode(destination_id)}` |
-| `start_date`  type: `string` | Render the preview with user’s intent signal; ex: 2016-12-24.   * For hotel, this would be the value of `trip.checkin_date` * For destination, this would be the value of `trip.travel_start` * For flight, this would be the value of `trip.departing_departure_date` |
-| `end_date`  type: `string` | Render the preview with user’s intent signal; ex: 2017-01-01.   * For hotel, this would be the value of `trip.checkout_date` * For destination, this would be the value of `trip.travel_end` * For flight, this would be the value of `trip.returning_departure_date` |
+| `start_date`  type: `string` | Render the preview with user's intent signal; ex: 2016-12-24.   * For hotel, this would be the value of `trip.checkin_date` * For destination, this would be the value of `trip.travel_start` * For flight, this would be the value of `trip.departing_departure_date` |
+| `end_date`  type: `string` | Render the preview with user's intent signal; ex: 2017-01-01.   * For hotel, this would be the value of `trip.checkout_date` * For destination, this would be the value of `trip.travel_end` * For flight, this would be the value of `trip.returning_departure_date` |
 
 ### Fetch Travel Ad Insights & Statistics
 
@@ -277,4 +273,4 @@ For hotel and destination, the `product id` breakdown is shown for each `hotel_i
 
 ### Fetch Comments and Likes
 
-To retrieve comments or “Likes” of Advantage+ catalog ads, use the [Dynamic Post API](https://developers.facebook.com/docs/graph-api/reference/rtb-dynamic-post).
+To retrieve comments or "Likes" of Advantage+ catalog ads, use the [Dynamic Post API](https://developers.facebook.com/docs/graph-api/reference/rtb-dynamic-post).

@@ -21,22 +21,22 @@ Meta provides localized catalog functionality, enabling you to set up your produ
 
 When building a template for [Advantage+ catalog ads](https://developers.facebook.com/docs/marketing-api/dynamic-product-ads/ads-management#create-template), you can specify customizations to the creative that are in different languages. For example, you might want to show a different headline to viewers of your ad who speak another language.
 
-In addition to the other fields in the creative’s template data (within the object story spec), you can specify an **array** of customizations, in the `customization_rules_spec` field, where each customization has the following form:
+In addition to the other fields in the creative's template data (within the object story spec), you can specify an **array** of customizations, in the `customization_rules_spec` field, where each customization has the following form:
 
 | Field Name | Description | Accepts Template Parameters |
 | --- | --- | --- |
 | `customization_spec`  type: object | **Required**.  Describes the language for the customization. Learn how to [Create Advantage+ Catalog Ads for Multiple Languages and Countries, Ads Help Center⁠](https://www.facebook.com/business/help/2144286692311411?locale=en_US).  Example: `{'language' => 'en_XX'}` | No |
-| `message`  type: string | **Optional**.  Message for your ad, visible on Instagram.  Example: `Test {{product.name | titleize}}` | Yes |
+| `message`  type: string | **Optional**.  Message for your ad, visible on Instagram.  Example: `Test {​{product.name | titleize}​}` | Yes |
 | `link`  type: string | **Optional**.  Link to your website; used to generate the caption of the ad. This field is always replaced with the `link` field from your product feed, except the end card of [Carousel Ads](https://developers.facebook.com/documentation/ads-commerce/marketing-api/guides/videoads#spec), which links to this. This cannot be a URL on [Facebook.com⁠](http://facebook.com/).  Example: `//link.com`  For Collection ads, you can use `link` to provide an Instant Experiences document, as detailed in [Collection Ads](https://developers.facebook.com/documentation/ads-commerce/marketing-api/creative/collection-ads).  Example: `https://fb.com/canvas_doc/CANVAS_ID` | No |
-| `name`  type: string | **Optional**.  Name or title for your ad, visible on Instagram.  Example: `Headline {{product.price}}` | Yes |
-| `description`  type: string | **Optional**.  Description for your ad. Not visible on Instagram.  Example: `Description {{product. description}}` | Yes |
-| `template_url_spec`  type: object | **Optional**.  Can be used to provide a web deep link, as detailed in [Click Tracking and Templates](https://developers.facebook.com/docs/marketing-api/dynamic-product-ads/ads-management#create-template). **Note**: We only support the web deeplink.  Example: `{'web' => {'url' => DEEP_LINK}}`  Example: `{'web' => {'url' => 'example://link/?id={{product. retailer_id}}'}}` | Yes |
+| `name`  type: string | **Optional**.  Name or title for your ad, visible on Instagram.  Example: `Headline {​{product.price}​}` | Yes |
+| `description`  type: string | **Optional**.  Description for your ad. Not visible on Instagram.  Example: `Description {​{product. description}​}` | Yes |
+| `template_url_spec`  type: object | **Optional**.  Can be used to provide a web deep link, as detailed in [Click Tracking and Templates](https://developers.facebook.com/docs/marketing-api/dynamic-product-ads/ads-management#create-template). **Note**: We only support the web deeplink.  Example: `{'web' => {'url' => DEEP_LINK}​}`  Example: `{'web' => {'url' => 'example://link/?id={​{product. retailer_id}​}'}​}` | Yes |
 | `video_id`  type: integer | **Optional**.  For Collection ads only, you can use `video_id` to provide video for Collection hero media, as detailed in [Collection Ads](https://developers.facebook.com/documentation/ads-commerce/marketing-api/creative/collection-ads).  Example: `1234` | No |
 | `picture`  type: string | **Optional**.  For Collection ads only, you can use `picture` to provide an image for Collection hero media, as detailed in [Collection Ads](https://developers.facebook.com/documentation/ads-commerce/marketing-api/creative/collection-ads).  Example: `https://url/image.jpg` | No |
 
 When specifying the array of customizations, only **one** of the customizations should specify only the `customization_spec`. This identifies the language of the non-customized text that has been used in the `template_data`.
 
-When the ad is rendered, the rendering language is chosen, based on the viewer’s interface language and other signals. Meta also uses product properties from the catalog language feed to match the rendering language, if available.
+When the ad is rendered, the rendering language is chosen, based on the viewer's interface language and other signals. Meta also uses product properties from the catalog language feed to match the rendering language, if available.
 
 See also [Build a Creative Template](https://developers.facebook.com/docs/marketing-api/dynamic-product-ads/ads-management#create-template), [Supported Fields for Advantage+ Catalog Ads](https://developers.facebook.com/documentation/ads-commerce/catalog/reference#supported-fields), and [Supported Feed Formats for Advantage+ Catalog Ads](https://developers.facebook.com/documentation/ads-commerce/catalog/reference#feed-format).
 
@@ -46,7 +46,7 @@ When building [Collection Ads](https://developers.facebook.com/documentation/ads
 
 **Limitations**:
 
-* `link` for Collection ads must be created [using templates](https://developers.facebook.com/documentation/ads-commerce/marketing-api/guides/instant-experiences#templates) — Instant Storefront, formerly “Sell Products, Grid (1932289657009030)”
+* `link` for Collection ads must be created [using templates](https://developers.facebook.com/documentation/ads-commerce/marketing-api/guides/instant-experiences#templates) — Instant Storefront, formerly "Sell Products, Grid (1932289657009030)"
 * Template for Collection Ads is only delivered via a Facebook Mobile Feed placement only.
 
 ### Examples
@@ -75,10 +75,10 @@ curl -X POST \
   -F 'object_story_spec={
        "page_id": "<PAGE_ID>",
        "template_data": {
-         "message": "English Test {{product.name | titleize}}",
+         "message": "English Test {​{product.name | titleize}​}",
          "link": "http://www.example.com/englishurl",
-         "name": "English Headline {{product.price}}",
-         "description": "English Description {{product.description}}",
+         "name": "English Headline {​{product.price}​}",
+         "description": "English Description {​{product.description}​}",
          "customization_rules_spec": [
            {
              "customization_spec": {
@@ -89,10 +89,10 @@ curl -X POST \
              "customization_spec": {
                "language": "fr_XX"
              },
-             "message": "French Test {{product.name | titleize}}",
+             "message": "French Test {​{product.name | titleize}​}",
              "link": "http://www.example.com/frenchurl",
-             "name": "French Headline {{product.price}}",
-             "description": "French Description {{product.description}}",
+             "name": "French Headline {​{product.price}​}",
+             "description": "French Description {​{product.description}​}",
              "template_url_spec": {
                "web": {
                  "url": "http://www.example.com/frenchdeeplink"

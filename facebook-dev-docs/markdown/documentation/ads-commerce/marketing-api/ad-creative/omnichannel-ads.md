@@ -31,15 +31,13 @@ See the [Ad Preview documentation](https://developers.facebook.com/docs/marketin
 * Receive the iframe response.
 
   ```
-  ```
   {  
-  "data": [  
+  "data": [  
   {  
-  "body": "<PREVIEW_LINK>",  
+  "body": "<PREVIEW_LINK>",  
   }  
   ]  
   }
-  ```
   ```
 * Click on the link to see the previews.
 

@@ -27,41 +27,37 @@ In the following example, we are sending a basic coupon message that contains a 
 
 To send a coupon message, send a `POST` request to the `/PAGE-ID/messages` endpoint with a JSON object with the attachment type set to `template` and payload set with the `template_type` set to `coupon`, `title` set to coupon text, and the `coupon_code` set to the coupon code to send to the person.
 
-In the following code example we have set `title` to “10% off summer sale” , `subtitle` to “Copy code 10offsummer and use at checkout.” , `coupon_code` to “10offsummer” and `coupon_url` to “https://www.myshop.com/”.
+In the following code example we have set `title` to "10% off summer sale" , `subtitle` to "Copy code 10offsummer and use at checkout." , `coupon_code` to "10offsummer" and `coupon_url` to "https://www.myshop.com/".
 
 The subtitle text, **Terms may apply.**, and **Reveal code** button text are the default text for these coupon message properties.
 
 ```
-```
-curl -X POST -H "Content-Type: application/json" -d '{  
-  "recipient":{  
-    "id":"PSID"  
-  },  
-  "message":{  
-    "attachment": {  
-      "type": "template",  
-      "payload": {  
-          "template_type": "coupon",  
-          "title":"10% off summer sale",  
-          "subtitle": "Copy code 10offsummer and use at checkout."  
-          "coupon_code":"10offsummer",  
-          "coupon_url":"https://www.myshop.com/",  
-      },  
-    }  
-  }  
-}' "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/messages?access_token=PAGE-ACCESS-TOKEN"
-```
+curl -X POST -H "Content-Type: application/json" -d '{  
+  "recipient":{  
+    "id":"PSID"  
+  },  
+  "message":{  
+    "attachment": {  
+      "type": "template",  
+      "payload": {  
+          "template_type": "coupon",  
+          "title":"10% off summer sale",  
+          "subtitle": "Copy code 10offsummer and use at checkout."  
+          "coupon_code":"10offsummer",  
+          "coupon_url":"https://www.myshop.com/",  
+      },  
+    }  
+  }  
+}' "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/messages?access_token=PAGE-ACCESS-TOKEN"
 ```
 
 On success, your app receives the following JSON response with the PSID for the recipient and the ID for the message:
 
 ```
-```
 {  
-  "recipient_id": "PSID",  
-  "message_id": "MESSAGE-ID"  
+  "recipient_id": "PSID",  
+  "message_id": "MESSAGE-ID"  
 }
-```
 ```
 
 ## Send a Complex Coupon
@@ -70,32 +66,30 @@ In the following example, we are sending a more complex coupon message that cont
 
 ![Coupon template card with store image, 2 days left timer, 10% off summer sale title, code 10offsummer, and Copy code button](https://scontent.fdel1-6.fna.fbcdn.net/v/t39.2365-6/571352926_1471875067217954_7175114048941057158_n.png?_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=wEOQqGHfOosQ7kNvwHPoDij&_nc_oc=AdooohUH2bWMBbJjs8y235O8sv8QY1fc4n_ROiuUJLsTtlPl_lsvpR4Lm4FrngO_fexj5yV_SNY7XQa3jGnd6bw5&_nc_zt=14&_nc_ht=scontent.fdel1-6.fna&_nc_gid=Yy_IBINFBHJIAYblCe8YSg&_nc_ss=7b289&oh=00_AQCCLUDh6SEwT3FbpCGxrTZLEzt781bLwAuZQbREMNYwsA&oe=6A607B02)
 
-In the following code example we have configured a greeting using the `coupon_pre_message`, `title`, `subtitle`, the disclaimer that applies to this coupon, the second button with my store’s URL and “Shop now” text, an image from my store, and additional information to be sent in the webhook notification when a person clicks the **Copy code** button.
+In the following code example we have configured a greeting using the `coupon_pre_message`, `title`, `subtitle`, the disclaimer that applies to this coupon, the second button with my store's URL and "Shop now" text, an image from my store, and additional information to be sent in the webhook notification when a person clicks the **Copy code** button.
 
 ```
-```
-curl -X POST -H "Content-Type: application/json" -d '{  
-  "recipient":{  
-    "id":"PSID"  
-  },  
-  "message":{  
-    "attachment": {  
-      "type": "template",  
-      "payload": {  
-          "template_type": "coupon",  
-          "title":"10% off summer sale 🎁",  
-          "subtitle":"Use code 10offsummer at checkout.",  
-          "coupon_code":"10offsummer",  
-          "coupon_url":"https://www.myshop.com/",  
-          "coupon_url_button_title":"Shop now",  
-          "coupon_pre_message":"We have a new summer sale coming up",  
-          "image_url": "https://www.myshop.com/sale-image.png",  
-          "payload":"The coupon for 10% off everything that expires 2022-10-1",  
-      },  
-    }  
-  }  
-}' "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/messages?access_token=PAGE-ACCESS-TOKEN"
-```
+curl -X POST -H "Content-Type: application/json" -d '{  
+  "recipient":{  
+    "id":"PSID"  
+  },  
+  "message":{  
+    "attachment": {  
+      "type": "template",  
+      "payload": {  
+          "template_type": "coupon",  
+          "title":"10% off summer sale 🎁",  
+          "subtitle":"Use code 10offsummer at checkout.",  
+          "coupon_code":"10offsummer",  
+          "coupon_url":"https://www.myshop.com/",  
+          "coupon_url_button_title":"Shop now",  
+          "coupon_pre_message":"We have a new summer sale coming up",  
+          "image_url": "https://www.myshop.com/sale-image.png",  
+          "payload":"The coupon for 10% off everything that expires 2022-10-1",  
+      },  
+    }  
+  }  
+}' "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/messages?access_token=PAGE-ACCESS-TOKEN"
 ```
 
 ## Send a Coupon Code With LTO
@@ -111,37 +105,35 @@ When expire\_time is passed we show running timer to the user
 ### Request example
 
 ```
-```
-curl -X POST -H "Content-Type: application/json" -d '{  
-  "recipient":{  
-    "id":"PSID"  
-  },  
-  "message":{  
-    "attachment": {  
-      "type": "template",  
-      "payload": {  
-          "template_type": "coupon",  
-          "title":"10% off summer sale 🎁",  
-          "subtitle":"Use code 10offsummer at checkout.",  
-          "coupon_code":"10offsummer",  
-          "coupon_url":"https://www.myshop.com/",  
-          "coupon_url_button_title":"Shop now",  
-          "expire_time" :"2025-10-25 16:00:00",  
-          "coupon_pre_message":"We have a new summer sale coming up",  
-          "image_url": "https://www.myshop.com/sale-image.png",  
-          "payload":"The coupon for 10% off everything that expires 2022-10-1",  
-      },  
-    }  
-  }  
-}' "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/messages?access_token=PAGE-ACCESS-TOKEN"
-```
+curl -X POST -H "Content-Type: application/json" -d '{  
+  "recipient":{  
+    "id":"PSID"  
+  },  
+  "message":{  
+    "attachment": {  
+      "type": "template",  
+      "payload": {  
+          "template_type": "coupon",  
+          "title":"10% off summer sale 🎁",  
+          "subtitle":"Use code 10offsummer at checkout.",  
+          "coupon_code":"10offsummer",  
+          "coupon_url":"https://www.myshop.com/",  
+          "coupon_url_button_title":"Shop now",  
+          "expire_time" :"2025-10-25 16:00:00",  
+          "coupon_pre_message":"We have a new summer sale coming up",  
+          "image_url": "https://www.myshop.com/sale-image.png",  
+          "payload":"The coupon for 10% off everything that expires 2022-10-1",  
+      },  
+    }  
+  }  
+}' "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/messages?access_token=PAGE-ACCESS-TOKEN"
 ```
 
 ## Expired Coupon Code
 
 When a coupon code is sent with an `expire_time`, we display the expired state format once the coupon code has expired.
 
-In the expired state we don’t show coupon code CTA and only show URL CTA (if added) to redirect a person to your store with default title and body.
+In the expired state we don't show coupon code CTA and only show URL CTA (if added) to redirect a person to your store with default title and body.
 
 ## Reference
 

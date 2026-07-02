@@ -27,21 +27,21 @@ No. The Zero Permissions model does not support requesting consent for direct ac
 
 ### What are overlay views?
 
-Overlay views are Meta-controlled iframes embedded in your game’s UI. You define the layout using XML, and Meta renders the content — including player names, photos, and other profile data — securely inside the iframe. Your game positions the iframe but never receives the actual player data.
+Overlay views are Meta-controlled iframes embedded in your game's UI. You define the layout using XML, and Meta renders the content — including player names, photos, and other profile data — securely inside the iframe. Your game positions the iframe but never receives the actual player data.
 
 See [Overlay View Components](https://developers.facebook.com/documentation/games/build/zero-permissions/overlay-view-components) for the full XML syntax reference.
 
-### How do I display a friend’s name and photo in my game?
+### How do I display a friend's name and photo in my game?
 
 * Call `FBInstant.player.getConnectedPlayersAsync()` to get a list of friend player IDs.
-* Create an overlay view that references those IDs using template expressions like `].name}}` and `].photo}}`.
+* Create an overlay view that references those IDs using template expressions like `].name}​}` and `].photo}​}`.
 * Attach the overlay iframe to a DOM element in your game.
 
 See [Connected Players](https://developers.facebook.com/documentation/games/build/zero-permissions/social-features/connected-players) for complete implementation examples.
 
 ### Can I display players who are not friends with the current player?
 
-Yes. Overlay views can render any player’s information by referencing their player ID with `].photo}}` and `].name}}`. The target player does not need to be connected to or share a context with the current player.
+Yes. Overlay views can render any player's information by referencing their player ID with `].photo}​}` and `].name}​}`. The target player does not need to be connected to or share a context with the current player.
 
 This is how you build custom leaderboards or matchmaking UIs. See [Arbitrary Player Rendering](https://developers.facebook.com/documentation/games/build/zero-permissions/social-features/arbitrary-player) for details.
 
@@ -51,7 +51,7 @@ The built-in Global Leaderboards API is deprecated for Zero Permissions games. I
 
 * Submit scores from your game client to your server (verify identity with `getSignedPlayerInfoAsync()`).
 * Fetch ranked entries from your server, which returns player IDs and scores.
-* Pass the player IDs to an overlay view, which renders names and photos using `]}}`.
+* Pass the player IDs to an overlay view, which renders names and photos using `]}​}`.
 
 See [Global Leaderboards](https://developers.facebook.com/documentation/games/build/zero-permissions/social-features/global-leaderboards) for the full implementation guide.
 
@@ -98,7 +98,7 @@ You **may keep** player IDs and gameplay data (scores, progress, purchases). You
 
 See the [Data Deletion section](https://developers.facebook.com/documentation/games/build/zero-permissions/onboarding-and-migration/overview#confirm-data-deletion) of the migration guide for details.
 
-### Why don’t I need advanced permissions after migrating?
+### Why don't I need advanced permissions after migrating?
 
 Previously, gaming apps needed advanced permissions like `gaming_profile`, `gaming_user_picture`, and `user_friends` to access social features. Under Zero Permissions, those social play experiences are handled by Meta through overlay views — your game never directly accesses the underlying data. Since there is no direct data access, there are no permissions to request.
 
@@ -120,7 +120,7 @@ Zero Permissions games run on Facebook (web and mobile app) and Messenger. For M
 
 No. Overlay views can only load images from your game bundle (relative paths), player photo template expressions, or base64 data URLs passed via `initialData`. External CDN URLs are not supported.
 
-To work around this, fetch the image in your game’s JavaScript, convert it to base64, and pass it as a data parameter. See the [Image component reference](https://developers.facebook.com/documentation/games/build/zero-permissions/components#allowed-image-sources) for details.
+To work around this, fetch the image in your game's JavaScript, convert it to base64, and pass it as a data parameter. See the [Image component reference](https://developers.facebook.com/documentation/games/build/zero-permissions/components#allowed-image-sources) for details.
 
 ### Are overlay images cached between updates?
 

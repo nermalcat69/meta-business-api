@@ -11,7 +11,7 @@ This functionality is in development. Meta can change or remove this functionali
 
 Messenger helps brands build lasting relationships through conversation. Whether you are talking to a loyal customer or someone brand new, Messenger lets businesses help customers with their pre and post purchase inquiries. Every interaction is an opportunity for the businesses to delight the customer. And, businesses now have more robust tools such as Customer Feedback Template to measure the experience they provide to their customers. With Customer Feedback Template businesses can:
 
-* **Increase response rates** for your customer feedback surveys with Messenger’s native customer feedback template.
+* **Increase response rates** for your customer feedback surveys with Messenger's native customer feedback template.
 * **Aggregate customer satisfaction ratings across channels easily** with built-in Messenger templates such as Customer Satisfaction (CSAT), Net Promoter Score (NPS) and Customer Effort Score (CES) surveys.
 * **Reduce biases and inconsistency** in survey scores with optimized UX.
 
@@ -70,19 +70,19 @@ Score Type: CES
     payload: "1", "2", "3", "4", "5", "6", "7"
 ```
 
-**CSAT(Customer Satisfaction Score)** will be able to support views with 1 to 5, 5 stars or 5 emojis, default if none is provided would be **“five\_stars”**. You can provide your own custom title for the question, if none is provided, the **default\_title** will be chosen. Note: default\_titles will be translated and localized to the locale of the user. Custom titles will not be translated, you would have to perform the translation yourselves if needed.
+**CSAT(Customer Satisfaction Score)** will be able to support views with 1 to 5, 5 stars or 5 emojis, default if none is provided would be **"five\_stars"**. You can provide your own custom title for the question, if none is provided, the **default\_title** will be chosen. Note: default\_titles will be translated and localized to the locale of the user. Custom titles will not be translated, you would have to perform the translation yourselves if needed.
 
 Selecting a score in any of the view formats will translate to a numeric score from 1 to 5 which will be the value that would be sent to your web-hook. That is what the payload fields show above. An example CSAT view using five\_stars is shown below.
 
 ![CSAT five_stars view asking how would you rate your experience, with Negative to Positive star selectors](https://scontent.fdel1-1.fna.fbcdn.net/v/t39.2365-6/104114593_540263709976958_4941858584795044930_n.png?_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=P4gaMeCnQ8sQ7kNvwFhXNKr&_nc_oc=AdoksygfQYCczkn72V7m3tQs2j3T5RQxpeHbPIjWIMTEgjfHhgxoKKG_GhIHnT1thJp-r4WFNb_PmDyLLxOB6L4v&_nc_zt=14&_nc_ht=scontent.fdel1-1.fna&_nc_gid=BMQGvZB-_BRfm8aTO920XQ&_nc_ss=7b289&oh=00_AQC89M1IQb4pXY83h6ctmMZNb0R7dqi4bg53AwG2kEQkTg&oe=6A605F11)
 
-**NPS(Net Promoter Score)** will be able to support views with numbers from 0 to 10, default if none is provided would be **“zero\_to\_ten”**.. You can provide your own custom title for the question, if none is provided, the **default\_title** will be chosen. Note: default\_titles will be translated and localized to the locale of the user. Custom titles will not be translated, you would have to perform the translation yourselves if needed.
+**NPS(Net Promoter Score)** will be able to support views with numbers from 0 to 10, default if none is provided would be **"zero\_to\_ten"**.. You can provide your own custom title for the question, if none is provided, the **default\_title** will be chosen. Note: default\_titles will be translated and localized to the locale of the user. Custom titles will not be translated, you would have to perform the translation yourselves if needed.
 
 Selecting a score will translate to a numeric score from 0 to 10, which will be the value that would be sent to your web-hook. An example NPS view is shown below.
 
 ![NPS view asking how likely you are to recommend the business, with a 0 to 10 score selector from Unlikely to Likely](https://scontent.fdel1-2.fna.fbcdn.net/v/t39.2365-6/103631685_656826515174329_6652044623311997817_n.png?_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=b66ocIyyuDQQ7kNvwFgD2Lb&_nc_oc=Adq_AqVN-vwvfM2rxIO3sxhQUAxntJ4M1AdjTj4jIZl08t0-oGaDko9F6g1N6oD1Bstu7uslE3GL67loCpEIqq39&_nc_zt=14&_nc_ht=scontent.fdel1-2.fna&_nc_gid=BMQGvZB-_BRfm8aTO920XQ&_nc_ss=7b289&oh=00_AQCY2obflMRZX0tpDVQs72pBAWAei3y6uoY9-_ZPpy8nHA&oe=6A60820B)
 
-**CES(Customer Effort Score)** will be able to support views with numbers from 1 to 7, default if none is provided would be **“one\_to\_seven”**. You can provide your own custom title for the question, if none is provided, the **default\_title** will be chosen. Note: default\_titles will be translated and localized to the locale of the user. Custom titles will not be translated, you would have to perform the translation yourselves if needed.
+**CES(Customer Effort Score)** will be able to support views with numbers from 1 to 7, default if none is provided would be **"one\_to\_seven"**. You can provide your own custom title for the question, if none is provided, the **default\_title** will be chosen. Note: default\_titles will be translated and localized to the locale of the user. Custom titles will not be translated, you would have to perform the translation yourselves if needed.
 Selecting a score will translate to a numeric score from 1 to 7, which will be the value that would be sent to your web-hook. An example CES view is shown below.
 
 ![CES view asking how easy it was to solve your problem, with a 1 to 7 score selector from Difficult to Easy](https://scontent.fdel1-9.fna.fbcdn.net/v/t39.2365-6/102468843_552125318756128_3061439580152725875_n.png?_nc_cat=105&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=HzlRKBykLvYQ7kNvwFT6AqF&_nc_oc=AdoK_MAIDzv4L0QbEwdU-of0IOZR4PT3MzbMi4VdNhea-uZPVYqLqOkpJ4H6SzWhazGvTea7XHmWzIH3sP0a5b-I&_nc_zt=14&_nc_ht=scontent.fdel1-9.fna&_nc_gid=BMQGvZB-_BRfm8aTO920XQ&_nc_ss=7b289&oh=00_AQBAMQ_EjkQErVZpAJNz0P739qfqam8tD0bfIzr1SlSTVA&oe=6A605581)
@@ -93,7 +93,7 @@ Selecting a score will translate to a numeric score from 1 to 7, which will be t
 
 ## Score Labels
 
-For each of the scoring options you can also set the score labels to clearly define the level of the lowest value and the highest value in the template. The values that you can use are below. Please note, some values are default for certain score options, provided in parentheses below. For e.g. if no score label for CSAT is provided, it will take neg\_pos as the default. You could also choose “none” if you would like to not show any labels at all.
+For each of the scoring options you can also set the score labels to clearly define the level of the lowest value and the highest value in the template. The values that you can use are below. Please note, some values are default for certain score options, provided in parentheses below. For e.g. if no score label for CSAT is provided, it will take neg\_pos as the default. You could also choose "none" if you would like to not show any labels at all.
 
 ```
 "neg_pos" = Negative - Positive (default value for CSAT)
@@ -110,7 +110,7 @@ For eg. a CSAT five\_stars score option with *neg\_pos* set would show the Negat
 
 ## 24 hour restriction
 
-The standard messaging window for sending the template to a user is 24 hours after the user’s last message. We encourage you to send the template within the 24 hour window for better customer experience and response rates. We also recognize that sometimes surveys will need to be sent outside this window. For that, you can use the [message-tag](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/send-api#sending): **CUSTOMER\_FEEDBACK** while sending the template. This tag allows you to send the template within 7 days after the user’s last message.
+The standard messaging window for sending the template to a user is 24 hours after the user's last message. We encourage you to send the template within the 24 hour window for better customer experience and response rates. We also recognize that sometimes surveys will need to be sent outside this window. For that, you can use the [message-tag](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/send-api#sending): **CUSTOMER\_FEEDBACK** while sending the template. This tag allows you to send the template within 7 days after the user's last message.
 Please note, the tag can only be used with the customer feedback template. Use in any other form is prohibited and will fail.
 
 ## API details:
@@ -164,23 +164,23 @@ A call should be made to the Send API with the following POST structure. Example
 | Property | Type | Description |
 | --- | --- | --- |
 | `id` | String | *Required*. The `PSID` of the customer. |
-| `attachment.type` | String | *Required*. Must be “template”. |
-| `template_type` | String | *Required*. Must be “customer\_feedback”. |
+| `attachment.type` | String | *Required*. Must be "template". |
+| `template_type` | String | *Required*. Must be "customer\_feedback". |
 | `title` | String | *Required*. Defines the main title of the template that gets sent to the thread with the button to open the feedback form. **Max 65 chars allowed. No URLs.** |
 | `subtitle` | String | *Required*. Defines the sub-title of the template that gets sent to the thread with the button to open the feedback form. **Max 80 chars allowed. No URLs.** |
 | `button_title` | String | *Required*. Defines the button title for the button that will open the feedback form. **Max 20 chars allowed. No URLs.** |
 | `feedback_screens` | Array<`Objects`> | *Required*. This is an array of objects. Each object represents 1 page. Please note we only support one page and one question per page right now. If multiple pages or multiple questions per page are set, we will throw an error back. |
 | `questions` | Array<`question`> | *Required*. Each page may have up to 1 questions. This is an array of objects. Each object represents 1 question. |
-| `question.id` | String | *Required*. Alphanumeric. Maximum 80 characters. Must be unique throughout the entire form. You shall use these as the unique identifiers of the questions which would be sent back in the response to help you tie context back to your system. Ids should be alpha numeric and can contain any number of underscores(\_) for e.g. banjkkl\_\_2345 is a valid id, abnj-4567 is not a valid id due to the “-“. |
-| `question.type` | String | *Required*. The type of the question. Currently supported values include: “csat”, “nps”, “ces”, “free\_form. Please check Score Types section above for more details. |
+| `question.id` | String | *Required*. Alphanumeric. Maximum 80 characters. Must be unique throughout the entire form. You shall use these as the unique identifiers of the questions which would be sent back in the response to help you tie context back to your system. Ids should be alpha numeric and can contain any number of underscores(\_) for e.g. banjkkl\_\_2345 is a valid id, abnj-4567 is not a valid id due to the "-". |
+| `question.type` | String | *Required*. The type of the question. Currently supported values include: "csat", "nps", "ces", "free\_form. Please check Score Types section above for more details. |
 | `question.title` | String | *Optional*. You can provide your own custom title for the question, if none is provided, the default\_title will be chosen. Please check Score Types section above for more details. Note: default\_titles will be translated and localized to the locale of the user. Custom titles will not be translated, you would have to perform the translation yourselves if needed. **Min 5 chars and Max 85 chars allowed. No URLs.** |
-| `question.score_label` | String | *Optional*. Field to define the level labels for low and high values. Please check Score Level Indicators section above for details. Values include ‘neg\_pos’, ‘hard\_easy’, ‘dis\_sat’, ‘unlike\_like’,’poor\_great’ |
-| `question.score_option` | String | *Optional*. Field to define the score selector views. For e.g. values include ‘1\_to\_5’, ‘five\_stars’, ‘five\_emojis’ for csat type. Please check Score Types section above for more details. |
+| `question.score_label` | String | *Optional*. Field to define the level labels for low and high values. Please check Score Level Indicators section above for details. Values include 'neg\_pos', 'hard\_easy', 'dis\_sat', 'unlike\_like','poor\_great' |
+| `question.score_option` | String | *Optional*. Field to define the score selector views. For e.g. values include '1\_to\_5', 'five\_stars', 'five\_emojis' for csat type. Please check Score Types section above for more details. |
 | `question.follow_up` | `Object` | *Optional*. Object to set a free form input. Inherits the title and id from the previous question on the same page. Only free-from input is allowed. |
-| `question.follow_up.type` | String | *Required*. Set value as ‘free\_form’. |
-| `question.follow_up.placeholder` | String | *Optional*. Placeholder to be shown inside the free form text input. Defaults to **“Give additional feedback”**, if none provided. **Max 65 chars allowed. No URLs.** |
+| `question.follow_up.type` | String | *Required*. Set value as 'free\_form'. |
+| `question.follow_up.placeholder` | String | *Optional*. Placeholder to be shown inside the free form text input. Defaults to **"Give additional feedback"**, if none provided. **Max 65 chars allowed. No URLs.** |
 | `business_privacy` | `Object` | *Required*. Object to provide your privacy policies in the template. |
-| `business_privacy.url` | String | *Required*. The link to your hosted privacy policy. Example, the “privacy policy” link in the screenshots. You only need to provide the URL, and the link text will be automatically generated in the template. |
+| `business_privacy.url` | String | *Required*. The link to your hosted privacy policy. Example, the "privacy policy" link in the screenshots. You only need to provide the URL, and the link text will be automatically generated in the template. |
 | `expires_in_days` | Integer | *Optional*. Set the time for template expiration in minutes. You can set a value between 1 to 7. Unit is days. If no value is set then a default of 1 day would be set. |
 
 ![Two Messenger screens showing the in-thread Rate Experience template and the resulting CSAT feedback bottom sheet from the API call](https://scontent.fdel1-8.fna.fbcdn.net/v/t39.2365-6/103260056_2779439025617991_1201279550415615271_n.png?_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=kLVaSkxh2WwQ7kNvwEmkGEA&_nc_oc=AdqEE2p82b7FoDi43VZgJkfqMFKERFsFzfu7-ZBEfmq9pmp7NYHgcScGsJXPmpGcghdFGwO70BcYZ2rMaH4VbxFi&_nc_zt=14&_nc_ht=scontent.fdel1-8.fna&_nc_gid=BMQGvZB-_BRfm8aTO920XQ&_nc_ss=7b289&oh=00_AQB6zSucNEy2j_P8FKQ3xBh3dbkI1cMMEtB4GaCfY9_3RA&oe=6A605B34)
@@ -201,7 +201,7 @@ Please check individual field restrictions in the API properties table above.
 
 ### Receiving data on submission:
 
-After the template is sent in thread, you shall wait and expect the customer to fill in the information and submit it. Your web-hook server will receive a “**messaging\_feedback**” event (i.e., an event that contains the submitted data) once the customer submits the feedback. Please ensure you have subscribed to the “**messaging\_feedback**” webhook subscription for your app and page in the app dashboard.
+After the template is sent in thread, you shall wait and expect the customer to fill in the information and submit it. Your web-hook server will receive a "**messaging\_feedback**" event (i.e., an event that contains the submitted data) once the customer submits the feedback. Please ensure you have subscribed to the "**messaging\_feedback**" webhook subscription for your app and page in the app dashboard.
 
 Note: The customer will have the time; set in the **expires\_in\_days** field of the send request (default 1 day, if not set) to fill the template and submit the feedback. The form will auto-expire after the set time, after which the in-thread entry point will no longer be available.
 
@@ -246,8 +246,8 @@ The received feedback event will be as below:
 | `time` | Integer | The timestamp when the customer submits the feedback. |
 | sender `id` | String | The customer `PSID`. |
 | recipient `id` | String | The page `ID` of your business page. |
-| `messaging_feedback` | `Object` | The standard key of a “messaging\_feedback” event. This holds an array of feedback\_screens with an array of object of feedback question responses. |
-| `messaging_feedback.feedback_screens` | Array<`Objects`> | Holds feedback by the customer. Each object represents a form page of your original request, with customer feedbacks. Each object has a key “screen\_id”, which is the form page index, and a key “questions”, which holds your question ids and customer answers. The objects are present in the same sequence as your original request. |
+| `messaging_feedback` | `Object` | The standard key of a "messaging\_feedback" event. This holds an array of feedback\_screens with an array of object of feedback question responses. |
+| `messaging_feedback.feedback_screens` | Array<`Objects`> | Holds feedback by the customer. Each object represents a form page of your original request, with customer feedbacks. Each object has a key "screen\_id", which is the form page index, and a key "questions", which holds your question ids and customer answers. The objects are present in the same sequence as your original request. |
 | `feedback_screens.questions` | `Object` | Holds questions in a form page. Each object has the key as the question id, and the value answered by the customer. |
 | `question.<id>` | String | question.id set in the Send API request, as a key to the responses submitted by the customer. |
 | `question.<id>.type` | String | Defines the type of the scoring mechanism used. For e.g csat, nps, ces etc |

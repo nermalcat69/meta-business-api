@@ -16,22 +16,20 @@ Sticker messages display animated or static sticker images in a WhatsApp message
 Use the [Messages API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/message-api#post-version-phone-number-id-messages) to send a sticker message to a WhatsApp user.
 
 ```
-```
-curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/messages' \  
--H 'Content-Type: application/json' \  
--H 'Authorization: Bearer <ACCESS_TOKEN>' \  
--d '  
+curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/messages' \  
+-H 'Content-Type: application/json' \  
+-H 'Authorization: Bearer <ACCESS_TOKEN>' \  
+-d '  
 {  
-  "messaging_product": "whatsapp",  
-  "recipient_type": "individual",  
-  "to": "<WHATSAPP_USER_PHONE_NUMBER>",  
-  "type": "sticker",  
-  "sticker": {  
-    "id": "<MEDIA_ID>", <!-- Only if using uploaded media -->  
-    "link": "<MEDIA_URL>", <!-- Only if using hosted media (not recommended) -->  
-  }  
+  "messaging_product": "whatsapp",  
+  "recipient_type": "individual",  
+  "to": "<WHATSAPP_USER_PHONE_NUMBER>",  
+  "type": "sticker",  
+  "sticker": {  
+    "id": "<MEDIA_ID>", <!-- Only if using uploaded media -->  
+    "link": "<MEDIA_URL>", <!-- Only if using hosted media (not recommended) -->  
+  }  
 }'
-```
 ```
 
 ### Post body parameters
@@ -77,26 +75,24 @@ curl 'https://graph.facebook.com/v25.0/106540352242922/messages' \
 ## Example response
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "contacts": [  
-    {  
-      "input": "+16505551234",  
-      "wa_id": "16505551234"  
-    }  
-  ],  
-  "messages": [  
-    {  
-      "id": "wamid.HBgLMTY0NjcwNDM1OTUVAgARGBI1RjQyNUE3NEYxMzAzMzQ5MkEA"  
-    }  
-  ]  
+  "messaging_product": "whatsapp",  
+  "contacts": [  
+    {  
+      "input": "+16505551234",  
+      "wa_id": "16505551234"  
+    }  
+  ],  
+  "messages": [  
+    {  
+      "id": "wamid.HBgLMTY0NjcwNDM1OTUVAgARGBI1RjQyNUE3NEYxMzAzMzQ5MkEA"  
+    }  
+  ]  
 }
-```
 ```
 
 ## Error handling
 
-A request fails if the `<MEDIA_ID>` is invalid or has expired, if the sticker isn’t a supported WebP type, or if the file exceeds the maximum size listed in [Supported sticker formats](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/text-messages#supported-sticker-formats). When a request fails, the API returns an error response instead of a message ID.
+A request fails if the `<MEDIA_ID>` is invalid or has expired, if the sticker isn't a supported WebP type, or if the file exceeds the maximum size listed in [Supported sticker formats](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/text-messages#supported-sticker-formats). When a request fails, the API returns an error response instead of a message ID.
 
 For the full list of error codes and recommended handling, see [WhatsApp Cloud API error codes](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/error-codes).

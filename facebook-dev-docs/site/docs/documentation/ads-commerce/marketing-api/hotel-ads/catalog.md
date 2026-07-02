@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/marketing
 
 Updated: Jun 24, 2026
 
-Facebook’s hotel ads use cross-device intent signals to automatically promote relevant hotels from your inventory with unique creatives on Facebook.
+Facebook's hotel ads use cross-device intent signals to automatically promote relevant hotels from your inventory with unique creatives on Facebook.
 
 ## Set up hotel ads
 

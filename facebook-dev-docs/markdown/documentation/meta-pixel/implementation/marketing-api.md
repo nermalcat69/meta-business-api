@@ -40,7 +40,7 @@ Refer to the [Object Properties](https://developers.facebook.com/documentation/m
 
 If you are using the `content_ids` property in your parameter object, its value should correspond to the product ID or product IDs associated with the action. **IDs must match the IDs found in your product catalog**. Values can be either single IDs, or an array of IDs.
 
-For example, here’s how to track a visitor who has added products with the IDs `201` and `301` to a shopping cart. The IDs match the IDs for those products in the product catalog.
+For example, here's how to track a visitor who has added products with the IDs `201` and `301` to a shopping cart. The IDs match the IDs for those products in the product catalog.
 
 ```
 fbq('track', 'AddToCart',
@@ -58,7 +58,7 @@ fbq('track', 'AddToCart',
 
 If you are using the `contents` property in your parameter object, in a sub-object, you must include the `id` property, with the product ID or product IDs as its value, and include the `quantity` property with a number of product items being added to cart or purchased. **IDs must match the IDs found in your product catalog**. `contents` property value must be an array of objects.
 
-For example, here’s how to track a visitor who has added a product with the ID `301`, and two products with the ID `401`, to a shopping cart. The IDs match the IDs for those products in the product catalog.
+For example, here's how to track a visitor who has added a product with the ID `301`, and two products with the ID `401`, to a shopping cart. The IDs match the IDs for those products in the product catalog.
 
 ```
 fbq('track', 'AddToCart', {
@@ -80,6 +80,6 @@ fbq('track', 'AddToCart', {
 
 Once you have confirmed that the Events Manager is tracking your standard events correctly, use the [Commerce Manager⁠](https://business.facebook.com/products) to set up your product catalog and Advantage+ catalog ad template, and target the standard events. Follow our [Create an Advantage+ Catalog Ad⁠](https://www.facebook.com/business/help/1132465490107046) help document to do this.
 
-After you complete all of the steps outlined in the document, be sure to use the Commerce Manager to verify that your catalog [recognizes your Pixel’s events as a data source⁠](https://www.facebook.com/business/help/946671458738854).
+After you complete all of the steps outlined in the document, be sure to use the Commerce Manager to verify that your catalog [recognizes your Pixel's events as a data source⁠](https://www.facebook.com/business/help/946671458738854).
 
-Note that it can take up to 24 hours for the Commerce Manager’s **Events Data Sources** tab to recognize your tracked events.
+Note that it can take up to 24 hours for the Commerce Manager's **Events Data Sources** tab to recognize your tracked events.

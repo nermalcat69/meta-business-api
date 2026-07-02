@@ -32,45 +32,45 @@ PHP SDKNode.js Business SDK
 ---
 
 ```
-Api::init($app_id, $app_secret, $access_token);  
+Api::init($app_id, $app_secret, $access_token);  
   
-// Create Product Items using Items Batch API  
-$catalog = new ProductCatalog($catalog_id);  
-$response = $catalog->createItemsBatch(  
- array(),  
- array(  
- "item_type" => "PRODUCT_ITEM",  
-   "requests" => array(  
-     // Item 1 - Create Item  
-     array(  
-       "method" => "create",  
-       "data" => array(  
-         "id" => "retailer_id_1",  
-         "title" => "Product Title",  
-         "description" => "Product Description",  
-         "brand" => "BrandName",  
-         "price" => "20.00 USD",  
-         "image_link" => "image_url",  
-         "availability" => "in stock",  
-         "link" => "http://productlink.com/product/retailer_id",  
-       )  
-     ),  
-     // Item 2 - Update item with retailer_id_2  
-     array(  
-       "method" => "update",  
-       "data" => array(  
-         "id" => "retailer_id_2",  
-         "title" => "Product Title 2",  
-       )  
-     ),  
-     // Item 3 - Delete item with retailer_id_3  
-     array(  
-       "method" => "delete",  
-       "data" => array(  
-         "id" => "retailer_id_3",  
-       )  
-     )  
-   )  
+// Create Product Items using Items Batch API  
+$catalog = new ProductCatalog($catalog_id);  
+$response = $catalog->createItemsBatch(  
+ array(),  
+ array(  
+ "item_type" => "PRODUCT_ITEM",  
+   "requests" => array(  
+     // Item 1 - Create Item  
+     array(  
+       "method" => "create",  
+       "data" => array(  
+         "id" => "retailer_id_1",  
+         "title" => "Product Title",  
+         "description" => "Product Description",  
+         "brand" => "BrandName",  
+         "price" => "20.00 USD",  
+         "image_link" => "image_url",  
+         "availability" => "in stock",  
+         "link" => "http://productlink.com/product/retailer_id",  
+       )  
+     ),  
+     // Item 2 - Update item with retailer_id_2  
+     array(  
+       "method" => "update",  
+       "data" => array(  
+         "id" => "retailer_id_2",  
+         "title" => "Product Title 2",  
+       )  
+     ),  
+     // Item 3 - Delete item with retailer_id_3  
+     array(  
+       "method" => "delete",  
+       "data" => array(  
+         "id" => "retailer_id_3",  
+       )  
+     )  
+   )  
 )  
 )
 ```
@@ -84,27 +84,27 @@ PHP SDKNode.js Business SDK
 ---
 
 ```
-Api::init($app_id, $app_secret, $access_token);  
+Api::init($app_id, $app_secret, $access_token);  
   
-// Get all products in a catalog  
-$catalog = new ProductCatalog($catalog_id);  
-$cursor = $catalog->getProducts();  
-//$cursor->setUseImplicitFetch(true); Set true for Auto Scroll  
+// Get all products in a catalog  
+$catalog = new ProductCatalog($catalog_id);  
+$cursor = $catalog->getProducts();  
+//$cursor->setUseImplicitFetch(true); Set true for Auto Scroll  
   
-while ($cursor->valid()) {  
-   echo $cursor->current()->{ProductItemFields::NAME}.PHP_EOL;  
-   echo $cursor->current()->{ProductItemFields::ID}.PHP_EOL;  
-   $cursor->next();  
+while ($cursor->valid()) {  
+   echo $cursor->current()->{ProductItemFields::NAME}.PHP_EOL;  
+   echo $cursor->current()->{ProductItemFields::ID}.PHP_EOL;  
+   $cursor->next();  
 }  
   
-$cursor->end(); // Set cursor to the end of the lst  
-$cursor->fetchAfter(); // Fetch the next page  
-$cursor->next(); // Move the cursor to the next item  
+$cursor->end(); // Set cursor to the end of the lst  
+$cursor->fetchAfter(); // Fetch the next page  
+$cursor->next(); // Move the cursor to the next item  
   
-while ($cursor->valid()) {  
-   echo $cursor->current()->{ProductItemFields::NAME}.PHP_EOL;  
-   echo $cursor->current()->{ProductItemFields::ID}.PHP_EOL;  
-   $cursor->next();  
+while ($cursor->valid()) {  
+   echo $cursor->current()->{ProductItemFields::NAME}.PHP_EOL;  
+   echo $cursor->current()->{ProductItemFields::ID}.PHP_EOL;  
+   $cursor->next();  
 }
 ```
 

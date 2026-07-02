@@ -216,14 +216,14 @@ private RewardedInterstitialAd rewardedInterstitialAd;
     }
 ```
 
-If you are using the default Google Android emulator, you’ll add the following line of code before loading a test ad:  
+If you are using the default Google Android emulator, you'll add the following line of code before loading a test ad:  
 `AdSettings.addTestDevice("HASHED ID");`.
 
 Use the hashed ID that is printed to logcat when you first make a request to load an ad on a device.
 
 Genymotion and physical devices do not need this step. If you would like to test with real ads, please consult our [Testing Guide](https://developers.facebook.com/documentation/audience-network/setting-up/testing/platform).
 
-Finally, clean up the object with its `destroy` method in your activity’s `onDestroy` method. Note that you should also use the `destroy` method to clean up old ad objects before assigning it to a new instance to avoid memory leak.
+Finally, clean up the object with its `destroy` method in your activity's `onDestroy` method. Note that you should also use the `destroy` method to clean up old ad objects before assigning it to a new instance to avoid memory leak.
 
 ```
 @Override
@@ -317,4 +317,4 @@ Please note - the server validation callbacks might occur after the end card has
 
 * Relevant code samples in both Swift and Objective-C are available on our [GitHub sample app respository⁠](https://github.com/fbsamples/audience-network/tree/master/samples/android)
 * [Test your ads integration](https://developers.facebook.com/documentation/audience-network/setting-up/testing) with your app.
-* As soon as we receive a request for an ad from your app or website, we’ll review it to make sure it complies with [Audience Network policies](https://developers.facebook.com/documentation/audience-network/optimization/best-practices/an-policy) and the [Facebook community standards⁠](https://www.facebook.com/communitystandards)
+* As soon as we receive a request for an ad from your app or website, we'll review it to make sure it complies with [Audience Network policies](https://developers.facebook.com/documentation/audience-network/optimization/best-practices/an-policy) and the [Facebook community standards⁠](https://www.facebook.com/communitystandards)

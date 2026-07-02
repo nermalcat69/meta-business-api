@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/business-messaging/wha
 
 Updated: Jun 24, 2026
 
-This document describes how to migrate templates from one WhatsApp Business account (WABA) to another. Migration doesn’t move templates; it recreates them in the destination WABA.
+This document describes how to migrate templates from one WhatsApp Business account (WABA) to another. Migration doesn't move templates; it recreates them in the destination WABA.
 
 ## Limitations
 
@@ -19,18 +19,16 @@ This document describes how to migrate templates from one WhatsApp Business acco
 Use the [Migrate Message Templates API](https://developers.facebook.com/docs/graph-api/reference/whats-app-business-account/migrate_message_templates) to migrate templates from one WABA to another.
 
 ```
-```
-curl -X POST "https://graph.facebook.com/<API_VERSION>/<DESTINATION_WABA_ID>/migrate_message_templates" \  
--H "Authorization: Bearer <ACCESS_TOKEN>" \  
--H "Content-Type: application/json" \  
--d '  
+curl -X POST "https://graph.facebook.com/<API_VERSION>/<DESTINATION_WABA_ID>/migrate_message_templates" \  
+-H "Authorization: Bearer <ACCESS_TOKEN>" \  
+-H "Content-Type: application/json" \  
+-d '  
 {  
-  "source_waba_id": "<SOURCE_WABA_ID>",  
-  "page_number": <PAGE_NUMBER>,  
-  "count": <COUNT>,  
-  "template_ids": [<TEMPLATE_IDS>]  
+  "source_waba_id": "<SOURCE_WABA_ID>",  
+  "page_number": <PAGE_NUMBER>,  
+  "count": <COUNT>,  
+  "template_ids": [<TEMPLATE_IDS>]  
 }'
-```
 ```
 
 ### Parameters
@@ -48,12 +46,10 @@ curl -X POST "https://graph.facebook.com/<API_VERSION>/<DESTINATION_WABA_ID>/
 ## Response
 
 ```
-```
 {  
-  "migrated_templates": [<MIGRATED_TEMPLATES>],  
-  "failed_templates": [<FAILED_TEMPLATES>]  
+  "migrated_templates": [<MIGRATED_TEMPLATES>],  
+  "failed_templates": [<FAILED_TEMPLATES>]  
 }
-```
 ```
 
 ### Response properties
@@ -75,18 +71,16 @@ curl -X POST 'https://graph.facebook.com/v25.0/104996122399160/migrate_message_t
 ## Example response
 
 ```
-```
 {  
-  "migrated_templates": [  
-    "1473688840035974",  
-    "6162904357082268",  
-    "6147830171896170"  
-  ],  
-  "failed_templates": {  
-    "1019496902803242": "Incorrect category",  
-    "259672276895259": "Formatting error - dangling parameter",  
-    "572279198452421": "Incorrect category"  
-  }  
+  "migrated_templates": [  
+    "1473688840035974",  
+    "6162904357082268",  
+    "6147830171896170"  
+  ],  
+  "failed_templates": {  
+    "1019496902803242": "Incorrect category",  
+    "259672276895259": "Formatting error - dangling parameter",  
+    "572279198452421": "Incorrect category"  
+  }  
 }
-```
 ```

@@ -43,7 +43,7 @@ When you make a registration request, the API checks how many registration reque
 | Name | Description |
 | --- | --- |
 | `messaging_product` | **Required.**  Messaging service used. Set this to `"whatsapp"`. |
-| `pin` | **Required.**  If your verified business phone number already has two-step verification enabled, set this value to your number’s 6-digit two-step verification PIN. If you cannot recall your PIN, you can change it. See [Two-step verification](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-phone-numbers/phone-numbers#two-step-verification).  If your verified business phone number does not have two-step verification enabled, set this value to a 6-digit number. This will be the newly verified business phone number’s two-step verification PIN. |
+| `pin` | **Required.**  If your verified business phone number already has two-step verification enabled, set this value to your number's 6-digit two-step verification PIN. If you cannot recall your PIN, you can change it. See [Two-step verification](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-phone-numbers/phone-numbers#two-step-verification).  If your verified business phone number does not have two-step verification enabled, set this value to a 6-digit number. This will be the newly verified business phone number's two-step verification PIN. |
 | `data_localization_region` | **Optional.**  If included, enables [local storage](https://developers.facebook.com/documentation/business-messaging/whatsapp/local-storage) on the business phone number. Value must be a 2-letter ISO 3166 country code (for example, `IN`) indicating the country where you want data-at-rest to be stored.  Supported values:  **APAC**   * Australia: `AU` * Indonesia: `ID` * India: `IN` * Japan: `JP` * Singapore: `SG` * South Korea: `KR`   **Europe**   * EU (Germany): `DE` * Switzerland: `CH` * United Kingdom: `GB`   **LATAM**   * Brazil: `BR`   **MEA**   * Bahrain: `BH` * South Africa: `ZA` * United Arab Emirates: `AE`   **NORAM**   * Canada: `CA`   Once you enable local storage, you cannot disable or change local storage directly. Instead, you must [deregister](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-phone-numbers/two-step-verification#deregister) the number and register it again without this parameter (to disable), or include the parameter with the new country code (to change).  If the number is already registered, deregister it, then register it again with this parameter to enable local storage. |
 
 ### Example request without local storage
@@ -109,11 +109,9 @@ curl -X POST \
 A successful response looks like:
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 ## See also

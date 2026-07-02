@@ -27,7 +27,7 @@ Retrieve various data about an access token. See [Debug Access Token](https://de
 | `data`  object | Data wrapper around the result. |
 | `type`  string | Whether the access token is an app access token or user access token. |
 | `application`  string | Name of the application this access token is for. |
-| `data_access_expires_at`  Unixtime | Timestamp when the app’s access to user data expires. |
+| `data_access_expires_at`  Unixtime | Timestamp when the app's access to user data expires. |
 | `expires_at`  Unixtime | Timestamp when this access token expires. |
 | `is_valid`  Boolean | Whether the access token is still valid or not. |
 | `issued_at`  Unixtime | Timestamp when this access token was issued. |

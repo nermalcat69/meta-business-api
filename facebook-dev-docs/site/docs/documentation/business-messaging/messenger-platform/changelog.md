@@ -34,14 +34,14 @@ The following table contains a list of common error codes you may encounter when
 | `9` – `2018352` | User is performing too many actions | When the Marketing Message opt–in request limit has been exceeded. |
 | `10` | No Permission For Pages Associated to Instant Games. | The User Profile API is not available for PSIDs associated with Instant Game Pages. |
 | `10` – `1404170` | Application does not have permission for this action | When the Page is temporarily restricted from sending Marketing Message opt–in requests. |
-| `10` – `1893015` | (#10) This user has currently stopped notification messages for this topic | When the Page sends a Marketing Message after the user clicks **“Stop these messages”**. |
+| `10` – `1893015` | (#10) This user has currently stopped notification messages for this topic | When the Page sends a Marketing Message after the user clicks **"Stop these messages"**. |
 | `10` – `2018336` | User Thread Impact | To determine whether there is user thread impact, invoke the [User Level Menu API](https://developers.facebook.com/documentation/business-messaging/messenger-platform/send-messages/persistent-menu). If you get a valid response, there is no impact. If you get an error message with code 10, subcode 2018336, the thread is impacted. |
-| `10` – `2534022` | This message is sent outside of allowed window. | Apps can only send a message to a customer within 24 hours of receiving the customer’s message. |
+| `10` – `2534022` | This message is sent outside of allowed window. | Apps can only send a message to a customer within 24 hours of receiving the customer's message. |
 | `10` – `2534077` | Cannot verify the connection between the IG account, the logged in user and the page. Please try reconnecting or verify if the user needs 2–factor authentication. | The page and IG account are not linked or 2–factor authentication is not enabled. Add a link to the 2–factor authentication document (It might be in the help center). Advise the user to check the linkage and perhaps link and unlink the page and the IG account to fix the issue. |
 | `10` – `2018278` | This message is sent outside of allowed window. Learn more about the new policy [here](https://developers.facebook.com/documentation/business-messaging/messenger-platform/policy). |  |
 | `10` – `2018065` | This message is sent outside of allowed window. You need [News Messaging permission](https://developers.facebook.com/documentation/business-messaging/messenger-platform/policy#news_messaging) to be able to do it. |  |
-| `10` – `2018108` | They can’t receive your messages right now. |  |
-| `10` – `1893063` | You are temporarily restricted from sending messages. | The Page is temporarily restricted from sending messages due to activity that doesn’t follow our Messaging Policies. [Learn more⁠](https://www.facebook.com/help/254699034734362) about when and why we restrict messaging. |
+| `10` – `2018108` | They can't receive your messages right now. |  |
+| `10` – `1893063` | You are temporarily restricted from sending messages. | The Page is temporarily restricted from sending messages due to activity that doesn't follow our Messaging Policies. [Learn more⁠](https://www.facebook.com/help/254699034734362) about when and why we restrict messaging. |
 | `100` | Bad Parameter Error: Invalid FBID.  Bad Parameter Error: No matching user found.  `notification_messages_token` is invalid  `notification_messages_token` has expired | Check to make sure the ID or token you are using is valid. |
 | `100` – `33` | Unsupported get request. Object with ID \* does not exist, cannot be loaded due to missing permissions, or does not support this operation. | Make sure the ID in your request exists and that your app has the proper permissions to access it. |
 | `100` – `2018001` | No matching user found |  |
@@ -51,7 +51,7 @@ The following table contains a list of common error codes you may encounter when
 | `100` – `2018074` | Possible invalid ID or you do not own the attachment. | Please view Document Source: Attachment Upload API |
 | `100` – `2018109` | Attachment size exceeds allowable limit |  |
 | `100` – `2018164` | Incorrect App ID. |  |
-| `100` – `2018294` | Video upload timed out or video is corrupted. Note that if the video can’t be fetched within 75 seconds, it will time out. |  |
+| `100` – `2018294` | Video upload timed out or video is corrupted. Note that if the video can't be fetched within 75 seconds, it will time out. |  |
 | `100` – `2018320` | Invalid product id | Check to make sure the product ID you are using in your [Product Template](https://developers.facebook.com/documentation/business-messaging/messenger-platform/send-messages/template/product) is a valid ID and that your app has permission to access it. |
 | `100` – `2018328` | [Product template](https://developers.facebook.com/documentation/business-messaging/messenger-platform/send-messages/template/product) is not supported below version 8. Use API version 8 or higher to use product templates. |  |
 | `100` – `2534013` | The page is not linked to an Instagram account | The Page ID used in your API calls must be for the Facebook Page linked to your Instagram Professional account. |
@@ -59,16 +59,16 @@ The following table contains a list of common error codes you may encounter when
 | `100` – `2534015` | Invalid message data | Make sure that the type of data you are sending in your message is allowed for your message type. |
 | `100` – `2534025` | The comment is invalid for a private reply | Make sure that the type of data you are sending in your private reply is allowed. |
 | `100` – `2534029` | The business has been blocked from sending messages via the IG Messaging API | Check to make sure you do not have any policy violations that must be rectified before you can send messages using the Messenger Platform. |
-| `100` – `2534037` | The action is invalid since it’s not the thread owner. | You do not have permission to perform the action on this conversation. Check that your app has the correct permissions and access tokens to manage the conversation. |
+| `100` – `2534037` | The action is invalid since it's not the thread owner. | You do not have permission to perform the action on this conversation. Check that your app has the correct permissions and access tokens to manage the conversation. |
 | `190` | Access Token Error: Invalid OAuth access token. |  |
 | `200` | Permission Error: Cannot message users who are not admins, developers or testers of the app until pages\_messaging permission is reviewed and the app is live. |  |
-| `200` – `1545041` | Message Not Sent: This person isn’t available right now. |  |
+| `200` – `1545041` | Message Not Sent: This person isn't available right now. |  |
 | `200` – `2018021` | Requires phone matching access fee to be paid by this page unless the recipient user is an admin, developer, or tester of the app. |  |
 | `200` – `2018027` | Cannot message users who are not admins, developers or testers of the app until pages\_messaging\_phone\_number permission is reviewed and the app is live. |  |
 | `200` – `2018028` | Cannot message users who are not admins, developers or testers of the app until pages\_messaging permission is reviewed and the app is live. |  |
-| `200` – `2534041` | The account owner has [disabled access](https://developers.facebook.com/documentation/business-messaging/instagram-messaging/get-started) to instagram direct messages. | The owner of the Instagram Professional account has revoked your app’s access. |
-| `551` | User Block Error: This person isn’t receiving messages from you right now. |  |
-| `551` – `1545041` | This person isn’t available right now. |  |
+| `200` – `2534041` | The account owner has [disabled access](https://developers.facebook.com/documentation/business-messaging/instagram-messaging/get-started) to instagram direct messages. | The owner of the Instagram Professional account has revoked your app's access. |
+| `551` | User Block Error: This person isn't receiving messages from you right now. |  |
+| `551` – `1545041` | This person isn't available right now. |  |
 | `613` – `1893016` | Scope of service exceeded: You may not send multiple opt–in requests with the same topic to a user. | When a Page sends more than 1 opt–in request to the user on the same topic.  If a user receives this type of error through opting–in via [Send to Messenger](https://developers.facebook.com/docs/messenger-platform/send-messages/recurring-notifications/ways-to-get-opt-ins), you will need to inform the user on your website that an opt–in request was already sent to Messenger |
 | `613` – `2018338` | Warning! You are engaging in behavior that may be considered bothersome or abusive by users. You must significantly decrease the rate at which you are sending messages using message tags to this person. Further misuse of API features may result in messaging restrictions being placed on your Page |  |
 | `613` – `2534040` | Calls to this api have exceeded the rate limit. | Your app has reached the rate limit. Pause API calls and try again later. |
@@ -77,7 +77,7 @@ The following table contains a list of common error codes you may encounter when
 | `24001` | User canceled payment flow |  |
 | `24002` | Payment request cannot be processed due to missing privacy url |  |
 | `24005` | Failed to get user ID |  |
-| `36103` | To onboard creator accounts during Instagram phased rollout | Call the Conversation API with the page access token to check their eligibility: if the API responds with error code `36103` with the message “`This IG account is not eligible for API yet`” the business is not yet eligible. Source Document: Messenger API support for Instagram Rollout |
+| `36103` | To onboard creator accounts during Instagram phased rollout | Call the Conversation API with the page access token to check their eligibility: if the API responds with error code `36103` with the message "`This IG account is not eligible for API yet`" the business is not yet eligible. Source Document: Messenger API support for Instagram Rollout |
 | `2018144` | Could not send Instant Game message to the user at this time, only 5 notifications can be sent to a user within 10 days since they last played. | Pause your requests until the number of requests falls below the limit. |
 | `2018154` | Messenger Extensions unexpected error |  |
 | `2018163` | Begin Share Param Validation Error |  |
@@ -89,7 +89,7 @@ The following table contains a list of common error codes you may encounter when
 | `2018300` | Message failed to send because another app is controlling this thread now. |  |
 | `2018321` | The chat is currently controlled by Messenger while the user is in an automated question and answer flow. Please wait for the flow to finish before trying again. |  |
 | `2071010` | This SDK method is not supported on this Messenger client. Please upgrade |  |
-| `2071011` | Messenger Extensions are not enabled – could be “messenger\_extensions” was not set on a url, the domain was not added to the allow list or this is an outdated version of Messenger client |  |
+| `2071011` | Messenger Extensions are not enabled – could be "messenger\_extensions" was not set on a url, the domain was not added to the allow list or this is an outdated version of Messenger client |  |
 | `2071014` | Invalid MessageContent provided to SDK API call |  |
 | `2071015` | Invalid title string provided in message content |  |
 | `2071016` | Invalid subtitle string provided in message content |  |

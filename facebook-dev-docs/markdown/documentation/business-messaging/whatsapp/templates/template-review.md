@@ -16,11 +16,11 @@ Every template has a quality rating based on usage, customer feedback, and engag
 
 Newly created templates have a quality score of `UNKNOWN`. WhatsApp updates the rating automatically as it collects usage, feedback, and engagement signals over time.
 
-Quality ratings factor into [template pacing](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-pacing) and [template pausing](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-pausing), which can affect template delivery. If a template continuously receives negative feedback or low engagement, it can eventually affect the template’s status. If the status changes to anything other than `APPROVED`, the template cannot be sent in template messages unless its `APPROVED` status is restored.
+Quality ratings factor into [template pacing](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-pacing) and [template pausing](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-pausing), which can affect template delivery. If a template continuously receives negative feedback or low engagement, it can eventually affect the template's status. If the status changes to anything other than `APPROVED`, the template cannot be sent in template messages unless its `APPROVED` status is restored.
 
 ## Get template quality rating via API
 
-Use the [Template API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/message-template-api#get-version-template-id) and request the `quality_score` field to get a template’s quality score.
+Use the [Template API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/message-template-api#get-version-template-id) and request the `quality_score` field to get a template's quality score.
 
 ### Example request
 
@@ -33,18 +33,16 @@ curl 'https://graph.facebook.com/v25.0/1105258428396250?fields=quality_score' \
 
 ### Example response
 
-The Template API returns the template’s `quality_score` field, including the `score` and the `date` it was last updated:
+The Template API returns the template's `quality_score` field, including the `score` and the `date` it was last updated:
 
 ```
-```
 {  
-  "quality_score": {  
-    "score": "GREEN",  
-    "date": 1758754645  
-  },  
-  "id": "1387372356726668"  
+  "quality_score": {  
+    "score": "GREEN",  
+    "date": 1758754645  
+  },  
+  "id": "1387372356726668"  
 }
-```
 ```
 
 ## Get template quality rating via WhatsApp Manager
@@ -58,4 +56,4 @@ The [Manage templates⁠](https://business.facebook.com/latest/whatsapp_manager/
 
 ## See also
 
-* [About your WhatsApp Business message template’s quality rating⁠](https://www.facebook.com/business/help/766346674749731)
+* [About your WhatsApp Business message template's quality rating⁠](https://www.facebook.com/business/help/766346674749731)

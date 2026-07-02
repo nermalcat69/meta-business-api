@@ -21,7 +21,7 @@ Advertisers will need to source video files (MP4 format is recommended but nearl
 
 Some examples of video sources the team has seen advertisers use include:
 
-* PDP videos from the brand’s owned eCommerce website
+* PDP videos from the brand's owned eCommerce website
 * Videos leveraging their preferred 3rd-party MBP (i.e., Smartly, Shakr)
 * UGC style/Creator Lofi videos featuring individual products
 * Produced high fidelity videos highlighting hero products
@@ -75,15 +75,15 @@ Supplementary feeds are just one of the ways to provide Product-Level Videos. Vi
 
 **When used, does every product item in a supplementary feed need to be present in a primary feed?**
 
-A supplementary feed does not need to have the same columns as the primary feed, they are allowed to only have ID and video columns (e.g., `video[0].url`, `video[1].url`, etc.). In the supplementary feed, you do NOT need to have the item IDs for which you don’t want to add a video URL.
+A supplementary feed does not need to have the same columns as the primary feed, they are allowed to only have ID and video columns (e.g., `video[0].url`, `video[1].url`, etc.). In the supplementary feed, you do NOT need to have the item IDs for which you don't want to add a video URL.
 
 **Do we need to list all primary feed IDs for the supplementary feeds created in order for the supplementary feed to be properly connected?**
 
-Yes, 1 supplementary feed can have many primary feeds attached to it (1-to-many). However, 1 primary feed can be attached to only 1 supplementary feed (1-to-1). But as long as the supplementary feed has matching products (product IDs/retailer IDs) across primary feeds, it will update the video metadata/product item across the primary feeds it’s connected to.
+Yes, 1 supplementary feed can have many primary feeds attached to it (1-to-many). However, 1 primary feed can be attached to only 1 supplementary feed (1-to-1). But as long as the supplementary feed has matching products (product IDs/retailer IDs) across primary feeds, it will update the video metadata/product item across the primary feeds it's connected to.
 
-**Once the videos are uploaded with supplementary feed, are they removed even if we replace feed update on the primary feed which doesn’t have those videos?**
+**Once the videos are uploaded with supplementary feed, are they removed even if we replace feed update on the primary feed which doesn't have those videos?**
 
-No. As long as the IDs in the supplementary feed match to product IDs in the primary feed, it wouldn’t affect videos uploaded via supplementary feed, even on replace.
+No. As long as the IDs in the supplementary feed match to product IDs in the primary feed, it wouldn't affect videos uploaded via supplementary feed, even on replace.
 
 **What are the various methods of uploading videos?**
 
@@ -105,24 +105,24 @@ You can query a product item ID to see the `video_fetch_status` for that item. `
 
 You can use the [Product Diagnostics API](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-catalog/diagnostics) by querying the `/{catalog-id}/diagnostics` endpoint to see errors and warnings for your catalog, including catalog product video-related problems. The possible video-related responses for your catalog product items are:
 
-* `VIDEO_NOT_DOWNLOADABLE`: Video link doesn’t point to a video. Your video link may not actually lead to a video file but rather to a video player. Ways to check that your link points to a video:
+* `VIDEO_NOT_DOWNLOADABLE`: Video link doesn't point to a video. Your video link may not actually lead to a video file but rather to a video player. Ways to check that your link points to a video:
   * Open the video link in a browser to find out whether it prompts a file download.
   * Ensure the video link has one of the following supported file extensions: .3g2, .3gp, .3gpp, .asf, .avi, .dat, .divx, .dv, .f4v, .flv, .gif, .m2ts, .m4v, .mkv, .mod, .mov, .mp4, .mpe, .mpeg, .mpeg4, .mpg, .mts, .nsv, .ogm, .ogv, .qt, .tod, .ts, .vob or .wmv.
 * `VIDEO_FETCH_FAILED_LINK_BROKEN`: Video could not be found. Your video link may be broken. Check whether your video link works by opening it in a browser. Possible solutions:
   * Ensure the video link begins with http:// or https:// and actually leads to a video file.
-  * Avoid putting spaces in your video link, as spaces are not supported. If the video link contains spaces, either remove them or make sure that spaces are encoded (replaced with “%20”).
-* `VIDEO_FETCH_FAILED_BAD_GATEWAY`: There may be an issue with your video hosting site. The website server that you’re using to host your video may be experiencing issues or may be temporarily unavailable. Check whether your website server is working properly and accepting requests from Meta. If your server is unavailable, it may not be possible to access and download your video.
+  * Avoid putting spaces in your video link, as spaces are not supported. If the video link contains spaces, either remove them or make sure that spaces are encoded (replaced with "%20").
+* `VIDEO_FETCH_FAILED_BAD_GATEWAY`: There may be an issue with your video hosting site. The website server that you're using to host your video may be experiencing issues or may be temporarily unavailable. Check whether your website server is working properly and accepting requests from Meta. If your server is unavailable, it may not be possible to access and download your video.
 * `VIDEO_FETCH_FAILED_FILE_SIZE_EXCEEDED`: Your video file size exceeds 200 MB. Try the following solutions to reduce the file size.
   * Shorten the video, resave and reupload.
   * Lower the video quality, resave and reupload.
 * `VIDEO_FETCH_FAILED_FORBIDDEN`: Meta may be blocked from accessing the video. Learn how to check whether your website is blocking Meta. Possible solutions:
-  * Check whether your website server is using a firewall or protection service, such as Cloudflare or Cloudfront. If so, add the facebookcatalog/1.0 user agent to your website’s allow list.
+  * Check whether your website server is using a firewall or protection service, such as Cloudflare or Cloudfront. If so, add the facebookcatalog/1.0 user agent to your website's allow list.
   * Check whether the video file is password protected, blocking the download. Test the video link into your browser to see whether a popup appears, requesting a username and password. If so, remove the password protection from the video file.
-* `VIDEO_FETCH_FAILED_TIMED_OUT`: Video download timed out. The website server that you’re using to host your video may have taken too long to complete the request. Try the following solutions to increase the video download speed:
+* `VIDEO_FETCH_FAILED_TIMED_OUT`: Video download timed out. The website server that you're using to host your video may have taken too long to complete the request. Try the following solutions to increase the video download speed:
   * Reduce your video file size, resave and reupload.
-  * Increase your server’s download rate.
+  * Increase your server's download rate.
   * Check whether the server is working on other requests from Meta. If so, consider canceling other requests and try again.
-* `VIDEO_FETCH_FAILED`: Video fetch failed. Make sure to avoid common link issues: Check that the link points to your video. Begin the link with “http://” or “https://”. Replace any spaces in the link with “%20”. Once you edit the link, we’ll try to download the video again.
+* `VIDEO_FETCH_FAILED`: Video fetch failed. Make sure to avoid common link issues: Check that the link points to your video. Begin the link with "http://" or "https://". Replace any spaces in the link with "%20". Once you edit the link, we'll try to download the video again.
 
 ## Ads Management
 
@@ -151,7 +151,7 @@ Carousel and collection formats are now supported, as is single video. Please se
 
 **How do Instant Experiences work for Collection Ads?**
 
-If you use “Dynamic Video” as the hero media, we will replace that with a product video instead. However, there are no changes to Instant Experiences. Instant Experiences still have full control over product sets.
+If you use "Dynamic Video" as the hero media, we will replace that with a product video instead. However, there are no changes to Instant Experiences. Instant Experiences still have full control over product sets.
 
 **How will Product-Level Videos determine whether to deliver a static image or video to users?**
 

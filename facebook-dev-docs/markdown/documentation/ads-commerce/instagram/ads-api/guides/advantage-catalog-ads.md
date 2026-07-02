@@ -23,7 +23,7 @@ You can obtain the Instagram User ID (IG User) via the [Instagram API](https://d
 
 #### Instagram Graph API
 
-Obtain an Instagram Business or creator account’s user ID by using the `instagram_business_account` field on the relevant Facebook Page. See [Instagram Graph API, Getting Started](https://developers.facebook.com/docs/instagram-api/getting-started).
+Obtain an Instagram Business or creator account's user ID by using the `instagram_business_account` field on the relevant Facebook Page. See [Instagram Graph API, Getting Started](https://developers.facebook.com/docs/instagram-api/getting-started).
 
 #### Instagram Ads API
 
@@ -36,7 +36,7 @@ If you need to connect your Instagram account, see [Add an Instagram Account to 
 
 ### Step 2: Find the Post You Want to Promote and Check Its Eligibility
 
-To obtain the ID for the relevant Instagram post ([IG Media](https://developers.facebook.com/docs/instagram-api/reference/ig-media)) that you would like to use as an ad, use the Instagram Graph API’s [media endpoints](https://developers.facebook.com/docs/instagram-api/reference/ig-user/media). To obtain the ID for the relevant Instagram story that would like to use as an ad, use the Instagram Graph API’s [stories endpoint](https://developers.facebook.com/docs/instagram-api/reference/ig-user/stories). This ID will be used as the `source_instagram_media_id` in your ad.
+To obtain the ID for the relevant Instagram post ([IG Media](https://developers.facebook.com/docs/instagram-api/reference/ig-media)) that you would like to use as an ad, use the Instagram Graph API's [media endpoints](https://developers.facebook.com/docs/instagram-api/reference/ig-user/media). To obtain the ID for the relevant Instagram story that would like to use as an ad, use the Instagram Graph API's [stories endpoint](https://developers.facebook.com/docs/instagram-api/reference/ig-user/stories). This ID will be used as the `source_instagram_media_id` in your ad.
 
 You can use the `boost_eligibility_info` field to determine whether media is eligible to be boosted as an ad.
 
@@ -58,27 +58,23 @@ To create your ads, complete the process described on [Instagram Ads API, Get St
 * Specify `source_instagram_media_id` as the media ID you got from [Step 2: Find the Post You Want to Promote](https://developers.facebook.com/documentation/ads-commerce/instagram/ads-api/guides/advantage-catalog-ads#ig-posts-step-2). For example:
 
   ```
-  ```
-  curl -i -X POST \  
+  curl -i -X POST \  
   "https://graph.facebook.com/v<API_VERSION>/act_<AD_ACCOUNT>/adcreatives  
   ?object_id=<PAGE_ID>  
   &instagram_user_id=<IG_USER_ID>  
   &source_instagram_media_id=<IG_ORGANIC_MEDIA_ID>  
   &access_token=<API_ACCESS_TOKEN>"
-  ```
   ```
 * If you would like, you can update the [`call_to_action`](https://developers.facebook.com/documentation/ads-commerce/instagram/ads-api/reference/data-cta-requirements) field for your promotion. For example:
 
   ```
-  ```
-  curl -i -X POST \  
+  curl -i -X POST \  
   "https://graph.facebook.com/v<API_VERSION>/act_<AD_ACCOUNT>/adcreatives  
   ?object_id=<PAGE_ID>  
   &instagram_user_id=<IG_USER_ID>  
   &source_instagram_media_id=<IG_ORGANIC_MEDIA_ID>  
-  &call_to_action="{'type':'LEARN_MORE','value':{'link': '<YOUR_LINK>'}}"  
+  &call_to_action="{'type':'LEARN_MORE','value':{'link': '<YOUR_LINK>'}​}"  
   &access_token=<API_ACCESS_TOKEN>"
-  ```
   ```
 
   #### Call to action
@@ -90,49 +86,43 @@ To create your ads, complete the process described on [Instagram Ads API, Get St
   ##### Click to Instagram
 
   ```
-  ```
-  "call_to_action": {  
-  "value": {"app_destination":"INSTAGRAM_DIRECT"},  
-  "type": "MESSAGE_PAGE"  
+  "call_to_action": {  
+  "value": {"app_destination":"INSTAGRAM_DIRECT"},  
+  "type": "MESSAGE_PAGE"  
   }
-  ```
   ```
 
   ##### Click to Messenger
 
   ```
-  ```
-  "call_to_action": {  
-  "value": {"app_destination":"MESSENGER"},  
-  "type": "MESSAGE_PAGE"  
+  "call_to_action": {  
+  "value": {"app_destination":"MESSENGER"},  
+  "type": "MESSAGE_PAGE"  
   }
-  ```
   ```
 
   ##### Click to multidestination
 
   ```
-  ```
-  "asset_feed_spec": {  
-  "optimization_type": "DOF_MESSAGING_DESTINATION",  
-  "call_to_actions": [  
+  "asset_feed_spec": {  
+  "optimization_type": "DOF_MESSAGING_DESTINATION",  
+  "call_to_actions": [  
   {  
-  "type": "MESSAGE_PAGE",  
-  "value": {  
-  "app_destination": "MESSENGER",  
-  "link": "https://fb.com/messenger_doc/"  
+  "type": "MESSAGE_PAGE",  
+  "value": {  
+  "app_destination": "MESSENGER",  
+  "link": "https://fb.com/messenger_doc/"  
   }  
   },  
   {  
-  "type": "INSTAGRAM_MESSAGE",  
-  "value": {  
-  "app_destination": "INSTAGRAM_DIRECT",  
-  "link": "https://www.instagram.com"  
+  "type": "INSTAGRAM_MESSAGE",  
+  "value": {  
+  "app_destination": "INSTAGRAM_DIRECT",  
+  "link": "https://www.instagram.com"  
   }  
   }  
   ]  
   }
-  ```
   ```
 
   See the [Asset Feed Spec documentation](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-creative/asset-feed-spec) for more information.
@@ -143,15 +133,13 @@ Once you have provided your ad creative, [create your ads](https://developers.fa
 
 Not all Facebook posts work as Instagram ads.
 
-You can boost your Instagram content by using an existing Facebook Feed post or Story as part of your ad’s creative. To know whether a post can be used for ads, make the following API call:
+You can boost your Instagram content by using an existing Facebook Feed post or Story as part of your ad's creative. To know whether a post can be used for ads, make the following API call:
 
 ```
-```
-curl -G \  
--d "access_token=<ACCESS_TOKEN>"\  
--d "fields=is_instagram_eligible"\  
+curl -G \  
+-d "access_token=<ACCESS_TOKEN>"\  
+-d "fields=is_instagram_eligible"\  
 "https://graph.facebook.com/<API_VERSION>/<POST_ID>"
-```
 ```
 
 If your response includes `"is_instagram_eligible": true`, you can start creating your ad.
@@ -163,7 +151,7 @@ curl -i -X POST \
   "https://graph.facebook.com/v25.0/act_<AD_ACCOUNT>/adcreatives
   ?object_story_id=<postOwnerID_postID>
   &instagram_user_id=<IG_USER_ID>
-  &call_to_action="{'type':MESSAGE_PAGE,'value':{'app_destination':'MESSENGER'}}"
+  &call_to_action="{'type':MESSAGE_PAGE,'value':{'app_destination':'MESSENGER'}​}"
   &access_token=<ACCESS_TOKEN>"
 ```
 
@@ -171,8 +159,8 @@ Where `object_story_id` is the post ID in the format of `postOwnerID_postID` and
 
 ## Troubleshooting
 
-* If you encounter an error stating “Creative Must Provide enroll\_status for Standard Enhancements”, refer to [Standard Enhancements for Advantage+ Creative](https://developers.facebook.com/documentation/ads-commerce/marketing-api/advantage-catalog-ads/standard-enhancements) for more information.
-* If you are promoting a Facebook post with an `instagram_user_id` in the ad creative and the ad set includes both Facebook and Instagram placements, you may encounter and error stating “Creative is missing DOF spec” or “Creative should have degrees\_of\_freedom spec for multi-destination ads”. Add `"optimization_type": "DOF_MESSAGING_DESTINATION"` to the `asset_feed_spec` parameter in the ad creative.
+* If you encounter an error stating "Creative Must Provide enroll\_status for Standard Enhancements", refer to [Standard Enhancements for Advantage+ Creative](https://developers.facebook.com/documentation/ads-commerce/marketing-api/advantage-catalog-ads/standard-enhancements) for more information.
+* If you are promoting a Facebook post with an `instagram_user_id` in the ad creative and the ad set includes both Facebook and Instagram placements, you may encounter and error stating "Creative is missing DOF spec" or "Creative should have degrees\_of\_freedom spec for multi-destination ads". Add `"optimization_type": "DOF_MESSAGING_DESTINATION"` to the `asset_feed_spec` parameter in the ad creative.
 
 ## Learn More
 

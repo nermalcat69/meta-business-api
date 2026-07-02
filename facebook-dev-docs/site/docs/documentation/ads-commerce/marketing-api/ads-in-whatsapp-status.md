@@ -50,11 +50,9 @@ https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/campaigns
 On success, your app receives a JSON response with the ad campaign ID.
 
 ```
-```
 {  
-  "id": "<CAMPAIGN_ID>"  
+  "id": "<CAMPAIGN_ID>"  
 }
-```
 ```
 
 ## Step 2: Create an ad set
@@ -82,11 +80,9 @@ https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/adsets
 On success, your app receives a JSON response with the ad set ID.
 
 ```
-```
 {  
-  "id": "<AD_SET_ID>"  
+  "id": "<AD_SET_ID>"  
 }
-```
 ```
 
 ## Step 3: Create an ad using an inline creative
@@ -114,7 +110,7 @@ curl -X POST \
   -F 'access_token=<ACCESS_TOKEN>' \
   -F 'name=Website to WhatsApp Ad' \
   -F 'adset_id=<AD_SET_ID>' \
-  -F 'creative={"object_story_spec":{"page_id":"<PAGE_ID>","link_data":{"image_hash":"<IMAGE_HASH>","link":"<WEBSITE_URL>","message":"<AD_PRIMARY_TEXT>","call_to_action":{"type":"LEARN_MORE","value":{"link":"<WEBSITE_URL>"}}}},"asset_feed_spec":{"message_extensions":[{"type":"whatsapp"}]}}' \
+  -F 'creative={"object_story_spec":{"page_id":"<PAGE_ID>","link_data":{"image_hash":"<IMAGE_HASH>","link":"<WEBSITE_URL>","message":"<AD_PRIMARY_TEXT>","call_to_action":{"type":"LEARN_MORE","value":{"link":"<WEBSITE_URL>"}​}}​},"asset_feed_spec":{"message_extensions":[{"type":"whatsapp"}]}​}' \
   -F 'status=PAUSED' \
 https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/ads
 ```
@@ -126,7 +122,7 @@ curl -X POST \
   -F 'access_token=<ACCESS_TOKEN>' \
   -F 'name=Website to Messenger Ad' \
   -F 'adset_id=<AD_SET_ID>' \
-  -F 'creative={"object_story_spec":{"page_id":"<PAGE_ID>","link_data":{"image_hash":"<IMAGE_HASH>","link":"<WEBSITE_URL>","message":"<AD_PRIMARY_TEXT>","call_to_action":{"type":"LEARN_MORE","value":{"link":"<WEBSITE_URL>"}}}},"asset_feed_spec":{"message_extensions":[{"type":"messenger"}]}}' \
+  -F 'creative={"object_story_spec":{"page_id":"<PAGE_ID>","link_data":{"image_hash":"<IMAGE_HASH>","link":"<WEBSITE_URL>","message":"<AD_PRIMARY_TEXT>","call_to_action":{"type":"LEARN_MORE","value":{"link":"<WEBSITE_URL>"}​}}​},"asset_feed_spec":{"message_extensions":[{"type":"messenger"}]}​}' \
   -F 'status=PAUSED' \
 https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/ads
 ```
@@ -138,7 +134,7 @@ curl -X POST \
   -F 'access_token=<ACCESS_TOKEN>' \
   -F 'name=Website to Instagram Direct Ad' \
   -F 'adset_id=<AD_SET_ID>' \
-  -F 'creative={"object_story_spec":{"page_id":"<PAGE_ID>","link_data":{"image_hash":"<IMAGE_HASH>","link":"<WEBSITE_URL>","message":"<AD_PRIMARY_TEXT>","call_to_action":{"type":"LEARN_MORE","value":{"link":"<WEBSITE_URL>"}}}},"asset_feed_spec":{"message_extensions":[{"type":"instagram_message"}]}}' \
+  -F 'creative={"object_story_spec":{"page_id":"<PAGE_ID>","link_data":{"image_hash":"<IMAGE_HASH>","link":"<WEBSITE_URL>","message":"<AD_PRIMARY_TEXT>","call_to_action":{"type":"LEARN_MORE","value":{"link":"<WEBSITE_URL>"}​}}​},"asset_feed_spec":{"message_extensions":[{"type":"instagram_message"}]}​}' \
   -F 'status=PAUSED' \
 https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/ads
 ```
@@ -146,11 +142,9 @@ https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/ads
 On success, your app receives a JSON response with the ad ID.
 
 ```
-```
 {  
-  "id": "<AD_ID>"  
+  "id": "<AD_ID>"  
 }
-```
 ```
 
 ## Step 4: Publish your ad
@@ -171,30 +165,28 @@ Verify that `message_extensions` and `destination_type` are set correctly by mak
 ```
 curl -G "https://graph.facebook.com/v25.0/<AD_ID>" \
   -d "access_token=<ACCESS_TOKEN>" \
-  -d "fields=creative{asset_feed_spec{message_extensions}},adset{destination_type}"
+  -d "fields=creative{asset_feed_spec{message_extensions}​},adset{destination_type}"
 ```
 
 The response for a website to WhatsApp ad looks like this:
 
 ```
-```
 {  
-  "creative": {  
-    "asset_feed_spec": {  
-      "message_extensions": [{"type": "whatsapp"}]  
-    }  
-  },  
-  "adset": {  
-    "destination_type": "WEBSITE"  
-  },  
-  "id": "<AD_ID>"  
+  "creative": {  
+    "asset_feed_spec": {  
+      "message_extensions": [{"type": "whatsapp"}]  
+    }  
+  },  
+  "adset": {  
+    "destination_type": "WEBSITE"  
+  },  
+  "id": "<AD_ID>"  
 }
-```
 ```
 
 ## Identify website ads that click to message
 
-You can identify website ads that click to message by checking the ad set `destination_type` and the ad creative’s `message_extensions` configuration.
+You can identify website ads that click to message by checking the ad set `destination_type` and the ad creative's `message_extensions` configuration.
 
 To determine whether an ad is a website ad that clicks to message, check for **both** of the following:
 

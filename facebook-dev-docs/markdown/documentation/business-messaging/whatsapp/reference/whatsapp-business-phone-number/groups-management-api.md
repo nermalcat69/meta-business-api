@@ -53,11 +53,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/groups' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/groups' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Header Parameters
@@ -197,11 +197,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/groups' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/groups' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 ---
@@ -223,11 +223,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/groups' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/groups' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -238,8 +238,8 @@ Select status code
 
 ```
 {  
-  "messaging_product": "\"whatsapp\"",  
-  "request_id": "\"106540352242922\""  
+  "messaging_product": "\"whatsapp\"",  
+  "request_id": "\"106540352242922\""  
 }
 ```
 
@@ -453,11 +453,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/groups' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/groups' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -468,8 +468,8 @@ Select status code
 
 ```
 {  
-  "messaging_product": "\"whatsapp\"",  
-  "request_id": "\"106540352242922\""  
+  "messaging_product": "\"whatsapp\"",  
+  "request_id": "\"106540352242922\""  
 }
 ```
 

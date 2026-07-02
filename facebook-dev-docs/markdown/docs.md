@@ -21,7 +21,7 @@ The primary way for apps to read and write to the Meta social graph.
 
 ## Rest API
 
-Modern, flexible, and developer-friendly way to build and integrate with Meta’s diverse platforms.
+Modern, flexible, and developer-friendly way to build and integrate with Meta's diverse platforms.
 
 [Docs](https://developers.facebook.com/documentation/rest-api/overview)
 

@@ -107,7 +107,7 @@ Below are sample CSV files for each business vertical:
 
 ## Filter Items Into Sets
 
-A set is a subset of the items in your catalog. Product sets are defined by filters applied to the catalog. You can use each business vertical’s edge to list items that belong to a specific product set. See the following links for full reference documentation for each edge:
+A set is a subset of the items in your catalog. Product sets are defined by filters applied to the catalog. You can use each business vertical's edge to list items that belong to a specific product set. See the following links for full reference documentation for each edge:
 
 * [Product Set Media Titles edge](https://developers.facebook.com/documentation/ads-commerce/catalog/reference/media-titles/product-set-edge)
 * [Apps and Software edge](https://developers.facebook.com/documentation/ads-commerce/catalog/reference/apps-and-software/product-set-edge)

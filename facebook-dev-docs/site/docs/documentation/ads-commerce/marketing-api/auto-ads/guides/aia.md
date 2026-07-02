@@ -15,7 +15,7 @@ Learn more about the catalog fields that describe the type or category of commer
 
 ### [Automotive model ads](https://developers.facebook.com/documentation/ads-commerce/marketing-api/auto-ads/guides/aoa)
 
-Learn how Facebook’s automotive model ads use cross-device intent signals to automatically promote relevant vehicle models and offers on Facebook.
+Learn how Facebook's automotive model ads use cross-device intent signals to automatically promote relevant vehicle models and offers on Facebook.
 
 ### [Automotive catalog](https://developers.facebook.com/documentation/ads-commerce/marketing-api/auto-ads/guides/catalog)
 

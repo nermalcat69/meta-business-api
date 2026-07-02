@@ -29,6 +29,6 @@ curl \
   -F "billing_event=LINK_CLICKS" \
   -F "campaign_id=<CAMPAIGN_ID>" \
   -F "access_token=<ACCESS_TOKEN>" \
-  -F "targeting={'geo_locations': {'countries': ['US', 'GB']}, 'user_os': ['iOS'],   'user_device': ['iPad', 'iPhone', 'iPod'], 'custom_audiences': [{<LOOKALIKE_DATA>}],  'targeting_relaxation_types': {'lookalike': 1}}" \
+  -F "targeting={'geo_locations': {'countries': ['US', 'GB']}, 'user_os': ['iOS'],   'user_device': ['iPad', 'iPhone', 'iPod'], 'custom_audiences': [{<LOOKALIKE_DATA>}],  'targeting_relaxation_types': {'lookalike': 1}​}" \
   https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/adsets
 ```

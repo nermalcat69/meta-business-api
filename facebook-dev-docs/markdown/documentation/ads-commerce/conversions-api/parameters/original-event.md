@@ -14,7 +14,7 @@ See the [Conversions API for App Events](https://developers.facebook.com/documen
 | Parameter | Description |
 | --- | --- |
 | `advertiser_tracking_enabled`  boolean | **Required for app events**  Use this field to specify ATT permission on an iOS 14.5+ device. Set to `0` for disabled or `1` for enabled. |
-| `application_tracking_enabled`  boolean | **Optional**  A person can choose to enable ad tracking on an app level. Your SDK should allow an app developer to put an opt-out setting into their app. Use this field to specify the person’s choice. Use `0` for disabled, `1` for enabled. |
+| `application_tracking_enabled`  boolean | **Optional**  A person can choose to enable ad tracking on an app level. Your SDK should allow an app developer to put an opt-out setting into their app. Use this field to specify the person's choice. Use `0` for disabled, `1` for enabled. |
 | `extinfo`  object  Expand the row to view the full list of `extinfo` values. | **Required for app events**  Extended device information, such as screen width and height. This parameter is an array. Separate the values with commas. When using `extinfo`, **all values are required and must be in the order indexed below**. If a value is missing, fill with an empty string as a placeholder.  Note:   * `version` must be `a2` for Android * `version` must be `i2` for iOS |
 | ↳ `0`  string | **Required**  extinfo version  Example: `i2` |
 | ↳ `1`  string | app package name  Example: `com.facebook.sdk.samples.hellofacebook` |

@@ -13,7 +13,7 @@ You can implement Embedded Signup without adding JavaScript code to your website
 
 ## Limitations
 
-Hosted Embedded Signup (“Hosted ES”) can only be used to onboard business customers to Cloud API, and the flow cannot be customized.
+Hosted Embedded Signup ("Hosted ES") can only be used to onboard business customers to Cloud API, and the flow cannot be customized.
 
 ## Requirements
 
@@ -29,7 +29,7 @@ You will also need:
 
 ## Step 1: Create a Facebook Login for Business configuration
 
-If you don’t already have a Facebook Login for Business configuration, you must create one. A Facebook Login for Business configuration defines which permissions to request, and what additional information to collect, from business customers who access Embedded Signup.
+If you don't already have a Facebook Login for Business configuration, you must create one. A Facebook Login for Business configuration defines which permissions to request, and what additional information to collect, from business customers who access Embedded Signup.
 
 Navigate to **Facebook Login for Business** > **Configurations** and click the **+ Create configuration** button to access the configuration flow.
 
@@ -41,7 +41,7 @@ When choosing assets and permissions, select only those assets and permissions t
 
 ![Create a Configuration Choose assets step listing Pages, Ad accounts, Catalogs, Pixels, Instagram, and WhatsApp accounts checkboxes](https://scontent.fdel1-3.fna.fbcdn.net/v/t39.2365-6/556838067_777912301525569_1334774809437446260_n.png?_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=zDZZ1Dc6fsoQ7kNvwGL-h_d&_nc_oc=AdoPVWuHenCANA8MO27LPxxHM4qgTyNUXLJBN3mqSpnQQOGRocqvVj4KBcs5rYpOLBQZhInkn82_i4vnYoTJOnE-&_nc_zt=14&_nc_ht=scontent.fdel1-3.fna&_nc_gid=yoxTMfbhi7WYWsXe2zL1EA&_nc_ss=7b2a8&oh=00_AQDkRSN-5RNuAJFgU8CoZt2SSE_I65CYJ-5WIYK2JBTkWA&oe=6A6040A1)
 
-For example, if you select the **Catalogs** asset but don’t actually need access to customer catalogs, your customers will likely abandon the flow at the catalog selection screen and ask you for clarification.
+For example, if you select the **Catalogs** asset but don't actually need access to customer catalogs, your customers will likely abandon the flow at the catalog selection screen and ask you for clarification.
 
 ## Step 2: Get the Hosted Embedded Signup URL
 
@@ -55,7 +55,7 @@ Locate the **Zero integration onboarding** card. The URL displayed in the card i
 
 Click the **Copy** button to copy the URL to your clipboard. Map this URL to a button on your website or customer portal that, when clicked, opens the URL in a new browser window.
 
-To preview the onboarding page, load the URL in a new browser window or tab, or click the blue “new window” icon.
+To preview the onboarding page, load the URL in a new browser window or tab, or click the blue "new window" icon.
 
 This onboarding page looks like this:
 
@@ -65,7 +65,7 @@ Click the **Get started** button, which launches the same flow that business cus
 
 ## Step 3: Capture customer asset IDs
 
-When a business customer completes the flow, Meta sends an [account\_update](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/account_update) webhook with `event` set to `PARTNER_ADDED`. Capture the customer’s WhatsApp Business account ID and business portfolio ID from the webhook payload.
+When a business customer completes the flow, Meta sends an [account\_update](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/account_update) webhook with `event` set to `PARTNER_ADDED`. Capture the customer's WhatsApp Business account ID and business portfolio ID from the webhook payload.
 
 ## Step 4: Generate an HMAC-SHA256 hash
 
@@ -74,9 +74,7 @@ Generate an HMAC-SHA256 hash of your app secret and system token.
 ### Bash example (Linux and macOS)
 
 ```
-```
-echo -n "<SYSTEM_TOKEN>" | openssl dgst -sha256 -hmac "<APP_SECRET>"
-```
+echo -n "<SYSTEM_TOKEN>" | openssl dgst -sha256 -hmac "<APP_SECRET>"
 ```
 
 * `<SYSTEM_TOKEN>` — Your system token.
@@ -84,23 +82,21 @@ echo -n "<SYSTEM_TOKEN>" | openssl dgst -sha256 -hmac "<APP_SECRET>"
 
 ## Step 5: Get a business token
 
-Use the [System User Access Tokens API](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/business/system_user_access_tokens) to get and capture the customer’s [business token](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#business-integration-system-user-access-tokens). (Target the customer’s business portfolio ID, not yours).
+Use the [System User Access Tokens API](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/business/system_user_access_tokens) to get and capture the customer's [business token](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#business-integration-system-user-access-tokens). (Target the customer's business portfolio ID, not yours).
 
 ### Request syntax
 
 ```
-```
-curl 'https://graph.facebook.com/<API_VERSION>/<BUSINESS_PORTFOLIO_ID>/system_user_access_tokens' \  
--H 'Content-Type: application/x-www-form-urlencoded' \  
--H 'Authorization: Bearer <SYSTEM_TOKEN>' \  
--d 'appsecret_proof=<APPSECRET_PROOF>' \  
--d 'fetch_only=true'
-```
+curl 'https://graph.facebook.com/<API_VERSION>/<BUSINESS_PORTFOLIO_ID>/system_user_access_tokens' \  
+-H 'Content-Type: application/x-www-form-urlencoded' \  
+-H 'Authorization: Bearer <SYSTEM_TOKEN>' \  
+-d 'appsecret_proof=<APPSECRET_PROOF>' \  
+-d 'fetch_only=true'
 ```
 
 * `<API_VERSION>` — API version.
 * `<APPSECRET_PROOF>` — HMAC-SHA256 hash of your app secret and system token.
-* `<BUSINESS_PORTFOLIO_ID>` — Business customer’s business portfolio ID.
+* `<BUSINESS_PORTFOLIO_ID>` — Business customer's business portfolio ID.
 * `<SYSTEM_TOKEN>` — Your system token.
 
 ### Response syntax
@@ -108,62 +104,56 @@ curl 'https://graph.facebook.com/<API_VERSION>/<BUSINESS_PORTFOLIO_ID>/system_u
 Upon success:
 
 ```
-```
 {  
-  "access_token": "<BUSINESS_TOKEN>"  
+  "access_token": "<BUSINESS_TOKEN>"  
 }
 ```
-```
 
-* `<BUSINESS_TOKEN>` — The business customer’s business token.
+* `<BUSINESS_TOKEN>` — The business customer's business token.
 
-## Step 6: Get the customer’s business phone number ID
+## Step 6: Get the customer's business phone number ID
 
-Use the [Phone Numbers API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/phone-number-management-api) to get and capture the business customer’s business phone number ID.
+Use the [Phone Numbers API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/phone-number-management-api) to get and capture the business customer's business phone number ID.
 
 ### Request syntax
 
 ```
-```
-curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_ACCOUNT_ID>/phone_numbers' \  
--H 'Authorization: Bearer <BUSINESS_TOKEN>'
-```
+curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_ACCOUNT_ID>/phone_numbers' \  
+-H 'Authorization: Bearer <BUSINESS_TOKEN>'
 ```
 
 * `<API_VERSION>` — API version.
-* `<BUSINESS_TOKEN>` — Business customer’s business token.
-* `<WHATSAPP_BUSINESS_ACCOUNT_ID>` — Business customer’s WhatsApp Business account ID.
+* `<BUSINESS_TOKEN>` — Business customer's business token.
+* `<WHATSAPP_BUSINESS_ACCOUNT_ID>` — Business customer's WhatsApp Business account ID.
 
 ### Response syntax
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "verified_name": "<VERIFIED_NAME>",  
-      "code_verification_status": "<CODE_VERIFICATION_STATUS>",  
-      "display_phone_number": "<DISPLAY_PHONE_NUMBER>",  
-      "quality_rating": "<QUALITY_RATING>",  
-      "platform_type": "<PLATFORM_TYPE>",  
-      "throughput": {  
-        "level": "<THROUGHPUT_LEVEL>"  
-      },  
-      "last_onboarded_time": "<LAST_ONBOARDED_TIME>",  
-      "webhook_configuration": {  
-        "application": "<WEBHOOK_CALLBACK_URL>"  
-      },  
-      "id": "<BUSINESS_PHONE_NUMBER_ID>"  
-    }  
-  ]  
+  "data": [  
+    {  
+      "verified_name": "<VERIFIED_NAME>",  
+      "code_verification_status": "<CODE_VERIFICATION_STATUS>",  
+      "display_phone_number": "<DISPLAY_PHONE_NUMBER>",  
+      "quality_rating": "<QUALITY_RATING>",  
+      "platform_type": "<PLATFORM_TYPE>",  
+      "throughput": {  
+        "level": "<THROUGHPUT_LEVEL>"  
+      },  
+      "last_onboarded_time": "<LAST_ONBOARDED_TIME>",  
+      "webhook_configuration": {  
+        "application": "<WEBHOOK_CALLBACK_URL>"  
+      },  
+      "id": "<BUSINESS_PHONE_NUMBER_ID>"  
+    }  
+  ]  
 }
-```
 ```
 
 * `<BUSINESS_PHONE_NUMBER_ID>` — Business phone number ID.
 * `<CODE_VERIFICATION_STATUS>` — Business phone number verification status.
 * `<DISPLAY_PHONE_NUMBER>` — Business display phone number.
-* `<LAST_ONBOARDED_TIME>` — Unix timestamp indicating when the number was added to the business customer’s WhatsApp Business account (essentially, when the customer successfully completed the flow).
+* `<LAST_ONBOARDED_TIME>` — Unix timestamp indicating when the number was added to the business customer's WhatsApp Business account (essentially, when the customer successfully completed the flow).
 * `<PLATFORM_TYPE>` — Platform.
 * `<QUALITY_RATING>` — Business phone number quality rating.
 * `<THROUGHPUT_LEVEL>` — Throughput level.

@@ -78,11 +78,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Business-ID}/whatsapp_business_accounts' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Business-ID}/whatsapp_business_accounts' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -93,65 +93,65 @@ Select status code
 
 ```
 {  
-  "multiple_accounts": {  
-    "summary": "Multiple WhatsApp Business Accounts",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "1234567890123456",  
-          "name": "Primary Business WABA",  
-          "account_review_status": "APPROVED",  
-          "currency": "USD",  
-          "country": "US",  
-          "timezone_id": "1",  
-          "business_verification_status": "VERIFIED",  
-          "is_enabled_for_insights": true,  
-          "message_template_namespace": "business_namespace_123"  
-        },  
-        {  
-          "id": "2345678901234567",  
-          "name": "Secondary Business WABA",  
-          "account_review_status": "PENDING",  
-          "currency": "EUR",  
-          "country": "DE",  
-          "timezone_id": "5",  
-          "business_verification_status": "PENDING",  
-          "is_enabled_for_insights": false,  
-          "message_template_namespace": "business_namespace_456"  
-        }  
-      ],  
-      "paging": {  
-        "cursors": {  
-          "after": "QVFIUjNpUWpVWmRBd0Rn"  
-        },  
-        "next": "https://graph.facebook.com/v23.0/1234567890/whatsapp_business_accounts?after=QVFIUjNpUWpVWmRBd0Rn"  
-      }  
-    }  
-  },  
-  "single_account": {  
-    "summary": "Single WhatsApp Business Account",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "1234567890123456",  
-          "name": "My Business WABA",  
-          "account_review_status": "APPROVED",  
-          "currency": "USD",  
-          "country": "US",  
-          "timezone_id": "1",  
-          "business_verification_status": "VERIFIED",  
-          "is_enabled_for_insights": true,  
-          "message_template_namespace": "business_namespace_123"  
-        }  
-      ]  
-    }  
-  },  
-  "empty_response": {  
-    "summary": "No WhatsApp Business Accounts",  
-    "value": {  
-      "data": []  
-    }  
-  }  
+  "multiple_accounts": {  
+    "summary": "Multiple WhatsApp Business Accounts",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "1234567890123456",  
+          "name": "Primary Business WABA",  
+          "account_review_status": "APPROVED",  
+          "currency": "USD",  
+          "country": "US",  
+          "timezone_id": "1",  
+          "business_verification_status": "VERIFIED",  
+          "is_enabled_for_insights": true,  
+          "message_template_namespace": "business_namespace_123"  
+        },  
+        {  
+          "id": "2345678901234567",  
+          "name": "Secondary Business WABA",  
+          "account_review_status": "PENDING",  
+          "currency": "EUR",  
+          "country": "DE",  
+          "timezone_id": "5",  
+          "business_verification_status": "PENDING",  
+          "is_enabled_for_insights": false,  
+          "message_template_namespace": "business_namespace_456"  
+        }  
+      ],  
+      "paging": {  
+        "cursors": {  
+          "after": "QVFIUjNpUWpVWmRBd0Rn"  
+        },  
+        "next": "https://graph.facebook.com/v23.0/1234567890/whatsapp_business_accounts?after=QVFIUjNpUWpVWmRBd0Rn"  
+      }  
+    }  
+  },  
+  "single_account": {  
+    "summary": "Single WhatsApp Business Account",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "1234567890123456",  
+          "name": "My Business WABA",  
+          "account_review_status": "APPROVED",  
+          "currency": "USD",  
+          "country": "US",  
+          "timezone_id": "1",  
+          "business_verification_status": "VERIFIED",  
+          "is_enabled_for_insights": true,  
+          "message_template_namespace": "business_namespace_123"  
+        }  
+      ]  
+    }  
+  },  
+  "empty_response": {  
+    "summary": "No WhatsApp Business Accounts",  
+    "value": {  
+      "data": []  
+    }  
+  }  
 }
 ```
 
@@ -873,11 +873,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Business-ID}/whatsapp_business_accounts' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Business-ID}/whatsapp_business_accounts' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -888,65 +888,65 @@ Select status code
 
 ```
 {  
-  "multiple_accounts": {  
-    "summary": "Multiple WhatsApp Business Accounts",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "1234567890123456",  
-          "name": "Primary Business WABA",  
-          "account_review_status": "APPROVED",  
-          "currency": "USD",  
-          "country": "US",  
-          "timezone_id": "1",  
-          "business_verification_status": "VERIFIED",  
-          "is_enabled_for_insights": true,  
-          "message_template_namespace": "business_namespace_123"  
-        },  
-        {  
-          "id": "2345678901234567",  
-          "name": "Secondary Business WABA",  
-          "account_review_status": "PENDING",  
-          "currency": "EUR",  
-          "country": "DE",  
-          "timezone_id": "5",  
-          "business_verification_status": "PENDING",  
-          "is_enabled_for_insights": false,  
-          "message_template_namespace": "business_namespace_456"  
-        }  
-      ],  
-      "paging": {  
-        "cursors": {  
-          "after": "QVFIUjNpUWpVWmRBd0Rn"  
-        },  
-        "next": "https://graph.facebook.com/v23.0/1234567890/whatsapp_business_accounts?after=QVFIUjNpUWpVWmRBd0Rn"  
-      }  
-    }  
-  },  
-  "single_account": {  
-    "summary": "Single WhatsApp Business Account",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "1234567890123456",  
-          "name": "My Business WABA",  
-          "account_review_status": "APPROVED",  
-          "currency": "USD",  
-          "country": "US",  
-          "timezone_id": "1",  
-          "business_verification_status": "VERIFIED",  
-          "is_enabled_for_insights": true,  
-          "message_template_namespace": "business_namespace_123"  
-        }  
-      ]  
-    }  
-  },  
-  "empty_response": {  
-    "summary": "No WhatsApp Business Accounts",  
-    "value": {  
-      "data": []  
-    }  
-  }  
+  "multiple_accounts": {  
+    "summary": "Multiple WhatsApp Business Accounts",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "1234567890123456",  
+          "name": "Primary Business WABA",  
+          "account_review_status": "APPROVED",  
+          "currency": "USD",  
+          "country": "US",  
+          "timezone_id": "1",  
+          "business_verification_status": "VERIFIED",  
+          "is_enabled_for_insights": true,  
+          "message_template_namespace": "business_namespace_123"  
+        },  
+        {  
+          "id": "2345678901234567",  
+          "name": "Secondary Business WABA",  
+          "account_review_status": "PENDING",  
+          "currency": "EUR",  
+          "country": "DE",  
+          "timezone_id": "5",  
+          "business_verification_status": "PENDING",  
+          "is_enabled_for_insights": false,  
+          "message_template_namespace": "business_namespace_456"  
+        }  
+      ],  
+      "paging": {  
+        "cursors": {  
+          "after": "QVFIUjNpUWpVWmRBd0Rn"  
+        },  
+        "next": "https://graph.facebook.com/v23.0/1234567890/whatsapp_business_accounts?after=QVFIUjNpUWpVWmRBd0Rn"  
+      }  
+    }  
+  },  
+  "single_account": {  
+    "summary": "Single WhatsApp Business Account",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "1234567890123456",  
+          "name": "My Business WABA",  
+          "account_review_status": "APPROVED",  
+          "currency": "USD",  
+          "country": "US",  
+          "timezone_id": "1",  
+          "business_verification_status": "VERIFIED",  
+          "is_enabled_for_insights": true,  
+          "message_template_namespace": "business_namespace_123"  
+        }  
+      ]  
+    }  
+  },  
+  "empty_response": {  
+    "summary": "No WhatsApp Business Accounts",  
+    "value": {  
+      "data": []  
+    }  
+  }  
 }
 ```
 
@@ -988,14 +988,14 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Business-ID}/whatsapp_business_accounts' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "name": "My Business WhatsApp Account",  
-  "currency": "USD",  
-  "timezone_id": 1  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Business-ID}/whatsapp_business_accounts' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "name": "My Business WhatsApp Account",  
+  "currency": "USD",  
+  "timezone_id": 1  
 }'
 ```
 
@@ -1007,13 +1007,13 @@ Select status code
 
 ```
 {  
-  "successful_creation": {  
-    "summary": "Successful WABA creation",  
-    "value": {  
-      "id": "1234567890123456",  
-      "payment_account_id": "9876543210987654"  
-    }  
-  }  
+  "successful_creation": {  
+    "summary": "Successful WABA creation",  
+    "value": {  
+      "id": "1234567890123456",  
+      "payment_account_id": "9876543210987654"  
+    }  
+  }  
 }
 ```
 
@@ -1633,14 +1633,14 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Business-ID}/whatsapp_business_accounts' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "name": "My Business WhatsApp Account",  
-  "currency": "USD",  
-  "timezone_id": 1  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Business-ID}/whatsapp_business_accounts' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "name": "My Business WhatsApp Account",  
+  "currency": "USD",  
+  "timezone_id": 1  
 }'
 ```
 
@@ -1652,13 +1652,13 @@ Select status code
 
 ```
 {  
-  "successful_creation": {  
-    "summary": "Successful WABA creation",  
-    "value": {  
-      "id": "1234567890123456",  
-      "payment_account_id": "9876543210987654"  
-    }  
-  }  
+  "successful_creation": {  
+    "summary": "Successful WABA creation",  
+    "value": {  
+      "id": "1234567890123456",  
+      "payment_account_id": "9876543210987654"  
+    }  
+  }  
 }
 ```
 

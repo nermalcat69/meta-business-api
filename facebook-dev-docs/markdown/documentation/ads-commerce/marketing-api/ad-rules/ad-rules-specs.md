@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/marketing
 
 Updated: Jun 26, 2026
 
-The ad rules engine is a central rule management service that helps you manage ads automatically based on rules you define. Without the ad rules engine, you must query the Marketing API to monitor an ad’s performance and manually take actions on certain conditions.
+The ad rules engine is a central rule management service that helps you manage ads automatically based on rules you define. Without the ad rules engine, you must query the Marketing API to monitor an ad's performance and manually take actions on certain conditions.
 
 Since most conditions can be expressed as logical expressions, you can automate management in two ways: [Schedule-based rules](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-rules/guides/scheduled-based-rules) or [Trigger-based rules](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-rules/guides/trigger-based-rules).
 
@@ -36,7 +36,7 @@ https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/adrules_library
 
 ### [Trigger-based rules](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-rules/guides/trigger-based-rules)
 
-Monitor the state of your ads in real-time. The ad rules engine evaluates a trigger-based rule as soon as the relevant ad objects’ metadata or [Ad Insights](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/adgroup/insights) data change.
+Monitor the state of your ads in real-time. The ad rules engine evaluates a trigger-based rule as soon as the relevant ad objects' metadata or [Ad Insights](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/adgroup/insights) data change.
 
 ### [Schedule-based rules](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-rules/guides/scheduled-based-rules)
 

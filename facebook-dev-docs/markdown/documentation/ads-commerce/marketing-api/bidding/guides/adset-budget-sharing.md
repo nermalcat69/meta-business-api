@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/marketing
 
 Updated: Jun 26, 2026
 
-An Advantage campaign budget is a way of optimizing the distribution of a campaign budget across your campaign’s ad sets. This means Facebook automatically and continuously finds the best available opportunities for results across your ad sets and distributes your campaign budget in real time to get those results.
+An Advantage campaign budget is a way of optimizing the distribution of a campaign budget across your campaign's ad sets. This means Facebook automatically and continuously finds the best available opportunities for results across your ad sets and distributes your campaign budget in real time to get those results.
 
 You can either enable or disable an Advantage campaign budget for an ad campaign. If you disable the Advantage campaign budget, you should provide budgets for all ad sets under the campaign.
 
@@ -29,7 +29,7 @@ See [examples](https://developers.facebook.com/documentation/ads-commerce/market
 
 | Name | Description |
 | --- | --- |
-| `daily_min_spend_target` | Daily minimum spending target for the ad set, in your account’s currency. You must specify a daily budget at the ad campaign level. This target does not guarantee you spend this amount, but Facebook makes a best effort to achieve it. To remove `daily_min_spend_target` from an ad set, set it to `0` or an empty value. For example, `daily_min_spend_target=0`, or `daily_min_spend_target=`. |
+| `daily_min_spend_target` | Daily minimum spending target for the ad set, in your account's currency. You must specify a daily budget at the ad campaign level. This target does not guarantee you spend this amount, but Facebook makes a best effort to achieve it. To remove `daily_min_spend_target` from an ad set, set it to `0` or an empty value. For example, `daily_min_spend_target=0`, or `daily_min_spend_target=`. |
 | `daily_spend_cap` | Daily spend cap of the ad set defined in your account currency.  You must specify the daily budget at the ad campaign level. |
 | `lifetime_min_spend_target` | Lifetime minimum spend target for an ad set defined in your account currency. You must specify the lifetime budget at the ad campaign level. This target is not a guarantee you achieve the target, but Facebook makes a best effort to reach it. To remove `lifetime_min_spend_target` from an ad set, set it to `0` or an empty value. For example, `lifetime_min_spend_target=0`, or `lifetime_min_spend_target=`. |
 | `lifetime_spend_cap` | Lifetime spend cap of the ad set defined in your account currency. You must specify the lifetime budget in the campaign. |
@@ -106,7 +106,7 @@ curl
   -F 'name=minRoasBiddingDemo' \
   -F 'optimization_goal=VALUE' \
   -F 'promoted_object={"pixel_id": <PIXEL_ID>, "custom_event_type": PURCHASE}' \
-  -F 'targeting={"geo_locations":{"countries":["US"]}}' \
+  -F 'targeting={"geo_locations":{"countries":["US"]}​}' \
   -F 'campaign_id=<CAMPAIGN_ID>' \
   -F 'status=PAUSED' \
   -F 'time_stop=1712888798' \

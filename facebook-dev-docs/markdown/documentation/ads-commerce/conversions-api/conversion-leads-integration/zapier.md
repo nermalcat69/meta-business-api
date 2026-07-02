@@ -117,9 +117,7 @@ This step will help you generate an access token for your Meta Pixel, which will
 * This is the endpoint format to make a `POST` request to the Conversions API without the SDK. You can get the entire endpoint by clicking **Copy endpoint** in the CRM Integration guide and saving it.
 
   ```
-  ```
   https://graph.facebook.com/API_VERSION/PIXEL_ID/events?access_token=ACCESS_TOKEN
-  ```
   ```
 
   * `API_VERSION`: The current Marketing API version

@@ -9,19 +9,19 @@ Updated: Jul 14, 2025
 
 Get the status of the Meta Developer Platform APIs, explore available Meta Developer Tools, and find Support.
 
-At the top of all pages on Meta’s Developer Documentation site, the following tabs are available:
+At the top of all pages on Meta's Developer Documentation site, the following tabs are available:
 
-* **Apps** – The Meta App Dashboard to configure your app with Meta’s APIs, products, and SDKs
-* **Docs** – The documentation for implementing Meta’s APIs, products, and SDKs
-* **Required actions** – The required actions needed for your app to retain access to Meta’s APIs
+* **Apps** – The Meta App Dashboard to configure your app with Meta's APIs, products, and SDKs
+* **Docs** – The documentation for implementing Meta's APIs, products, and SDKs
+* **Required actions** – The required actions needed for your app to retain access to Meta's APIs
 * **Support** – The support resources to ask questions, report bugs, and monitor platform status
 * **Tools** – The tools for testing, debugging, and previewing during development
 
 ## Apps
 
-The App Dashboard allows you to configure settings that may be required by the use cases, APIs, and SDKs that your app will use. It displays basic information about all apps for which you have a role and allows you to configure your app with Meta’s APIs, products, and SDKs. The dashboard allows you to:
+The App Dashboard allows you to configure settings that may be required by the use cases, APIs, and SDKs that your app will use. It displays basic information about all apps for which you have a role and allows you to configure your app with Meta's APIs, products, and SDKs. The dashboard allows you to:
 
-* Create and manage your app’s name and Meta ID
+* Create and manage your app's name and Meta ID
 * View the business connected to an app, if any
 * View the role you have on an app
 * View the published status of an app
@@ -41,7 +41,7 @@ Click **Docs** at the top of the page to access the landing page for all availab
 
 ## Required actions
 
-View the actions you are required to perform for all apps you own or administer to retain access to Meta’s servers, such as Data Use Checkup. You can filter actions by app name, status, and business portfolio.
+View the actions you are required to perform for all apps you own or administer to retain access to Meta's servers, such as Data Use Checkup. You can filter actions by app name, status, and business portfolio.
 
 Click **Required actions** at the top of the page to view any actions you need to take.
 
@@ -61,11 +61,11 @@ View current bug reports, search bug reports, and file a bug report.
 
 ### Community
 
-Visit Meta’s Developer Community Forum to ask, answer, and review questions from fellow developers.
+Visit Meta's Developer Community Forum to ask, answer, and review questions from fellow developers.
 
 ### FAQ
 
-Visit Meta’s Frequently Asked Questions (FAQs) to find answers to common questions.
+Visit Meta's Frequently Asked Questions (FAQs) to find answers to common questions.
 
 ### Platform Status
 
@@ -118,7 +118,7 @@ For example, if the time period is 30 days (43200 minutes) and an issue occurred
 
 Latency is calculated for inbound and outbound messages.
 
-* **Inbound** – Time from when a message is received from a user to when Meta makes the first attempt to send a corresponding message webhook to the business’s callback URL
+* **Inbound** – Time from when a message is received from a user to when Meta makes the first attempt to send a corresponding message webhook to the business's callback URL
 * **Outbound** – Time from when Meta receives a send message request from a business to when the message is ready to be transmitted to the user
 
 ##### Latency Percentiles
@@ -133,13 +133,13 @@ The status page displays P90 and P99 latency percentiles:
 Use the various developer tools from Meta to test, debug, and upgrade the various APIs, products, and SDKs. Meta Developer tools include:
 
 * The Graph API Explorer – Create, test, and authenticate API calls and get code
-* Sharing Debugger – Preview how content will look when it’s shared to Facebook
+* Sharing Debugger – Preview how content will look when it's shared to Facebook
 * Access Token Debugger – View details about access tokens, such as scope, type, and expiry
 
 This page also has links to business tools such as:
 
 * The Ads Manager – Create, preview, and publish ad campaigns
 * The Business Manager – View and manage your business portfolios and assets
-* The Monetization Manager – View your ads’ performance for each business portfolio
+* The Monetization Manager – View your ads' performance for each business portfolio
 
 Click **Tools** at the top of the page to get a list of developer tools and links to them.

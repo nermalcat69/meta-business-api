@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/commerce-
 
 Updated: Jun 16, 2025
 
-**NOTE**: This document will be deprecated on **September 4, 2025**. On that date, Shops checkout will no longer be available on Facebook and Instagram. Buyers will instead be sent to sellers’ own websites for checkout.
+**NOTE**: This document will be deprecated on **September 4, 2025**. On that date, Shops checkout will no longer be available on Facebook and Instagram. Buyers will instead be sent to sellers' own websites for checkout.
 
 Use this guide to set up a Commerce Platform integration project for sellers who want to sell on Facebook and Instagram, and manage orders via the [Commerce API](https://developers.facebook.com/docs/commerce-api).
 
@@ -25,11 +25,11 @@ Before you begin the integration setup:
 
 * Read through our [Concepts](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/concepts) to understand an overview of the user experience, how payments work, and what kind of data is exchanged between your business and the Commerce Platform.
 * Review the [out of scope](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/partners#outofscope) features as you build your integration.
-* If you’re building a solution for managing commerce on behalf of many sellers, learn more about [platform integrations](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/platforms).
+* If you're building a solution for managing commerce on behalf of many sellers, learn more about [platform integrations](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/platforms).
 
 ### Out of Scope
 
-Learn more about what’s considered unavailable/out of scope as you set up your integration:
+Learn more about what's considered unavailable/out of scope as you set up your integration:
 
 * **Integration with payments** – Facebook does not provide payment tokens or credentials as part of this integration. Facebook issues payments directly to seller bank accounts and will pay out every few days.
 * **Tax calculation** — Tax amounts are determined by Facebook based on the order destination, [Google product category](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/catalog/categories#google-prod-cat), Nexus, and [other information⁠](https://www.facebook.com/business/help/1768310879858675?id=540542143143969).
@@ -50,8 +50,8 @@ Your test commerce account comes with a test [product catalog](https://developer
 
 * Set up a [product feed](https://developers.facebook.com/documentation/ads-commerce/catalog/guides/feed-api) to periodically update it using a CSV or XML file.
 * Make sure that [all required fields](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/catalog/fields) are added to your product feed. Learn more about [catalogs](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/catalog).
-* Update [Inventory](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/catalog/inventory) at a regular cadence. Facebook stores the inventory count provided and decrement it when customers place orders, until the inventory is updated via feed or API again. Products are marked as “out of stock” when inventory drops to zero.
-* Implement the Batch API to keep Facebook’s perception of inventory up to date to avoid overselling.
+* Update [Inventory](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/catalog/inventory) at a regular cadence. Facebook stores the inventory count provided and decrement it when customers place orders, until the inventory is updated via feed or API again. Products are marked as "out of stock" when inventory drops to zero.
+* Implement the Batch API to keep Facebook's perception of inventory up to date to avoid overselling.
 
 ## Step 3: Set Up Order Management Integration
 
@@ -61,21 +61,21 @@ Your test commerce account comes with a test [product catalog](https://developer
 
 The Order Management integration is unidirectional. Facebook does not make API calls to your systems.
 
-Orders can be managed via Facebook’s Commerce Manager manually, but the orders may not reflect directly into your ecommerce platform or order management system without an integration. Managing orders both in Commerce Manager and via an API integration could lead to inconsistency; be sure to give permissions to your commerce account only to trained personnel.
+Orders can be managed via Facebook's Commerce Manager manually, but the orders may not reflect directly into your ecommerce platform or order management system without an integration. Managing orders both in Commerce Manager and via an API integration could lead to inconsistency; be sure to give permissions to your commerce account only to trained personnel.
 
 ## Step 4: Submit Your App for App Review
 
 After you can perform the routine tasks on orders via API in your test commerce account, submit your App for [App Review](https://developers.facebook.com/docs/commerce-platform/setup/app-review).
 
-* Provide a detailed description of how your app uses the requested permissions, how it adds value for a person using your app, and why it’s necessary for app functionality.
+* Provide a detailed description of how your app uses the requested permissions, how it adds value for a person using your app, and why it's necessary for app functionality.
 * Using your test integration and your test commerce account, provide a detailed step-by-step video walkthrough of how your app will use the requested permissions so a Facebook reviewer can confirm it is used correctly and does not violate our policies.
 
 ## Step 5: Set Up a Production Environment
 
 * While developing your integration using the test account,
-  [set up a production commerce account⁠](https://www.facebook.com/business/help/842191386156027?id=533228987210412) on your existing business’s primary Facebook page (which should be connected to your primary Instagram profile, if you have any).
+  [set up a production commerce account⁠](https://www.facebook.com/business/help/842191386156027?id=533228987210412) on your existing business's primary Facebook page (which should be connected to your primary Instagram profile, if you have any).
   You can set it up for Facebook or Instagram, and later add additional channels.
-* Set your sales channel’s visibility to **Staging** initially, so that only your team can make purchases.
+* Set your sales channel's visibility to **Staging** initially, so that only your team can make purchases.
 * Continue to work on your catalog and order management integration. Use [Best Practices](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/best-practices) as a reference for desigining various components of your integration.
 * Before going live, connect your production ecommerce systems and test order fulfillment with real shipped physical orders placed by your QA team.
 
@@ -110,7 +110,7 @@ Before you can go live, you must ensure the following:
 * All teams notified and confirmed readiness
 * All test orders are canceled or refunded in the production commerce account
 
-When you’re ready to launch, in Commerce Manager, set your sales channels’ visibility to **Published**. After launch, you should start receiving orders from real customers.
+When you're ready to launch, in Commerce Manager, set your sales channels' visibility to **Published**. After launch, you should start receiving orders from real customers.
 
 ## Learn More
 

@@ -48,12 +48,12 @@ To use the max price feature, you must:
 
 ## Recommendations
 
-Max price is an early-stage feature; performance may vary as Meta’s systems learn and improve.
+Max price is an early-stage feature; performance may vary as Meta's systems learn and improve.
 
-* **Set your max price at the template level.** The `bid_amount` in `optimization_spec` is what Meta’s delivery system optimizes against. Setting the right max price when you create the template gives the system the best signal for delivery optimization.
-* **Use `per_message_bid_multiplier` for individual message adjustments only.** The `per_message_bid_multiplier` scales the template’s `bid_amount` up or down for individual messages, but the delivery system generally gives better performance optimizing based on the original template-level `bid_amount` for bulk changes.
+* **Set your max price at the template level.** The `bid_amount` in `optimization_spec` is what Meta's delivery system optimizes against. Setting the right max price when you create the template gives the system the best signal for delivery optimization.
+* **Use `per_message_bid_multiplier` for individual message adjustments only.** The `per_message_bid_multiplier` scales the template's `bid_amount` up or down for individual messages, but the delivery system generally gives better performance optimizing based on the original template-level `bid_amount` for bulk changes.
 
-  For example, if you set a template’s `bid_amount` to 50,000 and then apply a multiplier of 2.0 on every single message, delivery performance might differ from setting the template’s `bid_amount` to 100,000 directly — even though the effective max price is the same. For best results, set the bid at the template level and update the template’s `optimization_spec` as needed rather than changing the message level multiplier as a workaround for such cases.
+  For example, if you set a template's `bid_amount` to 50,000 and then apply a multiplier of 2.0 on every single message, delivery performance might differ from setting the template's `bid_amount` to 100,000 directly — even though the effective max price is the same. For best results, set the bid at the template level and update the template's `optimization_spec` as needed rather than changing the message level multiplier as a workaround for such cases.
 * **Ramp up traffic gradually.** When sending messages with a new max price template for the first time, increase volume slowly before sending at scale. This aligns with [Template pacing](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-pacing) best practices and helps the delivery system optimize effectively.
 * **Start with A/B tests.** This helps you assess the impact of different bidding rates on your delivery rates and cost per delivery. Run a four-arm test (10,000 send requests per arm) with a similar audience and time window, with the following conditions:
 
@@ -71,27 +71,25 @@ Use the [Message Templates API](https://developers.facebook.com/documentation/bu
 ### Request syntax
 
 ```
-```
-curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_ACCOUNT_ID>/message_templates' \  
-  -H 'Authorization: Bearer <ACCESS_TOKEN>' \  
-  -H 'Content-Type: application/json' \  
-  -d '  
-  {  
-    "name": "seasonal_sale_promo",  
-    "category": "MARKETING",  
-    "language": "en",  
-    "components": [  
-      {  
-        "type": "BODY",  
-        "text": "Shop our seasonal sale! Up to 50% off selected items."  
-      }  
-    ],  
-    "optimization_spec": {  
-      "bid_amount": <BID_AMOUNT>,  
-      "bid_strategy": "LOWEST_COST_WITH_BID_CAP"  
-    }  
+curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_ACCOUNT_ID>/message_templates' \  
+  -H 'Authorization: Bearer <ACCESS_TOKEN>' \  
+  -H 'Content-Type: application/json' \  
+  -d '  
+  {  
+    "name": "seasonal_sale_promo",  
+    "category": "MARKETING",  
+    "language": "en",  
+    "components": [  
+      {  
+        "type": "BODY",  
+        "text": "Shop our seasonal sale! Up to 50% off selected items."  
+      }  
+    ],  
+    "optimization_spec": {  
+      "bid_amount": <BID_AMOUNT>,  
+      "bid_strategy": "LOWEST_COST_WITH_BID_CAP"  
+    }  
 }'
-```
 ```
 
 If `optimization_spec` is not included, the template uses standard rate card pricing.
@@ -103,14 +101,14 @@ If `optimization_spec` is not included, the template uses standard rate card pri
 | `<ACCESS_TOKEN>`  *String* | **Required.**  [System token](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#system-user-access-tokens) or [business token](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#business-integration-system-user-access-tokens). | `EAAA...` |
 | `<API_VERSION>`  *String* | **Optional.**  Graph API version. | v25.0 |
 | `<WABA_ID>`*String* | **Required.**  WhatsApp Business Account ID. | `102290129340398` |
-| `<BID_AMOUNT>`  *int32* | **Required.**  Maximum price per 1,000 message deliveries, expressed in your WABA currency’s smallest unit (cents for USD, paise for INR, peso for MXN). See [supported currencies](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing#updates-to-rate-cards) for a list of currencies. | `87000` |
+| `<BID_AMOUNT>`  *int32* | **Required.**  Maximum price per 1,000 message deliveries, expressed in your WABA currency's smallest unit (cents for USD, paise for INR, peso for MXN). See [supported currencies](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing#updates-to-rate-cards) for a list of currencies. | `87000` |
 | `<BID_STRATEGY>`  *Enum* | **Required.**  The bid strategy to use. Currently supports only `LOWEST_COST_WITH_BID_CAP`. | `LOWEST_COST_WITH_BID_CAP` |
 
 ### Calculating max price amounts
 
-The `bid_amount` represents your max price per 1,000 deliveries in your WABA currency’s smallest unit. To convert from your desired per-delivery price:
+The `bid_amount` represents your max price per 1,000 deliveries in your WABA currency's smallest unit. To convert from your desired per-delivery price:
 
-* Convert your desired per-delivery price to your WABA currency’s smallest unit
+* Convert your desired per-delivery price to your WABA currency's smallest unit
 * Multiply by 1,000 to express the value per 1,000 deliveries
 
 **Example**: To set a max price of ₹0.87 per delivery:
@@ -136,10 +134,8 @@ Query `optimization_spec` as of June 18, 2026. Querying `bid_spec` continues to 
 ### Request syntax
 
 ```
-```
-curl 'https://graph.facebook.com/<API_VERSION>/<TEMPLATE_ID>/?fields=optimization_spec' \  
-  -H 'Authorization: Bearer <ACCESS_TOKEN>'
-```
+curl 'https://graph.facebook.com/<API_VERSION>/<TEMPLATE_ID>/?fields=optimization_spec' \  
+  -H 'Authorization: Bearer <ACCESS_TOKEN>'
 ```
 
 ### Request parameters
@@ -153,15 +149,13 @@ curl 'https://graph.facebook.com/<API_VERSION>/<TEMPLATE_ID>/?fields=optimizati
 ### Example response
 
 ```
-```
 {  
-  "optimization_spec": {  
-    "bid_strategy": "LOWEST_COST_WITH_BID_CAP",  
-    "bid_amount": 87000  
-  },  
-  "id": "1733678867511493"  
+  "optimization_spec": {  
+    "bid_strategy": "LOWEST_COST_WITH_BID_CAP",  
+    "bid_amount": 87000  
+  },  
+  "id": "1733678867511493"  
 }
-```
 ```
 
 ## Update max price for templates
@@ -182,17 +176,15 @@ Other constraints follow the standard [template editing limits](https://develope
 ### Request syntax
 
 ```
-```
-curl 'https://graph.facebook.com/<API_VERSION>/<TEMPLATE_ID>/' \  
-  -H 'Authorization: Bearer <ACCESS_TOKEN>' \  
-  -H 'Content-Type: application/json' \  
-  -d '{  
-  "optimization_spec": {  
-    "bid_strategy": "LOWEST_COST_WITH_BID_CAP",  
-    "bid_amount": <BID_AMOUNT>  
-  }  
+curl 'https://graph.facebook.com/<API_VERSION>/<TEMPLATE_ID>/' \  
+  -H 'Authorization: Bearer <ACCESS_TOKEN>' \  
+  -H 'Content-Type: application/json' \  
+  -d '{  
+  "optimization_spec": {  
+    "bid_strategy": "LOWEST_COST_WITH_BID_CAP",  
+    "bid_amount": <BID_AMOUNT>  
+  }  
 }'
-```
 ```
 
 ### Request parameters
@@ -202,7 +194,7 @@ curl 'https://graph.facebook.com/<API_VERSION>/<TEMPLATE_ID>/' \
 | `<ACCESS_TOKEN>`  *String* | **Required.**  [System token](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#system-user-access-tokens) or [business token](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#business-integration-system-user-access-tokens). | `EAAA...` |
 | `<API_VERSION>`  *String* | **Optional.**  Graph API version. | v25.0 |
 | `<TEMPLATE_ID>`  *String* | **Required.**  ID of the WhatsApp message template. The template must have been originally created with `optimization_spec`. | `1733678867511493` |
-| `<BID_AMOUNT>`  *int32* | **Required.**  Updated maximum price per 1,000 message deliveries, expressed in your WABA currency’s smallest unit. | `4000` |
+| `<BID_AMOUNT>`  *int32* | **Required.**  Updated maximum price per 1,000 message deliveries, expressed in your WABA currency's smallest unit. | `4000` |
 
 ## Adjust max price when sending messages
 
@@ -213,29 +205,27 @@ Use the [Marketing Messages API](https://developers.facebook.com/documentation/b
 ### Request syntax
 
 ```
-```
-curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/marketing_messages' \  
-  -H 'Authorization: Bearer <ACCESS_TOKEN>' \  
-  -H 'Content-Type: application/json' \  
-  -d '{  
-  "recipient_type": "individual",  
-  "messaging_product": "whatsapp",  
-  "to": "<WHATSAPP_USER_PHONE_NUMBER>",  
-  "type": "template",  
-  "template": {  
-    "name": "seasonal_sale_promo",  
-    "language": {  
-      "code": "en"  
-    }  
-  },  
-  "bid_spec": {  
-    "per_message_bid_multiplier": "<PER_MESSAGE_BID_MULTIPLIER>"  
-  }  
+curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/marketing_messages' \  
+  -H 'Authorization: Bearer <ACCESS_TOKEN>' \  
+  -H 'Content-Type: application/json' \  
+  -d '{  
+  "recipient_type": "individual",  
+  "messaging_product": "whatsapp",  
+  "to": "<WHATSAPP_USER_PHONE_NUMBER>",  
+  "type": "template",  
+  "template": {  
+    "name": "seasonal_sale_promo",  
+    "language": {  
+      "code": "en"  
+    }  
+  },  
+  "bid_spec": {  
+    "per_message_bid_multiplier": "<PER_MESSAGE_BID_MULTIPLIER>"  
+  }  
 }'
 ```
-```
 
-In this example, the multiplier of 1.5 increases the template’s `bid_amount` by 50%. If the template’s `bid_amount` is 2000, the effective max price for this message becomes 3000.
+In this example, the multiplier of 1.5 increases the template's `bid_amount` by 50%. If the template's `bid_amount` is 2000, the effective max price for this message becomes 3000.
 
 ### Request parameters
 
@@ -245,7 +235,7 @@ In this example, the multiplier of 1.5 increases the template’s `bid_amount` b
 | `<API_VERSION>`  *String* | **Optional.**  Graph API version. | v25.0 |
 | `<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>`  *String* | **Required.**  WhatsApp business phone number ID. | `106540352242922` |
 | `<WHATSAPP_USER_PHONE_NUMBER>`  *String* | **Required.**  WhatsApp user phone number. | `+16505551234` |
-| `<PER_MESSAGE_BID_MULTIPLIER>`  *Float* | **Optional.** Default: `1`  A positive multiplier applied to the template’s `bid_amount`. For example, `1.5` increases the max price by 50%, `0.5` decreases it by 50%, and `1` (default) uses the template’s max price amount unchanged. | `1.5` |
+| `<PER_MESSAGE_BID_MULTIPLIER>`  *Float* | **Optional.** Default: `1`  A positive multiplier applied to the template's `bid_amount`. For example, `1.5` increases the max price by 50%, `0.5` decreases it by 50%, and `1` (default) uses the template's max price amount unchanged. | `1.5` |
 
 ## Estimate reach and costs
 
@@ -260,10 +250,8 @@ Meta generates estimates from historical data, and they are for informational an
 The `targeting_spec` value must be serialized JSON. For example:
 
 ```
-```
-curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_ACCOUNT_ID>/reachestimate?targeting_spec={"geo_locations":{"countries":["IN"]}}&date_interval=<DATE_INTERVAL>' \  
-  -H 'Authorization: Bearer <ACCESS_TOKEN>'
-```
+curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_ACCOUNT_ID>/reachestimate?targeting_spec={"geo_locations":{"countries":["IN"]}​}&date_interval=<DATE_INTERVAL>' \  
+  -H 'Authorization: Bearer <ACCESS_TOKEN>'
 ```
 
 ### Request parameters
@@ -274,34 +262,32 @@ curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_ACCOUNT_ID>/r
 | `<API_VERSION>`  *String* | **Optional.**  Graph API version. | v25.0 |
 | `<WABA_ID>`*String* | **Required.**  WhatsApp Business Account ID. | `102290129340398` |
 | `<DATE_INTERVAL>`  *Enum* | **Required.**  Lookback period for the historical data used to generate estimates. One of: `L1D` (last 1 day), `L7D` (last 7 days), `L14D` (last 14 days), `L28D` (last 28 days). | `L7D` |
-| `<TARGETING_SPEC>`  *JSON* | **Required.**  Serialized JSON specifying geographic targeting. Must include `geo_locations` with a `countries` array. | `{"geo_locations":{"countries":["IN"]}}` |
+| `<TARGETING_SPEC>`  *JSON* | **Required.**  Serialized JSON specifying geographic targeting. Must include `geo_locations` with a `countries` array. | `{"geo_locations":{"countries":["IN"]}​}` |
 
 ### Example response
 
 ```
-```
 {  
-  "waba_currency": "USD",  
-  "estimates": [  
-    {  
-      "bid_amount": 400,  
-      "users": 1000,  
-      "deliveries_lower_bound": 500,  
-      "deliveries_upper_bound": 570,  
-      "cost_lower_bound": 389.74,  
-      "cost_upper_bound": 390.74  
-    },  
-    {  
-      "bid_amount": 520,  
-      "users": 1000,  
-      "deliveries_lower_bound": 600,  
-      "deliveries_upper_bound": 650,  
-      "cost_lower_bound": 400.74,  
-      "cost_upper_bound": 510.74  
-    }  
-  ]  
+  "waba_currency": "USD",  
+  "estimates": [  
+    {  
+      "bid_amount": 400,  
+      "users": 1000,  
+      "deliveries_lower_bound": 500,  
+      "deliveries_upper_bound": 570,  
+      "cost_lower_bound": 389.74,  
+      "cost_upper_bound": 390.74  
+    },  
+    {  
+      "bid_amount": 520,  
+      "users": 1000,  
+      "deliveries_lower_bound": 600,  
+      "deliveries_upper_bound": 650,  
+      "cost_lower_bound": 400.74,  
+      "cost_upper_bound": 510.74  
+    }  
+  ]  
 }
-```
 ```
 
 The response contains multiple `estimates` entries at different max price amounts, allowing you to compare expected delivery volumes and costs across price points.
@@ -311,12 +297,12 @@ The response contains multiple `estimates` entries at different max price amount
 | Field | Description |
 | --- | --- |
 | `waba_currency` | The currency of your WhatsApp Business account. |
-| `bid_amount` | Max price per 1,000 message deliveries, in the WABA currency’s smallest unit. |
+| `bid_amount` | Max price per 1,000 message deliveries, in the WABA currency's smallest unit. |
 | `users` | Targeted user count. Fixed at 1,000 during beta. |
 | `deliveries_lower_bound` | Lower bound of the estimated delivery range for this max price amount. |
 | `deliveries_upper_bound` | Upper bound of the estimated delivery range for this max price amount. |
-| `cost_lower_bound` | Lower bound of the estimated average cost per 1,000 deliveries, in the WABA currency’s smallest unit. |
-| `cost_upper_bound` | Upper bound of the estimated average cost per 1,000 deliveries, in the WABA currency’s smallest unit. |
+| `cost_lower_bound` | Lower bound of the estimated average cost per 1,000 deliveries, in the WABA currency's smallest unit. |
+| `cost_upper_bound` | Upper bound of the estimated average cost per 1,000 deliveries, in the WABA currency's smallest unit. |
 
 ## Metrics and billing
 
@@ -332,18 +318,16 @@ Webhooks use lowercase `marketing_lite` for `pricing.category`, while analytics 
 ### Delivered/read webhook example (with max price)
 
 ```
-```
-"pricing": {  
-  "billable": true,  
-  "pricing_model": "PMP",  
-  "category": "marketing_lite",  
-  "type": "regular",  
-  "cost": {  
-    "amount": 0.035,  
-    "currency": "USD"  
-  }  
+"pricing": {  
+  "billable": true,  
+  "pricing_model": "PMP",  
+  "category": "marketing_lite",  
+  "type": "regular",  
+  "cost": {  
+    "amount": 0.035,  
+    "currency": "USD"  
+  }  
 }
-```
 ```
 
 #### Webhook cost fields
@@ -358,62 +342,58 @@ Webhooks use lowercase `marketing_lite` for `pricing.category`, while analytics 
 ### Pricing analytics response example
 
 ```
-```
 {  
-  "pricing_analytics": {  
-    "data": [  
-      {  
-        "data_points": [  
-          {  
-            "start": 1748761200,  
-            "end": 1748847600,  
-            "country": "IN",  
-            "pricing_type": "REGULAR",  
-            "pricing_category": "MARKETING_LITE",  
-            "volume": 1,  
-            "cost": 10  
-          }  
-        ]  
-      }  
-    ]  
-  }  
+  "pricing_analytics": {  
+    "data": [  
+      {  
+        "data_points": [  
+          {  
+            "start": 1748761200,  
+            "end": 1748847600,  
+            "country": "IN",  
+            "pricing_type": "REGULAR",  
+            "pricing_category": "MARKETING_LITE",  
+            "volume": 1,  
+            "cost": 10  
+          }  
+        ]  
+      }  
+    ]  
+  }  
 }
-```
 ```
 
 ### Template analytics response example
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "granularity": "DAILY",  
-      "product_type": "MARKETING_MESSAGES_LITE_API",  
-      "data_points": [  
-        {  
-          "template_id": "1421988012088524",  
-          "start": 1718064000,  
-          "end": 1718150400,  
-          "sent": 1,  
-          "delivered": 1,  
-          "read": 1,  
-          "cost": [  
-            {  
-              "type": "amount_spent",  
-              "value": 0.01  
-            },  
-            {  
-              "type": "cost_per_delivered",  
-              "value": 0.01  
-            }  
-          ]  
-        }  
-      ]  
-    }  
-  ]  
+  "data": [  
+    {  
+      "granularity": "DAILY",  
+      "product_type": "MARKETING_MESSAGES_LITE_API",  
+      "data_points": [  
+        {  
+          "template_id": "1421988012088524",  
+          "start": 1718064000,  
+          "end": 1718150400,  
+          "sent": 1,  
+          "delivered": 1,  
+          "read": 1,  
+          "cost": [  
+            {  
+              "type": "amount_spent",  
+              "value": 0.01  
+            },  
+            {  
+              "type": "cost_per_delivered",  
+              "value": 0.01  
+            }  
+          ]  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 For more details on metrics, see [Viewing metrics](https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/view-metrics).

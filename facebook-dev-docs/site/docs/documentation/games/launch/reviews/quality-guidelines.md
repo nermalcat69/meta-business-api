@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/games/launch/reviews/q
 
 Updated: Mar 3, 2026
 
-App Review is Facebook’s process for evaluating the permissions and data access that your application requests.
+App Review is Facebook's process for evaluating the permissions and data access that your application requests.
 
 This page explains what App Review is, how to prepare for it, how to submit, and how to handle rejections.
 
@@ -16,7 +16,7 @@ This page explains what App Review is, how to prepare for it, how to submit, and
 When your Instant Game integrates with Facebook features that access user data, your app must request **permissions** for that access. App Review is the process by which Facebook verifies that:
 
 * Your app has a legitimate need for each requested permission.
-* You use the data responsibly and in accordance with Facebook’s data policies.
+* You use the data responsibly and in accordance with Facebook's data policies.
 * Players understand what data your app accesses and why.
 * Your implementation follows the technical guidelines for each permission.
 
@@ -29,7 +29,7 @@ These are two different review processes that evaluate different things:
 | Aspect | App Review | Quality Review (Instant Games Review) |
 | --- | --- | --- |
 | **What it evaluates** | Permissions and data access | Game quality, gameplay, performance, and content |
-| **Who reviews** | Facebook’s App Review team | Facebook’s Instant Games Review team |
+| **Who reviews** | Facebook's App Review team | Facebook's Instant Games Review team |
 | **When to submit** | After integrating features that need permissions | After your game is complete and ready to go live |
 | **Rejection reasons** | Improper use of permissions, privacy issues | Poor quality, bugs, policy violations, bad UX |
 | **Applies to** | All Facebook apps | Instant Games specifically |
@@ -42,11 +42,11 @@ Here are some common permissions that Instant Games may request and that require
 
 | Permission | Use Case | Notes |
 | --- | --- | --- |
-| `gaming_activity` | Accessing the player’s gaming activity | Required for some social features. |
-| `user_friends` | Accessing the player’s friend list | Used for friend leaderboards or social features beyond the default connected players API. |
-| `email` | Accessing the player’s email address | Rarely needed for Instant Games. Requires strong justification. |
+| `gaming_activity` | Accessing the player's gaming activity | Required for some social features. |
+| `user_friends` | Accessing the player's friend list | Used for friend leaderboards or social features beyond the default connected players API. |
+| `email` | Accessing the player's email address | Rarely needed for Instant Games. Requires strong justification. |
 
-> **Note:** The Instant Games SDK provides many social features (such as connected players, context-based interactions, and sharing) without requiring additional permissions. Before requesting a new permission, check whether the SDK’s built-in features meet your needs. Using the SDK’s default capabilities reduces the scope of App Review and speeds up the process.
+> **Note:** The Instant Games SDK provides many social features (such as connected players, context-based interactions, and sharing) without requiring additional permissions. Before requesting a new permission, check whether the SDK's built-in features meet your needs. Using the SDK's default capabilities reduces the scope of App Review and speeds up the process.
 
 ## How to Submit for App Review
 
@@ -55,7 +55,7 @@ Here are some common permissions that Instant Games may request and that require
 Before submitting, make sure:
 
 * Your game is functional and demonstrates the features that use the requested permissions.
-* The permissions you are requesting are actually needed. Do not request permissions “just in case.” Only request what you actively use.
+* The permissions you are requesting are actually needed. Do not request permissions "just in case." Only request what you actively use.
 * Your privacy policy (required, see [Game Setup](https://developers.facebook.com/documentation/games/launch/game-setup)) accurately describes how you use the data from each requested permission.
 
 ### Step 2: Navigate to App Review
@@ -69,7 +69,7 @@ Before submitting, make sure:
 For each permission you request, you must provide:
 
 * **A description of how you use the permission.** Explain specifically what feature in your game uses this permission and why it is necessary.
-* **Step-by-step instructions** for how a reviewer can test the feature. Reviewers need to see the permission in action. Tell them exactly what to do: “Open the game, tap Play, complete the tutorial, tap the Leaderboard button to see friend scores.”
+* **Step-by-step instructions** for how a reviewer can test the feature. Reviewers need to see the permission in action. Tell them exactly what to do: "Open the game, tap Play, complete the tutorial, tap the Leaderboard button to see friend scores."
 * **A screencast or screenshots** showing the feature in use. This is strongly recommended and, for some permissions, required. Record a short video demonstrating the feature and upload it as part of your submission.
 
 ### Step 4: Submit for Review
@@ -97,7 +97,7 @@ App Review evaluators assess the following:
 
 **Symptom:** Your submission is rejected with a note that the justification is unclear or insufficient.
 
-**Fix:** Provide a more detailed, specific explanation of why you need the permission. Include concrete examples: “We use `user_friends` to show a leaderboard of the player’s Facebook friends who also play the game. This leaderboard is displayed on the main menu screen after completing the tutorial.”
+**Fix:** Provide a more detailed, specific explanation of why you need the permission. Include concrete examples: "We use `user_friends` to show a leaderboard of the player's Facebook friends who also play the game. This leaderboard is displayed on the main menu screen after completing the tutorial."
 
 ### Feature Not Demonstrable
 
@@ -166,9 +166,9 @@ These timelines can vary. During major platform updates, product launches, or ho
 
 ## Best Practices
 
-* **Request only what you need.** Each additional permission adds complexity to the review and increases the chance of rejection. Use the Instant Games SDK’s built-in features wherever possible.
+* **Request only what you need.** Each additional permission adds complexity to the review and increases the chance of rejection. Use the Instant Games SDK's built-in features wherever possible.
 * **Be thorough in your justifications.** Write clear, detailed explanations. Assume the reviewer has never seen your game before.
-* **Provide a screencast.** A 1-2 minute video showing the feature in action is extremely helpful for reviewers and significantly reduces the chance of rejection due to “feature not found.”
+* **Provide a screencast.** A 1-2 minute video showing the feature in action is extremely helpful for reviewers and significantly reduces the chance of rejection due to "feature not found."
 * **Keep your privacy policy up to date.** Every time you request a new permission, update your privacy policy to reflect the new data access.
 * **Test everything before submitting.** Run through the exact steps you provide in your test instructions and make sure they work.
 

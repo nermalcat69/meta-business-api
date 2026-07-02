@@ -9,7 +9,7 @@ Updated: Feb 9, 2026
 
 ## Overview
 
-Before buyers can purchase items, the product information needs to be uploaded into a product catalog (aka catalog). A catalog is a container of information about the seller’s products and where you can upload their inventory. If a seller advertises with Facebook Advantage+ catalog ads (formally known as Dynamic Ads), they will already have a catalog and must be upgrading that existing catalog for commerce.
+Before buyers can purchase items, the product information needs to be uploaded into a product catalog (aka catalog). A catalog is a container of information about the seller's products and where you can upload their inventory. If a seller advertises with Facebook Advantage+ catalog ads (formally known as Dynamic Ads), they will already have a catalog and must be upgrading that existing catalog for commerce.
 
 ## Why does the integration matter?
 
@@ -40,7 +40,7 @@ Your app must have the [catalog\_management](https://developers.facebook.com/doc
 
 ### Step 1: Determine if Seller is Upgrading Existing Ads Catalog or Creating a New Shops Catalog
 
-We recommend upgrading the seller’s existing Ads catalog (if any) to be used for commerce as it helps avoid discrepancies and gets the benefit of both offsite (from Seller surfaces, such as website and app) and onsite (on Meta surfaces, such as Instagram and Facebook apps) signals, effectively improving their ads and sales performance.
+We recommend upgrading the seller's existing Ads catalog (if any) to be used for commerce as it helps avoid discrepancies and gets the benefit of both offsite (from Seller surfaces, such as website and app) and onsite (on Meta surfaces, such as Instagram and Facebook apps) signals, effectively improving their ads and sales performance.
 
 To determine this:
 
@@ -51,26 +51,22 @@ To determine this:
 **Sample Request**
 
 ```
-```
-curl -X GET -G \  
-  -d 'fields=commerce_merchant_settings.fields(id,cta)' \  
-  -d 'access_token=<ACCESS_TOKEN>' \  
-  https://graph.facebook.com/<API_VERSION>/{catalog-id}
-```
+curl -X GET -G \  
+  -d 'fields=commerce_merchant_settings.fields(id,cta)' \  
+  -d 'access_token=<ACCESS_TOKEN>' \  
+  https://graph.facebook.com/<API_VERSION>/{catalog-id}
 ```
 
 **Sample Response**
 
 ```
-```
 {  
-  "commerce_merchant_settings": {  
-      "id": "2214103588714027",  
-      "cta": "ONSITE_CHECKOUT",  
-  },  
-  "id": "1181538518900034"  
+  "commerce_merchant_settings": {  
+      "id": "2214103588714027",  
+      "cta": "ONSITE_CHECKOUT",  
+  },  
+  "id": "1181538518900034"  
 }
-```
 ```
 
 For more details, see the [Product Catalog API reference](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-catalog#fields).
@@ -121,16 +117,16 @@ Variants represent product SKUs (units of stock). If selling clothing and access
 
 There are 3 possible scenarios to handle:
 
-**Scenario 1:** There is no existing feed or the existing feed (for Ads) doesn’t have variants; the new feed doesn’t have any applicable variants either. No special variant handling is required in this case.
+**Scenario 1:** There is no existing feed or the existing feed (for Ads) doesn't have variants; the new feed doesn't have any applicable variants either. No special variant handling is required in this case.
 
 **Scenario 2:** There is no existing feed or the existing feed (for Ads) already has variants; the new feed has applicable variants. No special variant handling is required in this case, except for ensuring that the variants are ingested.
 
-**Scenario 3:** The existing feed doesn’t have variants while the new feed has applicable variants. In this case, you cannot simply replace the existing feed without variants with the new feed with variants as depicted in the examples above. Doing so will cause your item with ID 10024 to be deleted from the catalog. This will negatively impact the seller’s existing ads catalog performance, as we will need to rebuild product ranking for the new IDs (10024\_1\_000, 10024\_2\_000, etc.), which can take several days to weeks, depending on the nature of the seller’s Facebook pixel. Instead, the recommended approach here is to:
+**Scenario 3:** The existing feed doesn't have variants while the new feed has applicable variants. In this case, you cannot simply replace the existing feed without variants with the new feed with variants as depicted in the examples above. Doing so will cause your item with ID 10024 to be deleted from the catalog. This will negatively impact the seller's existing ads catalog performance, as we will need to rebuild product ranking for the new IDs (10024\_1\_000, 10024\_2\_000, etc.), which can take several days to weeks, depending on the nature of the seller's Facebook pixel. Instead, the recommended approach here is to:
 
 * Populate the new catalog with variants (aka child products) – use the child IDs.
 * Populate the fields upon which the products vary (e.g. size, color).
 * Populate the `item_group_id` field to appropriately group the products together.
-* Populate the `previous_id` field to associate the variants with the original product in Meta’s systems.
+* Populate the `previous_id` field to associate the variants with the original product in Meta's systems.
 
 **Example: Feed Before Variants**
 
@@ -176,7 +172,7 @@ A feed is a set of items uploaded or fetched from a given source. Depending on t
 
 A feed upload that contains all up to date product information, including new items, and deletions, see the **[feed-api](https://developers.facebook.com/documentation/ads-commerce/catalog/guides/feed-api#feed-api-reference)** for more details on how to reflect new products and product deletes in your feeds. All catalogs should have a periodic primary replace feed uploads. Ensure that replace feed uploads for the same product do not overlap in time. The per-line length limit is less than or equal to 5 MB (5,242,880 characters).
 
-The primary replace feed file should contain a ‘snapshot’ view of your catalog as accurate as possible at the time of upload. This is important to avoid catalog drift if there are any transient issues with updates or Batch API calls.
+The primary replace feed file should contain a 'snapshot' view of your catalog as accurate as possible at the time of upload. This is important to avoid catalog drift if there are any transient issues with updates or Batch API calls.
 
 Any item not present in the replace feed file will be deleted from the catalog.
 
@@ -253,9 +249,9 @@ Whether the product items are uploaded using the [Feed API](https://developers.f
 
 After basic ingestion checks the item is persisted on the Meta side and receives `item_id`. When we receive catalog updates (whether via a feed update, or individual item updates via the [Batch API](https://developers.facebook.com/documentation/ads-commerce/catalog/guides/manage-catalog-items/catalog-batch-api)), we run async validation logic on each item to identify any issues with them. The issues we identify range from those that block displaying the item entirely (e.g. integrity policy violations), to missing attributes that can impact conversion. The goal is to communicate these to the seller (or support, who is helping the seller) to rectify them.
 
-We run this logic regularly, even after a seller has taken steps to rectify, because the problems can occur dynamically (e.g. an image link may break at any time). Therefore, it’s important for sellers to check back regularly on the health of their catalog.
+We run this logic regularly, even after a seller has taken steps to rectify, because the problems can occur dynamically (e.g. an image link may break at any time). Therefore, it's important for sellers to check back regularly on the health of their catalog.
 
-Because quite a few products can be labeled with an issue, and there can be multiple issues that come up, we set a “priority” field, to help sellers prioritize addressing them. Priorities are decided based on both the issue type (the severity level) and the item (the importance level). Meta commits to keeping high and medium priority issues as actionable as possible. To properly support this experience, we recommend polling our diagnostics API hourly to become aware of any issues, then surfacing them to the sellers. At a high-level, we recommend exposing these errors on these types of views on the partner surface:
+Because quite a few products can be labeled with an issue, and there can be multiple issues that come up, we set a "priority" field, to help sellers prioritize addressing them. Priorities are decided based on both the issue type (the severity level) and the item (the importance level). Meta commits to keeping high and medium priority issues as actionable as possible. To properly support this experience, we recommend polling our diagnostics API hourly to become aware of any issues, then surfacing them to the sellers. At a high-level, we recommend exposing these errors on these types of views on the partner surface:
 
 * **Item-view:** Depicting granular, item-level errors
 * **Summary-view:** Drawing attention to top errors and any associated items
@@ -264,36 +260,32 @@ Because quite a few products can be labeled with an issue, and there can be mult
 
 Right after ingestion, call [Prioduct Feed Upload Errors](https://developers.facebook.com/docs/marketing-api/reference/product-feed-upload/errors)/[Batch Request Status](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-catalog/check_batch_request_status) to discover fatal ingestion errors and warnings. Sellers have limited ability to fix fatal errors and we recommend monitoring and fixing them on a platform-integration level.
 
-**Feed Fatals:** For feed uploads, call the [feed upload error API](https://developers.facebook.com/docs/marketing-api/reference/product-feed-upload/errors) to discover fatal ingestion errors and warnings for both the entire feed and particular lines of the feed that couldn’t be ingested. This API returns both Fatals and warnings. Set the `error_priority` field to `HIGH` for filtering fatal errors.
+**Feed Fatals:** For feed uploads, call the [feed upload error API](https://developers.facebook.com/docs/marketing-api/reference/product-feed-upload/errors) to discover fatal ingestion errors and warnings for both the entire feed and particular lines of the feed that couldn't be ingested. This API returns both Fatals and warnings. Set the `error_priority` field to `HIGH` for filtering fatal errors.
 
 **Sample Request (Feed Fatals)**
 
 ```
-```
-curl -X GET -G \  
-  -d 'access_token=<ACCESS_TOKEN>' \  
+curl -X GET -G \  
+  -d 'access_token=<ACCESS_TOKEN>' \  
 'https://graph.facebook.com/<API_VERSION>/{upload-id}/errors?error_priority=HIGH'
-```
 ```
 
 **Sample Response (Feed Fatals)**
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "id" : 1510567479166488,  
-      "summary" : "Group Mismatch for Property: shipping.",  
-      "description" : "Property shipping must have the same value for all items in the same group.",  
-      "severity" : "fatal",  
-      "row_number" : 10,  
-      "column_number" : 5  
-    },  
-    ...  
-  ]  
+  "data": [  
+    {  
+      "id" : 1510567479166488,  
+      "summary" : "Group Mismatch for Property: shipping.",  
+      "description" : "Property shipping must have the same value for all items in the same group.",  
+      "severity" : "fatal",  
+      "row_number" : 10,  
+      "column_number" : 5  
+    },  
+    ...  
+  ]  
 }
-```
 ```
 
 See [Feeds diagnostics](https://developers.facebook.com/docs/marketing-api/reference/product-feed-upload/errors) for more details.
@@ -303,48 +295,44 @@ See [Feeds diagnostics](https://developers.facebook.com/docs/marketing-api/refer
 **Sample Request (Batch API Fatals)**
 
 ```
-```
-curl -X GET -G \  
-  -d 'access_token=<ACCESS_TOKEN>' \ 'https://graph.facebook.com/<API_VERSION>/{product-catalog-id}/check_batch_request_status?handle={handle}&error_priority=HIGH'
-```
+curl -X GET -G \  
+  -d 'access_token=<ACCESS_TOKEN>' \ 'https://graph.facebook.com/<API_VERSION>/{product-catalog-id}/check_batch_request_status?handle={handle}&error_priority=HIGH'
 ```
 
 **Sample Response (Batch API Fatals and Warnings)**
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "handle": "abc",  
-      "status": "finished",  
-      "errors_total_count": 2,  
-      "errors": [  
-        {  
-          "line": 2,  
-          "id": "retailed_id_1",  
-          "message": "URL Incorrectly Formatted: The provided URL is formatted incorrectly. If multiple links are included in one field, separate them using a comma. Specifying username and password in the URL is not supported."  
-        },  
-        {  
-          "line": 1,  
-          "id": "retailed_id_2",  
-          "message": "A required field is missing: Products need to have availability listed to run in ads. Include the current availability for each product in your data feed file and upload it again. You can only add the supported values \"in stock\", \"out of stock\", \"preorder\", \"available for order\", \"discontinued\", \"pending\" in US English under the \"availability\" column."  
-        },  
-      ],  
-      "warnings": [  
-        {  
-          "line": 2,  
-          "id": "retailed_id_3",  
-          "message": "These fields have missing information: Make items easier to discover by providing google_product_category information."  
-        },  
-        ...  
-      ],  
-      "ids_of_invalid_requests": [  
-      ]  
-    }  
-  ]  
+  "data": [  
+    {  
+      "handle": "abc",  
+      "status": "finished",  
+      "errors_total_count": 2,  
+      "errors": [  
+        {  
+          "line": 2,  
+          "id": "retailed_id_1",  
+          "message": "URL Incorrectly Formatted: The provided URL is formatted incorrectly. If multiple links are included in one field, separate them using a comma. Specifying username and password in the URL is not supported."  
+        },  
+        {  
+          "line": 1,  
+          "id": "retailed_id_2",  
+          "message": "A required field is missing: Products need to have availability listed to run in ads. Include the current availability for each product in your data feed file and upload it again. You can only add the supported values \"in stock\", \"out of stock\", \"preorder\", \"available for order\", \"discontinued\", \"pending\" in US English under the \"availability\" column."  
+        },  
+      ],  
+      "warnings": [  
+        {  
+          "line": 2,  
+          "id": "retailed_id_3",  
+          "message": "These fields have missing information: Make items easier to discover by providing google_product_category information."  
+        },  
+        ...  
+      ],  
+      "ids_of_invalid_requests": [  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 See [Batch API diagnostics](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-catalog/check_batch_request_status) for more details.
@@ -356,29 +344,25 @@ The list of all possible error types with descriptions can be retrieved from the
 **Sample Request**
 
 ```
-```
-curl -X GET -G \  
-  -d 'access_token=<ACCESS_TOKEN>' \  
+curl -X GET -G \  
+  -d 'access_token=<ACCESS_TOKEN>' \  
 'https://graph.facebook.com/<API_VERSION>/catalog_all_errors?locale=en_US'
-```
 ```
 
 **Sample Response**
 
 ```
-```
 {  
-  "all": [{  
-      "error_type": "IMAGE_RESOLUTION_LOW",  
-      "error_priority": "HIGH",  
-      "title": "Missing or invalid images",  
-      "description": "The main image of this item cannot be displayed. Images must be in JPEG or PNG format, less than 8 MB and at least 500 x 500 pixels. <a href="https://www.facebook.com/business/help/686259348512056?id=725943027795860">See all product image specifications</a>.",  
-      "call_to_action": "After you've made changes, save the image under a different link (URL) and provide the new link. Check that the link begins with http:// or https:// and isn't broken. Make sure that it doesn't block Meta from accessing the image.",  
-      },  
-      ...  
-    ]  
+  "all": [{  
+      "error_type": "IMAGE_RESOLUTION_LOW",  
+      "error_priority": "HIGH",  
+      "title": "Missing or invalid images",  
+      "description": "The main image of this item cannot be displayed. Images must be in JPEG or PNG format, less than 8 MB and at least 500 x 500 pixels. <a href="https://www.facebook.com/business/help/686259348512056?id=725943027795860">See all product image specifications</a>.",  
+      "call_to_action": "After you've made changes, save the image under a different link (URL) and provide the new link. Check that the link begins with http:// or https:// and isn't broken. Make sure that it doesn't block Meta from accessing the image.",  
+      },  
+      ...  
+    ]  
 }
-```
 ```
 
 ### Step 3: Retrieve Catalog-Level Errors
@@ -394,36 +378,32 @@ For surfacing top errors in a summary view:
 **Sample Request**
 
 ```
-```
-curl -X GET -G \  
-  -d 'access_token=<ACCESS_TOKEN>' \  
+curl -X GET -G \  
+  -d 'access_token=<ACCESS_TOKEN>' \  
 'https://graph.facebook.com/<API_VERSION>/{catalog_id}/products?fields=id,errors&error_priority={HIGH}[&error_type={error_type}]'
-```
 ```
 
 **Sample Response**
 
 ```
-```
 {  
-    "data": [{,  
-      "id": "4405565689470921",  
-      "errors": [  
-        {  
-          "error_type": "IMAGE_RESOLUTION_LOW",  
-          "error_priority": "HIGH",  
-          "title": "Missing or invalid images",  
-          "description": "The main image of this item cannot be displayed. Images must be in JPEG or PNG format, less than 8 MB and at least 500 x 500 pixels. <a href="https://www.facebook.com/business/help/686259348512056?id=725943027795860">See all product image specifications</a>.",  
-          "call_to_action": "After you've made changes, save the image under a different link (URL) and provide the new link. Check that the link begins with http:// or https:// and isn't broken. Make sure that it doesn't block Meta from accessing the image.",  
-        },  
-        ...  
-      ]},  
-    ...  
-    ],  
-    "paging": {},  
-    "summary": {}  
+    "data": [{,  
+      "id": "4405565689470921",  
+      "errors": [  
+        {  
+          "error_type": "IMAGE_RESOLUTION_LOW",  
+          "error_priority": "HIGH",  
+          "title": "Missing or invalid images",  
+          "description": "The main image of this item cannot be displayed. Images must be in JPEG or PNG format, less than 8 MB and at least 500 x 500 pixels. <a href="https://www.facebook.com/business/help/686259348512056?id=725943027795860">See all product image specifications</a>.",  
+          "call_to_action": "After you've made changes, save the image under a different link (URL) and provide the new link. Check that the link begins with http:// or https:// and isn't broken. Make sure that it doesn't block Meta from accessing the image.",  
+        },  
+        ...  
+      ]},  
+    ...  
+    ],  
+    "paging": {},  
+    "summary": {}  
 }
-```
 ```
 
 ### Step 4: Retrieve Granular Item-Level Errors
@@ -439,43 +419,39 @@ For surfacing errors on each item:
 **Sample Request**
 
 ```
-```
-curl -X GET -G \  
-  -d 'access_token=<ACCESS_TOKEN>' \  
- 'https://graph.facebook.com/<API_VERSION>/{item_id}?fields=errors'
-```
+curl -X GET -G \  
+  -d 'access_token=<ACCESS_TOKEN>' \  
+ 'https://graph.facebook.com/<API_VERSION>/{item_id}?fields=errors'
 ```
 
 **Sample Response**
 
 ```
-```
 {  
-  "errors": [{  
-          "error_type": "IMAGE_RESOLUTION_LOW",  
-          "error_priority": "HIGH",  
-          "title": "Missing or invalid images",  
-          "description": "The main image of this item cannot be displayed. Images must be in JPEG or PNG format, less than 8 MB and at least 500 x 500 pixels. <a href="https://www.facebook.com/business/help/686259348512056?id=725943027795860">See all product image specifications</a>.",  
-          "call_to_action": "After you've made changes, save the image under a different link (URL) and provide the new link. Check that the link begins with http:// or https:// and isn't broken. Make sure that it doesn't block Meta from accessing the image.",  
-        },  
-    ...  
-  ],  
-  "id": "4405565689470921"  
+  "errors": [{  
+          "error_type": "IMAGE_RESOLUTION_LOW",  
+          "error_priority": "HIGH",  
+          "title": "Missing or invalid images",  
+          "description": "The main image of this item cannot be displayed. Images must be in JPEG or PNG format, less than 8 MB and at least 500 x 500 pixels. <a href="https://www.facebook.com/business/help/686259348512056?id=725943027795860">See all product image specifications</a>.",  
+          "call_to_action": "After you've made changes, save the image under a different link (URL) and provide the new link. Check that the link begins with http:// or https:// and isn't broken. Make sure that it doesn't block Meta from accessing the image.",  
+        },  
+    ...  
+  ],  
+  "id": "4405565689470921"  
 }
-```
 ```
 
 ## Requirement 3: Enable Sellers to Set Up and Send Back Ads Signal via the Meta Pixel
 
-Conversion tracking refers to the seller tracking visitor activity on the seller’s website. Examples of visitor activities include a user viewing a product, adding it to cart or purchasing it. This is typically accomplished by the sellers using the [Meta Pixel](https://developers.facebook.com/docs/meta-pixel). Tracked conversions are used to measure the effectiveness of seller ads, to define custom audiences for ad targeting, for ads campaigns, and to analyze the effectiveness of conversion funnels.
+Conversion tracking refers to the seller tracking visitor activity on the seller's website. Examples of visitor activities include a user viewing a product, adding it to cart or purchasing it. This is typically accomplished by the sellers using the [Meta Pixel](https://developers.facebook.com/docs/meta-pixel). Tracked conversions are used to measure the effectiveness of seller ads, to define custom audiences for ad targeting, for ads campaigns, and to analyze the effectiveness of conversion funnels.
 
-Because Shops Ads can direct buyers to a merchant website or Meta’s onsite shop, to set up effective ads campaigns, sellers need to leverage the commerce signals from both their onsite shop and their website (via the Meta Pixel).
+Because Shops Ads can direct buyers to a merchant website or Meta's onsite shop, to set up effective ads campaigns, sellers need to leverage the commerce signals from both their onsite shop and their website (via the Meta Pixel).
 
-As a third-party partner, you need to enable the seller to provide their Pixel information during their Meta shop setup. By using FBE for seller onboarding, you will get this for free. To check whether the seller’s catalog is associated with a pixel, you can call the `catalog_id/external_event_sources` [API endpoint](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-catalog).
+As a third-party partner, you need to enable the seller to provide their Pixel information during their Meta shop setup. By using FBE for seller onboarding, you will get this for free. To check whether the seller's catalog is associated with a pixel, you can call the `catalog_id/external_event_sources` [API endpoint](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-catalog).
 
 ## Enhancement 1: Synchronize Product Set Collection
 
-A [product set](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-catalog/product_sets) is a subgroup of items in a catalog. A product set can be used in ads and/or published as a product set collection on the seller’s shop to help customers find the right set of products.
+A [product set](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-catalog/product_sets) is a subgroup of items in a catalog. A product set can be used in ads and/or published as a product set collection on the seller's shop to help customers find the right set of products.
 
 If you upgraded your ads catalog where you had existing product sets, you can update your product sets with collection metadata and publish them to your shop to be visible there.
 
@@ -486,43 +462,37 @@ Synchronize creations of a product set with collection metadata that matches spe
 **Sample Request**
 
 ```
-```
-curl -0 -X POST \  
- -H 'Content-Type: application/json; charset=utf-8' \  
-https://graph.facebook.com/<API_VERSION>/{product-catalog-id}/product_sets?access_token=<ACCESS_TOKEN> \  
---data-binary @- << EOF  
+curl -0 -X POST \  
+ -H 'Content-Type: application/json; charset=utf-8' \  
+https://graph.facebook.com/<API_VERSION>/{product-catalog-id}/product_sets?access_token=<ACCESS_TOKEN> \  
+--data-binary @- << EOF  
 {  
-  "name": "Best Sellers",  
-  "filter": "{  
-'retailer_id': {'is_any': ['pid1', 'pid2']}  
+  "name": "Best Sellers",  
+  "filter": "{  
+'retailer_id': {'is_any': ['pid1', 'pid2']}  
 }",  
-  "metadata":  
+  "metadata":  
 "{  
 'cover_image_url':'https://foo.com/image.jpg',  
 'external_url':'https://foo.com/best-sellers',  
-'description':'Our best selling products'  
+'description':'Our best selling products'  
 }"  
 }  
 EOF
-```
 ```
 
 **Sample Response**
 
 ```
-```
 {  
-  "id": "<PRODUCT_SET_ID>"  
+  "id": "<PRODUCT_SET_ID>"  
 }
 ```
-```
 
-In case of an unsuccessful response, you would receive an error response with error details. An error doesn’t necessarily mean that a product set collection was not created, e.g. if there is an error in fetching a cover image URL; the product set might still be created. To check what product sets collections you’ve already created and their current state:
+In case of an unsuccessful response, you would receive an error response with error details. An error doesn't necessarily mean that a product set collection was not created, e.g. if there is an error in fetching a cover image URL; the product set might still be created. To check what product sets collections you've already created and their current state:
 
 ```
-```
-GET /<API_VERSION>/<PRODUCT_CATALOG_ID>/product_sets
-```
+GET /<API_VERSION>/<PRODUCT_CATALOG_ID>/product_sets
 ```
 
 ### Step 2: Update or Publish a Product Set Collection
@@ -532,55 +502,47 @@ Synchronize updates to an existing product set with collection metadata and publ
 **Sample Request**
 
 ```
-```
-curl -0 -X POST \  
- -H 'Content-Type: application/json; charset=utf-8' \  
-https://graph.facebook.com/<API_VERSION>/{product-set-id}?access_token=<ACCESS_TOKEN> \  
---data-binary @- << EOF  
+curl -0 -X POST \  
+ -H 'Content-Type: application/json; charset=utf-8' \  
+https://graph.facebook.com/<API_VERSION>/{product-set-id}?access_token=<ACCESS_TOKEN> \  
+--data-binary @- << EOF  
 {  
-  "name": "Updated Best Sellers",  
-  "publish_to_shops": [  
-    {  
-      "shop_id": "<SHOP_ID>"  
-    }  
-  ]  
+  "name": "Updated Best Sellers",  
+  "publish_to_shops": [  
+    {  
+      "shop_id": "<SHOP_ID>"  
+    }  
+  ]  
 }  
 EOF
-```
 ```
 
 **Sample Response**
 
 ```
-```
 {  
-  "id": "<PRODUCT_SET_ID>"  
+  "id": "<PRODUCT_SET_ID>"  
 }
 ```
-```
 
-In addition, you can also synchronize deletions of a `ProductSet` by making a `DELETE` request to `/{product_set_id}`. By default, a product set cannot be deleted while it’s being used in an active ad, shop collection, or other usages. To override this behavior, include `allow_live_product_set_deletion=true` in your request.
+In addition, you can also synchronize deletions of a `ProductSet` by making a `DELETE` request to `/{product_set_id}`. By default, a product set cannot be deleted while it's being used in an active ad, shop collection, or other usages. To override this behavior, include `allow_live_product_set_deletion=true` in your request.
 
 Learn more about [product set-related API operations](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/catalog/collections).
 
 **Sample Request**
 
 ```
-```
-curl -X DELETE \  
-  -d 'access_token=<ACCESS_TOKEN>' \  
+curl -X DELETE \  
+  -d 'access_token=<ACCESS_TOKEN>' \  
 https://graph.facebook.com/<API_VERSION>/{product-set-id}
-```
 ```
 
 **Sample Response**
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 ## Enhancement 2: Enable Sellers to Set Up and Send Back Ads Signal via CAPI

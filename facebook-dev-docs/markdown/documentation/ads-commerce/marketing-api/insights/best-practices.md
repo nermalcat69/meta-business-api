@@ -66,40 +66,40 @@ The following breakdowns are available.
 
 | Breakdown | Description |
 | --- | --- |
-| `action_device` | The device on which the conversion event you’re tracking occurred. For example, "Desktop" if someone converted on a desktop computer. |
+| `action_device` | The device on which the conversion event you're tracking occurred. For example, "Desktop" if someone converted on a desktop computer. |
 | `action_canvas_component_name` | Name of a component within a Canvas ad. |
 | `action_carousel_card_id` | The ID of the specific carousel card that people engaged with when they saw your ad. |
 | `action_carousel_card_name` | The specific carousel card that people engaged with when they saw your ad. The cards are identified by their headlines. |
 | `action_destination` | The destination where people go after clicking on your ad. The destination can be your Facebook Page, an external URL for your conversion pixel, or an app configured with the software development kit (SDK). |
 | `action_reaction` | The number of reactions on your ads or boosted posts. The reactions button on an ad allows people to share different reactions on its content: Like, Love, Haha, Wow, Sad, or Angry. |
 | `action_target_id` | The ID of destination where people go after clicking on your ad. This could be your Facebook Page, an external URL for your conversion pixel or an app configured with the software development kit (SDK). |
-| `action_type` | The kind of actions taken on your ad, Page, app, or event after your ad was served to someone, even if they didn’t click on it. Action types include Page likes, app installs, conversions, event responses, and more. |
+| `action_type` | The kind of actions taken on your ad, Page, app, or event after your ad was served to someone, even if they didn't click on it. Action types include Page likes, app installs, conversions, event responses, and more. |
 | `action_video_sound` | The sound status (on/off) when someone plays your video ad. |
 | `action_video_type` | Video metrics breakdown. |
 | `ad_format_asset` | The ID of the ad format asset involved in impression, click, or action. |
-| `age` | The age range of the people you’ve reached. |
+| `age` | The age range of the people you've reached. |
 | `app_id` | The ID of the application associated with the ad account or campaign requested. The application information, including its ID, is viewable in the [App Dashboard](https://developers.facebook.com/apps/).  This breakdown is only supported by the `total_postbacks` field. |
 | `body_asset` | The ID of the body asset involved in impression, click, or action. |
 | `call_to_action_asset` | The ID of the call to action asset involved in impression, click, or action. |
-| `country` | The country where the people you’ve reached are located. The country value is based on information, such as a person’s hometown, their current city, and the geographical location where they tend to be when they visit Meta. |
+| `country` | The country where the people you've reached are located. The country value is based on information, such as a person's hometown, their current city, and the geographical location where they tend to be when they visit Meta. |
 | `description_asset` | The ID of the description asset involved in impression, click, or action. |
 | `device_platform` | The type of device, mobile or desktop, used by people when they viewed or clicked on an ad, as shown in ads reporting. |
 | `dma` | The Designated Market Area (DMA) regions are the 210 geographic areas in the United States in which local television viewing is measured by The Nielsen Company.  May need to be enabled via Ads Manager reporting breakdown menu |
 | `frequency_value` | The number of times an ad in your Reservation campaign was served to each Accounts Center account.  **Availability notice (effective August 6, 2026):** This breakdown may be unavailable for some ad accounts. If a synchronous request returns no results, the account administrator can opt in to this breakdown via Ads Manager, or you can retrieve the data through an asynchronous report job. See the [changelog](https://developers.facebook.com/documentation/ads-commerce/marketing-api/out-of-cycle-changes/occ-2026#may-8--2026) for details. |
-| `gender` | Gender of people you’ve reached. People who don’t list their gender are shown as ‘not specified’. |
-| `hourly_stats_aggregated_by_advertiser_time_zone` | Hourly breakdown aggregated by the time ads were delivered in the advertiser’s time zone. For example, if your ads are scheduled to run from 9 AM to 11 AM, but they reach audiences in multiple time zones, they may deliver from 9 AM to 1 PM in the advertiser’s time zone. Stats will be aggregated into four groups 9 AM - 10 AM, 10 AM - 11 AM, 11 AM - 12 PM, and 12 PM - 1 PM. |
-| `hourly_stats_aggregated_by_audience_time_zone` | Hourly breakdown aggregated by the time ads were delivered in the audiences’ time zone. For example, if your ads are scheduled to run from 9:00 am to 11:00 am, but they reach audiences in multiple time zones, they may deliver from 9:00 am to 1:00 pm in the advertiser’s time zone. Stats are aggregated into 2 groups: 9:00 am to 10:00 am and 10:00 am to 11:00 am.  **Availability notice (effective August 6, 2026):** This breakdown may be unavailable for some ad accounts. If a synchronous request returns no results, the account administrator can opt in to this breakdown via Ads Manager, or you can retrieve the data through an asynchronous report job. See the [changelog](https://developers.facebook.com/documentation/ads-commerce/marketing-api/out-of-cycle-changes/occ-2026#may-8--2026) for details. |
+| `gender` | Gender of people you've reached. People who don't list their gender are shown as 'not specified'. |
+| `hourly_stats_aggregated_by_advertiser_time_zone` | Hourly breakdown aggregated by the time ads were delivered in the advertiser's time zone. For example, if your ads are scheduled to run from 9 AM to 11 AM, but they reach audiences in multiple time zones, they may deliver from 9 AM to 1 PM in the advertiser's time zone. Stats will be aggregated into four groups 9 AM - 10 AM, 10 AM - 11 AM, 11 AM - 12 PM, and 12 PM - 1 PM. |
+| `hourly_stats_aggregated_by_audience_time_zone` | Hourly breakdown aggregated by the time ads were delivered in the audiences' time zone. For example, if your ads are scheduled to run from 9:00 am to 11:00 am, but they reach audiences in multiple time zones, they may deliver from 9:00 am to 1:00 pm in the advertiser's time zone. Stats are aggregated into 2 groups: 9:00 am to 10:00 am and 10:00 am to 11:00 am.  **Availability notice (effective August 6, 2026):** This breakdown may be unavailable for some ad accounts. If a synchronous request returns no results, the account administrator can opt in to this breakdown via Ads Manager, or you can retrieve the data through an asynchronous report job. See the [changelog](https://developers.facebook.com/documentation/ads-commerce/marketing-api/out-of-cycle-changes/occ-2026#may-8--2026) for details. |
 | `image_asset` | The ID of the image asset involved in impression, click, or action. |
 | `impression_device` | The device where your last ad was served to someone on Meta. For example "iPhone" if someone viewed your ad on an iPhone.  **Availability notice (effective August 6, 2026):** This breakdown may be unavailable for some ad accounts. If a synchronous request returns no results, the account administrator can opt in to this breakdown via Ads Manager, or you can retrieve the data through an asynchronous report job. This applies to `impression_device` on its own and to any breakdown combination that includes `impression_device`. See the [changelog](https://developers.facebook.com/documentation/ads-commerce/marketing-api/out-of-cycle-changes/occ-2026#may-8--2026) for details. |
-| `is_conversion_id_modeled` | A boolean flag that indicates whether the `conversion_bits` are modeled. A `0` indicates `conversion_bits` aren’t modeled, and a `1` indicates that `conversion_bits` are modeled.  This breakdown is only supported by the `total_postbacks_detailed` field. |
+| `is_conversion_id_modeled` | A boolean flag that indicates whether the `conversion_bits` are modeled. A `0` indicates `conversion_bits` aren't modeled, and a `1` indicates that `conversion_bits` are modeled.  This breakdown is only supported by the `total_postbacks_detailed` field. |
 | `link_url_asset` | The ID of the URL asset involved in impression, click, or action. |
 | `place_page_id` | The ID of the place page involved in impression or click.  Account-level insights and `page_place_id` are not compatible with each other, so they cannot be queried together. |
 | `platform_position` | Where your ad was shown within a platform, for example on Facebook desktop Feed, or Instagram Mobile Feed. |
 | `product_id` | The ID of the product involved in impression, click, or action. |
 | `publisher_platform` | Which platform your ad was shown, for example on Facebook, Instagram, or Audience Network. |
-| `region` | The regions where the people you’ve reached are located. The region value is based on information such as a person’s hometown, their current city and the geographical location where they tend to be when they visit Facebook. |
+| `region` | The regions where the people you've reached are located. The region value is based on information such as a person's hometown, their current city and the geographical location where they tend to be when they visit Facebook. |
 | `skan_campaign_id` | The raw campaign ID received as a part of Skan postback from iOS 15+.  **Note:** This breakdown is only supported by the `total_postbacks_detailed` field. |
-| `skan_conversion_id` | The assigned Conversion ID (also referred to as Priority ID) of the event or event bundle configured in the application’s SKAdNetwork configuration schema. The app events configuration can be viewed and adjusted in Meta Events Manager. You can learn more about [configuring your app events for Apple’s SKAdNetwork⁠](http://www.facebook.com/business/help/670955636925518).  **Note:** This breakdown is only supported by the `total_postbacks` field. |
+| `skan_conversion_id` | The assigned Conversion ID (also referred to as Priority ID) of the event or event bundle configured in the application's SKAdNetwork configuration schema. The app events configuration can be viewed and adjusted in Meta Events Manager. You can learn more about [configuring your app events for Apple's SKAdNetwork⁠](http://www.facebook.com/business/help/670955636925518).  **Note:** This breakdown is only supported by the `total_postbacks` field. |
 | `title_asset` | The ID of the title asset involved in impression, click, or action. |
 | `user_segment_key` | User segment (ex: new, existing) of Advantage+ Shopping Campaigns (ASC). Existing user is specified by the custom audience in ASC settings. |
 | `video_asset` | The ID of the video asset involved in impression, click, or action. |
@@ -127,11 +127,11 @@ cURL
 ---
 
 ```
-curl -G \  
-  -d "breakdowns=age,gender" \  
-  -d "fields=impressions" \  
-  -d "access_token=<ACCESS_TOKEN>" \  
-  "https://graph.facebook.com/<API_VERSION>/<AD_CAMPAIGN_ID>/insights"
+curl -G \  
+  -d "breakdowns=age,gender" \  
+  -d "fields=impressions" \  
+  -d "access_token=<ACCESS_TOKEN>" \  
+  "https://graph.facebook.com/<API_VERSION>/<AD_CAMPAIGN_ID>/insights"
 ```
 
 Show Response
@@ -152,10 +152,10 @@ cURL
 ---
 
 ```
-curl -G \  
--d "fields=impressions" \  
--d "breakdowns=hourly_stats_aggregated_by_audience_time_zone" \  
--d "access_token=<ACCESS_TOKEN>" \  
+curl -G \  
+-d "fields=impressions" \  
+-d "breakdowns=hourly_stats_aggregated_by_audience_time_zone" \  
+-d "access_token=<ACCESS_TOKEN>" \  
 "https://graph.facebook.com/<API_VERSION>/<AD_CAMPAIGN_ID>/insights"
 ```
 

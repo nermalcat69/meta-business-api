@@ -31,7 +31,7 @@ Introductory video tutorials to learn how to build Flows
 
 ## Use case guides
 
-Once you’ve completed these steps, you can start to build your Flows using the following guides:
+Once you've completed these steps, you can start to build your Flows using the following guides:
 
 * [Get Leads for Pre-Approved Loans](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/gettingstarted/pre-approved-loan)
 * [Get Insurance Quote](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/gettingstarted/health-insurance)

@@ -9,7 +9,7 @@ Updated: Jun 26, 2026
 
 **Embedded signup v2 will be deprecated on October 15, 2026.** Migrate your integration to [v4](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/version-4) before that date to avoid disruption. See [Versions](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/versions) for the full upgrade path.
 
-This feature is sometimes referred to as “Coexistence” in support channels and Partner documentation.
+This feature is sometimes referred to as "Coexistence" in support channels and Partner documentation.
 
 You can configure [Embedded Signup](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/overview) to allow business customers to onboard using their existing [WhatsApp Business app⁠](https://business.whatsapp.com/products/business-app?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR6KdcceqiNNYqymDpYm9KBjPTP58va7haSvNArot6NrPGxcy44C-DWeG8LGSQ_aem_z4TvYbYJHXtlJ8Vgw1kNGw) account and phone number. After a business customer chooses this option and onboards successfully, they can use your app to send high volumes of messages. They can still send messages on a one-to-one basis using the WhatsApp Business app, and WhatsApp keeps messaging history between both apps in sync.
 
@@ -91,13 +91,13 @@ The following table describes features available to business customers who have 
 
 ## Linked devices
 
-Businesses can link up to four WhatsApp “companion” clients to their WhatsApp Business app account on other devices (described as “[linked devices⁠](https://faq.whatsapp.com/378279804439436/?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR7-VObiTxlxTaqCGXBIbVmv_9gUI0gZ2PyNcZEG5dRGO-rMPyr_5diVpB4C6Q_aem__oExKUnJtWiy6zuMT6Ie7A)” in our Help Center).
+Businesses can link up to four WhatsApp "companion" clients to their WhatsApp Business app account on other devices (described as "[linked devices⁠](https://faq.whatsapp.com/378279804439436/?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR7-VObiTxlxTaqCGXBIbVmv_9gUI0gZ2PyNcZEG5dRGO-rMPyr_5diVpB4C6Q_aem__oExKUnJtWiy6zuMT6Ie7A)" in our Help Center).
 
 All companion clients are supported, except for [WhatsApp for Windows⁠](https://faq.whatsapp.com/1317564962315842/?cms_platform=windows-desktop&fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR5X5NMdR8BYNeRmQUydEo_MuPv9UfuVrrfuCgz3YxIIe28OoxyUf1KYisv97Q_aem_WQ7XY5OthMfAYYnv9wjnZA) and [WhatsApp for WearOS⁠](https://faq.whatsapp.com/564431798835071/?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR7pZRGJNkapR82BkLzl4w4_UE7S1zwKq24_-Qim5T32ngLAibh0wuNK_zyGbw_aem_1LFZJ9vp50IGGkBwMJKTlA).
 
 Once a business customer onboards to Cloud API with an existing WhatsApp Business app account and number, all companion apps will be unlinked from the account, and the business can then re-link any supported companion apps.
 
-WhatsApp users who use an unsupported companion client to message an onboarded business can do so, but the message will not trigger [messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/messages) webhooks, so the business won’t be able to mirror the message in their own app.
+WhatsApp users who use an unsupported companion client to message an onboarded business can do so, but the message will not trigger [messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/messages) webhooks, so the business won't be able to mirror the message in their own app.
 
 Messages sent from an onboarded business (by any means) that are viewed in an unsupported companion device will appear with placeholder text, instructing the WhatsApp user to view the message in their primary device.
 
@@ -105,10 +105,10 @@ Messages sent from an onboarded business (by any means) that are viewed in an un
 
 ### Step 1: Subscribe to webhooks
 
-Navigate to the [**App Dashboard**](https://developers.facebook.com/apps) > **WhatsApp** > **Configuration** panel and subscribe your app to the following WhatsApp Business account webhook topic fields, and make sure your app’s callback code can digest payloads for each of them. These fields are in addition to any fields you are already subscribed to as a partner.
+Navigate to the [**App Dashboard**](https://developers.facebook.com/apps) > **WhatsApp** > **Configuration** panel and subscribe your app to the following WhatsApp Business account webhook topic fields, and make sure your app's callback code can digest payloads for each of them. These fields are in addition to any fields you are already subscribed to as a partner.
 
 * [history](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/reconnect-offboarded-coexistence-clients#history) — describes past messages the business customer has sent/received
-* [smb\_app\_state\_sync](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/reconnect-offboarded-coexistence-clients#smb-app-state-sync) — describes the business customer’s current and new contacts
+* [smb\_app\_state\_sync](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/reconnect-offboarded-coexistence-clients#smb-app-state-sync) — describes the business customer's current and new contacts
 * [smb\_message\_echoes](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/reconnect-offboarded-coexistence-clients#smb-message-echoes) — describes any new messages the business customer sends with the WhatsApp Business app after having been onboarded
 
 ### Step 2: Customize Embedded Signup
@@ -143,32 +143,30 @@ When a business completes the flow and you [onboard the customer](https://develo
 * inform the business that you are synchronizing their WhatsApp Business app data
 * advise them to keep the WhatsApp Business app open to facilitate the synchronization process
 
-Onboarding and synchronization can take several minutes, depending on a number of factors such as the size of the business’s messaging history, their internet speed, and how quickly you can digest webhooks.
+Onboarding and synchronization can take several minutes, depending on a number of factors such as the size of the business's messaging history, their internet speed, and how quickly you can digest webhooks.
 
 When you complete the **onboarding** process, the WhatsApp Business app will automatically refresh and indicate to the business that their number is now connected to the API:
 
 ![WhatsApp Business app Business Platform settings showing the connected account with a Disconnect button](https://scontent.fdel1-4.fna.fbcdn.net/v/t39.2365-6/476788868_1168860751914222_5506074718266109385_n.jpg?_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=Y1EvF-JzC-YQ7kNvwFdgTDC&_nc_oc=AdrVH0B3-rAtG0OO-m8xa3K97uJlBl7xi0TRhc-MBnbGQQYtUQJFjg_HIOaew42wRSk58iqhcy3ydKAWO3yPxczL&_nc_zt=14&_nc_ht=scontent.fdel1-4.fna&_nc_gid=PNILC_lGxSdlkqFpKOoI7g&_nc_ss=7b2a8&oh=00_AQBy8mhpH_NEywFGQ_pkdQvxK-G1yvqlv5g9yxlOtPXYgw&oe=6A605F50)
 
-After you finish synchronizing the business’s messaging history, inform the customer that the process is complete.
+After you finish synchronizing the business's messaging history, inform the customer that the process is complete.
 
 ## Onboarding business customers
 
 When a business customer successfully completes the Embedded Signup flow, Embedded Signup returns their asset IDs and an exchangeable token code to the window that spawned the flow, as normal, but the [session event](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/implementation#session-logging-message-event-listener) payload sets `event` to `FINISH_WHATSAPP_BUSINESS_APP_ONBOARDING`:
 
 ```
-```
 {  
-  data: {  
-    waba_id: "<CUSTOMER_WABA_ID>"  
-  },  
-  type: "WA_EMBEDDED_SIGNUP",  
-  event: "FINISH_WHATSAPP_BUSINESS_APP_ONBOARDING",  
-  version: 3  
+  data: {  
+    waba_id: "<CUSTOMER_WABA_ID>"  
+  },  
+  type: "WA_EMBEDDED_SIGNUP",  
+  event: "FINISH_WHATSAPP_BUSINESS_APP_ONBOARDING",  
+  version: 3  
 }
 ```
-```
 
-Capture the customer’s asset IDs and exchangeable token code and use them to onboard the customer as you normally would, but **skip the phone number registration step**, as the number is already registered.
+Capture the customer's asset IDs and exchangeable token code and use them to onboard the customer as you normally would, but **skip the phone number registration step**, as the number is already registered.
 
 * [Onboarding business customers as a partner](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/onboarding-customers-as-a-solution-partner)
 * [Onboarding business customers as a Tech Provider](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/onboarding-customers-as-a-tech-provider)
@@ -177,7 +175,7 @@ Once you have completed these onboarding steps, you can begin the [messaging his
 
 ### Check onboarding status (optional)
 
-To confirm that the customer’s business phone number is registered for both Cloud API and WhatsApp Business app use, request the `is_on_biz_app` and `platform_type` fields on the business phone number ID:
+To confirm that the customer's business phone number is registered for both Cloud API and WhatsApp Business app use, request the `is_on_biz_app` and `platform_type` fields on the business phone number ID:
 
 Example request:
 
@@ -191,43 +189,39 @@ Example response:
 If `is_on_biz_app` is `true` and `platform_type` is `CLOUD_API`, the business phone number is able to use Cloud API and the WhatsApp Business app:
 
 ```
-```
 {  
-  "is_on_biz_app": true,  
-  "platform_type": "CLOUD_API",  
-  "id": "106540352242922"  
+  "is_on_biz_app": true,  
+  "platform_type": "CLOUD_API",  
+  "id": "106540352242922"  
 }
-```
 ```
 
 ## Synchronizing WhatsApp Business app data
 
 After you onboard the business customer, you have 24 hours to synchronize their contacts and messaging history, otherwise they must be offboarded and complete the flow again. For this reason, begin the synchronization process as soon as you finish onboarding the business.
 
-As a reminder, make sure that you subscribed to the business’s WABA when you [onboarded the business](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/reconnect-offboarded-coexistence-clients#onboarding-business-customers), and that you are [subscribed to the additional webhook fields](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/reconnect-offboarded-coexistence-clients#step-1-subscribe-to-webhooks), otherwise you will miss important webhooks.
+As a reminder, make sure that you subscribed to the business's WABA when you [onboarded the business](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/reconnect-offboarded-coexistence-clients#onboarding-business-customers), and that you are [subscribed to the additional webhook fields](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/reconnect-offboarded-coexistence-clients#step-1-subscribe-to-webhooks), otherwise you will miss important webhooks.
 
 ### Step 1: Initiate contacts synchronization
 
-Use the [SMB App Data API](https://developers.facebook.com/docs/graph-api/reference/whats-app-business-account-to-number-current-status/smb_app_data#Creating) to request the business customer’s contacts information.
+Use the [SMB App Data API](https://developers.facebook.com/docs/graph-api/reference/whats-app-business-account-to-number-current-status/smb_app_data#Creating) to request the business customer's contacts information.
 
-If the request is successful, WhatsApp sends a set of [smb\_app\_state\_sync](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/reconnect-offboarded-coexistence-clients#smb-app-state-sync) webhooks describing the WhatsApp contacts in the business’s WhatsApp Business app. Future additions or changes to the business’s [WhatsApp contacts⁠](https://faq.whatsapp.com/1270784217226727/?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR5ee5bPoPQCJjY-Hpr_ZpMGiNp3tnPJivpwwtOcac7KVYYjPewIPSbeYD7PtQ_aem_bRFx7smthpchTfxk06o5qg) will trigger a corresponding smb\_app\_state\_sync webhook.
+If the request is successful, WhatsApp sends a set of [smb\_app\_state\_sync](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/reconnect-offboarded-coexistence-clients#smb-app-state-sync) webhooks describing the WhatsApp contacts in the business's WhatsApp Business app. Future additions or changes to the business's [WhatsApp contacts⁠](https://faq.whatsapp.com/1270784217226727/?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR5ee5bPoPQCJjY-Hpr_ZpMGiNp3tnPJivpwwtOcac7KVYYjPewIPSbeYD7PtQ_aem_bRFx7smthpchTfxk06o5qg) will trigger a corresponding smb\_app\_state\_sync webhook.
 
 You can only perform this step once. If you need to perform it again, the customer must first offboard, then complete the Embedded Signup flow again.
 
 #### Example request
 
 ```
-```
-curl -X  POST \  
-'https://graph.facebook.com/<API_VERSION>/<BUSINESS_PHONE_NUMBER_ID>/smb_app_data \  
--H 'Authorization: <ACCESS_TOKEN>' \  
--H 'Content-Type: application/json' \  
--d '  
+curl -X  POST \  
+'https://graph.facebook.com/<API_VERSION>/<BUSINESS_PHONE_NUMBER_ID>/smb_app_data \  
+-H 'Authorization: <ACCESS_TOKEN>' \  
+-H 'Content-Type: application/json' \  
+-d '  
 {  
-  "messaging_product": "whatsapp",  
-  "sync_type": "smb_app_state_sync"  
+  "messaging_product": "whatsapp",  
+  "sync_type": "smb_app_state_sync"  
 }'
-```
 ```
 
 #### Example response
@@ -235,12 +229,10 @@ curl -X  POST \
 Upon success:
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "request_id" : "<REQUEST_ID>"  
+  "messaging_product": "whatsapp",  
+  "request_id" : "<REQUEST_ID>"  
 }
-```
 ```
 
 Store the `request_id` value in case you need to contact support.
@@ -266,17 +258,15 @@ If the business chose not to share their messaging history with you, a [history]
 #### Example request
 
 ```
-```
-curl -X  POST \  
-'https://graph.facebook.com/<API_VERSION>/<BUSINESS_PHONE_NUMBER_ID>/smb_app_data \  
--H 'Authorization: <ACCESS_TOKEN>' \  
--H 'Content-Type: application/json' \  
--d '  
+curl -X  POST \  
+'https://graph.facebook.com/<API_VERSION>/<BUSINESS_PHONE_NUMBER_ID>/smb_app_data \  
+-H 'Authorization: <ACCESS_TOKEN>' \  
+-H 'Content-Type: application/json' \  
+-d '  
 {  
-  "messaging_product": "whatsapp",  
-  "sync_type": "history"  
+  "messaging_product": "whatsapp",  
+  "sync_type": "history"  
 }'
-```
 ```
 
 #### Example response
@@ -284,12 +274,10 @@ curl -X  POST \
 If the request is successful, the API will respond with the following JSON payload. This response only indicates successful acceptance of the request; it does not indicate whether the business shared their messaging history with you.
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "request_id" : "<REQUEST_ID>"  
+  "messaging_product": "whatsapp",  
+  "request_id" : "<REQUEST_ID>"  
 }
-```
 ```
 
 Store the `request_id` value in case you need to contact support.
@@ -321,190 +309,178 @@ If you receive this webhook, instruct the business to check the WhatsApp Busines
 
 ### account\_update
 
-Describes changes to a WhatsApp Business account (“WABA”).
+Describes changes to a WhatsApp Business account ("WABA").
 
 #### Trigger events
 
 * the business phone number associated with the WABA changes
-* the WABA’s status changes
+* the WABA's status changes
 
 #### Payload syntax
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "<WABA_ID>",  
-      "time": <WEBHOOK_TIMESTAMP>,  
-      "changes": [  
-        {  
-          "value": {  
-              "phone_number": "<BUSINESS_PHONE_NUMBER>",  
-              "event": "<EVENT>",  
-              "disconnection_info": {  // only included for PARTNER_REMOVED events  
-                "reason": "<DISCONNECTION_REASON>",  
-                "initiated_by": "<DISCONNECTION_INITIATED_BY>"  
-              }  
-           },  
-          "field": "account_update"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "<WABA_ID>",  
+      "time": <WEBHOOK_TIMESTAMP>,  
+      "changes": [  
+        {  
+          "value": {  
+              "phone_number": "<BUSINESS_PHONE_NUMBER>",  
+              "event": "<EVENT>",  
+              "disconnection_info": {  // only included for PARTNER_REMOVED events  
+                "reason": "<DISCONNECTION_REASON>",  
+                "initiated_by": "<DISCONNECTION_INITIATED_BY>"  
+              }  
+           },  
+          "field": "account_update"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 #### Example payload
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "102290129340398",  
-      "time": 1739212624,  
-      "changes": [  
-        {  
-          "value": {  
-              "phone_number": "15550783881",  
-              "event": "PARTNER_REMOVED",  
-              "disconnection_info": {  
-                "reason": "PRIMARY_INACTIVITY",  
-                "initiated_by": "SYSTEM"  
-              }  
-           },  
-          "field": "account_update"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "102290129340398",  
+      "time": 1739212624,  
+      "changes": [  
+        {  
+          "value": {  
+              "phone_number": "15550783881",  
+              "event": "PARTNER_REMOVED",  
+              "disconnection_info": {  
+                "reason": "PRIMARY_INACTIVITY",  
+                "initiated_by": "SYSTEM"  
+              }  
+           },  
+          "field": "account_update"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 The `disconnection_info` object contains:
 
-* `reason` — Why your client was disconnected. Values: `ACCOUNT_DISCONNECTED` (your client’s account was disconnected due to [enforcement](https://developers.facebook.com/documentation/business-messaging/whatsapp/policy-enforcement) or because your client explicitly deleted their WhatsApp account; can be `USER` or `SYSTEM` initiated), `BUSINESS_DOWNGRADE` (your client registered their business phone number with the consumer WhatsApp app), `CHANGE_NUMBER` (your client changed their phone number), `COMPANION_INACTIVITY` (companion device inactive for approximately 30 days), `PRIMARY_INACTIVITY` (primary device inactive for approximately 14 days), `USER_RE_REGISTERED` (your client re-registered on a new device).
+* `reason` — Why your client was disconnected. Values: `ACCOUNT_DISCONNECTED` (your client's account was disconnected due to [enforcement](https://developers.facebook.com/documentation/business-messaging/whatsapp/policy-enforcement) or because your client explicitly deleted their WhatsApp account; can be `USER` or `SYSTEM` initiated), `BUSINESS_DOWNGRADE` (your client registered their business phone number with the consumer WhatsApp app), `CHANGE_NUMBER` (your client changed their phone number), `COMPANION_INACTIVITY` (companion device inactive for approximately 30 days), `PRIMARY_INACTIVITY` (primary device inactive for approximately 14 days), `USER_RE_REGISTERED` (your client re-registered on a new device).
 * `initiated_by` — Whether the disconnection was client- or system-initiated. Values: `USER`, `SYSTEM`.
 
 See the [account\_update webhook reference](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/account_update#partner-removed-disconnection) for full details.
 
 ### `account_offboarded`
 
-Describes changes to a WhatsApp Business account (“WABA”) when the business offboards due to device change or re-registration.
+Describes changes to a WhatsApp Business account ("WABA") when the business offboards due to device change or re-registration.
 
 #### Trigger events
 
 * The business phone number associated with the WABA changes devices and re-registers.
-* The WABA’s status changes due to the business offboarding their WhatsApp Business app phone number.
+* The WABA's status changes due to the business offboarding their WhatsApp Business app phone number.
 
 #### Payload syntax
 
 ```
-```
 {  
- "entry": [  
-   {  
-     "id": "<WABA_ID>",  
-     "time": "<WEBHOOK_TIMESTAMP>",  
-     "changes": [  
-       {  
-         "value": {  
-           "event": "ACCOUNT_OFFBOARDED"  
-         },  
-         "field": "account_update"  
-       }  
-     ]  
-   }  
- ],  
- "object": "whatsapp_business_account"  
+ "entry": [  
+   {  
+     "id": "<WABA_ID>",  
+     "time": "<WEBHOOK_TIMESTAMP>",  
+     "changes": [  
+       {  
+         "value": {  
+           "event": "ACCOUNT_OFFBOARDED"  
+         },  
+         "field": "account_update"  
+       }  
+     ]  
+   }  
+ ],  
+ "object": "whatsapp_business_account"  
 }
-```
 ```
 
 #### Example payload
 
 ```
-```
 {  
- "entry": [  
-   {  
-     "id": "862475293675413",  
-     "time": 1768477204,  
-     "changes": [  
-       {  
-         "value": {  
-           "event": "ACCOUNT_OFFBOARDED"  
-         },  
-         "field": "account_update"  
-       }  
-     ]  
-   }  
- ],  
- "object": "whatsapp_business_account"  
+ "entry": [  
+   {  
+     "id": "862475293675413",  
+     "time": 1768477204,  
+     "changes": [  
+       {  
+         "value": {  
+           "event": "ACCOUNT_OFFBOARDED"  
+         },  
+         "field": "account_update"  
+       }  
+     ]  
+   }  
+ ],  
+ "object": "whatsapp_business_account"  
 }
-```
 ```
 
 ### `account_reconnected`
 
-Describes when a WhatsApp Business account (“WABA”) reconnects (re-onboards) after previously offboarding.
+Describes when a WhatsApp Business account ("WABA") reconnects (re-onboards) after previously offboarding.
 
 #### Trigger events
 
 * The business re-onboards to the same partner after offboarding.
-* The WABA’s status changes to reconnected.
+* The WABA's status changes to reconnected.
 
 #### Payload syntax
 
 ```
-```
 {  
- "entry": [  
-   {  
-     "id": "<WABA_ID>",  
-     "time": "<WEBHOOK_TIMESTAMP>",  
-     "changes": [  
-       {  
-         "value": {  
-           "event": "ACCOUNT_RECONNECTED"  
-         },  
-         "field": "account_update"  
-       }  
-     ]  
-   }  
- ],  
- "object": "whatsapp_business_account"  
+ "entry": [  
+   {  
+     "id": "<WABA_ID>",  
+     "time": "<WEBHOOK_TIMESTAMP>",  
+     "changes": [  
+       {  
+         "value": {  
+           "event": "ACCOUNT_RECONNECTED"  
+         },  
+         "field": "account_update"  
+       }  
+     ]  
+   }  
+ ],  
+ "object": "whatsapp_business_account"  
 }
-```
 ```
 
 #### Example payload
 
 ```
-```
 {  
- "entry": [  
-   {  
-     "id": "862475293675413",  
-     "time": 1768477203,  
-     "changes": [  
-       {  
-         "value": {  
-           "event": "ACCOUNT_RECONNECTED"  
-         },  
-         "field": "account_update"  
-       }  
-     ]  
-   }  
- ],  
- "object": "whatsapp_business_account"  
+ "entry": [  
+   {  
+     "id": "862475293675413",  
+     "time": 1768477203,  
+     "changes": [  
+       {  
+         "value": {  
+           "event": "ACCOUNT_RECONNECTED"  
+         },  
+         "field": "account_update"  
+       }  
+     ]  
+   }  
+ ],  
+ "object": "whatsapp_business_account"  
 }
-```
 ```
 
 ### Edit
@@ -519,60 +495,58 @@ Describes edit events and payload contents for the WhatsApp Business account mes
 #### Payload syntax
 
 ```
-```
 {  
- "object": "whatsapp_business_account",  
- "entry": [  
-   {  
-     "id": "<WHATSAPP_BUSINESS_ACCOUNT_ID>",  
-     "changes": [  
-       {  
-         "value": {  
-           "messaging_product": "whatsapp",  
-           "metadata": {  
-             "display_phone_number": "<BUSINESS_DISPLAY_PHONE_NUMBER>",  
-             "phone_number_id": "<BUSINESS_PHONE_NUMBER_ID>"  
-           },  
-           "contacts": [  
-             {  
-               "profile": {  
-                 "name": "<WHATSAPP_USER_PROFILE_NAME>"  
-               },  
-               "wa_id": "<WHATSAPP_USER_ID>"  
-             }  
-           ],  
-           "messages": [  
-             {  
-               "from": "<WHATSAPP_USER_PHONE_NUMBER>",  
-               "id": "<WHATSAPP_MESSAGE_ID>",  
-               "timestamp": "<WEBHOOK_TRIGGER_TIMESTAMP>",  
-               "type": "edit",  
-               "edit": {  
-                 "original_message_id": "<ORIGINAL_WHATSAPP_MESSAGE_ID>",  
-                 "message": {  
-                   "context": {  
-                     "id": "<CONTEXT_ID>"  
-                   },  
-                   "type": "image",  
-                   "image": {  
-                     "caption": "<MEDIA_ASSET_CAPTION>",  
-                     "mime_type": "<MEDIA_ASSET_MIME_TYPE>",  
-                     "sha256": "<MEDIA_ASSET_SHA256_HASH>",  
-                     "id": "<MEDIA_ASSET_ID>",  
-                     "url": "<MEDIA_ASSET_URL>"  
-                   }  
-                 }  
-               }  
-             }  
-           ]  
-         },  
-         "field": "messages"  
-       }  
-     ]  
-   }  
- ]  
+ "object": "whatsapp_business_account",  
+ "entry": [  
+   {  
+     "id": "<WHATSAPP_BUSINESS_ACCOUNT_ID>",  
+     "changes": [  
+       {  
+         "value": {  
+           "messaging_product": "whatsapp",  
+           "metadata": {  
+             "display_phone_number": "<BUSINESS_DISPLAY_PHONE_NUMBER>",  
+             "phone_number_id": "<BUSINESS_PHONE_NUMBER_ID>"  
+           },  
+           "contacts": [  
+             {  
+               "profile": {  
+                 "name": "<WHATSAPP_USER_PROFILE_NAME>"  
+               },  
+               "wa_id": "<WHATSAPP_USER_ID>"  
+             }  
+           ],  
+           "messages": [  
+             {  
+               "from": "<WHATSAPP_USER_PHONE_NUMBER>",  
+               "id": "<WHATSAPP_MESSAGE_ID>",  
+               "timestamp": "<WEBHOOK_TRIGGER_TIMESTAMP>",  
+               "type": "edit",  
+               "edit": {  
+                 "original_message_id": "<ORIGINAL_WHATSAPP_MESSAGE_ID>",  
+                 "message": {  
+                   "context": {  
+                     "id": "<CONTEXT_ID>"  
+                   },  
+                   "type": "image",  
+                   "image": {  
+                     "caption": "<MEDIA_ASSET_CAPTION>",  
+                     "mime_type": "<MEDIA_ASSET_MIME_TYPE>",  
+                     "sha256": "<MEDIA_ASSET_SHA256_HASH>",  
+                     "id": "<MEDIA_ASSET_ID>",  
+                     "url": "<MEDIA_ASSET_URL>"  
+                   }  
+                 }  
+               }  
+             }  
+           ]  
+         },  
+         "field": "messages"  
+       }  
+     ]  
+   }  
+ ]  
 }
-```
 ```
 
 #### Parameters
@@ -581,7 +555,7 @@ Describes edit events and payload contents for the WhatsApp Business account mes
 | --- | --- | --- |
 | `<BUSINESS_DISPLAY_PHONE_NUMBER>` | Business display phone number. | 15550783881 |
 | `<BUSINESS_PHONE_NUMBER_ID>` | Business phone number ID. | 106540352242922 |
-| `<WHATSAPP_USER_PROFILE_NAME>` | WhatsApp user’s profile name. | Sheena Nelson |
+| `<WHATSAPP_USER_PROFILE_NAME>` | WhatsApp user's profile name. | Sheena Nelson |
 | `<WHATSAPP_USER_ID>` | WhatsApp user ID. | 16505551234 |
 | `<WHATSAPP_USER_PHONE_NUMBER>` | WhatsApp user phone number. | 16505551234 |
 | `<WHATSAPP_MESSAGE_ID>` | WhatsApp message ID for the edit event. | wamid.HBgLMTY1MDM4Nzk0MzkV... |
@@ -599,60 +573,58 @@ Describes edit events and payload contents for the WhatsApp Business account mes
 This example webhook describes an edit made by a user in a message.
 
 ```
-```
 {  
- "object": "whatsapp_business_account",  
- "entry": [  
-   {  
-     "id": "102290129340398",  
-     "changes": [  
-       {  
-         "value": {  
-           "messaging_product": "whatsapp",  
-           "metadata": {  
-             "display_phone_number": "15550783881",  
-             "phone_number_id": "106540352242922"  
-           },  
-           "contacts": [  
-             {  
-               "profile": {  
-                 "name": "Sheena Nelson"  
-               },  
-               "wa_id": "16505551234"  
-             }  
-           ],  
-           "messages": [  
-             {  
-               "from": "16505551234",  
-               "id": "wamid.HBgLMTY1MDM4Nzk0MzkVAgASGBQzQUFERjg0NDEzNDdFODU3MUMxMAA=",  
-               "timestamp": "1749854575",  
-               "type": "edit",  
-               "edit": {  
-                 "original_message_id": "wamid.HBgLMTQxMjU1NTA4MjkVAgASGBQzQUNCNjk5RDUwNUZGMUZEM0VBRAA=",  
-                 "message": {  
-                   "context": {  
-                     "id": "M0"  
-                   },  
-                   "type": "image",  
-                   "image": {  
-                     "caption": "Updated image caption",  
-                     "mime_type": "image/jpeg",  
-                     "sha256": "a1b2c3d4e5f6...",  
-                     "id": "1234567890",  
-                     "url": "https://media.example.com/updated-image.jpg"  
-                   }  
-                 }  
-               }  
-             }  
-           ]  
-         },  
-         "field": "messages"  
-       }  
-     ]  
-   }  
- ]  
+ "object": "whatsapp_business_account",  
+ "entry": [  
+   {  
+     "id": "102290129340398",  
+     "changes": [  
+       {  
+         "value": {  
+           "messaging_product": "whatsapp",  
+           "metadata": {  
+             "display_phone_number": "15550783881",  
+             "phone_number_id": "106540352242922"  
+           },  
+           "contacts": [  
+             {  
+               "profile": {  
+                 "name": "Sheena Nelson"  
+               },  
+               "wa_id": "16505551234"  
+             }  
+           ],  
+           "messages": [  
+             {  
+               "from": "16505551234",  
+               "id": "wamid.HBgLMTY1MDM4Nzk0MzkVAgASGBQzQUFERjg0NDEzNDdFODU3MUMxMAA=",  
+               "timestamp": "1749854575",  
+               "type": "edit",  
+               "edit": {  
+                 "original_message_id": "wamid.HBgLMTQxMjU1NTA4MjkVAgASGBQzQUNCNjk5RDUwNUZGMUZEM0VBRAA=",  
+                 "message": {  
+                   "context": {  
+                     "id": "M0"  
+                   },  
+                   "type": "image",  
+                   "image": {  
+                     "caption": "Updated image caption",  
+                     "mime_type": "image/jpeg",  
+                     "sha256": "a1b2c3d4e5f6...",  
+                     "id": "1234567890",  
+                     "url": "https://media.example.com/updated-image.jpg"  
+                   }  
+                 }  
+               }  
+             }  
+           ]  
+         },  
+         "field": "messages"  
+       }  
+     ]  
+   }  
+ ]  
 }
-```
 ```
 
 ### Revoke
@@ -667,47 +639,45 @@ This reference describes revoke events and payload contents for the WhatsApp Bus
 #### Syntax
 
 ```
-```
 {  
- "object": "whatsapp_business_account",  
- "entry": [  
-   {  
-     "id": "<WHATSAPP_BUSINESS_ACCOUNT_ID>",  
-     "changes": [  
-       {  
-         "value": {  
-           "messaging_product": "whatsapp",  
-           "metadata": {  
-             "display_phone_number": "<BUSINESS_DISPLAY_PHONE_NUMBER>",  
-             "phone_number_id": "<BUSINESS_PHONE_NUMBER_ID>"  
-           },  
-           "contacts": [  
-             {  
-               "profile": {  
-                 "name": "<WHATSAPP_USER_PROFILE_NAME>"  
-               },  
-               "wa_id": "<WHATSAPP_USER_ID>"  
-             }  
-           ],  
-           "messages": [  
-             {  
-               "from": "<WHATSAPP_USER_PHONE_NUMBER>",  
-               "id": "<WHATSAPP_MESSAGE_ID>",  
-               "timestamp": "<WEBHOOK_TRIGGER_TIMESTAMP>",  
-               "type": "revoke",  
-               "revoke": {  
-                 "original_message_id": "<ORIGINAL_WHATSAPP_MESSAGE_ID>"  
-               }  
-             }  
-           ]  
-         },  
-         "field": "messages"  
-       }  
-     ]  
-   }  
- ]  
+ "object": "whatsapp_business_account",  
+ "entry": [  
+   {  
+     "id": "<WHATSAPP_BUSINESS_ACCOUNT_ID>",  
+     "changes": [  
+       {  
+         "value": {  
+           "messaging_product": "whatsapp",  
+           "metadata": {  
+             "display_phone_number": "<BUSINESS_DISPLAY_PHONE_NUMBER>",  
+             "phone_number_id": "<BUSINESS_PHONE_NUMBER_ID>"  
+           },  
+           "contacts": [  
+             {  
+               "profile": {  
+                 "name": "<WHATSAPP_USER_PROFILE_NAME>"  
+               },  
+               "wa_id": "<WHATSAPP_USER_ID>"  
+             }  
+           ],  
+           "messages": [  
+             {  
+               "from": "<WHATSAPP_USER_PHONE_NUMBER>",  
+               "id": "<WHATSAPP_MESSAGE_ID>",  
+               "timestamp": "<WEBHOOK_TRIGGER_TIMESTAMP>",  
+               "type": "revoke",  
+               "revoke": {  
+                 "original_message_id": "<ORIGINAL_WHATSAPP_MESSAGE_ID>"  
+               }  
+             }  
+           ]  
+         },  
+         "field": "messages"  
+       }  
+     ]  
+   }  
+ ]  
 }
-```
 ```
 
 #### Parameters
@@ -716,7 +686,7 @@ This reference describes revoke events and payload contents for the WhatsApp Bus
 | --- | --- | --- |
 | `<BUSINESS_DISPLAY_PHONE_NUMBER>` | Business display phone number. | 15550783881 |
 | `<BUSINESS_PHONE_NUMBER_ID>` | Business phone number ID. | 106540352242922 |
-| `<WHATSAPP_USER_PROFILE_NAME>` | WhatsApp user’s profile name. | Sheena Nelson |
+| `<WHATSAPP_USER_PROFILE_NAME>` | WhatsApp user's profile name. | Sheena Nelson |
 | `<WHATSAPP_USER_ID>` | WhatsApp user ID. | 16505551234 |
 | `<WHATSAPP_USER_PHONE_NUMBER>` | WhatsApp user phone number. | 16505551234 |
 | `<WHATSAPP_MESSAGE_ID>` | WhatsApp message ID for the revoke event. | wamid.HBgLMTY1MDM4Nzk0MzkV... |
@@ -728,52 +698,50 @@ This reference describes revoke events and payload contents for the WhatsApp Bus
 This example webhook describes a delete made by a user in a message.
 
 ```
-```
 {  
- "object": "whatsapp_business_account",  
- "entry": [  
-   {  
-     "id": "102290129340398",  
-     "changes": [  
-       {  
-         "value": {  
-           "messaging_product": "whatsapp",  
-           "metadata": {  
-             "display_phone_number": "15550783881",  
-             "phone_number_id": "106540352242922"  
-           },  
-           "contacts": [  
-             {  
-               "profile": {  
-                 "name": "Sheena Nelson"  
-               },  
-               "wa_id": "16505551234"  
-             }  
-           ],  
-           "messages": [  
-             {  
-               "from": "16505551234",  
-               "id": "wamid.HBgLMTY1MDM4Nzk0MzkVAgASGBQzQUFERjg0NDEzNDdFODU3MUMxMAA=",  
-               "timestamp": "1749854575",  
-               "type": "revoke",  
-               "revoke": {  
-                 "original_message_id": "wamid.HBgLMTQxMjU1NTA4MjkVAgASGBQzQUNCNjk5RDUwNUZGMUZEM0VBRAA="  
-               }  
-             }  
-           ]  
-         },  
-         "field": "messages"  
-       }  
-     ]  
-   }  
- ]  
+ "object": "whatsapp_business_account",  
+ "entry": [  
+   {  
+     "id": "102290129340398",  
+     "changes": [  
+       {  
+         "value": {  
+           "messaging_product": "whatsapp",  
+           "metadata": {  
+             "display_phone_number": "15550783881",  
+             "phone_number_id": "106540352242922"  
+           },  
+           "contacts": [  
+             {  
+               "profile": {  
+                 "name": "Sheena Nelson"  
+               },  
+               "wa_id": "16505551234"  
+             }  
+           ],  
+           "messages": [  
+             {  
+               "from": "16505551234",  
+               "id": "wamid.HBgLMTY1MDM4Nzk0MzkVAgASGBQzQUFERjg0NDEzNDdFODU3MUMxMAA=",  
+               "timestamp": "1749854575",  
+               "type": "revoke",  
+               "revoke": {  
+                 "original_message_id": "wamid.HBgLMTQxMjU1NTA4MjkVAgASGBQzQUNCNjk5RDUwNUZGMUZEM0VBRAA="  
+               }  
+             }  
+           ]  
+         },  
+         "field": "messages"  
+       }  
+     ]  
+   }  
+ ]  
 }
-```
 ```
 
 ### History
 
-Describes the WhatsApp Business app chat history of a business that has chosen to share their chat history with a [partner](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/overview), or the business’s decision to decline chat history sharing.
+Describes the WhatsApp Business app chat history of a business that has chosen to share their chat history with a [partner](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/overview), or the business's decision to decline chat history sharing.
 
 #### Trigger events
 
@@ -782,7 +750,7 @@ Describes the WhatsApp Business app chat history of a business that has chosen t
 
 #### Chat history contents
 
-If the business has already approved chat history sharing when the partner requests the business’s chat history, a series of history webhooks will be triggered, describing all messages sent or received within 180 days of the time when the business was onboarded onto Cloud API.
+If the business has already approved chat history sharing when the partner requests the business's chat history, a series of history webhooks will be triggered, describing all messages sent or received within 180 days of the time when the business was onboarded onto Cloud API.
 
 * messages that are part of a group chat will not be included
 * media messages will not include media asset IDs; instead, additional history webhooks containing media message asset IDs will be sent separately, but only for media messages sent within 14 days of onboarding
@@ -808,279 +776,269 @@ If there is no chat history available for a given phase, no corresponding webhoo
 #### Payload syntax — chat history sharing approved
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "<WABA_ID>",  
-      "changes": [  
-        {  
-          "value": {  
-            "messaging_product": "whatsapp",  
-            "metadata": {  
-              "display_phone_number": "<BUSINESS_PHONE_NUMBER>",  
-              "phone_number_id": "<BUSINESS_PHONE_NUMBER_ID>"  
-            },  
-            "history": [  
-              {  
-                "metadata": {  
-                  "phase": <PHASE>,  
-                  "chunk_order": <CHUNK_ORDER>,  
-                  "progress": <PROGRESS>  
-                },  
-                "threads": [  
-                  /* First chat history thread object */  
-                  {  
-                    "id": "<WHATSAPP_USER_PHONE_NUMBER>",  
-                    "messages": [  
-                      /* First message object in thread */  
-                      {  
-                        "from": "<BUSINESS_OR_WHATSAPP_USER_PHONE_NUMBER>",  
-                        "to": "<WHATSAPP_USER_PHONE_NUMBER>", // only included if SMB message echo  
-                        "id": "<WHATSAPP_MESSAGE_ID>",  
-                        "timestamp": "<DEVICE_TIMESTAMP>,  
-                        "type": "<MESSAGE_TYPE>",  
-                        "<MESSAGE_TYPE>": {  
-                          <MESSAGE_CONTENTS>  
-                        },  
-                        "history_context": {  
-                          "status": "<MESSAGE_STATUS>"  
-                        }  
-                      },  
-                      /* Additional message objects in thread would follow, if any */  
-                    ]  
-                  },  
-                  /* Additional chat history thread objects would follow, if any */  
-                ]  
-              }  
-            ]  
-          },  
-          "field": "history"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "<WABA_ID>",  
+      "changes": [  
+        {  
+          "value": {  
+            "messaging_product": "whatsapp",  
+            "metadata": {  
+              "display_phone_number": "<BUSINESS_PHONE_NUMBER>",  
+              "phone_number_id": "<BUSINESS_PHONE_NUMBER_ID>"  
+            },  
+            "history": [  
+              {  
+                "metadata": {  
+                  "phase": <PHASE>,  
+                  "chunk_order": <CHUNK_ORDER>,  
+                  "progress": <PROGRESS>  
+                },  
+                "threads": [  
+                  /* First chat history thread object */  
+                  {  
+                    "id": "<WHATSAPP_USER_PHONE_NUMBER>",  
+                    "messages": [  
+                      /* First message object in thread */  
+                      {  
+                        "from": "<BUSINESS_OR_WHATSAPP_USER_PHONE_NUMBER>",  
+                        "to": "<WHATSAPP_USER_PHONE_NUMBER>", // only included if SMB message echo  
+                        "id": "<WHATSAPP_MESSAGE_ID>",  
+                        "timestamp": "<DEVICE_TIMESTAMP>,  
+                        "type": "<MESSAGE_TYPE>",  
+                        "<MESSAGE_TYPE>": {  
+                          <MESSAGE_CONTENTS>  
+                        },  
+                        "history_context": {  
+                          "status": "<MESSAGE_STATUS>"  
+                        }  
+                      },  
+                      /* Additional message objects in thread would follow, if any */  
+                    ]  
+                  },  
+                  /* Additional chat history thread objects would follow, if any */  
+                ]  
+              }  
+            ]  
+          },  
+          "field": "history"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 #### Payload contents — chat history sharing approved
 
 | Placeholder | Description | Example value |
 | --- | --- | --- |
-| `<WABA_ID>`  *String* | The business customer’s WhatsApp Business account ID. | `102290129340398` |
-| `<BUSINESS_PHONE_NUMBER>`  *String* | The business customer’s business phone number. | `15550783881` |
-| `<BUSINESS_PHONE_NUMBER_ID>`  *String* | The business customer’s business phone number ID. | `106540352242922` |
+| `<WABA_ID>`  *String* | The business customer's WhatsApp Business account ID. | `102290129340398` |
+| `<BUSINESS_PHONE_NUMBER>`  *String* | The business customer's business phone number. | `15550783881` |
+| `<BUSINESS_PHONE_NUMBER_ID>`  *String* | The business customer's business phone number ID. | `106540352242922` |
 | `<PHASE>`  *Integer* | Indicates history [phase](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/reconnect-offboarded-coexistence-clients#phases-and-chunks). Values can be:   * `0` — indicates messages are from day 0 (business onboarding time) through day 1 * `1` — indicates messages are from day 1 through day 90 * `2` — indicates messages are from day 90 through day 180 | `1` |
 | `<CHUNK_ORDER>`  *Integer* | Indicates [chunk](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/reconnect-offboarded-coexistence-clients#phases-and-chunks) number, which you can use to order sets of webhooks sequentially. | `1` |
 | `<PROGRESS>`  *Integer* | Indicates percentage total of synchronization progress.  Minimum `0`, maximum `100`. | `55` |
-| `<WHATSAPP_USER_PHONE_NUMBER>`  *String* | The WhatsApp user’s phone number. | `16505551234` |
-| `<BUSINESS_OR_WHATSAPP_USER_PHONE_NUMBER>`  *String* | The business customer’s phone number, or the WhatsApp user’s phone number.  If the value is the business’s phone number, the message object describes a message sent by the business to a WhatsApp user.  If the value is the WhatsApp user’s phone number, the message object describes a message sent by the WhatsApp user to the business. | `15550783881` |
-| `<WHATSAPP_USER_PHONE_NUMBER>`  *String* | The WhatsApp user’s phone number.  The `to` property is only included if the message object represents an [SMB message echo](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/reconnect-offboarded-coexistence-clients#step-3-mirror-new-whatsapp-business-app-messages). | `16505551234` |
+| `<WHATSAPP_USER_PHONE_NUMBER>`  *String* | The WhatsApp user's phone number. | `16505551234` |
+| `<BUSINESS_OR_WHATSAPP_USER_PHONE_NUMBER>`  *String* | The business customer's phone number, or the WhatsApp user's phone number.  If the value is the business's phone number, the message object describes a message sent by the business to a WhatsApp user.  If the value is the WhatsApp user's phone number, the message object describes a message sent by the WhatsApp user to the business. | `15550783881` |
+| `<WHATSAPP_USER_PHONE_NUMBER>`  *String* | The WhatsApp user's phone number.  The `to` property is only included if the message object represents an [SMB message echo](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/reconnect-offboarded-coexistence-clients#step-3-mirror-new-whatsapp-business-app-messages). | `16505551234` |
 | `<WHATSAPP_MESSAGE_ID>`  *String* | WhatsApp message ID. | `wamid.HBgLMTY0NjcwNDM1OTUVAgARGBIyNDlBOEI5QUQ4NDc0N0FCNjMA` |
-| `<DEVICE_TIMESTAMP>`  *String* | Unix timestamp indicating when the message was received by the recipient’s device. | `1738796547` |
-| `<MESSAGE_TYPE>`  *String* | [Message type](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/send-messages#message-types). This placeholder appears twice in the syntax above, as it serves as a placeholder for the `type` property’s value and its matching property name. See the [example payload below](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/reconnect-offboarded-coexistence-clients#example-history-approved) for a thread with various message types.  If this value is set to `media_placeholder`, the message object describes a message that contained a media asset. In this case, the message contents will be omitted. Instead, a separate history webhook will follow, describing the content of the message and the media asset ID, but only if the message was sent within the last two weeks of your query. See the [example payload below](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/reconnect-offboarded-coexistence-clients#example-media-asset) describing a media message’s contents. | `text` |
-| `<MESSAGE_CONTENTS>`  *Object* | An object describing the message’s contents. This value will vary based on the message type, as well as the contents of the message.  For example, if a business sends an `image` message without a caption, the object would not include the `caption` property.  See [Sending messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/send-messages) for examples of payloads for each message type. | `{"body":"Here's the info you requested! https://www.meta.com/quest/quest-3/"}` |
-| `<MESSAGE_STATUS>`  *String* | Indicates the message’s most recent delivery stats. Values can be:   * `DELIVERED` * `ERROR` * `PENDING` * `PLAYED` * `READ` * `SENT` | `READ` |
+| `<DEVICE_TIMESTAMP>`  *String* | Unix timestamp indicating when the message was received by the recipient's device. | `1738796547` |
+| `<MESSAGE_TYPE>`  *String* | [Message type](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/send-messages#message-types). This placeholder appears twice in the syntax above, as it serves as a placeholder for the `type` property's value and its matching property name. See the [example payload below](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/reconnect-offboarded-coexistence-clients#example-history-approved) for a thread with various message types.  If this value is set to `media_placeholder`, the message object describes a message that contained a media asset. In this case, the message contents will be omitted. Instead, a separate history webhook will follow, describing the content of the message and the media asset ID, but only if the message was sent within the last two weeks of your query. See the [example payload below](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/reconnect-offboarded-coexistence-clients#example-media-asset) describing a media message's contents. | `text` |
+| `<MESSAGE_CONTENTS>`  *Object* | An object describing the message's contents. This value will vary based on the message type, as well as the contents of the message.  For example, if a business sends an `image` message without a caption, the object would not include the `caption` property.  See [Sending messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/send-messages) for examples of payloads for each message type. | `{"body":"Here's the info you requested! https://www.meta.com/quest/quest-3/"}` |
+| `<MESSAGE_STATUS>`  *String* | Indicates the message's most recent delivery stats. Values can be:   * `DELIVERED` * `ERROR` * `PENDING` * `PLAYED` * `READ` * `SENT` | `READ` |
 
 #### Example payload — chat history sharing approved
 
-Example payload for two message threads: (1) a thread containing a text message and video message sent to a WhatsApp user, and the WhatsApp user’s response, and (2) a text message sent to a WhatsApp user thanking them for their order.
+Example payload for two message threads: (1) a thread containing a text message and video message sent to a WhatsApp user, and the WhatsApp user's response, and (2) a text message sent to a WhatsApp user thanking them for their order.
 
-The media message’s contents in the first thread are not described. Instead, a second webhook is triggered, describing the media message’s contents.
+The media message's contents in the first thread are not described. Instead, a second webhook is triggered, describing the media message's contents.
 
-```
 ```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "102290129340398",  
-      "changes": [  
-        {  
-          "value": {  
-            "messaging_product": "whatsapp",  
-            "metadata": {  
-              "display_phone_number": "15550783881",  
-              "phone_number_id": "106540352242922"  
-            },  
-            "history": [  
-              {  
-                "metadata": {  
-                  "phase": 0,  
-                  "chunk_order": 1,  
-                  "progress": 55  
-                },  
-                "threads": [  
-                  {  
-                    "id": "16505551234",  
-                    "messages": [  
-                      {  
-                        "from": "15550783881",  
-                        "id": "wamid.HBgLMTY0NjcwNDM1OTUVAgARGBIyNDlBOEI5QUQ4NDc0N0FCNjMA",  
-                        "timestamp": "1739230955",  
-                        "type": "text",  
-                        "text": {  
-                          "body": "Here's the info you requested! https://www.meta.com/quest/quest-3/"  
-                        },  
-                        "history_context": {  
-                          "status": "READ"  
-                        }  
-                      },  
-                      {  
-                        "from": "15550783881",  
-                        "id": "wamid.QyNUEHBgLMTY0NjcwNDM1OTUVAgARGBI1Rj3NEYxMzAzMzQ5MkEA",  
-                        "timestamp": "1739230970",  
-                        "type": "media_placeholder",  
-                        "history_context": {  
-                          "status": "PLAYED"  
-                        }  
-                      },  
-                      {  
-                        "from": "16505551234",  
-                        "id": "wamid.N0FCNjMAHBgLMTY0NjcwNDM1OTUVAgARGBIyNDlBOEI5QUQ4NDc0",  
-                        "timestamp": "1739230970",  
-                        "type": "text",  
-                        "text": {  
-                          "body": "Thanks!"  
-                        },  
-                        "history_context": {  
-                          "status": "READ"  
-                        }  
-                      }  
-                    ]  
-                  },  
-                  {  
-                    "id": "12125557890",  
-                    "messages": [  
-                      {  
-                        "from": "15550783881",  
-                        "id": "wamid.BIyNDlBOEI5N0FCNjMAHBgLMTY0NjcwNDM1OTUVAgARGQUQ4NDc0",  
-                        "timestamp": "1739230970",  
-                        "type": "text",  
-                        "text": {  
-                          "body": "Thanks for your order! As a thank you, use code THANKS30 to get 30% of your next order."  
-                        },  
-                        "history_context": {  
-                          "status": "DELIVERED"  
-                        }  
-                      }  
-                    ]  
-                  }  
-                ]  
-              }  
-            ]  
-          },  
-          "field": "history"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "102290129340398",  
+      "changes": [  
+        {  
+          "value": {  
+            "messaging_product": "whatsapp",  
+            "metadata": {  
+              "display_phone_number": "15550783881",  
+              "phone_number_id": "106540352242922"  
+            },  
+            "history": [  
+              {  
+                "metadata": {  
+                  "phase": 0,  
+                  "chunk_order": 1,  
+                  "progress": 55  
+                },  
+                "threads": [  
+                  {  
+                    "id": "16505551234",  
+                    "messages": [  
+                      {  
+                        "from": "15550783881",  
+                        "id": "wamid.HBgLMTY0NjcwNDM1OTUVAgARGBIyNDlBOEI5QUQ4NDc0N0FCNjMA",  
+                        "timestamp": "1739230955",  
+                        "type": "text",  
+                        "text": {  
+                          "body": "Here's the info you requested! https://www.meta.com/quest/quest-3/"  
+                        },  
+                        "history_context": {  
+                          "status": "READ"  
+                        }  
+                      },  
+                      {  
+                        "from": "15550783881",  
+                        "id": "wamid.QyNUEHBgLMTY0NjcwNDM1OTUVAgARGBI1Rj3NEYxMzAzMzQ5MkEA",  
+                        "timestamp": "1739230970",  
+                        "type": "media_placeholder",  
+                        "history_context": {  
+                          "status": "PLAYED"  
+                        }  
+                      },  
+                      {  
+                        "from": "16505551234",  
+                        "id": "wamid.N0FCNjMAHBgLMTY0NjcwNDM1OTUVAgARGBIyNDlBOEI5QUQ4NDc0",  
+                        "timestamp": "1739230970",  
+                        "type": "text",  
+                        "text": {  
+                          "body": "Thanks!"  
+                        },  
+                        "history_context": {  
+                          "status": "READ"  
+                        }  
+                      }  
+                    ]  
+                  },  
+                  {  
+                    "id": "12125557890",  
+                    "messages": [  
+                      {  
+                        "from": "15550783881",  
+                        "id": "wamid.BIyNDlBOEI5N0FCNjMAHBgLMTY0NjcwNDM1OTUVAgARGQUQ4NDc0",  
+                        "timestamp": "1739230970",  
+                        "type": "text",  
+                        "text": {  
+                          "body": "Thanks for your order! As a thank you, use code THANKS30 to get 30% of your next order."  
+                        },  
+                        "history_context": {  
+                          "status": "DELIVERED"  
+                        }  
+                      }  
+                    ]  
+                  }  
+                ]  
+              }  
+            ]  
+          },  
+          "field": "history"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 #### Example payload for media message asset
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "102290129340398",  
-      "changes": [  
-        {  
-          "value": {  
-            "messaging_product": "whatsapp",  
-            "metadata": {  
-              "display_phone_number": "15550783881",  
-              "phone_number_id": "106540352242922"  
-            },  
-            "messages": [  
-              {  
-                "from": "16505551234",  
-                "id": "wamid.QyNUEHBgLMTY0NjcwNDM1OTUVAgARGBI1Rj3NEYxMzAzMzQ5MkEA",  
-                "timestamp": "1738796547",  
-                "type": "image",  
-                "image": {  
-                  "caption": "Black Prince echeveria",  
-                  "mime_type": "image/jpeg",  
-                  "sha256": "3f9d94d399fa61c191bc1d4ca71375a035cd9b9f5b1128e1f0963a415c16b0cc",  
-                  "id": "24230790383178626"  
-                }  
-              }  
-            ]  
-          },  
-          "field": "history"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "102290129340398",  
+      "changes": [  
+        {  
+          "value": {  
+            "messaging_product": "whatsapp",  
+            "metadata": {  
+              "display_phone_number": "15550783881",  
+              "phone_number_id": "106540352242922"  
+            },  
+            "messages": [  
+              {  
+                "from": "16505551234",  
+                "id": "wamid.QyNUEHBgLMTY0NjcwNDM1OTUVAgARGBI1Rj3NEYxMzAzMzQ5MkEA",  
+                "timestamp": "1738796547",  
+                "type": "image",  
+                "image": {  
+                  "caption": "Black Prince echeveria",  
+                  "mime_type": "image/jpeg",  
+                  "sha256": "3f9d94d399fa61c191bc1d4ca71375a035cd9b9f5b1128e1f0963a415c16b0cc",  
+                  "id": "24230790383178626"  
+                }  
+              }  
+            ]  
+          },  
+          "field": "history"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 #### Payload syntax — chat history sharing declined
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "metadata": {  
-    "display_phone_number": "<BUSINESS_PHONE_NUMBER>",  
-    "phone_number_id": "<BUSINESS_PHONE_NUMBER_ID>"  
-  },  
-  "history": [  
-    {  
-      "errors": [  
-        {  
-          "code": 2593109,  
-          "title": "History sync is turned off by the business from the WhatsApp Business App",  
-          "message": "History sync is turned off by the business from the WhatsApp Business App",  
-          "error_data": {  
-            "details": "History sharing is turned off by the business"  
-          }  
-        }  
-      ]  
-    }  
-  ]  
+  "messaging_product": "whatsapp",  
+  "metadata": {  
+    "display_phone_number": "<BUSINESS_PHONE_NUMBER>",  
+    "phone_number_id": "<BUSINESS_PHONE_NUMBER_ID>"  
+  },  
+  "history": [  
+    {  
+      "errors": [  
+        {  
+          "code": 2593109,  
+          "title": "History sync is turned off by the business from the WhatsApp Business App",  
+          "message": "History sync is turned off by the business from the WhatsApp Business App",  
+          "error_data": {  
+            "details": "History sharing is turned off by the business"  
+          }  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 #### Example payload — chat history sharing declined
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "metadata": {  
-    "display_phone_number": "15550783881",  
-    "phone_number_id": "106540352242922"  
-  },  
-  "history": [  
-    {  
-      "errors": [  
-        {  
-          "code": 2593109,  
-          "title": "History sync is turned off by the business from the WhatsApp Business App",  
-          "message": "History sync is turned off by the business from the WhatsApp Business App",  
-          "error_data": {  
-            "details": "History sharing is turned off by the business"  
-          }  
-        }  
-      ]  
-    }  
-  ]  
+  "messaging_product": "whatsapp",  
+  "metadata": {  
+    "display_phone_number": "15550783881",  
+    "phone_number_id": "106540352242922"  
+  },  
+  "history": [  
+    {  
+      "errors": [  
+        {  
+          "code": 2593109,  
+          "title": "History sync is turned off by the business from the WhatsApp Business App",  
+          "message": "History sync is turned off by the business from the WhatsApp Business App",  
+          "error_data": {  
+            "details": "History sharing is turned off by the business"  
+          }  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ### smb\_app\_state\_sync
 
-Describes one or more [WhatsApp contacts⁠](https://faq.whatsapp.com/1270784217226727/?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR71V6xZzs9Jidkkcw147OgaS1YQvuv2gkjJIIDoPDqNXPAYyqkoltjua8IbIA_aem_ssCMuLYzRNtRPGnwnGXIhw) in a business customer’s WhatsApp Business app.
+Describes one or more [WhatsApp contacts⁠](https://faq.whatsapp.com/1270784217226727/?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR71V6xZzs9Jidkkcw147OgaS1YQvuv2gkjJIIDoPDqNXPAYyqkoltjua8IbIA_aem_ssCMuLYzRNtRPGnwnGXIhw) in a business customer's WhatsApp Business app.
 
 #### Trigger events:
 
@@ -1090,55 +1048,53 @@ Describes one or more [WhatsApp contacts⁠](https://faq.whatsapp.com/1270784217
 #### Payload syntax
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "<WABA_ID>",  
-      "changes": [  
-        {  
-          "value": {  
-            "messaging_product": "whatsapp",  
-            "metadata": {  
-              "display_phone_number": "<BUSINESS_PHONE_NUMBER>",  
-              "phone_number_id": "<BUSINESS_PHONE_NUMBER_ID>"  
-            },  
-            "state_sync": [  
-              {  
-                "type": "contact",  
-                "contact": {  
-                  "full_name": "<CONTACT_FULL_NAME>",  
-                  "first_name": "<CONTACT_FIRST_NAME>",  
-                  "phone_number": "<CONTACT_PHONE_NUMBER>"  
-                },  
-                "action": "<ACTION>",  
-                "metadata": {  
-                  "timestamp": "<WEBHOOK_TIMESTAMP>"  
-                }  
-              },  
-              * Additional contacts would follow, if any */  
-            ]  
-          },  
-          "field": "smb_app_state_sync"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "<WABA_ID>",  
+      "changes": [  
+        {  
+          "value": {  
+            "messaging_product": "whatsapp",  
+            "metadata": {  
+              "display_phone_number": "<BUSINESS_PHONE_NUMBER>",  
+              "phone_number_id": "<BUSINESS_PHONE_NUMBER_ID>"  
+            },  
+            "state_sync": [  
+              {  
+                "type": "contact",  
+                "contact": {  
+                  "full_name": "<CONTACT_FULL_NAME>",  
+                  "first_name": "<CONTACT_FIRST_NAME>",  
+                  "phone_number": "<CONTACT_PHONE_NUMBER>"  
+                },  
+                "action": "<ACTION>",  
+                "metadata": {  
+                  "timestamp": "<WEBHOOK_TIMESTAMP>"  
+                }  
+              },  
+              * Additional contacts would follow, if any */  
+            ]  
+          },  
+          "field": "smb_app_state_sync"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 #### Payload contents
 
 | Placeholder | Description | Example value |
 | --- | --- | --- |
-| `<WABA_ID>`*String* | The business customer’s WhatsApp Business account ID. | `102290129340398` |
-| `<BUSINESS_PHONE_NUMBER>`*String* | The business customer’s business phone number. | `15550783881` |
-| `<BUSINESS_PHONE_NUMBER_ID>`*String* | The business customer’s business phone number ID. | `106540352242922` |
-| `<CONTACT_FULL_NAME>`*String* | The contact’s full name, as it appears in the business customer’s WhatsApp Business app phone address book.  Not included when the business customer removes a contact from their WhatsApp Business app phone address book. | `Pablo Morales` |
-| `<CONTACT_FIRST_NAME>`*String* | The contact’s first name, as it appears in the business customer’s WhatsApp Business app phone address book.  Not included when the business customer removes a contact from their WhatsApp Business app phone address book. | `Pablo` |
-| `<CONTACT_PHONE_NUMBER>`*String* | The contact’s WhatsApp phone number. | `16505551234` |
+| `<WABA_ID>`*String* | The business customer's WhatsApp Business account ID. | `102290129340398` |
+| `<BUSINESS_PHONE_NUMBER>`*String* | The business customer's business phone number. | `15550783881` |
+| `<BUSINESS_PHONE_NUMBER_ID>`*String* | The business customer's business phone number ID. | `106540352242922` |
+| `<CONTACT_FULL_NAME>`*String* | The contact's full name, as it appears in the business customer's WhatsApp Business app phone address book.  Not included when the business customer removes a contact from their WhatsApp Business app phone address book. | `Pablo Morales` |
+| `<CONTACT_FIRST_NAME>`*String* | The contact's first name, as it appears in the business customer's WhatsApp Business app phone address book.  Not included when the business customer removes a contact from their WhatsApp Business app phone address book. | `Pablo` |
+| `<CONTACT_PHONE_NUMBER>`*String* | The contact's WhatsApp phone number. | `16505551234` |
 | `<ACTION>`*String* | Indicates if the business customer added, edited, or deleted a contact from their WhatsApp Business app phone address book. Values can be:   * `add` — the business added or edited a contact * `remove` — the business removed a contact | `add` |
 | `<CONTACT_CHANGE_TIMESTAMP>`*String* | Unix timestamp indicating when the contact was added, edited, or removed. | `1738346006` |
 
@@ -1153,104 +1109,100 @@ Describes a message sent by a business customer to a WhatsApp user with the What
 #### Payload syntax
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "<WABA_ID>",  
-      "changes": [  
-        {  
-          "value": {  
-            "messaging_product": "whatsapp",  
-            "metadata": {  
-              "display_phone_number": "<BUSINESS_PHONE_NUMBER>",  
-              "phone_number_id": "<BUSINESS_PHONE_NUMBER_ID>"  
-            },  
-            "message_echoes": [  
-              {  
-                "from": "<BUSINESS_PHONE_NUMBER>",  
-                "to": "<WHATSAPP_USER_PHONE_NUMBER>",  
-                "id": "<WHATSAPP_MESSAGE_ID>",  
-                "timestamp": "<WEBHOOK_TIMESTAMP>",  
-                "type": "<MESSAGE_TYPE>",  
-                "<MESSAGE_TYPE>": {  
-                  <MESSAGE_CONTENTS>  
-                }  
-              }  
-            ]  
-          },  
-          "field": "smb_message_echoes"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "<WABA_ID>",  
+      "changes": [  
+        {  
+          "value": {  
+            "messaging_product": "whatsapp",  
+            "metadata": {  
+              "display_phone_number": "<BUSINESS_PHONE_NUMBER>",  
+              "phone_number_id": "<BUSINESS_PHONE_NUMBER_ID>"  
+            },  
+            "message_echoes": [  
+              {  
+                "from": "<BUSINESS_PHONE_NUMBER>",  
+                "to": "<WHATSAPP_USER_PHONE_NUMBER>",  
+                "id": "<WHATSAPP_MESSAGE_ID>",  
+                "timestamp": "<WEBHOOK_TIMESTAMP>",  
+                "type": "<MESSAGE_TYPE>",  
+                "<MESSAGE_TYPE>": {  
+                  <MESSAGE_CONTENTS>  
+                }  
+              }  
+            ]  
+          },  
+          "field": "smb_message_echoes"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 #### Payload contents
 
 | Placeholder | Description | Example value |
 | --- | --- | --- |
-| `<WABA_ID>`  *String* | The business customer’s WhatsApp Business account ID. | `102290129340398` |
-| `<BUSINESS_PHONE_NUMBER>`  *String* | The business customer’s business phone number. | `15550783881` |
-| `<BUSINESS_PHONE_NUMBER_ID>`  *String* | The business customer’s business phone number ID. | `106540352242922` |
-| `<WHATSAPP_USER_PHONE_NUMBER>`  *String* | The WhatsApp user’s phone number. | `16505551234` |
+| `<WABA_ID>`  *String* | The business customer's WhatsApp Business account ID. | `102290129340398` |
+| `<BUSINESS_PHONE_NUMBER>`  *String* | The business customer's business phone number. | `15550783881` |
+| `<BUSINESS_PHONE_NUMBER_ID>`  *String* | The business customer's business phone number ID. | `106540352242922` |
+| `<WHATSAPP_USER_PHONE_NUMBER>`  *String* | The WhatsApp user's phone number. | `16505551234` |
 | `<WHATSAPP_MESSAGE_ID>`  *String* | WhatsApp message ID. | `wamid.HBgLMTY0NjcwNDM1OTUVAgARGBIyNDlBOEI5QUQ4NDc0N0FCNjMA` |
 | `<WEBHOOK_TIMESTAMP>`  *String* | Unix timestamp indicating when the webhook was triggered. | `1738796547` |
-| `<MESSAGE_TYPE>`  *String* | [Message type](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/send-messages#message-types). This placeholder appears twice in the syntax above, as it serves as a placeholder for the `type` property’s value and its matching property name. | `text` |
-| `<MESSAGE_CONTENTS>`  *Object* | An object describing the message’s contents.  This value will vary based on the message `type`, as well as the contents of the message.  For example, if a business sends an `image` message without a caption, the object would not include the `caption` property.  See [Sending messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/send-messages) for examples of payloads for each message type. | `{"body":"Here's the info you requested! https://www.meta.com/quest/quest-3/"}` |
+| `<MESSAGE_TYPE>`  *String* | [Message type](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/send-messages#message-types). This placeholder appears twice in the syntax above, as it serves as a placeholder for the `type` property's value and its matching property name. | `text` |
+| `<MESSAGE_CONTENTS>`  *Object* | An object describing the message's contents.  This value will vary based on the message `type`, as well as the contents of the message.  For example, if a business sends an `image` message without a caption, the object would not include the `caption` property.  See [Sending messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/send-messages) for examples of payloads for each message type. | `{"body":"Here's the info you requested! https://www.meta.com/quest/quest-3/"}` |
 
 #### Example payload
 
 This example payload describes a text message (`type` is `text`) sent to a WhatsApp user by a business customer with the WhatsApp Business app.
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "102290129340398",  
-      "changes": [  
-        {  
-          "value": {  
-            "messaging_product": "whatsapp",  
-            "metadata": {  
-              "display_phone_number": "15550783881",  
-              "phone_number_id": "106540352242922"  
-            },  
-            "message_echoes": [  
-              {  
-                "from": "15550783881",  
-                "to": "16505551234",  
-                "id": "wamid.HBgLMTY0NjcwNDM1OTUVAgARGBIyNDlBOEI5QUQ4NDc0N0FCNjMA",  
-                "timestamp": "1700255121",  
-                "type": "text",  
-                "text": {  
-                  "body": "Here's the info you requested! https://www.meta.com/quest/quest-3/"  
-                }  
-              }  
-            ]  
-          },  
-          "field": "smb_message_echoes"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "102290129340398",  
+      "changes": [  
+        {  
+          "value": {  
+            "messaging_product": "whatsapp",  
+            "metadata": {  
+              "display_phone_number": "15550783881",  
+              "phone_number_id": "106540352242922"  
+            },  
+            "message_echoes": [  
+              {  
+                "from": "15550783881",  
+                "to": "16505551234",  
+                "id": "wamid.HBgLMTY0NjcwNDM1OTUVAgARGBIyNDlBOEI5QUQ4NDc0N0FCNjMA",  
+                "timestamp": "1700255121",  
+                "type": "text",  
+                "text": {  
+                  "body": "Here's the info you requested! https://www.meta.com/quest/quest-3/"  
+                }  
+              }  
+            ]  
+          },  
+          "field": "smb_message_echoes"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ## Need support?
 
 For Coexistence *onboarding*, choose:
 
-* Question Topic: “WABiz: Onboarding” and “TechProvider: Onboarding”
-* Request Type: “Embedded Signup - Coexistence Onboarding”
+* Question Topic: "WABiz: Onboarding" and "TechProvider: Onboarding"
+* Request Type: "Embedded Signup - Coexistence Onboarding"
 
 For Coexistence *API issues*, choose:
 
-* Question Topic: “WABiz: Cloud API”
-* Request Type: “Coexistence Data Synchronization APIs and Webhooks”
+* Question Topic: "WABiz: Cloud API"
+* Request Type: "Coexistence Data Synchronization APIs and Webhooks"

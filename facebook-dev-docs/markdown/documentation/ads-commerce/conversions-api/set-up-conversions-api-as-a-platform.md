@@ -11,9 +11,9 @@ Updated: Jun 30, 2026
 
 **No code changes are needed.**
 
-Tier labels have been updated: “Standard Access” is now **Limited Access**, and “Advanced Access” is now **Full Access**. The revised qualification threshold for Full Access has been reduced from 1,500 to **500 Marketing API calls** in the past 15 days. The underlying permission identifier remains the same, and existing access levels are preserved automatically. Learn more in the [Marketing API Access Tier documentation](https://developers.facebook.com/docs/features-reference#marketing-api-access-tier).
+Tier labels have been updated: "Standard Access" is now **Limited Access**, and "Advanced Access" is now **Full Access**. The revised qualification threshold for Full Access has been reduced from 1,500 to **500 Marketing API calls** in the past 15 days. The underlying permission identifier remains the same, and existing access levels are preserved automatically. Learn more in the [Marketing API Access Tier documentation](https://developers.facebook.com/docs/features-reference#marketing-api-access-tier).
 
-The Conversions API supports advertisers’ efforts to provide consumers with appropriate data transparency and control while also helping them to continue providing personal experiences. With the API, you can share data directly from your server, rather than through a browser.
+The Conversions API supports advertisers' efforts to provide consumers with appropriate data transparency and control while also helping them to continue providing personal experiences. With the API, you can share data directly from your server, rather than through a browser.
 
 ### Benefits of integration
 
@@ -34,7 +34,7 @@ The following is a snapshot of the complete integration process:
 
 | Requirements | Full Integration | Optimization |
 | --- | --- | --- |
-| Select events to share with Meta with user consent (if any).   Set up your business’ assets: Meta Pixel, Meta Application, Meta Business Suite, Server Connection, System User. | **Step 1: One event** - Sending any event, manually, or automated using the system user’s token. Completing this step means you have correctly set up authentication.  **Step 2: Fully Integrated** - You need to be sending some automated events to be considered integrated. Completing this milestone means you are able to optimize for Conversions API even in the event that you stop using the Pixel or the Pixel is blocked. | Once you are fully integrated, send enough automated funnel events to be considered fully onboarded. Then, optimize your match rate based on guidance from Event Match Quality.   Make sure:   * The events can be sent via either channel (browser or server) and it is not being double-counted. * The events are being sent as close to real-time as possible. * Provide customer information parameters to be used for identity matching. |
+| Select events to share with Meta with user consent (if any).   Set up your business' assets: Meta Pixel, Meta Application, Meta Business Suite, Server Connection, System User. | **Step 1: One event** - Sending any event, manually, or automated using the system user's token. Completing this step means you have correctly set up authentication.  **Step 2: Fully Integrated** - You need to be sending some automated events to be considered integrated. Completing this milestone means you are able to optimize for Conversions API even in the event that you stop using the Pixel or the Pixel is blocked. | Once you are fully integrated, send enough automated funnel events to be considered fully onboarded. Then, optimize your match rate based on guidance from Event Match Quality.   Make sure:   * The events can be sent via either channel (browser or server) and it is not being double-counted. * The events are being sent as close to real-time as possible. * Provide customer information parameters to be used for identity matching. |
 
 ### Existing Pixel users
 
@@ -72,7 +72,7 @@ Send events that are most relevant to your business. See a full list of supporte
 
 You can send multiple parameters inside each event. See [parameters used by Conversions API](https://developers.facebook.com/documentation/ads-commerce/conversions-api/parameters) to learn more about those fields.
 
-You can add multiple types of IDs to your events, including `event_id`, `external_id` and `order_id`. It’s important to know the difference between these parameters:
+You can add multiple types of IDs to your events, including `event_id`, `external_id` and `order_id`. It's important to know the difference between these parameters:
 
 | ID | Description | How It Is Used |
 | --- | --- | --- |
@@ -86,7 +86,7 @@ Send events in real time or in [batches](https://developers.facebook.com/docs/gr
 
 Sending your events more than 2 hours after they occurred can cause a significant decrease in performance for ads optimized for those events. Events sent with a delay of 24 hours or more may experience significant issues with attribution and optimized ad delivery.
 
-If you’re sending events with long conversion windows, send the event as close to real time as possible from the point at which the full conversion is completed.
+If you're sending events with long conversion windows, send the event as close to real time as possible from the point at which the full conversion is completed.
 
 *Move on to the next step once you have:*
 
@@ -111,7 +111,7 @@ There are two ways to implement your integration:
 * [Direct Integration](https://developers.facebook.com/documentation/ads-commerce/conversions-api/set-up-conversions-api-as-a-platform#direct-integration) — You, as an advertiser, directly implement the Conversions API.
 * [Integration as a Platform](https://developers.facebook.com/documentation/ads-commerce/conversions-api/set-up-conversions-api-as-a-platform#integration-as-a-platform) — You, as a marketing partner, offer conversions API as a service to your clients.
 
-Advertisers using the Conversions API through one of Meta’s marketing partners should follow the partner’s implementation guidelines.
+Advertisers using the Conversions API through one of Meta's marketing partners should follow the partner's implementation guidelines.
 
 ## Direct integration
 
@@ -121,8 +121,8 @@ Prior to using the Conversions API, set up the following assets:
 
 | Asset | Description |
 | --- | --- |
-| [Meta Pixel](https://developers.facebook.com/documentation/ads-commerce/conversions-api/get-started#facebook_pixel) | When you send events through the Conversions API, they’re processed and stored in the same way as the events you send through your Pixel. When you implement the Conversions API, you select which Pixel you want to send your events to.   Sending your Conversions API events to a Pixel lets you use your Conversions API events in the same way you use your browser-based Pixel events for measurement, attribution, and ad delivery optimization. Send events from the browser and your server to the same Meta Pixel ID. |
-| [Meta Business Suite⁠](https://business.facebook.com/) | You need a Meta Business Suite to use the API. Meta Business Suite helps advertisers integrate Meta marketing efforts across their business and with external partners. If you don’t have a Meta Business Suite, see the Help Center article on how to [Create a Meta Business Suite⁠](https://www.facebook.com/business/help/1710077379203657). |
+| [Meta Pixel](https://developers.facebook.com/documentation/ads-commerce/conversions-api/get-started#facebook_pixel) | When you send events through the Conversions API, they're processed and stored in the same way as the events you send through your Pixel. When you implement the Conversions API, you select which Pixel you want to send your events to.   Sending your Conversions API events to a Pixel lets you use your Conversions API events in the same way you use your browser-based Pixel events for measurement, attribution, and ad delivery optimization. Send events from the browser and your server to the same Meta Pixel ID. |
+| [Meta Business Suite⁠](https://business.facebook.com/) | You need a Meta Business Suite to use the API. Meta Business Suite helps advertisers integrate Meta marketing efforts across their business and with external partners. If you don't have a Meta Business Suite, see the Help Center article on how to [Create a Meta Business Suite⁠](https://www.facebook.com/business/help/1710077379203657). |
 | Access Token | To use the Conversions API, you need an [access token](https://developers.facebook.com/documentation/facebook-login/guides/access-tokens). There are two ways of getting your access token:   * [Via Events Manager](https://developers.facebook.com/documentation/ads-commerce/conversions-api/get-started#via-events-manager) (Recommended) * [Using Your Own App](https://developers.facebook.com/documentation/ads-commerce/conversions-api/get-started#use-your-own-app) |
 
 *Move on to [Implement the API](https://developers.facebook.com/documentation/ads-commerce/conversions-api/set-up-conversions-api-as-a-platform#implement-the-api) once you have the assets ready. Remember to save IDs for your assets, since you use those on your API calls.*
@@ -145,7 +145,7 @@ After you complete your first call, verify your events on **Events Manager** > *
 
 #### Send and verify events
 
-To start sending events, make a `POST` request to the API’s `/events` edge. Attach a payload to your call — if you need help generating your payload, visit the [Payload Helper](https://developers.facebook.com/documentation/ads-commerce/conversions-api/payload-helper). See the following resources for more information and code samples:
+To start sending events, make a `POST` request to the API's `/events` edge. Attach a payload to your call — if you need help generating your payload, visit the [Payload Helper](https://developers.facebook.com/documentation/ads-commerce/conversions-api/payload-helper). See the following resources for more information and code samples:
 
 * [Using the API > Send requests](https://developers.facebook.com/documentation/ads-commerce/conversions-api/using-the-api#send)
 * [Dropped Events](https://developers.facebook.com/documentation/ads-commerce/conversions-api/using-the-api#dropped-events)
@@ -159,7 +159,7 @@ After you start sending events, go to Events Manager and confirm that Meta has r
 
 ### Step 3: Add parameters for deduplication
 
-If you’re sending identical events from your Pixel and through the Conversions API, you need to set up deduplication for your events sent via both channels. First, read [developer documentation to understand the deduplication logic](https://developers.facebook.com/documentation/ads-commerce/conversions-api/deduplicate-pixel-and-server-events).
+If you're sending identical events from your Pixel and through the Conversions API, you need to set up deduplication for your events sent via both channels. First, read [developer documentation to understand the deduplication logic](https://developers.facebook.com/documentation/ads-commerce/conversions-api/deduplicate-pixel-and-server-events).
 
 #### Event-based deduplication
 
@@ -175,15 +175,15 @@ To help ensure your events are deduplicated:
 
 #### Alternative to event-based deduplication
 
-While Event ID will always be the best way to deduplicate events, it’s a fairly complex implementation. You can use alternative solutions such as the external\_id or fbp parameters. If you have configured the external\_id or fbp parameters to be passed via both browser and server, Meta deduplicates events automatically if it detects the same event with the same external\_id or fbp parameters within 48 hours.
+While Event ID will always be the best way to deduplicate events, it's a fairly complex implementation. You can use alternative solutions such as the external\_id or fbp parameters. If you have configured the external\_id or fbp parameters to be passed via both browser and server, Meta deduplicates events automatically if it detects the same event with the same external\_id or fbp parameters within 48 hours.
 
 ### Optional step 4: Explore Business SDK features
 
 Explore [Business SDK features](https://developers.facebook.com/documentation/ads-commerce/conversions-api/guides/business-sdk-features). The Meta Business SDK has advanced features designed especially for Conversions API users:
 
-* [Asynchronous Requests](https://developers.facebook.com/documentation/ads-commerce/conversions-api/guides/business-sdk-features#asynchronous-requests) — Use this feature if you do not want to block your program’s execution to wait for a request to be completed. With this approach, you make your request and get a signal back from the server once it has been completed. While you wait for the response, the program can keep executing.
+* [Asynchronous Requests](https://developers.facebook.com/documentation/ads-commerce/conversions-api/guides/business-sdk-features#asynchronous-requests) — Use this feature if you do not want to block your program's execution to wait for a request to be completed. With this approach, you make your request and get a signal back from the server once it has been completed. While you wait for the response, the program can keep executing.
 * [Concurrent Batching](https://developers.facebook.com/documentation/ads-commerce/conversions-api/guides/business-sdk-features#concurrent-batching) — Leverage asynchronous requests to increase throughput by utilizing resources more efficiently. Create batched requests to support use cases like event request workers, cron jobs, and more.
-* [HTTP Service Interface](https://developers.facebook.com/documentation/ads-commerce/conversions-api/guides/business-sdk-features#http-service-interface) — Override the Business SDK’s default HTTP service and implement your own custom service with your preferred method or library.
+* [HTTP Service Interface](https://developers.facebook.com/documentation/ads-commerce/conversions-api/guides/business-sdk-features#http-service-interface) — Override the Business SDK's default HTTP service and implement your own custom service with your preferred method or library.
 
 ## Integration as a platform
 
@@ -201,25 +201,25 @@ Your app should get the following features and permissions:
 
 #### 1. Facebook Login for Business (recommended for partners)
 
-[Facebook Login for Business](https://developers.facebook.com/documentation/facebook-login/facebook-login-for-business#opt-in-to-facebook-login-for-business) is the preferred authentication and authorization solution for Tech Providers and business app developers who need access to their business clients’ assets. It allows you to specify the access token type, types of assets, and permissions your app needs, and save it as a set (configuration). You can then present the set to your business clients who can complete the flow and grant your app access to their business assets.
+[Facebook Login for Business](https://developers.facebook.com/documentation/facebook-login/facebook-login-for-business#opt-in-to-facebook-login-for-business) is the preferred authentication and authorization solution for Tech Providers and business app developers who need access to their business clients' assets. It allows you to specify the access token type, types of assets, and permissions your app needs, and save it as a set (configuration). You can then present the set to your business clients who can complete the flow and grant your app access to their business assets.
 
 #### 2. Meta Business Extension
 
-[Meta Business Extension](https://developers.facebook.com/docs/meta-business-extension) returns all the necessary information needed to send events on behalf of the client via the following process. Meta Business Extension provides an endpoint to retrieve system user access tokens created in the client’s Meta Business Suite. This process includes permissions to send server events and is done automatically and in a secured way.
+[Meta Business Extension](https://developers.facebook.com/docs/meta-business-extension) returns all the necessary information needed to send events on behalf of the client via the following process. Meta Business Extension provides an endpoint to retrieve system user access tokens created in the client's Meta Business Suite. This process includes permissions to send server events and is done automatically and in a secured way.
 
 The endpoint requires the user access token as input parameter. For new Meta Business Extension users, call this endpoint the endpoint to fetch the system user access token after you finish setting up Meta Business Extension. Existing users need to ask for re-authentication before calling the new API endpoint.
 
 Facebook Business Extension is currently only available to approved partners. If you are interested in becoming a partner, contact your Meta representative for access.
 
-#### 3. Business on behalf of: client shares dataset to the partner’s Meta Business Suite
+#### 3. Business on behalf of: client shares dataset to the partner's Meta Business Suite
 
-The client shares their dataset to the partner via Meta Business Suite settings, see ‘Client system user’s access token’ section or via [API through the On Behalf Of onboarding method](https://developers.facebook.com/docs/marketing-api/business-manager/guides/on-behalf-of). You can assign the partner system user to the client pixel and generate an access token to send server events by manually creating a System User Access Token. This can be done via the Conversions API inside the pixel settings above. On the API side, you need to request access to the [client’s ad account](https://developers.facebook.com/docs/marketing-api/business-asset-management/guides/business-to-business#managing-your-relationship-as-an-ad-agency-acting-on-behalf-of-another-business) managing the dataset and [proceed sharing pixels via API](https://developers.facebook.com/docs/marketing-api/business-asset-management/guides/business-pixel-sharing).
+The client shares their dataset to the partner via Meta Business Suite settings, see 'Client system user's access token' section or via [API through the On Behalf Of onboarding method](https://developers.facebook.com/docs/marketing-api/business-manager/guides/on-behalf-of). You can assign the partner system user to the client pixel and generate an access token to send server events by manually creating a System User Access Token. This can be done via the Conversions API inside the pixel settings above. On the API side, you need to request access to the [client's ad account](https://developers.facebook.com/docs/marketing-api/business-asset-management/guides/business-to-business#managing-your-relationship-as-an-ad-agency-acting-on-behalf-of-another-business) managing the dataset and [proceed sharing pixels via API](https://developers.facebook.com/docs/marketing-api/business-asset-management/guides/business-pixel-sharing).
 
-#### 4. Client system user’s access token
+#### 4. Client system user's access token
 
-This is the similar onboarding flow for direct integration. You will have your client [manually create a System User Access Token](https://developers.facebook.com/documentation/ads-commerce/conversions-api/set-up-conversions-api-as-a-platform#option1) via the Conversions API inside the dataset settings. Then, you can send events to the advertiser’s dataset with that token. A system user or an admin system user must install the app that will be used to generate the access token. With this setup, your app is allowed to call APIs on behalf of this system user or admin system user.
+This is the similar onboarding flow for direct integration. You will have your client [manually create a System User Access Token](https://developers.facebook.com/documentation/ads-commerce/conversions-api/set-up-conversions-api-as-a-platform#option1) via the Conversions API inside the dataset settings. Then, you can send events to the advertiser's dataset with that token. A system user or an admin system user must install the app that will be used to generate the access token. With this setup, your app is allowed to call APIs on behalf of this system user or admin system user.
 
-**Note**: If the partner system leverages this method, their token will be limited to sending data only to Meta. The token can’t be used to run API GET data requests.
+**Note**: If the partner system leverages this method, their token will be limited to sending data only to Meta. The token can't be used to run API GET data requests.
 
 ### Step 3: Attribute events to your platform
 

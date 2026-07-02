@@ -52,13 +52,13 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/media' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "file": "@/local/path/file.ogg;type=ogg",  
-  "messaging_product": "whatsapp"  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/media' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "file": "@/local/path/file.ogg;type=ogg",  
+  "messaging_product": "whatsapp"  
 }'
 ```
 
@@ -70,31 +70,31 @@ Select status code
 
 ```
 {  
-  "Upload Audio (form-data)": {  
-    "value": {  
-      "id": "<MEDIA_ID>"  
-    }  
-  },  
-  "Upload Audio JSON": {  
-    "value": {  
-      "id": "4490709327384033"  
-    }  
-  },  
-  "Upload Image JSON": {  
-    "value": {  
-      "id": "4490709327384033"  
-    }  
-  },  
-  "Upload Sticker File (form-data)": {  
-    "value": {  
-      "id": "<MEDIA_ID>"  
-    }  
-  },  
-  "Upload Sticker File JSON": {  
-    "value": {  
-      "id": "4490709327384033"  
-    }  
-  }  
+  "Upload Audio (form-data)": {  
+    "value": {  
+      "id": "<MEDIA_ID>"  
+    }  
+  },  
+  "Upload Audio JSON": {  
+    "value": {  
+      "id": "4490709327384033"  
+    }  
+  },  
+  "Upload Image JSON": {  
+    "value": {  
+      "id": "4490709327384033"  
+    }  
+  },  
+  "Upload Sticker File (form-data)": {  
+    "value": {  
+      "id": "<MEDIA_ID>"  
+    }  
+  },  
+  "Upload Sticker File JSON": {  
+    "value": {  
+      "id": "4490709327384033"  
+    }  
+  }  
 }
 ```
 
@@ -177,13 +177,13 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/media' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "file": "@/local/path/file.ogg;type=ogg",  
-  "messaging_product": "whatsapp"  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/media' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "file": "@/local/path/file.ogg;type=ogg",  
+  "messaging_product": "whatsapp"  
 }'
 ```
 
@@ -195,31 +195,31 @@ Select status code
 
 ```
 {  
-  "Upload Audio (form-data)": {  
-    "value": {  
-      "id": "<MEDIA_ID>"  
-    }  
-  },  
-  "Upload Audio JSON": {  
-    "value": {  
-      "id": "4490709327384033"  
-    }  
-  },  
-  "Upload Image JSON": {  
-    "value": {  
-      "id": "4490709327384033"  
-    }  
-  },  
-  "Upload Sticker File (form-data)": {  
-    "value": {  
-      "id": "<MEDIA_ID>"  
-    }  
-  },  
-  "Upload Sticker File JSON": {  
-    "value": {  
-      "id": "4490709327384033"  
-    }  
-  }  
+  "Upload Audio (form-data)": {  
+    "value": {  
+      "id": "<MEDIA_ID>"  
+    }  
+  },  
+  "Upload Audio JSON": {  
+    "value": {  
+      "id": "4490709327384033"  
+    }  
+  },  
+  "Upload Image JSON": {  
+    "value": {  
+      "id": "4490709327384033"  
+    }  
+  },  
+  "Upload Sticker File (form-data)": {  
+    "value": {  
+      "id": "<MEDIA_ID>"  
+    }  
+  },  
+  "Upload Sticker File JSON": {  
+    "value": {  
+      "id": "4490709327384033"  
+    }  
+  }  
 }
 ```
 

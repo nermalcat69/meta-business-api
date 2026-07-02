@@ -89,11 +89,9 @@ GGG
 A successful request returns HTTP status code `200` and the payload:
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 Please see [Error and Status Messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/error-codes) if you encounter any errors.
@@ -128,12 +126,10 @@ curl -X GET \
 A successful response looks like this:
 
 ```
-```
 {  
-  "business_public_key": "<2048_bit_RSA_key>"  
-  "business_public_key_signature_status": VALID | MISMATCH  
+  "business_public_key": "<2048_bit_RSA_key>"  
+  "business_public_key_signature_status": VALID | MISMATCH  
 }
-```
 ```
 
 Please see [Error and Status Messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/error-codes) if you encounter any errors.

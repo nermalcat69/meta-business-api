@@ -41,7 +41,7 @@ curl -X POST \
   -F 'object_id=<PAGE_ID>' \
   -F 'instagram_user_id=<IG_USER_ID>' \
   -F 'threads_user_id=<THREADS_USER_ID>' \
-  -F 'call_to_action={"type": "LEARN_MORE", "value": {"link": "<LINK_URL>"}}' \
+  -F 'call_to_action={"type": "LEARN_MORE", "value": {"link": "<LINK_URL>"}​}' \
   -F 'access_token=<ACCESS_TOKEN>' \
 https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/adcreatives
 ```
@@ -49,11 +49,9 @@ https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/adcreatives
 ### Example response
 
 ```
-```
 {  
-  "id": "<CREATIVE_ID>"  
+  "id": "<CREATIVE_ID>"  
 }
-```
 ```
 
 ## Promote an existing Facebook post
@@ -67,7 +65,7 @@ curl -X POST \
   -F 'object_story_id=<PAGE_ID>_<POST_ID>' \
   -F 'instagram_user_id=<IG_USER_ID>' \
   -F 'threads_user_id=<THREADS_USER_ID>' \
-  -F 'call_to_action={"type": "LEARN_MORE", "value": {"link": "<LINK_URL>"}}' \
+  -F 'call_to_action={"type": "LEARN_MORE", "value": {"link": "<LINK_URL>"}​}' \
   -F 'access_token=<ACCESS_TOKEN>' \
 https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/adcreatives
 ```
@@ -75,11 +73,9 @@ https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/adcreatives
 ### Example response
 
 ```
-```
 {  
-  "id": "<CREATIVE_ID>"  
+  "id": "<CREATIVE_ID>"  
 }
-```
 ```
 
 ## Create the ad

@@ -29,7 +29,7 @@ The following table compares the marketing message formats supported by Marketin
 | Description | Marketing Messages API for WhatsApp (Supports Marketing) | Cloud API (Supports Auth, Utility, Service, Marketing) |
 | --- | --- | --- |
 | **Animated image (GIF) header:** Marketing message templates support a GIF [media type in the header](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/components#media-headers). | **Yes** | **No** |
-| **Android app deep links:**[Links](https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/deep-links) that open a specified app on a customer’s Android device. | **Yes** | **No** |
+| **Android app deep links:**[Links](https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/deep-links) that open a specified app on a customer's Android device. | **Yes** | **No** |
 | **Customizable message validity periods:** Set a [time-to-live for messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/send-marketing-messages#create-marketing-templates) so messages expire when WhatsApp cannot deliver them soon enough. | **Yes:** TTL can range from 12 hours to 30 days. | **Limited:** Only supports Authentication and Utility messages. |
 | **Basic marketing message formats:**[Formats such as media, carousel, product catalog, flow, interactive list, and interactive reply.](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/marketing-templates) | **Yes** | **Yes** |
 
@@ -48,7 +48,7 @@ The following table compares the metrics available in Marketing Messages API for
 
 | Description | Marketing Messages API for WhatsApp (Supports Marketing) | Cloud API (Supports Auth, Utility, Service, Marketing) |
 | --- | --- | --- |
-| **Conversion metrics:** Conversions on Web and App. | **Yes:**[Measure app events](https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/measure-conversion#measure-app-conversions-with-meta-sdk-or-app-events-api) that users perform after a marketing message, such as “Add to Cart”, “Checkout Initiated”, and “Purchase”. | **No** |
+| **Conversion metrics:** Conversions on Web and App. | **Yes:**[Measure app events](https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/measure-conversion#measure-app-conversions-with-meta-sdk-or-app-events-api) that users perform after a marketing message, such as "Add to Cart", "Checkout Initiated", and "Purchase". | **No** |
 | **Cost metrics:**[Spend per template, Cost per click, Cost per delivery.](https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/view-metrics) | **Yes** | **Yes** |
 | **Basic metrics:**[Sent, delivered, read, clicked, errors.](https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/view-metrics) | **Yes** | **Yes** |
 
@@ -60,7 +60,7 @@ The following table compares the enterprise, security, and compliance features a
 | --- | --- | --- |
 | **Local Storage Support:** Phone numbers with [Local Storage enabled.](https://developers.facebook.com/documentation/business-messaging/whatsapp/local-storage) | **Yes** | **Yes** |
 | **Compliance certification:** Compliance resources available on the [Business Messaging Compliance Center⁠](https://www.facebook.com/business/business-messaging/compliance). | **Yes:** Certification for LGPD, GDPR, System Audit Report, SOC, ISO27001. | **Yes:** Certification for LGPD, GDPR, System Audit Report, SOC, ISO27001. |
-| **Automatic throughput upgrades:** Automatic upgrades (and webhook notifications) to a phone number’s [messaging throughput](https://developers.facebook.com/documentation/business-messaging/whatsapp/throughput). | **Yes** | **Yes** |
+| **Automatic throughput upgrades:** Automatic upgrades (and webhook notifications) to a phone number's [messaging throughput](https://developers.facebook.com/documentation/business-messaging/whatsapp/throughput). | **Yes** | **Yes** |
 | **Real-time service status updates:**[Uptime and availability metrics](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/api-status-page) are live on [metastatus.com⁠](https://metastatus.com/whatsapp-business-api?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR5PFmhNGdRbQVuQxSkl3MFz5YEPR2FyRbNUQBFvnp-P6cF1F27AW9hhxM3LVA_aem_RyaG3Jqbxr2Ho5P83B4DVw). | **Yes** | **Yes** |
 
 ## Onboarding

@@ -36,7 +36,7 @@ The following links explain some of the feature options:
 
 ## Audience Network Review
 
-Once you have successfully set up the Instant Games version of your game with Audience Network, you’ll see the Games platform card in your Monetization Manager. Click **Add payment account** to add payment information. This automatically starts the Audience Network review process.
+Once you have successfully set up the Instant Games version of your game with Audience Network, you'll see the Games platform card in your Monetization Manager. Click **Add payment account** to add payment information. This automatically starts the Audience Network review process.
 
 ## Integration
 
@@ -59,4 +59,4 @@ Your game must pass both Audience Network review and [Meta App Review](https://d
 
 * [Monetization Best Practices](https://developers.facebook.com/docs/games/monetization/best-practices)
 * [Best Practices and Troubleshooting](https://developers.facebook.com/docs/games/monetization/in-app-ads/instant-games#best-practices-and-troubleshooting) for Instant Games
-* [Meta Audience Network Policy](https://developers.facebook.com/documentation/audience-network/optimization/best-practices/an-policy), and [Policy Do’s and Don’ts](https://developers.facebook.com/documentation/audience-network/optimization/best-practices/an-policy/dos-and-donts) can help you avoid enforcement.
+* [Meta Audience Network Policy](https://developers.facebook.com/documentation/audience-network/optimization/best-practices/an-policy), and [Policy Do's and Don'ts](https://developers.facebook.com/documentation/audience-network/optimization/best-practices/an-policy/dos-and-donts) can help you avoid enforcement.

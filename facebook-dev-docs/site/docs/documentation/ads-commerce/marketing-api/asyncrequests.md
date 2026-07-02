@@ -17,7 +17,7 @@ If you make any changes to the following scenarios, your ad will be triggered fo
 
 **Note**: Changes to bid amount, budget, and ad set schedule will not have any effect on the review status.
 
-Additionally, if an ad enters Ad Review with the run status of “Paused”, then it will remain Paused upon exiting Ad Review. Otherwise, the ad will be considered Active and ready to deliver.
+Additionally, if an ad enters Ad Review with the run status of "Paused", then it will remain Paused upon exiting Ad Review. Otherwise, the ad will be considered Active and ready to deliver.
 
 ## Pagination
 
@@ -59,7 +59,7 @@ Quickly check if the response to a request has changed since you last made it, s
 
 ## Object archive and delete status
 
-Ad objects have two types of delete states: archived and deleted. You can query both archived and deleted objects with the object id. However, deleted objects are not returned if you request them from another object’s edge.
+Ad objects have two types of delete states: archived and deleted. You can query both archived and deleted objects with the object id. However, deleted objects are not returned if you request them from another object's edge.
 
 You can have up to 5000 archived objects at any time. You should move ad objects from archived states to deleted states if you no longer need to retrieve them via edges. To learn how states work and for sample calls see [Storing Ad Objects](https://developers.facebook.com/documentation/ads-commerce/marketing-api/best-practices/manage-your-ad-object-status).
 
@@ -83,7 +83,7 @@ You can use sandbox mode to demonstrate your app for app review. However in sand
 
 ### Basic criteria
 
-* Demonstrate value beyond Facebook’s core solutions, such as [Facebook Ads Manager⁠](https://www.facebook.com/ads/manager/).
+* Demonstrate value beyond Facebook's core solutions, such as [Facebook Ads Manager⁠](https://www.facebook.com/ads/manager/).
 * Focus on business objectives, such as increase in sales. Facebook business objectives can be found [here](https://developers.facebook.com/docs/reference/ads-api/guides/chapter-2-objective-connections).
 
 ## Policies
@@ -99,4 +99,4 @@ Understand the API policies; Facebook has the right to audit your activity anyti
 
 Be ready to adapt quickly to changes. Most changes are [versioned](https://developers.facebook.com/documentation/ads-commerce/marketing-api/overview/versioning) and change windows are 90 days, ongoing.
 
-In [Statement of Rights and Responsibilities⁠](https://www.facebook.com/legal/terms), you are financially and operationally responsible for your application, its contents, and your use of the Meta Platform and the Ads API. You should manage your app’s stability and potential bugs.
+In [Statement of Rights and Responsibilities⁠](https://www.facebook.com/legal/terms), you are financially and operationally responsible for your application, its contents, and your use of the Meta Platform and the Ads API. You should manage your app's stability and potential bugs.

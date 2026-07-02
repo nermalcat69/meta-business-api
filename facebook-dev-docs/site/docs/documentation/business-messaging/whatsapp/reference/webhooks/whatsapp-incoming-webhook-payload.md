@@ -73,11 +73,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{User-ID}/assigned_whatsapp_business_accounts' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{User-ID}/assigned_whatsapp_business_accounts' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -88,38 +88,38 @@ Select status code
 
 ```
 {  
-  "multiple_accounts": {  
-    "summary": "User with multiple assigned accounts",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "1234567890123456",  
-          "name": "Primary Business Account"  
-        },  
-        {  
-          "id": "2345678901234567",  
-          "name": "Secondary Business Account"  
-        }  
-      ]  
-    }  
-  },  
-  "single_account": {  
-    "summary": "User with single assigned account",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "1234567890123456",  
-          "name": "Business Account"  
-        }  
-      ]  
-    }  
-  },  
-  "no_accounts": {  
-    "summary": "User with no assigned accounts",  
-    "value": {  
-      "data": []  
-    }  
-  }  
+  "multiple_accounts": {  
+    "summary": "User with multiple assigned accounts",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "1234567890123456",  
+          "name": "Primary Business Account"  
+        },  
+        {  
+          "id": "2345678901234567",  
+          "name": "Secondary Business Account"  
+        }  
+      ]  
+    }  
+  },  
+  "single_account": {  
+    "summary": "User with single assigned account",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "1234567890123456",  
+          "name": "Business Account"  
+        }  
+      ]  
+    }  
+  },  
+  "no_accounts": {  
+    "summary": "User with no assigned accounts",  
+    "value": {  
+      "data": []  
+    }  
+  }  
 }
 ```
 
@@ -695,11 +695,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{User-ID}/assigned_whatsapp_business_accounts' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{User-ID}/assigned_whatsapp_business_accounts' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -710,38 +710,38 @@ Select status code
 
 ```
 {  
-  "multiple_accounts": {  
-    "summary": "User with multiple assigned accounts",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "1234567890123456",  
-          "name": "Primary Business Account"  
-        },  
-        {  
-          "id": "2345678901234567",  
-          "name": "Secondary Business Account"  
-        }  
-      ]  
-    }  
-  },  
-  "single_account": {  
-    "summary": "User with single assigned account",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "1234567890123456",  
-          "name": "Business Account"  
-        }  
-      ]  
-    }  
-  },  
-  "no_accounts": {  
-    "summary": "User with no assigned accounts",  
-    "value": {  
-      "data": []  
-    }  
-  }  
+  "multiple_accounts": {  
+    "summary": "User with multiple assigned accounts",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "1234567890123456",  
+          "name": "Primary Business Account"  
+        },  
+        {  
+          "id": "2345678901234567",  
+          "name": "Secondary Business Account"  
+        }  
+      ]  
+    }  
+  },  
+  "single_account": {  
+    "summary": "User with single assigned account",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "1234567890123456",  
+          "name": "Business Account"  
+        }  
+      ]  
+    }  
+  },  
+  "no_accounts": {  
+    "summary": "User with no assigned accounts",  
+    "value": {  
+      "data": []  
+    }  
+  }  
 }
 ```
 

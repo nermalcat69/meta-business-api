@@ -29,13 +29,13 @@ When the client completes the flow, Embedded Signup generates their new WABA, as
 
 You must capture these IDs and use them with the API to share your credit line, subscribe to webhooks, and register the number for use with Cloud API. Once you complete the final step (registration), the business phone number is re-associated with the destination WABA and the number can then be used to send and receive messages again.
 
-Since the client’s business phone number is not changing, its display name, quality rating, messaging limit, and Official Business Account status are all preserved.
+Since the client's business phone number is not changing, its display name, quality rating, messaging limit, and Official Business Account status are all preserved.
 
-In addition, all eligible templates are automatically duplicated in the destination WABA and granted the same statuses as their source counterparts, and all media uploaded on the client’s business phone number can continue to be used.
+In addition, all eligible templates are automatically duplicated in the destination WABA and granted the same statuses as their source counterparts, and all media uploaded on the client's business phone number can continue to be used.
 
 ### WhatsApp Business accounts
 
-Embedded Signup automatically generates the client’s new WABA, associates it with their Meta Business Account, and grants your app access to the WABA.
+Embedded Signup automatically generates the client's new WABA, associates it with their Meta Business Account, and grants your app access to the WABA.
 
 ### Templates
 
@@ -43,7 +43,7 @@ Templates are automatically duplicated in the destination WABA and initially gra
 
 After duplication however, templates are re-checked to ensure they are correctly categorized according to our [guidelines](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing). This may result in some duplicated templates having their `status` set to `REJECTED`.
 
-Only templates with both a `status` of `APPROVED` and `quality_score` of `GREEN` are eligible for duplication. If the destination WABA cannot accommodate all of the new templates, we will duplicate as many as we can until the destination WABA’s template limit has been reached. Unduplicated templates must be re-created and submitted for approval if they are to be used by the destination WABA.
+Only templates with both a `status` of `APPROVED` and `quality_score` of `GREEN` are eligible for duplication. If the destination WABA cannot accommodate all of the new templates, we will duplicate as many as we can until the destination WABA's template limit has been reached. Unduplicated templates must be re-created and submitted for approval if they are to be used by the destination WABA.
 
 Note that **template quality ratings are not duplicated**. All duplicated templates will start with an `UNKNOWN` rating. This rating will remain for the first 24 hours, after which a new rating will be generated if sufficient data is available.
 
@@ -92,7 +92,7 @@ At least one app must already be subscribed to webhooks on the destination WABA 
 
 ### Step 1: Instruct client to disable two-step verification
 
-If you haven’t already done so, instruct your client to use the WhatsApp Manager to [disable two-step verification](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-phone-numbers/phone-numbers#disabling-two-step-verification) on their business phone number (or to ask their current Solution Partner to disable it for them).
+If you haven't already done so, instruct your client to use the WhatsApp Manager to [disable two-step verification](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-phone-numbers/phone-numbers#disabling-two-step-verification) on their business phone number (or to ask their current Solution Partner to disable it for them).
 
 **You cannot complete the remaining steps until two-step verification is disabled.**
 
@@ -110,7 +110,7 @@ When the client completes the flow, capture the business phone number ID and new
 
 ### Step 5: Subscribe webhooks
 
-[Subscribe your app to webhooks](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/manage-webhooks#subscribe-to-a-whatsapp-business-account) on the client’s new WABA.
+[Subscribe your app to webhooks](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/manage-webhooks#subscribe-to-a-whatsapp-business-account) on the client's new WABA.
 
 ### Step 6: Register the phone number for Cloud API
 

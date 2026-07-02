@@ -11,7 +11,7 @@ Updated: Jun 17, 2026
 
 *Marketing Messages API for WhatsApp*
 
-The GET response for listing allowlisted end-businesses now includes `end_business_name`, the display name of each enrolled end-business, so Solution Partners no longer need a separate lookup per ID. The field is `null` when the business can’t be resolved. See [Enroll in the max price feature](https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/pricing/enroll-max-price).
+The GET response for listing allowlisted end-businesses now includes `end_business_name`, the display name of each enrolled end-business, so Solution Partners no longer need a separate lookup per ID. The field is `null` when the business can't be resolved. See [Enroll in the max price feature](https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/pricing/enroll-max-price).
 
 ## June 18, 2026
 
@@ -145,8 +145,8 @@ Added a [Coexistence onboarding guide to MM Lite](https://developers.facebook.co
 
 *MM Lite API*
 
-* On September 8th, 2025, we’re launching a new [“MM Lite ToS signed” webhook](https://developers.facebook.com/docs/whatsapp/marketing-messages-lite-api/onboarding#receive-mm-lite-terms-of-service-signed-webhook--preferred-), which will be sent whenever a business signs the MM Lite ToS via any method (e.g. Embedded Signup, or in WhatsApp Manager). The webhook will have a more descriptive name than the existing `AD_ACCOUNT_LINKED` webhook. The older webhook will be deprecated by Jan 1, 2026.
-* [Conversion metrics](https://developers.facebook.com/docs/whatsapp/marketing-messages-lite-api/viewing-metrics) will now also be available in WhatsApp Manager UI and via the WhatsApp Business Management API. This means that we’re removing the ability to view MM Lite metrics for read-only Ad Accounts in Ads Manager.
+* On September 8th, 2025, we're launching a new ["MM Lite ToS signed" webhook](https://developers.facebook.com/docs/whatsapp/marketing-messages-lite-api/onboarding#receive-mm-lite-terms-of-service-signed-webhook--preferred-), which will be sent whenever a business signs the MM Lite ToS via any method (e.g. Embedded Signup, or in WhatsApp Manager). The webhook will have a more descriptive name than the existing `AD_ACCOUNT_LINKED` webhook. The older webhook will be deprecated by Jan 1, 2026.
+* [Conversion metrics](https://developers.facebook.com/docs/whatsapp/marketing-messages-lite-api/viewing-metrics) will now also be available in WhatsApp Manager UI and via the WhatsApp Business Management API. This means that we're removing the ability to view MM Lite metrics for read-only Ad Accounts in Ads Manager.
 * The `/marketing_messages` endpoint will [accept marketing messages for both MM Lite API and Cloud API](https://developers.facebook.com/docs/whatsapp/marketing-messages-lite-api/sending-messages#send-marketing-template-messages).
 
 ## August 22, 2025
@@ -167,7 +167,7 @@ Added an [image background generation](https://developers.facebook.com/docs/what
 
 *MM Lite API*
 
-* Updated [references](https://developers.facebook.com/docs/whatsapp/marketing-messages-lite-api/guides/deep-links#form-fields) to “Mobile App ID” to “Meta App ID” when creating a template to avoid confusion.
+* Updated [references](https://developers.facebook.com/docs/whatsapp/marketing-messages-lite-api/guides/deep-links#form-fields) to "Mobile App ID" to "Meta App ID" when creating a template to avoid confusion.
 * Added a [Template-to-ad-syncing guideline](https://developers.facebook.com/docs/whatsapp/marketing-messages-lite-api/measuring-conversion) for clients to follow to ensure all templates be set up for conversion metrics.
 
 ## July 22, 2025
@@ -255,7 +255,7 @@ Added [new error codes](https://developers.facebook.com/docs/whatsapp/marketing-
 
 *Limited access available for [tracking click events](https://developers.facebook.com/docs/whatsapp/marketing-messages-lite-api/guides/tracking-click-events).*
 
-We are offering a limited roll-out of webhook access to click events on marketing messages sent using MM Lite. [Read the “Tracking click events” page for more information](https://developers.facebook.com/docs/whatsapp/marketing-messages-lite-api/guides/tracking-click-events)
+We are offering a limited roll-out of webhook access to click events on marketing messages sent using MM Lite. [Read the "Tracking click events" page for more information](https://developers.facebook.com/docs/whatsapp/marketing-messages-lite-api/guides/tracking-click-events)
 
 ### April 11, 2025
 
@@ -313,9 +313,9 @@ In addition, a new MM Lite enrolment parameter allows businesses and partners to
 
 *Reduced sync and async latency*
 
-MM Lite team has quickly responded to feedback on “async” or “delivery” latency. This is defined as the time between an API call being received by MM Lite API, and MM Lite API dispatching a “delivered” webhook, assuming a user is online when the message is sent.
+MM Lite team has quickly responded to feedback on "async" or "delivery" latency. This is defined as the time between an API call being received by MM Lite API, and MM Lite API dispatching a "delivered" webhook, assuming a user is online when the message is sent.
 
-MM Lite previously had a p99 “async” delivery time of 12s, vs. p99 of 5s on Cloud API. This time has now been reduced to 9s. No action is required on a business or partner’s part.
+MM Lite previously had a p99 "async" delivery time of 12s, vs. p99 of 5s on Cloud API. This time has now been reduced to 9s. No action is required on a business or partner's part.
 
 ## November 15, 2024
 
@@ -327,10 +327,10 @@ MM Lite is rolling out a new way for partners to guide a business through signin
 
 In parallel with the Embedded Signup flow already available, a partner will also alternatively be able to initiate the following flow:
 
-* Call an ‘Intent API’ endpoint to indicate a BMID the partner wishes to assist in migrating to MM Lite. (If a BMID contains any OBO WABAs, these must be migrated to ‘shared’ prior to this event).
+* Call an 'Intent API' endpoint to indicate a BMID the partner wishes to assist in migrating to MM Lite. (If a BMID contains any OBO WABAs, these must be migrated to 'shared' prior to this event).
 * Admins of that BMID will receive a notification that they have been invited to start sending marketing messages with optimizations via MM Lite. This notification is in Business Manager and via email.
 * Once accepted, and MM Lite setup and Ad account syncing is complete, a webhook will be triggered to the partner and all subscribers indicating that MM Lite onboarding is complete, and including the linked Ad IDs.
-* The partner may now call the “send” endpoint of MM Lite on this business’ behalf, and call an API to fetch an updated token with permission to access the business’ Ad account metrics.
+* The partner may now call the "send" endpoint of MM Lite on this business' behalf, and call an API to fetch an updated token with permission to access the business' Ad account metrics.
 
 See API docs for details on this new onboarding flow.
 
@@ -351,23 +351,23 @@ Businesses can now use MM Lite API to measure when marketing messages lead users
 To represent this new conversation type, MM Lite API conversations are available in every surface where reporting is offered:
 
 * Ads Manager UI [recommended]
-* Marketing API “Insights API” [recommended]
-* WhatsApp Manager UI “WABA Insights” page and “Template Insights” page
+* Marketing API "Insights API" [recommended]
+* WhatsApp Manager UI "WABA Insights" page and "Template Insights" page
 * Business Management API
 * Pricing webhooks
 
 For full details on how to see MM Lite API metrics via API and in pricing webhooks, consult the MM Lite API docs.
 
-* In the Marketing API “Insights API” response, MM Lite events can be return using fields named `marketing_messages_[event]`
-* In the Business Management API “Template Analytics” endpoint, MM Lite events can be returned using the query parameter `MARKETING_MESSAGES_LITE_API`
-* In the Business Management API “Conversation Analytics” endpoints, MM Lite events can be returned using the `product_type` query parameter `MARKETING\_LITE’
+* In the Marketing API "Insights API" response, MM Lite events can be return using fields named `marketing_messages_[event]`
+* In the Business Management API "Template Analytics" endpoint, MM Lite events can be returned using the query parameter `MARKETING_MESSAGES_LITE_API`
+* In the Business Management API "Conversation Analytics" endpoints, MM Lite events can be returned using the `product_type` query parameter `MARKETING\_LITE'
 * In message status webhooks, the `conversation:origin:type` and `pricing:category` fields will show as `marketing_lite`
 
-Businesses can now see MM Lite metrics as “Marketing - lite” in the WhatsApp Manager UI:
+Businesses can now see MM Lite metrics as "Marketing - lite" in the WhatsApp Manager UI:
 
 ![WhatsApp Manager Insights dashboard showing conversation metrics by category including Marketing - lite, with a trend chart](https://scontent.fdel1-6.fna.fbcdn.net/v/t39.2365-6/475969840_997283928986096_7019011551543213590_n.png?_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=BUOon2Ad1boQ7kNvwGOoDn_&_nc_oc=AdqNKIrh8cMy33IwxLAdq3k5QwwgVR3d6T_9ARNKBaZaxlXmQtqMZEKNksk5mRt-GgDfcpKnPL6W6RxRJ83OyGuw&_nc_zt=14&_nc_ht=scontent.fdel1-6.fna&_nc_gid=rsBi6FT19qNXhRJ-SgIbxg&_nc_ss=7b2a8&oh=00_AQA65_JFxFFRI7_oM5MA2sRB3WqvKl_que_qStqxTJBtUg&oe=6A606EE3)
 
-We recommend you integrate with the Marketing API “Insights API” for MM Lite Metrics, and encourage end businesses to log into Ads Manager UI to see their metrics, instead of using the WhatsApp business surface. Ads Mgr UI and Insights API show conversion metrics that are not available on WhatsApp surfaces, and will continue to support new metrics and features as the primary surface for MM Lite API reporting as the API grows.
+We recommend you integrate with the Marketing API "Insights API" for MM Lite Metrics, and encourage end businesses to log into Ads Manager UI to see their metrics, instead of using the WhatsApp business surface. Ads Mgr UI and Insights API show conversion metrics that are not available on WhatsApp surfaces, and will continue to support new metrics and features as the primary surface for MM Lite API reporting as the API grows.
 
 API docs for partners have been updated to reflect how to fetch MM Lite metrics via API.
 

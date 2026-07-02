@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/marketing
 
 Updated: Apr 30, 2026
 
-Create a custom audience of users who visited or took specific actions on your website using Meta Pixel, Meta’s on-platform events and audience rules.
+Create a custom audience of users who visited or took specific actions on your website using Meta Pixel, Meta's on-platform events and audience rules.
 
 Once you create a custom audience with website data, reference it in ad targeting as you do with standard [custom audiences](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/custom-audience). Meta automatically updates this audience based on the retention policy you set up.
 
@@ -17,7 +17,7 @@ See [Custom Audience](https://developers.facebook.com/documentation/ads-commerce
 
 If you share conversion events using Conversions API, you can create a Website Custom Audience and use it for ads. You can also create an Offline Custom Audience and a Mobile App Custom Audience. Meta recommends you share [`external_id`](https://developers.facebook.com/documentation/ads-commerce/conversions-api/parameters/external-id) as a customer information parameter to improve match rates and leverage matches across channels.
 
-Please note that the [`external_id`](https://developers.facebook.com/documentation/ads-commerce/conversions-api/parameters/external-id) mapping made via Conversions API is different from the one used with `extern_id` to create a Customer File Custom Audience. The `external_id` mapping cannot be used for creating a Customer File Custom Audience. Likewise, `extern_id` made via Customer File Custom Audience mapping can’t be used to create a Web Custom Audience, Offline Custom Audience or Mobile App Custom Audience.
+Please note that the [`external_id`](https://developers.facebook.com/documentation/ads-commerce/conversions-api/parameters/external-id) mapping made via Conversions API is different from the one used with `extern_id` to create a Customer File Custom Audience. The `external_id` mapping cannot be used for creating a Customer File Custom Audience. Likewise, `extern_id` made via Customer File Custom Audience mapping can't be used to create a Web Custom Audience, Offline Custom Audience or Mobile App Custom Audience.
 
 ## Before you begin
 
@@ -39,7 +39,7 @@ Use the following parameters:
 | `rule`  type: JSON Object | **Required.**  Audience rules applied to referring URL. See [Audience Rules](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/offline-custom-audiences#audiencerules). |
 | `retention_days`  type: Int | **Optional.**  Number of days to retain someone in audience. Between `1` and `180` days.   If not specified, the `retention_days` value is taken from the `retention_seconds` field in the rule. |
 | `prefill`  type: Boolean | **Optional.** Default is `true`. Available options are:   * `true`: Include website activity recorded before audience creation. * `false`: Only include website traffic from the time of audience creation.   If not specified, the `prefill` value is taken from the `retention_seconds` field in the rule. The maximum prefill is 180 days. |
-| `audience_labels`  type: String | **Optional.**  Choose a label that describes this audience. Labels may be used to find audiences for your ads more effectively. [About audience labels⁠](https://www.facebook.com/business/help/706325895111530).  **Engaged audiences:**   * `QUALIFIED_LEADS` — Leads that meet your qualification criteria. * `DISQUALIFIED_LEADS` — Leads that don’t meet your qualification criteria. * `APP_USERS` — People that are currently using your app. * `TRIAL_USERS` — People who started a trial of your product. * `ENGAGED_USERS` — People that showed interest but are not customers.   **Customers:**   * `HIGH_VALUE_CUSTOMERS` — Customers you consider valuable to your business. * `LOW_VALUE_CUSTOMERS` — Customers who are of low or negative value to your business. * `AT_RISK` — Customers who are showing signs of disengaging or churning. * `DISENGAGED` — Customers who have not made a purchase recently or stopped subscribing. * `CUSTOMERS` — Your existing customers. |
+| `audience_labels`  type: String | **Optional.**  Choose a label that describes this audience. Labels may be used to find audiences for your ads more effectively. [About audience labels⁠](https://www.facebook.com/business/help/706325895111530).  **Engaged audiences:**   * `QUALIFIED_LEADS` — Leads that meet your qualification criteria. * `DISQUALIFIED_LEADS` — Leads that don't meet your qualification criteria. * `APP_USERS` — People that are currently using your app. * `TRIAL_USERS` — People who started a trial of your product. * `ENGAGED_USERS` — People that showed interest but are not customers.   **Customers:**   * `HIGH_VALUE_CUSTOMERS` — Customers you consider valuable to your business. * `LOW_VALUE_CUSTOMERS` — Customers who are of low or negative value to your business. * `AT_RISK` — Customers who are showing signs of disengaging or churning. * `DISENGAGED` — Customers who have not made a purchase recently or stopped subscribing. * `CUSTOMERS` — Your existing customers. |
 
 For example:
 
@@ -189,7 +189,7 @@ Sample response:
 ```
 {
   "name": "My WCA",
-  "rule": "{\"and\": [\n\t\t{\"url\": {\"i_contains\": \"shoes\"}},\n\t\t{\"url\": {\"i_contains\": \"red\"}}]}",
+  "rule": "{\"and\": [\n\t\t{\"url\": {\"i_contains\": \"shoes\"}​},\n\t\t{\"url\": {\"i_contains\": \"red\"}​}]}",
   "id": "1234567890"
 }
 ```
@@ -218,11 +218,9 @@ Sample Response:
 Delete an audience by `id`:
 
 ```
-```
-curl -X DELETE \  
-  -F 'access_token=<ACCESS_TOKEN>' \  
-  https://graph.facebook.com/v25.0/<CUSTOM_AUDIENCE_ID>
-```
+curl -X DELETE \  
+  -F 'access_token=<ACCESS_TOKEN>' \  
+  https://graph.facebook.com/v25.0/<CUSTOM_AUDIENCE_ID>
 ```
 
 Sample Response:
@@ -275,7 +273,7 @@ curl
 -F "name=search_hotel_later_than_today"
 -F "pixel_id=PIXEL_ID"
 -F "retention_days=30"
--F 'rule={"event": {"i_contains": "search"}}'
+-F 'rule={"event": {"i_contains": "search"}​}'
 -F 'rule_aggregation={"type":"last_event_time_field", "config":{"field":"checkin_date", "time_format":"YYYY-MM-DD"}, "operator":"lt", "value": "0"}'
 -F "access_token=ACCESS_TOKEN"
 "https://graph.facebook.com/API_VERSION/act_AD_ACCOUNT_ID/customaudiences"
@@ -310,7 +308,7 @@ See [Advertiser Help Center, Custom Audience from your Website⁠](https://www.f
 
 **How many audiences can I create?**
 
-At this time, there’s a maximum of `10000` Custom Audiences from your website that can be created in a single account.
+At this time, there's a maximum of `10000` Custom Audiences from your website that can be created in a single account.
 
 **Can I exclude a Website Custom Audience from my ad targeting?**
 
@@ -338,7 +336,7 @@ We recommend CPM bidding for Website Custom Audience until your audience has rea
 
 Yes, Custom Audiences from your website works with all native ad formats and serves across desktop, mobile, and tablet.
 
-**How does Custom Audiences from Your Website relate to ‘FBX’?**
+**How does Custom Audiences from Your Website relate to 'FBX'?**
 
 `FBX` and Website Custom Audiences are complementary products. `FBX` is best when advertisers require product-level dynamic ads, which are as current as possible and are not yet easily facilitated by Custom Audiences from your website. However, FBX is limited to desktop inventory. Custom Audiences from your website allows targeting across browsers, overlaying of Meta data, access to mobile inventory, and usage of all Meta ad units—all of which are not available on `FBX`.
 
@@ -352,9 +350,9 @@ You can create rules based on URLs visited or on custom events from Meta Pixel. 
 
 **What privacy features are in Custom Audiences from your website?**
 
-No personal information is reported to the advertiser about any individual person on a website. You can only target an audience once it reaches a certain size; it’s impossible to learn the individual identity an any person visiting a website.
+No personal information is reported to the advertiser about any individual person on a website. You can only target an audience once it reaches a certain size; it's impossible to learn the individual identity an any person visiting a website.
 
-Meta also provides an AdChoices link where people can learn more and opt out of targeted ads they receive. Click the “x” in the top-right corner of ads to show more options:
+Meta also provides an AdChoices link where people can learn more and opt out of targeted ads they receive. Click the "x" in the top-right corner of ads to show more options:
 
 * Hide this ad — Don't see this ad again (Facebook native). This is specific to the ad ID in the campaign only.
 * Hide all ads — Don't see any other ads from that advertiser (Facebook native). Hide any ads from either that subdomain, such as `savings.att.com` or `att.com`, or the page `facebook.com/ATT` if we have it. Block the sub-domain or page across ad accounts.
@@ -366,19 +364,19 @@ View Tags are not yet permitted for Custom Audiences from your website clients. 
 
 **Can Website Custom Audiences be shared with another account or FBMP?**
 
-Yes, it’s possible to share Website Custom Audiences.
+Yes, it's possible to share Website Custom Audiences.
 
-**If I delete a Website Custom Audience, what happens to my campaign that’s targeting this Website Custom Audience?**
+**If I delete a Website Custom Audience, what happens to my campaign that's targeting this Website Custom Audience?**
 
 If an `Active` campaign targets a Website Custom Audience and that audience is deleted, the campaign is put on `Pause`.
 
 **How quickly does my audience update?**
 
-We update an audience as soon as technically possible. Once customers go to webpages with a Meta Pixel and match an Audience rule, they’re added to that Website Custom Audience. If this Website Custom Audience is being targeted with an ad, the customer is eligible to be served an ad in a matter of minutes.
+We update an audience as soon as technically possible. Once customers go to webpages with a Meta Pixel and match an Audience rule, they're added to that Website Custom Audience. If this Website Custom Audience is being targeted with an ad, the customer is eligible to be served an ad in a matter of minutes.
 
 **Do I have to add a new Meta Pixel to my website every time I create an audience?**
 
-No. There’s one Meta Pixel generated per account. Add this Meta Pixel to all pages of your website one at a time, and use Audience rules to create different Website Custom Audiences.
+No. There's one Meta Pixel generated per account. Add this Meta Pixel to all pages of your website one at a time, and use Audience rules to create different Website Custom Audiences.
 
 **Can I use a Meta Pixel with another third-party tag?**
 
@@ -396,7 +394,7 @@ The full JavaScript version has the following advantages over the IMG-only pixel
 
 **What is a pixel ID?**
 
-A pixel ID is an identifier of the piece of code placed on an advertiser’s website. There’s one pixel ID per Meta Ad account.
+A pixel ID is an identifier of the piece of code placed on an advertiser's website. There's one pixel ID per Meta Ad account.
 
 **How to obtain a Meta Pixel through the API?**
 
@@ -406,13 +404,13 @@ See [Meta Pixel](https://developers.facebook.com/docs/facebook-pixel/using-the-p
 
 See [Meta Pixel](https://developers.facebook.com/docs/meta-pixel/get-started#installing-the-pixel).
 
-**How can I fire Custom Data events using ‘fbq’?**
+**How can I fire Custom Data events using 'fbq'?**
 
 See [Meta Pixel, with Website Custom Audiences](https://developers.facebook.com/docs/facebook-pixel/pixel-with-ads/website-custom-audiences).
 
 **How do I refer to custom data in Custom Audiences from your website rules?**
 
-In your rules, refer to event names under the parameter ‘event’. For rules based on custom data, refer to it the same way you do for referring URLs, under the parameter ‘url’. For example, to matches all visitors:
+In your rules, refer to event names under the parameter 'event'. For rules based on custom data, refer to it the same way you do for referring URLs, under the parameter 'url'. For example, to matches all visitors:
 
 * to URLs containing 'signup', or
 * associated with event 'SignUp' by fbq.push(['track', 'SignUp']);
@@ -435,7 +433,7 @@ In your rules, refer to event names under the parameter ‘event’. For rules b
 }
 ```
 
-The following rule matches all visitors who have viewed any product in the TV category by fbq.push([‘track’, ‘ViewProduct’, {category: ‘TV’}]);.
+The following rule matches all visitors who have viewed any product in the TV category by fbq.push(['track', 'ViewProduct', {category: 'TV'}]);.
 
 ```
 "filter": {
@@ -464,7 +462,7 @@ window.fbq = window.fbq || [];
 fbq.push(['track', 123456, {currency: 'USD', value: 30.00}]);
 ```
 
-Ideally, you don’t need to know whether a fired event is a conversion event or a remarketing event. You only need the conversion ID to fire a conversion event. For example, if the old conversion pixel is:
+Ideally, you don't need to know whether a fired event is a conversion event or a remarketing event. You only need the conversion ID to fire a conversion event. For example, if the old conversion pixel is:
 
 ```
 var fb_param = {};
@@ -492,7 +490,7 @@ Manually insert an `IMG` tag:
   src="https://www.facebook.com/tr?id=pixel_ID/ad_account_id&ev=event name&cd[p1]=v1&cd[p2]=v2..." />
 ```
 
-Custom data is represented as key-value pairs. Each parameter is inside ‘cd[...]’. For example:
+Custom data is represented as key-value pairs. Each parameter is inside 'cd[...]'. For example:
 
 ```
 <img height="1" width="1" border="0" alt="" style="display:none"
@@ -509,7 +507,7 @@ fbq.push(['track', 'ViewProduct', {category: 'TV'}]);
 
 **How do you use an image pixel to fire conversion events?**
 
-Use parameter ‘ev’ to specify conversion ID, parameter ‘cd[value]’ to specify value, and parameter ‘cd[currency]’ to specify currency:
+Use parameter 'ev' to specify conversion ID, parameter 'cd[value]' to specify value, and parameter 'cd[currency]' to specify currency:
 
 ```
 <img height="1" width="1" border="0" alt="" style="display:none"
@@ -519,7 +517,7 @@ Use parameter ‘ev’ to specify conversion ID, parameter ‘cd[value]’ to sp
 
 **When to use image pixel?**
 
-Meta Pixel code tries to fire events using JavaScript first. If JavaScript isn’t available, Meta Pixel code tries to use image pixel. However it’s recommended to always use the JavaScript pixel:
+Meta Pixel code tries to fire events using JavaScript first. If JavaScript isn't available, Meta Pixel code tries to use image pixel. However it's recommended to always use the JavaScript pixel:
 
 * Can be fired multiple times on each page load.
 * Can control when an event should be fired such as on a button click.

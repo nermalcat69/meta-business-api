@@ -64,7 +64,7 @@ Restart the Codex App and verify that the new server entry appears in the `~/.co
 * **URL**: `https://mcp.facebook.com/devtools`
 * **Authentication**: **OAuth**
 
-Meta Developer Tools appears in the composer’s Developer mode menu during conversations.
+Meta Developer Tools appears in the composer's Developer mode menu during conversations.
 
 ### Cursor
 
@@ -73,16 +73,14 @@ Cursor reads MCP servers from `mcp.json` — `~/.cursor/mcp.json` for all projec
 Add the server to `mcp.json`:
 
 ```
-```
 {  
-  "mcpServers": {  
-    "Meta Developer Tools": {  
-      "url": "https://mcp.facebook.com/devtools",  
-      "type": "http"  
-    }  
-  }  
+  "mcpServers": {  
+    "Meta Developer Tools": {  
+      "url": "https://mcp.facebook.com/devtools",  
+      "type": "http"  
+    }  
+  }  
 }
-```
 ```
 
 You can also add it from the app: open **Settings** > **Tools & Integrations** > **New MCP Server**, which opens `mcp.json` for you to paste the entry above.
@@ -100,11 +98,11 @@ The Meta Developer Tools MCP server authenticates with your Meta developer accou
 After you add the server to your client (see [Set up your IDE or agent client](https://developers.facebook.com/documentation/mcp/devtools-mcp#set-up-your-ide-or-agent-client)):
 
 * **Start the connection.** Many clients begin the OAuth flow automatically when the server is added. Others require you to click **Connect** or **Authenticate** first. For example, run `/mcp` in Claude Code and select **Authenticate**, or click **Authenticate** in a desktop client.
-* **Sign in.** Your browser opens to sign in with your Meta account. If it doesn’t open automatically, copy the link your client prints and open it manually.
+* **Sign in.** Your browser opens to sign in with your Meta account. If it doesn't open automatically, copy the link your client prints and open it manually.
 * **Grant access.** On the consent screen, select the apps you want the server to access.
 * **Confirm.** Return to your client and [verify your connection](https://developers.facebook.com/documentation/mcp/devtools-mcp#verify-your-connection).
 
-You’ll need to complete the sign-in flow again when you restart the client.
+You'll need to complete the sign-in flow again when you restart the client.
 
 ### Scopes
 
@@ -123,8 +121,8 @@ The following table describes common error messages:
 
 | Message | What it means |
 | --- | --- |
-| “It looks like this app isn’t available” | Your account doesn’t have approved access yet. |
-| “Facebook login is currently unavailable for this app” | Your MCP client may not be supported yet. |
+| "It looks like this app isn't available" | Your account doesn't have approved access yet. |
+| "Facebook login is currently unavailable for this app" | Your MCP client may not be supported yet. |
 
 ### Verify your connection
 
@@ -146,7 +144,7 @@ Search Meta developer documentation for API guides, references, and tutorials. U
 
 **Actions:**`search_docs`
 
-**Example prompt:** “Search the Meta developer docs for how to set up WhatsApp Cloud API webhooks.”
+**Example prompt:** "Search the Meta developer docs for how to set up WhatsApp Cloud API webhooks."
 
 ### `devtools_app_list`
 
@@ -154,7 +152,7 @@ List the Meta apps you can access through the Meta Developer Tools MCP server. R
 
 **Actions:**`list`
 
-**Example prompt:** “List all the Meta apps I have access to.”
+**Example prompt:** "List all the Meta apps I have access to."
 
 ### `devtools_app`
 
@@ -162,15 +160,15 @@ Inspect the settings, permissions, and configuration of a Meta app. Use this whe
 
 **Actions:**`basic_settings`, `advanced_settings`, `security`, `restrictions`, `data_protection_officer`
 
-**Example prompt:** “Show the basic settings and security configuration for app 1234567890.”
+**Example prompt:** "Show the basic settings and security configuration for app 1234567890."
 
 ### `devtools_app_review`
 
-Check App Review for the permissions and features your app requests. Use this when an agent needs to look up the status of a review, see what an app is approved for, or understand what’s required to submit.
+Check App Review for the permissions and features your app requests. Use this when an agent needs to look up the status of a review, see what an app is approved for, or understand what's required to submit.
 
 **Actions:**`status`, `history`, `privileges`, `requirements`
 
-**Example prompt:** “What’s the App Review status for app 1234567890, and which permissions is it approved for?”
+**Example prompt:** "What's the App Review status for app 1234567890, and which permissions is it approved for?"
 
 ### `devtools_compliance`
 
@@ -178,31 +176,31 @@ Check the compliance status of a Meta app, open required actions, violations, an
 
 **Actions:**`status`
 
-**Example prompt:** “Check whether app 1234567890 has any open compliance actions or violations.”
+**Example prompt:** "Check whether app 1234567890 has any open compliance actions or violations."
 
 ### `devtools_api_usage`
 
-Monitor API health for a Meta app so an agent has operational visibility into an integration. Use this to see whether an app is approaching its rate limits, how much call volume it’s driving, and which APIs it depends on are deprecated.
+Monitor API health for a Meta app so an agent has operational visibility into an integration. Use this to see whether an app is approaching its rate limits, how much call volume it's driving, and which APIs it depends on are deprecated.
 
 **Actions:**`rate_limits`, `call_volume`, `deprecations`
 
-**Example prompt:** “Is app 1234567890 close to any rate limits, and are there deprecations I should plan for?”
+**Example prompt:** "Is app 1234567890 close to any rate limits, and are there deprecations I should plan for?"
 
 ### `devtools_webhook_list`
 
-List the webhook topics available to a Meta app and the subscriptions currently configured on it, including the subscribed fields. Use this to see what an app can subscribe to and what it’s already receiving.
+List the webhook topics available to a Meta app and the subscriptions currently configured on it, including the subscribed fields. Use this to see what an app can subscribe to and what it's already receiving.
 
 **Actions:**`list_topics`, `list_subscriptions`
 
-**Example prompt:** “List the webhook topics and current subscriptions for app 1234567890.”
+**Example prompt:** "List the webhook topics and current subscriptions for app 1234567890."
 
 ### `devtools_webhook_manage`
 
-Create, update, and delete webhook subscriptions on a Meta app. Use this when an agent is wiring an app to receive updates from a Meta product (for example, Messenger Platform message events or WhatsApp Cloud API events). Subscribing requires a live HTTPS callback URL that passes Meta’s verification. Requires the **Manage** scope.
+Create, update, and delete webhook subscriptions on a Meta app. Use this when an agent is wiring an app to receive updates from a Meta product (for example, Messenger Platform message events or WhatsApp Cloud API events). Subscribing requires a live HTTPS callback URL that passes Meta's verification. Requires the **Manage** scope.
 
 **Actions:**`subscribe`, `unsubscribe`, `update_fields`
 
-**Example prompt:** “Subscribe app 1234567890 to the page topic for the feed and messages fields, using https://example.com/webhook as the callback URL.”
+**Example prompt:** "Subscribe app 1234567890 to the page topic for the feed and messages fields, using https://example.com/webhook as the callback URL."
 
 ### `devtools_webhook_test`
 
@@ -210,15 +208,15 @@ Send a test payload to a webhook subscription so you can verify the receiving en
 
 **Actions:**`test_send`
 
-**Example prompt:** “Send a test event to the messages field on the page topic for app 1234567890.”
+**Example prompt:** "Send a test event to the messages field on the page topic for app 1234567890."
 
 ### `devtools_api_changelog`
 
-Find Meta platform changelog products and their public changelog and RSS URLs, so an agent can point a developer to “what changed recently?” without browsing manually. Works without app-scoped permissions.
+Find Meta platform changelog products and their public changelog and RSS URLs, so an agent can point a developer to "what changed recently?" without browsing manually. Works without app-scoped permissions.
 
 **Actions:**`list_products`, `get_changelog_url`, `get_rss_url`
 
-**Example prompt:** “What changelog products are available, and what’s the RSS feed URL for business messaging?”
+**Example prompt:** "What changelog products are available, and what's the RSS feed URL for business messaging?"
 
 ## Related
 

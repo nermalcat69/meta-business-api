@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/marketing
 
 Updated: Mar 26, 2026
 
-Partnership ads allow you to run Facebook and Instagram ads from a creator or other partner’s handle to expand your collaborations. Using the creator’s own handle lets your ads feature the creator’s voice when you run their content on Meta’s platforms.
+Partnership ads allow you to run Facebook and Instagram ads from a creator or other partner's handle to expand your collaborations. Using the creator's own handle lets your ads feature the creator's voice when you run their content on Meta's platforms.
 
 These guides discuss how to use the Partnership Ads API to automate partnership ad campaign features and permissions.
 

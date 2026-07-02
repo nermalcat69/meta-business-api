@@ -25,7 +25,7 @@ Set up encryption for secure data exchange between your endpoint and WhatsApp Fl
 
 ### [Flow health and monitoring](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/healthmonitoring)
 
-Monitor your Flow’s health and address issues detected by WhatsApp.
+Monitor your Flow's health and address issues detected by WhatsApp.
 
 ### [Testing and debugging](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/testingdebugging)
 
@@ -97,7 +97,7 @@ WhatsApp Flows are not supported on companion devices (for example, WhatsApp Web
 
 ## Terminology
 
-**Flows**: Represents a use case or workflow that a business offers to users. For example, “Book an appointment”. A Flow consists of screens, components (such as input fields), assets such as graphics), and (optionally) an endpoint for data-driven interactions.
+**Flows**: Represents a use case or workflow that a business offers to users. For example, "Book an appointment". A Flow consists of screens, components (such as input fields), assets such as graphics), and (optionally) an endpoint for data-driven interactions.
 
 **Flow JSON**: Flow JSON is used to programmatically define Flows.
 

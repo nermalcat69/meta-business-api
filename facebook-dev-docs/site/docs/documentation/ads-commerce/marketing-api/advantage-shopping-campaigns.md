@@ -9,11 +9,11 @@ Updated: Jun 17, 2026
 
 Beginning with v25.0, you will no longer be able to use the [Advantage+ shopping campaign (ASC) API](https://developers.facebook.com/documentation/ads-commerce/marketing-api/advantage-shopping-campaigns) with the `smart_promotion_type=AUTOMATED_SHOPPING_ADS` field to create ASC campaigns, or the [Advantage+ app campaign API](https://developers.facebook.com/docs/app-ads/advantage-app-campaigns) with the `smart_promotion_type=SMART_APP_PROMOTION` field to create AAC campaigns. Instead, you will need to create campaigns with [Advantage+ audience](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference/targeting-expansion/advantage-audience), [Advantage+ campaign budget](https://developers.facebook.com/documentation/ads-commerce/marketing-api/bidding/guides/advantage-campaign-budget), and Advantage+ placements to create campaigns with an `advantage_state` that reflects the type of Advantage+ campaign. For more details, see the [Advantage+ campaign experience blog post](https://developers.facebook.com/blog/post/2025/06/03/advantage-plus-campaign-experience-for-sales-and-app).
 
-The `existing_customer_budget_percentage` field is not available for new Advantage+ campaigns. Existing ASC campaigns with this field will remain functional until v26.0, when they will be paused, and can only be migrated via Ads Manager where you will be prompted to “Duplicate Campaign”. For new campaigns, refer to the [Replicate `existing_customer_budget_percentage` Behavior](https://developers.facebook.com/documentation/ads-commerce/marketing-api/advantage-shopping-campaigns#replicate-existing-customer-budget-percentage-behavior) section below.
+The `existing_customer_budget_percentage` field is not available for new Advantage+ campaigns. Existing ASC campaigns with this field will remain functional until v26.0, when they will be paused, and can only be migrated via Ads Manager where you will be prompted to "Duplicate Campaign". For new campaigns, refer to the [Replicate `existing_customer_budget_percentage` Behavior](https://developers.facebook.com/documentation/ads-commerce/marketing-api/advantage-shopping-campaigns#replicate-existing-customer-budget-percentage-behavior) section below.
 
-This guide shows you how to create Advantage+ sales and app campaigns with `advantage_state` set to `advantage_plus_sales` or `advantage_plus_app`. These campaigns will be displayed in Ads Manager as Advantage+ sales (or app) campaign “ON” with the associated performance benefits. Advantage+ sales and app campaigns are the updated, streamlined versions of [Advantage+ shopping campaigns](https://developers.facebook.com/documentation/ads-commerce/marketing-api/advantage-shopping-campaigns) and [Advantage+ app campaigns](https://developers.facebook.com/docs/app-ads/advantage-app-campaigns).
+This guide shows you how to create Advantage+ sales and app campaigns with `advantage_state` set to `advantage_plus_sales` or `advantage_plus_app`. These campaigns will be displayed in Ads Manager as Advantage+ sales (or app) campaign "ON" with the associated performance benefits. Advantage+ sales and app campaigns are the updated, streamlined versions of [Advantage+ shopping campaigns](https://developers.facebook.com/documentation/ads-commerce/marketing-api/advantage-shopping-campaigns) and [Advantage+ app campaigns](https://developers.facebook.com/docs/app-ads/advantage-app-campaigns).
 
-In this new setup, all sales and app promotion campaigns can benefit from the AI optimizations that drive performance for Advantage+ shopping and app campaigns today. The complete range of ad tools will remain available to meet businesses’ needs.
+In this new setup, all sales and app promotion campaigns can benefit from the AI optimizations that drive performance for Advantage+ shopping and app campaigns today. The complete range of ad tools will remain available to meet businesses' needs.
 
 You will need to ensure the campaign includes [Advantage+ audience](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference/targeting-expansion/advantage-audience), [Advantage+ campaign budget](https://developers.facebook.com/documentation/ads-commerce/marketing-api/bidding/guides/advantage-campaign-budget), and Advantage+ placement for the campaign to have the Advantage+ state enabled, as reflected in the `advantage_state` field set to a value other than `DISABLED`.
 
@@ -64,40 +64,34 @@ GET /v25.0/<CAMPAIGN_ID>?fields=name,objective,advantage_state_info
 #### `objective: OUTCOME_SALES`
 
 ```
-```
-advantage_state_info: {  
- advantage_state: ADVANTAGE_PLUS_SALES  
- advantage_budget_state: ENABLED  
- advantage_audience_state: ENABLED  
- advantage_placement_state: ENABLED  
+advantage_state_info: {  
+ advantage_state: ADVANTAGE_PLUS_SALES  
+ advantage_budget_state: ENABLED  
+ advantage_audience_state: ENABLED  
+ advantage_placement_state: ENABLED  
 }
-```
 ```
 
 #### `objective: APP_PROMOTION`
 
 ```
-```
-advantage_state_info: {  
- advantage_state: ADVANTAGE_PLUS_APP  
- advantage_budget_state: ENABLED  
- advantage_audience_state: ENABLED  
- advantage_placement_state: ENABLED  
+advantage_state_info: {  
+ advantage_state: ADVANTAGE_PLUS_APP  
+ advantage_budget_state: ENABLED  
+ advantage_audience_state: ENABLED  
+ advantage_placement_state: ENABLED  
 }
-```
 ```
 
 #### `objective: OUTCOME_LEADS`
 
 ```
-```
-advantage_state_info: {  
- advantage_state: ADVANTAGE_PLUS_LEADS  
- advantage_budget_state: ENABLED  
- advantage_audience_state: ENABLED  
- advantage_placement_state: ENABLED  
+advantage_state_info: {  
+ advantage_state: ADVANTAGE_PLUS_LEADS  
+ advantage_budget_state: ENABLED  
+ advantage_audience_state: ENABLED  
+ advantage_placement_state: ENABLED  
 }
-```
 ```
 
 #### `DISABLED` state
@@ -105,14 +99,12 @@ advantage_state_info: {
 If any of the levers `advantage_budget_state`, `advantage_audience_state`, or `advantage_placement_state` are `DISABLED`, the `advantage_state` within `advantage_state_info` will be `DISABLED`.
 
 ```
-```
-advantage_state_info: {  
- advantage_state: DISABLED  
- advantage_budget_state: DISABLED  
- advantage_audience_state: ENABLED  
- advantage_placement_state: ENABLED  
+advantage_state_info: {  
+ advantage_state: DISABLED  
+ advantage_budget_state: DISABLED  
+ advantage_audience_state: ENABLED  
+ advantage_placement_state: ENABLED  
 }
-```
 ```
 
 A campaign must have `advantage_budget_state`, `advantage_audience_state`, and `advantage_placement_state` set to `ENABLED` in order to have the `advantage_state` set to `ADVANTAGE_PLUS_SALES`, `ADVANTAGE_PLUS_APP`, or `ADVANTAGE_PLUS_LEADS`.
@@ -144,7 +136,6 @@ To replicate `existing_customer_budget_percentage` behavior for your ad campaign
   * Set the `custom_audience` settings to include the custom audience that you consider your existing customers. Make sure this is not a suggestion or relaxed by ensuring that `targeting_relaxation_types` is set to `0` for custom audiences.
 
     ```
-    ```
     {  
     "targeting":{  
     "geo_locations":{  
@@ -158,7 +149,6 @@ To replicate `existing_customer_budget_percentage` behavior for your ad campaign
     }  
     }  
     }
-    ```
     ```
 * Use the [same creative settings](https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/basic-ad-creation/create-an-ad-creative) in both ad sets. Then, you can [create your ad](https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/basic-ad-creation/create-an-ad) with the `/act_<AD_ACCOUNT_ID>/ads` endpoint.
     
@@ -174,7 +164,6 @@ To replicate `existing_customer_budget_percentage` behavior for your ad campaign
   * Use the [`/adcopies` endpoint](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-campaign/copies) to duplicate your first ad set, then make a `POST` call to edit the ad set to exclude the custom audience ID of existing customers.
 
   ```
-  ```
   {  
   "targeting":{  
   "geo_locations":{  
@@ -187,7 +176,6 @@ To replicate `existing_customer_budget_percentage` behavior for your ad campaign
   }],  
   }  
   }
-  ```
   ```
 
 You have created a new ad campaign with a spending limit on existing customers. It will run after review.
@@ -212,18 +200,16 @@ curl -X POST <AD_CAMPAIGN_ID>/copies?migrate_to_advantage_plus=true
 #### Example response
 
 ```
-```
 {  
-  "copied_campaign_id": "6877326900432",  
-  "ad_object_ids": [  
-    {  
-      "ad_object_type": "campaign",  
-      "source_id": "6877313029432",  
-      "copied_id": "6877326900432"  
-    }  
-  ]  
+  "copied_campaign_id": "6877326900432",  
+  "ad_object_ids": [  
+    {  
+      "ad_object_type": "campaign",  
+      "source_id": "6877313029432",  
+      "copied_id": "6877326900432"  
+    }  
+  ]  
 }
-```
 ```
 
 When the new campaign (`copied_id`) is queried, it will reflect a `smart_promotion_type` of `GUIDED_CREATION` and will have `advantage_state_info` details.
@@ -245,11 +231,9 @@ curl -X POST <AD_CAMPAIGN_ID>?migrate_to_advantage_plus=true
 #### Example response
 
 ```
-```
 {  
-success: <BOOLEAN>  
+success: <BOOLEAN>  
 }
-```
 ```
 
 The campaign will then reflect a `smart_promotion_type` of `GUIDED_CREATION` and will have `advantage_state_info` details.
@@ -276,7 +260,7 @@ We typically roll out products at the ad account level, so there is a chance you
 
 * ASC/AAC campaigns that can be migrated into Advantage+ structure may use the `migrate_to_advantage_plus` field to migrate or copy and migrate their campaigns.
 * With the introduction of v24.0, you will not be able to create ASC campaigns with `smart_promotion_type=AUTOMATED_SHOPPING_ADS`, but may revert to v23.0 to do so. The introduction of v25.0 will give an error for all attempts to create ASC campaigns with `smart_promotion_type=AUTOMATED_SHOPPING_ADS` on any version of the API.
-* If not migrated prior, existing Advantage+ shopping campaigns cannot be edited and will maintain all previous settings with the introduction of v25.0. Un-migrated eligible campaigns may still take migration actions for “Copy and Migrate” or “Migrate Only”, but will be blocked from all other edit activity with v25.0.
+* If not migrated prior, existing Advantage+ shopping campaigns cannot be edited and will maintain all previous settings with the introduction of v25.0. Un-migrated eligible campaigns may still take migration actions for "Copy and Migrate" or "Migrate Only", but will be blocked from all other edit activity with v25.0.
 * The v25.0 edit exceptions are for ASC campaigns that use `existing_customer_budget_percentage` and cannot be migrated, or ASC campaigns that have more than 50 ads within the adset and cannot be migrated - these campaigns will be editable after v25.0, but may not be duplicated. We advise you to begin creating Advantage+ sales campaigns with `"advantage_state": "ADVANTAGE_PLUS_SALES"` as soon as possible to avoid any disruption with v25.0.
 * All legacy ASC/AAC campaigns will be blocked from edits with the release of v26.0 and will no longer be able to use the `migrate_to_advantage_plus` field to migrate. This includes campaigns that have more than 50 ads within their adsets, or campaigns that are using `existing_customer_budget_percentage`.
 
@@ -290,25 +274,25 @@ AAC campaigns cannot be copied and migrated, but may be migrated using the `migr
 
 **Will I be able to edit my old Advantage+ shopping campaigns that I created via API without issue in the new Ads Manager UI after the new Advantage+ campaign UI experience is fully rolled out?**
 
-Yes. Once the ad account has been upgraded into the new Advantage+ experience on Ads Manager, campaigns that were created as Advantage+ shopping campaigns will show as “Advantage+ On” in the Ads Manager whether they were created via API or UI.
+Yes. Once the ad account has been upgraded into the new Advantage+ experience on Ads Manager, campaigns that were created as Advantage+ shopping campaigns will show as "Advantage+ On" in the Ads Manager whether they were created via API or UI.
 
-**Will my ASC campaigns created through the API with automated\_shopping\_ads reflect as “advantage\_state”: “ADVANTAGE\_PLUS\_SALES” after this change?**
+**Will my ASC campaigns created through the API with automated\_shopping\_ads reflect as "advantage\_state": "ADVANTAGE\_PLUS\_SALES" after this change?**
 
-If you edit the ASC campaign within the Ads Manager UI in any way and accept turning on Advantage+ campaign budget when prompted, it will be converted to an `ADVANTAGE_PLUS_SALES` campaign that shows as “Advantage+ On” through the Ads Manager UI, and `"advantage_state": "ADVANTAGE_PLUS_SALES"` when queried on its API settings. The campaign will also change from `smart_promotion_type=AUTOMATED_SHOPPING_ADS` to `smart_promotion_type=GUIDED_CREATION`. However, you must edit something about the ASC campaign in the Ads Manager in order to prompt this change and accept the Advantage+ campaign budget.
+If you edit the ASC campaign within the Ads Manager UI in any way and accept turning on Advantage+ campaign budget when prompted, it will be converted to an `ADVANTAGE_PLUS_SALES` campaign that shows as "Advantage+ On" through the Ads Manager UI, and `"advantage_state": "ADVANTAGE_PLUS_SALES"` when queried on its API settings. The campaign will also change from `smart_promotion_type=AUTOMATED_SHOPPING_ADS` to `smart_promotion_type=GUIDED_CREATION`. However, you must edit something about the ASC campaign in the Ads Manager in order to prompt this change and accept the Advantage+ campaign budget.
 
-If the ASC campaign was created and edited exclusively through the API, it will continue to reflect as `smart_promotion_type=AUTOMATED_SHOPPING_ADS` in the API settings until something is edited about this campaign in the Ads Manager. It will show as “Advantage+ On: through the Ads Manager UI after the ad account has been upgraded into the new Advantage+ experience.
+If the ASC campaign was created and edited exclusively through the API, it will continue to reflect as `smart_promotion_type=AUTOMATED_SHOPPING_ADS` in the API settings until something is edited about this campaign in the Ads Manager. It will show as "Advantage+ On: through the Ads Manager UI after the ad account has been upgraded into the new Advantage+ experience.
 
-**If I create an ASC campaign before my ad account is enrolled in the new Advantage+ campaign Ads Manager experience, will that campaign reflect as “Advantage+ On” when it becomes enrolled? Will it show as “advantage\_state”: “ADVANTAGE\_PLUS\_SALES” in the API?**
+**If I create an ASC campaign before my ad account is enrolled in the new Advantage+ campaign Ads Manager experience, will that campaign reflect as "Advantage+ On" when it becomes enrolled? Will it show as "advantage\_state": "ADVANTAGE\_PLUS\_SALES" in the API?**
 
-ASC campaigns created through the old ASC experience in Ads Manager will show with “Advantage+ On” settings once the ad account has been upgraded into the new Advantage+ campaign Ads Manager experience.
+ASC campaigns created through the old ASC experience in Ads Manager will show with "Advantage+ On" settings once the ad account has been upgraded into the new Advantage+ campaign Ads Manager experience.
 
 However, ASC campaigns created on the Ads Manager with the old ASC UI before the ad account has been upgraded into the new Advantage+ campaign UI experience will need to be edited in the Ads Manager and accept turning on Advantage+ campaign budget when prompted in order to reflect Advantage+ Sales being on in the new interface and `"advantage_state": "ADVANTAGE_PLUS_SALES"`. This will also then display the budget at the campaign level in reporting and update to `smart_promotion_type=GUIDED_CREATION`. Otherwise, the campaign will continue to reflect `smart_promotion_type=AUTOMATED_SHOPPING_ADS` on the API settings.
 
-**What’s the impact when I edit an API-created ASC campaign in the new Advantage+ campaign UI experience and leave its settings as “Advantage+ On”?**
+**What's the impact when I edit an API-created ASC campaign in the new Advantage+ campaign UI experience and leave its settings as "Advantage+ On"?**
 
 The campaign converts from Advantage+ shopping campaign (i.e., `smart_promotion_type=AUTOMATED_SHOPPING_ADS`) to an Advantage+ sales campaign (i.e., `"advantage_state": "ADVANTAGE_PLUS_SALES"`) with `smart_promotion_type=GUIDED_CREATION`.
 
-**What happens to my ASC campaigns with smart\_promotion\_type=AUTOMATED\_SHOPPING\_ADS that were using existing\_customer\_budget\_percentage if it’s not supported with Advantage+ sales campaigns?**
+**What happens to my ASC campaigns with smart\_promotion\_type=AUTOMATED\_SHOPPING\_ADS that were using existing\_customer\_budget\_percentage if it's not supported with Advantage+ sales campaigns?**
 
 ASC campaigns that use `existing_customer_budget_percentage` cannot be migrated to the Advantage+ structure with `"advantage_state": "ADVANTAGE_PLUS_SALES"` using the API, but can be migrated into Advantage+ structure if you open the campaign in Ads Manager.
 

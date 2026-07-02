@@ -22,31 +22,29 @@ https://graph.facebook.com/v25.0/<AD_ID>/targetingsentencelines
 The response:
 
 ```
-```
 {  
-    "id": "<AD_ID>/targetingsentencelines",  
-    "targetingsentencelines": [  
-    {  
-        "content": "Location - Living In:",  
-        "children": [  
-            "Japan",  
-            "United States"  
-        ]  
-    },  
-    {  
-        "content": "Age:",  
-        "children": [  
-            "20 - 24"  
-        ]  
-    },  
-    {  
-        "content": "Gender:",  
-        "children": [  
-            "Male"  
-        ]  
-    }]  
+    "id": "<AD_ID>/targetingsentencelines",  
+    "targetingsentencelines": [  
+    {  
+        "content": "Location - Living In:",  
+        "children": [  
+            "Japan",  
+            "United States"  
+        ]  
+    },  
+    {  
+        "content": "Age:",  
+        "children": [  
+            "20 - 24"  
+        ]  
+    },  
+    {  
+        "content": "Gender:",  
+        "children": [  
+            "Male"  
+        ]  
+    }]  
 }
-```
 ```
 
 Responses contain these fields:
@@ -77,38 +75,36 @@ https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/targetingsentencelines
 Response:
 
 ```
-```
 {  
-    "params": {  
-        "genders": [1],  
-        "age_min": 20,  
-        "age_max": 24,  
-        "geo_locations": {  
-            "countries": [  
-                "US",  
-                "JP"  
-            ]  
-        }  
-    },  
-    "targetingsentencelines": [{  
-        "content": "Location - Living In:",  
-        "children": [  
-            "Japan",  
-            "United States"  
-        ]  
-    }, {  
-        "content": "Age:",  
-        "children": [  
-            "20 - 24"  
-        ]  
-    }, {  
-        "content": "Gender:",  
-        "children": [  
-            "Male"  
-        ]  
-    }]  
+    "params": {  
+        "genders": [1],  
+        "age_min": 20,  
+        "age_max": 24,  
+        "geo_locations": {  
+            "countries": [  
+                "US",  
+                "JP"  
+            ]  
+        }  
+    },  
+    "targetingsentencelines": [{  
+        "content": "Location - Living In:",  
+        "children": [  
+            "Japan",  
+            "United States"  
+        ]  
+    }, {  
+        "content": "Age:",  
+        "children": [  
+            "20 - 24"  
+        ]  
+    }, {  
+        "content": "Gender:",  
+        "children": [  
+            "Male"  
+        ]  
+    }]  
 }
-```
 ```
 
 Additional parameters include:

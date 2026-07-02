@@ -40,7 +40,7 @@ For more information about how pricing works on the WhatsApp Business Platform, 
 
 If your client worked with a partner in the past and still shares the previous credit line, the client may see an error when attempting to switch to a new partner.
 
-* Backup your client’s messages.
+* Backup your client's messages.
 * Disconnect from WhatsApp Business app.
 * Reconnect in WhatsApp Business app.
 * Start onboarding process using the [WhatsApp Business app user onboarding](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/onboarding-business-app-users) flow.
@@ -62,14 +62,14 @@ These are common payment errors you may encounter in the Meta Business Suite. If
 
 | Error title and description | Possible solution |
 | --- | --- |
-| ***<CARD\_TYPE> <CARD\_NUMBER> hasn’t been verified.***  *We weren’t able to complete verification, please try again.* | * Try again, making sure you are correctly entering the one-time-password sent to you by your bank. * Make sure you are able to receive your bank’s one-time-password code. * Contact your card’s issuing bank and ask if or why your card was blocked. * Try again after a few days. * Try another card. |
-| **Couldn’t save payment method**  Couldn’t save payment method. You’ve already saved this payment method to the maximum number of ad accounts. Please use a different payment method. | Use an alternative credit card.  Note that the maximum number of accounts sharing a given credit card cannot be increased. There are no exceptions to this limitation. |
-| **Request Not Completed**  We noticed something unusual and, for your security, this request couldn’t be completed. Please try again later, or visit our Help Center. | * Ask your card’s issuing bank if any restrictions have been placed on the card. * Try another card. |
-| **Something went wrong**  We couldn’t complete your request. Please try again later. | * Try again in a few days. * Try another card. |
+| ***<CARD\_TYPE> <CARD\_NUMBER> hasn't been verified.***  *We weren't able to complete verification, please try again.* | * Try again, making sure you are correctly entering the one-time-password sent to you by your bank. * Make sure you are able to receive your bank's one-time-password code. * Contact your card's issuing bank and ask if or why your card was blocked. * Try again after a few days. * Try another card. |
+| **Couldn't save payment method**  Couldn't save payment method. You've already saved this payment method to the maximum number of ad accounts. Please use a different payment method. | Use an alternative credit card.  Note that the maximum number of accounts sharing a given credit card cannot be increased. There are no exceptions to this limitation. |
+| **Request Not Completed**  We noticed something unusual and, for your security, this request couldn't be completed. Please try again later, or visit our Help Center. | * Ask your card's issuing bank if any restrictions have been placed on the card. * Try another card. |
+| **Something went wrong**  We couldn't complete your request. Please try again later. | * Try again in a few days. * Try another card. |
 
 ## Display names
 
-Once a business phone number’s display name is reviewed, clients can change their display name using WhatsApp Manager. Newly edited display names must undergo display name review again.
+Once a business phone number's display name is reviewed, clients can change their display name using WhatsApp Manager. Newly edited display names must undergo display name review again.
 
 To edit a display name via WhatsApp Manager:
 

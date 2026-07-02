@@ -58,11 +58,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Media-URL}' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Media-URL}' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -73,10 +73,10 @@ Select status code
 
 ```
 {  
-  "Media download": {  
-    "summary": "Binary media content returned",  
-    "value": ""  
-  }  
+  "Media download": {  
+    "summary": "Binary media content returned",  
+    "value": ""  
+  }  
 }
 ```
 
@@ -155,11 +155,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Media-URL}' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Media-URL}' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -170,10 +170,10 @@ Select status code
 
 ```
 {  
-  "Media download": {  
-    "summary": "Binary media content returned",  
-    "value": ""  
-  }  
+  "Media download": {  
+    "summary": "Binary media content returned",  
+    "value": ""  
+  }  
 }
 ```
 

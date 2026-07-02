@@ -7,13 +7,13 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/marketing
 
 Updated: Apr 30, 2026
 
-Build audiences based on people’s actions in your app that meet your criteria. This feature allows you to build an audience who, for example:
+Build audiences based on people's actions in your app that meet your criteria. This feature allows you to build an audience who, for example:
 
-* “Passed Level 8 in the last 10 days”
-* “Used app in the last 8 days but hasn’t purchased anything”
-* “Added to cart but not purchased”
+* "Passed Level 8 in the last 10 days"
+* "Used app in the last 8 days but hasn't purchased anything"
+* "Added to cart but not purchased"
 
-This solution uses logged named events through our [Facebook SDKs](https://developers.facebook.com/docs/app-ads/sdk), [App Events API](https://developers.facebook.com/docs/app-events), or via [Mobile Measurement Partners](https://developers.facebook.com/docs/app-ads/measuring/measurement-partners). Examples of events to log include “Installed”, “Added to Cart”, “Purchased”, or “Achieved a Level”.
+This solution uses logged named events through our [Facebook SDKs](https://developers.facebook.com/docs/app-ads/sdk), [App Events API](https://developers.facebook.com/docs/app-events), or via [Mobile Measurement Partners](https://developers.facebook.com/docs/app-ads/measuring/measurement-partners). Examples of events to log include "Installed", "Added to Cart", "Purchased", or "Achieved a Level".
 
 ### Limitations
 
@@ -86,7 +86,7 @@ Use these fields:
 | `name`  type: string | **Required.**  Name of your Custom Audience |
 | `retention_days`  type: integer | **Required.**  How long someone is in this audience. The minimum number is `1`. The maximum number is `180`. If `retention_days` is 14, and on day 13, an audience member triggers an app event matching your criteria, then Facebook extends their time in the audience 14 more days. Someone is in an audience N days from the last matching event they triggered. |
 | `rule`  type: JSON Object | **Required.**  Rules to define the audience. See [Audience Rules](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/website-custom-audiences#rules) |
-| `audience_labels`  type: string | **Optional.**  Choose a label that describes this audience. Labels may be used to find audiences for your ads more effectively. [About audience labels⁠](https://www.facebook.com/business/help/706325895111530).  **Engaged audiences:**   * `QUALIFIED_LEADS` — Leads that meet your qualification criteria. * `DISQUALIFIED_LEADS` — Leads that don’t meet your qualification criteria. * `APP_USERS` — People that are currently using your app. * `TRIAL_USERS` — People who started a trial of your product. * `ENGAGED_USERS` — People that showed interest but are not customers.   **Customers:**   * `HIGH_VALUE_CUSTOMERS` — Customers you consider valuable to your business. * `LOW_VALUE_CUSTOMERS` — Customers who are of low or negative value to your business. * `AT_RISK` — Customers who are showing signs of disengaging or churning. * `DISENGAGED` — Customers who have not made a purchase recently or stopped subscribing. * `CUSTOMERS` — Your existing customers. |
+| `audience_labels`  type: string | **Optional.**  Choose a label that describes this audience. Labels may be used to find audiences for your ads more effectively. [About audience labels⁠](https://www.facebook.com/business/help/706325895111530).  **Engaged audiences:**   * `QUALIFIED_LEADS` — Leads that meet your qualification criteria. * `DISQUALIFIED_LEADS` — Leads that don't meet your qualification criteria. * `APP_USERS` — People that are currently using your app. * `TRIAL_USERS` — People who started a trial of your product. * `ENGAGED_USERS` — People that showed interest but are not customers.   **Customers:**   * `HIGH_VALUE_CUSTOMERS` — Customers you consider valuable to your business. * `LOW_VALUE_CUSTOMERS` — Customers who are of low or negative value to your business. * `AT_RISK` — Customers who are showing signs of disengaging or churning. * `DISENGAGED` — Customers who have not made a purchase recently or stopped subscribing. * `CUSTOMERS` — Your existing customers. |
 
 ## Audience rules
 
@@ -94,10 +94,10 @@ To determine who gets added to the Custom Audience, define a rule based on event
 
 * [Audience Rule Syntax](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/audience-rules#audience-rules-syntax)
 * [Rule Set Syntax](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/audience-rules#rule_set_syntax)
-* [Inclusion And Exclusion Rule Syntax](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/audience-rules#inclusion-exclusion): Under `event_sources`, set `id` to your app’s ID and `type` to `app`.
+* [Inclusion And Exclusion Rule Syntax](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/audience-rules#inclusion-exclusion): Under `event_sources`, set `id` to your app's ID and `type` to `app`.
 * [Filters](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/audience-rules#filter)
 * [Filter Rules](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/audience-rules#filter-rules):
-  * Use `'event'` as `field`, if the filter is to specify an event. Parameters that match App events sent by app; for example, “\_appVersion”, “\_value”, and so on.
+  * Use `'event'` as `field`, if the filter is to specify an event. Parameters that match App events sent by app; for example, "\_appVersion", "\_value", and so on.
   * If the `field` attribute is set to `"event"`, the value must be set to an event name. Use the App Event API to see app events and parameters reported by the pixel.
 * [Aggregation Functions](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/audience-rules#aggregate): The following aggregation functions are available for Mobile App Custom Audiences: `"count"`,`"sum"`, `"avg"`, `"min"`, and `"max"`.
 

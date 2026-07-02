@@ -61,11 +61,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/message_qrdls/{QR-Code-ID}' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/message_qrdls/{QR-Code-ID}' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -76,47 +76,47 @@ Select status code
 
 ```
 {  
-  "default_fields": {  
-    "summary": "Default fields response",  
-    "description": "Response with default fields (code, prefilled_message, deep_link_url)",  
-    "value": {  
-      "data": [  
-        {  
-          "code": "ANED2T5QRU7HG1",  
-          "prefilled_message": "Show me Cyber Monday deals!",  
-          "deep_link_url": "https://wa.me/message/ANED2T5QRU7HG1"  
-        }  
-      ]  
-    }  
-  },  
-  "with_qr_image_svg": {  
-    "summary": "Response with SVG QR code image",  
-    "description": "Response including QR code image URL in SVG format",  
-    "value": {  
-      "data": [  
-        {  
-          "code": "ANED2T5QRU7HG1",  
-          "prefilled_message": "Show me Cyber Monday deals!",  
-          "deep_link_url": "https://wa.me/message/ANED2T5QRU7HG1",  
-          "qr_image_url": "https://scontent-iad3-1.xx.fbcdn.net/m1/v/t6/An-H7T8OyTqO07lcRGHlKteuPMKDnx07nua3dGb4i560bVxDscweOV4KoKD_4wCDFoHR_C5LyVjxQISKPxwora1bbFhUEo2nA19ZPLBUVoQSmV12l1x-nuu312jKty-5rmojmde_a0g?ccb=10-5&oh=00_AfASq_vjojFza_9A-HDeRgHM3wZ8yjNprpYBjNKOn8RkSg&oe=64550A9E&_nc_sid=f36290"  
-        }  
-      ]  
-    }  
-  },  
-  "with_creation_time": {  
-    "summary": "Response with creation time (first-party apps only)",  
-    "description": "Response including creation timestamp for first-party applications",  
-    "value": {  
-      "data": [  
-        {  
-          "code": "ANED2T5QRU7HG1",  
-          "prefilled_message": "Show me Cyber Monday deals!",  
-          "deep_link_url": "https://wa.me/message/ANED2T5QRU7HG1",  
-          "creation_time": "1672531200"  
-        }  
-      ]  
-    }  
-  }  
+  "default_fields": {  
+    "summary": "Default fields response",  
+    "description": "Response with default fields (code, prefilled_message, deep_link_url)",  
+    "value": {  
+      "data": [  
+        {  
+          "code": "ANED2T5QRU7HG1",  
+          "prefilled_message": "Show me Cyber Monday deals!",  
+          "deep_link_url": "https://wa.me/message/ANED2T5QRU7HG1"  
+        }  
+      ]  
+    }  
+  },  
+  "with_qr_image_svg": {  
+    "summary": "Response with SVG QR code image",  
+    "description": "Response including QR code image URL in SVG format",  
+    "value": {  
+      "data": [  
+        {  
+          "code": "ANED2T5QRU7HG1",  
+          "prefilled_message": "Show me Cyber Monday deals!",  
+          "deep_link_url": "https://wa.me/message/ANED2T5QRU7HG1",  
+          "qr_image_url": "https://scontent-iad3-1.xx.fbcdn.net/m1/v/t6/An-H7T8OyTqO07lcRGHlKteuPMKDnx07nua3dGb4i560bVxDscweOV4KoKD_4wCDFoHR_C5LyVjxQISKPxwora1bbFhUEo2nA19ZPLBUVoQSmV12l1x-nuu312jKty-5rmojmde_a0g?ccb=10-5&oh=00_AfASq_vjojFza_9A-HDeRgHM3wZ8yjNprpYBjNKOn8RkSg&oe=64550A9E&_nc_sid=f36290"  
+        }  
+      ]  
+    }  
+  },  
+  "with_creation_time": {  
+    "summary": "Response with creation time (first-party apps only)",  
+    "description": "Response including creation timestamp for first-party applications",  
+    "value": {  
+      "data": [  
+        {  
+          "code": "ANED2T5QRU7HG1",  
+          "prefilled_message": "Show me Cyber Monday deals!",  
+          "deep_link_url": "https://wa.me/message/ANED2T5QRU7HG1",  
+          "creation_time": "1672531200"  
+        }  
+      ]  
+    }  
+  }  
 }
 ```
 
@@ -583,11 +583,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/message_qrdls/{QR-Code-ID}' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/message_qrdls/{QR-Code-ID}' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -598,47 +598,47 @@ Select status code
 
 ```
 {  
-  "default_fields": {  
-    "summary": "Default fields response",  
-    "description": "Response with default fields (code, prefilled_message, deep_link_url)",  
-    "value": {  
-      "data": [  
-        {  
-          "code": "ANED2T5QRU7HG1",  
-          "prefilled_message": "Show me Cyber Monday deals!",  
-          "deep_link_url": "https://wa.me/message/ANED2T5QRU7HG1"  
-        }  
-      ]  
-    }  
-  },  
-  "with_qr_image_svg": {  
-    "summary": "Response with SVG QR code image",  
-    "description": "Response including QR code image URL in SVG format",  
-    "value": {  
-      "data": [  
-        {  
-          "code": "ANED2T5QRU7HG1",  
-          "prefilled_message": "Show me Cyber Monday deals!",  
-          "deep_link_url": "https://wa.me/message/ANED2T5QRU7HG1",  
-          "qr_image_url": "https://scontent-iad3-1.xx.fbcdn.net/m1/v/t6/An-H7T8OyTqO07lcRGHlKteuPMKDnx07nua3dGb4i560bVxDscweOV4KoKD_4wCDFoHR_C5LyVjxQISKPxwora1bbFhUEo2nA19ZPLBUVoQSmV12l1x-nuu312jKty-5rmojmde_a0g?ccb=10-5&oh=00_AfASq_vjojFza_9A-HDeRgHM3wZ8yjNprpYBjNKOn8RkSg&oe=64550A9E&_nc_sid=f36290"  
-        }  
-      ]  
-    }  
-  },  
-  "with_creation_time": {  
-    "summary": "Response with creation time (first-party apps only)",  
-    "description": "Response including creation timestamp for first-party applications",  
-    "value": {  
-      "data": [  
-        {  
-          "code": "ANED2T5QRU7HG1",  
-          "prefilled_message": "Show me Cyber Monday deals!",  
-          "deep_link_url": "https://wa.me/message/ANED2T5QRU7HG1",  
-          "creation_time": "1672531200"  
-        }  
-      ]  
-    }  
-  }  
+  "default_fields": {  
+    "summary": "Default fields response",  
+    "description": "Response with default fields (code, prefilled_message, deep_link_url)",  
+    "value": {  
+      "data": [  
+        {  
+          "code": "ANED2T5QRU7HG1",  
+          "prefilled_message": "Show me Cyber Monday deals!",  
+          "deep_link_url": "https://wa.me/message/ANED2T5QRU7HG1"  
+        }  
+      ]  
+    }  
+  },  
+  "with_qr_image_svg": {  
+    "summary": "Response with SVG QR code image",  
+    "description": "Response including QR code image URL in SVG format",  
+    "value": {  
+      "data": [  
+        {  
+          "code": "ANED2T5QRU7HG1",  
+          "prefilled_message": "Show me Cyber Monday deals!",  
+          "deep_link_url": "https://wa.me/message/ANED2T5QRU7HG1",  
+          "qr_image_url": "https://scontent-iad3-1.xx.fbcdn.net/m1/v/t6/An-H7T8OyTqO07lcRGHlKteuPMKDnx07nua3dGb4i560bVxDscweOV4KoKD_4wCDFoHR_C5LyVjxQISKPxwora1bbFhUEo2nA19ZPLBUVoQSmV12l1x-nuu312jKty-5rmojmde_a0g?ccb=10-5&oh=00_AfASq_vjojFza_9A-HDeRgHM3wZ8yjNprpYBjNKOn8RkSg&oe=64550A9E&_nc_sid=f36290"  
+        }  
+      ]  
+    }  
+  },  
+  "with_creation_time": {  
+    "summary": "Response with creation time (first-party apps only)",  
+    "description": "Response including creation timestamp for first-party applications",  
+    "value": {  
+      "data": [  
+        {  
+          "code": "ANED2T5QRU7HG1",  
+          "prefilled_message": "Show me Cyber Monday deals!",  
+          "deep_link_url": "https://wa.me/message/ANED2T5QRU7HG1",  
+          "creation_time": "1672531200"  
+        }  
+      ]  
+    }  
+  }  
 }
 ```
 
@@ -663,11 +663,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request DELETE \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/message_qrdls/{QR-Code-ID}' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request DELETE \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/message_qrdls/{QR-Code-ID}' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -678,13 +678,13 @@ Select status code
 
 ```
 {  
-  "successful_deletion": {  
-    "summary": "QR code successfully deleted",  
-    "description": "Confirmation that the QR code has been permanently deleted",  
-    "value": {  
-      "success": true  
-    }  
-  }  
+  "successful_deletion": {  
+    "summary": "QR code successfully deleted",  
+    "description": "Confirmation that the QR code has been permanently deleted",  
+    "value": {  
+      "success": true  
+    }  
+  }  
 }
 ```
 
@@ -1095,11 +1095,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request DELETE \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/message_qrdls/{QR-Code-ID}' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request DELETE \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/message_qrdls/{QR-Code-ID}' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -1110,13 +1110,13 @@ Select status code
 
 ```
 {  
-  "successful_deletion": {  
-    "summary": "QR code successfully deleted",  
-    "description": "Confirmation that the QR code has been permanently deleted",  
-    "value": {  
-      "success": true  
-    }  
-  }  
+  "successful_deletion": {  
+    "summary": "QR code successfully deleted",  
+    "description": "Confirmation that the QR code has been permanently deleted",  
+    "value": {  
+      "success": true  
+    }  
+  }  
 }
 ```
 

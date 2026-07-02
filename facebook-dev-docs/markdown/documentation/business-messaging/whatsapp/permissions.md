@@ -15,9 +15,9 @@ The platform supports the following access token types. The type you use depends
 
 ## System user access tokens
 
-System user access tokens (“system tokens”) represent you, your business, organization, or people within your business or organization. The main advantage of these tokens is that they are long-lived and can represent automated services within your business that don’t require any user input.
+System user access tokens ("system tokens") represent you, your business, organization, or people within your business or organization. The main advantage of these tokens is that they are long-lived and can represent automated services within your business that don't require any user input.
 
-System tokens rely on system users. Most endpoints check if the user identified by the token has access to the queried resource. If the user doesn’t have access to the resource, the system rejects the request with [error code `200`](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/error-codes) (not to be confused with HTTP status code `200`).
+System tokens rely on system users. Most endpoints check if the user identified by the token has access to the queried resource. If the user doesn't have access to the resource, the system rejects the request with [error code `200`](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/error-codes) (not to be confused with HTTP status code `200`).
 
 System users can be [admins](https://developers.facebook.com/documentation/business-messaging/whatsapp/permissions#admin-system-users) or [employees](https://developers.facebook.com/documentation/business-messaging/whatsapp/permissions#employee-system-users).
 
@@ -25,9 +25,9 @@ System users can be [admins](https://developers.facebook.com/documentation/busin
 
 By default, admin system users have full access to all WhatsApp Business Accounts (WABAs) and their assets owned by or shared with you or your business portfolio.
 
-Admin system users are useful if your app needs access to all of the business portfolio’s assets, without having to manually grant business asset access to each asset whenever it is created, or shared with your business portfolio.
+Admin system users are useful if your app needs access to all of the business portfolio's assets, without having to manually grant business asset access to each asset whenever it is created, or shared with your business portfolio.
 
-You can override an admin system user’s default business asset access by granting partial access on a per-WABA basis. See [Business Asset Access](https://developers.facebook.com/documentation/business-messaging/whatsapp/permissions#business-asset-access) to learn how to set and override access.
+You can override an admin system user's default business asset access by granting partial access on a per-WABA basis. See [Business Asset Access](https://developers.facebook.com/documentation/business-messaging/whatsapp/permissions#business-asset-access) to learn how to set and override access.
 
 ### Employee system users
 
@@ -45,7 +45,7 @@ Click the **+Add** button, and in the **Create system user** window that appears
 
 ![Create system user dialog with name field and role selector](https://scontent.fdel1-3.fna.fbcdn.net/v/t39.2365-6/465150702_510049308508353_7881035250572985544_n.png?_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=JRmdHZ81740Q7kNvwEvNOGf&_nc_oc=AdpXBfqwDZe12USNKnFVH7wv3eyhVDyBjecU2T8pg-vBQbr8RLdJ09tV2p7Yl76U7z6u0hlHBDwh_cZuvXcHbI5i&_nc_zt=14&_nc_ht=scontent.fdel1-3.fna&_nc_gid=2rm6nr0dYltsZL-unxUuzg&_nc_ss=7b2a8&oh=00_AQAikU-iFWxv8e5e_DShJhMI0ZrycuNmndIvlSK1nwo45A&oe=6A60604E)
 
-Once you create the admin system user, it appears in the list of system users. Click the system user’s name to display the asset assignment overlay:
+Once you create the admin system user, it appears in the list of system users. Click the system user's name to display the asset assignment overlay:
 
 ![System users list showing asset assignment overlay](https://scontent.fdel1-9.fna.fbcdn.net/v/t39.2365-6/465056956_862633796067178_7287331611550335065_n.png?_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=fwl7ZqYzkf4Q7kNvwGulOBi&_nc_oc=AdqfHibmhQlqI-0zMjhVPZTD7hl8r7K-12NtVg73rJftmAz3-0PSZzK2Ph3coxy9a6jm3ukps0B5yFutBru68UcY&_nc_zt=14&_nc_ht=scontent.fdel1-9.fna&_nc_gid=2rm6nr0dYltsZL-unxUuzg&_nc_ss=7b2a8&oh=00_AQD72bwre6B1eOs6buBrquuqTI5-6BMc-mnyAJbh4lVpNg&oe=6A6068D6)
 
@@ -55,7 +55,7 @@ Click the **Assign assets** button to display the **Select assets and assign per
 
 Select your app and grant your system user the **Manage app** permission, then click the **Assign assets** button to confirm and dismiss the window.
 
-Back in the **System Users** panel, reload the page to confirm that your system user has been granted **Full control** of your app. Granting the permissions may take a few minutes, so reload the page if your app doesn’t appear as an assigned asset. Once the asset has been assigned, it should look like this:
+Back in the **System Users** panel, reload the page to confirm that your system user has been granted **Full control** of your app. Granting the permissions may take a few minutes, so reload the page if your app doesn't appear as an assigned asset. Once the asset has been assigned, it should look like this:
 
 ![System user with full control of app displayed](https://scontent.fdel1-6.fna.fbcdn.net/v/t39.2365-6/465048557_1084025226566535_5772232306997286547_n.png?_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=zdfBOO84IUIQ7kNvwHoQDbX&_nc_oc=Ado4_hGEUA7WbPjGXlP1dzEWowraXTBBQozfjj6r6qXtU7yvObf6jzxx8NE6m5f3nOJs4yu5Z-5fFRYUev6LIwAq&_nc_zt=14&_nc_ht=scontent.fdel1-6.fna&_nc_gid=2rm6nr0dYltsZL-unxUuzg&_nc_ss=7b2a8&oh=00_AQDF16ymnHI59-Q0flu_bCywrF8Ye6fjGKugOUwoRle81g&oe=6A606F58)
 
@@ -73,7 +73,7 @@ Click the **Generate token** button and copy the token when it appears.
 
 ## Business integration system user access tokens
 
-Business Integration System User access tokens (“business tokens”) are scoped to individual onboarded customers and should be used by Tech Providers and solution partners when accessing onboarded customer data.
+Business Integration System User access tokens ("business tokens") are scoped to individual onboarded customers and should be used by Tech Providers and solution partners when accessing onboarded customer data.
 
 These tokens are useful for apps that perform programmatic, automated actions on customer WABAs, without having to rely on input from an app user, or requiring future re-authentication.
 
@@ -112,9 +112,9 @@ Tokens can vary in length, and their internal structure and characteristics can 
 
 ## Business asset access
 
-After creating a system user, you must set business asset access levels. Many endpoints require the system user whose token is included in API requests to have either **Partial** or **Full** business asset access to the WABA being queried (or its assets). If the system user doesn’t have this access, these endpoints return [error code `200`](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/error-codes) (not to be confused with HTTP status code `200`).
+After creating a system user, you must set business asset access levels. Many endpoints require the system user whose token is included in API requests to have either **Partial** or **Full** business asset access to the WABA being queried (or its assets). If the system user doesn't have this access, these endpoints return [error code `200`](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/error-codes) (not to be confused with HTTP status code `200`).
 
-If you set a system user’s business asset access on a WABA to **Partial** access, you can further restrict access to certain assets or actions on the WABA. For example, if you have a large business and want a certain department to only have read access to a WABA’s template and business phone number data, you could create a system user for that department and set granular access to view only for that data.
+If you set a system user's business asset access on a WABA to **Partial** access, you can further restrict access to certain assets or actions on the WABA. For example, if you have a large business and want a certain department to only have read access to a WABA's template and business phone number data, you could create a system user for that department and set granular access to view only for that data.
 
 To set business asset access on a WABA, follow these steps:
 

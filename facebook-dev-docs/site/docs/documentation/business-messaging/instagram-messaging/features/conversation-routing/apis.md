@@ -30,44 +30,42 @@ Some basic message routing features are available even without enabling Conversa
 
 ## Conversation Routing for Instagram ads
 
-To set up Conversation Routing for Instagram Ads, you’ll need to configure a message template as part of your ad creation process. For detailed steps, refer to the official [Facebook Business Help article⁠](https://www.facebook.com/business/help/198088077975174?id=371525583593535).
+To set up Conversation Routing for Instagram Ads, you'll need to configure a message template as part of your ad creation process. For detailed steps, refer to the official [Facebook Business Help article⁠](https://www.facebook.com/business/help/198088077975174?id=371525583593535).
 
 ### Defining message templates
 
-When creating your Instagram Ad, you’ll be prompted to select a Message template. You can either create a new template or use an existing one.
+When creating your Instagram Ad, you'll be prompted to select a Message template. You can either create a new template or use an existing one.
 
 Within the message template, you can specify parameters such as the `receiving_app_id` and the thread window. This allows you to control which app receives the conversation and for how long it maintains control.
 
 ### Sample template
 
 ```
-```
 {  
-    "message": {  
-        "attachment": {  
-            "type": "template",  
-            "payload": {  
-                "template_type": "button",  
-                "text": "Hi! Please let us know how we can help you",  
-                "buttons": [  
-                    {  
-                        "title": "Show me the product!",  
-                        "type": "web_url",  
-                        "url": "http://www.facebook.com/"  
-                    },  
-                    {  
-                        "title": "Tell me more",  
-                        "type": "postback",  
-                        "payload": "USER_DEFINED_PAYLOAD"  
-                    }  
-                ]  
-            }  
-        },  
-        "receiving_app_id": 1278416343931139,  
-        "receiving_app_control_expiration": 4  
-    }  
+    "message": {  
+        "attachment": {  
+            "type": "template",  
+            "payload": {  
+                "template_type": "button",  
+                "text": "Hi! Please let us know how we can help you",  
+                "buttons": [  
+                    {  
+                        "title": "Show me the product!",  
+                        "type": "web_url",  
+                        "url": "http://www.facebook.com/"  
+                    },  
+                    {  
+                        "title": "Tell me more",  
+                        "type": "postback",  
+                        "payload": "USER_DEFINED_PAYLOAD"  
+                    }  
+                ]  
+            }  
+        },  
+        "receiving_app_id": 1278416343931139,  
+        "receiving_app_control_expiration": 4  
+    }  
 }
-```
 ```
 
 * `receiving_app_id`: The ID of the app that will receive the conversation.

@@ -19,11 +19,11 @@ The merchant of record is responsible for any outstanding credits or debits from
 
 Prepaid orders may behave differently in your order management system. As such, follow these recommendations:
 
-* Consider not processing these orders against your payment fraud service, as you won’t have access to the payment credentials.
-* Consider what will be stored as a payment method name (example: ‘Paid on Instagram’) in your systems and on order invoices.
+* Consider not processing these orders against your payment fraud service, as you won't have access to the payment credentials.
+* Consider what will be stored as a payment method name (example: 'Paid on Instagram') in your systems and on order invoices.
 * Differentiate orders placed in different channels (Instagram and Facebook).
 
-Orders that can’t be cleared from buyer risk/sanctions potentially remain for a longer time in the `FB_PROCESSING` state and cannot be acknowledged. These orders can be [canceled](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/order-management/cancellation-refund-api) after 24 hours.
+Orders that can't be cleared from buyer risk/sanctions potentially remain for a longer time in the `FB_PROCESSING` state and cannot be acknowledged. These orders can be [canceled](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/order-management/cancellation-refund-api) after 24 hours.
 
 ### Acknowledge orders in bulk
 
@@ -125,7 +125,7 @@ To address these challenges, the system consuming the Commerce Platform should m
 
 ### Design considerations
 
-* Use a max retry count to avoid flooding the Commerce Platform with failing requests. Not doing so may cause your application to eventually hit the rate limit for your application and be blocked to send new requests. After a message hits the max retry count, it could trigger a notification to your operations team to review the Requestor’s and Commerce Platform’s health.
+* Use a max retry count to avoid flooding the Commerce Platform with failing requests. Not doing so may cause your application to eventually hit the rate limit for your application and be blocked to send new requests. After a message hits the max retry count, it could trigger a notification to your operations team to review the Requestor's and Commerce Platform's health.
 * Use an exponential backoff where retry attempts have a waiting time and timeout increasing by a factor; for example, requests have a 10-second timeout the first attempt, and a 20-second timeout in the next attempt. The first retry happens 10 minutes after the original request; the second retry happens 20 minutes later.
 * Use a circuit-break behavior where if a given rate of messages fails when calling the Commerce Platform, it will trigger a notification to your operations team. Queue these messages for future processing as the health of the Requestor and/or Commerce Platform are restored.
 * If your application is subscribing to webhooks, prepare your application to handle duplicate messages sent by the Commerce Platform.
@@ -135,21 +135,19 @@ Given the payload in the following example, your application should use the `id`
 **Example**
 
 ```
-```
 {  
-   entry:[  
-      {  
-         id: 1942543229149327, // unique webhook id  
-         time: 1566839325, // time when this webhook notification was first sent  
-         changes:[  
-            {  
-              // suppressed for readability  
-            }  
-         ]  
-      }  
-   ]  
+   entry:[  
+      {  
+         id: 1942543229149327, // unique webhook id  
+         time: 1566839325, // time when this webhook notification was first sent  
+         changes:[  
+            {  
+              // suppressed for readability  
+            }  
+         ]  
+      }  
+   ]  
 }
-```
 ```
 
 ## Handle text as Unicode
@@ -185,21 +183,19 @@ Learn more about [Order Management, Commerce Platform](https://developers.facebo
 
 ## Manually process orders from Commerce Manager
 
-If you’re an API seller who has lost access to your API connection and want to manually process the orders from Commerce Manager, you need to first delete the existing API connection using the `DELETE` request to the `https://graph.facebook.com/{cms-id}/order_management_apps` endpoint.
+If you're an API seller who has lost access to your API connection and want to manually process the orders from Commerce Manager, you need to first delete the existing API connection using the `DELETE` request to the `https://graph.facebook.com/{cms-id}/order_management_apps` endpoint.
 
 **Example**
 
 ```
-```
 {  
-   "error": {  
-      "message": "(#803) Some of the aliases you requested do not exist: {cms-id}",  
-      "type": "OAuthException",  
-      "code": 803,  
-      "fbtrace_id": "AXDusJwgK_--o5FnIZkGBu8"  
-   }  
+   "error": {  
+      "message": "(#803) Some of the aliases you requested do not exist: {cms-id}",  
+      "type": "OAuthException",  
+      "code": 803,  
+      "fbtrace_id": "AXDusJwgK_--o5FnIZkGBu8"  
+   }  
 }
-```
 ```
 
 ## Learn more

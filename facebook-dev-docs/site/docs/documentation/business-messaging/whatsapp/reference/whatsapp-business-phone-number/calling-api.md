@@ -61,11 +61,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/call_permissions' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/call_permissions' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -76,78 +76,78 @@ Select status code
 
 ```
 {  
-  "Granted Permission": {  
-    "value": {  
-      "messaging_product": "whatsapp",  
-      "permission": {  
-        "status": "granted",  
-        "expiration_time": 1735689600  
-      },  
-      "actions": [  
-        {  
-          "action_name": "start_call",  
-          "can_perform_action": true,  
-          "limits": [  
-            {  
-              "time_period": "24h",  
-              "current_usage": 5,  
-              "max_allowed": 100,  
-              "limit_expiration_time": 1735689600  
-            }  
-          ]  
-        },  
-        {  
-          "action_name": "send_call_permission_request",  
-          "can_perform_action": false,  
-          "limits": ""  
-        }  
-      ]  
-    }  
-  },  
-  "Pending Permission": {  
-    "value": {  
-      "messaging_product": "whatsapp",  
-      "permission": {  
-        "status": "pending"  
-      },  
-      "actions": [  
-        {  
-          "action_name": "start_call",  
-          "can_perform_action": false  
-        },  
-        {  
-          "action_name": "send_call_permission_request",  
-          "can_perform_action": false  
-        }  
-      ]  
-    }  
-  },  
-  "Denied Permission": {  
-    "value": {  
-      "messaging_product": "whatsapp",  
-      "permission": {  
-        "status": "denied"  
-      },  
-      "actions": [  
-        {  
-          "action_name": "start_call",  
-          "can_perform_action": false  
-        },  
-        {  
-          "action_name": "send_call_permission_request",  
-          "can_perform_action": true,  
-          "limits": [  
-            {  
-              "time_period": "24h",  
-              "current_usage": 2,  
-              "max_allowed": 5,  
-              "limit_expiration_time": 1735689600  
-            }  
-          ]  
-        }  
-      ]  
-    }  
-  }  
+  "Granted Permission": {  
+    "value": {  
+      "messaging_product": "whatsapp",  
+      "permission": {  
+        "status": "granted",  
+        "expiration_time": 1735689600  
+      },  
+      "actions": [  
+        {  
+          "action_name": "start_call",  
+          "can_perform_action": true,  
+          "limits": [  
+            {  
+              "time_period": "24h",  
+              "current_usage": 5,  
+              "max_allowed": 100,  
+              "limit_expiration_time": 1735689600  
+            }  
+          ]  
+        },  
+        {  
+          "action_name": "send_call_permission_request",  
+          "can_perform_action": false,  
+          "limits": ""  
+        }  
+      ]  
+    }  
+  },  
+  "Pending Permission": {  
+    "value": {  
+      "messaging_product": "whatsapp",  
+      "permission": {  
+        "status": "pending"  
+      },  
+      "actions": [  
+        {  
+          "action_name": "start_call",  
+          "can_perform_action": false  
+        },  
+        {  
+          "action_name": "send_call_permission_request",  
+          "can_perform_action": false  
+        }  
+      ]  
+    }  
+  },  
+  "Denied Permission": {  
+    "value": {  
+      "messaging_product": "whatsapp",  
+      "permission": {  
+        "status": "denied"  
+      },  
+      "actions": [  
+        {  
+          "action_name": "start_call",  
+          "can_perform_action": false  
+        },  
+        {  
+          "action_name": "send_call_permission_request",  
+          "can_perform_action": true,  
+          "limits": [  
+            {  
+              "time_period": "24h",  
+              "current_usage": 2,  
+              "max_allowed": 5,  
+              "limit_expiration_time": 1735689600  
+            }  
+          ]  
+        }  
+      ]  
+    }  
+  }  
 }
 ```
 
@@ -334,11 +334,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/call_permissions' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/call_permissions' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -349,78 +349,78 @@ Select status code
 
 ```
 {  
-  "Granted Permission": {  
-    "value": {  
-      "messaging_product": "whatsapp",  
-      "permission": {  
-        "status": "granted",  
-        "expiration_time": 1735689600  
-      },  
-      "actions": [  
-        {  
-          "action_name": "start_call",  
-          "can_perform_action": true,  
-          "limits": [  
-            {  
-              "time_period": "24h",  
-              "current_usage": 5,  
-              "max_allowed": 100,  
-              "limit_expiration_time": 1735689600  
-            }  
-          ]  
-        },  
-        {  
-          "action_name": "send_call_permission_request",  
-          "can_perform_action": false,  
-          "limits": ""  
-        }  
-      ]  
-    }  
-  },  
-  "Pending Permission": {  
-    "value": {  
-      "messaging_product": "whatsapp",  
-      "permission": {  
-        "status": "pending"  
-      },  
-      "actions": [  
-        {  
-          "action_name": "start_call",  
-          "can_perform_action": false  
-        },  
-        {  
-          "action_name": "send_call_permission_request",  
-          "can_perform_action": false  
-        }  
-      ]  
-    }  
-  },  
-  "Denied Permission": {  
-    "value": {  
-      "messaging_product": "whatsapp",  
-      "permission": {  
-        "status": "denied"  
-      },  
-      "actions": [  
-        {  
-          "action_name": "start_call",  
-          "can_perform_action": false  
-        },  
-        {  
-          "action_name": "send_call_permission_request",  
-          "can_perform_action": true,  
-          "limits": [  
-            {  
-              "time_period": "24h",  
-              "current_usage": 2,  
-              "max_allowed": 5,  
-              "limit_expiration_time": 1735689600  
-            }  
-          ]  
-        }  
-      ]  
-    }  
-  }  
+  "Granted Permission": {  
+    "value": {  
+      "messaging_product": "whatsapp",  
+      "permission": {  
+        "status": "granted",  
+        "expiration_time": 1735689600  
+      },  
+      "actions": [  
+        {  
+          "action_name": "start_call",  
+          "can_perform_action": true,  
+          "limits": [  
+            {  
+              "time_period": "24h",  
+              "current_usage": 5,  
+              "max_allowed": 100,  
+              "limit_expiration_time": 1735689600  
+            }  
+          ]  
+        },  
+        {  
+          "action_name": "send_call_permission_request",  
+          "can_perform_action": false,  
+          "limits": ""  
+        }  
+      ]  
+    }  
+  },  
+  "Pending Permission": {  
+    "value": {  
+      "messaging_product": "whatsapp",  
+      "permission": {  
+        "status": "pending"  
+      },  
+      "actions": [  
+        {  
+          "action_name": "start_call",  
+          "can_perform_action": false  
+        },  
+        {  
+          "action_name": "send_call_permission_request",  
+          "can_perform_action": false  
+        }  
+      ]  
+    }  
+  },  
+  "Denied Permission": {  
+    "value": {  
+      "messaging_product": "whatsapp",  
+      "permission": {  
+        "status": "denied"  
+      },  
+      "actions": [  
+        {  
+          "action_name": "start_call",  
+          "can_perform_action": false  
+        },  
+        {  
+          "action_name": "send_call_permission_request",  
+          "can_perform_action": true,  
+          "limits": [  
+            {  
+              "time_period": "24h",  
+              "current_usage": 2,  
+              "max_allowed": 5,  
+              "limit_expiration_time": 1735689600  
+            }  
+          ]  
+        }  
+      ]  
+    }  
+  }  
 }
 ```
 
@@ -453,19 +453,19 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/calls' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "messaging_product": "whatsapp",  
-  "to": "14085551234",  
-  "action": "connect",  
-  "session": {  
-    "sdp_type": "offer",  
-    "sdp": "v=0\no=- 3626166318745852955 2 IN IP4 127.0.0.1\ns=-\nt=0 0\na=group:BUNDLE 0\na=extmap-allow-mixed\na=msid-semantic: WMS d8b26053-4474-4eb7-b3c3-c93d6c8c9b2e\nm=audio 9 UDP/TLS/RTP/SAVPF 111 63 9 0 8 110 126\nc=IN IP4 0.0.0.0\na=rtcp:9 IN IP4 0.0.0.0\na=ice-ufrag:4g1c\na=ice-pwd:qY/Bb+jQzg5ICn6X4fhJQetk\na=ice-options:trickle\na=fingerprint:sha-256 35:47:24:24:9F:93:C4:3E:DB:37:7F:BB:ED:F8:20:B5:AD:AC:DC:35:C2:7D:67:EE:6C:35:54:DF:A6:00:5C:4A\na=setup:actpass\na=mid:0\na=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\na=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\na=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\na=sendrecv\na=msid:d8b26053-4474-4eb7-b3c3-c93d6c8c9b2e 5b4d3d96-ea9b-44a8-87e6-11a1ad21a3bc\na=rtcp-mux\na=rtpmap:111 opus/48000/2\na=rtcp-fb:111 transport-cc\na=fmtp:111 minptime=10;useinbandfec=1\na=rtpmap:63 red/48000/2\na=fmtp:63 111/111\na=rtpmap:9 G722/8000\na=rtpmap:0 PCMU/8000\na=rtpmap:8 PCMA/8000\na=rtpmap:110 telephone-event/48000\na=rtpmap:126 telephone-event/8000\na=ssrc:2220762577 cname:w/zwpg3jXNiTFTdZ\na=ssrc:2220762577 msid:d8b26053-4474-4eb7-b3c3-c93d6c8c9b2e 5b4d3d96-ea9b-44a8-87e6-11a1ad21a3bc\n"  
-  },  
-  "biz_opaque_callback_data": "0fS5cePMok"  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/calls' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "messaging_product": "whatsapp",  
+  "to": "14085551234",  
+  "action": "connect",  
+  "session": {  
+    "sdp_type": "offer",  
+    "sdp": "v=0\no=- 3626166318745852955 2 IN IP4 127.0.0.1\ns=-\nt=0 0\na=group:BUNDLE 0\na=extmap-allow-mixed\na=msid-semantic: WMS d8b26053-4474-4eb7-b3c3-c93d6c8c9b2e\nm=audio 9 UDP/TLS/RTP/SAVPF 111 63 9 0 8 110 126\nc=IN IP4 0.0.0.0\na=rtcp:9 IN IP4 0.0.0.0\na=ice-ufrag:4g1c\na=ice-pwd:qY/Bb+jQzg5ICn6X4fhJQetk\na=ice-options:trickle\na=fingerprint:sha-256 35:47:24:24:9F:93:C4:3E:DB:37:7F:BB:ED:F8:20:B5:AD:AC:DC:35:C2:7D:67:EE:6C:35:54:DF:A6:00:5C:4A\na=setup:actpass\na=mid:0\na=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\na=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\na=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\na=sendrecv\na=msid:d8b26053-4474-4eb7-b3c3-c93d6c8c9b2e 5b4d3d96-ea9b-44a8-87e6-11a1ad21a3bc\na=rtcp-mux\na=rtpmap:111 opus/48000/2\na=rtcp-fb:111 transport-cc\na=fmtp:111 minptime=10;useinbandfec=1\na=rtpmap:63 red/48000/2\na=fmtp:63 111/111\na=rtpmap:9 G722/8000\na=rtpmap:0 PCMU/8000\na=rtpmap:8 PCMA/8000\na=rtpmap:110 telephone-event/48000\na=rtpmap:126 telephone-event/8000\na=ssrc:2220762577 cname:w/zwpg3jXNiTFTdZ\na=ssrc:2220762577 msid:d8b26053-4474-4eb7-b3c3-c93d6c8c9b2e 5b4d3d96-ea9b-44a8-87e6-11a1ad21a3bc\n"  
+  },  
+  "biz_opaque_callback_data": "0fS5cePMok"  
 }'
 ```
 
@@ -477,21 +477,21 @@ Select status code
 
 ```
 {  
-  "Connect Call Response": {  
-    "value": {  
-      "messaging_product": "whatsapp",  
-      "calls": [  
-        {  
-          "id": "wacid.ABGGFjFVU2AfAgo6V"  
-        }  
-      ]  
-    }  
-  },  
-  "Terminate Call Response": {  
-    "value": {  
-      "success": true  
-    }  
-  }  
+  "Connect Call Response": {  
+    "value": {  
+      "messaging_product": "whatsapp",  
+      "calls": [  
+        {  
+          "id": "wacid.ABGGFjFVU2AfAgo6V"  
+        }  
+      ]  
+    }  
+  },  
+  "Terminate Call Response": {  
+    "value": {  
+      "success": true  
+    }  
+  }  
 }
 ```
 
@@ -684,19 +684,19 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/calls' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "messaging_product": "whatsapp",  
-  "to": "14085551234",  
-  "action": "connect",  
-  "session": {  
-    "sdp_type": "offer",  
-    "sdp": "v=0\no=- 3626166318745852955 2 IN IP4 127.0.0.1\ns=-\nt=0 0\na=group:BUNDLE 0\na=extmap-allow-mixed\na=msid-semantic: WMS d8b26053-4474-4eb7-b3c3-c93d6c8c9b2e\nm=audio 9 UDP/TLS/RTP/SAVPF 111 63 9 0 8 110 126\nc=IN IP4 0.0.0.0\na=rtcp:9 IN IP4 0.0.0.0\na=ice-ufrag:4g1c\na=ice-pwd:qY/Bb+jQzg5ICn6X4fhJQetk\na=ice-options:trickle\na=fingerprint:sha-256 35:47:24:24:9F:93:C4:3E:DB:37:7F:BB:ED:F8:20:B5:AD:AC:DC:35:C2:7D:67:EE:6C:35:54:DF:A6:00:5C:4A\na=setup:actpass\na=mid:0\na=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\na=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\na=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\na=sendrecv\na=msid:d8b26053-4474-4eb7-b3c3-c93d6c8c9b2e 5b4d3d96-ea9b-44a8-87e6-11a1ad21a3bc\na=rtcp-mux\na=rtpmap:111 opus/48000/2\na=rtcp-fb:111 transport-cc\na=fmtp:111 minptime=10;useinbandfec=1\na=rtpmap:63 red/48000/2\na=fmtp:63 111/111\na=rtpmap:9 G722/8000\na=rtpmap:0 PCMU/8000\na=rtpmap:8 PCMA/8000\na=rtpmap:110 telephone-event/48000\na=rtpmap:126 telephone-event/8000\na=ssrc:2220762577 cname:w/zwpg3jXNiTFTdZ\na=ssrc:2220762577 msid:d8b26053-4474-4eb7-b3c3-c93d6c8c9b2e 5b4d3d96-ea9b-44a8-87e6-11a1ad21a3bc\n"  
-  },  
-  "biz_opaque_callback_data": "0fS5cePMok"  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/calls' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "messaging_product": "whatsapp",  
+  "to": "14085551234",  
+  "action": "connect",  
+  "session": {  
+    "sdp_type": "offer",  
+    "sdp": "v=0\no=- 3626166318745852955 2 IN IP4 127.0.0.1\ns=-\nt=0 0\na=group:BUNDLE 0\na=extmap-allow-mixed\na=msid-semantic: WMS d8b26053-4474-4eb7-b3c3-c93d6c8c9b2e\nm=audio 9 UDP/TLS/RTP/SAVPF 111 63 9 0 8 110 126\nc=IN IP4 0.0.0.0\na=rtcp:9 IN IP4 0.0.0.0\na=ice-ufrag:4g1c\na=ice-pwd:qY/Bb+jQzg5ICn6X4fhJQetk\na=ice-options:trickle\na=fingerprint:sha-256 35:47:24:24:9F:93:C4:3E:DB:37:7F:BB:ED:F8:20:B5:AD:AC:DC:35:C2:7D:67:EE:6C:35:54:DF:A6:00:5C:4A\na=setup:actpass\na=mid:0\na=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\na=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\na=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\na=sendrecv\na=msid:d8b26053-4474-4eb7-b3c3-c93d6c8c9b2e 5b4d3d96-ea9b-44a8-87e6-11a1ad21a3bc\na=rtcp-mux\na=rtpmap:111 opus/48000/2\na=rtcp-fb:111 transport-cc\na=fmtp:111 minptime=10;useinbandfec=1\na=rtpmap:63 red/48000/2\na=fmtp:63 111/111\na=rtpmap:9 G722/8000\na=rtpmap:0 PCMU/8000\na=rtpmap:8 PCMA/8000\na=rtpmap:110 telephone-event/48000\na=rtpmap:126 telephone-event/8000\na=ssrc:2220762577 cname:w/zwpg3jXNiTFTdZ\na=ssrc:2220762577 msid:d8b26053-4474-4eb7-b3c3-c93d6c8c9b2e 5b4d3d96-ea9b-44a8-87e6-11a1ad21a3bc\n"  
+  },  
+  "biz_opaque_callback_data": "0fS5cePMok"  
 }'
 ```
 
@@ -708,21 +708,21 @@ Select status code
 
 ```
 {  
-  "Connect Call Response": {  
-    "value": {  
-      "messaging_product": "whatsapp",  
-      "calls": [  
-        {  
-          "id": "wacid.ABGGFjFVU2AfAgo6V"  
-        }  
-      ]  
-    }  
-  },  
-  "Terminate Call Response": {  
-    "value": {  
-      "success": true  
-    }  
-  }  
+  "Connect Call Response": {  
+    "value": {  
+      "messaging_product": "whatsapp",  
+      "calls": [  
+        {  
+          "id": "wacid.ABGGFjFVU2AfAgo6V"  
+        }  
+      ]  
+    }  
+  },  
+  "Terminate Call Response": {  
+    "value": {  
+      "success": true  
+    }  
+  }  
 }
 ```
 

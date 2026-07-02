@@ -72,11 +72,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{WhatsApp-Business-Profile-ID}' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{WhatsApp-Business-Profile-ID}' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -87,29 +87,29 @@ Select status code
 
 ```
 {  
-  "complete_profile": {  
-    "summary": "Complete business profile with all details",  
-    "value": {  
-      "id": "1234567890123456",  
-      "description": "Leading e-commerce platform for quality products",  
-      "email": "contact@business-example.com",  
-      "about": "Quality products delivered worldwide",  
-      "address": "123 Business Street, Commerce City, CC 12345",  
-      "vertical": "RETAIL",  
-      "websites": [  
-        "https://www.business-example.com",  
-        "https://shop.business-example.com"  
-      ],  
-      "profile_picture_url": "https://pps.whatsapp.net/v/profile-picture-url",  
-      "messaging_product": "whatsapp"  
-    }  
-  },  
-  "minimal_profile": {  
-    "summary": "Minimal business profile with required fields only",  
-    "value": {  
-      "id": "2345678901234567"  
-    }  
-  }  
+  "complete_profile": {  
+    "summary": "Complete business profile with all details",  
+    "value": {  
+      "id": "1234567890123456",  
+      "description": "Leading e-commerce platform for quality products",  
+      "email": "contact@business-example.com",  
+      "about": "Quality products delivered worldwide",  
+      "address": "123 Business Street, Commerce City, CC 12345",  
+      "vertical": "RETAIL",  
+      "websites": [  
+        "https://www.business-example.com",  
+        "https://shop.business-example.com"  
+      ],  
+      "profile_picture_url": "https://pps.whatsapp.net/v/profile-picture-url",  
+      "messaging_product": "whatsapp"  
+    }  
+  },  
+  "minimal_profile": {  
+    "summary": "Minimal business profile with required fields only",  
+    "value": {  
+      "id": "2345678901234567"  
+    }  
+  }  
 }
 ```
 
@@ -671,11 +671,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{WhatsApp-Business-Profile-ID}' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{WhatsApp-Business-Profile-ID}' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -686,29 +686,29 @@ Select status code
 
 ```
 {  
-  "complete_profile": {  
-    "summary": "Complete business profile with all details",  
-    "value": {  
-      "id": "1234567890123456",  
-      "description": "Leading e-commerce platform for quality products",  
-      "email": "contact@business-example.com",  
-      "about": "Quality products delivered worldwide",  
-      "address": "123 Business Street, Commerce City, CC 12345",  
-      "vertical": "RETAIL",  
-      "websites": [  
-        "https://www.business-example.com",  
-        "https://shop.business-example.com"  
-      ],  
-      "profile_picture_url": "https://pps.whatsapp.net/v/profile-picture-url",  
-      "messaging_product": "whatsapp"  
-    }  
-  },  
-  "minimal_profile": {  
-    "summary": "Minimal business profile with required fields only",  
-    "value": {  
-      "id": "2345678901234567"  
-    }  
-  }  
+  "complete_profile": {  
+    "summary": "Complete business profile with all details",  
+    "value": {  
+      "id": "1234567890123456",  
+      "description": "Leading e-commerce platform for quality products",  
+      "email": "contact@business-example.com",  
+      "about": "Quality products delivered worldwide",  
+      "address": "123 Business Street, Commerce City, CC 12345",  
+      "vertical": "RETAIL",  
+      "websites": [  
+        "https://www.business-example.com",  
+        "https://shop.business-example.com"  
+      ],  
+      "profile_picture_url": "https://pps.whatsapp.net/v/profile-picture-url",  
+      "messaging_product": "whatsapp"  
+    }  
+  },  
+  "minimal_profile": {  
+    "summary": "Minimal business profile with required fields only",  
+    "value": {  
+      "id": "2345678901234567"  
+    }  
+  }  
 }
 ```
 
@@ -751,22 +751,22 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{WhatsApp-Business-Profile-ID}' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "messaging_product": "whatsapp",  
-  "description": "Updated leading e-commerce platform for premium products",  
-  "email": "updated-contact@business-example.com",  
-  "about": "Premium products delivered worldwide with excellent service",  
-  "address": "456 Updated Business Avenue, Commerce City, CC 54321",  
-  "vertical": "RETAIL",  
-  "websites": [  
-    "https://www.updated-business-example.com",  
-    "https://shop.updated-business-example.com"  
-  ],  
-  "profile_picture_handle": "4:VGVzdC5wbmc=:aW1hZ2UvanBlZw==:ARat4Mt-L09JON3f30SmDkdyPSuyBkDDYiB4TFXuXISjdgHoNp2b7j882_9Jzr2tPrdKxi92UygyVzTivJiOvmebMpZ6MIjTik3gTyI3ZCQAgQ:e:1659995302:2022308451254161:636685196:ARZf1ftR5N6-qSLtklU"  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{WhatsApp-Business-Profile-ID}' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "messaging_product": "whatsapp",  
+  "description": "Updated leading e-commerce platform for premium products",  
+  "email": "updated-contact@business-example.com",  
+  "about": "Premium products delivered worldwide with excellent service",  
+  "address": "456 Updated Business Avenue, Commerce City, CC 54321",  
+  "vertical": "RETAIL",  
+  "websites": [  
+    "https://www.updated-business-example.com",  
+    "https://shop.updated-business-example.com"  
+  ],  
+  "profile_picture_handle": "4:VGVzdC5wbmc=:aW1hZ2UvanBlZw==:ARat4Mt-L09JON3f30SmDkdyPSuyBkDDYiB4TFXuXISjdgHoNp2b7j882_9Jzr2tPrdKxi92UygyVzTivJiOvmebMpZ6MIjTik3gTyI3ZCQAgQ:e:1659995302:2022308451254161:636685196:ARZf1ftR5N6-qSLtklU"  
 }'
 ```
 
@@ -778,13 +778,13 @@ Select status code
 
 ```
 {  
-  "successful_update": {  
-    "summary": "Successful profile update response",  
-    "value": {  
-      "id": "1234567890123456",  
-      "success": true  
-    }  
-  }  
+  "successful_update": {  
+    "summary": "Successful profile update response",  
+    "value": {  
+      "id": "1234567890123456",  
+      "success": true  
+    }  
+  }  
 }
 ```
 
@@ -1349,22 +1349,22 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{WhatsApp-Business-Profile-ID}' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "messaging_product": "whatsapp",  
-  "description": "Updated leading e-commerce platform for premium products",  
-  "email": "updated-contact@business-example.com",  
-  "about": "Premium products delivered worldwide with excellent service",  
-  "address": "456 Updated Business Avenue, Commerce City, CC 54321",  
-  "vertical": "RETAIL",  
-  "websites": [  
-    "https://www.updated-business-example.com",  
-    "https://shop.updated-business-example.com"  
-  ],  
-  "profile_picture_handle": "4:VGVzdC5wbmc=:aW1hZ2UvanBlZw==:ARat4Mt-L09JON3f30SmDkdyPSuyBkDDYiB4TFXuXISjdgHoNp2b7j882_9Jzr2tPrdKxi92UygyVzTivJiOvmebMpZ6MIjTik3gTyI3ZCQAgQ:e:1659995302:2022308451254161:636685196:ARZf1ftR5N6-qSLtklU"  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{WhatsApp-Business-Profile-ID}' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "messaging_product": "whatsapp",  
+  "description": "Updated leading e-commerce platform for premium products",  
+  "email": "updated-contact@business-example.com",  
+  "about": "Premium products delivered worldwide with excellent service",  
+  "address": "456 Updated Business Avenue, Commerce City, CC 54321",  
+  "vertical": "RETAIL",  
+  "websites": [  
+    "https://www.updated-business-example.com",  
+    "https://shop.updated-business-example.com"  
+  ],  
+  "profile_picture_handle": "4:VGVzdC5wbmc=:aW1hZ2UvanBlZw==:ARat4Mt-L09JON3f30SmDkdyPSuyBkDDYiB4TFXuXISjdgHoNp2b7j882_9Jzr2tPrdKxi92UygyVzTivJiOvmebMpZ6MIjTik3gTyI3ZCQAgQ:e:1659995302:2022308451254161:636685196:ARZf1ftR5N6-qSLtklU"  
 }'
 ```
 
@@ -1376,13 +1376,13 @@ Select status code
 
 ```
 {  
-  "successful_update": {  
-    "summary": "Successful profile update response",  
-    "value": {  
-      "id": "1234567890123456",  
-      "success": true  
-    }  
-  }  
+  "successful_update": {  
+    "summary": "Successful profile update response",  
+    "value": {  
+      "id": "1234567890123456",  
+      "success": true  
+    }  
+  }  
 }
 ```
 

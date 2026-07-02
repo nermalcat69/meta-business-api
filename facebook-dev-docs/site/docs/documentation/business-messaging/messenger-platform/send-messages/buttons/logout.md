@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/business-messaging/mes
 
 Updated: Jun 17, 2026
 
-The log in button triggers the [account linking authentication flow](https://developers.facebook.com/documentation/business-messaging/messenger-platform/identity/account-linking), which lets you link the message recipient’s identity on Messenger with their account on your site by directing them to your web-based login flow for authentication.
+The log in button triggers the [account linking authentication flow](https://developers.facebook.com/documentation/business-messaging/messenger-platform/identity/account-linking), which lets you link the message recipient's identity on Messenger with their account on your site by directing them to your web-based login flow for authentication.
 
 For more on using the log in button for account linking, see [Account linking](https://developers.facebook.com/documentation/business-messaging/messenger-platform/identity/account-linking).
 

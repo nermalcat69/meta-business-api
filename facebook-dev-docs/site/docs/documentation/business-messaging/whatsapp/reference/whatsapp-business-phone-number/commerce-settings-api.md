@@ -55,11 +55,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/whatsapp_commerce_settings' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/whatsapp_commerce_settings' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -70,17 +70,17 @@ Select status code
 
 ```
 {  
-  "Example response": {  
-    "value": {  
-      "data": [  
-        {  
-          "id": "527759822865714",  
-          "is_cart_enabled": true,  
-          "is_catalog_visible": true  
-        }  
-      ]  
-    }  
-  }  
+  "Example response": {  
+    "value": {  
+      "data": [  
+        {  
+          "id": "527759822865714",  
+          "is_cart_enabled": true,  
+          "is_catalog_visible": true  
+        }  
+      ]  
+    }  
+  }  
 }
 ```
 
@@ -153,11 +153,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/whatsapp_commerce_settings' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/whatsapp_commerce_settings' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -168,17 +168,17 @@ Select status code
 
 ```
 {  
-  "Example response": {  
-    "value": {  
-      "data": [  
-        {  
-          "id": "527759822865714",  
-          "is_cart_enabled": true,  
-          "is_catalog_visible": true  
-        }  
-      ]  
-    }  
-  }  
+  "Example response": {  
+    "value": {  
+      "data": [  
+        {  
+          "id": "527759822865714",  
+          "is_cart_enabled": true,  
+          "is_catalog_visible": true  
+        }  
+      ]  
+    }  
+  }  
 }
 ```
 
@@ -203,11 +203,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/whatsapp_commerce_settings' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/whatsapp_commerce_settings' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -218,11 +218,11 @@ Select status code
 
 ```
 {  
-  "Example response": {  
-    "value": {  
-      "success": true  
-    }  
-  }  
+  "Example response": {  
+    "value": {  
+      "success": true  
+    }  
+  }  
 }
 ```
 
@@ -283,11 +283,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/whatsapp_commerce_settings' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/whatsapp_commerce_settings' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -298,11 +298,11 @@ Select status code
 
 ```
 {  
-  "Example response": {  
-    "value": {  
-      "success": true  
-    }  
-  }  
+  "Example response": {  
+    "value": {  
+      "success": true  
+    }  
+  }  
 }
 ```
 

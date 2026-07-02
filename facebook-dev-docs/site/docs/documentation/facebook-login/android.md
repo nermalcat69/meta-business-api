@@ -7,9 +7,9 @@ source_url: https://developers.facebook.com/documentation/facebook-login/android
 
 Updated: Feb 28, 2025
 
-**My login access token is Invalid and/or I can’t check the expiration date of my access token after upgrading the iOS SDK to v17.0.0.0.**
+**My login access token is Invalid and/or I can't check the expiration date of my access token after upgrading the iOS SDK to v17.0.0.0.**
 
-In response to [the upcoming changes to ATT enforcement⁠](https://developer.apple.com/news/?id=3d8a9yyh), we made changes to the iOS SDK and the SDK no longer provides valid user access tokens in scenarios where the user opts out of ATT. The access token validation or Graph API requests may throw errors like OAuthException - “Invalid OAuth access token - Cannot parse access token”. Our recommendation is that users integrate Limited Login following the official documentation:
+In response to [the upcoming changes to ATT enforcement⁠](https://developer.apple.com/news/?id=3d8a9yyh), we made changes to the iOS SDK and the SDK no longer provides valid user access tokens in scenarios where the user opts out of ATT. The access token validation or Graph API requests may throw errors like OAuthException - "Invalid OAuth access token - Cannot parse access token". Our recommendation is that users integrate Limited Login following the official documentation:
 
 * [Limited Login for iOS](https://developers.facebook.com/documentation/facebook-login/ios/limited-login/ios)
 * [Limited Login for Unity](https://developers.facebook.com/documentation/facebook-login/ios/limited-login/unity)
@@ -18,7 +18,7 @@ In response to [the upcoming changes to ATT enforcement⁠](https://developer.ap
 
 When users opt out of ATT, all Facebook Login traffic will be performed on the Limited Login domain. Limited Login **does not** support business permissions. Our recommendation is that developers integrate Limited Login following [the official documentation](https://developers.facebook.com/documentation/facebook-login/ios/limited-login/ios). See limited login supported permissions in [this document](https://developers.facebook.com/documentation/facebook-login/ios/limited-login/permissions).
 
-**I don’t get redirected to the FB app to log into Facebook when logging into my application; a browser is shown instead asking me to log in.**
+**I don't get redirected to the FB app to log into Facebook when logging into my application; a browser is shown instead asking me to log in.**
 
 When users opt out of ATT, all Facebook Login traffic will be performed on the limited login domain via the in-app browser. Limited Login **does not** support fast app switch (that is, redirecting to fb app to login). See limitations section of the [Limited Login for iOS](https://developers.facebook.com/documentation/facebook-login/ios/limited-login/ios) document.
 
@@ -91,7 +91,7 @@ Limited Login mode only supports basic profile (name and picture) and email perm
 
 **Can I map users in Limited Login mode across different apps belonging to my business?**
 
-Yes, but this will require the use of an app access token to request the `token_for_business` field on the User node. Limited Login safeguards are not supported in this context. For apps that are associated with your business by means of Business Manager, you can use the app-scoped ID (ASID) included in the OIDC token returned after a successful login to get a unique string for a user. Using your app’s app access token, request the `token_for_business` field on the [`User`](https://developers.facebook.com/docs/graph-api/reference/user) node and pass in the user’s app-scoped ID. This call returns a string which is the same for this user across all the apps managed by the same Business Manager.
+Yes, but this will require the use of an app access token to request the `token_for_business` field on the User node. Limited Login safeguards are not supported in this context. For apps that are associated with your business by means of Business Manager, you can use the app-scoped ID (ASID) included in the OIDC token returned after a successful login to get a unique string for a user. Using your app's app access token, request the `token_for_business` field on the [`User`](https://developers.facebook.com/docs/graph-api/reference/user) node and pass in the user's app-scoped ID. This call returns a string which is the same for this user across all the apps managed by the same Business Manager.
 
 ```
 GET /ASID?fields=token_for_business
@@ -111,7 +111,7 @@ Usage notes:
 * The person being queried must have logged into this app.
 * If the owning business changes, the value of `token_for_business` will also change
 * If you request the `token_for_business` field and the app is not associated with a Business Manager, the call returns an error.
-* The value returned by `token_for_business` is a token, not an ID - it cannot be used directly against the Graph API to access a person’s information. You should still store the ID in your database.
+* The value returned by `token_for_business` is a token, not an ID - it cannot be used directly against the Graph API to access a person's information. You should still store the ID in your database.
 
 ## See Also
 

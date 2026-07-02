@@ -11,11 +11,11 @@ When creating a data pipeline in Signals Gateway, you can create or add data des
 
 ## Creating a Data Destination
 
-Click the “+” button in the pipeline details page. If the “+” button is not available or disabled, it means that all supported data destination types have already been added to the data pipeline, and the limit for each data destination type has been reached.
+Click the "+" button in the pipeline details page. If the "+" button is not available or disabled, it means that all supported data destination types have already been added to the data pipeline, and the limit for each data destination type has been reached.
 
 ![Data destinations section of the pipeline details page showing No data destination and the + button to add one.](https://scontent.fdel27-9.fna.fbcdn.net/v/t39.2365-6/473627246_625787650021953_8808880895963960517_n.png?_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=2sgyJ_-3tcEQ7kNvwHXewYO&_nc_oc=AdquAV-bww9haiNQwFM-Z5o4nCYo70WrcN63za7cXIlANQvNvPHmCMfcDjhpboTyGOqowlpFlpAQ1q-I9x84RF51&_nc_zt=14&_nc_ht=scontent.fdel27-9.fna&_nc_gid=8E6hfxqW6VBx3QjGnFE2Xw&_nc_ss=7b289&oh=00_AQCn5WMAUrOiVtcRs_jen2TZmWPNnj1YpkL0ysaZaj2brw&oe=6A609175)
 
-After clicking the “+” button, you can choose a name for your data destination and follow the provided instructions to complete the data destination creation process.
+After clicking the "+" button, you can choose a name for your data destination and follow the provided instructions to complete the data destination creation process.
 
 If you did not enable the Meta Conversions API plugin, the Meta data destination is disabled (as shown in the screenshot below).
 

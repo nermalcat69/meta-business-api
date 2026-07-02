@@ -34,7 +34,7 @@ If you want to learn how to use the Graph API, read our [Using Graph API guide](
 | --- | --- |
 | `date_preset` *enum{today, yesterday, this\_month, last\_month, this\_quarter, maximum, data\_maximum, last\_3d, last\_7d, last\_14d, last\_28d, last\_30d, last\_90d, last\_week\_mon\_sun, last\_week\_sun\_sat, last\_quarter, last\_year, this\_week\_mon\_today, this\_week\_sun\_today, this\_year}* | Date ranges container for benchmarking comparison |
 | `effective_status` *list<string>* | Filter ads by effective status. When unset, defaults to not return deleted or archived ads. |
-| `time_range` *{‘since’:YYYY-MM-DD,’until’:YYYY-MM-DD}* | Date range used to aggregate insights metrics  ---   `since` *datetime* A date in the format of "YYYY-MM-DD", which means from the beginning midnight of that day.  `until` *datetime* A date in the format of "YYYY-MM-DD", which means to the beginning midnight of the following day.  Show child parameters |
+| `time_range` *{'since':YYYY-MM-DD,'until':YYYY-MM-DD}* | Date range used to aggregate insights metrics  ---   `since` *datetime* A date in the format of "YYYY-MM-DD", which means from the beginning midnight of that day.  `until` *datetime* A date in the format of "YYYY-MM-DD", which means to the beginning midnight of the following day.  Show child parameters |
 | `updated_since` *integer* | filter by updated time |
 
 #### Fields

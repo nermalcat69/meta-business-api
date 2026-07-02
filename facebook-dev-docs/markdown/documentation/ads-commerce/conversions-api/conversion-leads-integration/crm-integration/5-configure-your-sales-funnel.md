@@ -22,7 +22,7 @@ There are two phases of data validation:
 
 ## Configure your sales funnel phase
 
-By configuring your funnel, you enable Meta to analyze and optimize your funnel’s performance, ultimately driving better results for your lead campaigns. To achieve this, the data shared with Meta must meet some requirements.
+By configuring your funnel, you enable Meta to analyze and optimize your funnel's performance, ultimately driving better results for your lead campaigns. To achieve this, the data shared with Meta must meet some requirements.
 
 * After sending all events, refer to the Overview tab of your dataset in Events Manager for integration status. You will be able to configure your funnel. Configuring your funnel helps Meta understand the data sent and perform deep analysis based on the fulfilment of the data requirements. Please refer to the [Configure your sales funnel](https://developers.facebook.com/documentation/ads-commerce/conversions-api/conversion-leads-integration/crm-integration/5-configure-your-sales-funnel) document to learn more.
 

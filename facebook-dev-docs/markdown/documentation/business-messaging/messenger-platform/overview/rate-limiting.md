@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/business-messaging/mes
 
 Updated: Mar 23, 2026
 
-Messenger from Meta lets a business’ Facebook Page or Instagram Professional account respond to people who message them through Facebook, Instagram, or a Meta plugin on your mobile app or website. A person must initiate the conversation. The Messenger Platform is free to use.
+Messenger from Meta lets a business' Facebook Page or Instagram Professional account respond to people who message them through Facebook, Instagram, or a Meta plugin on your mobile app or website. A person must initiate the conversation. The Messenger Platform is free to use.
 
 ## How it works
 

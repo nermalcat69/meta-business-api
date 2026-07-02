@@ -48,7 +48,7 @@ https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/adsets
 | Name | Description |
 | --- | --- |
 | `genders`  array | Genders to target. Defaults to all. `1` targets males, `2` targets females. |
-| `age_min`  int | Minimum age. Defaults to 18. If used, must be 13 or higher. If the app has custom settings for age restrictions, the app’s age restrictions will be used for ads with APP\_INSTALL goals. For example, if you set `age_min` to 13 but your app’s age minimum is set to 18, 18 will be used in ads targeting. |
+| `age_min`  int | Minimum age. Defaults to 18. If used, must be 13 or higher. If the app has custom settings for age restrictions, the app's age restrictions will be used for ads with APP\_INSTALL goals. For example, if you set `age_min` to 13 but your app's age minimum is set to 18, 18 will be used in ads targeting. |
 | `age_max`  int | Maximum age. If used, must be 65 or lower. |
 | `user_age_unknown`  boolean | Includes people on WhatsApp whose age is unknown.  Applies only to the WhatsApp Status placement  Starting May 2026, if the WhatsApp Status placement is included and this field is not set, it defaults to true.  Setting it to false allows businesses to exclude [people on WhatsApp whose age is unknown⁠](https://www.facebook.com/business/help/717368264947302?id=176276233019487). Businesses will be able to opt out of including people on WhatsApp whose age is unknown at any time. |
 
@@ -78,7 +78,7 @@ Using `radius` can cause an error, code: 100, subcode 1815946, when targeting mu
 | `custom_locations.address_string`  string | Address at latitude/longitude, such as 1601 Willow Rd, Menlo Park, CA. Suggested format: street number street name, city, state/province, country. Exclude postal codes. |
 | `geo_markets`  array | Geomarkets using Comscore Markets. Limit: 2500. **Example:**`'geo_markets':[{'key': 'COMSCORE_MARKET:2001', 'name': 'New York, NY'}, {'key': 'COMSCORE_MARKET:2051', 'name': 'New Orleans, LA'},]` |
 | `electoral_district`  array | Key for electoral districts. Get districts at [Targeting Search, Electoral](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference/targeting-search#electoral). **Example**: `'electoral_districts':[{'key':'US:AK00'},{'key':'US:CA01'},{'key':'US:NY14'}]` |
-| `location_types`  array | The array `['home', 'recent']` is the only option available. If no `location_types` array is provided, it will default to `['home', 'recent']`.   * `recent`: People whose recent location is in a selected area, as determined from mobile device data. Not available to exclude locations. * `home`: People whose stated location in their Facebook profile “current city” is in an area. Facebook validates this by IP and information from their friends’ profile locations. |
+| `location_types`  array | The array `['home', 'recent']` is the only option available. If no `location_types` array is provided, it will default to `['home', 'recent']`.   * `recent`: People whose recent location is in a selected area, as determined from mobile device data. Not available to exclude locations. * `home`: People whose stated location in their Facebook profile "current city" is in an area. Facebook validates this by IP and information from their friends' profile locations. |
 | `country_groups`  array | Global geographical regions and free trade areas. See [Targeting Search, Country Groups](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference/targeting-search#country_group).  Provide array of country group codes:   * `worldwide`: Worldwide. * `africa`: Africa. * `afta`: ASEAN Free Trade Area. * `android_app_store`: paid apps supporting countries in Android app store. * `android_free_store`: free apps supporting countries in Android app store. * `apec`: Asia-Pacific Economic Cooperation. * `asia`: Asia * `caribbean`: Caribbean. * `central_america`: Central America. * `cisfta`: Commonwealth of Independent States Free Trade Area. * `eea`: European Economic Area. * `emerging_markets`: countries in Emerging Markets * `europe`: Europe. * `gcc`: Gulf Cooperation Council. * `itunes_app_store`: supported countries for iTunes app store. * `mercosur`: MERCOSUR. * `nafta`: North American Free Trade Agreement. * `north_america`: North America. * `oceania`: Oceania. * `south_america`: South America.   **Example**: `'country_groups': ['asia','mercosur']` |
 
 ### Examples
@@ -86,31 +86,29 @@ Using `radius` can cause an error, code: 100, subcode 1815946, when targeting mu
 #### Target by countries
 
 ```
-```
-curl -X POST \  
-  -F 'name="My Reach Ad Set"' \  
-  -F 'optimization_goal="REACH"' \  
-  -F 'billing_event="IMPRESSIONS"' \  
-  -F 'bid_amount=2' \  
-  -F 'daily_budget=1000' \  
-  -F 'campaign_id="<AD_CAMPAIGN_ID>"' \  
-  -F 'targeting={  
-       "geo_locations": {  
-         "countries": [  
-           "US"  
-         ]  
-       },  
-       "facebook_positions": [  
-         "feed"  
-       ]  
-     }' \  
-  -F 'status="PAUSED"' \  
-  -F 'promoted_object={  
-       "page_id": "<PAGE_ID>"  
-     }' \  
-  -F 'access_token=<ACCESS_TOKEN>' \  
+curl -X POST \  
+  -F 'name="My Reach Ad Set"' \  
+  -F 'optimization_goal="REACH"' \  
+  -F 'billing_event="IMPRESSIONS"' \  
+  -F 'bid_amount=2' \  
+  -F 'daily_budget=1000' \  
+  -F 'campaign_id="<AD_CAMPAIGN_ID>"' \  
+  -F 'targeting={  
+       "geo_locations": {  
+         "countries": [  
+           "US"  
+         ]  
+       },  
+       "facebook_positions": [  
+         "feed"  
+       ]  
+     }' \  
+  -F 'status="PAUSED"' \  
+  -F 'promoted_object={  
+       "page_id": "<PAGE_ID>"  
+     }' \  
+  -F 'access_token=<ACCESS_TOKEN>' \  
 https://graph.facebook.com/v24.0/act_<AD_ACCOUNT_ID>/adsets
-```
 ```
 
 #### Location targeting with exclusions
@@ -212,7 +210,7 @@ To target males age 20-24 within 10 miles of Menlo Park, CA, or living in Texas 
 
 ##### Step 1
 
-First, get Japan’s country code:
+First, get Japan's country code:
 
 ```
 curl -G \
@@ -225,7 +223,7 @@ https://graph.facebook.com/v25.0/search
 
 ##### Step 2
 
-Get Texas’s region code:
+Get Texas's region code:
 
 ```
 curl -G \
@@ -329,7 +327,7 @@ https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/adsets
 
 ## Interest targeting
 
-Target based on interests from someone’s timeline, from Pages liked or from keywords associated with Pages or apps someone uses. See [Targeting Search, Interests](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference/targeting-search#interests).
+Target based on interests from someone's timeline, from Pages liked or from keywords associated with Pages or apps someone uses. See [Targeting Search, Interests](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference/targeting-search#interests).
 
 To target people interested in soccer, first query:
 
@@ -403,7 +401,7 @@ curl -X POST \
 https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/adsets
 ```
 
-Here’s another example:
+Here's another example:
 
 ```
 curl \
@@ -522,7 +520,7 @@ https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/adsets
 
 ## Learn more
 
-* [Search Targeting](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference/targeting-search) - Query for Facebook’s native ads targeting options.
+* [Search Targeting](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference/targeting-search) - Query for Facebook's native ads targeting options.
 * [Audience Targeting](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/custom-audiences)
 * [Special Ad Category](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/special-ad-category)
 

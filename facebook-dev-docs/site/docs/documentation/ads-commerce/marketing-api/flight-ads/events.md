@@ -9,7 +9,7 @@ Updated: Jun 26, 2026
 
 To promote your flight inventory on Facebook, you must share information about your flights with Facebook. You do this by creating a flight catalog and then filling it with flight routes. There are three ways to fill your catalog and keep it up to date.
 
-* [Upload CSV or XML files for ‘flight feeds’ with flight inventory](https://developers.facebook.com/documentation/ads-commerce/marketing-api/flight-ads/events#flight-feed-upload)
+* [Upload CSV or XML files for 'flight feeds' with flight inventory](https://developers.facebook.com/documentation/ads-commerce/marketing-api/flight-ads/events#flight-feed-upload)
 * [Use event activity to automatically fill your catalog](https://developers.facebook.com/documentation/ads-commerce/marketing-api/flight-ads/events#flight-activity)
 * [Combine a flight feed with automatically generated flights](https://developers.facebook.com/documentation/ads-commerce/marketing-api/flight-ads/events#combined-catalog)
 
@@ -32,7 +32,7 @@ A flight feed is a file with your flight inventory. Every line or item in the fi
 
 * The first row must list the chosen field names in the order the values will be given. Subsequent rows then supply the corresponding values for each flight.
 * Fields containing whitespace or commas should be enclosed in `"`double quotes`"`.
-* Nested or multi-value fields such as `image` can be represented using JSON-encoded values or by a set of “flattened” plain-text columns labeled using JSON-path syntax, such as `image[0].url`, `image[0].tag[0]`, `image[0].tag[1]`. Both conventions can be used interchangeably in the same file.
+* Nested or multi-value fields such as `image` can be represented using JSON-encoded values or by a set of "flattened" plain-text columns labeled using JSON-path syntax, such as `image[0].url`, `image[0].tag[0]`, `image[0].tag[1]`. Both conventions can be used interchangeably in the same file.
 
 #### XML sample description
 
@@ -63,14 +63,14 @@ For localized catalogs, see [supported fields for flight ads](https://developers
 | `one_way_price`  type: string | One-way price of the flight. You must specify the value with currency.  Example: `99.99 USD` |
 | `priority`  type: integer | Priority of the flight. Value from 0(lowest priority) to 5(highest priority). A flight without this value has priority 0.  Example: `5` |
 | `status`  Type: string | Controls whether an item is active or archived in your catalog. Only active items can be seen by people in your ads, shops, or any other channels. Supported values: `active`, `archived`. Items are active by default. Learn more about [archiving items⁠](https://www.facebook.com/business/help/543317109402043?id=725943027795860).  Example: `active`  **Note**: Some partner platforms such as Shopify may sync items to your catalog with a status called **staging**, which behaves the same as `archived`.  This field was previously called `visibility`. While the old field name is still supported, use the new field name. |
-| `internal_label`  Type: string | Add internal labels to help filter items when you create [product sets⁠](https://www.facebook.com/business/help/620275848114281?id=725943027795860). For example, you could add a “summer” label to all items that are part of a summer promotion and then filter those items into a set. Labels are only visible to you  Enclose each label in single quotes (‘) and separate multiple labels with commas (,). Don’t include white spaces at the beginning or end of a label. Character limit: Up to 5,000 labels per product and 110 characters per label.  Example (TSV, XLSX, Google Sheets): [‘summer’,’trending’]  Example (CSV): “[‘summer’,’trending’]”  **Note**: If you’re currently using custom labels (`custom_label_0` to `custom_label_4`) for filtering product sets, switching to internal labels (`internal_label`) instead is recommended. Unlike custom labels, you can add or update internal labels as often as needed without sending items through policy review each time, which can impact ad delivery.  This field was previously called `product_tags`. While the old field name is still supported, use the new field name. |
+| `internal_label`  Type: string | Add internal labels to help filter items when you create [product sets⁠](https://www.facebook.com/business/help/620275848114281?id=725943027795860). For example, you could add a "summer" label to all items that are part of a summer promotion and then filter those items into a set. Labels are only visible to you  Enclose each label in single quotes (') and separate multiple labels with commas (,). Don't include white spaces at the beginning or end of a label. Character limit: Up to 5,000 labels per product and 110 characters per label.  Example (TSV, XLSX, Google Sheets): ['summer','trending']  Example (CSV): "['summer','trending']"  **Note**: If you're currently using custom labels (`custom_label_0` to `custom_label_4`) for filtering product sets, switching to internal labels (`internal_label`) instead is recommended. Unlike custom labels, you can add or update internal labels as often as needed without sending items through policy review each time, which can impact ad delivery.  This field was previously called `product_tags`. While the old field name is still supported, use the new field name. |
 
 #### Image object parameters
 
 | Field Name and Type | Description |
 | --- | --- |
 | `url`  type: string | **Required**.  URL of the flight image. Follow these image specifications:   * All images must be in JPG, GIF, or PNG format. * For carousel ads and collection ads: Images display in square (1:1) format. The minimum image size is 500 x 500 px. For best quality, use 1024 x 1024 px. * For single image ads: Images display at a 1.91:1 aspect ratio. The minimum image size is 500 x 500 px. For best quality, use 1200 x 628 px. |
-| `tag`  type: string | A string that represents what’s in the image. There can be multiple tags associated with an image.  Examples:   * `Fitness Center` * `Swimming Pool`   Optional. `INSTAGRAM_STANDARD_PREFERRED` - Allows advertisers to tag a specific image in their feed as the default image that will be used for Instagram. This tag is case sensitive. |
+| `tag`  type: string | A string that represents what's in the image. There can be multiple tags associated with an image.  Examples:   * `Fitness Center` * `Swimming Pool`   Optional. `INSTAGRAM_STANDARD_PREFERRED` - Allows advertisers to tag a specific image in their feed as the default image that will be used for Instagram. This tag is case sensitive. |
 
 #### Applink Object Parameters
 
@@ -95,7 +95,7 @@ If you have separate apps for iPhone and iPad, specify iPhone and iPad specific 
 
 [Provide deep links](https://developers.facebook.com/documentation/ads-commerce/catalog/guides/product-deep-links) in feed following the [App Links](https://developers.facebook.com/docs/applinks) specification. Deep link information in feed takes precedence over any information Facebook collects with App Links metadata with our web crawler.
 
-If you already have deep link information from App Links, you don’t need to specify this data. Facebook uses information from App Links to display the correct deep link. To display deep links in your ads, see [Advantage+ Catalog Ads, Ad Template](https://developers.facebook.com/docs/marketing-api/dynamic-product-ads/ads-management#adtemplate).
+If you already have deep link information from App Links, you don't need to specify this data. Facebook uses information from App Links to display the correct deep link. To display deep links in your ads, see [Advantage+ Catalog Ads, Ad Template](https://developers.facebook.com/docs/marketing-api/dynamic-product-ads/ads-management#adtemplate).
 
 ## Autogenerate flights: add routes to your catalog automatically using event activity
 
@@ -110,7 +110,7 @@ curl \
   https://graph.facebook.com/<VERSION>/<CATALOG_ID>
 ```
 
-Routes that are added automatically don’t have an image (to display in the ad). Therefore, you need to provide a generic image to use for all autogenerated routes.
+Routes that are added automatically don't have an image (to display in the ad). Therefore, you need to provide a generic image to use for all autogenerated routes.
 
 ```
 curl \
@@ -151,9 +151,9 @@ curl -X POST \
 
 ## Upload your flight feeds via the API
 
-Once you’ve created the catalog, you need to upload your flight feed(s) to Facebook. Use the API to create a feed object for every feed you want to upload. Scheduled and direct uploads are supported.
+Once you've created the catalog, you need to upload your flight feed(s) to Facebook. Use the API to create a feed object for every feed you want to upload. Scheduled and direct uploads are supported.
 
-For scheduled uploads, specify a schedule when you create the feed. For non scheduled uploads, don’t specify a schedule.
+For scheduled uploads, specify a schedule when you create the feed. For non scheduled uploads, don't specify a schedule.
 
 ```
 curl -X POST \
@@ -189,13 +189,11 @@ A flight set is a subset of your catalog. To set up flight ads, you need to crea
 Flight sets are defined by filters that are applied to the flight catalog. For example, you can create a flight set with all routes that depart from London. Do note you can also create a flight set without any filters. In that case, the flight set will contain all flights in your catalog.
 
 ```
-```
-curl \  
-  -F 'name=Test Flight Set' \  
-  -F 'filter={"origin_airport":{"eq":"LHR"}}' \  
-  -F 'access_token=<ACCESS_TOKEN>' \  
-  https://graph.facebook.com/v2.11/<PRODUCT_CATALOG_ID>/product_sets
-```
+curl \  
+  -F 'name=Test Flight Set' \  
+  -F 'filter={"origin_airport":{"eq":"LHR"}​}' \  
+  -F 'access_token=<ACCESS_TOKEN>' \  
+  https://graph.facebook.com/v2.11/<PRODUCT_CATALOG_ID>/product_sets
 ```
 
 The `filter` parameter is made up of the following operators and data:
@@ -224,7 +222,7 @@ The `filter` parameter is made up of the following operators and data:
 
 To map the data from your event sources (your pixels and app events) to your catalog, every catalog must be associated with these event sources:
 
-* Go to your [business manager’s catalog page⁠](https://business.facebook.com/settings/product-catalogs/) and click **Associate Sources**.
+* Go to your [business manager's catalog page⁠](https://business.facebook.com/settings/product-catalogs/) and click **Associate Sources**.
 * Select the app and pixel that are receiving the travel events. Alternatively, you can use the API.
 
 ```

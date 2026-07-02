@@ -39,7 +39,7 @@ While debugging, you can check:
 * Paste your token in the text box of the [Access Token Debugger](https://developers.facebook.com/tools/debug/accesstoken) and click **Debug**.
 * Click **Extend Access Token** at the bottom of the **Access Token Info** table to get a long-lived token, and copy that token for later use.
 
-Check your new token’s properties using the Access Token Debugger. It should have a longer expiration time, such as “60 days”, or “Never” under **Expires**. See [Long-Lived Access Token](https://developers.facebook.com/documentation/facebook-login/guides/access-tokens/get-long-lived) for more information.
+Check your new token's properties using the Access Token Debugger. It should have a longer expiration time, such as "60 days", or "Never" under **Expires**. See [Long-Lived Access Token](https://developers.facebook.com/documentation/facebook-login/guides/access-tokens/get-long-lived) for more information.
 
 ### System user access tokens
 
@@ -56,9 +56,7 @@ See [System Users](https://developers.facebook.com/docs/marketing-api/system-use
 After the owner of an ad account you are going to manage clicks the **Allow** button when you prompt for permissions, they are redirected to a URL that contains the value of the `redirect_uri` parameter and an authorization code:
 
 ```
-```
 http://YOUR_URL?code=<AUTHORIZATION_CODE>
-```
 ```
 
 You can then build the URL for an API call that includes the endpoint for getting a token, your app ID, your site URL, your app secret, and the authorization code you just received:

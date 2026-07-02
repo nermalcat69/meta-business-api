@@ -71,11 +71,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Pre-Verified-Phone-Number-ID}/partners' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Pre-Verified-Phone-Number-ID}/partners' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -86,54 +86,54 @@ Select status code
 
 ```
 {  
-  "multiple_partners": {  
-    "summary": "Multiple partner businesses",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "1234567890123456",  
-          "name": "Partner Business Solutions Inc"  
-        },  
-        {  
-          "id": "2345678901234567",  
-          "name": "Global Commerce Partners LLC"  
-        }  
-      ],  
-      "paging": {  
-        "cursors": {  
-          "after": "MTAxNTExOTQ1MjAwNzI5NDE=",  
-          "before": "MAZDZD"  
-        },  
-        "next": "https://graph.facebook.com/v25.0/1234567890123456/partners?after=MTAxNTExOTQ1MjAwNzI5NDE%3D"  
-      }  
-    }  
-  },  
-  "single_partner": {  
-    "summary": "Single partner business",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "1234567890123456",  
-          "name": "Partner Business Solutions Inc"  
-        }  
-      ],  
-      "paging": {  
-        "cursors": {  
-          "after": "MTAxNTExOTQ1MjAwNzI5NDE=",  
-          "before": "MAZDZD"  
-        }  
-      }  
-    }  
-  },  
-  "empty_partners": {  
-    "summary": "No partner businesses found",  
-    "value": {  
-      "data": [],  
-      "paging": {  
-        "cursors": {}  
-      }  
-    }  
-  }  
+  "multiple_partners": {  
+    "summary": "Multiple partner businesses",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "1234567890123456",  
+          "name": "Partner Business Solutions Inc"  
+        },  
+        {  
+          "id": "2345678901234567",  
+          "name": "Global Commerce Partners LLC"  
+        }  
+      ],  
+      "paging": {  
+        "cursors": {  
+          "after": "MTAxNTExOTQ1MjAwNzI5NDE=",  
+          "before": "MAZDZD"  
+        },  
+        "next": "https://graph.facebook.com/v25.0/1234567890123456/partners?after=MTAxNTExOTQ1MjAwNzI5NDE%3D"  
+      }  
+    }  
+  },  
+  "single_partner": {  
+    "summary": "Single partner business",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "1234567890123456",  
+          "name": "Partner Business Solutions Inc"  
+        }  
+      ],  
+      "paging": {  
+        "cursors": {  
+          "after": "MTAxNTExOTQ1MjAwNzI5NDE=",  
+          "before": "MAZDZD"  
+        }  
+      }  
+    }  
+  },  
+  "empty_partners": {  
+    "summary": "No partner businesses found",  
+    "value": {  
+      "data": [],  
+      "paging": {  
+        "cursors": {}  
+      }  
+    }  
+  }  
 }
 ```
 
@@ -709,11 +709,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Pre-Verified-Phone-Number-ID}/partners' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Pre-Verified-Phone-Number-ID}/partners' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -724,54 +724,54 @@ Select status code
 
 ```
 {  
-  "multiple_partners": {  
-    "summary": "Multiple partner businesses",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "1234567890123456",  
-          "name": "Partner Business Solutions Inc"  
-        },  
-        {  
-          "id": "2345678901234567",  
-          "name": "Global Commerce Partners LLC"  
-        }  
-      ],  
-      "paging": {  
-        "cursors": {  
-          "after": "MTAxNTExOTQ1MjAwNzI5NDE=",  
-          "before": "MAZDZD"  
-        },  
-        "next": "https://graph.facebook.com/v25.0/1234567890123456/partners?after=MTAxNTExOTQ1MjAwNzI5NDE%3D"  
-      }  
-    }  
-  },  
-  "single_partner": {  
-    "summary": "Single partner business",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "1234567890123456",  
-          "name": "Partner Business Solutions Inc"  
-        }  
-      ],  
-      "paging": {  
-        "cursors": {  
-          "after": "MTAxNTExOTQ1MjAwNzI5NDE=",  
-          "before": "MAZDZD"  
-        }  
-      }  
-    }  
-  },  
-  "empty_partners": {  
-    "summary": "No partner businesses found",  
-    "value": {  
-      "data": [],  
-      "paging": {  
-        "cursors": {}  
-      }  
-    }  
-  }  
+  "multiple_partners": {  
+    "summary": "Multiple partner businesses",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "1234567890123456",  
+          "name": "Partner Business Solutions Inc"  
+        },  
+        {  
+          "id": "2345678901234567",  
+          "name": "Global Commerce Partners LLC"  
+        }  
+      ],  
+      "paging": {  
+        "cursors": {  
+          "after": "MTAxNTExOTQ1MjAwNzI5NDE=",  
+          "before": "MAZDZD"  
+        },  
+        "next": "https://graph.facebook.com/v25.0/1234567890123456/partners?after=MTAxNTExOTQ1MjAwNzI5NDE%3D"  
+      }  
+    }  
+  },  
+  "single_partner": {  
+    "summary": "Single partner business",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "1234567890123456",  
+          "name": "Partner Business Solutions Inc"  
+        }  
+      ],  
+      "paging": {  
+        "cursors": {  
+          "after": "MTAxNTExOTQ1MjAwNzI5NDE=",  
+          "before": "MAZDZD"  
+        }  
+      }  
+    }  
+  },  
+  "empty_partners": {  
+    "summary": "No partner businesses found",  
+    "value": {  
+      "data": [],  
+      "paging": {  
+        "cursors": {}  
+      }  
+    }  
+  }  
 }
 ```
 

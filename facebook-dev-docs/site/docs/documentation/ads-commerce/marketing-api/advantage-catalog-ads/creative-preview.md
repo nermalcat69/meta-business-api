@@ -11,7 +11,7 @@ Starting with Marketing API v22.0, opting in or out of standard enhancements wil
 
 The sub-features within the standard enhancement bundle for single image ads include `image_template`, `image_touchups`, `text_optimizations`, and `inline_comment`. For single video ads, the sub-features are `video_auto_crop`, `text_optimizations`, and `inline_comment`.
 
-Standard enhancements is for ads using a single image, video, or carousel. It automatically creates multiple variations of your ad and shows a personalized variation to each Account Center account based on what they’re most likely to respond to. You can create ads with standard enhancements using the `TRAFFIC` or `CONVERSIONS` objectives to generate tailored ad variations for each Account Center account. For more information, see [About Advantage+ creative⁠](https://www.facebook.com/business/help/297506218282224).
+Standard enhancements is for ads using a single image, video, or carousel. It automatically creates multiple variations of your ad and shows a personalized variation to each Account Center account based on what they're most likely to respond to. You can create ads with standard enhancements using the `TRAFFIC` or `CONVERSIONS` objectives to generate tailored ad variations for each Account Center account. For more information, see [About Advantage+ creative⁠](https://www.facebook.com/business/help/297506218282224).
 
 ## API support for standard enhancements
 
@@ -93,7 +93,7 @@ curl -X POST \
           "enroll_status": "OPT_IN"
         }
       }
-    }}' \
+    }​}' \
 -F "adset_id=<ADSET_ID>" \
 -F "name=New Ad" \
 -F "status=PAUSED" \

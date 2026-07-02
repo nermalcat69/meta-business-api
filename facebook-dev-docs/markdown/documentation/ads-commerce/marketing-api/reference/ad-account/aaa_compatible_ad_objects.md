@@ -9,12 +9,12 @@ Updated: May 6, 2026
 
 Represents a business, person or other entity who creates and manages ads on Facebook. Multiple people can manage an account, and each person can have one or more levels of access to an account, see [Business Manager API](https://developers.facebook.com/docs/marketing-api/business-manager-api).
 
-In response to Apple’s new policy, we are announcing breaking changes that will affect SDKAdNetwork, Marketing API and Ads Insights API endpoints.
+In response to Apple's new policy, we are announcing breaking changes that will affect SDKAdNetwork, Marketing API and Ads Insights API endpoints.
 
-To learn more about how Apple’s iOS 14.5 requirements will impact Facebook advertising, visit our Business Help Center aricles and changelog:
+To learn more about how Apple's iOS 14.5 requirements will impact Facebook advertising, visit our Business Help Center aricles and changelog:
 
-* [Facebook SDK for iOS, App Events API and Mobile Measurement Partners Updates for Apple’s iOS 14 Requirements⁠](https://www.facebook.com/business/help/2750680505215705?id=428636648170202)
-* [Facebook Pixel Updates for Apple’s iOS 14 Requirements⁠](https://www.facebook.com/business/help/721422165168355)
+* [Facebook SDK for iOS, App Events API and Mobile Measurement Partners Updates for Apple's iOS 14 Requirements⁠](https://www.facebook.com/business/help/2750680505215705?id=428636648170202)
+* [Facebook Pixel Updates for Apple's iOS 14 Requirements⁠](https://www.facebook.com/business/help/721422165168355)
 * [January 19, 2021 - Breaking Changes](https://developers.facebook.com/docs/graph-api/changelog/non-versioned-changes/jan-19-2021)
 
 The `agency_client_declaration` field requires [Admin privileges⁠](https://www.facebook.com/business/help/442345745885606?id=180505742745347) for all operations starting with v10.0 and will be required for all versions on May 25, 2021.
@@ -48,13 +48,13 @@ For information on managing ads volume, see [About Managing Ad Volume⁠](https:
 
 ### Running Or In Review
 
-To see if an ad is running or in review, we check `effective_status`, `configured_status`, and the ad account’s status:
+To see if an ad is running or in review, we check `effective_status`, `configured_status`, and the ad account's status:
 
 * If an ad has `effective_status` of `1` - `active`, we consider it a *running* or *in review*.
 * If an ad has `configured_status` of `active` and `effective_status` of `9` - `pending review`, or `17` - `pending processing` we consider it a *running* or *in review*.
 * The ad can be *running* or *in review* only if the ad account status is in `1` - `active`, `8` - `pending settlement`, `9` - `in grace period`.
 
-We also determine if an ad is running or in review based on the ad set’s schedule.
+We also determine if an ad is running or in review based on the ad set's schedule.
 
 * If start time is before current time, and current time is before end time, then we consider the ad running or in review.
 * If start time is before current time and the ad set has no end time, we also consider it running or in review.
@@ -65,7 +65,7 @@ If you are using special ads scheduling features, such as *day-parting*, we cons
 
 ### Breakdown By Actors
 
-We’ve added the `show_breakdown_by_actor`  parameter to the `act_123/ads_volume` endpoint so you can query ad volume and ad limits-related information for each page. For more details, see [Breakdown by Actors](https://developers.facebook.com/documentation/ads-commerce/marketing-api/insights-api/ads-volume#breakdown-by-actors).
+We've added the `show_breakdown_by_actor`  parameter to the `act_123/ads_volume` endpoint so you can query ad volume and ad limits-related information for each page. For more details, see [Breakdown by Actors](https://developers.facebook.com/documentation/ads-commerce/marketing-api/insights-api/ads-volume#breakdown-by-actors).
 
 ---
 
@@ -328,8 +328,8 @@ HTTPPHP SDKJavaScript SDKAndroid SDKiOS SDKcURL
 ---
 
 ```
-POST /v25.0/act_<AD_ACCOUNT_ID>/product_audiences HTTP/1.1  
-Host: graph.facebook.com  
+POST /v25.0/act_<AD_ACCOUNT_ID>/product_audiences HTTP/1.1  
+Host: graph.facebook.com  
   
 name=Test+Iphone+Product+Audience&product_set_id=%3CPRODUCT_SET_ID%3E&inclusions=%5B%7B%22retention_seconds%22%3A86400%2C%22rule%22%3A%7B%22and%22%3A%5B%7B%22event%22%3A%7B%22eq%22%3A%22AddToCart%22%7D%7D%2C%7B%22userAgent%22%3A%7B%22i_contains%22%3A%22iPhone%22%7D%7D%5D%7D%7D%5D&exclusions=%5B%7B%22retention_seconds%22%3A172800%2C%22rule%22%3A%7B%22event%22%3A%7B%22eq%22%3A%22Purchase%22%7D%7D%7D%5D
 ```
@@ -468,10 +468,10 @@ soft_desc_challenge_localized_auth_amount: int32,
 | 3979 | You have exceeded the number of allowed ad accounts for your Business Manager at this time. |
 | 3980 | One or more of the ad accounts in your Business Manager are currently in bad standing or in review. All of your accounts must be in good standing in order to create new ad accounts. |
 | 415 | Two factor authentication required. User have to enter a code from SMS or TOTP code generator to pass 2fac. This could happen when accessing a 2fac-protected asset like a page that is owned by a 2fac-protected business manager. |
-| 3902 | There was a technical issue and your new ad account wasn’t created. Please try again. |
+| 3902 | There was a technical issue and your new ad account wasn't created. Please try again. |
 | 457 | The session has an invalid origin |
 | 190 | Invalid OAuth 2.0 Access Token |
-| 23007 | This credit card can’t be set as your account’s primary payment method, because your account is set up to be billed after your ads have delivered. This setup can’t be changed. Please try a different card or payment method. |
+| 23007 | This credit card can't be set as your account's primary payment method, because your account is set up to be billed after your ads have delivered. This setup can't be changed. Please try a different card or payment method. |
 
 ---
 
@@ -508,7 +508,7 @@ access_status: string,
 | 100 | Invalid parameter |
 | 3980 | One or more of the ad accounts in your Business Manager are currently in bad standing or in review. All of your accounts must be in good standing in order to create new ad accounts. |
 | 415 | Two factor authentication required. User have to enter a code from SMS or TOTP code generator to pass 2fac. This could happen when accessing a 2fac-protected asset like a page that is owned by a 2fac-protected business manager. |
-| 3936 | You’ve already tried to claim this ad account. You’ll see a notification if your request is accepted. |
+| 3936 | You've already tried to claim this ad account. You'll see a notification if your request is accepted. |
 | 368 | The action attempted has been deemed abusive or is otherwise disallowed |
 | 3944 | Your Business Manager already has access to this object. |
 

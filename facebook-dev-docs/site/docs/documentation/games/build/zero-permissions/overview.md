@@ -28,7 +28,7 @@ Before writing any code, you need a Facebook App that will hold your Instant Gam
 * Go to [developers.facebook.com/apps](https://developers.facebook.com/apps/).
 * Click **Create App**.
 * Select the **Gaming** category and click **Next**.
-* Enter a display name for your app (for example, “My First Instant Game”) and click **Create App**.
+* Enter a display name for your app (for example, "My First Instant Game") and click **Create App**.
 * On the app dashboard, find **Instant Games** in the product list and click **Set Up**.
 * Under **Web Hosting**, you will see options for uploading your game bundle. Keep this page open -- you will return here later.
 
@@ -41,112 +41,110 @@ Create a new folder on your computer for your game project. Inside it, create tw
 This is the entry point for your Instant Game. Facebook will load this file when a player starts your game.
 
 ```
-```
-<!DOCTYPE html>  
+<!DOCTYPE html>  
 <html>  
 <head>  
-  <meta charset="utf-8">  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">  
-  <title>My First Instant Game</title>  
-  <style>  
-    * {  
-      margin: 0;  
-      padding: 0;  
-      box-sizing: border-box;  
-    }  
+  <meta charset="utf-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">  
+  <title>My First Instant Game</title>  
+  <style>  
+    * {  
+      margin: 0;  
+      padding: 0;  
+      box-sizing: border-box;  
+    }  
   
-    body {  
-      background-color: #1a1a2e;  
-      color: #ffffff;  
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;  
-      display: flex;  
-      justify-content: center;  
-      align-items: center;  
-      min-height: 100vh;  
-      overflow: hidden;  
-    }  
+    body {  
+      background-color: #1a1a2e;  
+      color: #ffffff;  
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;  
+      display: flex;  
+      justify-content: center;  
+      align-items: center;  
+      min-height: 100vh;  
+      overflow: hidden;  
+    }  
   
-    #game-container {  
-      text-align: center;  
-      padding: 20px;  
-      max-width: 400px;  
-      width: 100%;  
-    }  
+    #game-container {  
+      text-align: center;  
+      padding: 20px;  
+      max-width: 400px;  
+      width: 100%;  
+    }  
   
-    #score-display {  
-      font-size: 64px;  
-      font-weight: bold;  
-      margin-bottom: 24px;  
-      color: #0f3460;  
-      text-shadow: 0 0 20px rgba(15, 52, 96, 0.5);  
-    }  
+    #score-display {  
+      font-size: 64px;  
+      font-weight: bold;  
+      margin-bottom: 24px;  
+      color: #0f3460;  
+      text-shadow: 0 0 20px rgba(15, 52, 96, 0.5);  
+    }  
   
-    #tap-button {  
-      background-color: #e94560;  
-      color: #ffffff;  
-      border: none;  
-      border-radius: 50%;  
-      width: 120px;  
-      height: 120px;  
-      font-size: 20px;  
-      font-weight: bold;  
-      cursor: pointer;  
-      transition: transform 0.1s ease, box-shadow 0.1s ease;  
-      box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);  
-    }  
+    #tap-button {  
+      background-color: #e94560;  
+      color: #ffffff;  
+      border: none;  
+      border-radius: 50%;  
+      width: 120px;  
+      height: 120px;  
+      font-size: 20px;  
+      font-weight: bold;  
+      cursor: pointer;  
+      transition: transform 0.1s ease, box-shadow 0.1s ease;  
+      box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);  
+    }  
   
-    #tap-button:active {  
-      transform: scale(0.95);  
-      box-shadow: 0 2px 8px rgba(233, 69, 96, 0.3);  
-    }  
+    #tap-button:active {  
+      transform: scale(0.95);  
+      box-shadow: 0 2px 8px rgba(233, 69, 96, 0.3);  
+    }  
   
-    #message {  
-      margin-top: 24px;  
-      font-size: 14px;  
-      color: #aaa;  
-    }  
+    #message {  
+      margin-top: 24px;  
+      font-size: 14px;  
+      color: #aaa;  
+    }  
   
-    #loading-screen {  
-      position: fixed;  
-      top: 0;  
-      left: 0;  
-      width: 100%;  
-      height: 100%;  
-      background-color: #1a1a2e;  
-      display: flex;  
-      justify-content: center;  
-      align-items: center;  
-      flex-direction: column;  
-      z-index: 1000;  
-    }  
+    #loading-screen {  
+      position: fixed;  
+      top: 0;  
+      left: 0;  
+      width: 100%;  
+      height: 100%;  
+      background-color: #1a1a2e;  
+      display: flex;  
+      justify-content: center;  
+      align-items: center;  
+      flex-direction: column;  
+      z-index: 1000;  
+    }  
   
-    #loading-text {  
-      font-size: 18px;  
-      color: #e94560;  
-    }  
-  </style>  
+    #loading-text {  
+      font-size: 18px;  
+      color: #e94560;  
+    }  
+  </style>  
 </head>  
 <body>  
-  <!-- Loading screen shown while the SDK initializes -->  
-  <div id="loading-screen">  
-    <div id="loading-text">Loading...</div>  
-  </div>  
+  <!-- Loading screen shown while the SDK initializes -->  
+  <div id="loading-screen">  
+    <div id="loading-text">Loading...</div>  
+  </div>  
   
-  <!-- Main game content (hidden until the game starts) -->  
-  <div id="game-container" style="display: none;">  
-    <div id="score-display">0</div>  
-    <button id="tap-button">TAP!</button>  
-    <div id="message">Tap the button as fast as you can!</div>  
-  </div>  
+  <!-- Main game content (hidden until the game starts) -->  
+  <div id="game-container" style="display: none;">  
+    <div id="score-display">0</div>  
+    <button id="tap-button">TAP!</button>  
+    <div id="message">Tap the button as fast as you can!</div>  
+  </div>  
   
-  <!-- Load the FBInstant SDK -->  
-  <script src="https://connect.facebook.net/en_US/fbinstant.8.0.js"></script>  
+  <!-- Load the FBInstant SDK -->  
+  <script src="https://connect.facebook.net/en_US/fbinstant.8.0.js"></script>  
   
-  <!-- Load your game logic -->  
-  <script src="game.js"></script>  
+  <!-- Load your game logic -->  
+  <script src="game.js"></script>  
 </body>  
 </html>
-```
 ```
 
 ### `game.js`
@@ -154,72 +152,70 @@ This is the entry point for your Instant Game. Facebook will load this file when
 This file contains all your game logic and SDK integration.
 
 ```
-```
-// Game state  
-var score = 0;  
+// Game state  
+var score = 0;  
   
-// Step 1: Initialize the SDK  
-// FBInstant.initializeAsync() must be called before using any other SDK functions.  
-// It returns a Promise that resolves when the SDK is ready.  
+// Step 1: Initialize the SDK  
+// FBInstant.initializeAsync() must be called before using any other SDK functions.  
+// It returns a Promise that resolves when the SDK is ready.  
 FBInstant.initializeAsync()  
-  .then(function() {  
-    // Step 2: Report loading progress  
-    // While your game assets load, report progress to show the loading bar.  
-    // Values range from 0 to 100.  
-    FBInstant.setLoadingProgress(50);  
+  .then(function() {  
+    // Step 2: Report loading progress  
+    // While your game assets load, report progress to show the loading bar.  
+    // Values range from 0 to 100.  
+    FBInstant.setLoadingProgress(50);  
   
-    // In a real game, you would load images, sounds, and other assets here.  
-    // For this example, we have minimal assets, so we go straight to 100%.  
-    FBInstant.setLoadingProgress(100);  
+    // In a real game, you would load images, sounds, and other assets here.  
+    // For this example, we have minimal assets, so we go straight to 100%.  
+    FBInstant.setLoadingProgress(100);  
   
-    // Step 3: Start the game  
-    // startGameAsync() tells Facebook the game is ready to play.  
-    // The loading screen will be dismissed and your game content will appear.  
-    return FBInstant.startGameAsync();  
-  })  
-  .then(function() {  
-    // The game has started! Initialize the game UI.  
-    onGameStart();  
-  })  
-  .catch(function(error) {  
-    // Handle initialization errors.  
-    console.error('Failed to initialize Instant Game:', error);  
-  });  
+    // Step 3: Start the game  
+    // startGameAsync() tells Facebook the game is ready to play.  
+    // The loading screen will be dismissed and your game content will appear.  
+    return FBInstant.startGameAsync();  
+  })  
+  .then(function() {  
+    // The game has started! Initialize the game UI.  
+    onGameStart();  
+  })  
+  .catch(function(error) {  
+    // Handle initialization errors.  
+    console.error('Failed to initialize Instant Game:', error);  
+  });  
   
-function onGameStart() {  
-  // Step 4: Get the player ID  
-  // The FBInstant.player object provides a player-scoped ID.  
-  var playerID = FBInstant.player.getID();  
+function onGameStart() {  
+  // Step 4: Get the player ID  
+  // The FBInstant.player object provides a player-scoped ID.  
+  var playerID = FBInstant.player.getID();  
   
-  // Hide the loading screen and show the game  
-  document.getElementById('loading-screen').style.display = 'none';  
-  document.getElementById('game-container').style.display = 'block';  
+  // Hide the loading screen and show the game  
+  document.getElementById('loading-screen').style.display = 'none';  
+  document.getElementById('game-container').style.display = 'block';  
   
-  // Set up the tap button  
-  var tapButton = document.getElementById('tap-button');  
-  tapButton.addEventListener('click', onTap);  
+  // Set up the tap button  
+  var tapButton = document.getElementById('tap-button');  
+  tapButton.addEventListener('click', onTap);  
   
-  // Log that the game started successfully  
-  console.log('Game started for player:', playerID);  
+  // Log that the game started successfully  
+  console.log('Game started for player:', playerID);  
 }  
   
-function onTap() {  
-  // Increment the score  
-  score++;  
+function onTap() {  
+  // Increment the score  
+  score++;  
   
-  // Update the display  
-  document.getElementById('score-display').textContent = score;  
+  // Update the display  
+  document.getElementById('score-display').textContent = score;  
   
-  // Show milestone messages  
-  if (score === 10) {  
-    document.getElementById('message').textContent = 'Nice! Keep going!';  
-  } else if (score === 50) {  
-    document.getElementById('message').textContent = 'You are on fire!';  
-  } else if (score === 100) {  
-    document.getElementById('message').textContent = 'Incredible! 100 taps!';  
-  }  
+  // Show milestone messages  
+  if (score === 10) {  
+    document.getElementById('message').textContent = 'Nice! Keep going!';  
+  } else if (score === 50) {  
+    document.getElementById('message').textContent = 'You are on fire!';  
+  } else if (score === 100) {  
+    document.getElementById('message').textContent = 'Incredible! 100 taps!';  
+  }  
 }
-```
 ```
 
 ## Step 3: Understand the SDK Lifecycle
@@ -247,11 +243,9 @@ Game is now playable
 This must be the first SDK call. It initializes the SDK and resolves when the SDK is ready. You cannot call any other FBInstant methods before this resolves.
 
 ```
-```
-FBInstant.initializeAsync().then(function() {  
-  // SDK is ready. You can now use other FBInstant methods.  
+FBInstant.initializeAsync().then(function() {  
+  // SDK is ready. You can now use other FBInstant methods.  
 });
-```
 ```
 
 ### `FBInstant.setLoadingProgress(progress)`
@@ -259,48 +253,42 @@ FBInstant.initializeAsync().then(function() {
 Call this while your game assets are loading. The `progress` parameter is a number from 0 to 100 representing the percentage of loading completed. This updates the loading bar that players see.
 
 ```
-```
-FBInstant.setLoadingProgress(25);  // 25% loaded  
-FBInstant.setLoadingProgress(50);  // 50% loaded  
-FBInstant.setLoadingProgress(100); // Fully loaded
-```
+FBInstant.setLoadingProgress(25);  // 25% loaded  
+FBInstant.setLoadingProgress(50);  // 50% loaded  
+FBInstant.setLoadingProgress(100); // Fully loaded
 ```
 
 **Tip**: For the best player experience, report progress honestly. If you are loading 10 images, report 10% after each image loads. Do not jump straight from 0 to 100 unless your game truly has nothing to load.
 
 ### `FBInstant.startGameAsync()`
 
-Call this after all essential assets are loaded and your game is ready to be displayed. This dismisses Facebook’s loading screen and shows your game. The player can now interact with your game.
+Call this after all essential assets are loaded and your game is ready to be displayed. This dismisses Facebook's loading screen and shows your game. The player can now interact with your game.
 
 ```
-```
-FBInstant.startGameAsync().then(function() {  
-  // The loading screen is gone. Show your game!  
+FBInstant.startGameAsync().then(function() {  
+  // The loading screen is gone. Show your game!  
 });
-```
 ```
 
 ## Step 4: Access player information
 
-Once the SDK is initialized, you can retrieve the current player’s ID.
+Once the SDK is initialized, you can retrieve the current player's ID.
 
 | Method | Returns | Description |
 | --- | --- | --- |
 | `FBInstant.player.getID()` | `string` or `null` | A unique, player-scoped ID. This ID is unique to your game -- the same player will have a different ID in a different game. |
 
 ```
-```
-var id = FBInstant.player.getID();       // "1234567890"
-```
+var id = FBInstant.player.getID();       // "1234567890"
 ```
 
 **Important**: The player ID returned by `getID()` is scoped to your game. You cannot use it to look up the player in other games or on Facebook. This is by design, for player privacy.
 
 ### Displaying player names and photos
 
-To display a player’s name or profile photo, use **overlay views**. Overlay views are iframes controlled by Meta that render player data securely without exposing it to your game code. You define the layout using XML, and Meta resolves player data at render time.
+To display a player's name or profile photo, use **overlay views**. Overlay views are iframes controlled by Meta that render player data securely without exposing it to your game code. You define the layout using XML, and Meta resolves player data at render time.
 
-For a step-by-step guide with code examples, see [Displaying the Current Player’s Profile](https://developers.facebook.com/documentation/games/build/zero-permissions/example-game-use-cases#displaying-the-current-player-s-profile).
+For a step-by-step guide with code examples, see [Displaying the Current Player's Profile](https://developers.facebook.com/documentation/games/build/zero-permissions/example-game-use-cases#displaying-the-current-player-s-profile).
 
 ## Step 5: Create and upload your bundle
 
@@ -390,7 +378,7 @@ The `index.html` and `game.js` files shown in Step 2 above form a complete, work
 
 * Create the two files with the code above.
 * Zip them together (make sure `index.html` is at the root of the zip).
-* Upload the zip to your app’s Web Hosting section.
+* Upload the zip to your app's Web Hosting section.
 * Stage the build for testing.
 * Open the test link on Facebook.
 
@@ -410,15 +398,13 @@ Now that you have a working Instant Game, here are some things to explore:
 
 ## Troubleshooting
 
-### “FBInstant is not defined”
+### "FBInstant is not defined"
 
 Make sure you are loading the SDK script before your game script:
 
 ```
-```
-<script src="https://connect.facebook.net/en_US/fbinstant.8.0.js"></script>  
-<script src="game.js"></script>
-```
+<script src="https://connect.facebook.net/en_US/fbinstant.8.0.js"></script>  
+<script src="game.js"></script>
 ```
 
 Also, the SDK will only work when your game is loaded inside the Facebook or Messenger environment. It will not work if you open `index.html` directly in your browser.

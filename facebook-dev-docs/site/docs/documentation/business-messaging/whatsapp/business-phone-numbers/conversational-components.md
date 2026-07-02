@@ -34,11 +34,9 @@ curl -X  POST \
 Sample response:
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 All API calls require authentication with access tokens.

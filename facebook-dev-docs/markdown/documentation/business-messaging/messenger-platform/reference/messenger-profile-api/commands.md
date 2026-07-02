@@ -11,11 +11,11 @@ Updated: Jul 1, 2025
 
 `whitelisted_domains` is a property of the Messenger Profile API. For information on retrieving, setting, updating, and deleting `whitelisted_domains`, see the [Messenger Profile API Reference](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/messenger-profile-api).
 
-The `whitelisted_domains` property of your bot’s Messenger profile specifies a list of third-party domains that are accessible in the Messenger webview for use with the [Messenger Extensions SDK](https://developers.facebook.com/documentation/business-messaging/messenger-platform/webview), and the [Checkbox Plugin](https://developers.facebook.com/documentation/business-messaging/messenger-platform/discovery).
+The `whitelisted_domains` property of your bot's Messenger profile specifies a list of third-party domains that are accessible in the Messenger webview for use with the [Messenger Extensions SDK](https://developers.facebook.com/documentation/business-messaging/messenger-platform/webview), and the [Checkbox Plugin](https://developers.facebook.com/documentation/business-messaging/messenger-platform/discovery).
 
 ## Requirements
 
-To set or update the domain whitelist you must have the ‘Administrator’ role for the Page associated with the bot.
+To set or update the domain whitelist you must have the 'Administrator' role for the Page associated with the bot.
 
 #### Domain Name and HTTPS Required
 
@@ -37,15 +37,13 @@ In addition to using the Messenger Profile API, Page admins may also update thei
 ## `whitelisted_domains` Format
 
 ```
-```
 {  
-  "whitelisted_domains":[  
-    "<WHITELISTED_DOMAIN>",  
-    "<WHITELISTED_DOMAIN>",  
-    ...  
-  ]  
+  "whitelisted_domains":[  
+    "<WHITELISTED_DOMAIN>",  
+    "<WHITELISTED_DOMAIN>",  
+    ...  
+  ]  
 }
-```
 ```
 
 ## Properties

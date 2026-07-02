@@ -33,82 +33,76 @@ Before you begin
 ### Search Pixel Event
 
 ```
-```
-    // This sample assumes the FB Pixel base code is already loaded  
+    // This sample assumes the FB Pixel base code is already loaded  
   
-fbq('track', 'Search', {  
-      content_type: 'vehicle', // RECOMMENDED: If sent, it must be set to 'vehicle'  
-      content_ids: ['123'], // RECOMMENDED: array of vehicle IDs  
-      postal_code: '94025', // RECOMMENDED  
-      country: 'United States', // RECOMMENDED. Don't use abbreviations.  
-      make: 'Lexus', // RECOMMENDED  
-      model: 'ES', // RECOMMENDED  
-      year: '2017', // RECOMMENDED  
-      state_of_vehicle: 'CPO', // RECOMMENDED  
-      exterior_color: 'black', // RECOMMENDED  
-      transmission: 'automatic', // RECOMMENDED  
-      body_style: 'sedan', // RECOMMENDED  
-      fuel_type: 'gasoline', // RECOMMENDED  
-      drivetrain: 'awd', // RECOMMENDED  
-      price: 1234.99, // RECOMMENDED, up to 2 decimals optional  
-      currency: 'USD', // REQUIRED if price and preferred_price_range is used, currency has to be the same for both price and preferred_price_range  
-      preferred_price_range: '[10000,20000]' // Optional up to two decimals, min,max  
+fbq('track', 'Search', {  
+      content_type: 'vehicle', // RECOMMENDED: If sent, it must be set to 'vehicle'  
+      content_ids: ['123'], // RECOMMENDED: array of vehicle IDs  
+      postal_code: '94025', // RECOMMENDED  
+      country: 'United States', // RECOMMENDED. Don't use abbreviations.  
+      make: 'Lexus', // RECOMMENDED  
+      model: 'ES', // RECOMMENDED  
+      year: '2017', // RECOMMENDED  
+      state_of_vehicle: 'CPO', // RECOMMENDED  
+      exterior_color: 'black', // RECOMMENDED  
+      transmission: 'automatic', // RECOMMENDED  
+      body_style: 'sedan', // RECOMMENDED  
+      fuel_type: 'gasoline', // RECOMMENDED  
+      drivetrain: 'awd', // RECOMMENDED  
+      price: 1234.99, // RECOMMENDED, up to 2 decimals optional  
+      currency: 'USD', // REQUIRED if price and preferred_price_range is used, currency has to be the same for both price and preferred_price_range  
+      preferred_price_range: '[10000,20000]' // Optional up to two decimals, min,max  
 });
-```
 ```
 
 ### ViewContent Pixel Event
 
 ```
-```
-    // This sample assumes the FB Pixel base code is already loaded  
+    // This sample assumes the FB Pixel base code is already loaded  
   
-fbq('track', 'ViewContent', {  
-      content_type: 'vehicle', // RECOMMENDED: If sent, it must be set to 'vehicle'  
-      content_ids: ['123'], // REQUIRED: array of vehicle IDs  
-      postal_code: '94025', // RECOMMENDED  
-      country: 'United States', // RECOMMENDED. Don't use abbreviations.  
-      make: 'Lexus', // RECOMMENDED  
-      model: 'ES', // RECOMMENDED  
-      year: '2017', // RECOMMENDED  
-      state_of_vehicle: 'CPO', // RECOMMENDED  
-      exterior_color: 'black', // RECOMMENDED  
-      transmission: 'automatic', // RECOMMENDED  
-      body_style: 'sedan', // RECOMMENDED  
-      fuel_type: 'gasoline', // RECOMMENDED  
-      drivetrain: 'awd', // RECOMMENDED  
-      price: 1234.99, // RECOMMENDED, up to 2 decimals optional  
-      currency: 'USD', // REQUIRED if price and preferred_price_range is used  
-      preferred_price_range: '[10000,20000]' // Optional up to two decimals, min,max  
+fbq('track', 'ViewContent', {  
+      content_type: 'vehicle', // RECOMMENDED: If sent, it must be set to 'vehicle'  
+      content_ids: ['123'], // REQUIRED: array of vehicle IDs  
+      postal_code: '94025', // RECOMMENDED  
+      country: 'United States', // RECOMMENDED. Don't use abbreviations.  
+      make: 'Lexus', // RECOMMENDED  
+      model: 'ES', // RECOMMENDED  
+      year: '2017', // RECOMMENDED  
+      state_of_vehicle: 'CPO', // RECOMMENDED  
+      exterior_color: 'black', // RECOMMENDED  
+      transmission: 'automatic', // RECOMMENDED  
+      body_style: 'sedan', // RECOMMENDED  
+      fuel_type: 'gasoline', // RECOMMENDED  
+      drivetrain: 'awd', // RECOMMENDED  
+      price: 1234.99, // RECOMMENDED, up to 2 decimals optional  
+      currency: 'USD', // REQUIRED if price and preferred_price_range is used  
+      preferred_price_range: '[10000,20000]' // Optional up to two decimals, min,max  
 });
-```
 ```
 
 ### AddToWishlist Pixel Event
 
 ```
-```
-// This sample assumes the FB Pixel base code is already loaded  
+// This sample assumes the FB Pixel base code is already loaded  
   
-fbq('track', 'AddToWishlist', {  
-      content_type: 'vehicle', // RECOMMENDED: If sent, it must be set to 'vehicle'  
-      content_ids: ['123'], // REQUIRED: array of vehicle IDs  
-      postal_code: '94025', // RECOMMENDED  
-      country: 'United States', // RECOMMENDED. Don't use abbreviations.  
-      make: 'Lexus', // RECOMMENDED  
-      model: 'ES', // RECOMMENDED  
-      year: '2017', // RECOMMENDED  
-      state_of_vehicle: 'CPO', // RECOMMENDED  
-      exterior_color: 'black', // RECOMMENDED  
-      transmission: 'automatic', // RECOMMENDED  
-      body_style: 'sedan', // RECOMMENDED  
-      fuel_type: 'gasoline', // RECOMMENDED  
-      drivetrain: 'awd', // RECOMMENDED  
-      price: 1234.99, // RECOMMENDED, up to 2 decimals optional  
-      currency: 'USD', // REQUIRED if price and preferred_price_range is used  
-      preferred_price_range: '[10000,20000]' // Optional up to two decimals, min,max  
+fbq('track', 'AddToWishlist', {  
+      content_type: 'vehicle', // RECOMMENDED: If sent, it must be set to 'vehicle'  
+      content_ids: ['123'], // REQUIRED: array of vehicle IDs  
+      postal_code: '94025', // RECOMMENDED  
+      country: 'United States', // RECOMMENDED. Don't use abbreviations.  
+      make: 'Lexus', // RECOMMENDED  
+      model: 'ES', // RECOMMENDED  
+      year: '2017', // RECOMMENDED  
+      state_of_vehicle: 'CPO', // RECOMMENDED  
+      exterior_color: 'black', // RECOMMENDED  
+      transmission: 'automatic', // RECOMMENDED  
+      body_style: 'sedan', // RECOMMENDED  
+      fuel_type: 'gasoline', // RECOMMENDED  
+      drivetrain: 'awd', // RECOMMENDED  
+      price: 1234.99, // RECOMMENDED, up to 2 decimals optional  
+      currency: 'USD', // REQUIRED if price and preferred_price_range is used  
+      preferred_price_range: '[10000,20000]' // Optional up to two decimals, min,max  
 });
-```
 ```
 
 ## Mobile app events for Android
@@ -499,7 +493,7 @@ This guide assumes you already have the Facebook SDK implemented in your iOS mob
 
 While each automotive advertiser may have slightly different goals or custom tracking needs on the website, the recommended parameters below are based on the most common actions and key performance indicators (KPIs) for automotive websites.
 
-Parameters are subsets of a standard event that track additional information about each action. For example, if you’re tracking a `ViewContent` event on a Vehicle Detail Page (VDP), you can use parameters to also capture information each time that VDP is viewed, such as the make, model, and year of the vehicle.
+Parameters are subsets of a standard event that track additional information about each action. For example, if you're tracking a `ViewContent` event on a Vehicle Detail Page (VDP), you can use parameters to also capture information each time that VDP is viewed, such as the make, model, and year of the vehicle.
 
 While parameters are optional for general pixel setup, there are a few specific parameters required for automotive ads. Add those parameters (at minimum) to make it easier to set up DAA.
 
@@ -528,7 +522,7 @@ While parameters are optional for general pixel setup, there are a few specific 
 | `drivetrain`  Type: enum | **Recommended**.  Vehicle drivetrain. Supported values: `AWD`, `FOUR_WD`, `FWD`, `RWD`, `TWO_WD`, `Other` |
 | `price`  Type: float | **Recommended**.  Vehicle price.  Example: `8000` |
 | `preferred_price_range`  Type: [float (min), float (max)] | **Recommended**.  Vehicle price range.  Example: `[8000, 12000]` |
-| `currency`  Type: string | **Recommended**.  Currency for the `price` and `price_range`. Use [ISO 4217⁠](https://www.iso.org/iso-4217-currency-codes.html) currency format, such as “USD”. |
+| `currency`  Type: string | **Recommended**.  Currency for the `price` and `price_range`. Use [ISO 4217⁠](https://www.iso.org/iso-4217-currency-codes.html) currency format, such as "USD". |
 | `trim`  Type: string | **Recommended**.  Vehicle trim.  Example: `5DR HB SE` |
 | `vin`  Type: string | **Recommended**.  Vehicle identification number. Maximum characters: 17  Example: `KL9CD9S99EC111111` |
 | `interior_color`  Type: string | **Optional**.  Vehicle interior color.  Example: `Black`, `White`, `Blue`, and so on |

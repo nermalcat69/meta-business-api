@@ -15,7 +15,7 @@ This guide is for information purposes only with no support or warranties of any
 
 ### Overview
 
-This guide explains how to set up [WhatsApp Business Calling API](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling) using SIP signaling with [Asterisk⁠](https://www.asterisk.org/?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR7WlgU2D_nYpi9cfvPiwHW3pAcJ4ioAXwByWSEi00HO80ot2z93xPB4iJDu-w_aem_adl3wSgC9B3Pu089VwUlWQ), an open-source PBX (Private Branch Exchange). You’ll learn how to configure your Asterisk server, connect SIP phones, and handle both incoming and outgoing WhatsApp calls.
+This guide explains how to set up [WhatsApp Business Calling API](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling) using SIP signaling with [Asterisk⁠](https://www.asterisk.org/?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR7WlgU2D_nYpi9cfvPiwHW3pAcJ4ioAXwByWSEi00HO80ot2z93xPB4iJDu-w_aem_adl3wSgC9B3Pu089VwUlWQ), an open-source PBX (Private Branch Exchange). You'll learn how to configure your Asterisk server, connect SIP phones, and handle both incoming and outgoing WhatsApp calls.
 
 #### User-initiated calls
 
@@ -25,7 +25,7 @@ This guide explains how to set up [WhatsApp Business Calling API](https://develo
 
 #### Business-initiated calls
 
-* The business agent/user registers with Asterisk using SIP credentials (see “[Configuring a VoIP Phone](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/reference#configuring-a-voip-phone)” section).
+* The business agent/user registers with Asterisk using SIP credentials (see "[Configuring a VoIP Phone](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/reference#configuring-a-voip-phone)" section).
 * The business user dials the b2c-sip (business to consumer) extension, which is handled by an IVR. The IVR prompts for the WhatsApp number to call.
 * The call is then connected to the WhatsApp user.
 
@@ -279,21 +279,21 @@ Download and install a softphone client (for example, [Linphone⁠](https://www.
 
 * Select an extension to register as a SIP UA (extensions 1001–1005).
 * Open Preferences.
-* Under “SIP Accounts,” click “Add account.”
+* Under "SIP Accounts," click "Add account."
 * Enter the following details:
   * SIP Address: for example, sip:1001@{asterisk-sip-server-dns}
   * SIP Server Address: for example, sip:{asterisk-sip-server-dns};transport=tls
   * Transport: TLS
   * Disable ICE
   * Enable AVPF
-  * Disable “Publish presence information”
+  * Disable "Publish presence information"
 * Confirm and save the account.
 * Enter the password when prompted (that is, {sip-ua-password})
-* Once connected, return to Preferences and select the “Audio” tab. Enable all audio codecs.
-* In the “Calls and Chat” tab:
-  * Select “Encryption”
-  * Choose “SRTP-SDES”
-  * Enable “Encryption is mandatory”
+* Once connected, return to Preferences and select the "Audio" tab. Enable all audio codecs.
+* In the "Calls and Chat" tab:
+  * Select "Encryption"
+  * Choose "SRTP-SDES"
+  * Enable "Encryption is mandatory"
   * Confirm settings
 
 ### Final checklist
@@ -312,11 +312,11 @@ Confirm that the SIP URL is correct and the domain is pointing to the Asterisk s
 
 For a user initiated call, Meta sends a `SIP INVITE` to your SIP server which then responds with `200 OK`. Meta acks your `200 OK` with an `ACK` but you never receive this ACK. So your SIP server keeps resending the `200 OK` and ultimately the SIP dialog is terminated due to ACK timeout (typically 32s).
 
-The most likely cause for this problem is incorrect `Record-Route` headers in your `200 OK` to Meta. The `200 OK` response is supposed to not modify the `Record-Route` headers included in the original Meta’s `INVITE`. Your SIP server can add new `Record-Route` headers but cannot modify those present in our `INVITE`.
+The most likely cause for this problem is incorrect `Record-Route` headers in your `200 OK` to Meta. The `200 OK` response is supposed to not modify the `Record-Route` headers included in the original Meta's `INVITE`. Your SIP server can add new `Record-Route` headers but cannot modify those present in our `INVITE`.
 
 The solution to this problem is to change `rewrite_contact=yes` to `rewrite_contact=no` on the WhatsApp endpoint configuration in pjsip.conf file. After this make sure your `200 OK` has following headers as the last 2 in the list of `Record-Route` headers
 
-This problem is hard to detect or diagnose. Even with this bug, the call will get connected and media will flow in both directions but around 32s later, your SIP server will terminate the call which won’t be propagated to WhatsApp client because your BYE request has incorrect `Route` headers. So WA user stops hearing business audio around 32s.
+This problem is hard to detect or diagnose. Even with this bug, the call will get connected and media will flow in both directions but around 32s later, your SIP server will terminate the call which won't be propagated to WhatsApp client because your BYE request has incorrect `Route` headers. So WA user stops hearing business audio around 32s.
 
 ```
 Record-Route: <sip:wa.meta.vc;transport=tls;lr>
@@ -327,12 +327,12 @@ Record-Route: <sip:onevc-sip-proxy.fbinfra.net:8191;transport=tls;lr>
 
 ### Overview
 
-This guide explains how to set up [WhatsApp Business Calling API](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling) using SIP signaling with [FreeSWITCH⁠](https://signalwire.com/freeswitch?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR4Gyix9SeTw6091BlLDa8L1G5d_IkKU991tQBUQRCo8ZB1LwdhRduYcZpxAog_aem_FIN9kFgm_K-iiNno_LesBg), an open-source communication framework. You’ll learn how to configure your FreeSWITCH server, connect SIP phones, and handle both user-initiated and business-initiated WhatsApp calls.
+This guide explains how to set up [WhatsApp Business Calling API](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling) using SIP signaling with [FreeSWITCH⁠](https://signalwire.com/freeswitch?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR4Gyix9SeTw6091BlLDa8L1G5d_IkKU991tQBUQRCo8ZB1LwdhRduYcZpxAog_aem_FIN9kFgm_K-iiNno_LesBg), an open-source communication framework. You'll learn how to configure your FreeSWITCH server, connect SIP phones, and handle both user-initiated and business-initiated WhatsApp calls.
 
 #### User-initiated calls
 
 * The WhatsApp user dials the business number.
-* The call is received by FreeSWITCH and routed through an IVR, which prompts the user to enter an agent’s extension registered on the same FreeSWITCH server.
+* The call is received by FreeSWITCH and routed through an IVR, which prompts the user to enter an agent's extension registered on the same FreeSWITCH server.
 * Once the extension is entered, the call is connected to the specified recipient agent.
 
 #### Business-initiated calls
@@ -561,7 +561,7 @@ Start CLI (`/usr/share/freeswitch/bin/fs_cli`) to view SIP messages
 
 ### Overview
 
-This guide explains how to set up [WhatsApp Business Calling API](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling) using [WhatsApp Cloud API signaling](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/business-initiated-calls) with [FreeSWITCH⁠](https://signalwire.com/freeswitch?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR71KdJILwN4hWgqf_F3lofWYA30zDvZe_Iv-VQc-RYr-mI3sPpiDNd1n-202w_aem_sxVB9-IHuH8oj4lGJW_wJw), an open-source communication framework and [Janus⁠](https://janus.conf.meetecho.com/?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR516SvNTWneWJ1BRyPN_AUwkutE4mEG3HfgWLNwp2vKQNk5dxI0lA9ItJirSg_aem_0fRiwIWcHro6u8toSKri-Q), a general-purpose WebRTC server. You’ll learn how to configure your FreeSWITCH server, connect SIP phones, and handle both incoming and outgoing WhatsApp calls.
+This guide explains how to set up [WhatsApp Business Calling API](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling) using [WhatsApp Cloud API signaling](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/business-initiated-calls) with [FreeSWITCH⁠](https://signalwire.com/freeswitch?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR71KdJILwN4hWgqf_F3lofWYA30zDvZe_Iv-VQc-RYr-mI3sPpiDNd1n-202w_aem_sxVB9-IHuH8oj4lGJW_wJw), an open-source communication framework and [Janus⁠](https://janus.conf.meetecho.com/?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR516SvNTWneWJ1BRyPN_AUwkutE4mEG3HfgWLNwp2vKQNk5dxI0lA9ItJirSg_aem_0fRiwIWcHro6u8toSKri-Q), a general-purpose WebRTC server. You'll learn how to configure your FreeSWITCH server, connect SIP phones, and handle both incoming and outgoing WhatsApp calls.
 
 ![Architecture diagram showing FreeSWITCH with Janus integration](https://scontent.fdel1-1.fna.fbcdn.net/v/t39.2365-6/572080785_1362494772245673_6325189235439218390_n.png?_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=B96mUX8-qXIQ7kNvwEhgZ5_&_nc_oc=Adpdsmu3kX_780ij-4BOXftPeew-17_WpgDy4DWzB9_qPkCpgbsCZign5sl3oBW2_BhwDhAJiwUHIhsRVLeEhByn&_nc_zt=14&_nc_ht=scontent.fdel1-1.fna&_nc_gid=Xb45OPkKjmlOCUiPmG7ReA&_nc_ss=7b2a8&oh=00_AQDswmsU1BMEpk7jhe9kKDm2-_hVdILGrM4sBMsYdpYgeA&oe=6A605031)
 
@@ -574,7 +574,7 @@ This guide explains how to set up [WhatsApp Business Calling API](https://develo
 
 #### Business-initiated calls
 
-* The business agent/user registers with FreeSWITCH using SIP credentials (see “[Configuring a VoIP Phone](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/integration-examples#configuring-a-voip-phone)” section).
+* The business agent/user registers with FreeSWITCH using SIP credentials (see "[Configuring a VoIP Phone](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/integration-examples#configuring-a-voip-phone)" section).
 * The business user dials the b2c-sip (business to consumer) extension, which is handled by an IVR. The IVR prompts for the WhatsApp number to call.
 * FreeSWITCH bridges the call to extension registered to Janus SIP plugin which translates it to an API request to Meta
 * The call is then connected to the WhatsApp user.
@@ -734,7 +734,7 @@ Start CLI (`/usr/share/freeswitch/bin/fs_cli`) to view SIP messages
 
 ### Overview
 
-This guide explains how to set up [WhatsApp Business Calling API](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling) using [WhatsApp Cloud API signaling](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/business-initiated-calls) with [Asterisk⁠](https://www.asterisk.org/?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR71KdJILwN4hWgqf_F3lofWYA30zDvZe_Iv-VQc-RYr-mI3sPpiDNd1n-202w_aem_sxVB9-IHuH8oj4lGJW_wJw), an open-source PBX (Private Branch Exchange) and [RtpEngine⁠](https://github.com/sipwise/rtpengine?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR516SvNTWneWJ1BRyPN_AUwkutE4mEG3HfgWLNwp2vKQNk5dxI0lA9ItJirSg_aem_0fRiwIWcHro6u8toSKri-Q), an open-source proxy used for relaying, manipulating, and controlling RTP streams. You’ll learn how to configure your Asterisk server, connect SIP phones, and handle both incoming and outgoing WhatsApp calls.
+This guide explains how to set up [WhatsApp Business Calling API](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling) using [WhatsApp Cloud API signaling](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/business-initiated-calls) with [Asterisk⁠](https://www.asterisk.org/?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR71KdJILwN4hWgqf_F3lofWYA30zDvZe_Iv-VQc-RYr-mI3sPpiDNd1n-202w_aem_sxVB9-IHuH8oj4lGJW_wJw), an open-source PBX (Private Branch Exchange) and [RtpEngine⁠](https://github.com/sipwise/rtpengine?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR516SvNTWneWJ1BRyPN_AUwkutE4mEG3HfgWLNwp2vKQNk5dxI0lA9ItJirSg_aem_0fRiwIWcHro6u8toSKri-Q), an open-source proxy used for relaying, manipulating, and controlling RTP streams. You'll learn how to configure your Asterisk server, connect SIP phones, and handle both incoming and outgoing WhatsApp calls.
 
 #### User-initiated calls
 
@@ -745,9 +745,9 @@ This guide explains how to set up [WhatsApp Business Calling API](https://develo
 
 #### Business-initiated calls
 
-* The business agent/user registers with Asterisk using SIP credentials (see “[Configuring a VoIP Phone](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/integration-examples#configuring-a-voip-phone)” section).
+* The business agent/user registers with Asterisk using SIP credentials (see "[Configuring a VoIP Phone](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/integration-examples#configuring-a-voip-phone)" section).
 * The business user dials the b2c-sip (business to consumer) extension, which is handled by an IVR. The IVR prompts for the WhatsApp number to call.
-* Asterisk bridges the call to extension registered by the integration module (see “Integration with Cloud API Signalling”)
+* Asterisk bridges the call to extension registered by the integration module (see "Integration with Cloud API Signalling")
 * On receiving the call, the integration module bridges the media using RtpEngine and then translates it to an API request to Meta
 * The call is then connected to the WhatsApp user.
 
@@ -782,12 +782,12 @@ You will need following components, which are part of the integration module for
 Business initiated calls
 
 * Business agent registered to the same Asterisk server dials b2c-sip extension to initiate a call to WhatsApp user
-* The extension prompts the business agent to enter WA user’s phone number
+* The extension prompts the business agent to enter WA user's phone number
 * Asterisk sends a SIP INVITE request to extension 1000 with a custom header containing the dialed WA user phone number
-* The SIP UA inside the module would’ve registered at extension 1000 and hence receives the SIP INVITE from Asterisk
+* The SIP UA inside the module would've registered at extension 1000 and hence receives the SIP INVITE from Asterisk
 * The SDP included in the SIP INVITE is sent to RtpEngine which returns a new SDP
 * The new SDP is included in the [Graph API request](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/business-initiated-calls#initiate-call) to initiate a new call
-* When the WhatsApp user accepts the call, an “accepted” webhook is received
+* When the WhatsApp user accepts the call, an "accepted" webhook is received
 * Upon receiving this webhook, the answer SDP received in the webhook is sent to RtpEngine which returns a new SDP
 * The SIP UA accepts the original SIP INVITE (step 3), passing along the new SDP received from RtpEngine
 * The call is now bridged between WA user, RtpEngine, and Asterisk

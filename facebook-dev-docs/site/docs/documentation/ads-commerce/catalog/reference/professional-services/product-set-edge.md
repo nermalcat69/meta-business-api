@@ -28,7 +28,7 @@ Host: graph.facebook.com
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| `filter` | string | **Optional**. JSON-encoded WCA filter rule for filtering professional services. For example: `{"service_category":{"eq":"Home Services"}}`. See [Product Set](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-set) for the full list of filter operators. |
+| `filter` | string | **Optional**. JSON-encoded WCA filter rule for filtering professional services. For example: `{"service_category":{"eq":"Home Services"}​}`. See [Product Set](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-set) for the full list of filter operators. |
 | `summary` | boolean | **Optional**. When `true`, includes a `summary` object with `total_count` in the response. |
 | `limit` | integer | **Optional**. Maximum number of items to return per page. |
 | `before` | string | **Optional**. Cursor for backward pagination. |
@@ -99,8 +99,8 @@ For the full list of supported fields, see the [Professional Services node — F
 
 ## Updating
 
-You can’t update the Product Catalog Professional Services edge directly. To update individual professional services items, use the [Professional Services](https://developers.facebook.com/docs/marketing-api/catalog/reference/professional-services#updating) node.
+You can't update the Product Catalog Professional Services edge directly. To update individual professional services items, use the [Professional Services](https://developers.facebook.com/docs/marketing-api/catalog/reference/professional-services#updating) node.
 
 ## Deleting
 
-You can’t delete items from the Product Catalog Professional Services edge directly. To delete individual professional services items, use the [Items Batch API](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-catalog/items_batch).
+You can't delete items from the Product Catalog Professional Services edge directly. To delete individual professional services items, use the [Items Batch API](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-catalog/items_batch).

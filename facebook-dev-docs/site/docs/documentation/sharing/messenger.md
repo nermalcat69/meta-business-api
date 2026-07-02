@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/sharing/messenger
 
 Updated: Jun 30, 2026
 
-With the Send Dialog people can privately send content to specific friends. They’ll have the option to privately share a link as a Facebook message. The Send Dialog does not require any extended permissions.
+With the Send Dialog people can privately send content to specific friends. They'll have the option to privately share a link as a Facebook message. The Send Dialog does not require any extended permissions.
 
 ![Send Dialog with Recipients and Message fields above a shared link preview, plus Close and Send buttons](https://scontent.fdel27-2.fna.fbcdn.net/v/t39.2365-6/20628681_742958425912197_1298219896043208704_n.png?_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=fCPk1BaY-ZEQ7kNvwGgrGYQ&_nc_oc=AdrSTRy3SzVtVyqApu0CStnbuKPxbAuE8WB2AWX_tcUNGochU2TtHFEbSeKRBdv4g6SeuHPWUoQOCQSN5akybNmK&_nc_zt=14&_nc_ht=scontent.fdel27-2.fna&_nc_gid=0OTAfNx1kBQKF2I6HTo2uw&_nc_ss=7b289&oh=00_AQD3rB4QQIFD7ZwP-ptuGAkhSr-K8tMwYrrCwV00C31PCw&oe=6A607AE2)
 
@@ -43,9 +43,9 @@ http://www.facebook.com/dialog/send?
 
 | Parameter | Description |
 | --- | --- |
-| `app_id` | Your app’s unique identifier. Required. |
+| `app_id` | Your app's unique identifier. Required. |
 | `redirect_uri` | The URL to redirect to after a person clicks a button on the dialog. Required when using URL redirection. |
-| `display` | Determines how the dialog is rendered. In nearly all cases, you won’t need to specify this and the default will work best.   * If you use the URL redirect dialog, then this will be a full page display, shown in Facebook.com. This display type is called `page`. * If you are using the Facebook SDK for JavaScript, this will default to a modal `iframe` type for people logged into your app or `async` when using within a game on Facebook.com, and a `popup` window for everyone else. |
+| `display` | Determines how the dialog is rendered. In nearly all cases, you won't need to specify this and the default will work best.   * If you use the URL redirect dialog, then this will be a full page display, shown in Facebook.com. This display type is called `page`. * If you are using the Facebook SDK for JavaScript, this will default to a modal `iframe` type for people logged into your app or `async` when using within a game on Facebook.com, and a `popup` window for everyone else. |
 | `to` | A user ID of a recipient. Once the dialog comes up, the sender can specify additional people as recipients. |
 | `link` | Required parameter. The URL that is being sent in the message. |
 

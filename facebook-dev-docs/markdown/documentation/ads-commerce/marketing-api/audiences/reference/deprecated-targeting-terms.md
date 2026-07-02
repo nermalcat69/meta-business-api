@@ -26,4 +26,4 @@ Limitations on ad targeting:
 | `geo_markets` | 210 |
 | Connections targeted | 50 |
 | Latest graduation year targeted | 1980 |
-| Targeting by zip code | 50,000. Past limit was 2500 zip codes. If you use more than 50,000 zip codes, Meta creates an object that represents a set of zip codes. You can view this object in the ad set’s `targeting_spec`. |
+| Targeting by zip code | 50,000. Past limit was 2500 zip codes. If you use more than 50,000 zip codes, Meta creates an object that represents a set of zip codes. You can view this object in the ad set's `targeting_spec`. |

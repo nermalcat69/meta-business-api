@@ -11,8 +11,8 @@ This document shows you how to use the Facebook Stories API to publish Stories o
 
 To publish a story, your app will perform the following steps:
 
-* Upload your app user’s media to the Meta servers
-* Publish the media to your app user’s Page as a Story
+* Upload your app user's media to the Meta servers
+* Publish the media to your app user's Page as a Story
 
 ## Before you start
 
@@ -105,7 +105,7 @@ To upload a hosted file, send a `POST` request to the `upload_url` endpoint you 
 
 Be sure the host is ***`rupload.facebook.com`***.
 
-The API will now reject files hosted on sites that restrict access via robots.txt. Developers need to ensure that the hosting site allows the “facebookexternalhit/1.1 (+http://www.facebook.com/externalhit\_uatext.php)” user agent to fetch the hosted file.
+The API will now reject files hosted on sites that restrict access via robots.txt. Developers need to ensure that the hosting site allows the "facebookexternalhit/1.1 (+http://www.facebook.com/externalhit\_uatext.php)" user agent to fetch the hosted file.
 
 Files hosted on Meta CDN (e.g.. fbcdn URLs) will get rejected. Instead, developers can use the crossposting feature to publish a video on multiple pages without uploading the video to each page. Refer to our [detailed guidance](https://developers.facebook.com/documentation/video-api/guides/crossposting) on crossposting.
 
@@ -137,11 +137,9 @@ On upload success, your app receives a JSON response with `success` set to `true
 ##### Example upload response
 
 ```
-```
 {  
-    "success": true  
+    "success": true  
 }
-```
 ```
 
 #### Interrupted upload
@@ -183,49 +181,45 @@ On success, your app receives a JSON response that contains:
 The following response shows a file that has been successfully uploaded.
 
 ```
-```
 {  
-  "status": {  
-    "video_status": "processing",  
-    "uploading_phase": {  
-      "status": "in_progress",  
-      "bytes_transfered": 50002  
-    },  
-    "processing_phase": {  
-      "status": "not_started"  
-    }  
-    "publishing_phase": {  
-      "status": "not_started",  
-      "publish_status": "published",  
-      "publish_time": 234523452  
-    }  
-  }  
+  "status": {  
+    "video_status": "processing",  
+    "uploading_phase": {  
+      "status": "in_progress",  
+      "bytes_transfered": 50002  
+    },  
+    "processing_phase": {  
+      "status": "not_started"  
+    }  
+    "publishing_phase": {  
+      "status": "not_started",  
+      "publish_status": "published",  
+      "publish_time": 234523452  
+    }  
+  }  
 }
-```
 ```
 
 The following response shows an error has occurred in the processing phase.
 
 ```
-```
 {  
-  "status": {  
-    "video_status": "processing",  
-    "uploading_phase": {  
-      "status": "complete"  
-    },  
-    "processing_phase": {  
-      "status": "not_started",  
-      "error": {  
-        "message": "Resolution too low. Video must have a minimum resolution of 540p."  
-      }  
-    }  
-    "publishing_phase": {  
-      "status": "not_started"  
-    }  
-  }  
+  "status": {  
+    "video_status": "processing",  
+    "uploading_phase": {  
+      "status": "complete"  
+    },  
+    "processing_phase": {  
+      "status": "not_started",  
+      "error": {  
+        "message": "Resolution too low. Video must have a minimum resolution of 540p."  
+      }  
+    }  
+    "publishing_phase": {  
+      "status": "not_started"  
+    }  
+  }  
 }
-```
 ```
 
 ### Step 3. Publish a video story
@@ -253,12 +247,10 @@ On success, your app receives a JSON response that contains the following key-va
 #### Example response
 
 ```
-```
 {  
-  "success": true,  
-  "post_id": 1234  
+  "success": true,  
+  "post_id": 1234  
 }
-```
 ```
 
 ## Photo stories
@@ -291,12 +283,10 @@ On success, your app receives a JSON response that contains the following key-va
 #### Example response
 
 ```
-```
 {  
-  "success": true,  
-  "post_id": 1234  
+  "success": true,  
+  "post_id": 1234  
 }
-```
 ```
 
 ## Get stories

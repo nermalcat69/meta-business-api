@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/business-messaging/wha
 
 Updated: Mar 24, 2026
 
-Use Flow JSON to define your Flow’s user experience.
+Use Flow JSON to define your Flow's user experience.
 
 To visualize the complete user experience, use the Builder. The Builder emulates the entire Flow experience and can be updated on the fly. To navigate to the Builder:
 
@@ -45,7 +45,7 @@ Flow JSON has several required and optional properties that are used in the proc
 
 #### Optional properties
 
-* `routing_model` - represents a routing ruling system. The routing model is generated automatically if your Flow doesn’t use a Data Endpoint. If it does, the validation system will ask you to provide a routing model.
+* `routing_model` - represents a routing ruling system. The routing model is generated automatically if your Flow doesn't use a Data Endpoint. If it does, the validation system will ask you to provide a routing model.
 * `data_api_version` - represents the version to use during communication with the WhatsApp Flows Data Endpoint. The current value is `3.0`. If flow uses the data-channel capability, the validation system will ask to provide this property.
 
 * `data_channel_uri` - represents the URL of the WhatsApp Flows Data Endpoint. If a Flow uses the data-channel capability, the validation system will ask to provide this property.
@@ -53,26 +53,22 @@ Flow JSON has several required and optional properties that are used in the proc
 `data_channel_uri` is not supported by Flow JSON as of version `3.0`. For Flow JSON `3.0`, configure the URL of your Flow Data Endpoint using the `endpoint_uri` field provided by the [Flows API](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/flowsapi).
 
 ```
-```
 {  
- "version": "2.1",  
- "data_api_version": "3.0",  
- "routing_model": {"MY_FIRST_SCREEN": ["MY_SECOND_SCREEN"] },  
- "screens": [...],  
- "data_channel_uri": "https://example.com"  
+ "version": "2.1",  
+ "data_api_version": "3.0",  
+ "routing_model": {"MY_FIRST_SCREEN": ["MY_SECOND_SCREEN"] },  
+ "screens": [...],  
+ "data_channel_uri": "https://example.com"  
 }
-```
 ```
 
 ```
-```
 {  
- "version": "3.1",  
- "data_api_version": "3.0",  
- "routing_model": {"MY_FIRST_SCREEN": ["MY_SECOND_SCREEN"] },  
- "screens": [...]  
+ "version": "3.1",  
+ "data_api_version": "3.0",  
+ "routing_model": {"MY_FIRST_SCREEN": ["MY_SECOND_SCREEN"] },  
+ "screens": [...]  
 }
-```
 ```
 
 ## Screens
@@ -80,17 +76,15 @@ Flow JSON has several required and optional properties that are used in the proc
 Screens are the main unit of a Flow. Each screen represents a single node in the state machine you define. These properties then make up the Flows screen property model:
 
 ```
-```
-"screen" : {  
-  "id": string,  
-  "terminal": ?boolean,  
-  "success": ?boolean,  
-  "title": ?string,  
-  "refresh_on_back": ?boolean,  
-  "data": ?object,  
-  "layout": object  
+"screen" : {  
+  "id": string,  
+  "terminal": ?boolean,  
+  "success": ?boolean,  
+  "title": ?string,  
+  "refresh_on_back": ?boolean,  
+  "data": ?object,  
+  "layout": object  
 }
-```
 ```
 
 ### Required properties
@@ -100,20 +94,18 @@ Screens are the main unit of a Flow. Each screen represents a single node in the
 
 ### Optional properties
 
-* `terminal` (optional) - the business flow is the end state machine. It means that each Flow should have a terminal state where the experience is terminated and the Flow is completed. Multiple screens can be marked as terminal. It’s mandatory to have a Footer component on the terminal screen.
+* `terminal` (optional) - the business flow is the end state machine. It means that each Flow should have a terminal state where the experience is terminated and the Flow is completed. Multiple screens can be marked as terminal. It's mandatory to have a Footer component on the terminal screen.
 * `data` (optional) - declaration of dynamic data that fills the components field in the Flow JSON. It uses JSON Schema to define the structure and type of the properties. Below you can find the simple example.
 
 ```
-```
 {  
-  "data": {  
-    "first_name": {  
-      "type": "string",  
-      "__example__": "John"  
-    }  
-  }  
+  "data": {  
+    "first_name": {  
+      "type": "string",  
+      "__example__": "John"  
+    }  
+  }  
 }
-```
 ```
 
 * `title` (optional) - screen level attribute that is rendered in the top navigation bar.
@@ -129,11 +121,11 @@ Given a simple Flow example with the following screens:
 * User selects `Appointment Time`.
 * User `Confirms` an appointment.
 
-The user may navigate back from the confirmation page to re-select an appointment time. By using the `refresh_on_back` property in the `Confirmation` screen’s definition, you can control whether to refresh the list of available times, or to reload the previously shown list.
+The user may navigate back from the confirmation page to re-select an appointment time. By using the `refresh_on_back` property in the `Confirmation` screen's definition, you can control whether to refresh the list of available times, or to reload the previously shown list.
 
 #### refresh\_on\_back=false (default)
 
-If `refresh_on_back=false`, when the user goes back to the `Appointment Time` screen, the Flow does not request the Flow Data Endpoint. The screen loads with the previously provided data and the user’s prior input. This is the preferred behavior in most cases, because it avoids a roundtrip to the Flow Data Endpoint and reduces load time for the user.
+If `refresh_on_back=false`, when the user goes back to the `Appointment Time` screen, the Flow does not request the Flow Data Endpoint. The screen loads with the previously provided data and the user's prior input. This is the preferred behavior in most cases, because it avoids a roundtrip to the Flow Data Endpoint and reduces load time for the user.
 
 ![Flow diagram for refresh_on_back=false: navigating back loads the Appointment Time screen with prior data](https://scontent.fdel1-6.fna.fbcdn.net/v/t39.2365-6/651784578_1459945582530758_2544451265645226695_n.png?_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=qb-HZ11DmPsQ7kNvwEEkvpV&_nc_oc=Adpb2oTsxoxMZfMLpRJOHss3c5ZrTHwCtg0mDO852DX4AgdPUGRziQmAMt-rNkkJdpVlUhXbB_6Kfa3HP_UM1_AF&_nc_zt=14&_nc_ht=scontent.fdel1-6.fna&_nc_gid=IEcXhZrnOdldPDRU8IOHlw&_nc_ss=7b289&oh=00_AQAHpzEmzlpOZoywhsOo4pEWPmLfM6JfQZwHuRXVJ1HvCw&oe=6A6079D8)
 
@@ -148,7 +140,7 @@ The complete payload structure is [defined here](https://developers.facebook.com
 
 ### Additional information on `sensitive` fields
 
-Given a Flow in which certain fields are marked as `sensitive`, the following masking configuration is used to display the summary upon the Flow’s completion:
+Given a Flow in which certain fields are marked as `sensitive`, the following masking configuration is used to display the summary upon the Flow's completion:
 
 | Component | Masking | Consumer experience |
 | --- | --- | --- |
@@ -169,7 +161,7 @@ Layout represents screen UI Content. It can be predefined by the WhatsApp Flows 
 
 Layout has the following properties:
 
-* `type` - the layout identifier that’s used in the template. In the current version of Flow JSON, there is only one layout available - `"SingleColumnLayout"` which represents a vertical flexbox container.
+* `type` - the layout identifier that's used in the template. In the current version of Flow JSON, there is only one layout available - `"SingleColumnLayout"` which represents a vertical flexbox container.
 * `children` - represents an array of components from the WhatsApp Flows Library.
 
 ## Routing model
@@ -190,8 +182,8 @@ The following routing model can be built:
 
 ### When to define routes
 
-If you don’t use an Endpoint, you don’t need to define a routing model. The routing model is generated automatically.
-However, if you want to use a server to power your Flow, you’ll have to provide a `routing_model` in your Flow JSON.
+If you don't use an Endpoint, you don't need to define a routing model. The routing model is generated automatically.
+However, if you want to use a server to power your Flow, you'll have to provide a `routing_model` in your Flow JSON.
 
 ### How to define routes
 
@@ -199,14 +191,14 @@ Routes are defined per screen via the `routing_model` property. It is a map of s
 
 ### Routing rules
 
-* Route cannot be the current screen, but the route can be “refreshed” for validation purposes.
+* Route cannot be the current screen, but the route can be "refreshed" for validation purposes.
 * If there is an edge between two screens, then the user can go back and forth between them using the BACK button.
-* Only forward routes should be specified in the routing model. For example, if you have specified an edge from Screen\_A to Screen\_B then you shouldn’t specify another edge from Screen\_B to Screen\_A.
+* Only forward routes should be specified in the routing model. For example, if you have specified an edge from Screen\_A to Screen\_B then you shouldn't specify another edge from Screen\_B to Screen\_A.
 * Routes can be empty for a screen if there is no forward route from it.
 * There should be an **entry** screen in the routing model. A screen is eligible to be an entry screen if has no inbound edge.  
   For example, Item Catalog is the entry screen in the following routing model : Item Catalog => [Checkout]
   .  
-  If your Flow is not using a Data Endpoint then an entry screen will be the one which is not set as the “next” screen in any of the “navigate” actions defined in the Flow.
+  If your Flow is not using a Data Endpoint then an entry screen will be the one which is not set as the "next" screen in any of the "navigate" actions defined in the Flow.
 * All routes must end at the terminal screen.
 
 #### Routing model Flow JSON example (Endpoint)
@@ -449,7 +441,7 @@ You can dynamically reference these data types in all the components of Flow JSO
 
 Supported starting with Flow JSON version 6.0
 
-Nested expressions allow conditionals and string concatenation to be created and used in components’ properties (except `name` and `type` properties). Dynamic and static properties work as stated in this document in the previous sections, to enable nested expressions you need to wrap the property with backticks (``). Check below how to use it with all the available operations (code snippets provided). The available operations are:
+Nested expressions allow conditionals and string concatenation to be created and used in components' properties (except `name` and `type` properties). Dynamic and static properties work as stated in this document in the previous sections, to enable nested expressions you need to wrap the property with backticks (``). Check below how to use it with all the available operations (code snippets provided). The available operations are:
 
 * Equality comparisons (`==`, `!=`)
 * Math comparisons (`<`, `<=`, `>`, `>=`)
@@ -460,12 +452,10 @@ Nested expressions allow conditionals and string concatenation to be created and
 Note that in order to be able to use backticks as part of a string, you should add two back slashes (\\) before if.
 
 ```
-```
 {  
-  "type": "TextBody",  
-  "text": "`'This is an example for Ana\\`s house.'`"  
+  "type": "TextBody",  
+  "text": "`'This is an example for Ana\\`s house.'`"  
 }
-```
 ```
 
 #### Equality comparisons
@@ -477,37 +467,31 @@ Note that in order to be able to use backticks as part of a string, you should a
 Code snippet with strings:
 
 ```
-```
 {  
-  "type": "TextBody",  
-  "text": "Your first name should be different from your last name.",  
-  "visible": "`${form.first_name} == ${form.last_name}`"  
+  "type": "TextBody",  
+  "text": "Your first name should be different from your last name.",  
+  "visible": "`${form.first_name} == ${form.last_name}`"  
 }
-```
 ```
 
 Code snippet with booleans:
 
 ```
-```
 {  
-  "type": "TextBody",  
-  "text": "You have not accepted the T&C!",  
-  "visible": "`${form.accept} != true`"  
+  "type": "TextBody",  
+  "text": "You have not accepted the T&C!",  
+  "visible": "`${form.accept} != true`"  
 }
-```
 ```
 
 Code snippet with numbers:
 
 ```
-```
 {  
-  "type": "TextBody",  
-  "text": "You are 18!",  
-  "visible": "`${form.age} == 18`"  
+  "type": "TextBody",  
+  "text": "You are 18!",  
+  "visible": "`${form.age} == 18`"  
 }
-```
 ```
 
 #### Math comparisons
@@ -519,23 +503,19 @@ Code snippet with numbers:
 Code snippets:
 
 ```
-```
 {  
-  "type": "TextBody",  
-  "text": "You are above 18!",  
-  "visible": "`${form.age} > 18`"  
+  "type": "TextBody",  
+  "text": "You are above 18!",  
+  "visible": "`${form.age} > 18`"  
 }
-```
 ```
 
 ```
-```
-  {  
-  "type": "TextBody",  
-  "text": "You are above or at 18!",  
-  "visible": "`${form.age} >= 18`"  
+  {  
+  "type": "TextBody",  
+  "text": "You are above or at 18!",  
+  "visible": "`${form.age} >= 18`"  
 }
-```
 ```
 
 #### Logical comparisons
@@ -547,35 +527,29 @@ Code snippets:
 Code snippets:
 
 ```
-```
 {  
-  "type": "TextBody",  
-  "text": "You have accepted the T&C and subscribed for our newsletter!",  
-  "visible": "`${form.accept} && ${form.subscribe}`"  
+  "type": "TextBody",  
+  "text": "You have accepted the T&C and subscribed for our newsletter!",  
+  "visible": "`${form.accept} && ${form.subscribe}`"  
 }
-```
 ```
 
 Code snippet combined with other expressions:
 
 ```
-```
 {  
-  "type": "TextBody",  
-  "text": "You are above 18 and have accepted our T&C!",  
-  "visible": "`(${form.age} > 18) && ${form.accept}`"  
+  "type": "TextBody",  
+  "text": "You are above 18 and have accepted our T&C!",  
+  "visible": "`(${form.age} > 18) && ${form.accept}`"  
 }
-```
 ```
 
 ```
-```
 {  
-  "type": "TextBody",  
-  "text": "You provided at least your first or last name.",  
-  "visible": "`(${form.first_name} != '') || (${form.last_name} != '')`"  
+  "type": "TextBody",  
+  "text": "You provided at least your first or last name.",  
+  "visible": "`(${form.first_name} != '') || (${form.last_name} != '')`"  
 }
-```
 ```
 
 #### String concatenation
@@ -587,21 +561,17 @@ Code snippet combined with other expressions:
 Code snippets:
 
 ```
-```
 {  
-  "type": "TextBody",  
-  "text": "`'Hello ' ${form.first_name}`"  
+  "type": "TextBody",  
+  "text": "`'Hello ' ${form.first_name}`"  
 }
-```
 ```
 
 ```
-```
 {  
-  "type": "TextBody",  
-  "text": "`${form.first_name} ' you are ' ${form.age} ' years old.'`"  
+  "type": "TextBody",  
+  "text": "`${form.first_name} ' you are ' ${form.age} ' years old.'`"  
 }
-```
 ```
 
 #### Math operations
@@ -614,21 +584,17 @@ Note that in case of division or modulo for `zero` or `null` value, the result w
 Code snippets:
 
 ```
-```
 {  
-  "type": "TextBody",  
-  "text": "`'You were born on either ' (2024 - ${form.age}) ' or ' (2023 - ${form.age})`"  
+  "type": "TextBody",  
+  "text": "`'You were born on either ' (2024 - ${form.age}) ' or ' (2023 - ${form.age})`"  
 }
-```
 ```
 
 ```
-```
 {  
-  "type": "TextBody",  
-  "text": "`'The amount per person is: ' ${data.total} / ${form.group_size}`"  
+  "type": "TextBody",  
+  "text": "`'The amount per person is: ' ${data.total} / ${form.group_size}`"  
 }
-```
 ```
 
 ### Declaring screen properties (No endpoint example)
@@ -740,7 +706,7 @@ A few things have been added:
 * Inside `MY_FIRST_SCREEN` a data field is declared
 * Inside the data field, `hello_world_text` is declared. This is the data that the screen expects to receive.
   * `hello_world_text` follows the JSON Schema specification to declare the expected type, in this example it is a string.
-  * `__example__` field serves as mock data for the template, which is useful while you’re developing your template without WhatsApp Flows Data Endpoint integration. **This field is mandatory.**
+  * `__example__` field serves as mock data for the template, which is useful while you're developing your template without WhatsApp Flows Data Endpoint integration. **This field is mandatory.**
 * In `TextHeading` the data is referenced via dynamic data reference syntax. ${data} represents an object that came from the WhatsApp Flows Data Endpoint or `navigate` actions in case of Flow without endpoint. You can treat it as a screen state that was set after the response is received.
 * Property of the state can be accessed using the following pattern - `"${data.property_name}"`
 
@@ -869,23 +835,21 @@ To get and submit the data entered from users, Flow JSON uses a straightforward 
 HTML Form example:
 
 ```
-```
 <form>  
-  <label for="first_name">First name</label><br>  
-  <input type="text" id="first_name" name="first_name"><br>  
-  <label for="last_name">Last name</label><br>  
-  <input type="text" id="last_name" name="last_name">  
+  <label for="first_name">First name</label><br>  
+  <input type="text" id="first_name" name="first_name"><br>  
+  <label for="last_name">Last name</label><br>  
+  <input type="text" id="last_name" name="last_name">  
   
-  <input type="radio" id="html" name="fav_language" value="HTML">  
-  <label for="html">HTML</label><br>  
+  <input type="radio" id="html" name="fav_language" value="HTML">  
+  <label for="html">HTML</label><br>  
   
-  <input type="radio" id="css" name="fav_language" value="CSS">  
-  <label for="css">CSS</label><br>  
+  <input type="radio" id="css" name="fav_language" value="CSS">  
+  <label for="css">CSS</label><br>  
   
-  <input type="radio" id="javascript" name="fav_language" value="JavaScript">  
-  <label for="javascript">JavaScript</label>  
+  <input type="radio" id="javascript" name="fav_language" value="JavaScript">  
+  <label for="javascript">JavaScript</label>  
 </form>
-```
 ```
 
 This form can also be implemented in Flow JSON as follows:
@@ -1167,38 +1131,34 @@ Using the example above, you can reference form properties using a `"${form.fiel
 #### Passing data to the next screen:
 
 ```
-```
 {  
-  "type": "Footer",  
-  "label": "Submit data",  
-  "on-click-action": {  
-    "name": "navigate",  
-    "next": { "type": "screen", "name": "NEXT_SCREEN" },  
-    "payload": {  
-      "name": "${form.first_name}",  
-      "lang": "${form.favourite_language}"  
-    }  
-  }  
+  "type": "Footer",  
+  "label": "Submit data",  
+  "on-click-action": {  
+    "name": "navigate",  
+    "next": { "type": "screen", "name": "NEXT_SCREEN" },  
+    "payload": {  
+      "name": "${form.first_name}",  
+      "lang": "${form.favourite_language}"  
+    }  
+  }  
 }
-```
 ```
 
 #### Submitting data to the server:
 
 ```
-```
 {  
-  "type": "Footer",  
-  "label": "Submit data",  
-  "on-click-action": {  
-    "name": "data_exchange",  
-    "payload": {  
-      "name": "${form.first_name}",  
-      "lang": "${form.favourite_language}"  
-    }  
-  }  
+  "type": "Footer",  
+  "label": "Submit data",  
+  "on-click-action": {  
+    "name": "data_exchange",  
+    "payload": {  
+      "name": "${form.first_name}",  
+      "lang": "${form.favourite_language}"  
+    }  
+  }  
 }
-```
 ```
 
 ### Building forms guidelines
@@ -1228,8 +1188,8 @@ Initial values of inputs can be initialized using `init-values` property. `error
 
 | Attribute | Description |
 | --- | --- |
-| `init-values` | <key, value> object where  key - Field Name in Component  value - Field Initial Value  type - String, Array<String> or Dynamic `init-values`=”${data.init\_values}” |
-| `error-messages` | <key, value> object where  key - Field Name in Component  value - Error Message  type - String or Dynamic `error-messages`= “${data.error\_messages}” |
+| `init-values` | <key, value> object where  key - Field Name in Component  value - Field Initial Value  type - String, Array<String> or Dynamic `init-values`="${data.init\_values}" |
+| `error-messages` | <key, value> object where  key - Field Name in Component  value - Error Message  type - String or Dynamic `error-messages`= "${data.error\_messages}" |
 
 You set `init-values` by specifying the field name in the respective component, then mapping it to your desired value.
 
@@ -1364,7 +1324,7 @@ Submit data
 
 Managed by the business. Learn more [Learn more](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/flowsapi)
 
-Starting from `Flow JSON versions 4.0`, the Form component is optional. If you don’t use the Form component, you can still set the initial values of inputs with the `init-value` property, and set custom errors for each input with the `error-message` property. Here is an example showing how to initialize values without the Form component:
+Starting from `Flow JSON versions 4.0`, the Form component is optional. If you don't use the Form component, you can still set the initial values of inputs with the `init-value` property, and set custom errors for each input with the `error-message` property. Here is an example showing how to initialize values without the Form component:
 
 Flow JSON
 
@@ -1516,50 +1476,44 @@ Before `Flow JSON Version 4.0`, to transfer data from one screen to another you 
 following:
 
 ```
-```
-"on-click-action": {  
-  "name": "navigate",  
-  "next": {  
-           "type": "screen",  
-           "name": "SCREEN_TWO"  
-          },  
-   "payload": {  
-      "field1": "${data.field_one}",  
-      "field2": "${form.field_two}"  
-    }  
+"on-click-action": {  
+  "name": "navigate",  
+  "next": {  
+           "type": "screen",  
+           "name": "SCREEN_TWO"  
+          },  
+   "payload": {  
+      "field1": "${data.field_one}",  
+      "field2": "${form.field_two}"  
+    }  
 }
 ```
-```
 
-In Flow JSON V4.0 you don’t need to transfer the data via `navigate` since all data now is globally accessible, so instead you can keep `payload` as empty `{}`
+In Flow JSON V4.0 you don't need to transfer the data via `navigate` since all data now is globally accessible, so instead you can keep `payload` as empty `{}`
 
 ```
-```
-"on-click-action": {  
-  "name": "navigate",  
-  "next": {  
-           "type": "screen",  
-           "name": "SCREEN_TWO"  
-          },  
-   "payload": {}  
+"on-click-action": {  
+  "name": "navigate",  
+  "next": {  
+           "type": "screen",  
+           "name": "SCREEN_TWO"  
+          },  
+   "payload": {}  
 }
-```
 ```
 
 And on `SCREEN_TWO` you can reference it as:
 
 ```
-```
 {  
-  "type": "TextBody",  
-  "text": "${screen.SCREEN_ONE.data.field1}"  
+  "type": "TextBody",  
+  "text": "${screen.SCREEN_ONE.data.field1}"  
 }
-```
 ```
 
 ### Example 2 - No screen `data` declaration for global fields
 
-When you use global fields on the screen, you don’t need to specify them in the `data` model. Global fields utilise data-model of the parent screens.
+When you use global fields on the screen, you don't need to specify them in the `data` model. Global fields utilise data-model of the parent screens.
 See the example below, which uses `${screen.SCREEN_ONE.form.field1}` and `${screen.SCREEN_ONE.data.field2}` on `SCREEN_TWO`. Since the data comes from `SCREEN_ONE`, you keep
 the `data` model empty on `SCREEN_TWO`
 
@@ -1687,7 +1641,7 @@ Managed by the business. Learn more [Learn more](https://developers.facebook.com
 
 ### Example 3 - Forward references
 
-When you use global fields on the screen, you can also reference “future” screens. The only caveat is that you need to handle empty values. This can be done with `Conditional Rendering` components.
+When you use global fields on the screen, you can also reference "future" screens. The only caveat is that you need to handle empty values. This can be done with `Conditional Rendering` components.
 See example below:
 
 * `SELECT_SERVICES` screen references the data from `SELECT_INSURANCE`
@@ -1823,12 +1777,12 @@ Flow JSON provides a generic way to trigger asynchronous actions handled by a cl
 | `data_exchange` | Sending Data to WhatsApp Flows Data Endpoint | Customizable JSON payload on data exchanges { [key:string]: any } |
 | `navigate` | Triggers the next screen with the payload as its input. The CTA button will be disabled until the payload with data required for the next screen is supplied. | Static JSON payload |
 | `complete` | Triggers the termination of the Flow with the provided payload. | Static JSON payload |
-| `update_data` | Triggers an immediate update to the screen’s state, reflecting user input changes. | Static JSON payload |
-| `open_url` | Triggers a link to open in the device’s default web browser. | No payload is accepted by the `open_url` action. It only accepts a `url` property (i.e. the URL of the link to open). |
+| `update_data` | Triggers an immediate update to the screen's state, reflecting user input changes. | Static JSON payload |
+| `open_url` | Triggers a link to open in the device's default web browser. | No payload is accepted by the `open_url` action. It only accepts a `url` property (i.e. the URL of the link to open). |
 
 ### `navigate` action
 
-This action is a primary way to navigate between the screens of the flow. The data that’s passed as `payload` of this action will be available on the next screen through dynamic data referencing - `${data.field_name}`. You shouldn’t use it on the Footer of a terminal screen because that will prevent the flow from terminating.
+This action is a primary way to navigate between the screens of the flow. The data that's passed as `payload` of this action will be available on the next screen through dynamic data referencing - `${data.field_name}`. You shouldn't use it on the Footer of a terminal screen because that will prevent the flow from terminating.
 
 #### When to use
 
@@ -1837,20 +1791,18 @@ Use this action when you need to transition to another screen.
 #### Example
 
 ```
-```
 {  
-  "type": "Footer",  
-  "label": "Continue",  
-  "on-click-action": {  
-    "name": "navigate",  
-    "next": { "type": "screen", "name": "NEXT_SCREEN" },  
-    "payload": {  
-      "name": "${form.first_name}",  
-      "lang": "${form.favourite_language}"  
-    }  
-  }  
+  "type": "Footer",  
+  "label": "Continue",  
+  "on-click-action": {  
+    "name": "navigate",  
+    "next": { "type": "screen", "name": "NEXT_SCREEN" },  
+    "payload": {  
+      "name": "${form.first_name}",  
+      "lang": "${form.favourite_language}"  
+    }  
+  }  
 }
-```
 ```
 
 ### `complete` action
@@ -1861,24 +1813,22 @@ Terminates the flow and sends the response message to the chat thread. The busin
 
 Use this action on `terminal` screen as a last interaction of the user. Once triggered, the flow will be terminated and entered data will be submitted via webhook.
 
-Include only data inputted by the user in the Flow’s completion payload, and keep the payload size to a minimum. Avoid using the completion payload to send base64 images.
+Include only data inputted by the user in the Flow's completion payload, and keep the payload size to a minimum. Avoid using the completion payload to send base64 images.
 
 #### Example
 
 ```
-```
 {  
-  "type": "Footer",  
-  "label": "Submit data",  
-  "on-click-action": {  
-    "name": "complete",  
-    "payload": {  
-      "discount_code": "${data.discount_code}",  
-      "items": "${form.selected_items}"  
-    }  
-  }  
+  "type": "Footer",  
+  "label": "Submit data",  
+  "on-click-action": {  
+    "name": "complete",  
+    "payload": {  
+      "discount_code": "${data.discount_code}",  
+      "items": "${form.selected_items}"  
+    }  
+  }  
 }
-```
 ```
 
 ### Example of flow using `navigate` and `complete` actions
@@ -2020,26 +1970,24 @@ You can only use this action if your Flow is powered by a Data Endpoint. Use thi
 #### Example
 
 ```
-```
 {  
-  "type": "Footer",  
-  "label": "Submit data",  
-  "on-click-action": {  
-    "name": "data_exchange",  
-    "payload": {  
-      "discount_code": "${data.discount_code}",  
-      "items": "${form.selected_items}"  
-    }  
-  }  
+  "type": "Footer",  
+  "label": "Submit data",  
+  "on-click-action": {  
+    "name": "data_exchange",  
+    "payload": {  
+      "discount_code": "${data.discount_code}",  
+      "items": "${form.selected_items}"  
+    }  
+  }  
 }
-```
 ```
 
 ### `update_data` action
 
 This action is supported from Flow JSON version 6.0 onwards.
 
-This updates the state of the current screen based on user interactions. For example, when a user selects a value from a dropdown, another dropdown on the screen can be updated immediately. The data that’s passed as payload of this action can have multiple key-value pairs, where the key references the dynamic data of the screen where you are using this action. The value of the payload can be form/data, and can be referenced using the global dynamic referencing syntax.
+This updates the state of the current screen based on user interactions. For example, when a user selects a value from a dropdown, another dropdown on the screen can be updated immediately. The data that's passed as payload of this action can have multiple key-value pairs, where the key references the dynamic data of the screen where you are using this action. The value of the payload can be form/data, and can be referenced using the global dynamic referencing syntax.
 
 #### When to use
 
@@ -2184,41 +2132,37 @@ Managed by the business. Learn more [Learn more](https://developers.facebook.com
 
 This action is supported from Flow JSON version 6.0 onwards.
 
-This action opens the URL of a website that loads in the device’s default mobile web browser when the URL text in the Flow is tapped by the user. It can be used only with the `EmbeddedLink` and `OptIn` components.
+This action opens the URL of a website that loads in the device's default mobile web browser when the URL text in the Flow is tapped by the user. It can be used only with the `EmbeddedLink` and `OptIn` components.
 
 #### When to use
 
-Use this when you want to redirect the user to an external link outside WhatsApp. For example, to open the “Terms and Conditions” link.
+Use this when you want to redirect the user to an external link outside WhatsApp. For example, to open the "Terms and Conditions" link.
 
 #### EmbeddedLink example
 
 ```
-```
 {  
-   "type": "EmbeddedLink",  
-   "text": "This is an external link.",  
-   "on-click-action": {  
-   "name": "open_url",  
-   "url": "https://www.whatsapp.com/"  
-   }  
+   "type": "EmbeddedLink",  
+   "text": "This is an external link.",  
+   "on-click-action": {  
+   "name": "open_url",  
+   "url": "https://www.whatsapp.com/"  
+   }  
 }
-```
 ```
 
 #### OptIn example
 
 ```
-```
 {  
-   "type": "OptIn",  
-   "label": "I agree to the terms.",  
-   "name": "T&Cs",  
-   "on-click-action": {  
-   "name": "open_url",  
-   "url": "https://www.whatsapp.com/"  
-   }  
+   "type": "OptIn",  
+   "label": "I agree to the terms.",  
+   "name": "T&Cs",  
+   "on-click-action": {  
+   "name": "open_url",  
+   "url": "https://www.whatsapp.com/"  
+   }  
 }
-```
 ```
 
 ## Components

@@ -93,11 +93,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Business-ID}/onboard_partners_to_mm_lite' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Business-ID}/onboard_partners_to_mm_lite' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -108,18 +108,18 @@ Select status code
 
 ```
 {  
-  "new_request": {  
-    "summary": "New onboarding request created",  
-    "value": {  
-      "request_id": "1234567890123456"  
-    }  
-  },  
-  "existing_request": {  
-    "summary": "Existing pending request returned",  
-    "value": {  
-      "request_id": "2345678901234567"  
-    }  
-  }  
+  "new_request": {  
+    "summary": "New onboarding request created",  
+    "value": {  
+      "request_id": "1234567890123456"  
+    }  
+  },  
+  "existing_request": {  
+    "summary": "Existing pending request returned",  
+    "value": {  
+      "request_id": "2345678901234567"  
+    }  
+  }  
 }
 ```
 
@@ -630,11 +630,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Business-ID}/onboard_partners_to_mm_lite' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Business-ID}/onboard_partners_to_mm_lite' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -645,18 +645,18 @@ Select status code
 
 ```
 {  
-  "new_request": {  
-    "summary": "New onboarding request created",  
-    "value": {  
-      "request_id": "1234567890123456"  
-    }  
-  },  
-  "existing_request": {  
-    "summary": "Existing pending request returned",  
-    "value": {  
-      "request_id": "2345678901234567"  
-    }  
-  }  
+  "new_request": {  
+    "summary": "New onboarding request created",  
+    "value": {  
+      "request_id": "1234567890123456"  
+    }  
+  },  
+  "existing_request": {  
+    "summary": "Existing pending request returned",  
+    "value": {  
+      "request_id": "2345678901234567"  
+    }  
+  }  
 }
 ```
 

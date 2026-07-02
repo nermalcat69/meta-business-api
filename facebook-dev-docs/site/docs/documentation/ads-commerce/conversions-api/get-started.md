@@ -7,9 +7,9 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/conversio
 
 Updated: Jun 28, 2026
 
-The Conversions API is designed to create a connection between an advertiser’s marketing data (such as website events, app events, business messaging events and offline conversions) from an advertiser’s server, website platform, mobile app, or CRM to Meta systems that optimize ad targeting, decrease cost per result and measure outcomes.
+The Conversions API is designed to create a connection between an advertiser's marketing data (such as website events, app events, business messaging events and offline conversions) from an advertiser's server, website platform, mobile app, or CRM to Meta systems that optimize ad targeting, decrease cost per result and measure outcomes.
 
-Rather than maintaining separate connection points for each data source, advertisers can use the Conversions API to send multiple event types and reduce the number of separate integrations they maintain. In the case of direct integrations, this entails establishing a connection between an advertiser’s server and Meta’s Conversions API endpoint.
+Rather than maintaining separate connection points for each data source, advertisers can use the Conversions API to send multiple event types and reduce the number of separate integrations they maintain. In the case of direct integrations, this entails establishing a connection between an advertiser's server and Meta's Conversions API endpoint.
 
 Server events are linked to a dataset ID and are processed like events sent using the Meta Pixel, Facebook SDK for iOS or Android, mobile measurement partner SDK, offline event set, or .csv upload. This means that server events may be used in measurement, reporting, or optimization in a similar way as other connection channels. Offline events may be used for attributed offline events measurement, offline custom audience creation or measurement.
 
@@ -39,7 +39,7 @@ Learn how to handle error codes returned by the Conversions API.
 
 ### Meta Pixel Events
 
-Learn more about the Meta Pixel’s [Standard Events](https://developers.facebook.com/docs/facebook-pixel/implementation/conversion-tracking#standard-events) and [Custom Events](https://developers.facebook.com/docs/facebook-pixel/implementation/conversion-tracking#custom-events).
+Learn more about the Meta Pixel's [Standard Events](https://developers.facebook.com/docs/facebook-pixel/implementation/conversion-tracking#standard-events) and [Custom Events](https://developers.facebook.com/docs/facebook-pixel/implementation/conversion-tracking#custom-events).
 
 ### Business Help Center
 

@@ -13,7 +13,7 @@ With the new account model, onboarding flows automatically create a separate Mes
 
 Under the new account model, all available Embedded Signup flows reflect the following changes:
 
-* “WhatsApp Business account” and “Messaging Account” appear in Embedded Signup screens and in Meta Business Suite for onboarded clients
+* "WhatsApp Business account" and "Messaging Account" appear in Embedded Signup screens and in Meta Business Suite for onboarded clients
 * A WhatsApp Business account and Messaging Account are automatically created when a client completes the flow
 * `waac_id` starts appearing in [message events](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/implementation#session-logging-message-event-listener) starting at **Phase 2 — New Graph API version**
 
@@ -23,7 +23,7 @@ Under the new account model, all available Embedded Signup flows reflect the fol
 
 ## Partner-initiated account creation
 
-With [partner-initiated account creation](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/partner-initiated-waba-creation), the same asset creation and sharing logic applies. Starting at **Phase 1 — General availability**, when a client accepts the partner’s request to create and share a Messaging Account, they must provide a phone number. Adding a phone number is no longer optional.
+With [partner-initiated account creation](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/partner-initiated-waba-creation), the same asset creation and sharing logic applies. Starting at **Phase 1 — General availability**, when a client accepts the partner's request to create and share a Messaging Account, they must provide a phone number. Adding a phone number is no longer optional.
 
 ## Onboarding changes by phase
 

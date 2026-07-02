@@ -24,8 +24,8 @@ HTTPPHP SDKJavaScript SDKAndroid SDKiOS SDK
 ---
 
 ```
-GET /v25.0/{business-id} HTTP/1.1  
-Host: graph.facebook.com
+GET /v25.0/{business-id} HTTP/1.1  
+Host: graph.facebook.com
 ```
 
 Try it in [Graph API Explorer](https://developers.facebook.com/tools/explorer/?method=GET&path=%7Bbusiness-id%7D&version=v25.0)
@@ -173,8 +173,8 @@ name: string,
 | Error Code | Description |
 | --- | --- |
 | 100 | Invalid parameter |
-| 3912 | There was a technical issue and the changes you made to your Business Manager weren’t saved. Please try again. |
-| 3918 | The Facebook Page you’ve tried to add is already owned by another Business Manager. You can still request access to this Page, but your request will need to be approved by the Business Manager that owns it. |
+| 3912 | There was a technical issue and the changes you made to your Business Manager weren't saved. Please try again. |
+| 3918 | The Facebook Page you've tried to add is already owned by another Business Manager. You can still request access to this Page, but your request will need to be approved by the Business Manager that owns it. |
 | 3974 | The name you chose for this Business Manager is not valid. Try a different name. |
 | 3947 | You are trying to create a Business Manager with the same name as one you are already a part of. Please pick a different name. |
 | 200 | Permissions error |
@@ -217,7 +217,7 @@ name: string,
 | Error Code | Description |
 | --- | --- |
 | 200 | Permissions error |
-| 3913 | It doesn’t look like you have permission to create a new Business Manager. |
+| 3913 | It doesn't look like you have permission to create a new Business Manager. |
 | 368 | The action attempted has been deemed abusive or is otherwise disallowed |
 | 100 | Invalid parameter |
 | 3947 | You are trying to create a Business Manager with the same name as one you are already a part of. Please pick a different name. |
@@ -294,14 +294,14 @@ id: numeric string,
 | Error Code | Description |
 | --- | --- |
 | 3974 | The name you chose for this Business Manager is not valid. Try a different name. |
-| 3918 | The Facebook Page you’ve tried to add is already owned by another Business Manager. You can still request access to this Page, but your request will need to be approved by the Business Manager that owns it. |
+| 3918 | The Facebook Page you've tried to add is already owned by another Business Manager. You can still request access to this Page, but your request will need to be approved by the Business Manager that owns it. |
 | 3911 | You need permission to set up a new Business Manager. |
 | 3910 | You need permission to edit the details of your Business Manager. Please talk to one of your Business Manager admins about changing your role or editing the Business Manager details. |
 | 415 | Two factor authentication required. User have to enter a code from SMS or TOTP code generator to pass 2fac. This could happen when accessing a 2fac-protected asset like a page that is owned by a 2fac-protected business manager. |
 | 3947 | You are trying to create a Business Manager with the same name as one you are already a part of. Please pick a different name. |
 | 3973 | The name you chose for this Business Manager is not valid. Please choose another. |
 | 368 | The action attempted has been deemed abusive or is otherwise disallowed |
-| 3912 | There was a technical issue and the changes you made to your Business Manager weren’t saved. Please try again. |
+| 3912 | There was a technical issue and the changes you made to your Business Manager weren't saved. Please try again. |
 | 100 | Invalid parameter |
 
 ---
@@ -339,7 +339,7 @@ name: string,
 
 | Error Code | Description |
 | --- | --- |
-| 42004 | You couldn’t create the client business on behalf your client successfully |
+| 42004 | You couldn't create the client business on behalf your client successfully |
 | 200 | Permissions error |
 | 100 | Invalid parameter |
 
@@ -421,7 +421,7 @@ success: bool,
 
 | Error Code | Description |
 | --- | --- |
-| 42001 | This Page can’t be removed because it’s already linked to an Instagram business profile. To remove this Page from Business Manager, go to Instagram and convert to a personal account or change the Page linked to your business profile. |
+| 42001 | This Page can't be removed because it's already linked to an Instagram business profile. To remove this Page from Business Manager, go to Instagram and convert to a personal account or change the Page linked to your business profile. |
 | 200 | Permissions error |
 | 3996 | The page does not belong to this Business Manager. |
 | 415 | Two factor authentication required. User have to enter a code from SMS or TOTP code generator to pass 2fac. This could happen when accessing a 2fac-protected asset like a page that is owned by a 2fac-protected business manager. |
@@ -532,7 +532,7 @@ success: bool,
 
 | Error Code | Description |
 | --- | --- |
-| 3914 | It looks like you’re trying to remove the last admin from this Business Manager. At least one admin is required in Business Manager. |
+| 3914 | It looks like you're trying to remove the last admin from this Business Manager. At least one admin is required in Business Manager. |
 | 415 | Two factor authentication required. User have to enter a code from SMS or TOTP code generator to pass 2fac. This could happen when accessing a 2fac-protected asset like a page that is owned by a 2fac-protected business manager. |
 | 100 | Invalid parameter |
 | 190 | Invalid OAuth 2.0 Access Token |
@@ -583,7 +583,7 @@ success: bool,
 
 | Error Code | Description |
 | --- | --- |
-| 3912 | There was a technical issue and the changes you made to your Business Manager weren’t saved. Please try again. |
+| 3912 | There was a technical issue and the changes you made to your Business Manager weren't saved. Please try again. |
 | 100 | Invalid parameter |
 
 ---

@@ -18,11 +18,11 @@ In the [dashboard](https://developers.facebook.com/apps/), go to click **Use Cas
 
 #### Step 1. Connect your business portfolio and ad accounts
 
-* If you haven’t already added a business portfolio to your app, or would like to change the business portfolio connect to your app, click **+ Business Portfolio** to add, update, or create one.
+* If you haven't already added a business portfolio to your app, or would like to change the business portfolio connect to your app, click **+ Business Portfolio** to add, update, or create one.
 * A pop-up window will appear showing a dropdown of business portfolios that you have full control and that can be connected to your app.
 
 * Both verified and unverified business portfolios are listed. You can add an unverified business portfolio however it must be verified before you can run ads.
-* If you don’t have a Meta business portfolio or want to create a new one, click **Create new account**.
+* If you don't have a Meta business portfolio or want to create a new one, click **Create new account**.
 
 * Add at least one ad account ID or click **Go to Business Settings** to create an ad account.
 
@@ -43,7 +43,7 @@ In the [dashboard](https://developers.facebook.com/apps/), go to click **Use Cas
 
 #### Quickstart
 
-* If you haven’t already been redirected to the Quickstart, click **App Events > Quickstart** menu.
+* If you haven't already been redirected to the Quickstart, click **App Events > Quickstart** menu.
 * Select each platform (iOS, Android, Web) you will be tracking events for.
 * Complete the list of action items for each platform to set up events.
 * Go to the Events Manager to continue the setup and test your events. A new browser will open with the Events Manager **Data Sources Settings** tab for your app and platform.
@@ -56,24 +56,24 @@ You can also click the **Testing**, tools icon, in the left side menu to **Go to
 
 Once you have completed development, and successfully completed App Review (if necessary), you can publish your app.
 
-**Apps that require publishing** – If your app will access content you don’t own or manage, or you have implemented a product, such as webhooks, that requires your app to be published, it will need to be published.
+**Apps that require publishing** – If your app will access content you don't own or manage, or you have implemented a product, such as webhooks, that requires your app to be published, it will need to be published.
 
-* Click **Publish** in the left side menu. If any app settings are needed, you’ll be directed to update them.
-* You can review your app’s use cases and App Review approvals.
+* Click **Publish** in the left side menu. If any app settings are needed, you'll be directed to update them.
+* You can review your app's use cases and App Review approvals.
 * Click the **Publish** button in the lower-right.
 
 **Note:** Some functionality, such as webhooks, require your app to be published.
 
 ## Create an ad campaign
 
-With your use case set up complete, you’re ready to create your first app promotion ad campaign. In the **What’s next?** section, click **Go to Ads Manager** to create an ad campaign for your app.
+With your use case set up complete, you're ready to create your first app promotion ad campaign. In the **What's next?** section, click **Go to Ads Manager** to create an ad campaign for your app.
 
 Learn more about
 [the Ads Manager.⁠](https://www.facebook.com/business/tools/ads-manager)
 
 ## Update the use case
 
-If, at any point, you want to change your app’s use case settings, you can return to your dashboard, click **Use cases**, the pencil icon, in the left side menu and select the use case from the dropdown menu.
+If, at any point, you want to change your app's use case settings, you can return to your dashboard, click **Use cases**, the pencil icon, in the left side menu and select the use case from the dropdown menu.
 
 ## Helpful articles
 

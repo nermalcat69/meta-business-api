@@ -98,46 +98,44 @@ curl -G \
 ### Example response
 
 ```
-```
 {  
-  "creative_asset_groups_spec": {  
-    "groups": [  
-      {  
-        "images": [  
-          {  
-            "hash": <IMAGE_HASH_1>,  
-          },  
-          {  
-            "hash": <IMAGE_HASH_2>,  
-          }  
-        ],  
-        "texts": [  
-          {  
-            "text": "Summer Sale",  
-            "text_type": "primary_text"  
-          },  
-          {  
-            "text": "Everything 50% off",  
-            "text_type": "headline"  
-          }  
-        ],  
-        "videos": [  
-          {  
-            "video_id": <VIDEO_ID_1>,  
-            "image_hash": <VIDEO_THUMBNAIL_HASH_1>  
-          },  
-          {  
-            "video_id": <VIDEO_ID_2>,  
-            "image_hash": <VIDEO_THUMBNAIL_HASH_2>  
-          }  
-        ],  
-        "group_uuid": <GROUP_ID>  
-      }  
-    ]  
-  },  
-  "id": <AD_ID>  
+  "creative_asset_groups_spec": {  
+    "groups": [  
+      {  
+        "images": [  
+          {  
+            "hash": <IMAGE_HASH_1>,  
+          },  
+          {  
+            "hash": <IMAGE_HASH_2>,  
+          }  
+        ],  
+        "texts": [  
+          {  
+            "text": "Summer Sale",  
+            "text_type": "primary_text"  
+          },  
+          {  
+            "text": "Everything 50% off",  
+            "text_type": "headline"  
+          }  
+        ],  
+        "videos": [  
+          {  
+            "video_id": <VIDEO_ID_1>,  
+            "image_hash": <VIDEO_THUMBNAIL_HASH_1>  
+          },  
+          {  
+            "video_id": <VIDEO_ID_2>,  
+            "image_hash": <VIDEO_THUMBNAIL_HASH_2>  
+          }  
+        ],  
+        "group_uuid": <GROUP_ID>  
+      }  
+    ]  
+  },  
+  "id": <AD_ID>  
 }
-```
 ```
 
 ## See also

@@ -69,11 +69,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Business-ID}/client_whatsapp_business_accounts' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Business-ID}/client_whatsapp_business_accounts' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -84,64 +84,64 @@ Select status code
 
 ```
 {  
-  "multiple_accounts": {  
-    "summary": "Multiple client WhatsApp Business Accounts",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "1234567890123456",  
-          "name": "Client Business WABA A",  
-          "account_review_status": "APPROVED",  
-          "currency": "USD",  
-          "country": "US",  
-          "timezone_id": "1",  
-          "business_verification_status": "VERIFIED",  
-          "ownership_type": "CLIENT_OWNED",  
-          "is_enabled_for_insights": true  
-        },  
-        {  
-          "id": "2345678901234567",  
-          "name": "Client Business WABA B",  
-          "account_review_status": "PENDING",  
-          "currency": "EUR",  
-          "country": "DE",  
-          "timezone_id": "5",  
-          "business_verification_status": "PENDING",  
-          "ownership_type": "AGENCY_OWNED",  
-          "is_enabled_for_insights": false  
-        }  
-      ],  
-      "paging": {  
-        "cursors": {  
-          "after": "QVFIUjNpUWpVWmRBd0Rn"  
-        },  
-        "next": "https://graph.facebook.com/v25.0/1234567890/client_whatsapp_business_accounts?after=QVFIUjNpUWpVWmRBd0Rn"  
-      }  
-    }  
-  },  
-  "single_account": {  
-    "summary": "Single client WhatsApp Business Account",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "1234567890123456",  
-          "name": "Client Business WABA",  
-          "account_review_status": "APPROVED",  
-          "currency": "USD",  
-          "country": "US",  
-          "timezone_id": "1",  
-          "business_verification_status": "VERIFIED",  
-          "ownership_type": "CLIENT_OWNED"  
-        }  
-      ]  
-    }  
-  },  
-  "empty_response": {  
-    "summary": "No client WhatsApp Business Accounts",  
-    "value": {  
-      "data": []  
-    }  
-  }  
+  "multiple_accounts": {  
+    "summary": "Multiple client WhatsApp Business Accounts",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "1234567890123456",  
+          "name": "Client Business WABA A",  
+          "account_review_status": "APPROVED",  
+          "currency": "USD",  
+          "country": "US",  
+          "timezone_id": "1",  
+          "business_verification_status": "VERIFIED",  
+          "ownership_type": "CLIENT_OWNED",  
+          "is_enabled_for_insights": true  
+        },  
+        {  
+          "id": "2345678901234567",  
+          "name": "Client Business WABA B",  
+          "account_review_status": "PENDING",  
+          "currency": "EUR",  
+          "country": "DE",  
+          "timezone_id": "5",  
+          "business_verification_status": "PENDING",  
+          "ownership_type": "AGENCY_OWNED",  
+          "is_enabled_for_insights": false  
+        }  
+      ],  
+      "paging": {  
+        "cursors": {  
+          "after": "QVFIUjNpUWpVWmRBd0Rn"  
+        },  
+        "next": "https://graph.facebook.com/v25.0/1234567890/client_whatsapp_business_accounts?after=QVFIUjNpUWpVWmRBd0Rn"  
+      }  
+    }  
+  },  
+  "single_account": {  
+    "summary": "Single client WhatsApp Business Account",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "1234567890123456",  
+          "name": "Client Business WABA",  
+          "account_review_status": "APPROVED",  
+          "currency": "USD",  
+          "country": "US",  
+          "timezone_id": "1",  
+          "business_verification_status": "VERIFIED",  
+          "ownership_type": "CLIENT_OWNED"  
+        }  
+      ]  
+    }  
+  },  
+  "empty_response": {  
+    "summary": "No client WhatsApp Business Accounts",  
+    "value": {  
+      "data": []  
+    }  
+  }  
 }
 ```
 
@@ -947,11 +947,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Business-ID}/client_whatsapp_business_accounts' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Business-ID}/client_whatsapp_business_accounts' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -962,64 +962,64 @@ Select status code
 
 ```
 {  
-  "multiple_accounts": {  
-    "summary": "Multiple client WhatsApp Business Accounts",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "1234567890123456",  
-          "name": "Client Business WABA A",  
-          "account_review_status": "APPROVED",  
-          "currency": "USD",  
-          "country": "US",  
-          "timezone_id": "1",  
-          "business_verification_status": "VERIFIED",  
-          "ownership_type": "CLIENT_OWNED",  
-          "is_enabled_for_insights": true  
-        },  
-        {  
-          "id": "2345678901234567",  
-          "name": "Client Business WABA B",  
-          "account_review_status": "PENDING",  
-          "currency": "EUR",  
-          "country": "DE",  
-          "timezone_id": "5",  
-          "business_verification_status": "PENDING",  
-          "ownership_type": "AGENCY_OWNED",  
-          "is_enabled_for_insights": false  
-        }  
-      ],  
-      "paging": {  
-        "cursors": {  
-          "after": "QVFIUjNpUWpVWmRBd0Rn"  
-        },  
-        "next": "https://graph.facebook.com/v25.0/1234567890/client_whatsapp_business_accounts?after=QVFIUjNpUWpVWmRBd0Rn"  
-      }  
-    }  
-  },  
-  "single_account": {  
-    "summary": "Single client WhatsApp Business Account",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "1234567890123456",  
-          "name": "Client Business WABA",  
-          "account_review_status": "APPROVED",  
-          "currency": "USD",  
-          "country": "US",  
-          "timezone_id": "1",  
-          "business_verification_status": "VERIFIED",  
-          "ownership_type": "CLIENT_OWNED"  
-        }  
-      ]  
-    }  
-  },  
-  "empty_response": {  
-    "summary": "No client WhatsApp Business Accounts",  
-    "value": {  
-      "data": []  
-    }  
-  }  
+  "multiple_accounts": {  
+    "summary": "Multiple client WhatsApp Business Accounts",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "1234567890123456",  
+          "name": "Client Business WABA A",  
+          "account_review_status": "APPROVED",  
+          "currency": "USD",  
+          "country": "US",  
+          "timezone_id": "1",  
+          "business_verification_status": "VERIFIED",  
+          "ownership_type": "CLIENT_OWNED",  
+          "is_enabled_for_insights": true  
+        },  
+        {  
+          "id": "2345678901234567",  
+          "name": "Client Business WABA B",  
+          "account_review_status": "PENDING",  
+          "currency": "EUR",  
+          "country": "DE",  
+          "timezone_id": "5",  
+          "business_verification_status": "PENDING",  
+          "ownership_type": "AGENCY_OWNED",  
+          "is_enabled_for_insights": false  
+        }  
+      ],  
+      "paging": {  
+        "cursors": {  
+          "after": "QVFIUjNpUWpVWmRBd0Rn"  
+        },  
+        "next": "https://graph.facebook.com/v25.0/1234567890/client_whatsapp_business_accounts?after=QVFIUjNpUWpVWmRBd0Rn"  
+      }  
+    }  
+  },  
+  "single_account": {  
+    "summary": "Single client WhatsApp Business Account",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "1234567890123456",  
+          "name": "Client Business WABA",  
+          "account_review_status": "APPROVED",  
+          "currency": "USD",  
+          "country": "US",  
+          "timezone_id": "1",  
+          "business_verification_status": "VERIFIED",  
+          "ownership_type": "CLIENT_OWNED"  
+        }  
+      ]  
+    }  
+  },  
+  "empty_response": {  
+    "summary": "No client WhatsApp Business Accounts",  
+    "value": {  
+      "data": []  
+    }  
+  }  
 }
 ```
 

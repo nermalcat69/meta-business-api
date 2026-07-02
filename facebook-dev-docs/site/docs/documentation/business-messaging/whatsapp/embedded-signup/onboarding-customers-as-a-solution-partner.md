@@ -30,14 +30,14 @@ When business customers click the link or button, Embedded Signup opens a new wi
 
 ![Facebook Login for Business window opening the Embedded Signup flow with a Seamlessly connect your account onboarding screen](https://scontent.fdel1-4.fna.fbcdn.net/v/t39.2365-6/531995822_1112262264200439_63249353490863536_n.png?_nc_cat=105&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=gvTdCMZBz98Q7kNvwH_eBHN&_nc_oc=AdqJMJEk87X2ZgnGgBCnQMpsfa8DT9tZcxiiT03oITk_ow8xgzAs-yFktmxoNYjdk8ODPD2UyyrJ4O5nb8nl2Mhx&_nc_zt=14&_nc_ht=scontent.fdel1-4.fna&_nc_gid=5j81JwWlwnrjnO1MyJCULQ&_nc_ss=7b2a8&oh=00_AQAHhmrk7lub-YQwWJoqSve9W36snuhzoK5uSojM1hOL5Q&oe=6A6050C0)
 
-Upon successful completion, Embedded Signup returns the customer’s WABA ID, business phone number ID, and an exchangeable token code, to the window that spawned the flow. You must send this data to your server and use it in a server-to-server call to:
+Upon successful completion, Embedded Signup returns the customer's WABA ID, business phone number ID, and an exchangeable token code, to the window that spawned the flow. You must send this data to your server and use it in a server-to-server call to:
 
 * exchange the code for a customer-scoped business token
-* register the customer’s business phone number for Cloud API use
-* subscribe your app to webhooks on the customer’s WABA
+* register the customer's business phone number for Cloud API use
+* subscribe your app to webhooks on the customer's WABA
 * share your credit line with the customer (Solution Partners only)
 
-When these steps are complete, the customer’s next action depends on your partner status. If you are a Solution Partner or are partnered with one, the customer can begin using your or your partner’s app for messaging immediately. If you are not a Solution Partner, or not partnered with one, the customer must first attach a payment method to their WABA before they can begin messaging.
+When these steps are complete, the customer's next action depends on your partner status. If you are a Solution Partner or are partnered with one, the customer can begin using your or your partner's app for messaging immediately. If you are not a Solution Partner, or not partnered with one, the customer must first attach a payment method to their WABA before they can begin messaging.
 
 A new experience is being tested in the Embedded Signup flow for all versions. The flow itself is unchanged, but after completion, you may see a new **View your setup guide** button. Clicking the **View your setup guide** button takes you to a new setup guidance page in WhatsApp Manager, which offers next steps on:
 
@@ -76,7 +76,7 @@ Business customers onboarded via Embedded Signup start with standard [messaging 
 
 The default implementation of Embedded Signup presents your business customers with a series of onboarding screens. See [Cloud API Flow](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/default-flow) for descriptions of each screen.
 
-Note that if you know information about your customer’s business, you can [inject this data](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/pre-filled-data), which can significantly reduce the number of screens that your customers have to interact with.
+Note that if you know information about your customer's business, you can [inject this data](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/pre-filled-data), which can significantly reduce the number of screens that your customers have to interact with.
 
 ## Access tokens
 
@@ -84,7 +84,7 @@ Embedded Signup generates [business tokens](https://developers.facebook.com/docu
 
 If you are a Tech Provider, you will use business tokens exclusively.
 
-If you are a Solution Partner, you will use your [system user access token](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#system-user-access-tokens) (“system token”) to share your credit line with onboarded business customers, and business tokens for everything else. To share your credit line, the system user who the token represents must meet two requirements. The system user must have granted your app the **business\_management** permission. The system user must also have an **Admin** or **Financial Editor** role on your business portfolio.
+If you are a Solution Partner, you will use your [system user access token](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#system-user-access-tokens) ("system token") to share your credit line with onboarded business customers, and business tokens for everything else. To share your credit line, the system user who the token represents must meet two requirements. The system user must have granted your app the **business\_management** permission. The system user must also have an **Admin** or **Financial Editor** role on your business portfolio.
 
 ## Permissions
 
@@ -97,7 +97,7 @@ Embedded Signup can be configured to support business messaging products for you
 
 You can specify which permissions your app needs during the [implementation](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/implementation) process.
 
-Note that while your app is in development mode, these permissions will appear in Embedded Signup’s [authorization screen](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/default-flow#authorization-screen) to anyone who has an **admin**, **developer**, or **tester** role on your app. However, once you switch your app to live mode, only permissions that have been approved for advanced access through the [App Review](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/app-review) process will appear in the flow.
+Note that while your app is in development mode, these permissions will appear in Embedded Signup's [authorization screen](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/default-flow#authorization-screen) to anyone who has an **admin**, **developer**, or **tester** role on your app. However, once you switch your app to live mode, only permissions that have been approved for advanced access through the [App Review](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/app-review) process will appear in the flow.
 
 ## Billing
 
@@ -113,17 +113,17 @@ If you are a Tech Provider or Tech Partner, your onboarded business customers mu
 
 ## Sandbox accounts
 
-You can test the Embedded Signup flow using your own Facebook account, but this can result in additional business portfolios, WABAs, and business phone numbers. If you don’t want to add test data to your Facebook account, you can claim a sandbox test account instead, and use it to simulate a business customer completing the flow.
+You can test the Embedded Signup flow using your own Facebook account, but this can result in additional business portfolios, WABAs, and business phone numbers. If you don't want to add test data to your Facebook account, you can claim a sandbox test account instead, and use it to simulate a business customer completing the flow.
 
-When you complete the flow using the sandbox account, the sandbox account’s [WABA ID, business phone number ID](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/implementation#session-logging-message-event-listener), and an [exchangeable token code](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/implementation#response-callback) will be returned, just as if it were a real customer completing the flow.
+When you complete the flow using the sandbox account, the sandbox account's [WABA ID, business phone number ID](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/implementation#session-logging-message-event-listener), and an [exchangeable token code](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/implementation#response-callback) will be returned, just as if it were a real customer completing the flow.
 
 ### Sandbox account limitations
 
 * Sandbox accounts are valid for 30 days, after which they will be deactivated and must be reclaimed in order to be used again.
 * The sandbox account cannot be used to create additional sandbox business portfolios, WABAs, or business phone numbers; the assets are generated automatically and will appear in the Embedded Signup flow.
-* The sandbox account is associated with the app’s admin. In order for the sandbox account’s assets to appear in the Embedded Signup flow, the app admin must be signed into their Meta developer account.
-* The sandbox account’s business portfolio will not appear in the Meta Business Suite or WhatsApp Manager.
-* You can exchange the returned token code for the sandbox account’s business token and use it to get data on the account’s WABA ID, but the business phone number cannot be used to send or receive messages.
+* The sandbox account is associated with the app's admin. In order for the sandbox account's assets to appear in the Embedded Signup flow, the app admin must be signed into their Meta developer account.
+* The sandbox account's business portfolio will not appear in the Meta Business Suite or WhatsApp Manager.
+* You can exchange the returned token code for the sandbox account's business token and use it to get data on the account's WABA ID, but the business phone number cannot be used to send or receive messages.
 
 ### Claiming sandbox accounts
 
@@ -145,7 +145,7 @@ To delete your sandbox account:
 
 * Navigate to the [App Dashboard](https://developers.facebook.com/apps) > **WhatsApp** > **Quickstart** panel.
 * Locate the **Testing Integrations** section, then locate your sandbox account.
-* Click your sandbox account’s **Delete account** button.
+* Click your sandbox account's **Delete account** button.
 
 ![Test integrations panel showing a claimed Sandbox WhatsApp Business account with View account and Delete account buttons](https://scontent.fdel1-3.fna.fbcdn.net/v/t39.2365-6/511293188_1404444270796306_3723440624353556557_n.png?_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=2zMHmmZ0GJgQ7kNvwF4H1_3&_nc_oc=Adp0B4I357IHLlUp4tUe4x0iBkCSwqOoKX1YWSieJO8ebsZ3nuQvqavmKlvvnxotCoNqrplqhQSFi5Z9mxEG8dBG&_nc_zt=14&_nc_ht=scontent.fdel1-3.fna&_nc_gid=5j81JwWlwnrjnO1MyJCULQ&_nc_ss=7b2a8&oh=00_AQCHGjyvsXr-D4LMSUfADjUUbnTVQS3VDheEzKi8n1E1wA&oe=6A60642C)
 
@@ -189,7 +189,7 @@ You can access the integration helper by navigating to **App Dashboard** > **Wha
 
 As part of the Embedded Signup onboarding process, you must subscribe your app to webhooks on the WABA of each business customer who completes the flow.
 
-Meta triggers webhooks and sends them to the callback URL configured on your app, according to the webhook fields you have subscribed to. This means that all webhooks for all of your onboarded business customers will be sent to your app’s callback URL. However, you can override the callback URL on an individual WhatsApp Business account or business phone number. See [Webhook Overrides](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/override) to learn how to do this.
+Meta triggers webhooks and sends them to the callback URL configured on your app, according to the webhook fields you have subscribed to. This means that all webhooks for all of your onboarded business customers will be sent to your app's callback URL. However, you can override the callback URL on an individual WhatsApp Business account or business phone number. See [Webhook Overrides](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/override) to learn how to do this.
 
 ## Localization
 

@@ -23,7 +23,7 @@ At this time only the Opus codec is supported. For video codecs, the following a
 * H265
 * AV1
 
-If the consumer switches from the front camera to the back camera, the system reuses the same video stream. You don’t need to process any media update for this case.
+If the consumer switches from the front camera to the back camera, the system reuses the same video stream. You don't need to process any media update for this case.
 
 Video codec trade-offs involve processing power, device support, video quality, and network bandwidth. The following table helps guide your decision. You can specify multiple codecs supported in your SDP offer along with a priority configuration. Additionally, the WebRTC standard requires all browsers to support both H264 and VP8.
 
@@ -65,7 +65,7 @@ If the versions do not match what the API expects, an error or empty SDP respons
 
 **Tracks**
 
-You can use this parameter to enable or disable media tracks that Meta is already aware of on the call. For example, if you have a call with audio track 123 and already enabled video with track ID 456, you can turn your video off by sending an API request to this endpoint specifying enabled\_tracks: [“123”] without renegotiating SDP. The API currently supports 2 tracks: one for audio and one for video.
+You can use this parameter to enable or disable media tracks that Meta is already aware of on the call. For example, if you have a call with audio track 123 and already enabled video with track ID 456, you can turn your video off by sending an API request to this endpoint specifying enabled\_tracks: ["123"] without renegotiating SDP. The API currently supports 2 tracks: one for audio and one for video.
 
 Bundle is supported and required in the SDP offer. This means the same network IP and port is used for all tracks (audio, video, and so on) in the call.
 
@@ -77,35 +77,33 @@ Bundle is supported and required in the SDP offer. This means the same network I
 | `from_version`  *string* | The current media version of your local client |
 | `to_version`  *string* | The new media version that your client is moving to |
 | `tracks`  *Array of objects* | Metadata about the media tracks you want to add/update  1) `tracks[i].msid`: string that matches the msid line in the sdp offer  2) `tracks[i].label`: enum value   * `DEFAULT_AUDIO`: the default audio track (typically a microphone) * `DEFAULT_VIDEO`: the default video track (typically a webcam)   3) `tracks[i].status`: enum value   * `ENABLED`: the track is enabled * `DISABLED`: the track is disabled |
-| `session`  *JSON* | JSON serialized string with following 2 keys:  1) `sdp`: SDP offer of the device on the other end of the call. See the appendix for example structure.  2) `sdp_type`: “offer” to indicate an SDP offer |
+| `session`  *JSON* | JSON serialized string with following 2 keys:  1) `sdp`: SDP offer of the device on the other end of the call. See the appendix for example structure.  2) `sdp_type`: "offer" to indicate an SDP offer |
 
 ```
-```
-POST /<PAGE_ID>/calls  
+POST /<PAGE_ID>/calls  
 {  
-  "platform": "messenger",  
-  "call_id": "c_M5YPhGE5jm0L_PMQdScLlYJlR7tU_f0rgXinCqnTQ",  
-  "action": "media_update",  
-  "from_version": "0",  
-  "to_version": "1",  
-  "tracks": [  
-     {  
-       "msid", "123-abc",  
-       "label": "default_audio",  
-       "status": "enabled"  
-     },  
-     {  
-       "msid", "456-def",  
-       "label": "default_video",  
-       "status": "enabled"  
-     }  
-  ],  
-  "session" : {  
-     "sdp_type" : "offer",  
-     "sdp" : "<<RFC 4566 SDP>>"  
-  }  
+  "platform": "messenger",  
+  "call_id": "c_M5YPhGE5jm0L_PMQdScLlYJlR7tU_f0rgXinCqnTQ",  
+  "action": "media_update",  
+  "from_version": "0",  
+  "to_version": "1",  
+  "tracks": [  
+     {  
+       "msid", "123-abc",  
+       "label": "default_audio",  
+       "status": "enabled"  
+     },  
+     {  
+       "msid", "456-def",  
+       "label": "default_video",  
+       "status": "enabled"  
+     }  
+  ],  
+  "session" : {  
+     "sdp_type" : "offer",  
+     "sdp" : "<<RFC 4566 SDP>>"  
+  }  
 }
-```
 ```
 
 ### Example Response
@@ -116,21 +114,19 @@ POST /<PAGE_ID>/calls
 | `session`  *JSON* | SDP data. The API response includes an SDP response that should be applied to the business peer connection. |
 
 ```
-```
 {  
-  "success" : true  
-  "session" : {  
-     "sdp_response" : {  
-       "sdp_type": "answer",  
-       "sdp": "<<RFC 4566 SDP>>"  
-     },  
-     "sdp_renegotiation": {  
-       "sdp_type": "offer",  
-       "sdp": "<<RFC 4566 SDP>>"  
-     }  
-  }  
+  "success" : true  
+  "session" : {  
+     "sdp_response" : {  
+       "sdp_type": "answer",  
+       "sdp": "<<RFC 4566 SDP>>"  
+     },  
+     "sdp_renegotiation": {  
+       "sdp_type": "offer",  
+       "sdp": "<<RFC 4566 SDP>>"  
+     }  
+  }  
 }
-```
 ```
 
 ### Error Response

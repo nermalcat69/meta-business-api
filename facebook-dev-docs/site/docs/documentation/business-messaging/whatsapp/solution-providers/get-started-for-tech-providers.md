@@ -19,7 +19,7 @@ Solution Partners have [credit lines⁠](https://www.facebook.com/business/help/
 
 In addition, Solution Partners have access to [Direct Support](https://developers.facebook.com/documentation/business-messaging/whatsapp/support#enterprise-developer-support) and are eligible to participate in the [Meta Business Partner SMB Accelerator Program⁠](https://www.facebook.com/business/marketing-partners/mbp-smb-accelerator), which offers incentive, accreditation, and enablement services.
 
-Note that becoming a Solution Partner is a lengthy process, so if you don’t need a credit line and don’t need to invoice your clients for API usage directly, consider becoming a Tech Provider instead.
+Note that becoming a Solution Partner is a lengthy process, so if you don't need a credit line and don't need to invoice your clients for API usage directly, consider becoming a Tech Provider instead.
 
 See [Get started for Solution Partners](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/get-started-for-solution-partners).
 
@@ -41,7 +41,7 @@ To learn how to upgrade to a Tech Partner, see [Upgrading to a Tech Partner](htt
 
 ## Other partners
 
-If you just want to use Meta Business Suite to provide WhatsApp messaging-related services to clients (that is, you **don’t need API access**), you only need a verified business portfolio.
+If you just want to use Meta Business Suite to provide WhatsApp messaging-related services to clients (that is, you **don't need API access**), you only need a verified business portfolio.
 
 * Go to [https://business.facebook.com⁠](https://business.facebook.com/) and create a business portfolio, or sign into your existing Meta Business Suite account if you already have one.
 * Complete the [business verification steps⁠](https://www.facebook.com/business/help/2058515294227817) described in our Help Center article.
@@ -74,7 +74,7 @@ You can configure Embedded Signup to [onboard clients who already use the WhatsA
 
 ### Hosted Embedded Signup
 
-[Hosted Embedded Signup](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/hosted-es) (“Hosted ES”) is an alternative and simpler way of implementing Embedded Signup that doesn’t require you to configure and host the implementation code on your website or portal.
+[Hosted Embedded Signup](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/hosted-es) ("Hosted ES") is an alternative and simpler way of implementing Embedded Signup that doesn't require you to configure and host the implementation code on your website or portal.
 
 ### Partner-initiated account creation
 
@@ -118,8 +118,8 @@ The [permissions](https://developers.facebook.com/documentation/business-messagi
 
 The most commonly needed permissions are:
 
-* **whatsapp\_business\_management** — necessary if your app needs access to your clients’ WhatsApp Business Account settings and message templates. If your app uses this permission to access WABAs not owned by your business, you must have **Advanced access**. Without it, API calls return error code `200`.
-* **whatsapp\_business\_messaging** — necessary if your app needs access to your clients’ business phone number settings, or if your app will be used by your clients to send and receive messages.
+* **whatsapp\_business\_management** — necessary if your app needs access to your clients' WhatsApp Business Account settings and message templates. If your app uses this permission to access WABAs not owned by your business, you must have **Advanced access**. Without it, API calls return error code `200`.
+* **whatsapp\_business\_messaging** — necessary if your app needs access to your clients' business phone number settings, or if your app will be used by your clients to send and receive messages.
 
 Note that before your app can be granted these permissions by your clients, the permissions must be approved through the [App Review](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/app-review) process.
 
@@ -135,4 +135,4 @@ To be eligible for increased messaging limits, business phone number limits, and
 
 [How to Verify Your Business on Meta⁠](https://www.facebook.com/business/help/2058515294227817?id=180505742745347)
 
-Alternatively, if you are a **Select Solution** or **Premier** Solution Partner, you can submit a client’s business for verification on their behalf, which has a much faster turnaround time. See [Partner-led Business Verification](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/partner-led-business-verification).
+Alternatively, if you are a **Select Solution** or **Premier** Solution Partner, you can submit a client's business for verification on their behalf, which has a much faster turnaround time. See [Partner-led Business Verification](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/partner-led-business-verification).

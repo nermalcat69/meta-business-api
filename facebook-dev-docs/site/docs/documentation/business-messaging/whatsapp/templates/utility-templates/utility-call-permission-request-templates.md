@@ -38,76 +38,74 @@ Utility templates support the following components:
 Use the [Message Templates API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/message-template-api#post-version-waba-id-message-templates) to create a utility template.
 
 ```
-```
-curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_ACCOUNT_ID>/message_templates' \  
--H 'Content-Type: application/json' \  
--H 'Authorization: Bearer <ACCESS_TOKEN>' \  
--d '  
+curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_ACCOUNT_ID>/message_templates' \  
+-H 'Content-Type: application/json' \  
+-H 'Authorization: Bearer <ACCESS_TOKEN>' \  
+-d '  
 {  
-  "name": "<TEMPLATE_NAME>",  
-  "language": "<TEMPLATE_LANGUAGE>",  
-  "category": "utility",  
-  "parameter_format": "<PARAMETER_FORMAT>",  
-  "components": [  
+  "name": "<TEMPLATE_NAME>",  
+  "language": "<TEMPLATE_LANGUAGE>",  
+  "category": "utility",  
+  "parameter_format": "<PARAMETER_FORMAT>",  
+  "components": [  
   
-    <!-- header component optional -->  
-    {  
-      "type": "header",  
-      "format": "<HEADER_TYPE>",  
-      "example": {  
-        "header_handle": [  
-          "<HEADER_HANDLE>"  
-        ]  
-      }  
-    },  
+    <!-- header component optional -->  
+    {  
+      "type": "header",  
+      "format": "<HEADER_TYPE>",  
+      "example": {  
+        "header_handle": [  
+          "<HEADER_HANDLE>"  
+        ]  
+      }  
+    },  
   
-    <!-- body component required -->  
-    {  
-      "type": "body",  
-      "text": "<BODY_TEXT>",  
+    <!-- body component required -->  
+    {  
+      "type": "body",  
+      "text": "<BODY_TEXT>",  
   
-      <!-- example required if <BODY_TEXT> contains one or more parameters -->  
-      "example": {  
-        "body_text_named_params": [  
-          {  
-            "param_name": "<PARAMETER_NAME>",  
-            "example": "<PARAMETER_EXAMPLE_VALUE>"  
-          },  
+      <!-- example required if <BODY_TEXT> contains one or more parameters -->  
+      "example": {  
+        "body_text_named_params": [  
+          {  
+            "param_name": "<PARAMETER_NAME>",  
+            "example": "<PARAMETER_EXAMPLE_VALUE>"  
+          },  
   
-          <!-- additional parameters would follow, if using multiple parameters -->  
-        ]  
-      }  
-    },  
+          <!-- additional parameters would follow, if using multiple parameters -->  
+        ]  
+      }  
+    },  
   
-    <!-- footer component optional -->  
-    {  
-      "type": "footer",  
-      "text": "<FOOTER_TEXT>"  
-    },  
+    <!-- footer component optional -->  
+    {  
+      "type": "footer",  
+      "text": "<FOOTER_TEXT>"  
+    },  
   
-    <!-- button components optional -->  
-    {  
-      "type": "buttons",  
-      "buttons": [  
-        {  
-          "type": "url",  
-          "text": "<URL_BUTTON_LABEL_TEXT>",  
-          "url": "<URL>"  
-        },  
-        {  
-          "type": "phone_number",  
-          "text": "<PHONE_BUTTON_LABEL_TEXT>",  
-          "phone_number": "<PHONE_NUMBER>"  
-        },  
-        {  
-          "type": "quick_reply",  
-          "text": "<QUICK_REPLY_BUTTON_LABEL_TEXT>"  
-        }  
-      ]  
-    }  
-  ]  
+    <!-- button components optional -->  
+    {  
+      "type": "buttons",  
+      "buttons": [  
+        {  
+          "type": "url",  
+          "text": "<URL_BUTTON_LABEL_TEXT>",  
+          "url": "<URL>"  
+        },  
+        {  
+          "type": "phone_number",  
+          "text": "<PHONE_BUTTON_LABEL_TEXT>",  
+          "phone_number": "<PHONE_NUMBER>"  
+        },  
+        {  
+          "type": "quick_reply",  
+          "text": "<QUICK_REPLY_BUTTON_LABEL_TEXT>"  
+        }  
+      ]  
+    }  
+  ]  
 }'
-```
 ```
 
 ### Request parameters
@@ -116,18 +114,18 @@ curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_ACCOUNT_ID>/m
 | --- | --- | --- |
 | `<ACCESS_TOKEN>`  *String* | **Required.**  [System token](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#system-user-access-tokens) or [business token](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#business-integration-system-user-access-tokens). | `EAAA...` |
 | `<API_VERSION>`  *String* | **Optional.**  Graph API version. | v25.0 |
-| `<BODY_TEXT>`  *String* | **Required.**  Template body text. Variables are supported.  Maximum 1024 characters. | `You're all set! Your reservation for {{number_of_guests}} at Lucky Shrub Eatery on {{day}}, {{date}}, at {{time}}, is confirmed. See you then!` |
+| `<BODY_TEXT>`  *String* | **Required.**  Template body text. Variables are supported.  Maximum 1024 characters. | `You're all set! Your reservation for {​{number_of_guests}​} at Lucky Shrub Eatery on {​{day}​}, {​{date}​}, at {​{time}​}, is confirmed. See you then!` |
 | `<FOOTER_TEXT>`  *String* | **Optional.**  Template footer text. Variables are supported.  Maximum 60 characters. | `Lucky Shrub Eatery: The Luckiest Eatery in Town!` |
 | `<HEADER_ASSET_HANDLE>`  *String* | **Required if using a header with a media asset.**  Asset handle of example media asset uploaded on your WhatsApp Business account.  Maximum 60 characters. | `4::aW1hZ2UvcG5n:ARYpf5zqqUjggwGfsZOJ2_o26Zs8ntcO2mss2vKpFb8P_IvskL043YXKpehYTD7IxqEB4t-uZcIzOTxOFRavEcN_tZLhk1WXFb3IOr4S8UKJcQ:e:1759093121:634974688087057:100089620928913:ARYyOAh63uQLhDpqOdk\n4::aW1hZ2UvcG5n:ARZW8t9-cBNjpdmxV5Z9wcRAMhfmw4ATpJcJiHT0nY62hXq4ppOeBaTWaGI0IwX-twF2IkeKo-_MyW2pEDuBAE5vyw2oHTNgPZQkntclrgWMGg:e:1759093121:634974688087057:100089620928913:ARZE4NC5MrxnZUe5GRw` |
 | `<HEADER_TYPE>`  *String* | **Required if using a header.**  Header format. Values can be:   * documentation * image * location * text * video | `image` |
 | `<PARAMETER_EXAMPLE_VALUE>`  *String* | **Required if using a body component string that includes one or more parameters.**  Example parameter value. You must supply an example for each parameter defined in your body component string. | `Saturday` |
-| `<PARAMETER_NAME>`  *String* | **Required if using named parameters.**  Must be a unique string, composed of lowercase characters and underscores, wrapped in double curly brackets. | `{{day}}` |
+| `<PARAMETER_NAME>`  *String* | **Required if using named parameters.**  Must be a unique string, composed of lowercase characters and underscores, wrapped in double curly brackets. | `{​{day}​}` |
 | `<PHONE_BUTTON_LABEL_TEXT>`  *String* | **Required if using a phone number button.**  Button label text.  Maximum 25 characters. Alphanumeric characters only. | `Change reservation` |
-| `<PHONE_NUMBER>`  *String* | **Required if using a phone number button component.**  Business phone number to be called in the WhatsApp user’s default phone app when tapped by the user.  Note that some countries have special phone numbers that have leading zeros after the country calling code (for example, +55-0-955-585-95436). If you assign one of these numbers to the button, the leading zero will be stripped from the number. If your number will not work without the leading zero, assign an alternate number to the button, or add the number as message  Maximum 20 characters. Alphanumeric characters only. | `15550051310` |
+| `<PHONE_NUMBER>`  *String* | **Required if using a phone number button component.**  Business phone number to be called in the WhatsApp user's default phone app when tapped by the user.  Note that some countries have special phone numbers that have leading zeros after the country calling code (for example, +55-0-955-585-95436). If you assign one of these numbers to the button, the leading zero will be stripped from the number. If your number will not work without the leading zero, assign an alternate number to the button, or add the number as message  Maximum 20 characters. Alphanumeric characters only. | `15550051310` |
 | `<QUICK_REPLY_BUTTON_LABEL_TEXT>` | **Required if using a quick-reply button.**  Button label text.  Maximum 25 characters. Alphanumeric characters only. | `Cancel reservation` |
 | `<TEMPLATE_LANGUAGE>`  *String* | **Required.**  [Template language code](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/supported-languages). | `en_US` |
 | `<TEMPLATE_NAME>`  *String* | **Required.**  Template name. Must be unique, unless existing templates with the same name have a different template language.  Maximum 512 characters. Lowercase, alphanumeric characters and underscores only. | `reservation_confirmation` |
-| `<URL>`  *String* | **Required if including a URL button.**  URL to be loaded in WhatsApp user’s default web browser when tapped. | `https://www.luckyshrubeater.com/reservations` |
+| `<URL>`  *String* | **Required if including a URL button.**  URL to be loaded in WhatsApp user's default web browser when tapped. | `https://www.luckyshrubeater.com/reservations` |
 | `<URL_BUTTON_LABEL_TEXT>`  *String* | **Required if using a URL button.**  Button label text.  Maximum 25 characters. Alphanumeric characters only. | `Change reservation` |
 | `<WHATSAPP_BUSINESS_ACCOUNT_ID>` | **Required.**  WhatsApp Business account ID. | `546151681022936` |
 
@@ -136,13 +134,11 @@ curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_ACCOUNT_ID>/m
 Upon success:
 
 ```
-```
 {  
-  "id": "<TEMPLATE_ID>",  
-  "status": "<TEMPLATE_STATUS>",  
-  "category": "<TEMPLATE_CATEGORY>"  
+  "id": "<TEMPLATE_ID>",  
+  "status": "<TEMPLATE_STATUS>",  
+  "category": "<TEMPLATE_CATEGORY>"  
 }
-```
 ```
 
 ### Response parameters
@@ -186,7 +182,7 @@ curl 'https://graph.facebook.com/v23.0/102290129340398/message_templates' \
     },
     {
       "type": "body",
-      "text": "*You're all set!*\n\nYour reservation for {{number_of_guests}} at Lucky Shrub Eatery on {{day}}, {{date}}, at {{time}}, is confirmed. See you then!",
+      "text": "*You're all set!*\n\nYour reservation for {​{number_of_guests}​} at Lucky Shrub Eatery on {​{day}​}, {​{date}​}, at {​{time}​}, is confirmed. See you then!",
       "example": {
         "body_text_named_params": [
           {
@@ -238,13 +234,11 @@ curl 'https://graph.facebook.com/v23.0/102290129340398/message_templates' \
 ### Example response
 
 ```
-```
 {  
-  "id": "546151681022936",  
-  "status": "PENDING",  
-  "category": "UTILITY"  
+  "id": "546151681022936",  
+  "status": "PENDING",  
+  "category": "UTILITY"  
 }
-```
 ```
 
 ## Send a utility template
@@ -323,23 +317,21 @@ curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_I
 Upon success:
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "contacts": [  
-    {  
-      "input": "<WHATSAPP_USER_PHONE_NUMBER>",  
-      "wa_id": "<WHATSAPP_USER_ID>"  
-    }  
-  ],  
-  "messages": [  
-    {  
-      "id": "<WHATSAPP_MESSAGE_ID>",  
-      "message_status": "<PACING_STATUS>"  
-    }  
-  ]  
+  "messaging_product": "whatsapp",  
+  "contacts": [  
+    {  
+      "input": "<WHATSAPP_USER_PHONE_NUMBER>",  
+      "wa_id": "<WHATSAPP_USER_ID>"  
+    }  
+  ],  
+  "messages": [  
+    {  
+      "id": "<WHATSAPP_MESSAGE_ID>",  
+      "message_status": "<PACING_STATUS>"  
+    }  
+  ]  
 }
-```
 ```
 
 ### Response parameters
@@ -348,8 +340,8 @@ Upon success:
 | --- | --- | --- |
 | `<PACING_STATUS>` | [Template pacing](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-pacing) status. | `accepted` |
 | `<WHATSAPP_MESSAGE_ID>` | WhatsApp Message ID.  This ID is included in status [messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/messages/status) webhooks for delivery status purposes. | `wamid.HBgLMTY1MDM4Nzk0MzkVAgARGBJBRkJENzExMTRFRjk2NTI1OTEA` |
-| `<WHATSAPP_USER_ID>` | WhatsApp user’s WhatsApp ID. May not match input value. | `16505551234` |
-| `<WHATSAPP_USER_PHONE_NUMBER>` | WhatsApp user’s WhatsApp phone number. May not match wa\_id value. | `16505551234` |
+| `<WHATSAPP_USER_ID>` | WhatsApp user's WhatsApp ID. May not match input value. | `16505551234` |
+| `<WHATSAPP_USER_PHONE_NUMBER>` | WhatsApp user's WhatsApp phone number. May not match wa\_id value. | `16505551234` |
 
 ### Example request
 
@@ -415,21 +407,19 @@ curl 'https://graph.facebook.com/v23.0/106540352242922/messages' \
 ### Example response
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "contacts": [  
-    {  
-      "input": "16505551234",  
-      "wa_id": "16505551234"  
-    }  
-  ],  
-  "messages": [  
-    {  
-      "id": "wamid.HBgLMTY1MDM4Nzk0MzkVAgARGBJBRkJENzExMTRFRjk2NTI1OTEA",  
-      "message_status": "accepted"  
-    }  
-  ]  
+  "messaging_product": "whatsapp",  
+  "contacts": [  
+    {  
+      "input": "16505551234",  
+      "wa_id": "16505551234"  
+    }  
+  ],  
+  "messages": [  
+    {  
+      "id": "wamid.HBgLMTY1MDM4Nzk0MzkVAgARGBJBRkJENzExMTRFRjk2NTI1OTEA",  
+      "message_status": "accepted"  
+    }  
+  ]  
 }
-```
 ```

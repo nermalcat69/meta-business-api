@@ -92,7 +92,7 @@ https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/ads
 
 ### Step 2: Preview for text generation
 
-When an ad is created with opt-in to use `text_generation`, the feature will only be applied to the current ad, and Meta inserts generated primary texts into the creative spec. If the feature was opted-in through the `/ads` endpoint, the system sets the `status` field on the adgroup to `PAUSED` by default ([see documentation](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/adgroup)). You can review the generated suggestions before manually setting the ad’s status to `ACTIVE` so it can be delivered.
+When an ad is created with opt-in to use `text_generation`, the feature will only be applied to the current ad, and Meta inserts generated primary texts into the creative spec. If the feature was opted-in through the `/ads` endpoint, the system sets the `status` field on the adgroup to `PAUSED` by default ([see documentation](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/adgroup)). You can review the generated suggestions before manually setting the ad's status to `ACTIVE` so it can be delivered.
 
 You can preview the creative spec containing generated suggestions by reading the `asset_feed_spec` through the creative ID or the ad ID. See example request and response below:
 
@@ -338,10 +338,10 @@ curl \
     "object_story_spec": {
       "page_id": "<PAGE_ID>",
       "template_data": {
-        "description": "Description {{product.description}} ",
+        "description": "Description {​{product.description}​} ",
         "link": "https://www.example.com/",
-        "message": "Test {{product.name | titleize}} ",
-        "name": "Headline {{product.price}}"
+        "message": "Test {​{product.name | titleize}​} ",
+        "name": "Headline {​{product.price}​}"
       }
     },
     "product_set_id": "<PRODUCT_SET_ID>",

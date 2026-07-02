@@ -17,7 +17,7 @@ You are the seller of record and are responsible for maintaining and servicing y
 
 ## Getting Paid
 
-After a customer places an order from your Facebook Shop or Instagram Shopping account and you mark the order as shipped, you’ll be paid for the order within 2 to 30 days. We have a standard payout period of 5 days after payment is captured, but the payment hold period can vary depending on various merchant criteria. Our payment processor will pay you out through ACH on a rolling schedule. Payouts will go to a valid bank account that you have linked during set-up.
+After a customer places an order from your Facebook Shop or Instagram Shopping account and you mark the order as shipped, you'll be paid for the order within 2 to 30 days. We have a standard payout period of 5 days after payment is captured, but the payment hold period can vary depending on various merchant criteria. Our payment processor will pay you out through ACH on a rolling schedule. Payouts will go to a valid bank account that you have linked during set-up.
 
 Your balance and payout history is available at any time in the [Commerce Manager⁠](https://www.facebook.com/commerce_manager). You can create and download cash settlement reports for a given time window manually, or using our [Reporting API](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/reporting/payouts). These reports have information on transactions like sales, refunds, chargebacks and payouts. You can download a sample cash reconciliation report below.
 

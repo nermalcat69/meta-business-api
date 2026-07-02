@@ -21,13 +21,13 @@ This document describes:
 
 Sharing on Facebook depends on a few core components:
 
-**URLs**: In most cases, including sharing from mobile apps, your content is shared on Facebook as a link, whether it’s an article, image, video, or something else
+**URLs**: In most cases, including sharing from mobile apps, your content is shared on Facebook as a link, whether it's an article, image, video, or something else
 
 **The Facebook Crawler**: When someone shares your content, our crawler will scrape the page to render a preview on Facebook
 
 **Open Graph Tags**: Adding Open Graph meta tags to the `<head>` of your web page HTML will provide the crawler with structured info like a title, description, and thumbnail image for the content
 
-**Sharing Interfaces**: There are a few different end-user experiences you can choose from to let people share from your website or app to Facebook. Here’s an overview of how it works:
+**Sharing Interfaces**: There are a few different end-user experiences you can choose from to let people share from your website or app to Facebook. Here's an overview of how it works:
 
 | Button Trigger | Sharing Interface Launched | Publishing Behavior |
 | --- | --- | --- |
@@ -85,11 +85,11 @@ The Share Dialog is an easy way to let people share content without requiring th
 
 ![Share dialog previewing a shared link on Web, iOS, and Android](https://scontent.fdel27-6.fna.fbcdn.net/v/t39.2365-6/673989050_1484143276777655_1887471214663635800_n.png?_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=pS6c4iUoV3MQ7kNvwHQfbwU&_nc_oc=AdoJOv1TqbGuIladdHZAVoD3L0UAOsM3ThjhF4dNw5aoWdifGvCLgFrlEqxNrYJefin_AlwskKrI2cSVy7lNdIMm&_nc_zt=14&_nc_ht=scontent.fdel27-6.fna&_nc_gid=mqNWKWL4FSjsnK0g8xh9Yg&_nc_ss=7b289&oh=00_AQBQTJuiO_I8xvLFJBx59TMhOLb9s6QXHYlShQrYFIVx8A&oe=6A607E01)
 
-On mobile, when someone shares with the Share Dialog, the dialog makes a fast app-switch to the Facebook app on their device. We also have a web dialog as a fallback if someone doesn’t have the native Facebook app installed.
+On mobile, when someone shares with the Share Dialog, the dialog makes a fast app-switch to the Facebook app on their device. We also have a web dialog as a fallback if someone doesn't have the native Facebook app installed.
 
 #### Message Dialog
 
-Use the Message dialog to let people privately share content to Messenger. Like the Share dialog, it’s a native sharing component that doesn’t require you to implement Facebook Login.
+Use the Message dialog to let people privately share content to Messenger. Like the Share dialog, it's a native sharing component that doesn't require you to implement Facebook Login.
 
 The Message dialog enables people to share links, images and Open Graph stories. On mobile, someone must have the native Messenger app installed.
 
@@ -103,12 +103,12 @@ You can use Android implicit intents and iOS custom URL schemes to pass photos, 
 
 ### Markup
 
-It’s important to mark up your website’s HTML with Open Graph tags to manage how your content appears on Facebook. Without these tags, the Facebook crawler will do its best to identify content such as title, description, and image for your content.
+It's important to mark up your website's HTML with Open Graph tags to manage how your content appears on Facebook. Without these tags, the Facebook crawler will do its best to identify content such as title, description, and image for your content.
 
-Optimize your content for sharing to Facebook by adding Open Graph tags to the `<head>` of your page’s HTML. These tags describe the content shared. This includes content type such as image, video, or article and any additional attributes.
+Optimize your content for sharing to Facebook by adding Open Graph tags to the `<head>` of your page's HTML. These tags describe the content shared. This includes content type such as image, video, or article and any additional attributes.
 
 Learn about tags you should include with your content in [Markup for Sharing](https://developers.facebook.com/documentation/sharing/webmasters#markup).
 
 ### Updating URLs
 
-If you move content to a new URL, the Likes, Shares, and Comments on that original URL won’t automatically migrate. To continue aggregating these actions at a new URL, you should point the Facebook crawler to the old page that represents the canonical URL for your content. Learn how in [this doc for webmasters](https://developers.facebook.com/documentation/sharing/webmasters/getting-started/versioned-link).
+If you move content to a new URL, the Likes, Shares, and Comments on that original URL won't automatically migrate. To continue aggregating these actions at a new URL, you should point the Facebook crawler to the old page that represents the canonical URL for your content. Learn how in [this doc for webmasters](https://developers.facebook.com/documentation/sharing/webmasters/getting-started/versioned-link).

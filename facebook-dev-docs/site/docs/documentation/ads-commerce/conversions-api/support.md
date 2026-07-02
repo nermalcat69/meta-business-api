@@ -36,7 +36,7 @@ The Conversions API allows you to share website events that the Pixel may lose d
 
 ### Ensure redundant events can be deduplicated
 
-When sending redundant events using the Meta Pixel and Conversions API, ensure that both events use the identical `event_name` and that either `event_id` or a combination of `external_id` and `fbp` are included. Include all of these parameters to help Meta properly deduplicate events and reduce double reporting of identical events. [Learn more about deduplication, when it’s necessary and how to set it up.⁠](https://www.facebook.com/business/help/823677331451951)
+When sending redundant events using the Meta Pixel and Conversions API, ensure that both events use the identical `event_name` and that either `event_id` or a combination of `external_id` and `fbp` are included. Include all of these parameters to help Meta properly deduplicate events and reduce double reporting of identical events. [Learn more about deduplication, when it's necessary and how to set it up.⁠](https://www.facebook.com/business/help/823677331451951)
 
 ### Send required and recommended parameters
 
@@ -72,7 +72,7 @@ For example, if an event had only the customer information parameters `ge`, `ct`
 
 ### Ensure `fbp` and `fbc` parameters are refreshed
 
-The [`fbp`](https://developers.facebook.com/documentation/ads-commerce/conversions-api/parameters/fbp-and-fbc) and [`fbc`](https://developers.facebook.com/documentation/ads-commerce/conversions-api/parameters/fbp-and-fbc) parameters are cookie values typically set on your site visitors’ browsers in connection with Meta’s first-party cookie solution, and are subject to change. If you send them as [user parameters](https://developers.facebook.com/documentation/ads-commerce/conversions-api/parameters), you should regularly refresh their values.
+The [`fbp`](https://developers.facebook.com/documentation/ads-commerce/conversions-api/parameters/fbp-and-fbc) and [`fbc`](https://developers.facebook.com/documentation/ads-commerce/conversions-api/parameters/fbp-and-fbc) parameters are cookie values typically set on your site visitors' browsers in connection with Meta's first-party cookie solution, and are subject to change. If you send them as [user parameters](https://developers.facebook.com/documentation/ads-commerce/conversions-api/parameters), you should regularly refresh their values.
 
 These values will be set as first-party cookies when the Meta Pixel is implemented on your website and can be retrieved for use in Conversions API requests.
 
@@ -82,12 +82,12 @@ Sharing events when they happen can help your campaigns achieve the best results
 
 ### Use test events
 
-Use the [Test Events tool⁠](https://www.facebook.com/business/help/1624255387706033) to validate your Conversions API connection. Typically, developers should use their own customer information parameters (for example, name, email address, phone number) for test events, because these events may get discarded if they don’t match a Facebook or Meta account.
+Use the [Test Events tool⁠](https://www.facebook.com/business/help/1624255387706033) to validate your Conversions API connection. Typically, developers should use their own customer information parameters (for example, name, email address, phone number) for test events, because these events may get discarded if they don't match a Facebook or Meta account.
 
 You can use the Test Events tool to:
 
-* Verify that you’ve set up your server events correctly and Meta has received them.
-* Verify that you’ve deduplicated events correctly by seeing which events were processed and deduplicated.
+* Verify that you've set up your server events correctly and Meta has received them.
+* Verify that you've deduplicated events correctly by seeing which events were processed and deduplicated.
 * Debug any unusual activity.
 
 [Learn how to test your server events using the Test Events tool.⁠](https://www.facebook.com/business/help/1624255387706033)
@@ -124,7 +124,7 @@ By default, website platform partners may consider whether to offer Conversions 
 
 ### Check Event Match Quality
 
-If you share server events using the Conversions API, you can see the Event Match Quality (EMQ) for each event in Events Manager. An event’s EMQ score (out of 10) indicates how effective your server event’s customer information may be at matching it to a Facebook or Meta account. Learn more about EMQ best practices [here⁠](https://www.facebook.com/business/help/765081237991954?id=818859032317965).
+If you share server events using the Conversions API, you can see the Event Match Quality (EMQ) for each event in Events Manager. An event's EMQ score (out of 10) indicates how effective your server event's customer information may be at matching it to a Facebook or Meta account. Learn more about EMQ best practices [here⁠](https://www.facebook.com/business/help/765081237991954?id=818859032317965).
 
 Event Match Quality is currently available only for web events. For other event types such as offline and physical store events, app events, conversion leads or any integration under alpha or beta stages, contact your Meta representative for guidance on improving event match quality.
 

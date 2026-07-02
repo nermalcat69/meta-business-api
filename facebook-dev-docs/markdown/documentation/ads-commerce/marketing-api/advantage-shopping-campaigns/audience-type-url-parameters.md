@@ -32,44 +32,42 @@ You can now also create Shop Ads with Advantage+ Shopping Campaigns by setting t
 #### Example
 
 ```
-```
 {  
-     daily_budget: 20000,  
-     promoted_object: {  
-         omnichannel_object: {  
-             app: [  
-                 {  
-                     application_id: <application_id>,  
-                     custom_event_type: PURCHASE,  
-                     object_store_urls: [  
-                         "https://play.google.com/store/apps/details?id=com.facebook.ka"  
-                         "https://apps.apple.com/us/app/facebook/id284882215",  
-                     ],  
-                 },  
-             ],  
-             pixel:  [  
-                 {  
-                     pixel_id: <pixel_id>,  
-                     custom_event_type: PURCHASE  
-                 },  
-             ],  
-         }  
-     }  
+     daily_budget: 20000,  
+     promoted_object: {  
+         omnichannel_object: {  
+             app: [  
+                 {  
+                     application_id: <application_id>,  
+                     custom_event_type: PURCHASE,  
+                     object_store_urls: [  
+                         "https://play.google.com/store/apps/details?id=com.facebook.ka"  
+                         "https://apps.apple.com/us/app/facebook/id284882215",  
+                     ],  
+                 },  
+             ],  
+             pixel:  [  
+                 {  
+                     pixel_id: <pixel_id>,  
+                     custom_event_type: PURCHASE  
+                 },  
+             ],  
+         }  
+     }  
 }
-```
 ```
 
 ## Ad
 
-At the Ad level, you can specify the primary destination and secondary destination that advertisers want users to land on when users click their ad. For example, you may want primary destination as apps, and if apps are not installed on users’ phones, then secondary destination can be website or app store. This destination setting is specified using `applink_treatment`. [Advantage+ catalog ads](https://developers.facebook.com/documentation/ads-commerce/marketing-api/advantage-catalog-ads/get-started#specify-desired-behavior-of-ads-click-from-mobile) already use these fields.
+At the Ad level, you can specify the primary destination and secondary destination that advertisers want users to land on when users click their ad. For example, you may want primary destination as apps, and if apps are not installed on users' phones, then secondary destination can be website or app store. This destination setting is specified using `applink_treatment`. [Advantage+ catalog ads](https://developers.facebook.com/documentation/ads-commerce/marketing-api/advantage-catalog-ads/get-started#specify-desired-behavior-of-ads-click-from-mobile) already use these fields.
 
 `applink_treatment` has the following values with the description below:
 
 | Name | Description |
 | --- | --- |
 | `web_only` | Always send the user to the given web URL. |
-| `deeplink_with_web_fallback` | If the app is installed on the user’s phone and Meta has corresponding deep link information, send the user to the app. If one of these conditions is not met, send them to the website. |
-| `deeplink_with_appstore_fallback` | Default when app links are present for the product. If the app is installed on the user’s phone and Meta has corresponding deep link information, send the user to the app. If the app is not installed, send them to the app store for the app. |
+| `deeplink_with_web_fallback` | If the app is installed on the user's phone and Meta has corresponding deep link information, send the user to the app. If one of these conditions is not met, send them to the website. |
+| `deeplink_with_appstore_fallback` | Default when app links are present for the product. If the app is installed on the user's phone and Meta has corresponding deep link information, send the user to the app. If the app is not installed, send them to the app store for the app. |
 
 Advantage+ shopping campaign does not support `automatic` mode.
 
@@ -87,33 +85,31 @@ In this field, you may use dynamic fields such as product URL or ID.
 #### Example
 
 ```
-```
 {  
-   "creative":{  
-      "applink_treatment":"deeplink_with_web_fallback",  
-      "template_url_spec":{  
-         "android":{  
-            "url":"example://product/{{product.retailer_id | urlencode}}"  
-         },  
-         "config":{  
-            "app_id":"<application_id>"  
-         },  
-         "ios":{  
-            "url":"example://product/{{product.name | urlencode}}"  
-         },  
-         "web":{  
-            "url":"https://www.example.com/deeplink/{{product.name | urlencode}}"  
-         }  
-      }  
-   },  
-   "tracking_specs":[  
-      {  
-         "action.type":"offsite_conversion",  
-         "fb_pixel":"<pixel_id>"  
-      }  
-   ]  
+   "creative":{  
+      "applink_treatment":"deeplink_with_web_fallback",  
+      "template_url_spec":{  
+         "android":{  
+            "url":"example://product/{​{product.retailer_id | urlencode}​}"  
+         },  
+         "config":{  
+            "app_id":"<application_id>"  
+         },  
+         "ios":{  
+            "url":"example://product/{​{product.name | urlencode}​}"  
+         },  
+         "web":{  
+            "url":"https://www.example.com/deeplink/{​{product.name | urlencode}​}"  
+         }  
+      }  
+   },  
+   "tracking_specs":[  
+      {  
+         "action.type":"offsite_conversion",  
+         "fb_pixel":"<pixel_id>"  
+      }  
+   ]  
 }
-```
 ```
 
 ### Non-catalog ads
@@ -137,43 +133,41 @@ For manual upload ads, Meta introduced a new field, `omnichannel_link_spec`, in 
 #### Example
 
 ```
-```
 {  
-  "creative":  
+  "creative":  
 {  
-  "applink_treatment": "deeplink_with_web_fallback",  
-  "omnichannel_link_spec": {  
-      "web": {  
-        "url": <web_url>  
-      },  
-      "app": {  
-        "application_id": <application_id>,  
-        "platform_specs": {  
-          "android": {  
-            "url": <android_deeplink>  
-          },  
-          "ios": {  
-            "url": <ios_deeplink>  
-          }  
-        }  
-      }  
-   },  
-  "object_story_spec": {  
-    "instagram_user_id": <IG_USER_ID>,  
-    "page_id": <page_id>,  
-    "link_data": {  
-      "call_to_action": {  
-        "type": "LEARN_MORE",  
-      },  
-      "link": web_url,  
-      "message": "Purchase now!",  
-      "name": "Sample creative"  
-    }  
-  },  
-  "object_type": "SHARE"  
+  "applink_treatment": "deeplink_with_web_fallback",  
+  "omnichannel_link_spec": {  
+      "web": {  
+        "url": <web_url>  
+      },  
+      "app": {  
+        "application_id": <application_id>,  
+        "platform_specs": {  
+          "android": {  
+            "url": <android_deeplink>  
+          },  
+          "ios": {  
+            "url": <ios_deeplink>  
+          }  
+        }  
+      }  
+   },  
+  "object_story_spec": {  
+    "instagram_user_id": <IG_USER_ID>,  
+    "page_id": <page_id>,  
+    "link_data": {  
+      "call_to_action": {  
+        "type": "LEARN_MORE",  
+      },  
+      "link": web_url,  
+      "message": "Purchase now!",  
+      "name": "Sample creative"  
+    }  
+  },  
+  "object_type": "SHARE"  
 }  
 }
-```
 ```
 
 | Field | Description |
@@ -183,41 +177,39 @@ For manual upload ads, Meta introduced a new field, `omnichannel_link_spec`, in 
 
 For ad validation:
 
-The tracking spec’s (`tracking_specs`) `pixel_id` and `application_id` must be consistent with those in promoted\_object. `tracking_specs` must include these specs:
+The tracking spec's (`tracking_specs`) `pixel_id` and `application_id` must be consistent with those in promoted\_object. `tracking_specs` must include these specs:
 
 | Tracking Spec | Code Sample |
 | --- | --- |
-| Pixel | ```  ``` {        "action.type": ["offsite_conversion"],        "fb_pixel": [<pixel_id>] } ``` ``` |
-| App install | ```  ``` {        "action.type": ["mobile_app_install"],        "application": [<application_id>] } ``` ``` |
-| App event | ```  ``` {        "action.type": ["app_custom_event"],        "application": [<application_id>] } ``` ``` |
+| Pixel | ``` {        "action.type": ["offsite_conversion"],        "fb_pixel": [<pixel_id>] } ``` |
+| App install | ``` {        "action.type": ["mobile_app_install"],        "application": [<application_id>] } ``` |
+| App event | ``` {        "action.type": ["app_custom_event"],        "application": [<application_id>] } ``` |
 
 #### Example
 
 ```
-```
 {  
-     "name": "sample ad"  
-     "adset_id": "6170648652866",  
-     "creative": {  
-         "creative_id": <creative_id>,  
-    }  
-    "status": "PAUSED",  
-    "tracking_specs": [  
-        {  
-            "action.type": ["offsite_conversion"],  
-            "fb_pixel": [<pixel_id>]  
-        }  
-        {  
-            "action.type": ["mobile_app_install"],  
-            "application": [<application_id>]  
-        }  
-        {  
-            "action.type": ["app_custom_event"],  
-            "application": [<application_id>]  
-        }  
-    ]  
+     "name": "sample ad"  
+     "adset_id": "6170648652866",  
+     "creative": {  
+         "creative_id": <creative_id>,  
+    }  
+    "status": "PAUSED",  
+    "tracking_specs": [  
+        {  
+            "action.type": ["offsite_conversion"],  
+            "fb_pixel": [<pixel_id>]  
+        }  
+        {  
+            "action.type": ["mobile_app_install"],  
+            "application": [<application_id>]  
+        }  
+        {  
+            "action.type": ["app_custom_event"],  
+            "application": [<application_id>]  
+        }  
+    ]  
 }
-```
 ```
 
 ## Learn more

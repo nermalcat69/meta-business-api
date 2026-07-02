@@ -48,8 +48,8 @@ curl -X GET \
 
 | Name | Description |
 | --- | --- |
-| `catalog_id`  numeric string | **Required.**  The ID of the marketplace’s catalog, referred to as a **parent catalog**.  During onboarding, this catalog may be filtered using `vendor_id=<child_business_external_id>` to create a catalog segment for a seller. |
-| `marketplace_bm_id`  string | **Required.**  The marketplace’s Business Manager ID. See [Find your Business ID in Meta Business Suite⁠](https://www.facebook.com/business/help/1181250022022158?id=180505742745347) for more information. |
+| `catalog_id`  numeric string | **Required.**  The ID of the marketplace's catalog, referred to as a **parent catalog**.  During onboarding, this catalog may be filtered using `vendor_id=<child_business_external_id>` to create a catalog segment for a seller. |
+| `marketplace_bm_id`  string | **Required.**  The marketplace's Business Manager ID. See [Find your Business ID in Meta Business Suite⁠](https://www.facebook.com/business/help/1181250022022158?id=180505742745347) for more information. |
 | `vendor_id`  string | **Required.**  The **unique ID** of the seller for a marketplace. |
 
 ### Response
@@ -67,7 +67,7 @@ curl -X GET \
 | Name | Description |
 | --- | --- |
 | `is_eligible`  bool | Indicates whether the seller is eligible. |
-| `reason_code`  enum string | The reason code for the seller’s eligibility. **Empty** if the seller is eligible. |
+| `reason_code`  enum string | The reason code for the seller's eligibility. **Empty** if the seller is eligible. |
 | `reason_description`  enum string | A description of the eligibility reason. **Empty** if seller is eligible. |
 
 ### Error codes
@@ -75,7 +75,7 @@ curl -X GET \
 | Error Code | Error Subcode | Description |
 | --- | --- | --- |
 | 1800000 | 2310114 | Complete the managed partner ads onboarding process in Collaboration Center. |
-| 1800012 | 2310173 | Check the marketplace you entered ({marketplace\_id}). If it’s the correct ID, ask someone with full control to go to Business settings in Meta Business Suite to give you admin access. Once assigned, retry the request. |
+| 1800012 | 2310173 | Check the marketplace you entered ({marketplace\_id}). If it's the correct ID, ask someone with full control to go to Business settings in Meta Business Suite to give you admin access. Once assigned, retry the request. |
 | 1800101 | 2310116 | Your business {business\_id} does not manage the catalog ID you entered {catalog\_id}. Enter a catalog ID that your business manages. |
 
 ## See more

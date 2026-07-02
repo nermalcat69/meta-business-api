@@ -31,32 +31,28 @@ If `app_id` is not specified, thread control will be passed to the default appli
 #### Sample request
 
 ```
-```
-curl -X POST -H "Content-Type: application/json" -d '{  
-  "messaging_type": "RESPONSE",  
-  "thread_control": {  
-  "app_id": "<APPLICATION_ID>",  
-  "control_type": "pass"  
-  },  
-  "recipient": {  
-  "id": "<IGSID>"  
-  },  
-  "message": {  
-  "text" : "Let me transfer you to our live agent"  
-  }  
-}' "https://graph.facebook.com/v12.0/me/messages?access_token=<ACCESS_TOKEN>"
-```
+curl -X POST -H "Content-Type: application/json" -d '{  
+  "messaging_type": "RESPONSE",  
+  "thread_control": {  
+  "app_id": "<APPLICATION_ID>",  
+  "control_type": "pass"  
+  },  
+  "recipient": {  
+  "id": "<IGSID>"  
+  },  
+  "message": {  
+  "text" : "Let me transfer you to our live agent"  
+  }  
+}' "https://graph.facebook.com/v12.0/me/messages?access_token=<ACCESS_TOKEN>"
 ```
 
 #### Sample response
 
 ```
-```
 {  
-  "recipient_id":"<IGSID>",  
-  "message_id":"MESSAGE-ID"  
+  "recipient_id":"<IGSID>",  
+  "message_id":"MESSAGE-ID"  
 }
-```
 ```
 
 ### Release thread control
@@ -66,31 +62,27 @@ Release thread control by setting the `control_type` field in the `thread_contro
 #### Sample request
 
 ```
-```
-curl -X POST -H "Content-Type: application/json" -d '{  
-  "messaging_type": "RESPONSE",  
-  "thread_control": {  
-    "control_type": "release"  
-  },  
-  "recipient": {  
-    "id": "<IGSID>"  
-  },  
-  "message": {  
-    "text" : "Let me transfer you to our live agent"  
-  }  
-}' "https://graph.facebook.com/v12.0/me/messages?access_token=<ACCESS_TOKEN>"
-```
+curl -X POST -H "Content-Type: application/json" -d '{  
+  "messaging_type": "RESPONSE",  
+  "thread_control": {  
+    "control_type": "release"  
+  },  
+  "recipient": {  
+    "id": "<IGSID>"  
+  },  
+  "message": {  
+    "text" : "Let me transfer you to our live agent"  
+  }  
+}' "https://graph.facebook.com/v12.0/me/messages?access_token=<ACCESS_TOKEN>"
 ```
 
 #### Sample response
 
 ```
-```
 {  
-  "recipient_id":"<IGSID>",  
-  "message_id":"MESSAGE-ID"  
+  "recipient_id":"<IGSID>",  
+  "message_id":"MESSAGE-ID"  
 }
-```
 ```
 
 | Parameter | Description |
@@ -121,44 +113,38 @@ When your app needs to hand over the conversation to another application, send a
 #### Sample request
 
 ```
-```
-curl -X POST "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/pass_thread_control  
-  ?recipient={id:IGSID}  
-  &target_app_id=APP-GETTING-CONTROL  
-  &metadata=Information about the conversation  
-  &access_token=PAGE-ACCESS-TOKEN"
-```
+curl -X POST "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/pass_thread_control  
+  ?recipient={id:IGSID}  
+  &target_app_id=APP-GETTING-CONTROL  
+  &metadata=Information about the conversation  
+  &access_token=PAGE-ACCESS-TOKEN"
 ```
 
 #### Sample response
 
 ```
-```
 {  
-  "success" : true  
+  "success" : true  
 }
-```
 ```
 
 #### Webhook notification example
 
 ```
-```
 {  
-  "sender":{  
-     "id":"IGSID" // The Instagram-scoped ID for the person who sent the message to the business  
-  },  
-  "recipient":{  
-     "id":"BusinessId"  
-  },  
-  "timestamp":UNIX-TIMESTAMP,  
-  "pass_thread_control":{  
-     "previous_owner_app_id":"APP-RELEASING-CONTROL",  
-      "new_owner_app_id": "APP-GETTING-CONTROL",  
-      "metadata":"Information about the conversation"  
-  }  
+  "sender":{  
+     "id":"IGSID" // The Instagram-scoped ID for the person who sent the message to the business  
+  },  
+  "recipient":{  
+     "id":"BusinessId"  
+  },  
+  "timestamp":UNIX-TIMESTAMP,  
+  "pass_thread_control":{  
+     "previous_owner_app_id":"APP-RELEASING-CONTROL",  
+      "new_owner_app_id": "APP-GETTING-CONTROL",  
+      "metadata":"Information about the conversation"  
+  }  
 }
-```
 ```
 
 ### Release thread control
@@ -177,22 +163,18 @@ To release thread control, send a POST request to `/PAGE-ID/release_thread_contr
 #### Sample request
 
 ```
-```
-curl -X POST "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/release_thread_control  
-  ?recipient={id:IGSID}  
-  &metadata=Information about the conversation  
-  &access_token=PAGE-ACCESS-TOKEN"
-```
+curl -X POST "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/release_thread_control  
+  ?recipient={id:IGSID}  
+  &metadata=Information about the conversation  
+  &access_token=PAGE-ACCESS-TOKEN"
 ```
 
 #### Sample response
 
 ```
-```
 {  
-  "success" : true  
+  "success" : true  
 }
-```
 ```
 
 After a successful request, the conversation status changes to idle.
@@ -213,22 +195,18 @@ To take control of a conversation, send a POST request to `/PAGE-ID/take_thread_
 #### Sample request
 
 ```
-```
-curl -X POST "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/take_thread_control  
-  ?recipient={id:ID}  
-  &metadata=Information about the conversation  
-  &access_token=PAGE_ACCESS_TOKEN"
-```
+curl -X POST "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/take_thread_control  
+  ?recipient={id:ID}  
+  &metadata=Information about the conversation  
+  &access_token=PAGE_ACCESS_TOKEN"
 ```
 
 #### Sample response
 
 ```
-```
 {  
-  "success" : true  
+  "success" : true  
 }
-```
 ```
 
 #### Webhook notification example
@@ -236,22 +214,20 @@ curl -X POST "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/take_thre
 The thread owner from whom the control was taken will receive a notification with the IGSID for the person who sent the message, the ID for the Instagram Professional account that received the message, the ID for the previous app that controlled the conversation, the ID for the app that now controls the conversation, and any metadata about the conversation that was sent in the API request that triggered the webhook. If the thread was taken from idle state, no webhooks would be sent.
 
 ```
-```
 {  
-  "sender":{  
-    "id":"IGSID"  
-  },  
-  "recipient":{  
-    "id":"BusinessId"  
-  },  
-  "timestamp":UNIX-TIMESTAMP,  
-  "take_thread_control":{  
-    "previous_owner_app_id":"PREVIOUS-OWNER-APP-ID",  
-    "new_owner_app_id": "NEW-OWNER-APP-ID",  
-    "metadata":"Information about the conversation"  
-  }  
+  "sender":{  
+    "id":"IGSID"  
+  },  
+  "recipient":{  
+    "id":"BusinessId"  
+  },  
+  "timestamp":UNIX-TIMESTAMP,  
+  "take_thread_control":{  
+    "previous_owner_app_id":"PREVIOUS-OWNER-APP-ID",  
+    "new_owner_app_id": "NEW-OWNER-APP-ID",  
+    "metadata":"Information about the conversation"  
+  }  
 }
-```
 ```
 
 ### Extend thread control
@@ -270,22 +246,18 @@ To extend control of a conversation, send a POST request to `/PAGE-ID/extend_thr
 #### Sample request
 
 ```
-```
-curl -X POST "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/extend_thread_control  
-  ?recipient={id:IGSID}  
-  &duration=86400   //Length of time, in seconds  
-  &access_token=PAGE-ACCESS-TOKEN"
-```
+curl -X POST "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/extend_thread_control  
+  ?recipient={id:IGSID}  
+  &duration=86400   //Length of time, in seconds  
+  &access_token=PAGE-ACCESS-TOKEN"
 ```
 
 #### Sample response
 
 ```
-```
 {  
-  "success" : true  
+  "success" : true  
 }
-```
 ```
 
 ### Request thread control
@@ -305,22 +277,18 @@ To request control of a conversation from another app, send a POST request to `/
 #### Sample request
 
 ```
-```
-curl -X POST "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/request_thread_control  
-  ?recipient={id:PSID}  
-  &metadata=Information about the conversation  
-  &access_token=PAGE-ACCESS-TOKEN"
-```
+curl -X POST "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/request_thread_control  
+  ?recipient={id:PSID}  
+  &metadata=Information about the conversation  
+  &access_token=PAGE-ACCESS-TOKEN"
 ```
 
 #### Sample response
 
 ```
-```
 {  
-  "success" : true  
+  "success" : true  
 }
-```
 ```
 
 #### Webhook notification example
@@ -328,21 +296,19 @@ curl -X POST "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/request_t
 The following webhook notification will be received by the current thread owner.
 
 ```
-```
 {  
-  "sender":{  
-     "id":"IGSID" // The Instagram-scoped ID for the person who sent the message to the business  
-  },  
-  "recipient":{  
-     "id":"BusinessId"  
-  },  
-  "timestamp":UNIX-TIMESTAMP,  
-  "request_thread_control":{  
-     "requested_owner_app_id":"APP-ASKING-FOR-THREAD-CONTROL",  
-     "metadata":"Information about the conversation"  
-  }  
+  "sender":{  
+     "id":"IGSID" // The Instagram-scoped ID for the person who sent the message to the business  
+  },  
+  "recipient":{  
+     "id":"BusinessId"  
+  },  
+  "timestamp":UNIX-TIMESTAMP,  
+  "request_thread_control":{  
+     "requested_owner_app_id":"APP-ASKING-FOR-THREAD-CONTROL",  
+     "metadata":"Information about the conversation"  
+  }  
 }
-```
 ```
 
 ### Find the app in control
@@ -355,11 +321,9 @@ To find which app currently controls a conversation, send a GET request to `/PAG
 #### Sample request
 
 ```
-```
-curl -X GET "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/thread_owner  
-  ?recipient=IGSID  
-  &access_token=PAGE-ACCESS-TOKEN"
-```
+curl -X GET "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/thread_owner  
+  ?recipient=IGSID  
+  &access_token=PAGE-ACCESS-TOKEN"
 ```
 
 #### Sample response
@@ -369,18 +333,16 @@ curl -X GET "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/thread_own
 * Otherwise, you'll receive an empty response.
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "thread_owner": {  
-        "app_id": APP-ID,  
-        "expiration": UNIX-TIMESTAMP  
-      }  
-    }  
-  ]  
+  "data": [  
+    {  
+      "thread_owner": {  
+        "app_id": APP-ID,  
+        "expiration": UNIX-TIMESTAMP  
+      }  
+    }  
+  ]  
 }
-```
 ```
 
 ### Messaging feature status API
@@ -392,22 +354,18 @@ Check the Conversation Routing status of a Facebook Page for Messenger or a busi
 #### Sample request
 
 ```
-```
-curl -X GET "https://graph.facebook.com/v12.0/me?fields=messaging_feature_status&access_token=<ACCESS_TOKEN>"
-```
+curl -X GET "https://graph.facebook.com/v12.0/me?fields=messaging_feature_status&access_token=<ACCESS_TOKEN>"
 ```
 
 #### Sample response
 
 ```
-```
 {  
-  "messaging_feature_status": {  
-    "hop_v2": false,  
-    "msgr_multi_app": true,  
-    "ig_multi_app": false  
-  },  
-  "id": "<page_id>"  
+  "messaging_feature_status": {  
+    "hop_v2": false,  
+    "msgr_multi_app": true,  
+    "ig_multi_app": false  
+  },  
+  "id": "<page_id>"  
 }
-```
 ```

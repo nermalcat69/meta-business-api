@@ -36,19 +36,17 @@ Use the [Media Upload API](https://developers.facebook.com/documentation/busines
 
 | Name | Description |
 | --- | --- |
-| `file` | **Required.**  Path to the file stored in your local directory. For example: “@/local/path/file.jpg”. |
+| `file` | **Required.**  Path to the file stored in your local directory. For example: "@/local/path/file.jpg". |
 | `type` | **Required.**  Type of media file being uploaded. See [Supported Media Types](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/mark-message-as-read#supported-media-types) for more information. |
 | `messaging_product` | **Required.**  Messaging service used for the request. In this case, use `whatsapp`. |
 
 ### Request
 
 ```
-```
-curl 'https://graph.facebook.com/<API_VERSION>/<PHONE_NUMBER_ID>/media' \  
--H 'Authorization: Bearer <ACCESS_TOKEN>' \  
--F 'messaging_product=whatsapp' \  
--F 'file=@<FILE_PATH_AND_NAME>;type=<MIME_TYPE>'
-```
+curl 'https://graph.facebook.com/<API_VERSION>/<PHONE_NUMBER_ID>/media' \  
+-H 'Authorization: Bearer <ACCESS_TOKEN>' \  
+-F 'messaging_product=whatsapp' \  
+-F 'file=@<FILE_PATH_AND_NAME>;type=<MIME_TYPE>'
 ```
 
 ### Response
@@ -56,11 +54,9 @@ curl 'https://graph.facebook.com/<API_VERSION>/<PHONE_NUMBER_ID>/media' \
 Upon success:
 
 ```
-```
 {  
-  "id": "<MEDIA_ID>"  
+  "id": "<MEDIA_ID>"  
 }
-```
 ```
 
 ### Example request
@@ -75,11 +71,9 @@ curl 'https://graph.facebook.com/v25.0/106540352242922/media' \
 ### Example response
 
 ```
-```
 {  
-  "id": "1037543291543636"  
+  "id": "1037543291543636"  
 }
-```
 ```
 
 ## Get media URL
@@ -91,10 +85,8 @@ Media URLs **expire after 5 minutes**, after which you must query the ID again t
 ### Request syntax
 
 ```
-```
-curl 'https://graph.facebook.com/<API_VERSION>/<MEDIA_ID>?phone_number_id=<BUSINESS_PHONE_NUMBER_ID>' \  
--H 'Authorization: Bearer EAAJB'
-```
+curl 'https://graph.facebook.com/<API_VERSION>/<MEDIA_ID>?phone_number_id=<BUSINESS_PHONE_NUMBER_ID>' \  
+-H 'Authorization: Bearer EAAJB'
 ```
 
 Note that `phone_number_id` is optional. If included, the request will only be processed if the business phone number ID included in the query matches the ID of the business phone number that the media was uploaded on.
@@ -104,16 +96,14 @@ Note that `phone_number_id` is optional. If included, the request will only be p
 A successful response includes an object with a media URL. The URL is only valid for 5 minutes. To use this URL, see [Download Media](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/mark-message-as-read#download-media).
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "url": "<MEDIA_URL>",  
-  "mime_type": "<MEDIA_MIME_TYPE>",  
-  "sha256": "<SHA_256_HASH>",  
-  "file_size": "<MEDIA_FILE_SIZE>",  
-  "id": "<MEDIA_ID>"  
+  "messaging_product": "whatsapp",  
+  "url": "<MEDIA_URL>",  
+  "mime_type": "<MEDIA_MIME_TYPE>",  
+  "sha256": "<SHA_256_HASH>",  
+  "file_size": "<MEDIA_FILE_SIZE>",  
+  "id": "<MEDIA_ID>"  
 }
-```
 ```
 
 ## Delete media
@@ -123,10 +113,8 @@ Use the [Media API](https://developers.facebook.com/documentation/business-messa
 ### Request syntax
 
 ```
-```
-curl -X DELETE 'https://graph.facebook.com/<API_VERSION>/<MEDIA_ID>?phone_number_id=<BUSINESS_PHONE_NUMBER_ID>' \  
--H 'Authorization: Bearer EAAJB...'
-```
+curl -X DELETE 'https://graph.facebook.com/<API_VERSION>/<MEDIA_ID>?phone_number_id=<BUSINESS_PHONE_NUMBER_ID>' \  
+-H 'Authorization: Bearer EAAJB...'
 ```
 
 Note that `phone_number_id` is optional. If included, the request will only be processed if the business phone number ID included in the query matches the ID of the business phone number that the media was uploaded on.
@@ -134,11 +122,9 @@ Note that `phone_number_id` is optional. If included, the request will only be p
 ### Example response
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 ## Download media
@@ -150,16 +136,14 @@ Note that when retrieving a media from a media ID received via webhook, the medi
 ### Request syntax
 
 ```
-```
-curl '<MEDIA_URL>' \  
--H 'Authorization: Bearer EAAJB...' \  
--o '<DESIRED_FILE_NAME>'
-```
+curl '<MEDIA_URL>' \  
+-H 'Authorization: Bearer EAAJB...' \  
+-o '<DESIRED_FILE_NAME>'
 ```
 
 Upon success, the API will respond with the binary data of the media asset. Response headers contain a content-type header to indicate the MIME type of returned data. Check [supported media types](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/mark-message-as-read#supported-media-types) for supported media types.
 
-If the download attempt fails, you will receive a `404 Not Found` response code. In that case, try to [get a new media URL](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/mark-message-as-read#get-media-url) and download it again. If doing so doesn’t resolve the issue, renew your access token and attempt to download the media asset again.
+If the download attempt fails, you will receive a `404 Not Found` response code. In that case, try to [get a new media URL](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/mark-message-as-read#get-media-url) and download it again. If doing so doesn't resolve the issue, renew your access token and attempt to download the media asset again.
 
 ## Supported media types
 
@@ -208,7 +192,7 @@ WebP images can only be sent in [sticker messages](https://developers.facebook.c
 
 Only H.264 video codec and AAC audio codec supported. Single audio stream or no audio stream only.
 
-Note that videos encoded with the H.264 “High” profile and B-frames are not supported by Android WhatsApp clients. We recommend that you use H.264 “Main” profile without B-frames, or the H.264 “Baseline” profile when encoding (or re-encoding with a tool like ffmpeg), and place moov boxes before mdat boxes, for broader compatibility. If you are using ffmpeg, you can use the -movflags faststart flag to place moov boxes before mdata boxes.
+Note that videos encoded with the H.264 "High" profile and B-frames are not supported by Android WhatsApp clients. We recommend that you use H.264 "Main" profile without B-frames, or the H.264 "Baseline" profile when encoding (or re-encoding with a tool like ffmpeg), and place moov boxes before mdat boxes, for broader compatibility. If you are using ffmpeg, you can use the -movflags faststart flag to place moov boxes before mdata boxes.
 
 | Video Type | Extension | MIME Type | Max Size |
 | --- | --- | --- | --- |
@@ -223,7 +207,7 @@ Note that mismatched MIME type (`131053`) is a common error. Inspect your media 
 
 The maximum supported file size for media messages on Cloud API is 100MB. In the event the customer sends a file that is greater than 100MB, you will receive a webhook with error code [131052](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/error-codes#other-errors) and `title`:
 
-*“Media file size too big. Max file size we currently support: 100MB. Please communicate with your customer to send a media file that is smaller than 100MB”*.
+*"Media file size too big. Max file size we currently support: 100MB. Please communicate with your customer to send a media file that is smaller than 100MB"*.
 
 Send customers a warning message that their media file exceeds the maximum file size when this webhook event is triggered.
 

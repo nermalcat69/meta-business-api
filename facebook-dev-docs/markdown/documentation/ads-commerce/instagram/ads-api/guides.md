@@ -24,7 +24,7 @@ To use Instagram and Facebook posts as ads, see [Use Posts as Instagram Ads](htt
 
 ## Step 1: Get Instagram account ID
 
-You need to know your Instagram account’s ID before you start creating ads. Depending on your account’s type, you have different ways of getting an account ID:
+You need to know your Instagram account's ID before you start creating ads. Depending on your account's type, you have different ways of getting an account ID:
 
 | Type of Instagram Account | How To Find Account ID |
 | --- | --- |
@@ -59,7 +59,7 @@ For Reach And Frequency campaigns, see [Instagram Reach And Frequency](https://d
 [Create an ad set](https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/basic-ad-creation/create-an-ad-set) with the desired:
 
 * [Optimization Goal](https://developers.facebook.com/documentation/ads-commerce/marketing-api/bidding/overview#opt): Your goal options depend on the objective set at the campaign level. Check our [validation rules](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-campaign-group#objective-validation).
-* [Targeting Options](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference): You can use all [Facebook targeting options](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference) for Instagram campaigns, including Facebook’s native [basic targeting options](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference/basic-targeting), [Custom Audiences](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/custom-audience), and [Lookalike Audiences](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/lookalike-audiences).
+* [Targeting Options](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference): You can use all [Facebook targeting options](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference) for Instagram campaigns, including Facebook's native [basic targeting options](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference/basic-targeting), [Custom Audiences](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/custom-audience), and [Lookalike Audiences](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/lookalike-audiences).
 * [Budget](https://developers.facebook.com/documentation/ads-commerce/marketing-api/bidding/overview/budgets)
 * [Billing Event](https://developers.facebook.com/documentation/ads-commerce/marketing-api/bidding/overview/billing-events): The `billing_event` depends on which `optimization_goal` you choose. Check our [validation rules](https://developers.facebook.com/documentation/ads-commerce/marketing-api/bidding/overview#opt-goal-validation).
 * [Schedule](https://developers.facebook.com/documentation/ads-commerce/marketing-api/bidding/overview/pacing-and-scheduling)
@@ -70,13 +70,13 @@ If you create a [Reach and Frequency](https://developers.facebook.com/docs/marke
 
 ### Placement
 
-To deliver ads to Instagram, include `instagram` under [`publisher_platforms`](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference/placement-targeting#newplacement) in your ad set. You can use Instagram `stream`, `story`, `explore`, `reels`, `explore_home`, and `ig_search` placements, or you can enable multiple platforms including Instagram’s placements. If you choose multiple platforms, Facebook optimizes delivery based on your target audience on each platform with [Placement Optimization](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference/placement-targeting).
+To deliver ads to Instagram, include `instagram` under [`publisher_platforms`](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference/placement-targeting#newplacement) in your ad set. You can use Instagram `stream`, `story`, `explore`, `reels`, `explore_home`, and `ig_search` placements, or you can enable multiple platforms including Instagram's placements. If you choose multiple platforms, Facebook optimizes delivery based on your target audience on each platform with [Placement Optimization](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference/placement-targeting).
 
 * To show ads exclusively in Stream or Stories specify `stream` or `story` in the `instagram_positions` field.
 * Instagram displays ads using `"instagram_positions":["story"]` in both the Instagram Desktop and Mobile web feeds.
-* If you want to display your ads in Instagram’s **Explore** tab you must include both `stream` and `explore` as placements.
-* If you want to display your ads on Instagram’s **Explore home** placement you must include both `stream` and `explore` as placements.
-* If you want to display your ads on Instagram’s **search results** placement you must include `stream` as a placement.
+* If you want to display your ads in Instagram's **Explore** tab you must include both `stream` and `explore` as placements.
+* If you want to display your ads on Instagram's **Explore home** placement you must include both `stream` and `explore` as placements.
+* If you want to display your ads on Instagram's **search results** placement you must include `stream` as a placement.
 * Instagram Web Feeds ads use the `stream` placement and are checked for web eligibility to be delivered to both desktop and mobile web feeds. The compatible objectives are `BRAND_AWARENESS`, `REACH`, `LINK_CLICKS`, `POST_ENGAGEMENT`, `VIDEO_VIEWS`, and `CONVERSIONS`.
 
 If `instagram_positions` is not specified, ads are delivered to all available Instagram placements.

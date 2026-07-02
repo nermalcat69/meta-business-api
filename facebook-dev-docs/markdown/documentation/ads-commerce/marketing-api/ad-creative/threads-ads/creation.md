@@ -37,7 +37,7 @@ To make API calls with an Instagram-associated Threads account you need a user a
 * `threads_business_basic`
 * `pages_read_engagement`
 
-If the app user was granted a role via the Meta Business Suite on the Page connected to your app user’s Instagram professional account, your app will also need one of:
+If the app user was granted a role via the Meta Business Suite on the Page connected to your app user's Instagram professional account, your app will also need one of:
 
 * `ads_management`
 * `ads_read`
@@ -69,7 +69,7 @@ The result should be a Threads account object containing only the `threads_user_
 
 ## Instagram-backed Threads accounts
 
-If you don’t have a Threads profile, you can still create and deliver ads in Threads using an Instagram-backed Threads account.
+If you don't have a Threads profile, you can still create and deliver ads in Threads using an Instagram-backed Threads account.
 
 These accounts are created with the API and function as if you are running ads *for* a Threads account, however a mock Threads account is created specifically to run those ads.
 
@@ -106,7 +106,7 @@ This returns a Threads account object, if there is one. The object includes a `t
 
 ## Page-backed Threads accounts
 
-If you don’t have a Threads profile or an Instagram account, you can still create and deliver ads in Threads using a Page-backed Threads account, similar to Page-backed Instagram accounts for Instagram.
+If you don't have a Threads profile or an Instagram account, you can still create and deliver ads in Threads using a Page-backed Threads account, similar to Page-backed Instagram accounts for Instagram.
 
 **Note:** You should only use a Page-backed Threads account when you are using a Page-backed Instagram account for Instagram ads.
 

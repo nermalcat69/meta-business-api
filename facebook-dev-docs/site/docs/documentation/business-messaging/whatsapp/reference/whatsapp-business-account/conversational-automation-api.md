@@ -66,11 +66,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{WhatsApp-Business-Account-ID}/assigned_users' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{WhatsApp-Business-Account-ID}/assigned_users' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -81,56 +81,56 @@ Select status code
 
 ```
 {  
-  "multiple_users": {  
-    "summary": "Multiple assigned users with different types",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "1234567890123456",  
-          "name": "John Smith",  
-          "business": {  
-            "id": "9876543210987654",  
-            "name": "Example Business Inc"  
-          },  
-          "user_type": "BUSINESS_USER"  
-        },  
-        {  
-          "id": "2345678901234567",  
-          "name": "System User Bot",  
-          "business": {  
-            "id": "9876543210987654",  
-            "name": "Example Business Inc"  
-          },  
-          "user_type": "SYSTEM_USER"  
-        }  
-      ],  
-      "paging": {  
-        "cursors": {  
-          "after": "QVFIUjJ5M2wwdmtONVFHbDZAMVQ4OGJBQUFBQQ",  
-          "before": "QVFIUmx1WTBpMGpJWXprYzVYaVhabW9PVVhF"  
-        },  
-        "next": "https://graph.facebook.com/v25.0/1234567890123456/assigned_users?access_token=YOUR_SYSTEM_USER_ACCESS_TOKEN&limit=25&after=QVFIUjJ5M2wwdmtONVFHbDZAMVQ4OGJBQUFBQQ"  
-      },  
-      "summary": {  
-        "total_count": 15  
-      }  
-    }  
-  },  
-  "single_user": {  
-    "summary": "Single assigned user",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "1234567890123456",  
-          "name": "Jane Doe",  
-          "user_type": "BUSINESS_USER"  
-        }  
-      ],  
-      "summary": {  
-        "total_count": 1  
-      }  
-    }  
-  }  
+  "multiple_users": {  
+    "summary": "Multiple assigned users with different types",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "1234567890123456",  
+          "name": "John Smith",  
+          "business": {  
+            "id": "9876543210987654",  
+            "name": "Example Business Inc"  
+          },  
+          "user_type": "BUSINESS_USER"  
+        },  
+        {  
+          "id": "2345678901234567",  
+          "name": "System User Bot",  
+          "business": {  
+            "id": "9876543210987654",  
+            "name": "Example Business Inc"  
+          },  
+          "user_type": "SYSTEM_USER"  
+        }  
+      ],  
+      "paging": {  
+        "cursors": {  
+          "after": "QVFIUjJ5M2wwdmtONVFHbDZAMVQ4OGJBQUFBQQ",  
+          "before": "QVFIUmx1WTBpMGpJWXprYzVYaVhabW9PVVhF"  
+        },  
+        "next": "https://graph.facebook.com/v25.0/1234567890123456/assigned_users?access_token=YOUR_SYSTEM_USER_ACCESS_TOKEN&limit=25&after=QVFIUjJ5M2wwdmtONVFHbDZAMVQ4OGJBQUFBQQ"  
+      },  
+      "summary": {  
+        "total_count": 15  
+      }  
+    }  
+  },  
+  "single_user": {  
+    "summary": "Single assigned user",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "1234567890123456",  
+          "name": "Jane Doe",  
+          "user_type": "BUSINESS_USER"  
+        }  
+      ],  
+      "summary": {  
+        "total_count": 1  
+      }  
+    }  
+  }  
 }
 ```
 
@@ -741,11 +741,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{WhatsApp-Business-Account-ID}/assigned_users' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{WhatsApp-Business-Account-ID}/assigned_users' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -756,56 +756,56 @@ Select status code
 
 ```
 {  
-  "multiple_users": {  
-    "summary": "Multiple assigned users with different types",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "1234567890123456",  
-          "name": "John Smith",  
-          "business": {  
-            "id": "9876543210987654",  
-            "name": "Example Business Inc"  
-          },  
-          "user_type": "BUSINESS_USER"  
-        },  
-        {  
-          "id": "2345678901234567",  
-          "name": "System User Bot",  
-          "business": {  
-            "id": "9876543210987654",  
-            "name": "Example Business Inc"  
-          },  
-          "user_type": "SYSTEM_USER"  
-        }  
-      ],  
-      "paging": {  
-        "cursors": {  
-          "after": "QVFIUjJ5M2wwdmtONVFHbDZAMVQ4OGJBQUFBQQ",  
-          "before": "QVFIUmx1WTBpMGpJWXprYzVYaVhabW9PVVhF"  
-        },  
-        "next": "https://graph.facebook.com/v25.0/1234567890123456/assigned_users?access_token=YOUR_SYSTEM_USER_ACCESS_TOKEN&limit=25&after=QVFIUjJ5M2wwdmtONVFHbDZAMVQ4OGJBQUFBQQ"  
-      },  
-      "summary": {  
-        "total_count": 15  
-      }  
-    }  
-  },  
-  "single_user": {  
-    "summary": "Single assigned user",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "1234567890123456",  
-          "name": "Jane Doe",  
-          "user_type": "BUSINESS_USER"  
-        }  
-      ],  
-      "summary": {  
-        "total_count": 1  
-      }  
-    }  
-  }  
+  "multiple_users": {  
+    "summary": "Multiple assigned users with different types",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "1234567890123456",  
+          "name": "John Smith",  
+          "business": {  
+            "id": "9876543210987654",  
+            "name": "Example Business Inc"  
+          },  
+          "user_type": "BUSINESS_USER"  
+        },  
+        {  
+          "id": "2345678901234567",  
+          "name": "System User Bot",  
+          "business": {  
+            "id": "9876543210987654",  
+            "name": "Example Business Inc"  
+          },  
+          "user_type": "SYSTEM_USER"  
+        }  
+      ],  
+      "paging": {  
+        "cursors": {  
+          "after": "QVFIUjJ5M2wwdmtONVFHbDZAMVQ4OGJBQUFBQQ",  
+          "before": "QVFIUmx1WTBpMGpJWXprYzVYaVhabW9PVVhF"  
+        },  
+        "next": "https://graph.facebook.com/v25.0/1234567890123456/assigned_users?access_token=YOUR_SYSTEM_USER_ACCESS_TOKEN&limit=25&after=QVFIUjJ5M2wwdmtONVFHbDZAMVQ4OGJBQUFBQQ"  
+      },  
+      "summary": {  
+        "total_count": 15  
+      }  
+    }  
+  },  
+  "single_user": {  
+    "summary": "Single assigned user",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "1234567890123456",  
+          "name": "Jane Doe",  
+          "user_type": "BUSINESS_USER"  
+        }  
+      ],  
+      "summary": {  
+        "total_count": 1  
+      }  
+    }  
+  }  
 }
 ```
 
@@ -846,13 +846,13 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{WhatsApp-Business-Account-ID}/assigned_users' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/x-www-form-urlencoded' \  
-  --data-urlencode 'user=2345678901234567' \  
-  --data-urlencode 'tasks[0]=MANAGE' \  
-  --data-urlencode 'tasks[1]=VIEW_COST'
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{WhatsApp-Business-Account-ID}/assigned_users' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/x-www-form-urlencoded' \  
+  --data-urlencode 'user=2345678901234567' \  
+  --data-urlencode 'tasks[0]=MANAGE' \  
+  --data-urlencode 'tasks[1]=VIEW_COST'
 ```
 
 Select status code
@@ -863,7 +863,7 @@ Select status code
 
 ```
 {  
-  "success": true  
+  "success": true  
 }
 ```
 
@@ -1386,13 +1386,13 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{WhatsApp-Business-Account-ID}/assigned_users' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/x-www-form-urlencoded' \  
-  --data-urlencode 'user=2345678901234567' \  
-  --data-urlencode 'tasks[0]=MANAGE' \  
-  --data-urlencode 'tasks[1]=VIEW_COST'
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{WhatsApp-Business-Account-ID}/assigned_users' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/x-www-form-urlencoded' \  
+  --data-urlencode 'user=2345678901234567' \  
+  --data-urlencode 'tasks[0]=MANAGE' \  
+  --data-urlencode 'tasks[1]=VIEW_COST'
 ```
 
 Select status code
@@ -1403,7 +1403,7 @@ Select status code
 
 ```
 {  
-  "success": true  
+  "success": true  
 }
 ```
 
@@ -1439,11 +1439,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request DELETE \  
-  --url 'https://graph.facebook.com/{Version}/{WhatsApp-Business-Account-ID}/assigned_users' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/x-www-form-urlencoded' \  
-  --data-urlencode 'user=2345678901234567'
+curl --request DELETE \  
+  --url 'https://graph.facebook.com/{Version}/{WhatsApp-Business-Account-ID}/assigned_users' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/x-www-form-urlencoded' \  
+  --data-urlencode 'user=2345678901234567'
 ```
 
 Select status code
@@ -1454,7 +1454,7 @@ Select status code
 
 ```
 {  
-  "success": true  
+  "success": true  
 }
 ```
 
@@ -1956,11 +1956,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request DELETE \  
-  --url 'https://graph.facebook.com/{Version}/{WhatsApp-Business-Account-ID}/assigned_users' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/x-www-form-urlencoded' \  
-  --data-urlencode 'user=2345678901234567'
+curl --request DELETE \  
+  --url 'https://graph.facebook.com/{Version}/{WhatsApp-Business-Account-ID}/assigned_users' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/x-www-form-urlencoded' \  
+  --data-urlencode 'user=2345678901234567'
 ```
 
 Select status code
@@ -1971,7 +1971,7 @@ Select status code
 
 ```
 {  
-  "success": true  
+  "success": true  
 }
 ```
 

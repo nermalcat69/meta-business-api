@@ -11,7 +11,7 @@ To aid users who are visually impaired, you can use Threads API to set the acces
 
 ### Limitations
 
-This feature isn’t available for text-only posts. It will only work on image, video, and carousel posts.
+This feature isn't available for text-only posts. It will only work on image, video, and carousel posts.
 
 ## Publishing
 

@@ -20,8 +20,8 @@ HTTPPHP SDKJavaScript SDKAndroid SDKiOS SDK
 ---
 
 ```
-GET /v25.0/{business-id}/owned_businesses HTTP/1.1  
-Host: graph.facebook.com
+GET /v25.0/{business-id}/owned_businesses HTTP/1.1  
+Host: graph.facebook.com
 ```
 
 Try it in [Graph API Explorer](https://developers.facebook.com/tools/explorer/?method=GET&path=%7Bbusiness-id%7D%2Fowned_businesses&version=v25.0)
@@ -114,7 +114,7 @@ name: string,
 | Error Code | Description |
 | --- | --- |
 | 200 | Permissions error |
-| 3913 | It doesn’t look like you have permission to create a new Business Manager. |
+| 3913 | It doesn't look like you have permission to create a new Business Manager. |
 | 368 | The action attempted has been deemed abusive or is otherwise disallowed |
 | 100 | Invalid parameter |
 | 3947 | You are trying to create a Business Manager with the same name as one you are already a part of. Please pick a different name. |
@@ -152,7 +152,7 @@ success: bool,
 
 | Error Code | Description |
 | --- | --- |
-| 3912 | There was a technical issue and the changes you made to your Business Manager weren’t saved. Please try again. |
+| 3912 | There was a technical issue and the changes you made to your Business Manager weren't saved. Please try again. |
 | 100 | Invalid parameter |
 
 ---
@@ -169,8 +169,8 @@ success: bool,
 | 1690138 | To create a business using a primary page, you must be an admin of that page. |
 | 1690165 | This aggregator business already has an existing client business associated with this user |
 | 1690232 | Businesses Do Not Have Primary Pages: Please ensure all Business Managers have a unique Primary Page ID and try again. |
-| 1404163 | Your Advertising Access is Restricted: You’re no longer allowed to use Facebook Products to advertise. You can’t run ads, manage advertising assets or create new ad or business accounts. [Learn More⁠](https://www.facebook.com/accountquality/advertising_access?enforcement=1) |
-| 1404006 | Sorry, this feature isn’t available right now: An error occurred while processing this request. Please try again later. |
+| 1404163 | Your Advertising Access is Restricted: You're no longer allowed to use Facebook Products to advertise. You can't run ads, manage advertising assets or create new ad or business accounts. [Learn More⁠](https://www.facebook.com/accountquality/advertising_access?enforcement=1) |
+| 1404006 | Sorry, this feature isn't available right now: An error occurred while processing this request. Please try again later. |
 | 1752089 | Can Only Create One Business Account At One Time: A User Can Only Create One Business Account At One Time |
 | 2859040 | Action not allowed: You are attempting to create a new Client Business Manager with a shared\_page\_id owned by a disallowed\_business. |
 | 1690192 | App is not owned or shared by a business: App must exist and be owned or shared to aggregator business to create client businesses |

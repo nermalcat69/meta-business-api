@@ -35,18 +35,18 @@ For international inventory, use a localized catalog in addition to a U.S. catal
 
 If you have a global handle and sell your products in multiple countries and languages, you can [set up a localized catalog](https://developers.facebook.com/documentation/ads-commerce/catalog/localized-catalog/localized-catalog-setup) to localize relevant information. Learn how to [create a localized catalog for shopping](https://developers.facebook.com/documentation/ads-commerce/catalog/localized-catalog/localized-catalog-setup).
 
-Your global audience can view product information in their own country or language (as you specify in your catalog setup). Language is determined by your audience’s phone or app language settings and their country is based on location. For languages and countries that have no override, the audience sees default country and language product information.
+Your global audience can view product information in their own country or language (as you specify in your catalog setup). Language is determined by your audience's phone or app language settings and their country is based on location. For languages and countries that have no override, the audience sees default country and language product information.
 
-Use the same catalog for all your activity across Instagram and Facebook whether it’s commerce or Advantage+ catalog ads.
+Use the same catalog for all your activity across Instagram and Facebook whether it's commerce or Advantage+ catalog ads.
 
 ### Override for onsite checkout
 
-When you’re using a localized catalog override for onsite checkout, you need to follow additional requirements:
+When you're using a localized catalog override for onsite checkout, you need to follow additional requirements:
 
 * The `inventory` field must be part of your main data feed and cannot be included in the override language or country data feeds.
-* Your main data feed must be in **USD** currency. Format the currency as a number, followed by the 3-digit ISO currency code [(ISO 4217 standards)⁠](https://en.wikipedia.org/wiki/ISO_4217), with a space between cost and currency. Use a period (“.”) as the decimal point; for example, `9.99 USD`.
+* Your main data feed must be in **USD** currency. Format the currency as a number, followed by the 3-digit ISO currency code [(ISO 4217 standards)⁠](https://en.wikipedia.org/wiki/ISO_4217), with a space between cost and currency. Use a period (".") as the decimal point; for example, `9.99 USD`.
 
-Include only one (1) currency in your catalog so customers don’t see mixed currencies for products in your ads or commerce channels. To add product information and prices that will display for other countries or languages, [upload a country feed or language feed to your catalog⁠](https://www.facebook.com/business/help/2144286692311411?id=725943027795860) instead.
+Include only one (1) currency in your catalog so customers don't see mixed currencies for products in your ads or commerce channels. To add product information and prices that will display for other countries or languages, [upload a country feed or language feed to your catalog⁠](https://www.facebook.com/business/help/2144286692311411?id=725943027795860) instead.
 
 ### Remove an override
 
@@ -55,9 +55,9 @@ When you want to remove an override from your catalog, set a new field (`delete`
 ### Considerations
 
 * Filtering and sorting is done on the USD currency, so products might be unsorted in other localized currencies.
-* Typeahead currently doesn’t support localized product information (Search itself works as expected).
+* Typeahead currently doesn't support localized product information (Search itself works as expected).
 * If you provide a localized product information for a given country and a particular product is missing override for this country, this product is hidden from the user in this country.
-* If you don’t provide any localized product information for a given country, all products display default localized information for that country’s audience.
+* If you don't provide any localized product information for a given country, all products display default localized information for that country's audience.
 
 Learn more about [Localized Catalogs](https://developers.facebook.com/documentation/ads-commerce/catalog/guides/localized-catalog).
 
@@ -73,7 +73,7 @@ Use automatic feeds instead of creating products manually in the UI. Feeds are m
 
 | Disadvantages |
 | --- |
-| * For very small catalogs (up to 100 SKUs) not updated frequently, feeds create maintenance overhead. * There’s a delay between the feed update and product updates in the shop. |
+| * For very small catalogs (up to 100 SKUs) not updated frequently, feeds create maintenance overhead. * There's a delay between the feed update and product updates in the shop. |
 
 Learn more about how to [Add Items to a Catalog, Business Help Center⁠](https://www.facebook.com/business/help/384041892421495?id=725943027795860).
 
@@ -90,9 +90,9 @@ If using scheduled product feed uploads via HTTPS or SFTP in Commerce Manager, b
 *The minimum scheduled feed updates frequency is hourly*. If you require more frequent inventory updates (for faster-selling inventory):
 
 * Use the [Catalog Batch API](https://developers.facebook.com/documentation/ads-commerce/catalog/guides/manage-catalog-items/catalog-batch-api) or [Direct Feed Upload API](https://developers.facebook.com/documentation/ads-commerce/catalog/guides/feed-api) on your own cron.
-* Implement a stock threshold and set the availability to “out of stock” if the product inventory is less than the threshold value.
+* Implement a stock threshold and set the availability to "out of stock" if the product inventory is less than the threshold value.
 
-If products are marked as “out of stock” on Instagram when they are actually “in stock” on your website, buyers may have negative experiences. When implementing inventory thresholds, make sure they are adequately small to prevent products going out of stock on Instagram. Overselling is possible, so make sure the threshold is not too small.
+If products are marked as "out of stock" on Instagram when they are actually "in stock" on your website, buyers may have negative experiences. When implementing inventory thresholds, make sure they are adequately small to prevent products going out of stock on Instagram. Overselling is possible, so make sure the threshold is not too small.
 
 ## Manage product visibility
 
@@ -149,7 +149,7 @@ When using [category-specific fields](https://developers.facebook.com/documentat
 ### Recommendations
 
 * When uploading a catalog for commerce and Checkout specifically, include `availability`, `inventory`, `google_product_category`, `shipping`, and `shipping_weight` along with the other required fields.
-* Include all relevant fields, even if they are marked “Optional”. This helps surface relevant products to people.
+* Include all relevant fields, even if they are marked "Optional". This helps surface relevant products to people.
 * When controlling variants, group relevant products with the same `item_group_id`, and include `size` or `color` to differentiate variants.
 * If your products have a discounted price, include `sale_price` and `sale_price_effective_date`.
 
@@ -201,11 +201,11 @@ There are 5 optional custom label fields allowed in the catalog feed file, rangi
 
 If you need to define a collection of products, and are not able to use other fields, such as `size`, `color`, `price`, and so on, then you can add any custom labels in these custom fields when uploading your feed file, and use them to define your collection.
 
-Custom labels are also used in Advantage+ catalog ads, and you can configure your ad to display the custom label field in your ad. If you use your catalog for both commerce and Advantage+ catalog ads, make sure you use different custom labels if it contains information that you don’t want to show in ads.
+Custom labels are also used in Advantage+ catalog ads, and you can configure your ad to display the custom label field in your ad. If you use your catalog for both commerce and Advantage+ catalog ads, make sure you use different custom labels if it contains information that you don't want to show in ads.
 
 ## Provide rich media in descriptions
 
-You can provide up to 5,000 characters of rich format text description for an item using HTML tags, in the `rich_text_description` field. If this field is provided, it’s used instead of `description`; however, the `description` field is still required so that it can be used as a fallback if rich text cannot be rendered correctly.
+You can provide up to 5,000 characters of rich format text description for an item using HTML tags, in the `rich_text_description` field. If this field is provided, it's used instead of `description`; however, the `description` field is still required so that it can be used as a fallback if rich text cannot be rendered correctly.
 
 Supported tags include `<b>`, `<i>`, `<em>`, `<strong>`, `<br>`, `<p>`, `<ul>`, and `<li>`. Includes all Header tags (`<h1>` through `<h6>`).
 

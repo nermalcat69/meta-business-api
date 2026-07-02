@@ -28,7 +28,7 @@ Host: graph.facebook.com
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| `filter` | string | **Optional**. JSON-encoded WCA filter rule for filtering media titles. For example: `{"media_category":{"eq":"Movie"}}`. See [Product Set](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-set) for the full list of filter operators. |
+| `filter` | string | **Optional**. JSON-encoded WCA filter rule for filtering media titles. For example: `{"media_category":{"eq":"Movie"}​}`. See [Product Set](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-set) for the full list of filter operators. |
 | `summary` | boolean | **Optional**. When `true`, includes a `summary` object with `total_count` in the response. |
 | `limit` | integer | **Optional**. Maximum number of items to return per page. |
 | `before` | string | **Optional**. Cursor for backward pagination. |
@@ -99,8 +99,8 @@ For the full list of supported fields, see the [Media Title node — Fields](htt
 
 ## Updating
 
-You can’t perform this operation on this node. To update individual media title items, use the [Media Title](https://developers.facebook.com/documentation/ads-commerce/catalog/reference/media-titles#updating) node.
+You can't perform this operation on this node. To update individual media title items, use the [Media Title](https://developers.facebook.com/documentation/ads-commerce/catalog/reference/media-titles#updating) node.
 
 ## Deleting
 
-You can’t perform this operation on this node. To delete individual media title items, use the [Media Title](https://developers.facebook.com/documentation/ads-commerce/catalog/reference/media-titles#deleting) node.
+You can't perform this operation on this node. To delete individual media title items, use the [Media Title](https://developers.facebook.com/documentation/ads-commerce/catalog/reference/media-titles#deleting) node.

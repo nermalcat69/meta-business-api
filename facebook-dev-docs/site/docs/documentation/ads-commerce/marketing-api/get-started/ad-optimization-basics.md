@@ -11,7 +11,7 @@ Managing ad campaigns through the Marketing API involves several key operations:
 
 ## Modify an ad campaign
 
-To update an existing ad campaign, you can send a `POST` request to the `/<CAMPAIGN_ID>` endpoint. You can change various settings, including the campaign’s objective, budget, and targeting attributes.
+To update an existing ad campaign, you can send a `POST` request to the `/<CAMPAIGN_ID>` endpoint. You can change various settings, including the campaign's objective, budget, and targeting attributes.
 
 **Example API Request:**
 
@@ -71,5 +71,5 @@ curl -X DELETE \
 ## Learn more
 
 * [Campaign Reference](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-campaign-group)
-* [Manage Your Ad Object’s Status](https://developers.facebook.com/documentation/ads-commerce/marketing-api/best-practices/manage-your-ad-object-status)
+* [Manage Your Ad Object's Status](https://developers.facebook.com/documentation/ads-commerce/marketing-api/best-practices/manage-your-ad-object-status)
 * [Troubleshooting](https://developers.facebook.com/documentation/ads-commerce/marketing-api/troubleshooting)

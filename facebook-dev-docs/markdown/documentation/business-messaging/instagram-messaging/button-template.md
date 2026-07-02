@@ -24,43 +24,41 @@ https://graph.facebook.com/v25.0/me/messages?access_token=<PAGE_ACCESS_TOKEN>
 ## Example request
 
 ```
-```
-curl -X POST -H "Content-Type: application/json" -d '{  
-  "recipient":{  
-    "id":"<IGSID>"  
-  },  
-  "message":{  
-    "attachment":{  
-      "type":"template",  
-      "payload":{  
-        "template_type":"generic",  
-        "elements":[  
-           {  
-            "title":"Welcome!",  
-            "image_url":"https://github.com/fbsamples/original-coast-clothing/blob/main/public/looks/male-work.jpg",  
-            "subtitle":"We have the right hat for everyone.",  
-            "default_action": {  
-              "type": "web_url",  
-              "url": "https://www.originalcoastclothing.com",  
-            },  
-            "buttons":[  
-              {  
-                "type":"web_url",  
-                "url":"https://www.originalcoastclothing.com",  
-                "title":"View Website"  
-              },{  
-                "type":"postback",  
-                "title":"Start Chatting",  
-                "payload":"DEVELOPER_DEFINED_PAYLOAD"  
-              }  
-            ]  
-          }  
-        ]  
-      }  
-    }  
-  }  
-}' "https://graph.facebook.com/v10.0/me/messages?access_token=<PAGE_ACCESS_TOKEN>"
-```
+curl -X POST -H "Content-Type: application/json" -d '{  
+  "recipient":{  
+    "id":"<IGSID>"  
+  },  
+  "message":{  
+    "attachment":{  
+      "type":"template",  
+      "payload":{  
+        "template_type":"generic",  
+        "elements":[  
+           {  
+            "title":"Welcome!",  
+            "image_url":"https://github.com/fbsamples/original-coast-clothing/blob/main/public/looks/male-work.jpg",  
+            "subtitle":"We have the right hat for everyone.",  
+            "default_action": {  
+              "type": "web_url",  
+              "url": "https://www.originalcoastclothing.com",  
+            },  
+            "buttons":[  
+              {  
+                "type":"web_url",  
+                "url":"https://www.originalcoastclothing.com",  
+                "title":"View Website"  
+              },{  
+                "type":"postback",  
+                "title":"Start Chatting",  
+                "payload":"DEVELOPER_DEFINED_PAYLOAD"  
+              }  
+            ]  
+          }  
+        ]  
+      }  
+    }  
+  }  
+}' "https://graph.facebook.com/v10.0/me/messages?access_token=<PAGE_ACCESS_TOKEN>"
 ```
 
 ## Example response

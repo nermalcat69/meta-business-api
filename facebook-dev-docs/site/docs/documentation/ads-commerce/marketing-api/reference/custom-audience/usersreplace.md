@@ -16,22 +16,20 @@ Add people to your ad's audience with a hash of data from your business. See [Cu
 If the audience is flagged with an `operation_status` of `471`, you must resolve the restrictions on the customer file custom audience before you can update or delete the user memberships. Attempts to edit user memberships without resolving the restrictions will result in an error.
 
 ```
-```
 {  
-  "error": {  
-    "message": "Invalid parameter",  
-    "code": 100,  
-    "error_subcode": 1713230,  
-    "error_user_title": "Audience Upload Blocked",  
-    "error_user_msg": "Before updating user memberships, you must resolve integrity restrictions on this Data File Custom Audience. Go to Audience Manager to appeal the restrictions or create a new audience with updated data",  
-  },  
+  "error": {  
+    "message": "Invalid parameter",  
+    "code": 100,  
+    "error_subcode": 1713230,  
+    "error_user_title": "Audience Upload Blocked",  
+    "error_user_msg": "Before updating user memberships, you must resolve integrity restrictions on this Data File Custom Audience. Go to Audience Manager to appeal the restrictions or create a new audience with updated data",  
+  },  
 }
-```
 ```
 
 ## Reading
 
-You can’t perform this operation on this endpoint.
+You can't perform this operation on this endpoint.
 
 ## Creating
 
@@ -52,8 +50,8 @@ HTTPPHP SDKJavaScript SDKAndroid SDKiOS SDKcURL
 ---
 
 ```
-POST /v25.0/<CUSTOM_AUDIENCE_ID>/users HTTP/1.1  
-Host: graph.facebook.com  
+POST /v25.0/<CUSTOM_AUDIENCE_ID>/users HTTP/1.1  
+Host: graph.facebook.com  
   
 payload=%7B%22schema%22%3A%5B%22EMAIL%22%2C%22LOOKALIKE_VALUE%22%5D%2C%22data%22%3A%5B%5B%229b431636bd164765d63c573c346708846af4f68fe3701a77a3bdd7e7e5166254%22%2C44.5%5D%2C%5B%228cc62c145cd0c6dc444168eaeb1b61b351f9b1809a579cc9b4c9e9d7213a39ee%22%2C140%5D%2C%5B%224eaf70b1f7a797962b9d2a533f122c8039012b31e0a52b34a426729319cb792a%22%2C0%5D%2C%5B%2298df8d46f118f8bef552b0ec0a3d729466a912577830212a844b73960777ac56%22%2C0.9%5D%5D%7D
 ```

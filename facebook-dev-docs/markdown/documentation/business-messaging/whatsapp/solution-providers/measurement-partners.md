@@ -14,7 +14,7 @@ This guide goes over the steps [Solution Partners](https://developers.facebook.c
 * [Sign Contracts](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/measurement-partners#sign-contracts)
 * [Build Integration](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/measurement-partners#build-integration)
 
-After you’re done, please [keep up with monthly updates](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/measurement-partners#keep-up-with-monthly-updates).
+After you're done, please [keep up with monthly updates](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/measurement-partners#keep-up-with-monthly-updates).
 
 ## Prepare and plan
 
@@ -24,7 +24,7 @@ Before you start, read through the [developer documentation](https://developers.
 
 ### Plan onboarding and migration
 
-**Use Embedded Signup to onboard new clients to the Cloud API.** If you haven’t already, implement [Embedded Signup](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/overview). Embedded Signup is the fastest and easiest way to register clients, enabling them to start sending messages in less than five minutes.
+**Use Embedded Signup to onboard new clients to the Cloud API.** If you haven't already, implement [Embedded Signup](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/overview). Embedded Signup is the fastest and easiest way to register clients, enabling them to start sending messages in less than five minutes.
 
 ## Set up assets
 
@@ -34,7 +34,7 @@ To use the Cloud API, you need to have the following assets:
 | --- | --- |
 | **Business portfolio** | You can use an existing one, or [set up a new one⁠](https://www.facebook.com/business/help/1710077379203657). Save the business portfolio ID. |
 | **WhatsApp Business account** (WABA) | See [Create a WhatsApp Business account for the WhatsApp Business API⁠](https://www.facebook.com/business/help/2087193751603668) for help. |
-| [**Meta App**](https://developers.facebook.com/apps/) | If you don’t have an app, you need to [create one](https://developers.facebook.com/docs/development/create-an-app) with the **Business** type. Remember to add a display name and a contact email to your app.  As a Solution Partner, your app must go through [App Review](https://developers.facebook.com/docs/app-review) and request **Advanced access** to the following permissions:   * [`whatsapp_business_management`](https://developers.facebook.com/docs/permissions/reference/whatsapp_business_management) — Manage phone numbers, message templates, registration, and business profiles under a WhatsApp Business account. If your app uses this permission to access WABAs not owned by your business, you must have **Advanced access**. Without it, API calls return error code `200`. To get **Advanced access**, submit your app for [App Review](https://developers.facebook.com/docs/app-review). * [`whatsapp_business_messaging`](https://developers.facebook.com/docs/permissions/reference/whatsapp_business_messaging) — Used to send/receive messages from WhatsApp users, upload/download media under a WhatsApp Business account. To get this permission, your app must go through [App Review](https://developers.facebook.com/docs/app-review). * [`whatsapp_business_manage_events`](https://developers.facebook.com/docs/permissions#whatsapp_business_manage_events) — Used to log events — such as purchases, add-to-cart actions, leads, and more under a WhatsApp Business account. Only request this permission if you are using the [Marketing Messages API for WhatsApp](https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/overview) with [Conversions API](https://developers.facebook.com/documentation/ads-commerce/conversions-api). To get this permission, your app must go through [App Review](https://developers.facebook.com/docs/app-review).   As a Solution Partner, you can also reuse the same Meta app across different clients and WABAs. But be aware that each app can only have one webhook endpoint and each app needs to go through App Review. |
+| [**Meta App**](https://developers.facebook.com/apps/) | If you don't have an app, you need to [create one](https://developers.facebook.com/docs/development/create-an-app) with the **Business** type. Remember to add a display name and a contact email to your app.  As a Solution Partner, your app must go through [App Review](https://developers.facebook.com/docs/app-review) and request **Advanced access** to the following permissions:   * [`whatsapp_business_management`](https://developers.facebook.com/docs/permissions/reference/whatsapp_business_management) — Manage phone numbers, message templates, registration, and business profiles under a WhatsApp Business account. If your app uses this permission to access WABAs not owned by your business, you must have **Advanced access**. Without it, API calls return error code `200`. To get **Advanced access**, submit your app for [App Review](https://developers.facebook.com/docs/app-review). * [`whatsapp_business_messaging`](https://developers.facebook.com/docs/permissions/reference/whatsapp_business_messaging) — Used to send/receive messages from WhatsApp users, upload/download media under a WhatsApp Business account. To get this permission, your app must go through [App Review](https://developers.facebook.com/docs/app-review). * [`whatsapp_business_manage_events`](https://developers.facebook.com/docs/permissions#whatsapp_business_manage_events) — Used to log events — such as purchases, add-to-cart actions, leads, and more under a WhatsApp Business account. Only request this permission if you are using the [Marketing Messages API for WhatsApp](https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/overview) with [Conversions API](https://developers.facebook.com/documentation/ads-commerce/conversions-api). To get this permission, your app must go through [App Review](https://developers.facebook.com/docs/app-review).   As a Solution Partner, you can also reuse the same Meta app across different clients and WABAs. But be aware that each app can only have one webhook endpoint and each app needs to go through App Review. |
 | **System User** | See [Add system users to your business portfolio⁠](https://www.facebook.com/business/help/503306463479099) for help.  Currently, a Meta App with `whatsapp_business_messaging`, `whatsapp_business_management`, `whatsapp_business_manage_events`, and `business_messaging` permissions has access to up to:   * 1 admin system user * 1 employee system user   Use the admin system user for your production deployment. See [About business portfolio access⁠](https://www.facebook.com/business/help/442345745885606) for more information. |
 | **Business Phone Number** | This is the phone number the business will use to send messages. Phone numbers need to be verified through SMS/voice call.  If you wish to use your own number, [add a phone number⁠](https://www.facebook.com/business/help/456220311516626) in WhatsApp Manager and verify it with the [Verify Code API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/verify-code-api#post-version-phone-number-id-verify-code).  If your clients wish to use their own numbers, add and verify their numbers using your [Embedded Signup flow](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/overview).  There is no limit to the amount of business phone numbers that can be onboarded to the Cloud API. |
 | **Consumer Phone Number** | This is a phone number that is currently using the consumer WhatsApp app. This number will be receiving the messages sent by your business phone number. |
@@ -75,7 +75,7 @@ To generate a system user access token:
 
 With Webhooks set up, you can receive real-time HTTP notifications from the WhatsApp Business Platform. This means you get notified when, for example, you get a message from a customer or there are changes to your WhatsApp Business account (WABA).
 
-To set up your webhook endpoint, you need to create an internet-facing web server with a URL that meets Meta’s and WhatsApp’s requirements. See our [Webhooks](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/overview) document for more information. If you need an endpoint for testing purposes, [you can deploy a test app](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/set-up-whatsapp-echo-bot) that simply dumps webhook payloads to your console.
+To set up your webhook endpoint, you need to create an internet-facing web server with a URL that meets Meta's and WhatsApp's requirements. See our [Webhooks](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/overview) document for more information. If you need an endpoint for testing purposes, [you can deploy a test app](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/set-up-whatsapp-echo-bot) that simply dumps webhook payloads to your console.
 
 #### App setup
 
@@ -105,16 +105,14 @@ curl -X POST \
 If you get the response below, all Webhook events for the phone numbers under this account will be sent to your configured Webhooks endpoint.
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 ### Step 4: Get phone number ID
 
-To send messages, you need to register the phone number you want to use. Before you can register it, you need to get the phone number’s ID. To get your phone number’s ID, make the following API call:
+To send messages, you need to register the phone number you want to use. Before you can register it, you need to get the phone number's ID. To get your phone number's ID, make the following API call:
 
 ```
 curl -X GET \
@@ -125,24 +123,22 @@ curl -X GET \
 If the request is successful, the response includes all phone numbers connected to your WABA:
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "verified_name": "Jasper's Market",  
-      "display_phone_number": "+1 631-555-5555",  
-      "id": "1906385232743451",  
-      "quality_rating": "GREEN"  
-    },  
-    {  
-      "verified_name": "Jasper's Ice Cream",  
-      "display_phone_number": "+1 631-555-5556",  
-      "id": "1913623884432103",  
-      "quality_rating": "NA"  
-    }  
-  ]  
+  "data": [  
+    {  
+      "verified_name": "Jasper's Market",  
+      "display_phone_number": "+1 631-555-5555",  
+      "id": "1906385232743451",  
+      "quality_rating": "GREEN"  
+    },  
+    {  
+      "verified_name": "Jasper's Ice Cream",  
+      "display_phone_number": "+1 631-555-5556",  
+      "id": "1913623884432103",  
+      "quality_rating": "NA"  
+    }  
+  ]  
 }
-```
 ```
 
 Save the ID for the phone number you want to register. See [Read Phone Numbers](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-phone-numbers/phone-numbers) for more information about this endpoint.
@@ -153,7 +149,7 @@ If you are migrating a phone number from the On-Premises API to the Cloud API, t
 
 ### Step 5: Register phone number
 
-With the phone number’s ID in hand, you can register it. In the registration API call, you perform two actions at the same time:
+With the phone number's ID in hand, you can register it. In the registration API call, you perform two actions at the same time:
 
 * Register the phone.
 * [Enable two-step verification](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-phone-numbers/two-step-verification) by setting a 6-digit registration code — you must set this code on your end. Save and memorize this code as it can be requested later.
@@ -175,11 +171,9 @@ curl -X POST \
 Sample response:
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 #### Embedded Signup users
@@ -193,47 +187,45 @@ Once participating customers send a message to your business, you get **24 hours
 From a personal WhatsApp iOS/Android app, send a message to the phone number you just registered. Once the message is sent, you should receive an incoming message to your Webhook with a notification in the following format.
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "102290129340398",  
-      "changes": [  
-        {  
-          "value": {  
-            "messaging_product": "whatsapp",  
-            "metadata": {  
-              "display_phone_number": "16315551234",  
-              "phone_number_id": "PHONE_NUMBER_ID"  
-            },  
-            "contacts": [  
-              {  
-                "profile": {  
-                  "name": "Kerry Fisher"  
-                },  
-                "wa_id": "16315555555"  
-              }  
-            ],  
-            "messages": [  
-              {  
-                "from": "16315555555",  
-                "id": "wamid.ABGGFlA5FpafAgo6tHcNmNjXmuSf",  
-                "timestamp": "1602139392",  
-                "text": {  
-                  "body": "Hello!"  
-                },  
-                "type": "text"  
-                }  
-            ]  
-          },  
-        "field": "messages"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "102290129340398",  
+      "changes": [  
+        {  
+          "value": {  
+            "messaging_product": "whatsapp",  
+            "metadata": {  
+              "display_phone_number": "16315551234",  
+              "phone_number_id": "PHONE_NUMBER_ID"  
+            },  
+            "contacts": [  
+              {  
+                "profile": {  
+                  "name": "Kerry Fisher"  
+                },  
+                "wa_id": "16315555555"  
+              }  
+            ],  
+            "messages": [  
+              {  
+                "from": "16315555555",  
+                "id": "wamid.ABGGFlA5FpafAgo6tHcNmNjXmuSf",  
+                "timestamp": "1602139392",  
+                "text": {  
+                  "body": "Hello!"  
+                },  
+                "type": "text"  
+                }  
+            ]  
+          },  
+        "field": "messages"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ### Step 7: Send a test message
@@ -245,7 +237,7 @@ curl -X  POST \
 'https://graph.facebook.com/v25.0/<FROM_PHONE_NUMBER_ID>/messages' \
 -H 'Authorization: Bearer <ACCESS_TOKEN>' \
 -H 'Content-Type: application/json' \
--d '{"messaging_product": "whatsapp", "to": "16315555555","text": {"body" : "hello world!"}}'
+-d '{"messaging_product": "whatsapp", "to": "16315555555","text": {"body" : "hello world!"}​}'
 ```
 
 If your call is successful, your response will include a message ID. Use that ID to track the progress of your messages through Webhooks. The maximum length of the ID is 128 characters.
@@ -253,14 +245,12 @@ If your call is successful, your response will include a message ID. Use that ID
 Sample response:
 
 ```
-```
 {  
-  "id":"wamid.gBGGFlaCGg0xcvAdgmZ9plHrf2Mh-o"  
+  "id":"wamid.gBGGFlaCGg0xcvAdgmZ9plHrf2Mh-o"  
 }
 ```
-```
 
-With the Cloud API, there is no longer a way to explicitly check if a phone number has a WhatsApp ID. To send someone a message using the Cloud API, just send it directly to the WhatsApp user’s phone number after they have [opted-in](https://developers.facebook.com/documentation/business-messaging/whatsapp/getting-opt-in). See [Sending messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/send-messages).
+With the Cloud API, there is no longer a way to explicitly check if a phone number has a WhatsApp ID. To send someone a message using the Cloud API, just send it directly to the WhatsApp user's phone number after they have [opted-in](https://developers.facebook.com/documentation/business-messaging/whatsapp/getting-opt-in). See [Sending messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/send-messages).
 
 ## Onboard WhatsApp Business app users
 
@@ -268,7 +258,7 @@ If your clients already use the [WhatsApp Business app⁠](https://business.what
 
 ## Keep up with monthly updates
 
-Cloud API updates are released on the first Tuesday of every month. These updates include new features and improvements. You don’t need to do any work to use any of the new features, since the Cloud API updates automatically.
+Cloud API updates are released on the first Tuesday of every month. These updates include new features and improvements. You don't need to do any work to use any of the new features, since the Cloud API updates automatically.
 
 ## FAQs
 
@@ -286,7 +276,7 @@ Access to Cloud API is free, and we expect it to generate additional cost saving
 
 **What is the architecture of the Cloud API?**
 
-The Cloud API architecture significantly simplifies the Solution Partner’s operational and infrastructure requirements to integrate with WhatsApp Business Platform. First, it removes the infrastructure requirements to run Business API docker containers (CAPEX savings). Second, it obviates the need of operational responsibilities to manage the deployment (OPEX savings).
+The Cloud API architecture significantly simplifies the Solution Partner's operational and infrastructure requirements to integrate with WhatsApp Business Platform. First, it removes the infrastructure requirements to run Business API docker containers (CAPEX savings). Second, it obviates the need of operational responsibilities to manage the deployment (OPEX savings).
 ![Image](https://scontent.fdel1-5.fna.fbcdn.net/v/t39.2365-6/574916010_1357390812786236_2094506065743510683_n.jpg?_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=Ub5dtkeVRMEQ7kNvwHZGmeK&_nc_oc=AdrpbbGo_SsyWNTb6MnmhmjyYySRKANL7GxaeBDSHykbgESuB_CVDSmGb4YHDEgpXtRxK2-ayli0CVqavilxKhak&_nc_zt=14&_nc_ht=scontent.fdel1-5.fna&_nc_gid=_058_jY8tfsS0255eEe4nA&_nc_ss=7b2a8&oh=00_AQCmKdTiGZAGxvXeHtpggtI9k3C8RQqDZk-xWIFPwh0rAQ&oe=6A606D14)
 
 **What will disaster recovery look like: if a region is unavailable, how much time does it take to move messages to another region?**
@@ -315,4 +305,4 @@ In order to send and receive messages through Cloud API, Cloud API manages the e
 
 **How does Cloud API comply with regional data protection laws (such as GDPR, LGPD, and PDPB)?**
 
-Meta takes data protection and people’s privacy very seriously and we comply with applicable legal, industry, and regulatory requirements governing data protection, as well as industry best practices. Cloud API customers must meet their own obligations under data protection laws, such as the General Data Protection Regulation (GDPR). Please visit our [Meta Business Messaging Compliance Center⁠](https://www.facebook.com/business/business-messaging/compliance) to learn more.
+Meta takes data protection and people's privacy very seriously and we comply with applicable legal, industry, and regulatory requirements governing data protection, as well as industry best practices. Cloud API customers must meet their own obligations under data protection laws, such as the General Data Protection Regulation (GDPR). Please visit our [Meta Business Messaging Compliance Center⁠](https://www.facebook.com/business/business-messaging/compliance) to learn more.

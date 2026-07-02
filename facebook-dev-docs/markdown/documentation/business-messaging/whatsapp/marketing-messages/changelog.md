@@ -27,23 +27,19 @@ Sign the max price beta agreement once per Meta Business Suite. The caller must 
 ### Request syntax
 
 ```
-```
-POST /<BUSINESS_ID>/max_price_agreements
-```
+POST /<BUSINESS_ID>/max_price_agreements
 ```
 
 ### Example request
 
 ```
-```
-curl -X POST 'https://graph.facebook.com/<API_VERSION>/<BUSINESS_ID>/max_price_agreements' \  
-  -H 'Authorization: Bearer <ACCESS_TOKEN>' \  
-  -H 'Content-Type: application/json' \  
-  -d '{  
-  "signer_name": "<SIGNER_NAME>",  
-  "signer_email": "<SIGNER_EMAIL>"  
+curl -X POST 'https://graph.facebook.com/<API_VERSION>/<BUSINESS_ID>/max_price_agreements' \  
+  -H 'Authorization: Bearer <ACCESS_TOKEN>' \  
+  -H 'Content-Type: application/json' \  
+  -d '{  
+  "signer_name": "<SIGNER_NAME>",  
+  "signer_email": "<SIGNER_EMAIL>"  
 }'
-```
 ```
 
 ### Request parameters
@@ -59,31 +55,27 @@ curl -X POST 'https://graph.facebook.com/<API_VERSION>/<BUSINESS_ID>/max_pric
 ### Example response
 
 ```
-```
 {  
-  "status": "pending",  
-  "signer_name": "Jane Doe",  
-  "signer_email": "jane.doe@bsp.example",  
-  "message": "Agreement email sent to jane.doe@bsp.example"  
+  "status": "pending",  
+  "signer_name": "Jane Doe",  
+  "signer_email": "jane.doe@bsp.example",  
+  "message": "Agreement email sent to jane.doe@bsp.example"  
 }
-```
 ```
 
 Re-posting while the agreement is pending resends the email (5-minute cooldown). You can pass an updated `signer_email` to redirect the link.
 
 When the owner of the Meta Business Suite ID formally accepts the agreement, Meta automatically allowlists all self-owned and internally owned WABA IDs of the Meta Business Suite.
 
-Meta collects the `signer_name` and `signer_email` you provide solely to execute the Max Price Beta Agreement. `signer_name` appears on the agreement as the designated signer, and Meta uses `signer_email` only to deliver the acceptance link. Meta does not retain either field for marketing, associate it with the signer’s other Meta identities, or share it with third parties. Once you accept the agreement, Meta makes no further use of this information.
+Meta collects the `signer_name` and `signer_email` you provide solely to execute the Max Price Beta Agreement. `signer_name` appears on the agreement as the designated signer, and Meta uses `signer_email` only to deliver the acceptance link. Meta does not retain either field for marketing, associate it with the signer's other Meta identities, or share it with third parties. Once you accept the agreement, Meta makes no further use of this information.
 
 ## Check agreement status
 
 ### Request syntax
 
 ```
-```
-curl -X GET 'https://graph.facebook.com/<API_VERSION>/<BUSINESS_ID>/max_price_agreements' \  
-  -H 'Authorization: Bearer <ACCESS_TOKEN>'
-```
+curl -X GET 'https://graph.facebook.com/<API_VERSION>/<BUSINESS_ID>/max_price_agreements' \  
+  -H 'Authorization: Bearer <ACCESS_TOKEN>'
 ```
 
 ### Example responses
@@ -91,25 +83,19 @@ curl -X GET 'https://graph.facebook.com/<API_VERSION>/<BUSINESS_ID>/max_price
 Agreement accepted:
 
 ```
-```
-{"status": "accepted", "signer_name": "Jane Doe", "signer_email": "jane.doe@bsp.example"}
-```
+{"status": "accepted", "signer_name": "Jane Doe", "signer_email": "jane.doe@bsp.example"}
 ```
 
 Agreement pending:
 
 ```
-```
-{"status": "pending", "signer_name": "Jane Doe", "signer_email": "jane.doe@bsp.example"}
-```
+{"status": "pending", "signer_name": "Jane Doe", "signer_email": "jane.doe@bsp.example"}
 ```
 
 No agreement:
 
 ```
-```
-{"status": "none"}
-```
+{"status": "none"}
 ```
 
 Possible `status` values: `none`, `pending`, `accepted`.
@@ -125,12 +111,10 @@ Once your beta agreement is accepted, allowlist the end-business IDs whose WABAs
 #### Request syntax
 
 ```
-```
-curl -X POST 'https://graph.facebook.com/<API_VERSION>/<SOLUTION_PARTNER_BUSINESS_ID>/max_price_end_businesses' \  
-  -H 'Authorization: Bearer <ACCESS_TOKEN>' \  
-  -H 'Content-Type: application/json' \  
-  -d '{"end_business_ids": [<END_BUSINESS_IDS>]}'
-```
+curl -X POST 'https://graph.facebook.com/<API_VERSION>/<SOLUTION_PARTNER_BUSINESS_ID>/max_price_end_businesses' \  
+  -H 'Authorization: Bearer <ACCESS_TOKEN>' \  
+  -H 'Content-Type: application/json' \  
+  -d '{"end_business_ids": [<END_BUSINESS_IDS>]}'
 ```
 
 #### Request parameters
@@ -145,14 +129,12 @@ curl -X POST 'https://graph.facebook.com/<API_VERSION>/<SOLUTION_PARTNER_BUSI
 #### Example response
 
 ```
-```
 {  
-  "results": [  
-    {"end_business_id": "111111111", "status": "enrolled"},  
-    {"end_business_id": "222222222", "status": "rejected", "reason": "No shared WABA"}  
-  ]  
+  "results": [  
+    {"end_business_id": "111111111", "status": "enrolled"},  
+    {"end_business_id": "222222222", "status": "rejected", "reason": "No shared WABA"}  
+  ]  
 }
-```
 ```
 
 Requests are additive and idempotent. Duplicate enrollments are no-ops.
@@ -162,49 +144,41 @@ Requests are additive and idempotent. Duplicate enrollments are no-ops.
 #### Request syntax
 
 ```
-```
-curl -X GET 'https://graph.facebook.com/<API_VERSION>/<SOLUTION_PARTNER_BUSINESS_ID>/max_price_end_businesses' \  
-  -H 'Authorization: Bearer <ACCESS_TOKEN>'
-```
+curl -X GET 'https://graph.facebook.com/<API_VERSION>/<SOLUTION_PARTNER_BUSINESS_ID>/max_price_end_businesses' \  
+  -H 'Authorization: Bearer <ACCESS_TOKEN>'
 ```
 
 #### Example response
 
 ```
-```
 {  
-  "data": [  
-    {"end_business_id": "111111111", "end_business_name": "Acme Foods", "enrolled_time": 1714500000}  
-  ]  
+  "data": [  
+    {"end_business_id": "111111111", "end_business_name": "Acme Foods", "enrolled_time": 1714500000}  
+  ]  
 }
 ```
-```
 
-Returns an empty `data` array if no allowlist exists yet. `end_business_name` is the display name of the enrolled end-business, or `null` if the business can’t be resolved (for example, if it was deactivated or deleted).
+Returns an empty `data` array if no allowlist exists yet. `end_business_name` is the display name of the enrolled end-business, or `null` if the business can't be resolved (for example, if it was deactivated or deleted).
 
 ### Remove end-businesses
 
 #### Request syntax
 
 ```
-```
-curl -X DELETE 'https://graph.facebook.com/<API_VERSION>/<SOLUTION_PARTNER_BUSINESS_ID>/max_price_end_businesses' \  
-  -H 'Authorization: Bearer <ACCESS_TOKEN>' \  
-  -H 'Content-Type: application/json' \  
-  -d '{"end_business_ids": [<END_BUSINESS_IDS>]}'
-```
+curl -X DELETE 'https://graph.facebook.com/<API_VERSION>/<SOLUTION_PARTNER_BUSINESS_ID>/max_price_end_businesses' \  
+  -H 'Authorization: Bearer <ACCESS_TOKEN>' \  
+  -H 'Content-Type: application/json' \  
+  -d '{"end_business_ids": [<END_BUSINESS_IDS>]}'
 ```
 
 #### Example response
 
 ```
-```
 {  
-  "results": [  
-    {"end_business_id": "111111111", "status": "removed"}  
-  ]  
+  "results": [  
+    {"end_business_id": "111111111", "status": "removed"}  
+  ]  
 }
-```
 ```
 
 Per-ID `status` is `removed` (was present, now deleted) or `not_found` (was not in the allowlist). Both are non-errors.
@@ -214,7 +188,7 @@ Per-ID `status` is `removed` (was present, now deleted) or `not_found` (was not 
 | Condition | Behavior |
 | --- | --- |
 | Missing or invalid parameters | HTTP 400 with parameter validation error |
-| Solution Partner does not have an accepted agreement | HTTP 403 “Agreement required” |
+| Solution Partner does not have an accepted agreement | HTTP 403 "Agreement required" |
 | `POST` agreement called within 5 minutes of last email send | HTTP 429 with `retry_after` |
 | End-business not eligible (no shared WABA, not onboarded to Marketing Messages API) | HTTP 200 with per-ID `{"status": "rejected", "reason": "..."}` |
 | Allowlist already at cap of 15 | HTTP 200 with per-ID `{"status": "rejected", "reason": "The allowlist has reached the maximum of 15 end-businesses."}` |

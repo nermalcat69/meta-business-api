@@ -63,7 +63,7 @@ The MM API for WhatsApp includes:
 * **Quality-based delivery:** Up to 9% higher marketing message deliveries over Cloud API for high engagement content.
 * **Automated creative optimizations:** Automatic enhancements to marketing creative to increase message performance.
 * **Performance benchmarks and recommendations:** Comparison of read and click rates versus similar templates from businesses in your region.
-* **Conversion metrics:** Measure marketing messages that lead users to perform app events such as ‘Add to Cart’, ‘Checkout Initiated’, or ‘Purchase’.
+* **Conversion metrics:** Measure marketing messages that lead users to perform app events such as 'Add to Cart', 'Checkout Initiated', or 'Purchase'.
 
 [Learn more about the Marketing Messages API for WhatsApp.](https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/overview)
 
@@ -98,21 +98,19 @@ The WhatsApp Business Platform is built on [Graph API](https://developers.facebo
 #### Example: Sending a text message using cURL
 
 ```
-```
-curl 'https://graph.facebook.com/v17.0/106540352242922/messages' \  
-  -H 'Content-Type: application/json' \  
-  -H 'Authorization: Bearer EAAJB...' \  
-  -d '{  
-    "messaging_product": "whatsapp",  
-    "recipient_type": "individual",  
-    "to": "+16505555555",  
-    "type": "text",  
-    "text": {  
-      "preview_url": true,  
-      "body": "Here's the info you requested! https://www.meta.com/quest/quest-3/"  
-    }  
-  }'
-```
+curl 'https://graph.facebook.com/v17.0/106540352242922/messages' \  
+  -H 'Content-Type: application/json' \  
+  -H 'Authorization: Bearer EAAJB...' \  
+  -d '{  
+    "messaging_product": "whatsapp",  
+    "recipient_type": "individual",  
+    "to": "+16505555555",  
+    "type": "text",  
+    "text": {  
+      "preview_url": true,  
+      "body": "Here's the info you requested! https://www.meta.com/quest/quest-3/"  
+    }  
+  }'
 ```
 
 [Learn more about the Graph API.](https://developers.facebook.com/docs/graph-api)
@@ -121,25 +119,23 @@ curl 'https://graph.facebook.com/v17.0/106540352242922/messages' \
 
 API responses are formatted in JSON.
 
-#### Example: Requesting a business phone number’s metadata
+#### Example: Requesting a business phone number's metadata
 
 ```
-```
 {  
-  "verified_name": "Lucky Shrub",  
-  "code_verification_status": "VERIFIED",  
-  "display_phone_number": "15550783881",  
-  "quality_rating": "GREEN",  
-  "platform_type": "CLOUD_API",  
-  "throughput": {  
-    "level": "STANDARD"  
-  },  
-  "webhook_configuration": {  
-    "application": "https://www.luckyshrub.com/webhooks"  
-  },  
-  "id": "106540352242922"  
+  "verified_name": "Lucky Shrub",  
+  "code_verification_status": "VERIFIED",  
+  "display_phone_number": "15550783881",  
+  "quality_rating": "GREEN",  
+  "platform_type": "CLOUD_API",  
+  "throughput": {  
+    "level": "STANDARD"  
+  },  
+  "webhook_configuration": {  
+    "application": "https://www.luckyshrub.com/webhooks"  
+  },  
+  "id": "106540352242922"  
 }
-```
 ```
 
 ### Authentication and authorization
@@ -183,7 +179,7 @@ Templates have quality scores and are subject to various messaging limits.
 
 ### Test resources
 
-When you [get started with Cloud API](https://developers.facebook.com/documentation/business-messaging/whatsapp/get-started), a test WhatsApp Business account and test business phone number are automatically created for you. Test WhatsApp Business accounts and test phone numbers are useful for testing purposes, as they have relaxed messaging limits and don’t require a payment method on file in order to send template messages.
+When you [get started with Cloud API](https://developers.facebook.com/documentation/business-messaging/whatsapp/get-started), a test WhatsApp Business account and test business phone number are automatically created for you. Test WhatsApp Business accounts and test phone numbers are useful for testing purposes, as they have relaxed messaging limits and don't require a payment method on file in order to send template messages.
 
 You can delete your business portfolio and its test resources if:
 
@@ -198,7 +194,7 @@ To delete your business portfolio and its test resources:
 * Locate the **Test Account** section.
 * Click the **Delete** button.
 
-Use the API Playground when testing endpoints. Find the playground in the “API Reference” section on the left sidebar of this page. In each reference, click the “Try it” button to open the playground.
+Use the API Playground when testing endpoints. Find the playground in the "API Reference" section on the left sidebar of this page. In each reference, click the "Try it" button to open the playground.
 
 Also helpful for testing is our [Postman collection⁠](https://www.postman.com/meta/whatsapp-business-platform/?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR484w0j88QFvn8oK69DOPGu0VYC_PW3Adh63SJGXijmYQ5Phu5a3pOB7VxatQ_aem_Fy_sP4NclLdKv0i8dacIkA).
 
@@ -242,7 +238,7 @@ The Cloud API automatically scales usage within your rate limits.
 
 ### Rate limits
 
-Requests made by your app on your WhatsApp Business Account (WABA) are counted against your app’s request count. An app’s request count is the number of requests it can make during a rolling one hour.
+Requests made by your app on your WhatsApp Business Account (WABA) are counted against your app's request count. An app's request count is the number of requests it can make during a rolling one hour.
 
 For the following endpoints, your app can make 200 requests per hour, per app, per WABA, by default. For active WABAs with at least one registered phone number, your app can make 5000 requests per hour, per app, per active WABA.
 
@@ -277,7 +273,7 @@ In addition, the platform applies several message rate limits:
 
 Business phone numbers can send 1 message every 6 seconds to the same WhatsApp user (0.17 messages/second), which equals about 10 messages per minute or 600 per hour. Exceeding this limit triggers [error code 131056](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/error-codes#throttling-errors) until you are back within the allowed rate.
 
-You may send up to 45 messages in a 6-second burst, but this “borrows” from your future quota. After a burst, you must wait the equivalent time it would take to send those messages at the normal rate (for example, a burst of 20 requires a ~2-minute wait before sending more to that user).
+You may send up to 45 messages in a 6-second burst, but this "borrows" from your future quota. After a burst, you must wait the equivalent time it would take to send those messages at the normal rate (for example, a burst of 20 requires a ~2-minute wait before sending more to that user).
 
 To manage post-burst throttling, if a send request fails, retry after 4^X seconds (starting with X=0 and increasing X by 1 after each failure) until successful.
 

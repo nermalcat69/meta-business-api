@@ -13,7 +13,7 @@ With this feature, you can disable certain products from being displayed in Shop
 
 By default, all products in a catalog have the capabilities their seller has been onboarded to. Each capability directly corresponds to a particular channel your products can be displayed in.
 
-For example, if you have been onboarded to Shops, your catalog’s products have `mini_shops` as their default capability. This means your products are displayed in Shops, by default.
+For example, if you have been onboarded to Shops, your catalog's products have `mini_shops` as their default capability. This means your products are displayed in Shops, by default.
 
 To override the default behavior for each product, specify the capability you want to disable in your feed. The `disabled_capabilities` field takes an array of strings, and each string represents a capability you want to disable.
 

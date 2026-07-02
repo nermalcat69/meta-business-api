@@ -9,7 +9,7 @@ Updated: May 29, 2025
 
 ## Reading
 
-You can’t perform this operation on this endpoint.
+You can't perform this operation on this endpoint.
 
 ## Creating
 
@@ -62,7 +62,7 @@ name: string,
 | Error Code | Description |
 | --- | --- |
 | 1800001 | The vendor ID is already in use |
-| 1800002 | The business name does not meet Facebook’s business name requirements |
+| 1800002 | The business name does not meet Facebook's business name requirements |
 | 100 | Invalid parameter |
 | 1800102 | You do not have access to the catalog ID entered |
 

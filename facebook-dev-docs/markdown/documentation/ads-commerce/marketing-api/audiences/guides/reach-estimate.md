@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/marketing
 
 Updated: May 21, 2026
 
-Facebook’s [Audience Network](https://developers.facebook.com/products/app-monetization/audience-network/) serves ads on other publishers’ iOS and Android apps and mobile websites. Then, you can use Facebook’s targeting options to find your audience within those mobile apps and mobile websites.
+Facebook's [Audience Network](https://developers.facebook.com/products/app-monetization/audience-network/) serves ads on other publishers' iOS and Android apps and mobile websites. Then, you can use Facebook's targeting options to find your audience within those mobile apps and mobile websites.
 
 On this page, see [Audience Network rules for ad creative and placement](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/reach-estimate#creative-placement). Then, learn to create ads:
 
@@ -21,7 +21,7 @@ Also learn how to [preview](https://developers.facebook.com/documentation/ads-co
 
 ## Ad creative and placement
 
-Facebook’s Audience Network delivers the ad’s image on the destination app:
+Facebook's Audience Network delivers the ad's image on the destination app:
 
 #### Supported ad creative
 
@@ -185,7 +185,7 @@ Create mobile app ad image creative:
 curl \
   -F 'object_story_spec={
     "link_data": {
-      "call_to_action": {"type":"INSTALL_MOBILE_APP","value":{"link":"<APP_STORE_URL>"}},
+      "call_to_action": {"type":"INSTALL_MOBILE_APP","value":{"link":"<APP_STORE_URL>"}​},
       "image_hash": "<IMAGE_HASH>",
       "link": "<APP_STORE_URL>",
       "message": "Message",
@@ -224,7 +224,7 @@ curl \
   -F 'object_story_spec={
     "page_id": "<PAGE_ID>",
     "video_data": {
-      "call_to_action": {"type":"INSTALL_MOBILE_APP","value":{"link":"<APP_STORE_URL>"}},
+      "call_to_action": {"type":"INSTALL_MOBILE_APP","value":{"link":"<APP_STORE_URL>"}​},
       "image_url": "<THUMBNAIL_URL>",
       "video_id": "<VIDEO_ID>"
     }
@@ -285,7 +285,7 @@ curl \
   -F "picture=http://thumbnailurl.com/pic1" \
   -F "source=<VIDEO_FORM_DATA>" \
   -F "published=0" \
-  -F "call_to_action={'type':'BOOK_TRAVEL','value':{'link':'http://example.com'}}" \
+  -F "call_to_action={'type':'BOOK_TRAVEL','value':{'link':'http://example.com'}​}" \
   -F "access_token=<PAGE_TOKEN>" \
 https://graph-video.facebook.com/v25.0/<PAGE_ID>/videos
 ```
@@ -384,7 +384,7 @@ The API returns an iFrame referencing its own CSS, and generates the preview ima
 
 ## Measurement
 
-To see your ad’s performance in suggested videos feeds, query `/insights` with `breakdowns=['publisher_platform']`, see [Ads Insights Guide](https://developers.facebook.com/documentation/ads-commerce/marketing-api/insights). Results look like this:
+To see your ad's performance in suggested videos feeds, query `/insights` with `breakdowns=['publisher_platform']`, see [Ads Insights Guide](https://developers.facebook.com/documentation/ads-commerce/marketing-api/insights). Results look like this:
 
 ```
 {

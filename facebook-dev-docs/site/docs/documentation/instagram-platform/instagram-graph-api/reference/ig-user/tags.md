@@ -35,7 +35,7 @@ This endpoint will return an error if comments have been disabled on the [IG Med
 
 ```
 GET https://graph.facebook.com/v25.0/{ig-user-id}
-  ?fields=mentioned_comment.comment_id({comment-id}){{fields}}
+  ?fields=mentioned_comment.comment_id({comment-id}){​{fields}​}
   &access_token={access-token}
 ```
 
@@ -43,7 +43,7 @@ GET https://graph.facebook.com/v25.0/{ig-user-id}
 
 | Parameter | Value |
 | --- | --- |
-| `{access_token}` **Required** *String* | The app user’s User Access Token. |
+| `{access_token}` **Required** *String* | The app user's User Access Token. |
 | `{comment-id}` **Required** *String* | The ID of the IG Comment in which the IG User has been @mentioned. The ID is included in the [Webhook notification](https://developers.facebook.com/documentation/instagram-platform/webhooks#reply-comment-mention) payload. |
 | `{fields}` *Comma-separated list* | A comma-separated list of IG Comment [Fields](https://developers.facebook.com/documentation/instagram-platform/instagram-graph-api/reference/ig-user/tags#fields) you want returned. If omitted, default fields will be returned. |
 
@@ -69,17 +69,15 @@ curl -X GET \
 #### Sample Response
 
 ```
-```
 {  
-  "mentioned_comment": {  
-    "timestamp": "2017-05-03T16:09:08+0000",  
-    "like_count": 185,  
-    "text": "Shout out to @metricsaurus",  
-    "id": "17873440459141021"  
-  },  
-  "id": "17841405309211844"  
+  "mentioned_comment": {  
+    "timestamp": "2017-05-03T16:09:08+0000",  
+    "like_count": 185,  
+    "text": "Shout out to @metricsaurus",  
+    "id": "17873440459141021"  
+  },  
+  "id": "17841405309211844"  
 }
-```
 ```
 
 ### Field Expansion
@@ -98,27 +96,25 @@ media{id,media_url}
 
 ```
 curl -X GET \
-  'https://graph.facebook.com/v25.0/17841405309211844?fields=mentioned_comment.comment_id(17873440459141021){timestamp,like_count,text,media{id,media_url}}&access_token=IGQVJ...'
+  'https://graph.facebook.com/v25.0/17841405309211844?fields=mentioned_comment.comment_id(17873440459141021){timestamp,like_count,text,media{id,media_url}​}&access_token=IGQVJ...'
 ```
 
 #### Sample Field Expansion Response
 
 ```
-```
 {  
-  "mentioned_comment": {  
-    "timestamp": "2017-05-03T16:09:08+0000",  
-    "like_count": 185,  
-    "text": "Shout out to @metricsaurus",  
-    "id": "17873440459141021",  
-    "media": {  
-      "id": "17895695668004550",  
-      "media_url": "https://scont..."  
-    }  
-  },  
-  "id": "17841405309211844"  
+  "mentioned_comment": {  
+    "timestamp": "2017-05-03T16:09:08+0000",  
+    "like_count": 185,  
+    "text": "Shout out to @metricsaurus",  
+    "id": "17873440459141021",  
+    "media": {  
+      "id": "17895695668004550",  
+      "media_url": "https://scont..."  
+    }  
+  },  
+  "id": "17841405309211844"  
 }
-```
 ```
 
 ### Pagination

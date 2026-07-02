@@ -15,7 +15,7 @@ The Facebook SDK for Android consists of the following component SDKs:
 * The [Facebook Messenger](https://developers.facebook.com/docs/messenger-expressions) SDK
 * The [Facebook App Links](https://developers.facebook.com/documentation/applinks) SDK
 
-If you don’t need the functionality of the full Facebook SDK for Android, you can save space by using only the component SDKs that you need to support the Facebook products that you want to use in your app.
+If you don't need the functionality of the full Facebook SDK for Android, you can save space by using only the component SDKs that you need to support the Facebook products that you want to use in your app.
 
 When you use the Facebook SDK, some events in your app are automatically logged and collected unless you disable automatic event logging. For details about what information is collected and how to disable automatic event logging, see [Automatic App Event Logging](https://developers.facebook.com/documentation/app-events/getting-started-app-events-android#auto-events).
 
@@ -31,7 +31,7 @@ To link with Maven to one of the component SDKs in your project, add one of the 
 
 **To add an implementation statement:**
 
-* In your project, open **your\_app | Gradle Scripts | build.gradle (Project)** and add the following repository to the `buildscript { repositories {}}` section to download the SDK from the Maven Central Repository:
+* In your project, open **your\_app | Gradle Scripts | build.gradle (Project)** and add the following repository to the `buildscript { repositories {}​}` section to download the SDK from the Maven Central Repository:
 
   ```
   mavenCentral()

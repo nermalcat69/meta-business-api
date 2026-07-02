@@ -9,7 +9,7 @@ Updated: Jun 24, 2026
 
 The first step in launching an ad campaign is to create the campaign itself using the API.
 
-To create an ad campaign, send a `POST` request to the `/act_<AD_ACCOUNT_ID>/campaigns` endpoint with key parameters including the campaign’s `name`, `objective`, and `status`.
+To create an ad campaign, send a `POST` request to the `/act_<AD_ACCOUNT_ID>/campaigns` endpoint with key parameters including the campaign's `name`, `objective`, and `status`.
 
 **Example API Request:**
 

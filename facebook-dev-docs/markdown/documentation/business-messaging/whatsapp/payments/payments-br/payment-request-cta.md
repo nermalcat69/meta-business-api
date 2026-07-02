@@ -13,7 +13,7 @@ Order details message template is a template with [interactive components](https
 
 Once you create and approve your order details message templates, you can use the approved template to send the template message with order or bill information to prompt customers to make a payment.
 
-Before sending an order details template message, create a template with an “order details” call-to-action button. See [Create Message Templates for Your WhatsApp Business account⁠](https://www.facebook.com/business/help/2055875911147364?id=2129163877102343) for more information on prerequisites and how to create a template.
+Before sending an order details template message, create a template with an "order details" call-to-action button. See [Create Message Templates for Your WhatsApp Business account⁠](https://www.facebook.com/business/help/2055875911147364?id=2129163877102343) for more information on prerequisites and how to create a template.
 
 ## Creating an order details template on WhatsApp Manager
 
@@ -33,61 +33,57 @@ In **WhatsApp Manager** > **Account tools**:
 * The system approves or rejects the template after verifying its components.
   * If you believe the assigned category is not consistent with the template category guidelines, confirm there are no [common issues](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-review) that leads to rejections and if you are looking for further clarification you may [request a review](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-categorization#requesting-review) of the template via [Business Support⁠](https://business.facebook.com/business-support-home/)
 * Once approved template [status](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview#template-status) will be changed to `ACTIVE`
-  * A template’s status can change automatically from `ACTIVE` to `PAUSED` or `DISABLED` based on customer feedback and engagement. [Monitor status changes](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-review#common-rejection-reasons) and take appropriate action whenever such a change occurs.
+  * A template's status can change automatically from `ACTIVE` to `PAUSED` or `DISABLED` based on customer feedback and engagement. [Monitor status changes](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-review#common-rejection-reasons) and take appropriate action whenever such a change occurs.
 
 ## Creating an order details template using template creation APIs
 
 To create a template through API and understand the general syntax, required categories and
 components please refer to [templates API](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview#creating-templates). All the guidelines outlined above in creating templates apply through API as well.
 
-Order details template can be categorized as “Utility” or “Marketing” template and apart from ‘name’ and ‘language’ of
-choice, the template has general template components such as HEADER, BODY, FOOTER, and a fixed BUTTON with “ORDER\_DETAILS” type.
+Order details template can be categorized as "Utility" or "Marketing" template and apart from 'name' and 'language' of
+choice, the template has general template components such as HEADER, BODY, FOOTER, and a fixed BUTTON with "ORDER\_DETAILS" type.
 
 The `category` must be `UTILITY` or `MARKETING`, and the header `format` must be `TEXT`, `IMAGE`, or `DOCUMENT`.
 
 ### Endpoint
 
 ```
-```
-POST /{WHATSAPP_BUSINESS_ACCOUNT_ID}/message_templates
-```
+POST /{WHATSAPP_BUSINESS_ACCOUNT_ID}/message_templates
 ```
 
 ### Request body
 
 ```
-```
 {  
-  "name": "<TEMPLATE_NAME>",  
-  "language": "<LANGUAGE_CODE>",  
-  "category": "<CATEGORY>",  
-  "display_format": "ORDER_DETAILS",  
-  "components": [  
-    {  
-      "type": "HEADER",  
-      "format": "<FORMAT>",  
-      "text": "<HEADER_TEXT>"  
-    },  
-    {  
-      "type": "BODY",  
-      "text": "<BODY_TEXT>"  
-    },  
-    {  
-      "type": "FOOTER",  
-      "text": "<FOOTER_TEXT>"  
-    },  
-    {  
-      "type": "BUTTONS",  
-      "buttons": [  
-        {  
-          "type": "ORDER_DETAILS",  
-          "text": "<COPY_PIX_CODE>"  
-        }  
-      ]  
-    }  
-  ]  
+  "name": "<TEMPLATE_NAME>",  
+  "language": "<LANGUAGE_CODE>",  
+  "category": "<CATEGORY>",  
+  "display_format": "ORDER_DETAILS",  
+  "components": [  
+    {  
+      "type": "HEADER",  
+      "format": "<FORMAT>",  
+      "text": "<HEADER_TEXT>"  
+    },  
+    {  
+      "type": "BODY",  
+      "text": "<BODY_TEXT>"  
+    },  
+    {  
+      "type": "FOOTER",  
+      "text": "<FOOTER_TEXT>"  
+    },  
+    {  
+      "type": "BUTTONS",  
+      "buttons": [  
+        {  
+          "type": "ORDER_DETAILS",  
+          "text": "<COPY_PIX_CODE>"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ## Sending order details template message
@@ -107,110 +103,104 @@ For example, the following sample describes how to send [Copy Pix code](https://
 ### Endpoint
 
 ```
-```
-POST /{PHONE_NUMBER_ID}/messages
-```
+POST /{PHONE_NUMBER_ID}/messages
 ```
 
 ### Request body
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "recipient_type": "individual",  
-  "to": "<PHONE_NUMBER>",  
-  "type": "template",  
-  "template": {  
-    "name": "<TEMPLATE_NAME>",  
-    "language": {  
-      "policy": "deterministic",  
-      "code": "<LANGUAGE_AND_LOCALE_CODE>"  
-    },  
-    "components": [  
-      {  
-        "type": "button",  
-        "sub_type": "order_details",  
-        "index": 0,  
-        "parameters": [  
-          {  
-            "type": "action",  
-            "action": {  
-              "order_details": {  
-                "reference_id": "<UNIQUE_REFERENCE_ID>",  
-                "type": "digital-goods",  
-                "payment_type": "br",  
-                "payment_settings": [  
-                  {  
-                    "type": "pix_dynamic_code",  
-                    "pix_dynamic_code": {  
-                      "code": "00020101021226700014br.gov.bcb.pix2548pix.example.com...",  
-                      "merchant_name": "Account holder name",  
-                      "key": "39580525000189",  
-                      "key_type": "CNPJ"  
-                    }  
-                  }  
-                ],  
-                "currency": "BRL",  
-                "total_amount": {  
-                  "value": 50000,  
-                  "offset": 100  
-                },  
-                "order": {  
-                  "status": "pending",  
-                  "tax": {  
-                    "value": 0,  
-                    "offset": 100,  
-                    "description": "optional text"  
-                  },  
-                  "items": [  
-                    {  
-                      "retailer_id": "1234567",  
-                      "name": "Cake",  
-                      "amount": {  
-                        "value": 50000,  
-                        "offset": 100  
-                      },  
-                      "quantity": 1  
-                    }  
-                  ],  
-                  "subtotal": {  
-                    "value": 50000,  
-                    "offset": 100  
-                  }  
-                }  
-              }  
-            }  
-          }  
-        ]  
-      }  
-    ]  
-  }  
+  "messaging_product": "whatsapp",  
+  "recipient_type": "individual",  
+  "to": "<PHONE_NUMBER>",  
+  "type": "template",  
+  "template": {  
+    "name": "<TEMPLATE_NAME>",  
+    "language": {  
+      "policy": "deterministic",  
+      "code": "<LANGUAGE_AND_LOCALE_CODE>"  
+    },  
+    "components": [  
+      {  
+        "type": "button",  
+        "sub_type": "order_details",  
+        "index": 0,  
+        "parameters": [  
+          {  
+            "type": "action",  
+            "action": {  
+              "order_details": {  
+                "reference_id": "<UNIQUE_REFERENCE_ID>",  
+                "type": "digital-goods",  
+                "payment_type": "br",  
+                "payment_settings": [  
+                  {  
+                    "type": "pix_dynamic_code",  
+                    "pix_dynamic_code": {  
+                      "code": "00020101021226700014br.gov.bcb.pix2548pix.example.com...",  
+                      "merchant_name": "Account holder name",  
+                      "key": "39580525000189",  
+                      "key_type": "CNPJ"  
+                    }  
+                  }  
+                ],  
+                "currency": "BRL",  
+                "total_amount": {  
+                  "value": 50000,  
+                  "offset": 100  
+                },  
+                "order": {  
+                  "status": "pending",  
+                  "tax": {  
+                    "value": 0,  
+                    "offset": 100,  
+                    "description": "optional text"  
+                  },  
+                  "items": [  
+                    {  
+                      "retailer_id": "1234567",  
+                      "name": "Cake",  
+                      "amount": {  
+                        "value": 50000,  
+                        "offset": 100  
+                      },  
+                      "quantity": 1  
+                    }  
+                  ],  
+                  "subtotal": {  
+                    "value": 50000,  
+                    "offset": 100  
+                  }  
+                }  
+              }  
+            }  
+          }  
+        ]  
+      }  
+    ]  
+  }  
 }
-```
 ```
 
 Once the order details template message is delivered, a successful response includes an object with an identifier prefixed with `wamid`. Use the ID listed after `wamid` to track your message status.
 
 ```
-```
 {  
-    "messaging_product": "whatsapp",  
-    "contacts": [  
-        {  
-            "input": "<PHONE_NUMBER>",  
-            "wa_id": "<WHATSAPP_ID>"  
-        }  
-    ],  
-    "messages": [  
-        {  
-            "id": "wamid.ID"  
-        }  
-    ]  
+    "messaging_product": "whatsapp",  
+    "contacts": [  
+        {  
+            "input": "<PHONE_NUMBER>",  
+            "wa_id": "<WHATSAPP_ID>"  
+        }  
+    ],  
+    "messages": [  
+        {  
+            "id": "wamid.ID"  
+        }  
+    ]  
 }
-```
 ```
 
 ## Post order details template message flow
 
-After the order details template message delivery the rest of the payment flow is the same as “Sending invoice in customer session window” and depends on the chosen [payment integration](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-br/overview) order details parameters.
+After the order details template message delivery the rest of the payment flow is the same as "Sending invoice in customer session window" and depends on the chosen [payment integration](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-br/overview) order details parameters.

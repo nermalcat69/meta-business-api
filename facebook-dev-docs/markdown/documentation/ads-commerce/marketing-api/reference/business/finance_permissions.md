@@ -35,7 +35,7 @@ cURLAndroid SDKObjective-C
 ---
 
 ```
-         curl -i -X GET \  
+         curl -i -X GET \  
 "https://graph.facebook.com/LATEST-VERSION/BUSINESS-ID/extendedcredits?access_token=USER-ACCESS-TOKEN"
 ```
 

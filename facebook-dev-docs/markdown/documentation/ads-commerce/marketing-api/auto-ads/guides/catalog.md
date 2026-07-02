@@ -9,7 +9,7 @@ Updated: Jun 26, 2026
 
 To set up automotive model ads, you need a Facebook catalog. A catalog stores information about your products and inventory. You can use your catalog in different ways within the Meta family of apps. In your inventory, each individual product represents a unique vehicle offer you want to promote in your campaign.
 
-Meta’s automotive model ads use cross-device intent signals to automatically promote relevant vehicle models and offers on Facebook and Instagram. A **vehicle models and offers catalog** includes information about offers, vehicles, and the markets where each offer is valid.
+Meta's automotive model ads use cross-device intent signals to automatically promote relevant vehicle models and offers on Facebook and Instagram. A **vehicle models and offers catalog** includes information about offers, vehicles, and the markets where each offer is valid.
 
 Use [Commerce Manager⁠](https://www.facebook.com/business/help/1659534074121655?id=725943027795860) to create and manage your catalogs. Learn more about [building a high-quality catalog⁠](https://www.facebook.com/business/help/2086567618225367?id=725943027795860).
 
@@ -20,7 +20,7 @@ Before you set up your catalog, follow these guidelines:
 * If you manage multiple catalogs for different businesses or want an agency to access your catalogs, you may need to set up [Meta Business Suite⁠](https://business.facebook.com/home/accounts?business_id=117943258886315).
 * To use the [Catalog Batch API](https://developers.facebook.com/documentation/ads-commerce/catalog/guides/manage-catalog-items/catalog-batch-api), you need the appropriate [Marketing API Access Level](https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/authorization#limits) and must accept the [Terms of Service⁠](https://business.facebook.com/legal/product_catalog_terms/) by creating your first catalog through [Meta Business Suite⁠](https://business.facebook.com/). See [Catalog Reference](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-catalog).
 
-If you’re using [Commerce Manager⁠](https://www.facebook.com/business/help/1659534074121655) as part of your application, you may be affected by a couple of security-related breaking changes. See [Breaking Changes, 1/30/2018, Catalog Permissions](https://developers.facebook.com/docs/graph-api/changelog/breaking-changes#1-30-2018).
+If you're using [Commerce Manager⁠](https://www.facebook.com/business/help/1659534074121655) as part of your application, you may be affected by a couple of security-related breaking changes. See [Breaking Changes, 1/30/2018, Catalog Permissions](https://developers.facebook.com/docs/graph-api/changelog/breaking-changes#1-30-2018).
 
 To set up automotive model ads, follow these steps.
 
@@ -91,7 +91,7 @@ After the feed is successfully uploaded, optionally create product sets to furth
 ```
 curl \
  -F 'name=lease offer set' \
- -F 'filter={"offer_type":{"eq":"lease"}}' \
+ -F 'filter={"offer_type":{"eq":"lease"}​}' \
  -F 'access_token=<ACCESS TOKEN>' \
  https://graph.facebook.com/<API_VERSION>/<CATALOG_ID>/product_sets
 ```
@@ -101,7 +101,7 @@ You can create product sets from the Commerce Manager UI or by using the API. Le
 
 ## Step 4: Install the Meta Pixel
 
-The Meta Pixel is a snippet of JavaScript code that allows you to track visitor activity on your website. When a visitor interacts with the website, pixel events are fired in response to their actions. A pixel event is a very lightweight http(s) request sent from the visitor’s browser to Meta’s servers together with some extra information about that event, such as the page url that the visitor is viewing, product ID or price of the product and so on. Therefore, to enable the tracking, you need to modify your website template to insert some JavaScript code in certain pages.
+The Meta Pixel is a snippet of JavaScript code that allows you to track visitor activity on your website. When a visitor interacts with the website, pixel events are fired in response to their actions. A pixel event is a very lightweight http(s) request sent from the visitor's browser to Meta's servers together with some extra information about that event, such as the page url that the visitor is viewing, product ID or price of the product and so on. Therefore, to enable the tracking, you need to modify your website template to insert some JavaScript code in certain pages.
 
 Properly setting up the pixel code is important for automotive model ads because our machine learning algorithm relies on the visitor-product interaction data in the web site collected from the pixel code. Without this data, Advantage+ catalog ads cannot make good recommendations to the potential customers who are most likely to make a purchase.
 
@@ -120,8 +120,8 @@ You can set up the Meta Pixel using the defined [standard events](https://develo
 | Name | Description |
 | --- | --- |
 | `content_type`  type: string | **Required**.  Parameter that designates the type of product being advertised.  Example: `vehicle_offer` |
-| `content_ids`  type: array of strings | **Required** for `ViewContent`, `AddToWishlist`, `Lead`. **Recommended** for `Search`.  These IDs need to match to `vehicle_offer_id` in the offers feed.  For `ViewContent` events, you should send the ID for the offer presented. For `Search` events, you might send an array of search results.  Examples: [‘123’, ‘456’], “12345”, ‘[‘1234’, ‘4567’, ‘5678’]’ |
-| `comscore_market_codes`  type: array of strings | **Recommended.**  The Comscore market area code, which the user looks at for offers.  Each string is an ID.  Example: [“2079”] (or another [valid Comscore Market ID⁠](https://www.facebook.com/business/help/1501907550136620?id=176276233019487)) |
+| `content_ids`  type: array of strings | **Required** for `ViewContent`, `AddToWishlist`, `Lead`. **Recommended** for `Search`.  These IDs need to match to `vehicle_offer_id` in the offers feed.  For `ViewContent` events, you should send the ID for the offer presented. For `Search` events, you might send an array of search results.  Examples: ['123', '456'], "12345", '['1234', '4567', '5678']' |
+| `comscore_market_codes`  type: array of strings | **Recommended.**  The Comscore market area code, which the user looks at for offers.  Each string is an ID.  Example: ["2079"] (or another [valid Comscore Market ID⁠](https://www.facebook.com/business/help/1501907550136620?id=176276233019487)) |
 | `make`  type: array of strings | **Recommended**.  Make or brand of the vehicle.  Example: `Endomoto` |
 | `model`  type: string | **Recommended**.  Model of the vehicle.  Example: `EndoHatch` |
 | `year`  type: integer | **Recommended**.  Year the vehicle was launched in `yyyy` format.  Example: `2015` |
@@ -184,7 +184,7 @@ For example:
 * To optimize towards offer detail page views, place the pixel on that page and set up the `ViewContent` pixel event.
 * To optimize towards a lead submission, place the pixel on the post submission page and set up the `Lead` pixel event. Learn more about [standard events](https://developers.facebook.com/docs/facebook-pixel/reference#standard-events).
 
-Make sure that you set up the pixels on all relevant pages, not just for the pages you’re optimizing for.
+Make sure that you set up the pixels on all relevant pages, not just for the pages you're optimizing for.
 
 **Important**: You need to send required parameters along with each pixel event, because a match needs to be made in the catalog to create a product audience.
 
@@ -265,7 +265,7 @@ curl \
   -F 'claim_objective=VEHICLE_OFFER' \
   -F 'content_type=vehicle_offer' \
   -F 'event_source_group=<EVENT_SOURCE_GROUP_ID>' \
-  -F 'rule={"vehicle_set_id":{"eq":"<VEHICLE_SET_ID>"}}' \
+  -F 'rule={"vehicle_set_id":{"eq":"<VEHICLE_SET_ID>"}​}' \
   -F 'inclusions=[
   {
       "event": "ViewContent",

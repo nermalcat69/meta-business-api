@@ -66,7 +66,7 @@ The `is_inverse` flag is useful for metrics such as `cost_per_mobile_app_install
 
 ### Example
 
-Here’s an example of a rebalance rule that:
+Here's an example of a rebalance rule that:
 
 * Pauses all under-performing ad sets in the ad account
 * Shifts their budgets to the rest
@@ -180,9 +180,9 @@ curl \
 https://graph.facebook.com/<VERSION>/<AD_ACCOUNT_ID>/adrules_library
 ```
 
-Here’s an example leveraging the `NO_PAUSE_PROPORTIONAL` type. In this case, the rule reallocates the budget from ad sets within ad campaigns that have a low amount of video views. However, in this case ad sets are not paused, and are left with a proportional amount of budget.
+Here's an example leveraging the `NO_PAUSE_PROPORTIONAL` type. In this case, the rule reallocates the budget from ad sets within ad campaigns that have a low amount of video views. However, in this case ad sets are not paused, and are left with a proportional amount of budget.
 
-Here’s a numeric example of what happens:
+Here's a numeric example of what happens:
 
 * Considering, you have ad sets `1-5` with `video_view` of `1-5`, `3000` daily budget each, and the below rule.
 * First, the rule takes the `6000` budget from ad sets `1` and `2`, and determines proportionally how to distribute that. In this case, each ad set has ratios of `1/15` up to `5/15`.
@@ -231,11 +231,11 @@ curl \
 https://graph.facebook.com/<VERSION>/<AD_ACCOUNT_ID>/adrules_library
 ```
 
-Finally, here’s an example that leverages `MATCHED_ONLY_PROPORTIONAL`. In this case, you don’t need to worry about unmatched objects. The focus is on ad sets that satisfy the rule’s filters. You can use the same example above, except now there is no need to determine the two lists based on how underperforming ad sets are.
+Finally, here's an example that leverages `MATCHED_ONLY_PROPORTIONAL`. In this case, you don't need to worry about unmatched objects. The focus is on ad sets that satisfy the rule's filters. You can use the same example above, except now there is no need to determine the two lists based on how underperforming ad sets are.
 
 With the same numeric example above, the rule uses all the budget in the pool (`15000`) and distributes it proportionally. As a result, ad sets `1-5` would end up with `1000-5000` budget.
 
-The main downside to this `type` is that there is no guarantee that better performing ad sets won’t end up losing budget, especially in cases of unbalanced budget values. All else being the same, if ad set `5` had started with `18000` budget, it would end up losing `8000` of its budget.
+The main downside to this `type` is that there is no guarantee that better performing ad sets won't end up losing budget, especially in cases of unbalanced budget values. All else being the same, if ad set `5` had started with `18000` budget, it would end up losing `8000` of its budget.
 
 ```
 curl \

@@ -14,7 +14,7 @@ The game play button launches an Instant Game that is associated with your Faceb
 | Property | Type | Description |
 | --- | --- | --- |
 | `type` | String | Type of button. Must be `game_play`. |
-| `title` | String | Button title, for example “Play”. |
+| `title` | String | Button title, for example "Play". |
 | `payload` | String | *Optional.* Serialized JSON data sent to the game on launch. The Instant Games SDK deserializes this data. |
 | `game_metadata` | Object | *Optional.* Parameters specific to Instant Games. See `game_metadata` properties below. |
 

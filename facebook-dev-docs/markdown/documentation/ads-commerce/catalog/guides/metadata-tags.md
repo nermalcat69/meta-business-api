@@ -19,11 +19,11 @@ Depending on the type of protocol you choose, the microdata needs to be in the r
 
 To test if your microdata tags are working, use this [microdata debugger tool⁠](https://business.facebook.com/ads/microdata/debug).
 
-If you update microdata on your website, your product information won’t be updated in Commerce Manager until your pixel has fired at least once, meaning that someone has interacted with that item on your website. If the product doesn’t receive any traffic on your website after you update its microdata, it won’t be updated in your catalog.
+If you update microdata on your website, your product information won't be updated in Commerce Manager until your pixel has fired at least once, meaning that someone has interacted with that item on your website. If the product doesn't receive any traffic on your website after you update its microdata, it won't be updated in your catalog.
 
 ## OpenGraph
 
-Pixel-based catalogs use activity from your pixel to add products to your catalog. Before you can successfully add a product to your catalog, you first need to add required tags that include information about the product (“microdata”) on its product page.
+Pixel-based catalogs use activity from your pixel to add products to your catalog. Before you can successfully add a product to your catalog, you first need to add required tags that include information about the product ("microdata") on its product page.
 See [required and optional tags for OpenGraph](https://developers.facebook.com/documentation/ads-commerce/catalog/reference#og-tags).
 
 Currently, only ecommerce catalogs can be created, leveraging the Facebook pixel.

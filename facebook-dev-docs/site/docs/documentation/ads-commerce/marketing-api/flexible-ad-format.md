@@ -14,15 +14,13 @@ The callback feature allows users to submit their contact information (e.g., nam
 To enable the callback feature on a call ad, add `"callback_type": "FORM"` in `call_ads_configuration` when creating the ad creative.
 
 ```
-```
 "asset_feed_spec":  
-  {  
-  "call_ads_configuration":  
-    {  
-      "callback_type": "FORM"  
-    }  
-  }
-```
+  {  
+  "call_ads_configuration":  
+    {  
+      "callback_type": "FORM"  
+    }  
+  }
 ```
 
 ## Download callback requests

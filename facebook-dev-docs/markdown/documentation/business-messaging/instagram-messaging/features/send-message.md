@@ -28,7 +28,7 @@ This experience leverages the following platform features. If you decide to [dep
 
 ## Deploy this experience on Instagram
 
-By the end of this guide, you’ll have a full Instagram app running on your server, answering messages from your account.
+By the end of this guide, you'll have a full Instagram app running on your server, answering messages from your account.
 
 The code that powers this experience is open-source. Anyone can get started with developing a messaging experience.
 
@@ -38,7 +38,7 @@ The code is released under the BSD License, allowing you to use it freely for yo
 
 * An **[Instagram Professional Account⁠](https://www.facebook.com/help/instagram/138925576505882)** (either Creator or Business account).
 * A **Facebook Page** [connected to that Instagram account](https://developers.facebook.com/docs/instagram-api/overview#pages). Make sure that you have a Facebook Page that represents your Instagram Professional account identity when connecting with users. To create a new Page, visit [https://www.facebook.com/pages/create⁠](https://www.facebook.com/pages/create), you can also set up a test Page to start.
-* A **Developer Account** that can perform [Tasks](https://developers.facebook.com/docs/instagram-api/overview#tasks) on your Page. A Developer Account allows you to create new apps, which are the core of any Facebook integration. You can register as a developer by going to the [Facebook Developers website](https://developers.facebook.com/) and clicking the “Get Started” button.
+* A **Developer Account** that can perform [Tasks](https://developers.facebook.com/docs/instagram-api/overview#tasks) on your Page. A Developer Account allows you to create new apps, which are the core of any Facebook integration. You can register as a developer by going to the [Facebook Developers website](https://developers.facebook.com/) and clicking the "Get Started" button.
 * A **[Facebook app](https://developers.facebook.com/docs/development/create-an-app)** with Basic settings configured. To create a new app, visit <https://developers.facebook.com/> and click on **Add New App**.
 
 #### Setup steps
@@ -48,7 +48,7 @@ The objective of this section is to gather all the access tokens and ids necessa
 If you just created a new Facebook app, it is probably in **development mode**. Note that apps in this mode are only allowed to message people connected to the app (Admins, Developers, and Testers). You can continue with this guide in this mode, but once your app is ready to be public, the app needs to go through app review for the [`instagram_manage_messages`](https://developers.facebook.com/docs/permissions/reference/instagram_manage_messages) permission. For more info, see [App Review](https://developers.facebook.com/docs/apps/review)
 
 * Configure your Instagram integration by following the [Getting Started](https://developers.facebook.com/documentation/business-messaging/instagram-messaging/get-started) documentation.
-* Add some Instagram test accounts that you’ll use to test the experience.
+* Add some Instagram test accounts that you'll use to test the experience.
 
 At this point you should have the following:
 
@@ -227,11 +227,11 @@ After the webhook subscription is validated, subscribe to the following events:
 
 ![Webhooks panel listing Instagram events like comments, messages, and messaging_postbacks with Test and Subscribe controls](https://scontent.fdel1-8.fna.fbcdn.net/v/t39.2365-6/643894727_1445181474007169_1011201775537317682_n.png?_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=FLVDSq3-4xQQ7kNvwH4l1vB&_nc_oc=AdqS12ySfNbF3gpY3mpQrI7Y8Seofg6Bp_Fj5PyG1iryMby1ms_90jPc30AqQFqOjVsT7RxBspVn7OXARc1OlpXv&_nc_zt=14&_nc_ht=scontent.fdel1-8.fna&_nc_gid=vW2_IDdb5MkkQuH7OUdcTQ&_nc_ss=7b289&oh=00_AQAuBKCeIjhUKRcTGmtGmDgax_G2Y5g601M4rD8t1oeoQw&oe=6A605798)
 
-Test the webhooks by clicking the “Test” buttons next to the subscribed events. You should see the test events in the log output of your server.
+Test the webhooks by clicking the "Test" buttons next to the subscribed events. You should see the test events in the log output of your server.
 
 ### Test that your app setup is successful
 
-While logged in to an account with the role of “Instagram Tester”, try sending a message to the Instagram account connected to your Page, or leaving a comment on a post.
+While logged in to an account with the role of "Instagram Tester", try sending a message to the Instagram account connected to your Page, or leaving a comment on a post.
 
 If you see a response to your message in Instagram, you have fully set up your app.
 

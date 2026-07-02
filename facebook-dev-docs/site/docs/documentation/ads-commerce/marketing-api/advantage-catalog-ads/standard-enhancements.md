@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/marketing
 
 Updated: Jan 14, 2025
 
-[Product extensions (the “Add catalog items” feature in Meta Ads Manager)⁠](https://www.facebook.com/business/help/336325168874197) is an Advantage+ creative optimization that showcases products from your catalog below your static single media when it’s likely to improve performance. This document shows you how to use product extensions features for ads.
+[Product extensions (the "Add catalog items" feature in Meta Ads Manager)⁠](https://www.facebook.com/business/help/336325168874197) is an Advantage+ creative optimization that showcases products from your catalog below your static single media when it's likely to improve performance. This document shows you how to use product extensions features for ads.
 
 #### API Support for Product Extensions
 
@@ -116,7 +116,7 @@ curl -X POST \
           },
         }
       }
-    }}' \
+    }​}' \
 -F "adset_id=<ADSET_ID>" \
 -F "name=New Ad" \
 -F "status=PAUSED" \
@@ -128,7 +128,7 @@ https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/ads
 
 | Name | Description |
 | --- | --- |
-| `product_extensions` | Product extensions is an Advantage+ creative optimization that showcases products from your catalog below your static single media when it’s likely to improve performance. Please set the `enroll_status` field with `OPT_IN` to enable it.  It can be added in `creative_features_spec`. For more details, see the [Ad Creative Features Details](https://developers.facebook.com/docs/marketing-api/reference/ad-creative-feature-details) reference documentation. |
+| `product_extensions` | Product extensions is an Advantage+ creative optimization that showcases products from your catalog below your static single media when it's likely to improve performance. Please set the `enroll_status` field with `OPT_IN` to enable it.  It can be added in `creative_features_spec`. For more details, see the [Ad Creative Features Details](https://developers.facebook.com/docs/marketing-api/reference/ad-creative-feature-details) reference documentation. |
 | `associated_product_set_id` | Specifies the product set ID for product extensions in Advantage+ creative optimization. This product set will be shown below your single media.  It can be added in the `creative_sourcing_spec`. See the [Ad Creative Sourcing Spec](https://developers.facebook.com/docs/marketing-api/reference/ad-creative-sourcing-spec) reference documentation for more details. |
 
 ## Learn More

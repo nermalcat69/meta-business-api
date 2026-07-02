@@ -11,7 +11,7 @@ Adds a business phone number to a pool of pre-verified business phone numbers on
 
 ## Reading
 
-You can’t perform this operation on this endpoint.
+You can't perform this operation on this endpoint.
 
 ## Creating
 

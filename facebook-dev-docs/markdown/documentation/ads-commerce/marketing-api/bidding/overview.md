@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/marketing
 
 Updated: Dec 8, 2025
 
-Learn how your bids and budget work with Facebook’s ad auction and delivery. This covers bidding options, placing bids for desired action, setting budget limits and tracking ads delivery. Facebook’s auction functions the same way for API-created ads as they do for ads from Facebook tools. See [Ads Help Center, Auction⁠](https://www.facebook.com/business/help/delivery).
+Learn how your bids and budget work with Facebook's ad auction and delivery. This covers bidding options, placing bids for desired action, setting budget limits and tracking ads delivery. Facebook's auction functions the same way for API-created ads as they do for ads from Facebook tools. See [Ads Help Center, Auction⁠](https://www.facebook.com/business/help/delivery).
 
 ## Main Concepts
 
@@ -19,7 +19,7 @@ Learn how your bids and budget work with Facebook’s ad auction and delivery. T
 
 ## Common Use Cases
 
-* [**Campaign Budget Optimization**](https://developers.facebook.com/docs/marketing-api/bidding-and-optimization/campaign-budget-optimization) — Optimize the distribution of a campaign budget across your campaign’s ad sets.
+* [**Campaign Budget Optimization**](https://developers.facebook.com/docs/marketing-api/bidding-and-optimization/campaign-budget-optimization) — Optimize the distribution of a campaign budget across your campaign's ad sets.
 * [**Optimized Cost Per Mille Ads**](https://developers.facebook.com/documentation/ads-commerce/marketing-api/bidding/guides/optimized-cost-per-mille) — Prioritize your marketing goals. Then, automatically deliver ads towards these goals in the most effective way possible.
 * [**Cost Per Action Ads**](https://developers.facebook.com/documentation/ads-commerce/marketing-api/bidding/guides/cost-per-action-ads) — Specify conversion events and get charged by the amount of conversions.
 * [**Reach and Frequency**](https://developers.facebook.com/docs/marketing-api/reachandfrequency) — Bid on a predicted unique audience reach for your ads on Facebook and Instagram and control display frequency.

@@ -41,7 +41,7 @@ Send a `POST` request to [`/act_{ad_account_id}/campaigns`](https://developers.f
 | --- | --- |
 | `adlabels`  *list of objects* | Ad Labels associated with the Advantage+ app campaigns campaign. **Optional.** |
 | `buying_type`  *string* | Currently, Advantage+ app campaigns only supports the `buying_type AUCTION`. **Required.** |
-| `execution_options`  *list of enums* | Default value: `set`. Other options are:   * `validate_only`: when this option is specified, the API call will not perform the mutation but will run through the validation rules against values of each field. * `include_recommendations`: this option cannot be used by itself. When this option is used, recommendations for ad object’s configuration will be included. A separate section [recommendations](https://developers.facebook.com/docs/marketing-api/reference/ad-recommendation) will be included in the response, but only if recommendations for this specification exist.   If the call passes validation or review, the response will be `{"success": true}`. If the call does not pass, an error is returned with more details. **Optional.** |
+| `execution_options`  *list of enums* | Default value: `set`. Other options are:   * `validate_only`: when this option is specified, the API call will not perform the mutation but will run through the validation rules against values of each field. * `include_recommendations`: this option cannot be used by itself. When this option is used, recommendations for ad object's configuration will be included. A separate section [recommendations](https://developers.facebook.com/docs/marketing-api/reference/ad-recommendation) will be included in the response, but only if recommendations for this specification exist.   If the call passes validation or review, the response will be `{"success": true}`. If the call does not pass, an error is returned with more details. **Optional.** |
 | `is_skadnetwork_attribution`  *string* | Identifies a SKAdsNetwork Campaign. **Optional** |
 | `name`  *string* | Name for the Advantage+ App Campaign. |
 | `objective`  *enum* | This is the campaign goal. Specify `APP_INSTALLS` for this type of ads. **Required.** |
@@ -97,12 +97,12 @@ To create an ad set, make a `POST` request to `/act_{ad_account_id}/adsets`. You
 | Parameter | Description |
 | --- | --- |
 | `adlabels`  *list of objects* | Specifies list of labels to be associated with this object. **Optional.** |
-| `bid_amount`  *integer* | **Required if `bid_strategy` is set to `LOWEST_COST_WITH_BID_CAP`.**  Bid cap or target cost for this ad set. The bid cap used in a lowest cost bid strategy is defined as the maximum bid you want to pay for a result based on your `optimization_goal`. The target cost used in a target cost bid strategy lets Facebook bid to meet your target on average and keep costs stable as you spend.   If an ad level `bid_amount` is specified, updating this value will overwrite the previous ad level bid.   The bid amount’s unit is cents for currencies like USD, EUR, and the basic unit for currencies like JPY, KRW. The bid amount is for each occurrence, and has a minimum value 1 US cents. The minimum bid amounts of other currencies are of similar value to the US Dollar values provided. |
+| `bid_amount`  *integer* | **Required if `bid_strategy` is set to `LOWEST_COST_WITH_BID_CAP`.**  Bid cap or target cost for this ad set. The bid cap used in a lowest cost bid strategy is defined as the maximum bid you want to pay for a result based on your `optimization_goal`. The target cost used in a target cost bid strategy lets Facebook bid to meet your target on average and keep costs stable as you spend.   If an ad level `bid_amount` is specified, updating this value will overwrite the previous ad level bid.   The bid amount's unit is cents for currencies like USD, EUR, and the basic unit for currencies like JPY, KRW. The bid amount is for each occurrence, and has a minimum value 1 US cents. The minimum bid amounts of other currencies are of similar value to the US Dollar values provided. |
 | `bid_constraints`  *list of objects* | **Required if `bid_strategy` is set to `lowest_cost_with_min_roas`.**  Similar to an ad set budget, minimum Return on Ads Spend (ROAS) bidding uses this to provide the ROAS floor, but you cannot use `bid_amount` with `bid_constraints`. |
 | `bid_strategy`  *enum* | Choose a bid strategy for this ad set to suit your specific business goals. Each strategy has tradeoffs and may be available for certain `optimization_goals`. See [Bidding Overview, Bid Strategies](https://developers.facebook.com/documentation/ads-commerce/marketing-api/bidding/overview/bid-strategy) for more information.   For Advantage+ app campaigns, the following strategies are available:   * `LOWEST_COST_WITHOUT_CAP` * `LOWEST_COST_WITH_BID_CAP` * `LOWEST_COST_WITH_MIN_ROAS`**Required.** |
 | `billing_event`  *enum* | The billing event that this ad set is using. For Automated App Aps, specify `IMPRESSIONS`. **Required.** |
 | `campaign_id`  *numeric string or integer* | The ID for a valid Advantage+ app campaigns ad campaign you wish to add this ad set to. **Required.** |
-| `campaign_attribution`  *enum* | The campaign attribution type used by this ad set.   * If you want to use Meta’s Aggregated Event Measurement, then set this field to `AEM`. * If you want to use Apple’s SKAdNetwork, then this field should be set to `SKADNETWORK`.   When one campaign has multiple ad sets, the campaign attribution type should be the same across all ad sets.  **This field is required when creating an iOS 14+ campaign.** |
+| `campaign_attribution`  *enum* | The campaign attribution type used by this ad set.   * If you want to use Meta's Aggregated Event Measurement, then set this field to `AEM`. * If you want to use Apple's SKAdNetwork, then this field should be set to `SKADNETWORK`.   When one campaign has multiple ad sets, the campaign attribution type should be the same across all ad sets.  **This field is required when creating an iOS 14+ campaign.** |
 | `daily_budget`  *int64* | The daily budget defined in your account currency, allowed only for ad sets with a duration (difference between `end_time` and `start_time`) longer than 24 hours.  Either `daily_budget` or `lifetime_budget` must be greater than 0. **Optional.** |
 | `end_time`  *datetime* | **Required when `lifetime_budget` is specified.**  When creating an ad set with a `daily_budget`, specify `end_time=0` to set the ad set as ongoing with no end date. Time should be provided in UTC UNIX timestamp.   For example: `2015-03-12 23:59:59-07:00` or `2015-03-12 23:59:59 PDT`. |
 | `lifetime_budget`  *int64* | Lifetime budget, defined in your account currency. If specified, you must also specify an `end_time`.  Either `daily_budget` or `lifetime_budget` must be greater than 0. **Optional.** |
@@ -111,7 +111,7 @@ To create an ad set, make a `POST` request to `/act_{ad_account_id}/adsets`. You
 | `promoted_object`  *object* | The object this ad set is promoting across all its ads. For Advantage+ app campaigns, provide `application_id` and `object_store_url`.  If your optimization goal is not `APP_INSTALLS`, provide:  | Standard Events | Custom Events | | --- | --- | | `application_id`, `object_store_url`, and `custom_event_type` | `application_id`, `object_store_url`, `custom_event_str` and specify `custom_event_type = OTHER` |  **Required for all campaigns except SKAdNetwork Campaign**. Optional for SKAdNetwork Campaign. |
 | `status`  *enum* | Only `ACTIVE` and `PAUSED` are valid for creation. The other statuses can be used for updates. If an ad set is set to `PAUSED`, all its active ads will be paused and have an effective status `ADSET_PAUSED`. **Required.** |
 | `start_time`  *datetime* | The start time of the set. For example: `2015-03-12 23:59:59-07:00` or `2015-03-12 23:59:59 PDT`. Must be provided as a UTC UNIX timestamp. |
-| `targeting`  *targeting object* | An Advantage+ App Campaign ad set’s targeting structure. Valid targeting options are `geo_locations` and `locales`. See [Targeting Fields](https://developers.facebook.com/documentation/app-ads/SKAdNetwork-aem-and-limitations#create-ad-set-targeting).   For example:  ``` {    "geo_location": {      "countries": [“US”]      },    "locales": [8] } ```  Advantage+ app campaigns do not support operating system targeting, however SKAdsNetwork Advantage+ app campaigns will only target iOS14.5+ users. **Required.** |
+| `targeting`  *targeting object* | An Advantage+ App Campaign ad set's targeting structure. Valid targeting options are `geo_locations` and `locales`. See [Targeting Fields](https://developers.facebook.com/documentation/app-ads/SKAdNetwork-aem-and-limitations#create-ad-set-targeting).   For example:  ``` {    "geo_location": {      "countries": ["US"]      },    "locales": [8] } ```  Advantage+ app campaigns do not support operating system targeting, however SKAdsNetwork Advantage+ app campaigns will only target iOS14.5+ users. **Required.** |
 | `time_start`  *datetime* | Time to start running this ad set. |
 | `time_stop`  *datetime* | Time to stop running this ad set. |
 
@@ -132,7 +132,7 @@ curl -X POST \
   -F 'promoted_object={ "application_id": "{app-id}", "object_store_url": "{store-object-id} }' \
   -F 'daily_budget=<num>' \
   -F 'billing_event=IMPRESSIONS' \
-  -F 'targeting={"geo_locations": {"countries": ["US"]}}' \
+  -F 'targeting={"geo_locations": {"countries": ["US"]}​}' \
   -F 'access_token={access-token}' \
 https://graph.facebook.com/v25.0/act_{ad-account-id}/adsets
 ```
@@ -153,18 +153,16 @@ At the ad set level, you must specify optimization goal, [bid strategy](https://
 ### SKAdNetwork Set Creation Call Example
 
 ```
-```
-curl -X POST \  
-  -F 'name=Advantage+ app campaigns sample campaign' \  
-  -F 'objective=APP_INSTALLS' \  
-  -F 'status=ACTIVE' \  
-  -F 'special_ad_categories=[]' \  
-  -F 'smart_promotion_type=SMART_APP_PROMOTION' \  
-  -F 'is_skadnetwork_attribution=true' \  
-  -F 'promoted_object={ "application_id": "{app-id}", "object_store_url": "{object-store-url}" }' \  
-  -F 'access_token={access-token}' \  
+curl -X POST \  
+  -F 'name=Advantage+ app campaigns sample campaign' \  
+  -F 'objective=APP_INSTALLS' \  
+  -F 'status=ACTIVE' \  
+  -F 'special_ad_categories=[]' \  
+  -F 'smart_promotion_type=SMART_APP_PROMOTION' \  
+  -F 'is_skadnetwork_attribution=true' \  
+  -F 'promoted_object={ "application_id": "{app-id}", "object_store_url": "{object-store-url}" }' \  
+  -F 'access_token={access-token}' \  
 https://graph.facebook.com/act_{ad-account-id}/campaigns
-```
 ```
 
 ## Step 4: Provide Creative and Create Ads
@@ -176,7 +174,7 @@ Once you have an ad set, you can create your ad by posting to the `/act_{ad_acco
 | `adset_id`  *int64* | **Required.**  The ID of the ad set. |
 | `adlabels`  *list of objects* | **Optional.**  Ad labels associated with this ad. |
 | `creative`  *AdCreative* | **Required.**  The creative spec of the ad creative to be used by this ad. Valid fields are `object_story_spec`, `asset_feed_spec`, and `use_page_actor_override`. See [Creative Fields](https://developers.facebook.com/documentation/app-ads/SKAdNetwork-aem-and-limitations#ad-creation-creative) for more information.   You can provide the creative in the following format:  ``` {   "creative_id":  {creative-id} } ```  Provide a creative spec:  ``` {   "creative": {     \"name\": \"<NAME>\",     \"object_story_spec\": <SPEC>   } } ``` |
-| `execution_options`  *list of enums* | **Optional.**  Default value: `set`.  Other options are:   * `validate_only`: when this option is specified, the API call does not perform the mutation but runs through the validation rules against values of each field. * `synchronous_ad_review`: this option should not be used by itself. It should always be specified with `validate_only`. When these options are specified, the API call performs Ads Integrity validations, which include message language checking, image 20% text rule, and so on, as well as the validation logics. * `include_recommendations`: this option cannot be used by itself. When this option is used, recommendations for ad object’s configuration will be included. A separate section recommendations will be included in the response, but only if recommendations for this specification exist.   If the call passes validation or review, the response will be `{"success": true}`. If the call does not pass, an error will be returned with more details. |
+| `execution_options`  *list of enums* | **Optional.**  Default value: `set`.  Other options are:   * `validate_only`: when this option is specified, the API call does not perform the mutation but runs through the validation rules against values of each field. * `synchronous_ad_review`: this option should not be used by itself. It should always be specified with `validate_only`. When these options are specified, the API call performs Ads Integrity validations, which include message language checking, image 20% text rule, and so on, as well as the validation logics. * `include_recommendations`: this option cannot be used by itself. When this option is used, recommendations for ad object's configuration will be included. A separate section recommendations will be included in the response, but only if recommendations for this specification exist.   If the call passes validation or review, the response will be `{"success": true}`. If the call does not pass, an error will be returned with more details. |
 | `name`  *string* | **Required.**  Name of the ad. |
 | `status`  *AdCreative*  type: enum | **Required.**  Valid options during creation: `ACTIVE` and `PAUSED`. During testing, it is recommended to set ads to a `PAUSED` status so as to not incur accidental spend. |
 
@@ -196,7 +194,7 @@ If you provide your creative formatted as creative spec:
 curl -X POST \
   -F 'name=Advantage+ app campaigns sample ad' \
   -F 'adset_id={adset-id}' \
-  -F 'creative={"name": {name}, "object_story_spec": {specifications}}' \
+  -F 'creative={"name": {name}, "object_story_spec": {specifications}​}' \
   -F 'access_token={access-token}' \
 https://graph.facebook.com/v25.0/act_{ad-account-id}/ads
 ```
@@ -755,7 +753,7 @@ If you need to update an Automatic App Ads campaign, make a `POST` request to `/
 | Parameter | Description |
 | --- | --- |
 | `adlabels`  *list of object* | Ad Labels that should be associated with the Advantage+ App Campaign. |
-| `execution_options`  *list of enums* | Default value: `set`. Other available options are:   * `validate_only`: when this option is specified, the API call will not perform the mutation but will run through the validation rules against values of each field. * `include_recommendations`: this option cannot be used by itself. When this option is used, recommendations for ad object’s configuration will be included. A separate section [recommendations](https://developers.facebook.com/docs/marketing-api/reference/ad-recommendation) will be included in the response, but only if recommendations for this specification exist.   If the call passes validation or review, the response is `{"success": true}`. If the call does not pass, an error is returned with more details. |
+| `execution_options`  *list of enums* | Default value: `set`. Other available options are:   * `validate_only`: when this option is specified, the API call will not perform the mutation but will run through the validation rules against values of each field. * `include_recommendations`: this option cannot be used by itself. When this option is used, recommendations for ad object's configuration will be included. A separate section [recommendations](https://developers.facebook.com/docs/marketing-api/reference/ad-recommendation) will be included in the response, but only if recommendations for this specification exist.   If the call passes validation or review, the response is `{"success": true}`. If the call does not pass, an error is returned with more details. |
 | `name`  *string* | New name you would like to give to your Advantage+ App Campaign. |
 | `status`  *enum* | You can use the following status for an update API call:   * `ACTIVE` * `PAUSED` * `DELETED` * `ARCHIVED`   If an ad campaign is set to `PAUSED`, its active child objects will be paused and have an effective status `CAMPAIGN_PAUSED`. |
 | `topline_id`  *numeric string or integer* | Topline ID. |
@@ -777,11 +775,11 @@ If you need to update an Automatic App Ads ad set, make a `POST` request to `/{a
 | Parameter | Description |
 | --- | --- |
 | `adlabels`  *list of objects* | Specifies list of labels to be associated with this object. **Optional.** |
-| `bid_amount`  *integer* | **Required if `bid_strategy` is set to `LOWEST_COST_WITH_BID_CAP`.**  Bid cap or target cost for this ad set. The bid cap used in a lowest cost bid strategy is defined as the maximum bid you want to pay for a result based on your `optimization_goal`. The target cost used in a target cost bid strategy lets Facebook bid to meet your target on average and keep costs stable as you spend.   If an ad level `bid_amount` is specified, updating this value will overwrite the previous ad level bid.   The bid amount’s unit is cents for currencies like USD, EUR, and the basic unit for currencies like JPY, KRW. The bid amount is for each occurrence, and has a minimum value 1 US cents. The minimum bid amounts of other currencies are of similar value to the US Dollar values provided. |
+| `bid_amount`  *integer* | **Required if `bid_strategy` is set to `LOWEST_COST_WITH_BID_CAP`.**  Bid cap or target cost for this ad set. The bid cap used in a lowest cost bid strategy is defined as the maximum bid you want to pay for a result based on your `optimization_goal`. The target cost used in a target cost bid strategy lets Facebook bid to meet your target on average and keep costs stable as you spend.   If an ad level `bid_amount` is specified, updating this value will overwrite the previous ad level bid.   The bid amount's unit is cents for currencies like USD, EUR, and the basic unit for currencies like JPY, KRW. The bid amount is for each occurrence, and has a minimum value 1 US cents. The minimum bid amounts of other currencies are of similar value to the US Dollar values provided. |
 | `bid_strategy`  *enum* | Choose a bid strategy for this ad set to suit your specific business goals. Each strategy has tradeoffs and may be available for certain `optimization_goals`. See [Bidding Overview, Bid Strategies](https://developers.facebook.com/documentation/ads-commerce/marketing-api/bidding/overview/bid-strategy) for more information.  To update Advantage+ App Campaign sets, the following strategies are available:   * `LOWEST_COST_WITHOUT_CAP` * `LOWEST_COST_WITH_BID_CAP`   If you enable [Campaign Budget Optimization](https://developers.facebook.com/docs/marketing-api/bidding/guides/campaign-budget-optimization), set `bid_strategy` at the parent campaign level. |
 | `daily_budget`  *int64* | The daily budget defined in your account currency, allowed only for ad sets with a duration (difference between `end_time` and `start_time`) longer than 24 hours. Either `daily_budget` or `lifetime_budget` must be greater than 0. |
 | `end_time`  *datetime* | End time, required when `lifetime_budget` is specified. Must be provided in UTC UNIX timestamp. For example: `2015-03-12 23:59:59-07:00` or `2015-03-12 23:59:59 PDT`.   When creating an ad set with a daily budget, specify `end_time=0` to set the ad set as ongoing with no end date. |
-| `execution_options`  *list of enums* | **Optional.**  Default value: `set`. Other options are:   * `validate_only`: when this option is specified, the API call will not perform the mutation but will run through the validation rules against values of each field. * `include_recommendations`: this option cannot be used by itself. When this option is used, recommendations for ad object’s configuration will be included. A separate section [recommendations](https://developers.facebook.com/docs/marketing-api/reference/ad-recommendation) will be included in the response, but only if recommendations for this specification exist.   If the call passes validation or review, the response is `{"success": true}`. If the call does not pass, an error is returned with more details. |
+| `execution_options`  *list of enums* | **Optional.**  Default value: `set`. Other options are:   * `validate_only`: when this option is specified, the API call will not perform the mutation but will run through the validation rules against values of each field. * `include_recommendations`: this option cannot be used by itself. When this option is used, recommendations for ad object's configuration will be included. A separate section [recommendations](https://developers.facebook.com/docs/marketing-api/reference/ad-recommendation) will be included in the response, but only if recommendations for this specification exist.   If the call passes validation or review, the response is `{"success": true}`. If the call does not pass, an error is returned with more details. |
 | `lifetime_budget`  *int64* | Lifetime budget, defined in your account currency. If specified, you must also specify an `end_time`. Either `daily_budget` or `lifetime_budget` must be greater than 0. |
 | `promoted_object`  *object* | **Required with certain campaign objectives.**  The object this ad set is promoting across all its ads.   If your optimization goal is not `APP_INSTALLS`, available options include:   * `custom_event_type` * `custom_event_str` (if `custom_event_type = OTHER`) |
 | `start_time`  *datetime* | The start time of the set. Must be provided in UTC UNIX timestamp. For example: `2015-03-12 23:59:59-07:00` or `2015-03-12 23:59:59 PDT`. |
@@ -808,7 +806,7 @@ If you need to update an Automatic App Ads ad, make a `POST` request to `/{ad_id
 | --- | --- |
 | `name`  *string* | Name of the ad. |
 | `adlabels`  *list of objects* | Ad labels associated with this ad. |
-| `execution_options`  *list of enums* | **Optional.**  Default value: `set`. Other options are:   * `validate_only`: when this option is specified, the API call does not perform the mutation but runs through the validation rules against values of each field. * `synchronous_ad_review`: this option should not be used by itself. It should always be specified with `validate_only`. When these options are specified, the API call performs ads integrity validations, which include message language checking, image 20% text rule, and so on, as well as the validation logics. * `include_recommendations`: this option cannot be used by itself. When this option is used, recommendations for an object’s configuration are included. A separate section recommendations is included in the response, but only if recommendations for this specification exist.   If the call passes validation or review, the response is `{"success": true}`. If the call does not pass, an error is returned with more details. |
+| `execution_options`  *list of enums* | **Optional.**  Default value: `set`. Other options are:   * `validate_only`: when this option is specified, the API call does not perform the mutation but runs through the validation rules against values of each field. * `synchronous_ad_review`: this option should not be used by itself. It should always be specified with `validate_only`. When these options are specified, the API call performs ads integrity validations, which include message language checking, image 20% text rule, and so on, as well as the validation logics. * `include_recommendations`: this option cannot be used by itself. When this option is used, recommendations for an object's configuration are included. A separate section recommendations is included in the response, but only if recommendations for this specification exist.   If the call passes validation or review, the response is `{"success": true}`. If the call does not pass, an error is returned with more details. |
 | `status`  *enum* | Options are:   * `ACTIVE` * `PAUSED` * `DELETED` * `ARCHIVED`   During testing, it is recommended to set ads to a `PAUSED` status so as to not incur accidental spend. |
 | `creative`  *AdCreative* | The creative spec of the ad creative to be used by this ad. Valid fields can be found on Creative Fields. Provide the creative spec as follows:  ``` {   "creative": {     \"name\": \"<NAME>\",     \"object_story_spec\": <SPEC>    } } ``` |
 
@@ -817,7 +815,7 @@ If you need to update an Automatic App Ads ad, make a `POST` request to `/{ad_id
 ```
 curl -X POST \
 -F 'name=Advantage+ app campaigns sample update ad' \
--F 'creative={"name": {name}, "object_story_spec": {specifications}}' \
+-F 'creative={"name": {name}, "object_story_spec": {specifications}​}' \
 -F 'access_token={access-token}' \
 https://graph.facebook.com/{ad-id}
 ```

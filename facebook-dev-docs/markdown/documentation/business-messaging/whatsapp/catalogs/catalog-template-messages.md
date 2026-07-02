@@ -26,40 +26,36 @@ You must have [inventory uploaded to Meta](https://developers.facebook.com/docum
 Use the [Messages API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/message-api#post-version-phone-number-id-messages) to send a catalog message.
 
 ```
-```
-POST /<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/messages
-```
+POST /<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/messages
 ```
 
 ## Post body
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "recipient_type": "individual",  
-  "to": "<TO>",  
-  "type": "interactive",  
-  "interactive" : {  
-    "type" : "catalog_message",  
-    "body" : {  
-      "text": "<BODY_TEXT>"  
-    },  
-    "action": {  
-      "name": "catalog_message",  
+  "messaging_product": "whatsapp",  
+  "recipient_type": "individual",  
+  "to": "<TO>",  
+  "type": "interactive",  
+  "interactive" : {  
+    "type" : "catalog_message",  
+    "body" : {  
+      "text": "<BODY_TEXT>"  
+    },  
+    "action": {  
+      "name": "catalog_message",  
   
-      /* Parameters object is optional */  
-      "parameters": {  
-        "thumbnail_product_retailer_id": "<THUMBNAIL_PRODUCT_RETAILER_ID>"  
-      }  
-    },  
+      /* Parameters object is optional */  
+      "parameters": {  
+        "thumbnail_product_retailer_id": "<THUMBNAIL_PRODUCT_RETAILER_ID>"  
+      }  
+    },  
   
-    /* Footer object is optional */  
-    "footer": {  
-      "text": "<FOOTER_TEXT>"  
-  }  
+    /* Footer object is optional */  
+    "footer": {  
+      "text": "<FOOTER_TEXT>"  
+  }  
 }
-```
 ```
 
 ## Properties
@@ -68,58 +64,54 @@ POST /<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/messages
 | --- | --- | --- |
 | `<BODY_TEXT>`  *String* | **Required.**  Text to appear in the message body.  Maximum 1024 characters. | `Hello! Thanks for your interest. Ordering is easy. Just visit our catalog and add items to purchase.` |
 | `<FOOTER_TEXT>`  *String* | **Optional.**  Text to appear in the message footer.  Maximum 60 characters. | `Best grocery deals on WhatsApp!` |
-| `<THUMBNAIL_PRODUCT_RETAILER_ID>`  *String* | **Optional.**  Item SKU number. Labeled as **Content ID** in the Commerce Manager.  WhatsApp uses the thumbnail of this item as the message’s header image.  If you omit the `parameters` object, WhatsApp uses the product image of the first item in your catalog. | `2lc20305pt` |
+| `<THUMBNAIL_PRODUCT_RETAILER_ID>`  *String* | **Optional.**  Item SKU number. Labeled as **Content ID** in the Commerce Manager.  WhatsApp uses the thumbnail of this item as the message's header image.  If you omit the `parameters` object, WhatsApp uses the product image of the first item in your catalog. | `2lc20305pt` |
 | `<TO>`  *String* | Customer phone number. | `+16505551234` |
 
 ## Example request
 
 ```
-```
-curl 'https://graph.facebook.com/v17.0/106540352242922/messages' \  
--H 'Content-Type: application/json' \  
--H 'Authorization: Bearer EAAJB...' \  
--d '  
+curl 'https://graph.facebook.com/v17.0/106540352242922/messages' \  
+-H 'Content-Type: application/json' \  
+-H 'Authorization: Bearer EAAJB...' \  
+-d '  
 {  
-  "messaging_product": "whatsapp",  
-  "recipient_type": "individual",  
-  "to": "+16505551234",  
-  "type": "interactive",  
-  "interactive": {  
-    "type": "catalog_message",  
-    "body": {  
-      "text": "Hello! Thanks for your interest. Ordering is easy. Just visit our catalog and add items to purchase."  
-    },  
-    "action": {  
-      "name": "catalog_message",  
-      "parameters": {  
-        "thumbnail_product_retailer_id": "2lc20305pt"  
-      }  
-    },  
-    "footer": {  
-      "text": "Best grocery deals on WhatsApp!"  
-    }  
-  }  
+  "messaging_product": "whatsapp",  
+  "recipient_type": "individual",  
+  "to": "+16505551234",  
+  "type": "interactive",  
+  "interactive": {  
+    "type": "catalog_message",  
+    "body": {  
+      "text": "Hello! Thanks for your interest. Ordering is easy. Just visit our catalog and add items to purchase."  
+    },  
+    "action": {  
+      "name": "catalog_message",  
+      "parameters": {  
+        "thumbnail_product_retailer_id": "2lc20305pt"  
+      }  
+    },  
+    "footer": {  
+      "text": "Best grocery deals on WhatsApp!"  
+    }  
+  }  
 }'
-```
 ```
 
 ## Example response
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "contacts": [  
-    {  
-      "input": "+16505551234",  
-      "wa_id": "16505551234"  
-    }  
-  ],  
-  "messages": [  
-    {  
-      "id": "wamid.HBgLMTY1MDM4Nzk0MzkVAgARGBI0ODVEREUwQzEzQkVBRjQ1RUUA"  
-    }  
-  ]  
+  "messaging_product": "whatsapp",  
+  "contacts": [  
+    {  
+      "input": "+16505551234",  
+      "wa_id": "16505551234"  
+    }  
+  ],  
+  "messages": [  
+    {  
+      "id": "wamid.HBgLMTY1MDM4Nzk0MzkVAgARGBI0ODVEREUwQzEzQkVBRjQ1RUUA"  
+    }  
+  ]  
 }
-```
 ```

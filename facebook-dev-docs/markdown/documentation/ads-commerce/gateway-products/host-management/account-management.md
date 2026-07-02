@@ -23,7 +23,7 @@ There are two ways to onboard an advertiser account based on how you want to man
 
 ![Add new account Choose an administrator step with Invite someone to be account administrator selected.](https://scontent.fdel27-3.fna.fbcdn.net/v/t39.2365-6/475139321_623964960129351_6742254935513604168_n.png?_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=-OPdyqn-mDAQ7kNvwGMhoZE&_nc_oc=AdpO3FFKvU6yxoKtDzpRLGzRhhnU5Jqrwthg4pXciRDMKaZD1HComdiOgWcn7fKA5SKP26Qu6pR96xU8V3OjPaQY&_nc_zt=14&_nc_ht=scontent.fdel27-3.fna&_nc_gid=WKHHgAJpBkdX8o6TerwDeQ&_nc_ss=7b289&oh=00_AQAsgCTCIEHoCxCP8CaWrNZ6yjPsFAxQsbjd_VrfMA72rQ&oe=6A607014)
 
-An account user can check their account’s status (managed or unmanaged) in the [Account users section](https://developers.facebook.com/documentation/ads-commerce/gateway-products/host-management/user-management).
+An account user can check their account's status (managed or unmanaged) in the [Account users section](https://developers.facebook.com/documentation/ads-commerce/gateway-products/host-management/user-management).
 
 ## Create a Managed Account
 
@@ -49,7 +49,7 @@ The newly created managed account will appear as Active *(see Account 1 in the i
 
 ![Manage accounts list showing the newly created Account 1 with an Active status.](https://scontent.fdel27-3.fna.fbcdn.net/v/t39.2365-6/475137967_9459714654081352_534077265856664125_n.png?_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=uRsL_FirwhoQ7kNvwHSfCTD&_nc_oc=Adpsm9Vzuq-7J63kwL6tadnfoX2DgiCsuh5ruUDbka09EdAYQB-AuK3iz5wT2NXWhtbPZby4S1y5Moz2YUNrxR8M&_nc_zt=14&_nc_ht=scontent.fdel27-3.fna&_nc_gid=WKHHgAJpBkdX8o6TerwDeQ&_nc_ss=7b289&oh=00_AQDGmmh6lIaO60mRtxIr2SyWJgczAwCWnZYmB9yktsl_pg&oe=6A6097FA)
 
-All host users are able to see and eventually manage a managed account. Follow the steps described in the [Add a new account user](https://developers.facebook.com/documentation/ads-commerce/gateway-products/host-management/user-management) section to add the account’s team (external to the host) as account users.
+All host users are able to see and eventually manage a managed account. Follow the steps described in the [Add a new account user](https://developers.facebook.com/documentation/ads-commerce/gateway-products/host-management/user-management) section to add the account's team (external to the host) as account users.
 
 ## Create an Unmanaged Account
 
@@ -59,7 +59,7 @@ First, provide the name of the account to be created and click **Continue**.
 
 ![Add new account Add an account name step with the Managed account name field and a Continue button.](https://scontent.fdel27-5.fna.fbcdn.net/v/t39.2365-6/475163833_2959205260909248_1946108326834107244_n.png?_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=lvQa66gktacQ7kNvwFoGD10&_nc_oc=AdrZtAzyDL9S75q50UxkopKxD4W6SJsv97gT5Ueg3_JuCGw8jIAhBolNh3b2grIWmGjF-Z1bBmBsPEr_I6w-nYNQ&_nc_zt=14&_nc_ht=scontent.fdel27-5.fna&_nc_gid=WKHHgAJpBkdX8o6TerwDeQ&_nc_ss=7b289&oh=00_AQBm4GTnfxOZWvld37-jmcE8Dlsuya_HwqtfRK4KD-RHWw&oe=6A6072AC)
 
-Choose “Invite someone to be account administrator” for an [Unmanaged account](https://developers.facebook.com/documentation/ads-commerce/gateway-products/host-management/account-management#managed-vs--unmanaged-accounts). This option is selected by default. Click on **Continue**.
+Choose "Invite someone to be account administrator" for an [Unmanaged account](https://developers.facebook.com/documentation/ads-commerce/gateway-products/host-management/account-management#managed-vs--unmanaged-accounts). This option is selected by default. Click on **Continue**.
 
 ![Choose an administrator step with Invite someone to be account administrator selected for an unmanaged account.](https://scontent.fdel27-4.fna.fbcdn.net/v/t39.2365-6/475107970_2364807913890753_2323666858810362369_n.png?_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=lOIglwtP4csQ7kNvwHjs2ww&_nc_oc=AdpKIG4GjNunkaLcPP1OSivg4SscmqUdKhsjYvl3pThbroxnbTpMBbff6rEhU1oO_6MhN_CtQJn_JR2wWD9mIpWT&_nc_zt=14&_nc_ht=scontent.fdel27-4.fna&_nc_gid=WKHHgAJpBkdX8o6TerwDeQ&_nc_ss=7b289&oh=00_AQC1FFJ9cIByXOxfdjRWreQDSee9OKTU4ZafK4PL7xHjtQ&oe=6A6098C9)
 
@@ -83,7 +83,7 @@ The future admin for the account, who will receive the invitation link, needs to
 
 ## Change the Name of a Managed Account
 
-Host admin or standard users can change the name of an account. To do so, click on the three dots button next to the account’s name and select Edit name.
+Host admin or standard users can change the name of an account. To do so, click on the three dots button next to the account's name and select Edit name.
 
 ![Edit Tenant Name dialog with a Tenant Name field and Cancel and Confirm buttons.](https://scontent.fdel27-2.fna.fbcdn.net/v/t39.2365-6/474838311_454973804217046_8586053608389663055_n.png?_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=6rmKFluo358Q7kNvwHFVgr7&_nc_oc=Adr1ss-4Nhk3SbB5KuXeR8XKIuLaAVB89hq5y0q-JEId4_FHG_PjtUL9jjShjghUnuJZp_RDHRjcP0pzcRwM5aFl&_nc_zt=14&_nc_ht=scontent.fdel27-2.fna&_nc_gid=WKHHgAJpBkdX8o6TerwDeQ&_nc_ss=7b289&oh=00_AQAXGatFJ24-jDCmTsn9frx0DLbRf8SsnUbrI3kyhGjyMQ&oe=6A609EA9)
 

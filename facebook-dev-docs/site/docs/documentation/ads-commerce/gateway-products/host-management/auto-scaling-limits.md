@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/gateway-p
 
 Updated: Feb 2, 2025
 
-Admin users for systems that host multiple accounts can configure the system’s SMTP service, for both the Conversions API Gateway or Signals Gateway configuration, under the **Host settings** menu.
+Admin users for systems that host multiple accounts can configure the system's SMTP service, for both the Conversions API Gateway or Signals Gateway configuration, under the **Host settings** menu.
 
 When this feature is enabled, each time a new user is invited, the Conversions API Gateway or Signals Gateway will send an invitation email (containing the invitation link) to the email address provided for their user profile. Invitation link regeneration and password reset requests will also inform the impacted user via their email address. If this feature is disabled the host will have to share the above links manually.
 

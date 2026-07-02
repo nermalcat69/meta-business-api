@@ -28,7 +28,7 @@ To retrieve all lead data and ad level data, you will need:
 * The [`pages_read_engagement` permission](https://developers.facebook.com/docs/permissions/reference/pages_read_management)
 * The [`pages_manage_ads` permission](https://developers.facebook.com/docs/permissions/reference/pages_manage_ads)
 
-**Note**: If the Page admin did not customize leads and has not granted access permission with the Leads Access Manager, then all Page admins will have leads access permission. If leads access permission is customized by the business admins, then it depends on the business admin’s configuration for whether a Page basic admin has leads access permission or not.
+**Note**: If the Page admin did not customize leads and has not granted access permission with the Leads Access Manager, then all Page admins will have leads access permission. If leads access permission is customized by the business admins, then it depends on the business admin's configuration for whether a Page basic admin has leads access permission or not.
 
 ## Rate Limits
 
@@ -76,41 +76,39 @@ Visit our [Webhooks for Pages guide](https://developers.facebook.com/docs/graph-
 On leadgen creation, your app receives the following webhook response:
 
 ```
-```
 array(  
-  "object" => "page",  
-  "entry" => array(  
-    "0" => array(  
-      "id" => 153125381133,  
-      "time" => 1438292065,  
-      "changes" => array(  
-        "0" => array(  
-          "field" => "leadgen",  
-          "value" => array(  
-            "leadgen_id" => 123123123123,  
-            "page_id" => 123123123,  
-            "form_id" => 12312312312,  
-            "adgroup_id" => 12312312312,  
-            "ad_id" => 12312312312,  
-            "created_time" => 1440120384  
-          )  
-        ),  
-        "1" => array(  
-          "field" => "leadgen",  
-          "value" => array(  
-            "leadgen_id" => 123123123124,  
-            "page_id" => 123123123,  
-            "form_id" => 12312312312,  
-            "adgroup_id" => 12312312312,  
-            "ad_id" => 12312312312,  
-            "created_time" => 1440120384  
-          )  
-        )  
-      )  
-    )  
-  )  
+  "object" => "page",  
+  "entry" => array(  
+    "0" => array(  
+      "id" => 153125381133,  
+      "time" => 1438292065,  
+      "changes" => array(  
+        "0" => array(  
+          "field" => "leadgen",  
+          "value" => array(  
+            "leadgen_id" => 123123123123,  
+            "page_id" => 123123123,  
+            "form_id" => 12312312312,  
+            "adgroup_id" => 12312312312,  
+            "ad_id" => 12312312312,  
+            "created_time" => 1440120384  
+          )  
+        ),  
+        "1" => array(  
+          "field" => "leadgen",  
+          "value" => array(  
+            "leadgen_id" => 123123123124,  
+            "page_id" => 123123123,  
+            "form_id" => 12312312312,  
+            "adgroup_id" => 12312312312,  
+            "ad_id" => 12312312312,  
+            "created_time" => 1440120384  
+          )  
+        )  
+      )  
+    )  
+  )  
 )
-```
 ```
 
 You can use `leadgen_id` to retrieve data associated with the lead:
@@ -124,39 +122,37 @@ https://graph.facebook.com/v25.0/<LEAD_ID>
 On success, your app receives the following response:
 
 ```
-```
 {  
-  "created_time": "2015-02-28T08:49:14+0000",  
-  "id": "<LEAD_ID>",  
-  "ad_id": "<AD_ID>",  
-  "form_id": "<FORM_ID>",  
-  "field_data": [{  
-    "name": "car_make",  
-    "values": [  
-      "Honda"  
-    ]  
-  },  
-  {  
-    "name": "full_name",  
-    "values": [  
-      "Joe Example"  
-    ]  
-  },  
-  {  
-    "name": "email",  
-    "values": [  
-      "joe@example.com"  
-    ]  
-  },  
-  {  
-    "name": "selected_dealer",  
-    "values": [  
-      "99213450"  
-    ]  
-  }],  
-  ...  
+  "created_time": "2015-02-28T08:49:14+0000",  
+  "id": "<LEAD_ID>",  
+  "ad_id": "<AD_ID>",  
+  "form_id": "<FORM_ID>",  
+  "field_data": [{  
+    "name": "car_make",  
+    "values": [  
+      "Honda"  
+    ]  
+  },  
+  {  
+    "name": "full_name",  
+    "values": [  
+      "Joe Example"  
+    ]  
+  },  
+  {  
+    "name": "email",  
+    "values": [  
+      "joe@example.com"  
+    ]  
+  },  
+  {  
+    "name": "selected_dealer",  
+    "values": [  
+      "99213450"  
+    ]  
+  }],  
+  ...  
 }
-```
 ```
 
 ### Learn More
@@ -234,9 +230,9 @@ The response:
 
 ### Reading Store Locator Question Value
 
-A store locator question is no different from any other question. A store locator question will also have a field ID that’s going to be mapped against them during the form creation. They are also going to be sent similarly as other questions. The value passed will come from the **Store Number** of the selected location.
+A store locator question is no different from any other question. A store locator question will also have a field ID that's going to be mapped against them during the form creation. They are also going to be sent similarly as other questions. The value passed will come from the **Store Number** of the selected location.
 
-For example, let’s say you have a store locator question with `selected_dealer` as the field ID. To fetch the leads in bulk, you can call:
+For example, let's say you have a store locator question with `selected_dealer` as the field ID. To fetch the leads in bulk, you can call:
 
 ```
 curl -G \

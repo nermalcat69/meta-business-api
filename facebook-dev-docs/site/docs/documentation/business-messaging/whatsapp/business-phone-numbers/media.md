@@ -9,9 +9,9 @@ Updated: Jun 17, 2026
 
 ## Overview
 
-WhatsApp may limit the number of marketing template messages a WhatsApp user receives from any business in a given period of time when they are less likely to be receptive and engage with those messages. WhatsApp determines this based on several factors, including a dynamic view of an individual’s recent marketing message read rate and how many messages they currently have in their inbox from friends, family, and businesses.
+WhatsApp may limit the number of marketing template messages a WhatsApp user receives from any business in a given period of time when they are less likely to be receptive and engage with those messages. WhatsApp determines this based on several factors, including a dynamic view of an individual's recent marketing message read rate and how many messages they currently have in their inbox from friends, family, and businesses.
 
-The per-user marketing limit adapts automatically over time based on a person’s recent engagement levels. While this adaptive limit may mean delivering fewer messages to some WhatsApp users during periods of lower marketing read rates or overall inbox activity, your ability to reach people when they are most engaged does not change.
+The per-user marketing limit adapts automatically over time based on a person's recent engagement levels. While this adaptive limit may mean delivering fewer messages to some WhatsApp users during periods of lower marketing read rates or overall inbox activity, your ability to reach people when they are most engaged does not change.
 
 ### United States phone numbers
 

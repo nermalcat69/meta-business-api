@@ -75,7 +75,7 @@ The `GET` endpoints that return one or many items support pagination. Use cursor
 
 While acknowledging orders you can pass a `merchant_order_reference` which represents the unique order ID from your Order Management System. This order ID is displayed on the receipt, along with all customer communication. It can be used by your support staff to retrieve orders when dealing with customer requests.
 
-If your Order Management System does not support concepts of external orders and you can’t ingest Facebook or Instagram order IDs, you **should** pass a `merchant_order_reference` when acknowledging orders. Otherwise your support staff won’t be able to help with customer requests.
+If your Order Management System does not support concepts of external orders and you can't ingest Facebook or Instagram order IDs, you **should** pass a `merchant_order_reference` when acknowledging orders. Otherwise your support staff won't be able to help with customer requests.
 
 ## Idempotency Key
 

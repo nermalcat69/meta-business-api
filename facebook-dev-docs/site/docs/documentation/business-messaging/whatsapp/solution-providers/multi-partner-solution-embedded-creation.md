@@ -7,11 +7,11 @@ source_url: https://developers.facebook.com/documentation/business-messaging/wha
 
 Updated: May 21, 2026
 
-This document explains how to set up Multi-Partner Solutions (“solutions”) and how to use them with [Embedded Signup](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/overview).
+This document explains how to set up Multi-Partner Solutions ("solutions") and how to use them with [Embedded Signup](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/overview).
 
-Multi-Partner Solutions allow Solution Partners and Tech Providers to jointly manage client WhatsApp assets in order to provide WhatsApp messaging services to their clients. For example, if you are a Tech Provider and are unable to offer custom or full WhatsApp messaging services to your clients, you can work with a Solution Partner to offer your clients the Solution Partner’s services.
+Multi-Partner Solutions allow Solution Partners and Tech Providers to jointly manage client WhatsApp assets in order to provide WhatsApp messaging services to their clients. For example, if you are a Tech Provider and are unable to offer custom or full WhatsApp messaging services to your clients, you can work with a Solution Partner to offer your clients the Solution Partner's services.
 
-Once created and accepted via API or App Dashboard, the solution’s ID can be used to customize the Embedded Signup flow. Any clients onboarded via the customized flow can grant asset access to all of the solution’s partners.
+Once created and accepted via API or App Dashboard, the solution's ID can be used to customize the Embedded Signup flow. Any clients onboarded via the customized flow can grant asset access to all of the solution's partners.
 
 Note that solutions can also be set up via an embedded button that triggers an interface that gathers app information from Tech Providers. This flow and the API calls involved are described in the [Multi-Partner Solution — Embedded Creation](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/multi-partner-solution-embedded-creation) document, but the information below is still relevant and should be read first.
 
@@ -52,11 +52,11 @@ Tech Providers who are part of a solution can onboard up to 200 total new client
 
 ## Embedded Signup
 
-[Embedded Signup](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/overview) can be configured and hosted by either of the solution’s partners, or both partners. Once implemented, clients who access it will see a customized version of the Embedded Signup flow, which makes it clear that by completing the flow they are granting WhatsApp data access to both partners:
+[Embedded Signup](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/overview) can be configured and hosted by either of the solution's partners, or both partners. Once implemented, clients who access it will see a customized version of the Embedded Signup flow, which makes it clear that by completing the flow they are granting WhatsApp data access to both partners:
 
 ![Customized Embedded Signup Connect your account to Tech Provider screen listing the permissions being shared with both partners](https://scontent.fdel1-2.fna.fbcdn.net/v/t39.2365-6/387758256_729453148995242_4492854088232630406_n.png?_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=XZhG4L9Ym4YQ7kNvwFYDeiJ&_nc_oc=Adqz5jkVRrdnvY1hjnkFcAuFWtY0l3-8TGC7SopStyGDvSY7f98BlQPLt7nZJ_uix3oi27fppHF0GWJdOI_fQb3j&_nc_zt=14&_nc_ht=scontent.fdel1-2.fna&_nc_gid=_n2DEc2TUlkUfOMdw-XK3g&_nc_ss=7b2a8&oh=00_AQDTFzalcAgLpk9GQaC0J-8XZMjBxTBg4WmzI6b2yfd0cg&oe=6A6063B5)
 
-When a client completes the flow, all of the client’s WhatsApp assets that we need are automatically generated, and access to those assets is granted to both partners of the solution.
+When a client completes the flow, all of the client's WhatsApp assets that we need are automatically generated, and access to those assets is granted to both partners of the solution.
 
 ## Billing
 
@@ -67,7 +67,7 @@ Clients onboarded via Embedded Signup configured with a solution ID share the cr
 Contact your potential partner and work together to determine:
 
 * A solution name. The solution name will appear in the **Partner Solutions** panel in the App Dashboard for both you and your partner, so you should both agree on a name that can be distinguished from other solutions you may initiate or accept.
-* Who will create and initiate the solution request. Either partner can do this. If you are initiating the request, you will need your partner’s app ID.
+* Who will create and initiate the solution request. Either partner can do this. If you are initiating the request, you will need your partner's app ID.
 * Who will host Embedded Signup configured with the solution ID. Either or both partners can do this.
 * Anything else, such as contracts, service level agreements, services provided, billing processes, etc. This is left to the discretion of you and your partner, subject to each of your separate agreements with Meta.
 
@@ -83,7 +83,7 @@ If you are creating the solution, navigate to the **App Dashboard** > **WhatsApp
 
 ![App Dashboard WhatsApp Partner solutions panel empty state with the Create a partner solution button highlighted](https://scontent.fdel1-5.fna.fbcdn.net/v/t39.2365-6/387766072_815168047024704_8866666397602417825_n.png?_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=LkENi65qixUQ7kNvwGdlZeD&_nc_oc=AdqYIRxXO0g6roLYKA46WfIIe2FVvaJFqQs_uNMrA8_OCBZ3w4KpDZaaqDrDyDvInGgxTNb3_cyLbLmBM8P229Cv&_nc_zt=14&_nc_ht=scontent.fdel1-5.fna&_nc_gid=_n2DEc2TUlkUfOMdw-XK3g&_nc_ss=7b2a8&oh=00_AQAVXgi1R5EJn_3PJN7QeKtDpzFcCMVld_musg0HFqjM-g&oe=6A606D11)
 
-Use your partner’s app ID to complete the flow. As part of the creation flow you can designate which solution partner apps can be used by onboarded clients to send messages (**Only me**, **Only my partner**).
+Use your partner's app ID to complete the flow. As part of the creation flow you can designate which solution partner apps can be used by onboarded clients to send messages (**Only me**, **Only my partner**).
 
 ![Create a partner solution dialog with Solution name, Partner app ID, and permission configuration fields and a Send request button](https://scontent.fdel1-2.fna.fbcdn.net/v/t39.2365-6/466044298_1209676256996747_5273108359679787011_n.png?_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=HTAqjyPxPjcQ7kNvwFgbmvX&_nc_oc=AdrWCumi14cqUO7tuiL4VcP8PdmL7GLXTrbUQFcOdglmCYtwSAZpXk9cAWJJhYyfOfDe4eOE99DviRVcak8DOres&_nc_zt=14&_nc_ht=scontent.fdel1-2.fna&_nc_gid=_n2DEc2TUlkUfOMdw-XK3g&_nc_ss=7b2a8&oh=00_AQBrdqSexysnAfpMjTJw4-erf0IbhkAgrFDdd5cRvpBI0A&oe=6A60645A)
 
@@ -135,58 +135,56 @@ curl -g 'https://graph.facebook.com/v25.0/795033096057724&fields=name,owner_perm
 #### Example response
 
 ```
-```
 {  
-  "name": "Social OVD with Lucky Shrub",  
-  "owner_permissions": [  
-    "MANAGE",  
-    "DEVELOP",  
-    "MANAGE_TEMPLATES",  
-    "MANAGE_PHONE",  
-    "VIEW_COST",  
-    "MANAGE_EXTENSIONS",  
-    "VIEW_PHONE_ASSETS",  
-    "MANAGE_PHONE_ASSETS",  
-    "VIEW_TEMPLATES",  
-    "VIEW_INSIGHTS"  
-  ],  
-  "partners": {  
-    "data": [  
-      {  
-        "partner_permissions": [  
-          "MANAGE",  
-          "DEVELOP",  
-          "MANAGE_TEMPLATES",  
-          "MANAGE_PHONE",  
-          "VIEW_COST",  
-          "MANAGE_EXTENSIONS",  
-          "VIEW_PHONE_ASSETS",  
-          "MANAGE_PHONE_ASSETS",  
-          "VIEW_TEMPLATES",  
-          "VIEW_INSIGHTS"  
-        ],  
-        "partner_app": {  
-          "link": "https://www.facebook.com/games/?app_id=21202248997039",  
-          "name": "Lucky Shrub",  
-          "id": "21202248997039"  
-        },  
-        "id": "795033099391057"  
-      }  
-    ],  
-    "paging": {  
-      "cursors": {  
-        "before": "QVFIUl9hX0RqLUZAPemJQVWdsYTl5WlBsY0lCb0FNTExOY2N2NzJtRENZAbDd3azBNXzhPZAndqaU5sSXdfWWJaSXJ1S2pqMi0tQUdUdm1LTGZATUDNIdGRNNE1B",  
-        "after": "QVFIUl9hX0RqLUZAPemJQVWdsYTl5WlBsY0lCb0FNTExOY2N2NzJtRENZAbDd3azBNXzhPZAndqaU5sSXdfWWJaSXJ1S2pqMi0tQUdUdm1LTGZATUDNIdGRNNE1B"  
-      }  
-    }  
-  },  
-  "id": "795033096057724"  
+  "name": "Social OVD with Lucky Shrub",  
+  "owner_permissions": [  
+    "MANAGE",  
+    "DEVELOP",  
+    "MANAGE_TEMPLATES",  
+    "MANAGE_PHONE",  
+    "VIEW_COST",  
+    "MANAGE_EXTENSIONS",  
+    "VIEW_PHONE_ASSETS",  
+    "MANAGE_PHONE_ASSETS",  
+    "VIEW_TEMPLATES",  
+    "VIEW_INSIGHTS"  
+  ],  
+  "partners": {  
+    "data": [  
+      {  
+        "partner_permissions": [  
+          "MANAGE",  
+          "DEVELOP",  
+          "MANAGE_TEMPLATES",  
+          "MANAGE_PHONE",  
+          "VIEW_COST",  
+          "MANAGE_EXTENSIONS",  
+          "VIEW_PHONE_ASSETS",  
+          "MANAGE_PHONE_ASSETS",  
+          "VIEW_TEMPLATES",  
+          "VIEW_INSIGHTS"  
+        ],  
+        "partner_app": {  
+          "link": "https://www.facebook.com/games/?app_id=21202248997039",  
+          "name": "Lucky Shrub",  
+          "id": "21202248997039"  
+        },  
+        "id": "795033099391057"  
+      }  
+    ],  
+    "paging": {  
+      "cursors": {  
+        "before": "QVFIUl9hX0RqLUZAPemJQVWdsYTl5WlBsY0lCb0FNTExOY2N2NzJtRENZAbDd3azBNXzhPZAndqaU5sSXdfWWJaSXJ1S2pqMi0tQUdUdm1LTGZATUDNIdGRNNE1B",  
+        "after": "QVFIUl9hX0RqLUZAPemJQVWdsYTl5WlBsY0lCb0FNTExOY2N2NzJtRENZAbDd3azBNXzhPZAndqaU5sSXdfWWJaSXJ1S2pqMi0tQUdUdm1LTGZATUDNIdGRNNE1B"  
+      }  
+    }  
+  },  
+  "id": "795033096057724"  
 }
-```
 ```
 
 * `name` — the name of the solution, as it appears in the App Dashboard.
-* `owner_permissions` — the permissions your partner’s app will be granted by clients who onboard via Embedded Signup.
+* `owner_permissions` — the permissions your partner's app will be granted by clients who onboard via Embedded Signup.
 * `partner_permissions` — the permissions your app will be granted by clients who onboard via Embedded Signup.
 * `partner_app` — the app (your app) that will be granted the permissions identified in `partner_permissions`.
 
@@ -211,11 +209,9 @@ curl -X POST 'https://graph.facebook.com/v25.0/795033096057724/reject' \
 Upon success:
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 ## Step 5: Configure Embedded Signup
@@ -223,26 +219,24 @@ Upon success:
 Assign the solution ID to the `solutionID` property in the `extras.setup` object within the [launch method and callback registration](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/implementation#launch-method-and-callback-registration) portion of the Embedded Signup code.
 
 ```
-```
-// Launch method and callback registration  
-const launchWhatsAppSignup = () => {  
-  FB.login(fbLoginCallback, {  
-    config_id: '<CONFIGURATION_ID>', // your configuration ID goes here, ensure it is in quotes  
-    response_type: 'code',  
-    override_default_response_type: true,  
-    extras: {  
-      setup: {  
-        solutionID: '<SOLUTION_ID>' // add solution ID here, ensure it is in quotes  
-      },  
-      featureType: '',  
-      sessionInfoVersion: '3',  
-    }  
-  });  
+// Launch method and callback registration  
+const launchWhatsAppSignup = () => {  
+  FB.login(fbLoginCallback, {  
+    config_id: '<CONFIGURATION_ID>', // your configuration ID goes here, ensure it is in quotes  
+    response_type: 'code',  
+    override_default_response_type: true,  
+    extras: {  
+      setup: {  
+        solutionID: '<SOLUTION_ID>' // add solution ID here, ensure it is in quotes  
+      },  
+      featureType: '',  
+      sessionInfoVersion: '3',  
+    }  
+  });  
 }
 ```
-```
 
-Both you and your partner’s business portfolio (**Business Settings** > **Business Info**) will appear throughout the Embedded Signup flow.
+Both you and your partner's business portfolio (**Business Settings** > **Business Info**) will appear throughout the Embedded Signup flow.
 
 ![Embedded Signup Connect your account to Tech Provider screen showing both partners and the WhatsApp data permissions being shared](https://scontent.fdel1-2.fna.fbcdn.net/v/t39.2365-6/387758256_729453148995242_4492854088232630406_n.png?_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=XZhG4L9Ym4YQ7kNvwFYDeiJ&_nc_oc=Adqz5jkVRrdnvY1hjnkFcAuFWtY0l3-8TGC7SopStyGDvSY7f98BlQPLt7nZJ_uix3oi27fppHF0GWJdOI_fQb3j&_nc_zt=14&_nc_ht=scontent.fdel1-2.fna&_nc_gid=_n2DEc2TUlkUfOMdw-XK3g&_nc_ss=7b2a8&oh=00_AQDTFzalcAgLpk9GQaC0J-8XZMjBxTBg4WmzI6b2yfd0cg&oe=6A6063B5)
 
@@ -273,31 +267,29 @@ If you are a Solution Partner, [share your line of credit](https://developers.fa
 When a new client has successfully completed the Embedded Signup flow, an **account\_update** webhook will be triggered with the `event` property set to `PARTNER_ADDED`.
 
 ```
-```
 {  
-  "entry": [  
-    {  
-      "id": "<BUSINESS_PORTFOLIO_ID>",  
-      "time": <TIMESTAMP>,  
-      "changes": [  
-        {  
-          "value": {  
-            "event": "<EVENT>",  
-            "waba_info": {  
-              "waba_id": "<BUSINESS_CUSTOMER_WABA_ID>",  
-              "owner_business_id": "<BUSINESS_CUSTOMER_BUSINESS_PORTFOLIO_ID>",  
-              "solution_id": "<SOLUTION_ID>",  
-              "solution_partner_business_ids": [<SOLUTION_BUSINESS_PORTFOLIO_IDS>]  
-            }  
-          },  
-          "field": "account_update"  
-        }  
-      ]  
-    }  
-  ],  
-  "object": "whatsapp_business_account"  
+  "entry": [  
+    {  
+      "id": "<BUSINESS_PORTFOLIO_ID>",  
+      "time": <TIMESTAMP>,  
+      "changes": [  
+        {  
+          "value": {  
+            "event": "<EVENT>",  
+            "waba_info": {  
+              "waba_id": "<BUSINESS_CUSTOMER_WABA_ID>",  
+              "owner_business_id": "<BUSINESS_CUSTOMER_BUSINESS_PORTFOLIO_ID>",  
+              "solution_id": "<SOLUTION_ID>",  
+              "solution_partner_business_ids": [<SOLUTION_BUSINESS_PORTFOLIO_IDS>]  
+            }  
+          },  
+          "field": "account_update"  
+        }  
+      ]  
+    }  
+  ],  
+  "object": "whatsapp_business_account"  
 }
-```
 ```
 
 #### Payload Properties
@@ -305,8 +297,8 @@ When a new client has successfully completed the Embedded Signup flow, an **acco
 | Placeholder | Description | Example |
 | --- | --- | --- |
 | `<BUSINESS_PORTFOLIO_ID>` | Your business portfolio ID. | `506914307656634` |
-| `<BUSINESS_CUSTOMER_BUSINESS_PORTFOLIO_ID>` | Onboarded client’s business portfolio ID. | `6143763655652543` |
-| `<BUSINESS_CUSTOMER_WABA_ID>` | Onboarded client’s WhatsApp Business Account ID. | `102290129340398` |
+| `<BUSINESS_CUSTOMER_BUSINESS_PORTFOLIO_ID>` | Onboarded client's business portfolio ID. | `6143763655652543` |
+| `<BUSINESS_CUSTOMER_WABA_ID>` | Onboarded client's WhatsApp Business Account ID. | `102290129340398` |
 | `<EVENT>` | If set to `PARTNER_ADDED`, indicates that the client has successfully completed the Embedded Signup flow. | `PARTNER_ADDED` |
 | `<SOLUTION_BUSINESS_PORTFOLIO_IDS>` | Strings of business portfolio IDs of the Tech Provider (or Tech Partner) and Solution Partner associated with the solution. | `"506914307656634","116133292427920"` |
 | `<SOLUTION_ID>` | Solution ID. | `303610109049230` |
@@ -317,27 +309,25 @@ When a new client has successfully completed the Embedded Signup flow, an **acco
 When a Multi-Partner Solution is created or modified, a **partner\_solutions** webhook describing the change will be triggered.
 
 ```
-```
 {  
-  "entry": [  
-    {  
-      "id": "<BUSINESS_PORTFOLIO_ID>",  
-      "time": <TIMESTAMP>,  
-      "changes": [  
-        {  
-          "value": {  
-            "event": "SOLUTION_CREATED",  
-            "solution_id": "<SOLUTION_ID>",  
-            "solution_status": "INITIATED"  
-          },  
-          "field": "partner_solutions"  
-        }  
-      ]  
-    }  
-  ],  
-  "object": "whatsapp_business_account"  
+  "entry": [  
+    {  
+      "id": "<BUSINESS_PORTFOLIO_ID>",  
+      "time": <TIMESTAMP>,  
+      "changes": [  
+        {  
+          "value": {  
+            "event": "SOLUTION_CREATED",  
+            "solution_id": "<SOLUTION_ID>",  
+            "solution_status": "INITIATED"  
+          },  
+          "field": "partner_solutions"  
+        }  
+      ]  
+    }  
+  ],  
+  "object": "whatsapp_business_account"  
 }
-```
 ```
 
 #### Payload Properties
@@ -354,7 +344,7 @@ When a Multi-Partner Solution is created or modified, a **partner\_solutions** w
 
 You can use the App Dashboard or API to edit or deactivate a solution.
 
-When you request deactivation, the solution’s status will change to **Pending deactivation** and your partner will be notified by email and Meta Business Suite notification. In addition, a [**partner\_solutions**](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/multi-partner-solution-embedded-creation#partner-solutions-webhook) webhook will be triggered with `event` set to `SOLUTION_UPDATED` and `solution_status` set to `PENDING_DEACTIVATION`. Your partner can then accept or reject your request.
+When you request deactivation, the solution's status will change to **Pending deactivation** and your partner will be notified by email and Meta Business Suite notification. In addition, a [**partner\_solutions**](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/multi-partner-solution-embedded-creation#partner-solutions-webhook) webhook will be triggered with `event` set to `SOLUTION_UPDATED` and `solution_status` set to `PENDING_DEACTIVATION`. Your partner can then accept or reject your request.
 
 Note that partner solutions can still be used to onboard clients until your partner accepts the deactivation request.
 
@@ -378,7 +368,7 @@ Use the **App Dashboard** > **WhatsApp** > **Partner solutions** panel to edit o
 | **Draft** | You may edit the solution name. |
 | **Inactive** | You may edit the solution name. |
 | **Pending** | Solutions in this state cannot be edited until accepted or declined by your partner. |
-| **Pending deactivation** | You may accept or decline the partner’s deactivation request. |
+| **Pending deactivation** | You may accept or decline the partner's deactivation request. |
 
 ### Via API
 
@@ -389,10 +379,8 @@ Use the [Send Deactivation Request API](https://developers.facebook.com/document
 #### Example request
 
 ```
-```
-curl -X POST 'https://graph.facebook.com/v20.0/795033096057724/send_deactivation_request \  
--H 'Authorization: Bearer EAAAT...'
-```
+curl -X POST 'https://graph.facebook.com/v20.0/795033096057724/send_deactivation_request \  
+-H 'Authorization: Bearer EAAAT...'
 ```
 
 #### Example response
@@ -400,11 +388,9 @@ curl -X POST 'https://graph.facebook.com/v20.0/795033096057724/send_deactivat
 Upon success:
 
 ```
-```
 {  
-    "success": true  
+    "success": true  
 }
-```
 ```
 
 ### Accept deactivation request
@@ -414,10 +400,8 @@ Use the [Accept Deactivation Request API](https://developers.facebook.com/docume
 #### Example request
 
 ```
-```
-curl -X POST 'https://graph.facebook.com/v20.0/795033096057724/accept_deactivation_request \  
--H 'Authorization: Bearer EAAAT...'
-```
+curl -X POST 'https://graph.facebook.com/v20.0/795033096057724/accept_deactivation_request \  
+-H 'Authorization: Bearer EAAAT...'
 ```
 
 #### Example response
@@ -425,11 +409,9 @@ curl -X POST 'https://graph.facebook.com/v20.0/795033096057724/accept_deactiv
 Upon success:
 
 ```
-```
 {  
-    "success": true  
+    "success": true  
 }
-```
 ```
 
 ### Reject deactivation request
@@ -439,10 +421,8 @@ Use the [Reject Deactivation Request API](https://developers.facebook.com/docume
 #### Example request
 
 ```
-```
-curl -X POST 'https://graph.facebook.com/v20.0/795033096057724/reject_deactivation_request \  
--H 'Authorization: Bearer EAAAT...'
-```
+curl -X POST 'https://graph.facebook.com/v20.0/795033096057724/reject_deactivation_request \  
+-H 'Authorization: Bearer EAAAT...'
 ```
 
 #### Example response
@@ -450,11 +430,9 @@ curl -X POST 'https://graph.facebook.com/v20.0/795033096057724/reject_deactiv
 Upon success:
 
 ```
-```
 {  
-    "success": true  
+    "success": true  
 }
-```
 ```
 
 ## Manually checking for onboarded clients
@@ -476,39 +454,37 @@ GET /<BUSINESS_PORTFOLIO_ID>/client_whatsapp_business_accounts
   ]
 ```
 
-Replace `<PARTNER_BUSINESS_PORTFOLIO_ID>` with your partner’s business portfolio ID.
+Replace `<PARTNER_BUSINESS_PORTFOLIO_ID>` with your partner's business portfolio ID.
 
 ### Response
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "id": "<CUSTOMER_WABA_ID>",  
-      "name": "<CUSTOMER_WABA_NAME>",  
-      "timezone_id": "<CUSTOMER_WABA_TIMEZONE_ID>",  
-      "business_type": "ent",  
-      "message_template_namespace": "<MESSAGE_TEMPLATE_NAMESPACE>"  
-    }  
-    ...  
-  ],  
-  "paging": {  
-    "cursors": {  
-      "before": "<BEFORE>",  
-      "after": "<AFTER>"  
-    },  
-    "next": "<NEXT>"  
-  }  
+  "data": [  
+    {  
+      "id": "<CUSTOMER_WABA_ID>",  
+      "name": "<CUSTOMER_WABA_NAME>",  
+      "timezone_id": "<CUSTOMER_WABA_TIMEZONE_ID>",  
+      "business_type": "ent",  
+      "message_template_namespace": "<MESSAGE_TEMPLATE_NAMESPACE>"  
+    }  
+    ...  
+  ],  
+  "paging": {  
+    "cursors": {  
+      "before": "<BEFORE>",  
+      "after": "<AFTER>"  
+    },  
+    "next": "<NEXT>"  
+  }  
 }
-```
 ```
 
 | Placeholder | Description | Example Value |
 | --- | --- | --- |
 | `<CUSTOMER_WABA_ID>` | Client WhatsApp Business Account ID. | `102290129340398` |
 | `<CUSTOMER_WABA_NAME>` | Client WhatsApp Business Account name. | `Cool New Customer 2` |
-| `<CUSTOMER_WABA_TIMEZONE_ID>` | Client’s WhatsApp Business Account timezone ID. | `7` |
+| `<CUSTOMER_WABA_TIMEZONE_ID>` | Client's WhatsApp Business Account timezone ID. | `7` |
 | `<BEFORE>` | Paginated results cursor. See [Paginated Results](https://developers.facebook.com/docs/graph-api/results). | `QVFIU...` |
 | `<AFTER>` | Paginated results cursor. See [Paginated Results](https://developers.facebook.com/docs/graph-api/results). | `QVFIU...` |
 | `<NEXT>` | Paginated results link. See [Paginated Results](https://developers.facebook.com/docs/graph-api/results). | `https://graph.facebook.com/v18.0/50691...` |
@@ -567,32 +543,30 @@ curl 'https://graph.facebook.com/v25.0/17602267745700?fields=name,status,partner
 #### Example Response
 
 ```
-```
 {  
-  "name": "Social OVD with Lucky Shrub",  
-  "status": "ACTIVE",  
-  "partners": {  
-    "data": [  
-      {  
-        "partner_app": {  
-          "link": "https://www.socialoverdrive.com/",  
-          "name": "Social Overdrive",  
-          "id": "637576208107267"  
-        },  
-        "status": "ACCEPTED",  
-        "id": "17602267745704"  
-      }  
-    ],  
-    "paging": {  
-      "cursors": {  
-        "before": "QVFIUmxnSE9LUFliNzlUTWdhTlYzQjBtekprSC0wQUdoZAGRYbFlzeUpDMG9yNkF1OHYyel9tcUlBbGhFckxJQ1Y3UFZA4dUkycEk0WDJwRGYzT2JYbVhEdFdB",  
-        "after": "QVFIUmxnSE9LUFliNzlUTWdhTlYzQjBtekprSC0wQUdoZAGRYbFlzeUpDMG9yNkF1OHYyel9tcUlBbGhFckxJQ1Y3UFZA4dUkycEk0WDJwRGYzT2JYbVhEdFdB"  
-      }  
-    }  
-  },  
-  "id": "17602267745700"  
+  "name": "Social OVD with Lucky Shrub",  
+  "status": "ACTIVE",  
+  "partners": {  
+    "data": [  
+      {  
+        "partner_app": {  
+          "link": "https://www.socialoverdrive.com/",  
+          "name": "Social Overdrive",  
+          "id": "637576208107267"  
+        },  
+        "status": "ACCEPTED",  
+        "id": "17602267745704"  
+      }  
+    ],  
+    "paging": {  
+      "cursors": {  
+        "before": "QVFIUmxnSE9LUFliNzlUTWdhTlYzQjBtekprSC0wQUdoZAGRYbFlzeUpDMG9yNkF1OHYyel9tcUlBbGhFckxJQ1Y3UFZA4dUkycEk0WDJwRGYzT2JYbVhEdFdB",  
+        "after": "QVFIUmxnSE9LUFliNzlUTWdhTlYzQjBtekprSC0wQUdoZAGRYbFlzeUpDMG9yNkF1OHYyel9tcUlBbGhFckxJQ1Y3UFZA4dUkycEk0WDJwRGYzT2JYbVhEdFdB"  
+      }  
+    }  
+  },  
+  "id": "17602267745700"  
 }
-```
 ```
 
 ### Get solutions associated with your app
@@ -609,30 +583,28 @@ curl 'https://graph.facebook.com/v25.0/21202248997039/whatsapp_business_solution
 #### Example Response
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "name": "Social OVD with Lucky Shrub",  
-      "status": "INITIATED",  
-      "status_for_pending_request": "PENDING_ACTIVATION",  
-      "id": "19702253086782"  
-    },  
-    {  
-      "name": "Social OVD with Social Brew",  
-      "status": "ACTIVE",  
-      "status_for_pending_request": "NONE",  
-      "id": "17602267745700"  
-    }  
-  ],  
-  "paging": {  
-    "cursors": {  
-      "before": "QVFIUkxlbkhTZA1VleGwyWHd3SmlSMnlnelhlbUVSSjVYQmU2aXVmb1YyWk9JTkx3b2gwNE9FS3J2ejMzNENxbmh1bWZAqSkZAJUzNfbmF4NmtPaFYxQldaaXR3",  
-      "after": "QVFIUlgyLTlQYWV0eTNGWXVhcTJnOEhzY1lvUDloVV8wUUxVQk9YMVJ5UGlBZAmx1Q1BjaEVwd0tWdmNvRU9jdGRiNnlrc193alRNaDV2SXZAfN1kybDBibEFR"  
-    }  
-  }  
+  "data": [  
+    {  
+      "name": "Social OVD with Lucky Shrub",  
+      "status": "INITIATED",  
+      "status_for_pending_request": "PENDING_ACTIVATION",  
+      "id": "19702253086782"  
+    },  
+    {  
+      "name": "Social OVD with Social Brew",  
+      "status": "ACTIVE",  
+      "status_for_pending_request": "NONE",  
+      "id": "17602267745700"  
+    }  
+  ],  
+  "paging": {  
+    "cursors": {  
+      "before": "QVFIUkxlbkhTZA1VleGwyWHd3SmlSMnlnelhlbUVSSjVYQmU2aXVmb1YyWk9JTkx3b2gwNE9FS3J2ejMzNENxbmh1bWZAqSkZAJUzNfbmF4NmtPaFYxQldaaXR3",  
+      "after": "QVFIUlgyLTlQYWV0eTNGWXVhcTJnOEhzY1lvUDloVV8wUUxVQk9YMVJ5UGlBZAmx1Q1BjaEVwd0tWdmNvRU9jdGRiNnlrc193alRNaDV2SXZAfN1kybDBibEFR"  
+    }  
+  }  
 }
-```
 ```
 
 ### Get solutions that onboarded a WABA
@@ -649,24 +621,22 @@ curl 'https://graph.facebook.com/v25.0/102290129340398/solutions' \
 #### Example Response
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "name": "Social OVD with Social Brew",  
-      "status": "ACTIVE",  
-      "status_for_pending_request": "NONE",  
-      "id": "17602267745700"  
-    }  
-  ],  
-  "paging": {  
-    "cursors": {  
-      "before": "QVFIUjZACTFNmWURVTHN2NFVaM2ZApd2RaOGIxOU5wenpQZADFkbVdtSEJDSGFDelhDOU5hT28xcmJLS05TM3U0UUFmdVNGUWFfdjdJb1o2OTVNY083ZAHYtc2x3",  
-      "after": "QVFIUjZACTFNmWURVTHN2NFVaM2ZApd2RaOGIxOU5wenpQZADFkbVdtSEJDSGFDelhDOU5hT28xcmJLS05TM3U0UUFmdVNGUWFfdjdJb1o2OTVNY083ZAHYtc2x3"  
-    }  
-  }  
+  "data": [  
+    {  
+      "name": "Social OVD with Social Brew",  
+      "status": "ACTIVE",  
+      "status_for_pending_request": "NONE",  
+      "id": "17602267745700"  
+    }  
+  ],  
+  "paging": {  
+    "cursors": {  
+      "before": "QVFIUjZACTFNmWURVTHN2NFVaM2ZApd2RaOGIxOU5wenpQZADFkbVdtSEJDSGFDelhDOU5hT28xcmJLS05TM3U0UUFmdVNGUWFfdjdJb1o2OTVNY083ZAHYtc2x3",  
+      "after": "QVFIUjZACTFNmWURVTHN2NFVaM2ZApd2RaOGIxOU5wenpQZADFkbVdtSEJDSGFDelhDOU5hT28xcmJLS05TM3U0UUFmdVNGUWFfdjdJb1o2OTVNY083ZAHYtc2x3"  
+    }  
+  }  
 }
-```
 ```
 
 ### Get partners of a solution
@@ -683,42 +653,38 @@ curl 'https://graph.facebook.com/v25.0/17602267745700/partners' \
 #### Example Response
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "partner_app": {  
-        "link": "https://www.socialoverdrive.com",  
-        "name": "Social Overdrive",  
-        "id": "637576208107267"  
-      },  
-      "status": "ACCEPTED",  
-      "id": "17602267745704"  
-    }  
-  ],  
-  "paging": {  
-    "cursors": {  
-      "before": "QVFIUmxnSE9LUFliNzlUTWdhTlYzQjBtekprSC0wQUdoZAGRYbFlzeUpDMG9yNkF1OHYyel9tcUlBbGhFckxJQ1Y3UFZA4dUkycEk0WDJwRGYzT2JYbVhEdFdB",  
-      "after": "QVFIUmxnSE9LUFliNzlUTWdhTlYzQjBtekprSC0wQUdoZAGRYbFlzeUpDMG9yNkF1OHYyel9tcUlBbGhFckxJQ1Y3UFZA4dUkycEk0WDJwRGYzT2JYbVhEdFdB"  
-    }  
-  }  
+  "data": [  
+    {  
+      "partner_app": {  
+        "link": "https://www.socialoverdrive.com",  
+        "name": "Social Overdrive",  
+        "id": "637576208107267"  
+      },  
+      "status": "ACCEPTED",  
+      "id": "17602267745704"  
+    }  
+  ],  
+  "paging": {  
+    "cursors": {  
+      "before": "QVFIUmxnSE9LUFliNzlUTWdhTlYzQjBtekprSC0wQUdoZAGRYbFlzeUpDMG9yNkF1OHYyel9tcUlBbGhFckxJQ1Y3UFZA4dUkycEk0WDJwRGYzT2JYbVhEdFdB",  
+      "after": "QVFIUmxnSE9LUFliNzlUTWdhTlYzQjBtekprSC0wQUdoZAGRYbFlzeUpDMG9yNkF1OHYyel9tcUlBbGhFckxJQ1Y3UFZA4dUkycEk0WDJwRGYzT2JYbVhEdFdB"  
+    }  
+  }  
 }
-```
 ```
 
 ## Getting client business tokens
 
-If you are not hosting Embedded Signup but want to get an onboarded client’s [business integration system user access token](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#business-integration-system-user-access-tokens) (“business token”), you can get their token using the business portfolio ID and solution ID contained in the [account\_update](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/multi-partner-solution-embedded-creation#account-update-webhook) webhook that was triggered when the client completed the Embedded Signup flow.
+If you are not hosting Embedded Signup but want to get an onboarded client's [business integration system user access token](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#business-integration-system-user-access-tokens) ("business token"), you can get their token using the business portfolio ID and solution ID contained in the [account\_update](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/multi-partner-solution-embedded-creation#account-update-webhook) webhook that was triggered when the client completed the Embedded Signup flow.
 
 ### Request
 
-Use the [GET /<SOLUTION\_ID>/access\_token](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-solution/access-token-api#Reading) endpoint and request the `business_id` parameter to get an onboarded business customer’s [business token](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#business-integration-system-user-access-tokens).
+Use the [GET /<SOLUTION\_ID>/access\_token](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-solution/access-token-api#Reading) endpoint and request the `business_id` parameter to get an onboarded business customer's [business token](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#business-integration-system-user-access-tokens).
 
 ```
-```
-curl 'https://graph.facebook.com/<API_VERSION>/<SOLUTION_ID>/access_token?business_id=<CUSTOMER_BUSINESS_PORTFOLIO_ID>' \  
--H 'Authorization: Bearer <SYSTEM_TOKEN>'
-```
+curl 'https://graph.facebook.com/<API_VERSION>/<SOLUTION_ID>/access_token?business_id=<CUSTOMER_BUSINESS_PORTFOLIO_ID>' \  
+-H 'Authorization: Bearer <SYSTEM_TOKEN>'
 ```
 
 ### Request parameters
@@ -726,7 +692,7 @@ curl 'https://graph.facebook.com/<API_VERSION>/<SOLUTION_ID>/access_token?busin
 | Placeholder | Description | Example Value |
 | --- | --- | --- |
 | `<API_VERSION>`  *String* | **Optional.**  Graph API version. | v25.0 |
-| `<CUSTOMER_BUSINESS_PORTFOLIO_ID>` | **Required.**  The onboarded business customer’s business portfolio ID.  This is included in [account\_update webhooks](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/manage-webhooks#onboarded-business-customer) when the business customer completes Embedded Signup. | `2729063490586005` |
+| `<CUSTOMER_BUSINESS_PORTFOLIO_ID>` | **Required.**  The onboarded business customer's business portfolio ID.  This is included in [account\_update webhooks](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/manage-webhooks#onboarded-business-customer) when the business customer completes Embedded Signup. | `2729063490586005` |
 | `<SOLUTION_ID>` | **Required.**  Your Multi-Partner Solution ID. | `303610109049230` |
 | `<SYSTEM_TOKEN>` | **Required.**  Your [system user access token](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#system-user-access-tokens). | `EAAAN6tcBzAUBOZC82CW7iR2LiaZBwUHS4Y7FDtQxRUPy1PHZClDGZBZCgWdrTisgMjpFKiZAi1FBBQNO2IqZBAzdZAA16lmUs0XgRcCf6z1LLxQCgLXDEpg80d41UZBt1FKJZCqJFcTYXJvSMeHLvOdZwFyZBrV9ZPHZASSqxDZBUZASyFdzjiy2A1sippEsF4DVV5W2IlkOSr2LrMLuYoNMYBy8xQczzOKDOMccqHEZD` |
 
@@ -735,15 +701,13 @@ curl 'https://graph.facebook.com/<API_VERSION>/<SOLUTION_ID>/access_token?busin
 Upon success:
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "access_token": "<CUSTOMER_BUSINESS_TOKEN>"  
-    }  
-  ]  
+  "data": [  
+    {  
+      "access_token": "<CUSTOMER_BUSINESS_TOKEN>"  
+    }  
+  ]  
 }
-```
 ```
 
 ## Migrating client assets among solutions

@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/instagram-platform
 
 Updated: Apr 17, 2026
 
-The Instagram Platform from Meta provides tools to help your app user’s interact with Instagram users.
+The Instagram Platform from Meta provides tools to help your app user's interact with Instagram users.
 
 ### Instagram API with Business Login for Instagram
 

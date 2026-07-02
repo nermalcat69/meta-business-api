@@ -52,11 +52,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Business-ID}/extendedcredits' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Business-ID}/extendedcredits' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -67,42 +67,42 @@ Select status code
 
 ```
 {  
-  "credit_lines": {  
-    "summary": "Extended credit lines with balances",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "1972385232742146",  
-          "legal_entity_name": "Lucky Shrub LLC",  
-          "credit_type": "WHATSAPP_BUSINESS",  
-          "balance": {  
-            "amount": "500.00",  
-            "amount_in_hundredths": "50000",  
-            "currency": "USD",  
-            "offsetted_amount": "50000"  
-          },  
-          "credit_available": {  
-            "amount": "1500.00",  
-            "amount_in_hundredths": "150000",  
-            "currency": "USD",  
-            "offsetted_amount": "150000"  
-          },  
-          "max_balance": {  
-            "amount": "2000.00",  
-            "amount_in_hundredths": "200000",  
-            "currency": "USD",  
-            "offsetted_amount": "200000"  
-          },  
-          "owner_business": {  
-            "id": "9876543210987654",  
-            "name": "Example Business Corp"  
-          },  
-          "is_access_revoked": false,  
-          "is_shared_credit_line_enabled_for_mpa": false  
-        }  
-      ]  
-    }  
-  }  
+  "credit_lines": {  
+    "summary": "Extended credit lines with balances",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "1972385232742146",  
+          "legal_entity_name": "Lucky Shrub LLC",  
+          "credit_type": "WHATSAPP_BUSINESS",  
+          "balance": {  
+            "amount": "500.00",  
+            "amount_in_hundredths": "50000",  
+            "currency": "USD",  
+            "offsetted_amount": "50000"  
+          },  
+          "credit_available": {  
+            "amount": "1500.00",  
+            "amount_in_hundredths": "150000",  
+            "currency": "USD",  
+            "offsetted_amount": "150000"  
+          },  
+          "max_balance": {  
+            "amount": "2000.00",  
+            "amount_in_hundredths": "200000",  
+            "currency": "USD",  
+            "offsetted_amount": "200000"  
+          },  
+          "owner_business": {  
+            "id": "9876543210987654",  
+            "name": "Example Business Corp"  
+          },  
+          "is_access_revoked": false,  
+          "is_shared_credit_line_enabled_for_mpa": false  
+        }  
+      ]  
+    }  
+  }  
 }
 ```
 
@@ -807,11 +807,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Business-ID}/extendedcredits' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Business-ID}/extendedcredits' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -822,42 +822,42 @@ Select status code
 
 ```
 {  
-  "credit_lines": {  
-    "summary": "Extended credit lines with balances",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "1972385232742146",  
-          "legal_entity_name": "Lucky Shrub LLC",  
-          "credit_type": "WHATSAPP_BUSINESS",  
-          "balance": {  
-            "amount": "500.00",  
-            "amount_in_hundredths": "50000",  
-            "currency": "USD",  
-            "offsetted_amount": "50000"  
-          },  
-          "credit_available": {  
-            "amount": "1500.00",  
-            "amount_in_hundredths": "150000",  
-            "currency": "USD",  
-            "offsetted_amount": "150000"  
-          },  
-          "max_balance": {  
-            "amount": "2000.00",  
-            "amount_in_hundredths": "200000",  
-            "currency": "USD",  
-            "offsetted_amount": "200000"  
-          },  
-          "owner_business": {  
-            "id": "9876543210987654",  
-            "name": "Example Business Corp"  
-          },  
-          "is_access_revoked": false,  
-          "is_shared_credit_line_enabled_for_mpa": false  
-        }  
-      ]  
-    }  
-  }  
+  "credit_lines": {  
+    "summary": "Extended credit lines with balances",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "1972385232742146",  
+          "legal_entity_name": "Lucky Shrub LLC",  
+          "credit_type": "WHATSAPP_BUSINESS",  
+          "balance": {  
+            "amount": "500.00",  
+            "amount_in_hundredths": "50000",  
+            "currency": "USD",  
+            "offsetted_amount": "50000"  
+          },  
+          "credit_available": {  
+            "amount": "1500.00",  
+            "amount_in_hundredths": "150000",  
+            "currency": "USD",  
+            "offsetted_amount": "150000"  
+          },  
+          "max_balance": {  
+            "amount": "2000.00",  
+            "amount_in_hundredths": "200000",  
+            "currency": "USD",  
+            "offsetted_amount": "200000"  
+          },  
+          "owner_business": {  
+            "id": "9876543210987654",  
+            "name": "Example Business Corp"  
+          },  
+          "is_access_revoked": false,  
+          "is_shared_credit_line_enabled_for_mpa": false  
+        }  
+      ]  
+    }  
+  }  
 }
 ```
 

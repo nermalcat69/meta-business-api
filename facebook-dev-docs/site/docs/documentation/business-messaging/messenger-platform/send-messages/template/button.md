@@ -44,31 +44,29 @@ Use this guide to select the right template for your use case:
 
 ## Send a message template
 
-To send a message template, send a `POST` request to the `/<PAGE_ID>/messages` endpoint with the recipient’s Page-scoped ID, the `messaging_type`, and the message attachment containing the template type and payload with details about the specific template, such as title, images, and buttons.
+To send a message template, send a `POST` request to the `/<PAGE_ID>/messages` endpoint with the recipient's Page-scoped ID, the `messaging_type`, and the message attachment containing the template type and payload with details about the specific template, such as title, images, and buttons.
 
 ```
-```
-curl -X POST -H "Content-Type: application/json" -d '{  
-  "recipient":{  
-    "id":"<PSID>"  
-  },  
-  "messaging_type":"RESPONSE",  
-  "message":{  
-    "attachment":{  
-      "type":"template",  
-      "payload":{  
-        "template_type":"<TEMPLATE_TYPE>",  
-        "elements":[  
-          {  
-            "title":"<TEMPLATE_TITLE>",  
-            ...  
-          }  
-        ]  
-      }  
-    }  
-  }  
-}' "https://graph.facebook.com/<API_VERSION>/<PAGE_ID>/messages?access_token=<PAGE_ACCESS_TOKEN>"
-```
+curl -X POST -H "Content-Type: application/json" -d '{  
+  "recipient":{  
+    "id":"<PSID>"  
+  },  
+  "messaging_type":"RESPONSE",  
+  "message":{  
+    "attachment":{  
+      "type":"template",  
+      "payload":{  
+        "template_type":"<TEMPLATE_TYPE>",  
+        "elements":[  
+          {  
+            "title":"<TEMPLATE_TITLE>",  
+            ...  
+          }  
+        ]  
+      }  
+    }  
+  }  
+}' "https://graph.facebook.com/<API_VERSION>/<PAGE_ID>/messages?access_token=<PAGE_ACCESS_TOKEN>"
 ```
 
 The body of the request follows a standard format for all template types, with the `message.attachment.payload` property containing the type and content details that are specific to each template type.

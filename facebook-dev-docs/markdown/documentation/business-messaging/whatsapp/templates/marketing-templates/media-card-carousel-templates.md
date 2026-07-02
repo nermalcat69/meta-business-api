@@ -79,7 +79,7 @@ curl -X POST \
 | `<API_VERSION>`  *String* | **Optional.**  Graph API version. | v25.0 |
 | `<BODY_PARAM_EXAMPLE>`  *String* | **Required if body text contains named parameters.**  Example value for the named parameter. You must supply one example for each parameter in your body text. | `Lisa` |
 | `<BODY_PARAM_NAME>`  *String* | **Required if body text contains named parameters.**  Name of the parameter, matching the placeholder in the body text. | `customer_name` |
-| `<BODY_TEXT>`  *String* | **Required.**  Body text string. Supports named parameters in `{{parameter_name}}` format.  Maximum 1024 characters. | `Hi {{customer_name}}! We are opening a new store near you. Visit us on opening day for {{discount}} off your first purchase!` |
+| `<BODY_TEXT>`  *String* | **Required.**  Body text string. Supports named parameters in `{​{parameter_name}​}` format.  Maximum 1024 characters. | `Hi {​{customer_name}​}! We are opening a new store near you. Visit us on opening day for {​{discount}​} off your first purchase!` |
 | `<FOOTER_TEXT>`  *String* | **Optional.**  Footer text. Maximum 60 characters. | `Reply STOP to unsubscribe.` |
 | `<TEMPLATE_LANGUAGE>`  *Enum* | **Required.**  Template [language and locale code](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/supported-languages). | `en_US` |
 | `<TEMPLATE_NAME>`  *String* | **Required.**  Template name.  Maximum 512 characters. | `store_grand_opening` |
@@ -106,7 +106,7 @@ curl -X POST \
       },
       {
         "type": "BODY",
-        "text": "Hi {{customer_name}}! We are opening a new store near you. Visit us on opening day for {{discount}} off your first purchase!",
+        "text": "Hi {​{customer_name}​}! We are opening a new store near you. Visit us on opening day for {​{discount}​} off your first purchase!",
         "example": {
           "body_text_named_params": [
             {
@@ -140,13 +140,11 @@ curl -X POST \
 ### Example response
 
 ```
-```
 {  
-  "id": "546151681022936",  
-  "status": "PENDING",  
-  "category": "MARKETING"  
+  "id": "546151681022936",  
+  "status": "PENDING",  
+  "category": "MARKETING"  
 }
-```
 ```
 
 ## Send a location template
@@ -276,20 +274,18 @@ curl -X POST \
 ### Example response
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "contacts": [  
-    {  
-      "input": "+16505551234",  
-      "wa_id": "16505551234"  
-    }  
-  ],  
-  "messages": [  
-    {  
-      "id": "wamid.HBgLMTY0NjcwNDM1OTUVAgARGBI1RjQyNUE3NEYxMzAzMzQ5MkEA"  
-    }  
-  ]  
+  "messaging_product": "whatsapp",  
+  "contacts": [  
+    {  
+      "input": "+16505551234",  
+      "wa_id": "16505551234"  
+    }  
+  ],  
+  "messages": [  
+    {  
+      "id": "wamid.HBgLMTY0NjcwNDM1OTUVAgARGBI1RjQyNUE3NEYxMzAzMzQ5MkEA"  
+    }  
+  ]  
 }
-```
 ```

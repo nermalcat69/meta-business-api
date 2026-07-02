@@ -17,10 +17,10 @@ The Marketing API changelog documents [versioned](https://developers.facebook.co
 
 ### Marketing API Access Tier (formerly Ads Management Standard Access)
 
-* Renamed: “Ads Management Standard Access” → “Marketing API Access Tier”
+* Renamed: "Ads Management Standard Access" → "Marketing API Access Tier"
 * |  |  |
   | --- | --- |
-  | New tier labels: “Standard Access” → “Limited access” | “Advanced Access” → “Full access” |
+  | New tier labels: "Standard Access" → "Limited access" | "Advanced Access" → "Full access" |
 * Auto-approval threshold lowered: 1,500 → 500 Marketing API calls in 15 days
 * Error rate calculation updated: rolling 500-request window (< 15%)
 * Screen recording requirement removed for tier upgrade submissions

@@ -22,15 +22,15 @@ Directory:
 High-level integration guidance:
 
 * Load the SDK: **clientParamBuilder** is loaded during page initialization.
-* Call the SDK APIs: The advertiser’s website calls the APIs provided by clientParamBuilder. For example:
+* Call the SDK APIs: The advertiser's website calls the APIs provided by clientParamBuilder. For example:
   * `processAndCollectAllParams` saves and updates `fbp`, `fpc`, and `fbi` (if `getIpFn` is available)
     * If getIpFn is not empty, `fbi` will be saved in the cookie, based on the pass-in function getIpFn result.
     * Saves `fbc` if applicable.
     * Saves `fbp` if applicable.
   * **.getNormalizedAndHashedPII**: Return normalized and hashed PII data based on input value and type.
   * **.getFbc()**, **getFbp()**, **getClientIpAddress()**: Call **.processAndCollectAllParams** first to set in cookies, and retrieve the results from the cookie.
-    *Note: this API will save/update cookies. Make sure the website has the user’s cookie consent before calling*.
-* Send the Conversions API payload: The advertiser’s website sends the Conversions API payload with retrieved parameters.
+    *Note: this API will save/update cookies. Make sure the website has the user's cookie consent before calling*.
+* Send the Conversions API payload: The advertiser's website sends the Conversions API payload with retrieved parameters.
 
 Refer to full instructions in README [file⁠](https://github.com/facebook/capi-param-builder/blob/main/client_js/README.md).
 
@@ -46,16 +46,16 @@ Directories:
 
 High-level integration guidance:
 
-* Import param builder library into advertiser’s website server application.
+* Import param builder library into advertiser's website server application.
 * Process the request: Call updatedCookieList = builder.processRequest with input data.
 * Get the cookies to set: Either use updatedCookieList or builder.getCookiesToSet to get a list of recommended cookies to save.
-* Save the cookies: The advertiser’s website server saves cookies based on the above list.
+* Save the cookies: The advertiser's website server saves cookies based on the above list.
 * Fetch the parameters. Retrieve values using:
   * getFbc()
   * getFbp()
   * getClientIpAddress()
   * getNormalizedAndHashedPII()
-* Send the Conversions API payload: The advertiser’s website sends payload with the above parameters.
+* Send the Conversions API payload: The advertiser's website sends payload with the above parameters.
 
 ### [Recommended] Client-side and server-side SDK
 

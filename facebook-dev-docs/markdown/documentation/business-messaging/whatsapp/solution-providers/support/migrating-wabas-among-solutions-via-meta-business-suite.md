@@ -7,9 +7,9 @@ source_url: https://developers.facebook.com/documentation/business-messaging/wha
 
 Updated: May 21, 2026
 
-If you are a Tech Provider, you can use the API and [Embedded Signup](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/overview) to migrate a client’s WABA from one Multi-Partner Solution (the “source solution”) to another (the “destination solution”).
+If you are a Tech Provider, you can use the API and [Embedded Signup](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/overview) to migrate a client's WABA from one Multi-Partner Solution (the "source solution") to another (the "destination solution").
 
-As part of this process, a new WhatsApp Business account (WABA) will be created for the client, templates within the source WABA will be duplicated in the destination WABA, and access to the WABA and its assets will be granted to the destination solution’s Solution Partner.
+As part of this process, a new WhatsApp Business account (WABA) will be created for the client, templates within the source WABA will be duplicated in the destination WABA, and access to the WABA and its assets will be granted to the destination solution's Solution Partner.
 
 ## Requirements
 
@@ -22,7 +22,7 @@ Templates are automatically duplicated in the destination WABA and initially gra
 
 After duplication however, templates are re-checked to ensure they are correctly categorized according to our [guidelines](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing). This may result in some duplicated templates having their `status` set to `REJECTED`.
 
-Only templates with both a `status` of `APPROVED` and `quality_score` of `GREEN` are eligible for duplication. If the destination WABA cannot accommodate all of the new templates, we will duplicate as many as we can until the destination WABA’s template limit has been reached. Unduplicated templates must be re-created and submitted for approval if they are to be used by the destination WABA.
+Only templates with both a `status` of `APPROVED` and `quality_score` of `GREEN` are eligible for duplication. If the destination WABA cannot accommodate all of the new templates, we will duplicate as many as we can until the destination WABA's template limit has been reached. Unduplicated templates must be re-created and submitted for approval if they are to be used by the destination WABA.
 
 Note that **template quality ratings are not duplicated**. All duplicated templates will start with an `UNKNOWN` rating. This rating will remain for the first 24 hours, after which a new rating will be generated if sufficient data is available.
 
@@ -34,22 +34,20 @@ Messages delivered after migration is complete are charged to the business custo
 
 ## Tech Provider steps
 
-### Step 1: Tag the customer’s WABA for migration
+### Step 1: Tag the customer's WABA for migration
 
-Use the [POST /<WHATSAPP\_BUSINESS\_ACCOUNT>/set\_solution\_migration\_intent](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/set-solution-migration-intent-api#Creating) endpoint to tag the business customer’s WABA for migration. This generates a [migration intent](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/migration-intent-api), which indicates your intent to migrate the WABA.
+Use the [POST /<WHATSAPP\_BUSINESS\_ACCOUNT>/set\_solution\_migration\_intent](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/set-solution-migration-intent-api#Creating) endpoint to tag the business customer's WABA for migration. This generates a [migration intent](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/migration-intent-api), which indicates your intent to migrate the WABA.
 
 #### Request
 
 ```
-```
-curl 'https://graph.facebook.com/<API_VERSION>/<WABA_ID>/set_solution_migration_intent' \  
--H 'Content-Type: application/json' \  
--H 'Authorization: Bearer <BUSINESS_TOKEN>' \  
--d '  
+curl 'https://graph.facebook.com/<API_VERSION>/<WABA_ID>/set_solution_migration_intent' \  
+-H 'Content-Type: application/json' \  
+-H 'Authorization: Bearer <BUSINESS_TOKEN>' \  
+-d '  
 {  
-  "solution_id": "<DESTINATION_MULTI-PARTNER_SOLUTION_ID>"  
+  "solution_id": "<DESTINATION_MULTI-PARTNER_SOLUTION_ID>"  
 }'
-```
 ```
 
 #### Response
@@ -57,29 +55,27 @@ curl 'https://graph.facebook.com/<API_VERSION>/<WABA_ID>/set_solution_migration
 Upon success:
 
 ```
-```
 {  
-  "id": "<MIGRATION_INTENT_ID>"  
+  "id": "<MIGRATION_INTENT_ID>"  
 }
-```
 ```
 
 Capture the migration intent ID.
 
 ### Step 2: Disable two-step verification on the business phone number
 
-If you have access to the client’s WABA in WhatsApp Manager, disable two-step verification on the business phone number associated with their WABA.
+If you have access to the client's WABA in WhatsApp Manager, disable two-step verification on the business phone number associated with their WABA.
 
 Alternatively, you can instruct the client to do this on their own. You can provide them with these instructions:
 
 * *Access WhatsApp Manager at [https://business.facebook.com/latest/whatsapp\_manager/⁠](https://business.facebook.com/latest/whatsapp_manager/).*
-* *Navigate to **Account tools** > **Phone numbers**, and click the phone number’s settings (gear) icon. If you don’t see your business phone number, click **Overview** in the menu on the left, then locate the number and click it.*
+* *Navigate to **Account tools** > **Phone numbers**, and click the phone number's settings (gear) icon. If you don't see your business phone number, click **Overview** in the menu on the left, then locate the number and click it.*
 * *Click the **Two-step verification** tab.*
 * *Click the **Turn off two-step verification** button and complete the flow.*
 
 ### Step 3: Instruct the customer to complete Embedded Signup
 
-Instruct the customer to complete the Solution Partner’s implementation of Embedded Signup.
+Instruct the customer to complete the Solution Partner's implementation of Embedded Signup.
 
 Make sure that you are directing the customer to the Embedded Signup implementation correctly configured with the destination Multi-Partner Solution ID, otherwise the customer could be onboarded via the wrong solution.
 
@@ -93,4 +89,4 @@ You can provide the customer with these instructions:
 
 ## Solution Partner steps
 
-Provide the Tech Provider with a link to your implementation of Embedded Signup configured with the Multi-Partner Solution ID. Whenever a client completes your implementation’s flow successfully, [onboard the client](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/onboarding-customers-as-a-solution-partner) as you normally would.
+Provide the Tech Provider with a link to your implementation of Embedded Signup configured with the Multi-Partner Solution ID. Whenever a client completes your implementation's flow successfully, [onboard the client](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/onboarding-customers-as-a-solution-partner) as you normally would.

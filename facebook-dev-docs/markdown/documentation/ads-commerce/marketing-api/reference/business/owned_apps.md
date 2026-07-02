@@ -9,7 +9,7 @@ Updated: Feb 24, 2026
 
 ## Reading
 
-Information about this business’s ad accounts.
+Information about this business's ad accounts.
 
 At the end of September 2024, the `POST /{pixel-id}/shared_accounts` API (including previous versions) will not support sharing of pixels with an ad account, if a business account does not have access to both pixel and ad account. Refer to the [pixel sharing API solution](https://developers.facebook.com/docs/marketing-api/business-asset-management/guides/business-pixel-sharing) to use `POST /{pixel-id}/agencies` or use `POST {ad_account}/agencies` to share into a business account, then use `POST /{pixel-id}/shared_accounts` to link pixel and ad account
 
@@ -22,8 +22,8 @@ HTTPPHP SDKJavaScript SDKAndroid SDKiOS SDK
 ---
 
 ```
-GET /v25.0/{business-id}/owned_ad_accounts HTTP/1.1  
-Host: graph.facebook.com
+GET /v25.0/{business-id}/owned_ad_accounts HTTP/1.1  
+Host: graph.facebook.com
 ```
 
 Try it in [Graph API Explorer](https://developers.facebook.com/tools/explorer/?method=GET&path=%7Bbusiness-id%7D%2Fowned_ad_accounts&version=v25.0)
@@ -112,7 +112,7 @@ access_status: string,
 | 100 | Invalid parameter |
 | 3980 | One or more of the ad accounts in your Business Manager are currently in bad standing or in review. All of your accounts must be in good standing in order to create new ad accounts. |
 | 415 | Two factor authentication required. User have to enter a code from SMS or TOTP code generator to pass 2fac. This could happen when accessing a 2fac-protected asset like a page that is owned by a 2fac-protected business manager. |
-| 3936 | You’ve already tried to claim this ad account. You’ll see a notification if your request is accepted. |
+| 3936 | You've already tried to claim this ad account. You'll see a notification if your request is accepted. |
 | 368 | The action attempted has been deemed abusive or is otherwise disallowed |
 | 3944 | Your Business Manager already has access to this object. |
 

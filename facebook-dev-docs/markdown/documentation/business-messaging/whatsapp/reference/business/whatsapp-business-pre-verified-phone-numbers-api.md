@@ -85,13 +85,13 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Business-ID}/share_preverified_numbers' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "preverified_id": "1234567890123456",  
-  "partner_business_id": "9876543210987654"  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Business-ID}/share_preverified_numbers' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "preverified_id": "1234567890123456",  
+  "partner_business_id": "9876543210987654"  
 }'
 ```
 
@@ -103,12 +103,12 @@ Select status code
 
 ```
 {  
-  "successful_sharing": {  
-    "summary": "Successful phone number sharing operation",  
-    "value": {  
-      "success": true  
-    }  
-  }  
+  "successful_sharing": {  
+    "summary": "Successful phone number sharing operation",  
+    "value": {  
+      "success": true  
+    }  
+  }  
 }
 ```
 
@@ -638,13 +638,13 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Business-ID}/share_preverified_numbers' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "preverified_id": "1234567890123456",  
-  "partner_business_id": "9876543210987654"  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Business-ID}/share_preverified_numbers' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "preverified_id": "1234567890123456",  
+  "partner_business_id": "9876543210987654"  
 }'
 ```
 
@@ -656,12 +656,12 @@ Select status code
 
 ```
 {  
-  "successful_sharing": {  
-    "summary": "Successful phone number sharing operation",  
-    "value": {  
-      "success": true  
-    }  
-  }  
+  "successful_sharing": {  
+    "summary": "Successful phone number sharing operation",  
+    "value": {  
+      "success": true  
+    }  
+  }  
 }
 ```
 

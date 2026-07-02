@@ -26,7 +26,7 @@ You can obtain calling permission from a WhatsApp user in any of the following w
 ### Limits (per business and WhatsApp user pair)
 
 * Temporary permissions are **granted for 7 calendar days (168 hours)**
-  * Calculated as the number of seconds in a day multiplied by 7, from the time of the user’s approval.
+  * Calculated as the number of seconds in a day multiplied by 7, from the time of the user's approval.
 * Permanent permissions do not expire, but they have the same connected calls limit.
 * Your business can make a maximum of **100 connected calls every 24 hours**
 * These limits are on the **business phone number**
@@ -195,7 +195,7 @@ POST <PHONE_NUMBER_ID>/messages
 | Parameter | Description | Sample Value |
 | --- | --- | --- |
 | `to`  *Integer* | **Required** (unless `recipient` is provided)  The phone number of the WhatsApp user you are messaging  [Learn more about formatting phone numbers in Cloud API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/whatsapp-business-account-phone-number-api) | `+17863476655` |
-| `recipient`  *String* | **Optional**  The WhatsApp user’s business-scoped user ID (BSUID) or parent BSUID. Use this instead of, or in addition to, `to`. If you include both, `to` takes precedence.  [Learn more about business-scoped user IDs](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#business-scoped-user-id) | `US.13491208655302741918` |
+| `recipient`  *String* | **Optional**  The WhatsApp user's business-scoped user ID (BSUID) or parent BSUID. Use this instead of, or in addition to, `to`. If you include both, `to` takes precedence.  [Learn more about business-scoped user IDs](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#business-scoped-user-id) | `US.13491208655302741918` |
 | `type`  *String* | **Required**  The type of interactive message you are sending.  In this case, you are sending a `call_permission_request`.  [Learn more about interactive messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/message-api) | `"call_permission_request"` |
 | `action`  *String* | **Required**  The action of your interactive message.  Must be `call_permission_request`. | `"call_permission_request"` |
 | `body`  *String* | **Optional**  The body of your message.  Although this field is optional, give the WhatsApp user context when you request permission to call them. | `"Allow us to call you so we can support you with your order."` |
@@ -203,25 +203,23 @@ POST <PHONE_NUMBER_ID>/messages
 #### Success response
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "contacts": [{  
-      "input": "+1-408-555-1234",  
-      "wa_id": "14085551234",  
-      "user_id": "<BSUID>",  
-      "parent_user_id": "<PARENT_BSUID>"  
-    }],  
-  "messages": [{  
-      "id": "wamid.gBGGFlaCmZ9plHrf2Mh-o"  
-    }]  
+  "messaging_product": "whatsapp",  
+  "contacts": [{  
+      "input": "+1-408-555-1234",  
+      "wa_id": "14085551234",  
+      "user_id": "<BSUID>",  
+      "parent_user_id": "<PARENT_BSUID>"  
+    }],  
+  "messages": [{  
+      "id": "wamid.gBGGFlaCmZ9plHrf2Mh-o"  
+    }]  
 }
-```
 ```
 
 [*Learn more about messaging success responses*](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/message-api)
 
-**Usernames and business-scoped user IDs:** When sending a call permission request message, you can use the `recipient` field to identify the user by BSUID, and the response may include `user_id` and `parent_user_id` fields; the user’s phone number may be omitted. For details, see [Business-scoped user IDs](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#business-scoped-user-id).
+**Usernames and business-scoped user IDs:** When sending a call permission request message, you can use the `recipient` field to identify the user by BSUID, and the response may include `user_id` and `parent_user_id` fields; the user's phone number may be omitted. For details, see [Business-scoped user IDs](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#business-scoped-user-id).
 
 #### Error response
 
@@ -263,45 +261,43 @@ POST/<WHATSAPP_BUSINESS_ACCOUNT_ID>/message_templates
 #### Request body
 
 ```
-```
 {  
-  "name": "sample_cpr_template",  
-  "language": "en",  
-  "category": "[MARKETING|UTILITY]",  
-  "components": [  
-     {  
-      "type": "HEADER",  
-      "text": "Support of Order No: {{1}}",  
-      "example": {  
-        "body_text": [  
-          [  
-            "ON-12345"  
-          ]  
-        ]  
-      }  
-    },  
-    {  
-      "type": "BODY",  
-      "text": "We would like to call you to help support your query on Order No: {{1}} for the item {{2}}.",  
-      "example": {  
-        "body_text": [  
-          [  
-            "ON-12345",  
-            "Avocados"  
-          ]  
-        ]  
-      }  
-    },  
-    {  
-      "type": "FOOTER",  
-      "text": "Talk to you soon!"  
-    },  
-    {  
-      "type": "call_permission_request"  
-    }  
-  ]  
+  "name": "sample_cpr_template",  
+  "language": "en",  
+  "category": "[MARKETING|UTILITY]",  
+  "components": [  
+     {  
+      "type": "HEADER",  
+      "text": "Support of Order No: {​{1}​}",  
+      "example": {  
+        "body_text": [  
+          [  
+            "ON-12345"  
+          ]  
+        ]  
+      }  
+    },  
+    {  
+      "type": "BODY",  
+      "text": "We would like to call you to help support your query on Order No: {​{1}​} for the item {​{2}​}.",  
+      "example": {  
+        "body_text": [  
+          [  
+            "ON-12345",  
+            "Avocados"  
+          ]  
+        ]  
+      }  
+    },  
+    {  
+      "type": "FOOTER",  
+      "text": "Talk to you soon!"  
+    },  
+    {  
+      "type": "call_permission_request"  
+    }  
+  ]  
 }
-```
 ```
 
 #### Body parameters
@@ -389,7 +385,7 @@ POST/<PHONE_NUMBER_ID>/messages
 
 [Learn more about sending template messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview)
 
-**Usernames and business-scoped user IDs:** When sending a call permission request template message, you can use the `recipient` field to identify the user by BSUID instead of a phone number; the user’s phone number may be omitted. For details, see [Business-scoped user IDs](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#business-scoped-user-id).
+**Usernames and business-scoped user IDs:** When sending a call permission request template message, you can use the `recipient` field to identify the user by BSUID instead of a phone number; the user's phone number may be omitted. For details, see [Business-scoped user IDs](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#business-scoped-user-id).
 
 ## Get current call permission state
 
@@ -461,9 +457,9 @@ GET /<PHONE_NUMBER_ID>/call_permissions?recipient=<BSUID>
 
 | Parameter | Description |
 | --- | --- |
-| `permission`  *JSON Object* | The permission object contains two values:  `status` *(String)* — The current status of the permission.  Can be either:   * `"no_permission"` * `"temporary"` * `"permanent"`   `expiration` *(Integer)* — The Unix time at which the permission will expire in UTC timezone.  If the permission is permanent, this field won’t be present. |
+| `permission`  *JSON Object* | The permission object contains two values:  `status` *(String)* — The current status of the permission.  Can be either:   * `"no_permission"` * `"temporary"` * `"permanent"`   `expiration` *(Integer)* — The Unix time at which the permission will expire in UTC timezone.  If the permission is permanent, this field won't be present. |
 | `actions`  *JSON Object* | A list of actions a business phone number may undertake to facilitate a call permission or a business initiated call.  Current actions are:  `send_call_permission_request`: Represents the action of sending new call permissions request messages to the WhatsApp user.  `start_call`: Represents the action of establishing a new call with the WhatsApp user. Establishing a new call means that the call was successfully picked up by the WhatsApp user.  For example, `send_call_permission_request` having a `can_perform_action` of `true` means that your business can send a call permission request to the WhatsApp user in question.  `can_perform_action` (*Boolean*) —  A flag indicating whether the action can be performed now, taking into account all limits. |
-| `limits`  *JSON Object* | A list of time-bound restrictions for the given `action_name`.  Each `action_name` has 1 or more restrictions depending on the timeframe.  For example, a business can only send 2 permission requests in a 24-hour period.  `limits` contains the following fields:  `time_period` (*String*) — The span of time in which the limit applies, represented in the ISO 8601 format.  `max_allowed` (*Integer*) — The maximum number of actions allowed within the specified time period.  `current_usage` (*Integer*) — The current number of actions the business has taken within the specified time period.  `limit_expiration_time` (*Integer*) — The Unix time at which the limit will expire in UTC timezone.  If `current_usage` is under the max allowed for the limit, this field won’t be present. |
+| `limits`  *JSON Object* | A list of time-bound restrictions for the given `action_name`.  Each `action_name` has 1 or more restrictions depending on the timeframe.  For example, a business can only send 2 permission requests in a 24-hour period.  `limits` contains the following fields:  `time_period` (*String*) — The span of time in which the limit applies, represented in the ISO 8601 format.  `max_allowed` (*Integer*) — The maximum number of actions allowed within the specified time period.  `current_usage` (*Integer*) — The current number of actions the business has taken within the specified time period.  `limit_expiration_time` (*Integer*) — The Unix time at which the limit will expire in UTC timezone.  If `current_usage` is under the max allowed for the limit, this field won't be present. |
 
 #### Error response
 
@@ -479,7 +475,7 @@ Possible errors that can occur:
 
 [View general Cloud API Error Codes here](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/error-codes)
 
-**Usernames and business-scoped user IDs:** When querying call permission state, you can use the `recipient` parameter to identify the user by BSUID instead of a phone number; the user’s phone number may be omitted. For details, see [Business-scoped user IDs](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#business-scoped-user-id).
+**Usernames and business-scoped user IDs:** When querying call permission state, you can use the `recipient` parameter to identify the user by BSUID instead of a phone number; the user's phone number may be omitted. For details, see [Business-scoped user IDs](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#business-scoped-user-id).
 
 ## User call permission reply webhook
 
@@ -534,12 +530,12 @@ No webhook is sent when a temporary permission expires. The `expiration_timestam
 | `from_user_id`  *String* | The [BSUID](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#business-scoped-user-id) of the WhatsApp user. |
 | `from_parent_user_id`  *String* | **Optional.** The [parent BSUID](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#parent-business-scoped-user-ids) of the WhatsApp user. Only included if parent BSUIDs are enabled. |
 | `context.id`  *String* | Can be either of two values   * Message ID of the permission request message sent by the business to the WhatsApp user. Shows when a permission decision is made by the user in response to a call permission request. * Call ID of the missed call placed by the business to the WhatsApp user. Shows when callback permission is enabled in settings and the user calls the business. |
-| `response`  *String* | The WhatsApp user’s response to the call permission request message  Can be `accept` or `reject` |
+| `response`  *String* | The WhatsApp user's response to the call permission request message  Can be `accept` or `reject` |
 | `is_permanent`  *Boolean* | Indicates if the permission is permanent or not. For temporary permission this will always be false. |
 | `expiration_timestamp`  *String* | Time in seconds when this call permission expires if the WhatsApp user approved it |
 | `response_source`  *String* | The source of this permission  Possible values for accepted call permissions are:   * `user_action`: User approved or rejected the permission * `automatic`: An automatic permission approval due to the WhatsApp user initiating the call |
 
-**Usernames and business-scoped user IDs:** Call permission reply webhooks may include `from_user_id` and `from_parent_user_id` to identify the user by BSUID; the user’s phone number may be omitted. For details, see [Business-scoped user IDs](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#business-scoped-user-id).
+**Usernames and business-scoped user IDs:** Call permission reply webhooks may include `from_user_id` and `from_parent_user_id` to identify the user by BSUID; the user's phone number may be omitted. For details, see [Business-scoped user IDs](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#business-scoped-user-id).
 
 #### Webhook sample scenarios
 

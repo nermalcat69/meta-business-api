@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/marketing
 
 Updated: Jun 26, 2026
 
-Pacing determines how your ads budget is spent over time. It provides uniform competition at Facebook’s ads auction across all advertisers each day and automatically allocates budgets to different ads. Pacing functions the same way for ads created with the API as it does with Facebook tools. See [Ads Help Center, Delivery, and Pacing⁠](https://www.facebook.com/business/help/1037425549606837).
+Pacing determines how your ads budget is spent over time. It provides uniform competition at Facebook's ads auction across all advertisers each day and automatically allocates budgets to different ads. Pacing functions the same way for ads created with the API as it does with Facebook tools. See [Ads Help Center, Delivery, and Pacing⁠](https://www.facebook.com/business/help/1037425549606837).
 
 You can set three pacing options in `pacing_type` when you create or update an [ad set](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-campaign). With standard pacing, Meta enters your ad into every relevant auction and adjusts your bid over a day to produce smooth, optimal delivery relative to your objective and budget. This is the default pacing.
 
@@ -20,7 +20,7 @@ curl \
 https://graph.facebook.com/v25.0/<AD_SET_ID>
 ```
 
-**Accelerated delivery** removes all pacing adjustments from your bid. Meta enters your ad into all eligible auctions at its full maximum bid. You can achieve maximum delivery with a specified cost and budget. Accelerated delivery results in delivery that is not smooth throughout the day; your ad set’s budget may be exhausted before the end of the day. To create an ad set with **accelerated delivery**:
+**Accelerated delivery** removes all pacing adjustments from your bid. Meta enters your ad into all eligible auctions at its full maximum bid. You can achieve maximum delivery with a specified cost and budget. Accelerated delivery results in delivery that is not smooth throughout the day; your ad set's budget may be exhausted before the end of the day. To create an ad set with **accelerated delivery**:
 
 ```
 curl \
@@ -31,7 +31,7 @@ curl \
   -F 'bid_amount=2' \
   -F 'daily_budget=1000' \
   -F 'campaign_id=<CAMPAIGN_ID>' \
-  -F 'targeting={"geo_locations":{"countries":["US"]}}' \
+  -F 'targeting={"geo_locations":{"countries":["US"]}​}' \
   -F 'access_token=<ACCESS_TOKEN>' \
 https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/adsets
 ```
@@ -44,7 +44,7 @@ You can disable pacing for these scenarios:
 
 You should not use this option when:
 
-* Meta under-delivers your ad because your bid is too low or targeting too narrow. In these cases Meta already effectively removes budget pacing, so accelerated delivery won’t help.
+* Meta under-delivers your ad because your bid is too low or targeting too narrow. In these cases Meta already effectively removes budget pacing, so accelerated delivery won't help.
 
 See [Ad Set, Pacing Options, Reference](https://developers.facebook.com/docs/marketing-api/adset/pacing).
 
@@ -77,7 +77,7 @@ curl \
   ]' \
   -F 'bid_amount=2' \
   -F 'campaign_id=<CAMPAIGN_ID>' \
-  -F 'targeting={"geo_locations":{"countries":["US"]}}' \
+  -F 'targeting={"geo_locations":{"countries":["US"]}​}' \
   -F 'access_token=<ACCESS_TOKEN>' \
 https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/adsets
 ```
@@ -132,7 +132,7 @@ Each array must have:
 | `start_minute`  type: int | 0-based minute of day. When schedule starts |
 | `end_minute`  type: int | 0-based minute of day. When schedule ends |
 | `days`  type: Array of ints | Days schedule active. Valid values: 0-6 where 0 is Sunday, 1 is Monday, and 6 is Saturday. |
-| `timezone_type`  Optional | If the value is “user”, the viewer’s timezone. If the value is “advertiser”, the account timezone. |
+| `timezone_type`  Optional | If the value is "user", the viewer's timezone. If the value is "advertiser", the account timezone. |
 
 `start_minute` and `end_minute` must be on the hour and must be at least one hour apart. For [Reach and Frequency](https://developers.facebook.com/docs/marketing-api/reachandfrequency), day parts must be at least 4 hours. For example:
 
@@ -143,7 +143,7 @@ Each array must have:
 The following restrictions apply:
 
 * Only use ad scheduling with lifetime budgets.
-* Ad scheduling applies to a target audience’s time zone for ads in a set, **not an ad account’s time zone**. If your ad account time zone is ET, but your ads target people in California in PST, when you schedule ads from 6PM-9PM, Meta delivers them to people in California 6PM-9PM PST not ET.
+* Ad scheduling applies to a target audience's time zone for ads in a set, **not an ad account's time zone**. If your ad account time zone is ET, but your ads target people in California in PST, when you schedule ads from 6PM-9PM, Meta delivers them to people in California 6PM-9PM PST not ET.
 
 ## FAQ
 
@@ -155,11 +155,11 @@ If we over-deliver your ad, you might have a very large audience that quickly ex
 
 **Is pacing at the ad set or ad campaign level?**
 
-If you’re using campaign budget optimization, budget pacing is at the campaign level. Otherwise, budget pacing is done at the ad set level.
+If you're using campaign budget optimization, budget pacing is at the campaign level. Otherwise, budget pacing is done at the ad set level.
 
 **When I change my budget, will it impact pacing?**
 
-When you change budget, our systems have to learn the new optimal bid which takes time. During this time, your bids are not optimal and we can’t maximize ROI. Therefore you should not change bid and budget **frequently**.
+When you change budget, our systems have to learn the new optimal bid which takes time. During this time, your bids are not optimal and we can't maximize ROI. Therefore you should not change bid and budget **frequently**.
 
 **When should I change bid or budget?**
 
@@ -169,11 +169,11 @@ If you have to change these parameters, limit yourself to 2-3 times a day and on
 
 Facebook optimizes pacing within a day, so this is not a problem.
 
-**I have ads with ‘billing\_event’ as ‘IMPRESSIONS’ and I switched ‘billing\_event’ to ‘LINK\_CLICKS’. Will this affect pacing?**
+**I have ads with 'billing\_event' as 'IMPRESSIONS' and I switched 'billing\_event' to 'LINK\_CLICKS'. Will this affect pacing?**
 
 Pacing may change. Since you switch from view-based billing to click-based billing, we re-adjust pacing.
 
-**I don’t see ‘max\_bid’ for different bid types, where is it?**
+**I don't see 'max\_bid' for different bid types, where is it?**
 
 Max bid is `bid_amount` of an ad set you specify regardless of its optimization goal.
 

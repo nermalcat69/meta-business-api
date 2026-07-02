@@ -22,8 +22,8 @@ HTTPPHP SDKJavaScript SDKAndroid SDKiOS SDK
 ---
 
 ```
-GET /v25.0/{business-user-id} HTTP/1.1  
-Host: graph.facebook.com
+GET /v25.0/{business-user-id} HTTP/1.1  
+Host: graph.facebook.com
 ```
 
 Try it in [Graph API Explorer](https://developers.facebook.com/tools/explorer/?method=GET&path=%7Bbusiness-user-id%7D&version=v25.0)
@@ -144,7 +144,7 @@ success: bool,
 | 415 | Two factor authentication required. User have to enter a code from SMS or TOTP code generator to pass 2fac. This could happen when accessing a 2fac-protected asset like a page that is owned by a 2fac-protected business manager. |
 | 368 | The action attempted has been deemed abusive or is otherwise disallowed |
 | 190 | Invalid OAuth 2.0 Access Token |
-| 3914 | It looks like you’re trying to remove the last admin from this Business Manager. At least one admin is required in Business Manager. |
+| 3914 | It looks like you're trying to remove the last admin from this Business Manager. At least one admin is required in Business Manager. |
 
 ---
 
@@ -170,7 +170,7 @@ success: bool,
 
 | Error Code | Description |
 | --- | --- |
-| 3914 | It looks like you’re trying to remove the last admin from this Business Manager. At least one admin is required in Business Manager. |
+| 3914 | It looks like you're trying to remove the last admin from this Business Manager. At least one admin is required in Business Manager. |
 | 100 | Invalid parameter |
 | 200 | Permissions error |
 | 415 | Two factor authentication required. User have to enter a code from SMS or TOTP code generator to pass 2fac. This could happen when accessing a 2fac-protected asset like a page that is owned by a 2fac-protected business manager. |

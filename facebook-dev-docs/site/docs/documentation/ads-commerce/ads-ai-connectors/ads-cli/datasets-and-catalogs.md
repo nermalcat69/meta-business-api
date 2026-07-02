@@ -16,7 +16,7 @@ An ad creative is an independent object that can be reused across multiple ads. 
 * Create an ad creative with `meta ads creative create`
 * Reference the ad creative when creating an ad with `meta ads ad create --creative-id <CREATIVE_ID>`
 
-Every ad creative requires a `--page-id` -- the Facebook Business Page that acts as the ad’s identity. Find your Business Page IDs with:
+Every ad creative requires a `--page-id` -- the Facebook Business Page that acts as the ad's identity. Find your Business Page IDs with:
 
 ```
 meta ads page list

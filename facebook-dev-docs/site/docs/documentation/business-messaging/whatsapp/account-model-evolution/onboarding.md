@@ -13,7 +13,7 @@ This document is for Solution Partners and direct developers building on the Wha
 
 ## Why this is changing
 
-Today, the WABA bundles phone numbers, templates, billing, webhooks, and partner access into a single entity. As a result, working with multiple partners requires a separate phone number for each partner. This means clients appear as multiple contacts in a WhatsApp user’s chat list — one for each phone number — which creates a fragmented experience for WhatsApp users and reflects poorly on the client’s brand. The new model addresses these limitations by separating business identity from template messages and billing.
+Today, the WABA bundles phone numbers, templates, billing, webhooks, and partner access into a single entity. As a result, working with multiple partners requires a separate phone number for each partner. This means clients appear as multiple contacts in a WhatsApp user's chat list — one for each phone number — which creates a fragmented experience for WhatsApp users and reflects poorly on the client's brand. The new model addresses these limitations by separating business identity from template messages and billing.
 
 The new account model benefits both partners and direct developers:
 
@@ -31,7 +31,7 @@ The new account model benefits both partners and direct developers:
 
 ![Before and after comparison of the WhatsApp Business account model, showing how a single WABA splits into a WhatsApp Business Account (WAAC) for phone numbers and a Messaging Account (PMA) for templates and billing.](https://scontent.fdel1-7.fna.fbcdn.net/v/t39.2365-6/686954085_1496158012242848_1081377968281458077_n.png?_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=zHjXDq15rkcQ7kNvwGafFXS&_nc_oc=AdoF75PtsdYAUo0V_GHYIrJKy8rj36-MsYMhWtoKRpkNPuiVdXjMyAlsRmC55PHyMP216igzcI9AN9JXceW5nGY-&_nc_zt=14&_nc_ht=scontent.fdel1-7.fna&_nc_gid=LxonrJBu12vrozwSDxEEJQ&_nc_ss=7b2a8&oh=00_AQBFM_7cBlMOcbWxwmsNBqVOcyBLn5lS6DJIyvZwI-fK7w&oe=6A604228)
 
-Each of these benefits is made possible because the new model separates a business’s identity (phone numbers) from template messages and billing. One trusted phone number works across all integrations, and each integration gets its own isolated templates, billing, and analytics.
+Each of these benefits is made possible because the new model separates a business's identity (phone numbers) from template messages and billing. One trusted phone number works across all integrations, and each integration gets its own isolated templates, billing, and analytics.
 
 ## New account model
 
@@ -46,18 +46,18 @@ Your existing IDs and API calls continue to work. Meta handles the account migra
 
 ### WhatsApp Business Account (WAAC)
 
-The WhatsApp Business Account represents a business’s identity (what WhatsApp users see and interact with in the WhatsApp app). It contains:
+The WhatsApp Business Account represents a business's identity (what WhatsApp users see and interact with in the WhatsApp app). It contains:
 
-* **Phone numbers** — the business’s registered WhatsApp numbers
+* **Phone numbers** — the business's registered WhatsApp numbers
 * **Business usernames** — unique identifiers that will supplement phone numbers as an alternate way for WhatsApp users to reach a business (future capability)
 * **Business profile information**
 * **Product catalogs**
 
 A WAAC is always owned by the client or direct developer and can be shared across direct integrations and multiple partners. When a client shares their WAAC with you, you gain access to the phone number it contains.
 
-Since each WAAC contains a single phone number, multiple WAACs can be linked together in a WAAC hierarchy — a primary WAAC with linked WAACs (sometimes called a “phone set”) — allowing clients to manage a collection of phone numbers as a group. When a client shares a primary WAAC with you, you get access to all linked WAACs and their phone numbers in the set.
+Since each WAAC contains a single phone number, multiple WAACs can be linked together in a WAAC hierarchy — a primary WAAC with linked WAACs (sometimes called a "phone set") — allowing clients to manage a collection of phone numbers as a group. When a client shares a primary WAAC with you, you get access to all linked WAACs and their phone numbers in the set.
 
-Note that WhatsApp Business Account (WAAC) is referred to as “WhatsApp Business Account” in the Terms of Service.
+Note that WhatsApp Business Account (WAAC) is referred to as "WhatsApp Business Account" in the Terms of Service.
 
 ### Messaging Account
 
@@ -76,7 +76,7 @@ A business phone number can be associated with multiple Messaging Accounts. See 
 
 **Faster partner integration**: Because the new model decouples phone numbers from Messaging Accounts, clients can add or change partners without migrating their phone number. Existing conversations are uninterrupted when new partners are added. The phone number migration process that previously acted as a natural switching barrier no longer applies. If you extend credit lines, factor this change into your risk management.
 
-Note that Messaging Account is referred to as “Messaging Account” in the Terms of Service.
+Note that Messaging Account is referred to as "Messaging Account" in the Terms of Service.
 
 ## What stays the same
 
@@ -95,7 +95,7 @@ Most of the platform surface you use today is unchanged:
 * **Webhook subscriptions** — you continue to [subscribe](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/subscribed-apps-api) to the `whatsapp_business_account` topic using your Messaging Account ID (WABA ID)
 * **Business verification** — same process
 * **Display names, quality ratings, and messaging limits** — unchanged
-* **Throughput** — remains at the phone number level. When multiple partners share a phone number, they share the phone number’s throughput capacity
+* **Throughput** — remains at the phone number level. When multiple partners share a phone number, they share the phone number's throughput capacity
 * **Messaging limits** — remain at the business portfolio level. When multiple partners share a phone number, the messaging limit (unique users per 24-hour period) is shared across all partners on that number
 
 ## What changes

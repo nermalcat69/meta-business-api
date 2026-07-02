@@ -62,7 +62,7 @@ https://graph.facebook.com/v25.0/act_AD_ACCOUNT_ID
 ```
 curl -i -X POST \
   -H 'Content-Type: application/json' \
-  -d '{"custom_audience_info": {"audience_type_param_name": "audience_type", "new_customer_tag": "prospecting", "existing_customer_tag": "retargeting"}}' \
+  -d '{"custom_audience_info": {"audience_type_param_name": "audience_type", "new_customer_tag": "prospecting", "existing_customer_tag": "retargeting"}​}' \
   // Note: new_customer_tag and existing_customer_tag are both shown here for example only
   -d 'access_token=ACCESS_TOKEN' \
   https://graph.facebook.com/v25.0/act_AD_ACCOUNT_ID

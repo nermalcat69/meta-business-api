@@ -9,9 +9,9 @@ Updated: Mar 30, 2026
 
 ## Call icon visibility controls
 
-You can hide the call icon in a Messenger thread by setting `icon_enabled` to false using the Messenger Call Settings API. By default, the call icon visibility is set to `true` for all Pages. When `icon_enabled` is set to `false`, the call icon won’t display in any threads for that Page.
+You can hide the call icon in a Messenger thread by setting `icon_enabled` to false using the Messenger Call Settings API. By default, the call icon visibility is set to `true` for all Pages. When `icon_enabled` is set to `false`, the call icon won't display in any threads for that Page.
 
-Additionally, users can’t initiate calls from Missed Call or Completed Call messages when icon visibility is turned off. You can send a Call Prompt message to allow the user to call your business.
+Additionally, users can't initiate calls from Missed Call or Completed Call messages when icon visibility is turned off. You can send a Call Prompt message to allow the user to call your business.
 
 Use this API to enable or disable the call icon for the Page.
 
@@ -20,12 +20,10 @@ Use this API to enable or disable the call icon for the Page.
 | `icon_enabled` *boolean* | Set to `true` to make call icon visible in Messenger threads, or `false` to hide the call icon in Messenger threads |
 
 ```
-```
-POST /<PAGE_ID>/messenger_call_settings  
+POST /<PAGE_ID>/messenger_call_settings  
 {  
-    "icon_enabled" : <boolean_value>  
+    "icon_enabled" : <boolean_value>  
 }
-```
 ```
 
 ### Example response
@@ -35,11 +33,9 @@ POST /<PAGE_ID>/messenger_call_settings
 | `result` *string* | `success` if the icon visibility was successfully set  `failure` if the icon visibility could not be set |
 
 ```
-```
 {  
-  "result": "success/failure"  
+  "result": "success/failure"  
 }
-```
 ```
 
 ### Error response
@@ -52,13 +48,13 @@ For more details on these errors, see the [Messenger Platform error codes refere
 
 ### Send a call prompt message using Messenger Send API
 
-You can send a new template `call_prompt`. This template contains a button that lets the consumer initiate a call with your business. The consumer can initiate the call for the number of days you specify when sending the message. Use `ttl_days` to specify how many days the calling button remains active for the consumer. If you don’t specify `ttl_days`, the calling button is active for **7 days** by default.
+You can send a new template `call_prompt`. This template contains a button that lets the consumer initiate a call with your business. The consumer can initiate the call for the number of days you specify when sending the message. Use `ttl_days` to specify how many days the calling button remains active for the consumer. If you don't specify `ttl_days`, the calling button is active for **7 days** by default.
 
 Call the Messenger Send API with the following payload to send a Call CTA to the consumer.
 
 | Property | Description |
 | --- | --- |
-| `recipient.id` *string* | Consumer’s PSID that the message will be sent to |
+| `recipient.id` *string* | Consumer's PSID that the message will be sent to |
 | `message`  *JSON* | The text/attachment that will be sent to the consumer |
 | `message.attachment.type` *string* | Type of the attachment; for a Call CTA, it will always be `template` |
 | `message.attachment.payload.template_type` *string* | Type of template being sent |
@@ -68,16 +64,14 @@ Call the Messenger Send API with the following payload to send a Call CTA to the
 
 | Property | Description |
 | --- | --- |
-| `recipient.id` *string* | Consumer’s PSID that the message will be sent to |
+| `recipient.id` *string* | Consumer's PSID that the message will be sent to |
 | `message_id`  *string* | `id` representing the successfully sent message |
 
 ```
-```
 {  
-  "recipient_id": "<PSID>"  
-  "message_id": "<Message-id>"  
+  "recipient_id": "<PSID>"  
+  "message_id": "<Message-id>"  
 }
-```
 ```
 
 ### Error response
@@ -95,7 +89,7 @@ For more details on these errors, see the [Messenger Platform error codes refere
 Use this API to update the settings. This updates the same setting on Meta Business Suite and the Messenger app.
 To set the call hours for a Page, make an API request to the `messenger_call_settings` endpoint and set `call_hours`.
 Updates in existing chats are near real-time.
-When you set hours, any previous settings are erased. Any days you don’t set default to closed.
+When you set hours, any previous settings are erased. Any days you don't set default to closed.
 
 | Property | Description |
 | --- | --- |
@@ -107,26 +101,24 @@ When you set hours, any previous settings are erased. Any days you don’t set d
 | `close_time` *string* | Close time expressed in the format hhmm. Example: 0000 = 12AM, 0900 = 9AM, 1200 = 12PM, 1830 = 6:30PM |
 
 ```
-```
-POST /<PAGE_ID>/messenger_call_settings  
+POST /<PAGE_ID>/messenger_call_settings  
 {  
-    "call_hours": {  
-      "timezone_id": "America/Los_Angeles",  
-      "weekly_operating_hours": [  
-        {  
-          "day_of_week": "MONDAY",  
-          "open_time": "0900",  
-          "close_time": "1700"  
-        },  
-        {  
-          "day_of_week": "TUESDAY",  
-          "open_time": "0930",  
-          "close_time": "1830"  
-        }  
-      ]  
-    }  
+    "call_hours": {  
+      "timezone_id": "America/Los_Angeles",  
+      "weekly_operating_hours": [  
+        {  
+          "day_of_week": "MONDAY",  
+          "open_time": "0900",  
+          "close_time": "1700"  
+        },  
+        {  
+          "day_of_week": "TUESDAY",  
+          "open_time": "0930",  
+          "close_time": "1830"  
+        }  
+      ]  
+    }  
 }
-```
 ```
 
 ### Example response
@@ -136,11 +128,9 @@ POST /<PAGE_ID>/messenger_call_settings
 | `success` *boolean* | Whether the operation was successful. |
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 ### Error response
@@ -163,9 +153,7 @@ To retrieve the current call hours for a Page, send a GET request to the `messen
 | `Page-Id` *string* | The delegate Page ID |
 
 ```
-```
-GET /<PAGE_ID>/messenger_call_settings?fields=call_hours
-```
+GET /<PAGE_ID>/messenger_call_settings?fields=call_hours
 ```
 
 ### Example response
@@ -175,25 +163,23 @@ GET /<PAGE_ID>/messenger_call_settings?fields=call_hours
 | `call_hours` *array* | Call hours for each day of the week |
 
 ```
-```
 {  
-    "call_hours": {  
-      "timezone_id": "America/Los_Angeles",  
-      "weekly_operating_hours": [  
-        {  
-          "day_of_week": "MONDAY",  
-          "open_time": "0900",  
-          "close_time": "1700"  
-        },  
-        {  
-          "day_of_week": "TUESDAY",  
-          "open_time": "0930",  
-          "close_time": "1830"  
-        }  
-      ]  
-    }  
+    "call_hours": {  
+      "timezone_id": "America/Los_Angeles",  
+      "weekly_operating_hours": [  
+        {  
+          "day_of_week": "MONDAY",  
+          "open_time": "0900",  
+          "close_time": "1700"  
+        },  
+        {  
+          "day_of_week": "TUESDAY",  
+          "open_time": "0930",  
+          "close_time": "1830"  
+        }  
+      ]  
+    }  
 }
-```
 ```
 
 ### Error response
@@ -219,37 +205,35 @@ You can subscribe to the `call_settings_update` webhook to receive notifications
 | `call_hours` *array* | Call hours for each day of the week |
 
 ```
-```
 {  
-  "object": "page",  
-  "entry": [  
-    {  
-      "id": <PAGE_ID>,  
-      "time": 1671644824,  
-      "call_settings": {  
-          "audio_enabled": true,  
-          "icon_enabled": true,  
-          "call_routing": "PARTNERS",  
-          "call_hours": {  
-              "timezone_id": "timezone_id",  
-              "weekly_operating_hours": [  
-                 {  
-                   "day_of_week": "MONDAY",  
-                   "open_time": "0400",  
-                   "close_time": "1020"  
-                 },  
-                 {  
-                    "day_of_week": "TUESDAY",  
-                    "open_time": "0108",  
-                    "close_time": "1020"  
-                 }  
-              ],  
-          },  
-      }  
-    }  
-  ]  
+  "object": "page",  
+  "entry": [  
+    {  
+      "id": <PAGE_ID>,  
+      "time": 1671644824,  
+      "call_settings": {  
+          "audio_enabled": true,  
+          "icon_enabled": true,  
+          "call_routing": "PARTNERS",  
+          "call_hours": {  
+              "timezone_id": "timezone_id",  
+              "weekly_operating_hours": [  
+                 {  
+                   "day_of_week": "MONDAY",  
+                   "open_time": "0400",  
+                   "close_time": "1020"  
+                 },  
+                 {  
+                    "day_of_week": "TUESDAY",  
+                    "open_time": "0108",  
+                    "close_time": "1020"  
+                 }  
+              ],  
+          },  
+      }  
+    }  
+  ]  
 }
-```
 ```
 
 ### Inbound call routing
@@ -269,14 +253,12 @@ Use this API to update the settings. This setting only affects consumer-initiate
 | `call_routing`  *JSON* | `ring_target`: Enum value   * **META**:   Incoming calls will only ring meta-owned platforms such as Business Inbox in Messenger and Meta Business Suite * **PARTNERS**:   Incoming calls will only ring third party applications |
 
 ```
-```
-POST /<PAGE_ID>/messenger_call_settings  
+POST /<PAGE_ID>/messenger_call_settings  
 {  
-    "call_routing": {  
-        "ring_target": <RING_TARGET>  
-    }  
+    "call_routing": {  
+        "ring_target": <RING_TARGET>  
+    }  
 }
-```
 ```
 
 ### Example response
@@ -286,11 +268,9 @@ POST /<PAGE_ID>/messenger_call_settings
 | `success` *boolean* | Whether the operation was successful |
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 ### Error response
@@ -312,9 +292,7 @@ To retrieve the current call routing for a Page, send a GET request to the `mess
 | `Page-Id` *string* | The delegate Page ID |
 
 ```
-```
-GET /<PAGE_ID>/messenger_call_settings?fields=call_routing
-```
+GET /<PAGE_ID>/messenger_call_settings?fields=call_routing
 ```
 
 ### Example response
@@ -324,13 +302,11 @@ GET /<PAGE_ID>/messenger_call_settings?fields=call_routing
 | `call_routing` *JSON* | object with value `ring_target` having enum value |
 
 ```
-```
 {  
-  "call_routing": {  
-    "ring_target": "PARTNERS"  
-  }  
+  "call_routing": {  
+    "ring_target": "PARTNERS"  
+  }  
 }
-```
 ```
 
 ### Error response

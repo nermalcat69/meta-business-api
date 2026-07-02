@@ -24,12 +24,12 @@ When players open the Gaming Tab, they see a curated selection of games organize
 * **Recently Played** — Games the player has played before, making it easy to return.
 * **Popular Games** — Games with high overall engagement across the platform.
 * **New Games** — Recently launched titles that are gaining traction.
-* **Recommended for You** — Games personalized to the player’s interests and play history.
+* **Recommended for You** — Games personalized to the player's interests and play history.
 * **Trending** — Games experiencing a surge in player activity.
 
 **What you can do:**
 
-* Ensure your game’s icon, cover image, and name are polished and professional. These are the first things players see when browsing, and they heavily influence whether a player taps on your game.
+* Ensure your game's icon, cover image, and name are polished and professional. These are the first things players see when browsing, and they heavily influence whether a player taps on your game.
 * Maintain strong engagement and retention metrics. Games with healthy player bases and good retention are more likely to appear in curated sections.
 * Release regular updates and new content. Active games are prioritized in discovery over stale ones.
 
@@ -49,16 +49,16 @@ Players can search for games by name within the Gaming Tab. Search results are r
 **What you can do:**
 
 * Choose a memorable and distinctive game name that is easy to spell and search for. Avoid overly generic names that will be buried under unrelated results.
-* Include relevant keywords in your game’s description. While the exact search algorithm considers multiple signals, a well-written description that naturally includes relevant terms can help your game surface for related searches.
+* Include relevant keywords in your game's description. While the exact search algorithm considers multiple signals, a well-written description that naturally includes relevant terms can help your game surface for related searches.
 
 #### Personalized recommendations
 
-Facebook’s recommendation system analyzes each player’s behavior — what games they play, how long they play, what their friends play, and other signals — to surface personalized game suggestions. These recommendations appear in the Gaming Tab and the News Feed.
+Facebook's recommendation system analyzes each player's behavior — what games they play, how long they play, what their friends play, and other signals — to surface personalized game suggestions. These recommendations appear in the Gaming Tab and the News Feed.
 
 **What you can do:**
 
 * Build a game that encourages repeat play and strong session engagement. The recommendation system favors games that players return to and spend meaningful time in.
-* Integrate social features. When a player’s friends are playing your game, the recommendation system is more likely to suggest it to that player. Social signals like friend activity, shared content, and tournament participation all feed into the recommendation engine.
+* Integrate social features. When a player's friends are playing your game, the recommendation system is more likely to suggest it to that player. Social signals like friend activity, shared content, and tournament participation all feed into the recommendation engine.
 * Maintain strong Day 1, Day 7, and Day 28 retention rates. Games with healthy retention curves are flagged by the system as high-quality experiences and receive more recommendation impressions.
 
 ### News Feed
@@ -67,7 +67,7 @@ The Facebook News Feed is one of the highest-traffic surfaces on the platform, a
 
 #### Friend activity
 
-When a player plays your game, achieves a milestone, or participates in a tournament, that activity can appear in their friends’ News Feeds. These stories are powerful because they come with an implicit endorsement — a friend is playing this game, which makes it feel trustworthy and interesting.
+When a player plays your game, achieves a milestone, or participates in a tournament, that activity can appear in their friends' News Feeds. These stories are powerful because they come with an implicit endorsement — a friend is playing this game, which makes it feel trustworthy and interesting.
 
 **What you can do:**
 
@@ -85,7 +85,7 @@ Players can actively share game content — scores, achievements, screenshots, a
 
 #### Viral posts
 
-Occasionally, game content goes viral on the platform — a particularly entertaining clip, an impressive achievement, or a clever challenge can spread far beyond a player’s immediate friend circle. While you cannot manufacture virality, you can create the conditions for it.
+Occasionally, game content goes viral on the platform — a particularly entertaining clip, an impressive achievement, or a clever challenge can spread far beyond a player's immediate friend circle. While you cannot manufacture virality, you can create the conditions for it.
 
 **What you can do:**
 
@@ -111,8 +111,8 @@ The challenge mechanic allows a player to challenge a friend to beat their score
 
 **What you can do:**
 
-* Implement the `FBInstant.updateAsync` method with `action: 'CUSTOM'` and a challenge `template` to create compelling challenge experiences. Pass the challenger’s score in the `data` field and a personalized message in the `text` field, and set a `cta` such as `'Accept Challenge'` to motivate the recipient to play. See [Custom Updates](https://developers.facebook.com/documentation/games/retain/custom-updates) for the full payload format.
-* Make the challenge experience feel personal and competitive. Show the challenger’s name, photo, and score prominently so the recipient feels motivated to beat them.
+* Implement the `FBInstant.updateAsync` method with `action: 'CUSTOM'` and a challenge `template` to create compelling challenge experiences. Pass the challenger's score in the `data` field and a personalized message in the `text` field, and set a `cta` such as `'Accept Challenge'` to motivate the recipient to play. See [Custom Updates](https://developers.facebook.com/documentation/games/retain/custom-updates) for the full payload format.
+* Make the challenge experience feel personal and competitive. Show the challenger's name, photo, and score prominently so the recipient feels motivated to beat them.
 
 ### Notifications
 
@@ -133,32 +133,32 @@ Players may receive notifications when their friends achieve milestones, beat th
 
 **What you can do:**
 
-* Use custom updates and context-aware messaging to trigger meaningful notifications. Focus on notifications that the recipient will find relevant and engaging — for example, “Your friend just beat your high score in [Game Name]! Can you take it back?”
+* Use custom updates and context-aware messaging to trigger meaningful notifications. Focus on notifications that the recipient will find relevant and engaging — for example, "Your friend just beat your high score in [Game Name]! Can you take it back?"
 * Respect notification frequency limits. Sending too many notifications will cause players to mute your game, which permanently cuts off this channel.
 
 ### Facebook Search
 
-Players can discover games by searching on Facebook’s main search bar, not just within the Gaming Tab. When a player searches for a game-related term (a game name, a genre, or even a general query like “puzzle game”), your game can appear in the results.
+Players can discover games by searching on Facebook's main search bar, not just within the Gaming Tab. When a player searches for a game-related term (a game name, a genre, or even a general query like "puzzle game"), your game can appear in the results.
 
 **What you can do:**
 
-* Optimize your game’s name and description for search relevance. Use clear, descriptive language that includes the terms players are likely to search for.
+* Optimize your game's name and description for search relevance. Use clear, descriptive language that includes the terms players are likely to search for.
 * Build a Facebook Page for your game (see below) and keep it active. Facebook Search considers Page activity, follower count, and engagement when ranking results.
 
 ### Game Pages
 
-Every Instant Game can have an associated Facebook Page. The Game Page serves as your game’s home on Facebook — a place where players can learn about the game, see updates, join a community, and launch the game directly.
+Every Instant Game can have an associated Facebook Page. The Game Page serves as your game's home on Facebook — a place where players can learn about the game, see updates, join a community, and launch the game directly.
 
 **What you can do:**
 
 * Create and maintain an active Facebook Page for your game. Post regular updates, respond to player comments, and share content that keeps your community engaged.
 * Use the Page to announce new features, events, and tournaments. Players who follow your Page will see these updates in their News Feed, which drives re-engagement and can attract new players through social sharing.
-* Add a “Play Game” call-to-action button to your Page so visitors can launch your game directly from the Page.
+* Add a "Play Game" call-to-action button to your Page so visitors can launch your game directly from the Page.
 * Encourage players to follow your Page by prompting them at appropriate moments in your game (for example, after completing a tutorial or achieving a milestone).
 
 ## Asset optimization for discovery
 
-Regardless of which discovery surface brings a player to your game, the visual assets and metadata you provide are what determine whether that player actually taps “Play.” Optimizing these assets is one of the highest-impact actions you can take for organic acquisition.
+Regardless of which discovery surface brings a player to your game, the visual assets and metadata you provide are what determine whether that player actually taps "Play." Optimizing these assets is one of the highest-impact actions you can take for organic acquisition.
 
 ### Game icon
 
@@ -174,18 +174,18 @@ Your game icon appears in the Gaming Tab, search results, notifications, Messeng
 
 ### Cover image
 
-The cover image (also called the banner image or hero image) appears in the Gaming Tab when your game is featured or when a player views your game’s detail page. It provides a larger canvas to showcase your game’s visual identity.
+The cover image (also called the banner image or hero image) appears in the Gaming Tab when your game is featured or when a player views your game's detail page. It provides a larger canvas to showcase your game's visual identity.
 
 **Best practices:**
 
 * Use a high-resolution image that represents the core experience of your game.
 * Show gameplay or game characters in action — static logos are less engaging.
-* Include your game’s name in the image, but do not rely on it as the only way to identify the game (the name is also displayed as text).
+* Include your game's name in the image, but do not rely on it as the only way to identify the game (the name is also displayed as text).
 * Follow the required dimensions specified in the App Dashboard to avoid cropping issues.
 
 ### Game name
 
-Your game’s name appears on every discovery surface. It should be distinctive, memorable, and easy to spell.
+Your game's name appears on every discovery surface. It should be distinctive, memorable, and easy to spell.
 
 **Best practices:**
 
@@ -196,7 +196,7 @@ Your game’s name appears on every discovery surface. It should be distinctive,
 
 ### Description
 
-Your game’s description appears on the game detail page and may be used by search and recommendation algorithms.
+Your game's description appears on the game detail page and may be used by search and recommendation algorithms.
 
 **Best practices:**
 

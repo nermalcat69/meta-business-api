@@ -15,7 +15,7 @@ Updated: Jun 28, 2026
 
 WhatsApp Flows let you collect information from your customers, understand their preferences, and collect opt-in for promotions ahead of the sales season. With WhatsApp Flows, your customers can provide their details and interests in a fast and simple way, without the need to speak with an agent. A business can use these details and interests to drive targeted promotions and purchases.
 
-This guide walks you through the entire process to build a Flow for ‘Collect Purchase Interest’ use case. The templates here can be adapted to suit your use case.
+This guide walks you through the entire process to build a Flow for 'Collect Purchase Interest' use case. The templates here can be adapted to suit your use case.
 
 The Flows you build demonstrate how to:
 
@@ -175,7 +175,7 @@ Managed by the business. Learn more [Learn more](https://developers.facebook.com
 
 You can preview the Flow on the right of the Builder UI.
 
-The Flow remains in the draft state as you edit it. You can share it with your team for testing purposes only. To share it with a large audience, you’ll need to publish it. However, you can’t edit the Flow once you [publish](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides#publishing).
+The Flow remains in the draft state as you edit it. You can share it with your team for testing purposes only. To share it with a large audience, you'll need to publish it. However, you can't edit the Flow once you [publish](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides#publishing).
 
 **See also**
 
@@ -190,7 +190,7 @@ After you complete the configurations, toggle the interactive preview in the Wha
 * Trigger the interactive preview by clicking on settings menu in the **Preview** section of the Flow Builder and enabling **Interactive mode** toggle.
 * In the modal that appears, select **JOIN\_NOW** as the **First Screen**.
 
-Now, click on the **Actions** tab at the bottom of the code editor in Builder. You’ll see a `navigate` action in the list. Click on it to see the details of the action.
+Now, click on the **Actions** tab at the bottom of the code editor in Builder. You'll see a `navigate` action in the list. Click on it to see the details of the action.
 
 Return to **Preview** and proceed to complete the first screen and then click on the *Continue* button to navigate to the next screen. Back in the **Actions** tab, notice the new `navigate` action logged, and the details contain the data passed to the next screen.
 
@@ -206,7 +206,7 @@ Before you publish your Flow you can also send it and test it on an actual devic
 
 ## Publishing
 
-When you first created your Flow, it entered the Draft state. As you edited and saved the modified Flow JSON content, it remained in the Draft state. You can send the Flow while it’s in the Draft state, but only for testing purposes. If you want to send the Flow to a larger audience, you’ll need to publish the Flow.
+When you first created your Flow, it entered the Draft state. As you edited and saved the modified Flow JSON content, it remained in the Draft state. You can send the Flow while it's in the Draft state, but only for testing purposes. If you want to send the Flow to a larger audience, you'll need to publish the Flow.
 
 You can publish your Flow once you have ensured that:
 

@@ -94,7 +94,7 @@ https://graph.facebook.com/v25.0/<CMS_ID>/commerce_orders
 | --- | --- |
 | `no_shipments` | Get orders with line items that are not shipped yet. |
 | `has_cancellations` | Get orders with line items that are canceled. |
-| `no_cancellations` | Get orders that don’t have any canceled line items. |
+| `no_cancellations` | Get orders that don't have any canceled line items. |
 | `has_refunds` | Get orders with line items that have refunds. |
 | `no_refunds` | Get orders that have no refunds. |
 
@@ -110,10 +110,10 @@ https://graph.facebook.com/v25.0/<CMS_ID>/commerce_orders
 | --- | --- | --- | --- |
 | `id` | `string` | Unique ID representing the order. **Although numerical, treat Order IDs as strings, as Order ID length and structure is subject to change.** | Yes |
 | `order_status` | [`order_status`](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/order-management/acknowledgement-api#order_status) |  | Yes |
-| `created` | `string` | Order’s creation datetime in [ISO 8601 format⁠](https://en.wikipedia.org/wiki/ISO_8601). | Yes |
-| `last_updated` | `string` | Order’s latest update datetime in [ISO 8601 format⁠](https://en.wikipedia.org/wiki/ISO_8601). | Yes |
+| `created` | `string` | Order's creation datetime in [ISO 8601 format⁠](https://en.wikipedia.org/wiki/ISO_8601). | Yes |
+| `last_updated` | `string` | Order's latest update datetime in [ISO 8601 format⁠](https://en.wikipedia.org/wiki/ISO_8601). | Yes |
 | `items` | [`items object`](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/order-management/acknowledgement-api#item) | Items edge. Contains list of items purchased in this order | No |
-| `ship_by_date` | `string` | The expected date the order is to be shipped by. Date format ‘Y-m-d’ | No |
+| `ship_by_date` | `string` | The expected date the order is to be shipped by. Date format 'Y-m-d' | No |
 | `merchant_order_id` | `string` | Unique ID representing the order in merchants Order Management System | No |
 | `channel` | `string` | Facebook or Instagram | No |
 | `selected_shipping_option` | [`selected_shipping_option`](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/order-management/acknowledgement-api#selected_shipping_option) | This field is available for backward compatibility. Integrations should read the [item](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/order-management/acknowledgement-api#item) level `selected_shipping_option` | No |
@@ -144,7 +144,7 @@ https://graph.facebook.com/v25.0/<CMS_ID>/commerce_orders
 | `street1` | `string` |  |
 | `street2` | `string` |  |
 | `city` | `string` |  |
-| `state` | `string` | Two-letter state abbreviation e.g. “NY” |
+| `state` | `string` | Two-letter state abbreviation e.g. "NY" |
 | `postal_code` | `string` |  |
 | `country` | `string` |  |
 
@@ -170,7 +170,7 @@ https://graph.facebook.com/v25.0/<CMS_ID>/commerce_orders
 
 | Attribute | Type | Description |
 | --- | --- | --- |
-| `amount` | `string` | Amount in decimal format, eg. “5.5”. |
+| `amount` | `string` | Amount in decimal format, eg. "5.5". |
 | `currency` | `string` | [Three digit ISO-4217-3 code](https://developers.facebook.com/documentation/ads-commerce/marketing-api/currencies) for the purchase, e.g. USD. |
 
 ### `estimated_shipping_time` object
@@ -186,7 +186,7 @@ https://graph.facebook.com/v25.0/<CMS_ID>/commerce_orders
 | --- | --- | --- |
 | `name` | `string` | Name of the customer |
 | `email` | `string` | Email address of the customer. For fulfillment purposes only, unless `email_remarketing_option` is set to `true` |
-| `email_remarketing_option` | `boolean` | Customer’s marketing opt-in status. **Do not** use email address for marketing purposes if set to **false**. |
+| `email_remarketing_option` | `boolean` | Customer's marketing opt-in status. **Do not** use email address for marketing purposes if set to **false**. |
 
 ### Sample Request (default fields)
 
@@ -205,44 +205,42 @@ https://graph.facebook.com/v25.0/<CMS_ID>/commerce_orders
 ### Sample Response (default fields)
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "id": "335211597203390",  
-      "order_status": {  
-        "state": "CREATED"  
-      },  
-      "created": "2019-01-14T19:17:31+00:00",  
-      "last_updated": "2019-01-14T19:47:35+00:00"  
-    },  
-    {  
-      "id": "2247696628885631",  
-      "order_status": {  
-        "state": "CREATED"  
-      },  
-      "created": "2019-01-11T22:56:04+00:00",  
-      "last_updated": "2019-01-11T23:26:18+00:00"  
-    },  
-    {  
-      "id": "64000005580968",  
-      "order_status": {  
-        "state": "CREATED"  
-      },  
-      "created": "2018-09-27T04:25:57+00:00",  
-      "last_updated": "2018-09-27T04:26:14+00:00"  
-    },  
-    // ... 25 more orders if present  
-  ],  
-  "paging": {  
-    "cursors": {  
-      "before": "--sanitized_key--",  
-      "after": "--sanitized_key--"  
-    },  
-    "next": "https://graph.facebook.com/vX.X/<cms-id>/commerce_orders?access_token=--sanitized_key--&pretty=0&limit=25&after=--sanitized_key--"  
-  }  
+  "data": [  
+    {  
+      "id": "335211597203390",  
+      "order_status": {  
+        "state": "CREATED"  
+      },  
+      "created": "2019-01-14T19:17:31+00:00",  
+      "last_updated": "2019-01-14T19:47:35+00:00"  
+    },  
+    {  
+      "id": "2247696628885631",  
+      "order_status": {  
+        "state": "CREATED"  
+      },  
+      "created": "2019-01-11T22:56:04+00:00",  
+      "last_updated": "2019-01-11T23:26:18+00:00"  
+    },  
+    {  
+      "id": "64000005580968",  
+      "order_status": {  
+        "state": "CREATED"  
+      },  
+      "created": "2018-09-27T04:25:57+00:00",  
+      "last_updated": "2018-09-27T04:26:14+00:00"  
+    },  
+    // ... 25 more orders if present  
+  ],  
+  "paging": {  
+    "cursors": {  
+      "before": "--sanitized_key--",  
+      "after": "--sanitized_key--"  
+    },  
+    "next": "https://graph.facebook.com/vX.X/<cms-id>/commerce_orders?access_token=--sanitized_key--&pretty=0&limit=25&after=--sanitized_key--"  
+  }  
 }
-```
 ```
 
 ### Sample Request to fetch orders between two dates (default fields)
@@ -260,42 +258,40 @@ https://graph.facebook.com/v25.0/<CMS_ID>/commerce_orders
 ### Sample Response
 
 ```
-```
- {  
-  "data": [  
-    {  
-      "id": "1299096923600598",  
-      "order_status": {  
-        "state": "CREATED"  
-      },  
-      "created": "2019-08-12T20:45:32+00:00",  
-      "last_updated": "2019-08-12T20:45:42+00:00"  
-    },  
-    {  
-      "id": "388309381882686",  
-      "order_status": {  
-        "state": "CREATED"  
-      },  
-      "created": "2019-08-12T19:52:46+00:00",  
-      "last_updated": "2019-08-12T19:52:56+00:00"  
-    },  
-    {  
-      "id": "366654374253443",  
-      "order_status": {  
-        "state": "CREATED"  
-      },  
-      "created": "2019-08-12T19:52:09+00:00",  
-      "last_updated": "2019-08-12T19:52:19+00:00"  
-    }  
-  ],  
-  "paging": {  
-    "cursors": {  
-      "before": "--sanitized_key--",  
-      "after": "--sanitized_key--"  
-    }  
-  }  
+ {  
+  "data": [  
+    {  
+      "id": "1299096923600598",  
+      "order_status": {  
+        "state": "CREATED"  
+      },  
+      "created": "2019-08-12T20:45:32+00:00",  
+      "last_updated": "2019-08-12T20:45:42+00:00"  
+    },  
+    {  
+      "id": "388309381882686",  
+      "order_status": {  
+        "state": "CREATED"  
+      },  
+      "created": "2019-08-12T19:52:46+00:00",  
+      "last_updated": "2019-08-12T19:52:56+00:00"  
+    },  
+    {  
+      "id": "366654374253443",  
+      "order_status": {  
+        "state": "CREATED"  
+      },  
+      "created": "2019-08-12T19:52:09+00:00",  
+      "last_updated": "2019-08-12T19:52:19+00:00"  
+    }  
+  ],  
+  "paging": {  
+    "cursors": {  
+      "before": "--sanitized_key--",  
+      "after": "--sanitized_key--"  
+    }  
+  }  
 }
-```
 ```
 
 ### Sample Request (multi-item order)
@@ -314,55 +310,53 @@ https://graph.facebook.com/v25.0/<CMS_ID>/commerce_orders
 ### Sample Response (multi-item order)
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "id": "372892946712291",  
-      "order_status": {  
-        "state": "CREATED"  
-      },  
-      "items": {  
-        "data": [  
-          {  
-            "id": "372892953378957",  
-            "product_id": "2416339625125194",  
-            "retailer_id": "FB_product_1237",  
-            "quantity": 1,  
-            "price_per_unit": {  
-              "amount": "0.99",  
-              "currency": "USD"  
-            }  
-          },  
-          {  
-            "id": "372892943378958",  
-            "product_id": "2654057021279988",  
-            "retailer_id": "FB_product_1238",  
-            "quantity": 1,  
-            "price_per_unit": {  
-              "amount": "0.99",  
-              "currency": "USD"  
-            }  
-          }  
-        ],  
-        "paging": {  
-          "cursors": {  
-            "before": "--sanitized_key--",  
-            "after": "--sanitized_key--"  
-          }  
-        }  
-      },  
-      "channel": "instagram"  
-    }  
-  ],  
-  "paging": {  
-    "cursors": {  
-      "before": "--sanitized_key--",  
-      "after": "--sanitized_key--"  
-    }  
-  }  
+  "data": [  
+    {  
+      "id": "372892946712291",  
+      "order_status": {  
+        "state": "CREATED"  
+      },  
+      "items": {  
+        "data": [  
+          {  
+            "id": "372892953378957",  
+            "product_id": "2416339625125194",  
+            "retailer_id": "FB_product_1237",  
+            "quantity": 1,  
+            "price_per_unit": {  
+              "amount": "0.99",  
+              "currency": "USD"  
+            }  
+          },  
+          {  
+            "id": "372892943378958",  
+            "product_id": "2654057021279988",  
+            "retailer_id": "FB_product_1238",  
+            "quantity": 1,  
+            "price_per_unit": {  
+              "amount": "0.99",  
+              "currency": "USD"  
+            }  
+          }  
+        ],  
+        "paging": {  
+          "cursors": {  
+            "before": "--sanitized_key--",  
+            "after": "--sanitized_key--"  
+          }  
+        }  
+      },  
+      "channel": "instagram"  
+    }  
+  ],  
+  "paging": {  
+    "cursors": {  
+      "before": "--sanitized_key--",  
+      "after": "--sanitized_key--"  
+    }  
+  }  
 }
-```
 ```
 
 ## Get Order Details
@@ -393,32 +387,30 @@ https://graph.facebook.com/v25.0/<ORDER_ID>
 ### Sample Response
 
 ```
-```
 {  
-  "estimated_payment_details": {  
-    "subtotal": {  
-      "items": {  
-        "amount": "2.00",  
-        "currency": "USD"  
-      },  
-      "shipping": {  
-        "amount": "0.00",  
-        "currency": "USD"  
-      }  
-    },  
-    "tax": {  
-      "amount": "0.19",  
-      "currency": "USD"  
-    },  
-    "total_amount": {  
-      "amount": "2.19",  
-      "currency": "USD"  
-    },  
-    "tax_remitted": true  
-  },  
-  "id": "412336950726541"  
+  "estimated_payment_details": {  
+    "subtotal": {  
+      "items": {  
+        "amount": "2.00",  
+        "currency": "USD"  
+      },  
+      "shipping": {  
+        "amount": "0.00",  
+        "currency": "USD"  
+      }  
+    },  
+    "tax": {  
+      "amount": "0.19",  
+      "currency": "USD"  
+    },  
+    "total_amount": {  
+      "amount": "2.19",  
+      "currency": "USD"  
+    },  
+    "tax_remitted": true  
+  },  
+  "id": "412336950726541"  
 }
-```
 ```
 
 ## List Order Items
@@ -442,12 +434,12 @@ https://graph.facebook.com/v25.0/<ORDER_ID>/items
 | Attribute | Type | Description | Default |
 | --- | --- | --- | --- |
 | `id` | `string` | **Unique ID** representing the item. Multiple quantities of any item will be represented in the quantity field (see below). | Yes |
-| `retailer_id` | `string` | ID representing the product in the merchant’s catalog. | Yes |
+| `retailer_id` | `string` | ID representing the product in the merchant's catalog. | Yes |
 | `product_name` | `string` | Name of Product. Note that this is not a default field and must be explicitly asked for via a `fields=` query. | No |
 | `product_id` | `string` | ID representing the product in the Facebook catalog. | Yes |
 | `quantity` | `Number` | Number of items ordered. | Yes |
 | `selected_shipping_option` | [`selected_shipping_option`](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/order-management/acknowledgement-api#selected_shipping_option) | Selected shipping option | No |
-| `status` | `string` | Items status breakdown. For example: {“in\_progress”: 0, “fulfilled”: 1, “cancelled”: 1} | No |
+| `status` | `string` | Items status breakdown. For example: {"in\_progress": 0, "fulfilled": 1, "cancelled": 1} | No |
 | `price_per_unit` | [`currency_amount`](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/order-management/acknowledgement-api#currency_amount) | Unit price for this item. | Yes |
 | `tax_details` | [`item_tax_details`](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/order-management/acknowledgement-api#item_tax_details) | Tax details for this item. | No |
 | `customization` | `string` | Text customization entered by the buyer on an order, if applicable. | No |
@@ -476,41 +468,39 @@ https://graph.facebook.com/v25.0/<ORDER_ID>/items
 ### Sample Response
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "id": "2082596341811586",  
-      "product_id": "1213131231",  
-      "retailer_id": "external_product_1234",  
-      "quantity": 2,  
-      "price_per_unit": {  
-        "amount": "20.00",  
-        "currency": "USD"  
-      }  
+  "data": [  
+    {  
+      "id": "2082596341811586",  
+      "product_id": "1213131231",  
+      "retailer_id": "external_product_1234",  
+      "quantity": 2,  
+      "price_per_unit": {  
+        "amount": "20.00",  
+        "currency": "USD"  
+      }  
   
-     "tax_details": {  
-                "estimated_tax": {  
-                  "amount": "0.30",  
-                  "currency": "USD"  
-                },  
-                "captured_tax": {  
-                  "total_tax": {  
-                    "amount": "0.30",  
-                    "currency": "USD"  
-                  }  
-               }  
-           }  
-    }  
-  ],  
-  "paging": {  
-    "cursors": {  
-      "before": "--sanitized_key--",  
-      "after": "--sanitized_key--"  
-    }  
-  }  
+     "tax_details": {  
+                "estimated_tax": {  
+                  "amount": "0.30",  
+                  "currency": "USD"  
+                },  
+                "captured_tax": {  
+                  "total_tax": {  
+                    "amount": "0.30",  
+                    "currency": "USD"  
+                  }  
+               }  
+           }  
+    }  
+  ],  
+  "paging": {  
+    "cursors": {  
+      "before": "--sanitized_key--",  
+      "after": "--sanitized_key--"  
+    }  
+  }  
 }
-```
 ```
 
 ## Get Product Details
@@ -528,7 +518,7 @@ https://graph.facebook.com/v25.0/<PRODUCT_ID>
 | Attribute | Type | Description | Default |
 | --- | --- | --- | --- |
 | `id` | `string` | ID representing the product. | Yes |
-| `retailer_id` | `string` | ID representing the product in the merchant’s catalog. | Yes |
+| `retailer_id` | `string` | ID representing the product in the merchant's catalog. | Yes |
 | `name` | `string` |  | Yes |
 | `description` | `string` |  | No |
 | `brand` | `string` |  | No |

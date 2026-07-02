@@ -9,7 +9,7 @@ Updated: Jun 1, 2026
 
 This callback will occur when a message has been sent to your Page. Messages are always sent in order. You may receive text messages or messages with attachments.
 
-Attachment types `image`, `audio`, `video`, `file`, `sticker`, `reel`, `ig_reel`, `post`, `ig_post` and `appointment_booking` are the main supported types. You may also receive `fallback` attachments. A common example of a ‘fallback’ is when a user shares a URL with a Page, an attachment is created based on [link sharing](https://developers.facebook.com/docs/sharing/web). For unsupported shares made by users to your Page a `fallback` with no payload might be sent.
+Attachment types `image`, `audio`, `video`, `file`, `sticker`, `reel`, `ig_reel`, `post`, `ig_post` and `appointment_booking` are the main supported types. You may also receive `fallback` attachments. A common example of a 'fallback' is when a user shares a URL with a Page, an attachment is created based on [link sharing](https://developers.facebook.com/docs/sharing/web). For unsupported shares made by users to your Page a `fallback` with no payload might be sent.
 
 > **Sticker attachment type transition (until August 30, 2026):** Sticker messages in webhooks now include a new `sticker` attachment type with `sticker_id` metadata. During the 90-day transition period, both the `sticker` and `image` attachment types are present in the payload. After August 30, 2026, only the `sticker` attachment type will be sent. Update your webhook handlers to recognize the `sticker` attachment type before this date. The same change applies to [message echoes](https://developers.facebook.com/documentation/business-messaging/messenger-platform/webhooks/webhook-events/message-echoes).
 
@@ -306,35 +306,33 @@ This webhook applies to the scenario when a user clicks on a CTM (Click-to-Messe
 Message with Ads Referral Information requires the application to have page subscriptions to both the `messages` and the `messaging_referrals` fields.
 
 ```
-```
 {  
-  "sender":{  
-    "id":"<PSID>"  
-  },  
-  "recipient":{  
-    "id":"<PAGE_ID>"  
-  },  
-  "timestamp":1458692752478,  
-  "message":{  
-    "mid":"mid.1457764197618:41d102a3e1ae206a38",  
-    "text":"hello, world!",  
-    "referral": {  
-      "ref": "<REF_DATA_IF_SPECIFIED_IN_THE_AD>",  
-      "ad_id": "<ID_OF_THE_AD>",  
-      "source": "ADS",  
-      "type": "OPEN_THREAD",  
-      "ads_context_data": {  
-        "ad_title": "<TITLE_OF_THE_AD>",  
-        "photo_url": "<URL_OF_THE_IMAGE_FROM_AD_THE_USER_IS_INTERESTED_IN>",  
-        "video_url": "<THUMBNAIL_URL_OF_THE_VIDEO_FROM_THE_AD>",  
-        "post_id": "<ID_OF_THE_POST>",  
-        "product_id": "<PRODUCT_ID>",  
-        "flow_id": "<ID_OF_THE_PARTNER_APP_WELCOME_MESSAGE_FLOW>"  
-      }  
-    }  
-  }  
+  "sender":{  
+    "id":"<PSID>"  
+  },  
+  "recipient":{  
+    "id":"<PAGE_ID>"  
+  },  
+  "timestamp":1458692752478,  
+  "message":{  
+    "mid":"mid.1457764197618:41d102a3e1ae206a38",  
+    "text":"hello, world!",  
+    "referral": {  
+      "ref": "<REF_DATA_IF_SPECIFIED_IN_THE_AD>",  
+      "ad_id": "<ID_OF_THE_AD>",  
+      "source": "ADS",  
+      "type": "OPEN_THREAD",  
+      "ads_context_data": {  
+        "ad_title": "<TITLE_OF_THE_AD>",  
+        "photo_url": "<URL_OF_THE_IMAGE_FROM_AD_THE_USER_IS_INTERESTED_IN>",  
+        "video_url": "<THUMBNAIL_URL_OF_THE_VIDEO_FROM_THE_AD>",  
+        "post_id": "<ID_OF_THE_POST>",  
+        "product_id": "<PRODUCT_ID>",  
+        "flow_id": "<ID_OF_THE_PARTNER_APP_WELCOME_MESSAGE_FLOW>"  
+      }  
+    }  
+  }  
 }
-```
 ```
 
 For more information about the flow ID, please refer to [Welcome Message Flows](https://developers.facebook.com/documentation/business-messaging/messenger-platform/ads/ads-welcome-message-flows).
@@ -342,37 +340,35 @@ For more information about the flow ID, please refer to [Welcome Message Flows](
 ### Message with commands
 
 ```
-```
 {  
-  "object": "page",  
-  "entry": [  
-    {  
-      "id": "<PAGE_ID>",  
-      "time": 1697643211842,  
-      "messaging": [  
-        {  
-          "sender": {  
-            "id": "<PSID>"  
-          },  
-          "recipient": {  
-            "id": "<PAGE_ID>"  
-          },  
-          "timestamp": 1697643027400,  
-          "message": {  
-            "mid": "m_3vs...",  
-            "text": "find flights from SFO to LAX next Thursday",  
-            "commands": [  
-              {  
-                "name": "flights"  
-              }  
-            ]  
-          }  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "page",  
+  "entry": [  
+    {  
+      "id": "<PAGE_ID>",  
+      "time": 1697643211842,  
+      "messaging": [  
+        {  
+          "sender": {  
+            "id": "<PSID>"  
+          },  
+          "recipient": {  
+            "id": "<PAGE_ID>"  
+          },  
+          "timestamp": 1697643027400,  
+          "message": {  
+            "mid": "m_3vs...",  
+            "text": "find flights from SFO to LAX next Thursday",  
+            "commands": [  
+              {  
+                "name": "flights"  
+              }  
+            ]  
+          }  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ## Properties

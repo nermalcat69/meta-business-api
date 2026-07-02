@@ -104,11 +104,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -119,50 +119,50 @@ Select status code
 
 ```
 {  
-  "default_response": {  
-    "summary": "Default phone number information",  
-    "description": "Basic phone number details without additional fields",  
-    "value": {  
-      "id": "106853218861309",  
-      "display_phone_number": "+1 555-555-5555",  
-      "verified_name": "Jaspers Market",  
-      "quality_rating": "GREEN"  
-    }  
-  },  
-  "with_name_status": {  
-    "summary": "Phone number with display name status",  
-    "description": "Includes business name certification status",  
-    "value": {  
-      "id": "106853218861309",  
-      "display_phone_number": "+1 555-555-5555",  
-      "verified_name": "Jaspers Market",  
-      "quality_rating": "GREEN",  
-      "name_status": "AVAILABLE_WITHOUT_REVIEW"  
-    }  
-  },  
-  "with_verification_status": {  
-    "summary": "Phone number with code verification status",  
-    "description": "Includes two-step verification status",  
-    "value": {  
-      "id": "106853218861309",  
-      "display_phone_number": "+1 555-555-5555",  
-      "verified_name": "Jaspers Market",  
-      "quality_rating": "GREEN",  
-      "code_verification_status": "VERIFIED"  
-    }  
-  },  
-  "comprehensive_response": {  
-    "summary": "Full phone number information",  
-    "description": "All available fields included in response",  
-    "value": {  
-      "id": "106853218861309",  
-      "display_phone_number": "+1 555-555-5555",  
-      "verified_name": "Jaspers Market",  
-      "quality_rating": "GREEN",  
-      "name_status": "APPROVED",  
-      "code_verification_status": "VERIFIED"  
-    }  
-  }  
+  "default_response": {  
+    "summary": "Default phone number information",  
+    "description": "Basic phone number details without additional fields",  
+    "value": {  
+      "id": "106853218861309",  
+      "display_phone_number": "+1 555-555-5555",  
+      "verified_name": "Jaspers Market",  
+      "quality_rating": "GREEN"  
+    }  
+  },  
+  "with_name_status": {  
+    "summary": "Phone number with display name status",  
+    "description": "Includes business name certification status",  
+    "value": {  
+      "id": "106853218861309",  
+      "display_phone_number": "+1 555-555-5555",  
+      "verified_name": "Jaspers Market",  
+      "quality_rating": "GREEN",  
+      "name_status": "AVAILABLE_WITHOUT_REVIEW"  
+    }  
+  },  
+  "with_verification_status": {  
+    "summary": "Phone number with code verification status",  
+    "description": "Includes two-step verification status",  
+    "value": {  
+      "id": "106853218861309",  
+      "display_phone_number": "+1 555-555-5555",  
+      "verified_name": "Jaspers Market",  
+      "quality_rating": "GREEN",  
+      "code_verification_status": "VERIFIED"  
+    }  
+  },  
+  "comprehensive_response": {  
+    "summary": "Full phone number information",  
+    "description": "All available fields included in response",  
+    "value": {  
+      "id": "106853218861309",  
+      "display_phone_number": "+1 555-555-5555",  
+      "verified_name": "Jaspers Market",  
+      "quality_rating": "GREEN",  
+      "name_status": "APPROVED",  
+      "code_verification_status": "VERIFIED"  
+    }  
+  }  
 }
 ```
 
@@ -744,11 +744,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -759,50 +759,50 @@ Select status code
 
 ```
 {  
-  "default_response": {  
-    "summary": "Default phone number information",  
-    "description": "Basic phone number details without additional fields",  
-    "value": {  
-      "id": "106853218861309",  
-      "display_phone_number": "+1 555-555-5555",  
-      "verified_name": "Jaspers Market",  
-      "quality_rating": "GREEN"  
-    }  
-  },  
-  "with_name_status": {  
-    "summary": "Phone number with display name status",  
-    "description": "Includes business name certification status",  
-    "value": {  
-      "id": "106853218861309",  
-      "display_phone_number": "+1 555-555-5555",  
-      "verified_name": "Jaspers Market",  
-      "quality_rating": "GREEN",  
-      "name_status": "AVAILABLE_WITHOUT_REVIEW"  
-    }  
-  },  
-  "with_verification_status": {  
-    "summary": "Phone number with code verification status",  
-    "description": "Includes two-step verification status",  
-    "value": {  
-      "id": "106853218861309",  
-      "display_phone_number": "+1 555-555-5555",  
-      "verified_name": "Jaspers Market",  
-      "quality_rating": "GREEN",  
-      "code_verification_status": "VERIFIED"  
-    }  
-  },  
-  "comprehensive_response": {  
-    "summary": "Full phone number information",  
-    "description": "All available fields included in response",  
-    "value": {  
-      "id": "106853218861309",  
-      "display_phone_number": "+1 555-555-5555",  
-      "verified_name": "Jaspers Market",  
-      "quality_rating": "GREEN",  
-      "name_status": "APPROVED",  
-      "code_verification_status": "VERIFIED"  
-    }  
-  }  
+  "default_response": {  
+    "summary": "Default phone number information",  
+    "description": "Basic phone number details without additional fields",  
+    "value": {  
+      "id": "106853218861309",  
+      "display_phone_number": "+1 555-555-5555",  
+      "verified_name": "Jaspers Market",  
+      "quality_rating": "GREEN"  
+    }  
+  },  
+  "with_name_status": {  
+    "summary": "Phone number with display name status",  
+    "description": "Includes business name certification status",  
+    "value": {  
+      "id": "106853218861309",  
+      "display_phone_number": "+1 555-555-5555",  
+      "verified_name": "Jaspers Market",  
+      "quality_rating": "GREEN",  
+      "name_status": "AVAILABLE_WITHOUT_REVIEW"  
+    }  
+  },  
+  "with_verification_status": {  
+    "summary": "Phone number with code verification status",  
+    "description": "Includes two-step verification status",  
+    "value": {  
+      "id": "106853218861309",  
+      "display_phone_number": "+1 555-555-5555",  
+      "verified_name": "Jaspers Market",  
+      "quality_rating": "GREEN",  
+      "code_verification_status": "VERIFIED"  
+    }  
+  },  
+  "comprehensive_response": {  
+    "summary": "Full phone number information",  
+    "description": "All available fields included in response",  
+    "value": {  
+      "id": "106853218861309",  
+      "display_phone_number": "+1 555-555-5555",  
+      "verified_name": "Jaspers Market",  
+      "quality_rating": "GREEN",  
+      "name_status": "APPROVED",  
+      "code_verification_status": "VERIFIED"  
+    }  
+  }  
 }
 ```
 
@@ -857,12 +857,12 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "connection_status": "CONNECTED"  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "connection_status": "CONNECTED"  
 }'
 ```
 
@@ -874,47 +874,47 @@ Select status code
 
 ```
 {  
-  "message_sent": {  
-    "summary": "Message sent successfully",  
-    "value": {  
-      "messaging_product": "whatsapp",  
-      "contacts": [  
-        {  
-          "input": "+1234567890",  
-          "wa_id": "1234567890"  
-        }  
-      ],  
-      "messages": [  
-        {  
-          "id": "wamid.HBgLMTY3NzE4NDM4NjAVAgARGBI5QTRCMEM4RjA2NzY4RTlBNAA="  
-        }  
-      ]  
-    }  
-  },  
-  "settings_updated": {  
-    "summary": "Settings updated successfully",  
-    "value": {  
-      "success": true  
-    }  
-  },  
-  "phone_registered": {  
-    "summary": "Phone number registered successfully",  
-    "value": {  
-      "success": true  
-    }  
-  },  
-  "code_verified": {  
-    "summary": "Verification code verified successfully",  
-    "value": {  
-      "success": true  
-    }  
-  },  
-  "two_step_verification_set": {  
-    "summary": "Two-step verification code set successfully",  
-    "value": {  
-      "success": true  
-    }  
-  }  
+  "message_sent": {  
+    "summary": "Message sent successfully",  
+    "value": {  
+      "messaging_product": "whatsapp",  
+      "contacts": [  
+        {  
+          "input": "+1234567890",  
+          "wa_id": "1234567890"  
+        }  
+      ],  
+      "messages": [  
+        {  
+          "id": "wamid.HBgLMTY3NzE4NDM4NjAVAgARGBI5QTRCMEM4RjA2NzY4RTlBNAA="  
+        }  
+      ]  
+    }  
+  },  
+  "settings_updated": {  
+    "summary": "Settings updated successfully",  
+    "value": {  
+      "success": true  
+    }  
+  },  
+  "phone_registered": {  
+    "summary": "Phone number registered successfully",  
+    "value": {  
+      "success": true  
+    }  
+  },  
+  "code_verified": {  
+    "summary": "Verification code verified successfully",  
+    "value": {  
+      "success": true  
+    }  
+  },  
+  "two_step_verification_set": {  
+    "summary": "Two-step verification code set successfully",  
+    "value": {  
+      "success": true  
+    }  
+  }  
 }
 ```
 
@@ -1569,12 +1569,12 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "connection_status": "CONNECTED"  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "connection_status": "CONNECTED"  
 }'
 ```
 
@@ -1586,47 +1586,47 @@ Select status code
 
 ```
 {  
-  "message_sent": {  
-    "summary": "Message sent successfully",  
-    "value": {  
-      "messaging_product": "whatsapp",  
-      "contacts": [  
-        {  
-          "input": "+1234567890",  
-          "wa_id": "1234567890"  
-        }  
-      ],  
-      "messages": [  
-        {  
-          "id": "wamid.HBgLMTY3NzE4NDM4NjAVAgARGBI5QTRCMEM4RjA2NzY4RTlBNAA="  
-        }  
-      ]  
-    }  
-  },  
-  "settings_updated": {  
-    "summary": "Settings updated successfully",  
-    "value": {  
-      "success": true  
-    }  
-  },  
-  "phone_registered": {  
-    "summary": "Phone number registered successfully",  
-    "value": {  
-      "success": true  
-    }  
-  },  
-  "code_verified": {  
-    "summary": "Verification code verified successfully",  
-    "value": {  
-      "success": true  
-    }  
-  },  
-  "two_step_verification_set": {  
-    "summary": "Two-step verification code set successfully",  
-    "value": {  
-      "success": true  
-    }  
-  }  
+  "message_sent": {  
+    "summary": "Message sent successfully",  
+    "value": {  
+      "messaging_product": "whatsapp",  
+      "contacts": [  
+        {  
+          "input": "+1234567890",  
+          "wa_id": "1234567890"  
+        }  
+      ],  
+      "messages": [  
+        {  
+          "id": "wamid.HBgLMTY3NzE4NDM4NjAVAgARGBI5QTRCMEM4RjA2NzY4RTlBNAA="  
+        }  
+      ]  
+    }  
+  },  
+  "settings_updated": {  
+    "summary": "Settings updated successfully",  
+    "value": {  
+      "success": true  
+    }  
+  },  
+  "phone_registered": {  
+    "summary": "Phone number registered successfully",  
+    "value": {  
+      "success": true  
+    }  
+  },  
+  "code_verified": {  
+    "summary": "Verification code verified successfully",  
+    "value": {  
+      "success": true  
+    }  
+  },  
+  "two_step_verification_set": {  
+    "summary": "Two-step verification code set successfully",  
+    "value": {  
+      "success": true  
+    }  
+  }  
 }
 ```
 

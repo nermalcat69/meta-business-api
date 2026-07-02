@@ -17,9 +17,9 @@ This topic explains how to set up the Chartboost bidding mediation partner for A
 
 ## How to Set Up Bidding
 
-Sign up for a free account on [Chartboost’s website⁠](https://www.chartboost.com/sign-up/), and request Helium access once you’re logged in to the Chartboost dashboard [here⁠](https://dashboard.chartboost.com/login?redirect=%2Flogout).
+Sign up for a free account on [Chartboost's website⁠](https://www.chartboost.com/sign-up/), and request Helium access once you're logged in to the Chartboost dashboard [here⁠](https://dashboard.chartboost.com/login?redirect=%2Flogout).
 
-* If you are a managed customer, you’ll be assigned a dedicated account manager.
+* If you are a managed customer, you'll be assigned a dedicated account manager.
 * If you have any questions, feel free to email **helium+fb@chartboost.com**
 
 Upon being granted access to the Helium platform, you can follow these steps to get properly set up:
@@ -29,8 +29,8 @@ Upon being granted access to the Helium platform, you can follow these steps to 
 
 ## New to Audience Network?
 
-* If you haven’t done so already, set up the [Monetization Manager⁠](https://www.facebook.com/business/help/452287605232720?id=211412110064838).
-* Refer to Helium’s guidance on [adding new bidding networks⁠](https://helium.chartboost.com/login).
+* If you haven't done so already, set up the [Monetization Manager⁠](https://www.facebook.com/business/help/452287605232720?id=211412110064838).
+* Refer to Helium's guidance on [adding new bidding networks⁠](https://helium.chartboost.com/login).
 
 ## Best Practices
 
@@ -43,5 +43,5 @@ Chartboost recommends the following steps in order to optimize your experience o
 * Make sure all the bidding networks and mediation networks are set up and have an **active** status.
 * Double-check to ensure that your partner credentials are correct and match those on the respective dashboards.
 * Set up multiple bidding networks for maximized performance.
-* Use Helium’s Test Mode to verify that the test ads are being displayed correctly before launching.
+* Use Helium's Test Mode to verify that the test ads are being displayed correctly before launching.
 * Monitor performance using the Analytics features on the Helium dashboard, and export the data through custom reports or reporting API.

@@ -13,25 +13,23 @@ When you receive a **message** webhook indicating an [incoming message](https://
 
 Mark incoming messages as read within 30 days of receipt. When you mark a message as read, the API also marks earlier messages in the conversation as read.
 
-If you mark a message as read with an invalid message ID, the API returns error code `131009` (“Parameter value is not valid”). Provide a valid `wamid` from a received message as the `message_id`.
+If you mark a message as read with an invalid message ID, the API returns error code `131009` ("Parameter value is not valid"). Provide a valid `wamid` from a received message as the `message_id`.
 
 ## Request syntax
 
 Use the [Messages API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/message-api#post-version-phone-number-id-messages) to mark a message as read.
 
 ```
-```
-curl -X POST \  
+curl -X POST \  
 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/messages'  
--H 'Authorization: Bearer <ACCESS_TOKEN>' \  
--H 'Content-Type: application/json' \  
--d '  
+-H 'Authorization: Bearer <ACCESS_TOKEN>' \  
+-H 'Content-Type: application/json' \  
+-d '  
 {  
-  "messaging_product": "whatsapp",  
-  "status": "read",  
-  "message_id": "<WHATSAPP_MESSAGE_ID>"  
+  "messaging_product": "whatsapp",  
+  "status": "read",  
+  "message_id": "<WHATSAPP_MESSAGE_ID>"  
 }'
-```
 ```
 
 ## Request parameters
@@ -48,11 +46,9 @@ curl -X POST \
 A successful mark-as-read request returns the following response:
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 ## Example request
@@ -74,9 +70,7 @@ curl 'https://graph.facebook.com/v25.0/106540352242922/messages' \
 A successful mark-as-read request returns:
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```

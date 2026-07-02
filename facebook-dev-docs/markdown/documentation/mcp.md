@@ -40,16 +40,16 @@ The Meta team has validated these clients for general availability. For configur
 * Cursor App
 * Cursor CLI
 
-More clients coming soon. Each client needs explicit support, so clients not listed above aren’t supported yet.
+More clients coming soon. Each client needs explicit support, so clients not listed above aren't supported yet.
 
 ## Get started
 
 The setup pattern is the same for every Meta MCP server. For per-client setup details, see the tools reference for each server.
 
-* **Add the server URL to your client.** Most clients have a Connectors or MCP settings panel. See the server’s reference page for client-specific instructions.
+* **Add the server URL to your client.** Most clients have a Connectors or MCP settings panel. See the server's reference page for client-specific instructions.
 * **Sign in with your Meta account** when prompted.
-* **Select the apps** you want to grant access to on the consent screen. You can adjust each app’s scope (Read or Manage) afterward from your Facebook account’s Business Integrations settings.
-* **Verify.** Ask your agent what tools it has — you should see the server’s tools listed.
+* **Select the apps** you want to grant access to on the consent screen. You can adjust each app's scope (Read or Manage) afterward from your Facebook account's Business Integrations settings.
+* **Verify.** Ask your agent what tools it has — you should see the server's tools listed.
 
 ## Security and best practices
 
@@ -60,9 +60,9 @@ By accessing or using a Meta MCP server, you and the agent acting on your behalf
 ### Recommended practices
 
 * **Use the scope you need.** Keep an app at the Read scope unless an agent needs to make changes, and set the scope per app from your Business Integrations settings.
-* **Use separate apps for dev and prod.** Don’t grant production app scopes to experimental agents.
+* **Use separate apps for dev and prod.** Don't grant production app scopes to experimental agents.
 * **Audit periodically.** Review connected MCP servers at facebook.com > **Settings** > **Business Integrations** every few months. Revoke ones you no longer use.
-* **Watch for prompt injection.** Untrusted content an AI agent reads — webhook payloads, documents, web pages, or data returned by other tools — can carry hidden instructions that manipulate the AI agent into misusing its granted scopes. Don’t grant write/manage scopes to AI agents that process untrusted input.
+* **Watch for prompt injection.** Untrusted content an AI agent reads — webhook payloads, documents, web pages, or data returned by other tools — can carry hidden instructions that manipulate the AI agent into misusing its granted scopes. Don't grant write/manage scopes to AI agents that process untrusted input.
 
 ## More resources
 

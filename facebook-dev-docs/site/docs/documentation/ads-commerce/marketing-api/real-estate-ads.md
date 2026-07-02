@@ -20,7 +20,7 @@ To use Advantage+ creative for catalog, follow Steps 1 and 2 of the [Advantage+ 
 
 ## Step 3: Provide ad creative
 
-Let us know you want to use Advantage+ creative for catalog when providing your campaign’s creative by specifying `FORMAT_AUTOMATION` as an `optimization_type` inside your `asset_feed_spec`. Your API call must contain the following fields:
+Let us know you want to use Advantage+ creative for catalog when providing your campaign's creative by specifying `FORMAT_AUTOMATION` as an `optimization_type` inside your `asset_feed_spec`. Your API call must contain the following fields:
 
 * [`product_set_id`](https://developers.facebook.com/documentation/ads-commerce/marketing-api/real-estate-ads#product-set-id)
 * [`template_data`](https://developers.facebook.com/documentation/ads-commerce/marketing-api/real-estate-ads#template-data)
@@ -39,7 +39,7 @@ For Advantage+ creative for catalog, `template_data` has the following **require
 | Name | Description |
 | --- | --- |
 | `multi_share_end_card` | Whether an advertiser wants to use the end card in the carousel ad format. Set to `true` if you are using the card; otherwise, set to `false`. |
-| `name` | **Optional**.  One template tag to be used as the product’s name. See [supported template tags](https://developers.facebook.com/documentation/ads-commerce/marketing-api/real-estate-ads#template-tags). |
+| `name` | **Optional**.  One template tag to be used as the product's name. See [supported template tags](https://developers.facebook.com/documentation/ads-commerce/marketing-api/real-estate-ads#template-tags). |
 | `link` | Link for the offsite landing page. A user will be directed to this link if they click your call-to-action button. |
 | `message` | **Optional**.  Copy for your ad. |
 | `call_to_action` | A call to action for the user seeing your ad. Use any call to action type compatible with Advantage+ catalog ads. |
@@ -69,7 +69,7 @@ For Advantage+ creative for catalog, `creative_features_spec` can include:
 | `adapt_to_placement` | **Optional.** Default is opt-in. Opt-in if you want to automatically fit images to placements based on what is predicted to work best.  By default, 4:5, and 9:16 placements are enabled. If you wish to control how the images are adjusted, you can use the `customizations` field to control the settings. See the `aspect_ratio_config` and `image_crop_style` fields in the [Ad Creative Feature Customizations](https://developers.facebook.com/docs/marketing-api/reference/ad-creative-feature-customizations) reference documentation for more details.  The `enroll_status` field can be set to `OPT_IN` or `OPT_OUT`.  **Note:** This feature is labeled **Image touch-ups** in Ads Manager. |
 | `media_type_automation` | **Optional.**  Opt-in if you want videos from your catalog to be displayed (along with images) in supported placements. See [Allow product video](https://developers.facebook.com/documentation/ads-commerce/marketing-api/advantage-catalog-ads/allow-product-video) for more information. |
 | `dynamic_partner_content` | **Optional.**  Opt-in if you want your active partnership ads from other campaigns to appear in a collection with items from your catalog. Opting in does not affect the other ad campaigns. The `enroll_status` field can be set to `OPT_IN` or `OPT_OUT`.  **Note:** This feature is labeled **Dynamic partnership ads** in Ads Manager. |
-| `add_text_overlay` | **Optional.**  This feature is labeled ‘Add Dynamic Overlays’ in Ads Manager. Opt-in if you want to add information from catalog items as visually-unique overlays.  The `enroll_status` field can be set to `OPT_IN` or `OPT_OUT`.  If you want to have manual control on how the overlay is rendered, see the [Ad Creative Link Data Image Layer Spec](https://developers.facebook.com/docs/marketing-api/reference/ad-creative-link-data-image-layer-spec) reference documentation for more details. |
+| `add_text_overlay` | **Optional.**  This feature is labeled 'Add Dynamic Overlays' in Ads Manager. Opt-in if you want to add information from catalog items as visually-unique overlays.  The `enroll_status` field can be set to `OPT_IN` or `OPT_OUT`.  If you want to have manual control on how the overlay is rendered, see the [Ad Creative Link Data Image Layer Spec](https://developers.facebook.com/docs/marketing-api/reference/ad-creative-link-data-image-layer-spec) reference documentation for more details. |
 
 ### Example: Default behavior
 
@@ -87,15 +87,15 @@ curl \
      "page_id": "<PAGE_ID>",
      "template_data": {
         "multi_share_end_card": "true",
-        "name": "{{product.name}}",
+        "name": "{​{product.name}​}",
         "link": "<OFFSITE_LANDING_PAGE>",
         "message": "<AD_COPY>",
         "call_to_action": {"type": "SHOP_NOW"},
-        }},
+        }​},
       "asset_feed_spec":{
         "optimization_type":"FORMAT_AUTOMATION",
         "ad_formats": ["CAROUSEL", "COLLECTION"]},
-        "descriptions": [{"text": "{{product.brand}}", "From {{product.current_price}}", ...]}
+        "descriptions": [{"text": "{​{product.brand}​}", "From {​{product.current_price}​}", ...]}
    }' \
    -F 'url_tags=<URL_TAGS>' \
    -F 'tracking_specs=[{"action.type":"offsite_conversion","fb_pixel":<PIXEL_ID>}]' \
@@ -119,7 +119,7 @@ curl \
     "page_id": "<PAGE_ID>",
     "template_data": {
       "multi_share_end_card": "true",
-      "name": "{{product.name}}",
+      "name": "{​{product.name}​}",
       "link": "<OFFSITE_LANDING_PAGE>",
       "message": "<AD_COPY>",
       "call_to_action": {"type": "SHOP_NOW"},
@@ -129,7 +129,7 @@ curl \
     "optimization_type":"FORMAT_AUTOMATION",
     "ad_formats": ["CAROUSEL", "COLLECTION"],
     "images": [{"hash": "<customized_image_hash>"}],
-    "descriptions": [{"text": "{{product.description}}", "From {{product.current_price}}", ...]
+    "descriptions": [{"text": "{​{product.description}​}", "From {​{product.current_price}​}", ...]
     }
    }' \
    -F 'url_tags=<URL_TAGS>' \
@@ -163,7 +163,7 @@ curl \
     "optimization_type":"FORMAT_AUTOMATION",
     "ad_formats": ["CAROUSEL", "COLLECTION"],
     "videos": [{"video_id": "<VIDEO_ID>"}]},
-    "descriptions": [{"text": "{{product.description}}", "From {{product.current_price}}", ...]}
+    "descriptions": [{"text": "{​{product.description}​}", "From {​{product.current_price}​}", ...]}
    }' \
    -F 'tracking_specs=[{"action.type":"offsite_conversion","fb_pixel":<PIXEL_ID>}]' \
    -F 'access_token=<ACCESS_TOKEN>' \
@@ -197,7 +197,7 @@ curl \
   "asset_feed_spec":{
     "optimization_type":"FORMAT_AUTOMATION",
     "ad_formats": ["CAROUSEL", "COLLECTION"],
-    "descriptions": [{"text": "{{product.description}}", "From {{product.current_price}}", ...}]
+    "descriptions": [{"text": "{​{product.description}​}", "From {​{product.current_price}​}", ...}]
   },
   "degrees_of_freedom_spec" : {
     "creative_features_spec": {
@@ -248,7 +248,7 @@ curl \
   "asset_feed_spec":{
     "optimization_type":"FORMAT_AUTOMATION",
     "ad_formats": ["CAROUSEL", "COLLECTION"],
-    "descriptions": [{"text": "{{product.description}}", "From {{product.current_price}}", ...]
+    "descriptions": [{"text": "{​{product.description}​}", "From {​{product.current_price}​}", ...]
   },
   "degrees_of_freedom_spec" : {
     "creative_features_spec": {
@@ -276,7 +276,7 @@ curl \
 
 The collection format features three products under a hero image or video that opens into a full-screen Instant Experience. The hero image or video is also called cover media. The Advantage+ creative for catalog API calls are different, depending on your choice for cover media.
 
-The standard behavior is to add an Advantage catalog video as your ad’s cover media. In this case, Meta automatically generates a personalized Advantage catalog video for each user that sees your ad. The video highlights products from the catalog that are most relevant to the user. Alternatively, you can provide your own custom image or video for the cover media position.
+The standard behavior is to add an Advantage catalog video as your ad's cover media. In this case, Meta automatically generates a personalized Advantage catalog video for each user that sees your ad. The video highlights products from the catalog that are most relevant to the user. Alternatively, you can provide your own custom image or video for the cover media position.
 
 See [Help Center: About Collection Ads⁠](https://www.facebook.com/business/help/11289146072381) for more information.
 
@@ -286,7 +286,7 @@ The carousel format lets you show two or more images and videos, descriptions, a
 
 Specify your description variations in the API call with the `descriptions` parameter under `asset_feed_spec`. Add all your description options under `descriptions` and list the first one under `description`.
 
-Your description options can contain catalog information or a new free-form short message, such as “Free Shipping”.
+Your description options can contain catalog information or a new free-form short message, such as "Free Shipping".
 
 #### Template tags
 
@@ -294,63 +294,63 @@ To use information available on your catalog, you can use the following template
 
 **Products**
 
-* `{{product.price}}`
-* `{{product.current_price}}`
-* `{{product.description}}`
-* `{{product.short_description}}`
-* `{{product.brand}}`
-* `{{product.name}}`
+* `{​{product.price}​}`
+* `{​{product.current_price}​}`
+* `{​{product.description}​}`
+* `{​{product.short_description}​}`
+* `{​{product.brand}​}`
+* `{​{product.name}​}`
 
 **Hotels**
 
-* `{{hotel.base_price}}`
-* `{{hotel.sale_price}}`
-* `{{hotel.total_price}}`
-* `{{hotel.brand}}`
-* `{{hotel.name}}`
-* `{{hotel.description}}`
+* `{​{hotel.base_price}​}`
+* `{​{hotel.sale_price}​}`
+* `{​{hotel.total_price}​}`
+* `{​{hotel.brand}​}`
+* `{​{hotel.name}​}`
+* `{​{hotel.description}​}`
 
 **Flights**
 
-* `{{flight.price}}`
-* `{{flight.description}}`
+* `{​{flight.price}​}`
+* `{​{flight.description}​}`
 
 **Destinations**
 
-* `{{destination.price}}`
-* `{{destination.name}}`
-* `{{destination.description}}`
+* `{​{destination.price}​}`
+* `{​{destination.name}​}`
+* `{​{destination.description}​}`
 
 **Home Listings**
 
-* `{{home_listing.price}}`
-* `{{home_listing.name}}`
-* `{{home_listing.description}}`
+* `{​{home_listing.price}​}`
+* `{​{home_listing.name}​}`
+* `{​{home_listing.description}​}`
 
 **Vehicles**
 
-* `{{vehicle.price}}`
-* `{{vehicle.sale_price}}`
-* `{{vehicle.description}}`
+* `{​{vehicle.price}​}`
+* `{​{vehicle.sale_price}​}`
+* `{​{vehicle.description}​}`
 
 **Vehicle\_Offers**
 
-* `{{vehicle_offer.amount}}`
-* `{{vehicle_offer.price}}`
-* `{{vehicle_offer.description}}`
+* `{​{vehicle_offer.amount}​}`
+* `{​{vehicle_offer.price}​}`
+* `{​{vehicle_offer.description}​}`
 
 **Automotive Models**
 
-* `{{automotive_model.price}}`
-* `{{automotive_model.description}}`
+* `{​{automotive_model.price}​}`
+* `{​{automotive_model.description}​}`
 
 The following tags cannot be used at the same time:
 
-* `{{product.price}}` and `{{product.current_price}}`
-* `{{product.description}}` and `{{product.short_description}}`
-* `{{hotel.base_price}}` and `{{hotel.sale_price}}` and `{{hotel.total_price}}`
-* `{{vehicle.price}}` and `{{vehicle.sale_price}}`
-* `{{vehicle_offer.amount}}` and `{{vehicle_offer.price}}`
+* `{​{product.price}​}` and `{​{product.current_price}​}`
+* `{​{product.description}​}` and `{​{product.short_description}​}`
+* `{​{hotel.base_price}​}` and `{​{hotel.sale_price}​}` and `{​{hotel.total_price}​}`
+* `{​{vehicle.price}​}` and `{​{vehicle.sale_price}​}`
+* `{​{vehicle_offer.amount}​}` and `{​{vehicle_offer.price}​}`
 
 #### Limitations
 

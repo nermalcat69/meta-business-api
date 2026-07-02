@@ -51,7 +51,7 @@ The Marketing Message API for Messenger is only available for Web applications.
 
 This document shows you how to configure Facebook Login for Business to onboard businesses to your Marketing Messages on Messenger app.
 
-**NOTE:** In this guide, **business** refers to the business portfolios onboarding to your app (your app’s user).
+**NOTE:** In this guide, **business** refers to the business portfolios onboarding to your app (your app's user).
 
 ## Choose Your Onboarding Flow
 
@@ -63,11 +63,11 @@ We provide three onboarding flows for Marketing Messages on Messenger. Please de
 | **Asset Requirement** | Ad Account and Page need to be **owned** by the same Business Portfolio | Ad Account and Page **does not** need to be owned by the same Business Portfolio | Page only — your client does not provide an ad account |
 | **Key Permission** | `paid_marketing_messages` | `marketing_messages_messenger` | `paid_marketing_messages` |
 | **Access Token Type** | System-business access token (non-expiring) | User access token (short-lived, ~1 hour) | System-business access token (non-expiring) |
-| **Billed Ad Account** | Client’s ad account | Client’s ad account | Your (the partner’s) ad account |
+| **Billed Ad Account** | Client's ad account | Client's ad account | Your (the partner's) ad account |
 | **Additional Features** | Enables subscriber automations | Enables subscriber automations | Enables subscriber automations |
-| **Best For** | Businesses with Business Manager access | Admins managing Pages and Ad Accounts without Business Manager access | Partners who want to bill marketing message deliveries to their own ad account instead of the client’s |
+| **Best For** | Businesses with Business Manager access | Admins managing Pages and Ad Accounts without Business Manager access | Partners who want to bill marketing message deliveries to their own ad account instead of the client's |
 
-**Recommendation:** Use Flow 1 (Business Portfolio Flow) if the admin for the Business is onboarding, as it provides higher level of authentication and the token doesn’t expire. Use Flow 2 (Asset-Based Flow) if the admin for the business is not available or the Ad Account and Page are not owned by the same business. Use Flow 3 (Partner Billing Flow) if you, as a partner, want marketing message deliveries to be billed to your own ad account instead of your client’s.
+**Recommendation:** Use Flow 1 (Business Portfolio Flow) if the admin for the Business is onboarding, as it provides higher level of authentication and the token doesn't expire. Use Flow 2 (Asset-Based Flow) if the admin for the business is not available or the Ad Account and Page are not owned by the same business. Use Flow 3 (Partner Billing Flow) if you, as a partner, want marketing message deliveries to be billed to your own ad account instead of your client's.
 
 ## Before You Start
 
@@ -173,29 +173,25 @@ In the following steps, you are creating a login configuration that requires the
 
 [Launch the Graph API Explorer](https://developers.facebook.com/tools/explorer)
 
-### Connect your ad account to the client’s system user
+### Connect your ad account to the client's system user
 
-After your client completes the login, the SUAT is associated with a Business Integration System User (BISU) created on your client’s business portfolio. To bill marketing message campaigns to your own ad account, connect that ad account to the BISU.
+After your client completes the login, the SUAT is associated with a Business Integration System User (BISU) created on your client's business portfolio. To bill marketing message campaigns to your own ad account, connect that ad account to the BISU.
 
 #### Step 1: Get the BISU ID
 
 Call `GET /me` with the SUAT to retrieve the BISU ID.
 
 ```
-```
-curl -X GET "https://graph.facebook.com/<API_VERSION>/me?fields=id" \  
-     -H "Authorization: Bearer <SYSTEM_USER_ACCESS_TOKEN>"
-```
+curl -X GET "https://graph.facebook.com/<API_VERSION>/me?fields=id" \  
+     -H "Authorization: Bearer <SYSTEM_USER_ACCESS_TOKEN>"
 ```
 
 On success, the response contains the BISU ID:
 
 ```
-```
 {  
-  "id": "<BUSINESS_INTEGRATION_SYSTEM_USER_ID>"  
+  "id": "<BUSINESS_INTEGRATION_SYSTEM_USER_ID>"  
 }
-```
 ```
 
 #### Step 2: Connect your ad account to the BISU
@@ -209,28 +205,24 @@ Send a `POST` request to the asset connections endpoint with your ad account ID.
 * The request body must be sent as `multipart/form-data` (`--form` in curl), **not** JSON.
 
 ```
-```
-curl -X POST "https://api.facebook.com/system_accounts/<BUSINESS_INTEGRATION_SYSTEM_USER_ID>/asset-connections" \  
-     -H "Authorization: Bearer <SYSTEM_USER_ACCESS_TOKEN>" \  
-     --form 'asset_id=<PARTNER_AD_ACCOUNT_ID>'
-```
+curl -X POST "https://api.facebook.com/system_accounts/<BUSINESS_INTEGRATION_SYSTEM_USER_ID>/asset-connections" \  
+     -H "Authorization: Bearer <SYSTEM_USER_ACCESS_TOKEN>" \  
+     --form 'asset_id=<PARTNER_AD_ACCOUNT_ID>'
 ```
 
 On success, the response is `HTTP/2 202` with:
 
 ```
-```
-{"success": true}
-```
+{"success": true}
 ```
 
-After the connection succeeds, [create marketing message campaigns](https://developers.facebook.com/documentation/business-messaging/messenger-platform/marketing-messages-on-messenger/send-messages) using your own ad account ID (`act_<PARTNER_AD_ACCOUNT_ID>`) as the campaign target. All messages are billed to your ad account instead of your client’s.
+After the connection succeeds, [create marketing message campaigns](https://developers.facebook.com/documentation/business-messaging/messenger-platform/marketing-messages-on-messenger/send-messages) using your own ad account ID (`act_<PARTNER_AD_ACCOUNT_ID>`) as the campaign target. All messages are billed to your ad account instead of your client's.
 
 Your Marketing Message API for Messenger login configuration for Flow 3 is complete.
 
 ## Test your login flow
 
-We recommend testing the login flow in Meta’s Graph API Explorer.
+We recommend testing the login flow in Meta's Graph API Explorer.
 
 * On the right side of the explorer, select your marketing messages app from the **Meta App** dropdown menu.
 * Click **Configurations** then select your marketing messages configuration from the dropdown menu. The access token type, permissions, and assets required by this configuration are listed.
@@ -243,7 +235,7 @@ We recommend testing the login flow in Meta’s Graph API Explorer.
 
 **For Flow 2:** Upon successful login, your app creates a short-lived user access token (expires in ~1 hour). To get a long-lived token (expires in 60 days), follow the instructions [here](https://developers.facebook.com/documentation/facebook-login/guides/access-tokens/get-long-lived#long-lived-access-tokens).
 
-**For Flow 3:** Upon successful login, your app creates a non-expiring system business access token scoped to your client’s selected Page(s). After receiving the token, complete the [Connect your ad account to the client’s system user](https://developers.facebook.com/documentation/business-messaging/messenger-platform/marketing-messages-on-messenger/get-subscription-tokens#connect-your-ad-account-to-the-clients-system-user) steps before sending campaigns.
+**For Flow 3:** Upon successful login, your app creates a non-expiring system business access token scoped to your client's selected Page(s). After receiving the token, complete the [Connect your ad account to the client's system user](https://developers.facebook.com/documentation/business-messaging/messenger-platform/marketing-messages-on-messenger/get-subscription-tokens#connect-your-ad-account-to-the-clients-system-user) steps before sending campaigns.
 
 ### View token details
 
@@ -263,18 +255,16 @@ We recommend implementing the Javascript SDK from Meta in your web app to invoke
 
 #### Embed your login button or URL in your web app
 
-Set the `config_id` attribute to your configuration’s ID in the `fb:login-button` element to invoke your configuration during login
+Set the `config_id` attribute to your configuration's ID in the `fb:login-button` element to invoke your configuration during login
 
 ```
-```
-<fb:login-button config_id="<CONFIG_ID>" onlogin="checkLoginState();">  
+<fb:login-button config_id="<CONFIG_ID>" onlogin="checkLoginState();">  
 </fb:login-button>
 ```
-```
 
-Use the JavaScript SDK from Meta’s `FB.login()` method in your web app to use a specific configuration to get a system user access token.
+Use the JavaScript SDK from Meta's `FB.login()` method in your web app to use a specific configuration to get a system user access token.
 
-* Set `config_id` to your configuration’s ID
+* Set `config_id` to your configuration's ID
 * Set `response_type` to `code` – authorization code grant type required for system user access tokens
 * Set `override_default_response_type` to `true` – any response types passed in take precedence over the default types
 
@@ -296,12 +286,10 @@ FB.login(
 When your app user completes the login dialog flow, Meta redirects the user to your redirect URL and includes the authorization code. You must then exchange this code for an access token by performing a server-to-server call to Meta servers.
 
 ```
-```
-curl https://graph.facebook.com/<API_VERSION/oauth/access_token?  
-  client_id=<APP_ID>  
-  &client_secret=<APP_SECRET>  
-  &code=<AUTHORIZATION_CODE>
-```
+curl https://graph.facebook.com/<API_VERSION/oauth/access_token?  
+  client_id=<APP_ID>  
+  &client_secret=<APP_SECRET>  
+  &code=<AUTHORIZATION_CODE>
 ```
 
 See [Exchanging Code for an Access Token](https://developers.facebook.com/documentation/facebook-login/guides/advanced/manual-flow#exchangecode) for more information about this step.
@@ -310,7 +298,7 @@ See [Exchanging Code for an Access Token](https://developers.facebook.com/docume
 
 Implement the following recommendations to help businesses discover and onboard to your app.
 
-* Use “Marketing Messages” in the name for the marketing messages product in your app and explain its benefits.
+* Use "Marketing Messages" in the name for the marketing messages product in your app and explain its benefits.
 
 **Marketing Messages on Messenger**
 
@@ -321,8 +309,8 @@ Implement the following recommendations to help businesses discover and onboard 
 * Send messages to everyone subscribed, or segment customers based on the subscription source or custom tag.
 * Pay per message delivered and measure down-funnel conversions.
 
-* Place the entry point to Marketing Messages in your app’s primary navigation, or near the relevant messaging flows, with an informational banner or a contextual guidance card.
-* Link your Marketing Messages onboarding flow to your app’s **Get started** action button.
+* Place the entry point to Marketing Messages in your app's primary navigation, or near the relevant messaging flows, with an informational banner or a contextual guidance card.
+* Link your Marketing Messages onboarding flow to your app's **Get started** action button.
 * When integrating multiple flows, provide clear guidance to help users choose the appropriate flow based on their permission level and business needs.
 
 ## Next steps

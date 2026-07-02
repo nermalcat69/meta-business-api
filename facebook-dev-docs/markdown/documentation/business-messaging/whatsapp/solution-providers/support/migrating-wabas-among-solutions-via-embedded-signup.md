@@ -17,13 +17,13 @@ Tech Providers who visit your website and click the embedded solution creation b
 
 ![Log in With Facebook dialog where a Tech Provider chooses which apps to grant the Solution Partner access to, with radio options and an app list.](https://scontent.fdel1-2.fna.fbcdn.net/v/t39.2365-6/458542138_1146317889773905_7397800002017796139_n.png?_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=YsEJnpqZ8FAQ7kNvwEOwyzc&_nc_oc=AdriTFxi_B0AgiOLiP8zy9aGHOPsB1evGblxcsAbsxAevpLmN7ehWBqXrKPwtuikYBBpZj9x6Xh5o64cNt7w7r3t&_nc_zt=14&_nc_ht=scontent.fdel1-2.fna&_nc_gid=wqM9EFleKfhVTKcMvy3Upg&_nc_ss=7b2a8&oh=00_AQAyhIka1GYikqkjgF48fSyjosei2Vx4RocZzZARmZC3Rw&oe=6A6071BC)
 
-After choosing an app, they can review and confirm that they will be granting your app permission to manage their app’s Multi-Partner Solutions.
+After choosing an app, they can review and confirm that they will be granting your app permission to manage their app's Multi-Partner Solutions.
 
 ![Permission review screen confirming the Solution Partner app can create and manage partner solutions for the selected app, with Back and Save buttons.](https://scontent.fdel1-4.fna.fbcdn.net/v/t39.2365-6/458977093_1267404221307200_5854548995664421217_n.png?_nc_cat=105&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=zSuhvV66BKcQ7kNvwEosBe8&_nc_oc=Adp3aD-7yBJLqicocpT8aOPr1vMva0ks1t1fJ1oLX8ZASy-REL5sNSjooAGNt3Jl6YFgRqkjdqFIOY1GSgVKnIDF&_nc_zt=14&_nc_ht=scontent.fdel1-4.fna&_nc_gid=wqM9EFleKfhVTKcMvy3Upg&_nc_ss=7b2a8&oh=00_AQA6Z6OEQvlcJJKbbjZrwAXPtz62Dpygsjyh8Bn3zn5TAA&oe=6A604D6B)
 
 ![Confirmation screen stating the Tech Provider has been connected to the Solution Partner app, with a link to Business Integrations and a Got it button.](https://scontent.fdel1-7.fna.fbcdn.net/v/t39.2365-6/458647670_1843654972790451_9197042182528031487_n.png?_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=NrednbRIrtIQ7kNvwG3KcIL&_nc_oc=Adp1043J3vNIDdwuj0qozObfnHyf7Qk9VfYmOalJqTzZ65dBenOa48GY1zVmeOodhwxw6G8-qAuajjhhIfTnOR-K&_nc_zt=14&_nc_ht=scontent.fdel1-7.fna&_nc_gid=wqM9EFleKfhVTKcMvy3Upg&_nc_ss=7b2a8&oh=00_AQD8xH1I1_6pxwx1TOYAVGNtTUjRAlTHHgvPoAPjrwCIvg&oe=6A60587B)
 
-Once the Tech Provider dismisses the interface, a user access token will be generated and returned to the flow, where you can capture it. You can then use the token in a series of API calls to get the Tech Provider’s chosen app IDs and create and accept a solution.
+Once the Tech Provider dismisses the interface, a user access token will be generated and returned to the flow, where you can capture it. You can then use the token in a series of API calls to get the Tech Provider's chosen app IDs and create and accept a solution.
 
 ## Requirements
 
@@ -88,7 +88,7 @@ Add the following code to your website or portal, or wherever you plan on direct
 <button onclick="launchSolutionCreationFlow()" style="background-color: #1877f2; border: 0; border-radius: 4px; color: #fff; cursor: pointer; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: bold; height: 40px; padding: 0 24px;">Launch Solution Creation</button>
 ```
 
-Direct prospective Tech Provider partners to this location and instruct them to complete the flow. Let them know that completing the flow does not create the solution (it requires some API calls on your part) and that you’ll provide them with the solution ID once it has been created.
+Direct prospective Tech Provider partners to this location and instruct them to complete the flow. Let them know that completing the flow does not create the solution (it requires some API calls on your part) and that you'll provide them with the solution ID once it has been created.
 
 ## Solution creation
 
@@ -97,33 +97,29 @@ Direct prospective Tech Provider partners to this location and instruct them to 
 Anytime a Tech Provider uses the embedded solution creation button and completes the flow, the flow returns an `authResponse` object (`response.authResponse`) that has an `accessToken` property:
 
 ```
-```
 {  
-  status: "connected",  
-  authResponse: {  
-    accessToken: "<USER_ACCESS_TOKEN>",  
-    expiresIn:"<TOKEN_EXPIRATION_TIMESTAMP>",  
-    reauthorize_required_in:"<SECONDS_UNTIL_REAUTH_REQUIRED>",  
-    signedRequest:"<SIGNED_PARAMETER>",  
-    userID:"<USER_ID>"  
-  }  
+  status: "connected",  
+  authResponse: {  
+    accessToken: "<USER_ACCESS_TOKEN>",  
+    expiresIn:"<TOKEN_EXPIRATION_TIMESTAMP>",  
+    reauthorize_required_in:"<SECONDS_UNTIL_REAUTH_REQUIRED>",  
+    signedRequest:"<SIGNED_PARAMETER>",  
+    userID:"<USER_ID>"  
+  }  
 }
 ```
-```
 
-Capture the `accessToken` property value. This is the Tech Provider’s user access token, which you will need next.
+Capture the `accessToken` property value. This is the Tech Provider's user access token, which you will need next.
 
 ### Step 2: Get app details
 
-Use the Tech Provider’s user access token and the [Assigned Applications API](https://developers.facebook.com/docs/graph-api/reference/user/assigned_applications) to get a list of app IDs that the Tech Provider selected when they completed the flow.
+Use the Tech Provider's user access token and the [Assigned Applications API](https://developers.facebook.com/docs/graph-api/reference/user/assigned_applications) to get a list of app IDs that the Tech Provider selected when they completed the flow.
 
 #### Example request
 
 ```
-```
-curl 'https://graph.facebook.com/v20.0/me/application_details' \  
--H 'Authorization: Bearer EAAJB'
-```
+curl 'https://graph.facebook.com/v20.0/me/application_details' \  
+-H 'Authorization: Bearer EAAJB'
 ```
 
 #### Example response
@@ -131,24 +127,22 @@ curl 'https://graph.facebook.com/v20.0/me/application_details' \
 Example response of a Tech Provider who selected a single app in the flow.
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "link": "www.mediamonsoon.com",  
-      "name": "media_monsoon_prod",  
-      "id": "634974688087057"  
-    }  
-  ]  
+  "data": [  
+    {  
+      "link": "www.mediamonsoon.com",  
+      "name": "media_monsoon_prod",  
+      "id": "634974688087057"  
+    }  
+  ]  
 }
-```
 ```
 
 Each object in the response describes an app the Tech Provider selected when completing the flow. Capture the `id` property value of each app for the next step.
 
 ### Step 3: Create a solution for Tech Provider
 
-Use the Tech Provider’s access token and an app ID from the previous step to make a request to the [Solution Creation API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/application/solution-creation-api#post-version-application-id-whatsapp-business-solution).
+Use the Tech Provider's access token and an app ID from the previous step to make a request to the [Solution Creation API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/application/solution-creation-api#post-version-application-id-whatsapp-business-solution).
 
 Repeat this request for each app ID returned in the previous step.
 
@@ -159,14 +153,12 @@ POST /<APP_ID>/whatsapp_business_solution
 ```
 
 ```
-```
 {  
-  "owner_permissions": ["MESSAGING"],  
-  "partner_app_id": "<SOLUTION_PARTNER_APP_ID>",  
-  "partner_permissions": ["MESSAGING"],  
-  "solution_name": "<SOLUTION_NAME>"  
+  "owner_permissions": ["MESSAGING"],  
+  "partner_app_id": "<SOLUTION_PARTNER_APP_ID>",  
+  "partner_permissions": ["MESSAGING"],  
+  "solution_name": "<SOLUTION_NAME>"  
 }
-```
 ```
 
 * `<SOLUTION_PARTNER_APP_ID>` — Your app ID.
@@ -174,14 +166,12 @@ POST /<APP_ID>/whatsapp_business_solution
 
 #### Response
 
-Upon success, the API will create a solution and associate your app and the Tech Provider’s app to it.
+Upon success, the API will create a solution and associate your app and the Tech Provider's app to it.
 
 ```
-```
 {  
-  "solution_id": "<SOLUTION_ID>"  
+  "solution_id": "<SOLUTION_ID>"  
 }
-```
 ```
 
 Capture the `solution_id` value. This is the solution ID, which you will need in the next step.
@@ -193,10 +183,8 @@ Use your system user access token from the [Grant Permission to App](https://dev
 #### Example request
 
 ```
-```
-curl -X POST 'https://graph.facebook.com/v20.0/795033096057724/accept' \  
--H 'Authorization: Bearer EAAAT...
-```
+curl -X POST 'https://graph.facebook.com/v20.0/795033096057724/accept' \  
+-H 'Authorization: Bearer EAAAT...
 ```
 
 #### Example response
@@ -204,11 +192,9 @@ curl -X POST 'https://graph.facebook.com/v20.0/795033096057724/accept' \
 Upon success:
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 Once you have accepted the solution, inform the Tech Provider that the solution has been created successfully, and provide them with any solution IDs you have created and accepted.

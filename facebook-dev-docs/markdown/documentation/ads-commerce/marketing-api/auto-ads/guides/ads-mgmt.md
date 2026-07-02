@@ -39,12 +39,10 @@ $product_catalog->createExternalEventSource(array(), array(
 Add a section for page event sources in the code block:
 
 ```
-```
 {  
-  "type": "page",  
-  "id": "<PAGE_ID>",  
+  "type": "page",  
+  "id": "<PAGE_ID>",  
 }
-```
 ```
 
 Below is an example of how to create a retargeting audience with signals from your pixel, app, and page events; that is, capture an audience who has visited your vehicle pages belonging to a certain vehicle set.
@@ -67,7 +65,7 @@ curl \
       "id": "<APP_ID>"
   }
   ]' \
-  -F 'rule={"vehicle_set_id":{"eq":"<VEHICLE_SET_ID>"}}' \
+  -F 'rule={"vehicle_set_id":{"eq":"<VEHICLE_SET_ID>"}​}' \
   -F 'inclusions=[
   {
       "event": "ViewContent",

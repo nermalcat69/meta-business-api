@@ -33,8 +33,8 @@ FB.ui(params, function(response))
 | --- | --- | --- |
 | `params` | `object` | A collection of parameters that control which dialog is loaded, and relevant settings. Click for more info. |
 | ↳ `method` | `enum` | The UI dialog that is being invoked. This is a required field. |
-| ↳ `*` | `various` | Each dialog also has it’s own set of additional parameters that are added to this `params` object when making the method call. Consult the relevant dialog’s own reference doc to see the parameters that can be used. |
-| `function(response)` | `function` | This specifies the function that is called whenever the UI dialog is closed, either by success, cancellation, or errors. The `response` object will depend on the dialog being used. Consult the relevant dialog’s own reference doc to see the `response` object that should be returned. Defaults to `null`. |
+| ↳ `*` | `various` | Each dialog also has it's own set of additional parameters that are added to this `params` object when making the method call. Consult the relevant dialog's own reference doc to see the parameters that can be used. |
+| `function(response)` | `function` | This specifies the function that is called whenever the UI dialog is closed, either by success, cancellation, or errors. The `response` object will depend on the dialog being used. Consult the relevant dialog's own reference doc to see the `response` object that should be returned. Defaults to `null`. |
 
 ## Examples
 

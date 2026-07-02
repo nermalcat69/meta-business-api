@@ -29,7 +29,7 @@ https://graph.facebook.com/<VERSION>/<AD_RULE_ID>
 
 ## Update a rule
 
-To update a spec, provide all fields, **including those that are unchanged**. The following is an example updating the rule’s trigger to be for every 1,000 impressions. Updating a rule’s status requires no spec changes.
+To update a spec, provide all fields, **including those that are unchanged**. The following is an example updating the rule's trigger to be for every 1,000 impressions. Updating a rule's status requires no spec changes.
 
 ```
 curl \
@@ -76,9 +76,9 @@ curl -X DELETE \
 https://graph.facebook.com/<VERSION>/<AD_RULE_ID>
 ```
 
-## Access a rule’s execution history
+## Access a rule's execution history
 
-Access historic data for each rule’s executions through a dedicated endpoint. By default, this endpoint provides relevant data, such as results and actions. You can also check the state of the rule at each execution to track edits.
+Access historic data for each rule's executions through a dedicated endpoint. By default, this endpoint provides relevant data, such as results and actions. You can also check the state of the rule at each execution to track edits.
 
 ```
 curl -G   \
@@ -99,9 +99,9 @@ curl -G   \
 https://graph.facebook.com/<VERSION>/<AD_RULE_ID>/history
 ```
 
-## Access an account’s execution history
+## Access an account's execution history
 
-Access aggregated history data for all rules under your account through a dedicated endpoint. By default, this endpoint provides the same relevant data as the [rule’s execution history](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences#history), but also includes the id of the rules for each entry.
+Access aggregated history data for all rules under your account through a dedicated endpoint. By default, this endpoint provides the same relevant data as the [rule's execution history](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences#history), but also includes the id of the rules for each entry.
 
 Entries in this endpoint are ordered from newest to oldest. This endpoint also supports the same filtering mechanisms as above: `object_id`, `action`, and `hide_no_changes`.
 
@@ -137,7 +137,7 @@ You can fetch results from the execution history once execution completes.
 
 Read all the rules that govern each ad, ad set, and ad campaign through these endpoints. By default, a rule governs an object if it statically references it by the `id` filter or dynamically references it by the `entity_type` filter.
 
-This endpoint also supports an optional `pass_evaluation`. With `pass_evaluation`, you can further limit the list of rules, by whether or not the object would pass the rule’s filters at that time. If `pass_evaluation` is `true`, you receive all rules that, when [previewed](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences#preview), would return the object. If it is `false`, you receive all rules that would not.
+This endpoint also supports an optional `pass_evaluation`. With `pass_evaluation`, you can further limit the list of rules, by whether or not the object would pass the rule's filters at that time. If `pass_evaluation` is `true`, you receive all rules that, when [previewed](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences#preview), would return the object. If it is `false`, you receive all rules that would not.
 
 ```
 curl \

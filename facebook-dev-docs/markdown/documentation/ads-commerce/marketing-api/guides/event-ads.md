@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/marketing
 
 Updated: Jun 30, 2026
 
-Use the Facebook Branded Content API to view and manage branded content permissions. This helps you control who is authorized to tag you in Facebook branded content posts, and allows you to view, monitor, and control tagging of your brand’s Facebook Page in any branded content posts.
+Use the Facebook Branded Content API to view and manage branded content permissions. This helps you control who is authorized to tag you in Facebook branded content posts, and allows you to view, monitor, and control tagging of your brand's Facebook Page in any branded content posts.
 
 ## Permissions
 
@@ -36,11 +36,9 @@ curl -X GET \
 Status: 200
 
 ```
-```
 {  
-  "allowlist_status": "ENABLED"  
+  "allowlist_status": "ENABLED"  
 }
-```
 ```
 
 ### Update the brand allowlist status
@@ -63,18 +61,16 @@ curl -X PUT \
 Status: 200
 
 ```
-```
 {  
-  "allowlist_status": "ENABLED"  
+  "allowlist_status": "ENABLED"  
 }
-```
 ```
 
 ## Manage allowlisted creators
 
 ### Retrieve allowlisted creators
 
-Retrieve a list of creators currently on your brand’s allowlist. These creators are authorized to create branded content tagging your Page. Certain legacy Pages are no longer authorized to create branded content in general, and if any such Pages are present in your allowlist, the API flags them with the `creator_ineligible_for_bc` field.
+Retrieve a list of creators currently on your brand's allowlist. These creators are authorized to create branded content tagging your Page. Certain legacy Pages are no longer authorized to create branded content in general, and if any such Pages are present in your allowlist, the API flags them with the `creator_ineligible_for_bc` field.
 
 #### Example request
 
@@ -90,24 +86,22 @@ curl -X GET \
 Status: 200
 
 ```
-```
 [  
-  {  
-    "creator_page_id": 1234567890,  
-    "creator_page_name": "Creator Page One",  
-    "creator_ineligible_for_bc": true  
-  },  
-  {  
-    "creator_page_id": 9876543210,  
-    "creator_page_name": "Creator Page Two"  
-  }  
+  {  
+    "creator_page_id": 1234567890,  
+    "creator_page_name": "Creator Page One",  
+    "creator_ineligible_for_bc": true  
+  },  
+  {  
+    "creator_page_id": 9876543210,  
+    "creator_page_name": "Creator Page Two"  
+  }  
 ]
-```
 ```
 
 ### Update the allowlisted creators
 
-Add one or more creators to your brand’s allowlist.
+Add one or more creators to your brand's allowlist.
 
 #### Example request
 
@@ -125,23 +119,21 @@ curl -X POST \
 Status: 200
 
 ```
-```
 [  
-  {  
-    "creator_page_id": 111222333,  
-    "status_code": 200  
-  },  
-  {  
-    "creator_page_id": 444555666,  
-    "status_code": 200  
-  }  
+  {  
+    "creator_page_id": 111222333,  
+    "status_code": 200  
+  },  
+  {  
+    "creator_page_id": 444555666,  
+    "status_code": 200  
+  }  
 ]
-```
 ```
 
 ### Remove creators from the allowlist
 
-Remove one or more creators from your brand’s allowlist.
+Remove one or more creators from your brand's allowlist.
 
 **Note:** Removing a creator from the allowlist does not automatically remove any existing branded content posts where your brand is tagged by a removed creator. Remove those posts separately by [managing branded content posts](https://developers.facebook.com/documentation/ads-commerce/marketing-api/guides/event-ads#manage-branded-content-posts).
 
@@ -159,26 +151,24 @@ curl -X DELETE \
 Status: 200
 
 ```
-```
 [  
-  {  
-    "creator_page_id": 111222333,  
-    "status_code": 200  
-  },  
-  {  
-    "creator_page_id": 444555666,  
-    "status_code": 404,  
-    "error_message": "Creator not found on allowlist."  
-  }  
+  {  
+    "creator_page_id": 111222333,  
+    "status_code": 200  
+  },  
+  {  
+    "creator_page_id": 444555666,  
+    "status_code": 404,  
+    "error_message": "Creator not found on allowlist."  
+  }  
 ]
-```
 ```
 
 ## Manage branded content posts
 
 ### Retrieve branded content posts
 
-Retrieve a list of branded content posts in which your brand’s Page is tagged.
+Retrieve a list of branded content posts in which your brand's Page is tagged.
 
 #### Query parameters
 
@@ -206,22 +196,20 @@ curl -X GET \
 Status: 200
 
 ```
-```
 [  
-  {  
-    "fb_post_id": 505613696297499,  
-    "creator_page_id": 1234567890,  
-    "creator_page_name": "Creator Page One",  
-    "created_at": "2024-01-15T10:00:00+0000"  
-  },  
-  {  
-    "fb_post_id": 701886166670250,  
-    "creator_page_id": 1234567890,  
-    "creator_page_name": "Creator Page One",  
-    "created_at": "2024-01-28T14:30:00+0000"  
-  }  
+  {  
+    "fb_post_id": 505613696297499,  
+    "creator_page_id": 1234567890,  
+    "creator_page_name": "Creator Page One",  
+    "created_at": "2024-01-15T10:00:00+0000"  
+  },  
+  {  
+    "fb_post_id": 701886166670250,  
+    "creator_page_id": 1234567890,  
+    "creator_page_name": "Creator Page One",  
+    "created_at": "2024-01-28T14:30:00+0000"  
+  }  
 ]
-```
 ```
 
 ### Remove sponsors from branded content posts
@@ -242,12 +230,10 @@ curl -X DELETE \
 Status: 200
 
 ```
-```
 [  
-  {  
-    "fb_post_id": 505613696297499,  
-    "status_code": 200  
-  }  
+  {  
+    "fb_post_id": 505613696297499,  
+    "status_code": 200  
+  }  
 ]
-```
 ```

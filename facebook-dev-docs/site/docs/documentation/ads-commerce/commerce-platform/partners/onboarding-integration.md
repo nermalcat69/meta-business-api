@@ -13,18 +13,18 @@ We encourage you to read this guide thoroughly and to integrate with as many ele
 
 As a developer, you most likely fit into one of these categories:
 
-* **Seller:** You’re part of an ecommerce company that has its own custom technical stack, and want to integrate with Meta’s Commerce APIs to enable a single (or a handful of) Shops to operate on Meta’s technologies.
-* **Tech Provider/Partner:** You’re part of an ecommerce platform company, or a company providing software services to existing ecommerce businesses, but doesn’t have a Shop by itself (collectively referred to as a commerce tech provider or partner), and you want to integrate with Meta’s Commerce APIs on behalf of the multiple shops supported by your platform.
+* **Seller:** You're part of an ecommerce company that has its own custom technical stack, and want to integrate with Meta's Commerce APIs to enable a single (or a handful of) Shops to operate on Meta's technologies.
+* **Tech Provider/Partner:** You're part of an ecommerce platform company, or a company providing software services to existing ecommerce businesses, but doesn't have a Shop by itself (collectively referred to as a commerce tech provider or partner), and you want to integrate with Meta's Commerce APIs on behalf of the multiple shops supported by your platform.
 
 In both categories, the quality of your integration will have a meaningful impact when your customers interact with products and Shops managed with our Commerce APIs. This guide is specifically focused on helping partner developers who want to:
 
 * Integrate with our Commerce APIs.
-* Get an overview and the “big picture” of all the elements that go into building a high-quality integration with Meta’s Commerce APIs.
-* Learn how the integration can lead to positive business outcomes: find new customers, close more sales, and successfully leverage Meta’s ads to drive the same outcomes.
+* Get an overview and the "big picture" of all the elements that go into building a high-quality integration with Meta's Commerce APIs.
+* Learn how the integration can lead to positive business outcomes: find new customers, close more sales, and successfully leverage Meta's ads to drive the same outcomes.
 
 ## Buyer Role Considerations
 
-Buyers have a very high bar when it comes to making purchase decisions. They seek rich information about the products they’re considering buying. They want a good deal, and expect to find the same discounts and promotions on a Shop as they find on the seller’s own website. They need timely updates about an order they’ve placed with accurate shipping, tracking, and returns information.
+Buyers have a very high bar when it comes to making purchase decisions. They seek rich information about the products they're considering buying. They want a good deal, and expect to find the same discounts and promotions on a Shop as they find on the seller's own website. They need timely updates about an order they've placed with accurate shipping, tracking, and returns information.
 
 Providing all of these elements to Meta is key to improving buyer conversion rates with Shops.
 
@@ -40,13 +40,13 @@ At Meta, we allow third party developers to build systems that integrate with ou
 
 ### Step 1: Create a Developer App
 
-To make requests to these Graph API endpoints, you first need to [create an app](https://developers.facebook.com/apps/create/) in the [Meta for Developers](https://developers.facebook.com/) portal. In this context, an app represents a collection of capabilities that your third-party software is granted access to on Meta’s systems. Every API call you make to Meta’s systems is associated with this app and your capabilities determine which API calls your software has access to. This app is associated with your business entity on Meta. Meta’s data model is designed such that all of the assets you create to run your business on Meta are owned by this business entity object. This same business entity object that owns your app can also own your Facebook Page, Instagram account, ad account, and product catalog.
+To make requests to these Graph API endpoints, you first need to [create an app](https://developers.facebook.com/apps/create/) in the [Meta for Developers](https://developers.facebook.com/) portal. In this context, an app represents a collection of capabilities that your third-party software is granted access to on Meta's systems. Every API call you make to Meta's systems is associated with this app and your capabilities determine which API calls your software has access to. This app is associated with your business entity on Meta. Meta's data model is designed such that all of the assets you create to run your business on Meta are owned by this business entity object. This same business entity object that owns your app can also own your Facebook Page, Instagram account, ad account, and product catalog.
 
 ### Step 2: Create Access Token (Using Test Account)
 
-As part of the app approval process, you need to provide an access token with each call when making API calls. This access token allows your app to access Meta’s platforms on behalf of a user. Access tokens are the equivalent of digital keys that keep a user logged in to Facebook so they don’t need to re-enter their password every time your third-party software needs to access Meta’s platforms on behalf of that user.
+As part of the app approval process, you need to provide an access token with each call when making API calls. This access token allows your app to access Meta's platforms on behalf of a user. Access tokens are the equivalent of digital keys that keep a user logged in to Facebook so they don't need to re-enter their password every time your third-party software needs to access Meta's platforms on behalf of that user.
 
-As a partner developer who wants to build a commerce integration where you’ll manage multiple shops, you’ll be required to store multiple access tokens—one for each shop you support that’s selling on Facebook and Instagram channels.
+As a partner developer who wants to build a commerce integration where you'll manage multiple shops, you'll be required to store multiple access tokens—one for each shop you support that's selling on Facebook and Instagram channels.
 
 To begin, [create a test commerce account](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/get-started), associating the assets and generating a corresponding access token to be used for developing the commerce API integration.
 
@@ -86,7 +86,7 @@ The table below lists the seller Jobs To be Done (JTBDs) grouped by different ca
 | **Onboard and Manage Shops** | Onboard onto Shops | 0 | Meta-specific | Third party must use [MBE](https://developers.facebook.com/docs/facebook-business-extension/fbe) |  |
 |  | View and resolve issues with Shop (including BI issues) | 0 |  |  |  |
 |  | View insights and recommendations for Shop | 1 | Meta-specific | N/A |  |
-|  | Customize Shop’s look and feel | 2 | Meta-specific | N/A |  |
+|  | Customize Shop's look and feel | 2 | Meta-specific | N/A |  |
 |  | Respond/communicate with Meta buyers | 0 | Both (many sellers prefer using Messenger/IGDM/WhatsApp to respond to customers, while others will rely on 3P tools for customer comms) | N/A |  |
 | **Manage Catalog** | Add/remove/edit products to maintain a rich, fresh catalog | 0 | Multichannel | Third party must synchronize product catalog to Meta and handle errors Use a scalable synchronization mechanism for non-volatile fields (full catalog sync every 24 hours and delta sync every 1 hour) Synchronize high volatility field (inventory and pricing) updates in near real-time (at least every 15 mins) | Third party should synchronize product set collection to Meta |
 |  | View and resolve product issues specific to Meta (eg BI flags) | 0 | Multichannel (though the actual issue resolution can be on a Meta surface, such as BI appeal) | 3P must surface diagnostics with clear Call-To-Action (CTA) to sellers |  |

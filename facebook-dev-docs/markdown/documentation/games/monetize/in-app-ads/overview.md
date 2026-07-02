@@ -75,21 +75,19 @@ Your endpoint should:
 **Example (Node.js):**
 
 ```
-```
-app.get('/webhook', (req, res) => {  
-  const mode = req.query['hub.mode'];  
-  const token = req.query['hub.verify_token'];  
-  const challenge = req.query['hub.challenge'];  
+app.get('/webhook', (req, res) => {  
+  const mode = req.query['hub.mode'];  
+  const token = req.query['hub.verify_token'];  
+  const challenge = req.query['hub.challenge'];  
   
-  if (mode === 'subscribe' && token === YOUR_VERIFY_TOKEN) {  
-    console.log('Webhook verified successfully.');  
-    res.status(200).send(challenge);  
-  } else {  
-    console.error('Webhook verification failed.');  
-    res.sendStatus(403);  
-  }  
+  if (mode === 'subscribe' && token === YOUR_VERIFY_TOKEN) {  
+    console.log('Webhook verified successfully.');  
+    res.status(200).send(challenge);  
+  } else {  
+    console.error('Webhook verification failed.');  
+    res.sendStatus(403);  
+  }  
 });
-```
 ```
 
 > **Note for PHP developers:** In PHP, dots and spaces in query parameter names are converted to underscores automatically. Access these parameters using `$_GET['hub_mode']`, `$_GET['hub_challenge']`, and `$_GET['hub_verify_token']`. See the [PHP manual⁠](https://php.net/manual/en/language.variables.external.php) for details.
@@ -171,63 +169,59 @@ Used by the `env` field to indicate the payment environment.
 ### Purchase Success
 
 ```
-```
 {  
-  "entry": [  
-    {  
-      "id": "7362434450471825",  
-      "time": 1777339377,  
-      "changes": [  
-        {  
-          "developer_payload": "{\"hello\":\"world\"}",  
-          "payment_action_type": "PURCHASE_SUCCESS",  
-          "user_id": 12345,  
-          "product_id": "test_product_001",  
-          "purchase_platform": "FB",  
-          "purchase_price_currency": "USD",  
-          "purchase_price_amount": 999,  
-          "purchase_token": 999999999,  
-          "env": "DEV",  
-          "version": "V2",  
-          "field": "in_app_purchase"  
-        }  
-      ]  
-    }  
-  ],  
-  "object": "application"  
+  "entry": [  
+    {  
+      "id": "7362434450471825",  
+      "time": 1777339377,  
+      "changes": [  
+        {  
+          "developer_payload": "{\"hello\":\"world\"}",  
+          "payment_action_type": "PURCHASE_SUCCESS",  
+          "user_id": 12345,  
+          "product_id": "test_product_001",  
+          "purchase_platform": "FB",  
+          "purchase_price_currency": "USD",  
+          "purchase_price_amount": 999,  
+          "purchase_token": 999999999,  
+          "env": "DEV",  
+          "version": "V2",  
+          "field": "in_app_purchase"  
+        }  
+      ]  
+    }  
+  ],  
+  "object": "application"  
 }
-```
 ```
 
 ### Refund
 
 ```
-```
 {  
-  "entry": [  
-    {  
-      "id": "7362434450471825",  
-      "time": 1777339400,  
-      "changes": [  
-        {  
-          "developer_payload": "{\"hello\":\"world\"}",  
-          "payment_action_type": "REFUND_SUCCESS",  
-          "user_id": 12345,  
-          "product_id": "test_product_001",  
-          "purchase_platform": "FB",  
-          "purchase_price_currency": "USD",  
-          "purchase_price_amount": 999,  
-          "purchase_token": 999999999,  
-          "env": "DEV",  
-          "version": "V2",  
-          "field": "in_app_purchase"  
-        }  
-      ]  
-    }  
-  ],  
-  "object": "application"  
+  "entry": [  
+    {  
+      "id": "7362434450471825",  
+      "time": 1777339400,  
+      "changes": [  
+        {  
+          "developer_payload": "{\"hello\":\"world\"}",  
+          "payment_action_type": "REFUND_SUCCESS",  
+          "user_id": 12345,  
+          "product_id": "test_product_001",  
+          "purchase_platform": "FB",  
+          "purchase_price_currency": "USD",  
+          "purchase_price_amount": 999,  
+          "purchase_token": 999999999,  
+          "env": "DEV",  
+          "version": "V2",  
+          "field": "in_app_purchase"  
+        }  
+      ]  
+    }  
+  ],  
+  "object": "application"  
 }
-```
 ```
 
 ## Handling Purchase Success
@@ -242,20 +236,18 @@ When your server receives a webhook with `payment_action_type` set to `PURCHASE_
 **Example server-side handler (Node.js):**
 
 ```
-```
-app.post('/webhook', async (req, res) => {  
-  // Validate the X-Hub-Signature-256 header first (see Security section)  
+app.post('/webhook', async (req, res) => {  
+  // Validate the X-Hub-Signature-256 header first (see Security section)  
   
-  const payload = req.body;  
+  const payload = req.body;  
   
-  if (payload.payment_action_type === 'PURCHASE_SUCCESS') {  
-    // 1. Grant the purchased item to the user  
-    // 2. Call consume purchase API with payload.purchase_token  
-  }  
+  if (payload.payment_action_type === 'PURCHASE_SUCCESS') {  
+    // 1. Grant the purchased item to the user  
+    // 2. Call consume purchase API with payload.purchase_token  
+  }  
   
-  res.sendStatus(200);  
+  res.sendStatus(200);  
 });
-```
 ```
 
 ## Handling Refunds
@@ -274,8 +266,8 @@ Historically, refunds account for **less than 4%** of all transactions.
 
 ### Recommended handling
 
-* **Use refund notifications for internal analytics and tracking.** Record which players received refunds, for which products, and the frequency of refunds to monitor your game’s purchase health.
-* **In-game handling of refunds is at your discretion.** You may choose to revoke the purchased item, adjust the player’s balance, or take no in-game action — the decision depends on your game’s economy and policies.
+* **Use refund notifications for internal analytics and tracking.** Record which players received refunds, for which products, and the frequency of refunds to monitor your game's purchase health.
+* **In-game handling of refunds is at your discretion.** You may choose to revoke the purchased item, adjust the player's balance, or take no in-game action — the decision depends on your game's economy and policies.
 
 ## Validating Payload Signatures
 
@@ -286,28 +278,26 @@ The header value has the format `sha256=<hex_signature>`, where the signature is
 **Example (Node.js):**
 
 ```
-```
-const crypto = require('crypto');  
+const crypto = require('crypto');  
   
-function verifyWebhookSignature(req, appSecret) {  
-  const signature = req.headers['x-hub-signature-256'];  
-  if (!signature) {  
-    throw new Error('Missing X-Hub-Signature-256 header');  
-  }  
+function verifyWebhookSignature(req, appSecret) {  
+  const signature = req.headers['x-hub-signature-256'];  
+  if (!signature) {  
+    throw new Error('Missing X-Hub-Signature-256 header');  
+  }  
   
-  const expectedSignature = 'sha256=' + crypto  
-    .createHmac('sha256', appSecret)  
-    .update(req.rawBody)  
-    .digest('hex');  
+  const expectedSignature = 'sha256=' + crypto  
+    .createHmac('sha256', appSecret)  
+    .update(req.rawBody)  
+    .digest('hex');  
   
-  if (!crypto.timingSafeEqual(  
-    Buffer.from(signature),  
-    Buffer.from(expectedSignature)  
-  )) {  
-    throw new Error('Invalid webhook signature');  
-  }  
+  if (!crypto.timingSafeEqual(  
+    Buffer.from(signature),  
+    Buffer.from(expectedSignature)  
+  )) {  
+    throw new Error('Invalid webhook signature');  
+  }  
 }
-```
 ```
 
 > **Important:** Always use a constant-time comparison function (like `crypto.timingSafeEqual`) to prevent timing attacks when comparing signatures.

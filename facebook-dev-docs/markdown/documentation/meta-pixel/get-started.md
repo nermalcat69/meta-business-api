@@ -7,9 +7,9 @@ source_url: https://developers.facebook.com/documentation/meta-pixel/get-started
 
 Updated: Jun 30, 2026
 
-The Meta Pixel is a snippet of JavaScript code that loads a small library of functions you can use to track Facebook ad-driven visitor activity on your website. It relies on [Facebook cookies⁠](https://www.facebook.com/policies/cookies/), which enable us to match your website visitors to their respective Facebook User accounts. Once matched, we can tally their actions in the Facebook Ads Manager so you can use the data to analyze your website’s conversion flows and optimize your ad campaigns.
+The Meta Pixel is a snippet of JavaScript code that loads a small library of functions you can use to track Facebook ad-driven visitor activity on your website. It relies on [Facebook cookies⁠](https://www.facebook.com/policies/cookies/), which enable us to match your website visitors to their respective Facebook User accounts. Once matched, we can tally their actions in the Facebook Ads Manager so you can use the data to analyze your website's conversion flows and optimize your ad campaigns.
 
-By default, the Pixel will track URLs visited, domains visited, and the devices your visitors use. In addition, you can use the Pixel’s library of functions to:
+By default, the Pixel will track URLs visited, domains visited, and the devices your visitors use. In addition, you can use the Pixel's library of functions to:
 
 * [track conversions](https://developers.facebook.com/documentation/meta-pixel/implementation/conversion-tracking), so you can measure ad effectiveness
 * define [custom audiences](https://developers.facebook.com/documentation/meta-pixel/implementation/custom-audiences), so you can target visitors who are more likely to convert
@@ -19,19 +19,19 @@ By default, the Pixel will track URLs visited, domains visited, and the devices 
 
 In order to implement the Pixel, you will need:
 
-* access to your website’s code base
-* your Pixel’s [base code](https://developers.facebook.com/documentation/meta-pixel/get-started) or its ID
+* access to your website's code base
+* your Pixel's [base code](https://developers.facebook.com/documentation/meta-pixel/get-started) or its ID
 * access to the [Facebook Ads Manager⁠](https://www.facebook.com/adsmanager)
 
 In addition, depending on where you conduct business, you may have to comply with [General Data Protection Regulation](https://developers.facebook.com/documentation/meta-pixel/implementation/gdpr).
 
-Ready? [Let’s get started](https://developers.facebook.com/documentation/meta-pixel/get-started).
+Ready? [Let's get started](https://developers.facebook.com/documentation/meta-pixel/get-started).
 
 ## Base Code
 
-Before you can install the Pixel, you will need your Pixel’s base code, which you can find in the [Ads Manager > Events Manager⁠](https://business.facebook.com/events_manager). If you have not created a Pixel, [follow these instructions⁠](https://www.facebook.com/business/help/952192354843755) to create one — all you will need is the Pixel’s base code (step 1).
+Before you can install the Pixel, you will need your Pixel's base code, which you can find in the [Ads Manager > Events Manager⁠](https://business.facebook.com/events_manager). If you have not created a Pixel, [follow these instructions⁠](https://www.facebook.com/business/help/952192354843755) to create one — all you will need is the Pixel's base code (step 1).
 
-The base Pixel code contains your Pixel’s ID in two places and looks like this:
+The base Pixel code contains your Pixel's ID in two places and looks like this:
 
 ```
 <!-- Facebook Pixel Code -->
@@ -58,9 +58,9 @@ When run, this code will download a library of functions which you can then use 
 
 ## Installing The Pixel
 
-To install the Pixel, we highly recommend that you add its base code between the opening and closing `<head>` tags on every page where you will be tracking website visitor actions. Most developers add it to their website’s persistent header, so it can be used on all pages.
+To install the Pixel, we highly recommend that you add its base code between the opening and closing `<head>` tags on every page where you will be tracking website visitor actions. Most developers add it to their website's persistent header, so it can be used on all pages.
 
-Placing the code within your `<head>` tags reduces the chances of browsers or third-party code blocking the Pixel’s execution. It also executes the code sooner, increasing the chance that your visitors are tracked before they leave your page.
+Placing the code within your `<head>` tags reduces the chances of browsers or third-party code blocking the Pixel's execution. It also executes the code sooner, increasing the chance that your visitors are tracked before they leave your page.
 
 Once you have added it to your website, load a page that has the Pixel. This should call `fbq('track', 'PageView')`, which will be tracked as a `PageView` event in the Events Manager.
 
@@ -70,7 +70,7 @@ Verify that this event was tracked by going to your Events Manager. Locate your 
 
 ### Installing Using a Tag Manager
 
-Although we recommend adding the Pixel directly to your website’s `<head>` tags, the Pixel will work in most tag management and tag container solutions. For specific advice on implementing the Pixel using your tag manager, please refer to your tag manager’s documentation.
+Although we recommend adding the Pixel directly to your website's `<head>` tags, the Pixel will work in most tag management and tag container solutions. For specific advice on implementing the Pixel using your tag manager, please refer to your tag manager's documentation.
 
 ### Installing Using an IMG Tag
 

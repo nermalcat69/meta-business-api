@@ -7,11 +7,11 @@ source_url: https://developers.facebook.com/documentation/business-messaging/wha
 
 Updated: May 21, 2026
 
-You can use the API and the Meta Business Suite’s **Business settings** panel to migrate a client’s WhatsApp Business account (WABA) from one [Multi-Partner Solution](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/multi-partner-solutions) (the “source solution”) to another (the “destination solution”).
+You can use the API and the Meta Business Suite's **Business settings** panel to migrate a client's WhatsApp Business account (WABA) from one [Multi-Partner Solution](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/multi-partner-solutions) (the "source solution") to another (the "destination solution").
 
-As part of this process, a new WhatsApp Business account (WABA) will be created for the client, templates within the source WABA will be duplicated in the destination WABA, and access to the WABA and its assets will be granted to the destination solution’s Solution Partner.
+As part of this process, a new WhatsApp Business account (WABA) will be created for the client, templates within the source WABA will be duplicated in the destination WABA, and access to the WABA and its assets will be granted to the destination solution's Solution Partner.
 
-Note that both you and the destination solution’s Solution Partner must perform one or more API requests to complete the process.
+Note that both you and the destination solution's Solution Partner must perform one or more API requests to complete the process.
 
 ## Requirements
 
@@ -23,7 +23,7 @@ Templates are automatically duplicated in the destination WABA and initially gra
 
 After duplication however, templates are re-checked to ensure they are correctly categorized according to our [guidelines](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing). This may result in some duplicated templates having their `status` set to `REJECTED`.
 
-Only templates with both a `status` of `APPROVED` and `quality_score` of `GREEN` are eligible for duplication. If the destination WABA cannot accommodate all of the new templates, we will duplicate as many as we can until the destination WABA’s template limit has been reached. Unduplicated templates must be re-created and submitted for approval if they are to be used by the destination WABA.
+Only templates with both a `status` of `APPROVED` and `quality_score` of `GREEN` are eligible for duplication. If the destination WABA cannot accommodate all of the new templates, we will duplicate as many as we can until the destination WABA's template limit has been reached. Unduplicated templates must be re-created and submitted for approval if they are to be used by the destination WABA.
 
 Note that **template quality ratings are not duplicated**. All duplicated templates will start with an `UNKNOWN` rating. This rating will remain for the first 24 hours, after which a new rating will be generated if sufficient data is available.
 
@@ -35,22 +35,20 @@ Messages delivered after migration is complete are charged to the business custo
 
 ## Tech Provider steps
 
-### Step 1: Tag the customer’s WABA for migration
+### Step 1: Tag the customer's WABA for migration
 
-Use the [POST /<WHATSAPP\_BUSINESS\_ACCOUNT>/set\_solution\_migration\_intent](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/set-solution-migration-intent-api#Creating) endpoint to tag the business customer’s WABA for migration. This generates a [migration intent](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/migration-intent-api), which indicates your intent to migrate the WABA.
+Use the [POST /<WHATSAPP\_BUSINESS\_ACCOUNT>/set\_solution\_migration\_intent](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/set-solution-migration-intent-api#Creating) endpoint to tag the business customer's WABA for migration. This generates a [migration intent](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/migration-intent-api), which indicates your intent to migrate the WABA.
 
 #### Request
 
 ```
-```
-curl 'https://graph.facebook.com/<API_VERSION>/<WABA_ID>/set_solution_migration_intent' \  
--H 'Content-Type: application/json' \  
--H 'Authorization: Bearer <BUSINESS_TOKEN>' \  
--d '  
+curl 'https://graph.facebook.com/<API_VERSION>/<WABA_ID>/set_solution_migration_intent' \  
+-H 'Content-Type: application/json' \  
+-H 'Authorization: Bearer <BUSINESS_TOKEN>' \  
+-d '  
 {  
-  "solution_id": "<DESTINATION_MULTI-PARTNER_SOLUTION_ID>"  
+  "solution_id": "<DESTINATION_MULTI-PARTNER_SOLUTION_ID>"  
 }'
-```
 ```
 
 #### Response
@@ -58,11 +56,9 @@ curl 'https://graph.facebook.com/<API_VERSION>/<WABA_ID>/set_solution_migration
 Upon success:
 
 ```
-```
 {  
-  "id": "<MIGRATION_INTENT_ID>"  
+  "id": "<MIGRATION_INTENT_ID>"  
 }
-```
 ```
 
 Capture the migration intent ID.
@@ -75,12 +71,12 @@ In addition to this, share the phone number on the old WABA that you want migrat
 
 ### Step 3: Disable two-step verification on the business phone number
 
-If you have access to the client’s WABA in WhatsApp Manager, disable two-step verification on the business phone number associated with their WABA.
+If you have access to the client's WABA in WhatsApp Manager, disable two-step verification on the business phone number associated with their WABA.
 
 Alternatively, instruct the client to do this on their own. You can provide them with these instructions:
 
 * *Access WhatsApp Manager at [https://business.facebook.com/latest/whatsapp\_manager/⁠](https://business.facebook.com/latest/whatsapp_manager/).*
-* *Navigate to **Account tools** > **Phone numbers**, and click the phone number’s settings (gear) icon. If you don’t see your business phone number, click **Overview** in the menu on the left, then locate the number and click it.*
+* *Navigate to **Account tools** > **Phone numbers**, and click the phone number's settings (gear) icon. If you don't see your business phone number, click **Overview** in the menu on the left, then locate the number and click it.*
 * *Click the **Two-step verification** tab.*
 * *Click the **Turn off two-step verification** button and complete the flow.*
 
@@ -88,48 +84,44 @@ Alternatively, instruct the client to do this on their own. You can provide them
 
 Instruct the customer to use the Meta Business Suite to review and accept the request. You can provide them with these instructions:
 
-* *Access Meta Business Suite’s **Business settings** panel at [https://business.facebook.com/settings/⁠](https://business.facebook.com/settings/).*
+* *Access Meta Business Suite's **Business settings** panel at [https://business.facebook.com/settings/⁠](https://business.facebook.com/settings/).*
 * *Navigate to **Requests** > **Received**.*
 * *Locate the request and click the **Review** button.*
 * *Complete the flow.*
 
 ![Meta Business settings Requests panel showing a Tech Provider partner access request to a WhatsApp Business account with a Review button](https://scontent.fdel1-3.fna.fbcdn.net/v/t39.2365-6/468478543_895393666016721_7634462766366671655_n.png?_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=-tOlUw2qIYsQ7kNvwH6rJ6y&_nc_oc=AdoJxiZwTmHYhIQ-RhPf1rBaquoVHcblb3TgwsHqTMD8Min1RD74FR7ZI_m791yxcS8xtm0fxO8HdjPXT1OtDct2&_nc_zt=14&_nc_ht=scontent.fdel1-3.fna&_nc_gid=lHlWz-CHFxZ9SmEUGVpcAw&_nc_ss=7b2a8&oh=00_AQB4Mm2BzDyetNqbRUwmjIiEBe-zr9tLBpvXIG2veKGxqQ&oe=6A60575E)
 
-When the customer completes this step, an [account\_update webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/manage-webhooks#onboarded-business-customer) indicating that a customer has been onboarded will be triggered and sent to both you and the destination solution’s Solution Partner.
+When the customer completes this step, an [account\_update webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/manage-webhooks#onboarded-business-customer) indicating that a customer has been onboarded will be triggered and sent to both you and the destination solution's Solution Partner.
 
 Note that an email from **WhatsApp for Business** (notification@facebookmail.com) will also be sent to anyone who has admin access on the WABA, requesting review and acceptance of the request. The button in the email just loads the Business settings panel in a new window, so any WABA admin can review and accept the request.
 
 ## Solution Partner steps
 
-### Step 1: Get the customer’s business token
+### Step 1: Get the customer's business token
 
-Use the [GET /<SOLUTION\_ID>/access\_token](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-solution/access-token-api#Reading) endpoint and request the `business_id` parameter to get an onboarded business customer’s [business token](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#business-integration-system-user-access-tokens).
+Use the [GET /<SOLUTION\_ID>/access\_token](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-solution/access-token-api#Reading) endpoint and request the `business_id` parameter to get an onboarded business customer's [business token](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#business-integration-system-user-access-tokens).
 
 #### Request
 
 ```
-```
-curl 'https://graph.facebook.com/<API_VERSION>/<SOLUTION_ID>/access_token?business_id=<CUSTOMER_BUSINESS_PORTFOLIO_ID>' \  
--H 'Authorization: Bearer <SYSTEM_TOKEN>'
-```
+curl 'https://graph.facebook.com/<API_VERSION>/<SOLUTION_ID>/access_token?business_id=<CUSTOMER_BUSINESS_PORTFOLIO_ID>' \  
+-H 'Authorization: Bearer <SYSTEM_TOKEN>'
 ```
 
-The customer’s business portfolio ID is included in the [account\_update webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/manage-webhooks#onboarded-business-customer) triggered when the customer accepts the migration intent.
+The customer's business portfolio ID is included in the [account\_update webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/manage-webhooks#onboarded-business-customer) triggered when the customer accepts the migration intent.
 
 #### Response
 
 Upon success:
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "access_token": "<CUSTOMER_BUSINESS_TOKEN>"  
-    }  
-  ]  
+  "data": [  
+    {  
+      "access_token": "<CUSTOMER_BUSINESS_TOKEN>"  
+    }  
+  ]  
 }
-```
 ```
 
 ### Step 2: Get the status of the migration intent
@@ -139,10 +131,8 @@ Use the [Migration Intent API](https://developers.facebook.com/documentation/bus
 #### Request
 
 ```
-```
-curl 'https://graph.facebook.com/<API_VERSION>/<MIGRATION_INTENT_ID>' \  
--H 'Authorization: Bearer <BUSINESS_TOKEN>'
-```
+curl 'https://graph.facebook.com/<API_VERSION>/<MIGRATION_INTENT_ID>' \  
+-H 'Authorization: Bearer <BUSINESS_TOKEN>'
 ```
 
 #### Response
@@ -150,45 +140,41 @@ curl 'https://graph.facebook.com/<API_VERSION>/<MIGRATION_INTENT_ID>' \
 Upon success:
 
 ```
-```
 {  
-  "solution": {  
-    "name": "<DESTINATION_SOLUTION_NAME>",  
-    "status": "<DESTINATION_SOLUTION_STATUS>",  
-    "status_for_pending_request": "<DESTINATION_SOLUTION_PENDING_REQUEST_STATUS>",  
-    "id": "<DESTINATION_SOLUTION_ID>"  
-  },  
-  "status": "<MIGRATION_INTENT_STATUS>",  
-  "destination_waba": {  
-    "id": "<BUSINESS_CUSTOMER_WABA_ID>",  
-    "name": "<BUSINESS_CUSTOMER_WABA_NAME>",  
-    "currency": "<BUSINESS_CUSTOMER_WABA_CURRENCY>",  
-    "timezone_id": "<BUSINESS_CUSTOMER_WABA_TIMEZONE>",  
-    "business_type": "ent",  
-    "message_template_namespace": "<BUSINESS_CUSTOMER_WABA_TEMPLATE_NAMESPACE>"  
-  },  
-  "id": "<MIGRATION_INTENT_ID>"  
+  "solution": {  
+    "name": "<DESTINATION_SOLUTION_NAME>",  
+    "status": "<DESTINATION_SOLUTION_STATUS>",  
+    "status_for_pending_request": "<DESTINATION_SOLUTION_PENDING_REQUEST_STATUS>",  
+    "id": "<DESTINATION_SOLUTION_ID>"  
+  },  
+  "status": "<MIGRATION_INTENT_STATUS>",  
+  "destination_waba": {  
+    "id": "<BUSINESS_CUSTOMER_WABA_ID>",  
+    "name": "<BUSINESS_CUSTOMER_WABA_NAME>",  
+    "currency": "<BUSINESS_CUSTOMER_WABA_CURRENCY>",  
+    "timezone_id": "<BUSINESS_CUSTOMER_WABA_TIMEZONE>",  
+    "business_type": "ent",  
+    "message_template_namespace": "<BUSINESS_CUSTOMER_WABA_TEMPLATE_NAMESPACE>"  
+  },  
+  "id": "<MIGRATION_INTENT_ID>"  
 }
 ```
-```
 
-If `<MIGRATION_INTENT_STATUS>` is `ACCEPTED`, it means the customer has reviewed and accepted the migration intent and you can proceed to the next step. **If it’s any other value, do not proceed.**
+If `<MIGRATION_INTENT_STATUS>` is `ACCEPTED`, it means the customer has reviewed and accepted the migration intent and you can proceed to the next step. **If it's any other value, do not proceed.**
 
-Note that when a customer accepts the migration intent in the Meta Business Suite, an [account\_update webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/manage-webhooks#onboarded-business-customer) is triggered with `status` set to `PARTNER_ADDED`. Although the webhook won’t tell if the customer onboarded via the Meta Business Suite, perform this query when you receive one of these webhooks.
+Note that when a customer accepts the migration intent in the Meta Business Suite, an [account\_update webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/manage-webhooks#onboarded-business-customer) is triggered with `status` set to `PARTNER_ADDED`. Although the webhook won't tell if the customer onboarded via the Meta Business Suite, perform this query when you receive one of these webhooks.
 
-### Step 3: Subscribe to webhooks on the customer’s WABA
+### Step 3: Subscribe to webhooks on the customer's WABA
 
-Use the [POST /<WABA\_ID>/subscribed\_apps](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/subscribed-apps-api#post-version-waba-id-subscribed-apps) endpoint to subscribe your app to webhooks on the business customer’s WABA. If you want the customer’s webhooks to be sent to a different callback URL than the one set on your app, you have multiple [webhook override](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/override) options.
+Use the [POST /<WABA\_ID>/subscribed\_apps](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/subscribed-apps-api#post-version-waba-id-subscribed-apps) endpoint to subscribe your app to webhooks on the business customer's WABA. If you want the customer's webhooks to be sent to a different callback URL than the one set on your app, you have multiple [webhook override](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/override) options.
 
-Note that `<WABA_ID>` should be the customer’s **destination** WABA ID.
+Note that `<WABA_ID>` should be the customer's **destination** WABA ID.
 
 #### Request
 
 ```
-```
-curl -X POST 'https://graph.facebook.com/<API_VERSION>/<WABA_ID>/subscribed_apps' \  
--H 'Authorization: Bearer <ACCESS_TOKEN>'
-```
+curl -X POST 'https://graph.facebook.com/<API_VERSION>/<WABA_ID>/subscribed_apps' \  
+-H 'Authorization: Bearer <ACCESS_TOKEN>'
 ```
 
 #### Response
@@ -196,11 +182,9 @@ curl -X POST 'https://graph.facebook.com/<API_VERSION>/<WABA_ID>/subscribed_a
 Upon success:
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 ### Step 4: Share your credit line with the customer
@@ -212,47 +196,41 @@ Use the [Credit Sharing API](https://developers.facebook.com/docs/marketing-api/
 #### Request
 
 ```
-```
-curl -X POST 'https://graph.facebook.com/<API_VERSION>/<EXTENDED_CREDIT_LINE_ID>/whatsapp_credit_sharing_and_attach?waba_currency=<CUSTOMER_BUSINESS_CURRENCY>&waba_id=<CUSTOMER_WABA_ID>' \  
--H 'Authorization: Bearer <SYSTEM_TOKEN>'
-```
+curl -X POST 'https://graph.facebook.com/<API_VERSION>/<EXTENDED_CREDIT_LINE_ID>/whatsapp_credit_sharing_and_attach?waba_currency=<CUSTOMER_BUSINESS_CURRENCY>&waba_id=<CUSTOMER_WABA_ID>' \  
+-H 'Authorization: Bearer <SYSTEM_TOKEN>'
 ```
 
-Note that `<CUSTOMER_WABA_ID>` should be the customer’s **destination** WABA ID.
+Note that `<CUSTOMER_WABA_ID>` should be the customer's **destination** WABA ID.
 
 #### Response
 
 Upon success:
 
 ```
-```
 {  
-  "allocation_config_id": "<ALLOCATION_CONFIGURATION_ID>",  
-  "waba_id": "<CUSTOMER_WABA_ID>"  
+  "allocation_config_id": "<ALLOCATION_CONFIGURATION_ID>",  
+  "waba_id": "<CUSTOMER_WABA_ID>"  
 }
 ```
-```
 
-### Step 5: Migrate the customer’s phone number to their new WABA
+### Step 5: Migrate the customer's phone number to their new WABA
 
-Use the [Phone Numbers API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/phone-number-management-api#post-version-waba-id-phone-numbers) to migrate the customer’s business phone number to the destination WABA. You should have received this from the Tech Provider in Step 2 of the Tech Provider steps.
+Use the [Phone Numbers API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/phone-number-management-api#post-version-waba-id-phone-numbers) to migrate the customer's business phone number to the destination WABA. You should have received this from the Tech Provider in Step 2 of the Tech Provider steps.
 
-Note that `<WABA_ID>` should be the customer’s **destination** WABA ID.
+Note that `<WABA_ID>` should be the customer's **destination** WABA ID.
 
 #### Request
 
 ```
-```
-curl 'https://graph.facebook.com/<API_VERSION>/<WABA_ID>/phone_numbers' \  
--H 'Content-Type: application/json' \  
--H 'Authorization: Bearer <BUSINESS_TOKEN>' \  
--d '  
+curl 'https://graph.facebook.com/<API_VERSION>/<WABA_ID>/phone_numbers' \  
+-H 'Content-Type: application/json' \  
+-H 'Authorization: Bearer <BUSINESS_TOKEN>' \  
+-d '  
 {  
-  "migrate_phone_number": true,  
-  "cc": "<BUSINESS_PHONE_NUMBER_COUNTRY_CALLING_CODE>",  
-  "phone_number": "<BUSINESS_PHONE_NUMBER_WITHOUT_COUNTRY_CODE>"  
+  "migrate_phone_number": true,  
+  "cc": "<BUSINESS_PHONE_NUMBER_COUNTRY_CALLING_CODE>",  
+  "phone_number": "<BUSINESS_PHONE_NUMBER_WITHOUT_COUNTRY_CODE>"  
 }'
-```
 ```
 
 #### Response
@@ -260,30 +238,26 @@ curl 'https://graph.facebook.com/<API_VERSION>/<WABA_ID>/phone_numbers' \
 Upon success:
 
 ```
-```
 {  
-  "id": "<BUSINESS_PHONE_NUMBER_ID>"  
+  "id": "<BUSINESS_PHONE_NUMBER_ID>"  
 }
 ```
-```
 
-### Step 6: Register the customer’s phone number for use with Cloud API
+### Step 6: Register the customer's phone number for use with Cloud API
 
-Use the [Register API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/register-api#post-version-phone-number-id-register) to register the customer’s business phone number for use with Cloud API.
+Use the [Register API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/register-api#post-version-phone-number-id-register) to register the customer's business phone number for use with Cloud API.
 
 #### Request
 
 ```
-```
-curl 'https://graph.facebook.com/<API_VERSION>/<BUSINESS_PHONE_NUMBER_ID>/register' \  
--H 'Content-Type: application/json' \  
--H 'Authorization: Bearer <BUSINESS_TOKEN>' \  
--d '  
+curl 'https://graph.facebook.com/<API_VERSION>/<BUSINESS_PHONE_NUMBER_ID>/register' \  
+-H 'Content-Type: application/json' \  
+-H 'Authorization: Bearer <BUSINESS_TOKEN>' \  
+-d '  
 {  
-  "messaging_product": "whatsapp",  
-  "pin": "<DESIRED_PIN>"  
+  "messaging_product": "whatsapp",  
+  "pin": "<DESIRED_PIN>"  
 }'
-```
 ```
 
 #### Response
@@ -291,9 +265,7 @@ curl 'https://graph.facebook.com/<API_VERSION>/<BUSINESS_PHONE_NUMBER_ID>/regis
 Upon success:
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```

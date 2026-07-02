@@ -7,17 +7,17 @@ source_url: https://developers.facebook.com/documentation/threads/get-started
 
 Updated: Dec 22, 2025
 
-You may use the Threads API to enable people to create and publish content on a person’s behalf on Threads, and to display those posts within your app solely to the person who created it.
+You may use the Threads API to enable people to create and publish content on a person's behalf on Threads, and to display those posts within your app solely to the person who created it.
 
 The Threads API can be accessed by either `graph.threads.com` or `graph.threads.net`.
 
 ## Rate Limiting
 
-Calls to the Threads API are counted against the calling app’s call count. An app’s call count is unique for each app and app user pair and is the number of calls the app has made in a rolling 24-hour window. It is calculated as follows:
+Calls to the Threads API are counted against the calling app's call count. An app's call count is unique for each app and app user pair and is the number of calls the app has made in a rolling 24-hour window. It is calculated as follows:
 
 `Calls within 24 hours = 4800 * Number of Impressions`
 
-The Number of Impressions is the number of times any content from the app user’s Threads account has entered a person’s screen within the last 24 hours.
+The Number of Impressions is the number of times any content from the app user's Threads account has entered a person's screen within the last 24 hours.
 
 Rate limiting may also be subject to total CPU time per day:
 
@@ -30,7 +30,7 @@ Rate limiting may also be subject to total CPU time per day:
 
 Threads profiles are limited to 250 API-published posts within a 24-hour moving period. Carousels count as a single post. This limit is enforced on the `POST /{threads-user-id}/threads_publish` endpoint when attempting to publish a media container. We recommend that your app also enforces the publishing rate limit, especially if your app allows app users to schedule posts to be published in the future.
 
-To check a profile’s current Threads API rate limit usage, query the [`GET /{threads-user-id}/threads_publishing_limit` endpoint](https://developers.facebook.com/documentation/threads/reference/user#get---threads-user-id--threads-publishing-limit).
+To check a profile's current Threads API rate limit usage, query the [`GET /{threads-user-id}/threads_publishing_limit` endpoint](https://developers.facebook.com/documentation/threads/reference/user#get---threads-user-id--threads-publishing-limit).
 
 **Note:** This endpoint requires the `threads_basic` and `threads_content_publish` permissions.
 
@@ -68,7 +68,7 @@ curl -s -X GET \
 
 Threads profiles are limited to 1,000 replies within a 24-hour moving period.
 
-To check a profile’s current Threads replies rate limit usage, query the [`GET /{threads-user-id}/threads_publishing_limit` endpoint](https://developers.facebook.com/documentation/threads/reference/user#get---threads-user-id--threads-publishing-limit). See the [Reply Management](https://developers.facebook.com/documentation/threads/reply-management) documentation for more information.
+To check a profile's current Threads replies rate limit usage, query the [`GET /{threads-user-id}/threads_publishing_limit` endpoint](https://developers.facebook.com/documentation/threads/reference/user#get---threads-user-id--threads-publishing-limit). See the [Reply Management](https://developers.facebook.com/documentation/threads/reply-management) documentation for more information.
 
 **Note:** This endpoint requires the `threads_basic`, `threads_content_publish`, and `threads_manage_replies` permissions.
 
@@ -106,7 +106,7 @@ curl -s -X GET \
 
 Threads profiles are limited to 100 deletions within a 24-hour moving period.
 
-To check a profile’s current Threads deletion rate limit usage, query the [`GET /{threads-user-id}/threads_publishing_limit` endpoint](https://developers.facebook.com/documentation/threads/reference/user#get---threads-user-id--threads-publishing-limit). See the [Delete Posts](https://developers.facebook.com/documentation/threads/posts/delete-posts) documentation for more information.
+To check a profile's current Threads deletion rate limit usage, query the [`GET /{threads-user-id}/threads_publishing_limit` endpoint](https://developers.facebook.com/documentation/threads/reference/user#get---threads-user-id--threads-publishing-limit). See the [Delete Posts](https://developers.facebook.com/documentation/threads/posts/delete-posts) documentation for more information.
 
 **Note:** This endpoint requires the `threads_basic` and `threads_delete` permissions.
 
@@ -144,7 +144,7 @@ curl -s -X GET \
 
 Threads profiles are limited to 500 location searches within a 24-hour moving period.
 
-To check a profile’s current Threads location search rate limit usage, query the [`GET /{threads-user-id}/threads_publishing_limit` endpoint](https://developers.facebook.com/documentation/threads/reference/user#get---threads-user-id--threads-publishing-limit). See the [Location Search](https://developers.facebook.com/documentation/threads/create-posts/location-tagging#search) documentation for more information.
+To check a profile's current Threads location search rate limit usage, query the [`GET /{threads-user-id}/threads_publishing_limit` endpoint](https://developers.facebook.com/documentation/threads/reference/user#get---threads-user-id--threads-publishing-limit). See the [Location Search](https://developers.facebook.com/documentation/threads/create-posts/location-tagging#search) documentation for more information.
 
 **Note:** This endpoint requires the `threads_basic` and `threads_location_tagging` permissions.
 
@@ -208,7 +208,7 @@ curl -s -X GET \
 
 * Text posts are limited to 500 characters.
 * Carousel posts must have a maximum of 20 children and a minimum of 2 children.
-* For additional limitations, refer to each endpoint’s reference.
+* For additional limitations, refer to each endpoint's reference.
 
 ## Next Steps
 

@@ -13,7 +13,7 @@ Ads that click to Instagram Direct send people that click on your ads directly i
 
 Ads that click to Instagram support ads with an image, a video, a carousel, or a slideshow. You can also include call prompts in your ad.
 
-If you’re interested in creating ads that send people to Messenger or WhatsApp chats, see [Ads that Click to Messenger](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-creative/messaging-ads/click-to-messenger) and [Ads that Click to WhatsApp](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-creative/messaging-ads/click-to-whatsapp) for guidance. You can also create ads that pick the destination the user is most likely to respond from, see [Ads that Click to Multidestination](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-creative/messaging-ads/click-to-multidestination) for more information.
+If you're interested in creating ads that send people to Messenger or WhatsApp chats, see [Ads that Click to Messenger](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-creative/messaging-ads/click-to-messenger) and [Ads that Click to WhatsApp](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-creative/messaging-ads/click-to-whatsapp) for guidance. You can also create ads that pick the destination the user is most likely to respond from, see [Ads that Click to Multidestination](https://developers.facebook.com/documentation/ads-commerce/marketing-api/ad-creative/messaging-ads/click-to-multidestination) for more information.
 
 ### Ad Creation Overview
 
@@ -51,7 +51,7 @@ Start by creating your ad campaign. To do this, make a `POST` request to the `/a
 | Name | Description |
 | --- | --- |
 | `name`  string | **Required.**  Name for the click to Instagram campaign. |
-| `objective`  enum | **Required.**  Campaign’s objective.  Supported objectives are `OUTCOME_ENGAGEMENT`, `OUTCOME_SALES`, and `OUTCOME_TRAFFIC`. |
+| `objective`  enum | **Required.**  Campaign's objective.  Supported objectives are `OUTCOME_ENGAGEMENT`, `OUTCOME_SALES`, and `OUTCOME_TRAFFIC`. |
 | `special_ad_categories`  list<Object> | **Required.**  Special ad categories associated with the click to Instagram campaign. See the [Ad Campaign reference](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-campaign-group) for more details. |
 | `status`  enum | **Optional.**  Valid options are `PAUSED` and `ACTIVE`.  If this status is `PAUSED`, all its active ad sets and ads will be paused and have an effective status `CAMPAIGN_PAUSED`. |
 
@@ -72,11 +72,9 @@ https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/campaigns
 On success, your app receives a JSON response with the ID of your newly created campaign.
 
 ```
-```
 {  
-  "id": "<AD_CAMPAIGN_ID>"  
+  "id": "<AD_CAMPAIGN_ID>"  
 }
-```
 ```
 
 ### Updating
@@ -99,14 +97,12 @@ https://graph.facebook.com/v25.0/<AD_CAMPAIGN_ID>
 #### Response
 
 ```
-```
 {  
-  "name": "Click to Instagram Campaign",  
-  "status": "ACTIVE",  
-  "objective": "OUTCOME_ENGAGEMENT",  
-  "id": "<AD_CAMPAIGN_ID>"  
+  "name": "Click to Instagram Campaign",  
+  "status": "ACTIVE",  
+  "objective": "OUTCOME_ENGAGEMENT",  
+  "id": "<AD_CAMPAIGN_ID>"  
 }
-```
 ```
 
 ## Step 2: Create an ad set
@@ -126,7 +122,7 @@ Once you have an ad campaign, create your ad set. To create an ad set, make a `P
 | `end_time`  datetime | **Required** when `lifetime_budget` is specified.  When creating an ad set with a `daily_budget`, specify `end_time=0` or leave this field empty to set the ad set as ongoing with no end date. **Example:** `2015-03-12 23:59:59-07:00` or `2015-03-12 23:59:59 PDT`. UTC UNIX timestamp. |
 | `lifetime_budget`  int64 | **Required** if `daily_budget` is not set.  The lifetime budget of the ad set defined in your account currency. If specified, you must also specify an `end_time`.  Either `daily_budget` or `lifetime_budget` must be greater than `0`. |
 | `name`  string | **Required.**  The name of the click to Instagram ad set. |
-| `optimization_goal`  enum | **Required.**  What the ad set is optimizing for. Depending on the campaign’s objective, the ad set may be eligible for different optimization goals.  `OUTCOME_ENGAGEMENT`: Engagement objective can optimize for `CONVERSATIONS`, and `LINK_CLICKS`. `OUTCOME_SALES`: Sales objective can optimize for `CONVERSATIONS`, `OFFSITE_CONVERSIONS`, `LINK_CLICKS`, `IMPRESSIONS`, and `REACH`. `OUTCOME_TRAFFIC`: Traffic objective can optimize for `CONVERSATIONS`, `LANDING_PAGE_VIEWS`, `LINK_CLICKS`, `IMPRESSIONS`, `REACH`, and `POST_ENGAGEMENT`. |
+| `optimization_goal`  enum | **Required.**  What the ad set is optimizing for. Depending on the campaign's objective, the ad set may be eligible for different optimization goals.  `OUTCOME_ENGAGEMENT`: Engagement objective can optimize for `CONVERSATIONS`, and `LINK_CLICKS`. `OUTCOME_SALES`: Sales objective can optimize for `CONVERSATIONS`, `OFFSITE_CONVERSIONS`, `LINK_CLICKS`, `IMPRESSIONS`, and `REACH`. `OUTCOME_TRAFFIC`: Traffic objective can optimize for `CONVERSATIONS`, `LANDING_PAGE_VIEWS`, `LINK_CLICKS`, `IMPRESSIONS`, `REACH`, and `POST_ENGAGEMENT`. |
 | `promoted_object`  [AdPromotedObject](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-promoted-object) | **Required.**  The object this ad set is promoting across all its ads. For ads that click to Instagram, `promoted_object` has the following conditions:   * `page_id`: **Required.** The ID of the Facebook Page.   See [Ad Set, Promoted Object](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-promoted-object) for more details. |
 | `start_time`  datetime | **Optional.**  The start time of the ad set. This field will default to the current time if no value is provided. **Example:** `2015-03-12 23:59:59-07:00` or `2015-03-12 23:59:59 PDT`. UTC UNIX timestamp. |
 | `status`  enum | **Optional.**  The status of the ad set. It can be different from the effective status due to its parent campaign. This field will default to `ACTIVE` if no value is provided. **Values:** `ACTIVE`, `PAUSED`, `DELETED`, `ARCHIVED` |
@@ -139,37 +135,33 @@ Visit the [Ad Account Ad Set reference](https://developers.facebook.com/document
 #### Request
 
 ```
-```
-curl -X POST \  
-  -F 'access_token=<ACCESS_TOKEN>' \  
-  -F 'bid_strategy=LOWEST_COST_WITHOUT_CAP' \  
-  -F 'billing_event=IMPRESSIONS' \  
-  -F 'campaign_id=<AD_CAMPAIGN_ID>' \  
-  -F 'daily_budget=<DAILY_BUDGET>' \  
-  -F 'destination_type=INSTAGRAM_DIRECT' \  
-  -F 'name=Click to Instagram Ad Set' \  
-  -F 'optimization_goal=CONVERSATIONS' \  
-  -F 'promoted_object={  
-    "page_id": "<PAGE_ID>"  
-  }' \  
-  -F 'status=ACTIVE' \  
-  -F 'start_time=<START_TIME>' \  
-  -F 'targeting={  
-    "geo_locations": { "countries":["US","CA"] },  
-    "device_platforms": ["mobile", "desktop"]  
-  }' \  
+curl -X POST \  
+  -F 'access_token=<ACCESS_TOKEN>' \  
+  -F 'bid_strategy=LOWEST_COST_WITHOUT_CAP' \  
+  -F 'billing_event=IMPRESSIONS' \  
+  -F 'campaign_id=<AD_CAMPAIGN_ID>' \  
+  -F 'daily_budget=<DAILY_BUDGET>' \  
+  -F 'destination_type=INSTAGRAM_DIRECT' \  
+  -F 'name=Click to Instagram Ad Set' \  
+  -F 'optimization_goal=CONVERSATIONS' \  
+  -F 'promoted_object={  
+    "page_id": "<PAGE_ID>"  
+  }' \  
+  -F 'status=ACTIVE' \  
+  -F 'start_time=<START_TIME>' \  
+  -F 'targeting={  
+    "geo_locations": { "countries":["US","CA"] },  
+    "device_platforms": ["mobile", "desktop"]  
+  }' \  
 https://graph.facebook.com/<API_VERSION>/act_<AD_ACCOUNT_ID>/adsets
-```
 ```
 
 #### Response
 
 ```
-```
 {  
-  "id": "<AD_SET_ID>"  
+  "id": "<AD_SET_ID>"  
 }
-```
 ```
 
 ### Updating
@@ -192,16 +184,14 @@ curl -X GET -G \
 #### Response
 
 ```
-```
 {  
-  "name": "Click to Instagram Ad Set",  
-  "destination_type": "INSTAGRAM_DIRECT",  
-  "optimization_goal": "CONVERSATIONS",  
-  "bid_strategy": "LOWEST_COST_WITHOUT_CAP",  
-  "status": "ACTIVE",  
-  "id": "<AD_SET_ID>"  
+  "name": "Click to Instagram Ad Set",  
+  "destination_type": "INSTAGRAM_DIRECT",  
+  "optimization_goal": "CONVERSATIONS",  
+  "bid_strategy": "LOWEST_COST_WITHOUT_CAP",  
+  "status": "ACTIVE",  
+  "id": "<AD_SET_ID>"  
 }
-```
 ```
 
 ## Step 3: Create an ad creative
@@ -218,15 +208,15 @@ The ad creative allows you to add assets to your ads. To create an ad creative, 
 
 Visit the [Ad Creative reference](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-creative) for the complete list of available parameters.
 
-If you see the error “Creative Must Provide enroll\_status for Standard Enhancements” on v17.0+, refer to [Standard Enhancements for Advantage+ Creative](https://developers.facebook.com/documentation/ads-commerce/marketing-api/advantage-catalog-ads/standard-enhancements) and fix it.
+If you see the error "Creative Must Provide enroll\_status for Standard Enhancements" on v17.0+, refer to [Standard Enhancements for Advantage+ Creative](https://developers.facebook.com/documentation/ads-commerce/marketing-api/advantage-catalog-ads/standard-enhancements) and fix it.
 
 ### Filling out a Page welcome message
 
-The default message that a customer sees is “Hello! Can I get more info on this?”. You can create more tailored user experiences for your ads that click to Instagram by customizing your ads’ greeting message in the `page_welcome_message` field under `object_story_spec`.
+The default message that a customer sees is "Hello! Can I get more info on this?". You can create more tailored user experiences for your ads that click to Instagram by customizing your ads' greeting message in the `page_welcome_message` field under `object_story_spec`.
 
 #### Example
 
-Adding text icebreakers with an optional automated response. String interpolation `{{user_first_name}}`, `{{user_last_name}}`, `{{user_full_name}}`, and `{{page_name}}` can be used in the greeting message and automated response. For example, “Hi {{user\_first\_name}}. Welcome to {{page\_name}}!”
+Adding text icebreakers with an optional automated response. String interpolation `{​{user_first_name}​}`, `{​{user_last_name}​}`, `{​{user_full_name}​}`, and `{​{page_name}​}` can be used in the greeting message and automated response. For example, "Hi {​{user\_first\_name}​}. Welcome to {​{page\_name}​}!"
 
 ```
 "page_welcome_message": {
@@ -315,31 +305,29 @@ https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/adcreatives
 #### Ad that uses a messaging flow configured on a partner app
 
 ```
-```
-curl -X POST \  
-  -F 'name=Sample ad creative' \  
-  -F 'object_story_spec={  
-       "page_id": "<PAGE_ID>",  
-       "instagram_actor_id": "<INSTAGRAM_ACCOUNT_ID>",  
-       "link_data": {  
-         "message": "<AD_PRIMARY_TEXT>",  
-         "image_hash": "<IMAGE_HASH>"  
-           "call_to_action": {  
-           "type": "INSTAGRAM_MESSAGE",  
-           "value": {  
-             "app_destination": "INSTAGRAM_DIRECT"  
-           }  
-         }  
-       }  
-     }' \  
-  -F 'asset_feed_spec={  
-       "additional_data": {  
-         "partner_app_welcome_message_flow_id": "<FLOW_ID>"  
-       }  
-     }' \  
-  -F 'access_token=<ACCESS_TOKEN>' \  
+curl -X POST \  
+  -F 'name=Sample ad creative' \  
+  -F 'object_story_spec={  
+       "page_id": "<PAGE_ID>",  
+       "instagram_actor_id": "<INSTAGRAM_ACCOUNT_ID>",  
+       "link_data": {  
+         "message": "<AD_PRIMARY_TEXT>",  
+         "image_hash": "<IMAGE_HASH>"  
+           "call_to_action": {  
+           "type": "INSTAGRAM_MESSAGE",  
+           "value": {  
+             "app_destination": "INSTAGRAM_DIRECT"  
+           }  
+         }  
+       }  
+     }' \  
+  -F 'asset_feed_spec={  
+       "additional_data": {  
+         "partner_app_welcome_message_flow_id": "<FLOW_ID>"  
+       }  
+     }' \  
+  -F 'access_token=<ACCESS_TOKEN>' \  
 https://graph.facebook.com/v19.0/act_<AD_ACCOUNT_ID>/adcreatives
-```
 ```
 
 For more information about messaging app flows, refer to [Welcome message flows](https://developers.facebook.com/documentation/business-messaging/messenger-platform/ads/ads-welcome-message-flows) in the Messenger Platform documentation.
@@ -397,11 +385,9 @@ https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/adcreatives
 On success, your app receives a JSON response with the ID of your newly created ad creative.
 
 ```
-```
 {  
-  "id": "<AD_CREATIVE_ID>"  
+  "id": "<AD_CREATIVE_ID>"  
 }
-```
 ```
 
 ### Creating ad creatives using Instagram content
@@ -459,7 +445,7 @@ curl -i -X POST \
   "https://graph.facebook.com/v25.0/act_<AD_ACCOUNT>/adcreatives
   ?object_story_id=<postOwnerID_postID>
   &instagram_actor_id=<IG_USER_ID>
-  &call_to_action="{'type':MESSAGE_PAGE,'value':{'app_destination':'MESSENGER'}}"
+  &call_to_action="{'type':MESSAGE_PAGE,'value':{'app_destination':'MESSENGER'}​}"
   &access_token=<ACCESS_TOKEN>"
 ```
 
@@ -477,7 +463,7 @@ To verify that you have successfully created a click to Instagram ad creative, y
 
 ```
 curl -X GET -G \
-  -d 'fields=name,object_story_spec{link_data{call_to_action,page_welcome_message}}' \
+  -d 'fields=name,object_story_spec{link_data{call_to_action,page_welcome_message}​}' \
   -d 'access_token=<ACCESS_TOKEN>' \
   https://graph.facebook.com/v25.0/<AD_CREATIVE_ID>
 ```
@@ -485,45 +471,43 @@ curl -X GET -G \
 #### Response
 
 ```
-```
 {  
-  "name": "Sample ad creative",  
-  "object_story_spec": {  
-    "link_data": {  
-      "call_to_action": {  
-        "type": "INSTAGRAM_MESSAGE",  
-        "value": {  
-          "app_destination": "INSTAGRAM_DIRECT"  
-        }  
-      },  
-      "page_welcome_message": {  
-        "type": "VISUAL_EDITOR",  
-        "version": 2,  
-        "landing_screen_type": "welcome_message",  
-        "media_type": "text",  
-        "text_format": {  
-          "customer_action_type": "ice_breakers",  
-          "message": {  
-            "text": "Sample greeting message",  
-            "ice_breakers": [  
-              {  
-                "title": "Sample icebreaker 1"  
-              },  
-              {  
-                "title": "Sample icebreaker 2"  
-              },  
-              {  
-                "title": "Sample icebreaker 3"  
-              }  
-            ]  
-          }  
-        }  
-      }  
-    }  
-  },  
-  "id": "<AD_CREATIVE_ID>"  
+  "name": "Sample ad creative",  
+  "object_story_spec": {  
+    "link_data": {  
+      "call_to_action": {  
+        "type": "INSTAGRAM_MESSAGE",  
+        "value": {  
+          "app_destination": "INSTAGRAM_DIRECT"  
+        }  
+      },  
+      "page_welcome_message": {  
+        "type": "VISUAL_EDITOR",  
+        "version": 2,  
+        "landing_screen_type": "welcome_message",  
+        "media_type": "text",  
+        "text_format": {  
+          "customer_action_type": "ice_breakers",  
+          "message": {  
+            "text": "Sample greeting message",  
+            "ice_breakers": [  
+              {  
+                "title": "Sample icebreaker 1"  
+              },  
+              {  
+                "title": "Sample icebreaker 2"  
+              },  
+              {  
+                "title": "Sample icebreaker 3"  
+              }  
+            ]  
+          }  
+        }  
+      }  
+    }  
+  },  
+  "id": "<AD_CREATIVE_ID>"  
 }
-```
 ```
 
 ### Alternative objective ID in creating an ad creative
@@ -579,11 +563,9 @@ https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/ads
 #### Response
 
 ```
-```
 {  
-  "id": "<AD_ID>"  
+  "id": "<AD_ID>"  
 }
-```
 ```
 
 ### Call to action
@@ -617,14 +599,12 @@ https://graph.facebook.com/v25.0/<AD_ID>
 #### Response
 
 ```
-```
 {  
-  "status": "PAUSED",  
-  "adset_id": "<AD_SET_ID>",  
-  "campaign_id": "<AD_CAMPAIGN_ID>",  
-  "id": "<AD_ID>"  
+  "status": "PAUSED",  
+  "adset_id": "<AD_SET_ID>",  
+  "campaign_id": "<AD_CAMPAIGN_ID>",  
+  "id": "<AD_ID>"  
 }
-```
 ```
 
 ## Step 5: Publish your ad
@@ -645,11 +625,9 @@ https://graph.facebook.com/v25.0/<AD_ID>
 ### Response
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 Your ad will be reviewed by Meta, and the `effective_status` will be `PENDING_REVIEW`. Once approved, the status will automatically update to `ACTIVE`, and your ad will be delivered.
@@ -666,11 +644,9 @@ https://graph.facebook.com/v25.0/<AD_ID>
 ### Response
 
 ```
-```
 {  
-  "status": "ACTIVE",  
-  "effective_status": "PENDING_REVIEW",  
-  "id": "<AD_ID>"  
+  "status": "ACTIVE",  
+  "effective_status": "PENDING_REVIEW",  
+  "id": "<AD_ID>"  
 }
-```
 ```

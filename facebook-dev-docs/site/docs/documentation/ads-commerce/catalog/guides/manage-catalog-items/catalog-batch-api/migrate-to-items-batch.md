@@ -14,7 +14,7 @@ There are separate API endpoints for managing:
 * Catalog items
 * Localization information for catalog items
 
-One API call allows you to modify one or multiple catalog entities (hence the “Batch” in the API name). In a single request you can mix three kinds of modifications:
+One API call allows you to modify one or multiple catalog entities (hence the "Batch" in the API name). In a single request you can mix three kinds of modifications:
 
 * Create
 * Update

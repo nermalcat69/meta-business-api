@@ -68,33 +68,31 @@ For a complete list of button properties, see the [postback button reference](ht
 For complete request details and properties, refer to the [Properties](https://developers.facebook.com/documentation/business-messaging/instagram-messaging/features/product-template#properties) section below.
 
 ```
-```
-curl -X POST -H "Content-Type: application/json" -d '{  
-  "recipient":{  
-    "id":"<IGID>"  
-  },  
-  "message":{  
-    "attachment":{  
-      "type":"template",  
-      "payload":{  
-        "template_type":"button",  
-        "text":"What do you want to do next?",  
-        "buttons":[  
-          {  
-            "type":"web_url",  
-            "url":"https://www.messenger.com",  
-            "title":"Visit Messenger"  
-          },  
-          {  
-            ...  
-          },  
-          {...}  
-        ]  
-      }  
-    }  
-  }  
-}' "https://graph.facebook.com/v13.0/me/messages?access_token=<PAGE_ACCESS_TOKEN>"
-```
+curl -X POST -H "Content-Type: application/json" -d '{  
+  "recipient":{  
+    "id":"<IGID>"  
+  },  
+  "message":{  
+    "attachment":{  
+      "type":"template",  
+      "payload":{  
+        "template_type":"button",  
+        "text":"What do you want to do next?",  
+        "buttons":[  
+          {  
+            "type":"web_url",  
+            "url":"https://www.messenger.com",  
+            "title":"Visit Messenger"  
+          },  
+          {  
+            ...  
+          },  
+          {...}  
+        ]  
+      }  
+    }  
+  }  
+}' "https://graph.facebook.com/v13.0/me/messages?access_token=<PAGE_ACCESS_TOKEN>"
 ```
 
 ## Example response

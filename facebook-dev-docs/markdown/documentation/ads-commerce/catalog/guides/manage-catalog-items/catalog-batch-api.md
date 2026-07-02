@@ -24,7 +24,7 @@ This option should be used when the volume of updates for a catalog is very low.
 
 ## Option 2. Feed API
 
-[Feed API](https://developers.facebook.com/documentation/ads-commerce/catalog/guides/feed-api) allows you to update a catalog using a file or a URL. Data can be uploaded on an ad-hoc basis or according to an hourly, daily or weekly schedule. Feed API allows uploading product data in the ‘replace’ mode--this can be convenient when you want products not present in the latest feed dataset to be deleted (see the [Help Center article⁠](https://www.facebook.com/business/help/2284463181837648) for more details).
+[Feed API](https://developers.facebook.com/documentation/ads-commerce/catalog/guides/feed-api) allows you to update a catalog using a file or a URL. Data can be uploaded on an ad-hoc basis or according to an hourly, daily or weekly schedule. Feed API allows uploading product data in the 'replace' mode--this can be convenient when you want products not present in the latest feed dataset to be deleted (see the [Help Center article⁠](https://www.facebook.com/business/help/2284463181837648) for more details).
 
 ## Option 3. Batch API
 

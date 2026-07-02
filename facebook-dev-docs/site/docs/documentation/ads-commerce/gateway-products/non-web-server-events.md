@@ -19,7 +19,7 @@ Go to:
 https://<Gateway Products Endpoint>/hub/health/
 ```
 
-The host is able to monitor the instance’s server status through this health-check service.
+The host is able to monitor the instance's server status through this health-check service.
 
 ## Issue 1: The host Gateway UI is inaccessible or does not show any information
 
@@ -27,7 +27,7 @@ The host is able to monitor the instance’s server status through this health-c
 
 **Step 2**. The network could be temporarily inaccessible - wait for a few minutes to log in again to the Gateway Product UI or refresh the page.
 
-**Step 3**. The instance’s resources could be insufficient. Terminate the pods to release resources by following these steps:
+**Step 3**. The instance's resources could be insufficient. Terminate the pods to release resources by following these steps:
 
 * Connect to the Session Manager and run command kubectl delete deployment capig to terminate the Gateway Product pod(s).
 * Wait for 5 mins, then run command kubectl get pods -A. All pod statuses should be either Running or Completed.
@@ -38,10 +38,10 @@ The host is able to monitor the instance’s server status through this health-c
 **Step 5**. Share with your Meta contact (if applicable)
 
 * Gateway Product logs
-* These can be downloaded from the /hub/settings/updates page by clicking on the “Download logs” button.
+* These can be downloaded from the /hub/settings/updates page by clicking on the "Download logs" button.
 * Screenshot of the host Gateway UI tool where the error is occurring.
 
-## “Error 400: Identity Pool does not exist (myproject-3-XXXXX.svc.id.goog)” occurs during the GCP host onboarding
+## "Error 400: Identity Pool does not exist (myproject-3-XXXXX.svc.id.goog)" occurs during the GCP host onboarding
 
 This error usually occurs because you have not created a Google Kubernetes Engine cluster in your GCP account and it takes time for some underlying resources to be created the first time. You should use the [uninstall script described in the Uninstall guide](https://developers.facebook.com/documentation/ads-commerce/gateway-products/uninstall) to clean up the installation and retry a new installation.
 
@@ -55,7 +55,7 @@ Follow the troubleshooting steps as below to help resolve the issue:
 
 ### Issue 1: Unable to Finish Installation
 
-Make sure to have followed all the steps as detailed in the onboarding guide. If you’re still blocked, reach out to your Meta point of contact with a clear description, or even better a screenshot, of the issue.
+Make sure to have followed all the steps as detailed in the onboarding guide. If you're still blocked, reach out to your Meta point of contact with a clear description, or even better a screenshot, of the issue.
 
 ### Issue 2: The Gateway UI Is Inaccessible or Does Not Show Any Information
 
@@ -64,7 +64,7 @@ Make sure to have followed all the steps as detailed in the onboarding guide. If
 **Step 2**. Share with your Meta contact (if applicable)
 
 * Gateway Product logs
-* Screenshot of the Console from developer’s tool of the host Gateway UI where the error is occurring
+* Screenshot of the Console from developer's tool of the host Gateway UI where the error is occurring
 
 ### Issue 3: Not receiving Gateway Events after Installation Is Completed
 
@@ -94,11 +94,11 @@ Unblock any websites that you would like to receive and publish events.
 
 **Step 3**. DNS configuration may be incomplete or incorrect. The pixel communicates with the Gateway on a domain proper to this communication, ideally the same as the page where the pixel fires. For example, if the pixel fires on advertiser.com, ideally the Gateway will be reachable by the pixel on gateway.advertiser.com.
 
-A subdomain of the account’s domain (the domain where the pixel fires) needs to be associated to the host subdomain through a CNAME record on the advertisers’s DNS provider, so that the Gateway Product endpoint can be reachable by the pixel through a first-party request call.
+A subdomain of the account's domain (the domain where the pixel fires) needs to be associated to the host subdomain through a CNAME record on the advertisers's DNS provider, so that the Gateway Product endpoint can be reachable by the pixel through a first-party request call.
 
 #### Diagnostics
 
-Use an online DNS checker like https://dnschecker.org/ to verify if the CNAME record as described above is correctly set, that is, the account subdomain correctly points to the host subdomain, that points to the load balanced domain assigned upon creation. If the account’s subdomain does not ultimately point to the load balanced domain, refer to the Resolution section for the next steps.
+Use an online DNS checker like https://dnschecker.org/ to verify if the CNAME record as described above is correctly set, that is, the account subdomain correctly points to the host subdomain, that points to the load balanced domain assigned upon creation. If the account's subdomain does not ultimately point to the load balanced domain, refer to the Resolution section for the next steps.
 
 #### Resolution
 
@@ -111,7 +111,7 @@ Use an online DNS checker like https://dnschecker.org/ to verify if the CNAME re
 
 #### Diagnostics
 
-Check if there is a content-security-policy response header set on the server from the advertiser’s website.
+Check if there is a content-security-policy response header set on the server from the advertiser's website.
 
 ![Browser DevTools Network panel response Headers tab highlighting the content-security-policy response header](https://scontent.fdel27-5.fna.fbcdn.net/v/t39.2365-6/474712406_945821884391529_1397524708516069168_n.jpg?_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=2s8tc_DlAjgQ7kNvwEvC23e&_nc_oc=AdqRUkqOc7VIW5uEBWZ6qCLlUpg5cusqHRfmwFvPDfzMAkd7VBp0kzmm5tiiSWhtf6Yiu7wZt6zEGE61Xfh-gROP&_nc_zt=14&_nc_ht=scontent.fdel27-5.fna&_nc_gid=dhRk84vjcW_r4k_0HoLinA&_nc_ss=7b289&oh=00_AQC5w8EIwz9f9v0ociH6ofLCM4OlV9KvWc62RoF2LBRVhw&oe=6A607722)
 
@@ -125,7 +125,7 @@ Check if there is a content-security-policy response header set on the server fr
 
 #### Diagnostics
 
-Check if there is a content-security-policy response header set on the server from the advertiser’s website.
+Check if there is a content-security-policy response header set on the server from the advertiser's website.
 
 Access `https://<Gateway Product Endpoint>/capig/graphiql/`. Paste the below command with the **tenantId** to get the corresponding access token
 
@@ -147,6 +147,6 @@ query test {
 
 To find the tenantId, go to the Gateway Products UI and select the corresponding account where the url link is shown as `https://<Gateway Product Endpoint>/hub/capig/?tenant=<tenentId>`.
 
-If the result of `badToken` returns `true`, fix it by clicking on the “Add Data Source” button to add the same Data Source again.
+If the result of `badToken` returns `true`, fix it by clicking on the "Add Data Source" button to add the same Data Source again.
 
 **Step 7**. Verify with your host if the host UI is accessible and follow the troubleshooting steps in this guide.

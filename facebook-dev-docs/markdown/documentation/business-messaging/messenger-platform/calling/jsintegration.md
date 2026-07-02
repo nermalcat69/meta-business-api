@@ -28,37 +28,35 @@ You can send this `audio_call` button using a generic template.
 | `payload`  *JSON* | The payload of the attachment |
 | `template_type`  *string* | The type of the template, in this case `generic` |
 | `elements`  *JSON* | The elements that will be used in the template |
-| `buttons`  *JSON* | The buttons CTA that will be used in the template.  **type**: the type of the button CTA, in this case “audio\_call”  **title (required)**: the title of the button CTA  **expires\_in\_days (default 7)**: [how long the button is clickable](https://developers.facebook.com/documentation/business-messaging/messenger-platform/calling/callsettings). The default value is 7 and cannot exceed 7 days. |
+| `buttons`  *JSON* | The buttons CTA that will be used in the template.  **type**: the type of the button CTA, in this case "audio\_call"  **title (required)**: the title of the button CTA  **expires\_in\_days (default 7)**: [how long the button is clickable](https://developers.facebook.com/documentation/business-messaging/messenger-platform/calling/callsettings). The default value is 7 and cannot exceed 7 days. |
 
 ```
-```
-POST /<PAGE_ID>/messages  
+POST /<PAGE_ID>/messages  
 {  
-  "recipient": {  
-    "id": "<PSID>"  
-  },  
-  "message": {  
-    "attachment": {  
-      "type": "template",  
-      "payload": {  
-        "template_type": "generic",  
-        "elements": [  
-          {  
-            "title": "Contact Support!",  
-            "buttons": [  
-              {  
-                "type": "audio_call",  
-                "title": "Call Now",  
-                "expires_in_days": 5  
-              }  
-            ]  
-          }  
-        ]  
-      }  
-    }  
-  }  
+  "recipient": {  
+    "id": "<PSID>"  
+  },  
+  "message": {  
+    "attachment": {  
+      "type": "template",  
+      "payload": {  
+        "template_type": "generic",  
+        "elements": [  
+          {  
+            "title": "Contact Support!",  
+            "buttons": [  
+              {  
+                "type": "audio_call",  
+                "title": "Call Now",  
+                "expires_in_days": 5  
+              }  
+            ]  
+          }  
+        ]  
+      }  
+    }  
+  }  
 }
-```
 ```
 
 ### Example response
@@ -69,14 +67,12 @@ POST /<PAGE_ID>/messages
 | `message_id`  *string* | The external-facing message ID (mid) of the message sent |
 
 ```
-```
 {  
-  "recipient": {  
-    "id": <PSID>,  
-    "message_id": <mid>,  
-  }  
+  "recipient": {  
+    "id": <PSID>,  
+    "message_id": <mid>,  
+  }  
 }
-```
 ```
 
 ### Error response
@@ -84,7 +80,7 @@ POST /<PAGE_ID>/messages
 The following errors can happen:
 
 * Invalid page-id or psid
-* The business Page hasn’t enabled the audio calling
+* The business Page hasn't enabled the audio calling
 * Permissions/Authorization errors
 * The `expires_in_days` is set above 7
 * Message is sent outside of allowed window
@@ -105,33 +101,31 @@ You can send this `audio_call` button using a button template.
 | `payload`  *JSON* | The payload of the attachment |
 | `template_type`  *string* | The type of the template, in this case `button` |
 | `elements`  *JSON* | The elements that will be used in the template |
-| `buttons`  *JSON* | The buttons CTA that will be used in the template.  **type**: the type of the button CTA, in this case “audio\_call”  **title (required)**: the title of the button CTA  **expires\_in\_days (default 7)**: [how long the button is clickable](https://developers.facebook.com/documentation/business-messaging/messenger-platform/calling/callsettings). The default value is 7 and cannot exceed 7 days. |
+| `buttons`  *JSON* | The buttons CTA that will be used in the template.  **type**: the type of the button CTA, in this case "audio\_call"  **title (required)**: the title of the button CTA  **expires\_in\_days (default 7)**: [how long the button is clickable](https://developers.facebook.com/documentation/business-messaging/messenger-platform/calling/callsettings). The default value is 7 and cannot exceed 7 days. |
 
 ```
-```
-POST /<PAGE_ID>/messages  
+POST /<PAGE_ID>/messages  
 {  
-  "recipient": {  
-    "id": "<PSID>"  
-  },  
-  "message": {  
-    "attachment": {  
-      "type": "template",  
-      "payload": {  
-        "template_type": "button",  
-        "text": "Contact Support!",  
-        "buttons": [  
-          {  
-            "type": "audio_call",  
-            "title": "Call Now",  
-            "expires_in_days": 5  
-          }  
-        ]  
-      }  
-    }  
-  }  
+  "recipient": {  
+    "id": "<PSID>"  
+  },  
+  "message": {  
+    "attachment": {  
+      "type": "template",  
+      "payload": {  
+        "template_type": "button",  
+        "text": "Contact Support!",  
+        "buttons": [  
+          {  
+            "type": "audio_call",  
+            "title": "Call Now",  
+            "expires_in_days": 5  
+          }  
+        ]  
+      }  
+    }  
+  }  
 }
-```
 ```
 
 ### Example response
@@ -146,7 +140,7 @@ POST /<PAGE_ID>/messages
 The following errors can happen:
 
 * Invalid page-id or psid
-* The business Page hasn’t enabled the audio calling
+* The business Page hasn't enabled the audio calling
 * Permissions/Authorization errors
 * The `expires_in_days` is set above 7
 * Message is sent outside of allowed window

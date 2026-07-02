@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/business-messaging/mes
 
 Updated: Jun 3, 2026
 
-This guide explains how to browse Meta’s first-party sticker catalog, search for stickers by keyword, and send stickers through the Messenger Send API.
+This guide explains how to browse Meta's first-party sticker catalog, search for stickers by keyword, and send stickers through the Messenger Send API.
 
 ## Before you start
 
@@ -28,20 +28,16 @@ To get a list of available sticker packs, send a `GET` request to the `/sticker_
 #### Sample request
 
 ```
-```
-curl -G 'https://graph.facebook.com/<API_VERSION>/sticker_packs' \  
-  -d 'access_token=<APP_ID>|<APP_SECRET>'
-```
+curl -G 'https://graph.facebook.com/<API_VERSION>/sticker_packs' \  
+  -d 'access_token=<APP_ID>|<APP_SECRET>'
 ```
 
 With locale for translated names and descriptions:
 
 ```
-```
-curl -G 'https://graph.facebook.com/<API_VERSION>/sticker_packs' \  
-  -d 'locale=vi_VN' \  
-  -d 'access_token=<APP_ID>|<APP_SECRET>'
-```
+curl -G 'https://graph.facebook.com/<API_VERSION>/sticker_packs' \  
+  -d 'locale=vi_VN' \  
+  -d 'access_token=<APP_ID>|<APP_SECRET>'
 ```
 
 ##### Parameters
@@ -53,26 +49,24 @@ curl -G 'https://graph.facebook.com/<API_VERSION>/sticker_packs' \
 #### Sample response
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "id": "840909108572865",  
-      "name": "Catster",  
-      "description": "Let your inner cat do the talking",  
-      "preview_image_url": "https://scontent.xx.fbcdn.net/v/t39.1997-6/...",  
-      "sticker_count": 21  
-    },  
-    {  
-      "id": "1451975965911353",  
-      "name": "FB Marketplace Thanks Stickers",  
-      "preview_image_url": "https://scontent.xx.fbcdn.net/v/t39.1997-6/...",  
-      "sticker_count": 5  
-    },  
-    ...  
-  ]  
+  "data": [  
+    {  
+      "id": "840909108572865",  
+      "name": "Catster",  
+      "description": "Let your inner cat do the talking",  
+      "preview_image_url": "https://scontent.xx.fbcdn.net/v/t39.1997-6/...",  
+      "sticker_count": 21  
+    },  
+    {  
+      "id": "1451975965911353",  
+      "name": "FB Marketplace Thanks Stickers",  
+      "preview_image_url": "https://scontent.xx.fbcdn.net/v/t39.1997-6/...",  
+      "sticker_count": 5  
+    },  
+    ...  
+  ]  
 }
-```
 ```
 
 ### Browse stickers in a pack
@@ -82,20 +76,16 @@ To get the individual stickers within a specific pack, send a `GET` request to t
 #### Sample request
 
 ```
-```
-curl -G 'https://graph.facebook.com/<API_VERSION>/sticker_packs/<STICKER_PACK_ID>/stickers' \  
-  -d 'access_token=<APP_ID>|<APP_SECRET>'
-```
+curl -G 'https://graph.facebook.com/<API_VERSION>/sticker_packs/<STICKER_PACK_ID>/stickers' \  
+  -d 'access_token=<APP_ID>|<APP_SECRET>'
 ```
 
 With locale for translated sticker names:
 
 ```
-```
-curl -G 'https://graph.facebook.com/<API_VERSION>/sticker_packs/<STICKER_PACK_ID>/stickers' \  
-  -d 'locale=ja_JP' \  
-  -d 'access_token=<APP_ID>|<APP_SECRET>'
-```
+curl -G 'https://graph.facebook.com/<API_VERSION>/sticker_packs/<STICKER_PACK_ID>/stickers' \  
+  -d 'locale=ja_JP' \  
+  -d 'access_token=<APP_ID>|<APP_SECRET>'
 ```
 
 ##### Parameters
@@ -107,29 +97,27 @@ curl -G 'https://graph.facebook.com/<API_VERSION>/sticker_packs/<STICKER_PACK_
 #### Sample response
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "id": "842488328414943",  
-      "name": "Cat with heart eyes",  
-      "image_url": "https://scontent.xx.fbcdn.net/v/t39.1997-6/...",  
-      "width": 240,  
-      "height": 240,  
-      "is_animated": false  
-    },  
-    {  
-      "id": "842488331748276",  
-      "name": "Cat waving",  
-      "image_url": "https://scontent.xx.fbcdn.net/v/t39.1997-6/...",  
-      "width": 240,  
-      "height": 240,  
-      "is_animated": false  
-    },  
-    ...  
-  ]  
+  "data": [  
+    {  
+      "id": "842488328414943",  
+      "name": "Cat with heart eyes",  
+      "image_url": "https://scontent.xx.fbcdn.net/v/t39.1997-6/...",  
+      "width": 240,  
+      "height": 240,  
+      "is_animated": false  
+    },  
+    {  
+      "id": "842488331748276",  
+      "name": "Cat waving",  
+      "image_url": "https://scontent.xx.fbcdn.net/v/t39.1997-6/...",  
+      "width": 240,  
+      "height": 240,  
+      "is_animated": false  
+    },  
+    ...  
+  ]  
 }
-```
 ```
 
 ### Search stickers by keyword
@@ -139,22 +127,18 @@ To search for stickers across all packs, send a `GET` request to the `/sticker_s
 #### Sample request
 
 ```
-```
-curl -G 'https://graph.facebook.com/<API_VERSION>/sticker_search' \  
-  -d 'q=love' \  
-  -d 'access_token=<APP_ID>|<APP_SECRET>'
-```
+curl -G 'https://graph.facebook.com/<API_VERSION>/sticker_search' \  
+  -d 'q=love' \  
+  -d 'access_token=<APP_ID>|<APP_SECRET>'
 ```
 
 With locale for non-English search:
 
 ```
-```
-curl -G 'https://graph.facebook.com/<API_VERSION>/sticker_search' \  
-  --data-urlencode 'q=감사' \  
-  -d 'locale=ko_KR' \  
-  -d 'access_token=<APP_ID>|<APP_SECRET>'
-```
+curl -G 'https://graph.facebook.com/<API_VERSION>/sticker_search' \  
+  --data-urlencode 'q=감사' \  
+  -d 'locale=ko_KR' \  
+  -d 'access_token=<APP_ID>|<APP_SECRET>'
 ```
 
 ##### Parameters
@@ -169,20 +153,18 @@ curl -G 'https://graph.facebook.com/<API_VERSION>/sticker_search' \
 #### Sample response
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "id": "842488328414943",  
-      "name": "Cat with heart eyes",  
-      "image_url": "https://scontent.xx.fbcdn.net/v/t39.1997-6/...",  
-      "width": 240,  
-      "height": 240,  
-      "is_animated": false  
-    }  
-  ]  
+  "data": [  
+    {  
+      "id": "842488328414943",  
+      "name": "Cat with heart eyes",  
+      "image_url": "https://scontent.xx.fbcdn.net/v/t39.1997-6/...",  
+      "width": 240,  
+      "height": 240,  
+      "is_animated": false  
+    }  
+  ]  
 }
-```
 ```
 
 ## Send a sticker
@@ -196,27 +178,23 @@ In addition to catalog stickers, you can send the thumbs-up (like) sticker using
 ### Sample request
 
 ```
-```
-curl -X POST -H "Content-Type: application/json" -d '{  
-  "recipient": {  
-    "id": "<PSID>"  
-  },  
-  "message": {  
-    "sticker_id": 767226160478561  
-  }  
-}' "https://graph.facebook.com/<API_VERSION>/<PAGE_ID>/messages?access_token=<PAGE_ACCESS_TOKEN>"
-```
+curl -X POST -H "Content-Type: application/json" -d '{  
+  "recipient": {  
+    "id": "<PSID>"  
+  },  
+  "message": {  
+    "sticker_id": 767226160478561  
+  }  
+}' "https://graph.facebook.com/<API_VERSION>/<PAGE_ID>/messages?access_token=<PAGE_ACCESS_TOKEN>"
 ```
 
 On success, the API returns the following JSON response:
 
 ```
-```
 {  
-  "recipient_id": "<PAGE_SCOPED_ID>",  
-  "message_id": "<MESSAGE_ID>"  
+  "recipient_id": "<PAGE_SCOPED_ID>",  
+  "message_id": "<MESSAGE_ID>"  
 }
-```
 ```
 
 ## Sticker in webhooks
@@ -226,34 +204,32 @@ When a sticker is sent (by you or the end user), the webhook payload includes a 
 ### Sample webhook payload
 
 ```
-```
 {  
-  "sender": {  
-    "id": "<PSID>"  
-  },  
-  "recipient": {  
-    "id": "<PAGE_ID>"  
-  },  
-  "message": {  
-    "mid": "<MESSAGE_ID>",  
-    "attachments": [  
-      {  
-        "type": "sticker",  
-        "payload": {  
-          "sticker_id": "842488328414943",  
-          "url": "https://scontent.xx.fbcdn.net/v/t39.1997-6/..."  
-        }  
-      },  
-      {  
-        "type": "image",  
-        "payload": {  
-          "url": "https://scontent.xx.fbcdn.net/v/t39.1997-6/..."  
-        }  
-      }  
-    ]  
-  }  
+  "sender": {  
+    "id": "<PSID>"  
+  },  
+  "recipient": {  
+    "id": "<PAGE_ID>"  
+  },  
+  "message": {  
+    "mid": "<MESSAGE_ID>",  
+    "attachments": [  
+      {  
+        "type": "sticker",  
+        "payload": {  
+          "sticker_id": "842488328414943",  
+          "url": "https://scontent.xx.fbcdn.net/v/t39.1997-6/..."  
+        }  
+      },  
+      {  
+        "type": "image",  
+        "payload": {  
+          "url": "https://scontent.xx.fbcdn.net/v/t39.1997-6/..."  
+        }  
+      }  
+    ]  
+  }  
 }
-```
 ```
 
 After the 90-day transition period, only the `sticker` attachment type will be sent.

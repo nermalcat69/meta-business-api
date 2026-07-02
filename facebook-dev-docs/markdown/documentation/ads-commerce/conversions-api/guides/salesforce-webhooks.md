@@ -11,7 +11,7 @@ Updated: May 5, 2026
 
 **No code changes are needed.**
 
-Tier labels have been updated: “Standard Access” is now **Limited Access**, and “Advanced Access” is now **Full Access**. The revised qualification threshold for Full Access has been reduced from 1,500 to **500 Marketing API calls** in the past 15 days. The underlying permission identifier remains the same, and existing access levels are preserved automatically. Learn more in the [Marketing API Access Tier documentation](https://developers.facebook.com/docs/features-reference#marketing-api-access-tier).
+Tier labels have been updated: "Standard Access" is now **Limited Access**, and "Advanced Access" is now **Full Access**. The revised qualification threshold for Full Access has been reduced from 1,500 to **500 Marketing API calls** in the past 15 days. The underlying permission identifier remains the same, and existing access levels are preserved automatically. Learn more in the [Marketing API Access Tier documentation](https://developers.facebook.com/docs/features-reference#marketing-api-access-tier).
 
 Partners may consider offering Conversions API for CRM events as a service. This allows your clients to upload lead events generated via their Facebook/Instagram lead ads (instant forms) from their respective CRM systems, and use the Conversion Leads performance goal in ads which may yield higher quality leads that are more likely to convert.
 
@@ -43,7 +43,7 @@ If you have not yet been offering the Conversions API as a service for web, app,
 | --- | --- | --- |
 | `ads_read` | The allowed usage for this permission is to provide API access to your ad performance data for use in custom dashboards and data analytics, or to send web events from your server directly to Meta. | **Written**: Explain that you will use this permission to send events via Conversions API from your server directly to Meta on behalf of your advertisers.  **Video**: Demonstrate how your platform sends an event via the Conversions API. |
 | `ads_management` | The allowed usage for this feature is to enable an unlimited number of ad accounts and lower rate limiting. At a minimum, `ads_read` or `ads_management` permission is required to use Marketing API Access Tier. | **Written**: Explain that you will use this permission to send events via Conversions API from your server directly to Facebook on behalf of your advertisers, or programmatically create and manage campaigns on behalf of your business as a value-added feature for your platform.  **Video**: Demonstrate how your platform sends an event via the Conversions API or show a test user logging onto your platform to create or edit ad campaigns. |
-| Ads Management Standard Access | The allowed usage for this feature is to enable an unlimited number of ad accounts and lower rate limiting. At a minimum, `ads_read` or `ads_management` permission is required to use Marketing API Access Tier. | To qualify for advanced access, your app must have successfully made at least 1,500 Marketing API calls with an error rate of less than 10% over a 15-day period.  It’s important to avoid the common mistake of repeatedly calling the API after reaching the rate limit. Instead, pause the calls immediately upon receiving an error response.  System granted permission, submission is not required. |
+| Ads Management Standard Access | The allowed usage for this feature is to enable an unlimited number of ad accounts and lower rate limiting. At a minimum, `ads_read` or `ads_management` permission is required to use Marketing API Access Tier. | To qualify for advanced access, your app must have successfully made at least 1,500 Marketing API calls with an error rate of less than 10% over a 15-day period.  It's important to avoid the common mistake of repeatedly calling the API after reaching the rate limit. Instead, pause the calls immediately upon receiving an error response.  System granted permission, submission is not required. |
 | `pages_read_engagement` | This permission allows your app to read content (posts, photos, videos, events) posted by the Page, read followers data (including name, PSID), and profile picture, and read metadata and other insights about the Page. | **Written**: Explain that you will need this permission as a prerequisite to `ads_management` permission, which you will use to send events via the Conversions API from your server directly to Meta on behalf of your advertisers.  **Video**: Demonstrate how your platform sends an event via Conversions API. |
 | `pages_show_list` (prerequisite for `pages_read_engagement`) | The allowed usage for this permission is to show a person the list of Pages they manage or verify that a person manages a Page. | **Written**: Explain that you will need this permission as a prerequisite to `pages_read_engagement` and `ads_management` permission, which you will use to send events via the Conversions API from your server directly to Meta on behalf of your advertisers.  **Video**: Demonstrate how your platform sends an event via the Conversions API. |
 | `business_management` (prerequisite for all pages permissions) | The allowed usage for this permission is to send business-related activities (for example, purchase, add to cart, lead) on behalf of Pages owned by the people who use your app. | **Written**: Explain that you will need this permission as a prerequisite to `pages_show_list`, `pages_read_engagement` and `ads_management` permission, which you will use to send events via Conversions API from your server directly to Facebook on behalf of your advertisers.  **Video**: Demonstrate how your platform sends an event via Conversions API. |
@@ -54,7 +54,7 @@ Partners have the following two authentication options for datasets not managed 
 
 #### Option 1 - Meta Business Extension (MBE, preferred)
 
-MBE provides an endpoint to retrieve system user access tokens created in the advertiser’s Business Manager. Complete [all the requirements](https://developers.facebook.com/docs/facebook-business-extension/fbe/guides/mbe-conversions-api) for implementing MBE.
+MBE provides an endpoint to retrieve system user access tokens created in the advertiser's Business Manager. Complete [all the requirements](https://developers.facebook.com/docs/facebook-business-extension/fbe/guides/mbe-conversions-api) for implementing MBE.
 
 Ensure that you:
 
@@ -153,7 +153,7 @@ Other best practices include the below:
 * You can backfill your data for up to 7 days in the past. The time difference is calculated between `event_time` and `upload_time`. Backfilling some data may speed up the training process.
 * Ensure that your `event_time` values are after the lead generation timestamp, otherwise your events may be discarded.
 * Log error messages from the CAPI call and create alerts if there are issues. Exception handling for these errors would also be a good idea.
-* Store `lead_id` whenever possible in your system together with other information such as the leads’ details, lead stage, etc.
+* Store `lead_id` whenever possible in your system together with other information such as the leads' details, lead stage, etc.
 
 ## Post Integration
 
@@ -180,13 +180,13 @@ a) [**Create a CRM dataset**](https://developers.facebook.com/documentation/ads-
 
 b) Connect to the partner system: Allow your advertiser to connect to your system and start sending in CRM events.
 
-c) Send a CRM event: To pass [Data Verification](https://developers.facebook.com/documentation/ads-commerce/conversions-api/conversion-leads-integration/crm-integration/4-verify-your-data) checks, the dataset must meet all of the requirements before proceeding to the next step. To confirm if this stage is successful, check in Events Manager if the status moves down to “Configure Sales Funnel”.
+c) Send a CRM event: To pass [Data Verification](https://developers.facebook.com/documentation/ads-commerce/conversions-api/conversion-leads-integration/crm-integration/4-verify-your-data) checks, the dataset must meet all of the requirements before proceeding to the next step. To confirm if this stage is successful, check in Events Manager if the status moves down to "Configure Sales Funnel".
 
 If an advertiser is not able to proceed beyond this step:
 
 * Check for errors in the Events Manager Diagnostic tab for the CRM Dataset.
 * Check that enough events are being uploaded to match with leads generated on Facebook. For example, if the advertiser generates 100 leads in one day we would expect all 100 leads to have uploaded events to match to them. You should reach at least 60% of lead coverage, which is defined as the percentage of leads that have matching events uploaded to Meta.
-* Check that a minimum of two stages for events from the advertiser’s sales funnel is being sent, including the first lead stage (that is, raw lead event). However, we recommend at least three stages if possible. For example, only sending in the “Sale” event will not be enough; make sure the advertiser sends in previous stages as well.
+* Check that a minimum of two stages for events from the advertiser's sales funnel is being sent, including the first lead stage (that is, raw lead event). However, we recommend at least three stages if possible. For example, only sending in the "Sale" event will not be enough; make sure the advertiser sends in previous stages as well.
 * Make sure data has all the required parameters and in the correct format highlighted in this guide. Sending data in other formats will trigger an error.
 
 **Step 2**. [**Configure sales funnel**](https://developers.facebook.com/documentation/ads-commerce/conversions-api/conversion-leads-integration/crm-integration/5-configure-your-sales-funnel)

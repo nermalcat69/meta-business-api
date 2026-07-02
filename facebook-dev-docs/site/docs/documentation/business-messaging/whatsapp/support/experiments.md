@@ -19,7 +19,7 @@ This feature helps you test whether your messaging services can handle increasin
 
 ### What types of load tests are available?
 
-At present, our Cloud API offers “Outbound Load Test.” This feature serves as a powerful tool for businesses to evaluate and enhance the resiliency of their WhatsApp Cloud API integration. By conducting Outbound Load Testing, clients can gain insightful measurements regarding their system’s performance and identify areas for improvement.
+At present, our Cloud API offers "Outbound Load Test." This feature serves as a powerful tool for businesses to evaluate and enhance the resiliency of their WhatsApp Cloud API integration. By conducting Outbound Load Testing, clients can gain insightful measurements regarding their system's performance and identify areas for improvement.
 
 The ability to proactively assess and optimize their systems is paramount for businesses aiming to provide seamless messaging experiences for their customers, even during periods of peak usage. By leveraging the Outbound Load Test feature, clients can gain confidence in the robustness and scalability of their WhatsApp Cloud API integration, ensuring that it can handle high message volumes without sacrificing performance or user experience.
 
@@ -93,7 +93,7 @@ To start **JMeter**, follow these steps:
 
 * Download JMeter using the provided download link.
 * Open the terminal and navigate to the JMeter folder.
-* Browse to the “bin” folder within the JMeter directory.
+* Browse to the "bin" folder within the JMeter directory.
 * Run the following command to start the JMeter application: `./jmeter`
 
 By executing this command, JMeter will launch, and you will have access to the JMeter application interface, allowing you to create and configure your performance tests.
@@ -103,16 +103,16 @@ Next step is to **import the test plan**. To import a sample test plan into JMet
 * Download the [zipped test plan file](https://scontent.fdel1-2.fna.fbcdn.net/v/t39.8562-6/383083590_849533576487865_448384137962027554_n.zip?_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=b8d81d&_nc_ohc=HpYLwo9YV7oQ7kNvwET0UGh&_nc_oc=AdqVrMwy3cdF5MSECufbNO9Rk9H6i1qT3wIoJo4SwUSdlj_HlGpcIq9Ga5VxBOh7CANyyU9J09JJKzImEgKoT9eE&_nc_zt=14&_nc_ht=scontent.fdel1-2.fna&_nc_gid=QaFU-KeUcidzmKHS_5Ik4A&_nc_ss=7b2a8&oh=00_AQBu0dfl5k9hSSnxbrq2BWJIDS9eMbz5Ypzu4cJ4g03Tbw&oe=6A4BE8E6) provided and extract its contents into the JMeter folder. This file contains the necessary configurations, and you only need to modify the variables.
 * Open JMeter and navigate to the `LoadTest.en_US.jmx` test file. You can do this by selecting **File** > **Open** and locating the file within the JMeter interface.
 * Once the test file is opened, JMeter will display the test plan structure. This imported test plan serves as a starting point, and you can modify it according to your specific requirements.
-* Locate the “HTTP Request” element within the test plan. Here, you need to provide the necessary details in the POST body data, including the template object.
+* Locate the "HTTP Request" element within the test plan. Here, you need to provide the necessary details in the POST body data, including the template object.
 
   ![JMeter HTTP Request element with POST body data showing the messaging template JSON](https://scontent.fdel1-3.fna.fbcdn.net/v/t39.2365-6/567935685_1343934440798540_7485235151905676730_n.jpg?_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=-hRLEXdafF0Q7kNvwF5k4jO&_nc_oc=Adpmji_eHWvaW088tJ5pMcjlnb-hnFvIXceoCxPB7LtfNZy9anJybAvw9q7Q-3FspV3DdHumflkDmrkkvT9Ax3VQ&_nc_zt=14&_nc_ht=scontent.fdel1-3.fna&_nc_gid=QaFU-KeUcidzmKHS_5Ik4A&_nc_ss=7b2a8&oh=00_AQDt3MBjFzJlql2jaf41KTJ4nwL2LbH7E0Ao31pfSciH0A&oe=6A605A87)
-* Find the “User Parameters” element and add values for the following variables:
+* Find the "User Parameters" element and add values for the following variables:
 
   * **phoneNumberID**: this will be the test phone number ID provided by Meta
   * **systemUserAccessToken**: this will be the access token also provided by Meta
 
   ![JMeter User Parameters element listing phoneNumberID, systemUserAccessToken, and to variables](https://scontent.fdel1-7.fna.fbcdn.net/v/t39.2365-6/569390372_1343934430798541_4395388978418862722_n.jpg?_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=R6RxaZoGs9UQ7kNvwFrTesE&_nc_oc=Adr37xhS2ziPHPlNP3QDTtGHOYL5zhyh5kKH30Cmsn2ARYZNGdwrLnJZhUzYJYn3dF5K5OqmGkSkzFsLjONJdneq&_nc_zt=14&_nc_ht=scontent.fdel1-7.fna&_nc_gid=QaFU-KeUcidzmKHS_5Ik4A&_nc_ss=7b2a8&oh=00_AQC6n3FjIL9S4zzb0e6SFMmgV0N3t7MFiF3Fl4WNVwiBXA&oe=6A6070E6)
-* To configure InfluxDB for result collection, go to the “Backend Listener” element. Configure it to match the settings shown in the provided screenshot or documentation.
+* To configure InfluxDB for result collection, go to the "Backend Listener" element. Configure it to match the settings shown in the provided screenshot or documentation.
   ![JMeter Backend Listener configured with InfluxDB sender and localhost:8086 demo database URL](https://scontent.fdel1-6.fna.fbcdn.net/v/t39.2365-6/565884286_1343934424131875_5658840901806577736_n.jpg?_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=4kQQTWW1d5wQ7kNvwFJTand&_nc_oc=AdoBAP82qmkzsHNXJb2dJpSSdCE6oeSzRbv8ePwdazuUFPK_vstlpKyXgZKeHPGpbxNsGBItsckNeLrTU5TAGLQb&_nc_zt=14&_nc_ht=scontent.fdel1-6.fna&_nc_gid=QaFU-KeUcidzmKHS_5Ik4A&_nc_ss=7b2a8&oh=00_AQABzYwET8aZXoT8QaVR0iWoye3ulgPfYzXZgAEt8Bb7Bg&oe=6A6062EF)
 
 By following these steps, you will successfully import the sample test plan into JMeter and make the necessary modifications to tailor it to your specific testing requirements. This test plan provides a starting point for load testing your system and collecting performance metrics using JMeter and InfluxDB.
@@ -138,14 +138,14 @@ Next start the InfluxDB server and create a new database for storing JMeter read
   ```
 * Create the Required Database:
 
-  * Within the InfluxDB console, create the necessary database for the JMeter configuration. In this example, let’s name the database “demo”.
+  * Within the InfluxDB console, create the necessary database for the JMeter configuration. In this example, let's name the database "demo".
   * Run the following command to create the database:
 
   ```
   create database demo
   ```
 
-With these steps completed, the InfluxDB server will be up and running, and you will have a designated “demo” database ready to store the JMeter readings.
+With these steps completed, the InfluxDB server will be up and running, and you will have a designated "demo" database ready to store the JMeter readings.
 
 To set up Grafana for JMeter, follow these steps:
 
@@ -204,19 +204,17 @@ To start Locust, follow these steps:
   * Modify the JSON structure as follows:
 
     ```
-    ```
     {  
-        "template": {  
-            "name": "welcome_user",  
-            "language": {  
-                "policy": "deterministic",  
-                "code": "en"  
-            }  
-        },  
-        "auth_token": "<YOUR_TOKEN>",  
-        "phone_number_id": "<YOUR_PHONE_NUMBER_ID>"  
+        "template": {  
+            "name": "welcome_user",  
+            "language": {  
+                "policy": "deterministic",  
+                "code": "en"  
+            }  
+        },  
+        "auth_token": "<YOUR_TOKEN>",  
+        "phone_number_id": "<YOUR_PHONE_NUMBER_ID>"  
     }
-    ```
     ```
   * Replace `<YOUR_TOKEN>` with the appropriate authentication token and `<YOUR_PHONE_NUMBER_ID>` with the corresponding phone number ID.
 * Ensure that Locust is installed on your system. If not, install it by running the following command:
@@ -262,7 +260,7 @@ Next start the InfluxDB server and create a new database for storing Locust read
     ```
 * Create the required database:
 
-  * Within the InfluxDB console, create the necessary database for the JMeter configuration. In this example, let’s name the database `pyt` .
+  * Within the InfluxDB console, create the necessary database for the JMeter configuration. In this example, let's name the database `pyt` .
   * Run the following command to create the database:
 
     ```
@@ -291,7 +289,7 @@ To set up Grafana for Locust, follow these steps:
   * Query Language: Select **InfluxQL**
   * URL: Set the URL as [http://localhost:8086](http://localhost:8086/?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR6yJFkTtuDg0tLo-aFvx0LyrffE_jiKUP49dNh8q_LAbuCLBZ3FLxyubtALKA_aem_dQXszfOKFIurLs7Mm86hXA)
   * Database: Set the database as `pyt`
-* Click on “Save and Test” to save the configuration and verify the connection to InfluxDB.
+* Click on "Save and Test" to save the configuration and verify the connection to InfluxDB.
 * To set up the Grafana dashboard:
 
   * Hover over the four-square icon on the left side of the Grafana interface and select **+Import**.

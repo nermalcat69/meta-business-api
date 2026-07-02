@@ -13,7 +13,7 @@ When a user starts a conversation with your business, you may want to identify h
 
 Account Linking allows you to invite users to log-in using your own authentication flow, and to receive a Messenger page-scoped ID (PSID) upon completion. You can then provide a more secure, personalized and relevant experience to users.
 
-Use the [`getContext()`](https://developers.facebook.com/documentation/business-messaging/messenger-platform/webview/context) function in Messenger Extensions to securely get your app user’s Page-scoped ID. Bots can then use that to link the user’s account or personalize the experience.
+Use the [`getContext()`](https://developers.facebook.com/documentation/business-messaging/messenger-platform/webview/context) function in Messenger Extensions to securely get your app user's Page-scoped ID. Bots can then use that to link the user's account or personalize the experience.
 
 ### Limitations
 
@@ -28,7 +28,7 @@ The Account Linking flow follows few simple steps.
 * Register a callback URL using [Log In Button](https://developers.facebook.com/documentation/business-messaging/messenger-platform/send-messages/buttons).
 * Messenger Platform invokes the registered URL when a user starts the account linking flow. The `redirect_uri` and `account_linking_token` parameters are appended to your registered callback.
 * Once linking is complete, redirect users to the location provided by `redirect_uri` and append a `authorization_code` parameter (defined by you) to confirm linking.
-* Optionally retrieve the user’s page-scoped ID (PSID) using the [account linking endpoint](https://developers.facebook.com/documentation/business-messaging/messenger-platform/identity/user-profile#endpoint). This step should only be used in special cases when you need the user’s PSID as part of the linking process.
+* Optionally retrieve the user's page-scoped ID (PSID) using the [account linking endpoint](https://developers.facebook.com/documentation/business-messaging/messenger-platform/identity/user-profile#endpoint). This step should only be used in special cases when you need the user's PSID as part of the linking process.
 
 Account Unlinking can be initiated:
 
@@ -37,14 +37,12 @@ Account Unlinking can be initiated:
 
 ## Set your account linking URL
 
-Before using account linking, you must set the `account_linking_url` property in your bot’s [Messenger Profile](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/messenger-profile-api). You must have the Administrator role for the Page associated with the bot.
+Before using account linking, you must set the `account_linking_url` property in your bot's [Messenger Profile](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/messenger-profile-api). You must have the Administrator role for the Page associated with the bot.
 
 ```
-```
 {  
-  "account_linking_url": "<YOUR_ACCOUNT_LINKING_URL>"  
+  "account_linking_url": "<YOUR_ACCOUNT_LINKING_URL>"  
 }
-```
 ```
 
 ## Callback
@@ -72,17 +70,17 @@ If **account linking failed**, redirect the browser to the `redirect_uri` passed
 | --- | --- |
 | `redirect_uri` | Redirect URI which will be added by Messenger, you must redirect the browser to this location at the end of the authentication flow. It may contain URL encoded parameters. |
 | `account_linking_token` | Short-lived token passed by Messenger which you need to pass back as part of the redirect scheme. This token is only valid for 5 minutes, it is encrypted and unique per user.  You can call the [PSID retrieval endpoint](https://developers.facebook.com/documentation/business-messaging/messenger-platform/identity/user-profile#endpoint) with this token to fetch the corresponding PSID. |
-| `authorization_code` | Code provided by you to confirm a successful linking. Messenger Platform will pass back this code along with the user’s PSID as the [Account Linking webhook event](https://developers.facebook.com/documentation/business-messaging/messenger-platform/webhooks/webhook-events/messaging_account_linking). Failing to pass this parameter will cause the linking process to abort. |
+| `authorization_code` | Code provided by you to confirm a successful linking. Messenger Platform will pass back this code along with the user's PSID as the [Account Linking webhook event](https://developers.facebook.com/documentation/business-messaging/messenger-platform/webhooks/webhook-events/messaging_account_linking). Failing to pass this parameter will cause the linking process to abort. |
 
 ## Webhook event
 
-A successful linking flow triggers the [Account Linking event](https://developers.facebook.com/documentation/business-messaging/messenger-platform/webhooks/webhook-events/messaging_account_linking) to deliver the user’s page-scoped ID (PSID).
+A successful linking flow triggers the [Account Linking event](https://developers.facebook.com/documentation/business-messaging/messenger-platform/webhooks/webhook-events/messaging_account_linking) to deliver the user's page-scoped ID (PSID).
 
 You must register to the [account linking callback](https://developers.facebook.com/documentation/business-messaging/messenger-platform/webhooks/webhook-events/messaging_account_linking) event. Not acknowledging this webhook event will cause the linking process to abort.
 
 ## PSID retrieval endpoint
 
-In certain cases you need to retrieve the user page-scoped ID (PSID) during the linking flow. To help with this situation we are providing a PSID retrieval endpoint allowing you to fetch the user’s PSID given a valid and unexpired `account_linking_token`.
+In certain cases you need to retrieve the user page-scoped ID (PSID) during the linking flow. To help with this situation we are providing a PSID retrieval endpoint allowing you to fetch the user's PSID given a valid and unexpired `account_linking_token`.
 
 ### Request
 
@@ -103,7 +101,7 @@ curl -X GET "https://graph.facebook.com/v2.6/me?access_token=PAGE_ACCESS_TOKEN \
 
 ## Account Unlink Endpoint
 
-In certain cases you need to unlink the user page-scoped ID (PSID) programmatically from your backend. To help with this situation we are providing a PSID unlinking endpoint allowing you to unlink the user’s account given a valid PSID.
+In certain cases you need to unlink the user page-scoped ID (PSID) programmatically from your backend. To help with this situation we are providing a PSID unlinking endpoint allowing you to unlink the user's account given a valid PSID.
 
 ### Request
 
@@ -125,17 +123,17 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 ✅ Use Account Linking when you have a user account system that extends beyond Messenger.
 
-✅ Let people create an account from within Messenger, so it’s available elsewhere.
+✅ Let people create an account from within Messenger, so it's available elsewhere.
 
-✅ Prompt for login when it’s contextually relevant—that is, when your bot user can see the benefit of doing it.
+✅ Prompt for login when it's contextually relevant—that is, when your bot user can see the benefit of doing it.
 
 ✅ Consider how your bot should behave if a user declines login.
 
 ✅ Provide clear confirmation and a friendly welcome after login.
 
-❌ Don’t use Account Linking if people will *only* interact with you via Messenger. You can store account information via thread ID.
+❌ Don't use Account Linking if people will *only* interact with you via Messenger. You can store account information via thread ID.
 
-❌ Don’t require Account Linking right away if you can avoid it; let people get a sense for your bot first.
+❌ Don't require Account Linking right away if you can avoid it; let people get a sense for your bot first.
 
 ### Recommended Design Flow
 

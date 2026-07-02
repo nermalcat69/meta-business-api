@@ -19,7 +19,7 @@ The Facebook Video API from Meta allows apps to publish and crosspost videos on 
 
 ### [Overview](https://developers.facebook.com/documentation/video-api/overview)
 
-An explanation of the API’s core resources, abilities, and usage requirements.
+An explanation of the API's core resources, abilities, and usage requirements.
 
 ### [Get Started](https://developers.facebook.com/documentation/video-api/getting-started)
 

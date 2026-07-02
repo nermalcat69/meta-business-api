@@ -75,8 +75,8 @@ HTTPPHP SDKJavaScript SDKAndroid SDKiOS SDKcURL
 ---
 
 ```
-GET /v25.0/<CREATIVE_ID>/previews?ad_format=DESKTOP_FEED_STANDARD&product_item_ids=%5B%22%3CPRODUCT_ITEM_ID%3E%22%5D HTTP/1.1  
-Host: graph.facebook.com
+GET /v25.0/<CREATIVE_ID>/previews?ad_format=DESKTOP_FEED_STANDARD&product_item_ids=%5B%22%3CPRODUCT_ITEM_ID%3E%22%5D HTTP/1.1  
+Host: graph.facebook.com
 ```
 
 Try it in [Graph API Explorer](https://developers.facebook.com/tools/explorer/?method=GET&path=%3CCREATIVE_ID%3E%2Fpreviews%3Fad_format%3DDESKTOP_FEED_STANDARD%26product_item_ids%3D%255B%2522%253CPRODUCT_ITEM_ID%253E%2522%255D&version=v25.0)

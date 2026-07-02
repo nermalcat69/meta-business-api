@@ -11,7 +11,7 @@ You can track website visitor activity for movie ad campaigns by setting up [con
 
 ### Requirements
 
-The Pixel’s [base code](https://developers.facebook.com/documentation/meta-pixel/get-started#base-code) must already be installed on every page where you will to tracking the standard events below.
+The Pixel's [base code](https://developers.facebook.com/documentation/meta-pixel/get-started#base-code) must already be installed on every page where you will to tracking the standard events below.
 
 ## Standard Events
 
@@ -19,7 +19,7 @@ You must track the following [standard events](https://developers.facebook.com/d
 
 ### ViewContent
 
-Track the following `ViewContent` standard event on your movie ad campaign’s **landing page**. This should be the first page that Meta ad-driven visitors reach when clicking your ad.
+Track the following `ViewContent` standard event on your movie ad campaign's **landing page**. This should be the first page that Meta ad-driven visitors reach when clicking your ad.
 
 ```
 <script type="text/javascript">
@@ -36,7 +36,7 @@ fbq(
 
 ### InitiateCheckout
 
-Track the following `InitiateCheckout` standard event on your movie ad campaign’s **payment page**:
+Track the following `InitiateCheckout` standard event on your movie ad campaign's **payment page**:
 
 ```
 <script type="text/javascript">
@@ -54,7 +54,7 @@ fbq(
 
 ### Purchase
 
-Track the following `Purchase` standard event on your movie ad campaign’s **payment confirmation** page:
+Track the following `Purchase` standard event on your movie ad campaign's **payment confirmation** page:
 
 ```
 <script type="text/javascript">
@@ -74,7 +74,7 @@ fbq(
 
 ### PageView
 
-Track the following `PageView` standard event on any pages of your movie ad campaign’s checkout flow, **other than your landing page, payment page, or payment confirmation page**:
+Track the following `PageView` standard event on any pages of your movie ad campaign's checkout flow, **other than your landing page, payment page, or payment confirmation page**:
 
 ```
 <script type="text/javascript">
@@ -93,7 +93,7 @@ fbq(
 | Property | Value Type | Description |
 | --- | --- | --- |
 | `content_ids` | String | IDs, separated by pipe symbols (`|`), that uniquely identify the movie, theater, and showtime, in that order. Showtime should be in the ISO 8601 format. |
-| `currency` | String | The currency’s 3 letter ISO code. |
-| `movieref` | String | If the referrer URL contains `eventref=movieref` as a query string parameter, then set this property’s value to `'fb_movies'`. Otherwise, set it to an empty string (`''`). |
+| `currency` | String | The currency's 3 letter ISO code. |
+| `movieref` | String | If the referrer URL contains `eventref=movieref` as a query string parameter, then set this property's value to `'fb_movies'`. Otherwise, set it to an empty string (`''`). |
 | `num_items` | Integer | The number of tickets the visitor is purchasing. |
 | `value` | Integer | Total price. |

@@ -180,7 +180,7 @@ curl -i -X POST \
 
 For create and update endpoints, the Graph API can immediately read a successfully published or updated object and return any fields supported by the corresponding read endpoint.
 
-By default, an ID of the object created or updated will be returned. To include more information in the response, include the `fields` parameter in your request and list the fields you want returned. For example, to publish the message “Hello” to a Page's feed, you could make the following request:
+By default, an ID of the object created or updated will be returned. To include more information in the response, include the `fields` parameter in your request and list the fields you want returned. For example, to publish the message "Hello" to a Page's feed, you could make the following request:
 
 ```
 curl -i - X POST "https://graph.facebook.com/PAGE-ID/feed?message=Hello&

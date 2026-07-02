@@ -31,11 +31,11 @@ Partners have access to all support channels. See [Support](https://developers.f
 
 ## Troubleshooting
 
-### Onboarded clients can’t send messages
+### Onboarded clients can't send messages
 
-There may be situations where clients can’t send messages after completing the Embedded Signup flow. The following checks may help resolve this issue:
+There may be situations where clients can't send messages after completing the Embedded Signup flow. The following checks may help resolve this issue:
 
-* Verify that a valid payment method is attached to the WhatsApp Business account. If there isn’t a payment method attached (either a credit line for clients onboarded via a Solution Partner, or a credit card for clients onboarded via a Tech Provider or Tech Partner), the client will be unable to send template messages.
+* Verify that a valid payment method is attached to the WhatsApp Business account. If there isn't a payment method attached (either a credit line for clients onboarded via a Solution Partner, or a credit card for clients onboarded via a Tech Provider or Tech Partner), the client will be unable to send template messages.
 * Check if a different business phone number was registered as part of the onboarding process. If a different number was registered, you must register the problematic number for use with Cloud API.
 * Check if the WhatsApp Business account has been disabled. WhatsApp Business accounts that violate our policies are automatically disabled, so this may be the reason.
 
@@ -43,6 +43,6 @@ There may be situations where clients can’t send messages after completing the
 
 Your suggestions are valuable in helping us continue to improve our platform and meet your needs. To request a feature, submit a [Direct Support⁠](https://business.facebook.com/direct-support/) ticket or [platform bug report](https://developers.facebook.com/support/bugs/).
 
-Please provide as much detail as possible about the feature you’re requesting. Include a clear description of the feature, its intended use, and any relevant use case examples. If you have any supporting documentation, images, or other resources related to the feature, include them as well.
+Please provide as much detail as possible about the feature you're requesting. Include a clear description of the feature, its intended use, and any relevant use case examples. If you have any supporting documentation, images, or other resources related to the feature, include them as well.
 
 Your request will be reviewed, and you may be contacted for further clarification.

@@ -15,8 +15,8 @@ Use this product review feed schema to onboard on to our ratings and review syst
 | --- | --- |
 | `aggregator`  Type: string | **Optional**.  The reviews aggregator used by the store to manage their review feeds. This field stores the name of the aggregator. |
 | `store.name`  Type: string | **Required**.  Name of the store the review feed is for. |
-| `store.id`  Type: string | **Optional**.  Unique identifier of the store on the aggregator’s platform. |
-| `store.storeUrls`  Type: Array<string> | **Required**.  Unique identifier of the store on the aggregator’s platform. |
+| `store.id`  Type: string | **Optional**.  Unique identifier of the store on the aggregator's platform. |
+| `store.storeUrls`  Type: Array<string> | **Required**.  Unique identifier of the store on the aggregator's platform. |
 | `reviewID`  Type: string | **Required**.  Unique identifier for the review. |
 | `rating`  Type: integer | **Required**.  Rating, from 1–5. |
 | `title`  Type: string | **Optional**.  Review title. |
@@ -30,17 +30,17 @@ Use this product review feed schema to onboard on to our ratings and review syst
 | `reviewer.reviewerID`  Type: string | **Optional**.  Unique identifier for the reviewer. |
 | `reviewer.isAnonymous`  Type: boolean | **Optional**.  Represents whether the reviewer is anonymous. |
 | `product.name`  Type: string | **Required**.  Name of the product. |
-| `product.url`  Type: string | **Required**.  Link to the product detail page on the store’s website. |
+| `product.url`  Type: string | **Required**.  Link to the product detail page on the store's website. |
 | `product.imageUrls`  Type: Array<string> | **Optional**.  List of image urls associated with the product. |
 | `product.groupID`  Type: string | **Optional**.  ID for a group of products that share reviews. You can choose to share the `groupID` or all of the variants directly using the `variants` field. |
-| `product.productStatus`  Type: Enum `{"active", "inactive"}` | **Optional**.  Status of the product. “active” if the product is still active and “inactive” if the product is no longer being sold. |
+| `product.productStatus`  Type: Enum `{"active", "inactive"}` | **Optional**.  Status of the product. "active" if the product is still active and "inactive" if the product is no longer being sold. |
 | `product.productIdentifiers.gtins`  Type: Array<string> | **Optional**.  Global trade item numbers (GTINs) associated with the product. |
 | `product.productIdentifiers.mpn`  Type: string | **Optional**.  Manufacturer part number (MPN) associated with the product. |
 | `product.productIdentifiers.brand`  Type: string | **Optional**.  Brand name associated with the product. |
 | `product.productIdentifiers.shopifyProductID`  Type: string | **Optional**.  Shopify Product ID associated with the product. |
 | `product.productIdentifiers.skus`  Type: Array<string> | **Optional**.  Stock keeping units (SKUs) associated with the product. |
 | `product.variants[0].name`  Type: string | **Optional**.  Name of the variant.  Note: Please duplicate the review to multiple rows, and let each row only contain one unique product variant, if the product mentioned by the review has multiple variants. |
-| `product.variants[0].url`  Type: string | **Optional**.  Link to the variant detail page on the store’s website.  Note: Please duplicate the review to multiple rows, and let each row only contain one unique product variant, if the product mentioned by the review has multiple variants. |
+| `product.variants[0].url`  Type: string | **Optional**.  Link to the variant detail page on the store's website.  Note: Please duplicate the review to multiple rows, and let each row only contain one unique product variant, if the product mentioned by the review has multiple variants. |
 | `product.variants[0].variantIdentifiers.gtins`  Type: Array<string> | **Optional**.  Global trade item numbers (GTINs) associated with the variant.  Note: Please duplicate the review to multiple rows, and let each row only contain one unique product variant, if the product mentioned by the review has multiple variants. |
 | `product.variants[0].variantIdentifiers.mpn`  Type: string | **Optional**.  Manufacturer part number (MPN) associated with the variant.  Note: Please duplicate the review to multiple rows, and let each row only contain one unique product variant, if the product mentioned by the review has multiple variants. |
 | `product.variants[0].variantIdentifiers.brand`  Type: string | **Optional**.  Brand name associated with the variant.  Note: Please duplicate the review to multiple rows, and let each row only contain one unique product variant, if the product mentioned by the review has multiple variants. |

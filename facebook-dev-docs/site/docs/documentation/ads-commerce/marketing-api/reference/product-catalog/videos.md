@@ -20,8 +20,8 @@ HTTPPHP SDKJavaScript SDKAndroid SDKiOS SDK
 ---
 
 ```
-GET /v25.0/{product-catalog-id}/product_sets HTTP/1.1  
-Host: graph.facebook.com
+GET /v25.0/{product-catalog-id}/product_sets HTTP/1.1  
+Host: graph.facebook.com
 ```
 
 Try it in [Graph API Explorer](https://developers.facebook.com/tools/explorer/?method=GET&path=%7Bproduct-catalog-id%7D%2Fproduct_sets&version=v25.0)
@@ -92,8 +92,8 @@ HTTPPHP SDKJavaScript SDKAndroid SDKiOS SDKcURL
 ---
 
 ```
-POST /v25.0/<PRODUCT_CATALOG_ID>/product_sets HTTP/1.1  
-Host: graph.facebook.com  
+POST /v25.0/<PRODUCT_CATALOG_ID>/product_sets HTTP/1.1  
+Host: graph.facebook.com  
   
 name=Test+Set&filter=%7B%22product_type%22%3A%7B%22i_contains%22%3A%22shirt%22%7D%7D
 ```
@@ -155,7 +155,7 @@ Creating a product set with an empty `filter` parameter indicates that all items
 * If the filter rules you set result in an empty product set, ads tied to this product set will not deliver.
 * The `contains` operators can only be used for string matching when creating product sets. For `enum` values use the `eq` operators.
 * Filter operators are not case sensitive. However, `i_*` operators can still be used.
-* You can’t use non-English Unicode characters for filters in labels.
+* You can't use non-English Unicode characters for filters in labels.
 
 For a full list of limitations and examples, along with useful tips about how to use punctuation characters to create and manage product sets, [see this Business Help Center article⁠](https://www.facebook.com/business/help/741923962861190)
 
@@ -178,7 +178,7 @@ Filter rules are made up of the following fields and operators:
 | `color` | Type: string. The color of an item. |
 | `condition` | The condition of a product item or vehicle. Supported values for products: `new`, `refurbished`, and `used`. Supported values for vehicles: `Excellent`, `Good`, `Fair`, `Poor`, `Other`. |
 | `country` | The country where a hotel, home listing, automobile dealership, or destination is located. |
-| `currency` | The currency abbreviation for an item’s, hotel’s, home listing’s, automobile dealership’s, or destination’s price. |
+| `currency` | The currency abbreviation for an item's, hotel's, home listing's, automobile dealership's, or destination's price. |
 | `custom_label_0` | The value of a custom label of a product item, hotel, destination, vehicle, or home listing. |
 | `custom_label_1` | The value of a custom label of a product item, hotel, or destination. |
 | `custom_label_2` | The value of a custom label of a product item, hotel, or destination. |
@@ -190,7 +190,7 @@ Filter rules are made up of the following fields and operators:
 | `dealer_communication_channel` | The method with which an automobile dealer will be contacted by a buyer. Supported values: `CHAT` or `LEAD_FORM`. `LEAD_FORM` is subject to regional availability: when unavailable, every listing is forced to `CHAT`, irregardless of the value entered. |
 | `dealer_id` | The alphanumeric ID of an automobile dealership. |
 | `dealer_name` | The name of the automobile dealership. |
-| `drivetrain` | The vehicle’s drivetrain. Supported values: `4X2`, `4X4`, `AWD`, `FWD`, `RWD`, `Other`. |
+| `drivetrain` | The vehicle's drivetrain. Supported values: `4X2`, `4X4`, `AWD`, `FWD`, `RWD`, `Other`. |
 | `description` | The description of a flight route, home listing, or destination. |
 | `destination_airport` | The IATA code for the destination. Supports airport and city IATA code. Use IATA Code Search to validate IATA codes. To improve performance, avoid using a space for this unique ID. |
 | `destination_city` | The name of the destination city. Example: `New York` |
@@ -204,17 +204,17 @@ Filter rules are made up of the following fields and operators:
 | `home_listing_id` | The granular nique ID for a home listing (apartment, condo, home). |
 | `hotel_id` | The unique ID for a hotel within a catalog. This ID is matched with any `content_ids` provided in your hotel app and pixel events. |
 | `image_tags` | A string that describes an image. There can be multiple tags associated with an image. Example: [for home listings]`Fitness Center`, `Swimming Pool`, [for vehicles] `Exterior`, `Interior`, `StockImage`. For vehicles, follow this naming convention: `(image[0].url`, `image[0].tag[0]`, `image[0].tag[1])`. For vehicle offer ads, `Lease Offer`, `Financing`, and so on. In the `image[0].tag[m]` structure, increment the `m` value to add more tags.  When using a CSV/TSV file, we support two different formats: Use an image header that looks like: `image[0].url`, `image[1].url`, and so on. Use a JSON flatten string that looks like: `"[{url:'https://images.com/1.jpg'},{url:'https://images.com/2.jpg'}]"` |
-| `interior_color` | The vehicle’s interior color. |
+| `interior_color` | The vehicle's interior color. |
 | `listing_type` | The type of home listing. Supported values for Marketplace: `for_rent_by_agent`, `for_rent_by_owner`. Supported values for dynamic ads: `for_rent_by_agent`, `for_rent_by_owner`, `for_sale_by_agent`, `for_sale_by_owner`, `foreclosed`, `new_construction`, `new_listing`. |
 | `make` | The brand of a vehicle. Example `Ford` |
 | `margin_level` | An indicator of the profitability of a hotel; value from `1` to `10`. |
 | `market_id` | The market where an offer is eligible. Use for TWO FEED use case, to correspond with the market feed. For regional offers, this field is required and should match the `market_id` provided in the market feed. For national offers (offers applicable to all of the U.S.), this field should be empty. |
-| `material` | The material or fabric that a product is made out of. Example: ‘Leather’, ‘Denim’, ‘Suede’. |
+| `material` | The material or fabric that a product is made out of. Example: 'Leather', 'Denim', 'Suede'. |
 | `mileage_unit` | The mileage unit of a vehicle in miles (`MI`) or kilometers (`KM`). |
 | `mileage_value` | For used vehicles, the current mileage of a vehicle in miles (`MI`) or kilometers (`KM`). For new vehicles, use `0`. Vehicles on Marketplace must have over 500 miles/kms. |
 | `model` | The name of a vehicle product and sometimes a range of products. Example: `Focus` |
 | `name` | The name of a product item, hotel, home listing, or destination. |
-| `neighborhood` | The neighborhood where a hotel or home listing is located. If there’s more than one neighborhood, add additional columns for each one and use JSON-path syntax in each column name to indicate the number of neighborhoods. |
+| `neighborhood` | The neighborhood where a hotel or home listing is located. If there's more than one neighborhood, add additional columns for each one and use JSON-path syntax in each column name to indicate the number of neighborhoods. |
 | `neighborhood_id` | The neighborhood ID of a product item. |
 | `num_baths` | The total number of bathrooms for a home listing. Must be `1` at a minimum. |
 | `num_beds` | The total number of bedrooms for a home listing. Can be `0` for a studio. |
@@ -225,8 +225,8 @@ Filter rules are made up of the following fields and operators:
 | `offer_type` | The type of offer: `lease`, `finance`, `cash`. |
 | `one_way_price` | One-way price of a flight. You must specify the value with the currency. |
 | `origin_airport` | The IATA code for the origin of an airport. Supports airport and city IATA codes. Use IATA Code Search to validate IATA codes. |
-| `origin_city` | The city name of the flight’s origin. |
-| `pattern` | The pattern or graphic print featured on a product. Example: ‘Polka Dot’, ‘Striped’, ‘Paisley’. |
+| `origin_city` | The city name of the flight's origin. |
+| `pattern` | The pattern or graphic print featured on a product. Example: 'Polka Dot', 'Striped', 'Paisley'. |
 | `postal_code` | The postal or zip code designated for a hotel location, home listing, or automobile dealership. Optional for countries without a postal code system. |
 | `postal_codes` | For vehicle offer ads, the list of postal codes for the specific market provided in this format: `['94025', '94536']`. |
 | `price` | The price of a flight, home listing, vehicle, or destination. You must specify the value with currency. |
@@ -248,7 +248,7 @@ Filter rules are made up of the following fields and operators:
 | `sale_price` | The sale price or special price of a vehicle. |
 | `sale_price_amount` | For products: The sale price of a product item multiplied by 100, for all currencies. Example: `490` when used with USD denotes $4.90, and `49000` when used with JPY denotes ¥490. For hotels: Discounted sale cost and currency of a hotel stay, based on `checkin_date` and `length_of_stay`. |
 | `score` | Value for the hotel rating score. Example: `7.8` |
-| `size` | The size of a product item. Example: ‘XL’, ‘16/34 Tall’, ‘3.5 Kid’ |
+| `size` | The size of a product item. Example: 'XL', '16/34 Tall', '3.5 Kid' |
 | `star_rating_float` | The hotel star rating. Valid values: `1` to `5` and should be a multiple of 0.5. Example: `3`, `4.5` |
 | `state_of_vehicle` | The current state of a vehicle: `New`, `Used`, `CPO` (certified pre-owned). |
 | `title` | The full name of a vehicle. Max characters: 500. The title is relevant and specific to each vehicle and it should contain what is set in `year`, `make`, `model`, and `trim` fields. Example: `SE Ford Certified and 6-Speed Automatic` |
@@ -269,19 +269,19 @@ Filter rules are made up of the following fields and operators:
 
 | Operator | Type of filter |
 | --- | --- |
-| `and` | Returns products that match all query values inclusively. For example, `"color": {"red" and "shoe" and "running"}` will only return products that match all 3 query values, such as “red running shoe”. |
-| `contains` | Returns products that match a query string. For example, `category: {"contains": "running shoe"}` will return all products that contain the query string, such as “red running shoe”, “blue running shoe”, and “running shoe for kids”. |
-| `or` | Returns products that match only one query value exclusively. For example, `category: {"running" or "walking"}` will return products that match “running” or “walking” but not both. |
-| `not_contains` | Returns products that do not match a query string. For example, `category: {"not_contains": running shoe"}` will return all products that do not contain the query string, such as “red walking shoe”, “sandals”, and “boots”. |
-| `is_any` | Returns products that match any value in a list of query values. For example, `"color": {"is_any": "black", "blue", "brown"}` will return any product that matches at least one query string, such as “black boots”, “blue boots”, “brown boots”. |
-| `is_not_any` | Returns products that do not match any value in a list of query strings. For example, `"color": {"is_not_any": "black", "blue", "brown"}` will return any products that do not match any of the query values, such as “red boots”, “yellow boots”, and “green boots”. |
-| `eq` | Returns products that exactly match a query value. For example, `"brand": {"eq": "Instagram"}` will only match “Instagram” brand products. |
-| `neq` | Returns products that do not exactly match a query value. For example, `"brand": {"eq": "Instagram"}` will only match products that are not “Instagram” brand products. |
+| `and` | Returns products that match all query values inclusively. For example, `"color": {"red" and "shoe" and "running"}` will only return products that match all 3 query values, such as "red running shoe". |
+| `contains` | Returns products that match a query string. For example, `category: {"contains": "running shoe"}` will return all products that contain the query string, such as "red running shoe", "blue running shoe", and "running shoe for kids". |
+| `or` | Returns products that match only one query value exclusively. For example, `category: {"running" or "walking"}` will return products that match "running" or "walking" but not both. |
+| `not_contains` | Returns products that do not match a query string. For example, `category: {"not_contains": running shoe"}` will return all products that do not contain the query string, such as "red walking shoe", "sandals", and "boots". |
+| `is_any` | Returns products that match any value in a list of query values. For example, `"color": {"is_any": "black", "blue", "brown"}` will return any product that matches at least one query string, such as "black boots", "blue boots", "brown boots". |
+| `is_not_any` | Returns products that do not match any value in a list of query strings. For example, `"color": {"is_not_any": "black", "blue", "brown"}` will return any products that do not match any of the query values, such as "red boots", "yellow boots", and "green boots". |
+| `eq` | Returns products that exactly match a query value. For example, `"brand": {"eq": "Instagram"}` will only match "Instagram" brand products. |
+| `neq` | Returns products that do not exactly match a query value. For example, `"brand": {"eq": "Instagram"}` will only match products that are not "Instagram" brand products. |
 | `lt`  int | Returns products that are less than a numeric query value. For example, `"priority": {"lt": 3}` will only match products with a priority that is less than 3. |
 | `lte`  int | Returns products that are less than or equal to a numeric query value. For example, `"priority": {"lte": 3}` will only match products with a priority that is less than or equal to 3. |
 | `gt`  int | Returns products that are greater than a numeric query value. For example, `"priority": {"gt": 3}` will only match products with a priority that is greater than 3. |
 | `gte`  int | Returns products that are greater than or equal to a numeric query value. For example, `"priority": {"gte": 3}` will only match products with a priority that is greater than or equal to 3. |
-| `starts_with` | Returns products that match any string that starts with the query string. For example, `"small"` will return any product that starts with the query string, such as “small sandals”, “small t-shirt”, “small, blue boots”. **Note**: This filter option is now only available for the product category field. For other fields, you should use the `contains` filter. |
+| `starts_with` | Returns products that match any string that starts with the query string. For example, `"small"` will return any product that starts with the query string, such as "small sandals", "small t-shirt", "small, blue boots". **Note**: This filter option is now only available for the product category field. For other fields, you should use the `contains` filter. |
 
 ### Filter Examples
 
@@ -319,6 +319,6 @@ Each rule is a JSON-encoded string.
 
 | Rule | Description |
 | --- | --- |
-| {“category”: {“eq”: “Luggage & Bags”}} | Match all products within the “Luggage & Bags” category. |
-| {“retailer\_id”: {“is\_any”: [“pid1”, “pid2”]}} | Match all products with the retailer ID of pid1 or pid2. |
-| { “or”: [{“retailer\_product\_group\_id”: {“eq”: “group\_1”}},{“product\_type”: {“i\_contains”: “shirt”}}]} | Match all products with the `retailer_product_group_id` of group\_1 or `product_type` containing shirt. |
+| {"category": {"eq": "Luggage & Bags"}​} | Match all products within the "Luggage & Bags" category. |
+| {"retailer\_id": {"is\_any": ["pid1", "pid2"]}​} | Match all products with the retailer ID of pid1 or pid2. |
+| { "or": [{"retailer\_product\_group\_id": {"eq": "group\_1"}​},{"product\_type": {"i\_contains": "shirt"}​}]} | Match all products with the `retailer_product_group_id` of group\_1 or `product_type` containing shirt. |

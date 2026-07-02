@@ -70,11 +70,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/official_business_account' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/official_business_account' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -85,30 +85,30 @@ Select status code
 
 ```
 {  
-  "pending_status": {  
-    "summary": "Pending OBA application",  
-    "value": {  
-      "id": "1234567890123456",  
-      "oba_status": "PENDING",  
-      "status_message": "Your Official Business Account application is under review"  
-    }  
-  },  
-  "approved_status": {  
-    "summary": "Approved OBA status",  
-    "value": {  
-      "id": "2345678901234567",  
-      "oba_status": "APPROVED",  
-      "status_message": "Your Official Business Account has been approved"  
-    }  
-  },  
-  "rejected_status": {  
-    "summary": "Rejected OBA application",  
-    "value": {  
-      "id": "3456789012345678",  
-      "oba_status": "REJECTED",  
-      "status_message": "Your Official Business Account application was rejected. Please review the requirements and reapply."  
-    }  
-  }  
+  "pending_status": {  
+    "summary": "Pending OBA application",  
+    "value": {  
+      "id": "1234567890123456",  
+      "oba_status": "PENDING",  
+      "status_message": "Your Official Business Account application is under review"  
+    }  
+  },  
+  "approved_status": {  
+    "summary": "Approved OBA status",  
+    "value": {  
+      "id": "2345678901234567",  
+      "oba_status": "APPROVED",  
+      "status_message": "Your Official Business Account has been approved"  
+    }  
+  },  
+  "rejected_status": {  
+    "summary": "Rejected OBA application",  
+    "value": {  
+      "id": "3456789012345678",  
+      "oba_status": "REJECTED",  
+      "status_message": "Your Official Business Account application was rejected. Please review the requirements and reapply."  
+    }  
+  }  
 }
 ```
 
@@ -688,11 +688,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/official_business_account' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/official_business_account' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -703,30 +703,30 @@ Select status code
 
 ```
 {  
-  "pending_status": {  
-    "summary": "Pending OBA application",  
-    "value": {  
-      "id": "1234567890123456",  
-      "oba_status": "PENDING",  
-      "status_message": "Your Official Business Account application is under review"  
-    }  
-  },  
-  "approved_status": {  
-    "summary": "Approved OBA status",  
-    "value": {  
-      "id": "2345678901234567",  
-      "oba_status": "APPROVED",  
-      "status_message": "Your Official Business Account has been approved"  
-    }  
-  },  
-  "rejected_status": {  
-    "summary": "Rejected OBA application",  
-    "value": {  
-      "id": "3456789012345678",  
-      "oba_status": "REJECTED",  
-      "status_message": "Your Official Business Account application was rejected. Please review the requirements and reapply."  
-    }  
-  }  
+  "pending_status": {  
+    "summary": "Pending OBA application",  
+    "value": {  
+      "id": "1234567890123456",  
+      "oba_status": "PENDING",  
+      "status_message": "Your Official Business Account application is under review"  
+    }  
+  },  
+  "approved_status": {  
+    "summary": "Approved OBA status",  
+    "value": {  
+      "id": "2345678901234567",  
+      "oba_status": "APPROVED",  
+      "status_message": "Your Official Business Account has been approved"  
+    }  
+  },  
+  "rejected_status": {  
+    "summary": "Rejected OBA application",  
+    "value": {  
+      "id": "3456789012345678",  
+      "oba_status": "REJECTED",  
+      "status_message": "Your Official Business Account application was rejected. Please review the requirements and reapply."  
+    }  
+  }  
 }
 ```
 
@@ -778,18 +778,18 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/official_business_account' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "action": "SUBMIT_APPLICATION",  
-  "application_data": {  
-    "business_name": "Acme Corporation Ltd",  
-    "business_description": "Leading provider of innovative business solutions and consulting services",  
-    "website_url": "https://www.acmecorp.com",  
-    "contact_email": "business@acmecorp.com"  
-  }  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/official_business_account' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "action": "SUBMIT_APPLICATION",  
+  "application_data": {  
+    "business_name": "Acme Corporation Ltd",  
+    "business_description": "Leading provider of innovative business solutions and consulting services",  
+    "website_url": "https://www.acmecorp.com",  
+    "contact_email": "business@acmecorp.com"  
+  }  
 }'
 ```
 
@@ -801,32 +801,32 @@ Select status code
 
 ```
 {  
-  "successful_submission": {  
-    "summary": "Successful application submission",  
-    "value": {  
-      "success": true,  
-      "message": "Official Business Account application submitted successfully",  
-      "updated_status": {  
-        "id": "1234567890123456",  
-        "oba_status": "PENDING",  
-        "status_message": "Your Official Business Account application is under review"  
-      },  
-      "tracking_id": "oba_req_1234567890abcdef"  
-    }  
-  },  
-  "successful_withdrawal": {  
-    "summary": "Successful application withdrawal",  
-    "value": {  
-      "success": true,  
-      "message": "Official Business Account application withdrawn successfully",  
-      "updated_status": {  
-        "id": "1234567890123456",  
-        "oba_status": "CANCELLED",  
-        "status_message": "Official Business Account application has been cancelled"  
-      },  
-      "tracking_id": "oba_req_fedcba0987654321"  
-    }  
-  }  
+  "successful_submission": {  
+    "summary": "Successful application submission",  
+    "value": {  
+      "success": true,  
+      "message": "Official Business Account application submitted successfully",  
+      "updated_status": {  
+        "id": "1234567890123456",  
+        "oba_status": "PENDING",  
+        "status_message": "Your Official Business Account application is under review"  
+      },  
+      "tracking_id": "oba_req_1234567890abcdef"  
+    }  
+  },  
+  "successful_withdrawal": {  
+    "summary": "Successful application withdrawal",  
+    "value": {  
+      "success": true,  
+      "message": "Official Business Account application withdrawn successfully",  
+      "updated_status": {  
+        "id": "1234567890123456",  
+        "oba_status": "CANCELLED",  
+        "status_message": "Official Business Account application has been cancelled"  
+      },  
+      "tracking_id": "oba_req_fedcba0987654321"  
+    }  
+  }  
 }
 ```
 
@@ -1558,18 +1558,18 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/official_business_account' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "action": "SUBMIT_APPLICATION",  
-  "application_data": {  
-    "business_name": "Acme Corporation Ltd",  
-    "business_description": "Leading provider of innovative business solutions and consulting services",  
-    "website_url": "https://www.acmecorp.com",  
-    "contact_email": "business@acmecorp.com"  
-  }  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/official_business_account' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "action": "SUBMIT_APPLICATION",  
+  "application_data": {  
+    "business_name": "Acme Corporation Ltd",  
+    "business_description": "Leading provider of innovative business solutions and consulting services",  
+    "website_url": "https://www.acmecorp.com",  
+    "contact_email": "business@acmecorp.com"  
+  }  
 }'
 ```
 
@@ -1581,32 +1581,32 @@ Select status code
 
 ```
 {  
-  "successful_submission": {  
-    "summary": "Successful application submission",  
-    "value": {  
-      "success": true,  
-      "message": "Official Business Account application submitted successfully",  
-      "updated_status": {  
-        "id": "1234567890123456",  
-        "oba_status": "PENDING",  
-        "status_message": "Your Official Business Account application is under review"  
-      },  
-      "tracking_id": "oba_req_1234567890abcdef"  
-    }  
-  },  
-  "successful_withdrawal": {  
-    "summary": "Successful application withdrawal",  
-    "value": {  
-      "success": true,  
-      "message": "Official Business Account application withdrawn successfully",  
-      "updated_status": {  
-        "id": "1234567890123456",  
-        "oba_status": "CANCELLED",  
-        "status_message": "Official Business Account application has been cancelled"  
-      },  
-      "tracking_id": "oba_req_fedcba0987654321"  
-    }  
-  }  
+  "successful_submission": {  
+    "summary": "Successful application submission",  
+    "value": {  
+      "success": true,  
+      "message": "Official Business Account application submitted successfully",  
+      "updated_status": {  
+        "id": "1234567890123456",  
+        "oba_status": "PENDING",  
+        "status_message": "Your Official Business Account application is under review"  
+      },  
+      "tracking_id": "oba_req_1234567890abcdef"  
+    }  
+  },  
+  "successful_withdrawal": {  
+    "summary": "Successful application withdrawal",  
+    "value": {  
+      "success": true,  
+      "message": "Official Business Account application withdrawn successfully",  
+      "updated_status": {  
+        "id": "1234567890123456",  
+        "oba_status": "CANCELLED",  
+        "status_message": "Official Business Account application has been cancelled"  
+      },  
+      "tracking_id": "oba_req_fedcba0987654321"  
+    }  
+  }  
 }
 ```
 

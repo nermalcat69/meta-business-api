@@ -98,43 +98,41 @@ curl -X GET "https://graph.facebook.com/v25.0/me/messenger_profile?fields=ice_br
 ### New Format Response
 
 ```
-```
 {  
-   "data": [  
-        {  
-          "call_to_actions" : [  
-               {  
-                "question": "<QUESTION>",  
-                "payload": "<PAYLOAD>",  
+   "data": [  
+        {  
+          "call_to_actions" : [  
+               {  
+                "question": "<QUESTION>",  
+                "payload": "<PAYLOAD>",  
   
-               },  
-               {  
-                "question": "<QUESTION>",  
-                "payload": "<PAYLOAD>",  
+               },  
+               {  
+                "question": "<QUESTION>",  
+                "payload": "<PAYLOAD>",  
   
-               },  
-          ],  
-          "locale": "<LOCALE>",  
-      },  
-      {  
-          "call_to_actions" : [  
-               {  
-                "question": "<QUESTION>",  
-                "payload": "<PAYLOAD>",  
+               },  
+          ],  
+          "locale": "<LOCALE>",  
+      },  
+      {  
+          "call_to_actions" : [  
+               {  
+                "question": "<QUESTION>",  
+                "payload": "<PAYLOAD>",  
   
-               },  
-               {  
-                "question": "<QUESTION>",  
-                "payload": "<PAYLOAD>",  
+               },  
+               {  
+                "question": "<QUESTION>",  
+                "payload": "<PAYLOAD>",  
   
-               },  
-          ],  
-          "locale": "<LOCALE>",  
-        ...  
-      }  
-   ]  
+               },  
+          ],  
+          "locale": "<LOCALE>",  
+        ...  
+      }  
+   ]  
 }
-```
 ```
 
 ### Existing Format Response

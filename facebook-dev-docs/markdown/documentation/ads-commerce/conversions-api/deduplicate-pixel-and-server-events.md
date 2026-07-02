@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/conversio
 
 Updated: Feb 27, 2026
 
-Dataset Quality API for offline events provides a breakdown of the score and recommendations by several quality dimensions, including match key coverage, frequency, and freshness. An optimal event setup allows for the collection of high-quality data, which is essential for the ad system’s performance.
+Dataset Quality API for offline events provides a breakdown of the score and recommendations by several quality dimensions, including match key coverage, frequency, and freshness. An optimal event setup allows for the collection of high-quality data, which is essential for the ad system's performance.
 
 A high-quality Conversions API multichannel setup will enable advertisers to use omnichannel ads, which is the solution that lets you drive in-store and website sales using one sales campaign.
 
@@ -24,7 +24,7 @@ Partners and agencies may use the Dataset Quality API to provide a quality dashb
 * In Business Manager, go to the Users section and select the **System User** tab. Click on the specific system user you are using for the Conversions API.
 * Go to the Assign Asset dialog and choose **Pixels**. Then, select the pixels you want to send events on behalf of.
 * For each pixel, select the Manage Pixel permission, and click **Save Changes**.
-* Go back to your system user’s details page. Verify that the selected pixels are visible there.
+* Go back to your system user's details page. Verify that the selected pixels are visible there.
 * To generate the access token, follow instructions [here⁠](https://www.facebook.com/business/help/503306463479099?id=2190812977867143).
 
 #### Partner Platform Authentication
@@ -33,15 +33,15 @@ You must first request authorization to send events on behalf of your clients. Y
 
 ##### Facebook Login for Business (Recommended)
 
-[Facebook Login for Business](https://developers.facebook.com/documentation/facebook-login/facebook-login-for-business) is the preferred authentication and authorization solution for tech providers and business app developers who need access to their business clients’ assets. It allows you to specify the access token type, types of assets, and permissions your app needs, and save it as a set (configuration). You can then present the set to your business clients to complete the flow and grant your app access to their business assets.
+[Facebook Login for Business](https://developers.facebook.com/documentation/facebook-login/facebook-login-for-business) is the preferred authentication and authorization solution for tech providers and business app developers who need access to their business clients' assets. It allows you to specify the access token type, types of assets, and permissions your app needs, and save it as a set (configuration). You can then present the set to your business clients to complete the flow and grant your app access to their business assets.
 
 ##### Meta Business Extension (Recommended)
 
-With this option, [Meta Business Extension](https://developers.facebook.com/docs/facebook-business-extension) (MBE) returns all the necessary information needed to send events on behalf of the client. MBE provides an endpoint to retrieve system user access tokens created in the client’s Business Manager. This process includes permissions to send server events and is done automatically and securely. MBE is currently under beta. Please contact your Meta representative for access.
+With this option, [Meta Business Extension](https://developers.facebook.com/docs/facebook-business-extension) (MBE) returns all the necessary information needed to send events on behalf of the client. MBE provides an endpoint to retrieve system user access tokens created in the client's Business Manager. This process includes permissions to send server events and is done automatically and securely. MBE is currently under beta. Please contact your Meta representative for access.
 
 The endpoint requires a user access token as an input parameter. If you are a new MBE user, call this endpoint to fetch the system user access token after you have finished setting up MBE. Existing users need to ask for re-authentication before calling the new API endpoint.
 
-##### Client Sharing of a Meta Pixel to Partner’s Business Manager
+##### Client Sharing of a Meta Pixel to Partner's Business Manager
 
 With this option, the client shares their Meta Pixel to the partner using Business Manager settings or by the [API](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ads-pixel/shared_accounts). Then, the partner can assign the partner system user to the client pixel and [generate an access token to send server events](https://developers.facebook.com/documentation/ads-commerce/conversions-api/set-up-conversions-api-as-a-platform#get-started).
 
@@ -95,43 +95,39 @@ GET/v25.0/dataset_quality?dataset_id=<DATASET_ID>&fields=offline
 **cURL**
 
 ```
-```
-curl -X GET \  
-https://graph.facebook.com/v23.0/dataset_quality?dataset_id=<DATASET_ID> \  
--F 'agent_name="My Agent Name"'\  
--F 'fields="offline"'\  
--F 'access_token=<ACCESS_TOKEN>'
-```
+curl -X GET \  
+https://graph.facebook.com/v23.0/dataset_quality?dataset_id=<DATASET_ID> \  
+-F 'agent_name="My Agent Name"'\  
+-F 'fields="offline"'\  
+-F 'access_token=<ACCESS_TOKEN>'
 ```
 
 **Sample Response**
 
 ```
-```
 {  
- "offline": [  
-    {  
-      "event_name": "Purchase",  
-      "composite": {  
-         "score": 6.6,  
-         "recommendation": "Your offline data quality score is ok, but could be improved."  
-      },  
-      "match_key": {  
-         "score": 5.6,  
-         "recommendation": "Sending email and phone number parameters can help improve your match key score."  
-      },  
-      "frequency":  {  
-         "score": 4.6,  
-         "recommendation": "Sharing your offline data more often can help improve your frequency score and help you get better ad outcomes."  
-      },  
-      "freshness":  {  
-         "score": 2.2,  
-         "recommendation": "Sending your most recent offline conversion data sooner can help improve your score and help you get better ad outcomes."  
-      }  
-    }  
-  ],  
+ "offline": [  
+    {  
+      "event_name": "Purchase",  
+      "composite": {  
+         "score": 6.6,  
+         "recommendation": "Your offline data quality score is ok, but could be improved."  
+      },  
+      "match_key": {  
+         "score": 5.6,  
+         "recommendation": "Sending email and phone number parameters can help improve your match key score."  
+      },  
+      "frequency":  {  
+         "score": 4.6,  
+         "recommendation": "Sharing your offline data more often can help improve your frequency score and help you get better ad outcomes."  
+      },  
+      "freshness":  {  
+         "score": 2.2,  
+         "recommendation": "Sending your most recent offline conversion data sooner can help improve your score and help you get better ad outcomes."  
+      }  
+    }  
+  ],  
 }
-```
 ```
 
 ### Example
@@ -141,27 +137,23 @@ Scenario: You only want the event names and the composite scores for each event.
 **Graph API Explorer**
 
 ```
-```
-GET/v23.0/dataset_quality?dataset_id=<DATASET_ID>&fields=offline{event_name, composite}
-```
+GET/v23.0/dataset_quality?dataset_id=<DATASET_ID>&fields=offline{event_name, composite}
 ```
 
 **Sample Response**
 
 ```
-```
 {  
-  "offline": [  
-    {  
-      "event_name": "Purchase",  
-      "composite": {  
-        "score": 6.6,  
-        "recommendation": "Your offline data quality score is ok, but could be improved."  
-      },  
-    }  
-  ],  
+  "offline": [  
+    {  
+      "event_name": "Purchase",  
+      "composite": {  
+        "score": 6.6,  
+        "recommendation": "Your offline data quality score is ok, but could be improved."  
+      },  
+    }  
+  ],  
 }
-```
 ```
 
 ### Example
@@ -171,31 +163,27 @@ Scenario: You only want the event names and the match key scores, recommendation
 **Graph API Explorer**
 
 ```
-```
-GET/v23.0/dataset_quality?dataset_id=<DATASET_ID>&fields=offline{event_name, match_key}
-```
+GET/v23.0/dataset_quality?dataset_id=<DATASET_ID>&fields=offline{event_name, match_key}
 ```
 
 **Sample Response**
 
 ```
-```
 {  
-   "offline": [  
-    {  
-  "event_name": "Purchase",  
-   "match_key":  {  
-             "score": 6.6,  
-             "recommendation": "Send email and phone parameters to help improve your match key score." },  
-             "coverage" : {  
-                     "email": 100.0  
-                     "phone": 90.0  
-              }  
-        }  
-    }  
-  ]  
+   "offline": [  
+    {  
+  "event_name": "Purchase",  
+   "match_key":  {  
+             "score": 6.6,  
+             "recommendation": "Send email and phone parameters to help improve your match key score." },  
+             "coverage" : {  
+                     "email": 100.0  
+                     "phone": 90.0  
+              }  
+        }  
+    }  
+  ]  
 }
-```
 ```
 
 ## Error Codes
@@ -204,8 +192,8 @@ The following error codes may be returned when creating a dataset:
 
 | Error Code | Description |
 | --- | --- |
-| `2044055` | The `dataset_id` that was inputted doesn’t exist. |
-| `10` | The application doesn’t have permission for this action. |
+| `2044055` | The `dataset_id` that was inputted doesn't exist. |
+| `10` | The application doesn't have permission for this action. |
 
 ## Other Resources
 

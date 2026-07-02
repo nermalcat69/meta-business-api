@@ -37,7 +37,7 @@ Each [fulfilled shipment](https://developers.facebook.com/documentation/ads-comm
 * Include all items shipped in the same parcel in the same shipment API call.
 * Identify your shipment with your fulfillment system ID using `external_shipment_id`.
 
-This requirement also means you won’t be able to:
+This requirement also means you won't be able to:
 
 * Use the same tracking number in two different fulfillment API calls.
 * Change items shipped in a parcel.
@@ -47,7 +47,7 @@ This requirement also means you won’t be able to:
 | Single/Multi-item > single parcel | [One API call](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/order-management/fulfillment-api#attach_shipment) to attach the shipment to the order. |
 | Multi-item > multi parcel | [Multiple API calls](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/order-management/fulfillment-api#attach_shipment) to attach each item(s) to the different shipments to the order. |
 | Single/Multi-item where tracking information needs to be updated | If you need to update your tracking information after fulfilling it, you can do it by using your `external_shipment_id` and change tracking number, carrier, or shipping method. |
-| Multi-item item > single parcel, but API call didn’t include all shipped items (human/system error) | The tracking number should be unique, so you need to make an [API call](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/order-management/fulfillment-api#attach_shipment) to fulfill the remaining shipped items using a new or variant of the tracking number; for example:   * Incomplete shipment tracking number: `ship X` * Tracking number (fulfilling the items shipped by missing the first API call): `ship X-2`   This should be used only to fix a condition your system shouldn’t allow. Be prepared to respond to customer inquiries about bad tracking numbers. |
+| Multi-item item > single parcel, but API call didn't include all shipped items (human/system error) | The tracking number should be unique, so you need to make an [API call](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/order-management/fulfillment-api#attach_shipment) to fulfill the remaining shipped items using a new or variant of the tracking number; for example:   * Incomplete shipment tracking number: `ship X` * Tracking number (fulfilling the items shipped by missing the first API call): `ship X-2`   This should be used only to fix a condition your system shouldn't allow. Be prepared to respond to customer inquiries about bad tracking numbers. |
 
 ## Update estimated taxes
 
@@ -57,7 +57,7 @@ You can get the estimated and actual payment and tax details by using this reque
 
 ```
 curl -X GET -G \
-  -d 'fields="estimated_payment_details,items{tax_details},shipments{items{tax}}"' \
+  -d 'fields="estimated_payment_details,items{tax_details},shipments{items{tax}​}"' \
   -d 'access_token=<ACCESS_TOKEN>' \
   https://graph.facebook.com/{order-id}
 ```
@@ -140,7 +140,7 @@ curl -X GET -G \
 | `order`/`estimated_payment_details`/ `tax` | Total amount for items, shipment, and taxes, at the time of order creation. These estimated values never change. |
 | `item`/`estimated_tax` | Total estimated tax for this particular item (all quantities), calculated during order creation. This estimated tax never changes. |
 | `items`/`captured_tax` | When this item is partially or fully fulfilled, `captured_tax` represents final taxes captured for this item, for the quantities that have been shipped as of this moment. |
-| `shipments`/`items`/`tax` | When an order has multiple shipments, each shipment corresponds to one payment. Thus, this is the sum of `item`/`captured_tax` included in each shipment. This tax amount never changes, as it was already captured and you can’t change the items in a shipment. |
+| `shipments`/`items`/`tax` | When an order has multiple shipments, each shipment corresponds to one payment. Thus, this is the sum of `item`/`captured_tax` included in each shipment. This tax amount never changes, as it was already captured and you can't change the items in a shipment. |
 
 For example, in the [response](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/best-practices/post-purchase#response) above, where `retailer_id` is `item_A` and `quantity` is `10`:
 

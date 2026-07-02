@@ -9,11 +9,11 @@ Updated: Jun 30, 2026
 
 # Content Delivery Reports API
 
-Delivery reports provide approximate impressions information at the content level. Delivery reports give greater transparency into where advertisers’ ads appeared.
+Delivery reports provide approximate impressions information at the content level. Delivery reports give greater transparency into where advertisers' ads appeared.
 
-While Meta applies brand suitability controls, Meta can’t guarantee that all content will be compliant or aligned with advertisers’ unique brand suitability standards.
+While Meta applies brand suitability controls, Meta can't guarantee that all content will be compliant or aligned with advertisers' unique brand suitability standards.
 
-You can see what Meta content an advertiser’s ads appeared next to or within by downloading content delivery reports, either for all publishers in a placement or specific publishers. Meta provides an IDs report that you can use to see the content.
+You can see what Meta content an advertiser's ads appeared next to or within by downloading content delivery reports, either for all publishers in a placement or specific publishers. Meta provides an IDs report that you can use to see the content.
 
 The following documentation is available for you to review or share with advertisers. Differences are to be expected as this content-delivery-report page is curated for Meta business partners.
 
@@ -33,32 +33,28 @@ The returned date times do not necessarily mean a specific ad campaign has data 
 **Sample Request**
 
 ```
-```
-GET /content_delivery_report_date_ranges  
+GET /content_delivery_report_date_ranges  
 ?platform=facebook  
 &position=instream_video  
 &fields=earliest_datetime,latest_datetime
-```
 ```
 
 **Sample Response**
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "earliest_datetime": "2025-04-07T00:00",  
-      "latest_datetime": "2025-04-21T23:00"  
-    }  
-  ]  
+  "data": [  
+    {  
+      "earliest_datetime": "2025-04-07T00:00",  
+      "latest_datetime": "2025-04-21T23:00"  
+    }  
+  ]  
 }
-```
 ```
 
 ### Get an ad set-level content delivery report
 
-This API requires “read” (that is, “View Performance”) permission on the ad account.
+This API requires "read" (that is, "View Performance") permission on the ad account.
 
 #### Purpose
 
@@ -83,7 +79,7 @@ The data body returns a `List<ContentDeliveryReportNode>`. The node structs and 
 | `creator_id` | `fbid` | Y | The Unique ID of the creator or FB page |
 | `estimated_impressions`\* | integer | Y | The sum of the ad impressions served on the content |
 
-\*`Estimated_impressions` is listed as an “estimated” number of impressions, due to Meta’s backend calculating this number in semi-real time. The estimated impressions number matches what Meta shows in Meta’s own reporting and ads billing.
+\*`Estimated_impressions` is listed as an "estimated" number of impressions, due to Meta's backend calculating this number in semi-real time. The estimated impressions number matches what Meta shows in Meta's own reporting and ads billing.
 
 #### Summary
 
@@ -97,90 +93,82 @@ Always returned by default. Set the summary field to `false` (`summary=false`) t
 
 #### Permissions
 
-Requires “View Performance” access to the ad account.
+Requires "View Performance" access to the ad account.
 
 Get an ad set level content delivery report for a specific placement and datetime. Replace `ad_set_id` with the ad set ID for the report. And ensure the `datetime` is within the available date range returned from the date ranges API:
 
 **Sample Request - Facebook In-stream Video**
 
 ```
-```
-GET /{ad_set_id}/content_delivery_report  
+GET /{ad_set_id}/content_delivery_report  
 ?platform=facebook  
 &position=instream_video  
 &datetime=2025-04-21T23:00  
 &fields=content_id,creator_id,estimated_impressions  
 &summary=true
 ```
-```
 
 **Sample Response**
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "content_id": "<CONTENT_ID>",  
-      "creator_id": "<CREATOR_ID>",  
-      "estimated_impressions": 13443  
-    },  
-    {  
-      "content_id": "<CONTENT_ID_2>",  
-      "creator_id": "<CREATOR_ID>",  
-      "estimated_impressions": 13391  
-    }  
-    ...  
-  ],  
-  ...  
-  "summary": {  
-    "total_count": 5168,  
-    "earliest_datetime": "2025-04-07T00:00",  
-    "latest_datetime": "2025-04-21T23:00"  
-  }  
+  "data": [  
+    {  
+      "content_id": "<CONTENT_ID>",  
+      "creator_id": "<CREATOR_ID>",  
+      "estimated_impressions": 13443  
+    },  
+    {  
+      "content_id": "<CONTENT_ID_2>",  
+      "creator_id": "<CREATOR_ID>",  
+      "estimated_impressions": 13391  
+    }  
+    ...  
+  ],  
+  ...  
+  "summary": {  
+    "total_count": 5168,  
+    "earliest_datetime": "2025-04-07T00:00",  
+    "latest_datetime": "2025-04-21T23:00"  
+  }  
 }
-```
 ```
 
 **Sample Request - Facebook Ads on Reels**
 
 ```
-```
-GET /{ad_set_id}/content_delivery_report  
+GET /{ad_set_id}/content_delivery_report  
 ?platform=facebook  
 &position=facebook_reels_overlay  
 &datetime=2025-04-21T23:00  
 &fields=content_id,creator_id,estimated_impressions  
 &summary=true
 ```
-```
 
 **Sample Response**
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "content_id": "<CONTENT_ID>",  
-      "creator_id": "<CREATOR_ID>",  
-      "estimated_impressions": 13443  
-    },  
-    {  
-      "content_id": "<CONTENT_ID_2>",  
-      "creator_id": "<FB_CREATOR_ID>",  
-      "estimated_impressions": 13391  
-    }  
-    ...  
-  ],  
-  ...  
-  "summary": {  
-    "total_count": 5168,  
-    "earliest_datetime": "2025-04-07T00:00",  
-    "latest_datetime": "2025-04-21T23:00"  
-  }  
+  "data": [  
+    {  
+      "content_id": "<CONTENT_ID>",  
+      "creator_id": "<CREATOR_ID>",  
+      "estimated_impressions": 13443  
+    },  
+    {  
+      "content_id": "<CONTENT_ID_2>",  
+      "creator_id": "<FB_CREATOR_ID>",  
+      "estimated_impressions": 13391  
+    }  
+    ...  
+  ],  
+  ...  
+  "summary": {  
+    "total_count": 5168,  
+    "earliest_datetime": "2025-04-07T00:00",  
+    "latest_datetime": "2025-04-21T23:00"  
+  }  
 }
-```
 ```
 
 ## Error codes
@@ -223,30 +211,26 @@ Fetch metadata and downloadable source file for an individual video on Facebook.
 **Sample Request**
 
 ```
-```
-GET /{video_id}  
+GET /{video_id}  
 ?fields=permalink_url,source,created_time,updated_time,from,description,picture
-```
 ```
 
 **Sample Response**
 
 ```
-```
 {  
-  "permalink_url": "/brookselitelandscapes/videos/773275220658768/",  
-  "source": "https://video-sjc3-1.xx.fbcdn.net/v/t39.25447-2/296672208_3302846743372673_5139359605630684497_n.mp4?_nc_cat=102&vs=16d3a1916d225711&_nc_vs=HBksFQAYJEdORGJyaEdCNF9MdTY3c0xBRkhObS1KVXJGSkhibWRqQUFBRhUAAsgBABUAGCRHTWREcWhGdTM0WUhPNkVBQUo2S25RNlNqWlVwYnJGcUFBQUYVAgLIAQBLBogScHJvZ3Jlc3NpdmVfcmVjaXBlATENc3Vic2FtcGxlX2ZwcwAQdm1hZl9lbmFibGVfbnN1YgAgbWVhc3VyZV9vcmlnaW5hbF9yZXNvbHV0aW9uX3NzaW0AKGNvbXB1dGVfc3NpbV9vbmx5X2F0X29yaWdpbmFsX3Jlc29sdXRpb24AEWRpc2FibGVfcG9zdF9wdnFzABUAJQAcAAAmlqmRwqfdzQMVAigKc2FuZGNhc3RsZRgLdnRzX3ByZXZpZXccF0BdEQYk3S8bGClkYXNoX2k0bGl0ZWJhc2ljXzVzZWNnb3BfaHEyX2ZyYWdfMl92aWRlbxIAGBh2aWRlb3MudnRzLmNhbGxiYWNrLnByb2Q4ElZJREVPX1ZJRVdfUkVRVUVTVBsKiBVvZW1fdGFyZ2V0X2VuY29kZV90YWcGb2VwX2hkE29lbV9yZXF1ZXN0X3RpbWVfbXMBMAxvZW1fY2ZnX3J1bGUHdW5tdXRlZBNvZW1fcm9pX3JlYWNoX2NvdW50BDMxOTERb2VtX2lzX2V4cGVyaW1lbnQADG9lbV92aWRlb19pZA83NzMyNzUyMjA2NTg3NjgSb2VtX3ZpZGVvX2Fzc2V0X2lkEDUyMjg2MjA5NTcxNzU0NDEVb2VtX3ZpZGVvX3Jlc291cmNlX2lkEDEwMTUzNTI3NTI0ODI4OTEcb2VtX3NvdXJjZV92aWRlb19lbmNvZGluZ19pZBAxMzc4NTMyODI1OTY4OTUxDnZ0c19yZXF1ZXN0X2lkACUCHAAlxAEbB4gBcwQ3OTA1AmNkCjIwMjItMDctMjgDcmNiBDMxMDADYXBwE0ZhY2Vib29rIGZvciBpUGhvbmUCY3QZQ09OVEFJTkVEX1BPU1RfQVRUQUNITUVOVBNvcmlnaW5hbF9kdXJhdGlvbl9zBzExNi4zMDkCdHMVcHJvZ3Jlc3NpdmVfZW5jb2RpbmdzAA%3D%3D&ccb=1-7&_nc_sid=41a7d5&efg=eyJ2ZW5jb2RlX3RhZyI6Im9lcF9oZCJ9&_nc_ohc=czalgyZgc1YAX9VjHuC&_nc_ht=video-sjc3-1.xx&oh=00_AT--2EefgQ54VCSNMmiSpC2I3rLV5IWuHQBWZv63sB-qKw&oe=62F039D4&_nc_rid=401297287969366",  
-  "created_time": "2022-07-28T23:29:13+0000",  
-  "updated_time": "2022-08-02T22:34:22+0000",  
-  "from": {  
-    "name": "Brooks Elite Landscapes",  
-    "id": "332104164111679"  
-  },  
-  "description": "👋 Welcome to our next job site in Mechanicsville!",  
-  "picture": "https://scontent-sjc3-1.xx.fbcdn.net/v/t15.5256-10/296266458_3171248163095396_202928376065076133_n.jpg?stp=dst-jpg_s160x160&_nc_cat=101&ccb=1-7&_nc_sid=08861d&_nc_ohc=XcFNSij3VIUAX-WxgHV&_nc_ht=scontent-sjc3-1.xx&oh=00_AT-mZFUSES-e5dX0AKzhKZUuebsrTgilMYBWPSubpe_2SQ&oe=62F03711",  
-  "id": "773275220658768"  
+  "permalink_url": "/brookselitelandscapes/videos/773275220658768/",  
+  "source": "https://video-sjc3-1.xx.fbcdn.net/v/t39.25447-2/296672208_3302846743372673_5139359605630684497_n.mp4?_nc_cat=102&vs=16d3a1916d225711&_nc_vs=HBksFQAYJEdORGJyaEdCNF9MdTY3c0xBRkhObS1KVXJGSkhibWRqQUFBRhUAAsgBABUAGCRHTWREcWhGdTM0WUhPNkVBQUo2S25RNlNqWlVwYnJGcUFBQUYVAgLIAQBLBogScHJvZ3Jlc3NpdmVfcmVjaXBlATENc3Vic2FtcGxlX2ZwcwAQdm1hZl9lbmFibGVfbnN1YgAgbWVhc3VyZV9vcmlnaW5hbF9yZXNvbHV0aW9uX3NzaW0AKGNvbXB1dGVfc3NpbV9vbmx5X2F0X29yaWdpbmFsX3Jlc29sdXRpb24AEWRpc2FibGVfcG9zdF9wdnFzABUAJQAcAAAmlqmRwqfdzQMVAigKc2FuZGNhc3RsZRgLdnRzX3ByZXZpZXccF0BdEQYk3S8bGClkYXNoX2k0bGl0ZWJhc2ljXzVzZWNnb3BfaHEyX2ZyYWdfMl92aWRlbxIAGBh2aWRlb3MudnRzLmNhbGxiYWNrLnByb2Q4ElZJREVPX1ZJRVdfUkVRVUVTVBsKiBVvZW1fdGFyZ2V0X2VuY29kZV90YWcGb2VwX2hkE29lbV9yZXF1ZXN0X3RpbWVfbXMBMAxvZW1fY2ZnX3J1bGUHdW5tdXRlZBNvZW1fcm9pX3JlYWNoX2NvdW50BDMxOTERb2VtX2lzX2V4cGVyaW1lbnQADG9lbV92aWRlb19pZA83NzMyNzUyMjA2NTg3NjgSb2VtX3ZpZGVvX2Fzc2V0X2lkEDUyMjg2MjA5NTcxNzU0NDEVb2VtX3ZpZGVvX3Jlc291cmNlX2lkEDEwMTUzNTI3NTI0ODI4OTEcb2VtX3NvdXJjZV92aWRlb19lbmNvZGluZ19pZBAxMzc4NTMyODI1OTY4OTUxDnZ0c19yZXF1ZXN0X2lkACUCHAAlxAEbB4gBcwQ3OTA1AmNkCjIwMjItMDctMjgDcmNiBDMxMDADYXBwE0ZhY2Vib29rIGZvciBpUGhvbmUCY3QZQ09OVEFJTkVEX1BPU1RfQVRUQUNITUVOVBNvcmlnaW5hbF9kdXJhdGlvbl9zBzExNi4zMDkCdHMVcHJvZ3Jlc3NpdmVfZW5jb2RpbmdzAA%3D%3D&ccb=1-7&_nc_sid=41a7d5&efg=eyJ2ZW5jb2RlX3RhZyI6Im9lcF9oZCJ9&_nc_ohc=czalgyZgc1YAX9VjHuC&_nc_ht=video-sjc3-1.xx&oh=00_AT--2EefgQ54VCSNMmiSpC2I3rLV5IWuHQBWZv63sB-qKw&oe=62F039D4&_nc_rid=401297287969366",  
+  "created_time": "2022-07-28T23:29:13+0000",  
+  "updated_time": "2022-08-02T22:34:22+0000",  
+  "from": {  
+    "name": "Brooks Elite Landscapes",  
+    "id": "332104164111679"  
+  },  
+  "description": "👋 Welcome to our next job site in Mechanicsville!",  
+  "picture": "https://scontent-sjc3-1.xx.fbcdn.net/v/t15.5256-10/296266458_3171248163095396_202928376065076133_n.jpg?stp=dst-jpg_s160x160&_nc_cat=101&ccb=1-7&_nc_sid=08861d&_nc_ohc=XcFNSij3VIUAX-WxgHV&_nc_ht=scontent-sjc3-1.xx&oh=00_AT-mZFUSES-e5dX0AKzhKZUuebsrTgilMYBWPSubpe_2SQ&oe=62F03711",  
+  "id": "773275220658768"  
 }
-```
 ```
 
 ### Page API
@@ -260,35 +244,31 @@ Fetch detailed information about a page on Facebook.
 **Sample Request**
 
 ```
-```
-GET /{page_id}  
+GET /{page_id}  
 ?fields=name,about,business,category,link
-```
 ```
 
 **Sample Response**
 
 ```
-```
 {  
-  "name": "Capital T Industries",  
-  "about": "We own the earth.",  
-  "business": {  
-    "id": "981914045859716",  
-    "name": "Capital T Industries"  
-  },  
-  "category": "Computer Company",  
-  "link": "https://www.facebook.com/1955398231373718",  
-  "id": "1955398231373718"  
+  "name": "Capital T Industries",  
+  "about": "We own the earth.",  
+  "business": {  
+    "id": "981914045859716",  
+    "name": "Capital T Industries"  
+  },  
+  "category": "Computer Company",  
+  "link": "https://www.facebook.com/1955398231373718",  
+  "id": "1955398231373718"  
 }
-```
 ```
 
 ## Additional useful documentation
 
 [Graph API - Overview](https://developers.facebook.com/docs/graph-api/overview)
 
-For a user-friendly, interactive UI, try out [Meta’s Graph API Explorer](https://developers.facebook.com/tools/explorer/)
+For a user-friendly, interactive UI, try out [Meta's Graph API Explorer](https://developers.facebook.com/tools/explorer/)
 
 [Marketing API | Best Practices](https://developers.facebook.com/documentation/ads-commerce/marketing-api/best-practices)
 
@@ -316,7 +296,7 @@ A: [Graph API Reference: Campaign | Adsets](https://developers.facebook.com/docu
 
 Q: Does the Content Delivery report (CDR) API contain an `advertiser_time_zone` field like in Adjacent CDR?
 
-A: No, Meta expects partners to choose the correct date time according to their advertiser’s time zone. The datetimes entered into the CDR API should be in Pacific Time (PT).
+A: No, Meta expects partners to choose the correct date time according to their advertiser's time zone. The datetimes entered into the CDR API should be in Pacific Time (PT).
 
 Q: How do you link data across various datasets (marketing API, to ad impressions and campaign information, to content)?
 
@@ -330,6 +310,6 @@ Q: What parameters are needed for the API?
 
 A: The two required parameters are platform and position. The date field is optional and will use the most recent data available if omitted.
 
-Q: How can an advertiser grant “read” (that is, “View Performance”) access to an ad account?
+Q: How can an advertiser grant "read" (that is, "View Performance") access to an ad account?
 
-A: An advertiser can grant READ access to a partner for their ad account using the “Assign Partners” button in Business Setting.
+A: An advertiser can grant READ access to a partner for their ad account using the "Assign Partners" button in Business Setting.

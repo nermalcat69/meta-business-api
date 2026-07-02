@@ -37,18 +37,16 @@ https://graph.facebook.com/v25.0/<BUSINESS_ID>/fields=commerce_merchant_settings
 **Sample Response**
 
 ```
-```
 {  
-  "id": "123456789"  
+  "id": "123456789"  
 }
-```
 ```
 
 If your seller has more than one commerce merchant settings you can query Instagram channel or page name to verify where orders are coming from.
 
 ## Get Page, Catalog IDs
 
-You can read a seller’s settings by ID. The onsite\_commerce\_merchant field is only returned for Shops configured for onsite Checkout.
+You can read a seller's settings by ID. The onsite\_commerce\_merchant field is only returned for Shops configured for onsite Checkout.
 
 **Sample Request**
 
@@ -63,33 +61,29 @@ https://graph.facebook.com/v25.0/<CMS_ID>?fields=merchant_page,product_catalogs
 Shop configured for onsite Checkout:
 
 ```
-```
 {  
-  "merchant_page": {  
-    "id": "4040",  
-    "name": "Checkout Page"  
-  },  
-  "product_catalogs": {  
-    "data": [  
-      {  
-        "id": "33799",  
-        "name": "Products for Checkout"  
-      }  
-    ]  
-  },  
-  "id": "1234567890"  
+  "merchant_page": {  
+    "id": "4040",  
+    "name": "Checkout Page"  
+  },  
+  "product_catalogs": {  
+    "data": [  
+      {  
+        "id": "33799",  
+        "name": "Products for Checkout"  
+      }  
+    ]  
+  },  
+  "id": "1234567890"  
 }
-```
 ```
 
 Shop not configured for onsite Checkout (old Shops API):
 
 ```
-```
 {  
-  "id": "1234567890"  
+  "id": "1234567890"  
 }
-```
 ```
 
 Otherwise a relevant error message will be returned.
@@ -109,15 +103,13 @@ https://graph.facebook.com/v25.0/<PAGE_ID>?fields=business
 **Sample Response**
 
 ```
-```
 {  
-  "business": {  
-    "id": "1234567890123",  
-    "name": "A merchant business name"  
-  },  
-  "id": "1234567890"  
+  "business": {  
+    "id": "1234567890123",  
+    "name": "A merchant business name"  
+  },  
+  "id": "1234567890"  
 }
-```
 ```
 
 ## Facebook Channel
@@ -133,21 +125,19 @@ https://graph.facebook.com/v25.0/<CMS_ID>?fields=facebook_channel
 **Sample Response**
 
 ```
-```
 {  
-  "facebook_channel": {  
-    "pages": {  
-      "data": [  
-        {  
-          "name": "Checkout Page",  
-          "id": "4040"  
-        }  
-      ]  
-    }  
-  },  
-  "id": "123456789890"  
+  "facebook_channel": {  
+    "pages": {  
+      "data": [  
+        {  
+          "name": "Checkout Page",  
+          "id": "4040"  
+        }  
+      ]  
+    }  
+  },  
+  "id": "123456789890"  
 }
-```
 ```
 
 ## Instagram Channel
@@ -163,20 +153,18 @@ https://graph.facebook.com/v25.0/<CMS_ID>?fields=instagram_channel
 **Sample Response**
 
 ```
-```
 {  
-  "instagram_channel": {  
-    "instagram_users": {  
-      "data": [  
-        {  
-          "id": "1234"  
-        }  
-      ]  
-    }  
-  },  
-  "id": "123456789890"  
+  "instagram_channel": {  
+    "instagram_users": {  
+      "data": [  
+        {  
+          "id": "1234"  
+        }  
+      ]  
+    }  
+  },  
+  "id": "123456789890"  
 }
-```
 ```
 
 ## Onsite or Offsite Configuration
@@ -226,7 +214,7 @@ https://graph.facebook.com/v25.0/<MERCHANT_SETTINGS_ID>/?fields=setup_status
 | --- | --- | --- |
 | `shop_setup` | [`shop_setup_status`](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/platforms/distribution#shop_setup_status) | Status of the Commerce account. |
 | `payment_setup` | [`payment_setup_status`](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/platforms/distribution#payment_setup_status) | Status of the seller payment details. |
-| `review_status` | [`review_status`](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/platforms/distribution#review_status) | Status of Facebook’s seller integrity review. |
+| `review_status` | [`review_status`](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/platforms/distribution#review_status) | Status of Facebook's seller integrity review. |
 
 ### `shop_setup_status`
 

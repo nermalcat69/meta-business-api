@@ -26,7 +26,7 @@ curl -i -X GET \
   &access_token={access-token}"
 ```
 
-Returns a list of [Pages](https://developers.facebook.com/docs/graph-api/reference/page) that meet the query’s criteria. Set the `q` parameter value to a keyword or search term (e.g. `q=Facebook`). Use the `fields` parameter to list any [fields](https://developers.facebook.com/documentation/pages-api/error-codes#fields) you want included with each Page returned in the response.
+Returns a list of [Pages](https://developers.facebook.com/docs/graph-api/reference/page) that meet the query's criteria. Set the `q` parameter value to a keyword or search term (e.g. `q=Facebook`). Use the `fields` parameter to list any [fields](https://developers.facebook.com/documentation/pages-api/error-codes#fields) you want included with each Page returned in the response.
 
 ### Sample Response
 
@@ -88,7 +88,7 @@ Returns a list of [Pages](https://developers.facebook.com/docs/graph-api/referen
 ## Limitations
 
 * The `GET /search?type=place` endpoint is deprecated in v8.0+ and in all versions on Nov. 2, 2020.
-* This endpoint does not return a Page’s profile picture. Please see the [Page Reference](https://developers.facebook.com/docs/graph-api/reference/page/picture) for information on getting a Page’s profile picture.
+* This endpoint does not return a Page's profile picture. Please see the [Page Reference](https://developers.facebook.com/docs/graph-api/reference/page/picture) for information on getting a Page's profile picture.
 * Alias-based searches are not strongly supported and might not return pages that have a low fan following.
 
 ## Learn More

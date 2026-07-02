@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/business-messaging/mes
 
 Updated: Jun 17, 2026
 
-The persistent menu allows you to create a menu of your business’s main features — such as hours of operation, store locations, and products — that is always visible in a person’s Messenger conversation with your business.
+The persistent menu allows you to create a menu of your business's main features — such as hours of operation, store locations, and products — that is always visible in a person's Messenger conversation with your business.
 
 Set the persistent menu via the `persistent_menu` property of the [Messenger Profile API](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/messenger-profile-api). The menu automatically appears in a thread if the person has been away for a certain period of time and returns.
 
@@ -21,7 +21,7 @@ For the persistent menu to appear, the following must be true:
 
 * The person must be running Messenger v106 or above on iOS or Android.
 * The Facebook Page the Messenger bot is subscribed to must be published.
-* The Messenger bot must be set to “public” in the app settings.
+* The Messenger bot must be set to "public" in the app settings.
 * The Messenger bot must have the `pages_messaging` permission.
 * The Messenger bot must have a [Get Started button](https://developers.facebook.com/documentation/business-messaging/messenger-platform/discovery/welcome-screen#set_postback) set.
 * You must have the Administrator role for the Page associated with the bot.
@@ -37,7 +37,7 @@ The persistent menu uses an array of [buttons](https://developers.facebook.com/d
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `locale` | String | The locale for this menu configuration. At least one object in the `persistent_menu` array must specify `"locale": "default"`. This is the fallback menu if no object matches the user’s locale. See [supported locales](https://developers.facebook.com/documentation/business-messaging/messenger-platform/messenger-profile/supported-locales). |
+| `locale` | String | The locale for this menu configuration. At least one object in the `persistent_menu` array must specify `"locale": "default"`. This is the fallback menu if no object matches the user's locale. See [supported locales](https://developers.facebook.com/documentation/business-messaging/messenger-platform/messenger-profile/supported-locales). |
 | `composer_input_disabled` | Boolean | Disables the Messenger composer field if set to `true`. The bot can only be interacted with via the persistent menu, postbacks, buttons, and webviews. Defaults to `false`. |
 | `call_to_actions` | Array | An array of top-level `menu_item` objects for the persistent menu. Maximum of 20 items. Required if `composer_input_disabled` is `true`. |
 
@@ -93,19 +93,17 @@ Disable the composer to make the persistent menu the only way for a person to in
 
 ## Localization
 
-You may provide default and localized button text for the persistent menu that is displayed based on a person’s locale. Specify a separate object in the `persistent_menu` array for each locale, setting the `locale` property to a [supported locale](https://developers.facebook.com/documentation/business-messaging/messenger-platform/messenger-profile/supported-locales):
+You may provide default and localized button text for the persistent menu that is displayed based on a person's locale. Specify a separate object in the `persistent_menu` array for each locale, setting the `locale` property to a [supported locale](https://developers.facebook.com/documentation/business-messaging/messenger-platform/messenger-profile/supported-locales):
 
 ```
-```
 {  
-  "locale": "default",  
-  "call_to_actions": [...]  
+  "locale": "default",  
+  "call_to_actions": [...]  
 },  
 {  
-  "locale": "zh_CN",  
-  "call_to_actions": [...]  
+  "locale": "zh_CN",  
+  "call_to_actions": [...]  
 }
-```
 ```
 
 ## User-level menu
@@ -179,12 +177,12 @@ Meta limits user-level menu calls to 10 API calls per user per 10-minute interva
 
 ## Best practices
 
-* Use the menu for entry points into your bot’s functionality.
+* Use the menu for entry points into your bot's functionality.
 * Be descriptive — your menu lets people know what your bot can do.
 * Limit menu items to 5 for the best user experience.
 * Do not expect the menu to contain user-specific data. It is the same for everyone who uses your bot, though it can be localized.
-* Do not put a “Menu” button in the menu that sends the user a message containing a menu. Put that content directly in the menu.
-* Do not put generic actions like “Restart” in the menu.
+* Do not put a "Menu" button in the menu that sends the user a message containing a menu. Put that content directly in the menu.
+* Do not put generic actions like "Restart" in the menu.
 * Do not use prime menu real estate for secondary info like about, terms of service, or privacy policy.
 
 ## Learn more

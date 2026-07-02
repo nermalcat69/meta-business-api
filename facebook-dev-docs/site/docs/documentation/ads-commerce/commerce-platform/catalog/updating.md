@@ -28,7 +28,7 @@ Batch API is a great way to update items more than once an hour. You can update 
 
 ## Scheduled Feeds
 
-**Scheduled feeds don’t support uploads more frequently than once per hour**. If you need to update inventory faster, use the [Direct Upload API](https://developers.facebook.com/documentation/ads-commerce/catalog/guides#direct-upload-feed) or [Batch API](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/catalog/batch-api).
+**Scheduled feeds don't support uploads more frequently than once per hour**. If you need to update inventory faster, use the [Direct Upload API](https://developers.facebook.com/documentation/ads-commerce/catalog/guides#direct-upload-feed) or [Batch API](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/catalog/batch-api).
 
 Schedule replace feed outside of working hours to avoid product update lag.
 
@@ -41,7 +41,7 @@ Set up your catalog during [seller onboarding](https://developers.facebook.com/d
 * The `id`, `title`, `description`, `price`, `quantity_to_sell_on_facebook`, `link`, `image_link` fields should be visible.
 * The `gtin` or `mpn` plus `brand` fields should be visible.
 * The `rich_text_description` (preferably) or `description` fields should be visible, well formatted (no extra spacing, punctuation is correct), and informative (may contain information on item size, volume, origin, and so on).
-* Ensure that the variant field’s (such as `size` or `color`) value is visible for **every product variant** sharing a common `item_group_id`, even those that are out of stock.
+* Ensure that the variant field's (such as `size` or `color`) value is visible for **every product variant** sharing a common `item_group_id`, even those that are out of stock.
 
 ## Format
 

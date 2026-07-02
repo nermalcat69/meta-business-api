@@ -28,51 +28,49 @@ POST /<PHONE_NUMBER_ID>/settings
 #### Request body
 
 ```
-```
 {  
-  "calling": {  
-    "status": "ENABLED",  
-    "call_icon_visibility": "DEFAULT",  
-    "call_hours": {  
-      "status": "ENABLED",  
-      "timezone_id": "America/Manaus",  
-      "weekly_operating_hours": [  
-        {  
-          "day_of_week": "MONDAY",  
-          "open_time": "0400",  
-          "close_time": "1020"  
-        },  
-        {  
-          "day_of_week": "TUESDAY",  
-          "open_time": "0108",  
-          "close_time": "1020"  
-        }  
-      ],  
-      "holiday_schedule": [  
-        {  
-          "date": "2026-01-01",  
-          "start_time": "0000",  
-          "end_time": "2359"  
-        }  
-      ]  
-    },  
-    "callback_permission_status": "ENABLED",  
-    "sip": {  
-      "status": "ENABLED | DISABLED (default)",  
-      "servers": [  
-        {  
-          "hostname": SIP_SERVER_HOSTNAME,  
-          "port": SIP_SERVER_PORT,  
-          "request_uri_user_params": {  
-            "KEY1": "VALUE1",  
-            "KEY2": "VALUE2"  
-          }  
-        }  
-      ]  
-    }  
-  }  
+  "calling": {  
+    "status": "ENABLED",  
+    "call_icon_visibility": "DEFAULT",  
+    "call_hours": {  
+      "status": "ENABLED",  
+      "timezone_id": "America/Manaus",  
+      "weekly_operating_hours": [  
+        {  
+          "day_of_week": "MONDAY",  
+          "open_time": "0400",  
+          "close_time": "1020"  
+        },  
+        {  
+          "day_of_week": "TUESDAY",  
+          "open_time": "0108",  
+          "close_time": "1020"  
+        }  
+      ],  
+      "holiday_schedule": [  
+        {  
+          "date": "2026-01-01",  
+          "start_time": "0000",  
+          "end_time": "2359"  
+        }  
+      ]  
+    },  
+    "callback_permission_status": "ENABLED",  
+    "sip": {  
+      "status": "ENABLED | DISABLED (default)",  
+      "servers": [  
+        {  
+          "hostname": SIP_SERVER_HOSTNAME,  
+          "port": SIP_SERVER_PORT,  
+          "request_uri_user_params": {  
+            "KEY1": "VALUE1",  
+            "KEY2": "VALUE2"  
+          }  
+        }  
+      ]  
+    }  
+  }  
 }
-```
 ```
 
 #### Body parameters
@@ -83,7 +81,7 @@ POST /<PHONE_NUMBER_ID>/settings
 | `call_icon_visibility`  *String* | **Optional**  Configure whether the WhatsApp call button icon displays for users when chatting with the business.  [View call icon visibility behavior details in the Parameter details section](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/troubleshooting#configure-call-settings-parameter-details) | [View call icon visibility behavior details below](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/troubleshooting#configure-call-settings-parameter-details) |
 | `call_hours`  *JSON object* | **Optional**  Allows you to specify and trigger call settings for incoming calls based on your timezone, business operating hours, and holiday schedules.  Any previously configured values in `call_hours` will be replaced with the values passed in the request body of this API call.  [View call hours behavior details in the Parameter details section](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/troubleshooting#configure-call-settings-parameter-details) | [View call hours behavior details below](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/troubleshooting#configure-call-settings-parameter-details) |
 | `callback_permission_status`  *String* | **Optional**  Configure whether a WhatsApp user is prompted with a call permission request after calling your business.  Note: The call permission request is triggered from either a missed or connected call.  [View callback permission status behavior details in the Parameter details section](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/troubleshooting#configure-call-settings-parameter-details) | `"ENABLED"`  `"DISABLED"` |
-| `sip`  *JSON object* | **Optional**  Configure call signaling via signal initiation protocol (SIP).  **Note: When SIP is enabled, you cannot use calling related endpoints and will not receive calling related webhooks.**  [Learn how to configure and use SIP call signaling](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/sip) | ```  ``` "sip": {    "status": "ENABLED | DISABLED (default)",    "servers": [// one server per app]      {        "hostname": SIP_SERVER_HOSTNAME        "port": SIP_SERVER_PORT,        "request_uri_user_params": {          "KEY1": "VALUE1", // for cases like TGRP          "KEY2": "VALUE2",        }      }    ]  } ``` ``` |
+| `sip`  *JSON object* | **Optional**  Configure call signaling via signal initiation protocol (SIP).  **Note: When SIP is enabled, you cannot use calling related endpoints and will not receive calling related webhooks.**  [Learn how to configure and use SIP call signaling](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/sip) | ``` "sip": {    "status": "ENABLED | DISABLED (default)",    "servers": [// one server per app]      {        "hostname": SIP_SERVER_HOSTNAME        "port": SIP_SERVER_PORT,        "request_uri_user_params": {          "KEY1": "VALUE1", // for cases like TGRP          "KEY2": "VALUE2",        }      }    ]  } ``` |
 
 #### Parameter details: Calling status
 
@@ -91,13 +89,13 @@ When the `status` parameter is set to `"ENABLED"`, calling features are enabled 
 
 When the `status` parameter is set to `"DISABLED"`, calling features are **disabled**, and both the business chat and business chat profile **do not display the call button icon.**
 
-Updates to `status` update the call button icon in existing business chats in near real-time when the business phone number is in the WhatsApp user’s contacts.
+Updates to `status` update the call button icon in existing business chats in near real-time when the business phone number is in the WhatsApp user's contacts.
 
 Otherwise, updates are near real-time for a limited number of users in conversation with the business, and are eventually updated for the rest of the conversations.
 
 #### Parameter details: Call button icon visibility
 
-When Calling API features are enabled for a business number, you can still choose whether to show the call button icon or not by using the `call_icon_visibility` parameter. Note: Disabling call button icon visibility **does not** disable a WhatsApp user’s ability to make unsolicited calls to your business.
+When Calling API features are enabled for a business number, you can still choose whether to show the call button icon or not by using the `call_icon_visibility` parameter. Note: Disabling call button icon visibility **does not** disable a WhatsApp user's ability to make unsolicited calls to your business.
 
 The behavior for supported options is as follows:
 
@@ -119,7 +117,7 @@ Your business can still [send interactive messages](https://developers.facebook.
 
 Calling a WhatsApp user requires explicit permission from the user. One way to obtain calling permissions is to request permission when a WhatsApp user calls your business.
 
-You can configure the call permission UI to automatically show in the WhatsApp user’s client app when they call your business number. The user may change their permission selection at any time.
+You can configure the call permission UI to automatically show in the WhatsApp user's client app when they call your business number. The user may change their permission selection at any time.
 
 ![Screenshot showing the WhatsApp call permission request dialog](https://scontent.fdel1-2.fna.fbcdn.net/v/t39.2365-6/602352272_1389874706204513_7741631937402058550_n.jpg?_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=tqt4932z7XoQ7kNvwH2g5NK&_nc_oc=AdpwIGVyW9sX_27KQHatDckqlj0CfYR0W2MN9I7reGHQLqWBTeKBsOCX3VwfVLSRUI22n8gFtrNuOw8ucwPTIbI3&_nc_zt=14&_nc_ht=scontent.fdel1-2.fna&_nc_gid=XXPEZVzs7R-Qf2CH_TyWgg&_nc_ss=7b2a8&oh=00_AQA-MBq5BXnaN11Kmr-zh6JSgxFY1o1L4jvjVk0Nvg35ZA&oe=6A60439A)
 
@@ -134,48 +132,44 @@ The WhatsApp client app shows users an option to chat with the business, or requ
 ![Screenshot showing WhatsApp call hours unavailable screen with callback option](https://scontent.fdel1-5.fna.fbcdn.net/v/t39.2365-6/561822470_1339317924593525_4183355843280485487_n.jpg?_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=ghzBb_7lhTYQ7kNvwHzczHA&_nc_oc=Adq0m3TYngCsg6IBJ9Ete83-mNpi3FQCNU-3rEgS8SK-khFa7f2bAYBpoIuUndQ0EKWTh1EZxTF6mWvzV9BD2YTa&_nc_zt=14&_nc_ht=scontent.fdel1-5.fna&_nc_gid=XXPEZVzs7R-Qf2CH_TyWgg&_nc_ss=7b2a8&oh=00_AQCslyOu4wQQuCMsLoNWU17Ghf8pqumVAB-xRE4sQI5jqg&oe=6A6051E7)
 
 ```
-```
-"call_hours": {  
-  "status": "ENABLED",  
-  "timezone_id": "America/Manaus",  
-  "weekly_operating_hours": [  
-    {  
-      "day_of_week": "MONDAY",  
-      "open_time": "04:00",  
-      "close_time": "10:20"  
-    },  
-    {  
-      "day_of_week": "TUESDAY",  
-      "open_time": "01:08",  
-      "close_time": "10:20"  
-    }  
-  ],  
-  "holiday_schedule": [  
-    {  
-      "date": "2026-01-01",  
-      "start_time": "00:00",  
-      "end_time": "23:59"  
-    }  
-  ]  
+"call_hours": {  
+  "status": "ENABLED",  
+  "timezone_id": "America/Manaus",  
+  "weekly_operating_hours": [  
+    {  
+      "day_of_week": "MONDAY",  
+      "open_time": "04:00",  
+      "close_time": "10:20"  
+    },  
+    {  
+      "day_of_week": "TUESDAY",  
+      "open_time": "01:08",  
+      "close_time": "10:20"  
+    }  
+  ],  
+  "holiday_schedule": [  
+    {  
+      "date": "2026-01-01",  
+      "start_time": "00:00",  
+      "end_time": "23:59"  
+    }  
+  ]  
 }
-```
 ```
 
 | Parameter | Description | Sample Values |
 | --- | --- | --- |
 | `status`  *String* | **Required**  Enable or disable the call hours for your business.  If call hours are disabled, your business is considered open 24 hours a day, 7 days a week. | `"ENABLED"`  `"DISABLED"` |
 | `timezone_id`  *String* | **Required**  The timezone your business operates in.  [Learn more about supported values for `timezone_id`](https://developers.facebook.com/docs/facebook-business-extension/fbe/reference#time-zones) | `"America/Menominee"`  `"Asia/Singapore"` |
-| `weekly_operating_hours`  *List of JSON objects* | **Required**  The operating hours schedule for each day of the week.  Each entry is a JSON object with three key-value pairs:  `day_of_week` — (*Enum*) **[Required]**  The day of the week.  Can take one of seven values: `"MONDAY"`, `"TUESDAY"`, `"WEDNESDAY"`, `"THURSDAY"`, `"FRIDAY"`, `"SATURDAY"`, `"SUNDAY"`  |  |  | | --- | --- | | `open_time` | `close_time` — (*Integer*) **[Required]** |  Opening and closing times represented in 24 hour format, for example `"1130"` = 11:30AM   * A maximum of two entries is allowed per day of the week * `open_time` must be before `close_time` * Overlapping entries not allowed | ```  ``` { "day_of_week": "MONDAY", "open_time": "0400", "close_time": "1020" }, { "day_of_week":"TUESDAY", "open_time": "0108", "close_time": "1020" } ... ``` ``` |
-| `holiday_schedule`  *String* | **Optional**  An optional override to the weekly schedule.  Up to 20 overrides can be specified.  Note: If `holiday_schedule` is not passed in the request, then the existing `holiday_schedule` will be deleted and replaced with an empty schedule.  `date` — (*String*) **[Required]**  Date for which you want to specify the override.  YYYY-MM-DD format.  |  |  | | --- | --- | | `open_time` | `close_time` — (*Integer*) **[Required]** |  Opening and closing times represented in 24 hour format, for example, `"1130"` = 11:30AM   * A maximum of two entries is allowed per day of the week * `open_time` must be before `close_time` * Overlapping entries not allowed | ```  ``` { "date": "2026-01-01", "start_time": "0000", "end_time": "2359", } ... ``` ``` |
+| `weekly_operating_hours`  *List of JSON objects* | **Required**  The operating hours schedule for each day of the week.  Each entry is a JSON object with three key-value pairs:  `day_of_week` — (*Enum*) **[Required]**  The day of the week.  Can take one of seven values: `"MONDAY"`, `"TUESDAY"`, `"WEDNESDAY"`, `"THURSDAY"`, `"FRIDAY"`, `"SATURDAY"`, `"SUNDAY"`  |  |  | | --- | --- | | `open_time` | `close_time` — (*Integer*) **[Required]** |  Opening and closing times represented in 24 hour format, for example `"1130"` = 11:30AM   * A maximum of two entries is allowed per day of the week * `open_time` must be before `close_time` * Overlapping entries not allowed | ``` { "day_of_week": "MONDAY", "open_time": "0400", "close_time": "1020" }, { "day_of_week":"TUESDAY", "open_time": "0108", "close_time": "1020" } ... ``` |
+| `holiday_schedule`  *String* | **Optional**  An optional override to the weekly schedule.  Up to 20 overrides can be specified.  Note: If `holiday_schedule` is not passed in the request, then the existing `holiday_schedule` will be deleted and replaced with an empty schedule.  `date` — (*String*) **[Required]**  Date for which you want to specify the override.  YYYY-MM-DD format.  |  |  | | --- | --- | | `open_time` | `close_time` — (*Integer*) **[Required]** |  Opening and closing times represented in 24 hour format, for example, `"1130"` = 11:30AM   * A maximum of two entries is allowed per day of the week * `open_time` must be before `close_time` * Overlapping entries not allowed | ``` { "date": "2026-01-01", "start_time": "0000", "end_time": "2359", } ... ``` |
 
 #### Success response
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 #### Error response
@@ -221,51 +215,49 @@ POST /<PHONE_NUMBER_ID>/settings
 #### Response body
 
 ```
-```
 {  
-  "calling": {  
-    "status": "ENABLED",  
-    "call_icon_visibility": "DEFAULT",  
-    "call_hours": {  
-      "status": "ENABLED",  
-      "timezone_id": "America/Manaus",  
-      "weekly_operating_hours": [  
-        {  
-          "day_of_week": "MONDAY",  
-          "open_time": "0400",  
-          "close_time": "1020"  
-        },  
-        {  
-          "day_of_week": "TUESDAY",  
-          "open_time": "0108",  
-          "close_time": "1020"  
-        }  
-      ],  
-      "holiday_schedule": [  
-        {  
-          "date": "2026-01-01",  
-          "start_time": "0000",  
-          "end_time": "2359"  
-        }  
-      ]  
-    },  
-    "callback_permission_status": "ENABLED",  
-    "sip": {  
-      "status": "ENABLED | DISABLED (default)",  
-      "servers": [  
-        {  
-          "hostname": SIP_SERVER_HOSTNAME,  
-          "port": SIP_SERVER_PORT,  
-          "request_uri_user_params": {  
-            "KEY1": "VALUE1",  
-            "KEY2": "VALUE2"  
-          }  
-        }  
-      ]  
-    }  
-  }  
+  "calling": {  
+    "status": "ENABLED",  
+    "call_icon_visibility": "DEFAULT",  
+    "call_hours": {  
+      "status": "ENABLED",  
+      "timezone_id": "America/Manaus",  
+      "weekly_operating_hours": [  
+        {  
+          "day_of_week": "MONDAY",  
+          "open_time": "0400",  
+          "close_time": "1020"  
+        },  
+        {  
+          "day_of_week": "TUESDAY",  
+          "open_time": "0108",  
+          "close_time": "1020"  
+        }  
+      ],  
+      "holiday_schedule": [  
+        {  
+          "date": "2026-01-01",  
+          "start_time": "0000",  
+          "end_time": "2359"  
+        }  
+      ]  
+    },  
+    "callback_permission_status": "ENABLED",  
+    "sip": {  
+      "status": "ENABLED | DISABLED (default)",  
+      "servers": [  
+        {  
+          "hostname": SIP_SERVER_HOSTNAME,  
+          "port": SIP_SERVER_PORT,  
+          "request_uri_user_params": {  
+            "KEY1": "VALUE1",  
+            "KEY2": "VALUE2"  
+          }  
+        }  
+      ]  
+    }  
+  }  
 }
-```
 ```
 
 #### Include SIP user password
@@ -279,22 +271,20 @@ POST /<PHONE_NUMBER_ID>/settings?include_sip_credentials=true
 Where the response will look like this:
 
 ```
-```
 {  
-  "calling": {  
-    ... // other calling api settings  
-    "sip": {  
-      "status": "ENABLED",  
-      "servers": [  
-        {  
-          "hostname": "sip.example.com",  
-          "sip_user_password": "{SIP_USER_PASSWORD}"  
-        }  
-      ]  
-    }  
-  }  
+  "calling": {  
+    ... // other calling api settings  
+    "sip": {  
+      "status": "ENABLED",  
+      "servers": [  
+        {  
+          "hostname": "sip.example.com",  
+          "sip_user_password": "{SIP_USER_PASSWORD}"  
+        }  
+      ]  
+    }  
+  }  
 }
-```
 ```
 
 #### Response details
@@ -321,7 +311,7 @@ When you then call the accept call endpoint, media begins flowing immediately si
 
 Pre-accepting calls is recommended because it facilitates faster connection times and avoids [audio clipping issues](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/troubleshooting#audio-clipping-issue-and-solution).
 
-There is about 30 to 60 seconds after the [Call Connect webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/troubleshooting#call-connect-webhook) is sent for the business to accept the phone call. If the business does not respond, the call is terminated on the WhatsApp user side with a “Not Answered” notification and a [Terminate Webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/troubleshooting#call-terminate-webhook) is delivered back to you.
+There is about 30 to 60 seconds after the [Call Connect webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/troubleshooting#call-connect-webhook) is sent for the business to accept the phone call. If the business does not respond, the call is terminated on the WhatsApp user side with a "Not Answered" notification and a [Terminate Webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/troubleshooting#call-terminate-webhook) is delivered back to you.
 
 **Note:** Since the WebRTC connection is established before calling the [Accept Call endpoint](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/troubleshooting#accept-call), make sure to flow the call media only after you receive a 200 OK response back.
 
@@ -357,7 +347,7 @@ POST <PHONE_NUMBER_ID>/calls
 | --- | --- | --- |
 | `call_id`  *String* | **Required**  The ID of the phone call.  For inbound calls, you receive a call ID from the [Call Connect webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/troubleshooting#call-connect-webhook) when a WhatsApp user initiates the call. | `"wacid.ABGGFjFVU2AfAgo6V-Hc5eCgK5Gh"` |
 | `action`  *String* | **Optional**  The action being taken on the given call ID.  Values can be `connect` | `pre_accept` | `accept` | `reject` | `terminate` | `"pre_accept"` |
-| `session`  *JSON object* | **Optional**  Contains the session description protocol (SDP) type and description language.  Requires two values:  `sdp_type` — (*String*) **Required**  “offer”, to indicate SDP offer  `sdp` — (*String*) **Required**  The SDP info of the device on the other end of the call. The SDP must be compliant with [RFC 8866⁠](https://datatracker.ietf.org/doc/html/rfc8866?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR4iDLLTgyr5fQ_inwTW1L6WI2WwFinuX53IxUrSRQ7TC4KiF8UeJT7Uf_XeEQ_aem_oFK5oh6aNDDa31OT7fq3QQ).  [Learn more about Session Description Protocol (SDP)⁠](https://www.rfc-editor.org/rfc/rfc8866.html?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR4iDLLTgyr5fQ_inwTW1L6WI2WwFinuX53IxUrSRQ7TC4KiF8UeJT7Uf_XeEQ_aem_oFK5oh6aNDDa31OT7fq3QQ)  [View example SDP structures](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/troubleshooting#sdp-overview-and-sample-sdp-structures) | ``` "session" : { "sdp_type" : "offer", "sdp" : "<<RFC 8866 SDP>>" } ``` |
+| `session`  *JSON object* | **Optional**  Contains the session description protocol (SDP) type and description language.  Requires two values:  `sdp_type` — (*String*) **Required**  "offer", to indicate SDP offer  `sdp` — (*String*) **Required**  The SDP info of the device on the other end of the call. The SDP must be compliant with [RFC 8866⁠](https://datatracker.ietf.org/doc/html/rfc8866?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR4iDLLTgyr5fQ_inwTW1L6WI2WwFinuX53IxUrSRQ7TC4KiF8UeJT7Uf_XeEQ_aem_oFK5oh6aNDDa31OT7fq3QQ).  [Learn more about Session Description Protocol (SDP)⁠](https://www.rfc-editor.org/rfc/rfc8866.html?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR4iDLLTgyr5fQ_inwTW1L6WI2WwFinuX53IxUrSRQ7TC4KiF8UeJT7Uf_XeEQ_aem_oFK5oh6aNDDa31OT7fq3QQ)  [View example SDP structures](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/troubleshooting#sdp-overview-and-sample-sdp-structures) | ``` "session" : { "sdp_type" : "offer", "sdp" : "<<RFC 8866 SDP>>" } ``` |
 
 #### Success response
 
@@ -385,9 +375,9 @@ Possible errors that can occur:
 
 ### Accept call
 
-Use this endpoint to connect to a call by providing a call agent’s SDP.
+Use this endpoint to connect to a call by providing a call agent's SDP.
 
-You have about 30 to 60 seconds after the [Call Connect Webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/troubleshooting#call-connect-webhook) is sent to accept the phone call. If your business does not respond, the call is terminated on the WhatsApp user side with a “Not Answered” notification and a [Terminate Webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/troubleshooting#call-terminate-webhook) is delivered back to you.
+You have about 30 to 60 seconds after the [Call Connect Webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/troubleshooting#call-connect-webhook) is sent to accept the phone call. If your business does not respond, the call is terminated on the WhatsApp user side with a "Not Answered" notification and a [Terminate Webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/troubleshooting#call-terminate-webhook) is delivered back to you.
 
 #### Request syntax
 
@@ -420,8 +410,8 @@ POST <PHONE_NUMBER_ID>/calls
 | --- | --- | --- |
 | `call_id`  *String* | **Required**  The ID of the phone call.  For inbound calls, you receive a call ID from the [Call Connect webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/troubleshooting#call-connect-webhook) when a WhatsApp user initiates the call. | `"wacid.ABGGFjFVU2AfAgo6V-Hc5eCgK5Gh"` |
 | `action`  *String* | **Optional**  The action being taken on the given call ID.  Values can be `connect` | `pre_accept` | `accept` | `reject` | `terminate` | `"accept"` |
-| `session`  *JSON object* | **Optional**  Contains the session description protocol (SDP) type and description language.  Requires two values:  `sdp_type` — (*String*) **Required**  “offer”, to indicate SDP offer  `sdp` — (*String*) **Required**  The SDP info of the device on the other end of the call. The SDP must be compliant with [RFC 8866⁠](https://datatracker.ietf.org/doc/html/rfc8866?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR4G883r_f8OxuBN4Ug2aWo3tRDVPu6JtxWg9T734Z5waARzxf7VGfEehXYlFw_aem_sWjiUmtGyV3tjOHfK_Nwxg).  [Learn more about Session Description Protocol (SDP)⁠](https://www.rfc-editor.org/rfc/rfc8866.html?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR7WlgU2D_nYpi9cfvPiwHW3pAcJ4ioAXwByWSEi00HO80ot2z93xPB4iJDu-w_aem_adl3wSgC9B3Pu089VwUlWQ)  [View example SDP structures](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/troubleshooting#sdp-overview-and-sample-sdp-structures) | ``` "session" : { "sdp_type" : "offer", "sdp" : "<<RFC 8866 SDP>>" } ``` |
-| `biz_opaque_callback_data`  *String* | **Optional**  An arbitrary string you can pass in that is useful for tracking and logging purposes.  Any app subscribed to the “calls” webhook field on your WhatsApp Business account can receive this string, as it is included in the `calls` object within the subsequent [Terminate webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/troubleshooting#call-terminate-webhook) payload.  Cloud API does not process this field, it just returns it as part of the [Terminate webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/troubleshooting#call-terminate-webhook).  Maximum 512 characters | `"8huas8d80nn"` |
+| `session`  *JSON object* | **Optional**  Contains the session description protocol (SDP) type and description language.  Requires two values:  `sdp_type` — (*String*) **Required**  "offer", to indicate SDP offer  `sdp` — (*String*) **Required**  The SDP info of the device on the other end of the call. The SDP must be compliant with [RFC 8866⁠](https://datatracker.ietf.org/doc/html/rfc8866?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR4G883r_f8OxuBN4Ug2aWo3tRDVPu6JtxWg9T734Z5waARzxf7VGfEehXYlFw_aem_sWjiUmtGyV3tjOHfK_Nwxg).  [Learn more about Session Description Protocol (SDP)⁠](https://www.rfc-editor.org/rfc/rfc8866.html?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR7WlgU2D_nYpi9cfvPiwHW3pAcJ4ioAXwByWSEi00HO80ot2z93xPB4iJDu-w_aem_adl3wSgC9B3Pu089VwUlWQ)  [View example SDP structures](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/troubleshooting#sdp-overview-and-sample-sdp-structures) | ``` "session" : { "sdp_type" : "offer", "sdp" : "<<RFC 8866 SDP>>" } ``` |
+| `biz_opaque_callback_data`  *String* | **Optional**  An arbitrary string you can pass in that is useful for tracking and logging purposes.  Any app subscribed to the "calls" webhook field on your WhatsApp Business account can receive this string, as it is included in the `calls` object within the subsequent [Terminate webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/troubleshooting#call-terminate-webhook) payload.  Cloud API does not process this field, it just returns it as part of the [Terminate webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/troubleshooting#call-terminate-webhook).  Maximum 512 characters | `"8huas8d80nn"` |
 | `recording`  *JSON object* | **Optional**  Opts the call into [call recording](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/call-recording/). When `status` is `ENABLED`, the call audio is recorded and delivered to you through the [Call recording webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/troubleshooting#call-recording-webhook).  `status` — (*String*) **Required.**`ENABLED` to record the call, `DISABLED` to explicitly opt out.  `purpose` — (*String*) **Required when `status` is `ENABLED`.** The purpose of the recording, spoken to both participants as part of the announcement. Maximum 250 characters.  `announcement_language` — (*String*) **Required when `status` is `ENABLED`.** Locale code for the language of the spoken announcement, for example `en_US`.  Recording and transcription are independent. [Learn more about call recording](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/call-recording/). | ``` "recording" : { "status" : "ENABLED", "purpose" : "quality assurance", "announcement_language" : "en_US" } ``` |
 | `transcription`  *JSON object* | **Optional**  Opts the call into [call transcription](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/call-transcription/). When `status` is `ENABLED`, the call audio is transcribed and delivered to you through the [Call transcription webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/troubleshooting#call-transcription-webhook).  `status` — (*String*) **Required.**`ENABLED` to transcribe the call, `DISABLED` to explicitly opt out.  `purpose` — (*String*) **Required when `status` is `ENABLED`.** The purpose of the transcription, spoken to both participants as part of the announcement. Maximum 250 characters.  `announcement_language` — (*String*) **Required when `status` is `ENABLED`.** Locale code for the language of the spoken announcement, for example `en_US`.  Recording and transcription are independent. [Learn more about call transcription](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/call-transcription/). | ``` "transcription" : { "status" : "ENABLED", "purpose" : "quality assurance", "announcement_language" : "en_US" } ``` |
 
@@ -454,7 +444,7 @@ Possible errors that can occur:
 
 Use this endpoint to reject a call.
 
-You have about 30 to 60 seconds after the [Call Connect webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/troubleshooting#call-connect-webhook) is sent to accept the phone call. If the business does not respond, the call is terminated on the WhatsApp user side with a “Not Answered” notification and a [Terminate Webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/troubleshooting#call-terminate-webhook) is delivered back to you.
+You have about 30 to 60 seconds after the [Call Connect webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/troubleshooting#call-connect-webhook) is sent to accept the phone call. If the business does not respond, the call is terminated on the WhatsApp user side with a "Not Answered" notification and a [Terminate Webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/troubleshooting#call-terminate-webhook) is delivered back to you.
 
 #### Request syntax
 
@@ -540,10 +530,10 @@ POST <PHONE_NUMBER_ID>/calls
 | Parameter | Description | Sample Value |
 | --- | --- | --- |
 | `to`  *Integer* | **Required** (unless `recipient` is provided)  The phone number being called (callee). You can identify the user by their phone number here, by their business-scoped user ID (BSUID) in `recipient`, or both. | `"17863476655"` |
-| `recipient`  *String* | **Optional**  The WhatsApp user’s business-scoped user ID (BSUID) or parent BSUID. Use this instead of, or in addition to, `to`. If you include both `to` and `recipient`, `to` takes precedence.  [Learn more about business-scoped user IDs](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#business-scoped-user-id) | `US.13491208655302741918` |
+| `recipient`  *String* | **Optional**  The WhatsApp user's business-scoped user ID (BSUID) or parent BSUID. Use this instead of, or in addition to, `to`. If you include both `to` and `recipient`, `to` takes precedence.  [Learn more about business-scoped user IDs](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#business-scoped-user-id) | `US.13491208655302741918` |
 | `action`  *String* | **Required**  The action being taken on the given call ID.  Values can be `connect` | `pre_accept` | `accept` | `reject` | `terminate` | `"connect"` |
-| `session`  *JSON object* | **Optional**  Contains the session description protocol (SDP) type and description language.  Requires two values:  `sdp_type` — (*String*) **Required**  “offer”, to indicate SDP offer  `sdp` — (*String*) **Required**  The SDP info of the device on the other end of the call. The SDP must be compliant with [RFC 8866⁠](https://datatracker.ietf.org/doc/html/rfc8866?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR7WlgU2D_nYpi9cfvPiwHW3pAcJ4ioAXwByWSEi00HO80ot2z93xPB4iJDu-w_aem_adl3wSgC9B3Pu089VwUlWQ).  [Learn more about Session Description Protocol (SDP)⁠](https://www.rfc-editor.org/rfc/rfc8866.html?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR4iDLLTgyr5fQ_inwTW1L6WI2WwFinuX53IxUrSRQ7TC4KiF8UeJT7Uf_XeEQ_aem_oFK5oh6aNDDa31OT7fq3QQ)  [View example SDP structures](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/troubleshooting#sdp-overview-and-sample-sdp-structures) | ``` "session" : { "sdp_type" : "offer", "sdp" : "<<RFC 8866 SDP>>" } ``` |
-| `biz_opaque_callback_data`  *String* | **Optional**  An arbitrary string you can pass in that is useful for tracking and logging purposes.  Any app subscribed to the “calls” webhook field on your WhatsApp Business account can receive this string, as it is included in the `calls` object within the subsequent [Call Terminate Webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/business-initiated-calls#call-terminate-webhook) payload.  Cloud API does not process this field.  Maximum 512 characters | `"0fS5cePMok"` |
+| `session`  *JSON object* | **Optional**  Contains the session description protocol (SDP) type and description language.  Requires two values:  `sdp_type` — (*String*) **Required**  "offer", to indicate SDP offer  `sdp` — (*String*) **Required**  The SDP info of the device on the other end of the call. The SDP must be compliant with [RFC 8866⁠](https://datatracker.ietf.org/doc/html/rfc8866?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR7WlgU2D_nYpi9cfvPiwHW3pAcJ4ioAXwByWSEi00HO80ot2z93xPB4iJDu-w_aem_adl3wSgC9B3Pu089VwUlWQ).  [Learn more about Session Description Protocol (SDP)⁠](https://www.rfc-editor.org/rfc/rfc8866.html?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR4iDLLTgyr5fQ_inwTW1L6WI2WwFinuX53IxUrSRQ7TC4KiF8UeJT7Uf_XeEQ_aem_oFK5oh6aNDDa31OT7fq3QQ)  [View example SDP structures](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/troubleshooting#sdp-overview-and-sample-sdp-structures) | ``` "session" : { "sdp_type" : "offer", "sdp" : "<<RFC 8866 SDP>>" } ``` |
+| `biz_opaque_callback_data`  *String* | **Optional**  An arbitrary string you can pass in that is useful for tracking and logging purposes.  Any app subscribed to the "calls" webhook field on your WhatsApp Business account can receive this string, as it is included in the `calls` object within the subsequent [Call Terminate Webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/business-initiated-calls#call-terminate-webhook) payload.  Cloud API does not process this field.  Maximum 512 characters | `"0fS5cePMok"` |
 | `recording`  *JSON object* | **Optional**  Opts the call into [call recording](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/call-recording/). When `status` is `ENABLED`, the call audio is recorded and delivered to you through the [Call recording webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/troubleshooting#call-recording-webhook).  `status` — (*String*) **Required.**`ENABLED` to record the call, `DISABLED` to explicitly opt out.  `purpose` — (*String*) **Required when `status` is `ENABLED`.** The purpose of the recording, spoken to both participants as part of the announcement. Maximum 250 characters.  `announcement_language` — (*String*) **Required when `status` is `ENABLED`.** Locale code for the language of the spoken announcement, for example `en_US`.  Recording and transcription are independent. [Learn more about call recording](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/call-recording/). | ``` "recording" : { "status" : "ENABLED", "purpose" : "quality assurance", "announcement_language" : "en_US" } ``` |
 | `transcription`  *JSON object* | **Optional**  Opts the call into [call transcription](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/call-transcription/). When `status` is `ENABLED`, the call audio is transcribed and delivered to you through the [Call transcription webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/troubleshooting#call-transcription-webhook).  `status` — (*String*) **Required.**`ENABLED` to transcribe the call, `DISABLED` to explicitly opt out.  `purpose` — (*String*) **Required when `status` is `ENABLED`.** The purpose of the transcription, spoken to both participants as part of the announcement. Maximum 250 characters.  `announcement_language` — (*String*) **Required when `status` is `ENABLED`.** Locale code for the language of the spoken announcement, for example `en_US`.  Recording and transcription are independent. [Learn more about call transcription](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/call-transcription/). | ``` "transcription" : { "status" : "ENABLED", "purpose" : "quality assurance", "announcement_language" : "en_US" } ``` |
 
@@ -705,14 +695,14 @@ GET /<PHONE_NUMBER_ID>/call_permissions?recipient=<BSUID>
 | --- | --- |
 | `permission`  *JSON Object* | The permission object contains two values:  `status` *(String)* — The current status of the permission.  Can be either:   * `"no_permission"` * `"temporary"`   `expiration` *(Integer)* — The Unix time at which the permission will expire in UTC timezone. |
 | `actions`  *JSON Object* | A list of actions a business phone number may undertake to facilitate a call permission or a business initiated call.  Current actions are:  `send_call_permission_request`: Represents the action of sending new call permissions request messages to the WhatsApp user.  `start_call`: Represents the action of establishing a new call with the WhatsApp user. Establishing a new call means that the call was successfully picked up by the WhatsApp user.  For example, `send_call_permission_request` having a `can_perform_action` of `true` means that your business can send a call permission request to the WhatsApp user in question.  `can_perform_action` (*Boolean*) —  A flag indicating whether the action can be performed now, taking into account all limits. |
-| `limits`  *JSON Object* | A list of time-bound restrictions for the given `action_name`.  Each `action_name` has one or more restrictions depending on the timeframe.  For example, your business can send only 2 permission requests in a 24-hour period.  `limits` contains the following fields:  `time_period` (*String*) — The span of time in which the limit applies, represented in the ISO 8601 format.  `max_allowed` (*Integer*) — The maximum number of actions allowed within the specified time period.  `current_usage` (*Integer*) — The current number of actions your business has taken within the specified time period.  `limit_expiration_time` (*Integer*) — The Unix time at which the limit will expire in UTC timezone.  If `current_usage` is under the max allowed for the limit, this field won’t be present. |
+| `limits`  *JSON Object* | A list of time-bound restrictions for the given `action_name`.  Each `action_name` has one or more restrictions depending on the timeframe.  For example, your business can send only 2 permission requests in a 24-hour period.  `limits` contains the following fields:  `time_period` (*String*) — The span of time in which the limit applies, represented in the ISO 8601 format.  `max_allowed` (*Integer*) — The maximum number of actions allowed within the specified time period.  `current_usage` (*Integer*) — The current number of actions your business has taken within the specified time period.  `limit_expiration_time` (*Integer*) — The Unix time at which the limit will expire in UTC timezone.  If `current_usage` is under the max allowed for the limit, this field won't be present. |
 
 #### Error response
 
 Possible errors that can occur:
 
 * Invalid `phone-number-id`
-* If the WhatsApp user’s phone number is uncallable, the API response will be `no_permission`.
+* If the WhatsApp user's phone number is uncallable, the API response will be `no_permission`.
 * Permissions/Authorization errors.
 * Rate limit reached. A maximum of 5 requests in a one-second window can be made to the API.
 * Calling is not enabled for the business phone number.
@@ -793,7 +783,7 @@ Once you receive the Call Connect webhook, you can apply the `SDP Answer` receiv
 | `event`  *String* | The calling event that this webhook is notifying the subscriber of |
 | `timestamp`  *String* | The UNIX timestamp of the webhook event |
 | `direction`  *String* | The direction of the call being made.  Can contain either:  `BUSINESS_INITIATED`, for calls initiated by your business.  `USER_INITIATED`, for calls initiated by a WhatsApp user. |
-| `session`  *JSON object* | **Optional**  Contains the session description protocol (SDP) type and description language.  Requires two values:  `sdp_type` — (*String*) **Required**  “offer”, to indicate SDP offer  `sdp` — (*String*) **Required**  The SDP info of the device on the other end of the call. The SDP must be compliant with [RFC 8866⁠](https://datatracker.ietf.org/doc/html/rfc8866?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR41FnCrohmZXHsu5M4EJCevDdqIFZE9l2HqUq7Halwy_NG48ZuFb9Gh1XRg8A_aem__2jI8CjMwFhsIG1RsL6ejA).  [Learn more about Session Description Protocol (SDP)⁠](https://www.rfc-editor.org/rfc/rfc8866.html?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR5hUUCuVfMrSpK1nFWwfgmhEX4J170f66mpbcRuH2F1v9AX32Sq6E3-nMvJdw_aem_zQZRjbb3Ajl9qFef31D3HA)  [View example SDP structures](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/troubleshooting#sdp-overview-and-sample-sdp-structures) |
+| `session`  *JSON object* | **Optional**  Contains the session description protocol (SDP) type and description language.  Requires two values:  `sdp_type` — (*String*) **Required**  "offer", to indicate SDP offer  `sdp` — (*String*) **Required**  The SDP info of the device on the other end of the call. The SDP must be compliant with [RFC 8866⁠](https://datatracker.ietf.org/doc/html/rfc8866?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR41FnCrohmZXHsu5M4EJCevDdqIFZE9l2HqUq7Halwy_NG48ZuFb9Gh1XRg8A_aem__2jI8CjMwFhsIG1RsL6ejA).  [Learn more about Session Description Protocol (SDP)⁠](https://www.rfc-editor.org/rfc/rfc8866.html?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR5hUUCuVfMrSpK1nFWwfgmhEX4J170f66mpbcRuH2F1v9AX32Sq6E3-nMvJdw_aem_zQZRjbb3Ajl9qFef31D3HA)  [View example SDP structures](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/troubleshooting#sdp-overview-and-sample-sdp-structures) |
 | `contacts`  *JSON object* | Profile information of the callee.  `name` — The WhatsApp profile name of the callee.  `username` — **Optional.** The username of the callee, if the user has adopted a username.  `wa_id` — The WhatsApp ID of the callee. May be omitted if the user has adopted a username and the phone number cannot be included.  `user_id` — The [BSUID](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids) of the callee.  `parent_user_id` — **Optional.** The [parent BSUID](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#parent-business-scoped-user-ids) of the callee. Only included if parent BSUIDs are enabled. |
 
 ### Call created webhook
@@ -801,51 +791,49 @@ Once you receive the Call Connect webhook, you can apply the `SDP Answer` receiv
 WhatsApp sends a webhook notification when a SIP call is attempted. This applies to both business-initiated and user-initiated SIP calls. For non-SIP calls using the Graph API, see the [Call Connect webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/troubleshooting#call-connect-webhook) instead.
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "<WHATSAPP_BUSINESS_ACCOUNT_ID>",  
-      "changes": [  
-        {  
-          "value": {  
-            "messaging_product": "whatsapp",  
-            "metadata": {  
-              "display_phone_number": "16315553601",  
-              "phone_number_id": "<PHONE_NUMBER_ID>"  
-            },  
-            "contacts": [  
-              {  
-                "profile": {  
-                  "name": "<CALLEE_NAME>",  
-                  "username": "<USERNAME>"  
-                },  
-                "wa_id": "16315553602",  
-                "user_id": "<BSUID>",  
-                "parent_user_id": "<PARENT_BSUID>"  
-              }  
-            ],  
-            "calls": [  
-              {  
-                "id": "wacid.ABGGFjFVU2AfAgo6V-Hc5eCgK5Gh",  
-                "to": "16315553601",  
-                "to_user_id": "<BSUID>",  
-                "to_parent_user_id": "<PARENT_BSUID>",  
-                "from": "16315553602",  
-                "event": "call_created",  
-                "timestamp": "1671644824",  
-                "direction": "BUSINESS_INITIATED"  
-              }  
-            ]  
-          },  
-          "field": "calls"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "<WHATSAPP_BUSINESS_ACCOUNT_ID>",  
+      "changes": [  
+        {  
+          "value": {  
+            "messaging_product": "whatsapp",  
+            "metadata": {  
+              "display_phone_number": "16315553601",  
+              "phone_number_id": "<PHONE_NUMBER_ID>"  
+            },  
+            "contacts": [  
+              {  
+                "profile": {  
+                  "name": "<CALLEE_NAME>",  
+                  "username": "<USERNAME>"  
+                },  
+                "wa_id": "16315553602",  
+                "user_id": "<BSUID>",  
+                "parent_user_id": "<PARENT_BSUID>"  
+              }  
+            ],  
+            "calls": [  
+              {  
+                "id": "wacid.ABGGFjFVU2AfAgo6V-Hc5eCgK5Gh",  
+                "to": "16315553601",  
+                "to_user_id": "<BSUID>",  
+                "to_parent_user_id": "<PARENT_BSUID>",  
+                "from": "16315553602",  
+                "event": "call_created",  
+                "timestamp": "1671644824",  
+                "direction": "BUSINESS_INITIATED"  
+              }  
+            ]  
+          },  
+          "field": "calls"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 #### Webhook values for `"calls"`
@@ -856,7 +844,7 @@ The field descriptions are the same as those in the [Call Connect webhook](https
 
 This webhook is sent during the following calling events:
 
-* Ringing: When the WhatsApp user’s client device begins ringing
+* Ringing: When the WhatsApp user's client device begins ringing
 * Accepted: When the WhatsApp user accepts the call
 * Rejected: When the call is rejected by the WhatsApp user
 
@@ -1115,7 +1103,7 @@ The webhook changes depending on if the user:
 * accepts or rejects the request
 * gives permission by responding to a request or by calling the business
 
-**Usernames and business-scoped user IDs:** This webhook also includes the WhatsApp user’s business-scoped user ID in `from_user_id` (and `from_parent_user_id` if parent BSUIDs are enabled), and the user’s phone number may be omitted. For details, see [Business-scoped user IDs](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#business-scoped-user-id).
+**Usernames and business-scoped user IDs:** This webhook also includes the WhatsApp user's business-scoped user ID in `from_user_id` (and `from_parent_user_id` if parent BSUIDs are enabled), and the user's phone number may be omitted. For details, see [Business-scoped user IDs](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#business-scoped-user-id).
 
 #### Webhook sample
 
@@ -1182,13 +1170,13 @@ The webhook changes depending on if the user:
 | `from_user_id`  *String* | The [BSUID](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#business-scoped-user-id) of the WhatsApp user. |
 | `from_parent_user_id`  *String* | **Optional.** The [parent BSUID](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#parent-business-scoped-user-ids) of the WhatsApp user. Only included if parent BSUIDs are enabled. |
 | `context.id`  *String* | Can be either of two values   * Message ID of the permission request message sent by the business to the customer number. Shows when a permission decision is made by the user in response to a call permission request. * Call ID of the missed call placed by the business to the customer number. Shows when callback permission is enabled in settings and the user calls the business. |
-| `response`  *String* | The WhatsApp user’s response to the call permission request message  Can be `accept` or `reject` |
+| `response`  *String* | The WhatsApp user's response to the call permission request message  Can be `accept` or `reject` |
 | `expiration_timestamp`  *String* | Time in seconds when this call permission expires if the WhatsApp user approved it |
 | `response_source`  *String* | The source of this permission  Possible values for accepted call permissions are:   * `user_action`: User approved or rejected the permission * `automatic`: An automatic permission approval due to the WhatsApp user initiating the call |
 
 ## SDP overview and sample SDP structures
 
-Session Description Protocol (SDP) is a text-based format that describes multimedia session characteristics, such as voice and video calls, in real-time communication applications. SDP provides a standardized way to convey information about the session’s media streams, including the type of media, codecs, protocols, and other parameters necessary for establishing and managing the session.
+Session Description Protocol (SDP) is a text-based format that describes multimedia session characteristics, such as voice and video calls, in real-time communication applications. SDP provides a standardized way to convey information about the session's media streams, including the type of media, codecs, protocols, and other parameters necessary for establishing and managing the session.
 
 In the context of WebRTC, SDP is used to negotiate the media parameters between the sender and receiver, enabling them to agree on the specifics of the media exchange.
 

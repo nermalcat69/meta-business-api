@@ -22,21 +22,19 @@ These two identifiers are different values for the same player. The Instant Game
 
 If a player has already been playing your Canvas Game or native mobile app and then launches the Instant Games version, you can retrieve their ASID from within the Instant Game to match them to their existing account.
 
-Use `FBInstant.player.getASIDAsync()` to retrieve the player’s ASID:
+Use `FBInstant.player.getASIDAsync()` to retrieve the player's ASID:
 
 ```
-```
 FBInstant.player.getASIDAsync()  
-  .then(function(asid) {  
-    // This ASID matches the user ID your Canvas Game  
-    // or native mobile app received for this player.  
-    // Use it to look up the player's existing account  
-    // in your backend and link it to their Instant Games  
-    // Player ID.  
-    var instantGamesPlayerID = FBInstant.player.getID();  
-    linkAccounts(instantGamesPlayerID, asid);  
-  });
-```
+  .then(function(asid) {  
+    // This ASID matches the user ID your Canvas Game  
+    // or native mobile app received for this player.  
+    // Use it to look up the player's existing account  
+    // in your backend and link it to their Instant Games  
+    // Player ID.  
+    var instantGamesPlayerID = FBInstant.player.getID();  
+    linkAccounts(instantGamesPlayerID, asid);  
+  });
 ```
 
 This allows you to look up the player in your existing backend using the ASID, retrieve their saved progress and purchases, and associate that data with their Instant Games Player ID going forward.
@@ -54,20 +52,18 @@ GET /me/ids_for_business?fields=id,app{id,name},instant_game_player_id
 The response includes the ASID and the Instant Games Player ID for each app owned by your business:
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "id": "67890",  
-      "app": {  
-        "id": "YOUR_APP_ID",  
-        "name": "YOUR_APP_NAME"  
-      },  
-      "instant_game_player_id": "12345"  
-    }  
-  ]  
+  "data": [  
+    {  
+      "id": "67890",  
+      "app": {  
+        "id": "YOUR_APP_ID",  
+        "name": "YOUR_APP_NAME"  
+      },  
+      "instant_game_player_id": "12345"  
+    }  
+  ]  
 }
-```
 ```
 
 In this response:
@@ -76,6 +72,6 @@ In this response:
 * `app` is the data related to the app.
 * `instant_game_player_id` is the Instant Games Player ID, which matches the value returned by `FBInstant.player.getID()` in the Instant Game.
 
-Use the `instant_game_player_id` to look up the player’s Instant Games data in your backend and link it to their native mobile app account.
+Use the `instant_game_player_id` to look up the player's Instant Games data in your backend and link it to their native mobile app account.
 
 > **Note:** The `instant_game_player_id` field requires your app to have the `gaming_crossplay_eligible` capability enabled and an Instant Games product configured. It is not included in the default response fields — you must explicitly request it.

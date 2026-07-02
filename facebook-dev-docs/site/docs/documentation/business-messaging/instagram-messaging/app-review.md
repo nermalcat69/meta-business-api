@@ -38,7 +38,7 @@ and
 | Webhook Field | Description |
 | --- | --- |
 | `message_reactions` | Meta sends a notification when a customer reacts or unreacts to a message  Graph API v12.0 and later supports `angry`, `sad`, `wow`, `love`, `like`, `laugh`, and `other` reactions. |
-| `messages` | A notification is sent when a customer sends your business:   * a message with text or media (image/video/file/audio) * a share (media/post shares) * a story reply or mention. Only story mentions will trigger a webhook. Tagging on regular posts will not trigger a webhook. Story Replies webhook currently doesn’t support GIF or sticker. * an inline message reply or sticker * a quick reply or Icebreaker option or Generic Template button is selected * a customer deletes a message * a message from a customer is unsupported * a customer sends a message from an Instagram Shops product detail page * a customer clicks an ad that goes to an Instagram Messaging conversation [(Click To Direct, CTD)⁠](https://www.facebook.com/business/help/198088077975174)   A notification is also sent when your business sends a message to a customer. A notification will not be sent when your business reacts or unreacts to a customer message.  This callback will occur when a message has been sent by your Instagram account. `is_echo` flag will be present to indicate that the message is sent from the Instagram account itself. `message_reactions` event will not have an echo webhook delivered |
+| `messages` | A notification is sent when a customer sends your business:   * a message with text or media (image/video/file/audio) * a share (media/post shares) * a story reply or mention. Only story mentions will trigger a webhook. Tagging on regular posts will not trigger a webhook. Story Replies webhook currently doesn't support GIF or sticker. * an inline message reply or sticker * a quick reply or Icebreaker option or Generic Template button is selected * a customer deletes a message * a message from a customer is unsupported * a customer sends a message from an Instagram Shops product detail page * a customer clicks an ad that goes to an Instagram Messaging conversation [(Click To Direct, CTD)⁠](https://www.facebook.com/business/help/198088077975174)   A notification is also sent when your business sends a message to a customer. A notification will not be sent when your business reacts or unreacts to a customer message.  This callback will occur when a message has been sent by your Instagram account. `is_echo` flag will be present to indicate that the message is sent from the Instagram account itself. `message_reactions` event will not have an echo webhook delivered |
 | `messaging_postbacks` | A notification is sent when a customer clicked an Icebreaker option or Generic Template button  Requires v8.0 or later. Requires v11.0 or later for inclusion of the `mid` field. |
 | `messaging_seen` | A notification is sent when a message has been read by the recipient |
 | `messaging_referral` | A notification is sent when an `ig.me` link with a referral parameter is clicked by a customer in an existing conversation |
@@ -126,155 +126,145 @@ The following are examples for the types of webhooks notifications you can recei
 ### Message reactions
 
 ```
-```
 {  
-  "object": "instagram",  
-  "entry": [  
-    {  
-      "id": "IGID",  // ID for your Instagram Professional account  
-      "time": 1569262486134,  
-      "messaging": [  
-        {  
-          "sender": {  
-            "id": "IGSID"  // Instagram-scoped ID for the customer who sent the message  
-          },  
-          "recipient": {  
-            "id": "IGID"  // ID for your Instagram Professional account  
-          },  
-          "timestamp": 1569262485349,  
-          "reaction" :{  
-            "mid" : "MESSAGE-ID",  
-            "action": "react",    // or unreact  
-            "reaction": "love", // optional, to unreact if there is no reaction field  
-            "emoji": "\u{2764}\u{FE0F}" // optional, to unreact if there is no emoji field  
-          }  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "instagram",  
+  "entry": [  
+    {  
+      "id": "IGID",  // ID for your Instagram Professional account  
+      "time": 1569262486134,  
+      "messaging": [  
+        {  
+          "sender": {  
+            "id": "IGSID"  // Instagram-scoped ID for the customer who sent the message  
+          },  
+          "recipient": {  
+            "id": "IGID"  // ID for your Instagram Professional account  
+          },  
+          "timestamp": 1569262485349,  
+          "reaction" :{  
+            "mid" : "MESSAGE-ID",  
+            "action": "react",    // or unreact  
+            "reaction": "love", // optional, to unreact if there is no reaction field  
+            "emoji": "\u{2764}\u{FE0F}" // optional, to unreact if there is no emoji field  
+          }  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ### Messaging postbacks
 
 ```
-```
 {  
-  "object": "instagram",  
-  "entry": [  
-    {  
-      "id": "IGSID",  // ID of your Instagram Professional account  
-      "time": 1502905976963,  
-      "messaging": [  
-        {  
-          "sender": { "id": "IGSID" },    // Instagram-scoped ID for the customer who sent the message  
-          "recipient": { "id": "IGID" },  // ID of your Instagram Professional account  
-          "timestamp": 1502905976377,  
-          "postback": {  
-            "mid":"MESSAGE-ID",           // ID for the message sent to your business  
-            "title": "SELECTED-ICEBREAKER-REPLY-OR-CTA-BUTTON",  
-            "payload": "CUSTOMER-RESPONSE-PAYLOAD",  // The payload with the option selected by the customer  
-          }  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "instagram",  
+  "entry": [  
+    {  
+      "id": "IGSID",  // ID of your Instagram Professional account  
+      "time": 1502905976963,  
+      "messaging": [  
+        {  
+          "sender": { "id": "IGSID" },    // Instagram-scoped ID for the customer who sent the message  
+          "recipient": { "id": "IGID" },  // ID of your Instagram Professional account  
+          "timestamp": 1502905976377,  
+          "postback": {  
+            "mid":"MESSAGE-ID",           // ID for the message sent to your business  
+            "title": "SELECTED-ICEBREAKER-REPLY-OR-CTA-BUTTON",  
+            "payload": "CUSTOMER-RESPONSE-PAYLOAD",  // The payload with the option selected by the customer  
+          }  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ### Messaging referral
 
 ```
-```
 {  
-  "object": "instagram",  
-  "entry": [  
-    {  
-      "id": "IGSID",  // ID of your Instagram Professional account  
-      "time": 1502905976963,  
-      "messaging": [  
-        {  
-          "sender": {  
-            "id": "IGSID"  // Instagram-scoped ID for the customer who sent the message  
-          },  
-          "recipient": {  
-            "id": "IGID"  // ID of your Instagram Professional account  
-          },  
-          "timestamp": 1502905976377,  
-          "referral": {  
-                 "ref": "INFORMATION-INCLUDED-IN-REF-PARAMETER-OF-IGME-LINK"  
-                 "source": "IGME-SOURCE-LINK"  
-                 "type":  "OPEN_THREAD"  // Only supported for existing conversations  
-          }  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "instagram",  
+  "entry": [  
+    {  
+      "id": "IGSID",  // ID of your Instagram Professional account  
+      "time": 1502905976963,  
+      "messaging": [  
+        {  
+          "sender": {  
+            "id": "IGSID"  // Instagram-scoped ID for the customer who sent the message  
+          },  
+          "recipient": {  
+            "id": "IGID"  // ID of your Instagram Professional account  
+          },  
+          "timestamp": 1502905976377,  
+          "referral": {  
+                 "ref": "INFORMATION-INCLUDED-IN-REF-PARAMETER-OF-IGME-LINK"  
+                 "source": "IGME-SOURCE-LINK"  
+                 "type":  "OPEN_THREAD"  // Only supported for existing conversations  
+          }  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ### Messaging seen
 
 ```
-```
 {  
-   "object":"instagram",  
-   "entry":[  
-      {  
-         "id":"IGID",  // ID for your Instagram Professional account  
-         "time":1569262486134,  
-         "messaging":[  
-            {  
-               "sender":{  
-                  "id":"IGSID"  // Instagram-scoped ID for the customer who sent the message  
-               },  
-               "recipient":{  
-                  "id":"IGID"  // ID for your Instagram Professional account  
-               },  
-               "timestamp":1569262485349,  
-               "read":{  
-                  "mid":"MESSAGE-ID"  
-               }  
-            }  
-         ]  
-      }  
-   ]  
+   "object":"instagram",  
+   "entry":[  
+      {  
+         "id":"IGID",  // ID for your Instagram Professional account  
+         "time":1569262486134,  
+         "messaging":[  
+            {  
+               "sender":{  
+                  "id":"IGSID"  // Instagram-scoped ID for the customer who sent the message  
+               },  
+               "recipient":{  
+                  "id":"IGID"  // ID for your Instagram Professional account  
+               },  
+               "timestamp":1569262485349,  
+               "read":{  
+                  "mid":"MESSAGE-ID"  
+               }  
+            }  
+         ]  
+      }  
+   ]  
 }
-```
 ```
 
 ### Disappearing media
 
 ```
-```
 {  
-  "object": "instagram",  
-  "entry": [  
-    {  
-      "id": "IGID",  // ID of your Instagram Professional account  
-      "time": 1569262486134,  
-      "messaging": [  
-        {  
-          "sender": { "id": "IGSID" },    // Instagram-scoped ID for the customer who sent the message  
-          "recipient": { "id": "IGID" },  // ID of your Instagram Professional account  
-          "timestamp": 1569262485349,  
-          "message": {  
-            "mid": "MESSAGE-ID",   // ID of the message sent to your business  
-            "attachments": [  
-              {  
-                "type":"ephemeral" // no URL is included for ephemeral media  
-              }  
-            ]  
-          }  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "instagram",  
+  "entry": [  
+    {  
+      "id": "IGID",  // ID of your Instagram Professional account  
+      "time": 1569262486134,  
+      "messaging": [  
+        {  
+          "sender": { "id": "IGSID" },    // Instagram-scoped ID for the customer who sent the message  
+          "recipient": { "id": "IGID" },  // ID of your Instagram Professional account  
+          "timestamp": 1569262485349,  
+          "message": {  
+            "mid": "MESSAGE-ID",   // ID of the message sent to your business  
+            "attachments": [  
+              {  
+                "type":"ephemeral" // no URL is included for ephemeral media  
+              }  
+            ]  
+          }  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ## See also

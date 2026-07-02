@@ -48,7 +48,7 @@ https://graph.facebook.com/v25.0/<AD_ID>/previews
 
 ### Instagram
 
-To preview an ad before providing ad creative, pass the creative’s `object_story_spec` in the preview’s `creative` parameter. You must provide `instagram_user_id` and `page_id` for both Instagram-only placement and mixed placement ads:
+To preview an ad before providing ad creative, pass the creative's `object_story_spec` in the preview's `creative` parameter. You must provide `instagram_user_id` and `page_id` for both Instagram-only placement and mixed placement ads:
 
 ```
 curl -G \
@@ -56,7 +56,7 @@ curl -G \
     "object_story_spec": {
       "instagram_user_id": "<INSTAGRAM_USER_ID>",
       "link_data": {
-        "call_to_action": {"type":"LEARN_MORE","value":{"link":"<URL>"}},
+        "call_to_action": {"type":"LEARN_MORE","value":{"link":"<URL>"}​},
         "caption": "www.example.com",
         "image_hash": "<IMAGE_HASH>",
         "link": "<URL>",
@@ -72,7 +72,7 @@ https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/generatepreviews
 
 ### Threads
 
-To preview an ad before providing an ad creative, pass the creative’s `object_story_spec` in the preview’s `creative` parameter. You must provide `threads_user_id` and `page_id` for both Threads with Instagram placements:
+To preview an ad before providing an ad creative, pass the creative's `object_story_spec` in the preview's `creative` parameter. You must provide `threads_user_id` and `page_id` for both Threads with Instagram placements:
 
 ```
 curl -G \
@@ -81,7 +81,7 @@ curl -G \
       "instagram_user_id": "<INSTAGRAM_USER_ID>",
       "threads_user_id" : "<THREAD_USER_ID>"
       "link_data": {
-        "call_to_action": {"type":"LEARN_MORE","value":{"link":"<URL>"}},
+        "call_to_action": {"type":"LEARN_MORE","value":{"link":"<URL>"}​},
         "caption": "www.example.com",
         "image_hash": "<IMAGE_HASH>",
         "link": "<URL>",
@@ -97,7 +97,7 @@ https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/generatepreviews
 
 ## Preview After Adding Creative
 
-After you provide ad creative, you can get the URL for the corresponding Instagram post, and can see responses to the ad post. The post is not identical to the one your audience sees. It does not have “Sponsored” or a call-to-action.
+After you provide ad creative, you can get the URL for the corresponding Instagram post, and can see responses to the ad post. The post is not identical to the one your audience sees. It does not have "Sponsored" or a call-to-action.
 
 This URL is not available with Advantage+ catalog ad creatives, which is when you use `template_data` in `object_story_spec`. This URL is also unavailable for ad creatives for ads in Instagram stories.
 
@@ -113,10 +113,8 @@ https://graph.facebook.com/v25.0/<CREATIVE_ID>/
 ### Example response
 
 ```
-```
 {  
-  "instagram_permalink_url": "<INSTAGRAM_POST_URL>",  
-  "id": "<AD_CREATIVE_ID>"  
+  "instagram_permalink_url": "<INSTAGRAM_POST_URL>",  
+  "id": "<AD_CREATIVE_ID>"  
 }
-```
 ```

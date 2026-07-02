@@ -40,11 +40,9 @@ https://graph.facebook.com/v25.0/me/accounts?fields=access_token,name,id,tasks
 * Using the `id` of the page, find the associated business ID, Commerce Merchant Setting ID, and catalog IDs by making the following call:
 
 ```
-```
-curl -X GET -G \  
--d 'access_token=<ACCESS_TOKEN>' \  
+curl -X GET -G \  
+-d 'access_token=<ACCESS_TOKEN>' \  
 https://graph.facebook.com/<PAGE_ID>/?fields=business,commerce_merchant_settings{id,display_name,product_catalogs}
-```
 ```
 
 If the seller wants to set up using one of the existing pages and Commerce accounts, skip the next step and go to [Step 4](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/platforms/onboarding/obo#authenticateCMS).
@@ -57,7 +55,7 @@ If the seller wants to set up using a new Commerce account, you need to direct t
 * Provide a `redirect_url` parameter and your `app_id` so Commerce Manager can send the seller back after setup is complete.
 * Commerce Manager attaches the ID of the newly created `CommerceMerchantSettings` object in the `cms_id` parameter when redirecting back to your platform.
 
-If you get permission errors, it’s likely that the seller did not grant you access to the correct page or the new Commerce account. You can explain it and [re-request permission](https://developers.facebook.com/documentation/facebook-login/web/permissions#re-asking-declined-permissions).
+If you get permission errors, it's likely that the seller did not grant you access to the correct page or the new Commerce account. You can explain it and [re-request permission](https://developers.facebook.com/documentation/facebook-login/web/permissions#re-asking-declined-permissions).
 
 | Attribute | Description |
 | --- | --- |
@@ -125,7 +123,7 @@ If a CMS has already been registered by another app, it cannot be registered aga
 
 ### Get Catalog and Page ID from CMS
 
-Retrieve the seller’s catalog ID and Facebook Page ID from the CMS object and save it for using with catalog API. Learn more about [retrieving additional metadata from a CMS](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/platforms/onboarding/troubleshooting).
+Retrieve the seller's catalog ID and Facebook Page ID from the CMS object and save it for using with catalog API. Learn more about [retrieving additional metadata from a CMS](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/platforms/onboarding/troubleshooting).
 
 #### GET Request
 
@@ -159,7 +157,7 @@ Learn more about [product catalogs and inventory syncing](https://developers.fac
 
 ### Establish an OBO System User Relationship
 
-The Business On Behalf Of API allows platforms to create a system user and use the system user’s access token that exists inside the seller’s Business Manager. It also allows access to your sellers’ business assets, such as catalogs and pages.
+The Business On Behalf Of API allows platforms to create a system user and use the system user's access token that exists inside the seller's Business Manager. It also allows access to your sellers' business assets, such as catalogs and pages.
 
 [Learn more about the Business On Behalf Of API.](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/platforms/onboarding/obo)
 

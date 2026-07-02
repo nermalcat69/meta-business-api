@@ -71,11 +71,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{WhatsApp-Account-Number-ID}' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{WhatsApp-Account-Number-ID}' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -86,34 +86,34 @@ Select status code
 
 ```
 {  
-  "verified_account_number": {  
-    "summary": "Verified account number with full details",  
-    "value": {  
-      "id": "1234567890123456",  
-      "display_phone_number": "+1 631-555-5555",  
-      "verified_name": "Jasper's Market",  
-      "status": "CONNECTED",  
-      "quality_rating": "GREEN",  
-      "country_code": "US",  
-      "country_dial_code": "1",  
-      "code_verification_status": "VERIFIED",  
-      "name_status": "APPROVED",  
-      "messaging_limit_tier": "TIER_1K",  
-      "account_mode": "LIVE",  
-      "is_official_business_account": false  
-    }  
-  },  
-  "unverified_account_number": {  
-    "summary": "Unverified account number with minimal details",  
-    "value": {  
-      "id": "2345678901234567",  
-      "display_phone_number": "+1 555-123-4567",  
-      "status": "UNVERIFIED",  
-      "quality_rating": "NA",  
-      "code_verification_status": "NOT_VERIFIED",  
-      "name_status": "NONE"  
-    }  
-  }  
+  "verified_account_number": {  
+    "summary": "Verified account number with full details",  
+    "value": {  
+      "id": "1234567890123456",  
+      "display_phone_number": "+1 631-555-5555",  
+      "verified_name": "Jasper's Market",  
+      "status": "CONNECTED",  
+      "quality_rating": "GREEN",  
+      "country_code": "US",  
+      "country_dial_code": "1",  
+      "code_verification_status": "VERIFIED",  
+      "name_status": "APPROVED",  
+      "messaging_limit_tier": "TIER_1K",  
+      "account_mode": "LIVE",  
+      "is_official_business_account": false  
+    }  
+  },  
+  "unverified_account_number": {  
+    "summary": "Unverified account number with minimal details",  
+    "value": {  
+      "id": "2345678901234567",  
+      "display_phone_number": "+1 555-123-4567",  
+      "status": "UNVERIFIED",  
+      "quality_rating": "NA",  
+      "code_verification_status": "NOT_VERIFIED",  
+      "name_status": "NONE"  
+    }  
+  }  
 }
 ```
 
@@ -743,11 +743,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{WhatsApp-Account-Number-ID}' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{WhatsApp-Account-Number-ID}' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -758,34 +758,34 @@ Select status code
 
 ```
 {  
-  "verified_account_number": {  
-    "summary": "Verified account number with full details",  
-    "value": {  
-      "id": "1234567890123456",  
-      "display_phone_number": "+1 631-555-5555",  
-      "verified_name": "Jasper's Market",  
-      "status": "CONNECTED",  
-      "quality_rating": "GREEN",  
-      "country_code": "US",  
-      "country_dial_code": "1",  
-      "code_verification_status": "VERIFIED",  
-      "name_status": "APPROVED",  
-      "messaging_limit_tier": "TIER_1K",  
-      "account_mode": "LIVE",  
-      "is_official_business_account": false  
-    }  
-  },  
-  "unverified_account_number": {  
-    "summary": "Unverified account number with minimal details",  
-    "value": {  
-      "id": "2345678901234567",  
-      "display_phone_number": "+1 555-123-4567",  
-      "status": "UNVERIFIED",  
-      "quality_rating": "NA",  
-      "code_verification_status": "NOT_VERIFIED",  
-      "name_status": "NONE"  
-    }  
-  }  
+  "verified_account_number": {  
+    "summary": "Verified account number with full details",  
+    "value": {  
+      "id": "1234567890123456",  
+      "display_phone_number": "+1 631-555-5555",  
+      "verified_name": "Jasper's Market",  
+      "status": "CONNECTED",  
+      "quality_rating": "GREEN",  
+      "country_code": "US",  
+      "country_dial_code": "1",  
+      "code_verification_status": "VERIFIED",  
+      "name_status": "APPROVED",  
+      "messaging_limit_tier": "TIER_1K",  
+      "account_mode": "LIVE",  
+      "is_official_business_account": false  
+    }  
+  },  
+  "unverified_account_number": {  
+    "summary": "Unverified account number with minimal details",  
+    "value": {  
+      "id": "2345678901234567",  
+      "display_phone_number": "+1 555-123-4567",  
+      "status": "UNVERIFIED",  
+      "quality_rating": "NA",  
+      "code_verification_status": "NOT_VERIFIED",  
+      "name_status": "NONE"  
+    }  
+  }  
 }
 ```
 

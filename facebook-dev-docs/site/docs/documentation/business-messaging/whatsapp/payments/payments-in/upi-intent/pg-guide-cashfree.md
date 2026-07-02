@@ -48,7 +48,7 @@ In the WhatsApp customer app, the purchase flow has the following steps:
 * When the consumer taps the Pay now/continue button, they are given the option to choose UPI payment apps - WhatsApp or any other UPI payments apps. Consumers may choose any UPI option to pay for the order.
 
   ![Confirm payment sheet showing recipient UPI ID and Send payment button](https://scontent.fdel1-7.fna.fbcdn.net/v/t39.2365-6/565098139_1339318224593495_6825114181877692125_n.jpg?_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=xpdLa3Lch8YQ7kNvwHL1UcY&_nc_oc=AdpbWOgYgp84h2zaPY7qnPAmyUzRlPOh_RoZl-zKrhGghGODeflu7gGMUjaTMe8hJp1yccQtTXPA7o93qwc22-KB&_nc_zt=14&_nc_ht=scontent.fdel1-7.fna&_nc_gid=HhzWA99tpyZF5DYoeXHRDQ&_nc_ss=7b2a8&oh=00_AQBWjWczdL-64DapylW51gPv_q9X25Dw2z1LRRjZsQ1iqg&oe=6A60512D)![Choose payment method screen listing bank, Google Pay, and PhonePe UPI options](https://scontent.fdel1-6.fna.fbcdn.net/v/t39.2365-6/561624481_1339317921260192_2024095528920144172_n.jpg?_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=Qgrdk7YcCe0Q7kNvwGOzLte&_nc_oc=Adp7aovtm5A6iBHegs-E-reYkBj2e2cXLfcZBx8YyMAQWUpzE7adBoTUo7q3wdl0qfFpMazLHM7ocigLU-mLTq66&_nc_zt=14&_nc_ht=scontent.fdel1-6.fna&_nc_gid=HhzWA99tpyZF5DYoeXHRDQ&_nc_ss=7b2a8&oh=00_AQBwv8FwYGxBzFLntxYXcgq58Sa6GVF1ZP9HEyQ1_iVtIw&oe=6A60772A)
-* Consumer pays for the order and the payment method is saved for the future and automatically selected for the next payment transaction. Also, one quick note is the order details screen order-status will continue to show “Order pending” until the merchant sends order status interactive message.
+* Consumer pays for the order and the payment method is saved for the future and automatically selected for the next payment transaction. Also, one quick note is the order details screen order-status will continue to show "Order pending" until the merchant sends order status interactive message.
 
   ![Chat showing completed payment receipt while order status stays pending](https://scontent.fdel1-9.fna.fbcdn.net/v/t39.2365-6/566231819_1339318157926835_1506879346444592490_n.jpg?_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=E1NOJTj4LekQ7kNvwHjnNTV&_nc_oc=AdpO-SVfAbmcPDNuXtFA1RZFDwzvf-TaKibLcP_eJrHsUDrXnZlrFH3G415GsJHJiDKwJJy0B0D1eicer5J2-p6A&_nc_zt=14&_nc_ht=scontent.fdel1-9.fna&_nc_gid=HhzWA99tpyZF5DYoeXHRDQ&_nc_ss=7b2a8&oh=00_AQCJpv06KGDN8YdfqpNC0iJ5z454Tf6VJ1-AHaa2BhmjqQ&oe=6A605941)![Order details screen with Payment details row and Continue button](https://scontent.fdel1-9.fna.fbcdn.net/v/t39.2365-6/561256871_1339318141260170_8139516040489296125_n.jpg?_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=hJNJR3FkKdMQ7kNvwF2dmM9&_nc_oc=AdpYf273-a4u4ydHAJlJJlHeaCBC7dMZZ20cvDYgJ_fkFkdKXMj0GbqPGQv5aZ0AjxwcbKPDFdQCehGbOkgnBVIz&_nc_zt=14&_nc_ht=scontent.fdel1-9.fna&_nc_gid=HhzWA99tpyZF5DYoeXHRDQ&_nc_ss=7b2a8&oh=00_AQCIUYZ5C5msvfnEISKR19ZyFTgD9N2LgzaZB2qip1ZMIg&oe=6A604B25)
 * Once the payment is complete, the business receives a notification from Payment Gateway and the merchant needs to send order status updates to the consumer client notifying consumers about the progress to the order, this will update the order details message CTAs and order details screen - order status description.
@@ -67,10 +67,8 @@ The following sequence diagram demonstrates the typical integration flow for WA 
 Once the consumer has expressed their interest to purchase an item using UPI payment method, merchant needs to call payment gateway to create a UPI intent, the following is the sample UPI intent link:
 
 ```
-```
 upi://pay?pa=abc@psp&pn=ABC&tr=877376394&  
-  am=10.00&cu=INR&mode=00&purpose=00&mc=5399&tn=877376394
-```
+  am=10.00&cu=INR&mode=00&purpose=00&mc=5399&tn=877376394
 ```
 
 Merchant/Partner could send the entire UPI intent as it is in the `upi_intent_link` type payload. These parameters will be discussed in detail below.
@@ -81,19 +79,19 @@ To send an `order_details` message, businesses must assemble an [interactive obj
 
 | Object | Description |
 | --- | --- |
-| `type`  object | **Required.**  Must be “order\_details”. |
+| `type`  object | **Required.**  Must be "order\_details". |
 | `header`  object | **Optional.**  Header content displayed on top of a message. If a header is not provided, the API uses an image of the first available product as the header |
 | `body`  object | **Required.**  An object with the body of the message. The object contains the following field:  `text` string   * **Required** if `body` is present. The content of the message. Emojis and markdown are supported. Maximum length is 1024 characters |
 | `footer`  object | **Optional.**  An object with the footer of the message. The object contains the following fields:  `text` string   * **Required** if `footer` is present. The footer content. Emojis, markdown, and links are supported. Maximum length is 60 characters |
-| `action`  object | **Required.**  An action object you want the user to perform after reading the message. This action object contains the following fields:  `name` string   * **Required**. Must be “review\_and\_pay”   `parameters` object   * See [Parameters Object](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-in/upi-intent/pg-guide-cashfree#paramobject) for information |
+| `action`  object | **Required.**  An action object you want the user to perform after reading the message. This action object contains the following fields:  `name` string   * **Required**. Must be "review\_and\_pay"   `parameters` object   * See [Parameters Object](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-in/upi-intent/pg-guide-cashfree#paramobject) for information |
 
 #### Parameters object
 
 | Object | Description |
 | --- | --- |
-| `reference_id`  string | **Required.**  Unique identifier for the order or invoice provided by the business. It is case sensitive and cannot be an empty string and can only contain English letters, numbers, underscores, dashes, or dots, and should not exceed 35 characters.  The reference\_id must be unique for each order\_details message for a given business. If there is a need to send multiple order\_details messages for the same order, it is recommended to include a sequence number in the reference\_id (for example, “BM345A-12”) to ensure reference\_id uniqueness. |
+| `reference_id`  string | **Required.**  Unique identifier for the order or invoice provided by the business. It is case sensitive and cannot be an empty string and can only contain English letters, numbers, underscores, dashes, or dots, and should not exceed 35 characters.  The reference\_id must be unique for each order\_details message for a given business. If there is a need to send multiple order\_details messages for the same order, it is recommended to include a sequence number in the reference\_id (for example, "BM345A-12") to ensure reference\_id uniqueness. |
 | `type`  object | **Required.**  The type of goods being paid for in this order. Current supported options are `digital-goods` and `physical-goods` |
-| `beneficiaries`  array | **Required for shipped physical-goods.**  An array of beneficiaries for this order. A beneficiary is an intended recipient for shipping the physical goods in the order. It contains the following fields:  Beneficiary information isn’t shown to users but is needed for legal and compliance reasons.  `name` string   * **Required.** Name of the individual or business receiving the physical goods. Cannot exceed 200 characters   `address_line1` string   * **Required.** Shipping address (Door/Tower Number, Street Name, and so on). Cannot exceed 100 characters   `address_line2` string   * **Optional.** Shipping address (Landmark, Area, and so on). Cannot exceed 100 characters   `city` string   * **Required.** Name of the city.   `state` string   * **Required.** Name of the state.   `country` string   * **Required.** Must be “India”.   `postal_code` string   * **Required.** 6-digit zip code of shipping address. |
+| `beneficiaries`  array | **Required for shipped physical-goods.**  An array of beneficiaries for this order. A beneficiary is an intended recipient for shipping the physical goods in the order. It contains the following fields:  Beneficiary information isn't shown to users but is needed for legal and compliance reasons.  `name` string   * **Required.** Name of the individual or business receiving the physical goods. Cannot exceed 200 characters   `address_line1` string   * **Required.** Shipping address (Door/Tower Number, Street Name, and so on). Cannot exceed 100 characters   `address_line2` string   * **Optional.** Shipping address (Landmark, Area, and so on). Cannot exceed 100 characters   `city` string   * **Required.** Name of the city.   `state` string   * **Required.** Name of the state.   `country` string   * **Required.** Must be "India".   `postal_code` string   * **Required.** 6-digit zip code of shipping address. |
 | `currency` | **Required.**  The currency for this order. Currently the only supported value is `INR`. |
 | `total_amount`  object | **Required.**  The `total_amount` object contains the following fields:  `offset` integer   * **Required.** Must be `100` for `INR`.   `value` integer   * **Required.** Positive integer representing the amount value multiplied by offset. For example, ₹12.34 has value 1234.   `total_amount.value` must be equal to `order.subtotal.value` + `order.tax.value` + `order.shipping.value` - `order.discount.value`. |
 | `payment_settings`  object | **Required.**  See [Payment Settings object](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-in/upi-intent/pg-guide-cashfree#paymentsettingsobject) for more information. |
@@ -107,16 +105,16 @@ You can pass UPI intent as it is or parse the UPI intent parameters and pass the
 
 | Object | Description |
 | --- | --- |
-| `type`  string | **Required.**  Must be set to **“upi\_intent\_link”** |
-| `upi_intent_link`  object | **Required.**  An object that describes payment account information:  `link` string   * **Required.** The UPI intent that is generated from Payment gateway.   The UPI intent only supports the following “`&`” separated attributes- pa, pn, mc, purpose, and tr   Example: `upi://pay?pa=merchant_vpa&pn=Merchant_Name&mc=merchant_category_code&purpose=purpose_code&tr=pg_generated_id` |
+| `type`  string | **Required.**  Must be set to **"upi\_intent\_link"** |
+| `upi_intent_link`  object | **Required.**  An object that describes payment account information:  `link` string   * **Required.** The UPI intent that is generated from Payment gateway.   The UPI intent only supports the following "`&`" separated attributes- pa, pn, mc, purpose, and tr   Example: `upi://pay?pa=merchant_vpa&pn=Merchant_Name&mc=merchant_category_code&purpose=purpose_code&tr=pg_generated_id` |
 
 #### Order object
 
 | Object | Description |
 | --- | --- |
 | `status`  string | **Required.**  Only supported value in the `order_details` message is `pending`.  In an `order_status` message, `status` can be: `pending`, `captured`, or `failed`. |
-| `type`  string | **Optional.**  Only supported value is `quick_pay`. When this field is passed in, the “Review and Pay” button is hidden and only the “Pay Now” button is shown in the order details bubble. |
-| `items`  object | **Required.**  An object with the list of items for this order, containing the following fields:  `retailer_id` string   * **Optional.** Content ID for an item in the order from your catalog.   `name` string   * **Required.** The item’s name to be displayed to the user. Cannot exceed 60 characters   `image` object   * **Optional.** Custom image for the item to be displayed to the user. See [item image object](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-in/upi-intent/pg-guide-cashfree#item_image_object) for information   Using this image field will limit the items array to a maximum of 10 items and this cannot be used with `retailer_id` or `catalog_id`.  `amount` amount object with value and offset -- refer total amount field above   * **Required.** The price per item   `sale_amount` amount object   * **Optional.** The discounted price per item. This should be less than the original amount. If included, this field is used to calculate the subtotal amount   `quantity` integer   * **Required.** The number of items in this order, this field cannot be decimal, has to be integer.   `country_of_origin` string   * **Required** if `catalog_id` is not present. The country of origin of the product   `importer_name` string   * **Required** if `catalog_id` is not present. Name of the importer company   `importer_address` string   * **Required** if `catalog_id` is not present. Address of importer company |
+| `type`  string | **Optional.**  Only supported value is `quick_pay`. When this field is passed in, the "Review and Pay" button is hidden and only the "Pay Now" button is shown in the order details bubble. |
+| `items`  object | **Required.**  An object with the list of items for this order, containing the following fields:  `retailer_id` string   * **Optional.** Content ID for an item in the order from your catalog.   `name` string   * **Required.** The item's name to be displayed to the user. Cannot exceed 60 characters   `image` object   * **Optional.** Custom image for the item to be displayed to the user. See [item image object](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-in/upi-intent/pg-guide-cashfree#item_image_object) for information   Using this image field will limit the items array to a maximum of 10 items and this cannot be used with `retailer_id` or `catalog_id`.  `amount` amount object with value and offset -- refer total amount field above   * **Required.** The price per item   `sale_amount` amount object   * **Optional.** The discounted price per item. This should be less than the original amount. If included, this field is used to calculate the subtotal amount   `quantity` integer   * **Required.** The number of items in this order, this field cannot be decimal, has to be integer.   `country_of_origin` string   * **Required** if `catalog_id` is not present. The country of origin of the product   `importer_name` string   * **Required** if `catalog_id` is not present. Name of the importer company   `importer_address` string   * **Required** if `catalog_id` is not present. Address of importer company |
 | `subtotal`  object | **Required.**  The value **must be equal** to sum of `order.amount.value` \* `order.amount.quantity`. Refer to `total_amount` description for explanation of `offset` and `value` fields  The following fields are part of the `subtotal` object:  `offset` integer   * **Required.** Must be `100` for `INR`   `value` integer   * **Required.** Positive integer representing the amount value multiplied by offset. For example, ₹12.34 has value 1234 |
 | `tax`  object | **Required.**  The tax information for this order which contains the following fields:  `offset` integer   * **Required.** Must be `100` for `INR`   `value` integer   * **Required.** Positive integer representing the amount value multiplied by offset. For example, ₹12.34 has value 1234   `description` string   * **Optional.** Max character limit is 60 characters |
 | `shipping`  object | **Optional.**  The shipping cost of the order. The object contains the following fields:  `offset` integer   * **Required.** Must be `100` for `INR`   `value` integer   * **Required.** Positive integer representing the amount value multiplied by offset. For example, ₹12.34 has value 1234   `description` string   * **Optional.** Max character limit is 60 characters |
@@ -133,118 +131,116 @@ You can pass UPI intent as it is or parse the UPI intent parameters and pass the
 By the end, the interactive object should look something like this for a merchant upi intent type catalog-based integration:
 
 ```
-```
 {  
-  "interactive": {  
-    "type": "order_details",  
-    "header": {  
-      "type": "image",  
-      "image": {  
-        "link": "your-media-url-link"  
-      }  
-    },  
-    "body": {  
-      "text": "your-text-body-content"  
-    },  
-    "footer": {  
-      "text": "your-text-footer-content"  
-    },  
-    "action": {  
-      "name": "review_and_pay",  
-      "parameters": {  
-        "reference_id": "reference-id-value",  
-        "type": "digital-goods",  
-        "payment_settings": [  
-          {  
-            "type": "upi_intent_link",  
-            "upi_intent_link": {  
-              "link": "upi://pay?pa=merchant_vpa&pn=merchant%20Name&mc=mc_code&purpose=purpose_code&tr=transaction_record"  
-            }  
-          }  
-        ],  
-        "currency": "INR",  
-        "total_amount": {  
-          "value": 21000,  
-          "offset": 100  
-        },  
-        "order": {  
-          "status": "pending",  
-          "expiration": {  
-            "timestamp": "utc_timestamp_in_seconds",  
-            "description": "cancellation-explanation"  
-          },  
-          "items": [  
-            {  
-              "name": "Product name, for example bread",  
-              "amount": {  
-                "value": 10000,  
-                "offset": 100  
-              },  
-              "quantity": 1,  
-              "sale_amount": {  
-                "value": 100,  
-                "offset": 100  
-              },  
-              "country_of_origin": "country-of-origin",  
-              "importer_name": "name-of-importer-business",  
-              "importer_address": {  
-                "address_line1": "B8/733 nand nagri",  
-                "address_line2": "police station",  
-                "city": "East Delhi",  
-                "zone_code": "DL",  
-                "postal_code": "110093",  
-                "country_code": "IN"  
-              }  
-            },  
-            {  
-              "name": "Product name, for example bread",  
-              "amount": {  
-                "value": 10000,  
-                "offset": 100  
-              },  
-              "quantity": 1,  
-              "sale_amount": {  
-                "value": 100,  
-                "offset": 100  
-              },  
-              "country_of_origin": "country-of-origin",  
-              "importer_name": "name-of-importer-business",  
-              "importer_address": {  
-                "address_line1": "B8/733 nand nagri",  
-                "address_line2": "police station",  
-                "city": "East Delhi",  
-                "zone_code": "DL",  
-                "postal_code": "110093",  
-                "country_code": "IN"  
-              }  
-            }  
-          ],  
-          "subtotal": {  
-            "value": 20000,  
-            "offset": 100  
-          },  
-          "tax": {  
-            "value": 1000,  
-            "offset": 100,  
-            "description": "optional_text"  
-          },  
-          "shipping": {  
-            "value": 1000,  
-            "offset": 100,  
-            "description": "optional_text"  
-          },  
-          "discount": {  
-            "value": 1000,  
-            "offset": 100,  
-            "description": "optional_text",  
-            "discount_program_name": "optional_text"  
-          }  
-        }  
-      }  
-    }  
-  }  
+  "interactive": {  
+    "type": "order_details",  
+    "header": {  
+      "type": "image",  
+      "image": {  
+        "link": "your-media-url-link"  
+      }  
+    },  
+    "body": {  
+      "text": "your-text-body-content"  
+    },  
+    "footer": {  
+      "text": "your-text-footer-content"  
+    },  
+    "action": {  
+      "name": "review_and_pay",  
+      "parameters": {  
+        "reference_id": "reference-id-value",  
+        "type": "digital-goods",  
+        "payment_settings": [  
+          {  
+            "type": "upi_intent_link",  
+            "upi_intent_link": {  
+              "link": "upi://pay?pa=merchant_vpa&pn=merchant%20Name&mc=mc_code&purpose=purpose_code&tr=transaction_record"  
+            }  
+          }  
+        ],  
+        "currency": "INR",  
+        "total_amount": {  
+          "value": 21000,  
+          "offset": 100  
+        },  
+        "order": {  
+          "status": "pending",  
+          "expiration": {  
+            "timestamp": "utc_timestamp_in_seconds",  
+            "description": "cancellation-explanation"  
+          },  
+          "items": [  
+            {  
+              "name": "Product name, for example bread",  
+              "amount": {  
+                "value": 10000,  
+                "offset": 100  
+              },  
+              "quantity": 1,  
+              "sale_amount": {  
+                "value": 100,  
+                "offset": 100  
+              },  
+              "country_of_origin": "country-of-origin",  
+              "importer_name": "name-of-importer-business",  
+              "importer_address": {  
+                "address_line1": "B8/733 nand nagri",  
+                "address_line2": "police station",  
+                "city": "East Delhi",  
+                "zone_code": "DL",  
+                "postal_code": "110093",  
+                "country_code": "IN"  
+              }  
+            },  
+            {  
+              "name": "Product name, for example bread",  
+              "amount": {  
+                "value": 10000,  
+                "offset": 100  
+              },  
+              "quantity": 1,  
+              "sale_amount": {  
+                "value": 100,  
+                "offset": 100  
+              },  
+              "country_of_origin": "country-of-origin",  
+              "importer_name": "name-of-importer-business",  
+              "importer_address": {  
+                "address_line1": "B8/733 nand nagri",  
+                "address_line2": "police station",  
+                "city": "East Delhi",  
+                "zone_code": "DL",  
+                "postal_code": "110093",  
+                "country_code": "IN"  
+              }  
+            }  
+          ],  
+          "subtotal": {  
+            "value": 20000,  
+            "offset": 100  
+          },  
+          "tax": {  
+            "value": 1000,  
+            "offset": 100,  
+            "description": "optional_text"  
+          },  
+          "shipping": {  
+            "value": 1000,  
+            "offset": 100,  
+            "description": "optional_text"  
+          },  
+          "discount": {  
+            "value": 1000,  
+            "offset": 100,  
+            "description": "optional_text",  
+            "discount_program_name": "optional_text"  
+          }  
+        }  
+      }  
+    }  
+  }  
 }
-```
 ```
 
 ### Step 3: Add common message parameters
@@ -252,17 +248,15 @@ By the end, the interactive object should look something like this for a merchan
 Once the interactive object is complete, append the other parameters that make a message: `recipient_type`, `to`, and `type`. Remember to set the `type` to `interactive`.
 
 ```
-```
 {  
-   "messaging_product": "whatsapp",  
-   "recipient_type": "individual",  
-   "to": "PHONE_NUMBER",  
-   "type": "interactive",  
-   "interactive": {  
-     // interactive object here  
-   }  
- }
-```
+   "messaging_product": "whatsapp",  
+   "recipient_type": "individual",  
+   "to": "PHONE_NUMBER",  
+   "type": "interactive",  
+   "interactive": {  
+     // interactive object here  
+   }  
+ }
 ```
 
 These are [parameters common to all message types](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/send-messages#requests).
@@ -272,18 +266,16 @@ These are [parameters common to all message types](https://developers.facebook.c
 Make a POST call to the [`/[PHONE_NUMBER_ID]/messages`](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/message-api) endpoint with the `JSON` object you have assembled. If your message is sent successfully, you get the following response:
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "contacts": [ {  
-      "input": "[PHONE_NUMBER_ID]",  
-      "wa_id": "[PHONE-NUMBER_ID]"  
-  } ],  
-  "messages": [ {  
-      "id": "wamid.HBgLMTY1MDUwNzY1MjAVAgARGBI5QTNDQTVCM0Q0Q0Q2RTY3RTcA"  
-  } ]  
+  "messaging_product": "whatsapp",  
+  "contacts": [ {  
+      "input": "[PHONE_NUMBER_ID]",  
+      "wa_id": "[PHONE-NUMBER_ID]"  
+  } ],  
+  "messages": [ {  
+      "id": "wamid.HBgLMTY1MDUwNzY1MjAVAgARGBI5QTNDQTVCM0Q0Q0Q2RTY3RTcA"  
+  } ]  
 }
-```
 ```
 
 #### Errors
@@ -293,20 +285,18 @@ Make a POST call to the [`/[PHONE_NUMBER_ID]/messages`](https://developers.faceb
 If you see the following error, accept the WhatsApp Payments terms of service using the link provided in the error message before trying again.
 
 ```
-```
 {  
-  "error": {  
-    "message": "(#134011) WhatsApp Payments terms of service has not been accepted",  
-    "type": "OAuthException",  
-    "code": 134011,  
-    "error_data": {  
-      "messaging_product": "whatsapp",  
-      "details": "WhatsApp Payments Terms of Service acceptance pending for this WhatsApp Business Account.  
-Please use the following link to accept terms of service before using Business APIs: https://fb.me/12345"  
-    }  
-  }  
+  "error": {  
+    "message": "(#134011) WhatsApp Payments terms of service has not been accepted",  
+    "type": "OAuthException",  
+    "code": 134011,  
+    "error_data": {  
+      "messaging_product": "whatsapp",  
+      "details": "WhatsApp Payments Terms of Service acceptance pending for this WhatsApp Business Account.  
+Please use the following link to accept terms of service before using Business APIs: https://fb.me/12345"  
+    }  
+  }  
 }
-```
 ```
 
 For all other errors that can be returned and guidance on how to handle them, see [WhatsApp Cloud API, Error Codes](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/error-codes).
@@ -339,29 +329,27 @@ Upon receiving transaction signals from payment gateway through webhook, the bus
 Typically businesses update the `order_status` using either the WhatsApp payment status change notifications or their own internal processes. To update `order_status`, the partner sends a `order_status` message to the user.
 
 ```
-```
 {  
-  "recipient_type": "individual",  
-  "to": "whatsapp-id",  
-  "type": "interactive",  
-  "interactive": {  
-    "type": "order_status",  
-    "body": {  
-      "text": "your-text-body-content"  
-    },  
-    "action": {  
-      "name": "review_order",  
-      "parameters": {  
-        "reference_id": "reference-id-value",  
-        "order": {  
-          "status": "processing | partially_shipped | shipped | completed | canceled",  
-          "description": "optional-text"  
-        }  
-      }  
-    }  
-  }  
+  "recipient_type": "individual",  
+  "to": "whatsapp-id",  
+  "type": "interactive",  
+  "interactive": {  
+    "type": "order_status",  
+    "body": {  
+      "text": "your-text-body-content"  
+    },  
+    "action": {  
+      "name": "review_order",  
+      "parameters": {  
+        "reference_id": "reference-id-value",  
+        "order": {  
+          "status": "processing | partially_shipped | shipped | completed | canceled",  
+          "description": "optional-text"  
+        }  
+      }  
+    }  
+  }  
 }
-```
 ```
 
 The following table describes the returned values:

@@ -31,9 +31,9 @@ These permissions are required for the ad account that owns the ad:
 * `ads_read` — for reading ad media and replies
 * `ads_management` — for hiding and adding replies
 
-## Retrieve a Threads ad’s media
+## Retrieve a Threads ad's media
 
-To retrieve a Threads ad’s media and associated metadata, send a `GET` request to the `/{media-id}` endpoint with a comma-separated `fields` parameter to specify which fields to return.
+To retrieve a Threads ad's media and associated metadata, send a `GET` request to the `/{media-id}` endpoint with a comma-separated `fields` parameter to specify which fields to return.
 
 ### Fields
 
@@ -52,37 +52,33 @@ To retrieve a Threads ad’s media and associated metadata, send a `GET` request
 | `media_url`  string | The CDN URL for the media image or video. |
 | `media_type`  string | The media type. **Values:** `IMAGE`, `VIDEO`, `CAROUSEL`. |
 | `gif_url`  string | The CDN URL of an attached GIF, if available. |
-| `owner_profile_pic`  string | The CDN URL for the owner’s profile picture. |
-| `is_owner_verified`  Boolean | Whether the media owner’s account is verified. |
+| `owner_profile_pic`  string | The CDN URL for the owner's profile picture. |
+| `is_owner_verified`  Boolean | Whether the media owner's account is verified. |
 
 ### Example request
 
 ```
-```
-curl -X GET "https://graph.facebook.com/v24.0/<MEDIA_ID>/?fields=id,caption,like_count,username,reply_count,hide_status,timestamp,media_type&access_token=<ACCESS_TOKEN>"
-```
+curl -X GET "https://graph.facebook.com/v24.0/<MEDIA_ID>/?fields=id,caption,like_count,username,reply_count,hide_status,timestamp,media_type&access_token=<ACCESS_TOKEN>"
 ```
 
 ### Example response
 
 ```
-```
 {  
-  "id": "18106042978723008",  
-  "caption": "Check out our latest product!",  
-  "like_count": 42,  
-  "username": "mybrand",  
-  "reply_count": 5,  
-  "hide_status": "UNHUSHED",  
-  "timestamp": "2025-11-18T23:52:47+0000",  
-  "media_type": "IMAGE"  
+  "id": "18106042978723008",  
+  "caption": "Check out our latest product!",  
+  "like_count": 42,  
+  "username": "mybrand",  
+  "reply_count": 5,  
+  "hide_status": "UNHUSHED",  
+  "timestamp": "2025-11-18T23:52:47+0000",  
+  "media_type": "IMAGE"  
 }
 ```
-```
 
-## Retrieve a Threads ad’s replies
+## Retrieve a Threads ad's replies
 
-To retrieve the direct replies to a Threads ad’s media, send a `GET` request to the `/{media-id}/replies` endpoint, with a comma-separated `fields` parameter to specify which fields to return.
+To retrieve the direct replies to a Threads ad's media, send a `GET` request to the `/{media-id}/replies` endpoint, with a comma-separated `fields` parameter to specify which fields to return.
 
 ### Fields
 
@@ -98,45 +94,41 @@ To retrieve the direct replies to a Threads ad’s media, send a `GET` request t
 | `repost_count`  integer | The number of reposts. |
 | `hide_status`  string | The hide status of the reply. **Values:** `HUSHED`, `UNHUSHED`. |
 | `timestamp`  string | The time the reply was created, in ISO 8601 format. |
-| `media_url`  string | The CDN URL for the reply’s media image or video, if available. |
+| `media_url`  string | The CDN URL for the reply's media image or video, if available. |
 | `media_type`  string | The media type. **Values:** `IMAGE`, `VIDEO`, `CAROUSEL`. |
 | `gif_url`  string | The CDN URL of an attached GIF, if available. |
-| `owner_profile_pic`  string | The CDN URL for the reply author’s profile picture. |
-| `is_owner_verified`  Boolean | Whether the reply author’s account is verified. |
+| `owner_profile_pic`  string | The CDN URL for the reply author's profile picture. |
+| `is_owner_verified`  Boolean | Whether the reply author's account is verified. |
 
 ### Example request
 
 ```
-```
-curl -X GET "https://graph.facebook.com/v24.0/<MEDIA_ID>/replies?fields=id,caption,username,like_count,hide_status,timestamp&access_token=<ACCESS_TOKEN>"
-```
+curl -X GET "https://graph.facebook.com/v24.0/<MEDIA_ID>/replies?fields=id,caption,username,like_count,hide_status,timestamp&access_token=<ACCESS_TOKEN>"
 ```
 
 ### Example response
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "id": "18106042978723009",  
-      "caption": "Love this!",  
-      "username": "user123",  
-      "like_count": 3,  
-      "hide_status": "UNHUSHED",  
-      "timestamp": "2025-11-19T01:15:22+0000"  
-    },  
-    {  
-      "id": "18106042978723010",  
-      "caption": "Where can I buy this?",  
-      "username": "user456",  
-      "like_count": 1,  
-      "hide_status": "UNHUSHED",  
-      "timestamp": "2025-11-19T02:30:45+0000"  
-    }  
-  ]  
+  "data": [  
+    {  
+      "id": "18106042978723009",  
+      "caption": "Love this!",  
+      "username": "user123",  
+      "like_count": 3,  
+      "hide_status": "UNHUSHED",  
+      "timestamp": "2025-11-19T01:15:22+0000"  
+    },  
+    {  
+      "id": "18106042978723010",  
+      "caption": "Where can I buy this?",  
+      "username": "user456",  
+      "like_count": 1,  
+      "hide_status": "UNHUSHED",  
+      "timestamp": "2025-11-19T02:30:45+0000"  
+    }  
+  ]  
 }
-```
 ```
 
 ## Hide or unhide replies on a Threads ad
@@ -160,21 +152,17 @@ To hide or unhide a reply on your Threads ad, send a `POST` request to the `/{re
 ### Example request
 
 ```
-```
-curl -X POST "https://graph.facebook.com/v24.0/<REPLY_ID>/manage_reply" \  
-  -H "Authorization: Bearer <ACCESS_TOKEN>" \  
-  -d "hide=true"
-```
+curl -X POST "https://graph.facebook.com/v24.0/<REPLY_ID>/manage_reply" \  
+  -H "Authorization: Bearer <ACCESS_TOKEN>" \  
+  -d "hide=true"
 ```
 
 ### Example response
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 ## Add replies to a Threads ad
@@ -198,21 +186,17 @@ To add a text reply to your Threads ad, send a `POST` request to the `/{reply-id
 ### Example request
 
 ```
-```
-curl -X POST "https://graph.facebook.com/v24.0/<REPLY_ID>/add_reply" \  
-  -H "Authorization: Bearer <ACCESS_TOKEN>" \  
-  -d "text=Thanks for your interest! Check out our website for more info."
-```
+curl -X POST "https://graph.facebook.com/v24.0/<REPLY_ID>/add_reply" \  
+  -H "Authorization: Bearer <ACCESS_TOKEN>" \  
+  -d "text=Thanks for your interest! Check out our website for more info."
 ```
 
 ### Example response
 
 ```
-```
 {  
-  "id": "18106042978723011"  
+  "id": "18106042978723011"  
 }
-```
 ```
 
 ## Learn more

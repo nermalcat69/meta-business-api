@@ -51,7 +51,7 @@ Use the instant form template to send the form to a potential customer.
 
 To send an instant form message, send a `POST` request to the `/`***`page_id`***`/messages` endpoint where **\*page\_id** is the Page sending the message with the following required parameters:
 
-* a `recipient_id` set to the person’s Page-scoped ID
+* a `recipient_id` set to the person's Page-scoped ID
 * `message.attachment` object with:
   * `type` set to `template`
   * `payload` object with:
@@ -91,17 +91,15 @@ On success your app receives the following JSON response with the ID for the rec
 The most common error response your app will receive is `2018382` where in the form ID is incorrect or the form is ineligible.
 
 ```
-```
 {  
-  "error": {  
-    "message": "(#1) The given \"FORM_ID\" field is incorrect, or the form is not inthread eligible.",  
-    "type": "OAuthException",  
-    "code": 1,  
-    "error_subcode": 2018382,  
-    "fbtrace_id": "..."  
-  }  
+  "error": {  
+    "message": "(#1) The given \"FORM_ID\" field is incorrect, or the form is not inthread eligible.",  
+    "type": "OAuthException",  
+    "code": 1,  
+    "error_subcode": 2018382,  
+    "fbtrace_id": "..."  
+  }  
 }
-```
 ```
 
 ## Webhook Notifications

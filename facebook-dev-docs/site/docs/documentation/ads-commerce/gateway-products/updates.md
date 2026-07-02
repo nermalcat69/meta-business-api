@@ -27,7 +27,7 @@ On the **Cost management** page, you can view your current cost and your current
 
 ![Cost history section showing the previous month's cost and the 6-month average cost.](https://scontent.fdel27-3.fna.fbcdn.net/v/t39.2365-6/466677299_1479685282726806_4131282770499254681_n.png?_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=inZZDvoZ69QQ7kNvwE0drRF&_nc_oc=Ado1IZQeRn__djPkqEa-7PS_hsJi7_UiwWzCOOCrW3qnI4BUe8ZcbwNia9FiT_7mprGlgqVM-y_P1IrEPoFlUOTQ&_nc_zt=14&_nc_ht=scontent.fdel27-3.fna&_nc_gid=1o0pE8ZSa1IRsuPsST7G6A&_nc_ss=7b289&oh=00_AQAe3z9ONxcl4C0UjV3sNyJ_H6EC1uR2ssN68wncpe7x5g&oe=6A607998)
 
-This page will also show the previous month’s costs and an average monthly cost, based on the previous six months.
+This page will also show the previous month's costs and an average monthly cost, based on the previous six months.
 
 ### Update Budget Limit
 

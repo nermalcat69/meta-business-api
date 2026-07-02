@@ -9,7 +9,7 @@ Updated: Apr 1, 2026
 
 This document explains how to successfully call Messenger API support for Instagram (also known as Instagram Messaging API in our Developer Policies) with your app and get Instagram professional account messages.
 
-**Note:** If your app users don’t have a Facebook Page linked to their Instagram professional account, learn more about building an app with [the Instagram API with Instagram Login](https://developers.facebook.com/docs/instagram/platform/instagram-api).
+**Note:** If your app users don't have a Facebook Page linked to their Instagram professional account, learn more about building an app with [the Instagram API with Instagram Login](https://developers.facebook.com/docs/instagram/platform/instagram-api).
 
 ## Before you start
 
@@ -46,7 +46,7 @@ To implement Business Login for Instagram, visit our
 
 ## 1. Get a user access token
 
-Make sure you are signed into your Facebook Developer account, then access your app and trigger the Facebook Login modal. Remember, your Facebook Developer account must be able to perform [Tasks](https://developers.facebook.com/docs/pages-api/overview#tasks) with at least “Moderate” level access on the [Facebook Page](https://developers.facebook.com/docs/pages-api/overview) connected to the Instagram account you want to query.
+Make sure you are signed into your Facebook Developer account, then access your app and trigger the Facebook Login modal. Remember, your Facebook Developer account must be able to perform [Tasks](https://developers.facebook.com/docs/pages-api/overview#tasks) with at least "Moderate" level access on the [Facebook Page](https://developers.facebook.com/docs/pages-api/overview) connected to the Instagram account you want to query.
 
 Once you have triggered the modal, click OK to grant your app the `instagram_basic`, `instagram_manage_messages`, and `pages_manage_metadata` permissions.
 
@@ -54,7 +54,7 @@ The API should return a User access token. Capture the token so your app can use
 
 ![Graph API Explorer with the captured User access token shown in the Access Token field](https://scontent.fdel1-5.fna.fbcdn.net/v/t39.2365-6/142020930_4059362647408614_1740112770862669549_n.png?_nc_cat=105&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=5vsWgceBiE0Q7kNvwHJlP0K&_nc_oc=AdoXhPFLD3r61qzw8SIEfWiusyV4E9T0AdX8MKLiy3TFnc20KvOQGbDwMMx_HdvhCYiSnKFfnfmsZihO4ysF-aQm&_nc_zt=14&_nc_ht=scontent.fdel1-5.fna&_nc_gid=7493LUMAq7jD-ECPpgBtvA&_nc_ss=7b289&oh=00_AQCn2e_PZyxrGWe1w67P3m9FY_sImixbvrJqCXInqILC1w&oe=6A606F44)
 
-## 2. Get the user’s Pages
+## 2. Get the user's Pages
 
 Query the `GET /me/accounts` endpoint (this translates to `GET /{user-id}/accounts`, which performs a GET on the Facebook [User](https://developers.facebook.com/docs/graph-api/reference/user) node, based on your access token).
 
@@ -66,34 +66,32 @@ curl -i -X GET \
 This should return a collection of Facebook Pages that the current Facebook User can perform the `MANAGE`, `CREATE_CONTENT`, `MODERATE`, or `ADVERTISE` tasks on:
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "access_token": "EAAJjmJ...",  
-      "category": "App Page",  
-      "category_list": [  
-        {  
-          "id": "2301",  
-          "name": "App Page"  
-        }  
-      ],  
-      "name": "Metricsaurus",  
-      "id": "134895793791914",  // capture the Page ID  
-      "tasks": [  
-        "ANALYZE",  
-        "ADVERTISE",  
-        "MODERATE",  
-        "CREATE_CONTENT",  
-        "MANAGE"  
-      ]  
-    }  
-  ]  
+  "data": [  
+    {  
+      "access_token": "EAAJjmJ...",  
+      "category": "App Page",  
+      "category_list": [  
+        {  
+          "id": "2301",  
+          "name": "App Page"  
+        }  
+      ],  
+      "name": "Metricsaurus",  
+      "id": "134895793791914",  // capture the Page ID  
+      "tasks": [  
+        "ANALYZE",  
+        "ADVERTISE",  
+        "MODERATE",  
+        "CREATE_CONTENT",  
+        "MANAGE"  
+      ]  
+    }  
+  ]  
 }
 ```
-```
 
-Capture the ID of the Facebook Page that’s connected to the Instagram account that you want to query. Keep in mind that your app users may be able to perform tasks on multiple pages, so you eventually will have to introduce logic that can determine the correct Page ID to capture (or devise a UI where your app users can identify the correct Page for you).
+Capture the ID of the Facebook Page that's connected to the Instagram account that you want to query. Keep in mind that your app users may be able to perform tasks on multiple pages, so you eventually will have to introduce logic that can determine the correct Page ID to capture (or devise a UI where your app users can identify the correct Page for you).
 
 ## 3. Get the Page access token
 
@@ -110,12 +108,10 @@ curl -i -X GET "https://graph.facebook.com/{page-id}?
 On success, your app gets this response:
 
 ```
-```
 {  
-  "access_token":"{page-access-token}",  
-  "id":"{page-id}"  
+  "access_token":"{page-access-token}",  
+  "id":"{page-id}"  
 }
-```
 ```
 
 * If you used a short-lived User access token, the Page access token is valid for only 1 hour.
@@ -125,7 +121,7 @@ To generate a long-lived Page access token, you can follow the guide [here](http
 
 ## 3a. Get the Page access token via the Instagram Developer Dashboard tool
 
-Meta is rolling out this tool to all developers over the coming weeks. If you don’t see the settings under the App Dashboard, you can leverage Step 1-5 above to generate Page Access Tokens.
+Meta is rolling out this tool to all developers over the coming weeks. If you don't see the settings under the App Dashboard, you can leverage Step 1-5 above to generate Page Access Tokens.
 
 Optionally, if you own the assets (Instagram account and Facebook Page) that you want to onboard to Messenger API support for Instagram, you can leverage the Instagram setup tool under the Developer App Dashboard to allow you to easily setup Page access tokens and Webhooks. You can find the tool under Developer app dashboard → Messenger → Instagram Settings. Existing way of configuring tokens and webhook will still work, but this tool will give you an easier way to setup your environment.
 
@@ -137,7 +133,7 @@ In order to manage Instagram messages via API, Instagram professional accounts w
 
 **Instagram Settings > Messages and story replies >Message controls > Connected Tools > toggle Allow Access to Messages**
 
-## 5. Get the Instagram professional account’s Inbox Objects
+## 5. Get the Instagram professional account's Inbox Objects
 
 Use the Page ID you captured and the Page access token (PAT) to query the `GET /{page-id}/conversations?platform=instagram` endpoint:
 
@@ -149,23 +145,21 @@ curl -i -X GET \
 This should return the IDs of all the thread objects on the Instagram user:
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "id": "aWdfZAG06MTpJR01lc3NhZA2VUaHJlYWQ6OTAwMTAxNDYyOTkyODI6MzQwMjgyMzY2ODQxNzEwMzAwOTQ5MTI4MTM2MDk5MDc1MzYyOTgx"  
-    },  
-    {  
-      "id": "aWdfZAG06MTpJR01lc3NhZA2VUaHJlYWQ6OTAwMTAxNDYyOTkyODI6MzQwMjgyMzY2ODQxNzEwMzAwOTQ5MTI4MTYzMzQ2MzE5NjM1NDcy"  
-    },  
-    {  
-      "id": "aWdfZAG06MTpJR01lc3NhZA2VUaHJlYWQ6OTAwMTAxNDYyOTkyODI6MzQwMjgyMzY2ODQxNzEwMzAwOTQ5MTI4MTk3MTY0NjI2NzAyMjMw"  
-    },  
-    {  
-      "id": "aWdfZAG06MTpJR01lc3NhZA2VUaHJlYWQ6OTAwMTAxNDYyOTkyODI6MzQwMjgyMzY2ODQxNzEwMzAwOTQ5MTI4MzkzNDI5MDYzMzkyNjU0"  
-    }  
+  "data": [  
+    {  
+      "id": "aWdfZAG06MTpJR01lc3NhZA2VUaHJlYWQ6OTAwMTAxNDYyOTkyODI6MzQwMjgyMzY2ODQxNzEwMzAwOTQ5MTI4MTM2MDk5MDc1MzYyOTgx"  
+    },  
+    {  
+      "id": "aWdfZAG06MTpJR01lc3NhZA2VUaHJlYWQ6OTAwMTAxNDYyOTkyODI6MzQwMjgyMzY2ODQxNzEwMzAwOTQ5MTI4MTYzMzQ2MzE5NjM1NDcy"  
+    },  
+    {  
+      "id": "aWdfZAG06MTpJR01lc3NhZA2VUaHJlYWQ6OTAwMTAxNDYyOTkyODI6MzQwMjgyMzY2ODQxNzEwMzAwOTQ5MTI4MTk3MTY0NjI2NzAyMjMw"  
+    },  
+    {  
+      "id": "aWdfZAG06MTpJR01lc3NhZA2VUaHJlYWQ6OTAwMTAxNDYyOTkyODI6MzQwMjgyMzY2ODQxNzEwMzAwOTQ5MTI4MzkzNDI5MDYzMzkyNjU0"  
+    }  
 }
-```
 ```
 
 If you can perform this final query successfully, you should be able to perform queries using any of the Messenger API support for Instagram endpoints - just refer to our various guides and references to learn what each endpoint can do and what permission they require.

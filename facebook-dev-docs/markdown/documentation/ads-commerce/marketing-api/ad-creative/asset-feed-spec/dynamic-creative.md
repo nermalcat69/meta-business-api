@@ -11,9 +11,9 @@ You can use the following options in your `asset_feed_spec`. See [Ad Asset Feed 
 
 | Property Name | Description |
 | --- | --- |
-| `images`  type: array of objects | **Required for `SINGLE_IMAGE` and `CAROUSEL_IMAGE` format.**  Array of **eligible** images. Images provided in this array should be included in the ad account’s [image library](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-image).   Provide this field as an array of objects, each containing `{"url": "{IMAGE_URL}", "hash": "{IMAGE_HASH}", "url_tags": "{TAG}"}`. Either `url` or `hash` is required. |
+| `images`  type: array of objects | **Required for `SINGLE_IMAGE` and `CAROUSEL_IMAGE` format.**  Array of **eligible** images. Images provided in this array should be included in the ad account's [image library](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-image).   Provide this field as an array of objects, each containing `{"url": "{IMAGE_URL}", "hash": "{IMAGE_HASH}", "url_tags": "{TAG}"}`. Either `url` or `hash` is required. |
 | `videos`  type: array of objects | **Required for `SINGLE_VIDEO` format.**  Array of `video_id`s. The [`video_id`s](https://developers.facebook.com/docs/marketing-api/advideo) provided in this array should belong to the ad account.   Provide this field as an array of objects, each containing `{"video_id": "{VIDEO_ID}", "thumbnail_url": "{THUMBNAIL_URL}", "url_tags": "{TAG}"}` |
-| `carousels`  type: array of objects | **Optional.**  An array of `child_attachments` along with the `multi_share_end_card` and `multi_share_optimized` Booleans, and `adlabels`. The `child_attachments` provided in this array should belong to the ad account.  Provide the `child_attachments` as an array of objects, each containing `{"image_label": {"name": "{IMAGE_LABEL}"}, "video_label": {"name": "{VIDEO_LABEL}"}, "title_label": {"name": "{TITLE_LABEL}"}, "description_label": {"name": "{DESC_LABEL}", "link_url_label": {"name": "{LINK_URL}"}}`.  **Note:** Either `image_label` or `video_label` is required.  See [Field Specifications](https://developers.facebook.com/documentation/ads-commerce/marketing-api/guides/videoads#spec) for more information. |
+| `carousels`  type: array of objects | **Optional.**  An array of `child_attachments` along with the `multi_share_end_card` and `multi_share_optimized` Booleans, and `adlabels`. The `child_attachments` provided in this array should belong to the ad account.  Provide the `child_attachments` as an array of objects, each containing `{"image_label": {"name": "{IMAGE_LABEL}"}, "video_label": {"name": "{VIDEO_LABEL}"}, "title_label": {"name": "{TITLE_LABEL}"}, "description_label": {"name": "{DESC_LABEL}", "link_url_label": {"name": "{LINK_URL}"}​}`.  **Note:** Either `image_label` or `video_label` is required.  See [Field Specifications](https://developers.facebook.com/documentation/ads-commerce/marketing-api/guides/videoads#spec) for more information. |
 | `bodies`  type: array of objects | **Optional.**  Array of bodies. The primary message or copy of the ad.   Provide this field as an array of objects, each `{"text": "{BODY_TEXT}", "url_tags": "{TAG}"}`. |
 | `call_to_action_types`  type: array of objects | **Required for all objectives, except `OUTCOME_AWARENESS`.**  Array of call-to-action-type values.   Provide this field as an array of objects, each `{"{CALL_TO_ACTION}"}`. You can provide multiple values, up to five. |
 | `titles`  type: array of objects | **Optional.**  Array of titles. A title is a short headline in the ad, generally shown next to a link, image, or video.   Provide this field as an array of objects, each `{"text": "{TITLE}", "url_tags": "{TAG}"}`. |
@@ -22,9 +22,9 @@ You can use the following options in your `asset_feed_spec`. See [Ad Asset Feed 
 | `ad_formats`  type: array of strings | **Required.**  Array of Facebook ad formats to create the ads in. Supported formats are: `SINGLE_IMAGE`, `CAROUSEL`, `SINGLE_VIDEO`, `AUTOMATIC_FORMAT`.   Provide this field as an array of strings `["{AD_FORMAT}"]`. |
 | `optimization_type`  type: string | **Optional.** Optimization type used in asset feed. Possible values are `ASSET\_CUSTOMIZATION`, `LANGUAGE`, `PLACEMENT`, and `REGULAR`. |
 | `message_extensions`  type: array of objects | **Optional.**  Set the message extension type for website ads. Pass the `message_extensions` property as an inline creative in the `POST /ads` call.  **Values:** `whatsapp`, `messenger`, `instagram_message` |
-| `onsite_destinations`  type: array of objects | **Required for Shops Ads.** Valid for Static Ads; `SINGLE_IMAGE`, `SINGLE_VIDEO` or `CAROUSEL` format.  Provide this field as an array of objects containing one of the following values to specify the landing destination for your onsite shop.  ```  ``` {"storefront_shop_id": "<SHOP_STOREFRONT_ID>"} or {"shop_collection_product_set_id": "<PRODUCT_SET_ID>"} or {"details_page_product_id": "<PRODUCT_ID>"} ``` ``` |
+| `onsite_destinations`  type: array of objects | **Required for Shops Ads.** Valid for Static Ads; `SINGLE_IMAGE`, `SINGLE_VIDEO` or `CAROUSEL` format.  Provide this field as an array of objects containing one of the following values to specify the landing destination for your onsite shop.  ``` {"storefront_shop_id": "<SHOP_STOREFRONT_ID>"} or {"shop_collection_product_set_id": "<PRODUCT_SET_ID>"} or {"details_page_product_id": "<PRODUCT_ID>"} ``` |
 | `shops_bundle`  type: boolean | **Required for Shops Ads.** Valid for Advantage+ Catalog Ads.  Provide this field for shop optimization. Includes both `reasons_to_shop` and `automated_product_tags` shop optimization types.  Possible values: `true`, `false` |
-| `reasons_to_shop`  type: boolean | **Required for Shops Ads.** Valid for Advantage+ Catalog Ads.  Provide this field for shop optimization. Automatically highlights product information from your shop, like “Free shipping”, “Trending” or “Low stock”.  Possible values: `true`, `false` |
+| `reasons_to_shop`  type: boolean | **Required for Shops Ads.** Valid for Advantage+ Catalog Ads.  Provide this field for shop optimization. Automatically highlights product information from your shop, like "Free shipping", "Trending" or "Low stock".  Possible values: `true`, `false` |
 
 ## Asset feed spec restrictions
 
@@ -71,9 +71,7 @@ For example, a valid asset feed combination setup for `SINGLE_IMAGE` format is:
 * 2 `link_urls`
 
 ```
-```
-"link_urls=[{'website_url':'<WEBSITE_URL>'}, {'website_url':'<WEBSITE_URL>'}]"
-```
+"link_urls=[{'website_url':'<WEBSITE_URL>'}, {'website_url':'<WEBSITE_URL>'}]"
 ```
 
 ## Use deep links
@@ -116,7 +114,7 @@ curl -X POST \
   -F 'access_token=<ACCESS_TOKEN>' \
   -F 'name=<AD_NAME>' \
   -F 'adset_id=<ADSET_ID>' \
-  -F 'creative={"object_story_spec":{"page_id":"<PAGE_ID>","link_data":{"image_hash":"<IMAGE_HASH>","link":"<BUSINESS_URL>","message":"Visit our website!","call_to_action":{"type":"LEARN_MORE","value":{"link":"<BUSINESS_URL>"}}}},"asset_feed_spec":{"message_extensions":[{"type":"whatsapp"}]}}' \
+  -F 'creative={"object_story_spec":{"page_id":"<PAGE_ID>","link_data":{"image_hash":"<IMAGE_HASH>","link":"<BUSINESS_URL>","message":"Visit our website!","call_to_action":{"type":"LEARN_MORE","value":{"link":"<BUSINESS_URL>"}​}}​},"asset_feed_spec":{"message_extensions":[{"type":"whatsapp"}]}​}' \
 https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/ads
 ```
 
@@ -127,11 +125,9 @@ To create a website to Instagram Direct ad, update `message_extensions` to `[{"t
 On success, your app receives a JSON response with the ID of your newly created ad.
 
 ```
-```
 {  
-  "id": "<AD_ID>"  
+  "id": "<AD_ID>"  
 }
-```
 ```
 
 To verify that you have successfully created a website ad that clicks to message, make a GET request to `/<AD_ID>`:

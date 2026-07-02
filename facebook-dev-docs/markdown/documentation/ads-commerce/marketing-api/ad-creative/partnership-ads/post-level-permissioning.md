@@ -32,7 +32,7 @@ Your app must have the following permissions granted on the access token:
 
 | Permission | Required? |
 | --- | --- |
-| `business_management` | **Required.** Grants access to the business’s assets. |
+| `business_management` | **Required.** Grants access to the business's assets. |
 | `facebook_branded_content_ads_brand` | **At least one required.** Grants access to Facebook partnership content. If you grant only this scope, the API returns Facebook content only. |
 | `instagram_branded_content_ads_brand` | **At least one required.** Grants access to Instagram partnership content. If you grant only this scope, the API returns Instagram content only. Also requires `instagram_basic` on the same Instagram account — granting `instagram_branded_content_ads_brand` without `instagram_basic` returns a 403. |
 
@@ -58,9 +58,9 @@ You must have at least one of the two brand scopes. If you have both, content fr
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| `business_id` | int | Path parameter. The advertiser’s Meta Business Suite ID. |
-| `fb_page_id` | FBID | Brand’s Facebook Page ID. **At least one of `fb_page_id` or `ig_user_id` is required.** |
-| `ig_user_id` | FBID | Brand’s Instagram User ID. **At least one of `fb_page_id` or `ig_user_id` is required.** |
+| `business_id` | int | Path parameter. The advertiser's Meta Business Suite ID. |
+| `fb_page_id` | FBID | Brand's Facebook Page ID. **At least one of `fb_page_id` or `ig_user_id` is required.** |
+| `ig_user_id` | FBID | Brand's Instagram User ID. **At least one of `fb_page_id` or `ig_user_id` is required.** |
 
 ### Filter parameters
 
@@ -73,7 +73,7 @@ All filter parameters are optional. They apply to the **search query** mode only
 | `platform_types` | vec<enum> | `INSTAGRAM` · `FACEBOOK`. If omitted, returns content for every platform your token has a brand scope for. If provided, results are filtered to exactly the requested platforms; requesting a platform your token lacks the brand scope for returns 403. |
 | `media_types` | vec<enum> | `IMAGE` · `VIDEO` · `CAROUSEL` · `LINK` |
 | `post_types` | vec<enum> | `FEED` · `STORY` · `REEL` |
-| `content_types` | vec<enum> | Filter by partnership content type  `BRANDED_CONTENT` — content posted under a paid partnership label. `PRODUCT` — content with tagged products. `AFFILIATE` — affiliate content where the creator earns commission on your products. `COLLAB_POST` — posts co-authored with your brand (Instagram or Facebook Collab). `TAGGED` — user-generated content that tags or @mentions your brand. `REPOSTED` — content you’ve reposted. |
+| `content_types` | vec<enum> | Filter by partnership content type  `BRANDED_CONTENT` — content posted under a paid partnership label. `PRODUCT` — content with tagged products. `AFFILIATE` — affiliate content where the creator earns commission on your products. `COLLAB_POST` — posts co-authored with your brand (Instagram or Facebook Collab). `TAGGED` — user-generated content that tags or @mentions your brand. `REPOSTED` — content you've reposted. |
 | `ad_eligibilities` | vec<enum> | `AD_READY` · `INELIGIBLE` · `NEEDS_ATTENTION` · `EXCLUDED` |
 | `ad_usages` | vec<enum> | `NEVER_USED` · `ACTIVE` · `PREVIOUSLY_USED` |
 | `country_codes` | vec<string> | ISO 3166-1 alpha-2 codes (for example, `US`, `GB`, `BR`). Returns only content from creators located in the specified countries. |
@@ -81,7 +81,7 @@ All filter parameters are optional. They apply to the **search query** mode only
 | `end_date` | string | `YYYY-MM-DD`. Filters content published on or before this date. Must be provided with `start_date`. `start_date` must be less than or equal to `end_date`. |
 | `search_key` | string | Keyword search across caption text. |
 | `sort_by` | enum | `RECOMMENDED` · `DATE`. Defaults to `RECOMMENDED`. |
-| `is_recommended` | bool | Filter to only content recommended for promotion as a Partnership Ad, as determined by Meta’s recommendation model. Defaults to `false`. |
+| `is_recommended` | bool | Filter to only content recommended for promotion as a Partnership Ad, as determined by Meta's recommendation model. Defaults to `false`. |
 
 ### Direct lookup parameters
 
@@ -98,7 +98,7 @@ Use these to look up specific content by identifier. Only **one** of these may b
 | Parameter | Type | Description |
 | --- | --- | --- |
 | `limit` | int | Page size. Min 1, max 50. Default 25. |
-| `after` | string | Cursor from the previous response’s `paging.cursors.after`. |
+| `after` | string | Cursor from the previous response's `paging.cursors.after`. |
 | `fields` | string | Comma-separated fields to include. Nested sub-fields via curly braces. Only `content_id` is returned by default. |
 
 ## Response
@@ -117,7 +117,7 @@ All fields except `content_id` are opt-in via the `fields` parameter.
 | `permalink` | string | Permanent URL to the post. |
 | `creation_time` | string | Post creation date in `YYYY-MM-DD` format. |
 | `author` | object | Content author. Sub-fields: `display_name` · `ig_user_id` · `fb_page_id` · `profile_picture_url`. The display name is the Page name if the content is a Facebook post, and the Instagram username if the content is Instagram media. |
-| `is_recommended` | bool | Whether this content is recommended for promotion as a Partnership Ad, as determined by Meta’s recommendation model. |
+| `is_recommended` | bool | Whether this content is recommended for promotion as a Partnership Ad, as determined by Meta's recommendation model. |
 | `ad_usage` | enum | `NEVER_USED` · `ACTIVE` · `PREVIOUSLY_USED` |
 | `partnership_info` | array | Partnership details per tagged partner. Sub-fields: `ad_eligibility` · `tagged_partner` (identity object) · `permission_status` · `permission_type` · `ad_code` · `content_types`. |
 | `organic_insights` | object | Organic metrics, each a nullable int: `likes` (number of likes on the content), `comments` (number of comments on the content), `views` (number of times the content was played or viewed), `reach` (number of unique accounts that saw the content), `shares` (number of times the content was shared), `interaction` (total interactions on the content), and `saves` (number of times the content was saved). |
@@ -131,9 +131,7 @@ fields=content_id
 ```
 
 ```
-```
-{"data": [{"content_id": "17854360229135492"}]}
-```
+{"data": [{"content_id": "17854360229135492"}]}
 ```
 
 **Top-level fields:**
@@ -143,14 +141,12 @@ fields=content_id,platform,caption,creation_time
 ```
 
 ```
-```
-{"data": [{  
-  "content_id": "17854360229135492",  
-  "platform": "INSTAGRAM",  
-  "caption": "Summer vibes with our new collection",  
-  "creation_time": "2025-06-28"  
+{"data": [{  
+  "content_id": "17854360229135492",  
+  "platform": "INSTAGRAM",  
+  "caption": "Summer vibes with our new collection",  
+  "creation_time": "2025-06-28"  
 }]}
-```
 ```
 
 **Author with specific sub-fields:**
@@ -160,36 +156,32 @@ fields=content_id,author{display_name,ig_user_id}
 ```
 
 ```
-```
-{"data": [{  
-  "content_id": "17854360229135492",  
-  "author": {  
-    "display_name": "StyleCreator_Ana",  
-    "ig_user_id": "1122334455"  
-  }  
+{"data": [{  
+  "content_id": "17854360229135492",  
+  "author": {  
+    "display_name": "StyleCreator_Ana",  
+    "ig_user_id": "1122334455"  
+  }  
 }]}
-```
 ```
 
 **Partnership info with nested `tagged_partner`:**
 
 ```
-fields=content_id,partnership_info{ad_eligibility,tagged_partner{display_name,profile_picture_url}}
+fields=content_id,partnership_info{ad_eligibility,tagged_partner{display_name,profile_picture_url}​}
 ```
 
 ```
-```
-{"data": [{  
-  "content_id": "17854360229135492",  
-  "partnership_info": [{  
-    "ad_eligibility": "AD_READY",  
-    "tagged_partner": {  
-      "display_name": "BrandPage",  
-      "profile_picture_url": "https://..."  
-    }  
-  }]  
+{"data": [{  
+  "content_id": "17854360229135492",  
+  "partnership_info": [{  
+    "ad_eligibility": "AD_READY",  
+    "tagged_partner": {  
+      "display_name": "BrandPage",  
+      "profile_picture_url": "https://..."  
+    }  
+  }]  
 }]}
-```
 ```
 
 **Specific organic insight metrics:**
@@ -199,16 +191,14 @@ fields=content_id,organic_insights{likes,views,reach}
 ```
 
 ```
-```
-{"data": [{  
-  "content_id": "17854360229135492",  
-  "organic_insights": {  
-    "likes": 15240,  
-    "views": 105000,  
-    "reach": 90000  
-  }  
+{"data": [{  
+  "content_id": "17854360229135492",  
+  "organic_insights": {  
+    "likes": 15240,  
+    "views": 105000,  
+    "reach": 90000  
+  }  
 }]}
-```
 ```
 
 ## Pagination
@@ -230,18 +220,16 @@ GET /650157780891832/partnership-ads-advertisable-content
 ```
 
 ```
-```
 {  
-  "data": [  
-    {"content_id": "111", "platform": "INSTAGRAM"},  
-    {"content_id": "222", "platform": "FACEBOOK"},  
-    {"content_id": "333", "platform": "INSTAGRAM"}  
-  ],  
-  "paging": {  
-    "cursors": {"after": "QVFJVW5pY29ybiBkYXRh"}  
-  }  
+  "data": [  
+    {"content_id": "111", "platform": "INSTAGRAM"},  
+    {"content_id": "222", "platform": "FACEBOOK"},  
+    {"content_id": "333", "platform": "INSTAGRAM"}  
+  ],  
+  "paging": {  
+    "cursors": {"after": "QVFJVW5pY29ybiBkYXRh"}  
+  }  
 }
-```
 ```
 
 ### Example: Next page
@@ -253,14 +241,12 @@ GET /650157780891832/partnership-ads-advertisable-content
 ```
 
 ```
-```
 {  
-  "data": [  
-    {"content_id": "444", "platform": "FACEBOOK"},  
-    {"content_id": "555", "platform": "INSTAGRAM"}  
-  ]  
+  "data": [  
+    {"content_id": "444", "platform": "FACEBOOK"},  
+    {"content_id": "555", "platform": "INSTAGRAM"}  
+  ]  
 }
-```
 ```
 
 No `paging` object means you have reached the last page.

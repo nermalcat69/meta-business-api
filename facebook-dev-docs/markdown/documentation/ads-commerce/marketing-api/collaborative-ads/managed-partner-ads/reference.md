@@ -14,36 +14,34 @@ API requests can return error responses. This guide explains what to expect in a
 The following represents a common error response resulting from a failed API request:
 
 ```
-```
 {  
-    "result": {  
-        "error": {  
-            ...  
-            "message": "<EXCEPTION_MESSAGE>",  
-            "code": <ERROR_CODE>,  
-            "error_subcode": <ERROR_SUBCODE>,  
-            "error_user_title": "<ERROR_TITLE>",  
-            "error_user_msg": "<ERROR_MESSAGE>",  
-            "fbtrace_id": "<REQUEST_ID>"  
-            ...  
-        }  
-    },  
-    "error_code": <ERROR_CODE>,  
-    "status": "FAILED",  
-    "exception": "<EXCEPTION_MESSAGE>",  
-    "id": "<ASYNC_SESSION_ID>"  
+    "result": {  
+        "error": {  
+            ...  
+            "message": "<EXCEPTION_MESSAGE>",  
+            "code": <ERROR_CODE>,  
+            "error_subcode": <ERROR_SUBCODE>,  
+            "error_user_title": "<ERROR_TITLE>",  
+            "error_user_msg": "<ERROR_MESSAGE>",  
+            "fbtrace_id": "<REQUEST_ID>"  
+            ...  
+        }  
+    },  
+    "error_code": <ERROR_CODE>,  
+    "status": "FAILED",  
+    "exception": "<EXCEPTION_MESSAGE>",  
+    "id": "<ASYNC_SESSION_ID>"  
 }
-```
 ```
 
 ### Response parameters
 
 | Name | Description |
 | --- | --- |
-| `code`  numeric | An error code. Same as `error_code` field. This code is not guaranteed to be unique.  For details, look at the corresponding API call’s error codes section. |
-| `error_code`  numeric | An error code. Same as `code` field. This code is not guaranteed to be unique.  For details, look at the corresponding API call’s error codes section. |
-| `error_subcode`  numeric | Based on the error that occurred, this field provides additional information about the error. The `error_subcode` field does not always appear in the response. If available then it is guaranteed to be unique.   For details, look at the corresponding API call’s error codes section. |
-| `error_user_msg`  string | If `error_subcode` is available then this field provides an error message with contextual information.   For details, look at the corresponding API call’s error codes section. |
+| `code`  numeric | An error code. Same as `error_code` field. This code is not guaranteed to be unique.  For details, look at the corresponding API call's error codes section. |
+| `error_code`  numeric | An error code. Same as `code` field. This code is not guaranteed to be unique.  For details, look at the corresponding API call's error codes section. |
+| `error_subcode`  numeric | Based on the error that occurred, this field provides additional information about the error. The `error_subcode` field does not always appear in the response. If available then it is guaranteed to be unique.   For details, look at the corresponding API call's error codes section. |
+| `error_user_msg`  string | If `error_subcode` is available then this field provides an error message with contextual information.   For details, look at the corresponding API call's error codes section. |
 | `error_user_title`  string | If `error_subcode` is available then this field provides a short title about the error. |
 | `exception`  string | A human-readable description of the error. Same as `message` field. |
 | `fbtrace_id`  string | Internal support identifier. When [reporting a bug](https://developers.facebook.com/bugs/) related to a Graph API call, include the `fbtrace_id` to help us find log data for debugging. |

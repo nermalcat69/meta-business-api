@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/development/create-an-
 
 Updated: Apr 16, 2026
 
-This document shows you how to customize the **Connect with customers through WhatsApp** use case you added to your app during the [app creation process](https://developers.facebook.com/documentation/development/create-an-app) in Meta’s App Dashboard.
+This document shows you how to customize the **Connect with customers through WhatsApp** use case you added to your app during the [app creation process](https://developers.facebook.com/documentation/development/create-an-app) in Meta's App Dashboard.
 
 After creating your app with the WhatsApp use case you are redirected to the **Customize use case > Connect on WhatsApp** page in the dashboard. You can also click the pencil icon **Use cases** menu item to the left then select the WhatsApp use case **Customize** button.
 
@@ -45,7 +45,7 @@ The following permissions are required and have been added to your app by defaul
 * `whatsapp_business_management`
 * `whatsapp_business_messaging`
 
-These permissions are required for the WhatsApp use case and can’t be removed.
+These permissions are required for the WhatsApp use case and can't be removed.
 
 ### Add optional permissions
 
@@ -57,11 +57,11 @@ If your app requires App Review:
 * Select **+Add to App Review**. Only add permissions that your app requires for it to function the way you want it to. Adding unneeded or unused permissions can result in rejection in App Review.
 * In the popup window, follow the links to learn more about [Access verification](https://developers.facebook.com/documentation/development/release/access-verification) and [Business verification](https://developers.facebook.com/documentation/development/release/business-verification) and [App Review](https://developers.facebook.com/documentation/resp-plat-initiatives/individual-processes/app-review) then click **Continue**.
 
-You’ll complete the App Review submission process as part of the [Tech Provider onboarding](https://developers.facebook.com/documentation/development/create-an-app/app-dashboard#tech-provider-onboarding) flow.
+You'll complete the App Review submission process as part of the [Tech Provider onboarding](https://developers.facebook.com/documentation/development/create-an-app/app-dashboard#tech-provider-onboarding) flow.
 
 ## Quickstart
 
-On this page of the dashboard, you’ll see a list of the following items:
+On this page of the dashboard, you'll see a list of the following items:
 
 * **Start the [API Setup](https://developers.facebook.com/documentation/development/create-an-app/app-dashboard#api-setup)** – Get set up on the Cloud API by adding a phone number and sending your first message.
 * **Scale your business**
@@ -104,17 +104,17 @@ On this page of the dashboard, you can:
 
 ## Resources
 
-Find links for the [developer documentation](https://developers.facebook.com/documentation/business-messaging/whatsapp/overview) and [Meta’s Blueprint courses⁠](https://www.facebookblueprint.com/student/collection/409587-meta-whatsapp-business-platform-for-developers-courses) as well as resources for contacting [support](https://developers.facebook.com/support/) , [viewing bug reports](https://developers.facebook.com/support/bugs/), and [reviewing your open support tickets⁠](https://business.facebook.com/direct-support/).
+Find links for the [developer documentation](https://developers.facebook.com/documentation/business-messaging/whatsapp/overview) and [Meta's Blueprint courses⁠](https://www.facebookblueprint.com/student/collection/409587-meta-whatsapp-business-platform-for-developers-courses) as well as resources for contacting [support](https://developers.facebook.com/support/) , [viewing bug reports](https://developers.facebook.com/support/bugs/), and [reviewing your open support tickets⁠](https://business.facebook.com/direct-support/).
 
 ## Tech Provider onboarding
 
 If you are a Tech Provider, you can onboard your clients to the WhatsApp Business API.
 
-On this page of the dashboard, you’ll find links to the [WhatsApp Embedded Signup developer documentation](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/overview), [Developer Support](https://developers.facebook.com/support/), and [Success Stories](https://developers.facebook.com/success-stories/) as well as steps to complete the Tech Provider onboarding process. This process includes:
+On this page of the dashboard, you'll find links to the [WhatsApp Embedded Signup developer documentation](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/overview), [Developer Support](https://developers.facebook.com/support/), and [Success Stories](https://developers.facebook.com/success-stories/) as well as steps to complete the Tech Provider onboarding process. This process includes:
 
 ### [Business verification⁠](https://www.facebook.com/business/help/2058515294227817)
 
-Click **Start verification** to verify your business. You’ll need the following information:
+Click **Start verification** to verify your business. You'll need the following information:
 
 * Verify business details – Provide your business name, address, phone number, email and website for verification.
 * Confirm your connection – Select a way for us to get in touch to confirm your connection to the business.
@@ -122,17 +122,17 @@ Click **Start verification** to verify your business. You’ll need the followin
 
 ### [App Review](https://developers.facebook.com/documentation/resp-plat-initiatives/individual-processes/app-review)
 
-Once you have completed business verification, you can submit your app for App Review. You’ll need to provide the following:
+Once you have completed business verification, you can submit your app for App Review. You'll need to provide the following:
 
 * Review your app settings – Your app will need [basic settings](https://developers.facebook.com/documentation/development/create-an-app/app-dashboard/basic-settings) such as an app icon, privacy policy, and app category.
 * Videos – To pass App Review, you need to submit video evidence of your capabilities to send messages and manage templates.
 * Submit for App Review
 
-If you prefer to onboard with a Solution Partner, you can do so by clicking the **Onboard with a Solution Partner** button at the bottom of the page. You will need to provide your partner’s app ID during onboarding to create a partner solution.
+If you prefer to onboard with a Solution Partner, you can do so by clicking the **Onboard with a Solution Partner** button at the bottom of the page. You will need to provide your partner's app ID during onboarding to create a partner solution.
 
 ### Onboard with an existing Solution Partner
 
-After you click the **Onboard with a Solution Partner** button, the Tech Provider onboarding page will refresh to this flow. The flow is identical to the Tech Provider flow with the additional App Review step to **Create a partner solution** by entering your partner’s app ID to create a partner solution.
+After you click the **Onboard with a Solution Partner** button, the Tech Provider onboarding page will refresh to this flow. The flow is identical to the Tech Provider flow with the additional App Review step to **Create a partner solution** by entering your partner's app ID to create a partner solution.
 
 To onboard without a partner, you can do so by clicking the **Onboard without a partner** button at the bottom of the page.
 
@@ -141,7 +141,7 @@ To onboard without a partner, you can do so by clicking the **Onboard without a 
 On this page of the dashboard, you can create a partner solution. Click the **Create a partner solution** button to start the process or the [**Learn more** button](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/multi-partner-solutions) to visit the developer documentation. Once you click the **Create a partner solution** button the modal will appear for you to enter:
 
 * **Solution name** - The name for your solution
-* **Partner app ID** - Your partner’s app ID. Your partner must then accept this solution request before customers can onboard to this solution. [Learn more.](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/multi-partner-solutions#step-4--accept-the-solution-request)
+* **Partner app ID** - Your partner's app ID. Your partner must then accept this solution request before customers can onboard to this solution. [Learn more.](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/multi-partner-solutions#step-4--accept-the-solution-request)
 * **Permission configuration** - Select the permissions.
 
 Click the **Send Request** button when you are ready to send your partner a request.
@@ -174,11 +174,11 @@ In this section you can follow links to learn more about:
   * Click the [Business Settings⁠](https://business.facebook.com/latest/settings/system_users) link to generate a system user access token in the Business Manager.
   * Copy the access token and paste it into the **System User Access Token** field in the Embedded Signup Builder.
 * Pre-verified phone numbers - Click the **Add phone number** button to add a pre-verified phone number to your Embedded Signup Builder.
-* Configure a webhook - If you haven’t already, [configure a webhook](https://developers.facebook.com/documentation/development/create-an-app/app-dashboard#configuration) to receive messages from your customers.
+* Configure a webhook - If you haven't already, [configure a webhook](https://developers.facebook.com/documentation/development/create-an-app/app-dashboard#configuration) to receive messages from your customers.
   * Add your Callback URL
   * Add your Verify Token
   * Click **Verify and Save** to save your changes and verify your webhook.
-* [Embedded Signup Pre-fill](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/pre-filled-data) - If you know details about your customer’s business, such as its name and address, you can inject this data into Embedded Signup.
+* [Embedded Signup Pre-fill](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/pre-filled-data) - If you know details about your customer's business, such as its name and address, you can inject this data into Embedded Signup.
   * Click the **Edit pre-fill** button to add pre-fill data in the modal.
   * Click **Set prefill** to save your changes.
   * Copy and paste the JSON code into your Embedded Signup code.
@@ -186,8 +186,8 @@ In this section you can follow links to learn more about:
   You can get detailed information about a user as they go through the Embedded Signup user journey.
   * Copy and paste the code into your Embedded Signup code.
 * Embedded Signup code setup - Sequence of steps to implement the Embedded Signup flow code.
-  * If you haven’t already, add the JavaScript SDK to your website.
-  * If you haven’t already, add the Session info setup code to your website.
+  * If you haven't already, add the JavaScript SDK to your website.
+  * If you haven't already, add the Session info setup code to your website.
   * Copy and paste the callback code into your website.
   * Copy and paste the set up method to be called on user click to open the Embedded Signup flow.
   * Copy and paste the code to add a button to your page to open the Embedded Signup flow.
@@ -214,7 +214,7 @@ In this section you can follow links to learn more about:
 
 To publish your app, you need the following assets:
 
-* An app icon – Your app’s unique icon image; this file must be less than 5 MB, between 512 x 512 and 1024 x 1024 pixels, and in JPEG, GIF or PNG format.
+* An app icon – Your app's unique icon image; this file must be less than 5 MB, between 512 x 512 and 1024 x 1024 pixels, and in JPEG, GIF or PNG format.
 * Contact information for a Data Protection Officer, if you are doing business in the European Union.
 * A [Privacy Policy⁠](https://en.wikipedia.org/wiki/Privacy_policy) URL for your app
 * A [data deletion](https://developers.facebook.com/documentation/development/create-an-app/app-dashboard/data-deletion-callback) URL with instructions or a callback that allows your app user to delete their data from your app.

@@ -17,9 +17,9 @@ This guide will walk you through the sales funnel configuration, which will info
 
 **Step 3**. If you share an adequate number of event stages, Meta may use AI to generate a sales funnel for you. You can then review, edit, and confirm the stages to proceed.
 
-**Step 4**. Lead events shared from your CRM will show up as funnel stages in Events Manager. Remove events that don’t belong and arrange the rest to reflect the order of your sales funnel, using two categories.
+**Step 4**. Lead events shared from your CRM will show up as funnel stages in Events Manager. Remove events that don't belong and arrange the rest to reflect the order of your sales funnel, using two categories.
 
-* *Positive stages*: Events that signify a quality lead, for example, ‘marketing qualified lead’, ‘add to cart’.
+* *Positive stages*: Events that signify a quality lead, for example, 'marketing qualified lead', 'add to cart'.
 * *Other stages*: Events that do not signify a quality lead, for example, test events or events accidentally uploaded from another system.
   * Remove events that indicate a negative lead or do not belong in your sales funnel by clicking the minus (-) button next to each event. These could be leads that received a phone call, but decided to not convert into a sale.
 

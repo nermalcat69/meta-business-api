@@ -9,7 +9,7 @@ Updated: Jun 30, 2026
 
 The parameter builder library is a list of open-source SDKs in both client-side (browser JavaScript) and server-side (PHP, Java, Python, Node.js, Ruby). You can implement the parameter builder library to improve the quality of your Conversions API integration. The library can help you create, manage, and send certain customer information parameters, which may lead to performance improvements through increased event match quality (EMQ) scores. The library handles event parameter management in the following ways:
 
-* **Generates match keys**: Automatically generates high-priority Conversions API match keys according to Meta’s best practices.
+* **Generates match keys**: Automatically generates high-priority Conversions API match keys according to Meta's best practices.
 * **Enhances parameter coverage**: Increases coverage of important event parameters including `fbc` (Meta click ID), `fbp` (Meta browser ID), and IP addresses.
 * **Ensures correct formatting**: Ensures that customer information you share, such as email and phone number, is formatted correctly to increase the likelihood of matching to Meta users.
 * **Reduces manual effort**: Reduces the manual work and the potential for errors associated with managing event parameters yourself.
@@ -49,10 +49,10 @@ Check GitHub for implementation details. ([PHP⁠](https://github.com/facebook/c
   * Capture cookies early: Make sure you save the `_fbp` and `_fbc` cookies as early as possible in the customer journey in your webpage. Ideally retrieve `_fbp` and `_fbc` cookies when loading your landing page. Do not retrieve them only from down-funnel events or when certain events are triggered.
   * Preserve the cookie value format: Do not override or adjust the `_fbc` or `_fbp` cookie. `_fbc` is case sensitive; do not normalize or format the `_fbc` to lowercase.
 * IP address handling:
-  * Prioritize IPv6 for `getIpFn`: When you implement the `getIpFn` functionality, retrieve the IPv6 address first, then fall back to the IPv4 address if the IPv6 address retrieval capability is not available from the user’s client side.
+  * Prioritize IPv6 for `getIpFn`: When you implement the `getIpFn` functionality, retrieve the IPv6 address first, then fall back to the IPv4 address if the IPv6 address retrieval capability is not available from the user's client side.
   * Integrate both the client and server parameter builder to achieve optimized performance:
     * Use the client-side parameter builder to retrieve `client_ip_address` and save to a cookie first.
     * Then use the server-side parameter builder to get the best available `client_ip_address` from both cookie and request to send to Meta using the Conversions API.
 * Data normalizing and hashing:
   * Normalize and hash only once: Apply normalization and hashing to customer information parameters only once—either on the client side or the server side—before sending them to Meta through the Conversions API.
-  * Parameter value is case-sensitive: All the customer information parameter fields’ values returned from the parameter builder are case sensitive. You can send these values as is back to Meta through the Conversions API without any normalizing (for example, lowercase), as it has been done automatically by the parameter builder SDK in the process.
+  * Parameter value is case-sensitive: All the customer information parameter fields' values returned from the parameter builder are case sensitive. You can send these values as is back to Meta through the Conversions API without any normalizing (for example, lowercase), as it has been done automatically by the parameter builder SDK in the process.

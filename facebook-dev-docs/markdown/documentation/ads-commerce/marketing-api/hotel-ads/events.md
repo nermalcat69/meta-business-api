@@ -32,7 +32,7 @@ A hotel feed is a file with your hotel inventory. Every line or item in the file
 
 * The first row must list the chosen field names in the order the values are given. Subsequent rows then supply the corresponding values for each hotel.
 * Fields containing whitespace or commas should be enclosed in `"`double quotes`"`.
-* Nested or multi-value fields, such as `address`, `neighborhood` or `image`, can be represented using JSON-encoded values or by a set of “flattened” plain-text columns labeled using JSON-path syntax, such as `address.city`, `neighborhood[0]`, `image[0].url`, `image[0].tag[0]`, `image[0].tag[1]`. Both conventions can be used interchangeably in the same file.
+* Nested or multi-value fields, such as `address`, `neighborhood` or `image`, can be represented using JSON-encoded values or by a set of "flattened" plain-text columns labeled using JSON-path syntax, such as `address.city`, `neighborhood[0]`, `image[0].url`, `image[0].tag[0]`, `image[0].tag[1]`. Both conventions can be used interchangeably in the same file.
 
 #### XML
 
@@ -51,7 +51,7 @@ For localized catalogs, see [supported fields for hotel ads](https://developers.
 
 | Field and Type | Description |
 | --- | --- |
-| `hotel_id`  type: string | **Required**.  Max length: 100  Your unique identifier for the hotel within the catalog. The `hotel_id` is matched with any `content_ids` provided in your `hotel` app and pixel events. **Tip**: To improve performance, avoid using a space for this unique identifier field. Don’t use duplicate IDs.  Example: `FB_hotel_1234` |
+| `hotel_id`  type: string | **Required**.  Max length: 100  Your unique identifier for the hotel within the catalog. The `hotel_id` is matched with any `content_ids` provided in your `hotel` app and pixel events. **Tip**: To improve performance, avoid using a space for this unique identifier field. Don't use duplicate IDs.  Example: `FB_hotel_1234` |
 | `room_id`  type: string | **Required if adding hotel room information**.  Enter a unique ID for the hotel room type. Max characters: 100 **Example**: `FB_hotel_room_1234` |
 | `name`  type: string | **Required**.  Most common name of the hotel.  Example: `Facebook Hotel` |
 | `description`  type: string | **Required**.  Max size: 5000  Brief description of the hotel.  Example: `Only 30 minutes away from San Francisco.` |
@@ -66,7 +66,7 @@ For localized catalogs, see [supported fields for hotel ads](https://developers.
 | `image[0].tag`  type: object | See [Image Object Parameters](https://developers.facebook.com/documentation/ads-commerce/marketing-api/hotel-ads/events#image-object). |
 | `brand`  type: string | **Optional**.  Brand name of the hotel chain.  Example: `Hilton` |
 | `address`  type: object | See [Address Object Parameters](https://developers.facebook.com/documentation/ads-commerce/marketing-api/hotel-ads/events#address-object). |
-| `neighborhood[0]`  type: string | **Required**.  Max neighborhoods allowed: 20  Neighborhood where the hotel is located. If there’s more than one neighborhood, add additional columns for each one and use JSON-path syntax in each column name to indicate the number of neighborhoods.  Example: `Belle Haven` |
+| `neighborhood[0]`  type: string | **Required**.  Max neighborhoods allowed: 20  Neighborhood where the hotel is located. If there's more than one neighborhood, add additional columns for each one and use JSON-path syntax in each column name to indicate the number of neighborhoods.  Example: `Belle Haven` |
 | `latitude`  type: float | **Required**.  Latitude of the hotel.  Example: `37.484100` |
 | `longitude`  type: float | **Required**.  Longitude of the hotel.  Example: `-122.148252` |
 | `sale_price`  type: string | **Optional**.  Sale price per night of hotel stay, based on `checkin_date` and `length_of_stay`. Use this when you want to advertise discounts off the regular price of the hotel. Make sure to add the currency type to the price (for example, USD for U.S. dollars). Make sure the `sale_price` of a hotel is lower than its `base_price`. Format price as the cost, followed by the [ISO currency code⁠](https://en.wikipedia.org/wiki/ISO_4217), with a space between cost and currency.  Example: `149.00 USD` |
@@ -81,19 +81,19 @@ For localized catalogs, see [supported fields for hotel ads](https://developers.
 | `number_of_rooms`  type: integer | **Optional**.  Total number of rooms/units in this hotel listing.  Example: `150` |
 | `status`  Type: string | Controls whether an item is active or archived in your catalog. Only active items can be seen by people in your ads, shops, or any other channels. Supported values: `active`, `archived`. Items are active by default. Learn more about [archiving items⁠](https://www.facebook.com/business/help/543317109402043?id=725943027795860).  Example: `active`  **Note**: Some partner platforms such as Shopify may sync items to your catalog with a status called **staging**, which behaves the same as `archived`.  This field was previously called `visibility`. The old field name is still supported, but use the new name. |
 | `custom_label_0` `custom_label_1` `custom_label_2` `custom_label_3` `custom_label_4`  Type: string | Max character limit: 100  Up to five custom fields for any additional information you want to filter items by when you create sets. For example, you could use a custom field to indicate all rooms that are part of a summer sale, and then filter those items into a set. This field supports any text value, including numbers.  Example: `Summer Sale`  This field is supported by supplementary feeds. |
-| `custom_number_0` `custom_number_1` `custom_number_2` `custom_number_3` `custom_number_4`  Type: int | Up to five custom fields for any additional number-related information you want to filter items by when you create sets. This field allows you to filter by number ranges (**is greater than** and **is less than**) when you create a set. For example, you could use this field to indicate the year a hotel was opened, and then filter a certain year range into a set.  This field supports whole numbers between 0 and 4294967295. It doesn’t support negative numbers, decimal numbers or commas, such as -2, 5.5, or 10,000.  Example: `2022` |
-| `internal_label`  Type: string | Add internal labels to help filter items when you create [product sets⁠](https://www.facebook.com/business/help/620275848114281?id=725943027795860). For example, you could add a “summer” label to all items that are part of a summer promotion and then filter those items into a set. Labels are only visible to you  Enclose each label in single quotes (‘) and separate multiple labels with commas (,). Don’t include white spaces at the beginning or end of a label. Character limit: Up to 5,000 labels per product and 110 characters per label.  Example (TSV, XLSX, Google Sheets): [‘summer’,’trending’]  Example (CSV): “[‘summer’,’trending’]”  **Note**: If you’re currently using custom labels (`custom_label_0` to `custom_label_4`) for filtering product sets, switching to internal labels (`internal_label`) instead is recommended. Unlike custom labels, you can add or update internal labels as often as needed without sending items through policy review each time, which can impact ad delivery.  This field was previously called `product_tags`. The old field name is still supported, but use the new name. |
+| `custom_number_0` `custom_number_1` `custom_number_2` `custom_number_3` `custom_number_4`  Type: int | Up to five custom fields for any additional number-related information you want to filter items by when you create sets. This field allows you to filter by number ranges (**is greater than** and **is less than**) when you create a set. For example, you could use this field to indicate the year a hotel was opened, and then filter a certain year range into a set.  This field supports whole numbers between 0 and 4294967295. It doesn't support negative numbers, decimal numbers or commas, such as -2, 5.5, or 10,000.  Example: `2022` |
+| `internal_label`  Type: string | Add internal labels to help filter items when you create [product sets⁠](https://www.facebook.com/business/help/620275848114281?id=725943027795860). For example, you could add a "summer" label to all items that are part of a summer promotion and then filter those items into a set. Labels are only visible to you  Enclose each label in single quotes (') and separate multiple labels with commas (,). Don't include white spaces at the beginning or end of a label. Character limit: Up to 5,000 labels per product and 110 characters per label.  Example (TSV, XLSX, Google Sheets): ['summer','trending']  Example (CSV): "['summer','trending']"  **Note**: If you're currently using custom labels (`custom_label_0` to `custom_label_4`) for filtering product sets, switching to internal labels (`internal_label`) instead is recommended. Unlike custom labels, you can add or update internal labels as often as needed without sending items through policy review each time, which can impact ad delivery.  This field was previously called `product_tags`. The old field name is still supported, but use the new name. |
 
 #### Image object parameters
 
 | Field Name and Type | Description |
 | --- | --- |
 | `url`  type: string | **Required**.  Max items: 20.  URL link to the image of the item that will appear in your ads. Follow these image specifications:   * All images must be in JPG, GIF, or PNG format. * For carousel ads and collection ads: Images display in square (1:1) format. The minimum image size is 500 x 500 px. Use 1024 x 1024 px for best quality. * For single image ads: Images display at a 1.91:1 aspect ratio. The minimum image size is 500 x 500 px. Use 1200 x 628 px for best quality. * If you have more than one image, add additional columns for each one and use JSON-path syntax in each column name to indicate the number of images.   Example: `image[0].url; image[1].url`  Example: `https://www.facebook.com/facebook_hotel.jpg` |
-| `tag`  type: string | **Optional**.  Tag appended to the image that shows what’s in the image. There can be multiple tags associated with an image.  Examples: `Fitness Center`, `Swimming Pool`, `suite`  `INSTAGRAM_STANDARD_PREFERRED` - Allows advertisers to tag a specific image in their feed as the default image to use for Instagram. This tag is case-sensitive. |
+| `tag`  type: string | **Optional**.  Tag appended to the image that shows what's in the image. There can be multiple tags associated with an image.  Examples: `Fitness Center`, `Swimming Pool`, `suite`  `INSTAGRAM_STANDARD_PREFERRED` - Allows advertisers to tag a specific image in their feed as the default image to use for Instagram. This tag is case-sensitive. |
 
 #### Address Object Parameters
 
-Nested or multi-value fields, such as `address` can be represented using JSON-encoded values or by a set of “flattened” plain-text columns labeled using JSON-path syntax, such as `address.region`. Both conventions can be used interchangeably in the same file.
+Nested or multi-value fields, such as `address` can be represented using JSON-encoded values or by a set of "flattened" plain-text columns labeled using JSON-path syntax, such as `address.region`. Both conventions can be used interchangeably in the same file.
 
 | Field Name and Type | Description |
 | --- | --- |
@@ -108,7 +108,7 @@ Nested or multi-value fields, such as `address` can be represented using JSON-en
 
 #### Guest rating object parameters
 
-Nested or multi-value fields, such as `guest_rating` can be represented using JSON-encoded values or by a set of “flattened” plain-text columns labeled using JSON-path syntax, such as `guest_rating[0].number_of_reviewers` or `guest_rating[0].max_score`.
+Nested or multi-value fields, such as `guest_rating` can be represented using JSON-encoded values or by a set of "flattened" plain-text columns labeled using JSON-path syntax, such as `guest_rating[0].number_of_reviewers` or `guest_rating[0].max_score`.
 
 | Field Name and Type | Description |
 | --- | --- |
@@ -139,9 +139,9 @@ curl -X POST \
 
 ## Upload your hotel feeds via the API
 
-Once you’ve created the catalog, you must upload your hotel feed(s) to Facebook. Use the API to create a feed object for every feed you want to upload. Scheduled and direct uploads are supported.
+Once you've created the catalog, you must upload your hotel feed(s) to Facebook. Use the API to create a feed object for every feed you want to upload. Scheduled and direct uploads are supported.
 
-For scheduled uploads, specify a schedule when you create the feed. For non scheduled uploads, don’t specify a schedule.
+For scheduled uploads, specify a schedule when you create the feed. For non scheduled uploads, don't specify a schedule.
 
 ```
 curl -X POST \
@@ -176,7 +176,7 @@ A hotel set is a subset of your catalog. To set up hotel ads, you need a hotel s
 
 Hotel sets are defined by filters that are applied to the hotel catalog. For example, you can create a hotel set with all hotels with a `star_rating` greater than 3. **Note**: You can also create a hotel set without any filters. When you create a set without filters, the hotel set will contain all hotels in your catalog.
 
-To create a hotel set containing all the hotels that contain ‘sample brand’ mentioned in the `brand` field:
+To create a hotel set containing all the hotels that contain 'sample brand' mentioned in the `brand` field:
 
 ```
 curl -X POST \
@@ -221,7 +221,7 @@ The `filter` parameter is made up of the following operators and data:
 
 To map the data from your event sources (your pixels and app events) to your catalog, every catalog must be associated with these event sources:
 
-* Go to your [business manager’s catalog page⁠](https://business.facebook.com/settings/product-catalogs/) and click **Associate Sources**.
+* Go to your [business manager's catalog page⁠](https://business.facebook.com/settings/product-catalogs/) and click **Associate Sources**.
 * Select the app and pixel that are receiving the travel events. Alternatively, you can use the API.
 
 ```

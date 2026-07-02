@@ -79,7 +79,7 @@ curl -X POST \
 | `<API_VERSION>`  *String* | **Optional.**  Graph API version. | v25.0 |
 | `<BODY_PARAM_EXAMPLE>`  *String* | **Required if body text contains named parameters.**  Example value for the named parameter. You must supply one example for each parameter in your body text. | `Mark` |
 | `<BODY_PARAM_NAME>`  *String* | **Required if body text contains named parameters.**  Name of the parameter, matching the placeholder in the body text. | `customer_name` |
-| `<BODY_TEXT>`  *String* | **Required.**  Body text string. Supports named parameters in `{{parameter_name}}` format.  Maximum 1024 characters. | `Good news {{customer_name}}! Your order #{{order_number}} is on its way. Check the map above for the delivery location.` |
+| `<BODY_TEXT>`  *String* | **Required.**  Body text string. Supports named parameters in `{​{parameter_name}​}` format.  Maximum 1024 characters. | `Good news {​{customer_name}​}! Your order #{​{order_number}​} is on its way. Check the map above for the delivery location.` |
 | `<CATEGORY>`  *Enum* | **Required.**  Template category. Must be `UTILITY` or `MARKETING` for location templates. | `UTILITY` |
 | `<FOOTER_TEXT>`  *String* | **Optional.**  Footer text. Maximum 60 characters. | `Tap the button below to stop delivery updates.` |
 | `<TEMPLATE_LANGUAGE>`  *Enum* | **Required.**  Template [language and locale code](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/supported-languages). | `en_US` |
@@ -107,7 +107,7 @@ curl -X POST \
       },
       {
         "type": "BODY",
-        "text": "Good news {{customer_name}}! Your order #{{order_number}} is on its way to the location above. Thank you for your order!",
+        "text": "Good news {​{customer_name}​}! Your order #{​{order_number}​} is on its way to the location above. Thank you for your order!",
         "example": {
           "body_text_named_params": [
             {
@@ -141,13 +141,11 @@ curl -X POST \
 ### Example response
 
 ```
-```
 {  
-  "id": "546151681022936",  
-  "status": "PENDING",  
-  "category": "UTILITY"  
+  "id": "546151681022936",  
+  "status": "PENDING",  
+  "category": "UTILITY"  
 }
-```
 ```
 
 ## Send a location template
@@ -277,20 +275,18 @@ curl -X POST \
 ### Example response
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "contacts": [  
-    {  
-      "input": "+16505551234",  
-      "wa_id": "16505551234"  
-    }  
-  ],  
-  "messages": [  
-    {  
-      "id": "wamid.HBgLMTY1MDU..."  
-    }  
-  ]  
+  "messaging_product": "whatsapp",  
+  "contacts": [  
+    {  
+      "input": "+16505551234",  
+      "wa_id": "16505551234"  
+    }  
+  ],  
+  "messages": [  
+    {  
+      "id": "wamid.HBgLMTY1MDU..."  
+    }  
+  ]  
 }
-```
 ```

@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/commerce-
 
 Updated: Dec 17, 2025
 
-When customers make a purchase from your shop on Facebook or Instagram, the checkout process takes place on your own website. You’ll need to build a checkout URL that will allow customers to complete their shops purchases seamlessly on your website.
+When customers make a purchase from your shop on Facebook or Instagram, the checkout process takes place on your own website. You'll need to build a checkout URL that will allow customers to complete their shops purchases seamlessly on your website.
 
 ![Shops checkout flow: customer shops on Facebook or Instagram through Product Ads, Product Detail Page, and Cart, then Meta redirects to the seller-configured checkout URL on the seller's website.](https://scontent.fdel27-7.fna.fbcdn.net/v/t39.2365-6/515507015_1245895697030091_7596074378978424260_n.jpg?_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=wP_cIKso55UQ7kNvwHexNu6&_nc_oc=AdoXlBsAf1DCtB0emnuvXWxBn4zpwHEfBBQStN6Sv42pYa9IncsP0FXZahRsgfWz-_EIcfFU0ZbnJZtSO7SOn8a4&_nc_zt=14&_nc_ht=scontent.fdel27-7.fna&_nc_gid=bSXP79vrag1fXrXq2ULiIQ&_nc_ss=7b289&oh=00_AQDrT-VBkCEvc057l3POPDw95mf5xw8ln0uaYC6tkBuUGA&oe=6A6091BD)
 
@@ -21,7 +21,7 @@ You will need to provide a checkout URL that can receive cart information:
 * Quantities
 * Coupons
 
-Once you build your checkout URL, you can test your checkout by adding products and promo codes. Make sure the products you’ve selected appear in your website’s checkout with the right quantity and price, and that your subtotal is accurate. If you’ve added a promo code, make sure it’s been applied. Meta will also automatically review your website’s checkout experience on a periodic basis to ensure it’s working properly.
+Once you build your checkout URL, you can test your checkout by adding products and promo codes. Make sure the products you've selected appear in your website's checkout with the right quantity and price, and that your subtotal is accurate. If you've added a promo code, make sure it's been applied. Meta will also automatically review your website's checkout experience on a periodic basis to ensure it's working properly.
 
 ## How to Build Your Checkout URL
 
@@ -71,34 +71,34 @@ PythonNode.jsC#Ruby
 ---
 
 ```
-# views.py  
-from django.http import JsonResponse  
-from django.views import View  
-class CheckoutView(View):  
-   def get(self, request):  
-       products_param = request.GET.get('products', '')  
-       coupon = request.GET.get('coupon', None)  
-       # Parse products  
-       product_quantities = {}  
-       if products_param:  
-           for entry in products_param.split(','):  
-               try:  
-                   product_id, quantity = entry.split(':')  
-                   product_quantities[product_id] = int(quantity)  
-               except ValueError:  
-                   continue  # Skip malformed entries  
-       # Build response  
-       response_data = {  
-           'products': product_quantities,  
-           'coupon': coupon if coupon else 'No coupon applied'  
-       }  
+# views.py  
+from django.http import JsonResponse  
+from django.views import View  
+class CheckoutView(View):  
+   def get(self, request):  
+       products_param = request.GET.get('products', '')  
+       coupon = request.GET.get('coupon', None)  
+       # Parse products  
+       product_quantities = {}  
+       if products_param:  
+           for entry in products_param.split(','):  
+               try:  
+                   product_id, quantity = entry.split(':')  
+                   product_quantities[product_id] = int(quantity)  
+               except ValueError:  
+                   continue  # Skip malformed entries  
+       # Build response  
+       response_data = {  
+           'products': product_quantities,  
+           'coupon': coupon if coupon else 'No coupon applied'  
+       }  
   
-       return JsonResponse(response_data)  
-    # urls.py  
-from django.urls import path  
-from .views import CheckoutView  
-urlpatterns = [  
-   path('checkout/', CheckoutView.as_view(), name='checkout'),  
+       return JsonResponse(response_data)  
+    # urls.py  
+from django.urls import path  
+from .views import CheckoutView  
+urlpatterns = [  
+   path('checkout/', CheckoutView.as_view(), name='checkout'),  
 ]
 ```
 
@@ -115,22 +115,22 @@ You will be required to use our checkout validation tool in Commerce Manager to 
 ### 2. Next, test in Commerce Manager:
 
 * Once the web browser test is successful, go test your production checkout URL in the validation tool in Commerce Manager.
-* You’ll follow steps to validate that catalog products and promo codes will appear accurately in your checkout.
+* You'll follow steps to validate that catalog products and promo codes will appear accurately in your checkout.
 * This step helps simulate the browser experience from mobile devices.
 * We recommend using the production URL for this test because you can test with products available in your catalog.
 
-### 3. Finally, test your shop in “preview” mode:
+### 3. Finally, test your shop in "preview" mode:
 
 * Submit your checkout URL and publish it on your shop.
-* Go to **Commerce Manager settings** > **General** > **Shops on Facebook**, then set your shop on “Preview” mode. Anyone with full admin control of your commerce account can still see a preview of your shop
+* Go to **Commerce Manager settings** > **General** > **Shops on Facebook**, then set your shop on "Preview" mode. Anyone with full admin control of your commerce account can still see a preview of your shop
 * Verify that you will be able to select products and add to cart on Facebook and Instagram, and then purchase these products on your website checkout.
-* When you’re ready, you can make your shop visible again in your settings.
+* When you're ready, you can make your shop visible again in your settings.
 
 ## Best Practices to Build Your Compatible Checkout URL
 
 ### 1. Clear the cart (if needed)
 
-If you store cart information in cookies or local storage, make sure that the cart is cleared on each call to the endpoint so that new items can be added each time. This ensures that your buyers don’t see products previously in their cart. You may add an additional parameter onto the endpoint to do this (for example: https://www.example.com/checkout?clear=true).
+If you store cart information in cookies or local storage, make sure that the cart is cleared on each call to the endpoint so that new items can be added each time. This ensures that your buyers don't see products previously in their cart. You may add an additional parameter onto the endpoint to do this (for example: https://www.example.com/checkout?clear=true).
 
 ### 2. Add products to the cart
 
@@ -175,9 +175,9 @@ If users navigate from the shop to your website (without directly going to your 
 
 These parameters are appended for traffic coming from a shop on Instagram or Facebook. They are also added to any parameters you have already set at the product level in your catalog or data feed (for example, `utm_content`).
 
-If you link directly to your website checkout, and users proceed from your shop’s cart to your website, we automatically append the parameter:
+If you link directly to your website checkout, and users proceed from your shop's cart to your website, we automatically append the parameter:
 
-* `cart_origin` with a value of either ‘facebook’, ‘instagram’, or ‘meta\_shops’ depending on the source of the checkout.
+* `cart_origin` with a value of either 'facebook', 'instagram', or 'meta\_shops' depending on the source of the checkout.
 
 `cart_origin` is appended in addition to:
 
@@ -191,7 +191,7 @@ If you link directly to your website checkout, and users proceed from your shop�
 | `products` | A comma-separated list of products. For each product, the ID and quantity are separated by a colon. Commas (%2C) and colons (%3A) are escaped according to [RFC 3986⁠](https://datatracker.ietf.org/doc/html/rfc3986).  Your web server should provide an API similar to decodeURIComponent to parse these parameters.  Products with comma (,) or colon (:) characters in their ID are not supported. | `products=12345%3A3%2C23456%3A1`  This example cart has the following two products:   * product ID 12345 with quantity 3 and * product ID 23456 with quantity 1 |
 | `coupon` | A single, optional coupon code to apply at checkout. This may include an email opt-in promo code. | `coupon=SUMMERSALE20` |
 | `fbclid` | A Facebook Click ID - automatically added to all outbound links from Facebook and Instagram. | `fbclid=1234567890abcdef` |
-| `cart_origin` | The source app the buyer is using to checkout. Possible values include “facebook”, “instagram”, and “meta\_shops”. These are for Facebook, Instagram and Commerce Manager respectively. | `cart_origin=instagram` |
+| `cart_origin` | The source app the buyer is using to checkout. Possible values include "facebook", "instagram", and "meta\_shops". These are for Facebook, Instagram and Commerce Manager respectively. | `cart_origin=instagram` |
 | `utm_source` | Identifies the traffic source. Included if the originating ad included this parameter. | `utm_source=facebook` |
 | `utm_medium` | Specifies the marketing channel or medium. Included if the originating ad included this parameter. | `utm_medium=paid` |
 | `utm_campaign` | Identifies ad creative variations or placements. Included if the originating ad included this parameter. | `utm_campaign=2025-spring-sale` |

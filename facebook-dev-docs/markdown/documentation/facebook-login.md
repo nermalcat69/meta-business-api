@@ -26,7 +26,7 @@ A secure, fast, and convenient way for users to log into your app, and for your 
 ### Changes to Social Plugins in the European Region
 
 You may start to see some impact to Social Plugins due to an updated cookies consent prompt that will be shown to people using Facebook products in the European Region.
-We will no longer support the ‘Like’ and ‘Comment’ Social Plugins for European Region users, unless they are both 1) Logged into their Facebook account, and 2) have provided consent to the “App and Website Cookies” control. If both of these requirements are met, the user will be able to see and interact with plugins such as the ‘Like’ or ‘Comment’ button. If either of the requirements above are not met, the user will not be able to see the plugins.
+We will no longer support the 'Like' and 'Comment' Social Plugins for European Region users, unless they are both 1) Logged into their Facebook account, and 2) have provided consent to the "App and Website Cookies" control. If both of these requirements are met, the user will be able to see and interact with plugins such as the 'Like' or 'Comment' button. If either of the requirements above are not met, the user will not be able to see the plugins.
 
 #### The European Region is a specific list of countries including:
 
@@ -80,7 +80,7 @@ Submitting your app for review of the permissions it requests.
 
 #### [Changelog](https://developers.facebook.com/docs/facebook-login/changelog)
 
-See what’s changed in different releases of Facebook Login.
+See what's changed in different releases of Facebook Login.
 
 ## Business Results
 

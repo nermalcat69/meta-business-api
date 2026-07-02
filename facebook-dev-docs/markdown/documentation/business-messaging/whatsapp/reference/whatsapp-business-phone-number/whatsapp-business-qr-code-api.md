@@ -76,11 +76,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/whatsapp_business_profile' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/whatsapp_business_profile' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -91,28 +91,28 @@ Select status code
 
 ```
 {  
-  "business_profile_details": {  
-    "summary": "Complete business profile information",  
-    "value": {  
-      "data": [  
-        {  
-          "business_profile": {  
-            "messaging_product": "whatsapp",  
-            "about": "Welcome to our business! We provide excellent service.",  
-            "address": "123 Business Street, City, State 12345",  
-            "description": "We are a leading provider of quality products and services.",  
-            "email": "contact@business.com",  
-            "profile_picture_url": "https://pps.whatsapp.net/v/profile_picture_url",  
-            "websites": [  
-              "https://www.business.com",  
-              "https://www.facebook.com/business"  
-            ],  
-            "vertical": "RESTAURANT"  
-          }  
-        }  
-      ]  
-    }  
-  }  
+  "business_profile_details": {  
+    "summary": "Complete business profile information",  
+    "value": {  
+      "data": [  
+        {  
+          "business_profile": {  
+            "messaging_product": "whatsapp",  
+            "about": "Welcome to our business! We provide excellent service.",  
+            "address": "123 Business Street, City, State 12345",  
+            "description": "We are a leading provider of quality products and services.",  
+            "email": "contact@business.com",  
+            "profile_picture_url": "https://pps.whatsapp.net/v/profile_picture_url",  
+            "websites": [  
+              "https://www.business.com",  
+              "https://www.facebook.com/business"  
+            ],  
+            "vertical": "RESTAURANT"  
+          }  
+        }  
+      ]  
+    }  
+  }  
 }
 ```
 
@@ -754,11 +754,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/whatsapp_business_profile' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/whatsapp_business_profile' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -769,28 +769,28 @@ Select status code
 
 ```
 {  
-  "business_profile_details": {  
-    "summary": "Complete business profile information",  
-    "value": {  
-      "data": [  
-        {  
-          "business_profile": {  
-            "messaging_product": "whatsapp",  
-            "about": "Welcome to our business! We provide excellent service.",  
-            "address": "123 Business Street, City, State 12345",  
-            "description": "We are a leading provider of quality products and services.",  
-            "email": "contact@business.com",  
-            "profile_picture_url": "https://pps.whatsapp.net/v/profile_picture_url",  
-            "websites": [  
-              "https://www.business.com",  
-              "https://www.facebook.com/business"  
-            ],  
-            "vertical": "RESTAURANT"  
-          }  
-        }  
-      ]  
-    }  
-  }  
+  "business_profile_details": {  
+    "summary": "Complete business profile information",  
+    "value": {  
+      "data": [  
+        {  
+          "business_profile": {  
+            "messaging_product": "whatsapp",  
+            "about": "Welcome to our business! We provide excellent service.",  
+            "address": "123 Business Street, City, State 12345",  
+            "description": "We are a leading provider of quality products and services.",  
+            "email": "contact@business.com",  
+            "profile_picture_url": "https://pps.whatsapp.net/v/profile_picture_url",  
+            "websites": [  
+              "https://www.business.com",  
+              "https://www.facebook.com/business"  
+            ],  
+            "vertical": "RESTAURANT"  
+          }  
+        }  
+      ]  
+    }  
+  }  
 }
 ```
 
@@ -833,22 +833,22 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/whatsapp_business_profile' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "messaging_product": "whatsapp",  
-  "about": "Welcome to our business! We provide excellent service.",  
-  "address": "123 Business Street, City, State 12345",  
-  "description": "We are a leading provider of quality products and services.",  
-  "email": "contact@business.com",  
-  "profile_picture_handle": "4:VGVzdC5wbmc=:aW1hZ2UvanBlZw==:ARat4Mt-L09JON3f30SmDkdyPSuyBkDDYiB4TFXuXISjdgHoNp2b7j882_9Jzr2tPrdKxi92UygyVzTivJiOvmebMpZ6MIjTik3gTyI3ZCQAgQ:e:1659995302:2022308451254161:636685196:ARZf1ftR5N6-qSLtklU",  
-  "websites": [  
-    "https://www.business.com",  
-    "https://www.facebook.com/business"  
-  ],  
-  "vertical": "RESTAURANT"  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/whatsapp_business_profile' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "messaging_product": "whatsapp",  
+  "about": "Welcome to our business! We provide excellent service.",  
+  "address": "123 Business Street, City, State 12345",  
+  "description": "We are a leading provider of quality products and services.",  
+  "email": "contact@business.com",  
+  "profile_picture_handle": "4:VGVzdC5wbmc=:aW1hZ2UvanBlZw==:ARat4Mt-L09JON3f30SmDkdyPSuyBkDDYiB4TFXuXISjdgHoNp2b7j882_9Jzr2tPrdKxi92UygyVzTivJiOvmebMpZ6MIjTik3gTyI3ZCQAgQ:e:1659995302:2022308451254161:636685196:ARZf1ftR5N6-qSLtklU",  
+  "websites": [  
+    "https://www.business.com",  
+    "https://www.facebook.com/business"  
+  ],  
+  "vertical": "RESTAURANT"  
 }'
 ```
 
@@ -860,12 +860,12 @@ Select status code
 
 ```
 {  
-  "profile_update_success": {  
-    "summary": "Successful profile update",  
-    "value": {  
-      "success": true  
-    }  
-  }  
+  "profile_update_success": {  
+    "summary": "Successful profile update",  
+    "value": {  
+      "success": true  
+    }  
+  }  
 }
 ```
 
@@ -1496,22 +1496,22 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/whatsapp_business_profile' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "messaging_product": "whatsapp",  
-  "about": "Welcome to our business! We provide excellent service.",  
-  "address": "123 Business Street, City, State 12345",  
-  "description": "We are a leading provider of quality products and services.",  
-  "email": "contact@business.com",  
-  "profile_picture_handle": "4:VGVzdC5wbmc=:aW1hZ2UvanBlZw==:ARat4Mt-L09JON3f30SmDkdyPSuyBkDDYiB4TFXuXISjdgHoNp2b7j882_9Jzr2tPrdKxi92UygyVzTivJiOvmebMpZ6MIjTik3gTyI3ZCQAgQ:e:1659995302:2022308451254161:636685196:ARZf1ftR5N6-qSLtklU",  
-  "websites": [  
-    "https://www.business.com",  
-    "https://www.facebook.com/business"  
-  ],  
-  "vertical": "RESTAURANT"  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/whatsapp_business_profile' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "messaging_product": "whatsapp",  
+  "about": "Welcome to our business! We provide excellent service.",  
+  "address": "123 Business Street, City, State 12345",  
+  "description": "We are a leading provider of quality products and services.",  
+  "email": "contact@business.com",  
+  "profile_picture_handle": "4:VGVzdC5wbmc=:aW1hZ2UvanBlZw==:ARat4Mt-L09JON3f30SmDkdyPSuyBkDDYiB4TFXuXISjdgHoNp2b7j882_9Jzr2tPrdKxi92UygyVzTivJiOvmebMpZ6MIjTik3gTyI3ZCQAgQ:e:1659995302:2022308451254161:636685196:ARZf1ftR5N6-qSLtklU",  
+  "websites": [  
+    "https://www.business.com",  
+    "https://www.facebook.com/business"  
+  ],  
+  "vertical": "RESTAURANT"  
 }'
 ```
 
@@ -1523,12 +1523,12 @@ Select status code
 
 ```
 {  
-  "profile_update_success": {  
-    "summary": "Successful profile update",  
-    "value": {  
-      "success": true  
-    }  
-  }  
+  "profile_update_success": {  
+    "summary": "Successful profile update",  
+    "value": {  
+      "success": true  
+    }  
+  }  
 }
 ```
 

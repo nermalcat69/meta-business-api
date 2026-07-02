@@ -26,8 +26,8 @@ The top-level elements of the JSON response.
 | Element | Description |
 | --- | --- |
 | `name`  Type: string | **Required**.  Name of the store the review feed is for. |
-| `id`  Type: string | **Optional**.  Unique identifier of the store on the aggregator’s platform. |
-| `storeUrls`  Type: Array<string> | **Optional**.  Domains owned by the store where they sell their products. Do not include any third-party seller websites, such as “amazon.com”.  Example: `["www.sephora.com", "www.sephora.de"]` |
+| `id`  Type: string | **Optional**.  Unique identifier of the store on the aggregator's platform. |
+| `storeUrls`  Type: Array<string> | **Optional**.  Domains owned by the store where they sell their products. Do not include any third-party seller websites, such as "amazon.com".  Example: `["www.sephora.com", "www.sephora.de"]` |
 
 ### Review
 
@@ -42,7 +42,7 @@ The top-level elements of the JSON response.
 | `reviewImageUrls`  Type: Array<string> | **Optional**.  List of URLs for published images as uploaded by shoppers with the review. |
 | `incentivized`  Type:boolean | **Required**.  Represents whether the review was obtained via an incentivized promotion run by the merchant. |
 | `hasVerifiedPurchase`  Type:boolean | **Optional**.  Represents whether the review was left after a verified purchase of the product. |
-| `reviewer`  Type: [Reviewer](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/platforms/feed-schema-csv#reviewer) | **Required**.  Review author’s information. |
+| `reviewer`  Type: [Reviewer](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/platforms/feed-schema-csv#reviewer) | **Required**.  Review author's information. |
 | `product`  Type: [Product](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/platforms/feed-schema-csv#product) | **Required**.  Information about the product the review is associated with. |
 | `language`  Type: string | **Optional**.  The language used for the written review. The string should be in [ISO 639-1⁠](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) code format.  Example: `en` |
 | `country`  Type: string | **Optional**.  Country from where the review was written. The string should be in [ISO 3166 Alpha-2⁠](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format. See also [glossary for ISO 3166⁠](https://www.iso.org/glossary-for-iso-3166.html).  Example: `US` |
@@ -75,12 +75,12 @@ The top-level elements of the JSON response.
 | Element | Description |
 | --- | --- |
 | `name`  Type: string | **Required**.  Name of the product. |
-| `url`  Type: string | **Required**.  Link to the product detail page on the store’s website. |
+| `url`  Type: string | **Required**.  Link to the product detail page on the store's website. |
 | `imageUrls`  Type: Array<string> | **Optional**.  List of image urls associated with the product. |
 | `groupID`  Type: string | **Optional**.  ID for a group of products that share reviews. You can choose to share the `groupID` or all of the variants directly using the `variants` field. |
 | `productIdentifiers`  Type: [ProductIdentifiers](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/platforms/feed-schema-csv#product-identifiers) | **Optional**.  List of all the different identifiers that can be used to match the reviews to a product in the Meta commerce catalog. |
 | `variants`  Type: Array<ProductVariant> | **Optional**.  Different [variants of this product](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/platforms/feed-schema-csv#product-variant) that can share the same reviews. |
-| `productStatus`  Type: Enum `{"active", "inactive"}` | **Optional**.  Status of the product. “active” if the product is still active and “inactive” if the product is no longer being sold. |
+| `productStatus`  Type: Enum `{"active", "inactive"}` | **Optional**.  Status of the product. "active" if the product is still active and "inactive" if the product is no longer being sold. |
 
 ### ProductIdentifiers
 
@@ -97,7 +97,7 @@ The top-level elements of the JSON response.
 | Element | Description |
 | --- | --- |
 | `name`  Type: string | **Required**.  Name of the product variant. |
-| `url`  Type: string | **Required**.  Link to the product detail page for the variant on the store’s website. |
+| `url`  Type: string | **Required**.  Link to the product detail page for the variant on the store's website. |
 | `variantIdentifiers`  Type: [ProductIdentifiers](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/platforms/feed-schema-csv#product-identifiers) | **Optional**.  List of all the different identifiers for the variant. |
 
 ### Sample Feed

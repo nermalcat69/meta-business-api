@@ -45,7 +45,7 @@ If you are an enterprise developer, such as a [partner](https://developers.faceb
 
 Note that if you are an end-client of a Solution Partner or managed partner, contact your Solution Partner or managed partner for support directly.
 
-We do our best to provide an initial response to your ticket within 24 hours on business days. Business days are Monday through Friday, in the customer’s country set in the Business Account, excluding holidays.
+We do our best to provide an initial response to your ticket within 24 hours on business days. Business days are Monday through Friday, in the customer's country set in the Business Account, excluding holidays.
 
 ### Ticket severity
 
@@ -65,7 +65,7 @@ When a **Critical** or **Urgent** ticket is resolved but with outstanding reques
 
 ### Message not delivered
 
-The following scenarios can cause a message to appear as sent but not delivered. For many of these reasons, **we will not disclose the underlying cause of the error**, because of privacy and policy reasons. The reasons messages appear as ‘sent’ but are not delivered include, but are not limited to, the following:
+The following scenarios can cause a message to appear as sent but not delivered. For many of these reasons, **we will not disclose the underlying cause of the error**, because of privacy and policy reasons. The reasons messages appear as 'sent' but are not delivered include, but are not limited to, the following:
 
 * The WhatsApp user did not come online during the 30-day window where we hold messages for offline customers.
 * The customer has blocked the business phone number, or another business phone number owned by the business.
@@ -91,7 +91,7 @@ Using a non-WhatsApp communication method, ask the WhatsApp user to:
 
 * confirm that they can actually send a message to your WhatsApp Business phone number(s)
 * confirm that none of your WhatsApp Business phone numbers are in their list of blocked numbers (**Settings** > **Privacy** > **Blocked** or **Blocked contacts**)
-* confirm that they have accepted our latest Terms of Service (**Settings** > **Help**, or **Settings** > **Application information** will prompt them to accept the latest terms/policies if they haven’t done so already)
+* confirm that they have accepted our latest Terms of Service (**Settings** > **Help**, or **Settings** > **Application information** will prompt them to accept the latest terms/policies if they haven't done so already)
 * update to the latest version of the WhatsApp client
 
 ### Country restrictions
@@ -106,7 +106,7 @@ As of May 15, 2024, Türkiye is no longer restricted for Cloud API business mess
 
 #### Conflicting message delivery status
 
-In rare cases, the same message might trigger both success and failure [status messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/messages/status) webhooks. For example, a message might trigger status message webhooks with `status` set to `delivered`, and another webhook with `status` set to `failed`. This can happen when a customer is logged in to WhatsApp on multiple devices and the message is successfully delivered to one device but not the other. Any message that triggers a `delivered` status messages webhook has been delivered to at least one of the user’s devices.
+In rare cases, the same message might trigger both success and failure [status messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/messages/status) webhooks. For example, a message might trigger status message webhooks with `status` set to `delivered`, and another webhook with `status` set to `failed`. This can happen when a customer is logged in to WhatsApp on multiple devices and the message is successfully delivered to one device but not the other. Any message that triggers a `delivered` status messages webhook has been delivered to at least one of the user's devices.
 
 ### Error Code `2` - API Service
 
@@ -124,41 +124,41 @@ These errors are returned when there was a problem with the access token you are
 
 You can directly paste the access token you are using into the [Access Token Debugger](https://developers.facebook.com/tools/debug/accesstoken). Then, check if you have selected the `whatsapp_business_management` and `whatsapp_business_messaging` permissions.
 
-If your token doesn’t have access to the permissions, you need to generate a new one. While generating the token, make sure to select:
+If your token doesn't have access to the permissions, you need to generate a new one. While generating the token, make sure to select:
 
 * The Meta app you are using for the API calls
 * The following permissions: `whatsapp_business_management` and `whatsapp_business_messaging`
 
 ## Marketing Messages API for WhatsApp
 
-### I can’t find an admin user at my company to onboard to MM API for WhatsApp
+### I can't find an admin user at my company to onboard to MM API for WhatsApp
 
-To use MM API for WhatsApp, [onboarding](https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/onboarding#onboarding-business-customers) must be completed by a user of your business portfolio with “full control” permissions (formerly the admin role). Read more on the various [access permissions available in a business portfolio⁠](https://business.facebook.com/business/help/442345745885606).
+To use MM API for WhatsApp, [onboarding](https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/onboarding#onboarding-business-customers) must be completed by a user of your business portfolio with "full control" permissions (formerly the admin role). Read more on the various [access permissions available in a business portfolio⁠](https://business.facebook.com/business/help/442345745885606).
 
-If a business (or a partner working with a business), is unable to locate a user with “full control”, follow the steps below to find users with sufficient permission, or claim access to a business portfolio.
+If a business (or a partner working with a business), is unable to locate a user with "full control", follow the steps below to find users with sufficient permission, or claim access to a business portfolio.
 
-### Find or add a user with “full control” permissions
+### Find or add a user with "full control" permissions
 
-* The simplest path to accepting the MM API for WhatsApp terms of service is if a business already knows a user with “full control” permission. If so, that user can go through the MM API for WhatsApp Onboarding flow.
-* **Find admins via Meta Business Suite.** If the business (or their partner) cannot find a user with “full control”, they can log into Meta Business Suite using another user with “basic access” to find the list of admins with “full control”.
+* The simplest path to accepting the MM API for WhatsApp terms of service is if a business already knows a user with "full control" permission. If so, that user can go through the MM API for WhatsApp Onboarding flow.
+* **Find admins via Meta Business Suite.** If the business (or their partner) cannot find a user with "full control", they can log into Meta Business Suite using another user with "basic access" to find the list of admins with "full control".
 
-* Log into Meta Business Suite, go to “Business Settings” and the “People” tab
-* Any user of the Business Portfolio with “basic access” or more can view the full list of users, and find one with “full control”.
+* Log into Meta Business Suite, go to "Business Settings" and the "People" tab
+* Any user of the Business Portfolio with "basic access" or more can view the full list of users, and find one with "full control".
 
-* **Find admins via an API call.** If the business is unable to find the admin of the business portfolio, however if their partner has a BISU token with business\_management permissions (API), they can fetch a list of users with “full control” permissions with the following API endpoints
+* **Find admins via an API call.** If the business is unable to find the admin of the business portfolio, however if their partner has a BISU token with business\_management permissions (API), they can fetch a list of users with "full control" permissions with the following API endpoints
 
 * [WhatsApp Business Account endpoint docs](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/whatsapp-business-account-api)
 * [Business Users endpoint docs](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/business/business_users)
 
-* **Submit a request for a new user to be added to the business portfolio.** A business can submit a request to have a user added with “full control” access to a business portfolio. **This process takes 24 hours on average to ensure a thorough security review if all documents are provided and in order, and should be a last resort after all other options have been exhausted.**
+* **Submit a request for a new user to be added to the business portfolio.** A business can submit a request to have a user added with "full control" access to a business portfolio. **This process takes 24 hours on average to ensure a thorough security review if all documents are provided and in order, and should be a last resort after all other options have been exhausted.**
 
-* A user from the business may request to be added to the business portfolio with “full access”, providing they meet the documentation requirements outlined below.
+* A user from the business may request to be added to the business portfolio with "full access", providing they meet the documentation requirements outlined below.
 * Follow instructions to [Submit a request to get full control of a business portfolio⁠](https://www.facebook.com/business/help/474856681929983)
 * Collect the required documents mentioned in the above link.
 
 With the collected assets, fill out the [contact support form⁠](https://www.facebook.com/business-support-home/contact-support).
 
-Note: If the desired admin is unable to select a Business from the dropdown list, they can select any random asset from the list and mention the desired BM ID as part of the “description text” in the request. If you are unable to select any asset / do not have any assets to select, reach out to your Partner manager.
+Note: If the desired admin is unable to select a Business from the dropdown list, they can select any random asset from the list and mention the desired BM ID as part of the "description text" in the request. If you are unable to select any asset / do not have any assets to select, reach out to your Partner manager.
 
 ## I think my delivery rates are lower on MM API for WhatsApp than they were on Cloud API
 
@@ -168,7 +168,7 @@ In India, MM API for WhatsApp marketing messages that receive higher engagement 
 
 ### Steps to take to troubleshoot lower delivery rates after moving to MM API for WhatsApp:
 
-* Ensure your team understands the way that MM API for WhatsApp prioritizes relative to Cloud API. On MM API for WhatsApp, high engagement messages can reach more WhatsApp users. Where Cloud API’s per-user message limits might not allow a message to be delivered to a user, MM API for WhatsApp can recognize high-engagement message templates (for example, messages that receive more reads), and when a message is sent, allow for dynamic messaging limits.
+* Ensure your team understands the way that MM API for WhatsApp prioritizes relative to Cloud API. On MM API for WhatsApp, high engagement messages can reach more WhatsApp users. Where Cloud API's per-user message limits might not allow a message to be delivered to a user, MM API for WhatsApp can recognize high-engagement message templates (for example, messages that receive more reads), and when a message is sent, allow for dynamic messaging limits.
 * **Ensure that you are making an accurate comparison between MM API for WhatsApp and Cloud API.** Many delivery rate differences are attributable to variations such as using different templates, times, or audiences. Verify that you are making an accurate comparison using the below guidelines before submitting a support request:
 
 * **Compare the same time period.** To accurately compare message delivery, evaluate campaigns run over the same 4-7 day period. Per-user message limits are dynamic and change in real-time based on message volume, holidays, business activity, and user behavior, making comparisons of results from different timeframes unreliable.
@@ -176,7 +176,7 @@ In India, MM API for WhatsApp marketing messages that receive higher engagement 
 * **Compare large campaigns with equivalent audience demographics.** Compare campaigns with at least 100,000 marketing messages sent to functionally identical audience cohorts. For example, randomly divide user segments to avoid bias (for example, different geographic regions, user filters, or ROI/engagement characteristics). Ensure no recipient receives messages more than once, including from other campaigns.
 * **Compare the same send time.** Send campaigns to both endpoints simultaneously to minimize external impacts like blocks or flags.
 
-* **Ensure that you are not counting retried messages in your “delivery” statistics.** If a message fails to deliver due to per-user marketing message limits, wait 24 hours before retrying (see [error code 131049](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/error-codes)). Repeated retries of the same messages will artificially lower your perceived delivery rate, as the same per-user limit may be still in effect resulting in the same outcome. For example, if 20 of 100 messages fail due to limits and are retried, the true 80% delivery rate could drop to ~67% after just one retry.
+* **Ensure that you are not counting retried messages in your "delivery" statistics.** If a message fails to deliver due to per-user marketing message limits, wait 24 hours before retrying (see [error code 131049](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/error-codes)). Repeated retries of the same messages will artificially lower your perceived delivery rate, as the same per-user limit may be still in effect resulting in the same outcome. For example, if 20 of 100 messages fail due to limits and are retried, the true 80% delivery rate could drop to ~67% after just one retry.
 * **Follow best practices for creating high-engagement marketing messages**
 
 * **Quality and Relevance**: Prioritize sending messages that offer clear value to WhatsApp users and avoid non-relevant or impersonal outreach. Relevant messages are more likely to be read, leading to more engaged prospects and customers.
@@ -192,21 +192,21 @@ In India, MM API for WhatsApp marketing messages that receive higher engagement 
 
 Because MM API for WhatsApp prioritizes higher delivery of high-engagement messages for users, more deliveries of high-engagement messages can lead to higher click-through rate (CTR) or other outcomes on the API.
 
-If you are finding a campaign’s click-through rate is lower on MM API for WhatsApp vs. Cloud API, check the following:
+If you are finding a campaign's click-through rate is lower on MM API for WhatsApp vs. Cloud API, check the following:
 
 * **Ensure that you are using an accurate A/B comparison of the same campaigns.** See the guidance above for delivery rates to set up a reliable A/B comparison of the same template, at the same time, to a comparable audience of sufficient size, to ensure that other factors are not invalidating the comparison of CTR on MM API for WhatsApp vs. Cloud API.
-* **Ensure your URL is compatible with Meta’s conversion measurement.** Broken URLs will lower click-through rate. See directions below.
+* **Ensure your URL is compatible with Meta's conversion measurement.** Broken URLs will lower click-through rate. See directions below.
 * **Assess whether [automated creative optimizations](https://developers.facebook.com/documentation/business-messaging/whatsapp/marketing-messages/send-marketing-messages#automatic-creative-optimizations) should be enabled for your campaign.** Some businesses are enrolled in a pilot of automated creative optimizations which tests minor variations of marketing message templates, and automatically selects the variant getting the highest click-through rate over time. Work with your partner to determine if your business uses these features and if your campaign is suitable.
 
-## I’m not seeing website or app conversion metrics for my marketing messages
+## I'm not seeing website or app conversion metrics for my marketing messages
 
-Ensure your URL is compatible with conversion measurement by sending a test event. Some partners will reformat URLs prior to sending them to MM API for WhatsApp, which breaks Meta’s ability to append a Click ID to the URL which enables conversion measurement.
+Ensure your URL is compatible with conversion measurement by sending a test event. Some partners will reformat URLs prior to sending them to MM API for WhatsApp, which breaks Meta's ability to append a Click ID to the URL which enables conversion measurement.
 
-Reach out to your Meta partner if you are working with a platform or partner whose URL reformatting breaks Meta’s conversion measurement. If your app is using Meta SDK, you must upgrade your SDK version to Meta Android SDK v17.0.2 or above.
+Reach out to your Meta partner if you are working with a platform or partner whose URL reformatting breaks Meta's conversion measurement. If your app is using Meta SDK, you must upgrade your SDK version to Meta Android SDK v17.0.2 or above.
 
 ## I still need help
 
-If you have followed all troubleshooting steps above and still are experiencing issues please [submit a direct support question⁠](https://business.facebook.com/direct-support/) using the question type “WABiz: Marketing Messages.”
+If you have followed all troubleshooting steps above and still are experiencing issues please [submit a direct support question⁠](https://business.facebook.com/direct-support/) using the question type "WABiz: Marketing Messages."
 
 * For lower deliveries on MM API for WhatsApp vs. Cloud API for similar campaigns, select WABiz: Marketing Messages > **Message Delivery** and include the details of how the campaigns you are comparing are accounting for similar time, audience, template, and retry normalization.
 
@@ -230,7 +230,7 @@ Access to Cloud API is free, and we expect it to generate additional cost saving
 
 **What is the architecture of the Cloud API?**
 
-The Cloud API architecture significantly simplifies the Solution Partner’s operational and infrastructure requirements to integrate with WhatsApp Business Platform. First, it removes the infrastructure requirements to run Business API docker containers (CAPEX savings). Second, it obviates the need of operational responsibilities to manage the deployment (OPEX savings).
+The Cloud API architecture significantly simplifies the Solution Partner's operational and infrastructure requirements to integrate with WhatsApp Business Platform. First, it removes the infrastructure requirements to run Business API docker containers (CAPEX savings). Second, it obviates the need of operational responsibilities to manage the deployment (OPEX savings).
 ![Image](https://scontent.fdel1-5.fna.fbcdn.net/v/t39.2365-6/574916010_1357390812786236_2094506065743510683_n.jpg?_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=Ub5dtkeVRMEQ7kNvwHZGmeK&_nc_oc=AdrpbbGo_SsyWNTb6MnmhmjyYySRKANL7GxaeBDSHykbgESuB_CVDSmGb4YHDEgpXtRxK2-ayli0CVqavilxKhak&_nc_zt=14&_nc_ht=scontent.fdel1-5.fna&_nc_gid=APiPiRlch9wds3QTHwEXyA&_nc_ss=7b2a8&oh=00_AQBAnJUbhgQML_DWQ_hAS9fum1nJ6XILEum65GAtzLscXw&oe=6A606D14)
 
 **Why does the Cloud API return different error codes when I send the same message?**
@@ -264,7 +264,7 @@ There may be issues that do not impact our global availability. In these cases, 
 There are the cases where downtimes in availability are not automatically tracked:
 
 * Network issues causing requests to fail before they reach the Graph API layer (first layer).
-* Network issues causing outbound webhooks not to reach business’s webhook endpoint.
+* Network issues causing outbound webhooks not to reach business's webhook endpoint.
 
 Any issues that surface before admission into our system after this point will appear as either error or missed success. Also issues encountered after the first attempt to emit the webhook will continue to be retried, until it is successfully delivered to the webhook endpoint.
 

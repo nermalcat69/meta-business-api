@@ -20,57 +20,53 @@ If you request the `health_status` field on any of these nodes, the API will ret
 ## Request syntax
 
 ```
-```
-GET /<NODE_ID>?fields=health_status
-```
+GET /<NODE_ID>?fields=health_status
 ```
 
 ## Response
 
 ```
-```
 {  
-  "health_status": {  
-    "can_send_message": "<OVERALL_MESSAGING_STATUS>",  
-    "entities": [  
+  "health_status": {  
+    "can_send_message": "<OVERALL_MESSAGING_STATUS>",  
+    "entities": [  
   
-      /* Only included if targeting a business phone number */  
-      {  
-        "entity_type": "PHONE_NUMBER",  
-        "id": "<BUSINESS_PHONE_NUMBER_ID>",  
-        "can_send_message": "<BUSINESS_PHONE_NUMBER_MESSAGING_STATUS>",  
-        "can_receive_call_sip": "<BUSINESS_PHONE_NUMBER_RECEIVE_CALL_SIP_STATUS>"  
-      },  
+      /* Only included if targeting a business phone number */  
+      {  
+        "entity_type": "PHONE_NUMBER",  
+        "id": "<BUSINESS_PHONE_NUMBER_ID>",  
+        "can_send_message": "<BUSINESS_PHONE_NUMBER_MESSAGING_STATUS>",  
+        "can_receive_call_sip": "<BUSINESS_PHONE_NUMBER_RECEIVE_CALL_SIP_STATUS>"  
+      },  
   
-      /* Only included if targeting a template */  
-      {  
-        "entity_type": "MESSAGE_TEMPLATE",  
-        "id": "<TEMPLATE_ID>",  
-        "can_send_message": "<TEMPLATE_MESSAGING_STATUS>"  
-      },  
+      /* Only included if targeting a template */  
+      {  
+        "entity_type": "MESSAGE_TEMPLATE",  
+        "id": "<TEMPLATE_ID>",  
+        "can_send_message": "<TEMPLATE_MESSAGING_STATUS>"  
+      },  
   
-      /* WABA, business, and app always included */  
-      {  
-        "entity_type": "WABA",  
-        "id": "<WABA_ID>",  
-        "can_send_message": "<WABA_MESSAGING_STATUS>"  
-      },  
-      {  
-        "entity_type": "BUSINESS",  
-        "id": "<BUSINESS_PORTFOLIO_ID>",  
-        "can_send_message": "<BUSINESS_PORTFOLIO_MESSAGING_STATUS>"  
-      },  
-      {  
-        "entity_type": "APP",  
-        "id": "<APP_ID>",  
-        "can_send_message": "<APP_MESSAGING_STATUS>",  
-        "can_receive_call_sip": "<APP_RECEIVE_CALL_SIP_STATUS>"  
-      }  
-    ]  
-  },  
-  "id": "<NODE_ID>"  
+      /* WABA, business, and app always included */  
+      {  
+        "entity_type": "WABA",  
+        "id": "<WABA_ID>",  
+        "can_send_message": "<WABA_MESSAGING_STATUS>"  
+      },  
+      {  
+        "entity_type": "BUSINESS",  
+        "id": "<BUSINESS_PORTFOLIO_ID>",  
+        "can_send_message": "<BUSINESS_PORTFOLIO_MESSAGING_STATUS>"  
+      },  
+      {  
+        "entity_type": "APP",  
+        "id": "<APP_ID>",  
+        "can_send_message": "<APP_MESSAGING_STATUS>",  
+        "can_receive_call_sip": "<APP_RECEIVE_CALL_SIP_STATUS>"  
+      }  
+    ]  
+  },  
+  "id": "<NODE_ID>"  
 }
-```
 ```
 
 ## Response contents
@@ -78,19 +74,19 @@ GET /<NODE_ID>?fields=health_status
 | Placeholder | Description | Example Value |
 | --- | --- | --- |
 | `<APP_ID>` | App ID. | `634974688087057` |
-| `<APP_MESSAGING_STATUS>` | The app’s messaging health status. See [Messaging Health Status](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/load-testing#health-status-field). | `AVAILABLE` |
-| `<APP_RECEIVE_CALL_SIP_STATUS>` | The app’s ability to receive a call over [SIP](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/sip). See [Health Status](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/load-testing#health-status-field). Other calling-related fields are planned for the future. | `AVAILABLE` |
+| `<APP_MESSAGING_STATUS>` | The app's messaging health status. See [Messaging Health Status](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/load-testing#health-status-field). | `AVAILABLE` |
+| `<APP_RECEIVE_CALL_SIP_STATUS>` | The app's ability to receive a call over [SIP](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/sip). See [Health Status](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/load-testing#health-status-field). Other calling-related fields are planned for the future. | `AVAILABLE` |
 | `<BUSINESS_PORTFOLIO_ID>` | Business portfolio ID. | `506914307656634` |
-| `<BUSINESS_PORTFOLIO_MESSAGING_STATUS>` | The business portfolio’s messaging health status. See [Messaging Health Status](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/load-testing#health-status-field). | `AVAILABLE` |
+| `<BUSINESS_PORTFOLIO_MESSAGING_STATUS>` | The business portfolio's messaging health status. See [Messaging Health Status](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/load-testing#health-status-field). | `AVAILABLE` |
 | `<BUSINESS_PHONE_NUMBER_ID>` | Business phone number ID. | `106540352242922` |
-| `<BUSINESS_PHONE_NUMBER_MESSAGING_STATUS>` | The business phone number’s messaging health status. See [Messaging Health Status](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/load-testing#health-status-field). | `AVAILABLE` |
-| `<BUSINESS_PHONE_NUMBER_RECEIVE_CALL_SIP_STATUS>` | The business phone number’s ability to receive a call over [SIP](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/sip). See [Health Status](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/load-testing#health-status-field). Other calling-related fields are planned for the future. | `AVAILABLE` |
-| `<NODE_ID>` | The targeted node’s ID. | `161311403722088` |
+| `<BUSINESS_PHONE_NUMBER_MESSAGING_STATUS>` | The business phone number's messaging health status. See [Messaging Health Status](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/load-testing#health-status-field). | `AVAILABLE` |
+| `<BUSINESS_PHONE_NUMBER_RECEIVE_CALL_SIP_STATUS>` | The business phone number's ability to receive a call over [SIP](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/sip). See [Health Status](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/load-testing#health-status-field). Other calling-related fields are planned for the future. | `AVAILABLE` |
+| `<NODE_ID>` | The targeted node's ID. | `161311403722088` |
 | `<OVERALL_MESSAGING_STATUS>` | The overall messaging health status, given all of the nodes involved in a messaging request, if using the targeted node. See [Messaging Health Status](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/load-testing#health-status-field). | `AVAILABLE` |
 | `<TEMPLATE_ID>` | Template ID. | `1421988012088524` |
-| `<TEMPLATE_MESSAGING_STATUS>` | The template’s messaging health status. See [Messaging Health Status](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/load-testing#health-status-field). | `AVAILABLE` |
+| `<TEMPLATE_MESSAGING_STATUS>` | The template's messaging health status. See [Messaging Health Status](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/load-testing#health-status-field). | `AVAILABLE` |
 | `<WABA_ID>` | WABA ID. | `102290129340398` |
-| `<WABA_MESSAGING_STATUS>` | The WABA’s messaging health status. See [Messaging Health Status](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/load-testing#health-status-field). | `AVAILABLE` |
+| `<WABA_MESSAGING_STATUS>` | The WABA's messaging health status. See [Messaging Health Status](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/load-testing#health-status-field). | `AVAILABLE` |
 
 ## Health status field
 
@@ -122,134 +118,128 @@ curl 'https://graph.facebook.com/v25.0/106540352242922?fields=health_status' \
 ## Example response
 
 ```
-```
 {  
-  "health_status": {  
-    "can_send_message": "AVAILABLE",  
-    "entities": [  
-      {  
-        "entity_type": "PHONE_NUMBER",  
-        "id": "106540352242922",  
-        "can_send_message": "AVAILABLE",  
-        "can_receive_call_sip":"AVAILABLE"  
-      },  
-      {  
-        "entity_type": "WABA",  
-        "id": "102290129340398",  
-        "can_send_message": "AVAILABLE"  
-      },  
-      {  
-        "entity_type": "BUSINESS",  
-        "id": "506914307656634",  
-        "can_send_message": "AVAILABLE"  
-      },  
-      {  
-        "entity_type": "APP",  
-        "id": "634974688087057",  
-        "can_send_message": "AVAILABLE",  
-        "can_receive_call_sip":"AVAILABLE"  
-      }  
-    ]  
-  },  
-  "id": "106540352242922"  
+  "health_status": {  
+    "can_send_message": "AVAILABLE",  
+    "entities": [  
+      {  
+        "entity_type": "PHONE_NUMBER",  
+        "id": "106540352242922",  
+        "can_send_message": "AVAILABLE",  
+        "can_receive_call_sip":"AVAILABLE"  
+      },  
+      {  
+        "entity_type": "WABA",  
+        "id": "102290129340398",  
+        "can_send_message": "AVAILABLE"  
+      },  
+      {  
+        "entity_type": "BUSINESS",  
+        "id": "506914307656634",  
+        "can_send_message": "AVAILABLE"  
+      },  
+      {  
+        "entity_type": "APP",  
+        "id": "634974688087057",  
+        "can_send_message": "AVAILABLE",  
+        "can_receive_call_sip":"AVAILABLE"  
+      }  
+    ]  
+  },  
+  "id": "106540352242922"  
 }
-```
 ```
 
 ## Additional info property
 
-If a given node’s `can_send_message` or `can_receive_call_sip` property is set to `LIMITED`, the `additional_info` property will be included, which provides additional context for the limitation.
+If a given node's `can_send_message` or `can_receive_call_sip` property is set to `LIMITED`, the `additional_info` property will be included, which provides additional context for the limitation.
 
 ### Example limited response
 
 This is an example response to a request on a business phone number that can be used to send messages, but has a limit on the number it can send because its display name has not been approved.
 
 ```
-```
 {  
-  "health_status": {  
-    "can_send_message": "LIMITED",  
-    "entities": [  
-      {  
-        "entity_type": "PHONE_NUMBER",  
-        "id": "106540352242922",  
-        "can_send_message": "LIMITED",  
-        "can_receive_call_sip":"AVAILABLE",  
-        "additional_info": [  
-          "Your display name has not been approved yet. Your message limit will increase after the display name is approved."  
-        ]  
-      },  
-      {  
-        "entity_type": "WABA",  
-        "id": "102290129340398",  
-        "can_send_message": "AVAILABLE"  
-      },  
-      {  
-        "entity_type": "BUSINESS",  
-        "id": "506914307656634",  
-        "can_send_message": "AVAILABLE"  
-      },  
-      {  
-        "entity_type": "APP",  
-        "id": "634974688087057",  
-        "can_send_message": "AVAILABLE",  
-        "can_receive_call_sip":"AVAILABLE"  
-      }  
-    ]  
-  },  
-  "id": "105154286024403"  
+  "health_status": {  
+    "can_send_message": "LIMITED",  
+    "entities": [  
+      {  
+        "entity_type": "PHONE_NUMBER",  
+        "id": "106540352242922",  
+        "can_send_message": "LIMITED",  
+        "can_receive_call_sip":"AVAILABLE",  
+        "additional_info": [  
+          "Your display name has not been approved yet. Your message limit will increase after the display name is approved."  
+        ]  
+      },  
+      {  
+        "entity_type": "WABA",  
+        "id": "102290129340398",  
+        "can_send_message": "AVAILABLE"  
+      },  
+      {  
+        "entity_type": "BUSINESS",  
+        "id": "506914307656634",  
+        "can_send_message": "AVAILABLE"  
+      },  
+      {  
+        "entity_type": "APP",  
+        "id": "634974688087057",  
+        "can_send_message": "AVAILABLE",  
+        "can_receive_call_sip":"AVAILABLE"  
+      }  
+    ]  
+  },  
+  "id": "105154286024403"  
 }
-```
 ```
 
 ## Errors property
 
-If a given node’s `can_send_message` or `can_receive_call_sip` property is set to `BLOCKED`, the `errors` property will be included, which describes the reason for the status and a possible solution.
+If a given node's `can_send_message` or `can_receive_call_sip` property is set to `BLOCKED`, the `errors` property will be included, which describes the reason for the status and a possible solution.
 
 ### Example blocked response
 
-This is an example response to a request on a template that can’t be sent in a template message because it is still in a pending state.
+This is an example response to a request on a template that can't be sent in a template message because it is still in a pending state.
 
 ```
-```
 {  
-  "health_status": {  
-    "can_send_message": "BLOCKED",  
-    "entities": [  
-      {  
-        "entity_type": "MESSAGE_TEMPLATE",  
-        "id": "2632273056924580",  
-        "can_send_message": "BLOCKED",  
-        "can_receive_call_sip":"AVAILABLE",  
-        "errors": [  
-          {  
-            "error_code": 141002,  
-            "error_description": "Message templates can only be sent out if they are approved.",  
-            "possible_solution": "Edit or appeal the message template review decision."  
-          }  
-        ]  
-      },  
-      {  
-        "entity_type": "WABA",  
-        "id": "102290129340398",  
-        "can_send_message": "AVAILABLE"  
-      },  
-      {  
-        "entity_type": "BUSINESS",  
-        "id": "506914307656634",  
-        "can_send_message": "AVAILABLE"  
-      },  
-      {  
-        "entity_type": "APP",  
-        "id": "634974688087057",  
-        "can_send_message": "AVAILABLE",  
-        "can_receive_call_sip":"AVAILABLE"  
-      }  
-    ]  
-  },  
-  "id": "2632273056924580"  
+  "health_status": {  
+    "can_send_message": "BLOCKED",  
+    "entities": [  
+      {  
+        "entity_type": "MESSAGE_TEMPLATE",  
+        "id": "2632273056924580",  
+        "can_send_message": "BLOCKED",  
+        "can_receive_call_sip":"AVAILABLE",  
+        "errors": [  
+          {  
+            "error_code": 141002,  
+            "error_description": "Message templates can only be sent out if they are approved.",  
+            "possible_solution": "Edit or appeal the message template review decision."  
+          }  
+        ]  
+      },  
+      {  
+        "entity_type": "WABA",  
+        "id": "102290129340398",  
+        "can_send_message": "AVAILABLE"  
+      },  
+      {  
+        "entity_type": "BUSINESS",  
+        "id": "506914307656634",  
+        "can_send_message": "AVAILABLE"  
+      },  
+      {  
+        "entity_type": "APP",  
+        "id": "634974688087057",  
+        "can_send_message": "AVAILABLE",  
+        "can_receive_call_sip":"AVAILABLE"  
+      }  
+    ]  
+  },  
+  "id": "2632273056924580"  
 }
-```
 ```
 
 ### Example blocked response for receiving calls over SIP
@@ -257,50 +247,48 @@ This is an example response to a request on a template that can’t be sent in a
 This is an example response to a request on a phone number that has not configured [SIP](https://developers.facebook.com/documentation/business-messaging/whatsapp/calling/sip).
 
 ```
-```
 {  
-  "health_status": {  
-    "can_send_message": "BLOCKED",  
-    "entities": [  
-      {  
-        "entity_type": "PHONE_NUMBER",  
-        "id": "597727103418254",  
-        "can_send_message": "AVAILABLE",  
-        "can_receive_call_sip": "BLOCKED",  
-        "errors": [  
-          {  
-            "error_code": 138024,  
-            "error_description": "WhatsApp Business calling cannot use SIP because it is not enabled",  
-            "possible_solution": "Configure SIP using {PHONE_NUMBER_ID}/settings API"  
-          }  
-        ]  
-      },  
-      {  
-        "entity_type": "WABA",  
-        "id": "102290129340398",  
-        "can_send_message": "AVAILABLE"  
-      },  
-      {  
-        "entity_type": "BUSINESS",  
-        "id": "506914307656634",  
-        "can_send_message": "AVAILABLE"  
-      },  
-      {  
-        "entity_type": "APP",  
-        "id": "634974688087057",  
-        "can_send_message": "AVAILABLE",  
-        "can_receive_call_sip": "BLOCKED",  
-        "errors": [  
-          {  
-            "error_code": 138025,  
-            "error_description": "This app cannot use SIP for WhatsApp Business calling because it has not configured a SIP server for this business phone number",  
-            "possible_solution": "Configure SIP server using {PHONE_NUMBER_ID}/settings API"  
-          }  
-        ]  
-      }  
-    ]  
-  },  
-  "id": "105154286024403"  
+  "health_status": {  
+    "can_send_message": "BLOCKED",  
+    "entities": [  
+      {  
+        "entity_type": "PHONE_NUMBER",  
+        "id": "597727103418254",  
+        "can_send_message": "AVAILABLE",  
+        "can_receive_call_sip": "BLOCKED",  
+        "errors": [  
+          {  
+            "error_code": 138024,  
+            "error_description": "WhatsApp Business calling cannot use SIP because it is not enabled",  
+            "possible_solution": "Configure SIP using {PHONE_NUMBER_ID}/settings API"  
+          }  
+        ]  
+      },  
+      {  
+        "entity_type": "WABA",  
+        "id": "102290129340398",  
+        "can_send_message": "AVAILABLE"  
+      },  
+      {  
+        "entity_type": "BUSINESS",  
+        "id": "506914307656634",  
+        "can_send_message": "AVAILABLE"  
+      },  
+      {  
+        "entity_type": "APP",  
+        "id": "634974688087057",  
+        "can_send_message": "AVAILABLE",  
+        "can_receive_call_sip": "BLOCKED",  
+        "errors": [  
+          {  
+            "error_code": 138025,  
+            "error_description": "This app cannot use SIP for WhatsApp Business calling because it has not configured a SIP server for this business phone number",  
+            "possible_solution": "Configure SIP server using {PHONE_NUMBER_ID}/settings API"  
+          }  
+        ]  
+      }  
+    ]  
+  },  
+  "id": "105154286024403"  
 }
-```
 ```

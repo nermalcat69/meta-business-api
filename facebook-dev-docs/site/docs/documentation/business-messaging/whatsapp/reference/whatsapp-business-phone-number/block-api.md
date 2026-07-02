@@ -57,11 +57,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/block_users' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/block_users' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -72,22 +72,22 @@ Select status code
 
 ```
 {  
-  "Get blocked users": {  
-    "value": {  
-      "data": [  
-        {  
-          "messaging_product": "whatsapp",  
-          "wa_id": "16505551234"  
-        }  
-      ],  
-      "paging": {  
-        "cursors": {  
-          "after": "eyJvZAmZAzZAXQiOjAsInZAlcnNpb25JZACI6IjE3Mzc2Nzk2ODgzODM1ODQifQZDZD",  
-          "before": "eyJvZAmZAzZAXQiOjAsInZAlcnNpb25JZACI6IjE3Mzc2Nzk2ODgzODM1ODQifQZDZD"  
-        }  
-      }  
-    }  
-  }  
+  "Get blocked users": {  
+    "value": {  
+      "data": [  
+        {  
+          "messaging_product": "whatsapp",  
+          "wa_id": "16505551234"  
+        }  
+      ],  
+      "paging": {  
+        "cursors": {  
+          "after": "eyJvZAmZAzZAXQiOjAsInZAlcnNpb25JZACI6IjE3Mzc2Nzk2ODgzODM1ODQifQZDZD",  
+          "before": "eyJvZAmZAzZAXQiOjAsInZAlcnNpb25JZACI6IjE3Mzc2Nzk2ODgzODM1ODQifQZDZD"  
+        }  
+      }  
+    }  
+  }  
 }
 ```
 
@@ -183,11 +183,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/block_users' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/block_users' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -198,22 +198,22 @@ Select status code
 
 ```
 {  
-  "Get blocked users": {  
-    "value": {  
-      "data": [  
-        {  
-          "messaging_product": "whatsapp",  
-          "wa_id": "16505551234"  
-        }  
-      ],  
-      "paging": {  
-        "cursors": {  
-          "after": "eyJvZAmZAzZAXQiOjAsInZAlcnNpb25JZACI6IjE3Mzc2Nzk2ODgzODM1ODQifQZDZD",  
-          "before": "eyJvZAmZAzZAXQiOjAsInZAlcnNpb25JZACI6IjE3Mzc2Nzk2ODgzODM1ODQifQZDZD"  
-        }  
-      }  
-    }  
-  }  
+  "Get blocked users": {  
+    "value": {  
+      "data": [  
+        {  
+          "messaging_product": "whatsapp",  
+          "wa_id": "16505551234"  
+        }  
+      ],  
+      "paging": {  
+        "cursors": {  
+          "after": "eyJvZAmZAzZAXQiOjAsInZAlcnNpb25JZACI6IjE3Mzc2Nzk2ODgzODM1ODQifQZDZD",  
+          "before": "eyJvZAmZAzZAXQiOjAsInZAlcnNpb25JZACI6IjE3Mzc2Nzk2ODgzODM1ODQifQZDZD"  
+        }  
+      }  
+    }  
+  }  
 }
 ```
 
@@ -237,17 +237,17 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/block_users' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "block_users": [  
-    {  
-      "user": "+16505551234"  
-    }  
-  ],  
-  "messaging_product": "whatsapp"  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/block_users' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "block_users": [  
+    {  
+      "user": "+16505551234"  
+    }  
+  ],  
+  "messaging_product": "whatsapp"  
 }'
 ```
 
@@ -259,19 +259,19 @@ Select status code
 
 ```
 {  
-  "Block user(s)": {  
-    "value": {  
-      "block_users": {  
-        "added_users": [  
-          {  
-            "input": "+16505551234",  
-            "wa_id": "16505551234"  
-          }  
-        ]  
-      },  
-      "messaging_product": "whatsapp"  
-    }  
-  }  
+  "Block user(s)": {  
+    "value": {  
+      "block_users": {  
+        "added_users": [  
+          {  
+            "input": "+16505551234",  
+            "wa_id": "16505551234"  
+          }  
+        ]  
+      },  
+      "messaging_product": "whatsapp"  
+    }  
+  }  
 }
 ```
 
@@ -387,17 +387,17 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/block_users' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "block_users": [  
-    {  
-      "user": "+16505551234"  
-    }  
-  ],  
-  "messaging_product": "whatsapp"  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/block_users' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "block_users": [  
+    {  
+      "user": "+16505551234"  
+    }  
+  ],  
+  "messaging_product": "whatsapp"  
 }'
 ```
 
@@ -409,19 +409,19 @@ Select status code
 
 ```
 {  
-  "Block user(s)": {  
-    "value": {  
-      "block_users": {  
-        "added_users": [  
-          {  
-            "input": "+16505551234",  
-            "wa_id": "16505551234"  
-          }  
-        ]  
-      },  
-      "messaging_product": "whatsapp"  
-    }  
-  }  
+  "Block user(s)": {  
+    "value": {  
+      "block_users": {  
+        "added_users": [  
+          {  
+            "input": "+16505551234",  
+            "wa_id": "16505551234"  
+          }  
+        ]  
+      },  
+      "messaging_product": "whatsapp"  
+    }  
+  }  
 }
 ```
 
@@ -445,17 +445,17 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request DELETE \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/block_users' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "block_users": [  
-    {  
-      "user": "+16505551234"  
-    }  
-  ],  
-  "messaging_product": "whatsapp"  
+curl --request DELETE \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/block_users' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "block_users": [  
+    {  
+      "user": "+16505551234"  
+    }  
+  ],  
+  "messaging_product": "whatsapp"  
 }'
 ```
 
@@ -467,19 +467,19 @@ Select status code
 
 ```
 {  
-  "Unblock user(s)": {  
-    "value": {  
-      "block_users": {  
-        "removed_users": [  
-          {  
-            "input": "+16505551234",  
-            "wa_id": "16505551234"  
-          }  
-        ]  
-      },  
-      "messaging_product": "whatsapp"  
-    }  
-  }  
+  "Unblock user(s)": {  
+    "value": {  
+      "block_users": {  
+        "removed_users": [  
+          {  
+            "input": "+16505551234",  
+            "wa_id": "16505551234"  
+          }  
+        ]  
+      },  
+      "messaging_product": "whatsapp"  
+    }  
+  }  
 }
 ```
 
@@ -595,17 +595,17 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request DELETE \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/block_users' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "block_users": [  
-    {  
-      "user": "+16505551234"  
-    }  
-  ],  
-  "messaging_product": "whatsapp"  
+curl --request DELETE \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/block_users' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "block_users": [  
+    {  
+      "user": "+16505551234"  
+    }  
+  ],  
+  "messaging_product": "whatsapp"  
 }'
 ```
 
@@ -617,19 +617,19 @@ Select status code
 
 ```
 {  
-  "Unblock user(s)": {  
-    "value": {  
-      "block_users": {  
-        "removed_users": [  
-          {  
-            "input": "+16505551234",  
-            "wa_id": "16505551234"  
-          }  
-        ]  
-      },  
-      "messaging_product": "whatsapp"  
-    }  
-  }  
+  "Unblock user(s)": {  
+    "value": {  
+      "block_users": {  
+        "removed_users": [  
+          {  
+            "input": "+16505551234",  
+            "wa_id": "16505551234"  
+          }  
+        ]  
+      },  
+      "messaging_product": "whatsapp"  
+    }  
+  }  
 }
 ```
 

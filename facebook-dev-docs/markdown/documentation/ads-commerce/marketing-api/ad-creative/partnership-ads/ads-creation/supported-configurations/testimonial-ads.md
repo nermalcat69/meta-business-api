@@ -72,8 +72,8 @@ The `hero_asset_facebook_post_id` and `hero_asset_instagram_media_id` fields tak
 
 **Note:** If the hero asset is already set in the body element and a hero asset field is then passed in:
 
-* If the passed-in hero asset is null, the body element’s hero asset overrides it.
-* If the passed-in hero asset is different from the body element’s hero asset, the API returns an error.
+* If the passed-in hero asset is null, the body element's hero asset overrides it.
+* If the passed-in hero asset is different from the body element's hero asset, the API returns an error.
 
 #### Parameters
 

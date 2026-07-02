@@ -50,21 +50,17 @@ You can combine the selection of different images for different ads with multi-r
 The deserialized JSON should be this format (each ratio is optional):
 
 ```
-```
 {  
- "DEFAULT":"my-tag",  
- "4_5":"my-tag-4-5",  
- "9_16":"my-tag-9-16"  
+ "DEFAULT":"my-tag",  
+ "4_5":"my-tag-4-5",  
+ "9_16":"my-tag-9-16"  
 }
-```
 ```
 
 **Example**
 
 ```
-```
-preferred_image_tags: ["{\"DEFAULT\":\"my_default_tag_1\",\"9_16\":\"my_9_16_tag_1\"}","{\"DEFAULT\":\"my_default_tag_2\",\"9_16\":\"my_9_16_tag_2\"}"]
-```
+preferred_image_tags: ["{\"DEFAULT\":\"my_default_tag_1\",\"9_16\":\"my_9_16_tag_1\"}","{\"DEFAULT\":\"my_default_tag_2\",\"9_16\":\"my_9_16_tag_2\"}"]
 ```
 
 In this case, 9:16 placements use an image with tag `my_9_16_tag_1` or `my_9_16_tag_2`, and other placements use an image with `my_default_tag_1` or `my_default_tag_2`.

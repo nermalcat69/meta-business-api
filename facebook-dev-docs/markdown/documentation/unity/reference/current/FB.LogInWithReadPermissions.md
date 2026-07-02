@@ -25,8 +25,8 @@ public static void Init(
 
 | Name | Type | Description | Default |
 | --- | --- | --- | --- |
-| `onInitComplete` | `InitDelegate` | A function that will be called once all data structures in the SDK are initialized; any code that should synchronize with the player’s Facebook session should be in `onInitComplete()`. | `null` |
-| `onHideUnity` | `HideUnityDelegate` | A function that will be called when Facebook tries to display HTML content within the boundaries of the Canvas. When called with its sole argument set to `false`, your game should pause and prepare to lose focus. If it’s called with its argument set to `true`, your game should prepare to regain focus and resume play. Your game should check whether it is in fullscreen mode when it resumes, and offer the player a chance to go to fullscreen mode if appropriate. | `null` |
+| `onInitComplete` | `InitDelegate` | A function that will be called once all data structures in the SDK are initialized; any code that should synchronize with the player's Facebook session should be in `onInitComplete()`. | `null` |
+| `onHideUnity` | `HideUnityDelegate` | A function that will be called when Facebook tries to display HTML content within the boundaries of the Canvas. When called with its sole argument set to `false`, your game should pause and prepare to lose focus. If it's called with its argument set to `true`, your game should prepare to regain focus and resume play. Your game should check whether it is in fullscreen mode when it resumes, and offer the player a chance to go to fullscreen mode if appropriate. | `null` |
 | `authResponse` | `string` | *effective in Web Player only, rarely used* A Facebook `auth_response` you have cached to preserve a session, represented in JSON. If an `auth_response` is provided, `FB` will initialize itself using the data from that session, with no additional checks. | `null` |
 
 ### Properties set via Facebook | Edit Settings in the Unity Editor
@@ -34,7 +34,7 @@ public static void Init(
 | Name | Type | Description | Default |
 | --- | --- | --- | --- |
 | `appId` | `string` | The Facebook application ID of the initializing app. **Required** |  |
-| `cookie` | `bool` | Sets a cookie which your server-side code can use to validate a user’s Facebook session | `true` |
+| `cookie` | `bool` | Sets a cookie which your server-side code can use to validate a user's Facebook session | `true` |
 | `logging` | `bool` | If `true`, outputs a verbose log to the Javascript console to facilitate debugging. *Effective on Web only.* | `true` |
 | `status` | `bool` | If `true`, attempts to initialize the Facebook object with valid session data.\* | `true` |
 | `xfbml` | `bool` | If `true`, Facebook will immediately parse any XFBML elements on the Facebook Canvas page hosting the app, like the [page plugin](https://developers.facebook.com/documentation/plugins/page-plugin). *Effective on Web only.* | `false` |

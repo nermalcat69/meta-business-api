@@ -68,11 +68,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Pre-Verified-Phone-Number-ID}' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Pre-Verified-Phone-Number-ID}' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -83,28 +83,28 @@ Select status code
 
 ```
 {  
-  "verified_number": {  
-    "summary": "Verified pre-verified phone number",  
-    "value": {  
-      "id": "1234567890123456",  
-      "phone_number": "+15551234567",  
-      "code_verification_status": "VERIFIED",  
-      "code_verification_time": 1705312200,  
-      "verification_expiry_time": 1705398600,  
-      "owner_business": {  
-        "id": "9876543210987654",  
-        "name": "Example Business Corp"  
-      }  
-    }  
-  },  
-  "not_verified_number": {  
-    "summary": "Not yet verified phone number",  
-    "value": {  
-      "id": "2345678901234567",  
-      "phone_number": "+442012345678",  
-      "code_verification_status": "NOT_VERIFIED"  
-    }  
-  }  
+  "verified_number": {  
+    "summary": "Verified pre-verified phone number",  
+    "value": {  
+      "id": "1234567890123456",  
+      "phone_number": "+15551234567",  
+      "code_verification_status": "VERIFIED",  
+      "code_verification_time": 1705312200,  
+      "verification_expiry_time": 1705398600,  
+      "owner_business": {  
+        "id": "9876543210987654",  
+        "name": "Example Business Corp"  
+      }  
+    }  
+  },  
+  "not_verified_number": {  
+    "summary": "Not yet verified phone number",  
+    "value": {  
+      "id": "2345678901234567",  
+      "phone_number": "+442012345678",  
+      "code_verification_status": "NOT_VERIFIED"  
+    }  
+  }  
 }
 ```
 
@@ -644,11 +644,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Pre-Verified-Phone-Number-ID}' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Pre-Verified-Phone-Number-ID}' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -659,28 +659,28 @@ Select status code
 
 ```
 {  
-  "verified_number": {  
-    "summary": "Verified pre-verified phone number",  
-    "value": {  
-      "id": "1234567890123456",  
-      "phone_number": "+15551234567",  
-      "code_verification_status": "VERIFIED",  
-      "code_verification_time": 1705312200,  
-      "verification_expiry_time": 1705398600,  
-      "owner_business": {  
-        "id": "9876543210987654",  
-        "name": "Example Business Corp"  
-      }  
-    }  
-  },  
-  "not_verified_number": {  
-    "summary": "Not yet verified phone number",  
-    "value": {  
-      "id": "2345678901234567",  
-      "phone_number": "+442012345678",  
-      "code_verification_status": "NOT_VERIFIED"  
-    }  
-  }  
+  "verified_number": {  
+    "summary": "Verified pre-verified phone number",  
+    "value": {  
+      "id": "1234567890123456",  
+      "phone_number": "+15551234567",  
+      "code_verification_status": "VERIFIED",  
+      "code_verification_time": 1705312200,  
+      "verification_expiry_time": 1705398600,  
+      "owner_business": {  
+        "id": "9876543210987654",  
+        "name": "Example Business Corp"  
+      }  
+    }  
+  },  
+  "not_verified_number": {  
+    "summary": "Not yet verified phone number",  
+    "value": {  
+      "id": "2345678901234567",  
+      "phone_number": "+442012345678",  
+      "code_verification_status": "NOT_VERIFIED"  
+    }  
+  }  
 }
 ```
 
@@ -721,11 +721,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request DELETE \  
-  --url 'https://graph.facebook.com/{Version}/{Pre-Verified-Phone-Number-ID}' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request DELETE \  
+  --url 'https://graph.facebook.com/{Version}/{Pre-Verified-Phone-Number-ID}' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -736,7 +736,7 @@ Select status code
 
 ```
 {  
-  "success": "true"  
+  "success": "true"  
 }
 ```
 
@@ -1221,11 +1221,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request DELETE \  
-  --url 'https://graph.facebook.com/{Version}/{Pre-Verified-Phone-Number-ID}' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request DELETE \  
+  --url 'https://graph.facebook.com/{Version}/{Pre-Verified-Phone-Number-ID}' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -1236,7 +1236,7 @@ Select status code
 
 ```
 {  
-  "success": "true"  
+  "success": "true"  
 }
 ```
 

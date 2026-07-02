@@ -11,7 +11,7 @@ This page has guidance on how to create an admin system user for Managed Partner
 
 ## Before you begin
 
-You must own a Meta app that’s associated with your Meta Business Suite to add system users. See [Add Apps to Your Meta Business Suite⁠](https://www.facebook.com/business/help/2199735813629697) for more information.
+You must own a Meta app that's associated with your Meta Business Suite to add system users. See [Add Apps to Your Meta Business Suite⁠](https://www.facebook.com/business/help/2199735813629697) for more information.
 
 ## Create the system user
 

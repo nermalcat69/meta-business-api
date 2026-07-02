@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/conversio
 
 Updated: Jun 28, 2026
 
-Integrating your CRM with Meta’s Conversions API and using the Lead Ads - Conversion Leads optimization goal may yield higher quality results. Currently, this optimization only supports native Lead Ads (Instant Forms) generated on Facebook or Instagram.
+Integrating your CRM with Meta's Conversions API and using the Lead Ads - Conversion Leads optimization goal may yield higher quality results. Currently, this optimization only supports native Lead Ads (Instant Forms) generated on Facebook or Instagram.
 
 This guide provides the payload specification for CRM events uploaded for the Conversion Leads optimization only. Do not use this specification for events not related to this optimization.
 
@@ -20,7 +20,7 @@ See the [Conversions API documentation](https://developers.facebook.com/document
 | Name | Description |
 | --- | --- |
 | `user_data`  object | A map that contains customer information data. See [Customer Information Parameters](https://developers.facebook.com/documentation/ads-commerce/conversions-api/parameters/customer-information-parameters) for options. See [Advanced Matching](https://developers.facebook.com/docs/meta-pixel/advanced/advanced-matching) for comparable options available for data sent via Meta Pixel. |
-| `event_name`  string | **Required.**  Free form field to capture the stages you use within your CRM.  Make sure to send *all stages* as they are updated, including the initial lead stage.  For example, your stages may include the following types. If a lead reaches the final “Converted” stage, then all previous stages should have been sent beforehand.   * Initial Lead from Facebook * Marketing Qualified Lead * Sales Opportunity * Converted   Use a variable to pass in the stages from your CRM. Alternatively, you could create a separate API call for each stage. |
+| `event_name`  string | **Required.**  Free form field to capture the stages you use within your CRM.  Make sure to send *all stages* as they are updated, including the initial lead stage.  For example, your stages may include the following types. If a lead reaches the final "Converted" stage, then all previous stages should have been sent beforehand.   * Initial Lead from Facebook * Marketing Qualified Lead * Sales Opportunity * Converted   Use a variable to pass in the stages from your CRM. Alternatively, you could create a separate API call for each stage. |
 | `event_time`  integer | **Required.**  A Unix timestamp in seconds indicating when the lead stage update event is updated by your CRM.  Use a variable to pass in the Unix timestamp values from your database. **Note:** The `event_time` parameter value can be up to 7 days before you send an event to Meta. Also the timestamp must occur after the lead generation time or else the event may be discarded. |
 | `action_source`  string | **Required.**  Set this parameter to the value `system_generated` for all Conversion Leads events.  For Conversion Leads integrations, this specifies where your conversions are system generated. |
 | `lead_event_source`  string | **Required.**  Set this parameter to the name of the tool where the leads are coming from (e.g., HubSpot, SAP, Oracle, Dynamics, In-house CRM, and so on), included under the `custom_data` parameter. |

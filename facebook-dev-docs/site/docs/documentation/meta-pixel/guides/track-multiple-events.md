@@ -17,7 +17,7 @@ If you conduct business in countries that are subject to General Data Protection
 
 While you can use the IMG tag to install Pixels, we suggest you refer to our [Implementation guide](https://developers.facebook.com/documentation/meta-pixel/get-started#installing-the-pixel) for alternatives.
 
-If you need to install the Pixel using a lightweight implementation, you can install it with an `<img>` tag. To do this, add the code below between an opening and closing `<noscript>` tag within your website’s header or body, and replace `{pixel-id}` with your pixel’s ID and `{standard-event}` with a [Standard Event](https://developers.facebook.com/documentation/meta-pixel/reference#standard-events).
+If you need to install the Pixel using a lightweight implementation, you can install it with an `<img>` tag. To do this, add the code below between an opening and closing `<noscript>` tag within your website's header or body, and replace `{pixel-id}` with your pixel's ID and `{standard-event}` with a [Standard Event](https://developers.facebook.com/documentation/meta-pixel/reference#standard-events).
 
 ```
 <img src="https://www.facebook.com/tr?id={pixel-id}&ev={standard-event}" height="1" width="1" style="display:none"/>
@@ -50,48 +50,36 @@ Below is an example of Meta Pixel IMG tag installation across key pages of a fic
 On the product page, a Pixel to track a `PageView` event and another to track a `ViewContent` event:
 
 ```
-```
-<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=12345&ev=PageView"/>
-```
+<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=12345&ev=PageView"/>
 ```
 
 ```
-```
-<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=12345&ev=ViewContent"/>
-```
+<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=12345&ev=ViewContent"/>
 ```
 
 On the add-to-cart page, one Pixel to track a `PageView` event and another to track an `AddToCart` event, with custom data:
 
 ```
-```
-<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=12345&ev=PageView"/>
-```
+<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=12345&ev=PageView"/>
 ```
 
 ```
-```
-<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=12345&ev=AddToCart&cd[currency]=USD&cd[value]=0.00"/>
-```
+<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=12345&ev=AddToCart&cd[currency]=USD&cd[value]=0.00"/>
 ```
 
 On the purchase page, one Pixel to track a `PageView` event and another to track a `Purchase` event, with data about the purchase:
 
 ```
-```
-<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=12345&ev=PageView"/>
-```
+<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=12345&ev=PageView"/>
 ```
 
 ```
-```
-<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=12345&ev=Purchase&cd[currency]=USD&cd[value]=0.00"/>
-```
+<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=12345&ev=Purchase&cd[currency]=USD&cd[value]=0.00"/>
 ```
 
 ## Aggregated Event Measurement IMG Pixel for iOS 14.5+
 
-Meta’s Aggregated Event Measurement is a protocol that allows for measurement of web and app events from people using iOS 14.5 or later devices. Statistical modeling may be used and is designed to provide a more complete view of results when data is missing or partial.
+Meta's Aggregated Event Measurement is a protocol that allows for measurement of web and app events from people using iOS 14.5 or later devices. Statistical modeling may be used and is designed to provide a more complete view of results when data is missing or partial.
 
 We strongly recommend following the [Install the Pixel using an IMG tag section](https://developers.facebook.com/documentation/meta-pixel/advanced#install-the-pixel-using-an-img-tag) of this doc when using the Pixel IMG tag or to forgo using the IMG tag and follow our [Implementation guide](https://developers.facebook.com/documentation/meta-pixel/get-started#installing-the-pixel) instead.
 
@@ -99,23 +87,21 @@ We strongly recommend following the [Install the Pixel using an IMG tag section]
 
 #### Runtime JavaScript
 
-If you set up your IMG Pixel by using runtime JavaScript to generate a [JavaScript Image class⁠](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/Image) without appending that Image class onto the website’s DOM tree, for example, using third-party JavaScript libraries to send your IMG Pixel, you must add the following code or Meta will not receive your IMG Pixel data.
+If you set up your IMG Pixel by using runtime JavaScript to generate a [JavaScript Image class⁠](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/Image) without appending that Image class onto the website's DOM tree, for example, using third-party JavaScript libraries to send your IMG Pixel, you must add the following code or Meta will not receive your IMG Pixel data.
 
 ```
-```
-var nativeBridge = window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.receiveImgPixel;  
-if (nativeBridge) {  
-    const postObj = {  
-        id: {pixel-id},  
-        ev: {standard-event},  
-        cd: {stringified-custom-data},  
-        dpo: {data-processing-options},          // Optional CCPA param  
-        dpoco: {data-processing-option-country}, // Optional CCPA param  
-        dpost: {data-processing-option-state},   // Optional CCPA param  
-    };  
-    nativeBridge.postMessage(JSON.stringify(postObj));  
+var nativeBridge = window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.receiveImgPixel;  
+if (nativeBridge) {  
+    const postObj = {  
+        id: {pixel-id},  
+        ev: {standard-event},  
+        cd: {stringified-custom-data},  
+        dpo: {data-processing-options},          // Optional CCPA param  
+        dpoco: {data-processing-option-country}, // Optional CCPA param  
+        dpost: {data-processing-option-state},   // Optional CCPA param  
+    };  
+    nativeBridge.postMessage(JSON.stringify(postObj));  
 }
-```
 ```
 
 #### Sandbox Attribute
@@ -124,106 +110,100 @@ If you place your Pixel IMG within an iframe that has the `sandbox` attribute yo
 
 ### Enabling AEM for auto-redirect scenarios
 
-We have extended AEM functionality to consider conversions from all advertiser-associated webpages where an advertiser’s optimized Pixel events are fired (as in the specific scenarios where advertisers may rely on URL shorteners or geo-based redirects, may have multiple lines of business or may depend on agencies to run their advertising). If you fall into one of these scenarios and want to enable AEM, we recommend you do the following:
+We have extended AEM functionality to consider conversions from all advertiser-associated webpages where an advertiser's optimized Pixel events are fired (as in the specific scenarios where advertisers may rely on URL shorteners or geo-based redirects, may have multiple lines of business or may depend on agencies to run their advertising). If you fall into one of these scenarios and want to enable AEM, we recommend you do the following:
 
 * Use the same Meta Pixel (i.e., same Pixel ID and Pixel event name pair) across the relevant domains they want to get conversions from
 * Ensure that the AEM events you want to get conversions from are prioritized across these domains
 
 ## Tracking clicks on Buttons
 
-When a visitor clicks a button, the Meta Pixel’s JavaScript code automatically detects and passes the relevant form fields to Meta.
+When a visitor clicks a button, the Meta Pixel's JavaScript code automatically detects and passes the relevant form fields to Meta.
 
-Suppose you have an e-commerce website and your “Add to Cart” button does not navigate to a new page. You may want to activate an event when the button is clicked.
+Suppose you have an e-commerce website and your "Add to Cart" button does not navigate to a new page. You may want to activate an event when the button is clicked.
 
-In this example, we will activate a `ViewContent` standard event on page load. When someone clicks “Add to Cart” button, we will activate an `AddToCart` standard event.
+In this example, we will activate a `ViewContent` standard event on page load. When someone clicks "Add to Cart" button, we will activate an `AddToCart` standard event.
 
 To do this, first load Meta Pixel code that you want to fire on page load:
 
 ```
-```
-<!-- Facebook Pixel Code -->  
+<!-- Facebook Pixel Code -->  
 <script>  
-fbq('track', 'ViewContent', {  
-  content_name: 'Really Fast Running Shoes',  
-  content_category: 'Apparel & Accessories > Shoes',  
-  content_ids: ['1234'],  
-  content_type: 'product',  
-  value: 0.50,  
-  currency: 'USD'  
- });  
+fbq('track', 'ViewContent', {  
+  content_name: 'Really Fast Running Shoes',  
+  content_category: 'Apparel & Accessories > Shoes',  
+  content_ids: ['1234'],  
+  content_type: 'product',  
+  value: 0.50,  
+  currency: 'USD'  
+ });  
 </script>  
-<!-- End Facebook Pixel Code -->
-```
+<!-- End Facebook Pixel Code -->
 ```
 
-Then fire `AddToCart` either on a new page load or on the click of an Add To Cart button. There are multiple ways to handle clicks on buttons. Here’s an example adding an `eventListener` to a button.
+Then fire `AddToCart` either on a new page load or on the click of an Add To Cart button. There are multiple ways to handle clicks on buttons. Here's an example adding an `eventListener` to a button.
 
 ```
-```
-<!-- Somewhere there is a button that performs Add to Cart -->  
-<button id="addToCartButton">Add To Cart</button>  
+<!-- Somewhere there is a button that performs Add to Cart -->  
+<button id="addToCartButton">Add To Cart</button>  
   
-<!-- Add Pixel Events to the button's click handler -->  
-<script type="text/javascript">  
-  var button = document.getElementById('addToCartButton');  
-  button.addEventListener(  
-    'click',  
-    function() {  
-      fbq('track', 'AddToCart', {  
-        content_name: 'Really Fast Running Shoes',  
-        content_category: 'Apparel & Accessories > Shoes',  
-        content_ids: ['1234'],  
-        content_type: 'product',  
-        value: 4.99,  
-        currency: 'USD'  
-      });  
-    },  
-    false  
-  );  
+<!-- Add Pixel Events to the button's click handler -->  
+<script type="text/javascript">  
+  var button = document.getElementById('addToCartButton');  
+  button.addEventListener(  
+    'click',  
+    function() {  
+      fbq('track', 'AddToCart', {  
+        content_name: 'Really Fast Running Shoes',  
+        content_category: 'Apparel & Accessories > Shoes',  
+        content_ids: ['1234'],  
+        content_type: 'product',  
+        value: 4.99,  
+        currency: 'USD'  
+      });  
+    },  
+    false  
+  );  
 </script>
-```
 ```
 
 There are many ways you can handle click events; just make sure to always call `fbq` function after the click.
 
-Depending on how you have implemented the Pixel, the [Pixel Helper](https://developers.facebook.com/documentation/meta-pixel/support/pixel-helper) may show an error before the button is clicked. You can verify that your Pixel is firing correctly by clicking the button, which dismisses the helper’s error.
+Depending on how you have implemented the Pixel, the [Pixel Helper](https://developers.facebook.com/documentation/meta-pixel/support/pixel-helper) may show an error before the button is clicked. You can verify that your Pixel is firing correctly by clicking the button, which dismisses the helper's error.
 
 ## Triggering events based on visibility
 
-For this example, suppose you have a blog and want to track users who read the entire content of an article. There’s no action from the user other than scrolling to the end of the page.
+For this example, suppose you have a blog and want to track users who read the entire content of an article. There's no action from the user other than scrolling to the end of the page.
 
-Here’s the sample HTML for a page where the Pixel loads:
+Here's the sample HTML for a page where the Pixel loads:
 
 ```
-```
-<!DOCTYPE html>  
+<!DOCTYPE html>  
 <html>  
 <head>  
-  <!-- Facebook Pixel Code -->  
-  <script>  
-  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?  
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;  
-  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;  
-  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,  
-  document,'script','https://connect.facebook.net/en_US/fbevents.js');  
+  <!-- Facebook Pixel Code -->  
+  <script>  
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?  
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;  
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;  
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,  
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');  
   
-  fbq('init', '<FB_PIXEL_ID>');  
-  fbq('track', "PageView");  
-  </script>  
-  <noscript><img height="1" width="1" style="display:none"  
-  src="https://www.facebook.com/tr?id=<FB_PIXEL_ID>&ev=PageView&noscript=1"  
-  /></noscript>  
-  <!-- End Facebook Pixel Code -->  
+  fbq('init', '<FB_PIXEL_ID>');  
+  fbq('track', "PageView");  
+  </script>  
+  <noscript><img height="1" width="1" style="display:none"  
+  src="https://www.facebook.com/tr?id=<FB_PIXEL_ID>&ev=PageView&noscript=1"  
+  /></noscript>  
+  <!-- End Facebook Pixel Code -->  
 </head>  
   
 <body>  
-  <h1>Scroll Page until the Lead event is fired</h1>  
-  <div style="height: 120vh; width: 100vw; background-color: #00f;"></div>  
-  <h1 id="fb-fire-pixel">Lead event will fire when this phrase enters the screen</h1>  
-  <div style="height: 120vh; width: 100vw; background-color: #000;"></div>  
+  <h1>Scroll Page until the Lead event is fired</h1>  
+  <div style="height: 120vh; width: 100vw; background-color: #00f;"></div>  
+  <h1 id="fb-fire-pixel">Lead event will fire when this phrase enters the screen</h1>  
+  <div style="height: 120vh; width: 100vw; background-color: #000;"></div>  
 </body>  
 </html>
-```
 ```
 
 When the `h1` element with `id=fb-fire-pixel` appears, we should fire the `Lead` standard event. To verify an element is visible on screen, we add the following code to the page:
@@ -285,7 +265,7 @@ executeWhenElementIsVisible(element, function() {
 
 ## Triggering events based on page length or percentage
 
-For this example, suppose you want to track users who read up to a length or percentage of the page. There’s no action from the user other than scrolling to the desired page length or percentage.
+For this example, suppose you want to track users who read up to a length or percentage of the page. There's no action from the user other than scrolling to the desired page length or percentage.
 
 This first example is to track the length of the page which the user has read. In the example, we are firing off the lead Pixel when the user has read up to 500px length of the page.
 
@@ -435,7 +415,7 @@ setTimeout(function() {
 }, seconds * 1000);
 ```
 
-It could be used to track “engaged” visits to a page, where people are not bouncing too fast and are actually reading the content.
+It could be used to track "engaged" visits to a page, where people are not bouncing too fast and are actually reading the content.
 
 ## Triggering events based on articles viewed per session
 
@@ -483,7 +463,7 @@ fbq('trackSingleCustom', '<PIXEL_B>', 'Step4',{
 ## Tracking events for individual Pixels
 
 In unusual cases, you may want to send events to just one of the Pixels installed on your website; for example, to restrict the data sent to one of the Pixels on your website.
-These methods track Pixel fires for a single Pixel. They’re called using the following:
+These methods track Pixel fires for a single Pixel. They're called using the following:
 
 ```
 fbq('trackSingle', 'FB_PIXEL_ID', 'Purchase', customData);

@@ -22,8 +22,8 @@ HTTPPHP SDKJavaScript SDKAndroid SDKiOS SDKcURL
 ---
 
 ```
-GET /v25.0/<PRODUCT_CATALOG_ID>/event_stats HTTP/1.1  
-Host: graph.facebook.com
+GET /v25.0/<PRODUCT_CATALOG_ID>/event_stats HTTP/1.1  
+Host: graph.facebook.com
 ```
 
 Try it in [Graph API Explorer](https://developers.facebook.com/tools/explorer/?method=GET&path=%3CPRODUCT_CATALOG_ID%3E%2Fevent_stats&version=v25.0)

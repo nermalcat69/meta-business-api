@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/instagram-platform/sel
 
 Updated: May 15, 2026
 
-You can query the Instagram oEmbed endpoint to get an Instagram post’s embed HTML and basic metadata in order to display the post in another website or app. Supports photo, video, Reel, and Feed posts.
+You can query the Instagram oEmbed endpoint to get an Instagram post's embed HTML and basic metadata in order to display the post in another website or app. Supports photo, video, Reel, and Feed posts.
 
 Visit the [Instagram Help Center⁠](https://help.instagram.com/620154495870484) to learn how to get the embed code from a public Instagram post or profile.
 
@@ -44,17 +44,15 @@ You can make up to 1,000 requests every hour.
 
 You can get an embed HTML programmatically or [in the Instagram app.](https://developers.facebook.com/documentation/instagram-platform/embed-button)
 
-To programmatically get an Instagram post’s embed HTML, send a request to:
+To programmatically get an Instagram post's embed HTML, send a request to:
 
 ```
-```
-GET /instagram_oembed?url=<URL_OF_THE_POST>
-```
+GET /instagram_oembed?url=<URL_OF_THE_POST>
 ```
 
 Replace `<URL_OF_THE_POST>` with the [URL](https://developers.facebook.com/documentation/instagram-platform/self-messaging#url-formats) of the Instagram post that you want to query.
 
-Upon success, the API will respond with a JSON object containing the post’s embed HTML and additional data. The embed HTML will be assigned to the `html` property.
+Upon success, the API will respond with a JSON object containing the post's embed HTML and additional data. The embed HTML will be assigned to the `html` property.
 
 Refer to the [Instagram oEmbed reference](https://developers.facebook.com/docs/graph-api/reference/instagram-oembed) for a list of [query string parameters](https://developers.facebook.com/docs/graph-api/reference/instagram-oembed#parameters) you can include to augment the request. You may also include the `fields` query string parameter to specify which [fields](https://developers.facebook.com/docs/graph-api/reference/instagram-oembed#fields) you want returned. If omitted, all default Fields will be included in the response.
 
@@ -75,16 +73,14 @@ curl -i -X GET \
 Some values truncated with an ellipsis (`...`) for readability.
 
 ```
-```
 {  
-  "version": "1.0",  
-  "provider_name": "Instagram",  
-  "provider_url": "https://www.instagram.com/",  
-  "type": "rich",  
-  "width": 658,  
-  "html": "<blockquote class=\"instagram-media\" data-instgrm-ca...",  
+  "version": "1.0",  
+  "provider_name": "Instagram",  
+  "provider_url": "https://www.instagram.com/",  
+  "type": "rich",  
+  "width": 658,  
+  "html": "<blockquote class=\"instagram-media\" data-instgrm-ca...",  
 }
-```
 ```
 
 ### URL Formats

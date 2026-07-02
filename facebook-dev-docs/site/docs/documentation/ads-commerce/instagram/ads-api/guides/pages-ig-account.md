@@ -29,7 +29,7 @@ To claim an Instagram account for a business, you need the username and password
 
 ## Optional Step 3: Assign Agency
 
-If an advertiser owns an Instagram account and a third party wants to run ads on its behalf, assign it as an partner. From the Business Manager, click on **Assign Partners** and enter the agency’s business ID.
+If an advertiser owns an Instagram account and a third party wants to run ads on its behalf, assign it as an partner. From the Business Manager, click on **Assign Partners** and enter the agency's business ID.
 
 See [Advertise on Behalf of Another Business⁠](https://www.facebook.com/business/help/375950529870841) for more information.
 
@@ -46,7 +46,7 @@ The ad account needs to:
 * Be owned by this business, or
 * Be accessible by this business while being owned by the business that owns the Instagram account.
 
-For example, if your business gets access to an ad account and an Instagram account from a client, you can assign them together within your business. But you cannot assign an ad account belonging to one client’s business to an Instagram account belonging to another business, even if your business have admin access to both of them.
+For example, if your business gets access to an ad account and an Instagram account from a client, you can assign them together within your business. But you cannot assign an ad account belonging to one client's business to an Instagram account belonging to another business, even if your business have admin access to both of them.
 
 ```
 curl \
@@ -56,7 +56,7 @@ curl \
 "https://graph.facebook.com/<API_VERSION>/<IG_USER_ID>/authorized_adaccounts"
 ```
 
-You can see which ad accounts for a given business are associated with an Instagram account. You must provide the `business` parameter and must be at least an `EMPLOYEE` of this business. We only return ad accounts of the given business and those accounts associated with the given Instagram account. If this Instagram account is associated with ad accounts of other businesses, you won’t get them in the response. You can send a `GET` request:
+You can see which ad accounts for a given business are associated with an Instagram account. You must provide the `business` parameter and must be at least an `EMPLOYEE` of this business. We only return ad accounts of the given business and those accounts associated with the given Instagram account. If this Instagram account is associated with ad accounts of other businesses, you won't get them in the response. You can send a `GET` request:
 
 ```
 curl -G \

@@ -15,7 +15,7 @@ Enable people to post to Facebook from your app.
 
 #### More Expressive Sharing
 
-When you use Facebook’s Share dialogs on all platforms, you can give people an expressive sharing experience regardless of how they’ve logged into your app. With the dialogs, you can add quotes to a link share, post photos and videos at the same time, or add a hashtag to let people connect with a community on Facebook - all while giving people a consistent experience that gives them the functionality they expect.
+When you use Facebook's Share dialogs on all platforms, you can give people an expressive sharing experience regardless of how they've logged into your app. With the dialogs, you can add quotes to a link share, post photos and videos at the same time, or add a hashtag to let people connect with a community on Facebook - all while giving people a consistent experience that gives them the functionality they expect.
 
 [iOS](https://developers.facebook.com/documentation/sharing/ios#Additional)[Android](https://developers.facebook.com/documentation/sharing/android#Additional)[Web](https://developers.facebook.com/documentation/sharing/web)
 

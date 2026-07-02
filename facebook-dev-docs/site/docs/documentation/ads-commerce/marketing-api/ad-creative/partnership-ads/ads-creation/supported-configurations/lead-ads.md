@@ -58,11 +58,9 @@ curl -X POST \
 ### Example response (inline ads)
 
 ```
-```
 {  
-  "id": "<CREATIVE_ID>"  
+  "id": "<CREATIVE_ID>"  
 }
-```
 ```
 
 ## Boost partnership testimonial ads
@@ -91,11 +89,9 @@ curl -X POST \
 ### Example response (boost ads)
 
 ```
-```
 {  
-  "id": "<CREATIVE_ID>"  
+  "id": "<CREATIVE_ID>"  
 }
-```
 ```
 
 ## Learn more

@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/business-messaging/wha
 
 Updated: Jun 24, 2026
 
-You can compare two templates by examining how often each one is sent, which one has the lower ratio of blocks to sends, and each template’s top reason for being blocked.
+You can compare two templates by examining how often each one is sent, which one has the lower ratio of blocks to sends, and each template's top reason for being blocked.
 
 ## Requirements
 
@@ -18,7 +18,7 @@ You can compare two templates by examining how often each one is sent, which one
 
 * Only two templates can be compared at a time.
 * Both templates must be in the same WhatsApp Business account.
-* Templates must have been sent at least 1,000 times in the query’s specified timeframe.
+* Templates must have been sent at least 1,000 times in the query's specified timeframe.
 * Lookback windows are limited to 7, 30, 60, and 90 days from the time of the request.
 
 ## Comparing templates
@@ -28,12 +28,10 @@ Use the [Template Comparison API](https://developers.facebook.com/docs/graph-api
 ### Request syntax
 
 ```
-```
-GET /<WHATSAPP_MESSAGE_TEMPLATE_ID>/compare  
-  ?template_ids=[<TEMPLATE_IDS>]  
-  &start=<START>  
-  &end=<END>
-```
+GET /<WHATSAPP_MESSAGE_TEMPLATE_ID>/compare  
+  ?template_ids=[<TEMPLATE_IDS>]  
+  &start=<START>  
+  &end=<END>
 ```
 
 ### Query parameters
@@ -58,30 +56,28 @@ Each value below is the number of seconds to subtract from the current Unix end 
 
 ### Response
 
-Upon success, the API returns a list of [WhatsApp Business Template Comparison](https://developers.facebook.com/docs/graph-api/reference/whats-app-business-hsm-comparison) nodes describing each template’s block rate, number of times sent, and top reason for being blocked.
+Upon success, the API returns a list of [WhatsApp Business Template Comparison](https://developers.facebook.com/docs/graph-api/reference/whats-app-business-hsm-comparison) nodes describing each template's block rate, number of times sent, and top reason for being blocked.
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "metric": "BLOCK_RATE",  
-      "type": "RELATIVE",  
-      "order_by_relative_metric": [<ORDER_BY_RELATIVE_METRIC>]  
-    },  
-    {  
-      "metric": "MESSAGE_SENDS",  
-      "type": "NUMBER_VALUES",  
-      "number_values": [<NUMBER_VALUES>]  
-    },  
-    {  
-      "metric": "TOP_BLOCK_REASON",  
-      "type": "STRING_VALUES",  
-      "string_values": [<STRING_VALUES>]  
-    }  
-  ]  
+  "data": [  
+    {  
+      "metric": "BLOCK_RATE",  
+      "type": "RELATIVE",  
+      "order_by_relative_metric": [<ORDER_BY_RELATIVE_METRIC>]  
+    },  
+    {  
+      "metric": "MESSAGE_SENDS",  
+      "type": "NUMBER_VALUES",  
+      "number_values": [<NUMBER_VALUES>]  
+    },  
+    {  
+      "metric": "TOP_BLOCK_REASON",  
+      "type": "STRING_VALUES",  
+      "string_values": [<STRING_VALUES>]  
+    }  
+  ]  
 }
-```
 ```
 
 ### Response contents
@@ -102,46 +98,44 @@ curl -X GET 'https://graph.facebook.com/v25.0/5289179717853347/compare?template_
 ### Example response
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "metric": "BLOCK_RATE",  
-      "type": "RELATIVE",  
-      "order_by_relative_metric": [  
-        "1533406637136032",  
-        "5289179717853347"  
-      ]  
-    },  
-    {  
-      "metric": "MESSAGE_SENDS",  
-      "type": "NUMBER_VALUES",  
-      "number_values": [  
-        {  
-          "key": "5289179717853347",  
-          "value": 1273  
-        },  
-        {  
-          "key": "1533406637136032",  
-          "value": 1042  
-        }  
-      ]  
-    },  
-    {  
-      "metric": "TOP_BLOCK_REASON",  
-      "type": "STRING_VALUES",  
-      "string_values": [  
-        {  
-          "key": "5289179717853347",  
-          "value": "UNKNOWN_BLOCK_REASON"  
-        },  
-        {  
-          "key": "1533406637136032",  
-          "value": "UNKNOWN_BLOCK_REASON"  
-        }  
-      ]  
-    }  
-  ]  
+  "data": [  
+    {  
+      "metric": "BLOCK_RATE",  
+      "type": "RELATIVE",  
+      "order_by_relative_metric": [  
+        "1533406637136032",  
+        "5289179717853347"  
+      ]  
+    },  
+    {  
+      "metric": "MESSAGE_SENDS",  
+      "type": "NUMBER_VALUES",  
+      "number_values": [  
+        {  
+          "key": "5289179717853347",  
+          "value": 1273  
+        },  
+        {  
+          "key": "1533406637136032",  
+          "value": 1042  
+        }  
+      ]  
+    },  
+    {  
+      "metric": "TOP_BLOCK_REASON",  
+      "type": "STRING_VALUES",  
+      "string_values": [  
+        {  
+          "key": "5289179717853347",  
+          "value": "UNKNOWN_BLOCK_REASON"  
+        },  
+        {  
+          "key": "1533406637136032",  
+          "value": "UNKNOWN_BLOCK_REASON"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```

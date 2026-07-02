@@ -13,7 +13,7 @@ Below are details on how to implement rewarded video ads from Audience Network o
 
 # Set up the SDK
 
-The Audience Network Rewarded Video format is now included in the public SDK. Rewarded video will be available for all gaming apps soon. If you don’t see Rewarded Video in Monetization Manager and you’re on the latest SDK, [apply now](mailto:publisherhelp@fb.com?subject=Publisher%20Application%20for%20Rewarded%20Video%20&body=Please%20add%20the%20following%20information%20for%20your%20application%3A%0D%0A%0D%0AApp%20id%20-%20from%20your%20Account%3A%0D%0ALink%20Appstore%3A%0D%0ADescription%20of%20what%20will%20be%20provided%20after%20watching%20the%20rewarded%20video%3A%0D%0A%0D%0APlease%20note%20that%20we%27ll%20review%20your%20application%20within%20the%20next%20weeks%20and%20come%20back%20to%20you%20if%20successful.).
+The Audience Network Rewarded Video format is now included in the public SDK. Rewarded video will be available for all gaming apps soon. If you don't see Rewarded Video in Monetization Manager and you're on the latest SDK, [apply now](mailto:publisherhelp@fb.com?subject=Publisher%20Application%20for%20Rewarded%20Video%20&body=Please%20add%20the%20following%20information%20for%20your%20application%3A%0D%0A%0D%0AApp%20id%20-%20from%20your%20Account%3A%0D%0ALink%20Appstore%3A%0D%0ADescription%20of%20what%20will%20be%20provided%20after%20watching%20the%20rewarded%20video%3A%0D%0A%0D%0APlease%20note%20that%20we%27ll%20review%20your%20application%20within%20the%20next%20weeks%20and%20come%20back%20to%20you%20if%20successful.).
 
 Ensure you have completed the Audience Network [Getting Started](https://developers.facebook.com/documentation/audience-network/setting-up/platform-setup) and [iOS Getting Started](https://developers.facebook.com/documentation/audience-network/setting-up/platform-setup/ios/get-started) guides before you proceed.
 
@@ -28,11 +28,11 @@ SwiftObjective-C
 ---
 
 ```
-import UIKit  
-import FBAudienceNetwork  
+import UIKit  
+import FBAudienceNetwork  
   
-class ViewController: UIViewController, FBRewardedInterstitialAdDelegate  {  
-  private var rewardedInterstitialAd: FBRewardedInterstitialAd?  
+class ViewController: UIViewController, FBRewardedInterstitialAdDelegate  {  
+  private var rewardedInterstitialAd: FBRewardedInterstitialAd?  
 }
 ```
 
@@ -45,21 +45,21 @@ SwiftObjective-C
 ---
 
 ```
-override func viewDidLoad() {  
-  super.viewDidLoad()  
+override func viewDidLoad() {  
+  super.viewDidLoad()  
   
-// Instantiate an rewarded interstitial object.  
-// NOTE: the placement ID will eventually identify this as your app. You can ignore it while you are testing  
-// and replace it later when you have signed up.  
-// While you are using this temporary code you will only get test ads and if you release  
-// your code like this to the App Store your users will not receive ads (you will get a 'No Fill' error).  
-let rewardedInterstitialAd = FBRewardedInterstitialAd(placementID: "YOUR_PLACEMENT_ID")  
-rewardedInterstitialAd.delegate = self  
+// Instantiate an rewarded interstitial object.  
+// NOTE: the placement ID will eventually identify this as your app. You can ignore it while you are testing  
+// and replace it later when you have signed up.  
+// While you are using this temporary code you will only get test ads and if you release  
+// your code like this to the App Store your users will not receive ads (you will get a 'No Fill' error).  
+let rewardedInterstitialAd = FBRewardedInterstitialAd(placementID: "YOUR_PLACEMENT_ID")  
+rewardedInterstitialAd.delegate = self  
   
-// For auto play video ads, it's recommended to load the ad at least 30 seconds before it is shown  
+// For auto play video ads, it's recommended to load the ad at least 30 seconds before it is shown  
 rewardedInterstitialAd.load()  
   
-  self.rewardedInterstitialAd = rewardedInterstitialAd  
+  self.rewardedInterstitialAd = rewardedInterstitialAd  
 }
 ```
 
@@ -83,24 +83,24 @@ SwiftObjective-C
 ---
 
 ```
-func rewardedInterstitialAdDidLoad(_ rewardedInterstitialAd: FBRewardedInterstitialAd) {  
-  print("Video ad is loaded and ready to be displayed")  
+func rewardedInterstitialAdDidLoad(_ rewardedInterstitialAd: FBRewardedInterstitialAd) {  
+  print("Video ad is loaded and ready to be displayed")  
 }  
   
-func rewardedInterstitialAd(_ rewardedInterstitialAd: FBRewardedInterstitialAd, didFailWithError error: Error) {  
-  print("Rewarded Interstitial ad failed to load")  
+func rewardedInterstitialAd(_ rewardedInterstitialAd: FBRewardedInterstitialAd, didFailWithError error: Error) {  
+  print("Rewarded Interstitial ad failed to load")  
 }  
   
-func rewardedInterstitialAdDidClick(_ rewardedInterstitialAd: FBRewardedInterstitialAd) {  
-  print("Video ad clicked")  
+func rewardedInterstitialAdDidClick(_ rewardedInterstitialAd: FBRewardedInterstitialAd) {  
+  print("Video ad clicked")  
 }  
   
-func rewardedInterstitialAdDidClose(_ rewardedInterstitialAd: FBRewardedInterstitialAd) {  
-  print("Rewarded Interstitial ad closed - this can be triggered by closing the application, or closing the video end card")  
+func rewardedInterstitialAdDidClose(_ rewardedInterstitialAd: FBRewardedInterstitialAd) {  
+  print("Rewarded Interstitial ad closed - this can be triggered by closing the application, or closing the video end card")  
 }  
   
-func rewardedInterstitialAdVideoComplete(_ rewardedInterstitialAd: FBRewardedInterstitialAd) {  
-  print("Rewarded Interstitial ad video completed - this is called after a full video view, before the ad end card is shown. You can use this event to initialize your reward")  
+func rewardedInterstitialAdVideoComplete(_ rewardedInterstitialAd: FBRewardedInterstitialAd) {  
+  print("Rewarded Interstitial ad video completed - this is called after a full video view, before the ad end card is shown. You can use this event to initialize your reward")  
 }
 ```
 
@@ -113,11 +113,11 @@ SwiftObjective-C
 ---
 
 ```
-private func showRewardedInterstitialAd() {  
-  guard let rewardedInterstitialAd = rewardedInterstitialAd, rewardedInterstitialAd.isAdValid else {  
-    return  
-  }  
-  rewardedInterstitialAd.show(fromRootViewController: self)  
+private func showRewardedInterstitialAd() {  
+  guard let rewardedInterstitialAd = rewardedInterstitialAd, rewardedInterstitialAd.isAdValid else {  
+    return  
+  }  
+  rewardedInterstitialAd.show(fromRootViewController: self)  
 }
 ```
 
@@ -134,12 +134,12 @@ SwiftObjective-C
 ---
 
 ```
-func rewardedInterstitialAdWillClose(_ rewardedInterstitialAd: FBRewardedInterstitialAd) {  
-  print("The user clicked on the close button, the ad is just about to close")  
+func rewardedInterstitialAdWillClose(_ rewardedInterstitialAd: FBRewardedInterstitialAd) {  
+  print("The user clicked on the close button, the ad is just about to close")  
 }  
   
-func rewardedInterstitialAdWillLogImpression(_ rewardedInterstitialAd: FBRewardedInterstitialAd) {  
-  print("Rewarded Interstitial impression is being captured")  
+func rewardedInterstitialAdWillLogImpression(_ rewardedInterstitialAd: FBRewardedInterstitialAd) {  
+  print("Rewarded Interstitial impression is being captured")  
 }
 ```
 

@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/business-messaging/mes
 
 Updated: Mar 30, 2026
 
-This document shows you how to create a welcome screen for your Messenger experience. The welcome screen displays the name for your business’ Facebook Page, the profile picture and cover photo from your Facebook Page, the time it usually takes for your business to respond to messages, and a **Get Started** button. When a person clicks the Get Started button, a message Get Started will be posted into the conversation, and your app can send the person messages.
+This document shows you how to create a welcome screen for your Messenger experience. The welcome screen displays the name for your business' Facebook Page, the profile picture and cover photo from your Facebook Page, the time it usually takes for your business to respond to messages, and a **Get Started** button. When a person clicks the Get Started button, a message Get Started will be posted into the conversation, and your app can send the person messages.
 
 ## How It Works
 
@@ -42,11 +42,9 @@ If your Page uses [Commands](https://developers.facebook.com/documentation/busin
 To set the postback payload, send a `POST` request to the [Messenger Profile API](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/messenger-profile-api):
 
 ```
-```
-curl -X POST -H "Content-Type: application/json" -d '{  
-  "get_started": {"payload": "<postback_payload>"}  
-}' "https://graph.facebook.com/v2.6/me/messenger_profile?access_token=<PAGE_ACCESS_TOKEN>"
-```
+curl -X POST -H "Content-Type: application/json" -d '{  
+  "get_started": {"payload": "<postback_payload>"}  
+}' "https://graph.facebook.com/v2.6/me/messenger_profile?access_token=<PAGE_ACCESS_TOKEN>"
 ```
 
 For complete details, see the [`get_started` property reference](https://developers.facebook.com/documentation/business-messaging/messenger-platform/discovery/welcome-screen).
@@ -57,8 +55,8 @@ The Get Started Button feature is not supported when Messenger is accessed via t
 
 * **Do** communicate next steps to encourage a response in your welcome message. You can use buttons to add structure to your message and call out specific actions people can take.
 * **Do** share basic commands in your welcome message. Communicate which keywords or terms people can use to ask for help, get updates, etc., so they find what they want more quickly.
-* **Do** change your onboarding experience when your bot experience changes. Revisit your welcome message as you update your capabilities to make sure they’re still relevant.
-* **Don’t** be too generic. Try addressing people by name to make the message feel personal and treating it as an opportunity to teach them how to use and control the experience.
+* **Do** change your onboarding experience when your bot experience changes. Revisit your welcome message as you update your capabilities to make sure they're still relevant.
+* **Don't** be too generic. Try addressing people by name to make the message feel personal and treating it as an opportunity to teach them how to use and control the experience.
 
 ## See Also
 

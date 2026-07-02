@@ -39,7 +39,7 @@ curl -X POST \
   -F 'bid_amount=2' \
   -F 'daily_budget=1000' \
   -F 'campaign_id=<CAMPAIGN_ID>' \
-  -F 'targeting={"geo_locations":{"countries":["US"]}}' \
+  -F 'targeting={"geo_locations":{"countries":["US"]}​}' \
   -F 'access_token=<ACCESS_TOKEN>' \
 https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/adsets
 ```
@@ -111,7 +111,7 @@ curl \
   -F 'bid_amount=2' \
   -F 'daily_budget=1000' \
   -F 'campaign_id=<CAMPAIGN_ID>' \
-  -F 'targeting={"geo_locations":{"countries":["US"]}}' \
+  -F 'targeting={"geo_locations":{"countries":["US"]}​}' \
   -F 'access_token=<ACCESS_TOKEN>' \
 https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/adsets
 ```
@@ -121,21 +121,19 @@ https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/adsets
 Make a Page post and event with the following parameters for the ad creative. The ad creative can be a single image, video, or multiple images.
 
 ```
-```
 "object_story_spec"={  
-  "page_id":<PAGE_ID>,  
-  "link_data": {  
-    "link":"<LINK_URL>",  
-    "event_id":<EVENT_ID>,  
-    "call_to_action": {  
-      "value": {  
-        "link":"<LINK_URL>"  
-      },  
-      "type":"BUY_TICKETS"  
-    }  
-  }  
+  "page_id":<PAGE_ID>,  
+  "link_data": {  
+    "link":"<LINK_URL>",  
+    "event_id":<EVENT_ID>,  
+    "call_to_action": {  
+      "value": {  
+        "link":"<LINK_URL>"  
+      },  
+      "type":"BUY_TICKETS"  
+    }  
+  }  
 }
-```
 ```
 
 #### Step 4: [Create an ad](https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/basic-ad-creation/create-an-ad).
@@ -181,20 +179,18 @@ Make a `POST` call to the `/{ad-account-id}/adsets` endpoint with the `name`, `c
 If you want to target people that are connected through `pages/apps/events`, specify the `targeting:connections` field as shown below.
 
 ```
-```
 {  
-  "geo_locations": {  
-    "countries":["US"]  
-  },  
-  "connections": [  
-    {  
-      "id":<CONNECTIONS_ID>  
-  }]  
+  "geo_locations": {  
+    "countries":["US"]  
+  },  
+  "connections": [  
+    {  
+      "id":<CONNECTIONS_ID>  
+  }]  
 }
 ```
-```
 
-In this case, those that are “Going” to the event with the id of `1700354713548840` are targeted as the audience for the ad.
+In this case, those that are "Going" to the event with the id of `1700354713548840` are targeted as the audience for the ad.
 
 #### Step 3: [Create the ad creative](https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/basic-ad-creation/create-an-ad-creative).
 
@@ -203,22 +199,20 @@ The ad creative can be a single image, video, or multiple images.
 The `object_story_spec` parameter contains the `page_id` and the `link_data` of the event.
 
 ```
-```
 "object_story_spec"={  
-  "page_id":<PAGE_ID>,  
-  "link_data": {  
-    "link":"<LINK_URL>",  
-    "event_id":<EVENT_ID>,  
-    "call_to_action": {  
-      "value": {  
-        "link":"<LINK_URL>"  
-      },  
-    "type":"BUY_TICKETS",  
-    "event_id":<EVENT_ID>  
-    }  
-  }  
+  "page_id":<PAGE_ID>,  
+  "link_data": {  
+    "link":"<LINK_URL>",  
+    "event_id":<EVENT_ID>,  
+    "call_to_action": {  
+      "value": {  
+        "link":"<LINK_URL>"  
+      },  
+    "type":"BUY_TICKETS",  
+    "event_id":<EVENT_ID>  
+    }  
+  }  
 }
-```
 ```
 
 You can use the `picture` field to point to a link to be used as the image. If you omit the `picture` field, Facebook scrapes a default image from the event link.
@@ -232,37 +226,35 @@ For a carousel ad creative, use the `child_attachments` parameter to specify the
 * The `picture` field is the URL of a picture to be used for an image card in the carousel.
 
 ```
-```
 {  
-  "page_id": <PAGE_ID>,  
-  "link_data": {  
-    "child_attachments": [  
-      {  
-        "link": "<LINK_URL>",  
-        "picture": "<PICTURE_URL>",  
-        "call_to_action": {  
-          "value": {  
-            "event_id": <EVENT_ID>  
-          },  
-          "type": "BUY_TICKETS"  
-        }  
-      },  
-      {  
-        "link": "<LINK_URL>",  
-        "picture": "<PICTURE_URL>",  
-        "call_to_action": {  
-          "value": {  
-            "event_id": <EVENT_ID>  
-          },  
-          "type": "BUY_TICKETS"  
-        }  
-      }  
-    ],  
-    "link": "<LINK_URL>",  
-    "event_id": <EVENT_ID>  
-  }  
+  "page_id": <PAGE_ID>,  
+  "link_data": {  
+    "child_attachments": [  
+      {  
+        "link": "<LINK_URL>",  
+        "picture": "<PICTURE_URL>",  
+        "call_to_action": {  
+          "value": {  
+            "event_id": <EVENT_ID>  
+          },  
+          "type": "BUY_TICKETS"  
+        }  
+      },  
+      {  
+        "link": "<LINK_URL>",  
+        "picture": "<PICTURE_URL>",  
+        "call_to_action": {  
+          "value": {  
+            "event_id": <EVENT_ID>  
+          },  
+          "type": "BUY_TICKETS"  
+        }  
+      }  
+    ],  
+    "link": "<LINK_URL>",  
+    "event_id": <EVENT_ID>  
+  }  
 }
-```
 ```
 
 ##### Video ad creative
@@ -344,20 +336,18 @@ curl -X POST \
 If you want to target people that are connected through `pages/apps/events`, you can specify the `targeting:connections` field as shown below.
 
 ```
-```
 {  
-  'geo_locations': {  
-    'countries':['US']  
-  },  
-  'connections': [  
-    {  
-      'id':<CONNECTIONS_ID>  
-  }]  
+  'geo_locations': {  
+    'countries':['US']  
+  },  
+  'connections': [  
+    {  
+      'id':<CONNECTIONS_ID>  
+  }]  
 }
 ```
-```
 
-In this case, those that are “Going” to the event with the id of `1700354713548840` are targeted as the audience for the ad.
+In this case, those that are "Going" to the event with the id of `1700354713548840` are targeted as the audience for the ad.
 
 #### Step 3: [Create the ad creative](https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/basic-ad-creation/create-an-ad-creative).
 
@@ -366,22 +356,20 @@ The ad creative can be a single image, video, or multiple images.
 The `object_story_spec` parameter contains the `page_id` and the `link_data` of the event.
 
 ```
-```
 "object_story_spec"={  
-  "page_id":<PAGE_ID>,  
-  "link_data": {  
-    "link":"<LINK_URL>",  
-    "event_id":<EVENT_ID>,  
-    "call_to_action": {  
-      "value": {  
-        "link":"<LINK_URL>"  
-      },  
-      "type":"BUY_TICKETS",  
-      "event_id":<EVENT_ID>  
-    }  
-  }  
+  "page_id":<PAGE_ID>,  
+  "link_data": {  
+    "link":"<LINK_URL>",  
+    "event_id":<EVENT_ID>,  
+    "call_to_action": {  
+      "value": {  
+        "link":"<LINK_URL>"  
+      },  
+      "type":"BUY_TICKETS",  
+      "event_id":<EVENT_ID>  
+    }  
+  }  
 }
-```
 ```
 
 You can use the `picture` field to point to a link to be used as the image, but if it is not provided, a default image will be scraped from the event link.
@@ -478,42 +466,38 @@ https://graph.facebook.com/v25.0/search
 The response:
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "suggested_radius": 16,  
-      "distance_unit": "kilometer"  
-    }  
-  ]  
+  "data": [  
+    {  
+      "suggested_radius": 16,  
+      "distance_unit": "kilometer"  
+    }  
+  ]  
 }
-```
 ```
 
 Create an unpublished Page post for your ad. See [Page Feed](https://developers.facebook.com/docs/graph-api/reference/v24.0/page/feed) to create these Page posts via the API.
 
 Linked Page posts are supported at this time. Video Page posts are available only if you use the `GET_DIRECTIONS` call to action. You can use only posts from the Page whose ID has been set as the `promoted_object` in the ad set.
 
-Unless you use the `LEARN_MORE` call to action, the `link` must match your business’s Facebook Page URL.
+Unless you use the `LEARN_MORE` call to action, the `link` must match your business's Facebook Page URL.
 
 You can optionally set one of these calls to action:
 
 ##### Get Directions
 
-If you use the `GET_DIRECTIONS` call to action, you must also set the `link` to be the coordinates of the store’s location.
+If you use the `GET_DIRECTIONS` call to action, you must also set the `link` to be the coordinates of the store's location.
 
 ```
-```
-"call_to_action": {  
-  "type": "GET_DIRECTIONS",  
-  "value": {  
-    "link": "fbgeo:<LATITUDE>,<LONGITUDE>,"<ADDRESS>""  
-  }  
+"call_to_action": {  
+  "type": "GET_DIRECTIONS",  
+  "value": {  
+    "link": "fbgeo:<LATITUDE>,<LONGITUDE>,"<ADDRESS>""  
+  }  
 }
 ```
-```
 
-After clicking on the call-to-action button, your store’s location will be presented with a map and directions.
+After clicking on the call-to-action button, your store's location will be presented with a map and directions.
 
 ##### Call Now
 
@@ -522,14 +506,12 @@ If you use the `CALL_NOW` call to action, you must also set the telephone number
 `Call Now` should always be used in combination with one of the [mobile targeting options](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference/advanced-targeting#mobile) to ensure device capability to make a telephone call.
 
 ```
-```
-"call_to_action": {  
-  "type":"CALL_NOW",  
-  "value": {  
-    "link": "tel:<TELEPHONE_NUMBER>"  
-  }  
+"call_to_action": {  
+  "type":"CALL_NOW",  
+  "value": {  
+    "link": "tel:<TELEPHONE_NUMBER>"  
+  }  
 }
-```
 ```
 
 Clicking on the call-to-action button launches the device dialer with the number pre-populated.
@@ -542,7 +524,7 @@ To format a telephone number:
 The `Call Now` call to action has the following limitations:
 
 * Ad set age targeting should not include people younger than 18 years old.
-* If your ad set’s geotargeting includes multiple locations, they should all be in the same country.
+* If your ad set's geotargeting includes multiple locations, they should all be in the same country.
 * Premium-rate phone numbers are not allowed.
 * The phone number in your ad must be from the same country as your ad set target locations.
 
@@ -551,11 +533,9 @@ The `Call Now` call to action has the following limitations:
 If you use the `MESSAGE_PAGE` call to action, no value is necessary.
 
 ```
-```
-"call_to_action": {  
-  "type": "MESSAGE_PAGE"  
+"call_to_action": {  
+  "type": "MESSAGE_PAGE"  
 }
-```
 ```
 
 Clicking on the call-to-action button launches the Messenger composer to send a message to the Page. The message includes the ad photo and headline as an attachment.
@@ -608,7 +588,7 @@ The ad will look similar to this:
 
 ![Local ad with a Get Directions call to action that opens a map with directions to the business](https://scontent.fdel1-9.fna.fbcdn.net/v/t39.2365-6/595152932_1378922860633031_2949549783729615430_n.png?_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=UUevU-GxeuwQ7kNvwHX0K_I&_nc_oc=AdrbPdqjmO-yglvL9eJ15jg71pQwjXC2QbJDuUvEiK9gsHD58s57qaW-S07h9kLUrLZxiNmkCTwhu5JwvW5olw7e&_nc_zt=14&_nc_ht=scontent.fdel1-9.fna&_nc_gid=ceBmAWOTEtd8vTRRACX_4w&_nc_ss=7b289&oh=00_AQAKPQF_dfrxiSag5nqS3o7dPTkgGxoj88AXo8hSqqUOzw&oe=6A607900)
 
-In this example, the call to action is `GET_DIRECTIONS`. Clicking on the button will present a map with directions to the business as listed on their Facebook Page. Clicks on other parts of the ad go to the advertiser’s Facebook Page.
+In this example, the call to action is `GET_DIRECTIONS`. Clicking on the button will present a map with directions to the business as listed on their Facebook Page. Clicks on other parts of the ad go to the advertiser's Facebook Page.
 
 Optionally, you can combine all the creative steps above into one by using the `object_story_spec` field in the ad creative.
 

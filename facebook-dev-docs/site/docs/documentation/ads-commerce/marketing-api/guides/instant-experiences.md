@@ -101,11 +101,9 @@ On success, your app receives a JSON response with the ID for the video and the 
 #### Example response
 
 ```
-```
 {  
-    "success": true  
+    "success": true  
 }
-```
 ```
 
 #### Headers
@@ -121,7 +119,7 @@ On success, your app receives a JSON response with the ID for the video and the 
 
 If the video upload is interrupted, it can be resumed by repeating the `POST` request with `offset` set to the `bytes_transferred` value from a `GET` `/status` endpoint. You can also restart the upload by setting the offset to `0`. This can be done by first retrieving the upload byte offset from the status endpoint, and then uploading the remaining bytes using the upload URL.
 
-The `offset` header should be set to the `offset/bytes_transferred` value received from the status endpoint, or set to `0` to restart from the beginning of the upload. The file bytes sent in the subsequent request should start with the byte at “offset” (zero-based).
+The `offset` header should be set to the `offset/bytes_transferred` value received from the status endpoint, or set to `0` to restart from the beginning of the upload. The file bytes sent in the subsequent request should start with the byte at "offset" (zero-based).
 
 #### Upload hosted files
 
@@ -164,25 +162,23 @@ curl -X GET "https://graph.facebook.com/v25.0/<VIDEO_ID>" \
 #### Example response
 
 ```
-```
 {  
-  "status": {  
-    "video_status": "processing", // ready, processing, expired, error  
-    "uploading_phase": {  
-      "status": "in_progress", // not_started, in_progress, complete, error  
-      "bytes_transferred": 50002  // bytes received (also 'offset')  
-    },  
-    "processing_phase": {  
-      "status": "not_started"  
-    }  
-    "publishing_phase": {  
-      "status": "not_started",  
-      "publish_status": "publish",  
-      "publish_time": 234523452 // publish time (unix)  
-    }  
-  }  
+  "status": {  
+    "video_status": "processing", // ready, processing, expired, error  
+    "uploading_phase": {  
+      "status": "in_progress", // not_started, in_progress, complete, error  
+      "bytes_transferred": 50002  // bytes received (also 'offset')  
+    },  
+    "processing_phase": {  
+      "status": "not_started"  
+    }  
+    "publishing_phase": {  
+      "status": "not_started",  
+      "publish_status": "publish",  
+      "publish_time": 234523452 // publish time (unix)  
+    }  
+  }  
 }
-```
 ```
 
 ## Step 4: Publish video to ad account
@@ -211,11 +207,9 @@ curl -X POST "https://graph.facebook.com/video-ads-upload/v25.0/act_<PAYMENT_ACC
 #### Example response
 
 ```
-```
 {  
-  "success": true,  
+  "success": true,  
 }
-```
 ```
 
 ## Get video ads
@@ -232,16 +226,14 @@ curl -X GET "https://graph.facebook.com/v25.0/act_<PAYMENT_ACCOUNT_ID>/video_ads
 #### Example response
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "updated_time": "unix_timestamp",  
-      "id": "video_id",  
-    }  
-  ]  
+  "data": [  
+    {  
+      "updated_time": "unix_timestamp",  
+      "id": "video_id",  
+    }  
+  ]  
 }
-```
 ```
 
 ### Filters (optional)

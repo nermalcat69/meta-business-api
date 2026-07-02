@@ -9,15 +9,15 @@ Updated: Jun 16, 2026
 
 This documentation is for developers building on the WhatsApp Business Platform. If you are a WhatsApp user experiencing issues with your personal account, visit the [WhatsApp Help Center⁠](https://faq.whatsapp.com/?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR6X2h2iP884TNre53zu6qvf2boDMTdigj_s9NPCJr-Ou7fqZVnd2wJYlMijuQ_aem_xhyXvvHok8M9JPPWncr6sw) for support.
 
-This guide helps developers quickly get started with the WhatsApp Cloud API. It covers the basic setup steps, including registering as a developer, creating a Meta app, sending your first message, and setting up a test webhook endpoint. You’ll also learn how to generate secure access tokens and send both template and non-template messages. Advanced features and further resources are introduced for deeper exploration.
+This guide helps developers quickly get started with the WhatsApp Cloud API. It covers the basic setup steps, including registering as a developer, creating a Meta app, sending your first message, and setting up a test webhook endpoint. You'll also learn how to generate secure access tokens and send both template and non-template messages. Advanced features and further resources are introduced for deeper exploration.
 
 ---
 
 ## Download the sample app
 
-The Jasper’s Market sample app contains all of the messages and code used in the Jasper’s Market demo. You can use this sample app to learn how to build an application that sends and handles WhatsApp Cloud API data.
+The Jasper's Market sample app contains all of the messages and code used in the Jasper's Market demo. You can use this sample app to learn how to build an application that sends and handles WhatsApp Cloud API data.
 
-[Download the Jasper’s Market Sample App](https://github.com/fbsamples/whatsapp-business-jaspers-market?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR7BJaZyorPqDBLmVDioj2rMeaUkp8GKtnNov3rJyAy4Oa92zSiX6iQPmZ1xkg_aem_Cr16znizwZuNbT8d25pTTg)
+[Download the Jasper's Market Sample App](https://github.com/fbsamples/whatsapp-business-jaspers-market?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdDFTU2F3MEdKRXZxdWxzRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR7BJaZyorPqDBLmVDioj2rMeaUkp8GKtnNov3rJyAy4Oa92zSiX6iQPmZ1xkg_aem_Cr16znizwZuNbT8d25pTTg)
 
 ---
 
@@ -34,7 +34,7 @@ The Jasper’s Market sample app contains all of the messages and code used in t
 
 * Open the [Meta App Dashboard](https://developers.facebook.com/apps) to create a new Meta app with the WhatsApp use case.
 * Click **Create App**.
-* Add your app’s name and your email.
+* Add your app's name and your email.
 * Select the **Connect with customers through WhatsApp** use case and click **Next**.
 * Select an existing business portfolio or create a new one.
 * A list of publishing requirements are listed. You may not have any at this point. Click **Next**.
@@ -86,47 +86,45 @@ Use the sample webhook server for testing purposes by following the [Using a tes
 Once your test webhook application is established, respond in the WhatsApp chat thread you created with yourself. You will see the webhook payload in your test application like this:
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "215589313241560883",  
-      "changes": [  
-        {  
-          "value": {  
-            "messaging_product": "whatsapp",  
-            "metadata": {  
-              "display_phone_number": "15551797781",  
-              "phone_number_id": "7794189252778687"  
-            },  
-            "contacts": [  
-              {  
-                "profile": {  
-                  "name": "Jessica Laverdetman"  
-                },  
-                "wa_id": "13557825698"  
-              }  
-            ],  
-            "messages": [  
-              {  
-                "from": "17863559966",  
-                "id": "wamid.HBgLMTc4NjM1NTk5NjYVAGHAYWYET688aASGNTI1QzZFQjhEMDk2QQA=",  
-                "timestamp": "1758254144",  
-                "text": {  
-                  "body": "Hi!"  
-                },  
-                "type": "text"  
-              }  
-            ]  
-          },  
-          "field": "messages"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "215589313241560883",  
+      "changes": [  
+        {  
+          "value": {  
+            "messaging_product": "whatsapp",  
+            "metadata": {  
+              "display_phone_number": "15551797781",  
+              "phone_number_id": "7794189252778687"  
+            },  
+            "contacts": [  
+              {  
+                "profile": {  
+                  "name": "Jessica Laverdetman"  
+                },  
+                "wa_id": "13557825698"  
+              }  
+            ],  
+            "messages": [  
+              {  
+                "from": "17863559966",  
+                "id": "wamid.HBgLMTc4NjM1NTk5NjYVAGHAYWYET688aASGNTI1QzZFQjhEMDk2QQA=",  
+                "timestamp": "1758254144",  
+                "text": {  
+                  "body": "Hi!"  
+                },  
+                "type": "text"  
+              }  
+            ]  
+          },  
+          "field": "messages"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ---
@@ -181,7 +179,7 @@ After successfully sending your message, check your test webhook application to 
 
 The WhatsApp Cloud API enables you to send messages and receive webhooks—these are the fundamental building blocks for messaging integration.
 Beyond these basics, the API offers additional features such as group creation and management, as well as support for calling.
-To explore these advanced capabilities, check out the “Learn more” section below.
+To explore these advanced capabilities, check out the "Learn more" section below.
 
 ---
 

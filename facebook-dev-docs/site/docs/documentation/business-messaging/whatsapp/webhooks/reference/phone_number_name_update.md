@@ -20,30 +20,28 @@ The **payment\_configuration\_update** webhook notifies you of changes to paymen
 ## Syntax
 
 ```
-```
 {  
-  "entry": [  
-    {  
-      "id": "<WHATSAPP_BUSINESS_ACCOUNT_ID>",  
-      "time": <WEBHOOK_TRIGGER_TIMESTAMP>,  
-      "changes": [  
-        {  
-          "field": "payment_configuration_update",  
-          "value": {  
-            "configuration_name": "<PAYMENT_CONFIGURATION_NAME>",  
-            "provider_name": "<PAYMENT_GATEWAY_PROVIDER_NAME>",  
-            "provider_mid": "<PAYMENT_GATEWAY_MERCHANT_ACCOUNT_ID>",  
-            "status": "<PAYMENT_CONFIGURATION_STATUS>",  
-            "created_timestamp": <PAYMENT_CONFIGURATION_CREATION_TIMESTAMP>,  
-            "updated_timestamp": <PAYMENT_CONFIGURATION_UPDATE_TIMESTAMP>  
-          }  
-        }  
-      ]  
-    }  
-  ],  
-  "object": "whatsapp_business_account"  
+  "entry": [  
+    {  
+      "id": "<WHATSAPP_BUSINESS_ACCOUNT_ID>",  
+      "time": <WEBHOOK_TRIGGER_TIMESTAMP>,  
+      "changes": [  
+        {  
+          "field": "payment_configuration_update",  
+          "value": {  
+            "configuration_name": "<PAYMENT_CONFIGURATION_NAME>",  
+            "provider_name": "<PAYMENT_GATEWAY_PROVIDER_NAME>",  
+            "provider_mid": "<PAYMENT_GATEWAY_MERCHANT_ACCOUNT_ID>",  
+            "status": "<PAYMENT_CONFIGURATION_STATUS>",  
+            "created_timestamp": <PAYMENT_CONFIGURATION_CREATION_TIMESTAMP>,  
+            "updated_timestamp": <PAYMENT_CONFIGURATION_UPDATE_TIMESTAMP>  
+          }  
+        }  
+      ]  
+    }  
+  ],  
+  "object": "whatsapp_business_account"  
 }
-```
 ```
 
 ## Parameters
@@ -62,28 +60,26 @@ The **payment\_configuration\_update** webhook notifies you of changes to paymen
 ## Example payload
 
 ```
-```
 {  
-  "entry": [  
-    {  
-      "id": "102290129340398",  
-      "time": 1739321024,  
-      "changes": [  
-        {  
-          "field": "payment_configuration_update",  
-          "value": {  
-            "configuration_name": "razorpay-prod",  
-            "provider_name": "razorpay",  
-            "provider_mid": "acc_GP4lfNA0iIMn5B",  
-            "status": "Needs Testing",  
-            "created_timestamp": 1748827100,  
-            "updated_timestamp": 1749320300  
-          }  
-        }  
-      ]  
-    }  
-  ],  
-  "object": "whatsapp_business_account"  
+  "entry": [  
+    {  
+      "id": "102290129340398",  
+      "time": 1739321024,  
+      "changes": [  
+        {  
+          "field": "payment_configuration_update",  
+          "value": {  
+            "configuration_name": "razorpay-prod",  
+            "provider_name": "razorpay",  
+            "provider_mid": "acc_GP4lfNA0iIMn5B",  
+            "status": "Needs Testing",  
+            "created_timestamp": 1748827100,  
+            "updated_timestamp": 1749320300  
+          }  
+        }  
+      ]  
+    }  
+  ],  
+  "object": "whatsapp_business_account"  
 }
-```
 ```

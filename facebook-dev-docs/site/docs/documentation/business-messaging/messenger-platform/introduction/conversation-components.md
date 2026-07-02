@@ -9,7 +9,7 @@ Updated: May 5, 2026
 
 To send messages to a person on Messenger or Instagram, the conversation must be initiated by that person. The Messenger Platform has several different types of messages you can send. Each message type has different policies and guidelines for what types of content and under what conditions they can be sent.
 
-**Note:** If your app users don’t have a Facebook Page linked to their Instagram professional account, learn more about building an app with [the Instagram API with Instagram Login](https://developers.facebook.com/docs/instagram/platform/instagram-api).
+**Note:** If your app users don't have a Facebook Page linked to their Instagram professional account, learn more about building an app with [the Instagram API with Instagram Login](https://developers.facebook.com/docs/instagram/platform/instagram-api).
 
 #### Informing Users About Your Automated Experience
 
@@ -24,9 +24,9 @@ Automated chat experiences that serve the following groups should pay special at
 * California market or California users
 * German market or German users
 
-Disclosures may include but are not limited to: “I’m the [Page Name] bot,”“You are interacting with an automated experience,” “You are talking to a bot,” or “I am an automated chatbot.”
+Disclosures may include but are not limited to: "I'm the [Page Name] bot,""You are interacting with an automated experience," "You are talking to a bot," or "I am an automated chatbot."
 
-Even where not legally required, we recommend informing users when they’re interacting with an automated chat as best practice, as this helps manage user expectations about their interaction with your messaging experience.
+Even where not legally required, we recommend informing users when they're interacting with an automated chat as best practice, as this helps manage user expectations about their interaction with your messaging experience.
 
 Visit our
 [Developer Policies](https://developers.facebook.com/devpolicy/#messengerplatform)
@@ -80,7 +80,7 @@ User IDs from [Facebook Login](https://developers.facebook.com/documentation/fac
 
 ### Messaging types
 
-The type of message you are sending is set in the `messaging_type` parameter. This parameter is a more explicit way to ensure your messaging complies with messaging policies and the recipient’s preferences.
+The type of message you are sending is set in the `messaging_type` parameter. This parameter is a more explicit way to ensure your messaging complies with messaging policies and the recipient's preferences.
 
 The following types of messages are supported:
 
@@ -92,9 +92,9 @@ The following types of messages are supported:
 
 Effective April 27th, 2026, all API requests containing the Message Tags CONFIRMED\_EVENT\_UPDATE, ACCOUNT\_UPDATE, and POST\_PURCHASE\_UPDATE will receive error code 100.
 
-Message Tags allow you to send a message outside the standard messaging window. These messages are personally relevant updates for a person. For example, you may send updates about shipping and delivery, an upcoming reservation or flight, or alerts about a customer’s account. For messaging flows that require an escalation path, the Human Agent tag allows a business representative to manually respond to a person’s messages within a 7-day period.
+Message Tags allow you to send a message outside the standard messaging window. These messages are personally relevant updates for a person. For example, you may send updates about shipping and delivery, an upcoming reservation or flight, or alerts about a customer's account. For messaging flows that require an escalation path, the Human Agent tag allows a business representative to manually respond to a person's messages within a 7-day period.
 
-Message Tags may not be used to send promotional content, including but not limited to: deals, offers, coupons, and discounts. Use of Message Tags outside the [approved use cases](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/send-api#parameters) may result in restrictions on the Page or Instagram account’s ability to send messages. See the [Messenger Platform and Instagram Messaging API Policy](https://developers.facebook.com/documentation/business-messaging/messenger-platform/policy) for details.
+Message Tags may not be used to send promotional content, including but not limited to: deals, offers, coupons, and discounts. Use of Message Tags outside the [approved use cases](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/send-api#parameters) may result in restrictions on the Page or Instagram account's ability to send messages. See the [Messenger Platform and Instagram Messaging API Policy](https://developers.facebook.com/documentation/business-messaging/messenger-platform/policy) for details.
 
 Businesses using Messenger Platform who want to send promotional messages outside the 24 hour standard messaging window should use [Sponsored Messages](https://developers.facebook.com/documentation/business-messaging/messenger-platform/discovery) or [One-Time Notifications](https://developers.facebook.com/docs/messenger-platform/send-messages/one-time-notification).
 
@@ -117,7 +117,7 @@ The message you send may contain the following types of content:
 
 ## Send a basic text
 
-To send a basic text message to a person who sent your Page a message, send a `POST` request to the `/<PAGE_ID>/messages` endpoint, with the `recipient` object literal key `id` set to the person’s Page-scoped ID (PSID), the `messaging_type` parameter set to `RESPONSE`, and the `message` parameter object `text` set to the message text.
+To send a basic text message to a person who sent your Page a message, send a `POST` request to the `/<PAGE_ID>/messages` endpoint, with the `recipient` object literal key `id` set to the person's Page-scoped ID (PSID), the `messaging_type` parameter set to `RESPONSE`, and the `message` parameter object `text` set to the message text.
 
 #### Sample request
 
@@ -133,22 +133,20 @@ curl -X POST -H "Content-Type: application/json" -d '{
 }' "https://graph.facebook.com/v25.0/{PAGE-ID}/messages?access_token={PAGE-ACCESS-TOKEN}"
 ```
 
-On success, your app will receive the following JSON response with the recipient’s ID and the message ID.
+On success, your app will receive the following JSON response with the recipient's ID and the message ID.
 
 ```
-```
 {  
-  "recipient_id": "PAGE-SCOPED-ID",  
-  "message_id": "AG5Hz2U..."  
+  "recipient_id": "PAGE-SCOPED-ID",  
+  "message_id": "AG5Hz2U..."  
 }
-```
 ```
 
 ## Send a media attachment
 
 To send a message with media, such as a GIF or image, or a template, you add the content to the API request in a JSON message attachment object.
 
-To send a message with an image to a person who sent your Page a message, send a `POST` request to the `/<PAGE_ID>/messages` endpoint, with the `recipient` object literal key `id` set to the person’s Page-scoped ID (PSID), the `messaging_type` parameter set to `RESPONSE`, and the `message` parameter `attachment` object `type` key set to `image` and the `payload` object `url` key set to the URL for the image.
+To send a message with an image to a person who sent your Page a message, send a `POST` request to the `/<PAGE_ID>/messages` endpoint, with the `recipient` object literal key `id` set to the person's Page-scoped ID (PSID), the `messaging_type` parameter set to `RESPONSE`, and the `message` parameter `attachment` object `type` key set to `image` and the `payload` object `url` key set to the URL for the image.
 
 #### Sample request
 
@@ -169,15 +167,13 @@ curl -X POST -H "Content-Type: application/json" -d '{
 }' "https://graph.facebook.com/v25.0/me/messages?access_token={PAGE_ACCESS_TOKEN}"
 ```
 
-On success, your app will receive the following JSON response with the recipient’s ID and the message ID.
+On success, your app will receive the following JSON response with the recipient's ID and the message ID.
 
 ```
-```
 {  
-  "recipient_id": "PAGE-SCOPED-ID",  
-  "message_id": "AG5Hz2U..."  
+  "recipient_id": "PAGE-SCOPED-ID",  
+  "message_id": "AG5Hz2U..."  
 }
-```
 ```
 
 Sending audio, video, or a file from a URL will use the same format.
@@ -189,7 +185,7 @@ You can also send media from your server or from content you have previously upl
 
 To send a message with multiple images, you add the content to the API request in a JSON message attachments array. The only media type allowed is an image, and it is limited to 30 images at once.
 
-To send a message with multiple images to a person who sent your Page a message, send a `POST` request to the `/<PAGE_ID>/messages` endpoint, with the `recipient` object literal key `id` set to the person’s Page-scoped ID (PSID), the `messaging_type` parameter set to `RESPONSE`, and the `message` parameter contains an `attachments` array where each attachment object `type` key is set to `image` and the `payload` object `url` key is set to the URL for the image.
+To send a message with multiple images to a person who sent your Page a message, send a `POST` request to the `/<PAGE_ID>/messages` endpoint, with the `recipient` object literal key `id` set to the person's Page-scoped ID (PSID), the `messaging_type` parameter set to `RESPONSE`, and the `message` parameter contains an `attachments` array where each attachment object `type` key is set to `image` and the `payload` object `url` key is set to the URL for the image.
 
 #### Sample request
 
@@ -217,22 +213,20 @@ curl -X POST -H "Content-Type: application/json" -d '{
 }' "https://graph.facebook.com/v25.0/me/messages?access_token={PAGE_ACCESS_TOKEN}"
 ```
 
-On success, your app will receive the following JSON response with the recipient’s ID and the message ID.
+On success, your app will receive the following JSON response with the recipient's ID and the message ID.
 
 ```
-```
 {  
-  "recipient_id": "PAGE-SCOPED-ID",  
-  "message_id": "AG5Hz2U..."  
+  "recipient_id": "PAGE-SCOPED-ID",  
+  "message_id": "AG5Hz2U..."  
 }
-```
 ```
 
 ## Send a reply to a message
 
 To send a reply to a specific past message within the chat, send a `POST` request to the `/<PAGE_ID>/messages` endpoint with the following:
 
-* `recipient` object literal key `id` set to the person’s Page-scoped ID (PSID)
+* `recipient` object literal key `id` set to the person's Page-scoped ID (PSID)
 * `messaging_type` set to `RESPONSE`
 * your message details in the message parameter object
 * `reply_to` object literal key `mid` set to the message id of the specific message in the chat you want to reply to
@@ -242,31 +236,27 @@ The message can either be the message your Page or the user sent.
 #### Sample request
 
 ```
-```
-curl -X POST -H "Content-Type: application/json" -d '{  
-  "recipient": {  
-    "id": "<PSID>"  
-  },  
-  "messaging_type": "RESPONSE",  
-  "message": {  
-    "text": "Hello, world!"  
-  },  
-  "reply_to": {  
-    "mid": "<MESSAGE_ID>"  
-  }  
-}' "https://graph.facebook.com/<API_VERSION>/<PAGE_ID>/messages?access_token=<PAGE_ACCESS_TOKEN>"
-```
+curl -X POST -H "Content-Type: application/json" -d '{  
+  "recipient": {  
+    "id": "<PSID>"  
+  },  
+  "messaging_type": "RESPONSE",  
+  "message": {  
+    "text": "Hello, world!"  
+  },  
+  "reply_to": {  
+    "mid": "<MESSAGE_ID>"  
+  }  
+}' "https://graph.facebook.com/<API_VERSION>/<PAGE_ID>/messages?access_token=<PAGE_ACCESS_TOKEN>"
 ```
 
-On success, your app will receive the following JSON response with the recipient’s ID and the message ID.
+On success, your app will receive the following JSON response with the recipient's ID and the message ID.
 
-```
 ```
 {  
-  "recipient_id": "PAGE-SCOPED-ID",  
-  "message_id": "AG5Hz2U…"  
+  "recipient_id": "PAGE-SCOPED-ID",  
+  "message_id": "AG5Hz2U…"  
 }
-```
 ```
 
 ## Sending messages on Instagram
@@ -311,14 +301,14 @@ For the complete list of error codes, see the [Send API Reference](https://devel
 #### Text messages
 
 * Keep it short. Consider screen size and scrolling behavior; compact messages are easier for people to follow. Try sending a few separate messages instead of one long one.
-* Don’t use text as a substitute for images, tables, charts, and images. Structured messages or even a webview might suit your needs better.
-* Don’t write lengthy exchanges. If you need to communicate multiple things, try sending a few separate messages instead of one long one.
+* Don't use text as a substitute for images, tables, charts, and images. Structured messages or even a webview might suit your needs better.
+* Don't write lengthy exchanges. If you need to communicate multiple things, try sending a few separate messages instead of one long one.
 
 #### Attachments
 
 * Pay attention to quality. Use colorful, high-resolution images so they display clearly in the conversation.
 * Consider aspect ratio. Review how your image may get cropped when it appears in the message bubble.
-* Don’t put large amounts of text in your image. Use a text message instead, or combine images and text with a generic template.
+* Don't put large amounts of text in your image. Use a text message instead, or combine images and text with a generic template.
 
 ## More message types
 

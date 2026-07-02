@@ -9,7 +9,7 @@ Updated: Jan 23, 2026
 
 Below is a diagram and a list of the main AWS resources and services used by the Conversions API Gateway or Signals Gateway on ECS Express, the number of instances created per resource or service type and, when applicable, their purpose.
 
-The diagram and the list contain only the most important AWS resources and services used by the “Gateway Products” – Conversions API Gateway or Signals Gateway. Other AWS resources and services not listed here will be used by your instance.
+The diagram and the list contain only the most important AWS resources and services used by the "Gateway Products" – Conversions API Gateway or Signals Gateway. Other AWS resources and services not listed here will be used by your instance.
 
 The Conversions API Gateway diagram below shows the main resources instantiated and how they interact between them. The Signals Gateway also uses the same AWS services, however it connects events to Meta only when using the Meta Pixel and/or Conversions API Gateway pipelines.
 
@@ -149,7 +149,7 @@ The estimated monthly base cost might look like the breakdown below based on dif
 
 ### Allowed Network Traffic
 
-The Gateway Products require the following inbound and outbound network traffic to work as documented. The default configuration only allows the required traffic. ECS Express provides inbuilt load balancer and access control which can’t be changed. The only inbound access to ECS Express service is on port 443. We have a security group attached to the ECS cluster which doesn’t allow any inbound traffic but allows outbound traffic so that telemetry can be sent to Meta in case of failures if telemetry consent is provided.
+The Gateway Products require the following inbound and outbound network traffic to work as documented. The default configuration only allows the required traffic. ECS Express provides inbuilt load balancer and access control which can't be changed. The only inbound access to ECS Express service is on port 443. We have a security group attached to the ECS cluster which doesn't allow any inbound traffic but allows outbound traffic so that telemetry can be sent to Meta in case of failures if telemetry consent is provided.
 
 ### Endpoints and In-Transit Data
 

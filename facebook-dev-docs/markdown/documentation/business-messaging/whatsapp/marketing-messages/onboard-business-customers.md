@@ -9,7 +9,7 @@ Updated: May 21, 2026
 
 Marketing Messages API for WhatsApp allows you to send marketing template messages only. To send other message types or receive messages, use Cloud API in parallel with Marketing Messages API for WhatsApp on the same business phone number.
 
-If you use a partner’s UI portals or APIs to configure and send marketing messages, you can continue to do so, and do not need to use any of the capabilities described in this document - your partner will take care of integrating with MM API for WhatsApp’s message sending functions on your behalf.
+If you use a partner's UI portals or APIs to configure and send marketing messages, you can continue to do so, and do not need to use any of the capabilities described in this document - your partner will take care of integrating with MM API for WhatsApp's message sending functions on your behalf.
 
 ## Prerequisites
 
@@ -26,8 +26,8 @@ Before you can send marketing messages via Marketing Messages API for WhatsApp, 
 You can create marketing templates in several ways:
 
 * Via WhatsApp Business Manager UI
-* Via the Business Management API “Message Templates” endpoint
-* If you work with a partner, your partner may offer their own API or user interfaces for template creation, which leverage the “Message Templates” endpoint
+* Via the Business Management API "Message Templates" endpoint
+* If you work with a partner, your partner may offer their own API or user interfaces for template creation, which leverage the "Message Templates" endpoint
 
 See documentation on how to [Create and manage templates](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview).
 
@@ -49,7 +49,7 @@ This feature introduces creative variability for performance optimization, meani
 
 ### Image filtering
 
-For some campaigns, Meta automatically applies the most effective filters to header images in order to enhance the images’ quality and appeal:
+For some campaigns, Meta automatically applies the most effective filters to header images in order to enhance the images' quality and appeal:
 
 ![Example of automatic image filtering optimization](https://scontent.fdel1-5.fna.fbcdn.net/v/t39.2365-6/677529769_26661613513447780_7533727623640867902_n.png?_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=fakDwlTxzb8Q7kNvwGPdJTD&_nc_oc=Adq1sUN6fz5R19k4dO1zlz0wOpT6J98JEdX42RfkX-V2A66SoX4v6YNL2eRaffY8qXJxtUS1E2T7bA8jwDJkdDbi&_nc_zt=14&_nc_ht=scontent.fdel1-5.fna&_nc_gid=wmtmSWcHb_EXWxYx1kCM7Q&_nc_ss=7b2a8&oh=00_AQAbv87v-1-vEg_BRv-TicZ4_jeAr_TddyjZyLqrNaEQEw&oe=6A6056D4)
 
@@ -83,7 +83,7 @@ Meta enhances single-image creatives by appending a set of additional catalog pr
 
 #### Auto promotion tag
 
-For some campaigns, Meta will automatically extract the promotion tag, like “30% off”, “50% discount”, “Free shipping” from messages to create a promotion tag and put it into the image to highlight promotion information.
+For some campaigns, Meta will automatically extract the promotion tag, like "30% off", "50% discount", "Free shipping" from messages to create a promotion tag and put it into the image to highlight promotion information.
 
 ![Example of auto promotion tag](https://scontent.fdel1-9.fna.fbcdn.net/v/t39.2365-6/637942395_939879988503659_167364162728640941_n.png?_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=JONJWnsaansQ7kNvwFTk9s7&_nc_oc=Adqoj4f5r8bnuAD-TKUseAtvOt3BC2afSerW-JdchbBcKIUDyS2dEW8W2szj1BSX8QRE7EexHUtG82jamP1pl-w5&_nc_zt=14&_nc_ht=scontent.fdel1-9.fna&_nc_gid=wmtmSWcHb_EXWxYx1kCM7Q&_nc_ss=7b2a8&oh=00_AQBhAGshIixRmPXnwBpZr7_8vYfzh5NCkX0XnlayxKMkAw&oe=6A6069DA)
 
@@ -95,7 +95,7 @@ For some campaigns, Meta will apply colorful paddings to transform the image cre
 
 #### Dynamic CTA
 
-For some campaigns, Meta will dynamically tailor CTA text to match the message or URL’s value prop, driving higher engagement through relevance.
+For some campaigns, Meta will dynamically tailor CTA text to match the message or URL's value prop, driving higher engagement through relevance.
 
 ![Example of dynamic CTA](https://scontent.fdel1-1.fna.fbcdn.net/v/t39.2365-6/677212286_854225160372759_4660251937918768355_n.png?_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=iBTglNhaxvEQ7kNvwHW8tje&_nc_oc=Adr84UWeRV8w-zIbcHWSE_YL820ig4nSreXN7kOmUqc2uhT-7KckJ44sal6YgQXrHtK9NtPA4z09JLLIQUnwgIpq&_nc_zt=14&_nc_ht=scontent.fdel1-1.fna&_nc_gid=wmtmSWcHb_EXWxYx1kCM7Q&_nc_ss=7b2a8&oh=00_AQBeImvqqKIuMIG6ANdreCXStXJ61eREdUwkXLgF54fYRA&oe=6A605EBE)
 
@@ -128,55 +128,53 @@ We have paused the following automatic creative optimizations, and you should no
 
 ### Configure automatic creative optimizations (template-level)
 
-All optimization features are enabled by default, but you can use the `creative_features_spec` object to specify which optimizations you want to enable (“opt-in”) or disable (“opt-out”) on a given template. To do this, set each optimization’s `enroll_status` property to either `OPT_IN` or `OPT_OUT` upon template creation, or when editing an existing template.
+All optimization features are enabled by default, but you can use the `creative_features_spec` object to specify which optimizations you want to enable ("opt-in") or disable ("opt-out") on a given template. To do this, set each optimization's `enroll_status` property to either `OPT_IN` or `OPT_OUT` upon template creation, or when editing an existing template.
 
 ### Request syntax
 
 Use the [Message Templates API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/message-template-api#post-version-waba-id-message-templates) to configure automatic creative optimizations at a template level.
 
 ```
-```
-POST /<WHATSAPP_BUSINESS_ACCOUNT_ID>/message_templates  
+POST /<WHATSAPP_BUSINESS_ACCOUNT_ID>/message_templates  
 {  
-  "name": "<TEMPLATE_NAME>",  
-  "language": "<TEMPLATE_LANGUAGE_AND_LOCALE_CODE>",  
-  "components": [<TEMPLATE_COMPONENTS>],  
-  "degrees_of_freedom_spec": {  
-    "creative_features_spec": {  
-      "image_brightness_and_contrast": {  
-        "enroll_status": "OPT_OUT"  
-      },  
-      "image_touchups": {  
-        "enroll_status": "OPT_IN"  
-      },  
-      "add_text_overlay": {  
-        "enroll_status": "OPT_OUT"  
-      },  
-      "image_animation": {  
-        "enroll_status": "OPT_IN"  
-      },  
-      "image_background_gen": {  
-        "enroll_status": "OPT_IN"  
-      },  
-      "auto_promotion_tag": {  
-        "enroll_status": "OPT_IN"  
-      },  
-     "text_extraction_for_headline": {  
-       "enroll_status": "OPT_IN"  
-     },  
-     "text_extraction_for_tap_target": {  
-       "enroll_status": "OPT_IN"  
-     },  
-      "product_extensions": {  
-        "enroll_status": "OPT_OUT"  
-      },  
-      "text_formatting_optimization": {  
-        "enroll_status": "OPT_OUT"  
-      }  
-    }  
-  }  
+  "name": "<TEMPLATE_NAME>",  
+  "language": "<TEMPLATE_LANGUAGE_AND_LOCALE_CODE>",  
+  "components": [<TEMPLATE_COMPONENTS>],  
+  "degrees_of_freedom_spec": {  
+    "creative_features_spec": {  
+      "image_brightness_and_contrast": {  
+        "enroll_status": "OPT_OUT"  
+      },  
+      "image_touchups": {  
+        "enroll_status": "OPT_IN"  
+      },  
+      "add_text_overlay": {  
+        "enroll_status": "OPT_OUT"  
+      },  
+      "image_animation": {  
+        "enroll_status": "OPT_IN"  
+      },  
+      "image_background_gen": {  
+        "enroll_status": "OPT_IN"  
+      },  
+      "auto_promotion_tag": {  
+        "enroll_status": "OPT_IN"  
+      },  
+     "text_extraction_for_headline": {  
+       "enroll_status": "OPT_IN"  
+     },  
+     "text_extraction_for_tap_target": {  
+       "enroll_status": "OPT_IN"  
+     },  
+      "product_extensions": {  
+        "enroll_status": "OPT_OUT"  
+      },  
+      "text_formatting_optimization": {  
+        "enroll_status": "OPT_OUT"  
+      }  
+    }  
+  }  
 }
-```
 ```
 
 Use the [Template API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/message-template-api#get-version-template-id) to retrieve automatic creative optimizations statuses at a template level.
@@ -184,113 +182,107 @@ Use the [Template API](https://developers.facebook.com/documentation/business-me
 ### Request syntax
 
 ```
-```
-GET /<TEMPLATE_ID>?fields=degrees_of_freedom_spec
-```
+GET /<TEMPLATE_ID>?fields=degrees_of_freedom_spec
 ```
 
 ### Example response
 
 ```
-```
 {  
-  "degrees_of_freedom_spec": {  
-    "creative_features_spec": [  
-      {  
-        "key": "IMAGE_BRIGHTNESS_AND_CONTRAST",  
-        "value": { "enroll_status": "OPT_OUT" }  
-      },  
-      {  
-        "key": "IMAGE_TOUCHUPS",  
-        "value": { "enroll_status": "OPT_OUT" }  
-      },  
-      {  
-        "key": "ADD_TEXT_OVERLAY",  
-        "value": { "enroll_status": "OPT_IN" }  
-      },  
-      {  
-        "key": "IMAGE_ANIMATION",  
-        "value": { "enroll_status": "OPT_OUT" }  
-      },  
-      {  
-        "key": "IMAGE_BACKGROUND_GEN",  
-        "value": { "enroll_status": "OPT_OUT" }  
-      },  
-      {  
-        "key": "AUTO_PROMOTION_TAG",  
-        "value": { "enroll_status": "OPT_OUT" }  
-      },  
-      {  
-        "key": "TEXT_EXTRACTION_FOR_HEADLINE",  
-        "value": { "enroll_status": "OPT_OUT" }  
-      },  
-      {  
-        "key": "TEXT_EXTRACTION_FOR_TAP_TARGET",  
-        "value": { "enroll_status": "OPT_OUT" }  
-      },  
-      {  
-        "key": "PRODUCT_EXTENSIONS",  
-        "value": { "enroll_status": "OPT_IN" }  
-      },  
-      {  
-        "key": "TEXT_FORMATTING_OPTIMIZATION",  
-        "value": { "enroll_status": "OPT_IN" }  
-      }  
-    ]  
-  },  
-  "id": "123456789"  
+  "degrees_of_freedom_spec": {  
+    "creative_features_spec": [  
+      {  
+        "key": "IMAGE_BRIGHTNESS_AND_CONTRAST",  
+        "value": { "enroll_status": "OPT_OUT" }  
+      },  
+      {  
+        "key": "IMAGE_TOUCHUPS",  
+        "value": { "enroll_status": "OPT_OUT" }  
+      },  
+      {  
+        "key": "ADD_TEXT_OVERLAY",  
+        "value": { "enroll_status": "OPT_IN" }  
+      },  
+      {  
+        "key": "IMAGE_ANIMATION",  
+        "value": { "enroll_status": "OPT_OUT" }  
+      },  
+      {  
+        "key": "IMAGE_BACKGROUND_GEN",  
+        "value": { "enroll_status": "OPT_OUT" }  
+      },  
+      {  
+        "key": "AUTO_PROMOTION_TAG",  
+        "value": { "enroll_status": "OPT_OUT" }  
+      },  
+      {  
+        "key": "TEXT_EXTRACTION_FOR_HEADLINE",  
+        "value": { "enroll_status": "OPT_OUT" }  
+      },  
+      {  
+        "key": "TEXT_EXTRACTION_FOR_TAP_TARGET",  
+        "value": { "enroll_status": "OPT_OUT" }  
+      },  
+      {  
+        "key": "PRODUCT_EXTENSIONS",  
+        "value": { "enroll_status": "OPT_IN" }  
+      },  
+      {  
+        "key": "TEXT_FORMATTING_OPTIMIZATION",  
+        "value": { "enroll_status": "OPT_IN" }  
+      }  
+    ]  
+  },  
+  "id": "123456789"  
 }
-```
 ```
 
 ### Configure automatic creative optimizations (WhatsApp Business Account-level)
 
-All optimization features are disabled by default, but you can use the `creative_features_spec` object to specify which optimizations you want to enable (“opt-in”) or disable (“opt-out”) for the entire WhatsApp Business Account. To do this, set each optimization’s `enroll_status` property that you wish to modify to either `OPT_IN` or `OPT_OUT`.
+All optimization features are disabled by default, but you can use the `creative_features_spec` object to specify which optimizations you want to enable ("opt-in") or disable ("opt-out") for the entire WhatsApp Business Account. To do this, set each optimization's `enroll_status` property that you wish to modify to either `OPT_IN` or `OPT_OUT`.
 
 ### Request syntax
 
 Use the [WhatsApp Business Account API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/whatsapp-business-account-api#post-version-waba-id) to configure automatic creative optimizations at a WhatsApp Business Account level.
 
 ```
-```
-POST /<WHATSAPP_BUSINESS_ACCOUNT_ID>  
+POST /<WHATSAPP_BUSINESS_ACCOUNT_ID>  
 {  
-  "degrees_of_freedom_spec": {  
-    "creative_features_spec": {  
-      "image_touchups": {  
-        "enroll_status": "OPT_IN"  
-      },  
-      "image_animation": {  
-        "enroll_status": "OPT_IN"  
-      },  
-      "image_brightness_and_contrast": {  
-        "enroll_status": "OPT_IN"  
-      },  
-      "add_text_overlay": {  
-        "enroll_status": "OPT_IN"  
-      },  
-      "image_background_gen": {  
-        "enroll_status": "OPT_IN"  
-      },  
-      "auto_promotion_tag": {  
-        "enroll_status": "OPT_IN"  
-      },  
-      "text_extraction_for_headline": {  
-        "enroll_status": "OPT_IN"  
-      },  
-      "product_extensions": {  
-        "enroll_status": "OPT_IN"  
-      },  
-      "text_extraction_for_tap_target": {  
-        "enroll_status": "OPT_IN"  
-      },  
-      "text_formatting_optimization": {  
-        "enroll_status": "OPT_OUT"  
-      }  
-    }  
-  }  
+  "degrees_of_freedom_spec": {  
+    "creative_features_spec": {  
+      "image_touchups": {  
+        "enroll_status": "OPT_IN"  
+      },  
+      "image_animation": {  
+        "enroll_status": "OPT_IN"  
+      },  
+      "image_brightness_and_contrast": {  
+        "enroll_status": "OPT_IN"  
+      },  
+      "add_text_overlay": {  
+        "enroll_status": "OPT_IN"  
+      },  
+      "image_background_gen": {  
+        "enroll_status": "OPT_IN"  
+      },  
+      "auto_promotion_tag": {  
+        "enroll_status": "OPT_IN"  
+      },  
+      "text_extraction_for_headline": {  
+        "enroll_status": "OPT_IN"  
+      },  
+      "product_extensions": {  
+        "enroll_status": "OPT_IN"  
+      },  
+      "text_extraction_for_tap_target": {  
+        "enroll_status": "OPT_IN"  
+      },  
+      "text_formatting_optimization": {  
+        "enroll_status": "OPT_OUT"  
+      }  
+    }  
+  }  
 }
-```
 ```
 
 ### Request syntax
@@ -298,46 +290,42 @@ POST /<WHATSAPP_BUSINESS_ACCOUNT_ID>
 Use the [WhatsApp Business Account API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/whatsapp-business-account-api#get-version-waba-id) to retrieve automatic creative optimizations statuses at a WhatsApp Business Account level.
 
 ```
-```
-GET /<WHATSAPP_BUSINESS_ACCOUNT_ID>?fields=degrees_of_freedom_spec
-```
+GET /<WHATSAPP_BUSINESS_ACCOUNT_ID>?fields=degrees_of_freedom_spec
 ```
 
 ### Example response
 
 ```
-```
 {  
-  "degrees_of_freedom_spec": {  
-    "data": [  
-      {  
-        "creative_features_spec": [  
-          {  
-            "image_brightness_and_contrast": "OPT_IN",  
-            "image_touchups": "OPT_IN",  
-            "add_text_overlay": "OPT_IN",  
-            "image_animation": "OPT_IN",  
-            "image_background_gen": "OPT_IN",  
-            "auto_promotion_tag": "OPT_IN",  
-            "text_extraction_for_headline": "OPT_IN",  
-            "product_extensions": "OPT_IN",  
-            "text_extraction_for_tap_target": "OPT_IN",  
-            "text_formatting_optimization": "OPT_IN"  
-          }  
-        ]  
-      }  
-    ]  
-  },  
-  "id": "1234567890"  
+  "degrees_of_freedom_spec": {  
+    "data": [  
+      {  
+        "creative_features_spec": [  
+          {  
+            "image_brightness_and_contrast": "OPT_IN",  
+            "image_touchups": "OPT_IN",  
+            "add_text_overlay": "OPT_IN",  
+            "image_animation": "OPT_IN",  
+            "image_background_gen": "OPT_IN",  
+            "auto_promotion_tag": "OPT_IN",  
+            "text_extraction_for_headline": "OPT_IN",  
+            "product_extensions": "OPT_IN",  
+            "text_extraction_for_tap_target": "OPT_IN",  
+            "text_formatting_optimization": "OPT_IN"  
+          }  
+        ]  
+      }  
+    ]  
+  },  
+  "id": "1234567890"  
 }
-```
 ```
 
 ## Other optimizations
 
 ### Text truncation
 
-Meta truncates text to a specific line-count to increase performance. No text content is changed, the original text is still accessible through the “Read more” button. The exact line count truncation rules are as follows:
+Meta truncates text to a specific line-count to increase performance. No text content is changed, the original text is still accessible through the "Read more" button. The exact line count truncation rules are as follows:
 
 * **Messages without any CTA, but with a link in the message body** (overrides the below rules): truncated to 5 lines
 * **Messages with a media header** ([Image](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/image-messages), [Video](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/video-messages), [Document](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/document-messages), [Location](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/components#media-header), and [GIF](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/components#media-header)): truncated to 3 lines
@@ -360,21 +348,19 @@ Note: You may still use the `/messages` endpoint to send marketing messages thro
 ### Request syntax
 
 ```
-```
-POST /<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/marketing_messages  
+POST /<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/marketing_messages  
 {  
-  "messaging_product": "whatsapp",  
-  "recipient_type": "individual",  
-  "to": "<WHATSAPP_USER_PHONE_NUMBER>",  
-  "type": "<MESSAGE_TYPE>",  
-  "<MESSAGE_TYPE>": {  
-    <MESSAGE_CONTENTS>  
-  },  
-  <!-- Optional -->  
-  "product_policy": "<PRODUCT_POLICY>",  
-  "message_activity_sharing": <SHARE_MESSAGING_ACTIVITY?>  
+  "messaging_product": "whatsapp",  
+  "recipient_type": "individual",  
+  "to": "<WHATSAPP_USER_PHONE_NUMBER>",  
+  "type": "<MESSAGE_TYPE>",  
+  "<MESSAGE_TYPE>": {  
+    <MESSAGE_CONTENTS>  
+  },  
+  <!-- Optional -->  
+  "product_policy": "<PRODUCT_POLICY>",  
+  "message_activity_sharing": <SHARE_MESSAGING_ACTIVITY?>  
 }
-```
 ```
 
 MM API for WhatsApp provides the following additional features that are not available to Marketing template messages on Cloud API:
@@ -391,22 +377,20 @@ Marketing Messages API for WhatsApp supports sending messages using a phone numb
 #### Request
 
 ```
-```
-curl 'https://graph.facebook.com/<API_VERSION>/<BUSINESS_PHONE_NUMBER_ID>/marketing_messages' \  
--H 'Content-Type: application/json' \  
--H 'Authorization: Bearer <ACCESS_TOKEN>' \  
--d '  
+curl 'https://graph.facebook.com/<API_VERSION>/<BUSINESS_PHONE_NUMBER_ID>/marketing_messages' \  
+-H 'Content-Type: application/json' \  
+-H 'Authorization: Bearer <ACCESS_TOKEN>' \  
+-d '  
 {  
-  "messaging_product": "whatsapp",  
-  "recipient_type": "individual",  
-  "to": "<USER_PHONE_NUMBER>",  
-  "recipient": "<BSUID>",  
-  "type": "template",  
-  "template": {  
-    <EXPECTED_TEMPLATE_PARAMETERS>  
-  }  
+  "messaging_product": "whatsapp",  
+  "recipient_type": "individual",  
+  "to": "<USER_PHONE_NUMBER>",  
+  "recipient": "<BSUID>",  
+  "type": "template",  
+  "template": {  
+    <EXPECTED_TEMPLATE_PARAMETERS>  
+  }  
 }'
-```
 ```
 
 #### Field reference
@@ -427,85 +411,77 @@ curl 'https://graph.facebook.com/<API_VERSION>/<BUSINESS_PHONE_NUMBER_ID>/marke
 The response adds a `user_id` field and changes the semantics of `input` and `wa_id`:
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "contacts": [  
-    {  
-      "input": "<USER_PHONE_NUMBER_OR_BSUID>",  
-      "wa_id": "<USER_PHONE_NUMBER>",  
-      "user_id": "<BSUID>"  
-    }  
-  ],  
-  "messages": [  
-    {  
-      "id": "<WHATSAPP_MESSAGE_ID>"  
-    }  
-  ]  
+  "messaging_product": "whatsapp",  
+  "contacts": [  
+    {  
+      "input": "<USER_PHONE_NUMBER_OR_BSUID>",  
+      "wa_id": "<USER_PHONE_NUMBER>",  
+      "user_id": "<BSUID>"  
+    }  
+  ],  
+  "messages": [  
+    {  
+      "id": "<WHATSAPP_MESSAGE_ID>"  
+    }  
+  ]  
 }
-```
 ```
 
 | Field | Description |
 | --- | --- |
-| `input` | The user’s phone number if the message was sent by phone number, the user’s BSUID (or parent BSUID) if sent by BSUID, or the group ID if sent to a group. |
-| `wa_id` | The user’s phone number. Omitted when the message was sent using a BSUID. |
-| `user_id` | The user’s BSUID (or parent BSUID) when the message was sent using a BSUID. Omitted when only a phone number is provided or when both phone number and BSUID are provided. |
+| `input` | The user's phone number if the message was sent by phone number, the user's BSUID (or parent BSUID) if sent by BSUID, or the group ID if sent to a group. |
+| `wa_id` | The user's phone number. Omitted when the message was sent using a BSUID. |
+| `user_id` | The user's BSUID (or parent BSUID) when the message was sent using a BSUID. Omitted when only a phone number is provided or when both phone number and BSUID are provided. |
 
 #### Example — send to phone number
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "contacts": [  
-    { "input": "+16505551234", "wa_id": "16505551234" }  
-  ],  
-  "messages": [  
-    { "id": "wamid.HBgLMTY0NjcwNDM1OTUVAgARGBI1RjQyNUE3NEYxMzAzMzQ5MkEA" }  
-  ]  
+  "messaging_product": "whatsapp",  
+  "contacts": [  
+    { "input": "+16505551234", "wa_id": "16505551234" }  
+  ],  
+  "messages": [  
+    { "id": "wamid.HBgLMTY0NjcwNDM1OTUVAgARGBI1RjQyNUE3NEYxMzAzMzQ5MkEA" }  
+  ]  
 }
-```
 ```
 
 #### Example — send to BSUID
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "contacts": [  
-    {  
-      "input": "US.13491208655302741918",  
-      "user_id": "US.13491208655302741918"  
-    }  
-  ],  
-  "messages": [  
-    { "id": "wamid.HBgLMTY0NjcwNDM1OTUVAgARGBI1RjQyNUE3NEYxMzAzMzQ5MkEA" }  
-  ]  
+  "messaging_product": "whatsapp",  
+  "contacts": [  
+    {  
+      "input": "US.13491208655302741918",  
+      "user_id": "US.13491208655302741918"  
+    }  
+  ],  
+  "messages": [  
+    { "id": "wamid.HBgLMTY0NjcwNDM1OTUVAgARGBI1RjQyNUE3NEYxMzAzMzQ5MkEA" }  
+  ]  
 }
-```
 ```
 
 #### Example — when both phone number and BSUID are omitted
 
 ```
-```
 {  
-  "error": {  
-    "message": "The parameter to is required.",  
-    "type": "OAuthException",  
-    "code": 100,  
-    "fbtrace_id": "ANPlYYIqhnaWG-FIJ-rABkS"  
-  }  
+  "error": {  
+    "message": "The parameter to is required.",  
+    "type": "OAuthException",  
+    "code": 100,  
+    "fbtrace_id": "ANPlYYIqhnaWG-FIJ-rABkS"  
+  }  
 }
-```
 ```
 
 ### Limitations when sending by BSUID
 
 * **Delivery optimization is not applied.** Marketing Messages Lite API delivery optimization does not run for sends addressed by BSUID.
-* **Dynamic pricing (`bid_spec`) is not supported with BSUID recipients.** Sending a marketing template that includes `bid_spec` to a BSUID recipient returns error `131062`. To use `bid_spec`, send to the user’s phone number, or use a template without `bid_spec`.
+* **Dynamic pricing (`bid_spec`) is not supported with BSUID recipients.** Sending a marketing template that includes `bid_spec` to a BSUID recipient returns error `131062`. To use `bid_spec`, send to the user's phone number, or use a template without `bid_spec`.
 
 ### Error: `131062` — BSUID recipients not supported for this message
 
@@ -513,7 +489,7 @@ The response adds a `user_id` field and changes the semantics of `input` and `wa
 | --- | --- |
 | **Code** | `131062` |
 | **Type** | `OAuthException` |
-| **Message** | “Business-scoped User ID (BSUID) recipients are not supported for this message.” |
+| **Message** | "Business-scoped User ID (BSUID) recipients are not supported for this message." |
 
 This error is returned when:
 
@@ -521,19 +497,17 @@ This error is returned when:
 * An authentication template is sent to a BSUID recipient.
 
 ```
-```
 {  
-  "error": {  
-    "message": "(#131062) Business-scoped User ID (BSUID) recipients are not supported for this message.",  
-    "type": "OAuthException",  
-    "code": 131062,  
-    "error_data": {  
-      "messaging_product": "whatsapp",  
-      "details": "The template specified in the request uses bid_spec, which is not supported for Business-scoped user ID (BSUID) recipients. To send this template, please provide the phone number of recipients or use a template without the bid_spec field."  
-    }  
-  }  
+  "error": {  
+    "message": "(#131062) Business-scoped User ID (BSUID) recipients are not supported for this message.",  
+    "type": "OAuthException",  
+    "code": 131062,  
+    "error_data": {  
+      "messaging_product": "whatsapp",  
+      "details": "The template specified in the request uses bid_spec, which is not supported for Business-scoped user ID (BSUID) recipients. To send this template, please provide the phone number of recipients or use a template without the bid_spec field."  
+    }  
+  }  
 }
-```
 ```
 
 ## Disable marketing messages on Cloud API
@@ -547,12 +521,10 @@ This setting has no effect on WhatsApp Business Accounts (WABAs) that have not s
 Use the [WhatsApp Business Account API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/whatsapp-business-account-api#post-version-waba-id) to enable or disable marketing messages on Cloud API.
 
 ```
-```
-POST /<WHATSAPP_BUSINESS_ACCOUNT_ID>  
+POST /<WHATSAPP_BUSINESS_ACCOUNT_ID>  
 {  
-  "disable_marketing_messages_on_cloud_api": true | false  
+  "disable_marketing_messages_on_cloud_api": true | false  
 }
-```
 ```
 
 Set `disable_marketing_messages_on_cloud_api` to `true` to block Marketing category templates on the Cloud API `/messages` endpoint. Set to `false` to allow Marketing category templates on Cloud API (default).
@@ -574,11 +546,9 @@ curl 'https://graph.facebook.com/v25.0/102290129340398' \
 ### Example response
 
 ```
-```
 {  
-  "id": "102290129340398"  
+  "id": "102290129340398"  
 }
-```
 ```
 
 ### Request syntax
@@ -586,20 +556,16 @@ curl 'https://graph.facebook.com/v25.0/102290129340398' \
 Use the [WhatsApp Business Account API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/whatsapp-business-account-api#get-version-waba-id) to check the current value.
 
 ```
-```
-GET /<WHATSAPP_BUSINESS_ACCOUNT_ID>?fields=disable_marketing_messages_on_cloud_api
-```
+GET /<WHATSAPP_BUSINESS_ACCOUNT_ID>?fields=disable_marketing_messages_on_cloud_api
 ```
 
 ### Example response
 
 ```
-```
 {  
-  "disable_marketing_messages_on_cloud_api": true,  
-  "id": "102290129340398"  
+  "disable_marketing_messages_on_cloud_api": true,  
+  "id": "102290129340398"  
 }
-```
 ```
 
 ### Error response
@@ -607,20 +573,18 @@ GET /<WHATSAPP_BUSINESS_ACCOUNT_ID>?fields=disable_marketing_messages_on_cloud_
 If `disable_marketing_messages_on_cloud_api` is set to `true` and you attempt to send a Marketing category template through the Cloud API `/messages` endpoint, the API returns the following error:
 
 ```
-```
 {  
-  "error": {  
-    "message": "(#131063) Marketing templates disabled for Cloud API",  
-    "type": "OAuthException",  
-    "code": 131063,  
-    "error_data": {  
-      "messaging_product": "whatsapp",  
-      "details": "Your template is categorized as Marketing, but marketing templates are currently disabled for your Cloud API configuration. To send this template, use the Marketing Messages API for WhatsApp or enable marketing templates on Cloud API by turning off disable_marketing_messages_on_cloud_api."  
-    },  
-    "fbtrace_id": "ABzNMWIqsLJ7hbj8xd5ytay"  
-  }  
+  "error": {  
+    "message": "(#131063) Marketing templates disabled for Cloud API",  
+    "type": "OAuthException",  
+    "code": 131063,  
+    "error_data": {  
+      "messaging_product": "whatsapp",  
+      "details": "Your template is categorized as Marketing, but marketing templates are currently disabled for your Cloud API configuration. To send this template, use the Marketing Messages API for WhatsApp or enable marketing templates on Cloud API by turning off disable_marketing_messages_on_cloud_api."  
+    },  
+    "fbtrace_id": "ABzNMWIqsLJ7hbj8xd5ytay"  
+  }  
 }
-```
 ```
 
 ### Fallback behavior on `/marketing_messages`

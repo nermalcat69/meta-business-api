@@ -17,7 +17,7 @@ Instagram Messaging is available for the following accounts:
 You can check the eligibility for accounts that you manage using the
 [Conversations API](https://developers.facebook.com/documentation/business-messaging/messenger-platform/conversations).
 
-If your app users don’t have a Facebook Page linked to their Instagram account, you can use the [Instagram Platform’s Messaging API](https://developers.facebook.com/docs/instagram-platform/instagram-api-with-instagram-login/messaging-api) instead.
+If your app users don't have a Facebook Page linked to their Instagram account, you can use the [Instagram Platform's Messaging API](https://developers.facebook.com/docs/instagram-platform/instagram-api-with-instagram-login/messaging-api) instead.
 
 ## Common uses
 
@@ -90,9 +90,9 @@ Automated chat experiences that serve the following groups should pay special at
 * California market or California users
 * German market or German users
 
-Disclosures may include but are not limited to: “I’m the [Page Name] bot,”“You are interacting with an automated experience,” “You are talking to a bot,” or “I am an automated chatbot.”
+Disclosures may include but are not limited to: "I'm the [Page Name] bot,""You are interacting with an automated experience," "You are talking to a bot," or "I am an automated chatbot."
 
-Even where not legally required, we recommend informing users when they’re interacting with an automated chat as best practice, as this helps manage user expectations about their interaction with your messaging experience.
+Even where not legally required, we recommend informing users when they're interacting with an automated chat as best practice, as this helps manage user expectations about their interaction with your messaging experience.
 
 Visit our
 [Developer Policies](https://developers.facebook.com/devpolicy/#messengerplatform)

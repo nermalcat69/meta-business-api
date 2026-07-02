@@ -3,7 +3,7 @@ title: "Messenger Platform"
 source_url: https://developers.facebook.com/documentation/business-messaging/messenger-platform/overview
 ---
 
-What’s next for business messaging and AI? Watch the Conversations keynote.
+What's next for business messaging and AI? Watch the Conversations keynote.
 
 [**Watch now**⁠](https://www.facebook.com/MetaforDevelopers/videos/1033573362435484/C26-EN-M4D-web-website_m4d-Website-Global-doc-messenger--)
 

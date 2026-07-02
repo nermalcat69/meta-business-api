@@ -226,7 +226,7 @@ You'll need to update your Android apps to Audience SDK 6.5 or later to continue
 
 ### Change: Data processing options
 
-* We’ve released a Limited Data Use feature to give businesses more control over how their data is used in our systems and better support them with their [California Consumer Privacy Act (CCPA)](https://developers.facebook.com/docs/audience-network/support/faq/ccpa) compliance efforts.
+* We've released a Limited Data Use feature to give businesses more control over how their data is used in our systems and better support them with their [California Consumer Privacy Act (CCPA)](https://developers.facebook.com/docs/audience-network/support/faq/ccpa) compliance efforts.
 
 ## Audience Network SDK 5.9.1 - June 19, 2020
 
@@ -313,7 +313,7 @@ We have changed the flag for the label for Mixed Audiences, from `isChildDirecte
 
 ### Bug fixes and changes
 
-* Fixed: Playable ads no longer freeze on the intro card, which prevented ads from showing, and locking the user’s screen.
+* Fixed: Playable ads no longer freeze on the intro card, which prevented ads from showing, and locking the user's screen.
 * Fixed: Playable ads failed to render, showing HTML source code instead of ad assets.
 * Fixed: Orientation issues with landscape screenshots on RV end cards.
 
@@ -355,7 +355,7 @@ NativeAdBase
 * Fixed NPE in NativeBanner with ImageView
 * Fixed issue with dex loading
 * Fixed NPE in RewardedVideo
-* SDK won’t crash if app is not hardware accelerated
+* SDK won't crash if app is not hardware accelerated
 
 ## What's New in 5.4.0
 
@@ -427,7 +427,7 @@ Exoplayer is no longer a dependency of the SDK.
 
 * Fixed issue with dex loading
 * Fixed NPE in RewardedVideo
-* SDK won’t crash if app is not hardware accelerated
+* SDK won't crash if app is not hardware accelerated
 
 ## Audience Network SDK 5.3.1 - May 20, 2019
 
@@ -445,7 +445,7 @@ Exoplayer is no longer a dependency of the SDK.
 * The Android SDK now uses less upstream network traffic when communicating with Facebook servers.
 * The SDK is now bundled differently to improve our security measures. We ship a separate asset that is a dex file with more code. Bytecode manipulation of this dex file is not allowed.
 * New method (`isInitialized`) in `AudienceNetworkAds` that allows applications to test whether the SDK is initialized. This allows publishers to avoid double initialization.
-* New method (`getAdsProcessName`) in `AudienceNetworkAds` that allows applications to check whether the current process is an internal SDK process (same as `isInAdsProcess` that was introduced in 5.1). For publishers who want more control over their apps’ processes, this can be used to filter the process spawned by the ads SDK.
+* New method (`getAdsProcessName`) in `AudienceNetworkAds` that allows applications to check whether the current process is an internal SDK process (same as `isInAdsProcess` that was introduced in 5.1). For publishers who want more control over their apps' processes, this can be used to filter the process spawned by the ads SDK.
 * `NativeAdViewAttributes` constructor now requires a Context object.
 
 ## Audience Network SDK 5.2.1 - Mar 14, 2019
@@ -502,7 +502,7 @@ Exoplayer is no longer a dependency of the SDK.
 * Important notes! In order to support Android P, please refer to [Android Network Security Config guide](https://developers.facebook.com/docs/audience-network/android-network-security-config)
 * Added Playable Ad format in Rewarded Video Placements: Playable ads are a new interactive ad format that allows advertisers to offer a short preview of their game, app or brand before people can choose to download the app.
 * Long videos now supported on Rewarded Video with skip option.
-* New ‘Report Ad’ icon in Interstitials and Rewarded Video.
+* New 'Report Ad' icon in Interstitials and Rewarded Video.
 * New End cards for Rewarded Video.
 * Make failOnCacheFailure default for Rewarded Video
 * New design for Interstitial Ads.
@@ -519,7 +519,7 @@ Exoplayer is no longer a dependency of the SDK.
 * Stopped NativeAd Template and NativeBannerAd Template from crashing the sample app.
 * Added error codes for internal errors.
 * Runtime Exception in MediaPlayer.hasSound
-* Don’t replay skipped Instream Video
+* Don't replay skipped Instream Video
 * Fixed Null Pointer Exception DefaultMediaViewVideoRenderer.
 * Fixed crash in AudienceNetworkActivity.
 * Fixed RejectedExecution exception.
@@ -535,7 +535,7 @@ Exoplayer is no longer a dependency of the SDK.
 
 ### Added
 
-* Support ImageView for NativeAd’s ad Icon.
+* Support ImageView for NativeAd's ad Icon.
 * Added optional OnActivityDestroyed callback for Rewarded Video and Interstitial.
 
 ### Fixed
@@ -553,17 +553,17 @@ Exoplayer is no longer a dependency of the SDK.
 * MediaView is now enforced for Native Ads
 * New IconView is now enforced for Native Banner Ads
 * Native Ads API Updates
-* Added “advertiserName”, “headline”, “linkDescription”, “sponsoredTranslation”, “adTranslation”, “promotedTranslation”
-* Renamed “body” to “bodyText”
+* Added "advertiserName", "headline", "linkDescription", "sponsoredTranslation", "adTranslation", "promotedTranslation"
+* Renamed "body" to "bodyText"
 * Caching all media assets is now the default for NativeAd and NativeBannerAd (media for nativeAd are image / video and icon. Media for nativeBannerAds is icon).
 * MediaCacheFlag now has only two options; All or NONE.
 * added onMediaDownloaded() callback in NativeAdListener to notify when media has been successfully downloaded.
-* Added (NativeAd / NativeBannerAd).downloadMedia method to download media on publisher’s own.
+* Added (NativeAd / NativeBannerAd).downloadMedia method to download media on publisher's own.
 * Exclude parent view group from clickable areas unless a publisher intentionally includes them to a list of clickableViews.
 
 ### Removed
 
-* Removed “title” and “subtitle” from the Native Ads API
+* Removed "title" and "subtitle" from the Native Ads API
 
 ### Fixed
 
@@ -578,14 +578,14 @@ Exoplayer is no longer a dependency of the SDK.
 * Fixed new OutOfMemory issues
 * Fixed IllegalStateException in MediaPlayer
 * Fixed Native Ad blinking when playing a video
-* Fixed error when unregistering a view that has been gc’ed
+* Fixed error when unregistering a view that has been gc'ed
 
 ## Audience Network SDK 4.28.1 - April 9, 2018
 
 ### Fixed
 
 * NPE fixes
-* Fixed crash when setting background on MediaView due to TextureView’s not supporting it since Android Nougat
+* Fixed crash when setting background on MediaView due to TextureView's not supporting it since Android Nougat
 * Fixed crash due to locked database
 * Fixed Out Of Memory issues
 * Fixed an issue with ImagePlaceHolder not showing before a video ad starts
@@ -691,6 +691,6 @@ Exoplayer is no longer a dependency of the SDK.
 ### Fixed
 
 * Fixed crash when interacting with the screen after rewarded video finishes and before showing the endcard
-* Fixed no fill on the very first impression when advertising id hasn’t been retrieved yet
-* Exoplayer doesn’t restart video anymore after rotation on Interstitials
+* Fixed no fill on the very first impression when advertising id hasn't been retrieved yet
+* Exoplayer doesn't restart video anymore after rotation on Interstitials
 * Fixed crash on old Android devices (below 4.2) for video interstitial ads

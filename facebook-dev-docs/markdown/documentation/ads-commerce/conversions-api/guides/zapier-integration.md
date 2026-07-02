@@ -11,7 +11,7 @@ Updated: May 5, 2026
 
 **No code changes are needed.**
 
-Tier labels have been updated: “Standard Access” is now **Limited Access**, and “Advanced Access” is now **Full Access**. The revised qualification threshold for Full Access has been reduced from 1,500 to **500 Marketing API calls** in the past 15 days. The underlying permission identifier remains the same, and existing access levels are preserved automatically. Learn more in the [Marketing API Access Tier documentation](https://developers.facebook.com/docs/features-reference#marketing-api-access-tier).
+Tier labels have been updated: "Standard Access" is now **Limited Access**, and "Advanced Access" is now **Full Access**. The revised qualification threshold for Full Access has been reduced from 1,500 to **500 Marketing API calls** in the past 15 days. The underlying permission identifier remains the same, and existing access levels are preserved automatically. Learn more in the [Marketing API Access Tier documentation](https://developers.facebook.com/docs/features-reference#marketing-api-access-tier).
 
 If you offer Meta Pixel setup as part of your tag management services, you may want to consider adding Conversions API functionalities. Integration with the Conversions API allows your customers to send web events to Meta directly, without having to rely on browser pixel events.
 
@@ -49,7 +49,7 @@ To start offering Conversions API as a platform, your app needs to go through [A
 
 ## Get Started
 
-If this is your first time using the Conversions API, follow these steps to create a Business, Meta app, Meta Pixel, and system user. Then, you will be able to use your system user’s access token to send server events via the Conversions API.
+If this is your first time using the Conversions API, follow these steps to create a Business, Meta app, Meta Pixel, and system user. Then, you will be able to use your system user's access token to send server events via the Conversions API.
 
 ### Step 1: [Create a business⁠](https://www.facebook.com/business/help/1710077379203657?id=180505742745347).
 
@@ -68,12 +68,12 @@ If this is your first time using the Conversions API, follow these steps to crea
 
 Once you have successfully sent a server event to your own Meta Pixel, you have options on how to send events on behalf of your clients.
 
-### For Meta Pixels owned or managed by the partner’s Business Manager
+### For Meta Pixels owned or managed by the partner's Business Manager
 
 * In **Business Manager**, go to the **Users** section and select the **System User** tab. Click on the specific system user you are using for Conversions API.
 * Go to the **Assign Asset** dialog and choose **Pixels**. Then, select the pixels for which you want to send events on behalf of.
 * For each pixel, select the **Manage Pixel** permission, and click **Save Changes**.
-* Go back to your system user’s details page. Verify that the selected pixels are visible there.
+* Go back to your system user's details page. Verify that the selected pixels are visible there.
 
 ### For Meta Pixels not managed by the partner
 
@@ -81,19 +81,19 @@ You must first request authorization to send events on behalf of your clients. Y
 
 #### Facebook Business Extension (Recommended)
 
-With this option, [Facebook Business Extension](https://developers.facebook.com/docs/facebook-business-extension) (FBE) returns all the necessary information needed to send events on behalf of the client via the following process. FBE provides an endpoint to retrieve system user access tokens created in the client’s Business Manager. This process includes permissions to send server events and is done automatically and in a secured way.
+With this option, [Facebook Business Extension](https://developers.facebook.com/docs/facebook-business-extension) (FBE) returns all the necessary information needed to send events on behalf of the client via the following process. FBE provides an endpoint to retrieve system user access tokens created in the client's Business Manager. This process includes permissions to send server events and is done automatically and in a secured way.
 
 The endpoint requires a user access token as an input parameter. For new FBE users, call this endpoint to fetch the system user access token after you finish setting up the FBE. Existing users need to ask for re-authentication before calling the new API endpoint.
 
 #### Client System User Access Token
 
-With this option, you must have your client manually create a system user access token via the Conversions API inside the **Pixel Settings**. You can then send events to the advertiser’s pixel with that token.
+With this option, you must have your client manually create a system user access token via the Conversions API inside the **Pixel Settings**. You can then send events to the advertiser's pixel with that token.
 
 A system user or an admin system user must install the app that will be used to generate the access token. With this setup, your app is allowed to call APIs on behalf of this system user or admin system user.
 
-Follow our [Get Started](https://developers.facebook.com/documentation/ads-commerce/conversions-api/get-started#access-token) documentation and request a system’s user token from your advertiser. Remember to use your own Meta Pixel and access token for testing.
+Follow our [Get Started](https://developers.facebook.com/documentation/ads-commerce/conversions-api/get-started#access-token) documentation and request a system's user token from your advertiser. Remember to use your own Meta Pixel and access token for testing.
 
-#### Client Sharing of a Meta Pixel to Partner’s Business Manager
+#### Client Sharing of a Meta Pixel to Partner's Business Manager
 
 With this option, the client shares their Meta Pixel to the partner via Business Manager settings or [via the API](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ads-pixel/shared_accounts). Then, you can assign the partner system user to the client pixel and [generate an access token to send server events](https://developers.facebook.com/documentation/ads-commerce/conversions-api/set-up-conversions-api-as-a-platform#get-started).
 
@@ -139,7 +139,7 @@ Sending events sent via the Conversions API is just like sending events via the 
 
 #### Capture offline and down-funnel events
 
-If someone uses an advertisers’ website to sign up for a credit card, they can send events such as ViewContent, Application Start, and Application Submit via the browser to the Meta Pixel. However, the end user still needs to be approved for this credit card. The Approval event happens offline and cannot be sent via browser. To register this final step, the advertiser can send the Approval via the Conversions API.
+If someone uses an advertisers' website to sign up for a credit card, they can send events such as ViewContent, Application Start, and Application Submit via the browser to the Meta Pixel. However, the end user still needs to be approved for this credit card. The Approval event happens offline and cannot be sent via browser. To register this final step, the advertiser can send the Approval via the Conversions API.
 
 #### Signal resiliency
 
@@ -172,7 +172,7 @@ To take full advantage of the Conversions API, no part of the data flow should b
 
 We recommend that you provide advertisers with a way to test this connection on your own platform.
 
-* Send a test event via the Conversions API to the advertiser’s pixel. Look for a `200` return code.
+* Send a test event via the Conversions API to the advertiser's pixel. Look for a `200` return code.
 * Update the status of the connection appropriately.
 
 **Will events sent by browser and Conversions API to a Meta Pixel be counted twice?**
@@ -181,6 +181,6 @@ Meta tries to deduplicate identical events sent through the Meta Pixel and the C
 
 **What is the external\_id parameter and how is it used?**
 
-The [`external_id` parameter](https://developers.facebook.com/documentation/ads-commerce/conversions-api/parameters/customer-information-parameters#external-id) is a string that represents a user on an advertiser’s system. These IDs help improve ads attribution and create audiences.
+The [`external_id` parameter](https://developers.facebook.com/documentation/ads-commerce/conversions-api/parameters/customer-information-parameters#external-id) is a string that represents a user on an advertiser's system. These IDs help improve ads attribution and create audiences.
 
 You can send `external_id`s via browser or the Conversions API, but you must be consistent across channels. For example, if you send a browser pixel event with `external_id` set to `123`, your server event for that same user should also have `external_id` set to `123`.

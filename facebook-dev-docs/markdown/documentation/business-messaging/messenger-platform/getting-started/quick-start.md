@@ -9,7 +9,7 @@ Updated: May 5, 2026
 
 Learn how your business can send a message to a customer using the Messenger Platform.
 
-You can use this tutorial to send a message from **your app** or, if you don’t have a fully functional app or just want to explore, you can use our **Graph API Explorer**.
+You can use this tutorial to send a message from **your app** or, if you don't have a fully functional app or just want to explore, you can use our **Graph API Explorer**.
 
 ## Before You Start
 
@@ -50,17 +50,14 @@ The `me` endpoint is a special endpoint that represents the ID for the User, Pag
 #### Sample Request
 
 ```
-```
 curl -i -X GET "https://graph.facebook.com/<API_VERSION>/me/accounts
     ?access_token=<USER_ACCESS_TOKEN>"
-```
 ```
 
 #### Example Response
 
 On success, your app will receive a JSON object with the Page ID as well as a Page access token that you can use in subsequent requests.
 
-```
 ```
 {
   "data": [
@@ -87,7 +84,6 @@ On success, your app will receive a JSON object with the Page ID as well as a Pa
   ]
 }
 ```
-```
 
 #### Get the PSID & Message ID
 
@@ -96,16 +92,13 @@ To obtain the PSID and message ID, send a `GET` request to the `/<PAGE_ID>/conve
 #### Sample Request
 
 ```
-```
 curl -i -X GET "https://graph.facebook.com/<API_VERSION>/<PAGE_ID>/conversations?fields=participants,messages{id,message}&access_token=<PAGE_ACCESS_TOKEN>"
-```
 ```
 
 #### Example Response
 
 On success, your app will receive the following JSON response:
 
-```
 ```
 {
   "data": [
@@ -141,15 +134,13 @@ On success, your app will receive the following JSON response:
   ]
 }
 ```
-```
 
 ### Step 2. Send the Customer a Message
 
-To respond to the message a customer sent to your Page, send a `POST` request to the `/<PAGE_ID>/messages` endpoint with the `recipient` parameter set to the customer’s PSID, `messaging_type` parameter set to `RESPONSE`, and the `message` parameter set to your response. **Note** that this must be sent within 24 hours of your Page receiving the customer’s message.
+To respond to the message a customer sent to your Page, send a `POST` request to the `/<PAGE_ID>/messages` endpoint with the `recipient` parameter set to the customer's PSID, `messaging_type` parameter set to `RESPONSE`, and the `message` parameter set to your response. **Note** that this must be sent within 24 hours of your Page receiving the customer's message.
 
 #### Sample Request
 
-```
 ```
 curl -X POST "https://graph.facebook.com/<API_VERSION>/<PAGE_ID>/messages" \
     -d "recipient={'id':'<PSID>'}" \
@@ -157,16 +148,13 @@ curl -X POST "https://graph.facebook.com/<API_VERSION>/<PAGE_ID>/messages" \
     -d "message={'text':'You did it!'}" \
     -d "access_token=<PAGE_ACCESS_TOKEN>"
 ```
-```
 
 On success, your app will receive the following JSON response:
 
 ```
-```
 {
   "recipient_id": "1008...",    // The customer's PSID
   "message_id": "m_AG5Hz2..."}  // The message ID
-```
 ```
 
 ## Use the Graph API Explorer Tool
@@ -212,7 +200,7 @@ To respond to the message the customer sent to your Page:
   * `message` set to `{text:'Hello, new customer!'}`
 * Click **Submit**.
 
-**Note** that when using the `RESPONSE` message type, the message must be sent within 24 hours of your Page receiving the customer’s message or an error will occur.
+**Note** that when using the `RESPONSE` message type, the message must be sent within 24 hours of your Page receiving the customer's message or an error will occur.
 
 [![](https://scontent.fdel1-1.fna.fbcdn.net/v/t15.5256-10/286125155_998483997479251_3737621177765749529_n.jpg?stp=dst-jpg_s2048x2048_tt6&_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=b07905&_nc_ohc=PUYbzkXn5yMQ7kNvwGCPB1i&_nc_oc=AdqyE1-1qvr2AfxDyiWYSj153WKsOAvW9NqPyHxPU0BJ5Hz45YFaFfOkckzRWT41Xm3Rx2VIVl2YzO3JIwvTrSR0&_nc_zt=23&_nc_ht=scontent.fdel1-1.fna&_nc_gid=sWhe4H7ACimeiwiRJj6OkA&_nc_ss=7b289&oh=00_AQCdcv4Jrhjl_MyOoabPR5EmNJQi4VRHb5gp9hCmBH3Sgw&oe=6A4C0014)](https://video.fdel1-3.fna.fbcdn.net/o1/v/t2/f2/m412/AQMfbrXQChiy3W7Faub5r1CjGsIfKJ6UzilcMEvwY1PUojbL8yxc6E6PleHFelrngwHxM7Fd-ucYx66wydWlY9pp.mp4?_nc_cat=102&_nc_oc=Adp4TffPR1yl9RDuDFWI5jiInx70x4Ae3VB366453gFBRD27xm0S3RG8tX0y_SWUFy3s0Rjc4I7aiO7PVp8d8sBw&_nc_sid=8bf8fe&_nc_ht=video.fdel1-3.fna.fbcdn.net&_nc_ohc=4O-bZLR6tZsQ7kNvwF45Ax-&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzIuNDI2LnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6NTM4ODgwNzQ0NDU3NjYxMiwiYXNzZXRfYWdlX2RheXMiOjE0NzUsInZpX3VzZWNhc2VfaWQiOjEwMTI4LCJkdXJhdGlvbl9zIjoxNTIsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&_nc_gid=sWhe4H7ACimeiwiRJj6OkA&_nc_ss=7b289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQCDrEzZTGJDOadJIjNYs-6HRzb5O-ZZ1lfBREXEauv9Kw&oe=6A4BF0B7&bitrate=13179&tag=sve_sd)
 

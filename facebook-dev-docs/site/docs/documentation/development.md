@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/development
 
 Updated: Aug 22, 2025
 
-Before you can integrate with Meta’s products, use Meta’s SDKs, or access any of Meta’s APIs, first register as a Meta developer. After you register, use the app dashboard to provide information about your app. This documentation explains how to register as a developer, how to use the app dashboard to configure your app, and how to build, test, and release your app.
+Before you can integrate with Meta's products, use Meta's SDKs, or access any of Meta's APIs, first register as a Meta developer. After you register, use the app dashboard to provide information about your app. This documentation explains how to register as a developer, how to use the app dashboard to configure your app, and how to build, test, and release your app.
 
 ## Documentation Contents
 

@@ -20,8 +20,8 @@ HTTPPHP SDKJavaScript SDKAndroid SDKiOS SDK
 ---
 
 ```
-GET /v25.0/{custom-audience-id}/health HTTP/1.1  
-Host: graph.facebook.com
+GET /v25.0/{custom-audience-id}/health HTTP/1.1  
+Host: graph.facebook.com
 ```
 
 Try it in [Graph API Explorer](https://developers.facebook.com/tools/explorer/?method=GET&path=%7Bcustom-audience-id%7D%2Fhealth&version=v25.0)
@@ -32,8 +32,8 @@ If you want to learn how to use the Graph API, read our [Using Graph API guide](
 
 | Parameter | Description |
 | --- | --- |
-| `calculated_date` *string* | The UTC calculated date / click date associated with this information, this will be a string in the format “YYYY-MM-DD” i.e. “2025-01-01” |
-| `processed_date` *string* | The UTC date on which the data was received, this will be a string in the format “YYYY-MM-DD” i.e. “2025-02-01” |
+| `calculated_date` *string* | The UTC calculated date / click date associated with this information, this will be a string in the format "YYYY-MM-DD" i.e. "2025-01-01" |
+| `processed_date` *string* | The UTC date on which the data was received, this will be a string in the format "YYYY-MM-DD" i.e. "2025-02-01" |
 | `value_aggregation_duration` *int64* | The duration over which this value type was calculated |
 | `value_country` *string* | The country associated to the value field |
 | `value_currency` *string* | The currency associated to the value field |

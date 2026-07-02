@@ -84,9 +84,9 @@ These are the Advantage+ creative opt-in features that can be implemented in the
 | --- | --- |
 | `adapt_to_placement` | **Optional.** Default is opt-in.  Opt-in if you want to automatically fit images to placements based on what is predicted to work best.  By default, 4:5 and 9:16 placements are enabled. If you wish to control how the images are adjusted, you can use the `customizations` field to control the settings. See the `aspect_ratio_config` and `image_crop_style` fields in the [Ad Creative Feature Customizations](https://developers.facebook.com/docs/marketing-api/reference/ad-creative-feature-customizations) reference documentation for more details.  The `enroll_status` field can be set to `OPT_IN` or `OPT_OUT`.  **Note:** This feature is labeled *\*Image touch-ups* in Ads Manager. |
 | `add_text_overlay` | **Optional.**  Opt-in if you want to add information from catalog items as visually-unique overlays  The `enroll_status` field can be set to `OPT_IN` or `OPT_OUT`.  **Note:** This feature is labeled **Add dynamic overlays** in Ads Manager.  If you want to have manual control on how the overlay is rendered, see the [Ad Creative Link Data Image Layer Spec](https://developers.facebook.com/docs/marketing-api/reference/ad-creative-link-data-image-layer-spec) reference documentation for more details. |
-| `creative_stickers` | **Optional.**  Opt-in if you want to add AI-generated stickers to help tell your story better and make your call-to-actions easier to understand. We’ll automatically place CTA stickers based on where they’re likely to perform best.  The `enroll_status` field can be set to `OPT_IN` or `OPT_OUT`.  **Note:** This feature is labeled **Create sticker CTA** in Ads Manager. |
-| `description_automation` | **Optional.**  For Advantage+ catalog ads, opt-in if you want item information from your catalog to be used for your ad’s description based on what each person who views your ad is likely to engage with. For static carousel ads, opt-in if you want your carousel description to be dynamically chosen when to show.  The `enroll_status` field can be set to `OPT_IN` or `OPT_OUT`.  **Note:** This feature is labeled **Dynamic description** in Ads Manager. |
-| `enhance_cta` | **Optional.**  Opt-in if you want keyphrases from your ad sources to be paired with your CTA.  The `enroll_status` field can be set to `OPT_IN` or `OPT_OUT`.  The `customizations` field can be set to below to use **potential high-performing phrases identified by AI**:  ```  ``` {     "text_extraction": {         "enroll_status": "OPT_IN" } ``` ```  **Note:** This feature is labeled **Enhance CTA** in Ads Manager. |
+| `creative_stickers` | **Optional.**  Opt-in if you want to add AI-generated stickers to help tell your story better and make your call-to-actions easier to understand. We'll automatically place CTA stickers based on where they're likely to perform best.  The `enroll_status` field can be set to `OPT_IN` or `OPT_OUT`.  **Note:** This feature is labeled **Create sticker CTA** in Ads Manager. |
+| `description_automation` | **Optional.**  For Advantage+ catalog ads, opt-in if you want item information from your catalog to be used for your ad's description based on what each person who views your ad is likely to engage with. For static carousel ads, opt-in if you want your carousel description to be dynamically chosen when to show.  The `enroll_status` field can be set to `OPT_IN` or `OPT_OUT`.  **Note:** This feature is labeled **Dynamic description** in Ads Manager. |
+| `enhance_cta` | **Optional.**  Opt-in if you want keyphrases from your ad sources to be paired with your CTA.  The `enroll_status` field can be set to `OPT_IN` or `OPT_OUT`.  The `customizations` field can be set to below to use **potential high-performing phrases identified by AI**:  ``` {     "text_extraction": {         "enroll_status": "OPT_IN" } ```  **Note:** This feature is labeled **Enhance CTA** in Ads Manager. |
 | `image_animation` | **Optional.**  Opt-in if you want a static image in your ad to be automatically transformed into a short animated video that adds subtle motion, making your creative more engaging. Only applicable to image ads. **This feature is generated with AI.**  The `enroll_status` field can be set to `OPT_IN` or `OPT_OUT`. |
 | `image_background_gen` | **Optional.**  Opt-in if you want different backgrounds for eligible product images to be created and the version that your audience is most likely to respond to delivered. **This feature is generated with AI.**  The `enroll_status` field can be set to `OPT_IN` or `OPT_OUT`.  **Note:** This feature is labeled **Generate backgrounds** in Ads Manager. |
 | `image_brightness_and_contrast` | **Optional.**  Opt-in if you want the brightness and contrast of your image to be adjusted when likely to improve performance.  The `enroll_status` field can be set to `OPT_IN` or `OPT_OUT`.  **Note:** This feature is labeled **Adjust brightness and contrast** in Ads Manager. |
@@ -96,10 +96,10 @@ These are the Advantage+ creative opt-in features that can be implemented in the
 | `image_uncrop` | **Optional.**  Opt-in if you want your image to be automatically expanded to fit more placements. **This feature is generated with AI.**  The `enroll_status` field can be set to `OPT_IN` or `OPT_OUT`.  **Note:** This feature is labeled **Expand image** in Ads Manager. |
 | `inline_comment` | **Optional.**  Opt-in if you want the most relevant comment to be displayed below your ad on Facebook and Instagram.  The `enroll_status` field can be set to `OPT_IN` or `OPT_OUT`.  **Note:** This feature is labeled **Relevant comments** in Ads Manager. |
 | `media_type_automation` | **Optional.**  Opt-in if you want videos from your catalog to be displayed (along with images) in supported placements.  The `enroll_status` field can be set to `OPT_IN` or `OPT_OUT`.  **Note:** This feature is labeled **Allow product video** in Ads Manager.  See [Allow product video](https://developers.facebook.com/documentation/ads-commerce/marketing-api/advantage-catalog-ads/allow-product-video) for more information. |
-| `pac_relaxation` | **Optional.**  Opt-in if you want to show media you chose for a specific aspect ratio across all placements when it’s likely to improve performance.  The `enroll_status` field can be set to `OPT_IN` or `OPT_OUT`.  **Note:** This feature is labeled **Flex media** or **Flexible media** in Ads Manager. |
-| `product_extensions` | **Optional.**  Opt-in if you want items from your catalog to be shown next to your selected media when it’s likely to improve performance.  The `enroll_status` field can be set to `OPT_IN` or `OPT_OUT`.  **Note:** This feature is labeled **Show products in the Collection dropdown within format display options** in Ads Manager.  See [Product Extensions (Add Catalog Items) Features on Marketing API](https://developers.facebook.com/documentation/ads-commerce/marketing-api/advantage-catalog-ads/product-extensions) for more details. |
+| `pac_relaxation` | **Optional.**  Opt-in if you want to show media you chose for a specific aspect ratio across all placements when it's likely to improve performance.  The `enroll_status` field can be set to `OPT_IN` or `OPT_OUT`.  **Note:** This feature is labeled **Flex media** or **Flexible media** in Ads Manager. |
+| `product_extensions` | **Optional.**  Opt-in if you want items from your catalog to be shown next to your selected media when it's likely to improve performance.  The `enroll_status` field can be set to `OPT_IN` or `OPT_OUT`.  **Note:** This feature is labeled **Show products in the Collection dropdown within format display options** in Ads Manager.  See [Product Extensions (Add Catalog Items) Features on Marketing API](https://developers.facebook.com/documentation/ads-commerce/marketing-api/advantage-catalog-ads/product-extensions) for more details. |
 | `reveal_details_over_time` | **Optional.**  Opt-in if you want information from your website or app store product page to be revealed when people spend a few seconds looking at your ad. This can help people feel more confident before they click your call-to-action.  The `enroll_status` field can be set to `OPT_IN` or `OPT_OUT`.  **Note:** This feature is labeled **Reveal details over time** in Ads Manager. |
-| `text_optimizations` | **Optional.**  Opt-in if you want text options you provide appear as primary text, headline or description when it’s likely to improve performance. We may add a caption introduction from your headline options and highlight key sentences when it’s likely to improve performance.  The `enroll_status` field can be set to `OPT_IN` or `OPT_OUT`.  The `customizations` field can be set to below to use **potential high-performing phrases identified by AI**:  ```  ``` {     "text_extraction": {         "enroll_status": "OPT_IN" } ``` ```  **Note:** This feature is labeled **Text improvements** in Ads Manager. |
+| `text_optimizations` | **Optional.**  Opt-in if you want text options you provide appear as primary text, headline or description when it's likely to improve performance. We may add a caption introduction from your headline options and highlight key sentences when it's likely to improve performance.  The `enroll_status` field can be set to `OPT_IN` or `OPT_OUT`.  The `customizations` field can be set to below to use **potential high-performing phrases identified by AI**:  ``` {     "text_extraction": {         "enroll_status": "OPT_IN" } ```  **Note:** This feature is labeled **Text improvements** in Ads Manager. |
 | `text_translation` | **Optional.**  Opt-in if you want your ad to be translated to different languages on Facebook and Instagram.  The `enroll_status` field can be set to `OPT_IN` or `OPT_OUT`.  **Note:** This feature is labeled **Translate Text** in Ads Manager. |
 | `translate_voiceover` | **Optional.**  Opt-in if you want the spoken audio in your video ad to be automatically translated into supported languages, generating a voiceover that sounds similar to the original speaker. This helps your ads resonate with users who prefer a different language, improving relevance and engagement within your existing target audience. **This feature is generated with AI.**  The `enroll_status` field can be set to `OPT_IN` or `OPT_OUT`.  **Supported source language:** English. **Supported target language:** Spanish. **Supported placements:** Facebook Feed, Facebook Reels, Instagram Feed, Instagram Reels. **Supported format:** Single video.  **Note:** This feature is labeled **Translate voiceover** in Ads Manager. |
 | `video_auto_crop` | **Optional.**  Opt-in if you want your chosen media to be automatically cropped and expanded to fit more placements. Only applicable to video ads.  The `enroll_status` field can be set to `OPT_IN` or `OPT_OUT`.  **Note:** This feature is labeled **Visual-touch ups** in Ads Manager. |
@@ -110,7 +110,7 @@ Features specified as `OPT_IN` but ineligible for the given ad setup will be aut
 
 To confirm the final configuration, use a `GET` request to retrieve the `creative_features_spec` parameter.
 
-Don’t worry if you see `standard_enhancements` or any standard enhancements sub-features appended to `creative_features_spec` when you retrieve it. As long as they are not set to `OPT_IN`, they will not be applied. Standard enhancements are in the process of being deprecated, and this behavior will be phased out once the deprecation is complete.
+Don't worry if you see `standard_enhancements` or any standard enhancements sub-features appended to `creative_features_spec` when you retrieve it. As long as they are not set to `OPT_IN`, they will not be applied. Standard enhancements are in the process of being deprecated, and this behavior will be phased out once the deprecation is complete.
 
 ### Music
 
@@ -257,23 +257,21 @@ https://graph.facebook.com/v25.0/<AD_ID>/previews
 #### Example response
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "body": "<iframe src='<PREVIEW_URL>'></iframe>",  
-      "transformation_spec": {  
-        "<FEATURE_NAME>": [  
-          {  
-            "body": "<iframe src='<PREVIEW_URL>'></iframe>",  
-            "status": "eligible"  
-          }  
-        ]  
-      }  
-    }  
-  ]  
+  "data": [  
+    {  
+      "body": "<iframe src='<PREVIEW_URL>'></iframe>",  
+      "transformation_spec": {  
+        "<FEATURE_NAME>": [  
+          {  
+            "body": "<iframe src='<PREVIEW_URL>'></iframe>",  
+            "status": "eligible"  
+          }  
+        ]  
+      }  
+    }  
+  ]  
 }
-```
 ```
 
 Click on the returned URL to see the previews.

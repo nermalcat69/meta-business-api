@@ -21,9 +21,9 @@ The bid multipliers API is going away in 2027. To prepare for this change, you c
 
 Not all ad sets using bid multipliers can be migrated to value rules at the moment. Refer to the [Value Rules Limitations](https://developers.facebook.com/documentation/ads-commerce/ccco#value_rules_limits) section for the full list of bid multipliers use cases not currently supported by value rules, and for guidance on how to handle these use cases.
 
-**Value rules** allow you to adjust bidding for certain audiences, placements, and conversion locations. Meta’s system will optimize for outcomes based on the rules you apply on the ad set level. Compared to bid multipliers, value rules offer enhanced bid adjustments, more flexibility and easier creation and management.
+**Value rules** allow you to adjust bidding for certain audiences, placements, and conversion locations. Meta's system will optimize for outcomes based on the rules you apply on the ad set level. Compared to bid multipliers, value rules offer enhanced bid adjustments, more flexibility and easier creation and management.
 
-Similar to bid multipliers, value rules can be managed using Meta’s Marketing API. The [value rules API documentation](https://developers.facebook.com/documentation/ads-commerce/marketing-api/bidding/value-rules) contains instructions for using this API. In addition, value rules can be managed in [**Ads Manager**⁠](https://adsmanager.facebook.com/) using a simple interface. For users of **Ads Manager**, value rules also offer enhanced reporting capabilities, with performance breakdowns based on rules applied.
+Similar to bid multipliers, value rules can be managed using Meta's Marketing API. The [value rules API documentation](https://developers.facebook.com/documentation/ads-commerce/marketing-api/bidding/value-rules) contains instructions for using this API. In addition, value rules can be managed in [**Ads Manager**⁠](https://adsmanager.facebook.com/) using a simple interface. For users of **Ads Manager**, value rules also offer enhanced reporting capabilities, with performance breakdowns based on rules applied.
 
 ## Replace bid multipliers with value rules
 
@@ -104,7 +104,7 @@ The response to this API call will include a **value rule set ID**. Save this ID
 
 ### Attach value rules to ad sets
 
-After a **value rule set** has been created, it must be attached to an ad set in order to adjust bids for that ad set. To attach a value rule set to an ad set, use Ads Manager to edit the ad set. Within the ad set editor, the value rules setting is located in the **Conversion** section. Check the “Apply a rule set” box, then select the rule set from the dropdown below.
+After a **value rule set** has been created, it must be attached to an ad set in order to adjust bids for that ad set. To attach a value rule set to an ad set, use Ads Manager to edit the ad set. Within the ad set editor, the value rules setting is located in the **Conversion** section. Check the "Apply a rule set" box, then select the rule set from the dropdown below.
 
 Alternatively, value rules can be attached to ad sets using the Marketing API.
 
@@ -246,33 +246,31 @@ The `AD_SET_ID` is the ID of the ad set containing your existing bid multiplier 
 If successful, the translation API will return a result similar to the following:
 
 ```
-```
 {  
-  "success": true,  
-  "value_rule_set": {  
-    "name": "Migrated from Bid Multiplier specification",  
-    "rules": [  
-      {  
-        "name": "Migrated Rule #1 - Age - 20-40",  
-        "adjust_sign": "DECREASE",  
-        "adjust_value": 50,  
-        "criterias": [  
-          {  
-            "criteria_type": "AGE",  
-            "operator": "CONTAINS",  
-            "criteria_values": [  
-              "20-40"  
-            ],  
-            "criteria_value_types": [  
-              "NONE"  
-            ]  
-          }  
-        ]  
-      }  
-    ]  
-  }  
+  "success": true,  
+  "value_rule_set": {  
+    "name": "Migrated from Bid Multiplier specification",  
+    "rules": [  
+      {  
+        "name": "Migrated Rule #1 - Age - 20-40",  
+        "adjust_sign": "DECREASE",  
+        "adjust_value": 50,  
+        "criterias": [  
+          {  
+            "criteria_type": "AGE",  
+            "operator": "CONTAINS",  
+            "criteria_values": [  
+              "20-40"  
+            ],  
+            "criteria_value_types": [  
+              "NONE"  
+            ]  
+          }  
+        ]  
+      }  
+    ]  
+  }  
 }
-```
 ```
 
 The translation result is under the key `value_rule_set`. The object under this key (starting with the opening braces `{` and ending with the corresponding closing braces `}`) can be saved and re-used for the next part of the migration flow described below. You can also modify this translation output after saving it, to fine-tune how your value rule set will be created.
@@ -329,34 +327,32 @@ If this API call is successful, two things happen as a result:
 Since an ad account is limited to 20 value rule sets, you should avoid creating value rule sets that are duplicates of each other. Creating duplicate value rule sets can happen accidentally as a result of migrating ad sets with identical bid multiplier parameter sets. To help avoid this situation, the translation API detects potential duplicates, and returns the ID of the existing value rule set if the translation result matches such an existing value rule set. When this happens, the output of the translation API will look like the following:
 
 ```
-```
 {  
-  "success": true,  
-  "existing_value_rule_set_id": <VALUE_RULE_SET_ID>,  
-  "value_rule_set": {  
-    "name": "Migrated from Bid Multiplier specification",  
-    "rules": [  
-      {  
-        "name": "Migrated Rule #1 - Age - 20-40",  
-        "adjust_sign": "DECREASE",  
-        "adjust_value": 50,  
-        "criterias": [  
-          {  
-            "criteria_type": "AGE",  
-            "operator": "CONTAINS",  
-            "criteria_values": [  
-              "20-40"  
-            ],  
-            "criteria_value_types": [  
-              "NONE"  
-            ]  
-          }  
-        ]  
-      }  
-    ]  
-  }  
+  "success": true,  
+  "existing_value_rule_set_id": <VALUE_RULE_SET_ID>,  
+  "value_rule_set": {  
+    "name": "Migrated from Bid Multiplier specification",  
+    "rules": [  
+      {  
+        "name": "Migrated Rule #1 - Age - 20-40",  
+        "adjust_sign": "DECREASE",  
+        "adjust_value": 50,  
+        "criterias": [  
+          {  
+            "criteria_type": "AGE",  
+            "operator": "CONTAINS",  
+            "criteria_values": [  
+              "20-40"  
+            ],  
+            "criteria_value_types": [  
+              "NONE"  
+            ]  
+          }  
+        ]  
+      }  
+    ]  
+  }  
 }
-```
 ```
 
 The complete translation output is still returned for reference. But this output should not be used directly. Instead, use the `VALUE_RULE_SET_ID` under the `existing_value_rule_set_id` key. This is the ID of the value rule set under the ad account which exactly matches the translation output (ignoring the names of rule set and rules). In this case, instead of creating a new value rule set, the existing value rule set can be used and attached to the ad set. See the [value rules attachment API](https://developers.facebook.com/documentation/ads-commerce/ccco#value_rules_migrate) section for details on how to use the existing value rule set ID.
@@ -372,52 +368,46 @@ Criteria are the smallest building block of value rule sets. A criteria contains
 **Example single-value criteria**
 
 ```
-```
 {  
-  "criteria_type": "GENDER",  
-  "operator": "CONTAINS",  
-  "criteria_values": [  
-    "FEMALE"  
-  ],  
-  "criteria_value_types": [  
-    "NONE"  
-  ]  
+  "criteria_type": "GENDER",  
+  "operator": "CONTAINS",  
+  "criteria_values": [  
+    "FEMALE"  
+  ],  
+  "criteria_value_types": [  
+    "NONE"  
+  ]  
 }
-```
 ```
 
 **Example multi-value criteria**
 
 ```
-```
 {  
-  "criteria_type": "AGE",  
-  "operator": "CONTAINS",  
-  "criteria_values": [  
-    "18-24", "35-44"  
-  ],  
-  "criteria_value_types": [  
-    "NONE", "NONE"  
-  ]  
+  "criteria_type": "AGE",  
+  "operator": "CONTAINS",  
+  "criteria_values": [  
+    "18-24", "35-44"  
+  ],  
+  "criteria_value_types": [  
+    "NONE", "NONE"  
+  ]  
 }
-```
 ```
 
 **Example location criteria**
 
 ```
-```
 {  
-  "criteria_type": "LOCATION",  
-  "operator": "CONTAINS",  
-  "criteria_values": [  
-    "BR", "527"  
-  ],  
-  "criteria_value_types": [  
-    "LOCATION_COUNTRY", "LOCATION_REGION"  
-  ]  
+  "criteria_type": "LOCATION",  
+  "operator": "CONTAINS",  
+  "criteria_values": [  
+    "BR", "527"  
+  ],  
+  "criteria_value_types": [  
+    "LOCATION_COUNTRY", "LOCATION_REGION"  
+  ]  
 }
-```
 ```
 
 Refer to the [value rules API documentation](https://developers.facebook.com/documentation/ads-commerce/marketing-api/bidding/value-rules#the-criteria-parameter) for a full table of supported **criteria values** for each **criteria type**.
@@ -433,25 +423,23 @@ When the adjustment sign is `DECREASE`, the possible values for the adjustment r
 **Example rule with 1 criteria**
 
 ```
-```
 {  
-  "name": "Age rule 1",  
-  "adjust_sign": "DECREASE",  
-  "adjust_value": 30,  
-  "criterias": [  
-    {  
-      "criteria_type": "AGE",  
-      "operator": "CONTAINS",  
-      "criteria_values": [  
-        "18-24"  
-      ],  
-      "criteria_value_types": [  
-        "NONE"  
-      ]  
-    }  
-  ]  
+  "name": "Age rule 1",  
+  "adjust_sign": "DECREASE",  
+  "adjust_value": 30,  
+  "criterias": [  
+    {  
+      "criteria_type": "AGE",  
+      "operator": "CONTAINS",  
+      "criteria_values": [  
+        "18-24"  
+      ],  
+      "criteria_value_types": [  
+        "NONE"  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 #### Value rule set
@@ -461,47 +449,45 @@ Value rule sets are made up of 1 or more rules. In addition to the rules, a valu
 **Example value rule set with 2 rules**
 
 ```
-```
 {  
-  "name": "My Value Rule Set",  
-  "rules": [  
-    {  
-      "name": "Age rule 1",  
-      "adjust_sign": "DECREASE",  
-      "adjust_value": 30,  
-      "criterias": [  
-        {  
-          "criteria_type": "AGE",  
-          "operator": "CONTAINS",  
-          "criteria_values": [  
-            "18-24"  
-          ],  
-          "criteria_value_types": [  
-            "NONE"  
-          ]  
-        }  
-      ]  
-    },  
-    {  
-      "name": "Age rule 2",  
-      "adjust_sign": "DECREASE",  
-      "adjust_value": 20,  
-      "criterias": [  
-        {  
-          "criteria_type": "AGE",  
-          "operator": "CONTAINS",  
-          "criteria_values": [  
-            "25-34"  
-          ],  
-          "criteria_value_types": [  
-            "NONE"  
-          ]  
-        }  
-      ]  
-    }  
-  ]  
+  "name": "My Value Rule Set",  
+  "rules": [  
+    {  
+      "name": "Age rule 1",  
+      "adjust_sign": "DECREASE",  
+      "adjust_value": 30,  
+      "criterias": [  
+        {  
+          "criteria_type": "AGE",  
+          "operator": "CONTAINS",  
+          "criteria_values": [  
+            "18-24"  
+          ],  
+          "criteria_value_types": [  
+            "NONE"  
+          ]  
+        }  
+      ]  
+    },  
+    {  
+      "name": "Age rule 2",  
+      "adjust_sign": "DECREASE",  
+      "adjust_value": 20,  
+      "criterias": [  
+        {  
+          "criteria_type": "AGE",  
+          "operator": "CONTAINS",  
+          "criteria_values": [  
+            "25-34"  
+          ],  
+          "criteria_value_types": [  
+            "NONE"  
+          ]  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 #### Translate simple bid multiplier parameter set
@@ -511,15 +497,13 @@ The first step of the translation process is retrieving the existing **bid multi
 We start with the simplest kind of bid multiplier parameter set to translate: a parameter set containing a single audience category, with a default weight of 1.0. An example is the below parameter set:
 
 ```
-```
 {  
-  "age": {  
-    "18-24": 0.7,  
-    "25-34": 0.8,  
-    "default": 1.0  
-  }  
+  "age": {  
+    "18-24": 0.7,  
+    "25-34": 0.8,  
+    "default": 1.0  
+  }  
 }
-```
 ```
 
 Note that the `default` weight may also be omitted from the parameter set. An omitted default weight is equivalent to a default weight of **1.0**.
@@ -527,121 +511,113 @@ Note that the `default` weight may also be omitted from the parameter set. An om
 Each non-default parameter value can be translated into 1 rule with 1 criteria. The audience category together with the parameter value determine the value rule criteria, while the weight value determine the value rule adjustment. For the example above, 2 rules are produced, each with 1 `AGE` criteria. The translated result is as follows.
 
 ```
-```
 {  
-  "name": "My Value Rule Set",  
-  "rules": [  
-    {  
-      "name": "Age rule 1",  
-      "adjust_sign": "DECREASE",  
-      "adjust_value": 30,  
-      "criterias": [  
-        {  
-          "criteria_type": "AGE",  
-          "operator": "CONTAINS",  
-          "criteria_values": [  
-            "18-24"  
-          ],  
-          "criteria_value_types": [  
-            "NONE"  
-          ]  
-        }  
-      ]  
-    },  
-    {  
-      "name": "Age rule 2",  
-      "adjust_sign": "DECREASE",  
-      "adjust_value": 20,  
-      "criterias": [  
-        {  
-          "criteria_type": "AGE",  
-          "operator": "CONTAINS",  
-          "criteria_values": [  
-            "25-34"  
-          ],  
-          "criteria_value_types": [  
-            "NONE"  
-          ]  
-        }  
-      ]  
-    }  
-  ]  
+  "name": "My Value Rule Set",  
+  "rules": [  
+    {  
+      "name": "Age rule 1",  
+      "adjust_sign": "DECREASE",  
+      "adjust_value": 30,  
+      "criterias": [  
+        {  
+          "criteria_type": "AGE",  
+          "operator": "CONTAINS",  
+          "criteria_values": [  
+            "18-24"  
+          ],  
+          "criteria_value_types": [  
+            "NONE"  
+          ]  
+        }  
+      ]  
+    },  
+    {  
+      "name": "Age rule 2",  
+      "adjust_sign": "DECREASE",  
+      "adjust_value": 20,  
+      "criterias": [  
+        {  
+          "criteria_type": "AGE",  
+          "operator": "CONTAINS",  
+          "criteria_values": [  
+            "25-34"  
+          ],  
+          "criteria_value_types": [  
+            "NONE"  
+          ]  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 A small complication arises if the default weight in the parameter set is not 1.0, as in the following example:
 
 ```
-```
 {  
-  "age": {  
-    "18-24": 0.7,  
-    "25-34": 0.8,  
-    "default": 0.5  
-  }  
+  "age": {  
+    "18-24": 0.7,  
+    "25-34": 0.8,  
+    "default": 0.5  
+  }  
 }
-```
 ```
 
 Value rules only support default adjustment of 1.0. To translate the above parameter set to value rules, we need to scale all weights such that the default weight is 1.0. This may cause some weights to exceed 1.0, which is not an issue since value rules supports bid increases as well as bid decreases. After scaling the weights, we arrive at the following:
 
 ```
-```
 {  
-  "age": {  
-    "18-24": 1.4,  
-    "25-34": 1.6,  
-    "default": 1.0  
-  }  
+  "age": {  
+    "18-24": 1.4,  
+    "25-34": 1.6,  
+    "default": 1.0  
+  }  
 }
-```
 ```
 
 The above is no longer a valid bid multiplier parameter set, due to the weights exceeding 1.0. It only serves as a source to inform the translation into value rules. The translated value rule set is as follows.
 
 ```
-```
 {  
-  "name": "My Value Rule Set",  
-  "rules": [  
-    {  
-      "name": "Age rule 1",  
-      "adjust_sign": "INCREASE",  
-      "adjust_value": 40,  
-      "criterias": [  
-        {  
-          "criteria_type": "AGE",  
-          "operator": "CONTAINS",  
-          "criteria_values": [  
-            "18-24"  
-          ],  
-          "criteria_value_types": [  
-            "NONE"  
-          ]  
-        }  
-      ]  
-    },  
-    {  
-      "name": "Age rule 2",  
-      "adjust_sign": "INCREASE",  
-      "adjust_value": 60,  
-      "criterias": [  
-        {  
-          "criteria_type": "AGE",  
-          "operator": "CONTAINS",  
-          "criteria_values": [  
-            "25-34"  
-          ],  
-          "criteria_value_types": [  
-            "NONE"  
-          ]  
-        }  
-      ]  
-    }  
-  ]  
+  "name": "My Value Rule Set",  
+  "rules": [  
+    {  
+      "name": "Age rule 1",  
+      "adjust_sign": "INCREASE",  
+      "adjust_value": 40,  
+      "criterias": [  
+        {  
+          "criteria_type": "AGE",  
+          "operator": "CONTAINS",  
+          "criteria_values": [  
+            "18-24"  
+          ],  
+          "criteria_value_types": [  
+            "NONE"  
+          ]  
+        }  
+      ]  
+    },  
+    {  
+      "name": "Age rule 2",  
+      "adjust_sign": "INCREASE",  
+      "adjust_value": 60,  
+      "criterias": [  
+        {  
+          "criteria_type": "AGE",  
+          "operator": "CONTAINS",  
+          "criteria_values": [  
+            "25-34"  
+          ],  
+          "criteria_value_types": [  
+            "NONE"  
+          ]  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 #### Translate nested bid multiplier parameter set
@@ -649,21 +625,19 @@ The above is no longer a valid bid multiplier parameter set, due to the weights 
 In a bid multiplier parameter set, it is possible to narrow down an audience segment using multiple audience categories, by nesting one audience category under the parameter of another. In the below example, the 25-34 age cohort is further refined into two segments, males aged 25-34 and females aged 25-34.
 
 ```
-```
 {  
-  "age": {  
-    "18-24": 0.7,  
-    "25-34": {  
-      "gender": {  
-        "male": 0.9,  
-        "female": 0.95,  
-        "default": 1.0  
-      }  
-    },  
-    "default": 1.0  
-  }  
+  "age": {  
+    "18-24": 0.7,  
+    "25-34": {  
+      "gender": {  
+        "male": 0.9,  
+        "female": 0.95,  
+        "default": 1.0  
+      }  
+    },  
+    "default": 1.0  
+  }  
 }
-```
 ```
 
 There is no nesting in value rule sets. Instead, each rule in a value rule set supports multiple criteria directly. To translate examples like the above to value rules, start at the top of the JSON document and proceed downwards. Each time a weight is encountered, a new rule is added to the translated value rule set. To determine the criteria to include in the translated rule, examine all of the audience categories and parameter values a user needs to match to land at this weight. Those audience categories and parameter values become the criteria types and criteria values in the rule.
@@ -677,84 +651,82 @@ The third weight reached is **0.95**. This weight is for an audience segment of 
 All remaining weights in the parameter spec are default weights of **1.0**, which do not need to be translated. Thus, the final value rule set contains 3 rules.
 
 ```
-```
 {  
-  "name": "My Value Rule Set",  
-  "rules": [  
-    {  
-      "name": "Age rule 1",  
-      "adjust_sign": "DECREASE",  
-      "adjust_value": 30,  
-      "criterias": [  
-        {  
-          "criteria_type": "AGE",  
-          "operator": "CONTAINS",  
-          "criteria_values": [  
-            "18-24"  
-          ],  
-          "criteria_value_types": [  
-            "NONE"  
-          ]  
-        }  
-      ]  
-    },  
-    {  
-      "name": "Age and gender rule 2",  
-      "adjust_sign": "DECREASE",  
-      "adjust_value": 10,  
-      "criterias": [  
-        {  
-          "criteria_type": "AGE",  
-          "operator": "CONTAINS",  
-          "criteria_values": [  
-            "25-34"  
-          ],  
-          "criteria_value_types": [  
-            "NONE"  
-          ]  
-        },  
-        {  
-          "criteria_type": "GENDER",  
-          "operator": "CONTAINS",  
-          "criteria_values": [  
-            "MALE"  
-          ],  
-          "criteria_value_types": [  
-            "NONE"  
-          ]  
-        }  
-      ]  
-    },  
-    {  
-      "name": "Age and gender rule 3",  
-      "adjust_sign": "DECREASE",  
-      "adjust_value": 5,  
-      "criterias": [  
-        {  
-          "criteria_type": "AGE",  
-          "operator": "CONTAINS",  
-          "criteria_values": [  
-            "25-34"  
-          ],  
-          "criteria_value_types": [  
-            "NONE"  
-          ]  
-        },  
-        {  
-          "criteria_type": "GENDER",  
-          "operator": "CONTAINS",  
-          "criteria_values": [  
-            "FEMALE"  
-          ],  
-          "criteria_value_types": [  
-            "NONE"  
-          ]  
-        }  
-      ]  
-    }  
-  ]  
+  "name": "My Value Rule Set",  
+  "rules": [  
+    {  
+      "name": "Age rule 1",  
+      "adjust_sign": "DECREASE",  
+      "adjust_value": 30,  
+      "criterias": [  
+        {  
+          "criteria_type": "AGE",  
+          "operator": "CONTAINS",  
+          "criteria_values": [  
+            "18-24"  
+          ],  
+          "criteria_value_types": [  
+            "NONE"  
+          ]  
+        }  
+      ]  
+    },  
+    {  
+      "name": "Age and gender rule 2",  
+      "adjust_sign": "DECREASE",  
+      "adjust_value": 10,  
+      "criterias": [  
+        {  
+          "criteria_type": "AGE",  
+          "operator": "CONTAINS",  
+          "criteria_values": [  
+            "25-34"  
+          ],  
+          "criteria_value_types": [  
+            "NONE"  
+          ]  
+        },  
+        {  
+          "criteria_type": "GENDER",  
+          "operator": "CONTAINS",  
+          "criteria_values": [  
+            "MALE"  
+          ],  
+          "criteria_value_types": [  
+            "NONE"  
+          ]  
+        }  
+      ]  
+    },  
+    {  
+      "name": "Age and gender rule 3",  
+      "adjust_sign": "DECREASE",  
+      "adjust_value": 5,  
+      "criterias": [  
+        {  
+          "criteria_type": "AGE",  
+          "operator": "CONTAINS",  
+          "criteria_values": [  
+            "25-34"  
+          ],  
+          "criteria_value_types": [  
+            "NONE"  
+          ]  
+        },  
+        {  
+          "criteria_type": "GENDER",  
+          "operator": "CONTAINS",  
+          "criteria_values": [  
+            "FEMALE"  
+          ],  
+          "criteria_value_types": [  
+            "NONE"  
+          ]  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ## How to use bid multipliers
@@ -810,14 +782,12 @@ curl -G \
 The result will look like the following. Note that the bid multiplier parameter set may be returned as a double-quoted string, with interior escape sequences. You may use a string to JSON parser to recover the structured JSON document.
 
 ```
-```
 {  
-  "bid_adjustments": {  
-    "user_groups": "{\"age\":{\"default\":0.8,\"18-24\":0.5}}"  
-  },  
-  "id": "<BID_ADJUSTMENTS_ID>"  
+  "bid_adjustments": {  
+    "user_groups": "{\"age\":{\"default\":0.8,\"18-24\":0.5}​}"  
+  },  
+  "id": "<BID_ADJUSTMENTS_ID>"  
 }
-```
 ```
 
 ### Bid multiplier parameter set
@@ -825,17 +795,15 @@ The result will look like the following. Note that the bid multiplier parameter 
 The **bid multiplier parameter set** is a structured JSON document used to set up bid multipliers for an ad set. A bid multiplier parameter set contains exactly one root audience category, with one or more parameter values under the root audience category. Each parameter value is associated with either a weight, or a nested bid multiplier parameter set containing another audience category. The root audience category may optionally specify a `default` parameter value, which can be associated with either a weight or a nested bid multiplier parameter set. If a `default` parameter value is not specified, a default weight of **1.0** is used.
 
 ```
-```
 {  
-  <AUDIENCE_CATEGORY>: {  
-    <PARAMETER_VALUE_1>: <WEIGHT or NESTED_BID_MULTIPLIER_PARAMETER_SET>,  
-    <PARAMETER_VALUE_2>: <WEIGHT or NESTED_BID_MULTIPLIER_PARAMETER_SET>,  
-    <PARAMETER_VALUE_3>: <WEIGHT or NESTED_BID_MULTIPLIER_PARAMETER_SET>,  
-    ...  
-    "default": <WEIGHT or NESTED_BID_MULTIPLIER_PARAMETER_SET>, // optional, if not specified, 1.0 will be used  
-  }  
+  <AUDIENCE_CATEGORY>: {  
+    <PARAMETER_VALUE_1>: <WEIGHT or NESTED_BID_MULTIPLIER_PARAMETER_SET>,  
+    <PARAMETER_VALUE_2>: <WEIGHT or NESTED_BID_MULTIPLIER_PARAMETER_SET>,  
+    <PARAMETER_VALUE_3>: <WEIGHT or NESTED_BID_MULTIPLIER_PARAMETER_SET>,  
+    ...  
+    "default": <WEIGHT or NESTED_BID_MULTIPLIER_PARAMETER_SET>, // optional, if not specified, 1.0 will be used  
+  }  
 }
-```
 ```
 
 Audience categories include (but are not limited to) the following:
@@ -852,15 +820,13 @@ Refer to the [Audience Category Reference](https://developers.facebook.com/docum
 **Simple example**
 
 ```
-```
 {  
-  "age": {  
-    "18-24": 0.7,  
-    "25-34": 1.0,  
-    "default": 0.3  
-  }  
+  "age": {  
+    "18-24": 0.7,  
+    "25-34": 1.0,  
+    "default": 0.3  
+  }  
 }
-```
 ```
 
 * For users between the ages of 18 and 24, apply weight 0.7
@@ -870,20 +836,18 @@ Refer to the [Audience Category Reference](https://developers.facebook.com/docum
 **Example with multiple audience categories**
 
 ```
-```
 {  
-  "age": {  
-    "18-24": 0.7,  
-    "25-34": {  
-      "gender": {  
-        "male": 0.9,  
-        "female": 1.0  
-      }  
-    },  
-    "default": 0.85  
-  }  
+  "age": {  
+    "18-24": 0.7,  
+    "25-34": {  
+      "gender": {  
+        "male": 0.9,  
+        "female": 1.0  
+      }  
+    },  
+    "default": 0.85  
+  }  
 }
-```
 ```
 
 * For users between the ages of 18 and 24, apply weight 0.7
@@ -894,20 +858,18 @@ Refer to the [Audience Category Reference](https://developers.facebook.com/docum
 **Example with nested audience category in default position**
 
 ```
-```
 {  
-  "age": {  
-    "18-24": 0.7,  
-    "25-34": 0.9,  
-    "default": {  
-      "gender": {  
-        "male": 0.3,  
-        "female": 0.4  
-      }  
-    }  
-  }  
+  "age": {  
+    "18-24": 0.7,  
+    "25-34": 0.9,  
+    "default": {  
+      "gender": {  
+        "male": 0.3,  
+        "female": 0.4  
+      }  
+    }  
+  }  
 }
-```
 ```
 
 * For users between the ages of 18 and 24, apply weight 0.7
@@ -925,16 +887,16 @@ The following table lists the audience categories that can be specified in a **b
 | [`age`](https://developers.facebook.com/documentation/ads-commerce/ccco#age) | Bid differently based on age or age range. (Not available for housing, employment, and credit campaigns.) | `AGE` |
 | [`booking_window`](https://developers.facebook.com/documentation/ads-commerce/ccco#booking_window) | Bid differently based on number of days until the start of travel. | Not supported in value rules |
 | [`custom_audience`](https://developers.facebook.com/documentation/ads-commerce/ccco#custom_audience) | Bid based on `custom_audience` the user is a part of. Lookalike audiences are supported for this option, except for housing, employment, and credit campaigns. | Not supported in value rules |
-| [`device_platform`](https://developers.facebook.com/documentation/ads-commerce/ccco#device_platform) | Bid differently based on the user’s device platform, such as mobile or desktop. | `DEVICE_PLATFORM` |
+| [`device_platform`](https://developers.facebook.com/documentation/ads-commerce/ccco#device_platform) | Bid differently based on the user's device platform, such as mobile or desktop. | `DEVICE_PLATFORM` |
 | [`gender`](https://developers.facebook.com/documentation/ads-commerce/ccco#gender) | Bid differently based on gender. (Not available for housing, employment, and credit campaigns.) | `GENDER` |
-| [`home_location`](https://developers.facebook.com/documentation/ads-commerce/ccco#home_location) | Bid based on the user’s locations, including their configured home location, as well as any recent locations. This multiplier will apply if the user’s home location or any of their recent locations match the given parameter. The `home_location` multiplier can be broken down into cities, regions, countries, and DMAs. (Not available for housing, employment, and credit campaigns.) | `LOCATION` |
+| [`home_location`](https://developers.facebook.com/documentation/ads-commerce/ccco#home_location) | Bid based on the user's locations, including their configured home location, as well as any recent locations. This multiplier will apply if the user's home location or any of their recent locations match the given parameter. The `home_location` multiplier can be broken down into cities, regions, countries, and DMAs. (Not available for housing, employment, and credit campaigns.) | `LOCATION` |
 | [`length_of_stay`](https://developers.facebook.com/documentation/ads-commerce/ccco#length_of_stay) | Bid based on number of days between start and end of travel. | Not supported in value rules |
 | [`locale`](https://developers.facebook.com/documentation/ads-commerce/ccco#locale) | Bid differently based on locale such as English or Spanish. (Not available for housing, employment, and credit campaigns.) | Not supported in value rules |
 | [`position_type`](https://developers.facebook.com/documentation/ads-commerce/ccco#position_type) | Bid based on which position an ad is shown; for example, `facebook_feed`, `facebook_marketplace`, or `instagram_story`. | `PLACEMENT` |
 | [`publisher_platform`](https://developers.facebook.com/documentation/ads-commerce/ccco#publisher_platform) | Bid based on `publisher_platform` such as `facebook`, `instagram`, `audience_network`, `messenger`. | `PLACEMENT` |
 | [`travel_start_date`](https://developers.facebook.com/documentation/ads-commerce/ccco#travel_start_date) | Bid differently based on date that travel starts; for example, `20181231` is 31 December 2018. | Not supported in value rules |
 | [`travel_start_day_of_week`](https://developers.facebook.com/documentation/ads-commerce/ccco#travel_start_day_of_week) | Bid based on day of week that travel starts. `0` is Monday; `6` is Sunday. | Not supported in value rules |
-| [`user_bucket`](https://developers.facebook.com/documentation/ads-commerce/ccco#user_bucket) | Bid based on the `user_bucket` value defined in the advertiser’s pixel fire or app event. The `user_bucket` field is an optional parameter expressed in an integer ranging from 0 to 100. (NOTE: 1.Not available for housing, employment, and credit campaigns; 2. Only available for hotel vertical, that is, when `content_type`=”hotel”) | Not supported in value rules |
+| [`user_bucket`](https://developers.facebook.com/documentation/ads-commerce/ccco#user_bucket) | Bid based on the `user_bucket` value defined in the advertiser's pixel fire or app event. The `user_bucket` field is an optional parameter expressed in an integer ranging from 0 to 100. (NOTE: 1.Not available for housing, employment, and credit campaigns; 2. Only available for hotel vertical, that is, when `content_type`="hotel") | Not supported in value rules |
 | [`user_device`](https://developers.facebook.com/documentation/ads-commerce/ccco#user_device) | Bid based on `user_device`, such as iPhone. | Not supported in value rules |
 | [`user_os`](https://developers.facebook.com/documentation/ads-commerce/ccco#user_os) | Bid based on `user_os` such as iOS or Android. | `OS_TYPE` |
 | [`user_recency`](https://developers.facebook.com/documentation/ads-commerce/ccco#user_recency) | Bid based on when the user last visited the site or app. | Not supported in value rules |
@@ -946,15 +908,13 @@ Group users by age ranges; for example, `18-24`, `25-34`. The minimum age that c
 **Example**
 
 ```
-```
 {  
-  "age": {  
-    "18-24": 0.5,  
-    "25-34": 0.7,  
-    "default": 1.0  
-  }  
+  "age": {  
+    "18-24": 0.5,  
+    "25-34": 0.7,  
+    "default": 1.0  
+  }  
 }
-```
 ```
 
 **Example API call**
@@ -962,7 +922,7 @@ Group users by age ranges; for example, `18-24`, `25-34`. The minimum age that c
 ```
 curl -X POST \
   -F 'bid_adjustments=
-     {"user_groups":{"age":{"18-24":0.5,"25-34":0.7,"default":1.0}}}' \
+     {"user_groups":{"age":{"18-24":0.5,"25-34":0.7,"default":1.0}​}}' \
   -F 'access_token=<ACCESS_TOKEN>' \
   https://graph.facebook.com/<API_VERSION>/<AD_SET_ID>
 ```
@@ -970,47 +930,45 @@ curl -X POST \
 **Equivalent value rule set**
 
 ```
-```
 {  
-  "name": "Example",  
-  "rules": [  
-    {  
-      "name": "Rule 1",  
-      "adjust_sign": "DECREASE",  
-      "adjust_value": 50,  
-      "criterias": [  
-        {  
-          "criteria_type": "AGE",  
-          "operator": "CONTAINS",  
-          "criteria_values": [  
-            "18-24"  
-          ],  
-          "criteria_value_types": [  
-            "NONE"  
-          ]  
-        }  
-      ]  
-    },  
-    {  
-      "name": "Rule 2",  
-      "adjust_sign": "DECREASE",  
-      "adjust_value": 30,  
-      "criterias": [  
-        {  
-          "criteria_type": "AGE",  
-          "operator": "CONTAINS",  
-          "criteria_values": [  
-            "25-34"  
-          ],  
-          "criteria_value_types": [  
-            "NONE"  
-          ]  
-        }  
-      ]  
-    }  
-  ]  
+  "name": "Example",  
+  "rules": [  
+    {  
+      "name": "Rule 1",  
+      "adjust_sign": "DECREASE",  
+      "adjust_value": 50,  
+      "criterias": [  
+        {  
+          "criteria_type": "AGE",  
+          "operator": "CONTAINS",  
+          "criteria_values": [  
+            "18-24"  
+          ],  
+          "criteria_value_types": [  
+            "NONE"  
+          ]  
+        }  
+      ]  
+    },  
+    {  
+      "name": "Rule 2",  
+      "adjust_sign": "DECREASE",  
+      "adjust_value": 30,  
+      "criterias": [  
+        {  
+          "criteria_type": "AGE",  
+          "operator": "CONTAINS",  
+          "criteria_values": [  
+            "25-34"  
+          ],  
+          "criteria_value_types": [  
+            "NONE"  
+          ]  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ### `booking_window`
@@ -1022,7 +980,7 @@ Possible parameter values include any integer range greater than or equal to 1. 
 ```
 curl -X POST \
   -F 'bid_adjustments=
-     {"user_groups":{"booking_window":{"event_sources":["123456789"],"1-2":0.1,"3-5":0.2,"default":0.5}}}' \
+     {"user_groups":{"booking_window":{"event_sources":["123456789"],"1-2":0.1,"3-5":0.2,"default":0.5}​}}' \
   -F 'access_token=<ACCESS_TOKEN>' \
   https://graph.facebook.com/<API_VERSION>/<AD_SET_ID>
 ```
@@ -1038,7 +996,7 @@ You can adjust bids based on your custom audiences.
 ```
 curl -X POST \
   -F 'bid_adjustments=
-     {"user_groups":{"custom_audience":{"<CUSTOM_AUDIENCE_ID>":0.8, "<CUSTOM_AUDIENCE_ID>":1.0, "default":0.5}}}' \
+     {"user_groups":{"custom_audience":{"<CUSTOM_AUDIENCE_ID>":0.8, "<CUSTOM_AUDIENCE_ID>":1.0, "default":0.5}​}}' \
   -F 'access_token=<ACCESS_TOKEN>' \
   https://graph.facebook.com/<API_VERSION>/<AD_SET_ID>
 ```
@@ -1068,47 +1026,45 @@ Possible parameter values:
 **Equivalent value rule set**
 
 ```
-```
 {  
-  "name": "Example",  
-  "rules": [  
-    {  
-      "name": "Rule 1",  
-      "adjust_sign": "DECREASE",  
-      "adjust_value": 30,  
-      "criterias": [  
-        {  
-          "criteria_type": "DEVICE_PLATFORM",  
-          "operator": "CONTAINS",  
-          "criteria_values": [  
-            "MOBILE"  
-          ],  
-          "criteria_value_types": [  
-            "NONE"  
-          ]  
-        }  
-      ]  
-    },  
-    {  
-      "name": "Rule 2",  
-      "adjust_sign": "DECREASE",  
-      "adjust_value": 10,  
-      "criterias": [  
-        {  
-          "criteria_type": "DEVICE_PLATFORM",  
-          "operator": "CONTAINS",  
-          "criteria_values": [  
-            "DESKTOP"  
-          ],  
-          "criteria_value_types": [  
-            "NONE"  
-          ]  
-        }  
-      ]  
-    }  
-  ]  
+  "name": "Example",  
+  "rules": [  
+    {  
+      "name": "Rule 1",  
+      "adjust_sign": "DECREASE",  
+      "adjust_value": 30,  
+      "criterias": [  
+        {  
+          "criteria_type": "DEVICE_PLATFORM",  
+          "operator": "CONTAINS",  
+          "criteria_values": [  
+            "MOBILE"  
+          ],  
+          "criteria_value_types": [  
+            "NONE"  
+          ]  
+        }  
+      ]  
+    },  
+    {  
+      "name": "Rule 2",  
+      "adjust_sign": "DECREASE",  
+      "adjust_value": 10,  
+      "criterias": [  
+        {  
+          "criteria_type": "DEVICE_PLATFORM",  
+          "operator": "CONTAINS",  
+          "criteria_values": [  
+            "DESKTOP"  
+          ],  
+          "criteria_value_types": [  
+            "NONE"  
+          ]  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ### `gender`
@@ -1135,47 +1091,45 @@ Possible parameter values:
 **Equivalent value rule set**
 
 ```
-```
 {  
-  "name": "Example",  
-  "rules": [  
-    {  
-      "name": "Rule 1",  
-      "adjust_sign": "DECREASE",  
-      "adjust_value": 50,  
-      "criterias": [  
-        {  
-          "criteria_type": "GENDER",  
-          "operator": "CONTAINS",  
-          "criteria_values": [  
-            "MALE"  
-          ],  
-          "criteria_value_types": [  
-            "NONE"  
-          ]  
-        }  
-      ]  
-    },  
-    {  
-      "name": "Rule 2",  
-      "adjust_sign": "DECREASE",  
-      "adjust_value": 30,  
-      "criterias": [  
-        {  
-          "criteria_type": "GENDER",  
-          "operator": "CONTAINS",  
-          "criteria_values": [  
-            "FEMALE"  
-          ],  
-          "criteria_value_types": [  
-            "NONE"  
-          ]  
-        }  
-      ]  
-    }  
-  ]  
+  "name": "Example",  
+  "rules": [  
+    {  
+      "name": "Rule 1",  
+      "adjust_sign": "DECREASE",  
+      "adjust_value": 50,  
+      "criterias": [  
+        {  
+          "criteria_type": "GENDER",  
+          "operator": "CONTAINS",  
+          "criteria_values": [  
+            "MALE"  
+          ],  
+          "criteria_value_types": [  
+            "NONE"  
+          ]  
+        }  
+      ]  
+    },  
+    {  
+      "name": "Rule 2",  
+      "adjust_sign": "DECREASE",  
+      "adjust_value": 30,  
+      "criterias": [  
+        {  
+          "criteria_type": "GENDER",  
+          "operator": "CONTAINS",  
+          "criteria_values": [  
+            "FEMALE"  
+          ],  
+          "criteria_value_types": [  
+            "NONE"  
+          ]  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ### `home_location`
@@ -1215,64 +1169,62 @@ Value rules do not support DMAs. When translating bid multiplier parameter sets 
 **Equivalent value rule set**
 
 ```
-```
 {  
-  "name": "Example",  
-  "rules": [  
-    {  
-      "name": "Rule 1",  
-      "adjust_sign": "DECREASE",  
-      "adjust_value": 75,  
-      "criterias": [  
-        {  
-          "criteria_type": "LOCATION",  
-          "operator": "CONTAINS",  
-          "criteria_values": [  
-            "2420605"  
-          ],  
-          "criteria_value_types": [  
-            "LOCATION_CITY"  
-          ]  
-        }  
-      ]  
-    },  
-    {  
-      "name": "Rule 2",  
-      "adjust_sign": "DECREASE",  
-      "adjust_value": 38,  
-      "criterias": [  
-        {  
-          "criteria_type": "LOCATION",  
-          "operator": "CONTAINS",  
-          "criteria_values": [  
-            "3847"  
-          ],  
-          "criteria_value_types": [  
-            "LOCATION_REGION"  
-          ]  
-        }  
-      ]  
-    },  
-    {  
-      "name": "Rule 3",  
-      "adjust_sign": "DECREASE",  
-      "adjust_value": 75,  
-      "criterias": [  
-        {  
-          "criteria_type": "LOCATION",  
-          "operator": "CONTAINS",  
-          "criteria_values": [  
-            "US"  
-          ],  
-          "criteria_value_types": [  
-            "LOCATION_COUNTRY"  
-          ]  
-        }  
-      ]  
-    }  
-  ]  
+  "name": "Example",  
+  "rules": [  
+    {  
+      "name": "Rule 1",  
+      "adjust_sign": "DECREASE",  
+      "adjust_value": 75,  
+      "criterias": [  
+        {  
+          "criteria_type": "LOCATION",  
+          "operator": "CONTAINS",  
+          "criteria_values": [  
+            "2420605"  
+          ],  
+          "criteria_value_types": [  
+            "LOCATION_CITY"  
+          ]  
+        }  
+      ]  
+    },  
+    {  
+      "name": "Rule 2",  
+      "adjust_sign": "DECREASE",  
+      "adjust_value": 38,  
+      "criterias": [  
+        {  
+          "criteria_type": "LOCATION",  
+          "operator": "CONTAINS",  
+          "criteria_values": [  
+            "3847"  
+          ],  
+          "criteria_value_types": [  
+            "LOCATION_REGION"  
+          ]  
+        }  
+      ]  
+    },  
+    {  
+      "name": "Rule 3",  
+      "adjust_sign": "DECREASE",  
+      "adjust_value": 75,  
+      "criterias": [  
+        {  
+          "criteria_type": "LOCATION",  
+          "operator": "CONTAINS",  
+          "criteria_values": [  
+            "US"  
+          ],  
+          "criteria_value_types": [  
+            "LOCATION_COUNTRY"  
+          ]  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ### `length_of_stay`
@@ -1284,7 +1236,7 @@ Possible parameter values include any integer range greater than or equal to 1. 
 ```
 curl -X POST \
   -F 'bid_adjustments=
-     {"user_groups":{"length_of_stay":{"event_sources":["123456789"],"1-2":0.1,"3-5":0.2,"default":0.5}}}' \
+     {"user_groups":{"length_of_stay":{"event_sources":["123456789"],"1-2":0.1,"3-5":0.2,"default":0.5}​}}' \
   -F 'access_token=<ACCESS_TOKEN>' \
   https://graph.facebook.com/<API_VERSION>/<AD_SET_ID>
 ```
@@ -1353,47 +1305,45 @@ This category is similar to the position options in the [Targeting API](https://
 **Value rule set (not equivalent to bid multipliers example due to unsupported parameter values)**
 
 ```
-```
 {  
-  "name": "Example",  
-  "rules": [  
-    {  
-      "name": "Rule 1",  
-      "adjust_sign": "DECREASE",  
-      "adjust_value": 50,  
-      "criterias": [  
-        {  
-          "criteria_type": "PLACEMENT",  
-          "operator": "CONTAINS",  
-          "criteria_values": [  
-            "FB_FEED"  
-          ],  
-          "criteria_value_types": [  
-            "NONE"  
-          ]  
-        }  
-      ]  
-    },  
-    {  
-      "name": "Rule 2",  
-      "adjust_sign": "DECREASE",  
-      "adjust_value": 30,  
-      "criterias": [  
-        {  
-          "criteria_type": "PLACEMENT",  
-          "operator": "CONTAINS",  
-          "criteria_values": [  
-            "FB_VIDEO"  
-          ],  
-          "criteria_value_types": [  
-            "NONE"  
-          ]  
-        }  
-      ]  
-    }  
-  ]  
+  "name": "Example",  
+  "rules": [  
+    {  
+      "name": "Rule 1",  
+      "adjust_sign": "DECREASE",  
+      "adjust_value": 50,  
+      "criterias": [  
+        {  
+          "criteria_type": "PLACEMENT",  
+          "operator": "CONTAINS",  
+          "criteria_values": [  
+            "FB_FEED"  
+          ],  
+          "criteria_value_types": [  
+            "NONE"  
+          ]  
+        }  
+      ]  
+    },  
+    {  
+      "name": "Rule 2",  
+      "adjust_sign": "DECREASE",  
+      "adjust_value": 30,  
+      "criterias": [  
+        {  
+          "criteria_type": "PLACEMENT",  
+          "operator": "CONTAINS",  
+          "criteria_values": [  
+            "FB_VIDEO"  
+          ],  
+          "criteria_value_types": [  
+            "NONE"  
+          ]  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ### `publisher_platform`
@@ -1422,47 +1372,45 @@ Possible parameter values:
 **Equivalent value rule set**
 
 ```
-```
 {  
-  "name": "Example",  
-  "rules": [  
-    {  
-      "name": "Rule 1",  
-      "adjust_sign": "DECREASE",  
-      "adjust_value": 30,  
-      "criterias": [  
-        {  
-          "criteria_type": "PLACEMENT",  
-          "operator": "CONTAINS",  
-          "criteria_values": [  
-            "FB_FEED", "FB_STORIES", "FB_REELS", "FB_MARKETPLACE", "FB_SEARCH", "FB_VIDEO"  
-          ],  
-          "criteria_value_types": [  
-            "NONE", "NONE", "NONE", "NONE", "NONE", "NONE"  
-          ]  
-        }  
-      ]  
-    },  
-    {  
-      "name": "Rule 2",  
-      "adjust_sign": "DECREASE",  
-      "adjust_value": 10,  
-      "criterias": [  
-        {  
-          "criteria_type": "PLACEMENT",  
-          "operator": "CONTAINS",  
-          "criteria_values": [  
-            "IG_FEED", "IG_STORIES", "IG_REELS", "IG_EXPLORE"  
-          ],  
-          "criteria_value_types": [  
-            "NONE", "NONE", "NONE", "NONE"  
-          ]  
-        }  
-      ]  
-    }  
-  ]  
+  "name": "Example",  
+  "rules": [  
+    {  
+      "name": "Rule 1",  
+      "adjust_sign": "DECREASE",  
+      "adjust_value": 30,  
+      "criterias": [  
+        {  
+          "criteria_type": "PLACEMENT",  
+          "operator": "CONTAINS",  
+          "criteria_values": [  
+            "FB_FEED", "FB_STORIES", "FB_REELS", "FB_MARKETPLACE", "FB_SEARCH", "FB_VIDEO"  
+          ],  
+          "criteria_value_types": [  
+            "NONE", "NONE", "NONE", "NONE", "NONE", "NONE"  
+          ]  
+        }  
+      ]  
+    },  
+    {  
+      "name": "Rule 2",  
+      "adjust_sign": "DECREASE",  
+      "adjust_value": 10,  
+      "criterias": [  
+        {  
+          "criteria_type": "PLACEMENT",  
+          "operator": "CONTAINS",  
+          "criteria_values": [  
+            "IG_FEED", "IG_STORIES", "IG_REELS", "IG_EXPLORE"  
+          ],  
+          "criteria_value_types": [  
+            "NONE", "NONE", "NONE", "NONE"  
+          ]  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ### `travel_start_date`
@@ -1474,7 +1422,7 @@ Possible parameter values include any date range in the format `yyyymmdd-yyyymmd
 ```
 curl -X POST \
   -F 'bid_adjustments=
-     {"user_groups":{"travel_start_date":{"event_sources":["123456789"],"20180901-20181001":0.2,"default":0.9}}}' \
+     {"user_groups":{"travel_start_date":{"event_sources":["123456789"],"20180901-20181001":0.2,"default":0.9}​}}' \
   -F 'access_token=<ACCESS_TOKEN>' \
   https://graph.facebook.com/<API_VERSION>/<AD_SET_ID>
 ```
@@ -1488,7 +1436,7 @@ Possible parameter values include any integer between 0 and 6, inclusive. `0` is
 ```
 curl -X POST \
   -F 'bid_adjustments=
-  {"user_groups":{"travel_start_day_of_week":{"event_sources":["123456789"],"0":0.1,"2":0.2,"6":0.3,"default":0.9}}}' \
+  {"user_groups":{"travel_start_day_of_week":{"event_sources":["123456789"],"0":0.1,"2":0.2,"6":0.3,"default":0.9}​}}' \
   -F 'access_token=<ACCESS_TOKEN>' \
   https://graph.facebook.com/<API_VERSION>/<AD_SET_ID>
 ```
@@ -1573,47 +1521,45 @@ See other possible values at [Targeting Search API](https://developers.facebook.
 **Equivalent value rule set**
 
 ```
-```
 {  
-  "name": "Example",  
-  "rules": [  
-    {  
-      "name": "Rule 1",  
-      "adjust_sign": "DECREASE",  
-      "adjust_value": 30,  
-      "criterias": [  
-        {  
-          "criteria_type": "OS_TYPE",  
-          "operator": "CONTAINS",  
-          "criteria_values": [  
-            "ANDROID"  
-          ],  
-          "criteria_value_types": [  
-            "NONE"  
-          ]  
-        }  
-      ]  
-    },  
-    {  
-      "name": "Rule 2",  
-      "adjust_sign": "DECREASE",  
-      "adjust_value": 10,  
-      "criterias": [  
-        {  
-          "criteria_type": "OS_TYPE",  
-          "operator": "CONTAINS",  
-          "criteria_values": [  
-            "IOS"  
-          ],  
-          "criteria_value_types": [  
-            "NONE"  
-          ]  
-        }  
-      ]  
-    }  
-  ]  
+  "name": "Example",  
+  "rules": [  
+    {  
+      "name": "Rule 1",  
+      "adjust_sign": "DECREASE",  
+      "adjust_value": 30,  
+      "criterias": [  
+        {  
+          "criteria_type": "OS_TYPE",  
+          "operator": "CONTAINS",  
+          "criteria_values": [  
+            "ANDROID"  
+          ],  
+          "criteria_value_types": [  
+            "NONE"  
+          ]  
+        }  
+      ]  
+    },  
+    {  
+      "name": "Rule 2",  
+      "adjust_sign": "DECREASE",  
+      "adjust_value": 10,  
+      "criterias": [  
+        {  
+          "criteria_type": "OS_TYPE",  
+          "operator": "CONTAINS",  
+          "criteria_values": [  
+            "IOS"  
+          ],  
+          "criteria_value_types": [  
+            "NONE"  
+          ]  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ### `user_recency`

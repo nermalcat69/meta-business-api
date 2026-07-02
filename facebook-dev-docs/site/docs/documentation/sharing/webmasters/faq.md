@@ -17,11 +17,9 @@ Using HTML meta tags, you can specify 3D assets to be displayed when a link is s
 * Modify the HTML response header for your URL to include the following meta tags. Replace the content attributes with your information.
 
 ```
-```
 <meta property="og:type" content="threed.asset" />
 <meta property="og:asset" content="your_3d_asset_url" />
 <meta property="og:title" content="your_link_title" />
-```
 ```
 
 * Open the **Sharing Debugger** to verify that your server is returning the correct metadata to Facebook for sharing.   

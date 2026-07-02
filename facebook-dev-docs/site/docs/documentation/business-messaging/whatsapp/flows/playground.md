@@ -15,7 +15,7 @@ Message webhook:
 
 * [Flow response message webhook](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/playground#flowresponse)
 
-Webhook to monitor the status of your business’ Flows:
+Webhook to monitor the status of your business' Flows:
 
 * [Flows status changes](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/playground#statuschange)
 
@@ -75,34 +75,32 @@ The Flow response does not include the Flow ID. You can include a custom field i
 Below is the structure of the Flow response message webhook payload:
 
 ```
-```
 {  
-  "messages": [{  
-    "context": {  
-      "from": "16315558151",  
-      "id": "gBGGEiRVVgBPAgm7FUgc73noXjo"  
-    },  
-    "from": "<USER_ACCOUNT_NUMBER>",  
-    "id": "<MESSAGE_ID>",  
-    "type": "interactive",  
-    "interactive": {  
-      "type": "nfm_reply",  
-      "nfm_reply": {  
-        "name": "flow",  
-        "body": "Sent",  
-        "response_json": "{\"flow_token\": \"<FLOW_TOKEN>\", \"optional_param1\": \"<value1>\", \"optional_param2\": \"<value2>\"}"  
-      }  
-    },  
-    "timestamp": "<MESSAGE_SEND_TIMESTAMP>"  
-  }]  
+  "messages": [{  
+    "context": {  
+      "from": "16315558151",  
+      "id": "gBGGEiRVVgBPAgm7FUgc73noXjo"  
+    },  
+    "from": "<USER_ACCOUNT_NUMBER>",  
+    "id": "<MESSAGE_ID>",  
+    "type": "interactive",  
+    "interactive": {  
+      "type": "nfm_reply",  
+      "nfm_reply": {  
+        "name": "flow",  
+        "body": "Sent",  
+        "response_json": "{\"flow_token\": \"<FLOW_TOKEN>\", \"optional_param1\": \"<value1>\", \"optional_param2\": \"<value2>\"}"  
+      }  
+    },  
+    "timestamp": "<MESSAGE_SEND_TIMESTAMP>"  
+  }]  
 }
-```
 ```
 
 | Parameter | Description |
 | --- | --- |
 | `context`*object* | Context of the message that the user replied to. Context object contains message\_id of flows request message and sender number. |
-| `context.from`*string* | User’s WhatsApp account number |
+| `context.from`*string* | User's WhatsApp account number |
 | `context.id`*string* | Message ID |
 | `context.type`*string* | Always `interactive` |
 | `interactive.type`*string* | Always `nfm_reply` |
@@ -148,61 +146,57 @@ Contains details for the change that triggered the webhook. This object is neste
 A notification is sent when the status for the flow changes, specifically when the flow is either `Published`, `Throttled`, `Blocked` or `Deprecated.`
 
 ```
-```
 {  
-  "entry": [  
-      {  
-        "id": "644600416743275",  
-        "time": 1684969340,  
-        "changes": [  
-          {  
-            "value": {  
-              "event": "FLOW_STATUS_CHANGE",  
-              "message": "Flow Webhook 3 changed status from DRAFT to PUBLISHED",  
-              "flow_id": "6627390910605886",  
-              "old_status": "DRAFT",  
-              "new_status": "PUBLISHED"  
-            },  
-            "field": "flows"  
-          }  
-        ]  
-      }  
-    ],  
-    "object": "whatsapp_business_account"  
+  "entry": [  
+      {  
+        "id": "644600416743275",  
+        "time": 1684969340,  
+        "changes": [  
+          {  
+            "value": {  
+              "event": "FLOW_STATUS_CHANGE",  
+              "message": "Flow Webhook 3 changed status from DRAFT to PUBLISHED",  
+              "flow_id": "6627390910605886",  
+              "old_status": "DRAFT",  
+              "new_status": "PUBLISHED"  
+            },  
+            "field": "flows"  
+          }  
+        ]  
+      }  
+    ],  
+    "object": "whatsapp_business_account"  
 }
-```
 ```
 
 The notification is also sent on the flow creation event. In this case the old status value will not be set, and the new value will be `Draft` as a default status.
 
 ```
-```
 {  
-  "entry": [  
-      {  
-        "id": "644600416743275",  
-        "time": 1684969340,  
-        "changes": [  
-          {  
-            "value": {  
-              "event": "FLOW_STATUS_CHANGE",  
-              "message": "Flow Webhook 3 has been created with DRAFT status",  
-              "flow_id": "6627390910605886",  
-              "new_status": "DRAFT"  
-            },  
-            "field": "flows"  
-          }  
-        ]  
-      }  
-    ],  
-    "object": "whatsapp_business_account"  
+  "entry": [  
+      {  
+        "id": "644600416743275",  
+        "time": 1684969340,  
+        "changes": [  
+          {  
+            "value": {  
+              "event": "FLOW_STATUS_CHANGE",  
+              "message": "Flow Webhook 3 has been created with DRAFT status",  
+              "flow_id": "6627390910605886",  
+              "new_status": "DRAFT"  
+            },  
+            "field": "flows"  
+          }  
+        ]  
+      }  
+    ],  
+    "object": "whatsapp_business_account"  
 }
-```
 ```
 
 ### Client error rate webhook
 
-Client error rate is approximate as it’s not available for all the client devices and regions.
+Client error rate is approximate as it's not available for all the client devices and regions.
 
 You receive a notification when the error rate for screen navigations on the client goes over one of the following thresholds and then again when it goes below these thresholds.
 
@@ -219,42 +213,40 @@ The detection period for these thresholds is 60 minutes, which is the period ove
 * Check the errors listed in the alert and check the [error codes reference guide](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/reference/error-codes#error-types-reported-via-webhook-alerts-or-propagated-back-to-endpoint) for possible resolutions.
 
 ```
-```
 {  
-  "entry": [  
-    {  
-      "id": "106181168862417",  
-      "time": 1674160476,  
-      "changes": [  
-        {  
-          "value": {  
-            "event": "CLIENT_ERROR_RATE",  
-            "message": "The flow client request error rate has reached the 5% threshold in the last 60 minutes. A higher error rate will make it harder for users to complete the flow, resulting in drop-offs.",  
-            "flow_id": "691244242662581",  
-            "error_rate": 14.28,  
-            "threshold": 10,  
-            "alert_state": "ACTIVATED",  
-            "errors": [  
-              {  
-                "error_type": "INVALID_SCREEN_TRANSITION",  
-                "error_rate": 66.66,  
-                "error_count": 2  
-              },  
-              {  
-                "error_type": "PUBLIC_KEY_MISSING",  
-                "error_rate": 33.33,  
-                "error_count": 1  
-              }  
-            ]  
-          },  
-          "field": "flows"  
-        }  
-      ]  
-    }  
-  ],  
-  "object": "whatsapp_business_account"  
+  "entry": [  
+    {  
+      "id": "106181168862417",  
+      "time": 1674160476,  
+      "changes": [  
+        {  
+          "value": {  
+            "event": "CLIENT_ERROR_RATE",  
+            "message": "The flow client request error rate has reached the 5% threshold in the last 60 minutes. A higher error rate will make it harder for users to complete the flow, resulting in drop-offs.",  
+            "flow_id": "691244242662581",  
+            "error_rate": 14.28,  
+            "threshold": 10,  
+            "alert_state": "ACTIVATED",  
+            "errors": [  
+              {  
+                "error_type": "INVALID_SCREEN_TRANSITION",  
+                "error_rate": 66.66,  
+                "error_count": 2  
+              },  
+              {  
+                "error_type": "PUBLIC_KEY_MISSING",  
+                "error_rate": 33.33,  
+                "error_count": 1  
+              }  
+            ]  
+          },  
+          "field": "flows"  
+        }  
+      ]  
+    }  
+  ],  
+  "object": "whatsapp_business_account"  
 }
-```
 ```
 
 ### Endpoint error rate webhook
@@ -274,42 +266,40 @@ The detection period for these thresholds is 30 minutes, which is the period ove
 * Check the errors listed in the alert and check the [error codes reference guide](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/reference/error-codes#error-types-reported-via-webhook-alerts-or-propagated-back-to-endpoint) for possible resolutions.
 
 ```
-```
 {  
-  "entry": [  
-    {  
-      "id": "106181168862417",  
-      "time": 1674160476,  
-      "changes": [  
-        {  
-          "value": {  
-            "event": "ENDPOINT_ERROR_RATE",  
-            "message": "The flow endpoint request error rate has reached the 10% threshold in the last 30 minutes. A higher error rate will make it harder for users to complete the flow, resulting in drop-offs.",  
-            "flow_id": "691244242662581",  
-            "error_rate": 14.28,  
-            "threshold": 10,  
-            "alert_state": "ACTIVATED",  
-            "errors": [  
-              {  
-                "error_type": "CAPABILITY_ERROR",  
-                "error_rate": 66.66,  
-                "error_count": 2  
-              },  
-              {  
-                "error_type": "TIMEOUT",  
-                "error_rate": 33.33,  
-                "error_count": 1  
-              }  
-            ]  
-          },  
-          "field": "flows"  
-        }  
-      ]  
-    }  
-  ],  
-  "object": "whatsapp_business_account"  
+  "entry": [  
+    {  
+      "id": "106181168862417",  
+      "time": 1674160476,  
+      "changes": [  
+        {  
+          "value": {  
+            "event": "ENDPOINT_ERROR_RATE",  
+            "message": "The flow endpoint request error rate has reached the 10% threshold in the last 30 minutes. A higher error rate will make it harder for users to complete the flow, resulting in drop-offs.",  
+            "flow_id": "691244242662581",  
+            "error_rate": 14.28,  
+            "threshold": 10,  
+            "alert_state": "ACTIVATED",  
+            "errors": [  
+              {  
+                "error_type": "CAPABILITY_ERROR",  
+                "error_rate": 66.66,  
+                "error_count": 2  
+              },  
+              {  
+                "error_type": "TIMEOUT",  
+                "error_rate": 33.33,  
+                "error_count": 1  
+              }  
+            ]  
+          },  
+          "field": "flows"  
+        }  
+      ]  
+    }  
+  ],  
+  "object": "whatsapp_business_account"  
 }
-```
 ```
 
 ### Endpoint latency webhook
@@ -329,32 +319,30 @@ The detection period for these thresholds is 30 minutes, which is the period ove
 * Improve responsiveness of your endpoint and aim to return response in less than 1 second.
 
 ```
-```
 {  
-  "entry": [  
-    {  
-      "id": "106181168862417",  
-      "time": 1674160476,  
-      "changes": [  
-        {  
-          "value": {  
-            "event": "ENDPOINT_LATENCY",  
-            "message": "Flow endpoint latency has reached the p90 threshold in the last 30 minutes. High latency will increase the loading time between screens in the flow, impacting user experience.",  
-            "flow_id": "691244242662581",  
-            "p90_latency": 8000,  
-            "p50_latency": 500,  
-            "requests_count": 34,  
-            "threshold": 7000,  
-            "alert_state": "ACTIVATED"  
-          },  
-          "field": "flows"  
-        }  
-      ]  
-    }  
-  ],  
-  "object": "whatsapp_business_account"  
+  "entry": [  
+    {  
+      "id": "106181168862417",  
+      "time": 1674160476,  
+      "changes": [  
+        {  
+          "value": {  
+            "event": "ENDPOINT_LATENCY",  
+            "message": "Flow endpoint latency has reached the p90 threshold in the last 30 minutes. High latency will increase the loading time between screens in the flow, impacting user experience.",  
+            "flow_id": "691244242662581",  
+            "p90_latency": 8000,  
+            "p50_latency": 500,  
+            "requests_count": 34,  
+            "threshold": 7000,  
+            "alert_state": "ACTIVATED"  
+          },  
+          "field": "flows"  
+        }  
+      ]  
+    }  
+  ],  
+  "object": "whatsapp_business_account"  
 }
-```
 ```
 
 ### Endpoint availability webhook
@@ -369,68 +357,64 @@ The detection period for the alert is 10 minutes.
 * Check that it can correctly responds to [health check requests](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/whatsapp-business-encryption#set-business-public-key).
 
 ```
-```
 {  
-  "entry": [  
-    {  
-      "id": "106181168862417",  
-      "time": 1674160476,  
-      "changes": [  
-        {  
-          "value": {  
-            "event": "ENDPOINT_AVAILABILITY",  
-            "message": "The flow endpoint availability has breached the 90% threshold in the last 10 minutes. Users will be unable to open or use the flow.",  
-            "flow_id": "12345678",  
-            "alert_state": "ACTIVATED",  
-            "availability": 75,  
-            "threshold" : 90  
-          },  
-          "field": "flows"  
-        }  
+  "entry": [  
+    {  
+      "id": "106181168862417",  
+      "time": 1674160476,  
+      "changes": [  
+        {  
+          "value": {  
+            "event": "ENDPOINT_AVAILABILITY",  
+            "message": "The flow endpoint availability has breached the 90% threshold in the last 10 minutes. Users will be unable to open or use the flow.",  
+            "flow_id": "12345678",  
+            "alert_state": "ACTIVATED",  
+            "availability": 75,  
+            "threshold" : 90  
+          },  
+          "field": "flows"  
+        }  
   
-      ]  
-    }  
-  ],  
-  "object": "whatsapp_business_account"  
+      ]  
+    }  
+  ],  
+  "object": "whatsapp_business_account"  
 }
-```
 ```
 
 ### Flow Version Freeze/Expiry warning Webhook
 
-A notification is sent to you on the flow creation event if any of the [versions used is about to be frozen](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/versioning#version-support-and-lifecycle). You won’t be able to publish the Flow after the version freezes.
+A notification is sent to you on the flow creation event if any of the [versions used is about to be frozen](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/versioning#version-support-and-lifecycle). You won't be able to publish the Flow after the version freezes.
 
 #### Possible resolutions
 
 * Please migrate to the [recommended version](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/changelogs#currently-supported-versions) as soon as possible.
 
 ```
-```
 {  
-  "entry": [  
-      {  
-        "id": "644600416743275",  
-        "time": 1684969340,  
-        "changes": [  
-          {  
-            "value": {  
-              "event": "FLOW_STATUS_CHANGE",  
-              "message": "Flow Webhook 3 has been created with DRAFT status",  
-              "flow_id": "6627390910605886",  
-              "new_status": "DRAFT",  
-              "warning": "Your current Flow version will freeze in 21 days. You won't be able to send the Flow after it expires. Please migrate to the recommended version as soon as possible. /documentation/business-messaging/whatsapp/flows/changelogs#currently-supported-versions"  
-            },  
-            "field": "flows"  
-          }  
-        ]  
-      }  
-    ],  
-    "object": "whatsapp_business_account"  
+  "entry": [  
+      {  
+        "id": "644600416743275",  
+        "time": 1684969340,  
+        "changes": [  
+          {  
+            "value": {  
+              "event": "FLOW_STATUS_CHANGE",  
+              "message": "Flow Webhook 3 has been created with DRAFT status",  
+              "flow_id": "6627390910605886",  
+              "new_status": "DRAFT",  
+              "warning": "Your current Flow version will freeze in 21 days. You won't be able to send the Flow after it expires. Please migrate to the recommended version as soon as possible. /documentation/business-messaging/whatsapp/flows/changelogs#currently-supported-versions"  
+            },  
+            "field": "flows"  
+          }  
+        ]  
+      }  
+    ],  
+    "object": "whatsapp_business_account"  
 }
 ```
-```
 
-The notification is also sent when you send Flow with [version which is about to expire](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/versioning#version-support-and-lifecycle). You won’t be able to send the Flow after it expires.
+The notification is also sent when you send Flow with [version which is about to expire](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/versioning#version-support-and-lifecycle). You won't be able to send the Flow after it expires.
 
 WhatsApp aims to send only a single webhook for each Flow whose version is about to expire.
 
@@ -439,25 +423,23 @@ WhatsApp aims to send only a single webhook for each Flow whose version is about
 * Please migrate to the [recommended version](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/changelogs#currently-supported-versions) as soon as possible.
 
 ```
-```
 {  
-  "entry": [  
-      {  
-        "id": "644600416743275",  
-        "time": 1684969340,  
-        "changes": [  
-          {  
-            "value": {  
-              "event": "FLOW_VERSION_EXPIRY_WARNING",  
-              "warning": "Your current Flow version will freeze in 21 days. You won't be able to send the Flow after it expires. Please migrate to the recommended version as soon as possible. /documentation/business-messaging/whatsapp/flows/changelogs#currently-supported-versions",  
-              "flow_id": "6627390910605886"  
-            },  
-            "field": "flows"  
-          }  
-        ]  
-      }  
-    ],  
-    "object": "whatsapp_business_account"  
+  "entry": [  
+      {  
+        "id": "644600416743275",  
+        "time": 1684969340,  
+        "changes": [  
+          {  
+            "value": {  
+              "event": "FLOW_VERSION_EXPIRY_WARNING",  
+              "warning": "Your current Flow version will freeze in 21 days. You won't be able to send the Flow after it expires. Please migrate to the recommended version as soon as possible. /documentation/business-messaging/whatsapp/flows/changelogs#currently-supported-versions",  
+              "flow_id": "6627390910605886"  
+            },  
+            "field": "flows"  
+          }  
+        ]  
+      }  
+    ],  
+    "object": "whatsapp_business_account"  
 }
-```
 ```

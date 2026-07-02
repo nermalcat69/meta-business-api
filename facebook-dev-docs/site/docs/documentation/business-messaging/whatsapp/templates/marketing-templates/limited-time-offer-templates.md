@@ -49,50 +49,48 @@ Use the [Message Templates API](https://developers.facebook.com/documentation/bu
 ### Request syntax
 
 ```
-```
-curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_ACCOUNT_ID>/message_templates' \  
--H 'Content-Type: application/json' \  
--H 'Authorization: Bearer <ACCESS_TOKEN>' \  
--d '  
+curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_ACCOUNT_ID>/message_templates' \  
+-H 'Content-Type: application/json' \  
+-H 'Authorization: Bearer <ACCESS_TOKEN>' \  
+-d '  
 {  
-  "name": "<TEMPLATE_NAME>",  
-  "language": "<TEMPLATE_LANGUAGE>",  
-  "category": "MARKETING",  
-  "parameter_format": "named",  
-  "components": [  
-    {  
-      "type": "HEADER",  
-      "format": "TEXT",  
-      "text": "<HEADER_TEXT>"  
-    },  
-    {  
-      "type": "BODY",  
-      "text": "<BODY_TEXT>",  
-      "example": {  
-        "body_text_named_params": [  
-          {  
-            "param_name": "<BODY_PARAMETER_NAME>",  
-            "example": "<BODY_PARAMETER_EXAMPLE_VALUE>"  
-          }  
-        ]  
-      }  
-    },  
-    {  
-      "type": "BUTTONS",  
-      "buttons": [  
-        {  
-          "type": "QUICK_REPLY",  
-          "text": "<QUICK_REPLY_BUTTON_LABEL_TEXT>"  
-        },  
-        {  
-          "type": "COPY_CODE",  
-          "example": "<COPY_CODE_BUTTON_EXAMPLE_CODE>"  
-        }  
-      ]  
-    }  
-  ]  
+  "name": "<TEMPLATE_NAME>",  
+  "language": "<TEMPLATE_LANGUAGE>",  
+  "category": "MARKETING",  
+  "parameter_format": "named",  
+  "components": [  
+    {  
+      "type": "HEADER",  
+      "format": "TEXT",  
+      "text": "<HEADER_TEXT>"  
+    },  
+    {  
+      "type": "BODY",  
+      "text": "<BODY_TEXT>",  
+      "example": {  
+        "body_text_named_params": [  
+          {  
+            "param_name": "<BODY_PARAMETER_NAME>",  
+            "example": "<BODY_PARAMETER_EXAMPLE_VALUE>"  
+          }  
+        ]  
+      }  
+    },  
+    {  
+      "type": "BUTTONS",  
+      "buttons": [  
+        {  
+          "type": "QUICK_REPLY",  
+          "text": "<QUICK_REPLY_BUTTON_LABEL_TEXT>"  
+        },  
+        {  
+          "type": "COPY_CODE",  
+          "example": "<COPY_CODE_BUTTON_EXAMPLE_CODE>"  
+        }  
+      ]  
+    }  
+  ]  
 }'
-```
 ```
 
 ### Request parameters
@@ -103,7 +101,7 @@ curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_ACCOUNT_ID>/m
 | `<API_VERSION>`  *String* | **Optional.**  Graph API version. | v25.0 |
 | `<BODY_PARAMETER_EXAMPLE_VALUE>`  *String* | **Required if using a body component string that includes one or more parameters.**  Example parameter value. You must supply an example for each parameter defined in your body component string. | `WINTER25` |
 | `<BODY_PARAMETER_NAME>`  *String* | **Required if using named parameters.**  Parameter name. Must be a unique string, composed of lowercase characters and underscores. | `coupon_code` |
-| `<BODY_TEXT>`  *String* | **Required.**  Template body text. Variables are supported.  Maximum 1024 characters. | `Shop now through the end of December and use the one-time use code {{coupon_code}} to get {{discount}} off of your entire order!` |
+| `<BODY_TEXT>`  *String* | **Required.**  Template body text. Variables are supported.  Maximum 1024 characters. | `Shop now through the end of December and use the one-time use code {​{coupon_code}​} to get {​{discount}​} off of your entire order!` |
 | `<COPY_CODE_BUTTON_EXAMPLE_CODE>`  *String* | **Required.**  String to copy to device clipboard.  Maximum 20 characters. | `WINTER25` |
 | `<HEADER_TEXT>`  *String* | **Required if using a text header component.**  Header text.  Maximum 60 characters. | `Our Winter Sale is on!` |
 | `<QUICK_REPLY_BUTTON_LABEL_TEXT>`  *String* | **Required if using a quick-reply button.**  Button label text. Maximum 25 characters. Alphanumeric characters only. | `Unsubscribe` |
@@ -116,13 +114,11 @@ curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_ACCOUNT_ID>/m
 Upon success, the API responds with:
 
 ```
-```
 {  
-  "id": "<TEMPLATE_ID>",  
-  "status": "<TEMPLATE_STATUS>",  
-  "category": "<TEMPLATE_CATEGORY>"  
+  "id": "<TEMPLATE_ID>",  
+  "status": "<TEMPLATE_STATUS>",  
+  "category": "<TEMPLATE_CATEGORY>"  
 }
-```
 ```
 
 ### Response parameters
@@ -153,7 +149,7 @@ curl 'https://graph.facebook.com/v25.0/102290129340398/message_templates' \
     },
     {
       "type": "BODY",
-      "text": "Shop now through the end of December and use the one-time use code {{coupon_code}} to get {{discount}} off of your entire order!",
+      "text": "Shop now through the end of December and use the one-time use code {​{coupon_code}​} to get {​{discount}​} off of your entire order!",
       "example": {
         "body_text_named_params": [
           {
@@ -187,13 +183,11 @@ curl 'https://graph.facebook.com/v25.0/102290129340398/message_templates' \
 ### Example response
 
 ```
-```
 {  
-  "category" : "MARKETING",  
-  "id" : "1924084211297547",  
-  "status" : "PENDING"  
+  "category" : "MARKETING",  
+  "id" : "1924084211297547",  
+  "status" : "PENDING"  
 }
-```
 ```
 
 ## Step 2: Send a coupon code template
@@ -203,46 +197,44 @@ Use the [Messages API](https://developers.facebook.com/documentation/business-me
 ### Request syntax
 
 ```
-```
-curl -X POST "https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/messages" \  
-  -H "Authorization: Bearer <ACCESS_TOKEN>" \  
-  -H "Content-Type: application/json" \  
-  -d '  
+curl -X POST "https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/messages" \  
+  -H "Authorization: Bearer <ACCESS_TOKEN>" \  
+  -H "Content-Type: application/json" \  
+  -d '  
 {  
-    "messaging_product": "whatsapp",  
-    "to": "<WHATSAPP_USER_PHONE_NUMBER>",  
-    "type": "template",  
-    "template": {  
-      "name": "<TEMPLATE_NAME>",  
-      "language": {  
-        "code": "<TEMPLATE_LANGUAGE>"  
-      },  
-      "components": [  
-        {  
-          "type": "body",  
-          "parameters": [  
-            {  
-              "type": "text",  
-              "parameter_name": "<PARAMETER_NAME>",  
-              "text": "<PARAMETER_VALUE>"  
-            }  
-          ]  
-        },  
-        {  
-          "type": "button",  
-          "sub_type": "copy_code",  
-          "index": <BUTTON_INDEX>,  
-          "parameters": [  
-            {  
-              "type": "coupon_code",  
-              "coupon_code": "<COUPON_CODE>"  
-            }  
-          ]  
-        }  
-      ]  
-    }  
-  }'
-```
+    "messaging_product": "whatsapp",  
+    "to": "<WHATSAPP_USER_PHONE_NUMBER>",  
+    "type": "template",  
+    "template": {  
+      "name": "<TEMPLATE_NAME>",  
+      "language": {  
+        "code": "<TEMPLATE_LANGUAGE>"  
+      },  
+      "components": [  
+        {  
+          "type": "body",  
+          "parameters": [  
+            {  
+              "type": "text",  
+              "parameter_name": "<PARAMETER_NAME>",  
+              "text": "<PARAMETER_VALUE>"  
+            }  
+          ]  
+        },  
+        {  
+          "type": "button",  
+          "sub_type": "copy_code",  
+          "index": <BUTTON_INDEX>,  
+          "parameters": [  
+            {  
+              "type": "coupon_code",  
+              "coupon_code": "<COUPON_CODE>"  
+            }  
+          ]  
+        }  
+      ]  
+    }  
+  }'
 ```
 
 ### Request parameters
@@ -257,7 +249,7 @@ curl -X POST "https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHO
 | `<PARAMETER_NAME>`  *String* | **Required if template uses one or more named parameters.**  [Named parameter](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview#named-parameters) name. | `coupon_code` |
 | `<PARAMETER_VALUE>`  *String* | **Required if template uses one or more named parameters.**  [Named parameter](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview#named-parameters) value. | `WINTER25` |
 | `<TEMPLATE_NAME>`  *String* | **Required.**  Name of the template to be sent. | `winter_sale_coupon` |
-| `<TEMPLATE_LANGUAGE>`  *String* | **Required.**  The template’s language and locale code. | `en_US` |
+| `<TEMPLATE_LANGUAGE>`  *String* | **Required.**  The template's language and locale code. | `en_US` |
 | `<WHATSAPP_USER_PHONE_NUMBER>`  *String* | **Required.**  WhatsApp user phone number. | `+16505551234` |
 
 ### Response syntax
@@ -265,24 +257,22 @@ curl -X POST "https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHO
 Upon success, the API responds with:
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "contacts": [  
-    {  
-      "input": "<WHATSAPP_USER_PHONE_NUMBER>",  
-      "wa_id": "<WHATSAPP_USER_ID>"  
-    }  
-  ],  
-  "messages": [  
-    {  
-      "id": "<WHATSAPP_MESSAGE_ID>",  
-      "group_id": "<GROUP_ID>", <!-- Only included if messaging a group -->  
-      "message_status": "<PACING_STATUS>" <!-- Only included if sending a template -->  
-    }  
-  ]  
+  "messaging_product": "whatsapp",  
+  "contacts": [  
+    {  
+      "input": "<WHATSAPP_USER_PHONE_NUMBER>",  
+      "wa_id": "<WHATSAPP_USER_ID>"  
+    }  
+  ],  
+  "messages": [  
+    {  
+      "id": "<WHATSAPP_MESSAGE_ID>",  
+      "group_id": "<GROUP_ID>", <!-- Only included if messaging a group -->  
+      "message_status": "<PACING_STATUS>" <!-- Only included if sending a template -->  
+    }  
+  ]  
 }
-```
 ```
 
 ### Response parameters
@@ -291,8 +281,8 @@ Upon success, the API responds with:
 | --- | --- | --- |
 | `<GROUP_ID>`  *String* | The string identifier of a group made using the Groups API.  This field shows when messages are sent, received, or read from a group.  [Learn more about the Groups API](https://developers.facebook.com/documentation/business-messaging/whatsapp/groups) | `Y2FwaV9ncm91cDoxNzA1NTU1MDEzOToxMjAzNjM0MDQ2OTQyMzM4MjAZD` |
 | `<PACING_STATUS>`  *String* | Indicates [template pacing](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-pacing) status. The `message_status` property is only included in responses when sending a [template message](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview) that uses a template that is being paced. | `wamid.HBgLMTY0NjcwNDM1OTUVAgARGBI4MjZGRDA0OUE2OTQ3RkEyMzcA` |
-| `<WHATSAPP_USER_PHONE_NUMBER>`  *String* | WhatsApp user’s WhatsApp phone number. May not match `wa_id` value. | `+16505551234` |
-| `<WHATSAPP_USER_ID>`  *String* | WhatsApp user’s WhatsApp ID. May not match `input` value. | `16505551234` |
+| `<WHATSAPP_USER_PHONE_NUMBER>`  *String* | WhatsApp user's WhatsApp phone number. May not match `wa_id` value. | `+16505551234` |
+| `<WHATSAPP_USER_ID>`  *String* | WhatsApp user's WhatsApp ID. May not match `input` value. | `16505551234` |
 | `<WHATSAPP_MESSAGE_ID>`  *String* | WhatsApp Message ID. This ID appears in associated **messages** webhooks, such as sent, read, and delivered webhooks. | `wamid.HBgLMTY0NjcwNDM1OTUVAgARGBI4MjZGRDA0OUE2OTQ3RkEyMzcA` |
 
 ### Example request
@@ -346,20 +336,18 @@ curl 'https://graph.facebook.com/v25.0/106540352242922/messages' \
 ### Example response
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "contacts": [  
-    {  
-      "input": "16505551234",  
-      "wa_id": "16505551234"  
-    }  
-  ],  
-  "messages": [  
-    {  
-      "id": "wamid.HBgLMTY1MDM4Nzk0MzkVAgARGBIxRjk1REYzMDBERDE3RUI0RDYA"  
-    }  
-  ]  
+  "messaging_product": "whatsapp",  
+  "contacts": [  
+    {  
+      "input": "16505551234",  
+      "wa_id": "16505551234"  
+    }  
+  ],  
+  "messages": [  
+    {  
+      "id": "wamid.HBgLMTY1MDM4Nzk0MzkVAgARGBIxRjk1REYzMDBERDE3RUI0RDYA"  
+    }  
+  ]  
 }
-```
 ```

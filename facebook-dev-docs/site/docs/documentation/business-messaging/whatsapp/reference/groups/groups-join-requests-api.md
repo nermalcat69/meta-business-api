@@ -53,11 +53,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{group_id}/invite_link' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{group_id}/invite_link' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -68,8 +68,8 @@ Select status code
 
 ```
 {  
-  "messaging_product": "\"whatsapp\"",  
-  "invite_link": "\"https:\\/\\/chat.whatsapp.com\\/LINK_ID\""  
+  "messaging_product": "\"whatsapp\"",  
+  "invite_link": "\"https:\\/\\/chat.whatsapp.com\\/LINK_ID\""  
 }
 ```
 
@@ -146,11 +146,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{group_id}/invite_link' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{group_id}/invite_link' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -161,8 +161,8 @@ Select status code
 
 ```
 {  
-  "messaging_product": "\"whatsapp\"",  
-  "invite_link": "\"https:\\/\\/chat.whatsapp.com\\/LINK_ID\""  
+  "messaging_product": "\"whatsapp\"",  
+  "invite_link": "\"https:\\/\\/chat.whatsapp.com\\/LINK_ID\""  
 }
 ```
 
@@ -185,11 +185,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request DELETE \  
-  --url 'https://graph.facebook.com/{Version}/{group_id}/invite_link' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request DELETE \  
+  --url 'https://graph.facebook.com/{Version}/{group_id}/invite_link' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -200,8 +200,8 @@ Select status code
 
 ```
 {  
-  "messaging_product": "\"whatsapp\"",  
-  "success": "\"true\""  
+  "messaging_product": "\"whatsapp\"",  
+  "success": "\"true\""  
 }
 ```
 
@@ -276,11 +276,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request DELETE \  
-  --url 'https://graph.facebook.com/{Version}/{group_id}/invite_link' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request DELETE \  
+  --url 'https://graph.facebook.com/{Version}/{group_id}/invite_link' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -291,8 +291,8 @@ Select status code
 
 ```
 {  
-  "messaging_product": "\"whatsapp\"",  
-  "success": "\"true\""  
+  "messaging_product": "\"whatsapp\"",  
+  "success": "\"true\""  
 }
 ```
 

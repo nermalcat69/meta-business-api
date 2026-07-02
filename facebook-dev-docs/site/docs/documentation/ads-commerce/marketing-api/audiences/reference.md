@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/marketing
 
 Updated: May 21, 2026
 
-As part of our ongoing efforts to promote fairness on our advertising platform, Meta has introduced a new Special Ad Category “Financial products and services” for advertisers promoting financial products and services. Starting January 14, 2025, using this category is required for financial products and services campaigns for advertisers based in the United States or showing ads to audiences in the United States. Ads may be rejected if an appropriate category is not chosen. Learn more about the update [here⁠](https://www.facebook.com/business/help/510724041294968).
+As part of our ongoing efforts to promote fairness on our advertising platform, Meta has introduced a new Special Ad Category "Financial products and services" for advertisers promoting financial products and services. Starting January 14, 2025, using this category is required for financial products and services campaigns for advertisers based in the United States or showing ads to audiences in the United States. Ads may be rejected if an appropriate category is not chosen. Learn more about the update [here⁠](https://www.facebook.com/business/help/510724041294968).
 
 For API developers
 
@@ -134,7 +134,7 @@ See the [Campaign reference](https://developers.facebook.com/documentation/ads-c
 
 **Prohibiting Ads About Social Issues, Elections, or Politics from Running in the European Union Due to New Regulation**
 
-In response to the European Union’s Transparency and Targeting of Political Ads (TTPA) regulation, beginning on October 6, 2025, social issue, electoral, and political ads will no longer be allowed to run in the EU and associated territories. [Learn more about these updates.⁠](https://about.fb.com/news/2025/07/ending-political-electoral-and-social-issue-advertising-in-the-eu/)
+In response to the European Union's Transparency and Targeting of Political Ads (TTPA) regulation, beginning on October 6, 2025, social issue, electoral, and political ads will no longer be allowed to run in the EU and associated territories. [Learn more about these updates.⁠](https://about.fb.com/news/2025/07/ending-political-electoral-and-social-issue-advertising-in-the-eu/)
 
 Advertisers running ads about social issues, elections, and politics need to specify `special_ad_categories` when creating an ad campaign. In addition, they also have to set the `authorization_category` flag at the ad creative level: use `POLITICAL` for political ads, and beginning January 9, 2024, use `POLITICAL_WITH_DIGITALLY_CREATED_MEDIA` for ads containing media that is digitally created or altered.
 
@@ -242,14 +242,12 @@ https://graph.facebook.com/v25.0/act_<CUSTOM_AUDIENCE_ID>?fields=id,is_eligible_
 **Example Response**
 
 ```
-```
 {  
-  "id": "23850663569120499"  
-  "is_eligible_for_sac_campaigns": false,  
-  "__fb_trace_id__": "B6T80EdcZGN",  
-  "__www_request_id__": "AcjtQwFivFWy3cTMMlr-DJ3"  
+  "id": "23850663569120499"  
+  "is_eligible_for_sac_campaigns": false,  
+  "__fb_trace_id__": "B6T80EdcZGN",  
+  "__www_request_id__": "AcjtQwFivFWy3cTMMlr-DJ3"  
 {
-```
 ```
 
 ### Milestones
@@ -268,7 +266,7 @@ Starting **January 21, 2025**, using the Special Ad Category designation is requ
 
 ## Troubleshooting
 
-A [campaign, ad set, or ad can be set to `WITH_ISSUES`](https://developers.facebook.com/ads/blog/post/2018/11/27/with-issues-status-blog/), if it can’t be delivered for any reason. When reading an object, you can dig into `WITH_ISSUES` to troubleshoot any problems with that object.
+A [campaign, ad set, or ad can be set to `WITH_ISSUES`](https://developers.facebook.com/ads/blog/post/2018/11/27/with-issues-status-blog/), if it can't be delivered for any reason. When reading an object, you can dig into `WITH_ISSUES` to troubleshoot any problems with that object.
 
 A call to an object with `"effective_status": "WITH_ISSUES"` returns a field called `issues_info`, with information related to the issues found. While working with Special Ad Category, you may see the following issues:
 
@@ -279,12 +277,12 @@ A call to an object with `"effective_status": "WITH_ISSUES"` returns a field cal
 | `2909035` | Saved Audiences Are Not Available | Using Saved Audiences is unavailable when running ads in this Special Ad Category. You must remove all selected Saved Audiences. |
 | `2909035` | Lookalike Audiences Are Not Available | Using Lookalike Audiences is unavailable when running ads in this Special Ad Category. You must remove all selected Lookalike Audiences. |
 | `2909035` | Location Radius Selection Is Not Available | The location radius you selected is unavailable when running ads in this Special Ad Category. You must include a radius of at least 15 miles (or 25 kilometers) from any selected city, address, or dropped pin. |
-| `2909035` | Detailed Targeting Selection Not Available | Some of the detailed targeting options you selected aren’t available when running ads in this Special Ad Category. You must remove them from your audience. |
+| `2909035` | Detailed Targeting Selection Not Available | Some of the detailed targeting options you selected aren't available when running ads in this Special Ad Category. You must remove them from your audience. |
 | `2909035` | Location Exclusion Is Not Available | Excluding specific locations is unavailable when running ads in this Special Ad Category. You must remove all location exclusions. |
 | `2909035` | Custom Gender Selection Is Not Available | Custom gender selection is unavailable when running ads in this Special Ad Category. Your audience must include all genders. |
 | `2909035` | Location Selection Is Not Available | Some of your location selections are unavailable when running ads in this Special Ad Category. Update your locations to include at least a 15-mile (or 25-kilometer) radius from any selected city, address, or dropped pin. |
 | `2909035` | Detailed Targeting Exclusion Is Not Available | Excluding behaviors, demographics, or interests is unavailable when running ads in this Special Ad Category. You must remove all detailed targeting exclusions. |
-| `2909035` | Interest Selection Is Not Available | Some of the detailed targeting options you selected aren’t available when running ads in this Special Ad Category. You must remove them from your audience. |
+| `2909035` | Interest Selection Is Not Available | Some of the detailed targeting options you selected aren't available when running ads in this Special Ad Category. You must remove them from your audience. |
 | `2909035` | Cannot Use Bid Multipliers | You cannot use bid multipliers under a Special Ad Category. |
 | `2909035` | Excluding Certain Audiences Is Not Available | Excluding Lookalike Audiences is unavailable when running ads in this Special Ad Category. You must remove all Lookalike Audience exclusions. |
 
@@ -298,7 +296,7 @@ If you select `HOUSING`, `EMPLOYMENT`, or `FINANCIAL_PRODUCTS_SERVICES` as `spec
 
 ## Context
 
-Meta is committed to protecting people from discrimination, and Meta is continually improving its ability to detect and deter potential abuse. It’s against [Meta’s policies⁠](https://www.facebook.com/policies/ads/prohibited_content/discriminatory_practices) to discriminate by wrongfully reaching or excluding specific groups of people.
+Meta is committed to protecting people from discrimination, and Meta is continually improving its ability to detect and deter potential abuse. It's against [Meta's policies⁠](https://www.facebook.com/policies/ads/prohibited_content/discriminatory_practices) to discriminate by wrongfully reaching or excluding specific groups of people.
 
 As part of a [historic settlement agreement⁠](https://www.facebook.com/business/news/helping-prevent-discrimination-in-ads-that-offer-housing-employment-or-credit-opportunities), Meta made changes to the way it manages housing, employment, and credit ads. Special Ad Categories were created to support that commitment.
 

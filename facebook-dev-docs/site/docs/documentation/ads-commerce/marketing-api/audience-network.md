@@ -111,9 +111,9 @@ Also, you need *two additional parameters* for each of the events to register su
 
 | Name | Description |
 | --- | --- |
-| `fb_content_id`  string | **Either `fb_content_id` or `fb_content` is required.**  The retailer’s product or product group ID(s). This should be a string containing a JSON-encoded array of IDs. Use product IDs if possible for more accurate targeting. |
+| `fb_content_id`  string | **Either `fb_content_id` or `fb_content` is required.**  The retailer's product or product group ID(s). This should be a string containing a JSON-encoded array of IDs. Use product IDs if possible for more accurate targeting. |
 | `fb_content`  string | **Either `fb_content_id` or `fb_content` is required.**  A list of JSON objects that contains the International Article Number (EAN) when applicable, or other product or content identifier(s) as well as quantities and prices of the products.   The `id` and `quantity` fields are the **required**. **Example:** `"[{\"id\": \"1234\", \"quantity\": 2}, {\"id\": \"5678\", \"quantity\": 1}]"` |
-| `fb_content_type`  string | **Optional.**  Either `product` or `product_group`, which needs to sync with the type of IDs used as `fb_content_id`.   If no `fb_content_type` is provided, Meta will match the event to every item that has the same ID, independent of its type.   See [“Choosing the right `content_type`”](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audience-network#choosing-the-right-content-type) to learn more. |
+| `fb_content_type`  string | **Optional.**  Either `product` or `product_group`, which needs to sync with the type of IDs used as `fb_content_id`.   If no `fb_content_type` is provided, Meta will match the event to every item that has the same ID, independent of its type.   See ["Choosing the right `content_type`"](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audience-network#choosing-the-right-content-type) to learn more. |
 | `_valueToSum`  string | **Optional.**  The total value of the products. |
 | `fb_currency`  string | **Optional.**  The currency of the product or purchase amount. |
 
@@ -133,9 +133,9 @@ These events should be sent with the following data parameters:
 
 | Name | Description |
 | --- | --- |
-| `content_ids`  string or string[] | **Either `content_ids` or `contents` is required.**  The retailer’s product or product group id(s). Use product IDs if possible for more accurate targeting. |
-| `contents`  object[] | **Either `content_ids` or `contents` is required.**  A list of JSON objects that contains the retailer’s product or product group ID(s) as well as additional information about the products.   The `id` and `quantity` fields are **required** **Example:** `[{"id": "1234", "quantity": 2}, {"id": "5678", "quantity": 1}]` |
-| `content_type`  string | **Optional.**  Either `product` or `product_group`, which needs to sync with the type of IDs used as `content_ids`.   If no `content_type` is provided, Meta will match the event to every item that has the same ID, independent of its type.   See [“Choosing the right `content_type`”](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audience-network#choosing-the-right-content-type) to learn more. |
+| `content_ids`  string or string[] | **Either `content_ids` or `contents` is required.**  The retailer's product or product group id(s). Use product IDs if possible for more accurate targeting. |
+| `contents`  object[] | **Either `content_ids` or `contents` is required.**  A list of JSON objects that contains the retailer's product or product group ID(s) as well as additional information about the products.   The `id` and `quantity` fields are **required** **Example:** `[{"id": "1234", "quantity": 2}, {"id": "5678", "quantity": 1}]` |
+| `content_type`  string | **Optional.**  Either `product` or `product_group`, which needs to sync with the type of IDs used as `content_ids`.   If no `content_type` is provided, Meta will match the event to every item that has the same ID, independent of its type.   See ["Choosing the right `content_type`"](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audience-network#choosing-the-right-content-type) to learn more. |
 | `product_catalog_id`  string | **Optional.**  The product catalog to be used. If `product_catalog_id` is supplied, that catalog will be the only one Pixel fires are associated with. If this is not supplied, the catalog(s) associated with your Pixel will be used.  See [Associate User Signals to Product Catalog](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audience-network#step-2-associate-user-signals-to-product-catalog) to learn more. |
 
 #### Examples
@@ -313,11 +313,11 @@ fbq('track', 'Purchase', {
 
 **Note:** `fb_content_type` is the content type for mobile.
 
-If the page is about a specific SKU (specific size, color, and so on), then use `product` for `content_type` and pass the product IDs (that is, [`id` column in the Product Feed](https://developers.facebook.com/documentation/ads-commerce/catalog#required-fields)) in `content_ids`. All `AddToCart` and `Purchase` events should use `content_type=product` because people buy specific products. People don’t buy an amorphous shirt of indeterminate size and color; they buy a specific shirt with a specific size and color.
+If the page is about a specific SKU (specific size, color, and so on), then use `product` for `content_type` and pass the product IDs (that is, [`id` column in the Product Feed](https://developers.facebook.com/documentation/ads-commerce/catalog#required-fields)) in `content_ids`. All `AddToCart` and `Purchase` events should use `content_type=product` because people buy specific products. People don't buy an amorphous shirt of indeterminate size and color; they buy a specific shirt with a specific size and color.
 
 If the page is about a group of related products that vary by size, color, and so on but belong to the same product group, use `product_group` and pass the product group IDs (that is, [`item_group_id` column in the Product Feed](https://developers.facebook.com/documentation/ads-commerce/catalog#optional-fields)) in `content_ids`. A common use case is a `ViewContent` page where the user has not chosen a size yet. **Do not use** `product_group` with `AddToCart` or `Purchase`.
 
-It’s important that the `content_type` matches the type of ID(s) included in the `content_ids` or `contents` parameter.
+It's important that the `content_type` matches the type of ID(s) included in the `content_ids` or `contents` parameter.
 
 Passing the specific product IDs (`content_type=product`) allows Meta to recommend more relevant products because it knows which specific variant (size, color, and so on) the user expressed interest in. Meta always shows products (not product groups), even if `content_type=product_group`.
 
@@ -383,7 +383,7 @@ If the same `event` is used in both inclusions and exclusions, any additional pa
 
 #### Examples
 
-To create an audience targeting people that viewed or added products to a cart, but didn’t finish the purchase:
+To create an audience targeting people that viewed or added products to a cart, but didn't finish the purchase:
 
 ```
 curl -X POST \
@@ -421,7 +421,7 @@ curl -X POST \
 https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/product_audiences
 ```
 
-If you want target people that viewed a product on the web with iPhone, but haven’t purchased on any device, create the following audience.
+If you want target people that viewed a product on the web with iPhone, but haven't purchased on any device, create the following audience.
 
 This assumes that you include a `userAgent` parameter in your Meta Pixel.
 

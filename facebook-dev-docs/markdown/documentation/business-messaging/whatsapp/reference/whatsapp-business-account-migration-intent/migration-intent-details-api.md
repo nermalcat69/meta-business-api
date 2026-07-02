@@ -71,11 +71,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Migration-Intent-ID}' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Migration-Intent-ID}' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -86,54 +86,54 @@ Select status code
 
 ```
 {  
-  "initiated_migration": {  
-    "summary": "Initiated migration intent",  
-    "value": {  
-      "id": "1234567890123456",  
-      "status": "INITIATED",  
-      "destination_waba": {  
-        "id": "2345678901234567"  
-      },  
-      "solution": {  
-        "id": "3456789012345678"  
-      },  
-      "waba": {  
-        "id": "4567890123456789"  
-      }  
-    }  
-  },  
-  "accepted_migration": {  
-    "summary": "Accepted migration intent",  
-    "value": {  
-      "id": "2345678901234567",  
-      "status": "ACCEPTED",  
-      "destination_waba": {  
-        "id": "3456789012345678"  
-      },  
-      "solution": {  
-        "id": "4567890123456789"  
-      },  
-      "waba": {  
-        "id": "5678901234567890"  
-      }  
-    }  
-  },  
-  "completed_migration": {  
-    "summary": "Completed migration intent",  
-    "value": {  
-      "id": "3456789012345678",  
-      "status": "COMPLETED",  
-      "destination_waba": {  
-        "id": "4567890123456789"  
-      },  
-      "solution": {  
-        "id": "5678901234567890"  
-      },  
-      "waba": {  
-        "id": "6789012345678901"  
-      }  
-    }  
-  }  
+  "initiated_migration": {  
+    "summary": "Initiated migration intent",  
+    "value": {  
+      "id": "1234567890123456",  
+      "status": "INITIATED",  
+      "destination_waba": {  
+        "id": "2345678901234567"  
+      },  
+      "solution": {  
+        "id": "3456789012345678"  
+      },  
+      "waba": {  
+        "id": "4567890123456789"  
+      }  
+    }  
+  },  
+  "accepted_migration": {  
+    "summary": "Accepted migration intent",  
+    "value": {  
+      "id": "2345678901234567",  
+      "status": "ACCEPTED",  
+      "destination_waba": {  
+        "id": "3456789012345678"  
+      },  
+      "solution": {  
+        "id": "4567890123456789"  
+      },  
+      "waba": {  
+        "id": "5678901234567890"  
+      }  
+    }  
+  },  
+  "completed_migration": {  
+    "summary": "Completed migration intent",  
+    "value": {  
+      "id": "3456789012345678",  
+      "status": "COMPLETED",  
+      "destination_waba": {  
+        "id": "4567890123456789"  
+      },  
+      "solution": {  
+        "id": "5678901234567890"  
+      },  
+      "waba": {  
+        "id": "6789012345678901"  
+      }  
+    }  
+  }  
 }
 ```
 
@@ -683,11 +683,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Migration-Intent-ID}' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Migration-Intent-ID}' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -698,54 +698,54 @@ Select status code
 
 ```
 {  
-  "initiated_migration": {  
-    "summary": "Initiated migration intent",  
-    "value": {  
-      "id": "1234567890123456",  
-      "status": "INITIATED",  
-      "destination_waba": {  
-        "id": "2345678901234567"  
-      },  
-      "solution": {  
-        "id": "3456789012345678"  
-      },  
-      "waba": {  
-        "id": "4567890123456789"  
-      }  
-    }  
-  },  
-  "accepted_migration": {  
-    "summary": "Accepted migration intent",  
-    "value": {  
-      "id": "2345678901234567",  
-      "status": "ACCEPTED",  
-      "destination_waba": {  
-        "id": "3456789012345678"  
-      },  
-      "solution": {  
-        "id": "4567890123456789"  
-      },  
-      "waba": {  
-        "id": "5678901234567890"  
-      }  
-    }  
-  },  
-  "completed_migration": {  
-    "summary": "Completed migration intent",  
-    "value": {  
-      "id": "3456789012345678",  
-      "status": "COMPLETED",  
-      "destination_waba": {  
-        "id": "4567890123456789"  
-      },  
-      "solution": {  
-        "id": "5678901234567890"  
-      },  
-      "waba": {  
-        "id": "6789012345678901"  
-      }  
-    }  
-  }  
+  "initiated_migration": {  
+    "summary": "Initiated migration intent",  
+    "value": {  
+      "id": "1234567890123456",  
+      "status": "INITIATED",  
+      "destination_waba": {  
+        "id": "2345678901234567"  
+      },  
+      "solution": {  
+        "id": "3456789012345678"  
+      },  
+      "waba": {  
+        "id": "4567890123456789"  
+      }  
+    }  
+  },  
+  "accepted_migration": {  
+    "summary": "Accepted migration intent",  
+    "value": {  
+      "id": "2345678901234567",  
+      "status": "ACCEPTED",  
+      "destination_waba": {  
+        "id": "3456789012345678"  
+      },  
+      "solution": {  
+        "id": "4567890123456789"  
+      },  
+      "waba": {  
+        "id": "5678901234567890"  
+      }  
+    }  
+  },  
+  "completed_migration": {  
+    "summary": "Completed migration intent",  
+    "value": {  
+      "id": "3456789012345678",  
+      "status": "COMPLETED",  
+      "destination_waba": {  
+        "id": "4567890123456789"  
+      },  
+      "solution": {  
+        "id": "5678901234567890"  
+      },  
+      "waba": {  
+        "id": "6789012345678901"  
+      }  
+    }  
+  }  
 }
 ```
 

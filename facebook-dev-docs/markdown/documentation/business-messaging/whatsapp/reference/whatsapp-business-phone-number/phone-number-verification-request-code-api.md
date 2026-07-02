@@ -81,13 +81,13 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/register' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "messaging_product": "whatsapp",  
-  "pin": "123456"  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/register' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "messaging_product": "whatsapp",  
+  "pin": "123456"  
 }'
 ```
 
@@ -99,12 +99,12 @@ Select status code
 
 ```
 {  
-  "successful_registration": {  
-    "summary": "Successful registration",  
-    "value": {  
-      "success": true  
-    }  
-  }  
+  "successful_registration": {  
+    "summary": "Successful registration",  
+    "value": {  
+      "success": true  
+    }  
+  }  
 }
 ```
 
@@ -732,13 +732,13 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/register' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "messaging_product": "whatsapp",  
-  "pin": "123456"  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/register' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "messaging_product": "whatsapp",  
+  "pin": "123456"  
 }'
 ```
 
@@ -750,12 +750,12 @@ Select status code
 
 ```
 {  
-  "successful_registration": {  
-    "summary": "Successful registration",  
-    "value": {  
-      "success": true  
-    }  
-  }  
+  "successful_registration": {  
+    "summary": "Successful registration",  
+    "value": {  
+      "success": true  
+    }  
+  }  
 }
 ```
 

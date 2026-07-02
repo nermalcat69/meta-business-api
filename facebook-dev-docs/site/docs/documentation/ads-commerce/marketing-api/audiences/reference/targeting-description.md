@@ -40,7 +40,7 @@ https://graph.facebook.com/<API_VERSION>/act_<AD_ACCOUNT_ID>/targetingsearch
 | `q`  type: string | **Required.**  Query string. |
 | `limit`  type: integer | **Optional.**  Number of results. |
 | `limit_type`  type: string | **Optional.**  Limit the type of audience to retrieve. Defaults to all types.  Valid values:   * `interests` * `education_schools` * `education_majors` * `work_positions` * `work_employers` * `relationship_statuses` * `college_years` * `education_statuses` * `family_statuses` * `industries` * `life_events` * `behaviors` * `income` |
-| `locale`  type: string | **Optional.**  The locale to display audience names and descriptions, if available. Defaults to the ad account’s locale. |
+| `locale`  type: string | **Optional.**  The locale to display audience names and descriptions, if available. Defaults to the ad account's locale. |
 
 ## Suggestions
 
@@ -57,10 +57,10 @@ Provide these parameters:
 
 | Name | Description |
 | --- | --- |
-| `targeting_list`  type: array of `{'type':'{TYPE}', 'id':{ID}}` | **Required.**  Array of `{'type':'{TYPE}', 'id':{ID}}` pairs as input audience for suggestions. |
+| `targeting_list`  type: array of `{'type':'{TYPE}', 'id':{ID}​}` | **Required.**  Array of `{'type':'{TYPE}', 'id':{ID}​}` pairs as input audience for suggestions. |
 | `limit`  type: integer | **Optional.**  Number of results. Default is 30. Maximum is 45. |
 | `limit_type`  type: string | **Optional.**  Limit the type of audience to retrieve. Defaults to all types.  Valid values:   * `interests` * `education_schools` * `education_majors` * `work_positions` * `work_employers` * `relationship_statuses` * `college_years` * `education_statuses` * `family_statuses` * `industries` * `life_events` * `behaviors` * `income` |
-| `locale`  type: string | **Optional.**  The locale to display audience names and descriptions. Defaults to the ad account’s locale. |
+| `locale`  type: string | **Optional.**  The locale to display audience names and descriptions. Defaults to the ad account's locale. |
 
 ## Browse
 
@@ -77,7 +77,7 @@ Provide the following optional parameters:
 | Name | Description |
 | --- | --- |
 | `limit_type`  type: string | **Optional.**  Limit the type of audience to retrieve. Defaults to all types. |
-| `locale`  type: string | **Optional.**  The locale to display audience names and descriptions. Defaults to the ad account’s locale. |
+| `locale`  type: string | **Optional.**  The locale to display audience names and descriptions. Defaults to the ad account's locale. |
 
 ## Validation
 
@@ -100,9 +100,9 @@ Here is the list of input parameters:
 
 | Name | Description |
 | --- | --- |
-| `targeting_list`  type: array of `{'type':'{TYPE}', 'id':{ID}}` | Array of `{'type':'{TYPE}', 'id':{ID}}` pairs for validation. Preferred. |
+| `targeting_list`  type: array of `{'type':'{TYPE}', 'id':{ID}​}` | Array of `{'type':'{TYPE}', 'id':{ID}​}` pairs for validation. Preferred. |
 | `id_list`  type: array of strings | Array of IDs for validation. Succeeds only if an ID is uniquely identifiable in the Meta audience database. |
 | `name_list`  type: array of strings | Array of strings for validation. Interests only. Case-insensitive. |
-| `locale`  type: string | Locale to display audience names and descriptions. Defaults to ad account’s locale. |
+| `locale`  type: string | Locale to display audience names and descriptions. Defaults to ad account's locale. |
 
 Provide at least one of the following: `targeting_list`, `id_list`, or `name_list`.

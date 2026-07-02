@@ -12,14 +12,12 @@ You can generate previews of authentication template text in various languages t
 ### Request syntax
 
 ```
-```
-GET /<WHATSAPP_BUSINESS_ACCOUNT_ID>/message_template_previews  
-  ?category=AUTHENTICATION,  
-  &language=<LANGUAGE>, // Optional  
-  &add_security_recommendation=<ADD_SECURITY_RECOMMENDATION>, // Optional  
-  &code_expiration_minutes=<CODE_EXPIRATION_MINUTES>, // Optional  
-  &button_types=<BUTTON_TYPES> // Optional
-```
+GET /<WHATSAPP_BUSINESS_ACCOUNT_ID>/message_template_previews  
+  ?category=AUTHENTICATION,  
+  &language=<LANGUAGE>, // Optional  
+  &add_security_recommendation=<ADD_SECURITY_RECOMMENDATION>, // Optional  
+  &code_expiration_minutes=<CODE_EXPIRATION_MINUTES>, // Optional  
+  &button_types=<BUTTON_TYPES> // Optional
 ```
 
 ### Request parameters
@@ -34,41 +32,37 @@ GET /<WHATSAPP_BUSINESS_ACCOUNT_ID>/message_template_previews
 ### Example request
 
 ```
-```
-curl 'https://graph.facebook.com/v17.0/102290129340398/message_template_previews?category=AUTHENTICATION&languages=en_US,es_ES&add_security_recommendation=true&code_expiration_minutes=10&button_types=OTP' \  
--H 'Authorization: Bearer EAAJB...'
-```
+curl 'https://graph.facebook.com/v17.0/102290129340398/message_template_previews?category=AUTHENTICATION&languages=en_US,es_ES&add_security_recommendation=true&code_expiration_minutes=10&button_types=OTP' \  
+-H 'Authorization: Bearer EAAJB...'
 ```
 
 ### Example response
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "body": "*{{1}}* is your verification code. For your security, do not share this code.",  
-      "buttons": [  
-        {  
-          "autofill_text": "Autofill",  
-          "text": "Copy code"  
-        }  
-      ],  
-      "footer": "This code expires in 10 minutes.",  
-      "language": "en_US"  
-    },  
-    {  
-      "body": "Tu código de verificación es *{{1}}*. Por tu seguridad, no lo compartas.",  
-      "buttons": [  
-        {  
-          "autofill_text": "Autocompletar",  
-          "text": "Copiar código"  
-        }  
-      ],  
-      "footer": "Este código caduca en 10 minutos.",  
-      "language": "es_ES"  
-    }  
-  ]  
+  "data": [  
+    {  
+      "body": "*{​{1}​}* is your verification code. For your security, do not share this code.",  
+      "buttons": [  
+        {  
+          "autofill_text": "Autofill",  
+          "text": "Copy code"  
+        }  
+      ],  
+      "footer": "This code expires in 10 minutes.",  
+      "language": "en_US"  
+    },  
+    {  
+      "body": "Tu código de verificación es *{​{1}​}*. Por tu seguridad, no lo compartas.",  
+      "buttons": [  
+        {  
+          "autofill_text": "Autocompletar",  
+          "text": "Copiar código"  
+        }  
+      ],  
+      "footer": "Este código caduca en 10 minutos.",  
+      "language": "es_ES"  
+    }  
+  ]  
 }
-```
 ```

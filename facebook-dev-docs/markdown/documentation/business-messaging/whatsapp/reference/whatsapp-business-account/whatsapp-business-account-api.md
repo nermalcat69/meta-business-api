@@ -67,11 +67,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{WABA-ID}' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{WABA-ID}' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -82,30 +82,30 @@ Select status code
 
 ```
 {  
-  "verified_account": {  
-    "summary": "Verified WhatsApp Business Account with full details",  
-    "value": {  
-      "id": "1234567890123456",  
-      "name": "My Business WhatsApp Account",  
-      "timezone_id": "1",  
-      "message_template_namespace": "ba30dd89_2ebd_41e4_b805_f2c05ae04cc9",  
-      "account_review_status": "APPROVED",  
-      "business_verification_status": "VERIFIED",  
-      "country": "US",  
-      "ownership_type": "SELF",  
-      "primary_business_location": "US"  
-    }  
-  },  
-  "basic_account": {  
-    "summary": "Basic WhatsApp Business Account with minimal details",  
-    "value": {  
-      "id": "2345678901234567",  
-      "name": "Test Business Account",  
-      "timezone_id": "1",  
-      "account_review_status": "PENDING",  
-      "business_verification_status": "NOT_VERIFIED"  
-    }  
-  }  
+  "verified_account": {  
+    "summary": "Verified WhatsApp Business Account with full details",  
+    "value": {  
+      "id": "1234567890123456",  
+      "name": "My Business WhatsApp Account",  
+      "timezone_id": "1",  
+      "message_template_namespace": "ba30dd89_2ebd_41e4_b805_f2c05ae04cc9",  
+      "account_review_status": "APPROVED",  
+      "business_verification_status": "VERIFIED",  
+      "country": "US",  
+      "ownership_type": "SELF",  
+      "primary_business_location": "US"  
+    }  
+  },  
+  "basic_account": {  
+    "summary": "Basic WhatsApp Business Account with minimal details",  
+    "value": {  
+      "id": "2345678901234567",  
+      "name": "Test Business Account",  
+      "timezone_id": "1",  
+      "account_review_status": "PENDING",  
+      "business_verification_status": "NOT_VERIFIED"  
+    }  
+  }  
 }
 ```
 
@@ -650,11 +650,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{WABA-ID}' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{WABA-ID}' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -665,30 +665,30 @@ Select status code
 
 ```
 {  
-  "verified_account": {  
-    "summary": "Verified WhatsApp Business Account with full details",  
-    "value": {  
-      "id": "1234567890123456",  
-      "name": "My Business WhatsApp Account",  
-      "timezone_id": "1",  
-      "message_template_namespace": "ba30dd89_2ebd_41e4_b805_f2c05ae04cc9",  
-      "account_review_status": "APPROVED",  
-      "business_verification_status": "VERIFIED",  
-      "country": "US",  
-      "ownership_type": "SELF",  
-      "primary_business_location": "US"  
-    }  
-  },  
-  "basic_account": {  
-    "summary": "Basic WhatsApp Business Account with minimal details",  
-    "value": {  
-      "id": "2345678901234567",  
-      "name": "Test Business Account",  
-      "timezone_id": "1",  
-      "account_review_status": "PENDING",  
-      "business_verification_status": "NOT_VERIFIED"  
-    }  
-  }  
+  "verified_account": {  
+    "summary": "Verified WhatsApp Business Account with full details",  
+    "value": {  
+      "id": "1234567890123456",  
+      "name": "My Business WhatsApp Account",  
+      "timezone_id": "1",  
+      "message_template_namespace": "ba30dd89_2ebd_41e4_b805_f2c05ae04cc9",  
+      "account_review_status": "APPROVED",  
+      "business_verification_status": "VERIFIED",  
+      "country": "US",  
+      "ownership_type": "SELF",  
+      "primary_business_location": "US"  
+    }  
+  },  
+  "basic_account": {  
+    "summary": "Basic WhatsApp Business Account with minimal details",  
+    "value": {  
+      "id": "2345678901234567",  
+      "name": "Test Business Account",  
+      "timezone_id": "1",  
+      "account_review_status": "PENDING",  
+      "business_verification_status": "NOT_VERIFIED"  
+    }  
+  }  
 }
 ```
 
@@ -715,12 +715,12 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{WABA-ID}' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "name": "Updated Business Name"  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{WABA-ID}' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "name": "Updated Business Name"  
 }'
 ```
 
@@ -732,7 +732,7 @@ Select status code
 
 ```
 {  
-  "success": true  
+  "success": true  
 }
 ```
 
@@ -1223,12 +1223,12 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{WABA-ID}' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "name": "Updated Business Name"  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{WABA-ID}' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "name": "Updated Business Name"  
 }'
 ```
 
@@ -1240,7 +1240,7 @@ Select status code
 
 ```
 {  
-  "success": true  
+  "success": true  
 }
 ```
 

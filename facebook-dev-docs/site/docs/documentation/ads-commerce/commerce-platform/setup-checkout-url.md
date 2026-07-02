@@ -19,7 +19,7 @@ This document is intended for partners who wish to automate the analysis of the 
 
 | Element | Description |
 | --- | --- |
-| `storeDomain`  Type: string | **Required**  Store’s website  Example: `[https://www.facebook.com, www.facebook.com or facebook.com]`. |
+| `storeDomain`  Type: string | **Required**  Store's website  Example: `[https://www.facebook.com, www.facebook.com or facebook.com]`. |
 | `storeName`  Type: string | **Required**  Store name or company name |
 | `storeID`  Type: string | **Required**  Store ID |
 | `isInEligiblePlan`  Type: boolean | **Optional**  Whether or not the seller is part of an eligible plan or tier that includes Meta syndication. |

@@ -34,13 +34,13 @@ There are a few ways to generate a preview, using:
 * [Ad Creative](https://developers.facebook.com/docs/reference/ads-api/adcreative) ID
 * Supplying a creative spec
 
-To use an ad ID for an existing ad, use ad’s [`previews`](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/adgroup/previews).
+To use an ad ID for an existing ad, use ad's [`previews`](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/adgroup/previews).
 
 ```
 https://graph.facebook.com/<API_VERSION>/<AD_ID>/previews
 ```
 
-To use an existing ad creative’s ID, use the ad creative’s [`previews`](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-creative/previews).
+To use an existing ad creative's ID, use the ad creative's [`previews`](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-creative/previews).
 
 ```
 https://graph.facebook.com/<API_VERSION>/<AD_CREATIVE_ID>/previews
@@ -71,7 +71,7 @@ curl -G \
   --data-urlencode 'creative={
     "object_story_spec": {
       "link_data": {
-        "call_to_action": {"type":"SIGN_UP","value":{"link":"<URL>"}},
+        "call_to_action": {"type":"SIGN_UP","value":{"link":"<URL>"}​},
         "description": "Description",
         "link": "<URL>",
         "message": "Message",
@@ -136,15 +136,13 @@ curl -X GET \
 The request returns a response similar to the following:
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "body": "<iframe src=\"https://www.facebook.com/ads/api/preview_iframe.php?d=AQKuwYcWpyFgVKLORPWQi52_uTud4v8PpMoDtyBfntL65i0iFtgkiXWN5S4JMBhq-UMKQmvxXFexVxu-5l5Xbf4WWRP48sCAtn3ArQAXwbdrD5qH0EL2z34K-gAgYyENd80cOGAdhVreKGJZvPkLbjDS3iDkdqdNNJQ6yaAFTmUpaz__cjgmhVVCUW68wU3UOZwqlv376mkijYR57Sm2OlyES4U6ivMPNGDx4xnZEd5d8kWyagDD-lPbCaGEk0nnQF5mnyeV9pFqdByhq-IqN6n0ZhSWjCPXZQa84wu5GNQ70YR2w7QxEYoiWCgI2WP0Z2OPeUMiNOf9bhYB-TBZJZ7G6HylsOnzzII9FQ8-0K-b_Q&t=AQJws9t-TtIGrKoFtCM\" width=\"274\" height=\"213\" scrolling=\"yes\" style=\"border: none;\"></iframe>"  
-    }  
-  ]  
+  "data": [  
+    {  
+      "body": "<iframe src=\"https://www.facebook.com/ads/api/preview_iframe.php?d=AQKuwYcWpyFgVKLORPWQi52_uTud4v8PpMoDtyBfntL65i0iFtgkiXWN5S4JMBhq-UMKQmvxXFexVxu-5l5Xbf4WWRP48sCAtn3ArQAXwbdrD5qH0EL2z34K-gAgYyENd80cOGAdhVreKGJZvPkLbjDS3iDkdqdNNJQ6yaAFTmUpaz__cjgmhVVCUW68wU3UOZwqlv376mkijYR57Sm2OlyES4U6ivMPNGDx4xnZEd5d8kWyagDD-lPbCaGEk0nnQF5mnyeV9pFqdByhq-IqN6n0ZhSWjCPXZQa84wu5GNQ70YR2w7QxEYoiWCgI2WP0Z2OPeUMiNOf9bhYB-TBZJZ7G6HylsOnzzII9FQ8-0K-b_Q&t=AQJws9t-TtIGrKoFtCM\" width=\"274\" height=\"213\" scrolling=\"yes\" style=\"border: none;\"></iframe>"  
+    }  
+  ]  
 }
-```
 ```
 
 Instagram search results Ad Previews using INSTAGRAM\_SEARCH\_CHAIN ad format
@@ -159,14 +157,12 @@ curl -X GET \
 The request returns a response similar to the following:
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "body": "<iframe src=\"https://www.facebook.com/ads/api/preview_iframe.php?d=AQKVMPdwuorP3mliXRaOi0TCSvsGRfucEzBTnB4jghArle84f8kBjvJmX3gmdjniUjohKA3GUppDZqljStZwxxRRxkQl9Y4R1o5wV4zRGE3xO3NHf1_qBbFM_uEIGAnAvptMWo_DLpbiIqIYFMjxbXNELzmZQsR0gnbBjaXM9i6gkI29dnHPqnm4xGvPxo2w8RWeXfWvmik2C96_2PrhrRhh4NKL3SOmFC9JDVsTp9Z6SYDlLVcLJWwpRKmciAZqEMOnMEFgepVTZ39yJ4ZiAMRo76RK9XNVGcornsUBtxI8cZHKtdW7nmj3ivq09_NGGUnFiJdJaPm-Mk-obM3K0QyOvgHKwnmLn7wvMiizJeXPEWAcSBa4DPUFLAO1mSuaKla0VQ6tzAM4BqFU9LJOG1-zZmPec7wKxQGDcrXoCOKfv2xkLyzECc-oDS0JJgvxxlo&t=AQI8ECKvkemIoVDaDrs\" width=\"274\" height=\"213\" scrolling=\"yes\" style=\"border: none;\"></iframe>"  
-    }  
-  ],  
-  "__www_request_id__": "AzCC2RoeSL0rMbSPTYDyDHa"  
+  "data": [  
+    {  
+      "body": "<iframe src=\"https://www.facebook.com/ads/api/preview_iframe.php?d=AQKVMPdwuorP3mliXRaOi0TCSvsGRfucEzBTnB4jghArle84f8kBjvJmX3gmdjniUjohKA3GUppDZqljStZwxxRRxkQl9Y4R1o5wV4zRGE3xO3NHf1_qBbFM_uEIGAnAvptMWo_DLpbiIqIYFMjxbXNELzmZQsR0gnbBjaXM9i6gkI29dnHPqnm4xGvPxo2w8RWeXfWvmik2C96_2PrhrRhh4NKL3SOmFC9JDVsTp9Z6SYDlLVcLJWwpRKmciAZqEMOnMEFgepVTZ39yJ4ZiAMRo76RK9XNVGcornsUBtxI8cZHKtdW7nmj3ivq09_NGGUnFiJdJaPm-Mk-obM3K0QyOvgHKwnmLn7wvMiizJeXPEWAcSBa4DPUFLAO1mSuaKla0VQ6tzAM4BqFU9LJOG1-zZmPec7wKxQGDcrXoCOKfv2xkLyzECc-oDS0JJgvxxlo&t=AQI8ECKvkemIoVDaDrs\" width=\"274\" height=\"213\" scrolling=\"yes\" style=\"border: none;\"></iframe>"  
+    }  
+  ],  
+  "__www_request_id__": "AzCC2RoeSL0rMbSPTYDyDHa"  
 }
-```
 ```

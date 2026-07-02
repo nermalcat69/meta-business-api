@@ -11,7 +11,7 @@ Updated: May 5, 2026
 
 **No code changes are needed.**
 
-Tier labels have been updated: “Standard Access” is now **Limited Access**, and “Advanced Access” is now **Full Access**. The revised qualification threshold for Full Access has been reduced from 1,500 to **500 Marketing API calls** in the past 15 days. The underlying permission identifier remains the same, and existing access levels are preserved automatically. Learn more in the [Marketing API Access Tier documentation](https://developers.facebook.com/docs/features-reference#marketing-api-access-tier).
+Tier labels have been updated: "Standard Access" is now **Limited Access**, and "Advanced Access" is now **Full Access**. The revised qualification threshold for Full Access has been reduced from 1,500 to **500 Marketing API calls** in the past 15 days. The underlying permission identifier remains the same, and existing access levels are preserved automatically. Learn more in the [Marketing API Access Tier documentation](https://developers.facebook.com/docs/features-reference#marketing-api-access-tier).
 
 Create a Meta ad with a focus on available reels placements and learn best practices around our ads operations.
 
@@ -24,7 +24,7 @@ If you do not meet those prerequisites, please refer to our [developer documenta
 
 ### Sandbox Testing
 
-Meta offers a testing environment, which doesn’t actually deliver ads, but allows you to:
+Meta offers a testing environment, which doesn't actually deliver ads, but allows you to:
 
 * Add Marketing API as a product within your Meta app in the Tools section to create and edit ads using our APIs without incurring costs
 * Create an ad account to use the Marketing API
@@ -47,7 +47,7 @@ Use system access tokens as they have longer expiration times.
 
 To access Marketing API endpoints, you need to create a Business app. They are subject to an additional layer of Graph API authorization called access levels. During App Review, your app must also request specific permissions and features. You must complete Business Verification if your app will be used by app users who do not have a role on the app itself, or a role in a Business that has claimed the app.
 
-If your app is managing other people’s ad accounts, you need:
+If your app is managing other people's ad accounts, you need:
 
 * Advanced Access `ads_read`
 
@@ -229,7 +229,7 @@ curl -i -X POST \
 https://graph.facebook.com/v25.0/act_<AD_ACCOUNT>/adcreatives?object_id=<PAGE_ID>
 &instagram_user_id=<IG_USER_ID>
 &source_instagram_media_id=<IG_ORGANIC_MEDIA_ID>
-&call_to_action="{'type':'LEARN_MORE','value':{'link': '<YOUR_LINK>'}}"
+&call_to_action="{'type':'LEARN_MORE','value':{'link': '<YOUR_LINK>'}​}"
 &access_token=<API_ACCESS_TOKEN>
 ```
 
@@ -338,9 +338,9 @@ Reels ads turn attention into action, supercharging results. When you build them
 
 **1. Build in 9:16 video to make your video captivating:** Reels is a full-screen, immersive video format. To help your creative feel at home here, consider leading with video and resizing it to 9:16.
 
-**2. Build in safe zones so that your messages are clear:** Work within the safe zones so your text sticker overlays, calls to action or key messages aren’t obscured by the Reels user interface. Keep the bottom 35% of your 9:16 creative free of text, logos, and other key elements.
+**2. Build in safe zones so that your messages are clear:** Work within the safe zones so your text sticker overlays, calls to action or key messages aren't obscured by the Reels user interface. Keep the bottom 35% of your 9:16 creative free of text, logos, and other key elements.
 
-**3. Build for sound on to make your video entertaining:** Audio – whether that’s music, voiceover or sound effects – is a key driver of engagement and entertainment on Reels.
+**3. Build for sound on to make your video entertaining:** Audio – whether that's music, voiceover or sound effects – is a key driver of engagement and entertainment on Reels.
 
 ## Allow product video with catalog product video
 

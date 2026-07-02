@@ -88,7 +88,7 @@ The following example rule:
 * Scales bid daily towards a target 1D View 1D Click Mobile App Purchase ROAS value of 0.80
 * With a 5% tolerance window set by a range filter on the ROAS value.
 
-Again, to get only mature data, use time presets that do not include today’s data, such as `LAST_7D` and `LAST_14D`.
+Again, to get only mature data, use time presets that do not include today's data, such as `LAST_7D` and `LAST_14D`.
 
 ```
 curl \

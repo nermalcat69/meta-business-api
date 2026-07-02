@@ -26,8 +26,8 @@ HTTPPHP SDKJavaScript SDKAndroid SDKiOS SDK
 ---
 
 ```
-GET /v25.0/{custom-audience-id}/shared_account_info HTTP/1.1  
-Host: graph.facebook.com
+GET /v25.0/{custom-audience-id}/shared_account_info HTTP/1.1  
+Host: graph.facebook.com
 ```
 
 Try it in [Graph API Explorer](https://developers.facebook.com/tools/explorer/?method=GET&path=%7Bcustom-audience-id%7D%2Fshared_account_info&version=v25.0)

@@ -75,7 +75,7 @@ Fix data processing options setter for android.
 
 ### Data processing options
 
-We’ve released a Limited Data Use feature to give businesses more control over how their data is used in our systems and better support them with their [California Consumer Privacy Act (CCPA)](https://developers.facebook.com/docs/audience-network/support/faq/ccpa) compliance efforts.
+We've released a Limited Data Use feature to give businesses more control over how their data is used in our systems and better support them with their [California Consumer Privacy Act (CCPA)](https://developers.facebook.com/docs/audience-network/support/faq/ccpa) compliance efforts.
 
 ### Audience Network Android SDK Updates
 
@@ -132,13 +132,13 @@ You can still continue to leverage other high performing formats such as Rewarde
 
 ### Important Changes on iOS: Added dependency to `FBBSDKCoreKit_Basics`
 
-As we’re adding `FBSDKCoreKit/FBSDKCoreKit_Basics` as a dependency of the iOS SDK, changes will be needed in project dependencies.
+As we're adding `FBSDKCoreKit/FBSDKCoreKit_Basics` as a dependency of the iOS SDK, changes will be needed in project dependencies.
 
 A manual dependency to `FBSDKCoreKit.framework` has to be added to the project. It can be done by following these steps:
 
 * Download both `FBSDKCoreKit.framework` and its stripped down version (`FBSDKCoreKit_Basics.framework`) from our [GitHub release page⁠](https://github.com/facebook/facebook-objc-sdk/releases).
 * If a static framework is used, drag and drop the framework to the project.
-* If a dynamic framework is used, add the framework to “Embedded Binaries” for the project.
+* If a dynamic framework is used, add the framework to "Embedded Binaries" for the project.
 
 ### Audience Network Android SDK Updates
 
@@ -299,7 +299,7 @@ A manual dependency to `FBSDKCoreKit.framework` has to be added to the project. 
 * AdChoices Prefab
 * Added simplified banner show method using a top/bottom position instead of raw height
 * Unity 2017 support
-* Native Ad now support all Canvas’ render modes
+* Native Ad now support all Canvas' render modes
 
 ### Fixed
 

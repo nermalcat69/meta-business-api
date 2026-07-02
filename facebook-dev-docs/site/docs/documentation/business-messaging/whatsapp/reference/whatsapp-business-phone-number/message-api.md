@@ -62,7 +62,7 @@ curl --request POST \
   },
   "messaging_product": "whatsapp",
   "recipient_type": "individual",
-  "to": "{{Recipient-Phone-Number}}",
+  "to": "{​{Recipient-Phone-Number}​}",
   "type": "audio"
 }'
 ```
@@ -2410,7 +2410,7 @@ curl --request POST \
   },
   "messaging_product": "whatsapp",
   "recipient_type": "individual",
-  "to": "{{Recipient-Phone-Number}}",
+  "to": "{​{Recipient-Phone-Number}​}",
   "type": "audio"
 }'
 ```

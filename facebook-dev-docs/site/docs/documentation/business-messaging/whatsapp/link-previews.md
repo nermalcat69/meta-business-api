@@ -16,21 +16,19 @@ The typing indicator will be dismissed once you respond, or after 25 seconds, wh
 ## Request syntax
 
 ```
-```
-curl -X POST \  
+curl -X POST \  
 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/messages'  
--H 'Authorization: Bearer <ACCESS_TOKEN>' \  
--H 'Content-Type: application/json' \  
--d '  
+-H 'Authorization: Bearer <ACCESS_TOKEN>' \  
+-H 'Content-Type: application/json' \  
+-d '  
 {  
-  "messaging_product": "whatsapp",  
-  "status": "read",  
-  "message_id": "<WHATSAPP_MESSAGE_ID>",  
-  "typing_indicator": {  
-    "type": "text"  
-  }  
+  "messaging_product": "whatsapp",  
+  "status": "read",  
+  "message_id": "<WHATSAPP_MESSAGE_ID>",  
+  "typing_indicator": {  
+    "type": "text"  
+  }  
 }'
-```
 ```
 
 ## Request parameters
@@ -47,11 +45,9 @@ curl -X POST \
 Upon success:
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 ## Example request
@@ -76,9 +72,7 @@ curl 'https://graph.facebook.com/v25.0/106540352242922/messages' \
 Upon success:
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```

@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/marketing
 
 Updated: May 21, 2026
 
-Limited Data Use is a data processing option that gives you more control over how your data is used in Meta’s systems and better supports your compliance efforts with various US state privacy regulations.
+Limited Data Use is a data processing option that gives you more control over how your data is used in Meta's systems and better supports your compliance efforts with various US state privacy regulations.
 To utilize this feature, you must proactively enable Limited Data Use. When Meta receives data with Limited Data Use enabled from people in the states where Limited Data Use applies, we will process that data in accordance with our role as a service provider or processor, as applicable, and limit the use of that data as specified in our [State-Specific Terms⁠](https://www.facebook.com/legal/terms/state-specific).
 
 ## Meta products that offer the Limited Data Use
@@ -31,7 +31,7 @@ The following Meta products offer Limited Data Use. Availability varies by state
 | **Maryland** | ✅    *Effective September 9, 2025* | ✅    *Effective September 9, 2025* | ❌ |
 | **Rhode Island** | ✅    *Effective November 17, 2025* | ✅    *Effective November 17, 2025* | ❌ |
 
-Limited Data Use is sent through a parameter called Data Processing Options, and it can optionally be sent alongside a user’s country and state. If an advertiser is not sure of the country or state, they can opt for Meta to determine if the event or record is from an applicable state.
+Limited Data Use is sent through a parameter called Data Processing Options, and it can optionally be sent alongside a user's country and state. If an advertiser is not sure of the country or state, they can opt for Meta to determine if the event or record is from an applicable state.
 
 ### For Business Tools and Audience Network SDK
 
@@ -55,7 +55,7 @@ Learn more about Data Processing Options:
 
 | Field | Description |
 | --- | --- |
-| **Data Processing Options**  array | Processing options you would like to enable for a specific event or record. Current accepted value is `LDU` for Limited Data Use.   The name of this field can be presented differently, depending on the API and implementation you are using. For example, this is `dataProcessingOptions` for a Meta Pixel JavaScript call, but `data_processing_options` for a Conversions API call. Please see the example calls below.   An empty array can be sent to explicitly specify that this event or record shouldn’t be processed with the Limited Data Use restrictions. |
+| **Data Processing Options**  array | Processing options you would like to enable for a specific event or record. Current accepted value is `LDU` for Limited Data Use.   The name of this field can be presented differently, depending on the API and implementation you are using. For example, this is `dataProcessingOptions` for a Meta Pixel JavaScript call, but `data_processing_options` for a Conversions API call. Please see the example calls below.   An empty array can be sent to explicitly specify that this event or record shouldn't be processed with the Limited Data Use restrictions. |
 | **Data Processing Options Country**  integer | **Optional for most APIs.** See note below for details.   A country that you want to associate with this data processing option. Current accepted values are `1` for the United States of America, or `0` to request that Meta perform geolocation. |
 | **Data Processing Options State**  integer | **Optional for most APIs.** See note below for details.  A state that you want to associate to this data processing option. Current accepted values are `1000` for California, `1001` for Colorado, `1002` for Connecticut, `1003` for Florida, `1004` for Oregon, `1005` for Texas, `1006` for Montana, `1007` for Delaware, `1008` for Nebraska, `1009` for New Hampshire, `1010` for New Jersey, `1011` for Minnesota, `1012` for Maryland, `1013` for Rhode Island or `0` to request that we perform geolocation.  **Note:**   * If you set a country, you must also set a state. Otherwise, we will perform geolocation. |
 
@@ -241,7 +241,7 @@ For publishers that are working with us through Bidding Kit and other Server-sid
 
 ### [Customer List Custom Audiences](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/custom-audiences)
 
-If you want to enable Limited Data Use for people in California via customer list custom audiences on or after June 1, 2023, you must upload new audiences or [update your existing audiences](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/custom-audiences) with the Limited Data Use flag. Regularly update and maintain your audiences and people’s Limited Data Use statuses as needed.
+If you want to enable Limited Data Use for people in California via customer list custom audiences on or after June 1, 2023, you must upload new audiences or [update your existing audiences](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/custom-audiences) with the Limited Data Use flag. Regularly update and maintain your audiences and people's Limited Data Use statuses as needed.
 
 Please note that a Limited Data Use flag applied to a user in one audience will not automatically carry over to different audiences. In the same way advertisers must manage each of their existing customer list custom audiences separately by the criteria they select, the Limited Data Use flag must be applied separately to each audience they leverage for their advertising.
 

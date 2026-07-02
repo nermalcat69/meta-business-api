@@ -48,7 +48,7 @@ When you add products on Instagram, you can see the product information in your 
 
 ### Who will see my Instagram Shopping tags?
 
-If you have uploaded a country feed to your catalog or set your catalog’s default country, via the **Settings** page in Commerce Manager, then your tags are only visible to people in the countries for which you have prices in your catalog.
+If you have uploaded a country feed to your catalog or set your catalog's default country, via the **Settings** page in Commerce Manager, then your tags are only visible to people in the countries for which you have prices in your catalog.
 For example, if you:
 
 * Choose US as the default country for your catalog

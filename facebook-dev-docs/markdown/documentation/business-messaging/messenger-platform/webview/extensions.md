@@ -23,14 +23,12 @@ In each of these instances, you can specify how the webview should look and beha
 As with any web page, the `<title>` tag sets the text displayed in the title bar for the webview.
 
 ```
-```
 <html>  
-  <head>  
-    <title>My Awesome Webview</title>  
-  </head>  
-   ...  
+  <head>  
+    <title>My Awesome Webview</title>  
+  </head>  
+   ...  
 </html>
-```
 ```
 
 ### Display with Messenger Extensions SDK
@@ -41,7 +39,7 @@ For more information, see [Adding the Messenger Extensions SDK](https://develope
 
 If your experience uses the Messenger Extensions, set the `messenger_extensions` parameter to `true` in the menu item or button you are invoking it from.
 
-To display a webpage with the [Messenger Extensions SDK](https://developers.facebook.com/documentation/business-messaging/messenger-platform/webview/extensions) enabled in the Messenger webview you **must** allowlist the domain, including sub-domain, in the [`whitelisted_domains` property of your bot’s Messenger Profile](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/messenger-profile-api/domain-whitelisting). This ensures that only trusted domains have access to user information available via SDK functions.
+To display a webpage with the [Messenger Extensions SDK](https://developers.facebook.com/documentation/business-messaging/messenger-platform/webview/extensions) enabled in the Messenger webview you **must** allowlist the domain, including sub-domain, in the [`whitelisted_domains` property of your bot's Messenger Profile](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/messenger-profile-api/domain-whitelisting). This ensures that only trusted domains have access to user information available via SDK functions.
 
 For more information on allowlisting domains, see the [`whitelisted_domains` reference](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/messenger-profile-api/domain-whitelisting).
 
@@ -78,9 +76,9 @@ This only works on Android. On iOS, the text and image are displayed, but the br
 * Use it for user preferences, or to allow on-demand changes to previous selections.
 * Use it in combination with more conversational interactions.
 * Configure the height of your webview to match its content and preserve the context of the thread beneath.
-* Take advantage of Messenger’s webview extensions to bring the thread’s context into the webview.
-* Don’t feel limited to collecting all form information at once. You can capture it piece by piece conversationally, then use a form in the webview for later edits.
-* Mix conversational and webview interactions, and keep any given interaction brief. Combine thread and webview interactions for a “Messenger-native” experience.
+* Take advantage of Messenger's webview extensions to bring the thread's context into the webview.
+* Don't feel limited to collecting all form information at once. You can capture it piece by piece conversationally, then use a form in the webview for later edits.
+* Mix conversational and webview interactions, and keep any given interaction brief. Combine thread and webview interactions for a "Messenger-native" experience.
 
 ### Example uses
 

@@ -19,7 +19,7 @@ There are separate tabs on the **Data pipeline** page, one containing Signals Ga
 
 ## Managing Data Pipelines
 
-This section includes details about creating, deleting and updating a Signals Gateway data pipeline. For creating a Meta Conversions API Gateway data pipeline using a Meta Pixel, refer to the “Connect a Meta Pixel to the Conversions API Gateway” section.
+This section includes details about creating, deleting and updating a Signals Gateway data pipeline. For creating a Meta Conversions API Gateway data pipeline using a Meta Pixel, refer to the "Connect a Meta Pixel to the Conversions API Gateway" section.
 
 ### Creating a Data Pipeline
 

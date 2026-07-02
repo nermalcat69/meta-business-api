@@ -7,16 +7,16 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/commerce-
 
 Updated: Oct 25, 2024
 
-Shops Ads can direct buyers either to a merchant website or Meta’s in-app shopping experience. Therefore, it’s important that pricing and promotions are synchronized to be consistent across both destinations. Promotions that are visible only on a merchant’s website can create a confusing experience for buyers, and lead to lost purchases or reduced return on Ad spend (ROAS) for buyers who shop in-app on Facebook and Instagram.
+Shops Ads can direct buyers either to a merchant website or Meta's in-app shopping experience. Therefore, it's important that pricing and promotions are synchronized to be consistent across both destinations. Promotions that are visible only on a merchant's website can create a confusing experience for buyers, and lead to lost purchases or reduced return on Ad spend (ROAS) for buyers who shop in-app on Facebook and Instagram.
 
-Offers are a valuable tool for encouraging buyers to transact. You can use them to acquire new customers, re-engage previous buyers, sell through unwanted inventory, and more. On the whole, sellers who merchandise offers on Meta Shops see more transactions and a higher average order value than sellers who don’t run offers. Offers are broadly classified into Meta-funded and seller-funded offers.
+Offers are a valuable tool for encouraging buyers to transact. You can use them to acquire new customers, re-engage previous buyers, sell through unwanted inventory, and more. On the whole, sellers who merchandise offers on Meta Shops see more transactions and a higher average order value than sellers who don't run offers. Offers are broadly classified into Meta-funded and seller-funded offers.
 
 In addition to supporting Meta-funded offers, we currently support the following types of seller-funded offers:
 
 * Offers allocated to individual items in an order
 * Offers allocated across items in an order (potentially with remainders)
 * Free shipping offers
-* ‘Buy X, Get Y’-style offers
+* 'Buy X, Get Y'-style offers
 
 ## Requirements
 
@@ -56,7 +56,7 @@ When an order is placed that has had offers applied to it, these offers are repr
 
 These are static values and reference the applications of offers at order creation time.
 
-These applied discount allocations can be linked to the seller’s original offer via the `retailer_id` field which returns the original offer’s `retailer_id`. The allocation also returns a Meta generated id in the `promotion_id` field.
+These applied discount allocations can be linked to the seller's original offer via the `retailer_id` field which returns the original offer's `retailer_id`. The allocation also returns a Meta generated id in the `promotion_id` field.
 
 In addition to `promotion_details` obtainable off the shipping option and line item objects, the order object itself also returns a list of all `promotion_details` objects associated with the order. In this response, the `promotion_details` that reference a common original offer are aggregated and the `applied_amount` field in the `promotion_details` object contains the sum of the applied amounts in each of the aggregated promotion details.
 
@@ -222,9 +222,9 @@ curl -X GET -G \
 
 ### Step 4: Handle Order Refund
 
-Refund differs from cancellation or fulfillment in that in a non-discounted scenario, you can provide either a quantity to refund, or a refund amount per line item. We currently support refund amount inputs for orders with order-level offers, but don’t currently support quantity based inputs.
+Refund differs from cancellation or fulfillment in that in a non-discounted scenario, you can provide either a quantity to refund, or a refund amount per line item. We currently support refund amount inputs for orders with order-level offers, but don't currently support quantity based inputs.
 
-In the case of providing a refund amount, a value is passed through directly as the pre-tax refund amount to the buyer. It’s not modified by the existence of any order-level discounts. In this scenario, you need to determine what the refund amount should be based on the presence of any order-level discounts.
+In the case of providing a refund amount, a value is passed through directly as the pre-tax refund amount to the buyer. It's not modified by the existence of any order-level discounts. In this scenario, you need to determine what the refund amount should be based on the presence of any order-level discounts.
 
 There are endpoints we provide that can help a user determine a refund amount:
 
@@ -267,15 +267,15 @@ curl -X GET -G \
 
 For example, when considering promotions, the current refundable amount for a line item can be computed as the (Price Per Unit) x (Quantity Fulfilled) - (Sum of Fulfilled Order Level Promotions) - (Total Refunded Amount for Line Item).
 
-### Step 5: Enable and Support Special Casing for ‘Buy X, Get Y’-Style Offers
+### Step 5: Enable and Support Special Casing for 'Buy X, Get Y'-Style Offers
 
-A noteworthy detail for Buy X Get Y (BXGY) offers is that an order with a BXGY offer applied can have multiple line items for the same product. For example, a “buy one get one free” offer can result in two line items, one with an item at full price, and one with an item that is free. This is represented by an item-level discount on the free item (see above for description on how item level discounts affect pricing details).
+A noteworthy detail for Buy X Get Y (BXGY) offers is that an order with a BXGY offer applied can have multiple line items for the same product. For example, a "buy one get one free" offer can result in two line items, one with an item at full price, and one with an item that is free. This is represented by an item-level discount on the free item (see above for description on how item level discounts affect pricing details).
 
 Historically, API users have provided a retailer id to identify which line item to act on in order management flows for cancellation, fulfillment, and refund. This retailer ID is an ID associated with the product. Because we no longer can uniquely identify a line item based on retailer ID when multiple line items are for the same product, we have added an additional input parameter (`item_id`) that must be used for line items with BXGY offers applied. This parameter can be read off the line item API response as the `id` field. You may persist that `id` field and call order management endpoints by providing that persisted value as the `item_id`.
 
 Going forward, the `retailer_id` field should not be provided.
 
-To create and use ‘Buy X Get Y’-style offers, you need to request this gated capability. When this capability is added to the integration, using the `retailer_id` parameter will result in the request failing.
+To create and use 'Buy X Get Y'-style offers, you need to request this gated capability. When this capability is added to the integration, using the `retailer_id` parameter will result in the request failing.
 
 **Sample Request**
 
@@ -307,7 +307,7 @@ curl -X POST \
 
 ### Step 6: Handle Special Casing for Meta-Funded Offers
 
-Meta occasionally runs promotions where we fund a portion of an order. From the buyer’s perspective, these appear in the form of discounts that get applied after tax is computed (the tax amount is not reduced by the presence of a meta funded offer).
+Meta occasionally runs promotions where we fund a portion of an order. From the buyer's perspective, these appear in the form of discounts that get applied after tax is computed (the tax amount is not reduced by the presence of a meta funded offer).
 
 A Meta funded offer can be identified through the sponsor attribute set to `facebook` on the `promotion_details` object.
 
@@ -321,27 +321,27 @@ Learn more about [promotions retrieval](https://developers.facebook.com/document
 
 ## Requirement 2: Surface Commerce Manager Redirect Link to Sellers to Synchronize Standard Offers to Meta
 
-Discounts need to be synchronized between the seller’s systems and Meta. If you’re not the source of truth, you need to surface a redirect link to Commerce Manager enabling sellers to set up offer sync directly with Meta. While creating these offers in [Commerce Manager⁠](https://www.facebook.com/business/help/431787070873394) can be helpful for one-off use-cases and evaluation purposes, we don’t recommend this as a long-term solution for keeping offers on the seller’s website in sync with offers visible on Meta applications. In the near future, Meta will provide sellers with a UI flow in Commerce Manager to set up recurring offer syncing and monitor the health of these recurring syncs.
+Discounts need to be synchronized between the seller's systems and Meta. If you're not the source of truth, you need to surface a redirect link to Commerce Manager enabling sellers to set up offer sync directly with Meta. While creating these offers in [Commerce Manager⁠](https://www.facebook.com/business/help/431787070873394) can be helpful for one-off use-cases and evaluation purposes, we don't recommend this as a long-term solution for keeping offers on the seller's website in sync with offers visible on Meta applications. In the near future, Meta will provide sellers with a UI flow in Commerce Manager to set up recurring offer syncing and monitor the health of these recurring syncs.
 
 Alternatively, sellers can set up recurring offer syncs through the Offers API similar to the setup outlined in the section below.
 
 ## Requirement 3: Synchronize Standard Offers to Meta via APIs
 
-Third-party partners that act as the source of truth for offers, **must** leverage the Offers API to set up recurring syncs of seller’s offers to Meta.
+Third-party partners that act as the source of truth for offers, **must** leverage the Offers API to set up recurring syncs of seller's offers to Meta.
 
 We recommend that you prioritize the offer types most commonly used by their sellers and clearly indicate to sellers if any offers will not be eligible for syncing.
 
-This is currently a gated capability. If you’re interested in trying this, please contact your Meta representative.
+This is currently a gated capability. If you're interested in trying this, please contact your Meta representative.
 
 ### Step 1: Create and Update Discounts Using the Offer APIs
 
-The [Offers API](https://developers.facebook.com/documentation/ads-commerce/catalog/guides/offers-api) allows sellers to upload offer data to a specific product catalog. This data can only be uploaded to a catalog associated with a Meta Shop. Just like with products, offers are uploaded to a catalog by creating a “data feed” file and leveraging the [Catalog Feed API](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-feed).
+The [Offers API](https://developers.facebook.com/documentation/ads-commerce/catalog/guides/offers-api) allows sellers to upload offer data to a specific product catalog. This data can only be uploaded to a catalog associated with a Meta Shop. Just like with products, offers are uploaded to a catalog by creating a "data feed" file and leveraging the [Catalog Feed API](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-feed).
 
-Data feed files can be in any supported format (CSV, TSV, RSS XML, ATOM XML, or [Google Sheets⁠](https://www.facebook.com/business/help/1898524300466211), where each “row” represents an individual offer and each “column” specifies that offer’s configuration.
+Data feed files can be in any supported format (CSV, TSV, RSS XML, ATOM XML, or [Google Sheets⁠](https://www.facebook.com/business/help/1898524300466211), where each "row" represents an individual offer and each "column" specifies that offer's configuration.
 
 For a complete list of supported fields, how to map offers from your own systems to the Meta offers feed file format, and more information about how Meta offers are configured, see the [Offers API](https://developers.facebook.com/documentation/ads-commerce/catalog/guides/offers-api).
 
-Once you’ve created a Meta offer feed file, one-time or recurring syncs of the file can be configured by making a `POST` request to the `/{product_catalog_id}/product_feeds` edge and setting the `feed_type` to `OFFER`.
+Once you've created a Meta offer feed file, one-time or recurring syncs of the file can be configured by making a `POST` request to the `/{product_catalog_id}/product_feeds` edge and setting the `feed_type` to `OFFER`.
 
 **Sample Request**
 
@@ -364,9 +364,9 @@ For more details on working with catalog data feeds, see the [Product Feed docum
 
 ### Step 2: Specify Offer Visibility on Meta Channel
 
-For partners using the [Offers API](https://developers.facebook.com/documentation/ads-commerce/catalog/guides/offers-api), it’s important to properly specify how buyers will discover an offer. In large part, this is controlled by the `application_type` field of an offer. When this field is set to either `SALE` or `AUTOMATIC_AT_CHECKOUT`, the offer is visible to all buyers and displays automatically across the buyer journey within Facebook and Instagram.
+For partners using the [Offers API](https://developers.facebook.com/documentation/ads-commerce/catalog/guides/offers-api), it's important to properly specify how buyers will discover an offer. In large part, this is controlled by the `application_type` field of an offer. When this field is set to either `SALE` or `AUTOMATIC_AT_CHECKOUT`, the offer is visible to all buyers and displays automatically across the buyer journey within Facebook and Instagram.
 
-For offers with associated coupon codes, the `application_type` should be `BUYER_APPLIED`. By default, these offers are not visibly displayed to buyers on shopping surfaces. This can be useful if, for instance, a seller wants to directly email a buyer a code to enter in Meta checkout, but doesn’t want to share that code with other buyers. However, in many cases, the coupon codes that a seller provides to Meta are intended to be broadly merchandised to buyers, such as a holiday promo code already displayed in a banner atop a merchant’s website. For these scenarios, you should set the `public_coupon_code` field to convey the seller’s intent and opt into visible merchandising of those codes on Meta. Learn more about the [Offers API](https://developers.facebook.com/documentation/ads-commerce/catalog/guides/offers-api).
+For offers with associated coupon codes, the `application_type` should be `BUYER_APPLIED`. By default, these offers are not visibly displayed to buyers on shopping surfaces. This can be useful if, for instance, a seller wants to directly email a buyer a code to enter in Meta checkout, but doesn't want to share that code with other buyers. However, in many cases, the coupon codes that a seller provides to Meta are intended to be broadly merchandised to buyers, such as a holiday promo code already displayed in a banner atop a merchant's website. For these scenarios, you should set the `public_coupon_code` field to convey the seller's intent and opt into visible merchandising of those codes on Meta. Learn more about the [Offers API](https://developers.facebook.com/documentation/ads-commerce/catalog/guides/offers-api).
 
 ## Learn More
 

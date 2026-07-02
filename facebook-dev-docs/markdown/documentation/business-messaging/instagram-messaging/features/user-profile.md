@@ -43,8 +43,8 @@ You will need:
 
 | Action | Description |
 | --- | --- |
-| `block_user` | Blocks user and Instagram business interactions on Instagram.  Prevents a user from messaging the Instagram business and prevents the business from messaging the user. The user will not be able to find the business’s profile, posts, or stories on Instagram. |
-| `unblock_user` | Unblocks user and Instagram business interactions on Instagram.  Allows the user and business to message each other again. The user will be able to view and interact with the business’s content on Instagram. |
+| `block_user` | Blocks user and Instagram business interactions on Instagram.  Prevents a user from messaging the Instagram business and prevents the business from messaging the user. The user will not be able to find the business's profile, posts, or stories on Instagram. |
+| `unblock_user` | Unblocks user and Instagram business interactions on Instagram.  Allows the user and business to message each other again. The user will be able to view and interact with the business's content on Instagram. |
 | `move_to_spam` | Marks the conversation as spam and moves the conversation to the spam folder in Meta Business Suite inbox. |
 
 ## Block a user
@@ -54,26 +54,22 @@ To block messaging with a user, send a `POST` request to the `/<PAGE_ID>/moderat
 #### Sample request
 
 ```
-```
-curl -X POST -H "Content-Type: application/json" -d '{  
-  "user_ids":[  
-    {  
-        "id": "<IGSID>"  
-    }  
-  ],  
-  "actions": [  
-    "block_user"  
-  ]  
-}' "https://graph.facebook.com/v22.0/<PAGE_ID>/moderate_conversations?access_token=<PAGE_ACCESS_TOKEN>"
-```
+curl -X POST -H "Content-Type: application/json" -d '{  
+  "user_ids":[  
+    {  
+        "id": "<IGSID>"  
+    }  
+  ],  
+  "actions": [  
+    "block_user"  
+  ]  
+}' "https://graph.facebook.com/v22.0/<PAGE_ID>/moderate_conversations?access_token=<PAGE_ACCESS_TOKEN>"
 ```
 
 On success, your app will receive the following JSON response with the `success` field set to `true`. On failure, the `success` field will be set to `false`.
 
 ```
-```
-"success": "true"
-```
+"success": "true"
 ```
 
 ## Unblock a user
@@ -83,26 +79,22 @@ To unblock a user, send a `POST` request to the `/<PAGE_ID>/moderate_conversatio
 #### Sample request
 
 ```
-```
-curl -X POST -H "Content-Type: application/json" -d '{  
-  "user_ids":[  
-    {  
-        "id":"<IGSID>"  
-    }  
-  ],  
-  "actions": [  
-    "unblock_user"  
-  ]  
-}' "https://graph.facebook.com/v22.0/<PAGE_ID>/moderate_conversations?access_token=<PAGE_ACCESS_TOKEN>"
-```
+curl -X POST -H "Content-Type: application/json" -d '{  
+  "user_ids":[  
+    {  
+        "id":"<IGSID>"  
+    }  
+  ],  
+  "actions": [  
+    "unblock_user"  
+  ]  
+}' "https://graph.facebook.com/v22.0/<PAGE_ID>/moderate_conversations?access_token=<PAGE_ACCESS_TOKEN>"
 ```
 
 On success, your app will receive the following JSON response with the `success` field set to `true`. On failure, the `success` field will be set to `false`.
 
 ```
-```
-"success": "true"
-```
+"success": "true"
 ```
 
 ## Move conversation to spam
@@ -112,26 +104,22 @@ To mark a conversation as spam and move it to the spam folder in the Meta Busine
 #### Sample request
 
 ```
-```
-curl -X POST -H "Content-Type: application/json" -d '{  
-  "user_ids":[  
-    {  
-        "id":"<IGSID>"  
-    }  
-  ],  
-  "actions": [  
-    "move_to_spam"  
-  ]  
-}' "https://graph.facebook.com/v22.0/<PAGE_ID>/moderate_conversations?access_token=<PAGE_ACCESS_TOKEN>"
-```
+curl -X POST -H "Content-Type: application/json" -d '{  
+  "user_ids":[  
+    {  
+        "id":"<IGSID>"  
+    }  
+  ],  
+  "actions": [  
+    "move_to_spam"  
+  ]  
+}' "https://graph.facebook.com/v22.0/<PAGE_ID>/moderate_conversations?access_token=<PAGE_ACCESS_TOKEN>"
 ```
 
 On success, your app will receive the following JSON response with the `success` field set to `true`. On failure, the `success` field will be set to `false`.
 
 ```
-```
-"success": "true"
-```
+"success": "true"
 ```
 
 ## Perform multiple actions for multiple users
@@ -143,30 +131,26 @@ If you would like to perform multiple actions at once for a set of users, send a
 Block two users and move the conversations to spam.
 
 ```
-```
-curl -X POST -H "Content-Type: application/json" -d '{  
-  "user_ids":[  
-    {  
-        "id":"<IGSID>"  
-    },  
-    {  
-        "id":"<IGSID>"  
-    }  
-  ],  
-  "actions": [  
-    "block_user",  
-    "move_to_spam"  
-  ]  
-}' "https://graph.facebook.com/v22.0/<PAGE_ID>/moderate_conversations?access_token=<PAGE_ACCESS_TOKEN>"
-```
+curl -X POST -H "Content-Type: application/json" -d '{  
+  "user_ids":[  
+    {  
+        "id":"<IGSID>"  
+    },  
+    {  
+        "id":"<IGSID>"  
+    }  
+  ],  
+  "actions": [  
+    "block_user",  
+    "move_to_spam"  
+  ]  
+}' "https://graph.facebook.com/v22.0/<PAGE_ID>/moderate_conversations?access_token=<PAGE_ACCESS_TOKEN>"
 ```
 
 On success, your app will receive the following JSON response with the `success` field set to `true`. On failure, the `success` field will be set to `false`.
 
 ```
-```
-"success": "true"
-```
+"success": "true"
 ```
 
 ## Error codes

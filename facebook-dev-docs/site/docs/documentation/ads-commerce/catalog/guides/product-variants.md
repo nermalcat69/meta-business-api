@@ -74,10 +74,10 @@ The fields returned for each event type, source and date are:
 | --- | --- |
 | `total_matched_content_ids` | The total number of content ids from received events that matched to an item in the catalog. This count is not de-duplicated across content ids. |
 | `total_content_ids_matched_other_catalogs` | Total number of content IDs from received events that matched to an item in another catalog associated to the given pixel or app. This count is not de-duplicated across content IDs. |
-| `total_unmatched_content_ids` | Total number of content IDs from received events received that didn’t match an item in the catalog. This count is not de-duplicated across content IDs. |
+| `total_unmatched_content_ids` | Total number of content IDs from received events received that didn't match an item in the catalog. This count is not de-duplicated across content IDs. |
 | `unique_matched_content_ids` | Number of unique content IDs from received events that matched to an item in the catalog. |
 | `unique_content_ids_matched_other_catalogs` | Number of unique content IDs from received events that matched to an item in another catalog associated to the given pixel or app that fired the event. |
-| `unique_unmatched_content_ids` | Number of unique content ids from received events that didn’t match an item in the catalog. |
+| `unique_unmatched_content_ids` | Number of unique content ids from received events that didn't match an item in the catalog. |
 
 ### Device Type Breakdowns
 
@@ -160,7 +160,7 @@ You can use the following checks:
 | --- | --- |
 | `pixel_missing_dpa_event` | Checks if there are missing events for this pixel, as defined in [Advantage+ Catalog Ads](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/dynamic-product-audiences). |
 | `pixel_missing_param_in_events` | Checks if there are events with missing mandatory parameters, as defined in [Dynamic Ads](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/dynamic-product-audiences). |
-| `pixel_decline` | Checks if there’s a decline in the number of events received for that pixel in the last 24 hours. |
+| `pixel_decline` | Checks if there's a decline in the number of events received for that pixel in the last 24 hours. |
 
 For details, see [Pixel Dynamic Ads Checks, Reference](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ads-pixel/da_checks).
 
@@ -169,10 +169,10 @@ Possible values for the `result` field:
 | Status | Description |
 | --- | --- |
 | passed | Your pixel passed this check. |
-| failed | Your pixel didn’t pass this check. |
+| failed | Your pixel didn't pass this check. |
 | unavailable | This check is not available for this pixel right now. Please try again later. |
 
-We return all checks by default, but you can specify checks you’d like to run, as follow:
+We return all checks by default, but you can specify checks you'd like to run, as follow:
 
 ```
 curl -G \
@@ -228,10 +228,10 @@ Possible values returned for `result`:
 | Status | Description |
 | --- | --- |
 | passed | Your app passed this check. |
-| failed | Your app didn’t pass this check. |
+| failed | Your app didn't pass this check. |
 | unavailable | This check is not available for this app right now. Please try again later. |
 
-You can request values for specific checks. We return all by default, but you can specify which checks you’d like to run by passing them in the request:
+You can request values for specific checks. We return all by default, but you can specify which checks you'd like to run by passing them in the request:
 
 ```
 curl -G \

@@ -7,15 +7,15 @@ source_url: https://developers.facebook.com/documentation/business-messaging/mes
 
 Updated: Mar 31, 2026
 
-This guide shows how a business using your app can get a list of their existing subscription tokens and increase their number of subscribers. A subscription token represents a person who has subscribed, opted in to receiving marketing messages from a business’ Facebook Page.
+This guide shows how a business using your app can get a list of their existing subscription tokens and increase their number of subscribers. A subscription token represents a person who has subscribed, opted in to receiving marketing messages from a business' Facebook Page.
 
 ## Get existing tokens
 
 If a business already has subscribers, there are a number of ways to get a list of subscription tokens. If your business does not have subscribers or you would like to increase the number, learn how to [grow your marketing messages audience](https://developers.facebook.com/documentation/business-messaging/messenger-platform/marketing-messages-on-messenger/grow-marketing-messages-audience).
 
-### Get subscription tokens for a business’ Facebook Page
+### Get subscription tokens for a business' Facebook Page
 
-Send a `GET` request to the `/<PAGE_ID>/notification_message_tokens` endpoint, where `<PAGE_ID>` represents the business’ Facebook Page, to get a list of all the subscription tokens for that Facebook Page.
+Send a `GET` request to the `/<PAGE_ID>/notification_message_tokens` endpoint, where `<PAGE_ID>` represents the business' Facebook Page, to get a list of all the subscription tokens for that Facebook Page.
 
 ```
 curl -i -X GET "https://graph.facebook.com/<API_VERSION>/<PAGE_ID>/notification_message_tokens" \
@@ -30,52 +30,50 @@ curl -i -X GET "https://graph.facebook.com/<API_VERSION>/<PAGE_ID>/notification_
 
 On success, your app receives a JSON response consisting of tokens with the following fields:
 
-* The customer’s subscription token
-* The customer’s Page-scoped ID (PSID)
+* The customer's subscription token
+* The customer's Page-scoped ID (PSID)
 * The time the token was created
-* The message’s title
+* The message's title
 * Time at which your app can send the next marketing message to that recipient
 * Time at which the token expires
 * Token status
 * Re-opt-in status
-* The customer’s timezone
+* The customer's timezone
 
 For tokens created during a Custom Audience upload, the response fields are limited to the following:
 
-* The customer’s subscription token
-* The message’s title
+* The customer's subscription token
+* The message's title
 * Re-opt-in status
 * Custom audience IDs that the token has matched in
 
 ```
-```
 {  
-  "data":[  
-    {  
-      "notification_messages_token":"<SUBSCRIPTION_TOKEN_ID_1>",  
-      "recipient_id":"<PSID_1>",  
-      "notification_messages_reoptin":"<RE_OPT_IN_STATUS>",  
-      "creation_timestamp":<TIMESTAMP>,  
-      "token_expiry_timestamp":<UNIX_TIMESTAMP_EXPIRATION_DATE>,  
-      "user_token_status":"<TOKEN_STATUS>",  
-      "topic_title":"<NOTIFICATION_TITLE>",  
-      "notification_messages_timezone":"<TIMEZONE_ID>",  
-      "next_eligible_time": <TIMESTAMP>  
-    },  
+  "data":[  
+    {  
+      "notification_messages_token":"<SUBSCRIPTION_TOKEN_ID_1>",  
+      "recipient_id":"<PSID_1>",  
+      "notification_messages_reoptin":"<RE_OPT_IN_STATUS>",  
+      "creation_timestamp":<TIMESTAMP>,  
+      "token_expiry_timestamp":<UNIX_TIMESTAMP_EXPIRATION_DATE>,  
+      "user_token_status":"<TOKEN_STATUS>",  
+      "topic_title":"<NOTIFICATION_TITLE>",  
+      "notification_messages_timezone":"<TIMEZONE_ID>",  
+      "next_eligible_time": <TIMESTAMP>  
+    },  
 ...  
-    {  
-      "notification_messages_token":"<SUBSCRIPTION_TOKEN_ID_1>",  
-      "topic_title":"<NOTIFICATION_TITLE>",  
-      "notification_messages_reoptin":"<RE_OPT_IN_STATUS>",  
-      "custom_audience_ids": [  
-        "<CUSTOM_AUDIENCE_ID>",  
-        "<CUSTOM_AUDIENCE_ID>",  
-        "<CUSTOM_AUDIENCE_ID>"  
-      ]  
-    },  
-  ],  
-  "paging":{"cursors":{"before":"QVFIU...","after":"QVFIU..."},"next":"https:\/\/graph.facebook.com\/<API_VERSION>\/<PAGE_ID>\/notification_message_tokens?access_token=<pPAGE_ACCESS_TOKEN>"}
-```
+    {  
+      "notification_messages_token":"<SUBSCRIPTION_TOKEN_ID_1>",  
+      "topic_title":"<NOTIFICATION_TITLE>",  
+      "notification_messages_reoptin":"<RE_OPT_IN_STATUS>",  
+      "custom_audience_ids": [  
+        "<CUSTOM_AUDIENCE_ID>",  
+        "<CUSTOM_AUDIENCE_ID>",  
+        "<CUSTOM_AUDIENCE_ID>"  
+      ]  
+    },  
+  ],  
+  "paging":{"cursors":{"before":"QVFIU...","after":"QVFIU..."},"next":"https:\/\/graph.facebook.com\/<API_VERSION>\/<PAGE_ID>\/notification_message_tokens?access_token=<pPAGE_ACCESS_TOKEN>"}
 ```
 
 ## Get token information
@@ -89,51 +87,47 @@ curl -i -X GET "https://graph.facebook.com/<API_VERSION>/notification_messages_<
 
 On success, your app receives the following JSON response which includes the following:
 
-* The customer’s subscription token
-* The customer’s Page-scoped ID
+* The customer's subscription token
+* The customer's Page-scoped ID
 * The time the token was created
-* The message’s title
+* The message's title
 * Time at which your app can send the next marketing message to that recipient
 * Time at which the token expires
 * Token status
 * Re-opt-in status
-* The customer’s timezone
+* The customer's timezone
 
 ```
-```
 {  
-  "notification_messages_token": "<SUBSCRIPTION_TOKEN_ID>",  
-  "recipient_id": "<PSID>",  
-  "creation_timestamp": "<TIMESTAMP>",  
-  "token_expiry_timestamp": "<TIMESTAMP>",  
-  "user_token_status": "REFRESHED",  
-  "notification_messages_reoptin": "ENABLED",  
-  "notification_messages_timezone": "<TIMEZONE_ID>"  
-  "next_eligible_time": <TIMESTAMP>  
+  "notification_messages_token": "<SUBSCRIPTION_TOKEN_ID>",  
+  "recipient_id": "<PSID>",  
+  "creation_timestamp": "<TIMESTAMP>",  
+  "token_expiry_timestamp": "<TIMESTAMP>",  
+  "user_token_status": "REFRESHED",  
+  "notification_messages_reoptin": "ENABLED",  
+  "notification_messages_timezone": "<TIMEZONE_ID>"  
+  "next_eligible_time": <TIMESTAMP>  
 }
-```
 ```
 
 For tokens created during a Custom Audience upload, the response fields are limited to the following:
 
-* The customer’s subscription token
-* The message’s title
+* The customer's subscription token
+* The message's title
 * Re-opt-in status
 * Custom audience IDs that the token has matched in
 
 ```
-```
 {  
-  "notification_messages_token":"<SUBSCRIPTION_TOKEN_ID_1>",  
-  "topic_title":"<NOTIFICATION_TITLE>",  
-  "notification_messages_reoptin":"<RE_OPT_IN_STATUS>",  
-  "custom_audience_ids": [  
-    "<CUSTOM_AUDIENCE_ID>",  
-    "<CUSTOM_AUDIENCE_ID>",  
-    "<CUSTOM_AUDIENCE_ID>"  
-  ]  
+  "notification_messages_token":"<SUBSCRIPTION_TOKEN_ID_1>",  
+  "topic_title":"<NOTIFICATION_TITLE>",  
+  "notification_messages_reoptin":"<RE_OPT_IN_STATUS>",  
+  "custom_audience_ids": [  
+    "<CUSTOM_AUDIENCE_ID>",  
+    "<CUSTOM_AUDIENCE_ID>",  
+    "<CUSTOM_AUDIENCE_ID>"  
+  ]  
 },
-```
 ```
 
 ## Next steps

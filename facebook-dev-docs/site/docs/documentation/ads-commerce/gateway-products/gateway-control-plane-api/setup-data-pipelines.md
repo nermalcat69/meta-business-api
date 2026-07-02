@@ -35,13 +35,13 @@ Starting from Conversions API Gateway and Signals Gateway v2.2.0, up-to-date ver
 | Field | Description |
 | --- | --- |
 | `id` *String* | Unique identifier of the user |
-| `email` *String* | User’s email address |
+| `email` *String* | User's email address |
 | `status` *Int* | User status can have 3 values indicating its state:  | Value | Description | | --- | --- | | 0 | Deactivated | | 1 | Activated | | 2 | Pending | |
 | `roles` [*Role*](https://developers.facebook.com/documentation/ads-commerce/gateway-products/gateway-control-plane-api/setup-data-pipelines#role) | List of roles of the user |
 | `tenants` [*Tenant*](https://developers.facebook.com/documentation/ads-commerce/gateway-products/gateway-control-plane-api/setup-data-pipelines#tenant) | Accounts to which the user belongs |
 | `isSelf`  Boolean | This indicates whether the logged in user is the same user (would be always false with api). |
-| `canBeDeleted` *Boolean* | This indicates that the user is the only admin of one/more of the accounts, so it can’t be deleted. |
-| `userExpiry` *String* | Expiration date for temporary user, in the format of date string “yyyy-mm-dd”. |
+| `canBeDeleted` *Boolean* | This indicates that the user is the only admin of one/more of the accounts, so it can't be deleted. |
+| `userExpiry` *String* | Expiration date for temporary user, in the format of date string "yyyy-mm-dd". |
 
 ### Role
 
@@ -93,7 +93,7 @@ Starting from Conversions API Gateway and Signals Gateway v2.2.0, up-to-date ver
 | `tenantName` *String* | Name of the account |
 | `ingress` *String* | Advertiser domain |
 | `enhancementTenantIngressVerifiedResult` [*EnhancementTenantIngressVerifiedResult*](https://developers.facebook.com/documentation/ads-commerce/gateway-products/gateway-control-plane-api/setup-data-pipelines#enhancement-tenant-ingress) | [See below](https://developers.facebook.com/documentation/ads-commerce/gateway-products/gateway-control-plane-api/setup-data-pipelines#enhancement-tenant-ingress) |
-| `cnameResolveSuccess` *Boolean* | Advertiser domain’s CName is verified |
+| `cnameResolveSuccess` *Boolean* | Advertiser domain's CName is verified |
 
 ### EnhancementTenantIngressVerifiedResult
 

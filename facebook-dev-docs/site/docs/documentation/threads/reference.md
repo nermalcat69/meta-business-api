@@ -11,15 +11,13 @@ The `/debug_token` endpoint returns metadata about a given access token. This in
 
 To access this endpoint, it is required to provide a user access token from a [Threads tester](https://developers.facebook.com/documentation/threads/get-started#threads-testers), and this access token must be associated with the same app that is linked to the `input_token` being inspected.
 
-## Retrieve an Access Token’s Data
+## Retrieve an Access Token's Data
 
 ### Example Request
 
 ```
-```
-curl -i -X GET \  
-  "https://graph.threads.net/v1.0/debug_token?access_token=<THREADS_TESTER_ACCESS_TOKEN>&input_token=<ACCESS_TOKEN_TO_BE_INSPECTED>"
-```
+curl -i -X GET \  
+  "https://graph.threads.net/v1.0/debug_token?access_token=<THREADS_TESTER_ACCESS_TOKEN>&input_token=<ACCESS_TOKEN_TO_BE_INSPECTED>"
 ```
 
 ### Parameters
@@ -34,29 +32,27 @@ curl -i -X GET \
 ### Example Response
 
 ```
-```
 {  
-  "data": {  
-    "type": "USER",  
-    "application": "Threads API Test App",  
-    "data_access_expires_at": 1754846089,  
-    "expires_at": 1752254132,  
-    "is_valid": true,  
-    "issued_at": 1747070132,  
-    "scopes": [  
-      "threads_basic",  
-      "threads_content_publish",  
-      "threads_manage_replies",  
-      "threads_manage_insights",  
-      "threads_read_replies",  
-      "threads_manage_mentions",  
-      "threads_keyword_search",  
-      "threads_location_tagging"  
-    ],  
-    "user_id": "1234567890123456"  
-  }  
+  "data": {  
+    "type": "USER",  
+    "application": "Threads API Test App",  
+    "data_access_expires_at": 1754846089,  
+    "expires_at": 1752254132,  
+    "is_valid": true,  
+    "issued_at": 1747070132,  
+    "scopes": [  
+      "threads_basic",  
+      "threads_content_publish",  
+      "threads_manage_replies",  
+      "threads_manage_insights",  
+      "threads_read_replies",  
+      "threads_manage_mentions",  
+      "threads_keyword_search",  
+      "threads_location_tagging"  
+    ],  
+    "user_id": "1234567890123456"  
+  }  
 }
-```
 ```
 
 ### Fields
@@ -66,7 +62,7 @@ curl -i -X GET \
 | `data`  object | Data wrapper around the result. |
 | `type`  string | Whether the access token is an app access token or user access token. |
 | `application`  string | Name of the application this access token is for. |
-| `data_access_expires_at`  Unixtime | Timestamp when the app’s access to user data expires. |
+| `data_access_expires_at`  Unixtime | Timestamp when the app's access to user data expires. |
 | `expires_at`  Unixtime | Timestamp when this access token expires. |
 | `is_valid`  Boolean | Whether the access token is still valid or not. |
 | `issued_at`  Unixtime | Timestamp when this access token was issued. |

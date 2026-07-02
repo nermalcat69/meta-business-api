@@ -86,11 +86,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Application-ID}/whatsapp_business_solutions' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Application-ID}/whatsapp_business_solutions' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -101,65 +101,65 @@ Select status code
 
 ```
 {  
-  "multiple_solutions": {  
-    "summary": "Application with multiple solutions (owner and partner)",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "1234567890123456",  
-          "name": "E-commerce Integration Solution",  
-          "status": "ACTIVE",  
-          "status_for_pending_request": "NONE",  
-          "owner_app": {  
-            "id": "9876543210987654",  
-            "name": "Solution Partner App"  
-          },  
-          "owner_permissions": [  
-            "MANAGE",  
-            "DEVELOP",  
-            "MANAGE_TEMPLATES"  
-          ]  
-        },  
-        {  
-          "id": "2345678901234567",  
-          "name": "Customer Support Solution",  
-          "status": "DRAFT",  
-          "status_for_pending_request": "PENDING_ACTIVATION"  
-        }  
-      ],  
-      "paging": {  
-        "cursors": {  
-          "after": "MTAxNTExOTQ1MjAwNzI5NDE"  
-        },  
-        "next": "https://graph.facebook.com/v25.0/1234567890123456/whatsapp_business_solution?after=MTAxNTExOTQ1MjAwNzI5NDE"  
-      }  
-    }  
-  },  
-  "owner_only_solutions": {  
-    "summary": "Application as owner only (with role=OWNER filter)",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "1234567890123456",  
-          "name": "E-commerce Integration Solution",  
-          "status": "ACTIVE",  
-          "status_for_pending_request": "NONE"  
-        }  
-      ],  
-      "paging": {  
-        "cursors": {}  
-      }  
-    }  
-  },  
-  "empty_results": {  
-    "summary": "No solutions found for application",  
-    "value": {  
-      "data": [],  
-      "paging": {  
-        "cursors": {}  
-      }  
-    }  
-  }  
+  "multiple_solutions": {  
+    "summary": "Application with multiple solutions (owner and partner)",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "1234567890123456",  
+          "name": "E-commerce Integration Solution",  
+          "status": "ACTIVE",  
+          "status_for_pending_request": "NONE",  
+          "owner_app": {  
+            "id": "9876543210987654",  
+            "name": "Solution Partner App"  
+          },  
+          "owner_permissions": [  
+            "MANAGE",  
+            "DEVELOP",  
+            "MANAGE_TEMPLATES"  
+          ]  
+        },  
+        {  
+          "id": "2345678901234567",  
+          "name": "Customer Support Solution",  
+          "status": "DRAFT",  
+          "status_for_pending_request": "PENDING_ACTIVATION"  
+        }  
+      ],  
+      "paging": {  
+        "cursors": {  
+          "after": "MTAxNTExOTQ1MjAwNzI5NDE"  
+        },  
+        "next": "https://graph.facebook.com/v25.0/1234567890123456/whatsapp_business_solution?after=MTAxNTExOTQ1MjAwNzI5NDE"  
+      }  
+    }  
+  },  
+  "owner_only_solutions": {  
+    "summary": "Application as owner only (with role=OWNER filter)",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "1234567890123456",  
+          "name": "E-commerce Integration Solution",  
+          "status": "ACTIVE",  
+          "status_for_pending_request": "NONE"  
+        }  
+      ],  
+      "paging": {  
+        "cursors": {}  
+      }  
+    }  
+  },  
+  "empty_results": {  
+    "summary": "No solutions found for application",  
+    "value": {  
+      "data": [],  
+      "paging": {  
+        "cursors": {}  
+      }  
+    }  
+  }  
 }
 ```
 
@@ -796,11 +796,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Application-ID}/whatsapp_business_solutions' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Application-ID}/whatsapp_business_solutions' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -811,65 +811,65 @@ Select status code
 
 ```
 {  
-  "multiple_solutions": {  
-    "summary": "Application with multiple solutions (owner and partner)",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "1234567890123456",  
-          "name": "E-commerce Integration Solution",  
-          "status": "ACTIVE",  
-          "status_for_pending_request": "NONE",  
-          "owner_app": {  
-            "id": "9876543210987654",  
-            "name": "Solution Partner App"  
-          },  
-          "owner_permissions": [  
-            "MANAGE",  
-            "DEVELOP",  
-            "MANAGE_TEMPLATES"  
-          ]  
-        },  
-        {  
-          "id": "2345678901234567",  
-          "name": "Customer Support Solution",  
-          "status": "DRAFT",  
-          "status_for_pending_request": "PENDING_ACTIVATION"  
-        }  
-      ],  
-      "paging": {  
-        "cursors": {  
-          "after": "MTAxNTExOTQ1MjAwNzI5NDE"  
-        },  
-        "next": "https://graph.facebook.com/v25.0/1234567890123456/whatsapp_business_solution?after=MTAxNTExOTQ1MjAwNzI5NDE"  
-      }  
-    }  
-  },  
-  "owner_only_solutions": {  
-    "summary": "Application as owner only (with role=OWNER filter)",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "1234567890123456",  
-          "name": "E-commerce Integration Solution",  
-          "status": "ACTIVE",  
-          "status_for_pending_request": "NONE"  
-        }  
-      ],  
-      "paging": {  
-        "cursors": {}  
-      }  
-    }  
-  },  
-  "empty_results": {  
-    "summary": "No solutions found for application",  
-    "value": {  
-      "data": [],  
-      "paging": {  
-        "cursors": {}  
-      }  
-    }  
-  }  
+  "multiple_solutions": {  
+    "summary": "Application with multiple solutions (owner and partner)",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "1234567890123456",  
+          "name": "E-commerce Integration Solution",  
+          "status": "ACTIVE",  
+          "status_for_pending_request": "NONE",  
+          "owner_app": {  
+            "id": "9876543210987654",  
+            "name": "Solution Partner App"  
+          },  
+          "owner_permissions": [  
+            "MANAGE",  
+            "DEVELOP",  
+            "MANAGE_TEMPLATES"  
+          ]  
+        },  
+        {  
+          "id": "2345678901234567",  
+          "name": "Customer Support Solution",  
+          "status": "DRAFT",  
+          "status_for_pending_request": "PENDING_ACTIVATION"  
+        }  
+      ],  
+      "paging": {  
+        "cursors": {  
+          "after": "MTAxNTExOTQ1MjAwNzI5NDE"  
+        },  
+        "next": "https://graph.facebook.com/v25.0/1234567890123456/whatsapp_business_solution?after=MTAxNTExOTQ1MjAwNzI5NDE"  
+      }  
+    }  
+  },  
+  "owner_only_solutions": {  
+    "summary": "Application as owner only (with role=OWNER filter)",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "1234567890123456",  
+          "name": "E-commerce Integration Solution",  
+          "status": "ACTIVE",  
+          "status_for_pending_request": "NONE"  
+        }  
+      ],  
+      "paging": {  
+        "cursors": {}  
+      }  
+    }  
+  },  
+  "empty_results": {  
+    "summary": "No solutions found for application",  
+    "value": {  
+      "data": [],  
+      "paging": {  
+        "cursors": {}  
+      }  
+    }  
+  }  
 }
 ```
 

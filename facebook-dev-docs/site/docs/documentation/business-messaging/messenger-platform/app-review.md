@@ -50,11 +50,11 @@ You can add an extra layer of security to your API calls by enabling the **Requi
 
 ## Design Strategy
 
-Whether using automation or implementing live messaging, it’s important to define the experience you want to create for yourself and the people you’re interacting with on Messenger. Before any messages get sent, take the time to:
+Whether using automation or implementing live messaging, it's important to define the experience you want to create for yourself and the people you're interacting with on Messenger. Before any messages get sent, take the time to:
 
 * **Determine your goals.** Do you want to design around utility, delight or a mixture of both? Understanding your strategy and what you want to accomplish will help you create the best experience.
 * **Decide what you want people to do.** What actions do you want people to take? Are there multiple tasks you want them to complete? How are those tasks completed outside of Messenger? Determine all the paths people can navigate when designing your interactions.
-* **Plan how you’ll evolve.** Once people complete your tasks, what are some ways you can keep the interaction going? Consider how you can expand your capabilities to grow your experience and extend your lifecycle.
+* **Plan how you'll evolve.** Once people complete your tasks, what are some ways you can keep the interaction going? Consider how you can expand your capabilities to grow your experience and extend your lifecycle.
 
 Focus on doing a couple things really well; doing too much creates confusion and dilutes your experience.
 
@@ -130,9 +130,9 @@ Based on the goals and tasks you outlined, write in a way that lets people know 
 
 ### Provide Context
 
-To build understanding of your bot’s experience, use content to guide people every step of the way: tell them what stage they are at, what is being asked of them, and what will happen next.
+To build understanding of your bot's experience, use content to guide people every step of the way: tell them what stage they are at, what is being asked of them, and what will happen next.
 
-* **Do** confirm actions people take. It will make people feel like your bot is “listening” and make your experience even more reliable.
+* **Do** confirm actions people take. It will make people feel like your bot is "listening" and make your experience even more reliable.
 * **Do not** keep people waiting. If someone asks for something, acknowledge their request and let them know if and when you can deliver.
 
 ## Writing Interactions
@@ -155,7 +155,7 @@ Based on the tasks, expectations, and context you want to establish, write out a
 * **Do not** make your conversations one-sided. Your goals may differ from the people you are talking to. Consider how they might reply and what they might ask of you, and prepare responses accordingly.
 * **Do not** use standalone questions. This could imply free form interaction and encourage people to respond in ways you do not support. If you do pose questions, add buttons with specific answers to the message for people to choose from.
 
-Every interaction is an opportunity to evaluate and make improvements to your existing experience and the messages that drive it. Use people’s responses to determine how and where to expand your capabilities.
+Every interaction is an opportunity to evaluate and make improvements to your existing experience and the messages that drive it. Use people's responses to determine how and where to expand your capabilities.
 
 ## Marketing Messages ([Recurring Notifications](https://developers.facebook.com/documentation/business-messaging/messenger-platform/changelog#may-10--2023))
 
@@ -180,15 +180,15 @@ A conversational tone should support an experience, not define it. If you want t
 
 ### Use the Active Voice
 
-In an active sentence, the subject of the sentence is doing something. In a passive sentence, something is being done to the subject (making the subject passive). Active voice is also more direct and helps with brevity. “Breaking news is delivered by CNN” is not as clear, short or simple as, “CNN delivers breaking news.”
+In an active sentence, the subject of the sentence is doing something. In a passive sentence, something is being done to the subject (making the subject passive). Active voice is also more direct and helps with brevity. "Breaking news is delivered by CNN" is not as clear, short or simple as, "CNN delivers breaking news."
 
 ### Use Contractions
 
-An easy way to make your messages feel conversational is to use shortened versions of words or groups of words. For example, “We cannot wait to get started” feels robotic, whereas “We can’t wait to get started” feels light and casual.
+An easy way to make your messages feel conversational is to use shortened versions of words or groups of words. For example, "We cannot wait to get started" feels robotic, whereas "We can't wait to get started" feels light and casual.
 
 ### Standardize Usage of the First and Second Person
 
-Standardize who is speaking in your messages and decide between first person singular (“I” as if an individual is speaking) or first person plural (“We” or “Spring” as if the company is speaking). Use second person (you, your, you’re) to address people, so you are talking *to* them and not *at* them.
+Standardize who is speaking in your messages and decide between first person singular ("I" as if an individual is speaking) or first person plural ("We" or "Spring" as if the company is speaking). Use second person (you, your, you're) to address people, so you are talking *to* them and not *at* them.
 
 ### Check Your Grammar
 
@@ -206,38 +206,38 @@ Here is an example of how the tone of an order confirmation can differ across de
 
 | Website | Email | Messenger |
 | --- | --- | --- |
-| Your order has been processed. This is a summary of your purchase:   * Running shoes * Cashmere sweater   We will update your account when these items have shipped. | We received your order. Your purchase includes:   * Running shoes * Cashmere sweater   A confirmation email will be sent once these items have shipped. | Thanks for your order! We’ll let you know when your running shoes and cashmere sweater have shipped. |
+| Your order has been processed. This is a summary of your purchase:   * Running shoes * Cashmere sweater   We will update your account when these items have shipped. | We received your order. Your purchase includes:   * Running shoes * Cashmere sweater   A confirmation email will be sent once these items have shipped. | Thanks for your order! We'll let you know when your running shoes and cashmere sweater have shipped. |
 
 Writing is best when it is authentic and relatable. You know your brand and experience best, so use your own judgement, do what feels right for you and the audience, and do not be afraid to make adjustments along the way.
 
 ## Updates and Alerts
 
-Keep people up-to-date with messages that are timely and relevant to your experience. If an action is completed, follow up with messages confirming the activity and communicate any necessary next steps. If you’re building a subscription model, strive to send your updates at the same time each day.
+Keep people up-to-date with messages that are timely and relevant to your experience. If an action is completed, follow up with messages confirming the activity and communicate any necessary next steps. If you're building a subscription model, strive to send your updates at the same time each day.
 
-✅ Let people know you’ve processed their information or request. Send receipts for purchases, verify answers to questions, acknowledge preferences, etc.
+✅ Let people know you've processed their information or request. Send receipts for purchases, verify answers to questions, acknowledge preferences, etc.
 
-✅ Give people a way to explicitly opt-in. Be specific about what they’ll receive and how often, and give them a way to opt out or update their preferences.
+✅ Give people a way to explicitly opt-in. Be specific about what they'll receive and how often, and give them a way to opt out or update their preferences.
 
-❌ Don’t change the type of info you send without consent. If people signed up for a specific alert, honor their preferences.
+❌ Don't change the type of info you send without consent. If people signed up for a specific alert, honor their preferences.
 
-Push notifications give people a preview of your updates and alerts, and let them know when you send a new message, even when they’re not in Messenger. Notifications are also an easy way to get people to re-engage.
+Push notifications give people a preview of your updates and alerts, and let them know when you send a new message, even when they're not in Messenger. Notifications are also an easy way to get people to re-engage.
 
-✅ Be proactive. Tell people who’ve opted into your experience when there’s a message waiting for them.
+✅ Be proactive. Tell people who've opted into your experience when there's a message waiting for them.
 
-✅ Consider going “silent”. If you send a lot of messages, silence the notifications for the ones that aren’t time-sensitive.
+✅ Consider going "silent". If you send a lot of messages, silence the notifications for the ones that aren't time-sensitive.
 
-❌ Don’t send too many. If people get overwhelmed by excessive notifications, they may decide to ignore the conversation entirely or block your activity.
+❌ Don't send too many. If people get overwhelmed by excessive notifications, they may decide to ignore the conversation entirely or block your activity.
 
 ## Fail States
 
-While some tools can automate your interactions, remember that you’re still communicating with humans. This means that messages and intent are open to interpretation. Be transparent when you receive requests that you don’t understand or recognize. Ask for clarification and communicate how you can/can’t help.
+While some tools can automate your interactions, remember that you're still communicating with humans. This means that messages and intent are open to interpretation. Be transparent when you receive requests that you don't understand or recognize. Ask for clarification and communicate how you can/can't help.
 
 ✅ Re-educate people. If they ask for something outside your experience, reiterate your capabilities, tell people about help commands or use buttons to offer options and redirect them.
 
-✅ Look at each failure as a piece of feedback that tells you what’s working, what isn’t and how you can evolve the way you communicate on Messenger.
+✅ Look at each failure as a piece of feedback that tells you what's working, what isn't and how you can evolve the way you communicate on Messenger.
 
-❌ Don’t expect perfection. No matter how much you plan, anticipate, or respond, people are going to miss details, ask the unexpected, see how much they can get away with and, as a result, get frustrated.
+❌ Don't expect perfection. No matter how much you plan, anticipate, or respond, people are going to miss details, ask the unexpected, see how much they can get away with and, as a result, get frustrated.
 
-❌ Don’t send multiple, identical failure messages. Reduce friction by limiting the number of failure responses people receive and by varying the language in each message.
+❌ Don't send multiple, identical failure messages. Reduce friction by limiting the number of failure responses people receive and by varying the language in each message.
 
-Your interactions are your opportunity to keep people engaged. Whether they’re used to start a conversation or keep it going, use them to continually set expectations about how your experience works and the value it provides.
+Your interactions are your opportunity to keep people engaged. Whether they're used to start a conversation or keep it going, use them to continually set expectations about how your experience works and the value it provides.

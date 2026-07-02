@@ -14,7 +14,7 @@ Here are the key benefits for advertisers:
 
 * Simplicity — Instead of managing multiple campaigns, optimize for website and app within a
   single campaign
-* More conversions — With more data captured, the chances of showing ads to people who’ll
+* More conversions — With more data captured, the chances of showing ads to people who'll
   convert increases
 * Cost-efficiency — Reach the most people at a lower cost
 
@@ -130,7 +130,7 @@ app deep link, or Android app deep link given the chosen destination option. Lea
 
 For ad validation:
 
-* The tracking spec’s (`tracking_specs`)`pixel_id` and `application_id` must be consistent with those in `promoted_object`.
+* The tracking spec's (`tracking_specs`)`pixel_id` and `application_id` must be consistent with those in `promoted_object`.
 * `tracking_specs` must include these specs:
 
 | Tracking Spec | Code Sample |
@@ -182,16 +182,16 @@ For Advantage+ catalog ads, `template_url_spec` can be used to specify deep link
       "applink_treatment":"deeplink_with_web_fallback",
       "template_url_spec":{
          "android":{
-            "url":"example://product/{{product.retailer_id | urlencode}}"
+            "url":"example://product/{​{product.retailer_id | urlencode}​}"
          },
          "config":{
             "app_id":"<APPLICATION_ID>"
          },
          "ios":{
-            "url":"example://product/{{product.name | urlencode}}"
+            "url":"example://product/{​{product.name | urlencode}​}"
          },
          "web":{
-            "url":"https://www.example.com/deeplink/{{product.name | urlencode}}"
+            "url":"https://www.example.com/deeplink/{​{product.name | urlencode}​}"
          }
       }
    },

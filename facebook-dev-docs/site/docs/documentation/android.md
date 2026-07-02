@@ -19,7 +19,7 @@ The Facebook SDK for Android gives you access to the following features:
 
 * [Facebook Login](https://developers.facebook.com/documentation/facebook-login) — A secure and convenient way for people to log into your app or website by using their Facebook credentials.
 * [Sharing](https://developers.facebook.com/documentation/sharing) — Enable people to post to Facebook from your app. People can share, send a message, and share to stories.
-* [App Events](https://developers.facebook.com/documentation/app-events) — Understand people’s actions in your app and measure the effectiveness of your Mobile App Ads.
+* [App Events](https://developers.facebook.com/documentation/app-events) — Understand people's actions in your app and measure the effectiveness of your Mobile App Ads.
 * [Advertise Your App](https://developers.facebook.com/documentation/app-ads) — Drive installs of your app by using [Mobile App Install Ads](https://developers.facebook.com/documentation/app-ads). Increase engagement with your app by using [Mobile App Engagement Ads](https://developers.facebook.com/documentation/app-ads). Find your target audience with [Custom Audiences for Mobile Apps](https://developers.facebook.com/documentation/app-ads/targeting).
 
 ## Documentation Contents
@@ -50,7 +50,7 @@ Instructions for upgrading your version of the Facebook SDK for Android.
 
 #### [Devices](https://developers.facebook.com/docs/android/devices)
 
-Considerations when you use the Facebook SDK for Android with Android TV and Amazon’s Fire TV.
+Considerations when you use the Facebook SDK for Android with Android TV and Amazon's Fire TV.
 
 #### [Downloads](https://developers.facebook.com/documentation/android/downloads)
 

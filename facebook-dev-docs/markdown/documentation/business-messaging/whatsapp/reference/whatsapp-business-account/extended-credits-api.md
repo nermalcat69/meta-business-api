@@ -66,17 +66,17 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/conversational_automation' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "enable_welcome_message": true,  
-  "prompts": [  
-    "How can I help you today?",  
-    "What product are you interested in?"  
-  ],  
-  "commands": []  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/conversational_automation' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "enable_welcome_message": true,  
+  "prompts": [  
+    "How can I help you today?",  
+    "What product are you interested in?"  
+  ],  
+  "commands": []  
 }'
 ```
 
@@ -88,12 +88,12 @@ Select status code
 
 ```
 {  
-  "success_response": {  
-    "summary": "Successful configuration",  
-    "value": {  
-      "success": true  
-    }  
-  }  
+  "success_response": {  
+    "summary": "Successful configuration",  
+    "value": {  
+      "success": true  
+    }  
+  }  
 }
 ```
 
@@ -638,17 +638,17 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/conversational_automation' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "enable_welcome_message": true,  
-  "prompts": [  
-    "How can I help you today?",  
-    "What product are you interested in?"  
-  ],  
-  "commands": []  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/conversational_automation' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "enable_welcome_message": true,  
+  "prompts": [  
+    "How can I help you today?",  
+    "What product are you interested in?"  
+  ],  
+  "commands": []  
 }'
 ```
 
@@ -660,12 +660,12 @@ Select status code
 
 ```
 {  
-  "success_response": {  
-    "summary": "Successful configuration",  
-    "value": {  
-      "success": true  
-    }  
-  }  
+  "success_response": {  
+    "summary": "Successful configuration",  
+    "value": {  
+      "success": true  
+    }  
+  }  
 }
 ```
 

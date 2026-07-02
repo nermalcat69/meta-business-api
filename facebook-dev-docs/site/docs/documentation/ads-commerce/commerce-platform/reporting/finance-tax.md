@@ -96,58 +96,56 @@ https://graph.facebook.com/v25.0/<PAGE_ID>/commerce_transactions
 ### Sample Response
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "transaction_type": "REFUND",  
-      "transaction_date": "2019-09-06T19:56:53+00:00",  
-      "order_details": {  
-        "id": "420069168636230",  
-        "order_status": {  
-          "state": "COMPLETED"  
-        },  
-        "created": "2019-08-27T21:08:42+00:00",  
-        "last_updated": "2019-09-06T19:56:56+00:00"  
-      },  
-      "processing_fee": {  
-        "amount": "0.00",  
-        "currency": "USD"  
-      },  
-      "net_payment_amount": {  
-        "amount": "-0.40",  
-        "currency": "USD"  
-      },  
-      "tax_rate": "0%;0%"  
-    },  
-    {  
-      "transaction_type": "REFUND",  
-      "transaction_date": "2019-09-06T19:56:53+00:00",  
-      "order_details": {  
-        "id": "420069168636230",  
-        "order_status": {  
-          "state": "COMPLETED"  
-        },  
-        "created": "2019-08-27T21:08:42+00:00",  
-        "last_updated": "2019-09-06T19:56:56+00:00"  
-      },  
-      "processing_fee": {  
-        "amount": "0.00",  
-        "currency": "USD"  
-      },  
-      "net_payment_amount": {  
-        "amount": "-0.11",  
-        "currency": "USD"  
-      },  
-      "tax_rate": "0%;0%"  
-    },  
-  ],  
-  "paging": {  
-    "cursors": {  
-      "before": "MAZDZD",  
-      "after": "MTgZD"  
-    }  
-  }  
+  "data": [  
+    {  
+      "transaction_type": "REFUND",  
+      "transaction_date": "2019-09-06T19:56:53+00:00",  
+      "order_details": {  
+        "id": "420069168636230",  
+        "order_status": {  
+          "state": "COMPLETED"  
+        },  
+        "created": "2019-08-27T21:08:42+00:00",  
+        "last_updated": "2019-09-06T19:56:56+00:00"  
+      },  
+      "processing_fee": {  
+        "amount": "0.00",  
+        "currency": "USD"  
+      },  
+      "net_payment_amount": {  
+        "amount": "-0.40",  
+        "currency": "USD"  
+      },  
+      "tax_rate": "0%;0%"  
+    },  
+    {  
+      "transaction_type": "REFUND",  
+      "transaction_date": "2019-09-06T19:56:53+00:00",  
+      "order_details": {  
+        "id": "420069168636230",  
+        "order_status": {  
+          "state": "COMPLETED"  
+        },  
+        "created": "2019-08-27T21:08:42+00:00",  
+        "last_updated": "2019-09-06T19:56:56+00:00"  
+      },  
+      "processing_fee": {  
+        "amount": "0.00",  
+        "currency": "USD"  
+      },  
+      "net_payment_amount": {  
+        "amount": "-0.11",  
+        "currency": "USD"  
+      },  
+      "tax_rate": "0%;0%"  
+    },  
+  ],  
+  "paging": {  
+    "cursors": {  
+      "before": "MAZDZD",  
+      "after": "MTgZD"  
+    }  
+  }  
 }
-```
 ```

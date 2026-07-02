@@ -59,29 +59,27 @@ To create a scrollable carousel, include up to 10 products in the `elements` arr
 ## Example Request
 
 ```
-```
-curl -X POST -H "Content-Type: application/json" -d '{  
-  "recipient":{  
-    "id":"<PSID>"  
-  },  
-  "message":{  
-    "attachment":{  
-      "type":"template",  
-        "payload": {  
-          "template_type": "product",  
-          "elements": [  
-            {  
-              "id": "<PRODUCT_ID_1>"  
-            },  
-            {  
-              "id": "<PRODUCT_ID_2>"  
-            }  
-         ]  
-      }  
-    }  
-  }  
-}' "https://graph.facebook.com/v8.0/me/messages?access_token=<PAGE_ACCESS_TOKEN>"
-```
+curl -X POST -H "Content-Type: application/json" -d '{  
+  "recipient":{  
+    "id":"<PSID>"  
+  },  
+  "message":{  
+    "attachment":{  
+      "type":"template",  
+        "payload": {  
+          "template_type": "product",  
+          "elements": [  
+            {  
+              "id": "<PRODUCT_ID_1>"  
+            },  
+            {  
+              "id": "<PRODUCT_ID_2>"  
+            }  
+         ]  
+      }  
+    }  
+  }  
+}' "https://graph.facebook.com/v8.0/me/messages?access_token=<PAGE_ACCESS_TOKEN>"
 ```
 
 ## Example Response

@@ -31,7 +31,7 @@ This guide can be adapted to suit other relevant use cases, including credit car
 
 ## [Get Insurance Quote](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/gettingstarted/health-insurance)
 
-This guide will help you create a Flow that enables users to seamlessly enroll in and customize their insurance coverage within WhatsApp. This use case is ideal for businesses that want to offer customizable products, particularly where a user’s details and preferences will generate a tailored quote. The guide will explain how to create a Flow that:
+This guide will help you create a Flow that enables users to seamlessly enroll in and customize their insurance coverage within WhatsApp. This use case is ideal for businesses that want to offer customizable products, particularly where a user's details and preferences will generate a tailored quote. The guide will explain how to create a Flow that:
 
 * Collects personal preferences and details from a user (number of members covered, health risks, premium, etc.) for any type of insurance, and allows them to view, customize and choose the insurance plans they are interested in.
 * Provides a quote based on the options selected, and allows the user to select how frequently they would like to pay.
@@ -47,7 +47,7 @@ This guide will help you to create a Flow for a business to understand what prod
 * Collect relevant personal data from a customer, such as name and email address
 * Allows the user to select the products or services that they are interested in
 
-This guide can be adapted to a range of use cases where you’d like to collect information from users.
+This guide can be adapted to a range of use cases where you'd like to collect information from users.
 
 ![WhatsApp Flow screens collecting customer details and product category interest for Black Friday](https://scontent.fdel1-1.fna.fbcdn.net/v/t39.2365-6/651706993_1459945709197412_5831719837776262328_n.png?_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=hDcA0IqH-eMQ7kNvwGw5OAO&_nc_oc=AdoqHK5Vs5ppYNr2pD2q8aGQPRpod7986wvgDJSd9F5uyQw7sOheG6Csxss7BNIMbkQShAFUvFhjNWRfTYyrXkhS&_nc_zt=14&_nc_ht=scontent.fdel1-1.fna&_nc_gid=asvMo6LqNtQ3jgulH5eBbw&_nc_ss=7b289&oh=00_AQB0xOGO30VpRLlQ8yPPEJCJdnLWA6ssJNQTDXJJNW_NmQ&oe=6A605C17)
 
@@ -87,9 +87,9 @@ Try to quickly configure and preview a basic Flow.
 
 ### [Get Support](https://developers.facebook.com/documentation/business-messaging/whatsapp/support)
 
-If you’re stuck on something with WhatsApp Flows, start here to get help.
+If you're stuck on something with WhatsApp Flows, start here to get help.
 
 ### [Changelog](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/changelogs)
 
-Are you looking for updates on what’s changed?
+Are you looking for updates on what's changed?
 This section includes details on current versions, API changes, and more.

@@ -32,11 +32,9 @@ The token here is `PAGE_ACCESS_TOKEN`
 ### Sample Response
 
 ```
-```
 {  
-    "success": true  
+    "success": true  
 }
-```
 ```
 
 ## Acknowledge One Order
@@ -63,23 +61,19 @@ The token here is `PAGE_ACCESS_TOKEN`
 ### Sample Request
 
 ```
-```
 {  
-  "idempotency_key": "cb090e84-e75a-9a34-45d3-5163bec88b65",  
-  "merchant_order_reference": "external_order-id-1"  
+  "idempotency_key": "cb090e84-e75a-9a34-45d3-5163bec88b65",  
+  "merchant_order_reference": "external_order-id-1"  
 }
-```
 ```
 
 ### Sample Response
 
 ```
-```
 {  
-  "id": "64000841784004",  
-  "state": "IN_PROGRESS"  
+  "id": "64000841784004",  
+  "state": "IN_PROGRESS"  
 }
-```
 ```
 
 ## Acknowledge Multiple Orders
@@ -115,19 +109,17 @@ You can Acknowledge multiple orders in one request. If few orders were in `FB_PR
 ### Sample Request
 
 ```
-```
 {  
-  "idempotency_key": "cb090e84-e75a-9a34-45d3-5163bec88b65",  
-  "orders": [  
-    {  
-      "id": "64000841790004"  
-    },  
-    {  
-      "id": "10100677592885259"  
-    }  
-  ]  
+  "idempotency_key": "cb090e84-e75a-9a34-45d3-5163bec88b65",  
+  "orders": [  
+    {  
+      "id": "64000841790004"  
+    },  
+    {  
+      "id": "10100677592885259"  
+    }  
+  ]  
 }
-```
 ```
 
 ### Response
@@ -146,21 +138,19 @@ You can Acknowledge multiple orders in one request. If few orders were in `FB_PR
 ### Sample Response
 
 ```
-```
 {  
-  "orders": [  
-    {  
-      "id": "64000841790004",  
-      "state": "IN_PROGRESS"  
-    },  
-    {  
-      "id": "10100677592885259",  
-      "error": {  
-        "error_code": 2361003,  
-        "error_message": "Invalid Order ID"  
-      }  
-    }  
-  ]  
+  "orders": [  
+    {  
+      "id": "64000841790004",  
+      "state": "IN_PROGRESS"  
+    },  
+    {  
+      "id": "10100677592885259",  
+      "error": {  
+        "error_code": 2361003,  
+        "error_message": "Invalid Order ID"  
+      }  
+    }  
+  ]  
 }
-```
 ```

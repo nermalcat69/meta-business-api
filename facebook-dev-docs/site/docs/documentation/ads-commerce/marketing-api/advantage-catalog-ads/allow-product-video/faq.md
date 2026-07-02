@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/marketing
 
 Updated: May 14, 2026
 
-When **Allow product video** is enabled, advertisers can deliver video assets from their catalog instead of product images in Advantage+ catalog ads when it’s likely to improve their cost per result. Allow product video is on by default, but you can use `media_type_automation` to control whether videos surface in ads and set to `OPT_OUT` as needed.
+When **Allow product video** is enabled, advertisers can deliver video assets from their catalog instead of product images in Advantage+ catalog ads when it's likely to improve their cost per result. Allow product video is on by default, but you can use `media_type_automation` to control whether videos surface in ads and set to `OPT_OUT` as needed.
 
 ## Before you begin
 
@@ -31,33 +31,29 @@ See the Business Help Center for:
 
 ### Add videos with the catalog feed file
 
-**Note:** For feeds, instead of the **video[0].url** column, you can create a column called `video` and add tags to the video. The `video` column can contain multiple video URLs per product and multiple tags per URL encoded in a JSON format. If you choose to use a tag column for the product set filter, you’ll need to add this column to the feed file too.
+**Note:** For feeds, instead of the **video[0].url** column, you can create a column called `video` and add tags to the video. The `video` column can contain multiple video URLs per product and multiple tags per URL encoded in a JSON format. If you choose to use a tag column for the product set filter, you'll need to add this column to the feed file too.
 
 **Example video column format:**
 
 ```
-```
 [  
-  {"url": "http://www.jaspersmarket-example1.com/video-file.avi", "tag": ["<OPTIONAL_TAG_1>", "<OPTIONAL_TAG_2>"]},  
-  {"url": "http://www.jaspersmarket-example2.com/video-file.avi", "tag": ["<OPTIONAL_TAG_1>", "<OPTIONAL_TAG_2>"]}  
+  {"url": "http://www.jaspersmarket-example1.com/video-file.avi", "tag": ["<OPTIONAL_TAG_1>", "<OPTIONAL_TAG_2>"]},  
+  {"url": "http://www.jaspersmarket-example2.com/video-file.avi", "tag": ["<OPTIONAL_TAG_1>", "<OPTIONAL_TAG_2>"]}  
 ]
-```
 ```
 
 For an XML feed, video URLs can be added using `video` tags like:
 
 ```
-```
 <video>  
-    <url>https://<URL_1></url>  
-    <tag>video_product_set1</tag>  
-    <tag>video_product_set2 </tag>  
+    <url>https://<URL_1></url>  
+    <tag>video_product_set1</tag>  
+    <tag>video_product_set2 </tag>  
 </video>  
 <video>  
-    <url>https://<URL_2></url>  
-    <tag>video_product_set1</tag>  
+    <url>https://<URL_2></url>  
+    <tag>video_product_set1</tag>  
 </video>
-```
 ```
 
 ### Query video data from the product item API
@@ -78,63 +74,61 @@ For more details on video information, see the [Product Item](https://developers
 Updates to product items are supported using the [`/{product-catalog-id}/items_batch` endpoint](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-catalog/items_batch). You can make a `POST` API call with the `video` field, which is an array of URLs.
 
 ```
-```
-curl \  
-  -d @body.json \  
-  -H "Content-Type: application/json"  
+curl \  
+  -d @body.json \  
+  -H "Content-Type: application/json"  
   
-> cat body.json  
+> cat body.json  
 {  
-  "access_token": "<ACCESS_TOKEN>",  
-  "item_type": "PRODUCT_ITEM",  
-  "requests": [  
-    {  
-      "method": "CREATE",  
-      "data": {  
-        "id": "retailer-2",  
-        "availability": "in stock",  
-        "brand": "BrandName",  
-        "google_product_category": "t-shirts",  
-        "description": "product description",  
-        "image_link": "http://www.images.example.com/t-shirts/1.png",  
-        "title": "product name",  
-        "price": "10.00 USD",  
-        "shipping": [  
-          {  
-            "shipping_country": "US",  
-            "shipping_region": "CA",  
-            "shipping_service": "service",  
-            "shipping_price_value": "10",  
-            "shipping_price_currency": "USD"  
-          }  
-        ],  
-        "condition": "new",  
-        "link": "http://www.images.example.com/t-shirts/1.png",  
-        "item_group_id": "product-group-1",  
-        "video": [  
-          {"url": "http://www.jaspersmarket-example1.com/video-file.avi", "tag": ["<OPTIONAL_TAG_1>", "<OPTIONAL_TAG_2>"]},  
-          {"url": "http://www.jaspersmarket-example2.com/video-file.avi", "tag": ["<OPTIONAL_TAG_1>", "<OPTIONAL_TAG_2>"]}  
-        ]  
-      }  
-    },  
-    {  
-      "method": "UPDATE",  
-      "data": {  
-        "availability": "out of stock",  
-        "id": "retailer-3",  
-        "video": [  
-          {  
-            "url": "https://yourvideo.com/demo.mp4?q=1411"  
-          },  
-          {  
-            "url": "https://yourvideo.com/demo.mp4?q=1421"  
-          }  
-        ]  
-      }  
-    }  
-  ]  
+  "access_token": "<ACCESS_TOKEN>",  
+  "item_type": "PRODUCT_ITEM",  
+  "requests": [  
+    {  
+      "method": "CREATE",  
+      "data": {  
+        "id": "retailer-2",  
+        "availability": "in stock",  
+        "brand": "BrandName",  
+        "google_product_category": "t-shirts",  
+        "description": "product description",  
+        "image_link": "http://www.images.example.com/t-shirts/1.png",  
+        "title": "product name",  
+        "price": "10.00 USD",  
+        "shipping": [  
+          {  
+            "shipping_country": "US",  
+            "shipping_region": "CA",  
+            "shipping_service": "service",  
+            "shipping_price_value": "10",  
+            "shipping_price_currency": "USD"  
+          }  
+        ],  
+        "condition": "new",  
+        "link": "http://www.images.example.com/t-shirts/1.png",  
+        "item_group_id": "product-group-1",  
+        "video": [  
+          {"url": "http://www.jaspersmarket-example1.com/video-file.avi", "tag": ["<OPTIONAL_TAG_1>", "<OPTIONAL_TAG_2>"]},  
+          {"url": "http://www.jaspersmarket-example2.com/video-file.avi", "tag": ["<OPTIONAL_TAG_1>", "<OPTIONAL_TAG_2>"]}  
+        ]  
+      }  
+    },  
+    {  
+      "method": "UPDATE",  
+      "data": {  
+        "availability": "out of stock",  
+        "id": "retailer-3",  
+        "video": [  
+          {  
+            "url": "https://yourvideo.com/demo.mp4?q=1411"  
+          },  
+          {  
+            "url": "https://yourvideo.com/demo.mp4?q=1421"  
+          }  
+        ]  
+      }  
+    }  
+  ]  
 }
-```
 ```
 
 ## Create ads with product video
@@ -302,7 +296,7 @@ curl -X POST \
 https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/ads
 ```
 
-Auto-crop only applies to videos that don’t meet the placement size requirements. Auto-crop primarily fits the video into the player’s viewport.
+Auto-crop only applies to videos that don't meet the placement size requirements. Auto-crop primarily fits the video into the player's viewport.
 
 If a video matches the aspect ratio for the ad placement, that video is returned. If you provide all aspect ratios for a product video, auto-crop does not apply. Otherwise, the ad selects a video and checks the auto-crop setting: `AUTO` returns the auto-cropped video and `NONE` returns the original video.
 

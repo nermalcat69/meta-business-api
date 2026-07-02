@@ -48,7 +48,7 @@ To take full advantage of higher throughput, [upload your media assets](https://
 
 ## Getting throughput level
 
-Use the [WhatsApp Business Phone Number API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/whatsapp-business-account-phone-number-api) to get a phone number’s current throughput level:
+Use the [WhatsApp Business Phone Number API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/whatsapp-business-account-phone-number-api) to get a phone number's current throughput level:
 
 ```
 GET /<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>?fields=throughput

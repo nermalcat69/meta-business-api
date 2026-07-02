@@ -45,7 +45,7 @@ When a template contains the value `library_template_name` in the `GET <WABAID>/
 
 Templates in the library contain both fixed content and parameters. The parameters represent spaces in the template where variable information can be inserted, such as names, addresses, and phone numbers.
 
-In the example above, parameters like the name `Jim` or the business name `CS Mutual` can be modified to accept variables like your customer’s name and your business’s name.
+In the example above, parameters like the name `Jim` or the business name `CS Mutual` can be modified to accept variables like your customer's name and your business's name.
 
 Messages sent using templates from Template Library are subject to parameter checks during send time. Values used in parameters that are outside of the established ranges listed below will cause the message send to fail.
 
@@ -71,43 +71,41 @@ Forms are only available to accounts who have had their message limits increased
 
 Some templates in Template Library are interactive forms that are powered by WhatsApp Flows.
 
-In WhatsApp Manager, you can identify these specific templates by the “Form” label they contain. The current supported use cases are Customer Feedback and Delivery Failure.
+In WhatsApp Manager, you can identify these specific templates by the "Form" label they contain. The current supported use cases are Customer Feedback and Delivery Failure.
 
 ### Identifying forms in the request response
 
 When calling the `GET /message_template_library` endpoint, the `type` key in the `buttons` array will show as `"FORMS"`.
 
 ```
-```
 {  
-      "name": "delivery_failed_2_form",  
-      "language": "en_US",  
-      "category": "UTILITY",  
-      "topic": "ORDER_MANAGEMENT",  
-      "usecase": "DELIVERY_FAILED",  
-      "industry": [  
-        "E_COMMERCE"  
-      ],  
-      "body": "We were unable to deliver order {{1}} today.  
+      "name": "delivery_failed_2_form",  
+      "language": "en_US",  
+      "category": "UTILITY",  
+      "topic": "ORDER_MANAGEMENT",  
+      "usecase": "DELIVERY_FAILED",  
+      "industry": [  
+        "E_COMMERCE"  
+      ],  
+      "body": "We were unable to deliver order {​{1}​} today.  
   
-Please {{2}} to schedule another delivery attempt.",  
-      "body_params": [  
-        "#12345",  
-        "try a redelivery"  
-      ],  
-      "body_param_types": [  
-        "TEXT",  
-        "TEXT"  
-      ],  
-      "buttons": [  
-        {  
-          "type": "FLOW",  
-          "text": "Reschedule"  
-        }  
-      ],  
-      "id": "7138055039625658"  
+Please {​{2}​} to schedule another delivery attempt.",  
+      "body_params": [  
+        "#12345",  
+        "try a redelivery"  
+      ],  
+      "body_param_types": [  
+        "TEXT",  
+        "TEXT"  
+      ],  
+      "buttons": [  
+        {  
+          "type": "FLOW",  
+          "text": "Reschedule"  
+        }  
+      ],  
+      "id": "7138055039625658"  
 },
-```
 ```
 
 ## Using the API
@@ -178,46 +176,44 @@ curl 'https://graph.facebook.com/v25.0/102290129340398/message_templates?search=
 ### Example response
 
 ```
-```
 {  
-      "name": "low_balance_warning_1",  
-      "language": "en_US",  
-      "category": "UTILITY",  
-      "topic": "PAYMENTS",  
-      "usecase": "LOW_BALANCE_WARNING",  
-      "industry": [  
-        "FINANCIAL_SERVICES"  
-      ],  
-      "header": "Your account balance is low",  
-      "body": "Hi {{1}},  
-This is to notify you that your {{2}} in your {{3}} account, ending in {{4}} is below your pre-set {{5}} of {{6}}.  
-Click the button to deposit more {{7}}.  
-{{8}}",  
-      "body_params": [  
-        "Jim",  
-        "available funds",  
-        "CS Mutual checking plus",  
-        "1234",  
-        "limit",  
-        "$75.00",  
-        "funds",  
-        "CS Mutual"  
-      ],  
-      "buttons": [  
-        {  
-          "type": "URL",  
-          "text": "Make a deposit",  
-          "url": "https://www.example.com/"  
-        },  
-        {  
-          "type": "PHONE_NUMBER",  
-          "text": "Call us",  
-          "phone_number": "+18005551234"  
-        }  
-      ],  
-      "id": "7147013345418927"  
+      "name": "low_balance_warning_1",  
+      "language": "en_US",  
+      "category": "UTILITY",  
+      "topic": "PAYMENTS",  
+      "usecase": "LOW_BALANCE_WARNING",  
+      "industry": [  
+        "FINANCIAL_SERVICES"  
+      ],  
+      "header": "Your account balance is low",  
+      "body": "Hi {​{1}​},  
+This is to notify you that your {​{2}​} in your {​{3}​} account, ending in {​{4}​} is below your pre-set {​{5}​} of {​{6}​}.  
+Click the button to deposit more {​{7}​}.  
+{​{8}​}",  
+      "body_params": [  
+        "Jim",  
+        "available funds",  
+        "CS Mutual checking plus",  
+        "1234",  
+        "limit",  
+        "$75.00",  
+        "funds",  
+        "CS Mutual"  
+      ],  
+      "buttons": [  
+        {  
+          "type": "URL",  
+          "text": "Make a deposit",  
+          "url": "https://www.example.com/"  
+        },  
+        {  
+          "type": "PHONE_NUMBER",  
+          "text": "Call us",  
+          "phone_number": "+18005551234"  
+        }  
+      ],  
+      "id": "7147013345418927"  
 }
-```
 ```
 
 ### Template filters
@@ -279,19 +275,17 @@ POST /<WHATSAPP_BUSINESS_ACCOUNT_ID>/message_templates
 ### Post body
 
 ```
-```
 {  
-  "name": "<NAME>",  
-  "category": "UTILITY",  
-  "language": "en_US",  
-  "library_template_name": "<LIBRARY_TEMPLATE_NAME>",  
-  "library_template_button_inputs": "[  
-    {'type': 'URL', 'url': {'base_url' : 'https://www.example.com/{{1}}',  
-    'url_suffix_example' : 'https://www.example.com/demo'}},  
-    {type: 'PHONE_NUMBER', 'phone_number': '+16315551010'}  
+  "name": "<NAME>",  
+  "category": "UTILITY",  
+  "language": "en_US",  
+  "library_template_name": "<LIBRARY_TEMPLATE_NAME>",  
+  "library_template_button_inputs": "[  
+    {'type': 'URL', 'url': {'base_url' : 'https://www.example.com/{​{1}​}',  
+    'url_suffix_example' : 'https://www.example.com/demo'}​},  
+    {type: 'PHONE_NUMBER', 'phone_number': '+16315551010'}  
 ]"  
 }
-```
 ```
 
 ### Body properties
@@ -302,7 +296,7 @@ POST /<WHATSAPP_BUSINESS_ACCOUNT_ID>/message_templates
 | `<CATEGORY>`  *Enum* | **Required.**  The template category.  **Must be `UTILITY` for use with Template Library.** | `UTILITY` |
 | `<LANGUAGE>`  *Enum* | **Required.**  The template language locale code.   See [Supported Languages](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/supported-languages) | `en_US` |
 | `<LIBRARY_TEMPLATE_NAME>`  *String* | **Required.**  The exact name of the Template Library template. | `delivery_update_1` |
-| `<LIBRARY_TEMPLATE_BUTTON_INPUTS>`  *Array of objects* | **Optional.**  The website and/or phone number of the business being used in the template.  **Note: For utility templates that have button inputs, this property is *not* optional.** | `"[ {'type': 'URL', 'url': {'base_url' : 'https://www.example.com/{{1}}', 'url_suffix_example' : 'https://www.example.com/demo'}}, {type: 'PHONE_NUMBER', 'phone_number': '+16315551010'} ]"` |
+| `<LIBRARY_TEMPLATE_BUTTON_INPUTS>`  *Array of objects* | **Optional.**  The website and/or phone number of the business being used in the template.  **Note: For utility templates that have button inputs, this property is *not* optional.** | `"[ {'type': 'URL', 'url': {'base_url' : 'https://www.example.com/{​{1}​}', 'url_suffix_example' : 'https://www.example.com/demo'}​}, {type: 'PHONE_NUMBER', 'phone_number': '+16315551010'} ]"` |
 
 ### Library template button inputs
 
@@ -329,34 +323,30 @@ POST /<WHATSAPP_BUSINESS_ACCOUNT_ID>/message_templates
 ### Example request
 
 ```
-```
-curl 'https://graph.facebook.com/v19.0/102290129340398/message_templates'  
--H 'Authorization: Bearer EAAJB...'  
--H 'Content-Type: application/json'  
--d '  
+curl 'https://graph.facebook.com/v19.0/102290129340398/message_templates'  
+-H 'Authorization: Bearer EAAJB...'  
+-H 'Content-Type: application/json'  
+-d '  
 {  
-  "name": "my_delivery_update",  
-  "language": "en_US",  
-  "category": "UTILITY",  
-  "library_template_name": "delivery_update_1",  
-  "library_template_button_inputs": "[  
-    {'type': 'URL', 'url': {'base_url' : 'https://www.example.com/{{1}}',  
-    'url_suffix_example' : 'https://www.example.com/order_update}}  
-  ]"  
+  "name": "my_delivery_update",  
+  "language": "en_US",  
+  "category": "UTILITY",  
+  "library_template_name": "delivery_update_1",  
+  "library_template_button_inputs": "[  
+    {'type': 'URL', 'url': {'base_url' : 'https://www.example.com/{​{1}​}',  
+    'url_suffix_example' : 'https://www.example.com/order_update}​}  
+  ]"  
 }
-```
 ```
 
 ### Example response
 
 ```
-```
 {  
-  "id": "{hsm-id}",  
-  "status": "APPROVED",  
-  "category": "UTILITY"  
+  "id": "{hsm-id}",  
+  "status": "APPROVED",  
+  "category": "UTILITY"  
 }
-```
 ```
 
 ## Sending template messages

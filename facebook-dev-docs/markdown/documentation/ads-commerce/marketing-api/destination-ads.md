@@ -7,19 +7,19 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/marketing
 
 Updated: Jun 24, 2026
 
-When you create flight ads, use these template tags in the ad creative and deep-link URLs. When Facebook displays your ad, it replaces the template tags with that person’s travel selections.
+When you create flight ads, use these template tags in the ad creative and deep-link URLs. When Facebook displays your ad, it replaces the template tags with that person's travel selections.
 
-**You should provide template tags in double curly brackets**: `{{....}}`
+**You should provide template tags in double curly brackets**: `{​{....}​}`
 
 **Before using template tags, make sure you provide all required details through your [Flight Events](https://developers.facebook.com/docs/marketing-api/dynamic-ads-for-flights/events)**.
 
 For example, the title of your ad could be:
 
-> Complete your booking to `{{flight.destination_city}}` today!
+> Complete your booking to `{​{flight.destination_city}​}` today!
 
 And the template URL of your ad could deep link people straight to the flight they were interested in, with the right departure and return date:
 
-> `https://www.(...).com/flights?from={{flight.origin_airport}}&to={{flight.destination_airport}}&departure={{trip.departing_departure_date date_format:Y-m-d}}&return={{trip.returning_departure_date date_format:Y-m-d}}&num={{trip.num_travelers}}`
+> `https://www.(...).com/flights?from={​{flight.origin_airport}​}&to={​{flight.destination_airport}​}&departure={​{trip.departing_departure_date date_format:Y-m-d}​}&return={​{trip.returning_departure_date date_format:Y-m-d}​}&num={​{trip.num_travelers}​}`
 
 ## Dynamic dates
 
@@ -32,9 +32,9 @@ Dynamic dates for template tags enable you to continuously update the dates that
 
 | Template tag | Description |
 | --- | --- |
-| `trip.currency_code` | The [ISO-4217⁠](https://www.iso.org/iso-4217-currency-codes.html) currency code (for example, “USD”) passed by the advertiser in dynamic events (for example, pixel events) using the key currency. If no currency code has been passed for an item, Facebook shows the product feed’s default currency. |
-| `trip.departing_departure_date` | The departure date that Facebook has collected for the user from the advertiser. If there was no departure date collected, this template tag defaults to tomorrow. Facebook supports most of the date formats provided [here⁠](http://php.net/manual/en/function.date.php).  Example:   * `{{trip.departing_departure_date}}` * `{{trip.departing_departure_date date_format:Y-m-d}}` |
-| `trip.returning_departure_date` | The return date that Facebook has collected for the user from the advertiser. If there was no return date collected, this template tag defaults to the day after tomorrow. Facebook supports most of the date formats provided [here⁠](http://php.net/manual/en/function.date.php).  Example:   * `{{trip.returning_departure_date}}` * `{{trip.returning_departure_date date_format:Y-m-d}}` |
+| `trip.currency_code` | The [ISO-4217⁠](https://www.iso.org/iso-4217-currency-codes.html) currency code (for example, "USD") passed by the advertiser in dynamic events (for example, pixel events) using the key currency. If no currency code has been passed for an item, Facebook shows the product feed's default currency. |
+| `trip.departing_departure_date` | The departure date that Facebook has collected for the user from the advertiser. If there was no departure date collected, this template tag defaults to tomorrow. Facebook supports most of the date formats provided [here⁠](http://php.net/manual/en/function.date.php).  Example:   * `{​{trip.departing_departure_date}​}` * `{​{trip.departing_departure_date date_format:Y-m-d}​}` |
+| `trip.returning_departure_date` | The return date that Facebook has collected for the user from the advertiser. If there was no return date collected, this template tag defaults to the day after tomorrow. Facebook supports most of the date formats provided [here⁠](http://php.net/manual/en/function.date.php).  Example:   * `{​{trip.returning_departure_date}​}` * `{​{trip.returning_departure_date date_format:Y-m-d}​}` |
 | `trip.num_adults` | Number of adult travelers, based on intent signals Facebook collects about a user. Currently defaults to 1, subject to change. |
 | `trip.num_children` | Number of children travelers, based on intent signals Facebook collects about the user. Currently defaults to 0, subject to change. |
 | `trip.num_infants` | Number of infant travelers, based on intent signals Facebook collects about the user. Currently defaults to 0, subject to change. |
@@ -44,6 +44,6 @@ Dynamic dates for template tags enable you to continuously update the dates that
 | `flight.origin_airport` | The IATA code for the origin, such as JFK. |
 | `flight.origin_city` | Origin city name from flight feed, if provided. If not, city name associated with destination airport in English, such as New York. |
 | `flight.description` | Flight description provided in catalog. |
-| `flight.price` | Price of the flight. To show a price from feed, use source:feed as the option: `{{flight.price source:feed}}` to use the last-seen price from a pixel or app event, use `source:event` as the option: `{{flight.price source:event}}`. |
-| `flight.price type:one_way` | One-way price of the flight. For this option, you must provide a source of prices. To show a price from feed, use `source:feed` as the option: `{{flight.price source:feed type:one_way}}`. |
+| `flight.price` | Price of the flight. To show a price from feed, use source:feed as the option: `{​{flight.price source:feed}​}` to use the last-seen price from a pixel or app event, use `source:event` as the option: `{​{flight.price source:event}​}`. |
+| `flight.price type:one_way` | One-way price of the flight. For this option, you must provide a source of prices. To show a price from feed, use `source:feed` as the option: `{​{flight.price source:feed type:one_way}​}`. |
 | `flight.url` | Flight URL provided in catalog. |

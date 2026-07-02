@@ -42,12 +42,10 @@ Use the [Sticker API](https://developers.facebook.com/documentation/business-mes
 Use the [Send Messages API](https://developers.facebook.com/documentation/business-messaging/messenger-platform/send-messages/) to send a sticker with the `sticker_id` field:
 
 ```
-```
 {  
-  "recipient": {"id": "<PSID>"},  
-  "message": {"sticker_id": 767226160478561}  
+  "recipient": {"id": "<PSID>"},  
+  "message": {"sticker_id": 767226160478561}  
 }
-```
 ```
 
 **Webhook change with sticker attachment type (90-day transition):**
@@ -104,7 +102,7 @@ March 6, 2026
 
 ### Named Parameters in Messenger Utility Templates
 
-Messenger Utility Templates now support named parameters (e.g., {{customer\_name}}, {{order\_id}}) in addition to positional parameters ({{1}}, {{2}}). Set parameter\_format to NAMED when creating a template and use the parameter\_name field when sending messages. Existing templates using positional parameters are unaffected. Detailed steps on how to created templates with named parameters are listed [here](https://developers.facebook.com/documentation/business-messaging/messenger-platform/send-messages/utility-messages#step-1--create-a-page-owned-template)
+Messenger Utility Templates now support named parameters (e.g., {​{customer\_name}​}, {​{order\_id}​}) in addition to positional parameters ({​{1}​}, {​{2}​}). Set parameter\_format to NAMED when creating a template and use the parameter\_name field when sending messages. Existing templates using positional parameters are unaffected. Detailed steps on how to created templates with named parameters are listed [here](https://developers.facebook.com/documentation/business-messaging/messenger-platform/send-messages/utility-messages#step-1--create-a-page-owned-template)
 
 ---
 
@@ -136,8 +134,8 @@ February 11, 2026
 
 The Messenger Calling API is now generally available. Any app with the pages\_messaging permission can enable voice calling between businesses and people on Messenger via third-party integration. The API supports inbound and outbound calls using WebRTC and includes:
 
-* Call settings webhook — Receive real-time updates when a Page’s Messenger call settings change
-* Call permissions API — Programmatically check a Page’s call permissions and rate limits before placing a call
+* Call settings webhook — Receive real-time updates when a Page's Messenger call settings change
+* Call permissions API — Programmatically check a Page's call permissions and rate limits before placing a call
 * Call metrics API — Submit client-side call quality metrics for monitoring and diagnostics
 * Audio call button CTA — Use the audio\_call button type in generic and button message templates to prompt users to call
 * Ad referral webhooks — Receive ad attribution data for calls originating from Call Prompt Ads
@@ -336,7 +334,7 @@ October 8, 2024
 
 ### Messenger `response_feedback` webhook
 
-The new `response_feedback` webhook event notifies you when a user provides feedback on a message you send, by clicking on one of the “thumbs up”/”thumbs down”/”Good response”/”Bad response” buttons. See more details about the webhook [here](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/webhook-events/response_feedback).
+The new `response_feedback` webhook event notifies you when a user provides feedback on a message you send, by clicking on one of the "thumbs up"/"thumbs down"/"Good response"/"Bad response" buttons. See more details about the webhook [here](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/webhook-events/response_feedback).
 
 ### Send API Rate Limits
 
@@ -382,13 +380,13 @@ June 11, 2024
 
 ### Messenger Conversation Routing: app-level thread control configs
 
-Businesses using Messenger Conversation Routing can now configure the thread control takeover capability on the individual app level. The original takeover config that’s coupled with the default app is now deprecated with all values migrated. Learn more [here](https://developers.facebook.com/documentation/business-messaging/messenger-platform/conversation-routing?locale=en_US#tc-takeover-configs).
+Businesses using Messenger Conversation Routing can now configure the thread control takeover capability on the individual app level. The original takeover config that's coupled with the default app is now deprecated with all values migrated. Learn more [here](https://developers.facebook.com/documentation/business-messaging/messenger-platform/conversation-routing?locale=en_US#tc-takeover-configs).
 
 ### Instagram Comment Webhooks
 
 *Applies to all versions*
 
-In addition to the `ad_id` and `ad_title`, the `original_media_id` will be returned in the `media` object of the `comments` field’s `value` object when a person comments on a [boosted Instagram post or Instagram ads post⁠](https://help.instagram.com/1067656009937668). For more information, refer to [Set Up Webhooks for Instagram](https://developers.facebook.com/docs/instagram-api/guides/webhooks).
+In addition to the `ad_id` and `ad_title`, the `original_media_id` will be returned in the `media` object of the `comments` field's `value` object when a person comments on a [boosted Instagram post or Instagram ads post⁠](https://help.instagram.com/1067656009937668). For more information, refer to [Set Up Webhooks for Instagram](https://developers.facebook.com/docs/instagram-api/guides/webhooks).
 
 ---
 
@@ -418,7 +416,7 @@ February 20, 2024
 
 ### Messaging Webhooks for Messenger
 
-“Reel” will now be a supported attachment type for message webhooks sent for Messenger conversations. Reel attachments will be categorized as type `reel` and the attachment payload will include the title, URL, and video ID of the reel.
+"Reel" will now be a supported attachment type for message webhooks sent for Messenger conversations. Reel attachments will be categorized as type `reel` and the attachment payload will include the title, URL, and video ID of the reel.
 
 ---
 
@@ -428,7 +426,7 @@ January 10, 2024
 
 ### Commands
 
-Commands are tappable keywords that the user can invoke at any time to perform specific actions within the Messenger experience. Commands are composed of the command itself and a hint, which educates the user on what it does. For example, when a user types “help me book **flights** and **hotels** to Mexico for the last week of december,” they are invoking the flights and hotels commands configured by the travel business. Learn more [here](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/messenger-profile-api/commands).
+Commands are tappable keywords that the user can invoke at any time to perform specific actions within the Messenger experience. Commands are composed of the command itself and a hint, which educates the user on what it does. For example, when a user types "help me book **flights** and **hotels** to Mexico for the last week of december," they are invoking the flights and hotels commands configured by the travel business. Learn more [here](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/messenger-profile-api/commands).
 
 ### Commands menu
 
@@ -458,7 +456,7 @@ October 17, 2023
 
 ### Conversation Routing for Instagram
 
-Conversation Routing is now available for Instagram. Conversation Routing allows Meta to route conversations between your business and customers, or prospective customers, to the app that you have specified to respond in the conversation. This routing allows your business to create rich conversations with people and to minimize API calls to Meta’s servers.
+Conversation Routing is now available for Instagram. Conversation Routing allows Meta to route conversations between your business and customers, or prospective customers, to the app that you have specified to respond in the conversation. This routing allows your business to create rich conversations with people and to minimize API calls to Meta's servers.
 
 ### Custom Labels and Personas APIs
 
@@ -600,7 +598,7 @@ Recurring Notifications for Messenger Platform
 
 #### Titles for Opt In Request
 
-The `title` property for [recurring notification opt in requests](https://developers.facebook.com/docs/messenger-platform/send-messages/recurring-notifications#request-permission-to-send-recurring-notifications) is **no longer required**. If `title` is not set, the value defaults to “Updates and promotions”. This change applies to opt in requests sent from a Facebook Page or Instagram Professional accounts.
+The `title` property for [recurring notification opt in requests](https://developers.facebook.com/docs/messenger-platform/send-messages/recurring-notifications#request-permission-to-send-recurring-notifications) is **no longer required**. If `title` is not set, the value defaults to "Updates and promotions". This change applies to opt in requests sent from a Facebook Page or Instagram Professional accounts.
 
 ---
 
@@ -654,10 +652,10 @@ November 9, 2022
 
 #### Improvements between Click to Messenger, Lead Gen ads and Messenger Platform
 
-We’ve made following up on Lead Gen ads that Click to Messenger easier through:
+We've made following up on Lead Gen ads that Click to Messenger easier through:
 
 * A new [Referral Webhook for Click to Messenger, Lead Gen ads](https://developers.facebook.com/documentation/business-messaging/messenger-platform/discovery/lead-generation-ads-in-messenger#webhooks) that include the lead information.
-* Improvements to the [Handover Protocol](https://developers.facebook.com/docs/messenger-platform/handover-protocol/messenger-lead-ads-hop). Advertisers can now select which app they want to route completed leads. Additionally, for apps that haven’t yet implemented these app notifications, an [optional summary message](https://developers.facebook.com/documentation/business-messaging/messenger-platform/discovery/lead-generation-ads-in-messenger#connnectapp) can be enabled, to send lead information to that app in the form of a regular message.
+* Improvements to the [Handover Protocol](https://developers.facebook.com/docs/messenger-platform/handover-protocol/messenger-lead-ads-hop). Advertisers can now select which app they want to route completed leads. Additionally, for apps that haven't yet implemented these app notifications, an [optional summary message](https://developers.facebook.com/documentation/business-messaging/messenger-platform/discovery/lead-generation-ads-in-messenger#connnectapp) can be enabled, to send lead information to that app in the form of a regular message.
 * Since referral or summary events are triggered while the standard messaging window is open, apps can use this to follow-up with leads directly in Messenger, upsell them to [Recurring Notifications](https://developers.facebook.com/docs/messenger-platform/send-messages/recurring-notifications) or have them book an appointment or call the business directly.
 
 #### Messaging Events API
@@ -727,7 +725,7 @@ May 25, 2022
 
 # 
 
-[User Profile API](https://developers.facebook.com/documentation/business-messaging/instagram-messaging/features/user-profile) supports retrieval of the customer’s Instagram username field on Graph API v14.0 and later.
+[User Profile API](https://developers.facebook.com/documentation/business-messaging/instagram-messaging/features/user-profile) supports retrieval of the customer's Instagram username field on Graph API v14.0 and later.
 
 ---
 
@@ -739,7 +737,7 @@ May 19, 2022
 [Recurring Notifications](https://developers.facebook.com/docs/messenger-platform/send-messages/recurring-notifications) is a major update to the Messenger API to allow businesses to send proactive, automated messages that drive re-engagement. Recurring Notifications help businesses deliver personalized, customer centric messages at every stage of the customer journey.
 
 **Recurring Notifications for Messenger API for Instagram**  
- We’re announcing Recurring Notifications for Messenger API for Instagram as a beta. Developers can sign up for our [beta interest list⁠](https://www.facebook.com/help/contact/528956182103351) before July.
+ We're announcing Recurring Notifications for Messenger API for Instagram as a beta. Developers can sign up for our [beta interest list⁠](https://www.facebook.com/help/contact/528956182103351) before July.
 
 **Instagram Send API rate limit increase**   
  We have increased the rate limit for the Send API to 100 API calls per second for each Instagram Professional Account.
@@ -757,8 +755,8 @@ April 19, 2022
 # 
 
 * Ice Breakers on Messenger API now [supports localization](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/messenger-profile-api/ice-breakers) allowing businesses to set custom ice breakers depending on the user locale. The API will have a new format and we encourage developers to leverage the new format to set and retrieve Ice Breakers information.
-* Messenger apps which haven’t completed [business verification](https://developers.facebook.com/docs/development/release/business-verification) must complete verification by **July 19, 2022**. If apps don’t complete business verification by then, they won’t be able to send and receive messages via Messenger and pages\_messaging permission for these apps will be revoked. **Developer alerts have been sent to the impacted apps. If you have already completed business verification for your Messenger app no further action is needed.**
-* We have restored [message reads, deliveries and reactions webhooks](https://developers.facebook.com/documentation/business-messaging/messenger-platform/europe-japan-updates) on Messenger Platform that weren’t available to businesses in Europe, and for people in Europe and Japan who connect with businesses globally.
+* Messenger apps which haven't completed [business verification](https://developers.facebook.com/docs/development/release/business-verification) must complete verification by **July 19, 2022**. If apps don't complete business verification by then, they won't be able to send and receive messages via Messenger and pages\_messaging permission for these apps will be revoked. **Developer alerts have been sent to the impacted apps. If you have already completed business verification for your Messenger app no further action is needed.**
+* We have restored [message reads, deliveries and reactions webhooks](https://developers.facebook.com/documentation/business-messaging/messenger-platform/europe-japan-updates) on Messenger Platform that weren't available to businesses in Europe, and for people in Europe and Japan who connect with businesses globally.
 
 ---
 
@@ -766,7 +764,7 @@ March 15, 2022
 
 # 
 
-We have launched the [Persistent Menu for Messenger API support for Instagram](https://developers.facebook.com/documentation/business-messaging/instagram-messaging/features/persistent-menu). This enables users to discover and interact with a Page’s main features.
+We have launched the [Persistent Menu for Messenger API support for Instagram](https://developers.facebook.com/documentation/business-messaging/instagram-messaging/features/persistent-menu). This enables users to discover and interact with a Page's main features.
 
 ---
 
@@ -774,7 +772,7 @@ March 14, 2022
 
 # 
 
-As per the announcement on September 14, 2021, all Facebook pages will now be migrated to support the new Handover Protocol behavior. We expect to have all Pages migrated by March 18, 2022. Please refer to the [breaking changes section](https://developers.facebook.com/docs/messenger-platform/handover-protocol#breaking-changes) for more details. Here’s a summary of key improvements that were announced previously.
+As per the announcement on September 14, 2021, all Facebook pages will now be migrated to support the new Handover Protocol behavior. We expect to have all Pages migrated by March 18, 2022. Please refer to the [breaking changes section](https://developers.facebook.com/docs/messenger-platform/handover-protocol#breaking-changes) for more details. Here's a summary of key improvements that were announced previously.
 
 We are making improvements to [Handover Protocol](https://developers.facebook.com/docs/messenger-platform/handover-protocol) which helps developers and businesses launch messaging experiences (i.e. apps) quickly, makes it easy to pass control of conversation between apps and ensures a great user experience by disallowing apps from interjecting ongoing conversations. Key improvements include [Exclusive mode](https://developers.facebook.com/docs/messenger-platform/handover-protocol#exclusive-mode), [Idle mode](https://developers.facebook.com/docs/messenger-platform/handover-protocol#idle-mode), New APIs for finer control over [thread ownership](https://developers.facebook.com/docs/messenger-platform/handover-protocol#app-type) and removing the requirement to assign [primary or secondary roles for apps](https://developers.facebook.com/docs/messenger-platform/handover-protocol#default)
 
@@ -822,9 +820,9 @@ September 14, 2021
   * We are making improvements to [Handover Protocol](https://developers.facebook.com/docs/messenger-platform/handover-protocol) which helps developers and businesses launch messaging experiences (i.e. apps) quickly, makes it easy to pass control of conversation between apps and ensures a great user experience by disallowing apps from interjecting ongoing conversations. Key improvements include [Exclusive mode](https://developers.facebook.com/docs/messenger-platform/handover-protocol#how-it-works), [Idle mode](https://developers.facebook.com/docs/messenger-platform/handover-protocol#how-it-works), [New APIs for finer control over thread ownership](https://developers.facebook.com/docs/messenger-platform/handover-protocol/conversation-control) and [removing the requirement to assign primary or secondary roles for apps](https://developers.facebook.com/docs/messenger-platform/handover-protocol#how-it-works)
   * Note that developers and businesses who currently use Handover Protocol need to implement the changes to their current Handover Protocol implementation by March 1st, 2022. Please refer to the [migration guide](https://developers.facebook.com/docs/messenger-platform/handover-protocol-v2#migration-guide) and [breaking changes](https://developers.facebook.com/docs/messenger-platform/handover-protocol-v2#breaking-changes) sections for more details.
 * Custom Labels API - We are making exciting updates to the [Custom Labels API](https://developers.facebook.com/documentation/business-messaging/messenger-platform/identity/custom-labels) that would allow businesses to create, update and delete labels and sync the labels between the Facebook Page Inbox and any other tool the business might be using to communicate with their customers.
-  * In order to use the Custom Labels API after October 1st, 2021 businesses need to accept our new *Page Contact Terms.* These terms describe Meta’s data practices for the Custom Labels created by the business. We will be rolling out the Page Contact Terms acceptance requirement to Facebook Pages on a rolling basis starting October 1st.
+  * In order to use the Custom Labels API after October 1st, 2021 businesses need to accept our new *Page Contact Terms.* These terms describe Meta's data practices for the Custom Labels created by the business. We will be rolling out the Page Contact Terms acceptance requirement to Facebook Pages on a rolling basis starting October 1st.
   * Graph API `v12.0`+ Custom Labels API `name` field will be replaced with `page_label_name`. This change will take effect on all older Graph API versions starting Dec 14, 2021. Developer should leverage `page_label_name` across various CRUD (Create, Retrieve, Update, Delete) API calls and webhooks.
-* [Messenger API Updates for Europe and Japan](https://developers.facebook.com/documentation/business-messaging/messenger-platform/europe-japan-updates) - We have restored [Customer Feedback Template](https://developers.facebook.com/documentation/business-messaging/messenger-platform/send-messages/templates/customer-feedback-template) in the Messenger API that wasn’t available to businesses in Europe, and for people in Europe and Japan who connect with businesses globally. Details [here](https://developers.facebook.com/documentation/business-messaging/messenger-platform/europe-japan-updates).
+* [Messenger API Updates for Europe and Japan](https://developers.facebook.com/documentation/business-messaging/messenger-platform/europe-japan-updates) - We have restored [Customer Feedback Template](https://developers.facebook.com/documentation/business-messaging/messenger-platform/send-messages/templates/customer-feedback-template) in the Messenger API that wasn't available to businesses in Europe, and for people in Europe and Japan who connect with businesses globally. Details [here](https://developers.facebook.com/documentation/business-messaging/messenger-platform/europe-japan-updates).
 * Messenger API for Instagram updates
   * [Reaction Webhook](https://developers.facebook.com/documentation/business-messaging/instagram-messaging/webhooks) - We have updated emoji reactions to return a new unicode format and support multiple emoji reactions. Please refer to the [developer documentation](https://developers.facebook.com/documentation/business-messaging/instagram-messaging/webhooks) and migrate to the new version before December 14, 2021 in order to continue supporting emoji reactions.
 * [User Profile API](https://developers.facebook.com/documentation/business-messaging/instagram-messaging/features/user-profile) - We have updated User Profile API to include additional fields that are publicly available on the Instagram app. Please refer to the [developer documentation](https://developers.facebook.com/documentation/business-messaging/instagram-messaging/features/user-profile) for details.
@@ -838,7 +836,7 @@ August 16, 2021
 
 # 
 
-* [Messenger API for Instagram](https://developers.facebook.com/docs/messenger-platform/instagram)- Messenger API for Instagram opened up to all developers in June, with an opportunity to build for IG business accounts with follower counts between 10k-100k. Now, developers can add Instagram messaging into their apps and build Instagram messaging experiences for all businesses on Instagram. The use of Messenger API for Instagram must comply with the [Developer Policies](https://developers.facebook.com/devpolicy#messengerplatform), particularly the policies listed under ‘Messenger and Instagram Messaging APIs’, as well as the [technical documentation](https://developers.facebook.com/docs/messenger-platform/instagram).
+* [Messenger API for Instagram](https://developers.facebook.com/docs/messenger-platform/instagram)- Messenger API for Instagram opened up to all developers in June, with an opportunity to build for IG business accounts with follower counts between 10k-100k. Now, developers can add Instagram messaging into their apps and build Instagram messaging experiences for all businesses on Instagram. The use of Messenger API for Instagram must comply with the [Developer Policies](https://developers.facebook.com/devpolicy#messengerplatform), particularly the policies listed under 'Messenger and Instagram Messaging APIs', as well as the [technical documentation](https://developers.facebook.com/docs/messenger-platform/instagram).
 
 ---
 
@@ -846,7 +844,7 @@ August 10, 2021
 
 # 
 
-* [Messenger API Updates for Europe and Japan](https://developers.facebook.com/documentation/business-messaging/messenger-platform/europe-japan-updates) - We have restored many of the features in the Messenger API that weren’t available to businesses in Europe, and for people in Europe and Japan who connect with businesses globally. See the list of all restored features [here](https://developers.facebook.com/documentation/business-messaging/messenger-platform/europe-japan-updates).
+* [Messenger API Updates for Europe and Japan](https://developers.facebook.com/documentation/business-messaging/messenger-platform/europe-japan-updates) - We have restored many of the features in the Messenger API that weren't available to businesses in Europe, and for people in Europe and Japan who connect with businesses globally. See the list of all restored features [here](https://developers.facebook.com/documentation/business-messaging/messenger-platform/europe-japan-updates).
 
 ---
 
@@ -870,7 +868,7 @@ July 7, 2021
 
 # 
 
-* [Messenger API for Instagram](https://developers.facebook.com/docs/messenger-platform/instagram) - Messenger API for Instagram opened up to all developers in June, with an opportunity to build for IG business accounts with follower counts between 10k-100k. We are expanding the rollout to IG business accounts with follower counts between 1K-10K. Now, developers can add Instagram messaging into their apps and build Instagram messaging experiences for even more businesses. The use of Messenger API for Instagram must comply with the [Developer Policies](https://developers.facebook.com/devpolicy#messengerplatform), particularly the policies listed under ‘Messenger and Instagram Messaging APIs’, as well as the [technical documentation](https://developers.facebook.com/docs/messenger-platform/instagram).
+* [Messenger API for Instagram](https://developers.facebook.com/docs/messenger-platform/instagram) - Messenger API for Instagram opened up to all developers in June, with an opportunity to build for IG business accounts with follower counts between 10k-100k. We are expanding the rollout to IG business accounts with follower counts between 1K-10K. Now, developers can add Instagram messaging into their apps and build Instagram messaging experiences for even more businesses. The use of Messenger API for Instagram must comply with the [Developer Policies](https://developers.facebook.com/devpolicy#messengerplatform), particularly the policies listed under 'Messenger and Instagram Messaging APIs', as well as the [technical documentation](https://developers.facebook.com/docs/messenger-platform/instagram).
 
 ---
 
@@ -897,9 +895,9 @@ June 2, 2021
 
 # 
 
-* [Messenger API for Instagram](https://developers.facebook.com/docs/messenger-platform/instagram) - We have opened up the Messenger API for Instagram to all developers who are making it possible for brands to offer messaging experiences on Instagram at scale. Now, developers can add Instagram messaging into their apps and build experiences for Instagram messaging. Developers can help businesses use different applications to leverage existing workflows, drive more meaningful conversations, increase customer satisfaction, and grow sales. Learn more [here](https://developers.facebook.com/docs/messenger-platform/instagram). The use of Messenger API for Instagram must comply with the [Developer Policies](https://developers.facebook.com/devpolicy#messengerplatform), particularly the policies listed under ‘Messenger and Instagram Messaging APIs’, as well as the [technical documentation](https://developers.facebook.com/docs/messenger-platform/instagram).
-* [Human Agent message tag](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/send-api) now available to all developers - This tag allows businesses to respond to user messages on Messenger and Instagram manually outside the 24-hour standard messaging window up to 7days. This tag is helpful especially for use cases such as weekend closures or for inquiries that need more than 24 hours to resolve. Developers should apply for the Human Agent tag permission via the App dashboard even if your app has been previously approved for Human Agent message tag. Navigate to the “Permissions and Features” section of the app dashboard and apply for the “Human Agent” permission. Learn more [here](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/send-api).
-* [Customer Feedback Template](https://developers.facebook.com/documentation/business-messaging/messenger-platform/send-messages/templates/customer-feedback-template) *is now available as Beta* - We are launching a native template within Messenger that supports common survey formats such as CSAT (Customer Satisfaction), NPS (Net Promoter Score), CES (Customer Effort Score) and free form text. The native template is easier to integrate because it’s built on Send API, eliminates the need to build custom survey solutions using Webview and makes it easy for developers to aggregate scores across channels that use similar survey formats. Learn more [here](https://developers.facebook.com/documentation/business-messaging/messenger-platform/send-messages/templates/customer-feedback-template).
+* [Messenger API for Instagram](https://developers.facebook.com/docs/messenger-platform/instagram) - We have opened up the Messenger API for Instagram to all developers who are making it possible for brands to offer messaging experiences on Instagram at scale. Now, developers can add Instagram messaging into their apps and build experiences for Instagram messaging. Developers can help businesses use different applications to leverage existing workflows, drive more meaningful conversations, increase customer satisfaction, and grow sales. Learn more [here](https://developers.facebook.com/docs/messenger-platform/instagram). The use of Messenger API for Instagram must comply with the [Developer Policies](https://developers.facebook.com/devpolicy#messengerplatform), particularly the policies listed under 'Messenger and Instagram Messaging APIs', as well as the [technical documentation](https://developers.facebook.com/docs/messenger-platform/instagram).
+* [Human Agent message tag](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/send-api) now available to all developers - This tag allows businesses to respond to user messages on Messenger and Instagram manually outside the 24-hour standard messaging window up to 7days. This tag is helpful especially for use cases such as weekend closures or for inquiries that need more than 24 hours to resolve. Developers should apply for the Human Agent tag permission via the App dashboard even if your app has been previously approved for Human Agent message tag. Navigate to the "Permissions and Features" section of the app dashboard and apply for the "Human Agent" permission. Learn more [here](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/send-api).
+* [Customer Feedback Template](https://developers.facebook.com/documentation/business-messaging/messenger-platform/send-messages/templates/customer-feedback-template) *is now available as Beta* - We are launching a native template within Messenger that supports common survey formats such as CSAT (Customer Satisfaction), NPS (Net Promoter Score), CES (Customer Effort Score) and free form text. The native template is easier to integrate because it's built on Send API, eliminates the need to build custom survey solutions using Webview and makes it easy for developers to aggregate scores across channels that use similar survey formats. Learn more [here](https://developers.facebook.com/documentation/business-messaging/messenger-platform/send-messages/templates/customer-feedback-template).
 
 ---
 
@@ -907,7 +905,7 @@ April 13, 2021
 
 # 
 
-* [Messenger API Updates for Europe and Japan](https://developers.facebook.com/documentation/business-messaging/messenger-platform/europe-japan-updates) - We have restored many of the features in the Messenger API that weren’t available to businesses in Europe and Japan, and for people in Europe and Japan who connect with businesses globally. See the list of all restored features [here](https://developers.facebook.com/documentation/business-messaging/messenger-platform/europe-japan-updates).
+* [Messenger API Updates for Europe and Japan](https://developers.facebook.com/documentation/business-messaging/messenger-platform/europe-japan-updates) - We have restored many of the features in the Messenger API that weren't available to businesses in Europe and Japan, and for people in Europe and Japan who connect with businesses globally. See the list of all restored features [here](https://developers.facebook.com/documentation/business-messaging/messenger-platform/europe-japan-updates).
 
 ---
 
@@ -931,4 +929,4 @@ December 1, 2020
 
 # 
 
-* [Messenger API Updates for Europe](https://developers.facebook.com/documentation/business-messaging/messenger-platform/europe-japan-updates) - As part of our efforts to comply with new privacy rules in Europe, we’re making updates that will impact some developers and businesses that use our Messenger API. Beginning December 16, several Messenger APIs will be unavailable for developers and businesses in Europe, and for people in Europe who connect with businesses globally.
+* [Messenger API Updates for Europe](https://developers.facebook.com/documentation/business-messaging/messenger-platform/europe-japan-updates) - As part of our efforts to comply with new privacy rules in Europe, we're making updates that will impact some developers and businesses that use our Messenger API. Beginning December 16, several Messenger APIs will be unavailable for developers and businesses in Europe, and for people in Europe who connect with businesses globally.

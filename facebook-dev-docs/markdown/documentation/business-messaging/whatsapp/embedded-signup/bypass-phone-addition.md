@@ -13,7 +13,7 @@ This document explains how to offer your business customers pre-verified phone n
 
 ![Screenshot of pre-verified phone numbers in Embedded Signup flow](https://scontent.fdel1-7.fna.fbcdn.net/v/t39.2365-6/338350398_960573981782900_5133226701088650766_n.png?_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=o_Kl3ziUdRwQ7kNvwF16Om7&_nc_oc=AdpLSwYxx1MavqI_DA9giEdFzZhFSVrY9qSIBYBHou1TtvWrRL_c3SoQne9n0FGyEP92lPLVQmEGZikK0I9RFdO9&_nc_zt=14&_nc_ht=scontent.fdel1-7.fna&_nc_gid=cn8xd6KS1TycEFJRGbAjfA&_nc_ss=7b2a8&oh=00_AQDLRiBw0U4i13EmSL89V3hWSZZkfkb1BQvcPWP0f80FDQ&oe=6A604949)
 
-Note that [WhatsApp Business Pre-Verified Phone Number](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/business/whatsapp-business-pre-verified-phone-numbers-api) objects represent pre-verified numbers. WhatsApp Business Pre-Verified Phone Number objects are **temporary**. When a business customer selects one of these numbers and completes the Embedded Signup flow, WhatsApp replaces the temporary object with a valid [WhatsApp Business Phone Number](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/whatsapp-business-account-phone-number-api) object. You must [get this new object’s ID](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/bypass-phone-addition#getting-and-registering-claimed-phone-numbers) and use it to [register the number](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/registering-phone-numbers#step-4--register-the-number) within 90 days.
+Note that [WhatsApp Business Pre-Verified Phone Number](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/business/whatsapp-business-pre-verified-phone-numbers-api) objects represent pre-verified numbers. WhatsApp Business Pre-Verified Phone Number objects are **temporary**. When a business customer selects one of these numbers and completes the Embedded Signup flow, WhatsApp replaces the temporary object with a valid [WhatsApp Business Phone Number](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/whatsapp-business-account-phone-number-api) object. You must [get this new object's ID](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/bypass-phone-addition#getting-and-registering-claimed-phone-numbers) and use it to [register the number](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/registering-phone-numbers#step-4--register-the-number) within 90 days.
 
 ## Requirements
 
@@ -27,7 +27,7 @@ Note that [WhatsApp Business Pre-Verified Phone Number](https://developers.faceb
 
 * You are responsible for keeping track of who has claimed a pre-verified business phone number.
 * If an end client does not claim a pre-verified business phone number in the Embedded Signup flow within 90 days of verification, the number will revert to an unverified status and you must verify it again to restore its status for another 90 days.
-* Unclaimed pre-verified business phone numbers can’t be re-verified until 45 days before they are scheduled to revert to an unverified status. The [`verification_expiry_time` field](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/business/whatsapp-business-pre-verified-phone-numbers-api#fields) indicates this time.
+* Unclaimed pre-verified business phone numbers can't be re-verified until 45 days before they are scheduled to revert to an unverified status. The [`verification_expiry_time` field](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/business/whatsapp-business-pre-verified-phone-numbers-api#fields) indicates this time.
 * If you add a phone number to your pool of pre-verified business phone numbers (Step 1) but do not verify it within 90 days (Step 3), WhatsApp removes it from your pool and you have to add it again.
 * Once a business customer claims a pre-verified business phone number, you have 90 days to register it.
 
@@ -37,7 +37,7 @@ Follow these steps to create a pre-verified business phone number, surface it in
 
 ### Step 1: Create a pre-verified business phone number
 
-Use the [Add Phone Numbers API](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/business/add_phone_numbers) to add a pre-verified business phone number to your business portfolio’s pool of business phone numbers.
+Use the [Add Phone Numbers API](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/business/add_phone_numbers) to add a pre-verified business phone number to your business portfolio's pool of business phone numbers.
 
 #### Request syntax
 
@@ -51,11 +51,9 @@ POST /<BUSINESS_PORTFOLIO_ID>/add_phone_numbers
 Upon success, the API will return a [WhatsApp Business Pre-Verified Phone Number](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/business/whatsapp-business-pre-verified-phone-numbers-api) ID. Capture this value for use in the next request.
 
 ```
-```
 {  
-  "id": "<WHATSAPP_BUSINESS_PRE_VERIFIED_PHONE_NUMBER_ID>"  
+  "id": "<WHATSAPP_BUSINESS_PRE_VERIFIED_PHONE_NUMBER_ID>"  
 }
-```
 ```
 
 #### Sample request
@@ -68,11 +66,9 @@ curl -X POST 'https://graph.facebook.com/v25.0/506914307656634/add_phone_numbers
 #### Sample response
 
 ```
-```
 {  
-  "id": "106540352242922"  
+  "id": "106540352242922"  
 }
-```
 ```
 
 ### Step 2: Request a verification code
@@ -92,11 +88,9 @@ POST /<WHATSAPP_BUSINESS_PRE_VERIFIED_PHONE_NUMBER_ID>/request_code
 Upon success, the API will return `true`.
 
 ```
-```
 {  
-  "success": <SUCCESS>  
+  "success": <SUCCESS>  
 }
-```
 ```
 
 In addition, WhatsApp sends an SMS or voice message containing a one-time password to the phone number. Capture the one-time password for use in the next request.
@@ -104,9 +98,7 @@ In addition, WhatsApp sends an SMS or voice message containing a one-time passwo
 #### One-time-password SMS syntax
 
 ```
-```
-WhatsApp code <CODE>
-```
+WhatsApp code <CODE>
 ```
 
 #### One-time-password voice message syntax
@@ -114,9 +106,7 @@ WhatsApp code <CODE>
 Repeated three times.
 
 ```
-```
-Verification code is <CODE>
-```
+Verification code is <CODE>
 ```
 
 #### Sample request
@@ -129,19 +119,15 @@ curl -X POST 'https://graph.facebook.com/v25.0/106540352242922/request_code?code
 #### Sample response
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 #### Sample one-time-password SMS message
 
 ```
-```
-WhatsApp code 123-456
-```
+WhatsApp code 123-456
 ```
 
 #### Sample one-time-password voice message
@@ -149,9 +135,7 @@ WhatsApp code 123-456
 Repeated three times.
 
 ```
-```
-Verification code is 123456
-```
+Verification code is 123456
 ```
 
 ### Step 3: Verify the number
@@ -170,11 +154,9 @@ POST /<WHATSAPP_BUSINESS_PRE_VERIFIED_PHONE_NUMBER_ID>/verify_code
 Upon success, the API will return `true` and the number will have its `code_verification_status` set to `VERIFIED` for 90 days.
 
 ```
-```
 {  
-  "success": <SUCCESS>  
+  "success": <SUCCESS>  
 }
-```
 ```
 
 #### Sample request
@@ -187,11 +169,9 @@ curl -X POST 'https://graph.facebook.com/v25.0/106540352242922/verify_code?code=
 #### Sample response
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 Once you have a pre-verified business phone number with a verified status (or a set of such numbers), display them in the new Embedded Signup flow.
@@ -257,7 +237,7 @@ Note that if no business customer claims a pre-verified business phone number wi
 
 To prevent this experience, **keep track of when you verified a number and re-verify it before it reverts to an unverified state.**
 
-If you don’t know when you last verified a given pre-verified business phone number, request the `code_verification_time` and `verification_expiry_time` fields on the pre-verified business phone number ID. These fields indicate its most recent verification time and its verification expiration time.
+If you don't know when you last verified a given pre-verified business phone number, request the `code_verification_time` and `verification_expiry_time` fields on the pre-verified business phone number ID. These fields indicate its most recent verification time and its verification expiration time.
 
 ## Determining if a number has been claimed through Embedded Signup
 
@@ -277,7 +257,7 @@ If you are using [session logging](https://developers.facebook.com/documentation
 
 If you are not using session logging, use the [Phone Numbers API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/phone-number-management-api) to get a list of WhatsApp Business phone numbers on the WhatsApp Business account.
 
-Parse for the `display_phone_number` property on each object returned in the result set. If an object in the result set has a `display_phone_number` value that matches a number you used to create a pre-verified business phone number, the object represents the WhatsApp Business phone number that has replaced the pre-verified business phone number. Copy this object’s ID and use it to register the WhatsApp Business phone number.
+Parse for the `display_phone_number` property on each object returned in the result set. If an object in the result set has a `display_phone_number` value that matches a number you used to create a pre-verified business phone number, the object represents the WhatsApp Business phone number that has replaced the pre-verified business phone number. Copy this object's ID and use it to register the WhatsApp Business phone number.
 
 Alternatively, you can use the same endpoint with `field` expansion to request the `display_phone_number` field and specify the display phone number. For example:
 
@@ -287,7 +267,7 @@ GET /102290129340398/phone_numbers?display_phone_number=16505551234
 
 ## Get pre-verified business phone numbers
 
-Use the [Preverified Numbers API](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/business/preverified_numbers) to get a list of all [WhatsApp Business Pre-Verified Phone Number](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/business/whatsapp-business-pre-verified-phone-numbers-api) objects, regardless of their verification status, in your business account’s pool of pre-verified business phone numbers:
+Use the [Preverified Numbers API](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/business/preverified_numbers) to get a list of all [WhatsApp Business Pre-Verified Phone Number](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/business/whatsapp-business-pre-verified-phone-numbers-api) objects, regardless of their verification status, in your business account's pool of pre-verified business phone numbers:
 
 ```
 GET /<BUSINESS_ACCOUNT_ID>/preverified_numbers
@@ -305,7 +285,7 @@ Use the [Share Preverified Numbers API](https://developers.facebook.com/document
 
 Partners of a solution can surface shared pre-verified business phone numbers in their implementation of Embedded Signup.
 
-If you are sharing numbers with multiple business partners, advise your partners to [get a list of shared pre-verified numbers](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/bypass-phone-addition#get-pre-verified-business-phone-numbers) before surfacing them in Embedded Signup. This reduces the likelihood of a partner attempting to surface a number that has already been claimed (claimed numbers do not appear in the flow, but the partner might not know this and wonder why it’s not appearing).
+If you are sharing numbers with multiple business partners, advise your partners to [get a list of shared pre-verified numbers](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/bypass-phone-addition#get-pre-verified-business-phone-numbers) before surfacing them in Embedded Signup. This reduces the likelihood of a partner attempting to surface a number that has already been claimed (claimed numbers do not appear in the flow, but the partner might not know this and wonder why it's not appearing).
 
 ### Sharing request syntax
 
@@ -325,14 +305,12 @@ DELETE /<BUSINESS_ID>/share_preverified_numbers
 
 ### Response
 
-Upon success, the API will return `true`. If sharing, notify your business partner of the newly shared pre-verified number and provide them with the number’s ID. If unsharing, the number will no longer appear in the partner’s implementation of Embedded Signup.
+Upon success, the API will return `true`. If sharing, notify your business partner of the newly shared pre-verified number and provide them with the number's ID. If unsharing, the number will no longer appear in the partner's implementation of Embedded Signup.
 
 ```
-```
 {  
-  "success": <SUCCESS>  
+  "success": <SUCCESS>  
 }
-```
 ```
 
 ### Example sharing request
@@ -352,13 +330,11 @@ curl -X DELETE 'https://graph.facebook.com/v17.0/share_preverified_numbers?partn
 ### Example response
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 ## Registering pre-verified numbers programmatically
 
-If you have customized Embedded Signup to [bypass the phone number addition screen](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/bypass-phone-addition), you can register pre-verified business phone numbers on an onboarded business customer’s WhatsApp Business account programmatically. To do this, first complete all of the steps to [create a pre-verified number](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/bypass-phone-addition#creating-pre-verified-numbers), then use the pre-verified number ID to complete **Step 1** and **Step 4** in the [Register Phone Numbers](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/registering-phone-numbers) document.
+If you have customized Embedded Signup to [bypass the phone number addition screen](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/bypass-phone-addition), you can register pre-verified business phone numbers on an onboarded business customer's WhatsApp Business account programmatically. To do this, first complete all of the steps to [create a pre-verified number](https://developers.facebook.com/documentation/business-messaging/whatsapp/embedded-signup/bypass-phone-addition#creating-pre-verified-numbers), then use the pre-verified number ID to complete **Step 1** and **Step 4** in the [Register Phone Numbers](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/registering-phone-numbers) document.

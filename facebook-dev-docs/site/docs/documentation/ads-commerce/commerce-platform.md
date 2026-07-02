@@ -90,9 +90,9 @@ Format `params` as follows:
 
 | Rule Type | Format | Example | Notes |
 | --- | --- | --- | --- |
-| Mapping Rule | “map\_from”: <string> | “map\_from”: “gavailability” |  |
-| Value Mapping Rule | <string> : <string> | “InStock”: “in stock” | Maximum number of mappings is limited to 10 and length of strings to 20. |
-| Letter Case Rule | “type”: one of : “capitalize\_first”, “capitalize\_all”, “to\_upper”, “to\_lower” | “type”: “capitalize\_first” |  |
+| Mapping Rule | "map\_from": <string> | "map\_from": "gavailability" |  |
+| Value Mapping Rule | <string> : <string> | "InStock": "in stock" | Maximum number of mappings is limited to 10 and length of strings to 20. |
+| Letter Case Rule | "type": one of : "capitalize\_first", "capitalize\_all", "to\_upper", "to\_lower" | "type": "capitalize\_first" |  |
 
 For details, see [Product Data Feed Rules API, Reference](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-feed/rules).
 
@@ -128,11 +128,11 @@ For details, See [Product Data Feed Rule API, Reference](https://developers.face
 
 ## Fix Missing Items in a Catalog
 
-If Commerce Manager reports that some items in your catalog are missing or can’t be found, you may need to check that your Meta pixel or app have been set up properly. You may encounter this error when:
+If Commerce Manager reports that some items in your catalog are missing or can't be found, you may need to check that your Meta pixel or app have been set up properly. You may encounter this error when:
 
-* The `content_id` included in your pixel or app event doesn’t match the ID in the catalog’s data feed.
-* The pixel or app isn’t associated to the catalog.
-* The item doesn’t exist in the catalog.
+* The `content_id` included in your pixel or app event doesn't match the ID in the catalog's data feed.
+* The pixel or app isn't associated to the catalog.
+* The item doesn't exist in the catalog.
 
 Learn more [here⁠](https://www.facebook.com/business/help/644889989181423).
 
@@ -181,28 +181,24 @@ You can request the full error report to be generated for a given upload session
 **Request**
 
 ```
-```
-GET https://graph.facebook.com/vX.X/{upload-session-id}/?fields=error_report
-```
+GET https://graph.facebook.com/vX.X/{upload-session-id}/?fields=error_report
 ```
 
 **Response**
 
 ```
-```
 {  
-  "error_report": {  
-    "report_status": "WRITE_FINISHED",  
-    "file_handle": "{link-to-the-file-location}"  
-  },  
-  "id": "493476498092860"  
+  "error_report": {  
+    "report_status": "WRITE_FINISHED",  
+    "file_handle": "{link-to-the-file-location}"  
+  },  
+  "id": "493476498092860"  
 }
-```
 ```
 
 You should find a URL that you can download (for example, with wget, curl, and so on). The downloaded file will contain the full error report.
 
-If you get this error: “Cannot access an object not managed by the business owning this app”, please make sure that the app you’re using belongs to the business (**Business Settings** > **Account** > **Apps**).
+If you get this error: "Cannot access an object not managed by the business owning this app", please make sure that the app you're using belongs to the business (**Business Settings** > **Account** > **Apps**).
 
 In case the report is not ready, repeat the last call after a few seconds. You can then download the report itself.
 
@@ -241,7 +237,7 @@ curl -i -X GET \
 | `ERROR_REPORT_OUTDATED` | The error report is older than 30 days and is no longer available. |
 | `FATAL_ERROR` | Something went wrong on our end while trying to prepare this error report. You can request for an error report to retry. |
 
-**Note**: A CDN URL using this error report can be downloaded and will be returned as “file\_handle” when the status of the `error_report` is `WRITE_FINISHED`.
+**Note**: A CDN URL using this error report can be downloaded and will be returned as "file\_handle" when the status of the `error_report` is `WRITE_FINISHED`.
 
 ## Manage Product Feed Upload Errors
 
@@ -270,47 +266,45 @@ Token: PAGE_ACCESS_TOKEN
 A `fatal` severity here means the item cannot be ingested by Meta; a `warning` severity means some recommended attributes are missing or malformed.
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "id": 1510567479166488,  
-      "summary": "A required field is missing: price.",  
-      "description": "Products need to have prices to run in ads. Include a price for each product in your data feed file and upload it again. Prices must include cost and an ISO currency code (for example: 10 USD instead of $10 for American dollars).",  
-      "severity": "fatal",  
-      "samples": {  
-        "data": [  
-          {  
-            "row_number": 2,  
-            "retailer_id": "yj9bpbpub5t8t22kgbq6",  
-            "id": "1677559492523068"  
-          },  
-          {  
-            "row_number": 5,  
-            "retailer_id": "ujn33tvbyv2vmdpo7ecb",  
-            "id": "1529743440653137"  
-          }  
-        ]  
-      }  
-    },  
-    {  
-      "id": 275241589314958,  
-      "summary": "GTIN is incorrectly formatted",  
-      "description": "Check that the GTIN (Global Trade Identification Number) for each of your products is in the correct format. Accepted types include UPC, EAN, JAN, and ISBN.",  
-      "severity": "warning",  
-      "samples": {  
-        "data": [  
-          {  
-            "row_number": 4,  
-            "retailer_id": "bxwb1pho9o43uxjxikcg",  
-            "id": "538700559625644"  
-          }  
-        ]  
-      }  
-    }  
-  ]  
+  "data": [  
+    {  
+      "id": 1510567479166488,  
+      "summary": "A required field is missing: price.",  
+      "description": "Products need to have prices to run in ads. Include a price for each product in your data feed file and upload it again. Prices must include cost and an ISO currency code (for example: 10 USD instead of $10 for American dollars).",  
+      "severity": "fatal",  
+      "samples": {  
+        "data": [  
+          {  
+            "row_number": 2,  
+            "retailer_id": "yj9bpbpub5t8t22kgbq6",  
+            "id": "1677559492523068"  
+          },  
+          {  
+            "row_number": 5,  
+            "retailer_id": "ujn33tvbyv2vmdpo7ecb",  
+            "id": "1529743440653137"  
+          }  
+        ]  
+      }  
+    },  
+    {  
+      "id": 275241589314958,  
+      "summary": "GTIN is incorrectly formatted",  
+      "description": "Check that the GTIN (Global Trade Identification Number) for each of your products is in the correct format. Accepted types include UPC, EAN, JAN, and ISBN.",  
+      "severity": "warning",  
+      "samples": {  
+        "data": [  
+          {  
+            "row_number": 4,  
+            "retailer_id": "bxwb1pho9o43uxjxikcg",  
+            "id": "538700559625644"  
+          }  
+        ]  
+      }  
+    }  
+  ]  
 }
-```
 ```
 
 ### Commerce
@@ -324,25 +318,21 @@ Learn more about resolving Diagnostic warnings and errors in Commerce Manager wi
 #### Request
 
 ```
-```
-GET https://graph.facebook.com/vX.X/{product-feed-id}/uploads
-```
+GET https://graph.facebook.com/vX.X/{product-feed-id}/uploads
 ```
 
 #### Sample Response
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "id": "493476498092860",  
-      "start_time": "2019-07-15T12:38:36+0000",  
-      "end_time": "2019-07-15T12:38:47+0000"  
-    }  
-  ]  
+  "data": [  
+    {  
+      "id": "493476498092860",  
+      "start_time": "2019-07-15T12:38:36+0000",  
+      "end_time": "2019-07-15T12:38:47+0000"  
+    }  
+  ]  
 }
-```
 ```
 
 Then, use the value returned in the `id` field to retrieve **a sampling** of errors and warnings.
@@ -350,9 +340,7 @@ Then, use the value returned in the `id` field to retrieve **a sampling** of err
 #### Request
 
 ```
-```
-GET https://graph.facebook.com/vX.X/{upload-session-id}/errors
-```
+GET https://graph.facebook.com/vX.X/{upload-session-id}/errors
 ```
 
 #### Sample Response
@@ -360,47 +348,45 @@ GET https://graph.facebook.com/vX.X/{upload-session-id}/errors
 A `fatal` severity here means the item cannot be ingested by Meta; a `warning` severity means some recommended attributes are missing or malformed.
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "id": 1510567479166488,  
-      "summary": "A required field is missing: price.",  
-      "description": "Products need to have prices to run in ads. Include a price for each product in your data feed file and upload it again. Prices must include cost and an ISO currency code (for example: 10 USD instead of $10 for American dollars).",  
-      "severity": "fatal",  
-      "samples": {  
-        "data": [  
-          {  
-            "row_number": 2,  
-            "retailer_id": "yj9bpbpub5t8t22kgbq6",  
-            "id": "1677559492523068"  
-          },  
-          {  
-            "row_number": 5,  
-            "retailer_id": "ujn33tvbyv2vmdpo7ecb",  
-            "id": "1529743440653137"  
-          }  
-        ]  
-      }  
-    },  
-    {  
-      "id": 275241589314958,  
-      "summary": "GTIN is incorrectly formatted",  
-      "description": "Check that the GTIN (Global Trade Identification Number) for each of your products is in the correct format. Accepted types include UPC, EAN, JAN, and ISBN.",  
-      "severity": "warning",  
-      "samples": {  
-        "data": [  
-          {  
-            "row_number": 4,  
-            "retailer_id": "bxwb1pho9o43uxjxikcg",  
-            "id": "538700559625644"  
-          }  
-        ]  
-      }  
-    }  
-  ]  
+  "data": [  
+    {  
+      "id": 1510567479166488,  
+      "summary": "A required field is missing: price.",  
+      "description": "Products need to have prices to run in ads. Include a price for each product in your data feed file and upload it again. Prices must include cost and an ISO currency code (for example: 10 USD instead of $10 for American dollars).",  
+      "severity": "fatal",  
+      "samples": {  
+        "data": [  
+          {  
+            "row_number": 2,  
+            "retailer_id": "yj9bpbpub5t8t22kgbq6",  
+            "id": "1677559492523068"  
+          },  
+          {  
+            "row_number": 5,  
+            "retailer_id": "ujn33tvbyv2vmdpo7ecb",  
+            "id": "1529743440653137"  
+          }  
+        ]  
+      }  
+    },  
+    {  
+      "id": 275241589314958,  
+      "summary": "GTIN is incorrectly formatted",  
+      "description": "Check that the GTIN (Global Trade Identification Number) for each of your products is in the correct format. Accepted types include UPC, EAN, JAN, and ISBN.",  
+      "severity": "warning",  
+      "samples": {  
+        "data": [  
+          {  
+            "row_number": 4,  
+            "retailer_id": "bxwb1pho9o43uxjxikcg",  
+            "id": "538700559625644"  
+          }  
+        ]  
+      }  
+    }  
+  ]  
 }
-```
 ```
 
 ## Learn More

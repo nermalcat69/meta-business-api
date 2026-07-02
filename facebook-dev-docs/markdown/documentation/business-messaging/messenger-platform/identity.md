@@ -40,15 +40,13 @@ MessengerExtensions.getSupportedFeatures(function success(result) {
 `getSupportedFeatures()` will return an array containing the featured supported in the current webview to the success callback. For details on the returned array values, see [Features](https://developers.facebook.com/documentation/business-messaging/messenger-platform/identity#features_list) below.
 
 ```
-```
 {  
-  "supported_features":[  
-    "payments",  
-    "context",  
-    "sharing_broadcast",  
-    "sharing_direct",  
-    "sharing_open_graph"  
-  ]  
+  "supported_features":[  
+    "payments",  
+    "context",  
+    "sharing_broadcast",  
+    "sharing_direct",  
+    "sharing_open_graph"  
+  ]  
 }
-```
 ```

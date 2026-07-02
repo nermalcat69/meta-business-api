@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/threads/insights
 
 Updated: Feb 13, 2026
 
-The Threads Reply Management API allows you manage replies to users’ own Threads by [hiding replies](https://developers.facebook.com/documentation/threads/insights#hide-replies), [controlling who can reply](https://developers.facebook.com/documentation/threads/insights#control-who-can-reply), and using [reply approvals](https://developers.facebook.com/documentation/threads/insights#reply-approvals).
+The Threads Reply Management API allows you manage replies to users' own Threads by [hiding replies](https://developers.facebook.com/documentation/threads/insights#hide-replies), [controlling who can reply](https://developers.facebook.com/documentation/threads/insights#control-who-can-reply), and using [reply approvals](https://developers.facebook.com/documentation/threads/insights#reply-approvals).
 
 ## Hide Replies
 
@@ -62,20 +62,16 @@ Use the `POST /{threads-user-id}/threads_publish` endpoint to publish the media 
 #### Example Request
 
 ```
-```
-curl -i -X POST \  
+curl -i -X POST \  
 "https://graph.threads.net/v1.0/<THREADS_USER_ID>/threads_publish?creation_id=<MEDIA_CONTAINER_ID>&access_token=<ACCESS_TOKEN>"
-```
 ```
 
 #### Example Response
 
 ```
-```
 {  
-  "id": "1234567" // Threads Media ID  
+  "id": "1234567" // Threads Media ID  
 }
-```
 ```
 
 ## Reply Approvals
@@ -95,24 +91,20 @@ You can enable reply approvals on a post by making a request to the `POST /{thre
 ##### Example request
 
 ```
-```
-curl -i -X POST \  
-  -d "media_type=TEXT" \  
-  -d "text=<TEXT>" \  
-  -d "access_token=<ACCESS_TOKEN>" \  
-  -d "enable_reply_approvals=true" \  
+curl -i -X POST \  
+  -d "media_type=TEXT" \  
+  -d "text=<TEXT>" \  
+  -d "access_token=<ACCESS_TOKEN>" \  
+  -d "enable_reply_approvals=true" \  
 "https://graph.threads.net/v1.0/<THREADS_USER_ID>/threads"
-```
 ```
 
 ##### Example response
 
 ```
-```
 {  
-  "id": "<MEDIA_CONTAINER_ID>"  
+  "id": "<MEDIA_CONTAINER_ID>"  
 }
-```
 ```
 
 #### Step 2: Publish the media container
@@ -143,54 +135,50 @@ All the [existing fields](https://developers.facebook.com/documentation/threads/
 ##### Example request
 
 ```
-```
-curl -s -X GET \  
-    -d "fields=id,text,topic_tag,timestamp,media_product_type,media_type,media_url,shortcode,thumbnail_url,children,has_replies,root_post,replied_to,is_reply,hide_status,reply_approval_status" \  
-    -d "reverse=false" \  
-    -d "access_token=<ACCESS_TOKEN>"  
+curl -s -X GET \  
+    -d "fields=id,text,topic_tag,timestamp,media_product_type,media_type,media_url,shortcode,thumbnail_url,children,has_replies,root_post,replied_to,is_reply,hide_status,reply_approval_status" \  
+    -d "reverse=false" \  
+    -d "access_token=<ACCESS_TOKEN>"  
 "https://graph.threads.net/v1.0/<MEDIA_ID>/pending_replies"
-```
 ```
 
 ##### Example response
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "id": "<MEDIA_ID>",  
-      "text": "ignored reply",  
-      "timestamp": "<TIMESTAMP>",  
-      "media_product_type": "THREADS",  
-      "media_type": "TEXT_POST",  
-      "shortcode": "<SHORT_CODE>",  
-      "has_replies": false,  
-      "is_reply": true,  
-      "hide_status": "NOT_HUSHED",  
-      "reply_approval_status": "ignored"  
-    },  
-    {  
-      "id": "<MEDIA_ID>",  
-      "text": "pending reply",  
-      "timestamp": "<TIMESTAMP>",  
-      "media_product_type": "THREADS",  
-      "media_type": "TEXT_POST",  
-      "shortcode": "<SHORT_CODE>",  
-      "has_replies": false,  
-      "is_reply": true,  
-      "hide_status": "NOT_HUSHED",  
-      "reply_approval_status": "pending"  
-    }  
-  ],  
-  "paging": {  
-    "cursors": {  
-      "before": "<BEFORE_CURSOR>",  
-      "after": "<AFTER_CURSOR>"  
-    }  
-  }  
+  "data": [  
+    {  
+      "id": "<MEDIA_ID>",  
+      "text": "ignored reply",  
+      "timestamp": "<TIMESTAMP>",  
+      "media_product_type": "THREADS",  
+      "media_type": "TEXT_POST",  
+      "shortcode": "<SHORT_CODE>",  
+      "has_replies": false,  
+      "is_reply": true,  
+      "hide_status": "NOT_HUSHED",  
+      "reply_approval_status": "ignored"  
+    },  
+    {  
+      "id": "<MEDIA_ID>",  
+      "text": "pending reply",  
+      "timestamp": "<TIMESTAMP>",  
+      "media_product_type": "THREADS",  
+      "media_type": "TEXT_POST",  
+      "shortcode": "<SHORT_CODE>",  
+      "has_replies": false,  
+      "is_reply": true,  
+      "hide_status": "NOT_HUSHED",  
+      "reply_approval_status": "pending"  
+    }  
+  ],  
+  "paging": {  
+    "cursors": {  
+      "before": "<BEFORE_CURSOR>",  
+      "after": "<AFTER_CURSOR>"  
+    }  
+  }  
 }
-```
 ```
 
 ### Manage pending replies
@@ -202,20 +190,16 @@ Use the `/manage_pending_reply` endpoint to approve/ignore any pending replies.
 #### Example request
 
 ```
-```
-curl -X POST \  
-  -F "approve={true|false}" \  
-  -F "access_token=<ACCESS_TOKEN>" \  
+curl -X POST \  
+  -F "approve={true|false}" \  
+  -F "access_token=<ACCESS_TOKEN>" \  
 "https://graph.threads.net/v1.0/<THREADS_REPLY_ID>/manage_pending_reply"
-```
 ```
 
 #### Example response
 
 ```
-```
 {  
- "success": true  
+ "success": true  
 }
-```
 ```

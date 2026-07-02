@@ -25,15 +25,15 @@ For each Meta App ID, advertisers targeting iOS 14 and later device users can ha
 * Your `buying_type` must always be `auction`.
 * Bid strategy `TARGET_COST` is not available for [Campaign Budget Optimization](https://developers.facebook.com/docs/marketing-api/bidding/guides/campaign-budget-optimization) campaigns.
 * Deferred Deep Linking is not available for new iOS14+ AKAdNetwork campaigns.
-* You can’t change the bundle ID, iPhone Store ID, or iPad Store ID for this app because one or more iOS 14+ campaigns are currently running.
+* You can't change the bundle ID, iPhone Store ID, or iPad Store ID for this app because one or more iOS 14+ campaigns are currently running.
 
 ### Ad Sets
 
-* You must specify at least iOS 14 under `user_os`. If you provide an invalid value, you won’t be able to create the ad set.
+* You must specify at least iOS 14 under `user_os`. If you provide an invalid value, you won't be able to create the ad set.
 * If the ad set is created using the default targeting string, we will filter the target devices based on if the ad set is eligible for iOS 14+ devices.
 * Bid strategy `TARGET_COST` is not available.
 * [Cost Per Action billing](https://developers.facebook.com/documentation/ads-commerce/marketing-api/bidding/guides/cost-per-action-ads) is not available. Specifically, `billing_event` and `optimization_goal` cannot be both set to `APP_INSTALLS`.
-* You must specify the `campaign_attribution` field. If you want to use Meta’s Aggregated Event Measurement, then set this field to `AEM`. If you want to use Apple’s SKAdNetwork, then this field should be set to `SKADNETWORK`.
+* You must specify the `campaign_attribution` field. If you want to use Meta's Aggregated Event Measurement, then set this field to `AEM`. If you want to use Apple's SKAdNetwork, then this field should be set to `SKADNETWORK`.
 
 ### Ads
 
@@ -47,7 +47,7 @@ Because iOS 14 campaigns rely on SKAdNetwork data and associated attribution log
 
 ## Aggregated Event Measurement
 
-Meta’s Aggregated Event Measurement is a protocol that allows for measurement of web and app events from people using iOS 14.5 or later devices. Aggregated Event Measurement currently limits domains and mobile apps to 8 conversion events that can be configured and prioritized for Aggregated Event Measurement.
+Meta's Aggregated Event Measurement is a protocol that allows for measurement of web and app events from people using iOS 14.5 or later devices. Aggregated Event Measurement currently limits domains and mobile apps to 8 conversion events that can be configured and prioritized for Aggregated Event Measurement.
 
 Visit our [Domain Verification guide](https://developers.facebook.com/documentation/sharing/domain-verification) to verify your domain ownership for Aggregated Event Measurement.
 

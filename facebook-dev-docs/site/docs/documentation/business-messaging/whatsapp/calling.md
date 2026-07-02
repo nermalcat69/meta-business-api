@@ -24,19 +24,17 @@ POST /<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/messages
 ### Post body
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "recipient_type": "individual",  
-  "to": "{{wa-user-phone-number}}",  
-  "type": "video",  
-  "video": {  
-    "id" : "<MEDIA_ID>", /* Only if using uploaded media */  
-    "link": "<MEDIA_URL>", /* Only if linking to your media */  
-    "caption": "<VIDEO_CAPTION_TEXT>"  
-  }  
+  "messaging_product": "whatsapp",  
+  "recipient_type": "individual",  
+  "to": "{​{wa-user-phone-number}​}",  
+  "type": "video",  
+  "video": {  
+    "id" : "<MEDIA_ID>", /* Only if using uploaded media */  
+    "link": "<MEDIA_URL>", /* Only if linking to your media */  
+    "caption": "<VIDEO_CAPTION_TEXT>"  
+  }  
 }
-```
 ```
 
 ### Post body parameters
@@ -52,7 +50,7 @@ POST /<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/messages
 
 Only H.264 video codec and AAC audio codec supported. Single audio stream or no audio stream only.
 
-Note that videos encoded with the H.264 “High” profile and B-frames are not supported by Android WhatsApp clients. We recommend that you use H.264 “Main” profile without B-frames, or the H.264 “Baseline” profile when encoding (or re-encoding with a tool like ffmpeg), and place moov boxes before mdat boxes, for broader compatibility. If you are using ffmpeg, you can use the -movflags faststart flag to place moov boxes before mdata boxes.
+Note that videos encoded with the H.264 "High" profile and B-frames are not supported by Android WhatsApp clients. We recommend that you use H.264 "Main" profile without B-frames, or the H.264 "Baseline" profile when encoding (or re-encoding with a tool like ffmpeg), and place moov boxes before mdat boxes, for broader compatibility. If you are using ffmpeg, you can use the -movflags faststart flag to place moov boxes before mdata boxes.
 
 | Video Type | Extension | MIME Type | Max Size |
 | --- | --- | --- | --- |
@@ -82,20 +80,18 @@ curl 'https://graph.facebook.com/v25.0/106540352242922/messages' \
 ## Example response
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "contacts": [  
-    {  
-      "input": "+16505551234",  
-      "wa_id": "16505551234"  
-    }  
-  ],  
-  "messages": [  
-    {  
-      "id": "wamid.HBgLMTY0NjcwNDM1OTUVAgARGBI1RjQyNUE3NEYxMzAzMzQ5MkEA"  
-    }  
-  ]  
+  "messaging_product": "whatsapp",  
+  "contacts": [  
+    {  
+      "input": "+16505551234",  
+      "wa_id": "16505551234"  
+    }  
+  ],  
+  "messages": [  
+    {  
+      "id": "wamid.HBgLMTY0NjcwNDM1OTUVAgARGBI1RjQyNUE3NEYxMzAzMzQ5MkEA"  
+    }  
+  ]  
 }
-```
 ```

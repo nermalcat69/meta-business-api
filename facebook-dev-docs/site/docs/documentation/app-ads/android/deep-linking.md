@@ -27,7 +27,7 @@ Before you can use deep linking, you need the following:
 
 If you are implementing Deferred Deep Linking (optional) for [iOS](https://developers.facebook.com/documentation/app-ads/ios/deep-linking#deferred-deep-linking) or [Android](https://developers.facebook.com/documentation/app-ads/android/deep-linking#deferred-deep-linking) apps, you must use the Facebook SDK for [iOS](https://developers.facebook.com/documentation/ios) or [Android](https://developers.facebook.com/documentation/android).
 
-On iOS, deep linking works only with ads. As a result, you can’t use deep linking with other things, like app invites.
+On iOS, deep linking works only with ads. As a result, you can't use deep linking with other things, like app invites.
 
 You must enable [Advertiser ID collection](https://developers.facebook.com/documentation/app-events/getting-started-app-events-ios) for deferred deep linking to work.
 

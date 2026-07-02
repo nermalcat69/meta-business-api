@@ -20,7 +20,7 @@ With value rules, you can:
 
 For example, if you know that men aged 25-44 have an average 60% higher lifetime value and women 25-44 have a 20% lower lifetime value relative to customers outside of these dimensions, you can use value rules to increase your bid by 60% for the male 25-44 age group and decrease your bid by 20% for the female 25-44 age group. People outside of these value rules will receive a non-adjusted bid.
 
-When you create a value rule set, the order of your rules will prioritize which adjustments will take place in the ad auction. If you create rules with audience overlap, we’ll only use the first applicable rule to adjust the bid. For example, rule 1 states you are willing to bid 20% more for women in California and rule 2 states you are willing to bid 10% more for women who use a particular mobile operating system. If a woman in California who uses that operating system is in your audience, then we will only apply Rule 1 to bid 20% more for her because it is the first rule in the order.
+When you create a value rule set, the order of your rules will prioritize which adjustments will take place in the ad auction. If you create rules with audience overlap, we'll only use the first applicable rule to adjust the bid. For example, rule 1 states you are willing to bid 20% more for women in California and rule 2 states you are willing to bid 10% more for women who use a particular mobile operating system. If a woman in California who uses that operating system is in your audience, then we will only apply Rule 1 to bid 20% more for her because it is the first rule in the order.
 
 ### Permissions
 
@@ -82,11 +82,11 @@ The `criteria_values` and `criteria_value_types` arrays work together to define 
 
 | `criteria\_type` | `criteria\_values` | `criteria\_value\_types` |
 | --- | --- | --- |
-| `AGE` | **1. Predefined age range** “18-24”, “25-34”, “35-44”, “45-55”, “55-64”, “65+”  **2. Custom age range** Age ranges can be arbitrary (e.g., “18-26”) or open-ended (e.g., “45+”). For example: [“18-26”, “31-37”, “48+”].  **Important:** Using “65” as the upper limit of a range is not allowed; use “18+” instead of “18-65”.  **Note:** Rule sets using custom age ranges will **not** be editable (read only) in the Ads Manager UI, editing rule set is possible only via API. | `NONE` |
+| `AGE` | **1. Predefined age range** "18-24", "25-34", "35-44", "45-55", "55-64", "65+"  **2. Custom age range** Age ranges can be arbitrary (e.g., "18-26") or open-ended (e.g., "45+"). For example: ["18-26", "31-37", "48+"].  **Important:** Using "65" as the upper limit of a range is not allowed; use "18+" instead of "18-65".  **Note:** Rule sets using custom age ranges will **not** be editable (read only) in the Ads Manager UI, editing rule set is possible only via API. | `NONE` |
 | `GENDER` | `MALE`, `FEMALE` | `NONE` |
 | `OS_TYPE` | `ANDROID`, `IOS` | `NONE` |
 | `DEVICE_PLATFORM` | `MOBILE`, `DESKTOP` | `NONE` |
-| `LOCATION` | Multiple, dependent on `criteria_value_types`.   * [`LOCATION_COUNTRY`](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference/targeting-search#countries) * [`LOCATION_REGION`](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference/targeting-search#regions) * [`LOCATION_CITY`](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference/targeting-search#cities) * [`LOCATION_DMA`](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference/targeting-search#geomarket-codes) * [`LOCATION_COMSCORE_MARKET`](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference/targeting-search#geomarket-codes)   **Note:** Starting June 22 2026, `LOCATION_DMA` are being replaced with `LOCATION_COMSCORE_MARKET`. Rules with DMAs won’t be active after this date. You can use equivalent Comscore markets in your audiences and rules. | `LOCATION_COUNTRY`, `LOCATION_REGION`, `LOCATION_CITY`, `LOCATION_DMA`, `LOCATION_COMSCORE_MARKET` |
+| `LOCATION` | Multiple, dependent on `criteria_value_types`.   * [`LOCATION_COUNTRY`](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference/targeting-search#countries) * [`LOCATION_REGION`](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference/targeting-search#regions) * [`LOCATION_CITY`](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference/targeting-search#cities) * [`LOCATION_DMA`](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference/targeting-search#geomarket-codes) * [`LOCATION_COMSCORE_MARKET`](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference/targeting-search#geomarket-codes)   **Note:** Starting June 22 2026, `LOCATION_DMA` are being replaced with `LOCATION_COMSCORE_MARKET`. Rules with DMAs won't be active after this date. You can use equivalent Comscore markets in your audiences and rules. | `LOCATION_COUNTRY`, `LOCATION_REGION`, `LOCATION_CITY`, `LOCATION_DMA`, `LOCATION_COMSCORE_MARKET` |
 | `PLACEMENT` | `FB_FEED`, `FB_STORIES`, `FB_REELS`, `FB_MARKETPLACE`, `FB_SEARCH`, `FB_VIDEO`, `IG_FEED`, `IG_STORIES`, `IG_REELS`, `IG_EXPLORE`, `AUDIENCE_NETWORK`  **Note:** Rule sets using any of `FB_MARKETPLACE`, `FB_SEARCH`, `FB_VIDEO`, `IG_EXPLORE` placements will **not** be editable (read only) in the Ads Manager UI, editing rule set is possible only via API. | `NONE` |
 | `OMNI_CHANNEL` | `APP`, `INSTANT_FORM`, `PHONE_CALL`, `WEBSITE` | `NONE` |
 | `AUDIENCE_LABEL` | `HIGH_VALUE`, `LOW_VALUE`, `OTHER_CUSTOMERS`, `NEW_USERS`, `QUALIFIED_LEADS`, `DISQUALIFIED_LEADS`, `AT_RISK`, `DISENGAGED`, `APP_INSTALLERS`, `TRIAL_USERS`, `ENGAGED_USERS`, `OTHER_1`, `OTHER_2`, `OTHER_3` | `NONE` |
@@ -94,58 +94,52 @@ The `criteria_values` and `criteria_value_types` arrays work together to define 
 For example, if you want to apply a bid adjustment to the age ranges `45-55` and `55-64`, here is what the criteria object would look like:
 
 ```
-```
 {  
-  "criteria_type": "AGE",  
-  "operator": "CONTAINS",  
-  "criteria_values": [  
-    "45-55",  
-    "55-64"  
-  ],  
-  "criteria_value_types": [  
-    "NONE",  
-    "NONE"  
-  ]  
+  "criteria_type": "AGE",  
+  "operator": "CONTAINS",  
+  "criteria_values": [  
+    "45-55",  
+    "55-64"  
+  ],  
+  "criteria_value_types": [  
+    "NONE",  
+    "NONE"  
+  ]  
 }
-```
 ```
 
 Alternatively, if you want to apply a bid adjustment to the country of Brazil and the region of Alberta, Canada, here is what the criteria object would look like:
 
 ```
-```
 {  
-  "criteria_type": "LOCATION",  
-  "operator": "CONTAINS",  
-  "criteria_values": [  
-    "BR",  
-    "527"  
-  ],  
-  "criteria_value_types": [  
-    "LOCATION_COUNTRY",  
-    "LOCATION_REGION"  
-  ]  
+  "criteria_type": "LOCATION",  
+  "operator": "CONTAINS",  
+  "criteria_values": [  
+    "BR",  
+    "527"  
+  ],  
+  "criteria_value_types": [  
+    "LOCATION_COUNTRY",  
+    "LOCATION_REGION"  
+  ]  
 }
-```
 ```
 
 Similarly, if you want to apply a bid adjustment to the high value and new users audience labels, here is what the criteria object would look like:
 
 ```
-```
 {  
-  "criteria_type": "AUDIENCE_LABEL",  
-  "operator": "CONTAINS",  
-  "criteria_values": [  
-    "HIGH_VALUE",  
-    "NEW_USERS"  
-  ],  
-  "criteria_value_types": [  
-    "NONE",  
-    "NONE"  
-  ]  
+  "criteria_type": "AUDIENCE_LABEL",  
+  "operator": "CONTAINS",  
+  "criteria_values": [  
+    "HIGH_VALUE",  
+    "NEW_USERS"  
+  ],  
+  "criteria_value_types": [  
+    "NONE",  
+    "NONE"  
+  ]  
 }
-```
 ```
 
 ### Example request
@@ -254,52 +248,50 @@ https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/value_rule_set?fields=name,
 ### Example response
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "id": "1110000000003",  
-      "name": "My Value Rule Set",  
-      "rules": {  
-        "data": [  
-          {  
-            "name": "High age and gender",  
-            "adjust_sign": "INCREASE",  
-            "adjust_value": 20,  
-            "criterias": {  
-              "data": [  
-                {  
-                  "criteria_type": "AGE",  
-                  "operator": "CONTAINS",  
-                  "criteria_values": [  
-                    "18-24"  
-                  ],  
-                  "criteria_value_types": [  
-                    "NONE"  
-                  ],  
-                  "id": "1110000000000"  
-                },  
-                {  
-                  "criteria_type": "GENDER",  
-                  "operator": "CONTAINS",  
-                  "criteria_values": [  
-                    "male"  
-                  ],  
-                  "criteria_value_types": [  
-                    "NONE"  
-                  ],  
-                  "id": "1110000000001"  
-                }  
-              ]  
-            },  
-            "id": "1110000000002"  
-          },  
-        ]  
-      }  
-    }  
-  ]  
+  "data": [  
+    {  
+      "id": "1110000000003",  
+      "name": "My Value Rule Set",  
+      "rules": {  
+        "data": [  
+          {  
+            "name": "High age and gender",  
+            "adjust_sign": "INCREASE",  
+            "adjust_value": 20,  
+            "criterias": {  
+              "data": [  
+                {  
+                  "criteria_type": "AGE",  
+                  "operator": "CONTAINS",  
+                  "criteria_values": [  
+                    "18-24"  
+                  ],  
+                  "criteria_value_types": [  
+                    "NONE"  
+                  ],  
+                  "id": "1110000000000"  
+                },  
+                {  
+                  "criteria_type": "GENDER",  
+                  "operator": "CONTAINS",  
+                  "criteria_values": [  
+                    "male"  
+                  ],  
+                  "criteria_value_types": [  
+                    "NONE"  
+                  ],  
+                  "id": "1110000000001"  
+                }  
+              ]  
+            },  
+            "id": "1110000000002"  
+          },  
+        ]  
+      }  
+    }  
+  ]  
 }
-```
 ```
 
 ## Update a value rule set
@@ -322,38 +314,36 @@ https://graph.facebook.com/v25.0/<VALUE_RULE_SET_ID>?fields=name,rules{name,adju
 The resulting response will be similar to this:
 
 ```
-```
 {  
-  "name": "Value Rule Set",  
-  "rules": {  
-    "data": [  
-      {  
-        "name": "High age",  
-        "adjust_sign": "INCREASE",  
-        "adjust_value": 20,  
-        "status": "ACTIVE",  
-        "criterias": {  
-          "data": [  
-            {  
-              "criteria_type": "AGE",  
-              "operator": "CONTAINS",  
-              "criteria_values": [  
-                "18-24"  
-              ],  
-              "criteria_value_types": [  
-                "NONE"  
-              ],  
-              "id": "1000000000000089"  
-            }  
-          ]  
-        },  
-        "id": "1000000000000099"  
-      }  
-    ]  
-  },  
-  "id": "1000000000000056",  
+  "name": "Value Rule Set",  
+  "rules": {  
+    "data": [  
+      {  
+        "name": "High age",  
+        "adjust_sign": "INCREASE",  
+        "adjust_value": 20,  
+        "status": "ACTIVE",  
+        "criterias": {  
+          "data": [  
+            {  
+              "criteria_type": "AGE",  
+              "operator": "CONTAINS",  
+              "criteria_values": [  
+                "18-24"  
+              ],  
+              "criteria_value_types": [  
+                "NONE"  
+              ],  
+              "id": "1000000000000089"  
+            }  
+          ]  
+        },  
+        "id": "1000000000000099"  
+      }  
+    ]  
+  },  
+  "id": "1000000000000056",  
 }
-```
 ```
 
 #### Step 2: Update the value rule set
@@ -496,27 +486,23 @@ curl -X POST \
 ### Example response if `VALUE_RULE_SET_ID` is a valid ID
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 ### Example response if `VALUE_RULE_SET_ID` is an invalid ID
 
 ```
-```
 {  
-  "error": {  
-    "message": "Unsupported post request. Object with ID 'redacted' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at /docs/graph-api",  
-    "type": "GraphMethodException",  
-    "code": 100,  
-    "error_subcode": 33,  
-    "fbtrace_id": "fbtrace_id"  
-  }  
+  "error": {  
+    "message": "Unsupported post request. Object with ID 'redacted' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at /docs/graph-api",  
+    "type": "GraphMethodException",  
+    "code": 100,  
+    "error_subcode": 33,  
+    "fbtrace_id": "fbtrace_id"  
+  }  
 }
-```
 ```
 
 ## Creating an ad set with a value rule set
@@ -602,40 +588,36 @@ A value rule set can be applied to all ad sets using the `LOWEST_COST_WITHOUT_CA
 ### 1. Campaign Objective: `OUTCOME_SALES` with web and in-store conversion locations
 
 ```
-```
 {  
-  "optimization_goal": "OFFSITE_CONVERSIONS",  
-  "promoted_object": {  
-    "omnichannel_object": {  
-      "offline": [  
-        {  
-          "custom_event_type": "PURCHASE",  
-          "offline_conversion_data_set_id": "offline_conversion_data_set_id"  
-        }  
-      ],  
-      "pixel": [  
-        {  
-          "custom_event_type": "PURCHASE",  
-          "pixel_id": "pixel_id"  
-        }  
-      ]  
-    }  
-  }  
+  "optimization_goal": "OFFSITE_CONVERSIONS",  
+  "promoted_object": {  
+    "omnichannel_object": {  
+      "offline": [  
+        {  
+          "custom_event_type": "PURCHASE",  
+          "offline_conversion_data_set_id": "offline_conversion_data_set_id"  
+        }  
+      ],  
+      "pixel": [  
+        {  
+          "custom_event_type": "PURCHASE",  
+          "pixel_id": "pixel_id"  
+        }  
+      ]  
+    }  
+  }  
 }
-```
 ```
 
 ### 2. Campaign Objective: `OUTCOME_LEADS` with web and call conversion locations
 
 ```
-```
 {  
-  "optimization_goal": "OFFSITE_CONVERSIONS",  
-  "optimization_sub_event": "NONE",  
-  "promoted_object": {  
-    "pixel_id": "pixel_id",  
-    "custom_event_type": "LEAD"  
-  }  
+  "optimization_goal": "OFFSITE_CONVERSIONS",  
+  "optimization_sub_event": "NONE",  
+  "promoted_object": {  
+    "pixel_id": "pixel_id",  
+    "custom_event_type": "LEAD"  
+  }  
 }
-```
 ```

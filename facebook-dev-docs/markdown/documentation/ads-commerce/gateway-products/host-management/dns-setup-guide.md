@@ -11,7 +11,7 @@ System Health Information is log data you can choose to send us periodically fro
 
 ## How System Health Information Works
 
-System Health Information is an optional feature you can enable during installation by choosing ‘Yes’ in the SystemHealthInformation dropdown list as shown below.
+System Health Information is an optional feature you can enable during installation by choosing 'Yes' in the SystemHealthInformation dropdown list as shown below.
 
 ![Specify stack details screen during installation with the SystemHealthInformation dropdown set to Yes.](https://scontent.fdel27-9.fna.fbcdn.net/v/t39.2365-6/475327507_597099006617448_2333644442544225176_n.png?_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=4HfqE0hWyEgQ7kNvwE3WKvW&_nc_oc=AdorRgdJF-QE_HMbUCAXXYWoCEAfzqDotFCcFyrpb8B9_mzdtTHjrtGLTnkr-e2Vg9mDGsl42AOzQpBeSEBUeoCG&_nc_zt=14&_nc_ht=scontent.fdel27-9.fna&_nc_gid=3cdM19aENUqdt6LP5Ax-2w&_nc_ss=7b289&oh=00_AQCi80EqW_zmo6gcT9RLVW17Wmrgqz4UbA9TGUsH8pJtEQ&oe=6A607E39)
 

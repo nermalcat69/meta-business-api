@@ -33,11 +33,11 @@ Learn how to retrieve and manage shipments, including partial shipments, for ord
 
 ### [Associate Shipping Profiles with Products](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/order-management/associate-shipping-profiles)
 
-Learn how to use a manual update feed to manage shipping profiles for items in a shop’s catalog feed.
+Learn how to use a manual update feed to manage shipping profiles for items in a shop's catalog feed.
 
 ### [Acknowledgement API](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/order-management/acknowledgement-api)
 
-Learn how to associate a shop with an app to ensure orders are properly synced between the partner’s OMS and Meta.
+Learn how to associate a shop with an app to ensure orders are properly synced between the partner's OMS and Meta.
 
 ### [Cancellation and Refund API](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/order-management/cancellation-refund-api)
 

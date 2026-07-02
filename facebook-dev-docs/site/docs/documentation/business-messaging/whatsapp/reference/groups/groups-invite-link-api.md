@@ -72,11 +72,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Business-ID}/preverified_numbers' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Business-ID}/preverified_numbers' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -87,40 +87,40 @@ Select status code
 
 ```
 {  
-  "basic_response": {  
-    "summary": "Basic response with pre-verified phone numbers",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "1234567890123456",  
-          "phone_number": "+15551234567",  
-          "code_verification_status": "VERIFIED",  
-          "code_verification_time": 1705312200,  
-          "verification_expiry_time": 1705398600  
-        },  
-        {  
-          "id": "2345678901234567",  
-          "phone_number": "+442012345678",  
-          "code_verification_status": "NOT_VERIFIED"  
-        }  
-      ],  
-      "paging": {  
-        "cursors": {  
-          "after": "QVFIUjJ5WjBpMGpJWXprYzVYaVhabW9PVks4ZD0"  
-        },  
-        "next": "https://graph.facebook.com/v25.0/1234567890123456/preverified_numbers?after=QVFIUjJ5WjBpMGpJWXprYzVYaVhabW9PVks4ZD0"  
-      }  
-    }  
-  },  
-  "empty_response": {  
-    "summary": "Empty response when no phone numbers are available",  
-    "value": {  
-      "data": [],  
-      "paging": {  
-        "cursors": {}  
-      }  
-    }  
-  }  
+  "basic_response": {  
+    "summary": "Basic response with pre-verified phone numbers",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "1234567890123456",  
+          "phone_number": "+15551234567",  
+          "code_verification_status": "VERIFIED",  
+          "code_verification_time": 1705312200,  
+          "verification_expiry_time": 1705398600  
+        },  
+        {  
+          "id": "2345678901234567",  
+          "phone_number": "+442012345678",  
+          "code_verification_status": "NOT_VERIFIED"  
+        }  
+      ],  
+      "paging": {  
+        "cursors": {  
+          "after": "QVFIUjJ5WjBpMGpJWXprYzVYaVhabW9PVks4ZD0"  
+        },  
+        "next": "https://graph.facebook.com/v25.0/1234567890123456/preverified_numbers?after=QVFIUjJ5WjBpMGpJWXprYzVYaVhabW9PVks4ZD0"  
+      }  
+    }  
+  },  
+  "empty_response": {  
+    "summary": "Empty response when no phone numbers are available",  
+    "value": {  
+      "data": [],  
+      "paging": {  
+        "cursors": {}  
+      }  
+    }  
+  }  
 }
 ```
 
@@ -681,11 +681,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Business-ID}/preverified_numbers' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Business-ID}/preverified_numbers' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -696,40 +696,40 @@ Select status code
 
 ```
 {  
-  "basic_response": {  
-    "summary": "Basic response with pre-verified phone numbers",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "1234567890123456",  
-          "phone_number": "+15551234567",  
-          "code_verification_status": "VERIFIED",  
-          "code_verification_time": 1705312200,  
-          "verification_expiry_time": 1705398600  
-        },  
-        {  
-          "id": "2345678901234567",  
-          "phone_number": "+442012345678",  
-          "code_verification_status": "NOT_VERIFIED"  
-        }  
-      ],  
-      "paging": {  
-        "cursors": {  
-          "after": "QVFIUjJ5WjBpMGpJWXprYzVYaVhabW9PVks4ZD0"  
-        },  
-        "next": "https://graph.facebook.com/v25.0/1234567890123456/preverified_numbers?after=QVFIUjJ5WjBpMGpJWXprYzVYaVhabW9PVks4ZD0"  
-      }  
-    }  
-  },  
-  "empty_response": {  
-    "summary": "Empty response when no phone numbers are available",  
-    "value": {  
-      "data": [],  
-      "paging": {  
-        "cursors": {}  
-      }  
-    }  
-  }  
+  "basic_response": {  
+    "summary": "Basic response with pre-verified phone numbers",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "1234567890123456",  
+          "phone_number": "+15551234567",  
+          "code_verification_status": "VERIFIED",  
+          "code_verification_time": 1705312200,  
+          "verification_expiry_time": 1705398600  
+        },  
+        {  
+          "id": "2345678901234567",  
+          "phone_number": "+442012345678",  
+          "code_verification_status": "NOT_VERIFIED"  
+        }  
+      ],  
+      "paging": {  
+        "cursors": {  
+          "after": "QVFIUjJ5WjBpMGpJWXprYzVYaVhabW9PVks4ZD0"  
+        },  
+        "next": "https://graph.facebook.com/v25.0/1234567890123456/preverified_numbers?after=QVFIUjJ5WjBpMGpJWXprYzVYaVhabW9PVks4ZD0"  
+      }  
+    }  
+  },  
+  "empty_response": {  
+    "summary": "Empty response when no phone numbers are available",  
+    "value": {  
+      "data": [],  
+      "paging": {  
+        "cursors": {}  
+      }  
+    }  
+  }  
 }
 ```
 

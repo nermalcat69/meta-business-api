@@ -24,11 +24,11 @@ You can configure all of these features in WhatsApp Manager on the specific numb
 * Select **Automations**.
 * Access and configure Conversational Components.
 
-Solution Partners can configure these features for their customers as well if they have access to their customers’ WhatsApp Business account in WhatsApp Manager.
+Solution Partners can configure these features for their customers as well if they have access to their customers' WhatsApp Business account in WhatsApp Manager.
 
 ## Ice breakers
 
-Ice breakers are customizable, tappable text strings that appear in a message thread the first time you chat with a user. For example, “Plan a trip” or “Create a workout plan”.
+Ice breakers are customizable, tappable text strings that appear in a message thread the first time you chat with a user. For example, "Plan a trip" or "Create a workout plan".
 
 Ice breakers are great for service interactions, such as customer support or account servicing. For example, you can embed a WhatsApp button on your app or website. When users tap the button, they are redirected to WhatsApp, where they can choose from a set of customizable prompts, showing them how to interact with your services.
 
@@ -43,47 +43,45 @@ If a WhatsApp user taps a [universal link⁠](https://faq.whatsapp.com/425247423
 ### Webhook payload
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "<WHATSAPP_BUSINESS_ACCOUNT_ID>",  
-      "changes": [  
-        {  
-          "value": {  
-            "messaging_product": "whatsapp",  
-            "metadata": {  
-              "display_phone_number": "<BUSINESS_DISPLAY_PHONE_NUMBER>",  
-              "phone_number_id": "<BUSINESS_PHONE_NUMBER_ID>"  
-            },  
-            "contacts": [  
-              {  
-                "profile": {  
-                  "name": "<WHATSAPP_USER_NAME>"  
-                },  
-                "wa_id": "<WHATSAPP_USER_ID>"  
-              }  
-            ],  
-            "messages": [  
-              {  
-                "from": "<WHATSAPP_USER_PHONE_NUMBER_ID>",  
-                "id": "<WHATSAPP_MESSAGE_ID>",  
-                "timestamp": "<TIMESTAMP>",  
-                "text": {  
-                  "body": "Plan a trip"  
-                },  
-                "type": "text"  
-              }  
-            ]  
-          },  
-          "field": "messages"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "<WHATSAPP_BUSINESS_ACCOUNT_ID>",  
+      "changes": [  
+        {  
+          "value": {  
+            "messaging_product": "whatsapp",  
+            "metadata": {  
+              "display_phone_number": "<BUSINESS_DISPLAY_PHONE_NUMBER>",  
+              "phone_number_id": "<BUSINESS_PHONE_NUMBER_ID>"  
+            },  
+            "contacts": [  
+              {  
+                "profile": {  
+                  "name": "<WHATSAPP_USER_NAME>"  
+                },  
+                "wa_id": "<WHATSAPP_USER_ID>"  
+              }  
+            ],  
+            "messages": [  
+              {  
+                "from": "<WHATSAPP_USER_PHONE_NUMBER_ID>",  
+                "id": "<WHATSAPP_MESSAGE_ID>",  
+                "timestamp": "<TIMESTAMP>",  
+                "text": {  
+                  "body": "Plan a trip"  
+                },  
+                "type": "text"  
+              }  
+            ]  
+          },  
+          "field": "messages"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ## Commands
@@ -103,47 +101,45 @@ You can define up to 30 commands. Each command has a maximum of 32 characters, a
 ### Webhook payload
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "<WHATSAPP_BUSINESS_ACCOUNT_ID>",  
-      "changes": [  
-        {  
-          "value": {  
-            "messaging_product": "whatsapp",  
-            "metadata": {  
-              "display_phone_number": "<BUSINESS_DISPLAY_PHONE_NUMBER>",  
-              "phone_number_id": "<BUSINESS_PHONE_NUMBER_ID>"  
-            },  
-            "contacts": [  
-              {  
-                "profile": {  
-                  "name": "<WHATSAPP_USER_NAME>"  
-                },  
-                "wa_id": "<WHATSAPP_USER_ID>"  
-              }  
-            ],  
-            "messages": [  
-              {  
-                "from": "<WHATSAPP_USER_PHONE_NUMBER_ID>",  
-                "id": "<WHATSAPP_MESSAGE_ID>",  
-                "timestamp": "<TIMESTAMP>",  
-                "text": {  
-                  "body": "/imagine cars racing on Mars"  
-                },  
-                "type": "text"  
-              }  
-            ]  
-          },  
-          "field": "messages"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "<WHATSAPP_BUSINESS_ACCOUNT_ID>",  
+      "changes": [  
+        {  
+          "value": {  
+            "messaging_product": "whatsapp",  
+            "metadata": {  
+              "display_phone_number": "<BUSINESS_DISPLAY_PHONE_NUMBER>",  
+              "phone_number_id": "<BUSINESS_PHONE_NUMBER_ID>"  
+            },  
+            "contacts": [  
+              {  
+                "profile": {  
+                  "name": "<WHATSAPP_USER_NAME>"  
+                },  
+                "wa_id": "<WHATSAPP_USER_ID>"  
+              }  
+            ],  
+            "messages": [  
+              {  
+                "from": "<WHATSAPP_USER_PHONE_NUMBER_ID>",  
+                "id": "<WHATSAPP_MESSAGE_ID>",  
+                "timestamp": "<TIMESTAMP>",  
+                "text": {  
+                  "body": "/imagine cars racing on Mars"  
+                },  
+                "type": "text"  
+              }  
+            ]  
+          },  
+          "field": "messages"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ## Configure using the API
@@ -171,41 +167,37 @@ POST /<PHONE_NUMBER_ID>/conversational_automation?prompts=<PROMPT>
 | Placeholder | Description | Sample Value |
 | --- | --- | --- |
 | `<PHONE_NUMBER_ID>`  *String* | **Required.**  A phone number ID on a WhatsApp Business account. | `+12784358810` |
-| `<COMMAND_LIST>`  *JSON* | **Optional.**  A list of commands to be configured. | ```  ``` [   {     "command_name": "generate",     "command_description": "Create a new image"   },   {     "command_name": "rethink",     "command_description": "Generate new images from existing images"   } ] ``` ``` |
+| `<COMMAND_LIST>`  *JSON* | **Optional.**  A list of commands to be configured. | ``` [   {     "command_name": "generate",     "command_description": "Create a new image"   },   {     "command_name": "rethink",     "command_description": "Generate new images from existing images"   } ] ``` |
 | `<PROMPTS>`  *List of String* | **Optional.**  The prompt(s) to be configured. | `"prompts": ["Book a flight","plan a vacation"]` |
 
 #### Sample request
 
 ```
-```
-   curl -X POST \  
- 'https://graph.facebook.com/v22.0/PHONE_NUMBER_ID/conversational_automation' \  
- -H 'Authorization: Bearer ACCESS_TOKEN' \  
- -H 'Content-Type: application/json' \  
- -d '{  
-   "commands": [  
-     {  
-       "command_name": "tickets",  
-       "command_description": "Book flight tickets"  
-     },  
-     {  
-       "command_name": "hotel",  
-       "command_description": "Book hotel"  
-     }  
-   ],  
-   "prompts": ["Book a flight", "plan a vacation"]  
+   curl -X POST \  
+ 'https://graph.facebook.com/v22.0/PHONE_NUMBER_ID/conversational_automation' \  
+ -H 'Authorization: Bearer ACCESS_TOKEN' \  
+ -H 'Content-Type: application/json' \  
+ -d '{  
+   "commands": [  
+     {  
+       "command_name": "tickets",  
+       "command_description": "Book flight tickets"  
+     },  
+     {  
+       "command_name": "hotel",  
+       "command_description": "Book hotel"  
+     }  
+   ],  
+   "prompts": ["Book a flight", "plan a vacation"]  
 }'
-```
 ```
 
 #### Sample response
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 ### View the current configuration using the API
@@ -221,27 +213,25 @@ GET  /<PHONE_NUMBER_ID>?fields=conversational_automation
 #### Sample response
 
 ```
-```
 {  
-  "conversational_automation": {  
-    "prompts": [  
-      "Find the best hotels in the area",  
-      "Find deals on rental cars"  
-    ],  
-    "commands": [  
-      {  
-        "command_name": "tickets",  
-        "command_description": "Book flight tickets"  
-      },  
-      {  
-        "command_name": "hotel",  
-        "command_description": "Book hotel"  
-      }  
-    ]  
-  },  
-  "id": "123456"  
+  "conversational_automation": {  
+    "prompts": [  
+      "Find the best hotels in the area",  
+      "Find deals on rental cars"  
+    ],  
+    "commands": [  
+      {  
+        "command_name": "tickets",  
+        "command_description": "Book flight tickets"  
+      },  
+      {  
+        "command_name": "hotel",  
+        "command_description": "Book hotel"  
+      }  
+    ]  
+  },  
+  "id": "123456"  
 }
-```
 ```
 
 ## Testing
@@ -251,7 +241,7 @@ To test conversational components once they have been configured, open the Whats
 For ice breakers, if you already have a chat thread going with the business phone number, you must first delete the chat thread:
 
 * Open the thread in the WhatsApp client.
-* Tap the business phone number’s profile.
+* Tap the business phone number's profile.
 * Tap **Clear Chat** > **Clear All Messages**.
 * **Delete Chat**.
 * Start a new chat thread with this business.

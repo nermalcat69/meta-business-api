@@ -16,11 +16,11 @@ We know how important it is to run successful advertising campaigns. In order to
 ### First, some resources...
 
 * [Mobile Gaming Solutions Playbook⁠](https://our.internmc.facebook.com/intern/gmshub/content/?id=481182979042881): A comprehensive guide to our solutions for advertisers launching a game. A lot of these tips are great for non-gaming apps, too.
-* [Facebook Marketing Partners⁠](https://www.facebook-pmdcenter.com/): You don’t have to go it alone. Get custom-tailored solutions, superior insights and data for better marketing decisions, and innovative solutions with one of our Marketing Partners. They already have deep expertise in all the Best Practices below.
+* [Facebook Marketing Partners⁠](https://www.facebook-pmdcenter.com/): You don't have to go it alone. Get custom-tailored solutions, superior insights and data for better marketing decisions, and innovative solutions with one of our Marketing Partners. They already have deep expertise in all the Best Practices below.
 
 ### Understand your objectives
 
-Facebook has three different advertising objectives you can choose from when you want to run ads for an app: App installs, traffic, and conversions. Each objective is designed to help you achieve a specific business goal, so it’s important to choose an objective that aligns with your goals.
+Facebook has three different advertising objectives you can choose from when you want to run ads for an app: App installs, traffic, and conversions. Each objective is designed to help you achieve a specific business goal, so it's important to choose an objective that aligns with your goals.
 
 For more information, see [Help Center, Choose the right objective⁠](https://www.facebook.com/business/help/518543828525528).
 
@@ -66,13 +66,13 @@ To get the most out of mobile app ads and to measure them accurately, Facebook r
 
 ### Understand your bidding options
 
-When you first start your app ad campaigns, use [Optimized CPM (oCPM) bidding](https://developers.facebook.com/documentation/ads-commerce/marketing-api/bidding/guides/cost-per-action-ads) to allow us to automatically achieve the best results for your app ads. oCPM leverages Facebook’s proprietary algorithms to optimize all your campaigns for you. By using oCPM, you can optimize for audiences most likely to install your app, and you pay for each impression. oCPM bidding also allows you to simplify campaign management so that you can focus on other key strategies for your app.
+When you first start your app ad campaigns, use [Optimized CPM (oCPM) bidding](https://developers.facebook.com/documentation/ads-commerce/marketing-api/bidding/guides/cost-per-action-ads) to allow us to automatically achieve the best results for your app ads. oCPM leverages Facebook's proprietary algorithms to optimize all your campaigns for you. By using oCPM, you can optimize for audiences most likely to install your app, and you pay for each impression. oCPM bidding also allows you to simplify campaign management so that you can focus on other key strategies for your app.
 
 Later, you can explore other bidding options such as [cost per action (CPA)](https://developers.facebook.com/documentation/ads-commerce/marketing-api/bidding/guides/cost-per-action-ads).
 
-### Time your promotions with your app’s content
+### Time your promotions with your app's content
 
-If you are releasing new content within your app or promoting a sale, that’s an opportunity to coordinate with some tailored advertising. These are the ideal times to funnel as many people as possible into your app to expose users to new content or campaigns.
+If you are releasing new content within your app or promoting a sale, that's an opportunity to coordinate with some tailored advertising. These are the ideal times to funnel as many people as possible into your app to expose users to new content or campaigns.
 
 ### Scale your campaigns to reach larger audiences
 
@@ -86,7 +86,7 @@ Once you have optimized, targeted, and tested campaigns with great creative, con
 * Promote new features
 * Share specials and deals for loyal fans
 
-As a case study for game apps, here are some tips from our partner Supercell on how they successfully developed and used their app’s Facebook Page:
+As a case study for game apps, here are some tips from our partner Supercell on how they successfully developed and used their app's Facebook Page:
 
 * **Respect your fans**. Create content for all your fans, not just one specific demographic.
 * Develop content that is interesting to your fans such as videos, images, and interesting stories.

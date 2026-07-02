@@ -11,7 +11,7 @@ Updated: May 5, 2026
 
 **No code changes are needed.**
 
-Tier labels have been updated: “Standard Access” is now **Limited Access**, and “Advanced Access” is now **Full Access**. The revised qualification threshold for Full Access has been reduced from 1,500 to **500 Marketing API calls** in the past 15 days. The underlying permission identifier remains the same, and existing access levels are preserved automatically. Learn more in the [Marketing API Access Tier documentation](https://developers.facebook.com/docs/features-reference#marketing-api-access-tier).
+Tier labels have been updated: "Standard Access" is now **Limited Access**, and "Advanced Access" is now **Full Access**. The revised qualification threshold for Full Access has been reduced from 1,500 to **500 Marketing API calls** in the past 15 days. The underlying permission identifier remains the same, and existing access levels are preserved automatically. Learn more in the [Marketing API Access Tier documentation](https://developers.facebook.com/docs/features-reference#marketing-api-access-tier).
 
 Beginning June 10, 2025, to improve overall API performance, `reach` will no longer be returned for standard queries that apply `breakdowns` and use `start_date`s more than 13 months old. (Responses to such requests will omit `reach` and related fields, such as `frequency` and `cpp`.)
 
@@ -114,13 +114,13 @@ Once an app reaches its limit, the call gets an error response with `error_code 
 
 We apply rate limiting to each app sending synchronous and asynchronous `/insights` calls combined. The two main parameters limits are counted against are by application, and by ad account.
 
-Here’s an example of the HTTP header with an application’s accrued score as a percentage of the limits:
+Here's an example of the HTTP header with an application's accrued score as a percentage of the limits:
 
 ```
 X-FB-Ads-Insights-Throttle: { "app_id_util_pct": 100, "acc_id_util_pct": 10, "ads_api_access_tier": "standard_access" }
 ```
 
-The header “x-fb-ads-insights-throttle” is a JSON value containing these info:
+The header "x-fb-ads-insights-throttle" is a JSON value containing these info:
 
 * `app_id_util_pct` — The percentage of allocated capacity for the associated app\_id has consumed.
 * `acc_id_util_pct` — The percentage of allocated capacity for the associated ad account\_id has consumed.
@@ -140,8 +140,8 @@ During these periods, it is advised to reduce calls, wait a short period, and qu
 
 * Sending several queries at once are more likely to trigger our rate limiting. Try to spread your `/insights` queries by pacing them with wait time in your job.
 * Use the rate information in the HTTP response header to moderate your calls. Add a back-off mechanism to slow down or pause your `/insights` queries when you come close to hitting 100% utility for your application, or for your ad account.
-* We report ad insights data in the ad account’s timezone. To retrieve insights data for the associated ad account daily, consider the time of day using the account timezone. This helps pace queries throughout the day.
-* Check the `ads_api_access_tier` that allows you to access the Marketing API. By default, apps are in the `development_access` tier and `standard_access` enables lower rate limiting. To get a higher rate limit and get to the standard tier, you can apply for the “Advanced Access” to the [Marketing API Access Tier](https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/authorization#layer-2--access-levels--permissions--and-features) feature.
+* We report ad insights data in the ad account's timezone. To retrieve insights data for the associated ad account daily, consider the time of day using the account timezone. This helps pace queries throughout the day.
+* Check the `ads_api_access_tier` that allows you to access the Marketing API. By default, apps are in the `development_access` tier and `standard_access` enables lower rate limiting. To get a higher rate limit and get to the standard tier, you can apply for the "Advanced Access" to the [Marketing API Access Tier](https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/authorization#layer-2--access-levels--permissions--and-features) feature.
 
 ## Insights API Asynchronous Jobs
 

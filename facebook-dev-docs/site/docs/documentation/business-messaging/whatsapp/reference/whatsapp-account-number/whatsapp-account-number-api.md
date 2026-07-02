@@ -49,48 +49,48 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/whatsapp/webhooks' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "419561257915477",  
-      "changes": [  
-        {  
-          "value": {  
-            "messaging_product": "whatsapp",  
-            "metadata": {  
-              "display_phone_number": "15550783881",  
-              "phone_number_id": "106540352242922"  
-            },  
-            "contacts": [  
-              {  
-                "profile": {  
-                  "name": "Sheena Nelson"  
-                },  
-                "wa_id": "16505551234"  
-              }  
-            ],  
-            "messages": [  
-              {  
-                "from": "16505551234",  
-                "id": "wamid.HBgLMTY1MDM4Nzk0MzkVAgASGBQzQTRBNjU5OUFFRTAzODEwMTQ0RgA=",  
-                "timestamp": "1749416383",  
-                "type": "text",  
-                "text": {  
-                  "body": "Does it come in another color?"  
-                }  
-              }  
-            ]  
-          },  
-          "field": "messages"  
-        }  
-      ]  
-    }  
-  ]  
+curl --request POST \  
+  --url 'https://graph.facebook.com/whatsapp/webhooks' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "419561257915477",  
+      "changes": [  
+        {  
+          "value": {  
+            "messaging_product": "whatsapp",  
+            "metadata": {  
+              "display_phone_number": "15550783881",  
+              "phone_number_id": "106540352242922"  
+            },  
+            "contacts": [  
+              {  
+                "profile": {  
+                  "name": "Sheena Nelson"  
+                },  
+                "wa_id": "16505551234"  
+              }  
+            ],  
+            "messages": [  
+              {  
+                "from": "16505551234",  
+                "id": "wamid.HBgLMTY1MDM4Nzk0MzkVAgASGBQzQTRBNjU5OUFFRTAzODEwMTQ0RgA=",  
+                "timestamp": "1749416383",  
+                "type": "text",  
+                "text": {  
+                  "body": "Does it come in another color?"  
+                }  
+              }  
+            ]  
+          },  
+          "field": "messages"  
+        }  
+      ]  
+    }  
+  ]  
 }'
 ```
 
@@ -924,31 +924,31 @@ Contact's formatted name
 
 first\_namestring
 
-Contact’s first name
+Contact's first name
 
 ---
 
 last\_namestring
 
-Contact’s last name
+Contact's last name
 
 ---
 
 middle\_namestring
 
-Contact’s middle name
+Contact's middle name
 
 ---
 
 suffixstring
 
-Contact’s name suffix
+Contact's name suffix
 
 ---
 
 prefixstring
 
-Contact’s name prefix
+Contact's name prefix
 
 ---
 
@@ -990,7 +990,7 @@ Show child attributes
 
 phonestring
 
-Contact’s Phone number
+Contact's Phone number
 
 ---
 
@@ -1658,48 +1658,48 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/whatsapp/webhooks' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "419561257915477",  
-      "changes": [  
-        {  
-          "value": {  
-            "messaging_product": "whatsapp",  
-            "metadata": {  
-              "display_phone_number": "15550783881",  
-              "phone_number_id": "106540352242922"  
-            },  
-            "contacts": [  
-              {  
-                "profile": {  
-                  "name": "Sheena Nelson"  
-                },  
-                "wa_id": "16505551234"  
-              }  
-            ],  
-            "messages": [  
-              {  
-                "from": "16505551234",  
-                "id": "wamid.HBgLMTY1MDM4Nzk0MzkVAgASGBQzQTRBNjU5OUFFRTAzODEwMTQ0RgA=",  
-                "timestamp": "1749416383",  
-                "type": "text",  
-                "text": {  
-                  "body": "Does it come in another color?"  
-                }  
-              }  
-            ]  
-          },  
-          "field": "messages"  
-        }  
-      ]  
-    }  
-  ]  
+curl --request POST \  
+  --url 'https://graph.facebook.com/whatsapp/webhooks' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "419561257915477",  
+      "changes": [  
+        {  
+          "value": {  
+            "messaging_product": "whatsapp",  
+            "metadata": {  
+              "display_phone_number": "15550783881",  
+              "phone_number_id": "106540352242922"  
+            },  
+            "contacts": [  
+              {  
+                "profile": {  
+                  "name": "Sheena Nelson"  
+                },  
+                "wa_id": "16505551234"  
+              }  
+            ],  
+            "messages": [  
+              {  
+                "from": "16505551234",  
+                "id": "wamid.HBgLMTY1MDM4Nzk0MzkVAgASGBQzQTRBNjU5OUFFRTAzODEwMTQ0RgA=",  
+                "timestamp": "1749416383",  
+                "type": "text",  
+                "text": {  
+                  "body": "Does it come in another color?"  
+                }  
+              }  
+            ]  
+          },  
+          "field": "messages"  
+        }  
+      ]  
+    }  
+  ]  
 }'
 ```
 

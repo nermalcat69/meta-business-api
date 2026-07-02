@@ -23,7 +23,7 @@ From your [Meta Business Suite/Commerce Manager⁠](https://www.facebook.com/pro
 
 ## Step 2: Create data feed
 
-You can either have a **single auto feed** to represent all vehicles in your catalog or **multiple auto feeds** where each feed represents a single dealership or a specific region’s vehicles.
+You can either have a **single auto feed** to represent all vehicles in your catalog or **multiple auto feeds** where each feed represents a single dealership or a specific region's vehicles.
 
 See [Reference](https://developers.facebook.com/documentation/ads-commerce/marketing-api/auto-ads/reference) for a list of supported formats and supported fields.
 

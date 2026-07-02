@@ -9,7 +9,7 @@ Updated: Jun 17, 2026
 
 [App ads](https://developers.facebook.com/documentation/ads-commerce/marketing-api/mobile-app-ads) are available for Threads. To deliver to Threads, include both `instagram` and `threads` under `publisher_platforms` in your ad set. Then, use the `threads_stream` placement. Remember that you must also select the Instagram `stream` placement.
 
-To create an ad creative for Threads app ads, include the `instagram_user_id` and `threads_user_id` as part of the ad creative’s `object_story_spec` parameter.
+To create an ad creative for Threads app ads, include the `instagram_user_id` and `threads_user_id` as part of the ad creative's `object_story_spec` parameter.
 
 ## Limitations
 
@@ -56,11 +56,9 @@ https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/adcreatives
 A successful response returns the new app ad creative ID.
 
 ```
-```
 {  
-  "id":"<CREATIVE_ID>"  
+  "id":"<CREATIVE_ID>"  
 }
-```
 ```
 
 ## Learn more

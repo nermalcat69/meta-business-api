@@ -97,7 +97,7 @@ curl 'https://graph.facebook.com/v25.0/<WHATSAPP_BUSINESS_ACCOUNT_ID>/message_te
 | Placeholder | Description | Example value |
 | --- | --- | --- |
 | `<ACCESS_TOKEN>`  *String* | **Required.**  Access token. | `EAAAN...` |
-| `<CARD_BODY_TEXT>`  *String* | **Required.**  Card body text. Supports variables.  Maximum 160 characters. | `Use code {{1}} to get {{2}} off our newest succulent!` |
+| `<CARD_BODY_TEXT>`  *String* | **Required.**  Card body text. Supports variables.  Maximum 160 characters. | `Use code {​{1}​} to get {​{2}​} off our newest succulent!` |
 | `<CARD_FOOTER_TEXT>`  *String* | **Optional.**  Footer text.  Maximum 60 characters. | `September 30, 2024` |
 | `<PARAMETER_NAME>`  *String* | **Required if body text uses parameters.**  Example parameter value string(s). You must include a parameter example for each parameter in your body text. | `25OFF` |
 | `<PARAMETER_FORMAT>`  *String* | **Optional.**  [Parameter format](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview#parameter-formats). Value can be:   * `named` * `positional`   If the `parameter_format` property is omitted, the template will use positional formatting. | `Lucky Shrub: Your gateway to succulents!` |
@@ -124,7 +124,7 @@ curl 'https://graph.facebook.com/v25.0/161311403722088/message_templates' \
     },
     {
       "type": "body",
-      "text": "Use code {{code}} to get {{percent}} off our newest succulent!",
+      "text": "Use code {​{code}​} to get {​{percent}​} off our newest succulent!",
       "example": {
         "body_text_named_params": [
           {

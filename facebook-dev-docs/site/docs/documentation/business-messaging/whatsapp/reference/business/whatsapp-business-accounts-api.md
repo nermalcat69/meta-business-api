@@ -74,11 +74,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Business-ID}/owned_whatsapp_business_accounts' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Business-ID}/owned_whatsapp_business_accounts' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -89,50 +89,50 @@ Select status code
 
 ```
 {  
-  "multiple_accounts": {  
-    "summary": "Multiple owned WhatsApp Business Accounts",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "104996122399160",  
-          "name": "Lucky Shrub",  
-          "message_template_namespace": "58e6d318_b627_4112_b9c7_2961197553ea",  
-          "timezone_id": "1"  
-        },  
-        {  
-          "id": "102290129340398",  
-          "name": "Test WhatsApp Business Account",  
-          "message_template_namespace": "ba30dd89_2ebd_41e4_b805_f2c05ae04cc9",  
-          "timezone_id": "1"  
-        }  
-      ],  
-      "paging": {  
-        "cursors": {  
-          "after": "QVFIUjBrRUs5QVJuUDhDSmZARMlc2dXRYNXBmMjMtRUt3SmFlbk9PRk43azdiN1VQaW1HcnRkejFzZATNoNDdTdGVWMDhjamVvY25HWnI4WjIzX0hYSk40NHhB",  
-          "before": "QVFIUnpPVXRnY3BPN19rTVItOG51T291YURjV3BaeXRXU29adDVreS04ekhSNl9YWTlfdmN3SHlyTEk1a2FRdnlWanBqM1FuQm1uZAHhfYl9UMTNCYjM3MWV3"  
-        }  
-      }  
-    }  
-  },  
-  "single_account": {  
-    "summary": "Single owned WhatsApp Business Account",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "104996122399160",  
-          "name": "Lucky Shrub",  
-          "message_template_namespace": "58e6d318_b627_4112_b9c7_2961197553ea",  
-          "timezone_id": "1"  
-        }  
-      ]  
-    }  
-  },  
-  "empty_result": {  
-    "summary": "No owned accounts found",  
-    "value": {  
-      "data": []  
-    }  
-  }  
+  "multiple_accounts": {  
+    "summary": "Multiple owned WhatsApp Business Accounts",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "104996122399160",  
+          "name": "Lucky Shrub",  
+          "message_template_namespace": "58e6d318_b627_4112_b9c7_2961197553ea",  
+          "timezone_id": "1"  
+        },  
+        {  
+          "id": "102290129340398",  
+          "name": "Test WhatsApp Business Account",  
+          "message_template_namespace": "ba30dd89_2ebd_41e4_b805_f2c05ae04cc9",  
+          "timezone_id": "1"  
+        }  
+      ],  
+      "paging": {  
+        "cursors": {  
+          "after": "QVFIUjBrRUs5QVJuUDhDSmZARMlc2dXRYNXBmMjMtRUt3SmFlbk9PRk43azdiN1VQaW1HcnRkejFzZATNoNDdTdGVWMDhjamVvY25HWnI4WjIzX0hYSk40NHhB",  
+          "before": "QVFIUnpPVXRnY3BPN19rTVItOG51T291YURjV3BaeXRXU29adDVreS04ekhSNl9YWTlfdmN3SHlyTEk1a2FRdnlWanBqM1FuQm1uZAHhfYl9UMTNCYjM3MWV3"  
+        }  
+      }  
+    }  
+  },  
+  "single_account": {  
+    "summary": "Single owned WhatsApp Business Account",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "104996122399160",  
+          "name": "Lucky Shrub",  
+          "message_template_namespace": "58e6d318_b627_4112_b9c7_2961197553ea",  
+          "timezone_id": "1"  
+        }  
+      ]  
+    }  
+  },  
+  "empty_result": {  
+    "summary": "No owned accounts found",  
+    "value": {  
+      "data": []  
+    }  
+  }  
 }
 ```
 
@@ -737,11 +737,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Business-ID}/owned_whatsapp_business_accounts' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Business-ID}/owned_whatsapp_business_accounts' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -752,50 +752,50 @@ Select status code
 
 ```
 {  
-  "multiple_accounts": {  
-    "summary": "Multiple owned WhatsApp Business Accounts",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "104996122399160",  
-          "name": "Lucky Shrub",  
-          "message_template_namespace": "58e6d318_b627_4112_b9c7_2961197553ea",  
-          "timezone_id": "1"  
-        },  
-        {  
-          "id": "102290129340398",  
-          "name": "Test WhatsApp Business Account",  
-          "message_template_namespace": "ba30dd89_2ebd_41e4_b805_f2c05ae04cc9",  
-          "timezone_id": "1"  
-        }  
-      ],  
-      "paging": {  
-        "cursors": {  
-          "after": "QVFIUjBrRUs5QVJuUDhDSmZARMlc2dXRYNXBmMjMtRUt3SmFlbk9PRk43azdiN1VQaW1HcnRkejFzZATNoNDdTdGVWMDhjamVvY25HWnI4WjIzX0hYSk40NHhB",  
-          "before": "QVFIUnpPVXRnY3BPN19rTVItOG51T291YURjV3BaeXRXU29adDVreS04ekhSNl9YWTlfdmN3SHlyTEk1a2FRdnlWanBqM1FuQm1uZAHhfYl9UMTNCYjM3MWV3"  
-        }  
-      }  
-    }  
-  },  
-  "single_account": {  
-    "summary": "Single owned WhatsApp Business Account",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "104996122399160",  
-          "name": "Lucky Shrub",  
-          "message_template_namespace": "58e6d318_b627_4112_b9c7_2961197553ea",  
-          "timezone_id": "1"  
-        }  
-      ]  
-    }  
-  },  
-  "empty_result": {  
-    "summary": "No owned accounts found",  
-    "value": {  
-      "data": []  
-    }  
-  }  
+  "multiple_accounts": {  
+    "summary": "Multiple owned WhatsApp Business Accounts",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "104996122399160",  
+          "name": "Lucky Shrub",  
+          "message_template_namespace": "58e6d318_b627_4112_b9c7_2961197553ea",  
+          "timezone_id": "1"  
+        },  
+        {  
+          "id": "102290129340398",  
+          "name": "Test WhatsApp Business Account",  
+          "message_template_namespace": "ba30dd89_2ebd_41e4_b805_f2c05ae04cc9",  
+          "timezone_id": "1"  
+        }  
+      ],  
+      "paging": {  
+        "cursors": {  
+          "after": "QVFIUjBrRUs5QVJuUDhDSmZARMlc2dXRYNXBmMjMtRUt3SmFlbk9PRk43azdiN1VQaW1HcnRkejFzZATNoNDdTdGVWMDhjamVvY25HWnI4WjIzX0hYSk40NHhB",  
+          "before": "QVFIUnpPVXRnY3BPN19rTVItOG51T291YURjV3BaeXRXU29adDVreS04ekhSNl9YWTlfdmN3SHlyTEk1a2FRdnlWanBqM1FuQm1uZAHhfYl9UMTNCYjM3MWV3"  
+        }  
+      }  
+    }  
+  },  
+  "single_account": {  
+    "summary": "Single owned WhatsApp Business Account",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "104996122399160",  
+          "name": "Lucky Shrub",  
+          "message_template_namespace": "58e6d318_b627_4112_b9c7_2961197553ea",  
+          "timezone_id": "1"  
+        }  
+      ]  
+    }  
+  },  
+  "empty_result": {  
+    "summary": "No owned accounts found",  
+    "value": {  
+      "data": []  
+    }  
+  }  
 }
 ```
 

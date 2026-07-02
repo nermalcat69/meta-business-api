@@ -7,19 +7,19 @@ source_url: https://developers.facebook.com/documentation/meta-pixel/implementat
 
 Updated: Jun 30, 2026
 
-You can use the Meta Pixel to track your website visitors’ actions also known as conversion tracking. Tracked conversions appear in the [Facebook Ads Manager⁠](https://www.facebook.com/adsmanager) and the [Facebook Events Manager⁠](https://www.facebook.com/events_manager2), where they can be used to analyze the effectiveness of your conversion funnel and to calculate your return on ad investment. You can also use tracked conversions to define [custom audiences](https://developers.facebook.com/documentation/meta-pixel/implementation/custom-audiences) for ad optimization and [Advantage+ catalog ads](https://developers.facebook.com/docs/facebook-pixel/implementation/dynamic-ads) campaigns. Once you have defined custom audiences, we can use them to identify other Facebook users who are likely to convert and target them with your ads.
+You can use the Meta Pixel to track your website visitors' actions also known as conversion tracking. Tracked conversions appear in the [Facebook Ads Manager⁠](https://www.facebook.com/adsmanager) and the [Facebook Events Manager⁠](https://www.facebook.com/events_manager2), where they can be used to analyze the effectiveness of your conversion funnel and to calculate your return on ad investment. You can also use tracked conversions to define [custom audiences](https://developers.facebook.com/documentation/meta-pixel/implementation/custom-audiences) for ad optimization and [Advantage+ catalog ads](https://developers.facebook.com/docs/facebook-pixel/implementation/dynamic-ads) campaigns. Once you have defined custom audiences, we can use them to identify other Facebook users who are likely to convert and target them with your ads.
 
 There are three ways to track conversions with the Pixel:
 
 * [standard events](https://developers.facebook.com/documentation/meta-pixel/implementation/pixel-for-collaborative-ads#standard-events), which are visitor actions that we have defined and that you report by calling a Pixel function
 * [custom events](https://developers.facebook.com/documentation/meta-pixel/implementation/pixel-for-collaborative-ads#custom-events), which are visitor actions that you have defined and that you report by calling a Pixel function
-* [custom conversions](https://developers.facebook.com/documentation/meta-pixel/implementation/pixel-for-collaborative-ads#custom-conversions), which are visitor actions that are tracked automatically by parsing your website’s referrer URLs
+* [custom conversions](https://developers.facebook.com/documentation/meta-pixel/implementation/pixel-for-collaborative-ads#custom-conversions), which are visitor actions that are tracked automatically by parsing your website's referrer URLs
 
-Beginning September 2, 2025, we will start to roll out more proactive restrictions on custom conversions that may suggest information not permitted under [our terms⁠](https://www.facebook.com/legal/terms/businesstools?_rdr). For example, any custom conversion suggesting specific health conditions (e.g., “arthritis”, “diabetes”) or financial status (e.g., “credit score”, “high income”) will be flagged and prevented from being used to run ad campaigns.
+Beginning September 2, 2025, we will start to roll out more proactive restrictions on custom conversions that may suggest information not permitted under [our terms⁠](https://www.facebook.com/legal/terms/businesstools?_rdr). For example, any custom conversion suggesting specific health conditions (e.g., "arthritis", "diabetes") or financial status (e.g., "credit score", "high income") will be flagged and prevented from being used to run ad campaigns.
 
 **What these restrictions mean for your campaigns:**
 
-* You won’t be able to use flagged custom conversions when creating new campaigns.
+* You won't be able to use flagged custom conversions when creating new campaigns.
 * If you have an active campaign using flagged custom conversions, you should either create a new campaign or duplicate your campaign and use a non-impacted custom conversion to avoid performance and optimization issues.
 
 **For API developers:**
@@ -30,7 +30,7 @@ More information on this update and how to resolve flagged custom conversions ca
 
 ### Requirements
 
-The Pixel’s [base code](https://developers.facebook.com/documentation/meta-pixel/get-started#base-code) must already be installed on every page where you want to track conversions.
+The Pixel's [base code](https://developers.facebook.com/documentation/meta-pixel/get-started#base-code) must already be installed on every page where you want to track conversions.
 
 ## Standard Events
 
@@ -40,7 +40,7 @@ For a full list of [Standard events](https://developers.facebook.com/documentati
 
 ### Tracking Standard Events
 
-All standard events are tracked by calling the Pixel’s `fbq('track')` function, with the event name, and (optionally) a JSON object as its parameters. For example, here’s a function call to track when a visitor has completed a purchase event, with currency and value included as a parameter:
+All standard events are tracked by calling the Pixel's `fbq('track')` function, with the event name, and (optionally) a JSON object as its parameters. For example, here's a function call to track when a visitor has completed a purchase event, with currency and value included as a parameter:
 
 ```
 fbq('track', 'Purchase', {currency: "USD", value: 30.00});
@@ -50,7 +50,7 @@ If you called that function, it would be tracked as a purchase event in the Even
 
 ![Events Manager Events tab charting PageView and Purchase events over time, with a tooltip showing one tracked Purchase event](https://scontent.fdel1-4.fna.fbcdn.net/v/t39.2365-6/39949625_1790839247617931_4027789432194072576_n.png?_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=63SrvQ6DnSMQ7kNvwFHsVZG&_nc_oc=AdpOPZltxDD6rg5IRlFj_GkdzZ3LU6d-owttCDkg0729nboe9p0w_c7VU5rkrPRp0ibneEtAmxCC8RdWxohvl9lK&_nc_zt=14&_nc_ht=scontent.fdel1-4.fna&_nc_gid=bZoI1wzyAvVDoi6RAaPe-w&_nc_ss=7b289&oh=00_AQAsYDMhlNQOPuBTT84IoOVn70ztXJUFMifA9wGW3DmjfQ&oe=6A605EDC)
 
-You can call the `fbq('track')` function anywhere between your web page’s opening and closing `<body>` tags, either when the page loads, or when a visitor completes an action, such as clicking a button.
+You can call the `fbq('track')` function anywhere between your web page's opening and closing `<body>` tags, either when the page loads, or when a visitor completes an action, such as clicking a button.
 
 For example, if you wanted to track a standard purchase event *after a visitor has completed the purchase*, you could call the `fbq('track')` function on your *purchase confirmation page*, like this:
 
@@ -79,15 +79,15 @@ Note that the example above uses jQuery to trigger the function call, but you co
 
 ## Custom Events
 
-If our predefined standard events aren’t suitable for your needs, you can track your own custom events, which also can be used to define [custom audiences](https://developers.facebook.com/documentation/meta-pixel/implementation/custom-audiences) for ad optimization. Custom events also support [parameters](https://developers.facebook.com/documentation/meta-pixel/implementation/pixel-for-collaborative-ads#parameters), which you can include to provide additional information about each custom event.
+If our predefined standard events aren't suitable for your needs, you can track your own custom events, which also can be used to define [custom audiences](https://developers.facebook.com/documentation/meta-pixel/implementation/custom-audiences) for ad optimization. Custom events also support [parameters](https://developers.facebook.com/documentation/meta-pixel/implementation/pixel-for-collaborative-ads#parameters), which you can include to provide additional information about each custom event.
 
 Learn more about conversion tracking and custom events with [Blueprint⁠](https://www.facebookblueprint.com/student/path/219710-technical-implementation-meta-pixel?content_id=en4RqCL2PfBZrUU).
 
 ### Tracking Custom Events
 
-You can track custom events by calling the Pixel’s `fbq('trackCustom')` function, with your custom event name and (optionally) a JSON object as its parameters. Just like standard events, you can call the `fbq('trackCustom')` function anywhere between your webpage’s opening and closing `<body>` tags, either when your page loads, or when a visitor performs an action like clicking a button.
+You can track custom events by calling the Pixel's `fbq('trackCustom')` function, with your custom event name and (optionally) a JSON object as its parameters. Just like standard events, you can call the `fbq('trackCustom')` function anywhere between your webpage's opening and closing `<body>` tags, either when your page loads, or when a visitor performs an action like clicking a button.
 
-For example, let’s say you wanted to track visitors who share a promotion in order to get a discount. You could track them using a custom event like this:
+For example, let's say you wanted to track visitors who share a promotion in order to get a discount. You could track them using a custom event like this:
 
 ```
 fbq('trackCustom', 'ShareDiscount', {promotion: 'share_discount_10%'});
@@ -99,7 +99,7 @@ Custom event names must be strings, and cannot exceed 50 characters in length.
 
 Each time the Pixel loads, it automatically calls `fbq('track', 'PageView')` to track a PageView standard event. PageView standard events record the referrer URL of the page that triggered the function call. You can use these recorded URLs in the Events Manager to define visitor actions that should be tracked.
 
-For example, let’s say that you send visitors who subscribe to your mailing list to a thank you page. You could set up a custom conversion that tracks website visitors who have viewed any page that has `/thank-you` in its URL. Assuming your thank you page is the only page with `/thank-you` in its URL, and you’ve installed the Pixel on that page, anyone who views it will be tracked using that custom conversion.
+For example, let's say that you send visitors who subscribe to your mailing list to a thank you page. You could set up a custom conversion that tracks website visitors who have viewed any page that has `/thank-you` in its URL. Assuming your thank you page is the only page with `/thank-you` in its URL, and you've installed the Pixel on that page, anyone who views it will be tracked using that custom conversion.
 
 Once tracked, custom conversions can be used to optimize your ad campaigns, to define [custom audiences](https://developers.facebook.com/documentation/meta-pixel/implementation/custom-audiences), and to further refine custom audiences that rely on standard or custom events. Learn more about custom conversions with [Blueprint⁠](https://www.facebookblueprint.com/student/path/219710-technical-implementation-meta-pixel?content_id=en4RqCL2PfBZrUU).
 
@@ -194,12 +194,10 @@ The maximum number of custom conversions per ad account is 100. If you use Ads I
 If a custom conversion is flagged, the `is_unavailable` field will be set to `true`.
 
 ```
-```
 {  
-  "is_unavailable": true,  
-  "id": "30141209892193360"  
+  "is_unavailable": true,  
+  "id": "30141209892193360"  
 }
-```
 ```
 
 #### To resolve flagged custom conversions
@@ -217,7 +215,7 @@ To resolve a flagged custom conversion in an existing campaign:
 
 #### Request a review
 
-If you believe your custom conversion has been flagged in error and doesn’t include non-permitted information, you can request a review via Ads Manager under the campaigns table, or in Events Manager under the custom conversions page.
+If you believe your custom conversion has been flagged in error and doesn't include non-permitted information, you can request a review via Ads Manager under the campaigns table, or in Events Manager under the custom conversions page.
 
 ## Track Offsite Conversions
 
@@ -225,11 +223,11 @@ Track offsite conversions with your Pixels by adding the `fb_pixel` field to the
 
 ## Parameters
 
-Parameters are optional, JSON-formatted objects that you can include when tracking standard and custom events. They allow you to provide additional information about your website visitors’ actions. Once tracked, parameters can be used to further define any custom audiences you create. Learn more about parameters with [Blueprint⁠](https://www.facebookblueprint.com/student/path/219710-technical-implementation-meta-pixel?content_id=en4RqCL2PfBZrUU).
+Parameters are optional, JSON-formatted objects that you can include when tracking standard and custom events. They allow you to provide additional information about your website visitors' actions. Once tracked, parameters can be used to further define any custom audiences you create. Learn more about parameters with [Blueprint⁠](https://www.facebookblueprint.com/student/path/219710-technical-implementation-meta-pixel?content_id=en4RqCL2PfBZrUU).
 
 To include a parameter object with a standard or custom event, format your parameter data as an object using JSON, then include it as the third function parameter when calling the `fbq('track')` or `fbq('trackCustom')` functions.
 
-For example, let’s say you wanted to track a visitor who purchased multiple products as a result of your promotion. You could do this:
+For example, let's say you wanted to track a visitor who purchased multiple products as a result of your promotion. You could do this:
 
 ```
 fbq('track', 'Purchase',
@@ -275,9 +273,9 @@ You can include the following predefined object properties with any custom event
 
 ### Custom Properties
 
-If our predefined object properties don’t suit your needs, you can include your own, custom properties. Custom properties can be used with both standard and custom events, and can help you further define custom audiences.
+If our predefined object properties don't suit your needs, you can include your own, custom properties. Custom properties can be used with both standard and custom events, and can help you further define custom audiences.
 
-For example, let’s say you wanted to track a visitor who purchased multiple products after having first compared them to other products. You could do this:
+For example, let's say you wanted to track a visitor who purchased multiple products after having first compared them to other products. You could do this:
 
 ```
 fbq('track', 'Purchase',
@@ -304,7 +302,7 @@ fbq('track', 'Purchase',
 
 ## Next Steps
 
-Now that you’re tracking conversions, we recommend that you use them to define [custom audiences](https://developers.facebook.com/documentation/meta-pixel/implementation/custom-audiences), so you can optimize your ads for website conversions.
+Now that you're tracking conversions, we recommend that you use them to define [custom audiences](https://developers.facebook.com/documentation/meta-pixel/implementation/custom-audiences), so you can optimize your ads for website conversions.
 
 ## Learn More
 

@@ -33,7 +33,7 @@ Create an ad set for each target audience with your bid; ads in the set target t
 
 ### Ad creatives
 
-Ad creatives contain only the visual elements of the ad, and you can’t change them once they’re created. Each ad account has a creative library to store creatives for reuse in ads.
+Ad creatives contain only the visual elements of the ad, and you can't change them once they're created. Each ad account has a creative library to store creatives for reuse in ads.
 
 ### Ads
 

@@ -108,14 +108,14 @@ curl \
     "product_audience_specs": [
       {
         "product_set_id": "<PRODUCT_SET_ID>",
-        "inclusions": [{"retention_seconds":432000,"rule":{"event":{"eq":"ViewContent"}}}],
-        "exclusions": [{"retention_seconds":432000,"rule":{"event":{"eq":"Purchase"}}}]
+        "inclusions": [{"retention_seconds":432000,"rule":{"event":{"eq":"ViewContent"}​}}],
+        "exclusions": [{"retention_seconds":432000,"rule":{"event":{"eq":"Purchase"}​}}]
       }
     ],
     "excluded_product_audience_specs": [
       {
         "product_set_id": "<PRODUCT_SET_ID>",
-        "inclusions": [{"retention_seconds":259200,"rule":{"event":{"eq":"ViewContent"}}}]
+        "inclusions": [{"retention_seconds":259200,"rule":{"event":{"eq":"ViewContent"}​}}]
       }
     ]
   }' \
@@ -130,26 +130,24 @@ https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/adsets
 Example for advertising products that the user has not looked at:
 
 ```
-```
-curl \  
--F 'name=Case 1 Adset' \  
--F 'bid_amount=3000' \  
--F 'billing_event=IMPRESSIONS' \  
--F 'status=ACTIVE' \  
--F 'daily_budget=15000' \  
--F 'campaign_id=<CAMPAIGN_ID>' \  
--F 'targeting= { \  
-            "geo_locations": { \  
-            "countries":["US"], \  
-             }, \  
-            "interests":[ \  
-                {"id":6003397425735,"name":"Tennis"}, \  
-            ], \  
-        }' \  
--F 'promoted_object={"product_set_id":<PRODUCT_SET_ID>}' \  
--F 'access_token=<ACCESS_TOKEN>' \  
+curl \  
+-F 'name=Case 1 Adset' \  
+-F 'bid_amount=3000' \  
+-F 'billing_event=IMPRESSIONS' \  
+-F 'status=ACTIVE' \  
+-F 'daily_budget=15000' \  
+-F 'campaign_id=<CAMPAIGN_ID>' \  
+-F 'targeting= { \  
+            "geo_locations": { \  
+            "countries":["US"], \  
+             }, \  
+            "interests":[ \  
+                {"id":6003397425735,"name":"Tennis"}, \  
+            ], \  
+        }' \  
+-F 'promoted_object={"product_set_id":<PRODUCT_SET_ID>}' \  
+-F 'access_token=<ACCESS_TOKEN>' \  
 https://graph.facebook.com/<API_VERSION>/act_<ACCOUNT_ID>/adsets
-```
 ```
 
 To cross-sell between product sets:
@@ -157,7 +155,7 @@ To cross-sell between product sets:
 * Provide the product audience with event rules related to product set A.
 * Show products from product set B in the ad by setting the `product_set_id` to product set B at the ad creative level.
 
-For example, a business wants to increase the sale of handbags in PRODUCT\_SET\_1 by targeting an ad to existing users who have shown interest in shoes that belong in PRODUCT\_SET\_2. Set the `product_set_id` in `product_audience_specs` to PRODUCT\_SET\_2’s ID or shoes and the `product_set_id` in `promoted_object` to PRODUCT\_SET\_1’s ID or handbags.
+For example, a business wants to increase the sale of handbags in PRODUCT\_SET\_1 by targeting an ad to existing users who have shown interest in shoes that belong in PRODUCT\_SET\_2. Set the `product_set_id` in `product_audience_specs` to PRODUCT\_SET\_2's ID or shoes and the `product_set_id` in `promoted_object` to PRODUCT\_SET\_1's ID or handbags.
 
 ```
 curl \
@@ -172,14 +170,14 @@ curl \
     "product_audience_specs": [
       {
         "product_set_id": "<PRODUCT_SET_2_ID>",
-        "inclusions": [{"retention_seconds":432000,"rule":{"event":{"eq":"ViewContent"}}}],
-        "exclusions": [{"retention_seconds":432000,"rule":{"event":{"eq":"Purchase"}}}]
+        "inclusions": [{"retention_seconds":432000,"rule":{"event":{"eq":"ViewContent"}​}}],
+        "exclusions": [{"retention_seconds":432000,"rule":{"event":{"eq":"Purchase"}​}}]
       }
     ],
     "excluded_product_audience_specs": [
       {
         "product_set_id": "<PRODUCT_SET_2_ID>",
-        "inclusions": [{"retention_seconds":259200,"rule":{"event":{"eq":"ViewContent"}}}]
+        "inclusions": [{"retention_seconds":259200,"rule":{"event":{"eq":"ViewContent"}​}}]
       }
     ]
   }' \
@@ -189,7 +187,7 @@ curl \
   https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/adsets
 ```
 
-And set `product_set_id` in the creative as PRODUCT\_SET\_1’s ID.
+And set `product_set_id` in the creative as PRODUCT\_SET\_1's ID.
 
 ```
 curl \
@@ -197,10 +195,10 @@ curl \
 -F 'object_story_spec={
   "page_id": "<PAGE_ID>",
   "template_data": {
-    "description": "Description {{product.description}}",
+    "description": "Description {​{product.description}​}",
     "link": "<LINK>",
-    "message": "Test {{product.name | titleize}}",
-    "name": "Headline {{product.price}}"
+    "message": "Test {​{product.name | titleize}​}",
+    "name": "Headline {​{product.price}​}"
   }
 }' \
 -F 'product_set_id=<PRODUCT_SET_ID>' \
@@ -234,7 +232,7 @@ curl \
     "excluded_product_audience_specs": [
       {
         "product_set_id": "<PRODUCT_SET_ID>",
-        "inclusions": [{"retention_seconds":864000,"rule":{"event":{"eq":"Purchase"}}}]
+        "inclusions": [{"retention_seconds":864000,"rule":{"event":{"eq":"Purchase"}​}}]
       }
     ]
   }' \
@@ -251,11 +249,11 @@ Advertisers running ads concerning housing, employment, credit, or issues, elect
 
 Categories for Advantage+ catalog ads introduces two new creative options for the Advantage+ catalog ads platform, both of which can be used to personalize creative for shoppers who are earlier in their decision journey. With this feature, you can create what is effectively a second, smaller creative catalog of images that represent each category (in addition to the catalog you already have of product imagery), and we will match product categories to people in your ads the same way we match products to people.
 
-Categories for Advantage+ catalog ads can be used with any targeting option in the traffic, conversion, or catalog sales objective. If you don’t have a high-quality image representative of each category or brand, Facebook can auto-generate a 2x2 collage of top products for each group of products.
+Categories for Advantage+ catalog ads can be used with any targeting option in the traffic, conversion, or catalog sales objective. If you don't have a high-quality image representative of each category or brand, Facebook can auto-generate a 2x2 collage of top products for each group of products.
 
 When mapping this new imagery to existing product catalogs, you can use one of three columns in your feed to group items: brand, product type, and Google product category.
 
-In the example catalog below, the **Product Type** column has five unique values. The advertiser can provide up to five collages or lifestyle images — one for each unique value in `product_type`. The product type is the category’s categorization criteria, which is the catalog field name used to define the categories. The catalog field’s value is the category’s criteria value.
+In the example catalog below, the **Product Type** column has five unique values. The advertiser can provide up to five collages or lifestyle images — one for each unique value in `product_type`. The product type is the category's categorization criteria, which is the catalog field name used to define the categories. The catalog field's value is the category's criteria value.
 
 A category can be uniquely identified by:
 
@@ -296,7 +294,7 @@ Below are the APIs to get and update categories information.
 curl -G \
   -d 'fields=["criteria_value","name","description","destination_uri","image_url"]' \
   -d 'categorization_criteria=product_type' \
-  -d 'filter={"price_amount":{"gt":1500}}' \ # optional
+  -d 'filter={"price_amount":{"gt":1500}​}' \ # optional
   -d 'access_token=<ACCESS_TOKEN>' \
   https://graph.facebook.com/v25.0/<PRODUCT_CATALOG_ID>/categories
 ```
@@ -306,27 +304,25 @@ We query for all products (the optional filter is supported) and find the top 1,
 **Sample response**
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "criteria_value": "clothes",  
-      "name": "Awesome clothes",  
-      "description": "Check out these awesome clothes!",  
-      "destination_uri": "http://www.example.com/clothes",  
-      "image_url": "http://www.example.com/clothes.jpg"  
-    },  
-    ...  
-    {  
-      "criteria_value": "shoes",  
-      "name": "Awesome shoes",  
-      "description": "Check out these awesome shoes!",  
-      "destination_uri": "http://www.example.com/shoes",  
-      "image_url": "http://www.example.com/shoes.jpg"  
-    }  
-  ]  
+  "data": [  
+    {  
+      "criteria_value": "clothes",  
+      "name": "Awesome clothes",  
+      "description": "Check out these awesome clothes!",  
+      "destination_uri": "http://www.example.com/clothes",  
+      "image_url": "http://www.example.com/clothes.jpg"  
+    },  
+    ...  
+    {  
+      "criteria_value": "shoes",  
+      "name": "Awesome shoes",  
+      "description": "Check out these awesome shoes!",  
+      "destination_uri": "http://www.example.com/shoes",  
+      "image_url": "http://www.example.com/shoes.jpg"  
+    }  
+  ]  
 }
-```
 ```
 
 ##### Updating
@@ -346,12 +342,12 @@ curl \
 
 ### Ads creation
 
-Categories for Advantage+ catalog ads ad creation is similar to ad creation for other Advantage+ catalog ads, but the creative selection is slightly different. You are still promoting a product set with dynamic category ads; the difference is that we’re showing category creatives instead.
+Categories for Advantage+ catalog ads ad creation is similar to ad creation for other Advantage+ catalog ads, but the creative selection is slightly different. You are still promoting a product set with dynamic category ads; the difference is that we're showing category creatives instead.
 
 ```
 curl \
   -F "name=Dynamic Category Ad Creative" \
-  -F 'object_story_spec={"page_id": "<PAGE_ID>", "template_data": {"description": "{{category.description}}", "link": "https://www.example.com/", "message": "<MESSAGE>", "name": "{{category.name}}"}}' \
+  -F 'object_story_spec={"page_id": "<PAGE_ID>", "template_data": {"description": "{​{category.description}​}", "link": "https://www.example.com/", "message": "<MESSAGE>", "name": "{​{category.name}​}"}​}' \
   -F 'product_set_id=<PRODUCT_SET_ID>' \
   -F 'categorization_criteria=brand' \
   -F 'category_media_source=MIXED' \ # optional
@@ -377,7 +373,7 @@ Supported category tokens:
 | Name | Description |
 | --- | --- |
 | `categorization_criteria` | Specifies which category type to use. **Values:**   * `brand` * `product_type` * `google_product_category` |
-| `category_media_source` | Specifies how to render the category carousel card. **Values:**   * `mixed` (default)    Uses the category’s image if exists; otherwise, falls back to `products_collage`. * `category`    Uses the category’s image. Skip this category if this category doesn’t have a image. * `products_collage`    Generates a 2x2 collage of product images from this category.   A 2x2 products_collage of four product images labeled Product 1 through Product 4 for a category card   * `products_slideshow`    Renders a slideshow of products from this category. |
+| `category_media_source` | Specifies how to render the category carousel card. **Values:**   * `mixed` (default)    Uses the category's image if exists; otherwise, falls back to `products_collage`. * `category`    Uses the category's image. Skip this category if this category doesn't have a image. * `products_collage`    Generates a 2x2 collage of product images from this category.   A 2x2 products_collage of four product images labeled Product 1 through Product 4 for a category card   * `products_slideshow`    Renders a slideshow of products from this category. |
 
 During the category ad creative creation, we search for possible renderable categories.
 
@@ -423,10 +419,10 @@ curl \
   -F 'object_story_spec={
     "page_id": "<PAGE_ID>",
     "template_data": {
-      "description": "Description {{product.description}}",
+      "description": "Description {​{product.description}​}",
       "link": "<LINK>",
-      "message": "Test {{product.name | titleize}}",
-      "name": "Headline {{product.price}}"
+      "message": "Test {​{product.name | titleize}​}",
+      "name": "Headline {​{product.price}​}"
     }
   }' \
   -F 'product_set_id=<PRODUCT_SET_ID>' \
@@ -437,51 +433,49 @@ curl \
 #### Use a Advantage+ catalog ads template with image overlays
 
 ```
-```
-curl \  
-  -F 'name=Advantage+ Catalog Ads Template Creative Sample' \  
-  -F 'object_story_spec={  
-    "page_id": "<PAGE_ID>",  
-    "template_data": {  
-      "call_to_action": {"type":"SHOP_NOW"},  
-      "description": "Description {{product.description}}",  
-      "link": "<LINK>",  
-      "message": "Test {{product.name | titleize}}",  
-      "name": "Headline {{product.price}}",  
-      "image_layer_specs": [  
-        {  
-          "layer_type": "image",  
-          "image_source": "catalog"  
-        },  
-        {  
-          "layer_type": "frame_overlay",  
-          "blending_mode": "lighten",  
-          "frame_image_hash": "<HASH>",  
-          "frame_source": "custom",  
-          "opacity": 100,  
-          "overlay_position": "center",  
-          "scale": 100  
-        },  
-        {  
-          "layer_type": "text_overlay",  
-          "content": {  
-            "type": "price",  
-            "auto_show_enroll_status": "OPT_IN"  
-          },  
-          "opacity": 100,  
-          "overlay_position": "top_left",  
-          "overlay_shape": "rectangle",  
-          "shape_color": "DF0005",  
-          "text_color": "FFFFFF",  
-          "text_font": "open_sans_bold"  
-        }  
-      ]  
-    }  
-  }' \  
-  -F 'product_set_id=<PRODUCT_SET_ID>' \  
-  -F 'access_token=<ACCESS_TOKEN>' \  
-  https://graph.facebook.com/<API_VERSION>/act_<AD_ACCOUNT_ID>/adcreatives
-```
+curl \  
+  -F 'name=Advantage+ Catalog Ads Template Creative Sample' \  
+  -F 'object_story_spec={  
+    "page_id": "<PAGE_ID>",  
+    "template_data": {  
+      "call_to_action": {"type":"SHOP_NOW"},  
+      "description": "Description {​{product.description}​}",  
+      "link": "<LINK>",  
+      "message": "Test {​{product.name | titleize}​}",  
+      "name": "Headline {​{product.price}​}",  
+      "image_layer_specs": [  
+        {  
+          "layer_type": "image",  
+          "image_source": "catalog"  
+        },  
+        {  
+          "layer_type": "frame_overlay",  
+          "blending_mode": "lighten",  
+          "frame_image_hash": "<HASH>",  
+          "frame_source": "custom",  
+          "opacity": 100,  
+          "overlay_position": "center",  
+          "scale": 100  
+        },  
+        {  
+          "layer_type": "text_overlay",  
+          "content": {  
+            "type": "price",  
+            "auto_show_enroll_status": "OPT_IN"  
+          },  
+          "opacity": 100,  
+          "overlay_position": "top_left",  
+          "overlay_shape": "rectangle",  
+          "shape_color": "DF0005",  
+          "text_color": "FFFFFF",  
+          "text_font": "open_sans_bold"  
+        }  
+      ]  
+    }  
+  }' \  
+  -F 'product_set_id=<PRODUCT_SET_ID>' \  
+  -F 'access_token=<ACCESS_TOKEN>' \  
+  https://graph.facebook.com/<API_VERSION>/act_<AD_ACCOUNT_ID>/adcreatives
 ```
 
 #### Create a single product Advantage+ catalog ads template with a call to action
@@ -493,11 +487,11 @@ curl \
     "page_id": "<PAGE_ID>",
     "template_data": {
       "call_to_action": {"type":"SHOP_NOW"},
-      "description": "Description {{product.description}}",
+      "description": "Description {​{product.description}​}",
       "force_single_link": true,
       "link": "<LINK>",
-      "message": "Test {{product.name | titleize}}",
-      "name": "Headline {{product.price}}"
+      "message": "Test {​{product.name | titleize}​}",
+      "name": "Headline {​{product.price}​}"
     }
   }' \
   -F 'product_set_id=<PRODUCT_SET_ID>' \
@@ -513,10 +507,10 @@ curl -X POST \
      -F 'object_story_spec={
            "page_id": <PAGE_ID>,
            "template_data": {
-             "message": "Test {{product.name | titleize}}",
+             "message": "Test {​{product.name | titleize}​}",
              "link": "<YOUR_LINK_URL>",
-             "name": "Headline {{product.price}}",
-             "description": "Description {{product.description}}",
+             "name": "Headline {​{product.price}​}",
+             "description": "Description {​{product.description}​}",
              "multi_share_end_card": false,
              "force_single_link": true,
              "show_multiple_images": true,
@@ -546,8 +540,8 @@ curl \
         },
         {
           "call_to_action": {"type":"SHOP_NOW"},
-          "description": "Description {{product.description}}",
-          "name": "Headline {{product.price}}"
+          "description": "Description {​{product.description}​}",
+          "name": "Headline {​{product.price}​}"
         }
       ],
       "link": "<LINK>",
@@ -570,10 +564,10 @@ curl \
     "page_id": "PAGE_ID",
     "template_data": {
       "call_to_action": {"type":"SHOP_NOW"},
-      "description": "Description {{product.description}}",
+      "description": "Description {​{product.description}​}",
       "link": "LINK",
-      "message": "Test {{product.name | titleize}}",
-      "name": "Headline {{product.price}}",
+      "message": "Test {​{product.name | titleize}​}",
+      "name": "Headline {​{product.price}​}",
       "format_option": "carousel_slideshows"
     }
   }' \
@@ -585,9 +579,7 @@ curl \
 The response to these calls is the ID of a new Advantage+ catalog ads template creative.
 
 ```
-```
 {"id":"creative_id"}
-```
 ```
 
 #### Upload a catalog
@@ -595,24 +587,22 @@ The response to these calls is the ID of a new Advantage+ catalog ads template c
 When uploading a catalog, you can specify arbitrary alphanumeric string tags for each image in each property.
 
 ```
-```
 <listing>  
- <hotel_id>hotel_1</hotel_id>  
- ...  
- <image>  
- <url>https://media-cdn.tripadvisor.com/media/photo-o/05/ca/40/af/the-epiphany-a-joie-de.jpg (https://l.facebook.com/l.php?u=https%3A%2F%2Fmedia-cdn.tripadvisor.com%2Fmedia%2Fphoto-o%2F05%2Fca%2F40%2Faf%2Fthe-epiphany-a-joie-de.jpg&h=ATPTuLcCa7Vsnmn07cEVa0YseTFl1C2hOax9NezejmXDbR48w3CLdjLlwlpuGCRDQmuafQvk03ybGqfhk-2mBcH7xtuKAsnuuq9xKwBd8DwfuBMZkq3n1qX5MdychRKGy2bo2ax9BZQzgqVDY_AvC1EqE6aAdUEc)</url>  
- <tag>exterior</tag>  
- <tag>first image</tag>  
- <tag>tree</tag>  
- </image>  
- <image>  
- <url>http://www3.hilton.com/resources/media/hi/DFWANHH/en_US/img/shared/full_page_image_gallery/main/HH_exteriorview001_1270x560_FitToBoxSmallDimension_Center.jpg (http://l.facebook.com/l.php?u=http%3A%2F%2Fwww3.hilton.com%2Fresources%2Fmedia%2Fhi%2FDFWANHH%2Fen_US%2Fimg%2Fshared%2Ffull_page_image_gallery%2Fmain%2FHH_exteriorview001_1270x560_FitToBoxSmallDimension_Center.jpg&h=ATPTuLcCa7Vsnmn07cEVa0YseTFl1C2hOax9NezejmXDbR48w3CLdjLlwlpuGCRDQmuafQvk03ybGqfhk-2mBcH7xtuKAsnuuq9xKwBd8DwfuBMZkq3n1qX5MdychRKGy2bo2ax9BZQzgqVDY_AvC1EqE6aAdUEc)</url>  
- <tag>skyline</tag>  
- ...  
- </image>  
- ...  
+ <hotel_id>hotel_1</hotel_id>  
+ ...  
+ <image>  
+ <url>https://media-cdn.tripadvisor.com/media/photo-o/05/ca/40/af/the-epiphany-a-joie-de.jpg (https://l.facebook.com/l.php?u=https%3A%2F%2Fmedia-cdn.tripadvisor.com%2Fmedia%2Fphoto-o%2F05%2Fca%2F40%2Faf%2Fthe-epiphany-a-joie-de.jpg&h=ATPTuLcCa7Vsnmn07cEVa0YseTFl1C2hOax9NezejmXDbR48w3CLdjLlwlpuGCRDQmuafQvk03ybGqfhk-2mBcH7xtuKAsnuuq9xKwBd8DwfuBMZkq3n1qX5MdychRKGy2bo2ax9BZQzgqVDY_AvC1EqE6aAdUEc)</url>  
+ <tag>exterior</tag>  
+ <tag>first image</tag>  
+ <tag>tree</tag>  
+ </image>  
+ <image>  
+ <url>http://www3.hilton.com/resources/media/hi/DFWANHH/en_US/img/shared/full_page_image_gallery/main/HH_exteriorview001_1270x560_FitToBoxSmallDimension_Center.jpg (http://l.facebook.com/l.php?u=http%3A%2F%2Fwww3.hilton.com%2Fresources%2Fmedia%2Fhi%2FDFWANHH%2Fen_US%2Fimg%2Fshared%2Ffull_page_image_gallery%2Fmain%2FHH_exteriorview001_1270x560_FitToBoxSmallDimension_Center.jpg&h=ATPTuLcCa7Vsnmn07cEVa0YseTFl1C2hOax9NezejmXDbR48w3CLdjLlwlpuGCRDQmuafQvk03ybGqfhk-2mBcH7xtuKAsnuuq9xKwBd8DwfuBMZkq3n1qX5MdychRKGy2bo2ax9BZQzgqVDY_AvC1EqE6aAdUEc)</url>  
+ <tag>skyline</tag>  
+ ...  
+ </image>  
+ ...  
 </listing>
-```
 ```
 
 #### Create an ad creative
@@ -628,10 +618,10 @@ curl \
        "preferred_image_tags": ["skyline","exterior"],
        "preferred_video_tags": ["landscape","city"],
        "call_to_action": {"type":"BOOK_TRAVEL"},
-       "description": "{{hotel.description}}",
+       "description": "{​{hotel.description}​}",
        "link": "<URL>",
-        "message": "Book your stay in {{hotel.city}}",
-        "name": "{{hotel.name | titleize}}"
+        "message": "Book your stay in {​{hotel.city}​}",
+        "name": "{​{hotel.name | titleize}​}"
      }
     }' \
  -F 'product_set_id=<PRODUCT_SET_ID>' \
@@ -650,64 +640,62 @@ This example uses an XML file; other formats should be similar.
 When you add video to the listing, the `url` and `tag` fields are supported. Currently, **only one video is supported for each product**.
 
 ```
-```
-<?xml version="1.0" encoding="utf-8"?>  
+<?xml version="1.0" encoding="utf-8"?>  
 <listings>  
-  <title>Test hotel feed</title>  
-  <listing>  
-    <hotel_id>hotel_1</hotel_id>  
-    <name>Test Hotel 1</name>  
-    <description>A very nice hotel</description>  
-    <brand>Facebook</brand>  
-    <address format="simple">  
-      <component name="addr1">180 Hamilton Ave</component>  
-      <component name="city">Palo Alto</component>  
-      <component name="city_id">12345</component>  
-      <component name="region">California</component>  
-      <component name="postal_code">94301</component>  
-      <component name="country">United States</component>  
-    </address>  
-    <latitude>37.4435997</latitude>  
-    <longitude>-122.1615219</longitude>  
-    <neighborhood>Palo Alto</neighborhood>  
-    <neighborhood>Silicon Valley</neighborhood>  
-    <margin_level>8</margin_level>  
-    <base_price>200.5 USD</base_price>  
-    <phone>+1 650 666-3311</phone>  
-    <star_rating>2.5</star_rating>  
-    <guest_rating>  
-      <score>7.8</score>  
-      <rating_system>tripAdvisor</rating_system>  
-      <number_of_reviewers>300</number_of_reviewers>  
-    </guest_rating>  
-    <guest_rating>  
-      <score>9.8</score>  
-      <rating_system>Hotels.com</rating_system>  
-      <number_of_reviewers>35000</number_of_reviewers>  
-    </guest_rating>  
-    <image>  
-      <url>https://media-cdn.tripadvisor.com/media/photo-o/05/ca/40/af/the-epiphany-a-joie-de.jpg</url>  
-      <tag>front view</tag>  
-      <tag>first image</tag>  
-    </image>  
-    <image>  
-      <url>http://www.jdvhotels.com/content/uploads/2014/06/72-1200x800.jpg</url>  
-      <tag>room</tag>  
-      <tag>bed</tag>  
-    </image>  
-    <loyalty_program>Starwood</loyalty_program>  
-    <url>http://www.jdvhotels.com/hotels/california/silicon-valley-hotels/the-epiphany-hotel/</url>  
-    <applink property="ios_url" content="example-ios://electronic"/>  
-    <applink property="ios_app_store_id" content="42"/>  
-    <applink property="ios_app_name" content="Electronic Example iOS"/>  
-*    <video>  
-      <url>http://example.com/some_video1.mp4</url>  
-      <tag>City</tag>  
-      <tag>Package</tag>  
-    </video>*  
-  </listing>  
+  <title>Test hotel feed</title>  
+  <listing>  
+    <hotel_id>hotel_1</hotel_id>  
+    <name>Test Hotel 1</name>  
+    <description>A very nice hotel</description>  
+    <brand>Facebook</brand>  
+    <address format="simple">  
+      <component name="addr1">180 Hamilton Ave</component>  
+      <component name="city">Palo Alto</component>  
+      <component name="city_id">12345</component>  
+      <component name="region">California</component>  
+      <component name="postal_code">94301</component>  
+      <component name="country">United States</component>  
+    </address>  
+    <latitude>37.4435997</latitude>  
+    <longitude>-122.1615219</longitude>  
+    <neighborhood>Palo Alto</neighborhood>  
+    <neighborhood>Silicon Valley</neighborhood>  
+    <margin_level>8</margin_level>  
+    <base_price>200.5 USD</base_price>  
+    <phone>+1 650 666-3311</phone>  
+    <star_rating>2.5</star_rating>  
+    <guest_rating>  
+      <score>7.8</score>  
+      <rating_system>tripAdvisor</rating_system>  
+      <number_of_reviewers>300</number_of_reviewers>  
+    </guest_rating>  
+    <guest_rating>  
+      <score>9.8</score>  
+      <rating_system>Hotels.com</rating_system>  
+      <number_of_reviewers>35000</number_of_reviewers>  
+    </guest_rating>  
+    <image>  
+      <url>https://media-cdn.tripadvisor.com/media/photo-o/05/ca/40/af/the-epiphany-a-joie-de.jpg</url>  
+      <tag>front view</tag>  
+      <tag>first image</tag>  
+    </image>  
+    <image>  
+      <url>http://www.jdvhotels.com/content/uploads/2014/06/72-1200x800.jpg</url>  
+      <tag>room</tag>  
+      <tag>bed</tag>  
+    </image>  
+    <loyalty_program>Starwood</loyalty_program>  
+    <url>http://www.jdvhotels.com/hotels/california/silicon-valley-hotels/the-epiphany-hotel/</url>  
+    <applink property="ios_url" content="example-ios://electronic"/>  
+    <applink property="ios_app_store_id" content="42"/>  
+    <applink property="ios_app_name" content="Electronic Example iOS"/>  
+*    <video>  
+      <url>http://example.com/some_video1.mp4</url>  
+      <tag>City</tag>  
+      <tag>Package</tag>  
+    </video>*  
+  </listing>  
 </listings>
-```
 ```
 
 ##### Video specs
@@ -749,19 +737,19 @@ curl \
   -F 'object_story_spec={
     "page_id": "<PAGE_ID>",
     "template_data": {
-      "description": "Description {{product.description}}",
+      "description": "Description {​{product.description}​}",
       "link": "<URL>",
-      "message": "Test {{product.name | titleize}}",
-      "name": "Headline {{product.price}}"
+      "message": "Test {​{product.name | titleize}​}",
+      "name": "Headline {​{product.price}​}"
     }
   }' \
   -F 'template_url_spec={
     "ios": {
       "app_store_id": "123",
-      "url": "example:\/\/link\/?nav=item.view&id={{product.retailer_id | urlencode}}&referrer=http:\/\/rover.example.com\/rover\/1\/711-198453-24755-9\/16%3Fitemid={{product.retailer_id | urlencode | urlencode}}"
+      "url": "example:\/\/link\/?nav=item.view&id={​{product.retailer_id | urlencode}​}&referrer=http:\/\/rover.example.com\/rover\/1\/711-198453-24755-9\/16%3Fitemid={​{product.retailer_id | urlencode | urlencode}​}"
     },
     "web": {
-      "url": "http:\/\/clicktrack.com\/cm325?id={{product.retailer_id | urlencode}}&redirect_url={{product.url | urlencode | urlencode}}"
+      "url": "http:\/\/clicktrack.com\/cm325?id={​{product.retailer_id | urlencode}​}&redirect_url={​{product.url | urlencode | urlencode}​}"
     }
   }' \
   -F 'product_set_id=<PRODUCT_SET_ID>' \
@@ -771,31 +759,29 @@ curl \
 
 ### Use data feed file data in your template
 
-When an ad is displayed, Facebook replaces the content in the `{{ }}` section with the proper values from your data feed file. Available template values are:
+When an ad is displayed, Facebook replaces the content in the `{​{ }​}` section with the proper values from your data feed file. Available template values are:
 
 | Name | Description |
 | --- | --- |
-| `brand` | The item’s `brand` value from your data feed file. |
+| `brand` | The item's `brand` value from your data feed file. |
 | `current_price` | The formatted sale price if the product has a specified sale price. Optionally you can specify sale start and end dates for a product and `current_price` will show the sale price while the item is on sale. If no sale price is specified or the sale dates have passed, this will show the price field. |
-| `description` | The item’s `description` value from your data feed file. |
-| `name` | The item’s `title` value from your data feed file. |
+| `description` | The item's `description` value from your data feed file. |
+| `name` | The item's `title` value from your data feed file. |
 | `price` | The formatted `price` column (like `$1,234.56`). |
-| `retailer_id` | The item’s `id` value from your data feed file. |
-| `url` | The item’s `link` value from your data feed file. |
-| `custom_label_0` | The item’s `custom_label_0` value from your data feed file. |
-| `custom_label_1` | The item’s `custom_label_1` value from your data feed file. |
-| `custom_label_2` | The item’s `custom_label_2` value from your data feed file. |
-| `custom_label_3` | The item’s `custom_label_3` value from your data feed file. |
-| `custom_label_4` | The item’s `custom_label_4` value from your data feed file. |
+| `retailer_id` | The item's `id` value from your data feed file. |
+| `url` | The item's `link` value from your data feed file. |
+| `custom_label_0` | The item's `custom_label_0` value from your data feed file. |
+| `custom_label_1` | The item's `custom_label_1` value from your data feed file. |
+| `custom_label_2` | The item's `custom_label_2` value from your data feed file. |
+| `custom_label_3` | The item's `custom_label_3` value from your data feed file. |
+| `custom_label_4` | The item's `custom_label_4` value from your data feed file. |
 
 #### Options
 
 Some template values may receive options, in any order, in the following format:
 
 ```
-```
-{{field option1 option2 ...}}
-```
+{​{field option1 option2 ...}​}
 ```
 
 The following options are available:
@@ -811,17 +797,15 @@ The following options are available:
 You can use template values with **transformations**, which adjust your value based on this format:
 
 ```
-```
-{{field | transform}}
-```
+{​{field | transform}​}
 ```
 
 Use one of these transformations:
 
 | Transformations | Description |
 | --- | --- |
-| `number_format` | Format the number in a default format, using a comma (“,”) as thousand separator, rounded to the nearest integer (e.g., 1234.56->“1,235”). The value to format must be an unformatted number (“1234”, not “1,234”). |
-| `titleize` | Capitalize the words for a better looking title (e.g., “box” -> “Box”). |
+| `number_format` | Format the number in a default format, using a comma (",") as thousand separator, rounded to the nearest integer (e.g., 1234.56->"1,235"). The value to format must be an unformatted number ("1234", not "1,234"). |
+| `titleize` | Capitalize the words for a better looking title (e.g., "box" -> "Box"). |
 | `urlencode` | Encode the value for URL. |
 
 ### Specify desired behavior of ads click from mobile
@@ -836,8 +820,8 @@ If both these requirements are fulfilled, you can use the `applink_treatment` fi
 | Name | Description |
 | --- | --- |
 | `web_only` | Always send the user to the given web URL. |
-| `deeplink_with_web_fallback` | If the app is installed on the user’s phone and we have corresponding deep link information, send the user to the app. If one of these conditions is not met, send them to the website. |
-| `deeplink_with_appstore_fallback` | Default when app links are present for the product. If the app is installed on the user’s phone and we have corresponding deep link information, send the user to the app. If the app is not installed, send them to the app store for the app. |
+| `deeplink_with_web_fallback` | If the app is installed on the user's phone and we have corresponding deep link information, send the user to the app. If one of these conditions is not met, send them to the website. |
+| `deeplink_with_appstore_fallback` | Default when app links are present for the product. If the app is installed on the user's phone and we have corresponding deep link information, send the user to the app. If the app is not installed, send them to the app store for the app. |
 
 #### Examples
 
@@ -851,10 +835,10 @@ curl \
     "page_id": "<PAGE_ID>",
     "template_data": {
       "call_to_action": {"type":"SHOP_NOW"},
-      "description": "Description {{product.description}}",
+      "description": "Description {​{product.description}​}",
       "link": "<LINK>",
-      "message": "Test {{product.name | titleize}}",
-      "name": "Headline {{product.price}}"
+      "message": "Test {​{product.name | titleize}​}",
+      "name": "Headline {​{product.price}​}"
     }
   }' \
   -F 'product_set_id=<PRODUCT_SET_ID>' \
@@ -872,10 +856,10 @@ curl \
     "page_id": "<PAGE_ID>",
     "template_data": {
       "call_to_action": {"type":"SHOP_NOW"},
-      "description": "Description {{product.description}}",
+      "description": "Description {​{product.description}​}",
       "link": "<LINK>",
-      "message": "Test {{product.name | titleize}}",
-      "name": "Headline {{product.price}}"
+      "message": "Test {​{product.name | titleize}​}",
+      "name": "Headline {​{product.price}​}"
     }
   }' \
   -F 'product_set_id=<PRODUCT_SET_ID>' \
@@ -907,7 +891,7 @@ curl \
           },
           "link": "<OFFSITE_LANDING_URL>",
           "multi_share_end_card": false,
-          "name": "{{product.name}}"
+          "name": "{​{product.name}​}"
         },
         "page_id": "<PAGE_ID>",
         "instagram_user_id": "<IG_USER_ID>"
@@ -936,7 +920,7 @@ https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/ads
 
 Congratulations! You have created your first Advantage+ catalog ad. Feel free to unpause it to start delivery.
 
-When published as an Instagram Stories’ ad, Advantage+ catalog ads are cropped to 1:1 regardless of the dimensions of the original image.
+When published as an Instagram Stories' ad, Advantage+ catalog ads are cropped to 1:1 regardless of the dimensions of the original image.
 
 ## Next steps
 
@@ -964,7 +948,7 @@ https://graph.facebook.com/v25.0/<CREATIVE_ID>/previews
 
 You can fetch statistics per product by making a `GET` call to the [insights](https://developers.facebook.com/documentation/ads-commerce/marketing-api/insights) endpoint. Add `product_id` to the `fields` parameter.
 
-This shows statistics for all products in an account’s product sets displayed in Advantage+ catalog ads.
+This shows statistics for all products in an account's product sets displayed in Advantage+ catalog ads.
 
 #### Example
 
@@ -985,36 +969,34 @@ https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/insights
 ##### Response
 
 ```
-```
 {  
- "data": [  
-   {  
-      "account_id": "123456",  
-      "product_id": "60750",  
-      "date_start": "2015-02-03",  
-      "date_stop": "2015-02-03",  
-      "impressions": 880,  
-      "clicks": 8,  
-      "actions": [  
-        {  
-          "action_type": "link_click",  
-          "value": 6  
-        },  
-        {  
-          "action_type": "offsite_conversion.other",  
-          "value": 5  
-        },  
-        {  
-          "action_type": "offsite_conversion",  
-          "value": 5  
-        }  
-      ],  
-      "account_name": "My Account"  
-    },  
- ],  
+ "data": [  
+   {  
+      "account_id": "123456",  
+      "product_id": "60750",  
+      "date_start": "2015-02-03",  
+      "date_stop": "2015-02-03",  
+      "impressions": 880,  
+      "clicks": 8,  
+      "actions": [  
+        {  
+          "action_type": "link_click",  
+          "value": 6  
+        },  
+        {  
+          "action_type": "offsite_conversion.other",  
+          "value": 5  
+        },  
+        {  
+          "action_type": "offsite_conversion",  
+          "value": 5  
+        }  
+      ],  
+      "account_name": "My Account"  
+    },  
+ ],  
 ...  
 }
-```
 ```
 
 ### Fetch comments and likes
@@ -1024,11 +1006,9 @@ You can retrieve the comments, likes, and the `product_id` for an Advantage+ cat
 **Note**: You cannot use this endpoint to retrieve comments from Instagram.
 
 ```
-```
-curl -G \  
-  -d 'access_token=<ACCESS_TOKEN>' \  
-  https://graph.facebook.com/<API_VERSION>/<POST_ID>/dynamic_posts
-```
+curl -G \  
+  -d 'access_token=<ACCESS_TOKEN>' \  
+  https://graph.facebook.com/<API_VERSION>/<POST_ID>/dynamic_posts
 ```
 
 This endpoint returns [dynamic post](https://developers.facebook.com/docs/graph-api/reference/rtb-dynamic-post) objects.

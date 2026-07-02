@@ -30,7 +30,7 @@ https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/campaigns
 
 Once you have the campaign and the `campaign_id`, you can create the [ad set](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-campaign). The ad set defines the bidding and targeting options for your ads.
 
-If you don’t specify `destination_type` at the ad set level, your ads’ default destination is the website URL from your catalog.
+If you don't specify `destination_type` at the ad set level, your ads' default destination is the website URL from your catalog.
 
 ### On-Facebook destination
 
@@ -58,7 +58,7 @@ curl \
 https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/adsets
 ```
 
-Automotive ads don’t support inline dynamic audience targeting specs in the ad set. You must first separately [create an audience](https://developers.facebook.com/docs/marketing-api/dynamic-ads-for-auto/audience-management#create-audience).
+Automotive ads don't support inline dynamic audience targeting specs in the ad set. You must first separately [create an audience](https://developers.facebook.com/docs/marketing-api/dynamic-ads-for-auto/audience-management#create-audience).
 
 ## Step 3. Create ad creative
 
@@ -95,9 +95,9 @@ You can use **template tags** in your [ad creatives](https://developers.facebook
 ### Template tag guidelines
 
 * Use these fields in the template tag: `vehicle.city`, `vehicle.dealer_name`, `vehicle.description`, `vehicle.make`, `vehicle.mileage`, `vehicle.model`, `vehicle.price`, `vehicle.region`, `vehicle.sale_price`, `vehicle.title`, `vehicle.url`, and `vehicle.year`.
-* Use double curly brackets `{{....}}` with the template tags.
-* Before using template tags, make sure you provide all required details through your vehicle events. For example, the title of your ad could be: Checkout great deals from `{{dealer_name}}`.
-* Use the `template_url_spec` field to specify the URL that appears after someone clicks the ad. If you don’t provide `template_url_spec`, or Facebook can’t derive it when rendering an ad, Facebook displays the URL from the catalog.
+* Use double curly brackets `{​{....}​}` with the template tags.
+* Before using template tags, make sure you provide all required details through your vehicle events. For example, the title of your ad could be: Checkout great deals from `{​{dealer_name}​}`.
+* Use the `template_url_spec` field to specify the URL that appears after someone clicks the ad. If you don't provide `template_url_spec`, or Facebook can't derive it when rendering an ad, Facebook displays the URL from the catalog.
 * You can show a single product or a carousel with multiple products. For single-product ads, you can show multiple images of the same product in the carousel, assuming your catalog contains multiple images for each product. You can also display static cards in combination with dynamic cards.
 
 For more information about creative options, see [Building a Creative Template](https://developers.facebook.com/docs/marketing-api/dynamic-product-ads/ads-management#adtemplate).
@@ -119,11 +119,11 @@ $object_story_spec->setData(array(
   AdCreativeObjectStorySpecFields::TEMPLATE_DATA =>
     (new AdCreativeLinkData())->setData(array(
       AdCreativeLinkDataFields::MESSAGE =>
-        'Check out these vehicles from {{dealer_name}}',
-      AdCreativeLinkDataFields::NAME => '{{vehicle.year}} {{vehicle.make}} {{vehicle.model}}',
-      AdCreativeLinkDataFields::LINK => '{{vehicle.url}}',
+        'Check out these vehicles from {​{dealer_name}​}',
+      AdCreativeLinkDataFields::NAME => '{​{vehicle.year}​} {​{vehicle.make}​} {​{vehicle.model}​}',
+      AdCreativeLinkDataFields::LINK => '{​{vehicle.url}​}',
       AdCreativeLinkDataFields::DESCRIPTION =>
-        '{{vehicle.description}}',
+        '{​{vehicle.description}​}',
       AdCreativeLinkDataFields::ADDITIONAL_IMAGE_INDEX => 0,
       AdCreativeLinkDataFields::CALL_TO_ACTION => array(
         'type' => AdCreativeCallToActionTypeValues::LEARN_MORE,
@@ -139,7 +139,7 @@ $creative->setData(array(
     array(
       'web' => array(
         'url' => 'http://www.example.com/vehicle'.
-          '?id={{vehicle_id | urlencode}}',
+          '?id={​{vehicle_id | urlencode}​}',
       )
     ),
   AdCreativeFields::PRODUCT_SET_ID => <PRODUCT_SET_ID>,

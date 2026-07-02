@@ -97,8 +97,8 @@ HTTPPHP SDKJavaScript SDKAndroid SDKiOS SDK
 ---
 
 ```
-GET /v25.0/{product-catalog-id}/pricing_variables_batch HTTP/1.1  
-Host: graph.facebook.com
+GET /v25.0/{product-catalog-id}/pricing_variables_batch HTTP/1.1  
+Host: graph.facebook.com
 ```
 
 Try it in [Graph API Explorer](https://developers.facebook.com/tools/explorer/?method=GET&path=%7Bproduct-catalog-id%7D%2Fpricing_variables_batch&version=v25.0)

@@ -23,27 +23,25 @@ The **partner\_solutions webhook** describes changes to the status of a [Multi-P
 ## Syntax
 
 ```
-```
 {  
-  "entry": [  
-    {  
-      "changes": [  
-        {  
-          "field": "partner_solutions",  
-          "value": {  
-            "event": "<EVENT>",  
-            "solution_id": "<SOLUTION_ID>",  
-            "solution_status": "<SOLUTION_STATUS>"  
-          }  
-        }  
-      ],  
-      "id": "<BUSINESS_PORTFOLIO_ID>",  
-      "time": <WEBHOOK_TRIGGER_TIMESTAMP>  
-    }  
-  ],  
-  "object": "whatsapp_business_account"  
+  "entry": [  
+    {  
+      "changes": [  
+        {  
+          "field": "partner_solutions",  
+          "value": {  
+            "event": "<EVENT>",  
+            "solution_id": "<SOLUTION_ID>",  
+            "solution_status": "<SOLUTION_STATUS>"  
+          }  
+        }  
+      ],  
+      "id": "<BUSINESS_PORTFOLIO_ID>",  
+      "time": <WEBHOOK_TRIGGER_TIMESTAMP>  
+    }  
+  ],  
+  "object": "whatsapp_business_account"  
 }
-```
 ```
 
 ## Parameters
@@ -59,25 +57,23 @@ The **partner\_solutions webhook** describes changes to the status of a [Multi-P
 ## Example
 
 ```
-```
 {  
-  "entry": [  
-    {  
-      "changes": [  
-        {  
-          "field": "partner_solutions",  
-          "value": {  
-            "event": "SOLUTION_CREATED",  
-            "solution_id": "774485461512159",  
-            "solution_status": "INITIATED"  
-          }  
-        }  
-      ],  
-      "id": "506914307656634",  
-      "time": 1739321024  
-    }  
-  ],  
-  "object": "whatsapp_business_account"  
+  "entry": [  
+    {  
+      "changes": [  
+        {  
+          "field": "partner_solutions",  
+          "value": {  
+            "event": "SOLUTION_CREATED",  
+            "solution_id": "774485461512159",  
+            "solution_status": "INITIATED"  
+          }  
+        }  
+      ],  
+      "id": "506914307656634",  
+      "time": 1739321024  
+    }  
+  ],  
+  "object": "whatsapp_business_account"  
 }
-```
 ```

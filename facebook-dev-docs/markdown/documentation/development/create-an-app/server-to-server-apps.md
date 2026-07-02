@@ -19,7 +19,7 @@ The **Consumer** app type is for apps that integrate consumer-related products t
 
 ## Business
 
-The **Business** app type is for apps that help businesses, creators, and organizations manage their presence and advertise on Meta’s Social Technologies apps.
+The **Business** app type is for apps that help businesses, creators, and organizations manage their presence and advertise on Meta's Social Technologies apps.
 
 ### Access Levels
 

@@ -31,7 +31,7 @@ Today, non-template message responses to users are all service messages (`catego
 
 In H2 2026, Meta will charge for non-template messages sent in response to users, based on the category of the message:
 
-* **Effective August 1, 2026**, Meta will charge on a per-token basis for Meta Business Agent messages. Charges reflect the token consumption to ingest the user’s message (the prompt) and to generate a response.
+* **Effective August 1, 2026**, Meta will charge on a per-token basis for Meta Business Agent messages. Charges reflect the token consumption to ingest the user's message (the prompt) and to generate a response.
 * **Effective October 1, 2026**, Meta will charge on a per-message basis for service messages, consistent with how Meta charges for template messages.
 * **Effective October 1, 2026**, Meta will charge on a per-message basis for utility messages sent in response to users within an open 24-hour customer service window. These messages have not been charged since July 1, 2025.
 
@@ -59,8 +59,8 @@ The following table shows example interactions and their estimated cost.
 
 | Type of interaction | Example user message | Messages to the user | Tokens consumed | Estimated cost |
 | --- | --- | --- | --- | --- |
-| Simple inquiry | “At what time do you open?” | 4 | ~80,000 (~20,000/message) | ~16–20 cents |
-| Complex interaction | “I’m stuck on step 3 of this assembly—can you walk me through it?” | 10 | ~250,000 (~25,000/message) | ~40–50 cents |
+| Simple inquiry | "At what time do you open?" | 4 | ~80,000 (~20,000/message) | ~16–20 cents |
+| Complex interaction | "I'm stuck on step 3 of this assembly—can you walk me through it?" | 10 | ~250,000 (~25,000/message) | ~40–50 cents |
 
 #### Service messages
 
@@ -80,13 +80,13 @@ Below is an example of an interaction between a business and a user. It starts w
 | Sender | Message content | Message type | Message category | Charge as of August 1, 2026 | Charge as of October 1, 2026 |
 | --- | --- | --- | --- | --- | --- |
 | Business | Cart abandonment reminder | Template | Marketing | 1 marketing charge | 1 **marketing** charge |
-| User | “Do you have this in a Small?” | — | — | Opens 24-hour CSW¹ | — |
-| Business | Meta agentic response to user’s question | Non-template | Meta Business Agent | 1 Meta Business Agent charge | 1 **Meta Business Agent** charge |
-| User | “Do you have this in white?” | — | — | — | — |
-| Business | Meta agentic response to user’s question | Non-template | Meta Business Agent | 1 Meta Business Agent charge | 1 **Meta Business Agent** charge |
-| User | “I’m ready to check-out, but my card is expired” | — | — | — | — |
+| User | "Do you have this in a Small?" | — | — | Opens 24-hour CSW¹ | — |
+| Business | Meta agentic response to user's question | Non-template | Meta Business Agent | 1 Meta Business Agent charge | 1 **Meta Business Agent** charge |
+| User | "Do you have this in white?" | — | — | — | — |
+| Business | Meta agentic response to user's question | Non-template | Meta Business Agent | 1 Meta Business Agent charge | 1 **Meta Business Agent** charge |
+| User | "I'm ready to check-out, but my card is expired" | — | — | — | — |
 | *Meta Business Agent hands off to customer service rep* |  |  |  | — | — |
-| Business | Customer service rep responds to user’s question | Non-template | Service | No charge | 1 **service** charge |
+| Business | Customer service rep responds to user's question | Non-template | Service | No charge | 1 **service** charge |
 | Business | Order confirmation | Template | Utility | No charge | 1 **utility** charge |
 |  |  |  | **Total charges** | **3 charges** | **5 charges** |
 

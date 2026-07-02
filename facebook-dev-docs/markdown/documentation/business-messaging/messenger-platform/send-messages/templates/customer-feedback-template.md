@@ -39,86 +39,78 @@ In the following example, we are sending a basic coupon message that contains a 
 
 To send a coupon message, send a `POST` request to the `/PAGE-ID/messages` endpoint with a JSON object with the attachment type set to `template` and payload set with the `template_type` set to `coupon`, `title` set to coupon text, and the `coupon_code` set to the coupon code to send to the person.
 
-In the following code example we have set `title` to “10% off everything” and `coupon_code` to “10PERCENT”.
+In the following code example we have set `title` to "10% off everything" and `coupon_code` to "10PERCENT".
 
 The subtitle text, **Terms may apply.**, and **Reveal code** button text are the default text for these coupon message properties.
 
 ![Basic Messenger coupon template message titled 10% off everything with Terms may apply disclaimer and a Reveal code button](https://scontent.fdel1-9.fna.fbcdn.net/v/t39.2365-6/327764634_1628843484215623_5292291581993679431_n.png?_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=Zln6l0_TXkwQ7kNvwGGzDJZ&_nc_oc=AdrqeC-euqH58WsA8apW07_SLo_0tDUjkW9NIZYROEJ-5LXLQbzSjs8dgoZiiNBfN2bJb1B2bDk1I0GpmKNwToJF&_nc_zt=14&_nc_ht=scontent.fdel1-9.fna&_nc_gid=Yc3oy1eNxM0p5okaVP4Q6Q&_nc_ss=7b289&oh=00_AQDeFr9sKKaQdiIlNsoEvZKEkG-qysHBSPTeIvBHbhHv_w&oe=6A606A38)
 
 ```
-```
-curl -X POST -H "Content-Type: application/json" -d '{  
-  "recipient":{  
-    "id":"PSID"  
-  },  
-  "message":{  
-    "attachment": {  
-      "type": "template",  
-      "payload": {  
-          "template_type": "coupon",  
-          "title":"10% off everything",  
-          "coupon_code":"10PERCENT",  
-      },  
-    }  
-  }  
-}' "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/messages?access_token=PAGE-ACCESS-TOKEN"
-```
+curl -X POST -H "Content-Type: application/json" -d '{  
+  "recipient":{  
+    "id":"PSID"  
+  },  
+  "message":{  
+    "attachment": {  
+      "type": "template",  
+      "payload": {  
+          "template_type": "coupon",  
+          "title":"10% off everything",  
+          "coupon_code":"10PERCENT",  
+      },  
+    }  
+  }  
+}' "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/messages?access_token=PAGE-ACCESS-TOKEN"
 ```
 
 On success, your app receives the following JSON response with the PSID for the recipient and the ID for the message:
 
 ```
-```
 {  
-  "recipient_id": "PSID",  
-  "message_id": "MESSAGE-ID"  
+  "recipient_id": "PSID",  
+  "message_id": "MESSAGE-ID"  
 }
-```
 ```
 
 ## Send a Complex Coupon
 
 In the following example, we are sending a more complex coupon message that contains all the properties you can send in the coupon template payload.
 
-In the following code example we have configured a greeting using the `coupon_pre_message`, `title`, `subtitle`, the disclaimer that applies to this coupon, the second button with my store’s URL and “Shop now” text, an image from my store, and additional information to be sent in the webhook notification when a person clicks the **Reveal code** button.
+In the following code example we have configured a greeting using the `coupon_pre_message`, `title`, `subtitle`, the disclaimer that applies to this coupon, the second button with my store's URL and "Shop now" text, an image from my store, and additional information to be sent in the webhook notification when a person clicks the **Reveal code** button.
 
 ![Complex Messenger coupon template message with greeting, percent-off store image, title 10% off everything, subtitle, Reveal code and Shop now buttons](https://scontent.fdel1-4.fna.fbcdn.net/v/t39.2365-6/313869006_1101125734105247_6408134586873650465_n.png?_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=lTFxjpDunXEQ7kNvwF0b5KZ&_nc_oc=AdobmXfZVw41757cwr1SfuXf6RdIZTk_TKEVrZ37FzQ77_ar0Ud2oY-Mj5OBysveqZmEZ_j_qxylKqri_9UgtZF8&_nc_zt=14&_nc_ht=scontent.fdel1-4.fna&_nc_gid=Yc3oy1eNxM0p5okaVP4Q6Q&_nc_ss=7b289&oh=00_AQCHLA8z8Cqx2rfALFGK0ATWS65ILwpjCte6fOHPMxqtJQ&oe=6A607172)
 
 ```
-```
-curl -X POST -H "Content-Type: application/json" -d '{  
-  "recipient":{  
-    "id":"PSID"  
-  },  
-  "message":{  
-    "attachment": {  
-      "type": "template",  
-      "payload": {  
-          "template_type": "coupon",  
-          "title":"10% off everything",  
-          "subtitle":"10% off. Limit 1 per customer. Expires on October 1st, 2022",  
-          "coupon_code":"10PERCENT",  
-          "coupon_url":"https://www.myshop.com/",  
-          "coupon_url_button_title":"Shop now",  
-          "coupon_pre_message":"Here'\''s a deal just for you!",  
-          "image_url": "https://www.myshop.com/sale-image.png",  
-          "payload":"The coupon for 10% off everything that expires 2022-10-1",  
-      },  
-    }  
-  }  
-}' "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/messages?access_token=PAGE-ACCESS-TOKEN"
-```
+curl -X POST -H "Content-Type: application/json" -d '{  
+  "recipient":{  
+    "id":"PSID"  
+  },  
+  "message":{  
+    "attachment": {  
+      "type": "template",  
+      "payload": {  
+          "template_type": "coupon",  
+          "title":"10% off everything",  
+          "subtitle":"10% off. Limit 1 per customer. Expires on October 1st, 2022",  
+          "coupon_code":"10PERCENT",  
+          "coupon_url":"https://www.myshop.com/",  
+          "coupon_url_button_title":"Shop now",  
+          "coupon_pre_message":"Here'\''s a deal just for you!",  
+          "image_url": "https://www.myshop.com/sale-image.png",  
+          "payload":"The coupon for 10% off everything that expires 2022-10-1",  
+      },  
+    }  
+  }  
+}' "https://graph.facebook.com/LATEST-API-VERSION/PAGE-ID/messages?access_token=PAGE-ACCESS-TOKEN"
 ```
 
 On success, your app receives the following JSON response with the PSID for the recipient and the ID for the message:
 
 ```
-```
 {  
-  "recipient_id": "PSID",  
-  "message_id": "MESSAGE-ID"  
+  "recipient_id": "PSID",  
+  "message_id": "MESSAGE-ID"  
 }
-```
 ```
 
 ## Webhook Notification
@@ -126,22 +118,20 @@ On success, your app receives the following JSON response with the PSID for the 
 When a person clicks on the coupon message, a `messages` webhook notification is sent to your server. The notification will contain the PSID for the person who clicked the coupon message, the ID for the Page that sent the message, and payload information about the coupon.
 
 ```
-```
 {  
-  "sender": {  
-    "id": "PSID",  
-  },  
-  "recipient": {  
-    "id": "PAGE-ID",  
-  },  
-  "timestamp": UNIX-TIMESTAMP,  
-  "template": {  
-    "type" : "coupon",  
-    "payload" : "ADDITIONAL-INFORMATION",  
-    "coupon_code":"COUPON-CODE",  
-  }  
+  "sender": {  
+    "id": "PSID",  
+  },  
+  "recipient": {  
+    "id": "PAGE-ID",  
+  },  
+  "timestamp": UNIX-TIMESTAMP,  
+  "template": {  
+    "type" : "coupon",  
+    "payload" : "ADDITIONAL-INFORMATION",  
+    "coupon_code":"COUPON-CODE",  
+  }  
 }
-```
 ```
 
 ## Reference

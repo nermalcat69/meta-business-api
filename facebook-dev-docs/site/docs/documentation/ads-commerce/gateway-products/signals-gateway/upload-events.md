@@ -13,7 +13,7 @@ Please complete the initial setup phase of Signals Gateway using Google Chrome. 
 
 ![Signals Gateway admin Log In screen with Email and Password fields and a Log In button](https://scontent.fdel27-1.fna.fbcdn.net/v/t39.2365-6/473373807_1014272824052721_5442893480350000969_n.png?_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=TTCQjdjpVqAQ7kNvwEKkcbJ&_nc_oc=AdpCvURliJLr0yJWBvCgD2T6p3faZFvyVv5FOIhHKVpHPOw9VpLtgnAHG0TVw5S-LFRxhfy3VERz_gd1ZXuhtNUU&_nc_zt=14&_nc_ht=scontent.fdel27-1.fna&_nc_gid=Ho1LHb4r-og_eNaNh2zpbQ&_nc_ss=7b289&oh=00_AQBB8xVBm3DEP85U9sOx38F_xJEM_p3N2OanQ4B6HNIrsA&oe=6A6076E8)
 
-Once you’ve logged in successfully as an admin user, you’ll be guided through the final configuration steps of the Signals Gateway.
+Once you've logged in successfully as an admin user, you'll be guided through the final configuration steps of the Signals Gateway.
 
 ## 1. Welcome Page
 

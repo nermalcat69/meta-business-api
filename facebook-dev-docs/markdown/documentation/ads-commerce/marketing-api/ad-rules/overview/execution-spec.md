@@ -34,10 +34,10 @@ Each filter has a list of supported logical operators. Here are the logical oper
 | `NOT_EQUAL` | numeric (100) |
 | `IN_RANGE` | tuple ([100, 200]) |
 | `NOT_IN_RANGE` | tuple ([100, 200]) |
-| `IN` | list ([“1”, “2”, “3”]) |
-| `NOT_IN` | list ([“1”, “2”, “3”]) |
-| `CONTAIN` | string (“ABC”) |
-| `NOT_CONTAIN` | string (“ABC”) |
+| `IN` | list (["1", "2", "3"]) |
+| `NOT_IN` | list (["1", "2", "3"]) |
+| `CONTAIN` | string ("ABC") |
+| `NOT_CONTAIN` | string ("ABC") |
 | `ANY` | list ([1, 2, 3]) |
 | `ALL` | list ([1, 2, 3]) |
 | `NONE` | list ([1, 2, 3]) |
@@ -56,7 +56,7 @@ The `time_preset` filter determines the time period over which Insights metrics 
 
 The only supported operator for `time_preset` is `EQUAL`, and this is required as long as any Insights filter or trigger is present. Trigger Based Rules only support time presets that include `TODAY` because it performs real-time evaluation.
 
-Time presets for rules can behave differently from other interfaces. Some of the time presets here include today’s data. This is because today’s data is critical for rules that run more than once a day. For other interfaces, a preset value of `LAST_N_DAYS` generally does not include today’s data. See the descriptions below for more details.
+Time presets for rules can behave differently from other interfaces. Some of the time presets here include today's data. This is because today's data is critical for rules that run more than once a day. For other interfaces, a preset value of `LAST_N_DAYS` generally does not include today's data. See the descriptions below for more details.
 
 ```
 {
@@ -69,7 +69,7 @@ Time presets for rules can behave differently from other interfaces. Some of the
 | Time Preset Values | Description |
 | --- | --- |
 | `LIFETIME` | Lifetime of the object |
-| `TODAY` | The current day starting from midnight in the ad account’s timezone |
+| `TODAY` | The current day starting from midnight in the ad account's timezone |
 | `LAST_2_DAYS` | `YESTERDAY` and `TODAY` |
 | `LAST_3_DAYS` | Last 2 full days and `TODAY` |
 | `LAST_7_DAYS` | Last 6 full days and `TODAY` |
@@ -119,7 +119,7 @@ Whether specified or not, the only allowed `value` for the `attribution_window` 
 
 ## Metadata filters
 
-With metadata filters, you can filter objects based on the current state of their metadata fields. These also support multi-level filtering, which means you can use prefixes to apply a metadata filter on an object’s parent or grandparent. This does not affect other filters. Insights filters still apply to the normal object.
+With metadata filters, you can filter objects based on the current state of their metadata fields. These also support multi-level filtering, which means you can use prefixes to apply a metadata filter on an object's parent or grandparent. This does not affect other filters. Insights filters still apply to the normal object.
 
 All metadata filters are supported for Scheduled Rules, but only a subset are supported for Trigger Rules.
 
@@ -170,8 +170,8 @@ For instance, if you want a rule that applies to ad sets of ad campaigns whose o
 | `placement.page_types` | Page types for placement of the ad set of the object.  **Supported Prefixes:** ad set  **Supported Values:** `array(DESKTOPFEED, HOME, INSTAGRAMSTREAM, INSTAGRAMSTORY, ...)` **Supported Operators:** `ANY`, `ALL`, `NONE` |
 | `budget_reset_period` | Budget reset period of the ad set of the object.  **Supported Prefixes:** ad set  **Supported Values:** `array(DAY, LIFETIME)` **Supported Operators:** `IN`, `NOT_IN` |
 | `hours_since_creation` | Hours since `created_time` of the object.  **Supported Prefixes:** ad, ad set, ad campaign  **Supported Values:** `int` **Supported Operators:** `GREATER_THAN`, `LESS_THAN`, `IN_RANGE`, `NOT_IN_RANGE` |
-| `estimated_budget_spending_percentage` | Estimated percentage of your ad set’s budget to be spent by the end of its schedule. This uses the same mechanism as our [Ad Sets, Budget Rebalancing](https://developers.facebook.com/documentation/ads-commerce/marketing-api/bidding/overview#rebalance) feature, so it works with any budget type, but requires 10 hours of delivery per day.  **Supported Prefixes:** ad set  **Supported Values:** `int` **Supported Operators:** `GREATER_THAN`, `LESS_THAN`, `IN_RANGE`, `NOT_IN_RANGE` |
-| `audience_reached_percentage` | Estimated percentage of your ad set’s reach against its audience size.  **Supported Prefixes:** ad set  **Supported Values:** `int` **Supported Operators:** `GREATER_THAN`, `LESS_THAN`, `IN_RANGE`, `NOT_IN_RANGE` |
+| `estimated_budget_spending_percentage` | Estimated percentage of your ad set's budget to be spent by the end of its schedule. This uses the same mechanism as our [Ad Sets, Budget Rebalancing](https://developers.facebook.com/documentation/ads-commerce/marketing-api/bidding/overview#rebalance) feature, so it works with any budget type, but requires 10 hours of delivery per day.  **Supported Prefixes:** ad set  **Supported Values:** `int` **Supported Operators:** `GREATER_THAN`, `LESS_THAN`, `IN_RANGE`, `NOT_IN_RANGE` |
+| `audience_reached_percentage` | Estimated percentage of your ad set's reach against its audience size.  **Supported Prefixes:** ad set  **Supported Values:** `int` **Supported Operators:** `GREATER_THAN`, `LESS_THAN`, `IN_RANGE`, `NOT_IN_RANGE` |
 | `active_time` | Seconds since the object had an effective status of `ACTIVE`. If the object is not currently `ACTIVE`, this returns `0`.  **Supported Prefixes:** ad, ad set, ad campaign  **Supported Values:** `int` **Supported Operators:** `GREATER_THAN`, `LESS_THAN`, `IN_RANGE`, `NOT_IN_RANGE` |
 | `current_time` | Current epoch time.  **Supported Prefixes:** none  **Supported Values:** `int` **Supported Operators:** `GREATER_THAN`, `LESS_THAN`, `IN_RANGE`, `NOT_IN_RANGE` |
 
@@ -193,7 +193,7 @@ For all execution types that act upon active objects, this default filter has an
 
 Insights filters are evaluated against the current values returned from Insights API for a given `time_preset`. These filters apply directly to the list or level of objects, and do not support multi-level filtering. All Insights filters support the following operators: `GREATER_THAN`, `LESS_THAN`, `EQUAL`, `IN_RANGE`, `NOT_IN_RANGE`.
 
-The units represented here are based on the currency’s base in the Marketing API. For example, for USD, the base unit is the cent, which means that a value of 1000 for spent is equivalent to $10.00.
+The units represented here are based on the currency's base in the Marketing API. For example, for USD, the base unit is the cent, which means that a value of 1000 for spent is equivalent to $10.00.
 
 For a description of each of the fields below, see the [Insights API docs](https://developers.facebook.com/docs/marketing-api/insights/fields). All of these filters are supported by Schedule Based Rules.
 

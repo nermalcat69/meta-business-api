@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/marketing
 
 Updated: Jun 16, 2026
 
-To use the Marketing API, you must follow some key steps to set up your environment and gain access to the API’s features. This section outlines the prerequisites necessary for getting started.
+To use the Marketing API, you must follow some key steps to set up your environment and gain access to the API's features. This section outlines the prerequisites necessary for getting started.
 
 ## Ad account requirements
 

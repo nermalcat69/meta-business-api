@@ -27,9 +27,7 @@ WhatsApp sends a standard [message status webhook](https://developers.facebook.c
 #### Request syntax
 
 ```
-```
-POST <PHONE_NUMBER_ID>/messages
-```
+POST <PHONE_NUMBER_ID>/messages
 ```
 
 | Placeholder | Description | Sample value |
@@ -39,29 +37,27 @@ POST <PHONE_NUMBER_ID>/messages
 #### Request body
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "recipient_type": "individual",  
-  "to": "14085551234",  
-  "recipient": "US.13491208655302741918",  
-  "type": "interactive",  
-  "interactive" : {  
-    "type" : "voice_call",  
-    "body" : {  
-      "text": "You can call us on WhatsApp now for faster service!"  
-    },  
-    "action": {  
-      "name": "voice_call",  
-      "parameters": {  
-        "display_text": "Call on WhatsApp",  
-        "ttl_minutes": 100,  
-        "payload": "payload data"  
-      }  
-    }  
-  }  
+  "messaging_product": "whatsapp",  
+  "recipient_type": "individual",  
+  "to": "14085551234",  
+  "recipient": "US.13491208655302741918",  
+  "type": "interactive",  
+  "interactive" : {  
+    "type" : "voice_call",  
+    "body" : {  
+      "text": "You can call us on WhatsApp now for faster service!"  
+    },  
+    "action": {  
+      "name": "voice_call",  
+      "parameters": {  
+        "display_text": "Call on WhatsApp",  
+        "ttl_minutes": 100,  
+        "payload": "payload data"  
+      }  
+    }  
+  }  
 }
-```
 ```
 
 #### Body parameters
@@ -71,10 +67,10 @@ POST <PHONE_NUMBER_ID>/messages
 | Parameter | Description | Sample value |
 | --- | --- | --- |
 | `to`  *Integer* | **Required** (unless `recipient` is provided)  The phone number of the WhatsApp user you are messaging.  [Learn more about formatting phone numbers in Cloud API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/whatsapp-business-account-phone-number-api) | `"17863476655"` |
-| `recipient`  *String* | **Optional**  The WhatsApp user’s business-scoped user ID (BSUID) or parent BSUID. Use this instead of, or in addition to, `to`. If you include both, `to` takes precedence.  [Learn more about business-scoped user IDs](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#business-scoped-user-id) | `"US.13491208655302741918"` |
+| `recipient`  *String* | **Optional**  The WhatsApp user's business-scoped user ID (BSUID) or parent BSUID. Use this instead of, or in addition to, `to`. If you include both, `to` takes precedence.  [Learn more about business-scoped user IDs](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#business-scoped-user-id) | `"US.13491208655302741918"` |
 | `type`  *String* | **Required**  The type of interactive message you are sending.  In this case, you are sending a `voice_call`.  [Learn more about interactive messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/message-api) | `"voice_call"` |
 | `action`  *String* | **Required**  The action of your interactive message.  Must be `voice_call`. | `"voice_call"` |
-| `parameters`  *JSON Object* | **Optional**    Optional parameters for the WhatsApp calling button sent to the user.  Contains three values: `display_text`, `ttl_minutes`, and `payload`.  `display_text` — (*String*) **Optional**  The display text on the WhatsApp calling button sent to the user.  Default is `Call Now`.  Max length: 20 characters.  `ttl_minutes` — (*Integer*) **Optional**  Time to live for the call-to-action (CTA) button in minutes.  Must be between 1 and 43200 (30 days).  Default value is 10080 (7 days).  `payload` — (*String*) **Optional**  An arbitrary string, useful for tracking.  Any app subscribed to the `calls` webhook field on the WhatsApp Business account can get this string. The string is included in the `connect` and `terminate` webhook payloads under the `cta_payload` field.  Cloud API does not process the `cta_payload` field; it returns the value in webhook payloads.  Maximum 512 characters.  Payload is only available to WhatsApp clients starting on version 2.25.27. | ```  ``` "parameters": { "display_text": "Call on WhatsApp", "ttl_minutes": 100, "payload": "payload data" } ``` ``` |
+| `parameters`  *JSON Object* | **Optional**    Optional parameters for the WhatsApp calling button sent to the user.  Contains three values: `display_text`, `ttl_minutes`, and `payload`.  `display_text` — (*String*) **Optional**  The display text on the WhatsApp calling button sent to the user.  Default is `Call Now`.  Max length: 20 characters.  `ttl_minutes` — (*Integer*) **Optional**  Time to live for the call-to-action (CTA) button in minutes.  Must be between 1 and 43200 (30 days).  Default value is 10080 (7 days).  `payload` — (*String*) **Optional**  An arbitrary string, useful for tracking.  Any app subscribed to the `calls` webhook field on the WhatsApp Business account can get this string. The string is included in the `connect` and `terminate` webhook payloads under the `cta_payload` field.  Cloud API does not process the `cta_payload` field; it returns the value in webhook payloads.  Maximum 512 characters.  Payload is only available to WhatsApp clients starting on version 2.25.27. | ``` "parameters": { "display_text": "Call on WhatsApp", "ttl_minutes": 100, "payload": "payload data" } ``` |
 
 **Usernames and business-scoped user IDs:** The `recipient` field lets you identify the WhatsApp user by their BSUID instead of, or in addition to, their phone number in `to`. For details, see [Business-scoped user IDs](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#business-scoped-user-id).
 
@@ -105,9 +101,7 @@ Use this endpoint to create a call button message template.
 #### Request syntax
 
 ```
-```
-POST /<WHATSAPP_BUSINESS_ACCOUNT_ID>/message_templates
-```
+POST /<WHATSAPP_BUSINESS_ACCOUNT_ID>/message_templates
 ```
 
 | Parameter | Description | Sample value |
@@ -117,34 +111,32 @@ POST /<WHATSAPP_BUSINESS_ACCOUNT_ID>/message_templates
 #### Request body
 
 ```
-```
 {  
-  "name": "<NAME>",  
-  "category": "<CATEGORY>",  
-  "language": "<LANGUAGE>",  
-  "components": [  
-    {  
-      "type": "BODY",  
-      "text": "You can call us on WhatsApp now for faster service!"  
-    },  
-    {  
-      "type": "BUTTONS",  
-      "buttons": [  
-        {  
-          "type": "voice_call",  
-          "text": "Call Now",  
-          "ttl_minutes": 1440  
-        },  
-        {  
-          "type": "URL",  
-          "text": "Contact Support",  
-          "url": "https://www.luckyshrub.com/support"  
-        }  
-      ]  
-    }  
-  ]  
+  "name": "<NAME>",  
+  "category": "<CATEGORY>",  
+  "language": "<LANGUAGE>",  
+  "components": [  
+    {  
+      "type": "BODY",  
+      "text": "You can call us on WhatsApp now for faster service!"  
+    },  
+    {  
+      "type": "BUTTONS",  
+      "buttons": [  
+        {  
+          "type": "voice_call",  
+          "text": "Call Now",  
+          "ttl_minutes": 1440  
+        },  
+        {  
+          "type": "URL",  
+          "text": "Contact Support",  
+          "url": "https://www.luckyshrub.com/support"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 #### Body parameters
@@ -164,13 +156,11 @@ When creating your call button template, ensure you configure `type` as `voice_c
 #### Success response
 
 ```
-```
 {  
-  "id": "<ID>",  
-  "status": "<STATUS>",  
-  "category": "<CATEGORY>"  
+  "id": "<ID>",  
+  "status": "<STATUS>",  
+  "category": "<CATEGORY>"  
 }
-```
 ```
 
 [*Learn more about messaging success responses*](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/message-api)
@@ -194,9 +184,7 @@ The following is a simplified sample of the send template message request. You c
 #### Request syntax
 
 ```
-```
-POST /<PHONE_NUMBER_ID>/messages
-```
+POST /<PHONE_NUMBER_ID>/messages
 ```
 
 | Parameter | Description | Sample value |
@@ -206,44 +194,42 @@ POST /<PHONE_NUMBER_ID>/messages
 #### Request body
 
 ```
-```
 {  
-  "to": "14085551234",  
-  "recipient": "US.13491208655302741918",  
-  "messaging_product": "whatsapp",  
-  "type": "template",  
-  "recipient_type": "individual",  
-  "template": {  
-    "name": "wa_voice_call",  
-    "language": {  
-      "code": "en"  
-    },  
-    "components": [  
-      {  
-        "type": "button",  
-        "sub_type" : "voice_call",  
-        "parameters": [  
-          {  
-            "type": "ttl_minutes",  
-            "ttl_minutes": 100  
-          },  
-          {  
-            "type": "payload",  
-            "payload": "payload data"  
-          }  
-        ]  
-      }  
-    ]  
-  }  
+  "to": "14085551234",  
+  "recipient": "US.13491208655302741918",  
+  "messaging_product": "whatsapp",  
+  "type": "template",  
+  "recipient_type": "individual",  
+  "template": {  
+    "name": "wa_voice_call",  
+    "language": {  
+      "code": "en"  
+    },  
+    "components": [  
+      {  
+        "type": "button",  
+        "sub_type" : "voice_call",  
+        "parameters": [  
+          {  
+            "type": "ttl_minutes",  
+            "ttl_minutes": 100  
+          },  
+          {  
+            "type": "payload",  
+            "payload": "payload data"  
+          }  
+        ]  
+      }  
+    ]  
+  }  
 }
-```
 ```
 
 #### Request parameters
 
 | Parameter | Description | Sample value |
 | --- | --- | --- |
-| `recipient`  *String* | **Optional**  The WhatsApp user’s business-scoped user ID (BSUID) or parent BSUID. Use this instead of, or in addition to, `to`. If you include both, `to` takes precedence.  [Learn more about business-scoped user IDs](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#business-scoped-user-id) | `"US.13491208655302741918"` |
+| `recipient`  *String* | **Optional**  The WhatsApp user's business-scoped user ID (BSUID) or parent BSUID. Use this instead of, or in addition to, `to`. If you include both, `to` takes precedence.  [Learn more about business-scoped user IDs](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#business-scoped-user-id) | `"US.13491208655302741918"` |
 | `ttl_minutes`  *Integer* | **Optional**  Time to live for the CTA button in minutes.  Must be between 1 and 43200 (30 days).  Default value is 10080 (7 days). | `10800` |
 | `payload`  *String* | **Optional**  An arbitrary string, useful for tracking.  Any app subscribed to the `calls` webhook field on the WhatsApp Business account can get this string. The string is included in the `connect` and `terminate` webhook payloads under the `cta_payload` field.  Cloud API does not process this field; it returns the value in webhook payloads.  Maximum 512 characters.  Payload is only available to WhatsApp clients starting on version 2.25.27. | `payload data` |
 

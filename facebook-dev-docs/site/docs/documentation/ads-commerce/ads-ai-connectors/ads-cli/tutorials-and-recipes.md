@@ -26,13 +26,11 @@ A dataset represents a [Meta Pixel](https://developers.facebook.com/docs/meta-pi
 ### List datasets
 
 ```
-```
-# List from the ad account (default and fallback)  
-meta ads dataset list  
+# List from the ad account (default and fallback)  
+meta ads dataset list  
   
-# List from a specific business  
-meta ads dataset list --business-id <BUSINESS_ID>
-```
+# List from a specific business  
+meta ads dataset list --business-id <BUSINESS_ID>
 ```
 
 The business ID is resolved automatically from your configured ad account. Set the `BUSINESS_ID` environment variable (see [Configuration](https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-cli/setup/configuration)) or use `--business-id` to specify one explicitly.
@@ -42,10 +40,8 @@ The business ID is resolved automatically from your configured ad account. Set t
 Before creating a dataset, a business admin must accept the [Meta business tools terms of service⁠](https://www.facebook.com/legal/terms/businesstools/). Ads CLI prompts you to complete this step if needed (see [Meta Platform Terms](https://developers.facebook.com/terms/dfc_platform_terms/)).
 
 ```
-```
-meta ads dataset create --name "My Website Pixel"  
-meta ads dataset create --name "My Pixel" --business-id <BUSINESS_ID>
-```
+meta ads dataset create --name "My Website Pixel"  
+meta ads dataset create --name "My Pixel" --business-id <BUSINESS_ID>
 ```
 
 After creation, Ads CLI automatically assigns the authenticated user to the dataset with `ADVERTISE`, `ANALYZE`, and `EDIT` permissions.
@@ -53,10 +49,8 @@ After creation, Ads CLI automatically assigns the authenticated user to the data
 ### View dataset details
 
 ```
-```
-meta ads dataset get <PIXEL_ID>  
-meta --output json ads dataset get <PIXEL_ID>
-```
+meta ads dataset get <PIXEL_ID>  
+meta --output json ads dataset get <PIXEL_ID>
 ```
 
 ### Connect a dataset
@@ -66,36 +60,28 @@ Connect datasets to ad accounts and/or product catalogs before using them.
 #### Connect to an ad account
 
 ```
-```
-meta ads dataset connect <PIXEL_ID> --ad-account-id <AD_ACCOUNT_ID>
-```
+meta ads dataset connect <PIXEL_ID> --ad-account-id <AD_ACCOUNT_ID>
 ```
 
 #### Connect to a product catalog (for conversion tracking on catalog products)
 
 ```
-```
-meta ads dataset connect <PIXEL_ID> --catalog-id <CATALOG_ID>
-```
+meta ads dataset connect <PIXEL_ID> --catalog-id <CATALOG_ID>
 ```
 
 #### Connect to both in a single command
 
 ```
-```
-meta ads dataset connect <PIXEL_ID> --ad-account-id <AD_ACCOUNT_ID> --catalog-id <CATALOG_ID>
-```
+meta ads dataset connect <PIXEL_ID> --ad-account-id <AD_ACCOUNT_ID> --catalog-id <CATALOG_ID>
 ```
 
 ### Disconnect a dataset
 
-Remove a dataset’s connection to an ad account:
+Remove a dataset's connection to an ad account:
 
 ```
-```
-meta ads dataset disconnect <PIXEL_ID> --ad-account-id <AD_ACCOUNT_ID>  
-meta ads dataset disconnect <PIXEL_ID> --ad-account-id <AD_ACCOUNT_ID> --force
-```
+meta ads dataset disconnect <PIXEL_ID> --ad-account-id <AD_ACCOUNT_ID>  
+meta ads dataset disconnect <PIXEL_ID> --ad-account-id <AD_ACCOUNT_ID> --force
 ```
 
 ### Assign users
@@ -103,16 +89,14 @@ meta ads dataset disconnect <PIXEL_ID> --ad-account-id <AD_ACCOUNT_ID> --
 Grant a user permissions on a dataset:
 
 ```
-```
-# Assign yourself (default: ADVERTISE + ANALYZE)  
-meta ads dataset assign-user <PIXEL_ID>  
+# Assign yourself (default: ADVERTISE + ANALYZE)  
+meta ads dataset assign-user <PIXEL_ID>  
   
-# Assign a specific user  
-meta ads dataset assign-user <PIXEL_ID> --user-id <USER_ID>  
+# Assign a specific user  
+meta ads dataset assign-user <PIXEL_ID> --user-id <USER_ID>  
   
-# Grant specific permissions  
-meta ads dataset assign-user <PIXEL_ID> --tasks ADVERTISE --tasks ANALYZE --tasks EDIT
-```
+# Grant specific permissions  
+meta ads dataset assign-user <PIXEL_ID> --tasks ADVERTISE --tasks ANALYZE --tasks EDIT
 ```
 
 Available tasks: `ADVERTISE`, `ANALYZE`, `EDIT`, `UPLOAD`
@@ -122,19 +106,17 @@ Available tasks: `ADVERTISE`, `ANALYZE`, `EDIT`, `UPLOAD`
 Once a dataset is connected to your ad account, reference it when creating conversion ad sets and ads:
 
 ```
-```
-# Create a conversion ad set with Pixel tracking  
-meta ads adset create <CAMPAIGN_ID> --name "Purchase Conversions" \  
-  --optimization-goal OFFSITE_CONVERSIONS \  
-  --billing-event IMPRESSIONS \  
-  --pixel-id <PIXEL_ID> \  
-  --custom-event-type PURCHASE \  
-  --targeting-countries US  
+# Create a conversion ad set with Pixel tracking  
+meta ads adset create <CAMPAIGN_ID> --name "Purchase Conversions" \  
+  --optimization-goal OFFSITE_CONVERSIONS \  
+  --billing-event IMPRESSIONS \  
+  --pixel-id <PIXEL_ID> \  
+  --custom-event-type PURCHASE \  
+  --targeting-countries US  
   
-# Create an ad with Pixel tracking  
-meta ads ad create <AD_SET_ID> --name "Conversion Ad" \  
-  --creative-id <CREATIVE_ID> --pixel-id <PIXEL_ID>
-```
+# Create an ad with Pixel tracking  
+meta ads ad create <AD_SET_ID> --name "Conversion Ad" \  
+  --creative-id <CREATIVE_ID> --pixel-id <PIXEL_ID>
 ```
 
 ## Product catalogs
@@ -144,20 +126,16 @@ Product catalogs hold your product inventory for Advantage+ catalog ads, shoppin
 ### List catalogs
 
 ```
-```
-meta ads catalog list  
-meta ads catalog list --business-id <BUSINESS_ID>  
-meta ads catalog list --limit 50
-```
+meta ads catalog list  
+meta ads catalog list --business-id <BUSINESS_ID>  
+meta ads catalog list --limit 50
 ```
 
 ### Create a catalog
 
 ```
-```
-meta ads catalog create --name "My Product Catalog"  
-meta ads catalog create --name "Hotel Inventory" --vertical hotels
-```
+meta ads catalog create --name "My Product Catalog"  
+meta ads catalog create --name "Hotel Inventory" --vertical hotels
 ```
 
 The `--vertical` option specifies the type of products in the catalog.
@@ -167,27 +145,21 @@ The `--vertical` option specifies the type of products in the catalog.
 ### View catalog details
 
 ```
-```
-meta ads catalog get <CATALOG_ID>  
-meta --output json ads catalog get <CATALOG_ID>
-```
+meta ads catalog get <CATALOG_ID>  
+meta --output json ads catalog get <CATALOG_ID>
 ```
 
 ### Update a catalog
 
 ```
-```
-meta ads catalog update <CATALOG_ID> --name "Renamed Catalog"
-```
+meta ads catalog update <CATALOG_ID> --name "Renamed Catalog"
 ```
 
 ### Delete a catalog
 
 ```
-```
-meta ads catalog delete <CATALOG_ID>  
-meta ads catalog delete <CATALOG_ID> --force
-```
+meta ads catalog delete <CATALOG_ID>  
+meta ads catalog delete <CATALOG_ID> --force
 ```
 
 **Note:** You cannot delete catalogs that have active product feeds or ads referencing them.
@@ -195,34 +167,32 @@ meta ads catalog delete <CATALOG_ID> --force
 ## Full workflow: set up conversion tracking
 
 ```
-```
-# 1. Create a dataset (Pixel)  
-meta ads dataset create --name "Website Pixel"  
-# Output: Created dataset 'Website Pixel' (ID: <PIXEL_ID>)  
+# 1. Create a dataset (Pixel)  
+meta ads dataset create --name "Website Pixel"  
+# Output: Created dataset 'Website Pixel' (ID: <PIXEL_ID>)  
   
-# 2. Connect the dataset to your ad account  
-meta ads dataset connect <PIXEL_ID> --ad-account-id <AD_ACCOUNT_ID>  
+# 2. Connect the dataset to your ad account  
+meta ads dataset connect <PIXEL_ID> --ad-account-id <AD_ACCOUNT_ID>  
   
-# 3. (Optional) Connect to a catalog for product-level tracking  
-meta ads dataset connect <PIXEL_ID> --catalog-id <CATALOG_ID>  
+# 3. (Optional) Connect to a catalog for product-level tracking  
+meta ads dataset connect <PIXEL_ID> --catalog-id <CATALOG_ID>  
   
-# 4. Create a conversion ad campaign  
-meta ads campaign create --name "Sales Campaign" --objective OUTCOME_SALES  
+# 4. Create a conversion ad campaign  
+meta ads campaign create --name "Sales Campaign" --objective OUTCOME_SALES  
   
-# 5. Create a conversion ad set using a Pixel  
-meta ads adset create <CAMPAIGN_ID> --name "Purchase Optimization" \  
-  --optimization-goal OFFSITE_CONVERSIONS \  
-  --billing-event IMPRESSIONS \  
-  --pixel-id <PIXEL_ID> \  
-  --custom-event-type PURCHASE \  
-  --targeting-countries US  
+# 5. Create a conversion ad set using a Pixel  
+meta ads adset create <CAMPAIGN_ID> --name "Purchase Optimization" \  
+  --optimization-goal OFFSITE_CONVERSIONS \  
+  --billing-event IMPRESSIONS \  
+  --pixel-id <PIXEL_ID> \  
+  --custom-event-type PURCHASE \  
+  --targeting-countries US  
   
-# 6. Create an ad creative and ad  
-meta ads creative create --name "Product Ad" --page-id <PAGE_ID> \  
-  --image ./product.jpg --body "Buy now!" \  
-  --link-url https://example.com --call-to-action SHOP_NOW  
+# 6. Create an ad creative and ad  
+meta ads creative create --name "Product Ad" --page-id <PAGE_ID> \  
+  --image ./product.jpg --body "Buy now!" \  
+  --link-url https://example.com --call-to-action SHOP_NOW  
   
-meta ads ad create <AD_SET_ID> --name "Product Ad" \  
-  --creative-id <CREATIVE_ID> --pixel-id <PIXEL_ID>
-```
+meta ads ad create <AD_SET_ID> --name "Product Ad" \  
+  --creative-id <CREATIVE_ID> --pixel-id <PIXEL_ID>
 ```

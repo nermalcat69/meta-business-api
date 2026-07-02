@@ -56,11 +56,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{WABA-ID}/activities' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{WABA-ID}/activities' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -71,35 +71,35 @@ Select status code
 
 ```
 {  
-  "recent_activities": {  
-    "summary": "Recent account activities",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "1234567890123456",  
-          "event_type": "PHONE_NUMBER_ADDED",  
-          "category": "PHONE_NUMBER",  
-          "timestamp": 1697377800,  
-          "actor_id": "9876543210987654",  
-          "actor_business_id": "5678901234567890"  
-        },  
-        {  
-          "id": "1234567890123457",  
-          "event_type": "USER_ADDED",  
-          "category": "USER",  
-          "timestamp": 1697374200,  
-          "actor_id": "1111222233334444",  
-          "actor_business_id": "5678901234567890"  
-        }  
-      ],  
-      "paging": {  
-        "cursors": {  
-          "after": "NDMyNzQyODI3OTQw",  
-          "before": "MTAxNTExOTQ1MjAwNzI5NDE="  
-        }  
-      }  
-    }  
-  }  
+  "recent_activities": {  
+    "summary": "Recent account activities",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "1234567890123456",  
+          "event_type": "PHONE_NUMBER_ADDED",  
+          "category": "PHONE_NUMBER",  
+          "timestamp": 1697377800,  
+          "actor_id": "9876543210987654",  
+          "actor_business_id": "5678901234567890"  
+        },  
+        {  
+          "id": "1234567890123457",  
+          "event_type": "USER_ADDED",  
+          "category": "USER",  
+          "timestamp": 1697374200,  
+          "actor_id": "1111222233334444",  
+          "actor_business_id": "5678901234567890"  
+        }  
+      ],  
+      "paging": {  
+        "cursors": {  
+          "after": "NDMyNzQyODI3OTQw",  
+          "before": "MTAxNTExOTQ1MjAwNzI5NDE="  
+        }  
+      }  
+    }  
+  }  
 }
 ```
 
@@ -474,11 +474,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{WABA-ID}/activities' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{WABA-ID}/activities' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -489,35 +489,35 @@ Select status code
 
 ```
 {  
-  "recent_activities": {  
-    "summary": "Recent account activities",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "1234567890123456",  
-          "event_type": "PHONE_NUMBER_ADDED",  
-          "category": "PHONE_NUMBER",  
-          "timestamp": 1697377800,  
-          "actor_id": "9876543210987654",  
-          "actor_business_id": "5678901234567890"  
-        },  
-        {  
-          "id": "1234567890123457",  
-          "event_type": "USER_ADDED",  
-          "category": "USER",  
-          "timestamp": 1697374200,  
-          "actor_id": "1111222233334444",  
-          "actor_business_id": "5678901234567890"  
-        }  
-      ],  
-      "paging": {  
-        "cursors": {  
-          "after": "NDMyNzQyODI3OTQw",  
-          "before": "MTAxNTExOTQ1MjAwNzI5NDE="  
-        }  
-      }  
-    }  
-  }  
+  "recent_activities": {  
+    "summary": "Recent account activities",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "1234567890123456",  
+          "event_type": "PHONE_NUMBER_ADDED",  
+          "category": "PHONE_NUMBER",  
+          "timestamp": 1697377800,  
+          "actor_id": "9876543210987654",  
+          "actor_business_id": "5678901234567890"  
+        },  
+        {  
+          "id": "1234567890123457",  
+          "event_type": "USER_ADDED",  
+          "category": "USER",  
+          "timestamp": 1697374200,  
+          "actor_id": "1111222233334444",  
+          "actor_business_id": "5678901234567890"  
+        }  
+      ],  
+      "paging": {  
+        "cursors": {  
+          "after": "NDMyNzQyODI3OTQw",  
+          "before": "MTAxNTExOTQ1MjAwNzI5NDE="  
+        }  
+      }  
+    }  
+  }  
 }
 ```
 

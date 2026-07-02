@@ -27,7 +27,7 @@ MessengerExtensions.getContext(app_id, success, error)
 
 ## Retrieve thread context
 
-Call this function to get the person’s PSID, thread ID, and thread type.
+Call this function to get the person's PSID, thread ID, and thread type.
 
 ```
 MessengerExtensions.getContext('<YOUR_APP_ID>',
@@ -45,14 +45,12 @@ MessengerExtensions.getContext('<YOUR_APP_ID>',
 The response passed to the success callback is a JavaScript object in the following format:
 
 ```
-```
 {  
-  "thread_type": "GROUP",  
-  "tid": "1411911565550430",  
-  "psid": "1293479104029354",  
-  "signed_request": "5f8i9XXH2hEaykXHKFvu-E5Nr6QRqN002JO7yl-w_9o.eyJhbGdvcml0aG0iOiJITUFDLVNIQTI1NiIsImlzc3VlZF9hdCI6MTUwNDA0NjM4MCwicGFnZV9pZCI6NjgyNDk4MTcxOTQzMTY1LCJwc2lkIjoiMTI1NDQ1OTE1NDY4MjkxOSIsInRocmVhZF90eXBlIjoiVVNFUl9UT19QQUdFIiwidGlkIjoiMTI1NDQ1OTE1NDY4MjkxOSJ9"  
+  "thread_type": "GROUP",  
+  "tid": "1411911565550430",  
+  "psid": "1293479104029354",  
+  "signed_request": "5f8i9XXH2hEaykXHKFvu-E5Nr6QRqN002JO7yl-w_9o.eyJhbGdvcml0aG0iOiJITUFDLVNIQTI1NiIsImlzc3VlZF9hdCI6MTUwNDA0NjM4MCwicGFnZV9pZCI6NjgyNDk4MTcxOTQzMTY1LCJwc2lkIjoiMTI1NDQ1OTE1NDY4MjkxOSIsInRocmVhZF90eXBlIjoiVVNFUl9UT19QQUdFIiwidGlkIjoiMTI1NDQ1OTE1NDY4MjkxOSJ9"  
 }
-```
 ```
 
 ### `thread_context` properties
@@ -81,16 +79,14 @@ You can validate it with the following 4 steps:
 Decoding the payload will yield an object with the same information as originally returned by `getContext()`, but with the addition of `algorithm`, `issued_at`, and `page_id` fields:
 
 ```
-```
 {  
-  "psid": "1293479104029354",  
-  "algorithm": "HMAC-SHA256",  
-  "thread_type": "GROUP",  
-  "tid": "1411911565550430",  
-  "issued_at": 1491351619,  
-  "page_id": 167938560376726  
+  "psid": "1293479104029354",  
+  "algorithm": "HMAC-SHA256",  
+  "thread_type": "GROUP",  
+  "tid": "1411911565550430",  
+  "issued_at": 1491351619,  
+  "page_id": 167938560376726  
 }
-```
 ```
 
 To avoid accidentally divulging your app secret, this validation should happen on your server and never in client-side code.
@@ -113,4 +109,4 @@ Example response:
 {"tid":1577059318985661,"global_tid":1577059318985661}
 ```
 
-If there’s no global page, `global_tid` will not be present.
+If there's no global page, `global_tid` will not be present.

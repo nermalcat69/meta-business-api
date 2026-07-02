@@ -36,8 +36,8 @@ HTTPPHP SDKJavaScript SDKAndroid SDKiOS SDKcURL
 ---
 
 ```
-GET /v25.0/act_<AD_ACCOUNT_ID>/generatepreviews?creative=%3CCREATIVE_SPEC%3E&ad_format=%3CAD_FORMAT%3E HTTP/1.1  
-Host: graph.facebook.com
+GET /v25.0/act_<AD_ACCOUNT_ID>/generatepreviews?creative=%3CCREATIVE_SPEC%3E&ad_format=%3CAD_FORMAT%3E HTTP/1.1  
+Host: graph.facebook.com
 ```
 
 Try it in [Graph API Explorer](https://developers.facebook.com/tools/explorer/?method=GET&path=act_%3CAD_ACCOUNT_ID%3E%2Fgeneratepreviews%3Fcreative%3D%253CCREATIVE_SPEC%253E%26ad_format%3D%253CAD_FORMAT%253E&version=v25.0)

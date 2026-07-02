@@ -82,7 +82,7 @@ The Marketing API supports all of the currencies supported by [ad accounts](http
 
 ## Offset
 
-Each currency has an offset that specifies how the Marketing API handles the currency’s subdivisions. The offset ensures the minimum bid, such as `1`, is a usable value for the currency.
+Each currency has an offset that specifies how the Marketing API handles the currency's subdivisions. The offset ensures the minimum bid, such as `1`, is a usable value for the currency.
 
 ### Example offset 100
 

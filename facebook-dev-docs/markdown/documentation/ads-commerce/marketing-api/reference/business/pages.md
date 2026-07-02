@@ -35,9 +35,9 @@ cURLAndroid SDKObjective-C
 ---
 
 ```
-        curl -i -X GET \  
-'https://graph.facebook.com/LATEST-VERSION/BUSINESS-ID/owned_whatsapp_business_accounts' \  
- -H 'Authorization: Bearer USER-ACCESS-TOKEN'
+        curl -i -X GET \  
+'https://graph.facebook.com/LATEST-VERSION/BUSINESS-ID/owned_whatsapp_business_accounts' \  
+ -H 'Authorization: Bearer USER-ACCESS-TOKEN'
 ```
 
 Response
@@ -70,11 +70,11 @@ cURL
 ---
 
 ```
-       curl -i -X GET \  
-"https://graph.facebook.com/LATEST-VERSION/BUSINESS-ID/owned_whatsapp_business_accounts \  
-?fields=id,name,creation_time \  
-&filtering=[{'field':'creation_time', 'operator': 'IN_RANGE', 'value': ['1569783261', '1604542049']}]"  
- -H 'Authorization: Bearer USER-ACCESS-TOKEN'
+       curl -i -X GET \  
+"https://graph.facebook.com/LATEST-VERSION/BUSINESS-ID/owned_whatsapp_business_accounts \  
+?fields=id,name,creation_time \  
+&filtering=[{'field':'creation_time', 'operator': 'IN_RANGE', 'value': ['1569783261', '1604542049']}]"  
+ -H 'Authorization: Bearer USER-ACCESS-TOKEN'
 ```
 
 #### Parameters

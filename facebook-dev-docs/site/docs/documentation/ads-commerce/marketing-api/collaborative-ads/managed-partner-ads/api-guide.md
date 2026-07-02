@@ -11,7 +11,7 @@ Updated: May 5, 2026
 
 **No code changes are needed.**
 
-Tier labels have been updated: “Standard Access” is now **Limited Access**, and “Advanced Access” is now **Full Access**. The revised qualification threshold for Full Access has been reduced from 1,500 to **500 Marketing API calls** in the past 15 days. The underlying permission identifier remains the same, and existing access levels are preserved automatically. Learn more in the [Marketing API Access Tier documentation](https://developers.facebook.com/docs/features-reference#marketing-api-access-tier).
+Tier labels have been updated: "Standard Access" is now **Limited Access**, and "Advanced Access" is now **Full Access**. The revised qualification threshold for Full Access has been reduced from 1,500 to **500 Marketing API calls** in the past 15 days. The underlying permission identifier remains the same, and existing access levels are preserved automatically. Learn more in the [Marketing API Access Tier documentation](https://developers.facebook.com/docs/features-reference#marketing-api-access-tier).
 
 ## Overview
 
@@ -27,7 +27,7 @@ The end-goal is to set up an automated process to onboard your sellers and build
 
 * Onboard into [Collaborative Ads](https://developers.facebook.com/documentation/ads-commerce/marketing-api/collaborative-ads#step-1--onboard-into-collaborative-ads). To start this process, click **Become a Retail Partner** in the [Collaborative Ads Retailer Directory⁠](https://www.facebook.com/collaborative_ads/retailer_directory/).
 * Own the following assets:
-  * Your marketplace [Business Manager](https://developers.facebook.com/documentation/ads-commerce/marketing-api/collaborative-ads/managed-partner-ads#business-manager) — If you don’t have one, see the [Create a Business Manager⁠](https://www.facebook.com/business/help/1710077379203657) to learn how to create it.
+  * Your marketplace [Business Manager](https://developers.facebook.com/documentation/ads-commerce/marketing-api/collaborative-ads/managed-partner-ads#business-manager) — If you don't have one, see the [Create a Business Manager⁠](https://www.facebook.com/business/help/1710077379203657) to learn how to create it.
   * A registered Meta app — This is used to interact with the Marketing API, which the Managed Partner Ads API is built upon.
     * Your app must have the `business_management` and `ads_management` permissions.
     * Ensure your app has [Marketing API Access Tier](https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/authorization) for higher rate limiting.
@@ -118,7 +118,7 @@ You are now all set to launch your Managed Partner Ads solution. You may conside
 * Ensure eligible sellers are aware of the Managed Partner Ads solution.
 * Provide a channel to receive feedback on the seller interface, including any feature requests and bug reports.
 * Monitor seller activity on Collaboration Center through Seller Dashboard or build your own monitoring tool for your own needs using Marketing API.
-* Keep track of your sellers’ campaign performance, build automated systems to detect problems and make changes for further optimization of delivery and performance.
+* Keep track of your sellers' campaign performance, build automated systems to detect problems and make changes for further optimization of delivery and performance.
 * Test different creatives, targeting and optimization options, understand what works/what does not for which seller.
 
 When your solution starts delivering value and can scale, start rolling it out to more sellers gradually, promote it in different channels and scale the number of sellers in your platform and their overall investment through Managed Partner Ads.

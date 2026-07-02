@@ -26,35 +26,33 @@ Use the [Message Templates API](https://developers.facebook.com/documentation/bu
 ### Request syntax
 
 ```
-```
-curl -X POST \  
-  'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_ACCOUNT_ID>/message_templates' \  
-  -H 'Authorization: Bearer <ACCESS_TOKEN>' \  
-  -H 'Content-Type: application/json' \  
-  -d '{  
-    "name": "<TEMPLATE_NAME>",  
-    "language": "<TEMPLATE_LANGUAGE>",  
-    "category": "<CATEGORY>",  
-    "parameter_format": "named",  
-    "components": [  
-      {  
-        "type": "body",  
-        "text": "<BODY_TEXT>",  
-        "example": {  
-          "body_text_named_params": [  
-            {  
-              "param_name": "<PARAM_NAME>",  
-              "example": "<EXAMPLE_PARAM_VALUE>"  
-            }  
-          ]  
-        }  
-      },  
-      {  
-        "type": "call_permission_request"  
-      }  
-   ]  
+curl -X POST \  
+  'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_ACCOUNT_ID>/message_templates' \  
+  -H 'Authorization: Bearer <ACCESS_TOKEN>' \  
+  -H 'Content-Type: application/json' \  
+  -d '{  
+    "name": "<TEMPLATE_NAME>",  
+    "language": "<TEMPLATE_LANGUAGE>",  
+    "category": "<CATEGORY>",  
+    "parameter_format": "named",  
+    "components": [  
+      {  
+        "type": "body",  
+        "text": "<BODY_TEXT>",  
+        "example": {  
+          "body_text_named_params": [  
+            {  
+              "param_name": "<PARAM_NAME>",  
+              "example": "<EXAMPLE_PARAM_VALUE>"  
+            }  
+          ]  
+        }  
+      },  
+      {  
+        "type": "call_permission_request"  
+      }  
+   ]  
 }'
-```
 ```
 
 ### Request parameters
@@ -63,7 +61,7 @@ curl -X POST \
 | --- | --- | --- |
 | `<ACCESS_TOKEN>`  *String* | **Required.**  [System token](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#system-user-access-tokens) or [business token](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#business-integration-system-user-access-tokens). | `EAAA...` |
 | `<API_VERSION>`  *String* | **Optional.**  Graph API version. | v25.0 |
-| `<BODY_TEXT>`  *String* | **Required.**  Body text string. Supports named parameters in `{{parameter_name}}` format.  Maximum 1024 characters. | `Hi {{first_name}}, we would like to call you to assist with your recent order. Our support team is ready to help.` |
+| `<BODY_TEXT>`  *String* | **Required.**  Body text string. Supports named parameters in `{​{parameter_name}​}` format.  Maximum 1024 characters. | `Hi {​{first_name}​}, we would like to call you to assist with your recent order. Our support team is ready to help.` |
 | `<CATEGORY>`  *Enum* | **Required.**  Template category. Must be `MARKETING` or `UTILITY`. | `UTILITY` |
 | `<EXAMPLE_PARAM_VALUE>`  *String* | **Required if body text uses named parameters.**  Example value for the named parameter. | `Pablo` |
 | `<PARAM_NAME>`  *String* | **Required if body text uses named parameters.**  Name of the parameter, matching the placeholder in the body text. | `first_name` |
@@ -86,7 +84,7 @@ curl -X POST \
     "components": [
       {
         "type": "body",
-        "text": "Hi {{first_name}}, we would like to call you to assist with your recent order. Our support team is ready to help.",
+        "text": "Hi {​{first_name}​}, we would like to call you to assist with your recent order. Our support team is ready to help.",
         "example": {
           "body_text_named_params": [
             {
@@ -106,13 +104,11 @@ curl -X POST \
 ### Example response
 
 ```
-```
 {  
-  "id": "546151681022936",  
-  "status": "PENDING",  
-  "category": "UTILITY"  
+  "id": "546151681022936",  
+  "status": "PENDING",  
+  "category": "UTILITY"  
 }
-```
 ```
 
 ## Step 2: Send a call permission request template
@@ -122,37 +118,35 @@ Use the [Messages API](https://developers.facebook.com/documentation/business-me
 ### Request syntax
 
 ```
-```
-curl -X POST \  
-  'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/messages' \  
-  -H 'Authorization: Bearer <ACCESS_TOKEN>' \  
-  -H 'Content-Type: application/json' \  
-  -d '{  
-    "messaging_product": "whatsapp",  
-    "recipient_type": "individual",  
-    "to": "<WHATSAPP_USER_PHONE_NUMBER>",  
-    "type": "template",  
-    "template": {  
-      "name": "<TEMPLATE_NAME>",  
-      "language": {  
-        "policy": "deterministic",  
-        "code": "<TEMPLATE_LANGUAGE_CODE>"  
-      },  
-      "components": [  
-        {  
-          "type": "body",  
-          "parameters": [  
-            {  
-              "type": "text",  
-              "parameter_name": "<PARAM_NAME>",  
-              "text": "<PARAM_VALUE>"  
-            }  
-          ]  
-        }  
-      ]  
-    }  
+curl -X POST \  
+  'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/messages' \  
+  -H 'Authorization: Bearer <ACCESS_TOKEN>' \  
+  -H 'Content-Type: application/json' \  
+  -d '{  
+    "messaging_product": "whatsapp",  
+    "recipient_type": "individual",  
+    "to": "<WHATSAPP_USER_PHONE_NUMBER>",  
+    "type": "template",  
+    "template": {  
+      "name": "<TEMPLATE_NAME>",  
+      "language": {  
+        "policy": "deterministic",  
+        "code": "<TEMPLATE_LANGUAGE_CODE>"  
+      },  
+      "components": [  
+        {  
+          "type": "body",  
+          "parameters": [  
+            {  
+              "type": "text",  
+              "parameter_name": "<PARAM_NAME>",  
+              "text": "<PARAM_VALUE>"  
+            }  
+          ]  
+        }  
+      ]  
+    }  
 }'
-```
 ```
 
 ### Request parameters
@@ -205,21 +199,19 @@ curl -X POST \
 ### Example response
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "contacts": [  
-    {  
-      "input": "+15551234567",  
-      "wa_id": "15551234567"  
-    }  
-  ],  
-  "messages": [  
-    {  
-      "id": "wamid.HBgLMTMyMzI4NjU2NzgVAgARGBJBQzRBRDBEMDEwQzVBM0M0QkIA",  
-      "message_status": "accepted"  
-    }  
-  ]  
+  "messaging_product": "whatsapp",  
+  "contacts": [  
+    {  
+      "input": "+15551234567",  
+      "wa_id": "15551234567"  
+    }  
+  ],  
+  "messages": [  
+    {  
+      "id": "wamid.HBgLMTMyMzI4NjU2NzgVAgARGBJBQzRBRDBEMDEwQzVBM0M0QkIA",  
+      "message_status": "accepted"  
+    }  
+  ]  
 }
-```
 ```

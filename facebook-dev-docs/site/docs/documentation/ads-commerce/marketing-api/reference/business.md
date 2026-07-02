@@ -20,8 +20,8 @@ HTTPPHP SDKJavaScript SDKAndroid SDKiOS SDK
 ---
 
 ```
-GET /v25.0/{ads-pixel-id} HTTP/1.1  
-Host: graph.facebook.com
+GET /v25.0/{ads-pixel-id} HTTP/1.1  
+Host: graph.facebook.com
 ```
 
 Try it in [Graph API Explorer](https://developers.facebook.com/tools/explorer/?method=GET&path=%7Bads-pixel-id%7D&version=v25.0)
@@ -110,8 +110,8 @@ HTTPPHP SDKJavaScript SDKAndroid SDKiOS SDKcURL
 ---
 
 ```
-POST /v25.0/act_<AD_ACCOUNT_ID>/adspixels HTTP/1.1  
-Host: graph.facebook.com  
+POST /v25.0/act_<AD_ACCOUNT_ID>/adspixels HTTP/1.1  
+Host: graph.facebook.com  
   
 name=My+WCA+Pixel
 ```

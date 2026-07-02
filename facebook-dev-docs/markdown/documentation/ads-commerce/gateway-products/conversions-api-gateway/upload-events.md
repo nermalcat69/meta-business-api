@@ -7,11 +7,11 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/gateway-p
 
 Updated: Feb 2, 2025
 
-A newly created account’s first access to the Conversions API Gateway dashboard will look like the screen below. The Overview menu is opened by default.
+A newly created account's first access to the Conversions API Gateway dashboard will look like the screen below. The Overview menu is opened by default.
 
 ![Conversions API Gateway Overview dashboard with no data sources connected and an Add data source button](https://scontent.fdel27-9.fna.fbcdn.net/v/t39.2365-6/457109740_1206480443836549_4608952629911777071_n.png?_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=LUHHRk3qgJUQ7kNvwHG6zfX&_nc_oc=AdoVypDn46Af1QX0xUK4eCaze8nir1DpuD16V3Zb_NzsgErlPZKfzjJTbXOwH3UpKgtzc4BLKNt_oJBT0jGqHz0q&_nc_zt=14&_nc_ht=scontent.fdel27-9.fna&_nc_gid=S4gXP0UzrEuqGTeJi61zwg&_nc_ss=7b289&oh=00_AQBlpL8kQ0Ws635pVi54kPrrbaBsxXyN57Se_G0fPqNPHg&oe=6A609C8A)
 
-The following table describes each account user type’s data source management permissions.
+The following table describes each account user type's data source management permissions.
 
 |  |  |
 | --- | --- |
@@ -49,7 +49,7 @@ Review the Conversions API Gateway settings and terms and click **Next** if you 
 
 ![What is Conversions API Gateway allowed to do step listing required permissions with a Next button](https://scontent.fdel27-9.fna.fbcdn.net/v/t39.2365-6/457047425_1277673793641271_8191630190423131778_n.png?_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=XCmp4Brc2s4Q7kNvwF47K5A&_nc_oc=Adpdhg1lVcXnKZHxnn2XzNGookI0feuXOEdAy5fVrbtAgW6-lhoGIZ16eeJAaYtIoVuB1HKKdhRTT7Ef1qNf5ibb&_nc_zt=14&_nc_ht=scontent.fdel27-9.fna&_nc_gid=S4gXP0UzrEuqGTeJi61zwg&_nc_ss=7b289&oh=00_AQCtTovMBnFAoCzVhLmMorKIxn9R-qQQyyFrw5iadp4HoA&oe=6A60923D)
 
-At this point, you’ll finish the process of connecting to Meta, and your connection status will be pending.
+At this point, you'll finish the process of connecting to Meta, and your connection status will be pending.
 
 ![You're all set confirmation that the website is connected to Facebook with a Done button](https://scontent.fdel27-3.fna.fbcdn.net/v/t39.2365-6/329703665_1332299043978020_295651046482762778_n.png?_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=-6QNzjXJD0kQ7kNvwHUcb90&_nc_oc=AdrarqHOgA0Awd_cacCJ364GCFy_erMXV_UaWsrl4HufG6U401RqGiwtgf9B4h-o3hOHC0gkCwPtU5XCIi8Syelx&_nc_zt=14&_nc_ht=scontent.fdel27-3.fna&_nc_gid=S4gXP0UzrEuqGTeJi61zwg&_nc_ss=7b289&oh=00_AQBPiLe4-vsLGnqo5Sj3V5fm9snlSrsoXaeU8PkZRDNufw&oe=6A608888)
 
@@ -75,7 +75,7 @@ Click on the three dots button of the pixel in the Overview menu and select **De
 
 It is also possible to stop sending specific events to the Conversions API without deactivating the Pixel. Click on the three dots button of the Pixel in the Overview menu and select **Disable publishing**.
 
-You can deactivate by event type or deactivate the entire Pixel. Selecting the event type or the entire Pixel and toggling the “Publishing” setting to “off” stops the Conversions API Gateway from publishing any event data to Meta in the future. This does not include data that has previously been published to Meta.
+You can deactivate by event type or deactivate the entire Pixel. Selecting the event type or the entire Pixel and toggling the "Publishing" setting to "off" stops the Conversions API Gateway from publishing any event data to Meta in the future. This does not include data that has previously been published to Meta.
 
 ![Overview data source three-dots menu open with Disable publishing highlighted among the menu options](https://scontent.fdel27-3.fna.fbcdn.net/v/t39.2365-6/457054834_1582900032572932_5704767517550185310_n.png?_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=DwKnsFNYwq8Q7kNvwEhz2ps&_nc_oc=AdpT8-08UleBEonRlRweJQ73NGh7pazzNgR6he20R_Rbr50pF09SzRJXR2U_4xV1nZPzW3rYNRSpvrWN-WMCQGBv&_nc_zt=14&_nc_ht=scontent.fdel27-3.fna&_nc_gid=S4gXP0UzrEuqGTeJi61zwg&_nc_ss=7b289&oh=00_AQAg-5cElasGg691nYwbwSAWeaakGq84oQ5ydz9wBrbB8Q&oe=6A6072A7)
 

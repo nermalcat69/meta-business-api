@@ -16,23 +16,21 @@ After the consumer has granted call permission, use the new call API to initiate
 
 ## Initiate a call
 
-Use this API to start a call by providing the consumer’s PSID and an SDP offer. A successful response includes an SDP answer that you apply to your local peer connection.
+Use this API to start a call by providing the consumer's PSID and an SDP offer. A successful response includes an SDP answer that you apply to your local peer connection.
 
 ### Request syntax
 
 ```
-```
-POST /{page-id}/calls  
+POST /{page-id}/calls  
 {  
-  "platform": "messenger",  
-  "to": "{psid}",  
-  "action": "connect",  
-  "session": {  
-      "sdp_type": "offer",  
-      "sdp": "<<RFC 4566 SDP>>"  
-   }  
+  "platform": "messenger",  
+  "to": "{psid}",  
+  "action": "connect",  
+  "session": {  
+      "sdp_type": "offer",  
+      "sdp": "<<RFC 4566 SDP>>"  
+   }  
 }
-```
 ```
 
 ### Request parameters
@@ -46,18 +44,16 @@ POST /{page-id}/calls
 ### Example response
 
 ```
-```
 {  
-  "success": true,  
-  "id": "c_M5YPhGE5jm0L_PMQdScLlYJlR7tU_f0rgXinCqnTQ",  
-  "session": {  
-    "sdp_response": {  
-      "sdp_type": "answer",  
-      "sdp": "<<RFC 4566 SDP>>"  
-    }  
-  }  
+  "success": true,  
+  "id": "c_M5YPhGE5jm0L_PMQdScLlYJlR7tU_f0rgXinCqnTQ",  
+  "session": {  
+    "sdp_response": {  
+      "sdp_type": "answer",  
+      "sdp": "<<RFC 4566 SDP>>"  
+    }  
+  }  
 }
-```
 ```
 
 ### Response fields
@@ -86,14 +82,12 @@ Use this API to end an active call.
 ### Request syntax
 
 ```
-```
-POST /{page-id}/calls  
+POST /{page-id}/calls  
 {  
-  "platform": "messenger",  
-  "call_id": "{call-id}",  
-  "action" : "terminate"  
+  "platform": "messenger",  
+  "call_id": "{call-id}",  
+  "action" : "terminate"  
 }
-```
 ```
 
 ### Request parameters
@@ -107,11 +101,9 @@ POST /{page-id}/calls
 ### Example response
 
 ```
-```
 {  
-  "success" : true  
+  "success" : true  
 }
-```
 ```
 
 ### Error response

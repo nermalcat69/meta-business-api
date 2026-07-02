@@ -34,7 +34,7 @@ The post intent flow supports the following query string parameters.
 | `reply_post_shortcode` | **Optional.**  The shortcode of the parent post that you are replying to. When this parameter is included, it will open the Threads post composer in reply mode with the parent post visible. |
 | `quote_post_shortcode` | **Optional.**  The shortcode of the post that is being quoted. When this parameter is included, it will open the Threads post composer with the quoted post attached. |
 
-All parameter values should be encoded using [percent-encoding⁠](https://datatracker.ietf.org/doc/html/rfc3986#section-2.1) (“URL encoding”) so that the values can safely be passed via the URL.
+All parameter values should be encoded using [percent-encoding⁠](https://datatracker.ietf.org/doc/html/rfc3986#section-2.1) ("URL encoding") so that the values can safely be passed via the URL.
 
 ### Examples
 

@@ -46,7 +46,7 @@ Yes. You must be accepted into the Approved Partner Program before your game can
 Games that work best tend to have these characteristics:
 
 * **Simple core mechanics** that are easy to learn and play in short sessions (2-5 minutes).
-* **Social features** like leaderboards, challenges, and tournaments that leverage Facebook’s social graph.
+* **Social features** like leaderboards, challenges, and tournaments that leverage Facebook's social graph.
 * **Broad appeal** across demographics and geographies.
 * **Replay value** through procedural content, progressive difficulty, or competitive elements.
 
@@ -88,11 +88,11 @@ Use the player data APIs:
 * **Load:**`FBInstant.player.getDataAsync(['key1', 'key2'])` to retrieve data.
 * **Flush:**`FBInstant.player.flushDataAsync()` to immediately persist pending writes.
 
-Player data is stored on Facebook’s servers and persists across sessions, devices, and platforms. The total size of player data is limited to 1 MB per player.
+Player data is stored on Facebook's servers and persists across sessions, devices, and platforms. The total size of player data is limited to 1 MB per player.
 
 ### Can I use a backend server with my Instant Game?
 
-Yes. The game client runs in the player’s browser, but you can use your own backend server for features like real-time multiplayer, server-side validation, custom leaderboards, and analytics. Your game client can communicate with your server using standard web APIs (`fetch`, `XMLHttpRequest`, WebSockets). Use `FBInstant.player.getSignedPlayerInfoAsync()` to authenticate requests from the game client to your server.
+Yes. The game client runs in the player's browser, but you can use your own backend server for features like real-time multiplayer, server-side validation, custom leaderboards, and analytics. Your game client can communicate with your server using standard web APIs (`fetch`, `XMLHttpRequest`, WebSockets). Use `FBInstant.player.getSignedPlayerInfoAsync()` to authenticate requests from the game client to your server.
 
 ### What game engines are compatible with Instant Games?
 
@@ -112,16 +112,16 @@ Each engine has its own process for exporting to HTML5. After export, you integr
 
 ### How do I localize my game for different languages?
 
-Use `FBInstant.getLocale()` to detect the player’s language and region. This returns a locale string like `"en_US"`, `"ja_JP"`, or `"pt_BR"`. Load the appropriate language files based on this locale. The platform does not provide automatic translation -- you are responsible for creating and managing your own localized content.
+Use `FBInstant.getLocale()` to detect the player's language and region. This returns a locale string like `"en_US"`, `"ja_JP"`, or `"pt_BR"`. Load the appropriate language files based on this locale. The platform does not provide automatic translation -- you are responsible for creating and managing your own localized content.
 
 ### Are there restrictions on what my game can do?
 
 Yes. Instant Games run in a sandboxed environment with certain restrictions:
 
-* You cannot access the player’s device filesystem, camera, microphone, or other hardware features (except haptic feedback via the SDK).
+* You cannot access the player's device filesystem, camera, microphone, or other hardware features (except haptic feedback via the SDK).
 * You cannot navigate the player away from the game to external URLs (use `FBInstant.shareAsync()` or `FBInstant.updateAsync()` for sharing).
 * You must use the Instant Games SDK for all Facebook platform interactions (authentication, social features, payments).
-* Your game must comply with Facebook’s [Platform Policies](https://developers.facebook.com/policy/) and [Community Standards⁠](https://www.facebook.com/communitystandards/).
+* Your game must comply with Facebook's [Platform Policies](https://developers.facebook.com/policy/) and [Community Standards⁠](https://www.facebook.com/communitystandards/).
 * Games with real-money gambling, explicit content, or content that violates Facebook policies will be rejected.
 
 ### How do I handle different screen sizes and orientations?
@@ -142,15 +142,15 @@ Instant Games can be played on a wide range of screen sizes, from small phones t
 
 There are several ways to test your Instant Game:
 
-* **Local testing:** You can develop and test your game locally in a web browser using a local development server. The Instant Games SDK will not be available locally, so you will need to mock the SDK calls or use the SDK’s test mode.
-* **Upload to App Dashboard:** Upload your game bundle to the [App Dashboard](https://developers.facebook.com/apps/) and use the “Share to Messenger” or “Play” button to test it on a real device. Only users listed as administrators, developers, or testers on your app can access the game before it is published.
+* **Local testing:** You can develop and test your game locally in a web browser using a local development server. The Instant Games SDK will not be available locally, so you will need to mock the SDK calls or use the SDK's test mode.
+* **Upload to App Dashboard:** Upload your game bundle to the [App Dashboard](https://developers.facebook.com/apps/) and use the "Share to Messenger" or "Play" button to test it on a real device. Only users listed as administrators, developers, or testers on your app can access the game before it is published.
 * **Embedded player:** The App Dashboard includes an embedded player that lets you preview your game in a simulated mobile environment directly in your browser.
 
 ### How do I debug issues in my game?
 
-* **Desktop browser:** Use Chrome DevTools (or your browser’s developer tools) to inspect the game, view console logs, debug JavaScript, and profile performance.
-* **Android:** Enable USB debugging on your Android device, connect it to your computer, and use Chrome’s `chrome://inspect` to remotely debug the game running in the Facebook app.
-* **iOS:** Use Safari’s Web Inspector to remotely debug the game running in the Facebook app on an iOS device. You will need a Mac and a USB connection.
+* **Desktop browser:** Use Chrome DevTools (or your browser's developer tools) to inspect the game, view console logs, debug JavaScript, and profile performance.
+* **Android:** Enable USB debugging on your Android device, connect it to your computer, and use Chrome's `chrome://inspect` to remotely debug the game running in the Facebook app.
+* **iOS:** Use Safari's Web Inspector to remotely debug the game running in the Facebook app on an iOS device. You will need a Mac and a USB connection.
 * **Console logging:** Use `console.log()`, `console.warn()`, and `console.error()` in your game code. Logs are visible in the remote debugging tools described above.
 
 ### Why does my game work locally but not on Facebook?
@@ -160,16 +160,16 @@ Common reasons include:
 * **Missing SDK calls:** Your game must call `FBInstant.initializeAsync()` and `FBInstant.startGameAsync()` in the correct order. Without these calls, the game will hang on the loading screen.
 * **CORS issues:** If your game makes requests to your own backend server, ensure your server sends proper CORS headers.
 * **Mixed content:** All resources must be loaded over HTTPS. The webview blocks HTTP resources.
-* **Unsupported APIs:** Some browser APIs may not be available in the Facebook app’s webview. Use `FBInstant.getSupportedAPIs()` to check feature availability.
+* **Unsupported APIs:** Some browser APIs may not be available in the Facebook app's webview. Use `FBInstant.getSupportedAPIs()` to check feature availability.
 * **Bundle structure:** The bundle must be a valid ZIP file with `index.html` at the root.
 
 ### How do I add test users to my app?
 
-In the [App Dashboard](https://developers.facebook.com/apps/), go to your app’s “Roles” section. You can add Facebook users as administrators, developers, or testers. Testers can access your game before it is published, but they cannot modify app settings.
+In the [App Dashboard](https://developers.facebook.com/apps/), go to your app's "Roles" section. You can add Facebook users as administrators, developers, or testers. Testers can access your game before it is published, but they cannot modify app settings.
 
 ### Can I use analytics tools with my Instant Game?
 
-Yes. You can use `FBInstant.logEvent()` to log custom analytics events that appear in the App Dashboard’s analytics section. You can also integrate third-party analytics services (Google Analytics, Amplitude, Mixpanel, and so on) by including their JavaScript SDKs in your game bundle. Note that some analytics SDKs may use cookies or local storage, which may have limited availability in the game’s webview.
+Yes. You can use `FBInstant.logEvent()` to log custom analytics events that appear in the App Dashboard's analytics section. You can also integrate third-party analytics services (Google Analytics, Amplitude, Mixpanel, and so on) by including their JavaScript SDKs in your game bundle. Note that some analytics SDKs may use cookies or local storage, which may have limited availability in the game's webview.
 
 ### My game is stuck on the loading screen. What is wrong?
 
@@ -187,10 +187,10 @@ This is usually caused by one of the following:
 ### How do I submit my game for review?
 
 * Create a Facebook App in the [App Dashboard](https://developers.facebook.com/apps/).
-* Add the “Instant Games” product to your app.
-* Upload your game bundle in the “Web Hosting” section.
+* Add the "Instant Games" product to your app.
+* Upload your game bundle in the "Web Hosting" section.
 * Configure your app settings (display name, icon, category, and so on).
-* Submit your app for review by clicking the “Submit for Review” button.
+* Submit your app for review by clicking the "Submit for Review" button.
 
 Your game will be reviewed by the Facebook team for quality, policy compliance, and functionality. See the [Quality Guidelines](https://developers.facebook.com/documentation/games/launch/reviews/quality-guidelines) for detailed requirements.
 
@@ -207,7 +207,7 @@ The most common rejection reasons are:
 * **Excessive or poorly timed ads.** Ads must not interrupt active gameplay or appear too frequently.
 * **Poor performance.** Games that crash, lag, or have excessively long load times may be rejected.
 * **Low-quality assets.** Game icons, screenshots, and cover images must meet the [Asset Design Guidelines](https://developers.facebook.com/documentation/games/launch/reviews/asset-design-guidelines).
-* **Policy violations.** Content that violates Facebook’s Platform Policies (explicit content, misleading claims, and so on).
+* **Policy violations.** Content that violates Facebook's Platform Policies (explicit content, misleading claims, and so on).
 * **Broken functionality.** Features that do not work correctly, dead buttons, or error screens visible to the player.
 * **Copycat or clone games.** Games that closely copy existing well-known games without adding meaningful originality.
 
@@ -238,25 +238,23 @@ Facebook takes a **30% revenue share** on in-app purchases, which is consistent 
 
 ### Are in-app purchases available on iOS?
 
-**Yes.** In-App Purchases are supported on iOS, Android, and the web. On iOS, purchases are processed through Apple’s billing system. No additional code changes are required — if your game already supports IAP, it works on iOS automatically.
+**Yes.** In-App Purchases are supported on iOS, Android, and the web. On iOS, purchases are processed through Apple's billing system. No additional code changes are required — if your game already supports IAP, it works on iOS automatically.
 
 As a best practice, always check for payment API availability before displaying purchase UI, since there may be edge cases where payments are temporarily unavailable on a particular client or device:
 
 ```
-```
-const paymentsAvailable = FBInstant.getSupportedAPIs().includes('payments.purchaseAsync');  
+const paymentsAvailable = FBInstant.getSupportedAPIs().includes('payments.purchaseAsync');  
   
-if (paymentsAvailable) {  
-  showPurchaseOptions();  
-} else {  
-  hidePurchaseOptions();  
+if (paymentsAvailable) {  
+  showPurchaseOptions();  
+} else {  
+  hidePurchaseOptions();  
 }
-```
 ```
 
 ### How do I set up products for in-app purchases?
 
-Configure your products in the [App Dashboard](https://developers.facebook.com/apps/) under your app’s “Instant Games” > “In-App Purchases” section. For each product, you define:
+Configure your products in the [App Dashboard](https://developers.facebook.com/apps/) under your app's "Instant Games" > "In-App Purchases" section. For each product, you define:
 
 * **Product ID:** A unique string identifier used in your game code.
 * **Product name:** The display name shown to the player.
@@ -275,11 +273,11 @@ Instant Games use the **Facebook Audience Network** for ad serving. You create a
 
 ### How much can I earn from ads?
 
-Ad revenue depends on many factors, including your game’s audience (geography, demographics), ad placement frequency, ad format mix, and overall engagement. eCPMs (earnings per thousand impressions) vary by country and ad format. Rewarded video ads typically generate the highest eCPMs, followed by interstitials, then banners. Exact revenue figures are specific to each game and market.
+Ad revenue depends on many factors, including your game's audience (geography, demographics), ad placement frequency, ad format mix, and overall engagement. eCPMs (earnings per thousand impressions) vary by country and ad format. Rewarded video ads typically generate the highest eCPMs, followed by interstitials, then banners. Exact revenue figures are specific to each game and market.
 
 ### When and how do I get paid?
 
-Revenue from both IAP and advertising is tracked in the App Dashboard. Facebook disburses payments according to its standard payout schedule. You must set up a valid payment account in your developer settings to receive payments. Details on payout thresholds, schedules, and supported payment methods are available in the App Dashboard under “Monetization” > “Payouts.”
+Revenue from both IAP and advertising is tracked in the App Dashboard. Facebook disburses payments according to its standard payout schedule. You must set up a valid payment account in your developer settings to receive payments. Details on payout thresholds, schedules, and supported payment methods are available in the App Dashboard under "Monetization" > "Payouts."
 
 ---
 
@@ -308,11 +306,11 @@ Use `FBInstant.updateAsync()` to send custom updates to the current game context
 
 ### How do I find out which friends play my game?
 
-Use `FBInstant.player.getConnectedPlayersAsync()` to get a list of the current player’s friends who have also played your game. This returns an array of `ConnectedPlayer` objects with each friend’s ID, name, and photo.
+Use `FBInstant.player.getConnectedPlayersAsync()` to get a list of the current player's friends who have also played your game. This returns an array of `ConnectedPlayer` objects with each friend's ID, name, and photo.
 
 ### What is a game context?
 
-A “context” represents the social setting in which the game is being played. Context types include:
+A "context" represents the social setting in which the game is being played. Context types include:
 
 * **SOLO:** The player is playing alone.
 * **THREAD:** The game was launched from a Messenger conversation.
@@ -342,7 +340,7 @@ You can use several mechanisms to attract new players:
 
 Aim for your game to be playable within **3 seconds** of the player tapping on it. Every additional second of load time significantly increases the drop-off rate. The top-performing Instant Games load in under 2 seconds.
 
-### How do I reduce my game’s load time?
+### How do I reduce my game's load time?
 
 Key strategies:
 
@@ -363,12 +361,12 @@ Older Android phones have limited CPU, GPU, and memory. Optimization strategies 
 * **Limit particle effects.** Reduce or disable particle systems on low-end devices.
 * **Use simpler shaders.** Avoid complex WebGL shaders that stress the GPU.
 * **Reduce canvas resolution.** Render at a lower resolution and scale up, rather than rendering at native resolution.
-* **Profile your code.** Use Chrome DevTools’ Performance panel (via remote debugging) to identify bottlenecks.
+* **Profile your code.** Use Chrome DevTools' Performance panel (via remote debugging) to identify bottlenecks.
 * **Test on real devices.** Emulators do not accurately reflect real-world performance.
 
 ### How much memory can my game use?
 
-There is no fixed memory limit published for Instant Games, but the practical limit depends on the player’s device. On low-end Android phones, available memory may be as low as 512 MB total for the entire app (including the Facebook app itself). On iOS, memory limits vary by device model.
+There is no fixed memory limit published for Instant Games, but the practical limit depends on the player's device. On low-end Android phones, available memory may be as low as 512 MB total for the entire app (including the Facebook app itself). On iOS, memory limits vary by device model.
 
 If your game exceeds available memory, the operating system may terminate the Facebook app (and your game with it). Monitor your memory usage and optimize by:
 
@@ -379,7 +377,7 @@ If your game exceeds available memory, the operating system may terminate the Fa
 
 ### Does my game need to support offline play?
 
-No, Instant Games require an internet connection. The platform does not support offline play. However, you should handle temporary network interruptions gracefully -- show a “connection lost” message rather than crashing, and attempt to reconnect.
+No, Instant Games require an internet connection. The platform does not support offline play. However, you should handle temporary network interruptions gracefully -- show a "connection lost" message rather than crashing, and attempt to reconnect.
 
 ### What audio formats should I use?
 
@@ -415,7 +413,7 @@ Approved partners have access to dedicated support channels provided during the 
 
 ### How do I transfer ownership of my game to another developer?
 
-App ownership can be transferred through the [App Dashboard](https://developers.facebook.com/apps/). Go to your app’s “Roles” section, add the new owner as an administrator, and then use the “Transfer” option in the app settings. Both the current owner and the new owner must have valid Facebook Developer accounts.
+App ownership can be transferred through the [App Dashboard](https://developers.facebook.com/apps/). Go to your app's "Roles" section, add the new owner as an administrator, and then use the "Transfer" option in the app settings. Both the current owner and the new owner must have valid Facebook Developer accounts.
 
 ### My game was rejected. What should I do?
 
@@ -431,7 +429,7 @@ If you believe the rejection was a mistake, you can appeal through the [Develope
 
 ### How do I delete my game entirely?
 
-You can delete your Facebook App from the [App Dashboard](https://developers.facebook.com/apps/) under the app’s settings. Deleting an app is permanent and cannot be undone. All associated data, analytics, player data, and configurations will be lost. Consider unpublishing the game instead of deleting it if you might want to restore it in the future.
+You can delete your Facebook App from the [App Dashboard](https://developers.facebook.com/apps/) under the app's settings. Deleting an app is permanent and cannot be undone. All associated data, analytics, player data, and configurations will be lost. Consider unpublishing the game instead of deleting it if you might want to restore it in the future.
 
 ### Where can I find other Instant Games developers?
 

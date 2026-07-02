@@ -26,6 +26,6 @@ curl \
   -F "billing_event=IMPRESSIONS" \
   -F "campaign_id=<CAMPAIGN_ID>" \
   -F "access_token=<ACCESS_TOKEN>" \
-  -F "targeting={'geo_locations': {'countries': ['US', 'GB']}, 'custom_audiences': [{<CUSTOM_AUDIENCE_DATA>}], 'targeting_relaxation_types': {'custom_audience': 1}}" \
+  -F "targeting={'geo_locations': {'countries': ['US', 'GB']}, 'custom_audiences': [{<CUSTOM_AUDIENCE_DATA>}], 'targeting_relaxation_types': {'custom_audience': 1}​}" \
   https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/adsets
 ```

@@ -13,7 +13,7 @@ Please complete the initial setup phase of Conversions API Gateway using Google 
 
 ![Conversions API Gateway admin Log In screen with Email and Password fields and a Log In button.](https://scontent.fdel27-3.fna.fbcdn.net/v/t39.2365-6/328850008_546765677405234_825368604249022024_n.png?_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=MIqjNE6EKnMQ7kNvwGcEWuv&_nc_oc=Adp4ygQZq8Lm88JflxUAAviFqS_3UmsJZITgNVbW1xvQqnYTXCrhcY53RVb3h4pXXnVd_aEgmIQ6Oa91UCtR8BNj&_nc_zt=14&_nc_ht=scontent.fdel27-3.fna&_nc_gid=8JW2Q1mCYFbKMdcyEX47vQ&_nc_ss=7b289&oh=00_AQB7AiYN44R47RhUxeXDAHqjbTIVmLd77BCusWuaLszwIg&oe=6A609212)
 
-Once you’ve logged in successfully as an admin user, you’ll be guided through the final configuration steps of the Conversions API Gateway.
+Once you've logged in successfully as an admin user, you'll be guided through the final configuration steps of the Conversions API Gateway.
 
 ### 1. Setup Overview
 
@@ -31,13 +31,13 @@ Click **Next** to continue.
 
 ### 3. Confirm Meta Business Account
 
-You’ll need to connect a Meta Business Account to the Conversions API Gateway. To do so, click **Get Started** and follow the steps to connect your business using your Meta Business Account.
+You'll need to connect a Meta Business Account to the Conversions API Gateway. To do so, click **Get Started** and follow the steps to connect your business using your Meta Business Account.
 
 Click **Next**.
 
 ![Confirm Meta Business Account step showing a Connect your business to Facebook panel with a Get Started button.](https://scontent.fdel27-4.fna.fbcdn.net/v/t39.2365-6/386158645_859253885760876_8256905306547668779_n.png?_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=65btzsbKKUoQ7kNvwGx5yrv&_nc_oc=AdpyN11H6PhemW3AvLlesERtULSNSHpjyed99WejxI3KfcPtSjOOZiu5pCR4oymRurYuQJsSKFL-0Wpkxde2zwcD&_nc_zt=14&_nc_ht=scontent.fdel27-4.fna&_nc_gid=8JW2Q1mCYFbKMdcyEX47vQ&_nc_ss=7b289&oh=00_AQDy7WH6pchFg273E6LLd2U4ZPnfwPNuZCXF1yIoVgTEKA&oe=6A60711A)
 
-Once you’ve completed the connection process, click **Next**.
+Once you've completed the connection process, click **Next**.
 
 ### 4. Domain Management
 

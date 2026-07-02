@@ -11,9 +11,9 @@ Updated: May 5, 2026
 
 **No code changes are needed.**
 
-Tier labels have been updated: “Standard Access” is now **Limited Access**, and “Advanced Access” is now **Full Access**. The revised qualification threshold for Full Access has been reduced from 1,500 to **500 Marketing API calls** in the past 15 days. The underlying permission identifier remains the same, and existing access levels are preserved automatically. Learn more in the [Marketing API Access Tier documentation](https://developers.facebook.com/docs/features-reference#marketing-api-access-tier).
+Tier labels have been updated: "Standard Access" is now **Limited Access**, and "Advanced Access" is now **Full Access**. The revised qualification threshold for Full Access has been reduced from 1,500 to **500 Marketing API calls** in the past 15 days. The underlying permission identifier remains the same, and existing access levels are preserved automatically. Learn more in the [Marketing API Access Tier documentation](https://developers.facebook.com/docs/features-reference#marketing-api-access-tier).
 
-The Conversions API is a Meta Business Tool that lets Business Messaging Partners share their clients’ data, for which they have permissions, directly from their servers and is designed to automatically honor Meta’s user privacy controls. This allows Business Messaging Partners to reliably send data about their clients’ valuable customer interactions in business chats to understand and improve performance for their clients’ ads that click to WhatsApp, Messenger or Instagram, improving operational efficiency and growing their business.
+The Conversions API is a Meta Business Tool that lets Business Messaging Partners share their clients' data, for which they have permissions, directly from their servers and is designed to automatically honor Meta's user privacy controls. This allows Business Messaging Partners to reliably send data about their clients' valuable customer interactions in business chats to understand and improve performance for their clients' ads that click to WhatsApp, Messenger or Instagram, improving operational efficiency and growing their business.
 
 This guide is designed to support Business Messaging Partners in completing the technical integration for the Conversions API for WhatsApp, Messenger or Instagram on behalf of their clients. It covers:
 
@@ -28,19 +28,19 @@ This guide is designed to support Business Messaging Partners in completing the 
 
 ### Pre-integration Requirements
 
-Before getting started with any integration, it’s necessary to ensure the right technical foundations are established and relevant access is granted for specific assets and platforms.
+Before getting started with any integration, it's necessary to ensure the right technical foundations are established and relevant access is granted for specific assets and platforms.
 
 #### Create a Facebook developer app
 
-If you don’t already have one, [follow the instructions](https://developers.facebook.com/docs/development/create-an-app) to create one.
+If you don't already have one, [follow the instructions](https://developers.facebook.com/docs/development/create-an-app) to create one.
 
 #### Integrate with the [Messenger API](https://developers.facebook.com/documentation/business-messaging/messenger-platform)
 
 #### Have advanced access to:
 
 * [`page_events`](https://developers.facebook.com/docs/permissions#p) permission
-  * You will need to apply for advanced access for `page_events` permission in the “Permissions and Features” section of the developer App Dashboard. If you already have advanced access for [`pages_messaging`](https://developers.facebook.com/docs/permissions#pages_messaging) permission, your app should be automatically approved for `page_events` permission after you apply.
-* [“Marketing API Access Tier”](https://developers.facebook.com/docs/features-reference#marketing-api-access-tier) feature. Extra guidance is included [here](https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/authorization).
+  * You will need to apply for advanced access for `page_events` permission in the "Permissions and Features" section of the developer App Dashboard. If you already have advanced access for [`pages_messaging`](https://developers.facebook.com/docs/permissions#pages_messaging) permission, your app should be automatically approved for `page_events` permission after you apply.
+* ["Marketing API Access Tier"](https://developers.facebook.com/docs/features-reference#marketing-api-access-tier) feature. Extra guidance is included [here](https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/authorization).
   * To be eligible for the Advanced Access feature, you need to make a total of 1500 successful Marketing API calls with an error rate of less than 10% in the past 15 days. This includes calls made through the Conversions API by a user with a role on the app.
 
 ### Integration Steps
@@ -123,18 +123,18 @@ After an event has been sent to Meta over the Conversions API successfully, you 
 
 ### Pre-integration Requirements
 
-Before getting started with any integration, it’s necessary to ensure the right technical foundations are established and relevant access is granted for specific assets and platforms.
+Before getting started with any integration, it's necessary to ensure the right technical foundations are established and relevant access is granted for specific assets and platforms.
 
 #### Create a Facebook developer app
 
-If you don’t already have one, [follow the instructions](https://developers.facebook.com/docs/development/create-an-app) to create one.
+If you don't already have one, [follow the instructions](https://developers.facebook.com/docs/development/create-an-app) to create one.
 
 #### Have advanced access to:
 
 * [`whatsapp_business_management`](https://developers.facebook.com/docs/permissions#whatsapp_business_management) permission
 * [`whatsapp_business_manage_events`](https://developers.facebook.com/docs/permissions#whatsapp_business_manage_events) permission
-  * You will need to apply for advanced access for `whatsapp_business_manage_events` permission in the “Permissions and Features” section of the Developer App Dashboard. If you already have advanced access for `whatsapp_business_messaging` permission, your app should be automatically approved for `whatsapp_business_manage_events` permission after you apply.
-* [“Marketing API Access Tier”](https://developers.facebook.com/docs/features-reference#marketing-api-access-tier) feature to allow your app to access the Marketing API. Extra guidance is included [here](https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/authorization).
+  * You will need to apply for advanced access for `whatsapp_business_manage_events` permission in the "Permissions and Features" section of the Developer App Dashboard. If you already have advanced access for `whatsapp_business_messaging` permission, your app should be automatically approved for `whatsapp_business_manage_events` permission after you apply.
+* ["Marketing API Access Tier"](https://developers.facebook.com/docs/features-reference#marketing-api-access-tier) feature to allow your app to access the Marketing API. Extra guidance is included [here](https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/authorization).
   * To be eligible for the Advanced Access feature, you need to make a total of 1500 successful Marketing API calls with an error rate of less than 10% in the past 15 days. This includes calls made through the Conversions API by a user with a role on the app.
 
 #### Be integrated with one of the two [WhatsApp Business Platform](https://developers.facebook.com/documentation/business-messaging/whatsapp/overview) integration options:
@@ -161,7 +161,7 @@ The WhatsApp Business Account ID (`waba_id`) can be obtained on completion of Em
 
 **3. Set Up Dataset API**
 
-When sharing event data to Meta via the Conversions API, Meta needs to know the source that is associated with those events. Datasets allow Meta Business Solutions Partners to connect and manage event data from different sources — such as a client’s website, mobile app, physical store location or business chats — in one place. You can [learn more about datasets here⁠](https://www.facebook.com/business/help/750785952855662?id=490360542427371). Datasets are owned by the client, and can be accessed by Meta Business Solutions Partners with necessary permissions.
+When sharing event data to Meta via the Conversions API, Meta needs to know the source that is associated with those events. Datasets allow Meta Business Solutions Partners to connect and manage event data from different sources — such as a client's website, mobile app, physical store location or business chats — in one place. You can [learn more about datasets here⁠](https://www.facebook.com/business/help/750785952855662?id=490360542427371). Datasets are owned by the client, and can be accessed by Meta Business Solutions Partners with necessary permissions.
 
 You can use the `whatsapp_business_account_id` and `access_token` to create a dataset by making a `POST` call to the [Dataset API](https://developers.facebook.com/docs/graph-api/reference/whats-app-business-account/dataset). If there is already an existing `dataset_id` associated with the Whatsapp Business Account, it will return that ID. Sample call below:
 
@@ -175,7 +175,7 @@ In order to retrieve the dataset\_id, you can make a `GET` call to the Dataset A
 https://graph.facebook.com/v16.0/{WHATSAPP_BUSINESS_ACCOUNT_ID}/dataset?access_token={TOKEN}
 ```
 
-The response will be an ID, which represents the `dataset_id`. We now have the dataset set up and ready for use. Next, you will need to retrieve the `ctwa_clid` that’s required to make a Conversions API call to send an event.
+The response will be an ID, which represents the `dataset_id`. We now have the dataset set up and ready for use. Next, you will need to retrieve the `ctwa_clid` that's required to make a Conversions API call to send an event.
 
 **4. Retrieve Click-to-WhatsApp Click ID**
 
@@ -185,7 +185,7 @@ The Click-to-WhatsApp Click ID (`ctwa_clid`) is a personal identifier, unique pe
 | --- | --- |
 | The `ctwa_cli`d field is obtained from the [referral object](https://developers.facebook.com/docs/whatsapp/on-premises/webhooks/inbound#message-generated-from-ads-that-click-to-whatsapp) under Messages webhook ([Cloud API](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/messages) | [On Premise](https://developers.facebook.com/docs/whatsapp/on-premises/webhooks/components#referral)). |
 
-Upon receiving the `ctwa_clid`, store it with the conversation. When a conversion has happened within a conversation, send the corresponding `ctwa_clid` via the Conversions API. Here’s a sample received message with a referral object containing a `ctwa_clid`:
+Upon receiving the `ctwa_clid`, store it with the conversation. When a conversion has happened within a conversation, send the corresponding `ctwa_clid` via the Conversions API. Here's a sample received message with a referral object containing a `ctwa_clid`:
 
 ```
 {
@@ -228,7 +228,7 @@ Upon receiving the `ctwa_clid`, store it with the conversation. When a conversio
 
 In the final stage of integration, it is now possible to send events via the Conversions API with all information (`waba_id`, `dataset_id`, `ctwa_clid`) obtained in the previous steps.
 
-During an advertiser’s campaign period, events happen in real time. Notify Meta of these events via the Conversions API using `dataset_id` and access token. Make a `POST` request to this API:
+During an advertiser's campaign period, events happen in real time. Notify Meta of these events via the Conversions API using `dataset_id` and access token. Make a `POST` request to this API:
 
 ```
 https://graph.facebook.com/v16.0/{DATASET_ID}/events?access_token={TOKEN}
@@ -270,19 +270,19 @@ After an event has been sent to Meta over the Conversions API successfully, you 
 
 ### Pre-integration Requirements
 
-Before getting started with any integration, it’s necessary to ensure the right technical foundations are established and relevant access is granted for specific assets and platforms.
+Before getting started with any integration, it's necessary to ensure the right technical foundations are established and relevant access is granted for specific assets and platforms.
 
 #### Create a Facebook developer app
 
-If you don’t already have one, [follow the instructions](https://developers.facebook.com/docs/development/create-an-app) to create one.
+If you don't already have one, [follow the instructions](https://developers.facebook.com/docs/development/create-an-app) to create one.
 
 #### Integrate with the [Messenger API](https://developers.facebook.com/documentation/business-messaging/messenger-platform)
 
 #### Have advanced access to:
 
 * [`instagram_manage_events`](https://developers.facebook.com/docs/permissions#instagram_manage_events) permission
-  * You will need to apply for advanced access for `instagram_manage_events` permission in the “Permissions and Features” section of the developer App Dashboard. If you already have advanced access for `instagram_manage_messages` permission, your app should be automatically approved for `instagram_manage_events` permission..
-* [“Marketing API Access Tier”](https://developers.facebook.com/docs/features-reference#marketing-api-access-tier) feature. Extra guidance is included [here](https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/authorization).
+  * You will need to apply for advanced access for `instagram_manage_events` permission in the "Permissions and Features" section of the developer App Dashboard. If you already have advanced access for `instagram_manage_messages` permission, your app should be automatically approved for `instagram_manage_events` permission..
+* ["Marketing API Access Tier"](https://developers.facebook.com/docs/features-reference#marketing-api-access-tier) feature. Extra guidance is included [here](https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/authorization).
   * To be eligible for the Advanced Access feature, you need to make a total of 1500 successful Marketing API calls with an error rate of less than 10% in the past 15 days. This includes calls made through the Conversions API by a user with a role on the app.
 
 ### Integration Steps
@@ -398,7 +398,7 @@ Please note that messaging events should only represent customer interactions th
 
 **A**: Yes, we support linking with existing dataset, you can refer to the available options to decide the right option for your business.
 
-**If I’m using Conversions API for Website today, will adding business messaging to the same integration interfere with my existing integration?**
+**If I'm using Conversions API for Website today, will adding business messaging to the same integration interfere with my existing integration?**
 
 **A**: There is no risk to adding business messaging to your existing CAPI integration. Attribution is based on the page/dataset id and is not related to the app id.
 

@@ -84,24 +84,22 @@ The following code will be in the `app.post` in your `app.js` file and may look 
 
 ### Verification Requests
 
-Anytime you configure the Webhooks product in your App Dashboard, we’ll send a `GET` request to your endpoint URL. Verification requests include the following query string parameters, appended to the end of your endpoint URL. They will look something like this:
+Anytime you configure the Webhooks product in your App Dashboard, we'll send a `GET` request to your endpoint URL. Verification requests include the following query string parameters, appended to the end of your endpoint URL. They will look something like this:
 
 #### Sample Verification Request
 
 ```
-```
-GET https://www.your-clever-domain-name.com/webhooks?  
-  hub.mode=subscribe&  
-  hub.verify_token=mytoken&  
-  hub.challenge=1158201444
-```
+GET https://www.your-clever-domain-name.com/webhooks?  
+  hub.mode=subscribe&  
+  hub.verify_token=mytoken&  
+  hub.challenge=1158201444
 ```
 
 #### Validating Verification Requests
 
 Whenever your endpoint receives a verification request, it must:
 
-* Verify that the `hub.verify_token` value matches the string you set in the **Verify Token** field when you [configure the Webhooks product](https://developers.facebook.com/documentation/business-messaging/messenger-platform/webhooks/webhook-events#subscribe-to-meta-webhooks) in your App Dashboard (you haven’t set up this token string yet).
+* Verify that the `hub.verify_token` value matches the string you set in the **Verify Token** field when you [configure the Webhooks product](https://developers.facebook.com/documentation/business-messaging/messenger-platform/webhooks/webhook-events#subscribe-to-meta-webhooks) in your App Dashboard (you haven't set up this token string yet).
 * Respond with the `hub.challenge` value.
 
 Your `app.js` file may look like the following:
@@ -134,41 +132,39 @@ app.get("/webhook", (req, res) => {
 | --- | --- | --- |
 | `hub.mode` | `subscribe` | This value will always be set to `subscribe`. |
 | `hub.challenge` | `1158201444` | An `int` you must pass back to us. |
-| `hub.verify_token` | `mytoken` | A string that we grab from the **Verify Token** field in your app’s App Dashboard. You will set this string when you complete the Webhooks configuration settings steps. |
+| `hub.verify_token` | `mytoken` | A string that we grab from the **Verify Token** field in your app's App Dashboard. You will set this string when you complete the Webhooks configuration settings steps. |
 
 **Note:** [PHP converts periods (.) to underscores (\_) in parameter names⁠](http://www.php.net/manual/en/language.variables.external.php).
 
-If you are in your App Dashboard and configuring your Webhooks product (and thus, triggering a Verification Request), the dashboard will indicate if your endpoint validated the request correctly. If you are using the Graph API’s `/app/subscriptions` endpoint to configure the Webhooks product, the API will respond with success or failure.
+If you are in your App Dashboard and configuring your Webhooks product (and thus, triggering a Verification Request), the dashboard will indicate if your endpoint validated the request correctly. If you are using the Graph API's `/app/subscriptions` endpoint to configure the Webhooks product, the API will respond with success or failure.
 
 ### Event Notifications
 
-When you configure your Webhooks product, you will subscribe to specific `fields` on an `object` type (for example, the `messages` field on the `page` object). Whenever there’s a change to one of these fields, we will send your endpoint a `POST` request with a JSON payload describing the change.
+When you configure your Webhooks product, you will subscribe to specific `fields` on an `object` type (for example, the `messages` field on the `page` object). Whenever there's a change to one of these fields, we will send your endpoint a `POST` request with a JSON payload describing the change.
 
-For example, if you subscribed to the `page` object’s `message_reactions` field and a customer reacted to a message your app sent, we would send you a `POST` request that would look something like this:
+For example, if you subscribed to the `page` object's `message_reactions` field and a customer reacted to a message your app sent, we would send you a `POST` request that would look something like this:
 
-```
 ```
 {  
-  "object":"page",  
-  "entry":[  
-    {  
-      "id":"<PAGE_ID>",  
-      "time":1458692752478,  
-      "messaging":[  
-        {  
-          "sender":{  
-          "id":"<PSID>"  
-          },  
-          "recipient":{  
-            "id":"<PAGE_ID>"  
-          },  
-          ...  
-        }  
-      ]  
-    }  
-  ]  
+  "object":"page",  
+  "entry":[  
+    {  
+      "id":"<PAGE_ID>",  
+      "time":1458692752478,  
+      "messaging":[  
+        {  
+          "sender":{  
+          "id":"<PSID>"  
+          },  
+          "recipient":{  
+            "id":"<PAGE_ID>"  
+          },  
+          ...  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 #### Payload Contents
@@ -184,29 +180,27 @@ We format all payloads with JSON, so you can parse the payload using common JSON
 All webhook event payloads follow the same top-level structure. The `entry` array contains one or more event objects, each with a `messaging` array of individual events:
 
 ```
-```
 {  
-  "object": "page",  
-  "entry": [  
-    {  
-      "id": "<PAGE_ID>",  
-      "time": 1458692752478,  
-      "messaging": [  
-        {  
-          "sender": {  
-            "id": "<PSID>"  
-          },  
-          "recipient": {  
-            "id": "<PAGE_ID>"  
-          },  
-          "timestamp": 1458692752478,  
-          ...  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "page",  
+  "entry": [  
+    {  
+      "id": "<PAGE_ID>",  
+      "time": 1458692752478,  
+      "messaging": [  
+        {  
+          "sender": {  
+            "id": "<PSID>"  
+          },  
+          "recipient": {  
+            "id": "<PAGE_ID>"  
+          },  
+          "timestamp": 1458692752478,  
+          ...  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 Every event in the `messaging` array includes `sender`, `recipient`, and `timestamp` fields. The remaining fields depend on the event type.
@@ -216,21 +210,19 @@ Every event in the `messaging` array includes `sender`, `recipient`, and `timest
 When a customer sends a text message to your Page, the event includes a `message` object with `mid` (message ID) and `text` fields:
 
 ```
-```
 {  
-  "sender": {  
-    "id": "<PSID>"  
-  },  
-  "recipient": {  
-    "id": "<PAGE_ID>"  
-  },  
-  "timestamp": 1458692752478,  
-  "message": {  
-    "mid": "mid.1457764197618:41d102a3e1ae206a38",  
-    "text": "hello, world!"  
-  }  
+  "sender": {  
+    "id": "<PSID>"  
+  },  
+  "recipient": {  
+    "id": "<PAGE_ID>"  
+  },  
+  "timestamp": 1458692752478,  
+  "message": {  
+    "mid": "mid.1457764197618:41d102a3e1ae206a38",  
+    "text": "hello, world!"  
+  }  
 }
-```
 ```
 
 ##### Message with attachment
@@ -238,28 +230,26 @@ When a customer sends a text message to your Page, the event includes a `message
 When a customer sends an image, video, audio, or file, the event includes an `attachments` array instead of `text`:
 
 ```
-```
 {  
-  "sender": {  
-    "id": "<PSID>"  
-  },  
-  "recipient": {  
-    "id": "<PAGE_ID>"  
-  },  
-  "timestamp": 1518479195308,  
-  "message": {  
-    "mid": "mid.$cAAJdkrCd2ORnva8ErFhjGm0X_Q_c",  
-    "attachments": [  
-      {  
-        "type": "image",  
-        "payload": {  
-          "url": "<IMAGE_URL>"  
-        }  
-      }  
-    ]  
-  }  
+  "sender": {  
+    "id": "<PSID>"  
+  },  
+  "recipient": {  
+    "id": "<PAGE_ID>"  
+  },  
+  "timestamp": 1518479195308,  
+  "message": {  
+    "mid": "mid.$cAAJdkrCd2ORnva8ErFhjGm0X_Q_c",  
+    "attachments": [  
+      {  
+        "type": "image",  
+        "payload": {  
+          "url": "<IMAGE_URL>"  
+        }  
+      }  
+    ]  
+  }  
 }
-```
 ```
 
 Supported attachment types: `image`, `audio`, `video`, `file`, `reel`, `ig_reel`.
@@ -269,32 +259,30 @@ Supported attachment types: `image`, `audio`, `video`, `file`, `reel`, `ig_reel`
 When a customer clicks a postback button, Get Started button, or persistent menu item:
 
 ```
-```
 {  
-  "sender": {  
-    "id": "<PSID>"  
-  },  
-  "recipient": {  
-    "id": "<PAGE_ID>"  
-  },  
-  "timestamp": 1458692752478,  
-  "postback": {  
-    "title": "<BUTTON_TITLE>",  
-    "payload": "<DEVELOPER_DEFINED_PAYLOAD>"  
-  }  
+  "sender": {  
+    "id": "<PSID>"  
+  },  
+  "recipient": {  
+    "id": "<PAGE_ID>"  
+  },  
+  "timestamp": 1458692752478,  
+  "postback": {  
+    "title": "<BUTTON_TITLE>",  
+    "payload": "<DEVELOPER_DEFINED_PAYLOAD>"  
+  }  
 }
-```
 ```
 
 For complete payload schemas for all event types, see the individual [webhook event reference pages](https://developers.facebook.com/documentation/business-messaging/messenger-platform/webhooks/webhook-events/messages).
 
 ### Validate Payloads
 
-We sign all Event Notification payloads with a **SHA256** signature and include the signature in the request’s ‘X-Hub-Signature-256’ header, preceded with ‘sha256=’. You don’t have to validate the payload, but you should and we strongly recommend that you do.
+We sign all Event Notification payloads with a **SHA256** signature and include the signature in the request's 'X-Hub-Signature-256' header, preceded with 'sha256='. You don't have to validate the payload, but you should and we strongly recommend that you do.
 
 To validate the payload:
 
-* Generate a **SHA256** signature using the payload and your app’s **App Secret**.
+* Generate a **SHA256** signature using the payload and your app's **App Secret**.
 * Compare your signature to the signature in the `X-Hub-Signature-256` header (everything after `sha256=`). If the signatures match, the payload is genuine.
 
 Please note that we generate the signature using an *escaped unicode* version of the payload, with lowercase hex digits. If you just calculate against the decoded bytes, you will end up with a different signature. For example, the string `äöå` should be escaped to `\u00e4\u00f6\u00e5`.
@@ -343,9 +331,7 @@ If multiple messages are sent by the user when the application fails, they may n
 To test your webhook verification run the following cURL request with your verify token:
 
 ```
-```
-curl -X GET "localhost:1337/webhook?hub.verify_token=YOUR-VERIFY-TOKEN&hub.challenge=CHALLENGE_ACCEPTED&hub.mode=subscribe"
-```
+curl -X GET "localhost:1337/webhook?hub.verify_token=YOUR-VERIFY-TOKEN&hub.challenge=CHALLENGE_ACCEPTED&hub.mode=subscribe"
 ```
 
 If your webhook verification is working as expected, you should see the following:
@@ -356,9 +342,7 @@ If your webhook verification is working as expected, you should see the followin
 To test your webhook send the following cURL request:
 
 ```
-```
-curl -H "Content-Type: application/json" -X POST "localhost:1337/webhook" -d '{"object": "page", "entry": [{"messaging": [{"message": "TEST_MESSAGE"}]}]}'
-```
+curl -H "Content-Type: application/json" -X POST "localhost:1337/webhook" -d '{"object": "page", "entry": [{"messaging": [{"message": "TEST_MESSAGE"}]}]}'
 ```
 
 If your webhook is working as expected, you should see the following:
@@ -368,16 +352,16 @@ If your webhook is working as expected, you should see the following:
 
 ## Subscribe to Meta Webhooks
 
-Once your webhooks server endpoint, or sample app is ready, go to your app’s [Meta App Dashboard](https://developers.facebook.com/apps) to subscribe to Meta Webhooks.
+Once your webhooks server endpoint, or sample app is ready, go to your app's [Meta App Dashboard](https://developers.facebook.com/apps) to subscribe to Meta Webhooks.
 
 In this example we will use the dashboard to configure a Webhook and subscribe to the `messages` field. Any time a customer sends your app a message, a notification will be sent to your webhooks endpoint.
 
 * In the App Dashboard, go to **Products > Messenger > Settings**.
   * Some Messenger Platform webhooks are not available for Instagram messaging. If you are only implementing webhooks for Instagram and know the webhooks available for Instagram messaging, you can subscribe to webhooks here. To only view and subscribe to webhooks for Instagram messaging, you can go to **Instagram settings**.
-* Enter your endpoint’s URL in the **Callback URL** field and add your verification token to the **Verify Token** field. We will include this string in all [Verification Requests](https://developers.facebook.com/documentation/business-messaging/messenger-platform/webhooks/webhook-events#verification-requests). If you are using one of our sample apps, this should be the same string you used for your app’s `TOKEN` config variable.
+* Enter your endpoint's URL in the **Callback URL** field and add your verification token to the **Verify Token** field. We will include this string in all [Verification Requests](https://developers.facebook.com/documentation/business-messaging/messenger-platform/webhooks/webhook-events#verification-requests). If you are using one of our sample apps, this should be the same string you used for your app's `TOKEN` config variable.
 * Subscribe to fields for which you would like to be send notifications and click **Save**.
 * The last step is to subscribe to individual fields. Subscribe to the `messages` field and send a test Event Notification.
-  * If your endpoint is set up correctly, it should [validate the payload](https://developers.facebook.com/documentation/business-messaging/messenger-platform/webhooks/webhook-events#validate-payloads) and execute whatever code you have set it up to do upon successful validation. If you are using our [sample app](https://developers.facebook.com/docs/graph-api/webhooks/sample-apps), load the app’s URL in your web browser. It should display the payload’s contents.
+  * If your endpoint is set up correctly, it should [validate the payload](https://developers.facebook.com/documentation/business-messaging/messenger-platform/webhooks/webhook-events#validate-payloads) and execute whatever code you have set it up to do upon successful validation. If you are using our [sample app](https://developers.facebook.com/docs/graph-api/webhooks/sample-apps), load the app's URL in your web browser. It should display the payload's contents.
 
 You can change your Webhooks subscriptions, verify token, or API version at any time using the App Dashboard.
 
@@ -404,7 +388,7 @@ You can also do this programmatically by using the [`/app/subscriptions` endpoin
 | `messaging_postbacks` | A notification is sent when [a customer clicks a postback button, Get Started button, or persistent menu item for Messenger conversations or an Icebreaker option or Generic Template button for Instagram Messaging conversations.](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/webhook-events/messaging_postbacks) |
 | `messaging_referrals` | A notification is sent when [a customer resumes a conversation with the Page by clicking an ig.me or m.me link, or an ad.](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/webhook-events/messaging_referrals) |
 | `messaging_seen` | A notification is sent when [a customer reads a message sent by your business, for Instagram Messaging conversations.](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/webhook-events/message-reads) See `messaging_reads` for Messenger conversations. |
-| `messenger_template_status_update` | A notification is sent when [a utility message template’s review status has changed](https://developers.facebook.com/documentation/business-messaging/messenger-platform/send-messages/utility-messages). |
+| `messenger_template_status_update` | A notification is sent when [a utility message template's review status has changed](https://developers.facebook.com/documentation/business-messaging/messenger-platform/send-messages/utility-messages). |
 | `response_feedback` | A notification is sent [when a customer provides feedback on a message sent by your business by clicking the feedback buttons](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/webhook-events/response_feedback). |
 | `send_cart` | A notification is sent when your business has received a message from a customer, when the message contains cart/order information. Only available for Messenger conversations. |
 | `standby` | A notification is sent when [a conversation is idle for an app during the Handover Protocol](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/webhook-events/standby) |
@@ -428,52 +412,44 @@ You will need to subscribe your Page to the Webhooks notifications you want to r
 * A Page access token requested from a person who can perform the [`MODERATE` task](https://developers.facebook.com/docs/pages/overview#tasks) on the Page being queried
 * The [`pages_messaging` and `pages_manage_metadata` permissions](https://developers.facebook.com/docs/pages/overview/permissions-features#permission-dependencies)
 
-To subscribe to a Webhooks field, send a `POST` request to the Page’s [subscribed\_apps](https://developers.facebook.com/docs/graph-api/reference/page/subscribed_apps) edge using the Page’s acccess token.
+To subscribe to a Webhooks field, send a `POST` request to the Page's [subscribed\_apps](https://developers.facebook.com/docs/graph-api/reference/page/subscribed_apps) edge using the Page's acccess token.
 
 ```
-```
-curl -i -X POST "https://graph.facebook.com/<PAGE_ID>/subscribed_apps?subscribed_fields=messages&access_token=<PAGE_ACCESS_TOKEN>"
-```
+curl -i -X POST "https://graph.facebook.com/<PAGE_ID>/subscribed_apps?subscribed_fields=messages&access_token=<PAGE_ACCESS_TOKEN>"
 ```
 
 #### Sample Response
 
 ```
-```
 {  
-  "success": "true"  
+  "success": "true"  
 }
 ```
-```
 
-To see which app’s your Page has installed, send a `GET` request instead:
+To see which app's your Page has installed, send a `GET` request instead:
 
 #### Sample Request
 
 ```
-```
-curl -i -X GET "https://graph.facebook.com/<PAGE_ID>/subscribed_apps?access_token=<PAGE_ACCESS_TOKEN>"
-```
+curl -i -X GET "https://graph.facebook.com/<PAGE_ID>/subscribed_apps?access_token=<PAGE_ACCESS_TOKEN>"
 ```
 
 #### Sample Response
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "category": "Business",  
-      "link": "https://my-clever-domain-name.com/app",  
-      "name": "My Sample App",  
-      "id": "<APP_ID>",  
-      "subscribed_fields": [  
-        "messages"  
-      ]  
-    }  
-  ]  
+  "data": [  
+    {  
+      "category": "Business",  
+      "link": "https://my-clever-domain-name.com/app",  
+      "name": "My Sample App",  
+      "id": "<APP_ID>",  
+      "subscribed_fields": [  
+        "messages"  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 If your Page has not installed any apps, the API will return an empty data set.
@@ -486,7 +462,7 @@ You can also use the [Graph API Explorer](https://developers.facebook.com/tools/
 * Click the **Get Token** dropdown and select **Get User Access Token**, then choose the `pages_manage_metadata` permission. This will exchange your app token for a User access token with the `pages_manage_metadata` permission granted.
 * Click **Get Token** again and select your Page. This will exchange your User access token for a Page access token.
 * Change the operation method by clicking the `GET` dropdown menu and selecting `POST`.
-* Replace the default `me?fields=id,name` query with the Page’s **id** followed by `/subscribed_apps`, then submit the query.
+* Replace the default `me?fields=id,name` query with the Page's **id** followed by `/subscribed_apps`, then submit the query.
 
 ## Next Steps
 

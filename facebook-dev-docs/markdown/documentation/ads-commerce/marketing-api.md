@@ -5,7 +5,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/marketing
 
 # Ads and Commerce
 
-Meta’s ads and commerce APIs enable businesses to programmatically create and manage ads, sell products, gather insights to optimize campaigns, and more.
+Meta's ads and commerce APIs enable businesses to programmatically create and manage ads, sell products, gather insights to optimize campaigns, and more.
 
 ## Explore the APIs
 
@@ -35,7 +35,7 @@ Upload and manage your product inventory and use it to run ads and sell products
 
 Ads Insights API
 
-Access customizable reports about your ads’ performance, including delivery, conversions, and breakdowns.
+Access customizable reports about your ads' performance, including delivery, conversions, and breakdowns.
 
 [Learn more](https://developers.facebook.com/documentation/ads-commerce/marketing-api/insights)
 

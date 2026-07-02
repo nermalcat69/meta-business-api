@@ -33,7 +33,7 @@ Note that this attribute only hides the visible share button in the webview chro
 
 Users can already share from the webview if they like a piece of content from your bot.
 
-But you may wish to customize the experience more. For instance, you might want to control the formatting of the resulting bubble and give the recipient a specific call to action (e.g. “Buy”, “Play). Or you may wish to direct the recipient into some specific flow (e.g. filling out an RSVP or taking a survey) that’s hosted at a different URL than the one the sender is seeing.
+But you may wish to customize the experience more. For instance, you might want to control the formatting of the resulting bubble and give the recipient a specific call to action (e.g. "Buy", "Play). Or you may wish to direct the recipient into some specific flow (e.g. filling out an RSVP or taking a survey) that's hosted at a different URL than the one the sender is seeing.
 
 Messages sent from the [share button](https://developers.facebook.com/documentation/business-messaging/messenger-platform/send-messages/buttons) can also be customized in a similar fashion via the `share_contents` attribute.
 
@@ -43,13 +43,13 @@ Messages shared via these APIs are subject to [Platform Terms](https://developer
 ## Best Practices
 
 ✅
-If your bot shares pieces of content or links that are not particularly tailored for Messenger, it’s best to leave the default sharing button on.
+If your bot shares pieces of content or links that are not particularly tailored for Messenger, it's best to leave the default sharing button on.
 
 ✅
-If you use customized sharing features in the webview, it’s best to turn the default webview share button off, as the resulting bubble may be less effective than the one you would generate.
+If you use customized sharing features in the webview, it's best to turn the default webview share button off, as the resulting bubble may be less effective than the one you would generate.
 
 ❌
-In accordance with [Platform Policy](https://developers.facebook.com/devpolicy/#control), don’t incentivize the user to share or block functionality unnecessarily.
+In accordance with [Platform Policy](https://developers.facebook.com/devpolicy/#control), don't incentivize the user to share or block functionality unnecessarily.
 
 ❌
-In the webview, don’t open the share flow without user action.
+In the webview, don't open the share flow without user action.

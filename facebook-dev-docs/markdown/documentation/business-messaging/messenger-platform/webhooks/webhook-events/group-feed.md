@@ -34,7 +34,7 @@ Below is a list of the events that can be sent to your webhook from the Messenge
 | `messaging_postbacks` | A notification is sent when [a customer clicks a postback button, Get Started button, or persistent menu item for Messenger conversations or an Icebreaker option or Generic Template button for Instagram Messaging conversations.](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/webhook-events/messaging_postbacks) |
 | `messaging_referrals` | A notification is sent when [a customer resumes a conversation with the Page by clicking an ig.me or m.me link, or an ad.](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/webhook-events/messaging_referrals) |
 | `messaging_seen` | A notification is sent when [a customer reads a message sent by your business, for Instagram Messaging conversations.](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/webhook-events/message-reads) See `messaging_reads` for Messenger conversations. |
-| `messenger_template_status_update` | A notification is sent when [a utility message template’s review status has changed](https://developers.facebook.com/documentation/business-messaging/messenger-platform/send-messages/utility-messages). |
+| `messenger_template_status_update` | A notification is sent when [a utility message template's review status has changed](https://developers.facebook.com/documentation/business-messaging/messenger-platform/send-messages/utility-messages). |
 | `response_feedback` | A notification is sent [when a customer provides feedback on a message sent by your business by clicking the feedback buttons](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/webhook-events/response_feedback). |
 | `send_cart` | A notification is sent when your business has received a message from a customer, when the message contains cart/order information. Only available for Messenger conversations. |
 | `standby` | A notification is sent when [a conversation is idle for an app during the Handover Protocol](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/webhook-events/standby) |
@@ -44,28 +44,26 @@ Below is a list of the events that can be sent to your webhook from the Messenge
 All callbacks for the Messenger Platform have a common set of properties that provide information you will need to process and respond to input from people using your bot. In addition to the properties below, each event also has a set of specific properties that detail the event.
 
 ```
-```
 {  
-  "object":"page",  
-  "entry":[  
-    {  
-      "id":"<PAGE_ID>",  
-      "time":1458692752478,  
-      "messaging":[  
-        {  
-          "sender":{  
-          "id":"<PSID>"  
-          },  
-          "recipient":{  
-            "id":"<PAGE_ID>"  
-          },  
-          ...  
-        }  
-      ]  
-    }  
-  ]  
+  "object":"page",  
+  "entry":[  
+    {  
+      "id":"<PAGE_ID>",  
+      "time":1458692752478,  
+      "messaging":[  
+        {  
+          "sender":{  
+          "id":"<PSID>"  
+          },  
+          "recipient":{  
+            "id":"<PAGE_ID>"  
+          },  
+          ...  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ### Properties

@@ -43,13 +43,13 @@ When [creating](https://developers.facebook.com/documentation/ads-commerce/marke
 * [Campaign](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-campaign-group) objective must be `APP_INSTALLS`, `LINK_CLICKS`, or `CONVERSIONS`.
 * [Ad set promoted object](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-campaign#promoted_object) must be set
 * [Targeting](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference/advanced-targeting)
-* For mobile app ads, you must use the [mobile targeting spec](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference/advanced-targeting#mobile) `user_os` field. The [placement](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference/advanced-targeting#placement) should have a `device_platforms` field with value of [‘`mobile`’] and highly recommend the use of the spec’s other fields to target mobile devices on Facebook. Optionally, you can specify `publisher_platforms` if you only want certain platforms.
+* For mobile app ads, you must use the [mobile targeting spec](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference/advanced-targeting#mobile) `user_os` field. The [placement](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/reference/advanced-targeting#placement) should have a `device_platforms` field with value of ['`mobile`'] and highly recommend the use of the spec's other fields to target mobile devices on Facebook. Optionally, you can specify `publisher_platforms` if you only want certain platforms.
 * For canvas app ads, `device_platforms` must be `desktop`. Optionally, you can specify `facebook_positions` if you do not want both Facebook desktop Feed and right-hand-side column.
 * When `GET_OFFER` is used for virtual goods, the price must be discounted. See [virtual goods](https://developers.facebook.com/docs/payments/ads_virtual_goods) for more information.
 
 ### App Ad call to actions:
 
-The below additional Call to Actions are available for app ads within the `call_to_action` field of a [post](https://developers.facebook.com/docs/graph-api/reference/page/feed) or the [ad creative’s `object_story_spec`](https://developers.facebook.com/docs/marketing-api/adcreative#object_story_spec). You can also specify the mobile app’s deep link in the `app_link` field, or the desktop app’s virtual good object in the `product_link` field.
+The below additional Call to Actions are available for app ads within the `call_to_action` field of a [post](https://developers.facebook.com/docs/graph-api/reference/page/feed) or the [ad creative's `object_story_spec`](https://developers.facebook.com/docs/marketing-api/adcreative#object_story_spec). You can also specify the mobile app's deep link in the `app_link` field, or the desktop app's virtual good object in the `product_link` field.
 
 | Key | Value | Required |
 | --- | --- | --- |
@@ -57,8 +57,8 @@ The below additional Call to Actions are available for app ads within the `call_
 | value | JSON dictionary of: `{"link": "<APP_STORE_LINK>",``"app_link": "<MOBILE_DEEP_LINK>",``"product_link": "<VIRTUAL_GOOD_DEEP_LINK>",``"link_title": "<NAME_FOR_LINK>"}` | yes   * Only certain values are required |
 | value.link | refers to the App Store, Google Play Store, or Facebook Canvas App URL, for example, https://itunes.apple.com/us/app/facebook/id284882215 | yes |
 | value.app\_link | To define the [deep link](https://developers.facebook.com/docs/ads-for-apps/mobile-app-ads#deep-linking) destination only for mobile apps, for example, `myapp://product/12345`. To specify a deep link for desktop apps you should specify it directly in the URL link field. | yes, only for mobile install or engagement ads |
-| value.product\_link | To define the URL that points to the product’s Open Graph virtual good object. See [here](https://developers.facebook.com/docs/payments/ads_virtual_goods) for setup details. | yes, only for desktop virtual goods |
-| value.link\_title | Allows you to customize the name for the link, which shows up below the ad’s image | no |
+| value.product\_link | To define the URL that points to the product's Open Graph virtual good object. See [here](https://developers.facebook.com/docs/payments/ads_virtual_goods) for setup details. | yes, only for desktop virtual goods |
+| value.link\_title | Allows you to customize the name for the link, which shows up below the ad's image | no |
 
 #### Field specification
 
@@ -66,7 +66,7 @@ The below additional Call to Actions are available for app ads within the `call_
 
 ### Create with photo
 
-To create a desktop or mobile app ad with a photo, first create a link Page Post with a photo using the [ad creative’s `object_story_spec: {'link_data': ...}`](https://developers.facebook.com/docs/marketing-api/adcreative#object_story_spec) field.
+To create a desktop or mobile app ad with a photo, first create a link Page Post with a photo using the [ad creative's `object_story_spec: {'link_data': ...}`](https://developers.facebook.com/docs/marketing-api/adcreative#object_story_spec) field.
 
 **Example:**
 
@@ -91,20 +91,20 @@ curl -X POST \
   https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/adcreatives
 ```
 
-Alternatively, you can create the Page Post through the Page’s [feed endpoint](https://developers.facebook.com/docs/graph-api/reference/page/feed) and use the post ID in the creative. See the [examples](https://developers.facebook.com/documentation/ads-commerce/marketing-api/guides/lead-ads#examples) section below for more examples.
+Alternatively, you can create the Page Post through the Page's [feed endpoint](https://developers.facebook.com/docs/graph-api/reference/page/feed) and use the post ID in the creative. See the [examples](https://developers.facebook.com/documentation/ads-commerce/marketing-api/guides/lead-ads#examples) section below for more examples.
 
 ### Create with carousel
 
-To create a mobile app install or engagement ad using the carousel ad format, follow the instructions in the [carousel ads docs](https://developers.facebook.com/documentation/ads-commerce/marketing-api/guides/videoads) except in each `child_attachments`’ `link` field, specify an app store link.
+To create a mobile app install or engagement ad using the carousel ad format, follow the instructions in the [carousel ads docs](https://developers.facebook.com/documentation/ads-commerce/marketing-api/guides/videoads) except in each `child_attachments`' `link` field, specify an app store link.
 
 #### Considerations
 
 * Currently carousel mobile app ads support only one app
 * Minimum number of 3 images (vs. 2 on non-app ad carousel ads)
 * Carousel mobile app ads must have a call to action defined
-* The end card (typically displaying the Page’s profile photo) will not be displayed for carousel mobile app ads.
+* The end card (typically displaying the Page's profile photo) will not be displayed for carousel mobile app ads.
 
-Note that you should specify the same app store link in each `child_attachment`. You do not have to specify the link again in the `call_to_action:{'value':{'link':... }}}`
+Note that you should specify the same app store link in each `child_attachment`. You do not have to specify the link again in the `call_to_action:{'value':{'link':... }​}}`
 
 ```
 curl -X POST \
@@ -168,7 +168,7 @@ https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/adcreatives
 
 ### Create with Video
 
-To create an app ad with a video, first upload a video to the [ad account’s video library](https://developers.facebook.com/docs/marketing-api/advideo). Then use the video ID in the [ad creative’s `object_story_spec: {'video_data':...}`](https://developers.facebook.com/docs/marketing-api/adcreative#object_story_spec) field.
+To create an app ad with a video, first upload a video to the [ad account's video library](https://developers.facebook.com/docs/marketing-api/advideo). Then use the video ID in the [ad creative's `object_story_spec: {'video_data':...}`](https://developers.facebook.com/docs/marketing-api/adcreative#object_story_spec) field.
 
 **Example:**
 
@@ -178,7 +178,7 @@ curl \
   -F 'object_story_spec={
     "page_id": "<PAGE_ID>",
     "video_data": {
-      "call_to_action": {"type":"INSTALL_MOBILE_APP","value":{"link":"<APP_STORE_URL>"}},
+      "call_to_action": {"type":"INSTALL_MOBILE_APP","value":{"link":"<APP_STORE_URL>"}​},
       "image_url": "<THUMBNAIL_URL>",
       "video_id": "<VIDEO_ID>"
     }
@@ -187,13 +187,13 @@ curl \
 https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/adcreatives
 ```
 
-Alternatively, you can create the Page Post through the Page’s [video endpoint](https://developers.facebook.com/docs/graph-api/reference/video) and use the video ID in the creative. See the [examples](https://developers.facebook.com/documentation/ads-commerce/marketing-api/guides/lead-ads#examples) section below for more examples.
+Alternatively, you can create the Page Post through the Page's [video endpoint](https://developers.facebook.com/docs/graph-api/reference/video) and use the video ID in the creative. See the [examples](https://developers.facebook.com/documentation/ads-commerce/marketing-api/guides/lead-ads#examples) section below for more examples.
 
 ## Read
 
 To retrieve details about your Page Post, refer to the [link Page Post docs](https://developers.facebook.com/docs/graph-api/reference/link) or [video Page Post docs](https://developers.facebook.com/docs/graph-api/reference/video).
 
-You can list all Page Posts from the Page’s [`/promotable_posts`](https://developers.facebook.com/docs/graph-api/reference/page/feed) edge.
+You can list all Page Posts from the Page's [`/promotable_posts`](https://developers.facebook.com/docs/graph-api/reference/page/feed) edge.
 
 ```
 curl https://graph.facebook.com/v25.0/<PAGE_ID>/promotable_posts
@@ -217,15 +217,13 @@ To retrieve details about your ad creative, refer to the [ad creative documentat
 #### Sample code
 
 ```
-```
 "call_to_action={  
-  'type':'LEARN_MORE',  
-  'value':{  
-    'link':'https://itunes.apple.com/us/app/facebook/id284882215',  
-    'app_link':'facebook://path/to/page'  
-  }  
+  'type':'LEARN_MORE',  
+  'value':{  
+    'link':'https://itunes.apple.com/us/app/facebook/id284882215',  
+    'app_link':'facebook://path/to/page'  
+  }  
 }"
-```
 ```
 
 Before specifying an app link, you should validate that it has been scraped by calling:
@@ -248,9 +246,9 @@ You can also breakdown stats by specifying an additional URL parameter, `breakdo
 
 | Name | Description |
 | --- | --- |
-| `gender_age` | Break down your statistics on audience’s age and gender |
-| `country` | Break down your statistics on audience’s country |
-| `locale` | Break down your statistics on audience’s locale |
+| `gender_age` | Break down your statistics on audience's age and gender |
+| `country` | Break down your statistics on audience's country |
+| `locale` | Break down your statistics on audience's locale |
 
 **Examples:**
 
@@ -274,7 +272,7 @@ curl \
   -F 'picture=<IMAGE_URL>' \
   -F 'link=<LINK>' \
   -F 'published=1' \
-  -F 'call_to_action={"type":"SIGN_UP","value":{"link":"<LINK>"}}' \
+  -F 'call_to_action={"type":"SIGN_UP","value":{"link":"<LINK>"}​}' \
   -F 'access_token=<ACCESS_TOKEN>' \
 https://graph.facebook.com/v25.0/<PAGE_ID>/feed
 ```
@@ -394,7 +392,7 @@ https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/adcreatives
 
 Step 3. Set the bidding at the ad set, optimizing for app events, paying for impressions.
 
-Note you must also set the ad set’s `promoted_object` to include a `custom_event_type` to optimize towards, see [ad set docs](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-campaign) for more details.
+Note you must also set the ad set's `promoted_object` to include a `custom_event_type` to optimize towards, see [ad set docs](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-campaign) for more details.
 
 ```
 curl -X POST \
@@ -453,7 +451,7 @@ Note that you should use `PAGE_ACCESS_TOKEN` and Pages API session to create Pag
   -F 'message=Check out this app!' \
   -F 'thumbnail=<APP_STORE_URL>' \
   -F 'published=0' \
-  -F 'call_to_action={"type":"INSTALL_MOBILE_APP","value":{"link":"<APP_STORE_URL>"}}' \
+  -F 'call_to_action={"type":"INSTALL_MOBILE_APP","value":{"link":"<APP_STORE_URL>"}​}' \
   -F 'source=@<VIDEO_PATH>' \
   -F 'access_token=<ACCESS_TOKEN>' \
 https://graph.facebook.com/v25.0/<PAGE_ID>/videos
@@ -484,7 +482,7 @@ https://graph.facebook.com/v25.0/<PAGE_ID>/videos
   -F 'message=Check out this app!' \
   -F 'thumbnail=<THUMBNAIL_PATH>' \
   -F 'published=0' \
-  -F 'call_to_action={"type":"PLAY_GAME","value":{"link":"<THUMBNAIL_PATH>"}}' \
+  -F 'call_to_action={"type":"PLAY_GAME","value":{"link":"<THUMBNAIL_PATH>"}​}' \
   -F 'source=@<VIDEO_PATH>' \
   -F 'access_token=<ACCESS_TOKEN>' \
 https://graph.facebook.com/v25.0/<PAGE_ID>/videos
@@ -498,7 +496,7 @@ curl \
   -F 'picture=<IMAGE_URL>' \
   -F 'link=<LINK>' \
   -F 'published=1' \
-  -F 'call_to_action={"type":"BUY_NOW","value":{"link":"<LINK>","product_link":"<PRODUCT_LINK>"}}' \
+  -F 'call_to_action={"type":"BUY_NOW","value":{"link":"<LINK>","product_link":"<PRODUCT_LINK>"}​}' \
   -F 'access_token=<ACCESS_TOKEN>' \
 https://graph.facebook.com/v25.0/<PAGE_ID>/feed
 ```
@@ -556,10 +554,10 @@ curl -X POST \
         ]
       }
     },
-    "message": "Test {{product.name | titleize}}",
+    "message": "Test {​{product.name | titleize}​}",
     "link": "https://www.example.com"",
-    "name": "Headline {{product.price}}",
-    "description": "Description {{product.description}}"
+    "name": "Headline {​{product.price}​}",
+    "description": "Description {​{product.description}​}"
     }
   }' \
   -F 'access_token=<ACCESS_TOKEN>' \
@@ -626,10 +624,10 @@ curl -X POST \
              "link": "http://www.example.com/appstoreurl"
            }
          },
-         "message": "Test {{product.name | titleize}}",
+         "message": "Test {​{product.name | titleize}​}",
          "link": "http://www.example.com/appstoreurl",
-         "name": "Headline {{product.price}}",
-         "description": "Description {{product.description}}"
+         "name": "Headline {​{product.price}​}",
+         "description": "Description {​{product.description}​}"
        }
      }' \
   -F 'product_set_id="<PRODUCT_SET_ID>"' \
@@ -669,16 +667,14 @@ curl -X POST \
 You can add two metadata tags to your playable HTML 5 file. This enables Meta to attribute the playable in the ads to your app.
 
 ```
-```
 ...  
 <head>  
-  ...  
-  <meta name="ref-application-id" content="<YOUR_APP_ID>">  
-  <meta name="ref-asset-id" content="<YOUR_ASSET_ID>">  
-  ...  
+  ...  
+  <meta name="ref-application-id" content="<YOUR_APP_ID>">  
+  <meta name="ref-asset-id" content="<YOUR_ASSET_ID>">  
+  ...  
 </head>  
 ...
-```
 ```
 
 * Provide your Meta app ID and asset ID meta tag in the playable HTML file. This helps Meta provide accurate insights about the asset when it appears in your ad.

@@ -24,7 +24,7 @@ Before you start, make sure you have:
 * A [Facebook App](https://developers.facebook.com/documentation/business-messaging/messenger-platform/get-started) configured for Messenger Platform
 * The `pages_messaging` and `pages_manage_metadata`[permissions](https://developers.facebook.com/docs/pages/overview/permissions-features#permission-dependencies)
 * Your app subscribed to the `messages` and `messaging_handovers`[webhook fields](https://developers.facebook.com/documentation/business-messaging/messenger-platform/webhooks#subscribe-to-meta-webhooks)
-* Your app authorized in the Page’s **Advanced Messaging** settings
+* Your app authorized in the Page's **Advanced Messaging** settings
 * The [Conversation Routing](https://developers.facebook.com/documentation/business-messaging/messenger-platform/conversation-routing) protocol enabled for your Page
 
 ## Creating an ad with an app
@@ -50,36 +50,34 @@ You can also select to send a summary message. This setting allows the app to ge
 When the conversation starts from the ad, the app will have control of the thread for 1 day (24 hours) from the last user message. Businesses with longer lead or sales cycles can extend thread control for up to 7 days by setting `receiving_app_control_expiration` from 1 to 7. Any invalid values for `receiving_app_control_expiration` would lead to the thread control window set to 1 day. Additionally, any [Conversation Routing](https://developers.facebook.com/documentation/business-messaging/messenger-platform/conversation-routing) actions would also reset the thread control window to 1 day.
 
 ![Ads Manager Advanced JSON setup pane showing the message flow JSON beside a Messenger business chat preview](https://scontent.fdel1-4.fna.fbcdn.net/v/t39.2365-6/653700866_1459945552530761_2051432269066693757_n.png?_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=u_GMBJzQ3G0Q7kNvwHp7HMw&_nc_oc=AdpC2mwUfjZyHHsWf9TYFBWDxr4mODg3GVkW9JYi3uc78_3Eua62YedKf-frn9lMRRqj6V_rZioAx1jre7Z20Nwg&_nc_zt=14&_nc_ht=scontent.fdel1-4.fna&_nc_gid=b9ioW9cigz8UNZpMnd8sHQ&_nc_ss=7b289&oh=00_AQD35JC1orCBAyyMoHlz4QrZdKFHcHLvLkrs0BBVXdW-WA&oe=6A608236)
-Here’s a sample JSON template from the above image which defines the `receiving_app_control_expiration`.
+Here's a sample JSON template from the above image which defines the `receiving_app_control_expiration`.
 
 ```
-```
 {  
-    "message": {  
-        "attachment": {  
-            "type": "template",  
-            "payload": {  
-                "template_type": "button",  
-                "text": "Hi! Please let us know how we can help you",  
-                "buttons": [  
-                    {  
-                        "title": "Show me the product!",  
-                        "type": "web_url",  
-                        "url": "http://www.facebook.com/"  
-                    },  
-                    {  
-                        "title": "Tell me more",  
-                        "type": "postback",  
-                        "payload": "USER_DEFINED_PAYLOAD"  
-                    }  
-                ]  
-            }  
-        },  
-        "receiving_app_id": 1278416343931139,  
-        "receiving_app_control_expiration": 4  
-    }  
+    "message": {  
+        "attachment": {  
+            "type": "template",  
+            "payload": {  
+                "template_type": "button",  
+                "text": "Hi! Please let us know how we can help you",  
+                "buttons": [  
+                    {  
+                        "title": "Show me the product!",  
+                        "type": "web_url",  
+                        "url": "http://www.facebook.com/"  
+                    },  
+                    {  
+                        "title": "Tell me more",  
+                        "type": "postback",  
+                        "payload": "USER_DEFINED_PAYLOAD"  
+                    }  
+                ]  
+            }  
+        },  
+        "receiving_app_id": 1278416343931139,  
+        "receiving_app_control_expiration": 4  
+    }  
 }
-```
 ```
 
 ## Expected Webhooks
@@ -93,36 +91,34 @@ This message is only sent for Lead Ads with summary message enabled and the lead
 This summary message will not appear in the thread for either the person or the Page. The goal of this message is to help apps that are not listening to `messaging_handovers` get an initial message to trigger them with context to get started.
 
 ```
-```
 {  
-    "object": "page",  
-    "entry": [  
-        {  
-            "time": 1661209504608,  
-            "id": "104508901353867",  
-            "messaging": [  
-                {  
-                    "sender": {  
-                        "id": "5794982867201265"  
-                    },  
-                    "recipient": {  
-                        "id": "542998526103632"  
-                    },  
-                    "timestamp": 1661209328,  
-                    "message": {  
-                        "mid": "m_2OF0H5fb2HNRyjM0rt2FVBAaDQp_p5DQlffdEXNVyOrraxQCt0tFwWXwq3QctcvbpjSX1rSY8BX9Y2IXwPirWA",  
-                        "text": "Lead summary:\nAre you interested in becoming a reseller?: Yes\nWhat city is your store located?: Menlo Park"  
-                    },  
-                    "hop_context": {  
-                        "app_id": 498721317747541,  
-                        "metadata": "messenger_lead_gen_complete"  
-                    }  
-                }  
-            ]  
-        }  
-    ]  
+    "object": "page",  
+    "entry": [  
+        {  
+            "time": 1661209504608,  
+            "id": "104508901353867",  
+            "messaging": [  
+                {  
+                    "sender": {  
+                        "id": "5794982867201265"  
+                    },  
+                    "recipient": {  
+                        "id": "542998526103632"  
+                    },  
+                    "timestamp": 1661209328,  
+                    "message": {  
+                        "mid": "m_2OF0H5fb2HNRyjM0rt2FVBAaDQp_p5DQlffdEXNVyOrraxQCt0tFwWXwq3QctcvbpjSX1rSY8BX9Y2IXwPirWA",  
+                        "text": "Lead summary:\nAre you interested in becoming a reseller?: Yes\nWhat city is your store located?: Menlo Park"  
+                    },  
+                    "hop_context": {  
+                        "app_id": 498721317747541,  
+                        "metadata": "messenger_lead_gen_complete"  
+                    }  
+                }  
+            ]  
+        }  
+    ]  
 }
-```
 ```
 
 ### For apps subscribed to conversation routing events
@@ -134,55 +130,51 @@ If the lead flow is dropped or the person is disqualified, the metadata shows `m
 This webhook triggers on thread control changes, so it arrives before the summary message webhook when enabled. You can use this to either ignore or expect the summary webhook.
 
 ```
-```
 {  
-    "object": "page",  
-    "entry": [  
-        {  
-            "id": "104508901353867",  
-            "time": 1662056205364,  
-            "messaging": [  
-                {  
-                    "recipient": {  
-                        "id": "542998526103632"  
-                    },  
-                    "timestamp": 1662056205364,  
-                    "sender": {  
-                        "id": "5794982867201265"  
-                    },  
-                    "pass_thread_control": {  
-                        "previous_owner_app_id": 413038776280800,  
-                        "new_owner_app_id": 2262510160704936,  
-                        "metadata": "messenger_lead_gen_complete"  
-                    }  
-                }  
-            ],  
-            "hop_context": [  
-                {  
-                    "app_id": 2262510160704936,  
-                    "metadata": "messenger_lead_gen_complete"  
-                }  
-            ]  
-        }  
-    ]  
+    "object": "page",  
+    "entry": [  
+        {  
+            "id": "104508901353867",  
+            "time": 1662056205364,  
+            "messaging": [  
+                {  
+                    "recipient": {  
+                        "id": "542998526103632"  
+                    },  
+                    "timestamp": 1662056205364,  
+                    "sender": {  
+                        "id": "5794982867201265"  
+                    },  
+                    "pass_thread_control": {  
+                        "previous_owner_app_id": 413038776280800,  
+                        "new_owner_app_id": 2262510160704936,  
+                        "metadata": "messenger_lead_gen_complete"  
+                    }  
+                }  
+            ],  
+            "hop_context": [  
+                {  
+                    "app_id": 2262510160704936,  
+                    "metadata": "messenger_lead_gen_complete"  
+                }  
+            ]  
+        }  
+    ]  
 }
-```
 ```
 
 ## Sending follow-up messages
 
-After your app receives thread control, you can send follow-up messages to the lead using the [Send API](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/send-api). The standard 24-hour messaging window applies from the time of the person’s last message.
+After your app receives thread control, you can send follow-up messages to the lead using the [Send API](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/send-api). The standard 24-hour messaging window applies from the time of the person's last message.
 
 To send a follow-up message, make a `POST` request to the `/<PAGE_ID>/messages` endpoint using the PSID from the webhook event:
 
 ```
-```
-curl -X POST "https://graph.facebook.com/<API_VERSION>/<PAGE_ID>/messages" \  
-    -d "recipient={'id':'<PSID>'}" \  
-    -d "messaging_type=RESPONSE" \  
-    -d "message={'text':'Thanks for your interest! A team member will follow up shortly.'}" \  
-    -d "access_token=<PAGE_ACCESS_TOKEN>"
-```
+curl -X POST "https://graph.facebook.com/<API_VERSION>/<PAGE_ID>/messages" \  
+    -d "recipient={'id':'<PSID>'}" \  
+    -d "messaging_type=RESPONSE" \  
+    -d "message={'text':'Thanks for your interest! A team member will follow up shortly.'}" \  
+    -d "access_token=<PAGE_ACCESS_TOKEN>"
 ```
 
 ## Retrieving lead data
@@ -190,9 +182,7 @@ curl -X POST "https://graph.facebook.com/<API_VERSION>/<PAGE_ID>/messages" \
 To retrieve the history of messages from a lead conversation, use the [Conversations API](https://developers.facebook.com/docs/graph-api/reference/page/conversations). Send a `GET` request to get the conversation and its messages:
 
 ```
-```
-curl -i -X GET "https://graph.facebook.com/<API_VERSION>/<PAGE_ID>/conversations?fields=participants,messages{message,created_time}&access_token=<PAGE_ACCESS_TOKEN>"
-```
+curl -i -X GET "https://graph.facebook.com/<API_VERSION>/<PAGE_ID>/conversations?fields=participants,messages{message,created_time}&access_token=<PAGE_ACCESS_TOKEN>"
 ```
 
 This returns the full conversation thread, including the lead qualification questions and answers exchanged during the automated flow.

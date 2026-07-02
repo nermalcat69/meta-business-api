@@ -30,7 +30,7 @@ Follow [Step 2: Getting Started With the CRM Integration](https://developers.fac
 * Ensure that your `event_time` values are after the lead generation timestamp, otherwise your events may be discarded.
 * Do not change Pixels after you complete the integration. Changing Pixels will start a new integration and restart the training process.
 
-**I’ve started sending data, but cannot proceed past the “Wait for 7 days of CRM events” message in Events Manager.**
+**I've started sending data, but cannot proceed past the "Wait for 7 days of CRM events" message in Events Manager.**
 
 The integration is currently in the data validation phase; it must pass all of the following requirements before proceeding to the next step:
 

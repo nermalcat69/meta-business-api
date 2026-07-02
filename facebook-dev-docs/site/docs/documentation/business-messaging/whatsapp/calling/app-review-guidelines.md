@@ -72,33 +72,27 @@ To complete these next steps, you will use the [Graph API Explorer tool](https:/
 * In the endpoint builder, enter `/<YOUR_SANDBOX_WABA_ID>/subscribed_apps`, then click **Submit**.
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 * Next, register your test phone number by entering `/<YOUR_SANDBOX_TEST_PHONE_NUMBER_ID>/register` in the endpoint builder.
 * In the left sidebar, click JSON, then enter the following JSON body, then click Submit:
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "pin": "123456"  
+  "messaging_product": "whatsapp",  
+  "pin": "123456"  
 }
-```
 ```
 
 * You should receive a standard `success` response:
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 ### Step 4. Test your messaging functionality
@@ -107,18 +101,16 @@ To complete these next steps, you will use the [Graph API Explorer tool](https:/
 * In the left sidebar, click **JSON**, then enter the following JSON body, then click **Submit**:
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "to": "YOUR_NUMBER", // Replace this value with phone number of your device.  
-  "recipient": "US.13491208655302741918",  
-  "type": "template",  
-  "template": {  
-    "name": "hello_world",  
-    "language": { "code": "en_US" }  
-  }  
+  "messaging_product": "whatsapp",  
+  "to": "YOUR_NUMBER", // Replace this value with phone number of your device.  
+  "recipient": "US.13491208655302741918",  
+  "type": "template",  
+  "template": {  
+    "name": "hello_world",  
+    "language": { "code": "en_US" }  
+  }  
 }
-```
 ```
 
 **Usernames and business-scoped user IDs:** The `recipient` field lets you identify the WhatsApp user by their BSUID instead of, or in addition to, their phone number in `to`. For details, see [Business-scoped user IDs](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids#business-scoped-user-id).
@@ -145,25 +137,21 @@ To complete these next steps, you will use the [Graph API Explorer tool](https:/
 * In the left sidebar, click **JSON**, then enter the following JSON body, then click **Submit**:
 
 ```
-```
 {  
-  "calling": {  
-    "status": "ENABLED",  
-    "call_icon_visibility": "DEFAULT",  
-    "callback_permission_status": "ENABLED"  
-  }  
+  "calling": {  
+    "status": "ENABLED",  
+    "call_icon_visibility": "DEFAULT",  
+    "callback_permission_status": "ENABLED"  
+  }  
 }
-```
 ```
 
 * You should receive a standard `success` response:
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 * Finally, under **Access Token**, copy the access token down for future use.

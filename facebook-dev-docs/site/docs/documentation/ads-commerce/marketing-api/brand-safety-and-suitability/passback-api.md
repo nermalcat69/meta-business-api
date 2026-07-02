@@ -7,9 +7,9 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/marketing
 
 Updated: Jun 30, 2026
 
-Delivery reports provide approximate impressions information at the publisher level and the content level. They give greater transparency into where advertisers’ ads appeared.
+Delivery reports provide approximate impressions information at the publisher level and the content level. They give greater transparency into where advertisers' ads appeared.
 
-While we apply brand suitability controls as effectively as possible, we can’t guarantee that all content and publishers will be compliant or aligned with advertisers’ unique brand suitability standards.
+While we apply brand suitability controls as effectively as possible, we can't guarantee that all content and publishers will be compliant or aligned with advertisers' unique brand suitability standards.
 
 During or after a campaign, delivery reports provide approximate publisher impression information for Facebook Pages (in-stream video ads, overlay, and ads on Reels), Instagram accounts (Ads in Instagram profile feed), and Audience Network apps (rewarded videos and native, banner, and interstitial ads).
 
@@ -63,7 +63,7 @@ All Publisher Delivery Report (PDR) APIs support a common set of fields
 | content\_types | list(enum) | Y | The list of content types. This field only applies to the `instream_video` placement. Possible values are: `vod`, `live`. |
 | status | enum | Y | The publisher status. This field only applies to the instream\_video placement. Possible values are: all, partner, non\_partner. |
 
-\*Estimated\_impressions is listed as an “estimated” number of impressions, due to our backend calculating this number semi-real time. It matches what we ultimately show in our own reporting and ads billing.
+\*Estimated\_impressions is listed as an "estimated" number of impressions, due to our backend calculating this number semi-real time. It matches what we ultimately show in our own reporting and ads billing.
 
 ## Summary
 
@@ -92,31 +92,27 @@ All API calls must be made with an access token associated with an Admin access 
 **Sample Request**
 
 ```
-```
-GET /publisher_delivery_report_date_ranges  
+GET /publisher_delivery_report_date_ranges  
 ?platform=facebook  
 &position=instream_video  
 &fields=start_date,end_date
-```
 ```
 
 **Sample Response**
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "start_date": "2022-10-01",  
-      "end_date": "2022-10-28"  
-    },  
-    {  
-      "start_date": "2022-09-28",  
-      "end_date": "2022-09-30"  
-    },  
-  ]  
+  "data": [  
+    {  
+      "start_date": "2022-10-01",  
+      "end_date": "2022-10-28"  
+    },  
+    {  
+      "start_date": "2022-09-28",  
+      "end_date": "2022-09-30"  
+    },  
+  ]  
 }
-```
 ```
 
 **Note:** For instream\_video and facebook\_reels\_overlay placements, there could be at most two non-overlapping available date ranges. The date ranges are sorted in reverse chronological order.
@@ -125,15 +121,14 @@ GET /publisher_delivery_report_date_ranges
 
 **Permissions**
 
-Requires “View Performance” access to the ad account that contains the ad set.
+Requires "View Performance" access to the ad account that contains the ad set.
 
 Get an ad set level publisher delivery report for a specific placement and date range. Replace `ad_set_id` with the ad set ID for the report. And ensure the `start_date` and `end_date` are within the available range from above:
 
 **Sample Request**
 
 ```
-```
-GET /{ad_set_id}/publisher_delivery_report  
+GET /{ad_set_id}/publisher_delivery_report  
 ?platform=facebook  
 &position=instream_video  
 &start_date=2022-07-31  
@@ -141,43 +136,40 @@ GET /{ad_set_id}/publisher_delivery_report
 &fields=url,name,status,content_types,estimated_impressions  
 &summary=true
 ```
-```
 
 **Sample Response**
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "url": "www.facebook.com/example1",  
-      "name": "Acme",  
-      "status": "partner",  
-      "content_types": [  
-        "vod"  
-      ],  
-      "estimated_impressions": 4823  
-    },  
-    {  
-      "url": "www.facebook.com/example2",  
-      "name": "Widgets",  
-      "status": "partner",  
-      "content_types": [  
-        "vod"  
-      ],  
-      "estimated_impressions": 4241  
-    }  
-    ...  
-  ],  
-  ...  
-  "summary": {  
-    "total_count": 5168,  
-    "non_partner_count": 124,  
-    "start_date": "2022-07-31",  
-    "end_date": "2022-08-31"  
-  }  
+  "data": [  
+    {  
+      "url": "www.facebook.com/example1",  
+      "name": "Acme",  
+      "status": "partner",  
+      "content_types": [  
+        "vod"  
+      ],  
+      "estimated_impressions": 4823  
+    },  
+    {  
+      "url": "www.facebook.com/example2",  
+      "name": "Widgets",  
+      "status": "partner",  
+      "content_types": [  
+        "vod"  
+      ],  
+      "estimated_impressions": 4241  
+    }  
+    ...  
+  ],  
+  ...  
+  "summary": {  
+    "total_count": 5168,  
+    "non_partner_count": 124,  
+    "start_date": "2022-07-31",  
+    "end_date": "2022-08-31"  
+  }  
 }
-```
 ```
 
 ## Error codes
@@ -217,7 +209,7 @@ The following rate limits apply at the product-level, meaning all Publisher List
 
 [Graph API - Overview](https://developers.facebook.com/docs/graph-api/overview)
 
-For a user-friendly, interactive UI, try out [Meta’s Graph API Explorer](https://developers.facebook.com/tools/explorer/)
+For a user-friendly, interactive UI, try out [Meta's Graph API Explorer](https://developers.facebook.com/tools/explorer/)
 
 [Marketing API | Best Practices](https://developers.facebook.com/documentation/ads-commerce/marketing-api/best-practices)
 

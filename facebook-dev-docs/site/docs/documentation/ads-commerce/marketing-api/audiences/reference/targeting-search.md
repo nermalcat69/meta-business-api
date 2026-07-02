@@ -109,7 +109,7 @@ For Audience Network and In-Stream video you can also exclude publishers by cate
 
 ### Limited spend on excluded placements
 
-If you use placement controls to exclude certain placements for your ad sets, you can allow up to 5% of your spend to be allocated to each excluded placement when it’s likely to improve performance.
+If you use placement controls to exclude certain placements for your ad sets, you can allow up to 5% of your spend to be allocated to each excluded placement when it's likely to improve performance.
 
 #### Opt-out with limited spend
 
@@ -120,23 +120,21 @@ The available positions are `facebook_positions`, `audience_network_positions`, 
 ##### Example request
 
 ```
-```
-"placement_soft_opt_out": {  
-  "facebook_positions": [  
-    "marketplace",  
-    "profile_feed"  
-  ],  
-  "audience_network_positions": [  
-    "classic",  
-    "rewarded_video"  
-  ]  
+"placement_soft_opt_out": {  
+  "facebook_positions": [  
+    "marketplace",  
+    "profile_feed"  
+  ],  
+  "audience_network_positions": [  
+    "classic",  
+    "rewarded_video"  
+  ]  
 }
-```
 ```
 
 #### Retrieve limited spend settings
 
-To see which placements have limited spend set, query an ad set’s `placement_soft_opt_out` field.
+To see which placements have limited spend set, query an ad set's `placement_soft_opt_out` field.
 
 ##### Example request
 
@@ -241,7 +239,7 @@ curl \
 
 ### Instagram Explore home
 
-To create an ad set with the `explore_home` placement that targets a supported country (e.g., “US”):
+To create an ad set with the `explore_home` placement that targets a supported country (e.g., "US"):
 
 ```
 curl -X POST \
@@ -272,7 +270,7 @@ curl -X POST \
 
 ### Instagram search results
 
-To create an ad set with the `ig_search` placement that targets a supported country (e.g., “US”):
+To create an ad set with the `ig_search` placement that targets a supported country (e.g., "US"):
 
 ```
 curl -X POST \
@@ -369,7 +367,7 @@ curl -G \
   https://graph.facebook.com/<VERSION>/23842573364570019
 ```
 
-With the effective placements, you can determine which placements your ad will deliver to based on your ad set’s `billing_event`, `optimization_goal` and `promoted_object` as well as your ad campaign’s `buying_type` and `objective`. All parameters for `/ad_campaign_placement` include:
+With the effective placements, you can determine which placements your ad will deliver to based on your ad set's `billing_event`, `optimization_goal` and `promoted_object` as well as your ad campaign's `buying_type` and `objective`. All parameters for `/ad_campaign_placement` include:
 
 * Ad `account_id` and access token
 * `billing_event`, such as `IMPRESSIONS`

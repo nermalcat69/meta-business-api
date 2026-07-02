@@ -7,11 +7,11 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/marketing
 
 Updated: Apr 21, 2026
 
-Beginning September 2, 2025, we will start to roll out more proactive restrictions on custom audiences and custom conversions that may suggest information not permitted under [our terms⁠](https://www.facebook.com/legal/terms/businesstools?_rdr). For example, any custom audience or custom conversions suggesting specific health conditions (e.g., “arthritis”, “diabetes”) or financial status (e.g., “credit score”, “high income”) will be flagged and prevented from being used to run ad campaigns.
+Beginning September 2, 2025, we will start to roll out more proactive restrictions on custom audiences and custom conversions that may suggest information not permitted under [our terms⁠](https://www.facebook.com/legal/terms/businesstools?_rdr). For example, any custom audience or custom conversions suggesting specific health conditions (e.g., "arthritis", "diabetes") or financial status (e.g., "credit score", "high income") will be flagged and prevented from being used to run ad campaigns.
 
 **What these restrictions mean for your campaigns:**
 
-* You won’t be able to use flagged custom audiences or custom conversions when creating new campaigns.
+* You won't be able to use flagged custom audiences or custom conversions when creating new campaigns.
 * If you have an active campaign using flagged custom audiences or custom conversions, you should promptly review and resolve the issues by following the resolution steps to avoid delivery and performance issues.
 
 **For API developers:**
@@ -94,7 +94,7 @@ The following are the limits on ad sets
 
 ### Housing, Employment and Credit Ads
 
-Facebook is committed to protecting people from discrimination, and we are continually improving our ability to detect and deter potential abuse. It’s already against [our policies⁠](https://www.facebook.com/policies/ads/prohibited_content/discriminatory_practices) to discriminate by wrongfully targeting or excluding specific groups of people. As part of a [historic settlement agreement⁠](https://newsroom.fb.com/news/2019/03/protecting-against-discrimination-in-ads/), we are making changes to the way we manage housing, employment and credit ads.
+Facebook is committed to protecting people from discrimination, and we are continually improving our ability to detect and deter potential abuse. It's already against [our policies⁠](https://www.facebook.com/policies/ads/prohibited_content/discriminatory_practices) to discriminate by wrongfully targeting or excluding specific groups of people. As part of a [historic settlement agreement⁠](https://newsroom.fb.com/news/2019/03/protecting-against-discrimination-in-ads/), we are making changes to the way we manage housing, employment and credit ads.
 
 Advertisers must specify a `special_ad_category` for ad campaigns that market housing, employment, and credit. In doing so, the set of targeting options available for ads in these campaigns will be restricted. See [Special Ad Category](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/special-ad-category) for more information.
 
@@ -105,38 +105,36 @@ If an ad set contains one or more custom lookalike audiences flagged with an `op
 **Example**
 
 ```
-```
 {  
-  "effective_status": "ACTIVE",  
-  "issues_info": [  
-    {  
-      "level": "AD_SET",  
-      "error_code": 2460003,  
-      "error_summary": "Custom Audience is blocked",  
-      "error_message": "Custom Audience is blocked: Some of this ad set’s custom audiences and/or lookalikes are blocked because they suggest the use of information (e.g., health, financial) not allowed under Meta’s terms. Go to Audience Manager for more details, and you can either review each custom audience or lookalike and remove prohibited information, or choose a different one for your ad set or create a new one and make sure it does not include potentially prohibited information. You can also request a review in Audience Manager if you think any don’t use restricted information.",  
-      "error_type": "SOFT_ERROR",  
-      "additional_info": "Custom Audience ID: 120231141155310247"  
-    },  
-    {  
-      "level": "AD_SET",  
-      "error_code": 2460003,  
-      "error_summary": "Custom Audience is blocked",  
-      "error_message": "Custom Audience is blocked: Some of this ad set’s custom audiences and/or lookalikes are blocked because they suggest the use of information (e.g., health, financial) not allowed under Meta’s terms. Go to Audience Manager for more details, and you can either review each custom audience or lookalike and remove prohibited information, or choose a different one for your ad set or create a new one and make sure it does not include potentially prohibited information. You can also request a review in Audience Manager if you think any don’t use restricted information.",  
-      "error_type": "SOFT_ERROR",  
-      "additional_info": "Custom Audience ID: 120232742978230247"  
-    },  
-    {  
-      "level": "AD_SET",  
-      "error_code": 2460004,  
-      "error_summary": "Custom Conversion is blocked",  
-      "error_message": "Custom Conversion is blocked: This ad set’s custom conversion is blocked because it suggests the use of information (e.g., health, financial) not allowed under Meta’s terms. You can’t edit this custom conversion, but you can choose a different one for this ad set or create a new one that doesn’t use prohibited information. You can also request a review if you think your custom conversion doesn’t use prohibited information.",  
-      "error_type": "SOFT_ERROR",  
-      "additional_info": "Custom Conversion ID: 730362226205831"  
-    }  
-  ],  
-  "id": "120228591637010247"  
+  "effective_status": "ACTIVE",  
+  "issues_info": [  
+    {  
+      "level": "AD_SET",  
+      "error_code": 2460003,  
+      "error_summary": "Custom Audience is blocked",  
+      "error_message": "Custom Audience is blocked: Some of this ad set's custom audiences and/or lookalikes are blocked because they suggest the use of information (e.g., health, financial) not allowed under Meta's terms. Go to Audience Manager for more details, and you can either review each custom audience or lookalike and remove prohibited information, or choose a different one for your ad set or create a new one and make sure it does not include potentially prohibited information. You can also request a review in Audience Manager if you think any don't use restricted information.",  
+      "error_type": "SOFT_ERROR",  
+      "additional_info": "Custom Audience ID: 120231141155310247"  
+    },  
+    {  
+      "level": "AD_SET",  
+      "error_code": 2460003,  
+      "error_summary": "Custom Audience is blocked",  
+      "error_message": "Custom Audience is blocked: Some of this ad set's custom audiences and/or lookalikes are blocked because they suggest the use of information (e.g., health, financial) not allowed under Meta's terms. Go to Audience Manager for more details, and you can either review each custom audience or lookalike and remove prohibited information, or choose a different one for your ad set or create a new one and make sure it does not include potentially prohibited information. You can also request a review in Audience Manager if you think any don't use restricted information.",  
+      "error_type": "SOFT_ERROR",  
+      "additional_info": "Custom Audience ID: 120232742978230247"  
+    },  
+    {  
+      "level": "AD_SET",  
+      "error_code": 2460004,  
+      "error_summary": "Custom Conversion is blocked",  
+      "error_message": "Custom Conversion is blocked: This ad set's custom conversion is blocked because it suggests the use of information (e.g., health, financial) not allowed under Meta's terms. You can't edit this custom conversion, but you can choose a different one for this ad set or create a new one that doesn't use prohibited information. You can also request a review if you think your custom conversion doesn't use prohibited information.",  
+      "error_type": "SOFT_ERROR",  
+      "additional_info": "Custom Conversion ID: 730362226205831"  
+    }  
+  ],  
+  "id": "120228591637010247"  
 }
-```
 ```
 
 In addition, attempting to create or modify ad sets containing any flagged custom audience, lookalike audience or custom conversion will fail with an error. The error will contain the list of IDs for the restricted assets.
@@ -144,38 +142,34 @@ In addition, attempting to create or modify ad sets containing any flagged custo
 ##### For flagged custom audiences
 
 ```
-```
 {  
-  "error": {  
-    "error_subcode": 246003,  
-    "error_data": {  
-      "Restricted Custom Audience IDs": [  
-        "<CUSTOM_AUDIENCE_ID1>",  
-        "<CUSTOM_AUDIENCE_ID2>"  
-      ]  
-    }  
-    "error_user_title": "Your custom audience is currently blocked",  
-    "error_user_msg": "  This custom audience is blocked because it may contain information (e.g., health, financial) not allowed under Meta’s terms. Visit the audience manager to appeal this decision, edit your audience and remove prohibited information, or choose a different audience."  
-  },  
+  "error": {  
+    "error_subcode": 246003,  
+    "error_data": {  
+      "Restricted Custom Audience IDs": [  
+        "<CUSTOM_AUDIENCE_ID1>",  
+        "<CUSTOM_AUDIENCE_ID2>"  
+      ]  
+    }  
+    "error_user_title": "Your custom audience is currently blocked",  
+    "error_user_msg": "  This custom audience is blocked because it may contain information (e.g., health, financial) not allowed under Meta's terms. Visit the audience manager to appeal this decision, edit your audience and remove prohibited information, or choose a different audience."  
+  },  
 }
-```
 ```
 
 ##### For flagged custom conversions
 
 ```
-```
 {  
-  "error": {  
-    "error_subcode": 246004,  
-    "error_data": {  
-      "Restricted Custom Conversion ID": "<CUSTOM_CONVERSION_ID>"  
-    }  
-    "error_user_title": "Your custom conversion is currently blocked",  
-    "error_user_msg": "This custom conversion is blocked because it may contain information (e.g., health, financial) not allowed under Meta’s terms. Visit the events manager to appeal this decision, edit your custom conversion and remove prohibited information, or choose a different custom conversion."  
-  },  
+  "error": {  
+    "error_subcode": 246004,  
+    "error_data": {  
+      "Restricted Custom Conversion ID": "<CUSTOM_CONVERSION_ID>"  
+    }  
+    "error_user_title": "Your custom conversion is currently blocked",  
+    "error_user_msg": "This custom conversion is blocked because it may contain information (e.g., health, financial) not allowed under Meta's terms. Visit the events manager to appeal this decision, edit your custom conversion and remove prohibited information, or choose a different custom conversion."  
+  },  
 }
-```
 ```
 
 #### To resolve flagged audiences
@@ -184,17 +178,17 @@ If your custom or lookalike audiences are flagged, consider these options.
 
 To resolve flagged custom audiences:
 
-* **Review flagged audiences**: Use Audience Manager to review your custom audience along with other information included in an audience, and remove any information that is not allowed under edit the audience to comply with [Meta’s terms⁠](https://www.facebook.com/legal/terms/businesstools/).
+* **Review flagged audiences**: Use Audience Manager to review your custom audience along with other information included in an audience, and remove any information that is not allowed under edit the audience to comply with [Meta's terms⁠](https://www.facebook.com/legal/terms/businesstools/).
 * **Create new or choose different audiences**: Alternatively, you can create a new custom audience or choose a different existing custom audience and make sure that it does not include information not allowed under our terms and use that to run campaigns.
 
 To resolve flagged lookalike audiences:
 
 * **Resolve issues with the underlying custom audience**: If the underlying custom audience (also known as the seed audience) of your lookalike audience is flagged, you will need to resolve the issue with the underlying custom audience on which the lookalike audience is built. Please refer to the preceding section on how to resolve flagged custom audiences.
-* **Create new audiences**: Consider developing new lookalike audiences and make sure that they don’t include information that is not allowed under our terms.
+* **Create new audiences**: Consider developing new lookalike audiences and make sure that they don't include information that is not allowed under our terms.
 
 ##### Request a review
 
-If you believe your custom audience or lookalike audience has been flagged in error and doesn’t include non-permitted information, you can request a review via Ads Manager under the campaigns table or, or in Audience Manager by clicking on individual audiences and under the summary tab of the impacted audience.
+If you believe your custom audience or lookalike audience has been flagged in error and doesn't include non-permitted information, you can request a review via Ads Manager under the campaigns table or, or in Audience Manager by clicking on individual audiences and under the summary tab of the impacted audience.
 
 #### To resolve flagged custom conversions
 
@@ -211,7 +205,7 @@ To resolve a flagged custom conversion in an existing campaign:
 
 ##### Request a review
 
-If you believe your custom conversion has been flagged in error and doesn’t include non-permitted information, you can request a review via Ads Manager under the campaigns table, or in Events Manager under the custom conversions page.
+If you believe your custom conversion has been flagged in error and doesn't include non-permitted information, you can request a review via Ads Manager under the campaigns table, or in Events Manager under the custom conversions page.
 
 ### Targeting European Union Ads
 
@@ -221,7 +215,7 @@ We are launching this requirement to respond to the EU Digital Services Act (DSA
 
 Ad sets targeted to the EU and/or associated territories (see [here⁠](https://www.facebook.com/business/help/605021638170961/) for a complete list) are required to provide beneficiary information (who benefits from the ad running), and payer information (who pays for the ad). This applies to new ads, duplicated ads, or significantly edited ads from May 16 forward, and without the required information, the API will respond with a wrong parameter error. For convenience the advertiser can set a saved beneficiary and payor in their ad account, which will be auto-populated during ad set creation, copying, and updating targets to include EU locations and ads under existing ad seta without configured the payor and beneficiary.. For more information about the ad account level parameters, `default_dsa_payor` and `default_dsa_beneficiary`, see to the check the [Ad Account reference document](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-account).
 
-To facilitate the creation of ad sets targeting the EU, we’re offering a new API which allows developers to get a list of likely beneficiary/payer strings, based on ad account activity. See [Ad Account DSA Recommendations](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-account/dsa_recommendations) for more information.
+To facilitate the creation of ad sets targeting the EU, we're offering a new API which allows developers to get a list of likely beneficiary/payer strings, based on ad account activity. See [Ad Account DSA Recommendations](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-account/dsa_recommendations) for more information.
 
 **Notice:**
 
@@ -230,7 +224,7 @@ To facilitate the creation of ad sets targeting the EU, we’re offering a new A
 * The `payer` and the `beneficiary` fields are only for ad sets targeting the EU and/or associated territories.
 * For ad sets targeting regions other than the EU and/or associated territories, that information will not be saved even if it is provided.
 
-To facilitate the creation of ad sets targeting the EU, we’re offering a new API which allows developers to get a list of likely beneficiary/payer strings, based on ad account activity. See [Ad Account Dsa Recommendations](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-account/dsa_recommendations) for more information.
+To facilitate the creation of ad sets targeting the EU, we're offering a new API which allows developers to get a list of likely beneficiary/payer strings, based on ad account activity. See [Ad Account Dsa Recommendations](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-account/dsa_recommendations) for more information.
 
 ## Reading
 
@@ -266,8 +260,8 @@ HTTPPHP SDKJavaScript SDKAndroid SDKiOS SDKcURL
 ---
 
 ```
-GET /v25.0/<AD_SET_ID>/?fields=adset_schedule HTTP/1.1  
-Host: graph.facebook.com
+GET /v25.0/<AD_SET_ID>/?fields=adset_schedule HTTP/1.1  
+Host: graph.facebook.com
 ```
 
 Try it in [Graph API Explorer](https://developers.facebook.com/tools/explorer/?method=GET&path=%3CAD_SET_ID%3E%2F%3Ffields%3Dadset_schedule&version=v25.0)
@@ -279,7 +273,7 @@ If you want to learn how to use the Graph API, read our [Using Graph API guide](
 | Parameter | Description |
 | --- | --- |
 | `date_preset` *enum{today, yesterday, this\_month, last\_month, this\_quarter, maximum, data\_maximum, last\_3d, last\_7d, last\_14d, last\_28d, last\_30d, last\_90d, last\_week\_mon\_sun, last\_week\_sun\_sat, last\_quarter, last\_year, this\_week\_mon\_today, this\_week\_sun\_today, this\_year}* | Date Preset |
-| `time_range` *{‘since’:YYYY-MM-DD,’until’:YYYY-MM-DD}* | Time Range. Note if time range is invalid, it will be ignored.  ---   `since` *datetime* A date in the format of "YYYY-MM-DD", which means from the beginning midnight of that day.  `until` *datetime* A date in the format of "YYYY-MM-DD", which means to the beginning midnight of the following day.  Show child parameters |
+| `time_range` *{'since':YYYY-MM-DD,'until':YYYY-MM-DD}* | Time Range. Note if time range is invalid, it will be ignored.  ---   `since` *datetime* A date in the format of "YYYY-MM-DD", which means from the beginning midnight of that day.  `until` *datetime* A date in the format of "YYYY-MM-DD", which means to the beginning midnight of the following day.  Show child parameters |
 
 #### Fields
 
@@ -622,8 +616,8 @@ HTTPPHP SDKJavaScript SDKAndroid SDKiOS SDKcURL
 ---
 
 ```
-POST /v25.0/act_<AD_ACCOUNT_ID>/adsets HTTP/1.1  
-Host: graph.facebook.com  
+POST /v25.0/act_<AD_ACCOUNT_ID>/adsets HTTP/1.1  
+Host: graph.facebook.com  
   
 name=My+First+Adset&lifetime_budget=20000&start_time=2026-05-12T10%3A45%3A09-0700&end_time=2026-05-22T10%3A45%3A09-0700&campaign_id=%3CAD_CAMPAIGN_ID%3E&bid_amount=100&billing_event=LINK_CLICKS&optimization_goal=LINK_CLICKS&targeting=%7B%22facebook_positions%22%3A%5B%22feed%22%5D%2C%22geo_locations%22%3A%7B%22countries%22%3A%5B%22US%22%5D%7D%2C%22publisher_platforms%22%3A%5B%22facebook%22%2C%22audience_network%22%5D%7D&status=PAUSED
 ```
@@ -752,10 +746,10 @@ PHP Business SDKPython Business SDKcURL
 ---
 
 ```
-use FacebookAds\Object\AdSet;  
+use FacebookAds\Object\AdSet;  
   
-$adset = new AdSet('<AD_SET_ID>');  
-$adset->end_time = '2013-10-02T00:00:00-0700';  
+$adset = new AdSet('<AD_SET_ID>');  
+$adset->end_time = '2013-10-02T00:00:00-0700';  
 $adset->update();
 ```
 
@@ -768,10 +762,10 @@ PHP Business SDKPython Business SDKcURL
 ---
 
 ```
-use FacebookAds\Object\AdSet;  
+use FacebookAds\Object\AdSet;  
   
-$adset = new AdSet('<AD_SET_ID>');  
-$adset->campaign_status = AdSet::STATUS_PAUSED;  
+$adset = new AdSet('<AD_SET_ID>');  
+$adset->campaign_status = AdSet::STATUS_PAUSED;  
 $adset->update();
 ```
 
@@ -813,8 +807,8 @@ HTTPPHP SDKJavaScript SDKAndroid SDKiOS SDKcURL
 ---
 
 ```
-DELETE /v25.0/<AD_SET_ID>/ HTTP/1.1  
-Host: graph.facebook.com
+DELETE /v25.0/<AD_SET_ID>/ HTTP/1.1  
+Host: graph.facebook.com
 ```
 
 Try it in [Graph API Explorer](https://developers.facebook.com/tools/explorer/?method=DELETE&path=%3CAD_SET_ID%3E%2F&version=v25.0)
@@ -859,7 +853,7 @@ curl -i -X POST \
   -d "destination_type=ON_PAGE" \
   -d "billing_event=IMPRESSIONS" \
   -d "daily_budget=500" \
-  -d "targeting={\"geo_locations\": {\"countries\": [\"US\"]}}" \
+  -d "targeting={\"geo_locations\": {\"countries\": [\"US\"]}​}" \
   -d "promoted_object={\"page_id\": PAGE_ID}" \
   -d "campaign_id=CAMPAIGN_ID" \
   -d "status=PAUSED" \
@@ -879,7 +873,7 @@ curl -i -X POST \
   -d "optimization_goal=PAGE_LIKES" \
   -d "billing_event=IMPRESSIONS" \
   -d "daily_budget=500" \
-  -d "targeting={\"geo_locations\": {\"countries\": [\"US\"]}}" \
+  -d "targeting={\"geo_locations\": {\"countries\": [\"US\"]}​}" \
   -d "promoted_object={\"page_id\": PAGE_ID}" \
   -d "campaign_id=CAMPAIGN_ID" \
   -d "status=PAUSED" \
@@ -915,7 +909,7 @@ There will be new restrictions on Outcome-Driven Ads Experiences (ODAX) campaign
 |  | Calls | N/A | Calls   API enum {`QUALITY_CALL`} | Lead Generation |
 |  | App | Complete Registration, Complete Tutorial, Contact, Find Location, Schedule, Start Trial, Submit Application, Subscribe | App Events, Link Clicks, Daily Unique Reach   API enum {`APP_INSTALLS_AND_OFFSITE_CONVERSIONS`, `LINK_CLICKS`, `REACH`} | Conversions |
 | **App Promotion** *Find people likely to install your app.* | N/A | All app events, including all custom events | Non-AAA: Link Clicks, App Installs, App Events, Value   API enum {`LINK_CLICKS`, `APP_INSTALLS`, `APP_INSTALLS_AND_OFFSITE_CONVERSIONS`, `VALUE`}   AAA: App Installs, App Installs w/ App Events, App Events, Value   API enum {`APP_INSTALLS`, `APP_INSTALLS_AND_OFFSITE_CONVERSIONS`, `VALUE`} | App Installs |
-| **Sales** *Find people likely to make purchases or take other important actions online or in store.* | Website & Facebook Shops (closed beta) | Purchase, InitiateCheckout, AddPaymentInfo, AddToCart, CompleteRegistration, Donate, StartTrial, Subscribe, ViewContent | (source of truth: same as today’s Conversions objective + web and shop)   API enum {`OFFSITE_CONVERSIONS`, `VALUE`, `LINK_CLICKS`, `LANDING_PAGE_VIEWS`, `LINK_CLICKS`, `IMPRESSIONS`, `REACH`} | Conversions |
+| **Sales** *Find people likely to make purchases or take other important actions online or in store.* | Website & Facebook Shops (closed beta) | Purchase, InitiateCheckout, AddPaymentInfo, AddToCart, CompleteRegistration, Donate, StartTrial, Subscribe, ViewContent | (source of truth: same as today's Conversions objective + web and shop)   API enum {`OFFSITE_CONVERSIONS`, `VALUE`, `LINK_CLICKS`, `LANDING_PAGE_VIEWS`, `LINK_CLICKS`, `IMPRESSIONS`, `REACH`} | Conversions |
 |  | Website | Purchase, InitiateCheckout, AddPaymentInfo, AddToCart, CompleteRegistration, Donate, StartTrial, Subscribe, ViewContent | Conversions, Value, Landing Page Views, Link Clicks, Impressions, Daily Unique Reach   API enum {`OFFSITE_CONVERSIONS`, `VALUE`, `LANDING_PAGE_VIEWS`, `LINK_CLICKS`, `IMPRESSIONS`, `REACH`} | Conversions |
 |  | App | Purchase, Initiate Checkout, Add Payment Info, Add to Cart, Complete Registration, Donate, In-App Ad Click, In-App Ad Impression, Spent Credits, Start Trial, Subscribe, View Content | App Events, Link Clicks, Daily Unique Reach   API enum {`OFFSITE_CONVERSIONS`, `LINK_CLICKS`, `REACH`} | Conversions |
 |  | Website & App | Purchase, InitiateCheckout, AddPaymentInfo, AddToCart, CompleteRegistration, Donate, StartTrial, Subscribe, ViewContent | Conversions   API enum {`OFFSITE_CONVERSIONS`} | Conversions |

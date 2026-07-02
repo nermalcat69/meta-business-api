@@ -18,7 +18,7 @@ You can use either the [Refund Order API](https://developers.facebook.com/docume
 * A customer can initiate a return request in the app and you have the option to email them a shipping label.
 * Once they ship the product to you and you receive it, you need to issue a call to the [Refund Order API](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/order-management/cancellation-refund-api#refund_order) to refund the order and give the customer their money back.
 
-In this API call, you also have the option to refund customers for shipping labels if it’s part of your policy to refund shipping fees.
+In this API call, you also have the option to refund customers for shipping labels if it's part of your policy to refund shipping fees.
 
 ### Cancellation API process
 
@@ -26,7 +26,7 @@ If an item goes out of stock before you can fulfill it, you need to issue a call
 
 ## Verify your email server accepts emails from Facebook IP addresses
 
-Facebook/Instagram communicates with you when you make a sale, a customer has questions, or a dispute claim or chargeback is filed against you. Facebook/Instagram then sends the email to the customer support email you set up in Commerce Manager (**General** tab in “Customer Service” card).
+Facebook/Instagram communicates with you when you make a sale, a customer has questions, or a dispute claim or chargeback is filed against you. Facebook/Instagram then sends the email to the customer support email you set up in Commerce Manager (**General** tab in "Customer Service" card).
 
 ### Integrate third-party customer support platforms
 
@@ -34,7 +34,7 @@ To manage customer communications, define how order transactional emails will be
 
 * Ensure that your email server is configured to accept emails from the @support.facebook.com or @shopping.instagram.com domain.
 
-Your email administrator must allowlist these email origin servers’ IP addresses to ensure that your organization does not reject Facebook or Instagram Shopping emails:
+Your email administrator must allowlist these email origin servers' IP addresses to ensure that your organization does not reject Facebook or Instagram Shopping emails:
 
 * 66.220.144.128/25 (66.220.144.128-66.220.144.254)
 * 66.220.155.128/25 (66.220.155.128-66.220.155.254)
@@ -42,7 +42,7 @@ Your email administrator must allowlist these email origin servers’ IP address
 * 69.63.178.128/25 (69.63.178.128-69.63.178.254)
 * 69.63.184.0/25 (69.63.184.0-69.63.184.126)
 
-* If you’re using a third-party platform for customer support (such as Zendesk), ensure that:
+* If you're using a third-party platform for customer support (such as Zendesk), ensure that:
   * You preserve the recipient address (for example, `5oguv2ft0e@shopping.instagram.com`).
   * You preserve the Facebook order ID to the reply subject line and body.
   * Your support agent can look up the order details using the Facebook order ID or the `merchant_order_reference` (see [Enforce `merchant_order_reference` immutability](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/best-practices/orders#merchant-order-ref)).
@@ -81,7 +81,7 @@ A. In the case of returns, the customer can initiate the return from the Instagr
 
 **Q: How does the customer initiate a return and what does it look like in the UI?**
 
-A: The customer is able to select Return Item in the Order Details page to initiate a return. There are two ways in which customers can initiate a return. Business handles returns: Navigating from the Order Detail Page to Returns, the customer can learn about how to return their order through the business’s website. By going through this return flow, the return communication between customer and business is handled outside of Instagram. The delivered status will change to refunded when the business marks it in their order management system. Return request in Instagram: This allows the customer to initiate a return request that gets sent to the business. The business must respond to the customer via email relay within 2 days. The customer and business can communicate via email relay and work out the return process. Instagram displays a note with the business’s delivered status on the Order Details screen that they started a return.
+A: The customer is able to select Return Item in the Order Details page to initiate a return. There are two ways in which customers can initiate a return. Business handles returns: Navigating from the Order Detail Page to Returns, the customer can learn about how to return their order through the business's website. By going through this return flow, the return communication between customer and business is handled outside of Instagram. The delivered status will change to refunded when the business marks it in their order management system. Return request in Instagram: This allows the customer to initiate a return request that gets sent to the business. The business must respond to the customer via email relay within 2 days. The customer and business can communicate via email relay and work out the return process. Instagram displays a note with the business's delivered status on the Order Details screen that they started a return.
 
 **Q: As a business am I still charged for payment processing with returns?**
 
@@ -89,11 +89,11 @@ A: No. You will not be charged for payment processing for returns.
 
 **Q: What happens when an item a customer purchases is out of stock?**
 
-A: If the item shows as out of stock in the inventory, Instagram won’t allow a sale. If the inventory count is inaccurate and the item is not available from the business anymore, the business can cancel the order within the Order Management UI or their OMS.
+A: If the item shows as out of stock in the inventory, Instagram won't allow a sale. If the inventory count is inaccurate and the item is not available from the business anymore, the business can cancel the order within the Order Management UI or their OMS.
 
 **Q. Do I need to provide a return label for the customer with every purchase?**
 
-A. In the event of a return, it’s up to the business and customer to determine how to ensure the item is shipped back.
+A. In the event of a return, it's up to the business and customer to determine how to ensure the item is shipped back.
 
 **Q. How will I protect myself from refund abuse? What type of documentation do I need to provide to prove my case?**
 
@@ -111,7 +111,7 @@ A: When a refund is processed after a transaction has been deposited into a busi
 
 A. Instagram shares transaction information, email, and address once a customer purchases from you. Meta terms explicitly state that you cannot use this for remarketing purposes, and only to fulfill the transaction similar to how you would treat a guest checkout. However, Instagram Shopping is built as a brand-first environment, and many of the businesses on Instagram offer loyalty benefits and have strong connections with the consumer. A consumer opt-in experience is being built for the launch. This opt-in would sit as part of the purchase flow, would also display the link to your privacy policy, and is being explored to tie a benefit such as free shipping, 10% off your first order, and so on as part of onboarding. The opt-in would be one-time in that a consumer who has opted in would not have to opt in again. Full account-linking capabilities are not available at launch and there is no two-way sync - For example, consumers cannot use your points shopping on Instagram, and different tiers of members cannot be distinguished, nor can an existing customer be recognized during the purchase experience. The opt-in means that the purchase email the consumer has entered in checkout is flagged as usable by your CRM, marketing, and loyalty activities.
 
-**Q: How do I retarget people who didn’t purchase or people who have purchased?**
+**Q: How do I retarget people who didn't purchase or people who have purchased?**
 
 A: Instagram has a suite of products for businesses - both free and paid - designed to work in complementary ways to help people shop on Instagram. Shopping is an organic feature that serves as a mobile storefront for businesses and lets them include products in their content. With paid, businesses can use brand and direct response ads to reach a targeted audience at a defined moment in time to achieve a specific outcome like raising awareness or driving sales to supplement their organic presence.
 

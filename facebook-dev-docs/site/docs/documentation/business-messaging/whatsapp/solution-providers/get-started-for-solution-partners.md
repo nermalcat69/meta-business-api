@@ -19,7 +19,7 @@ You need the following:
 
 During the app creation process you can create a business portfolio.
 
-If you prefer to onboard with a Solution Partner, you will need to provide your partner’s app ID.
+If you prefer to onboard with a Solution Partner, you will need to provide your partner's app ID.
 
 ## Go to the app dashboard
 
@@ -31,7 +31,7 @@ On this page of the dashboard, you will find links to the [WhatsApp Embedded Sig
 
 To become a tech provider you need to [verify your business with Meta⁠](https://www.facebook.com/business/help/2058515294227817). If you already have a verified business, and linked it to your app during the app creation process, this step will be marked as completed and you can [start the app review process](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/app-review).
 
-Click **Start verification** to verify your business. You’ll need the following information:
+Click **Start verification** to verify your business. You'll need the following information:
 
 * Verify business details – Provide your business name, address, phone number, email, and website for verification.
 * Confirm your connection – Select a way for us to get in touch to confirm your connection to the business.
@@ -41,7 +41,7 @@ Your business must be verified before you can start the app review process.
 
 ## Step 2: App Review
 
-Once you have completed business verification, you can submit your app for App Review. You’ll need to complete the following tasks:
+Once you have completed business verification, you can submit your app for App Review. You'll need to complete the following tasks:
 
 * Review your app settings
 * Create and submit videos of your app
@@ -58,18 +58,18 @@ To pass App Review, you need to submit video evidence of your capabilities to se
 * The first video must show a message created and sent from your app and received in the WhatsApp client (mobile app or web app).
 * The second video must show your app being used to create a message template.
 
-As an alternative, you can capture a screen recording of the **API Setup** cURL script being used by you to send a message to a WhatsApp user number you have added as a test recipient number, in lieu of sending a message using your or your partner’s app. Similarly, you can capture a screen recording of the **WhatsApp Manager** being used by you to create a template message, instead of your or your partner’s app.
+As an alternative, you can capture a screen recording of the **API Setup** cURL script being used by you to send a message to a WhatsApp user number you have added as a test recipient number, in lieu of sending a message using your or your partner's app. Similarly, you can capture a screen recording of the **WhatsApp Manager** being used by you to create a template message, instead of your or your partner's app.
 
 If you are partnering with a Solution Partner, you can use your current integration with them to demonstrate these actions.
 
 ### Submit documentation for App Review
 
-Get approval for advanced permissions and features so that you can manage your clients’ accounts and information.
+Get approval for advanced permissions and features so that you can manage your clients' accounts and information.
 
 App Review grants you **Advanced access** to the following permissions, which are required to become a Tech Provider:
 
 * **Advanced access** to `whatsapp_business_messaging` — required to send messages on behalf of your clients.
-* **Advanced access** to `whatsapp_business_management` — required to access your clients’ WABAs. Without it, API calls that use this permission on WABAs not owned by your business return error code `200`.
+* **Advanced access** to `whatsapp_business_management` — required to access your clients' WABAs. Without it, API calls that use this permission on WABAs not owned by your business return error code `200`.
 
 Click the **Begin App Review** button to start your submission.
 
@@ -79,7 +79,7 @@ Click the **Begin App Review** button to start your submission.
 
 If you prefer to onboard with a Solution Partner, click the **Onboard with a Solution Partner** button at the bottom of the page.
 
-After clicking the **Onboard with a Solution Partner** button, the Tech Provider onboarding page will refresh to this flow. The flow is identical to the Tech Provider flow with the additional App Review step to **Create a partner solution** by entering your partner’s app ID to create a partner solution.
+After clicking the **Onboard with a Solution Partner** button, the Tech Provider onboarding page will refresh to this flow. The flow is identical to the Tech Provider flow with the additional App Review step to **Create a partner solution** by entering your partner's app ID to create a partner solution.
 
 To onboard without a partner, you can do so by clicking the **Onboard without a partner** button at the bottom of the page.
 

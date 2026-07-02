@@ -36,7 +36,7 @@ Make sure that the app you are recording is the same app that you are submitting
 
 ### Platform settings
 
-Set this to **Website** (click the **Add Platform** button if you haven’t set a platform yet) and provide the URL where your app users can log into your service and set up an automated experience or custom inbox solution.
+Set this to **Website** (click the **Add Platform** button if you haven't set a platform yet) and provide the URL where your app users can log into your service and set up an automated experience or custom inbox solution.
 
 ### Step-by-step instructions
 
@@ -53,8 +53,8 @@ To create an app:
 * Go to {website testing URL}.
 * Log in with test credentials above.
 * Click the {button} in the left nav.
-* Click the ‘Continue with Facebook’ button and log in with a valid Facebook account.
-* Click the ‘Set Up an Automated Experience’ button.
+* Click the 'Continue with Facebook' button and log in with a valid Facebook account.
+* Click the 'Set Up an Automated Experience' button.
 * ...
 
 ### Credentials
@@ -62,7 +62,7 @@ To create an app:
 Select the dropdown menu option that best describes how app users access your app before they are able to create an automated experience or custom inbox solution.
 
 * **I use Facebook Login for Business to log into my website** — Select this option if your app users can use Facebook Login for Business to create an account and sign into your app.
-* **I don’t use Facebook Login for Business to log into my website** — Select this option if app users cannot use Facebook Login for Business to create an account or sign in your app. Include a login and password for a test account that our app reviewers can use to access your app and set up an automated experience or inbox solution. Do not include personal Facebook or Instagram account details or Facebook or Instagram test user credentials. We will use our own Facebook accounts to test your service (our reviewers do not need to be granted any roles on your app).
+* **I don't use Facebook Login for Business to log into my website** — Select this option if app users cannot use Facebook Login for Business to create an account or sign in your app. Include a login and password for a test account that our app reviewers can use to access your app and set up an automated experience or inbox solution. Do not include personal Facebook or Instagram account details or Facebook or Instagram test user credentials. We will use our own Facebook accounts to test your service (our reviewers do not need to be granted any roles on your app).
 
 ## `instagram_basic`
 

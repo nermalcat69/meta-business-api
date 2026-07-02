@@ -11,11 +11,11 @@ Updated: Jun 28, 2026
 
 **No code changes are needed.**
 
-Tier labels have been updated: “Standard Access” is now **Limited Access**, and “Advanced Access” is now **Full Access**. The revised qualification threshold for Full Access has been reduced from 1,500 to **500 Marketing API calls** in the past 15 days. The underlying permission identifier remains the same, and existing access levels are preserved automatically. Learn more in the [Marketing API Access Tier documentation](https://developers.facebook.com/docs/features-reference#marketing-api-access-tier).
+Tier labels have been updated: "Standard Access" is now **Limited Access**, and "Advanced Access" is now **Full Access**. The revised qualification threshold for Full Access has been reduced from 1,500 to **500 Marketing API calls** in the past 15 days. The underlying permission identifier remains the same, and existing access levels are preserved automatically. Learn more in the [Marketing API Access Tier documentation](https://developers.facebook.com/docs/features-reference#marketing-api-access-tier).
 
 Advertisers that share server events using the Conversions API can see the event match quality score in Meta Events Manager. However, this only works on an individual basis and is difficult to scale in cases where a Tech Provider partner, agency partner, or advertiser is managing hundreds and thousands of Meta Pixels for their businesses. The Dataset Quality (formerly known as Integration Quality) API can help solve this problem by consolidating dataset quality metrics programmatically at scale.
 
-## What’s new
+## What's new
 
 As of May 28th, 2025, the following additional metrics have been added to the API for querying.
 
@@ -43,7 +43,7 @@ Partners and agencies may use the Dataset Quality API to provide a quality dashb
 * In Meta Business Suite, go to the Users section and select the **System User** tab. Click on the specific system user you are using for the Conversions API.
 * Go to the Assign Asset dialog and choose **Pixels**. Then, select the pixels you want to send events on behalf of.
 * For each pixel, select the Manage Pixel permission, and click **Save Changes**.
-* Go back to your system user’s details page. Verify that the selected pixels are visible there.
+* Go back to your system user's details page. Verify that the selected pixels are visible there.
 * To generate the access token, follow instructions [here⁠](https://www.facebook.com/business/help/503306463479099?id=2190812977867143).
 
 #### Partner platform authentication
@@ -52,15 +52,15 @@ You must first request authorization to send events on behalf of your clients. Y
 
 ##### Facebook Login for Business (recommended)
 
-[Facebook Login for Business](https://developers.facebook.com/documentation/facebook-login/facebook-login-for-business) is the preferred authentication and authorization solution for Tech Providers and business app developers who need access to their business clients’ assets. It allows you to specify the access token type, types of assets, and permissions your app needs, and save it as a set (configuration). You can then present the set to your business clients to complete the flow and grant your app access to their business assets.
+[Facebook Login for Business](https://developers.facebook.com/documentation/facebook-login/facebook-login-for-business) is the preferred authentication and authorization solution for Tech Providers and business app developers who need access to their business clients' assets. It allows you to specify the access token type, types of assets, and permissions your app needs, and save it as a set (configuration). You can then present the set to your business clients to complete the flow and grant your app access to their business assets.
 
 ##### Meta Business Extension (recommended)
 
-With this option, [Meta Business Extension](https://developers.facebook.com/docs/facebook-business-extension) (MBE) returns all the necessary information needed to send events on behalf of the client. MBE provides an endpoint to retrieve system user access tokens created in the client’s Meta Business Suite. This process includes permissions to send server events and is done automatically and securely. MBE is currently under beta. Please contact your Meta representative for access.
+With this option, [Meta Business Extension](https://developers.facebook.com/docs/facebook-business-extension) (MBE) returns all the necessary information needed to send events on behalf of the client. MBE provides an endpoint to retrieve system user access tokens created in the client's Meta Business Suite. This process includes permissions to send server events and is done automatically and securely. MBE is currently under beta. Please contact your Meta representative for access.
 
 The endpoint requires a user access token as an input parameter. If you are a new MBE user, call this endpoint to fetch the system user access token after you have finished setting up MBE. Existing users need to ask for re-authentication before calling the new API endpoint.
 
-##### Client shares Meta Pixel to partner’s Meta Business Suite
+##### Client shares Meta Pixel to partner's Meta Business Suite
 
 With this option, the client shares their Meta Pixel to the partner using Meta Business Suite settings or by the [API](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ads-pixel/shared_accounts). Then, the partner can assign the partner system user to the client pixel and [generate an access token to send server events](https://developers.facebook.com/documentation/ads-commerce/conversions-api/set-up-conversions-api-as-a-platform#get-started).
 
@@ -103,7 +103,7 @@ https://graph.facebook.com/v25.0/dataset_quality
 | `web`  array | This field denotes a structured set of data related to website events. The filter is an array containing `event_name` and its metrics. This field is required by default in this API. See [example section](https://developers.facebook.com/documentation/ads-commerce/conversions-api/dataset-quality-api/offline-events#example-section). |
 | `event_name`  string | A [standard event](https://developers.facebook.com/docs/facebook-pixel/implementation/conversion-tracking#standard-events) or [custom event](https://developers.facebook.com/docs/facebook-pixel/implementation/conversion-tracking#custom-events) name. |
 | `event_match_quality`  [AdsPixelCAPIEMQ(/docs/marketing-api/reference/ads-pixel-capiemq)] | Event Match Quality indicates how effective the customer information sent from your server may be at matching event instances to a Facebook account.  See more details [here](https://developers.facebook.com/documentation/ads-commerce/conversions-api/dataset-quality-api/offline-events#emq-main). |
-| `event_potential_aly_acr_increase`  [AdsPixelCAPIEventALYACR](https://developers.facebook.com/docs/marketing-api/reference/ads-pixel-capi-event-alyacr) | Additional Conversions Reported (ACR) for Conversions API Event is a metric that estimates how many conversions (for example, purchases, or link clicks) are measured as a result of an advertiser’s Conversions API setup.  See more details [here](https://developers.facebook.com/documentation/ads-commerce/conversions-api/dataset-quality-api/offline-events#acr-capi-event). |
+| `event_potential_aly_acr_increase`  [AdsPixelCAPIEventALYACR](https://developers.facebook.com/docs/marketing-api/reference/ads-pixel-capi-event-alyacr) | Additional Conversions Reported (ACR) for Conversions API Event is a metric that estimates how many conversions (for example, purchases, or link clicks) are measured as a result of an advertiser's Conversions API setup.  See more details [here](https://developers.facebook.com/documentation/ads-commerce/conversions-api/dataset-quality-api/offline-events#acr-capi-event). |
 | `acr`  [AdsDatasetCAPIACR](https://developers.facebook.com/docs/marketing-api/reference/ads-dataset-capiacr) | Additional Conversions Reported (ACR) is a metric that helps you understand how much your business benefits from using the Conversions API alongside the Meta Pixel. It also can help you determine if you can improve your Conversions API setup to measure more reported conversions. More reported conversions can help you decrease your cost per result and show your ads to people that find them relevant.  See more details [here](https://developers.facebook.com/documentation/ads-commerce/conversions-api/dataset-quality-api/offline-events#acr-main). |
 | `event_coverage`  [AdsDatasetEventCoverage](https://developers.facebook.com/docs/marketing-api/reference/ads-dataset-event-coverage) | Event coverage is the 7-day average percent of Pixel events that are covered by the Conversions API, and share deduplication keys with events from the Conversions API.  See more details [here](https://developers.facebook.com/documentation/ads-commerce/conversions-api/dataset-quality-api/offline-events#acr-event-coverage). |
 | `dedup_key_feedback`  [AdsDatasetDedupKeyFeedback](https://developers.facebook.com/docs/marketing-api/reference/ads-dataset-dedup-key-feedback) | Deduplication is a process used to prevent our system from counting the same event twice. In order for you to have a high event coverage, covered events must have a proper deduplication setup.  Deduplication key feedback helps to identify any active issues with deduplication.  See more details [here](https://developers.facebook.com/documentation/ads-commerce/conversions-api/dataset-quality-api/offline-events#event-deduplication). |
@@ -119,20 +119,20 @@ https://graph.facebook.com/v25.0/dataset_quality
 
 Event match quality (EMQ) is a score (out of 10) that indicates how effective the customer information sent from your server may be at matching event instances to a Meta account. High quality event matching may improve ads attribution and performance.
 
-#### How it’s calculated
+#### How it's calculated
 
 Event match quality is calculated by looking at which customer information parameters are received from your server using a Conversions API integration, the quality of the information received and the percent of event instances that are matched to a Meta account.
 
-#### How it’s used
+#### How it's used
 
-Event match quality is used to assess whether you’re sending through the Conversions API the right customer information to match your events to a Meta account, and whether you have set up your customer information parameters correctly. Customer information parameters help match your events to a Meta account so you can attribute conversions to your ads and deliver them to people who are most likely to convert.
+Event match quality is used to assess whether you're sending through the Conversions API the right customer information to match your events to a Meta account, and whether you have set up your customer information parameters correctly. Customer information parameters help match your events to a Meta account so you can attribute conversions to your ads and deliver them to people who are most likely to convert.
 **Event match quality is calculated in real time**. Learn more about EMQ best practices [here⁠](https://www.facebook.com/business/help/765081237991954?id=818859032317965).
 
 EMQ is currently available only for web events. For other event types such as offline and physical store events, app events, conversion leads or any integration under alpha or beta stages, contact your Meta representative for guidance on improving match quality.
 
 **Use case**: Monitor event match quality score per event, along with match keys being sent, build an EMQ trendline or historical extracts, then hook up alerts/delectors for EMQ score and match keys drops.
 
-**Documentation**: All fields available for EMQ diagnostics can be found on [this developer’s page](https://developers.facebook.com/docs/marketing-api/reference/ads-pixel-capiemq).
+**Documentation**: All fields available for EMQ diagnostics can be found on [this developer's page](https://developers.facebook.com/docs/marketing-api/reference/ads-pixel-capiemq).
 
 ### Example
 
@@ -145,70 +145,66 @@ GET/v25.0/dataset_quality?dataset_id=<DATASET_ID>&agent_name=<AGENT_NAME>&access
 **cURL**
 
 ```
-```
-curl -X GET -G \  
-  -d 'fields=web{event_match_quality,event_name}' \  
-  -d 'dataset_id=<DATASET_ID>' \  
-  -d 'agent_name=<AGENT_NAME>' \  
-  -d 'access_token=<ACCESS_TOKEN>' \  
+curl -X GET -G \  
+  -d 'fields=web{event_match_quality,event_name}' \  
+  -d 'dataset_id=<DATASET_ID>' \  
+  -d 'agent_name=<AGENT_NAME>' \  
+  -d 'access_token=<ACCESS_TOKEN>' \  
 https://graph.facebook.com/<LATEST_VERSION>/dataset_quality
-```
 ```
 
 **API Response**
 
 ```
-```
 {  
-  "web": [  
-    {  
-      "event_match_quality": {  
-        "composite_score": 6.2,  
-        "match_key_feedback": [  
-          {  
-            "identifier": "user_agent",  
-            "coverage": {  
-              "percentage": 100  
-            }  
-          },  
-          {  
-            "identifier": "external_id",  
-            "coverage": {  
-              "percentage": 100  
-            }  
-          }  
-        ]  
-      },  
-      "event_name": "pLTVPurchase"  
-    },  
-    {  
-      "event_match_quality": {  
-        "composite_score": 7.2,  
-        "match_key_feedback": [  
-          {  
-            "identifier": "email",  
-            "coverage": {  
-              "percentage": 100  
-            }  
-          },  
-          {  
-            "identifier": "ip_address",  
-            "coverage": {  
-              "percentage": 99.9  
-            }  
-          },  
-        ]  
-      },  
-      "event_name": "CompleteRegistration"  
-    }  
-   ]  
- }
-```
+  "web": [  
+    {  
+      "event_match_quality": {  
+        "composite_score": 6.2,  
+        "match_key_feedback": [  
+          {  
+            "identifier": "user_agent",  
+            "coverage": {  
+              "percentage": 100  
+            }  
+          },  
+          {  
+            "identifier": "external_id",  
+            "coverage": {  
+              "percentage": 100  
+            }  
+          }  
+        ]  
+      },  
+      "event_name": "pLTVPurchase"  
+    },  
+    {  
+      "event_match_quality": {  
+        "composite_score": 7.2,  
+        "match_key_feedback": [  
+          {  
+            "identifier": "email",  
+            "coverage": {  
+              "percentage": 100  
+            }  
+          },  
+          {  
+            "identifier": "ip_address",  
+            "coverage": {  
+              "percentage": 99.9  
+            }  
+          },  
+        ]  
+      },  
+      "event_name": "CompleteRegistration"  
+    }  
+   ]  
+ }
 ```
 
 ## Additional Conversions Reported (ACR) for Event Match Quality parameters
 
-Additional Conversions Reported (ACR) is a metric that estimates how many conversions (for example, purchases, or link clicks) are measured as a result of an advertiser’s Conversions API setup.
+Additional Conversions Reported (ACR) is a metric that estimates how many conversions (for example, purchases, or link clicks) are measured as a result of an advertiser's Conversions API setup.
 
 **To learn more about this metric, see the [About ACR⁠](https://www.facebook.com/business/help/453888373437795) article and the [Learn More](https://developers.facebook.com/documentation/ads-commerce/conversions-api/dataset-quality-api#learn-more) section**.
 
@@ -221,52 +217,48 @@ Additional Conversions Reported (ACR) is a metric that estimates how many conver
 **Graph API Explorer**
 
 ```
-GET/v25.0/dataset_quality?dataset_id=<DATASET_ID>&agent_name=<AGENT_NAME>&access_token=<ACCESS_TOKEN>&fields=web{event_match_quality{match_key_feedback{identifier,potential_aly_acr_increase{percentage,description}}},event_name}
+GET/v25.0/dataset_quality?dataset_id=<DATASET_ID>&agent_name=<AGENT_NAME>&access_token=<ACCESS_TOKEN>&fields=web{event_match_quality{match_key_feedback{identifier,potential_aly_acr_increase{percentage,description}​}},event_name}
 ```
 
 **cURL**
 
 ```
-```
-curl -X GET -G \  
-  -d 'fields=web{event_match_quality{match_key_feedback{identifier,potential_aly_acr_increase{percentage,description}}},event_name}' \  
-  -d 'dataset_id=<DATASET_ID>' \  
-  -d 'agent_name=<AGENT_NAME>' \  
-  -d 'access_token=<ACCESS_TOKEN>' \  
+curl -X GET -G \  
+  -d 'fields=web{event_match_quality{match_key_feedback{identifier,potential_aly_acr_increase{percentage,description}​}},event_name}' \  
+  -d 'dataset_id=<DATASET_ID>' \  
+  -d 'agent_name=<AGENT_NAME>' \  
+  -d 'access_token=<ACCESS_TOKEN>' \  
 https://graph.facebook.com/<LATEST_VERSION>/dataset_quality
-```
 ```
 
 **API Response**
 
 ```
-```
 {  
-  "web": [  
-    {  
-      "event_match_quality":  
-        "match_key_feedback": [  
-          {  
-            "identifier": "email",  
-            "potential_aly_acr_increase": {  
-              "percentage": 58.96,  
-              "description": "Similar advertisers who sent valid Email for Purchase saw a 58.96% median increase in their existing additional conversions reported."  
-            }  
-          },  
-          {  
-            "identifier": "ip_address",  
-            "potential_aly_acr_increase": {  
-              "percentage": 20.65,  
-              "description": "Similar advertisers who sent valid Ip Address for Purchase saw a 20.65% median increase in their existing additional conversions reported."  
-            }  
-          },  
-        ]  
-      }  
-      "event_name": "Purchase"  
-    },  
-  ]  
+  "web": [  
+    {  
+      "event_match_quality":  
+        "match_key_feedback": [  
+          {  
+            "identifier": "email",  
+            "potential_aly_acr_increase": {  
+              "percentage": 58.96,  
+              "description": "Similar advertisers who sent valid Email for Purchase saw a 58.96% median increase in their existing additional conversions reported."  
+            }  
+          },  
+          {  
+            "identifier": "ip_address",  
+            "potential_aly_acr_increase": {  
+              "percentage": 20.65,  
+              "description": "Similar advertisers who sent valid Ip Address for Purchase saw a 20.65% median increase in their existing additional conversions reported."  
+            }  
+          },  
+        ]  
+      }  
+      "event_name": "Purchase"  
+    },  
+  ]  
 }
-```
 ```
 
 ## EMQ diagnostics
@@ -288,48 +280,44 @@ GET/v25.0/dataset_quality?dataset_id=<DATASET_ID>&agent_name=<AGENT_NAME>&access
 **cURL**
 
 ```
-```
-curl -X GET -G \  
-  -d 'fields=web{event_match_quality{diagnostics},event_name}' \  
-  -d 'dataset_id=<DATASET_ID>' \  
-  -d 'agent_name=<AGENT_NAME>' \  
-  -d 'access_token=<ACCESS_TOKEN>' \  
+curl -X GET -G \  
+  -d 'fields=web{event_match_quality{diagnostics},event_name}' \  
+  -d 'dataset_id=<DATASET_ID>' \  
+  -d 'agent_name=<AGENT_NAME>' \  
+  -d 'access_token=<ACCESS_TOKEN>' \  
 https://graph.facebook.com/<LATEST_VERSION>/dataset_quality
-```
 ```
 
 **API Response**
 
 ```
-```
 {  
-  "web": [  
-    {  
-      "event_match_quality": {  
-        "diagnostics": [  
-          {  
-            "name": "Update your IPv4 IP addresses to IPv6 IP addresses",  
-            "description": "Your server is sending IPV4 IP addresses through the Conversions API. We recommend updating to IPV6 IP addresses because this is the industry standard and offers better durability for this integration.",  
-            "solution": "You can update your web server and DNS provider configuration to support IPv6. In your server payload, send the client_ip_address retrieved from customer interactions. Use the payload helper to see how this value should be structured when it's sent to Meta. If this issue is not applicable or actionable, you can ignore it.",  
-            "percentage": 59.5,  
-            "affected_event_count": 18930,  
-            "total_event_count": 31830  
-          },  
-          {  
-            "name": "Server sending mismatched IP addresses",  
-            "description": "Your server is sending client IP addresses that do not match those from Meta Pixel. This may impact the attribution and optimization of your ad campaigns.",  
-            "solution": "In your server payload, send the client_ip_address retrieved from customer interactions. Use the payload helper to see how this value should be structured when it's sent to Meta.",  
-            "percentage": 61.5,  
-            "affected_event_count": 19567,  
-            "total_event_count": 31830  
-          }  
-        ]  
-      }  
-      "event_name": "Purchase"  
-    },  
-  ]  
+  "web": [  
+    {  
+      "event_match_quality": {  
+        "diagnostics": [  
+          {  
+            "name": "Update your IPv4 IP addresses to IPv6 IP addresses",  
+            "description": "Your server is sending IPV4 IP addresses through the Conversions API. We recommend updating to IPV6 IP addresses because this is the industry standard and offers better durability for this integration.",  
+            "solution": "You can update your web server and DNS provider configuration to support IPv6. In your server payload, send the client_ip_address retrieved from customer interactions. Use the payload helper to see how this value should be structured when it's sent to Meta. If this issue is not applicable or actionable, you can ignore it.",  
+            "percentage": 59.5,  
+            "affected_event_count": 18930,  
+            "total_event_count": 31830  
+          },  
+          {  
+            "name": "Server sending mismatched IP addresses",  
+            "description": "Your server is sending client IP addresses that do not match those from Meta Pixel. This may impact the attribution and optimization of your ad campaigns.",  
+            "solution": "In your server payload, send the client_ip_address retrieved from customer interactions. Use the payload helper to see how this value should be structured when it's sent to Meta.",  
+            "percentage": 61.5,  
+            "affected_event_count": 19567,  
+            "total_event_count": 31830  
+          }  
+        ]  
+      }  
+      "event_name": "Purchase"  
+    },  
+  ]  
 }
-```
 ```
 
 ## Event coverage
@@ -353,32 +341,28 @@ GET/v25.0/dataset_quality?dataset_id=<DATASET_ID>&access_token=<ACCESS_TOKEN>&fi
 **cURL**
 
 ```
-```
-curl -X GET -G \  
-  -d 'fields=web{event_coverage{percentage,goal_percentage,description},event_name}' \  
-  -d 'dataset_id=<DATASET_ID>' \  
-  -d 'access_token=<ACCESS_TOKEN>' \  
+curl -X GET -G \  
+  -d 'fields=web{event_coverage{percentage,goal_percentage,description},event_name}' \  
+  -d 'dataset_id=<DATASET_ID>' \  
+  -d 'access_token=<ACCESS_TOKEN>' \  
 https://graph.facebook.com/<LATEST_VERSION>/dataset_quality
-```
 ```
 
 **API Response**
 
 ```
-```
 {  
-  "web": [  
-    {  
-      "event_coverage": {  
-        "percentage": 34.1,  
-        "goal_percentage": 75,  
-        "description": "The percentage of events received from your Conversions API compared to unique browser events from the Meta Pixel."  
-      },  
-      "event_name": "B2B Purchase"  
-    },  
-  ]  
+  "web": [  
+    {  
+      "event_coverage": {  
+        "percentage": 34.1,  
+        "goal_percentage": 75,  
+        "description": "The percentage of events received from your Conversions API compared to unique browser events from the Meta Pixel."  
+      },  
+      "event_name": "B2B Purchase"  
+    },  
+  ]  
 }
-```
 ```
 
 ## Additional Conversions Reported (ACR) for Event Coverage
@@ -396,39 +380,35 @@ Additional Conversions Reported (ACR) for Event Coverage is a metric that helps 
 **Graph API Explorer**
 
 ```
-GET/v25.0/dataset_quality?dataset_id=<DATASET_ID>&access_token=<ACCESS_TOKEN>&fields=web{event_coverage{potential_aly_acr_increase{percentage,description}},event_name}
+GET/v25.0/dataset_quality?dataset_id=<DATASET_ID>&access_token=<ACCESS_TOKEN>&fields=web{event_coverage{potential_aly_acr_increase{percentage,description}​},event_name}
 ```
 
 **cURL**
 
 ```
-```
-curl -X GET -G \  
-  -d 'fields=web{event_coverage{potential_aly_acr_increase{percentage,description}},event_name}' \  
-  -d 'dataset_id=<DATASET_ID>' \  
-  -d 'access_token=<ACCESS_TOKEN>' \  
+curl -X GET -G \  
+  -d 'fields=web{event_coverage{potential_aly_acr_increase{percentage,description}​},event_name}' \  
+  -d 'dataset_id=<DATASET_ID>' \  
+  -d 'access_token=<ACCESS_TOKEN>' \  
 https://graph.facebook.com/<LATEST_VERSION>/dataset_quality
-```
 ```
 
 **API Response**
 
 ```
-```
 {  
-  "web": [  
-    {  
-      "event_coverage": {  
-        "potential_aly_acr_increase": {  
-          "percentage": 35.8,  
-          "description": "Similar advertisers who send the same AddToCart pixel events with matching deduplication keys through Conversions API saw a median of 35.8% additional conversions reported versus those that only used Meta Pixel."  
-        }  
-      },  
-      "event_name": "AddToCart"  
-    },  
-  ]  
+  "web": [  
+    {  
+      "event_coverage": {  
+        "potential_aly_acr_increase": {  
+          "percentage": 35.8,  
+          "description": "Similar advertisers who send the same AddToCart pixel events with matching deduplication keys through Conversions API saw a median of 35.8% additional conversions reported versus those that only used Meta Pixel."  
+        }  
+      },  
+      "event_name": "AddToCart"  
+    },  
+  ]  
 }
-```
 ```
 
 ## Event deduplication
@@ -450,81 +430,77 @@ The deduplication key feedback shows the percentages of events from the Pixel an
 **Graph API Explorer**
 
 ```
-GET/v25.0/dataset_quality?dataset_id=<DATASET_ID>&agent_name=<AGENT_NAME>&access_token=<ACCESS_TOKEN>&fields=web{dedupe_key_feedback{dedupe_key,browser_events_with_dedupe_key{percentage,description},server_events_with_dedupe_key{percentage,description},overall_browser_coverage_from_dedupe_key{percentage,description}},event_name}
+GET/v25.0/dataset_quality?dataset_id=<DATASET_ID>&agent_name=<AGENT_NAME>&access_token=<ACCESS_TOKEN>&fields=web{dedupe_key_feedback{dedupe_key,browser_events_with_dedupe_key{percentage,description},server_events_with_dedupe_key{percentage,description},overall_browser_coverage_from_dedupe_key{percentage,description}​},event_name}
 ```
 
 **cURL**
 
 ```
-```
-curl -X GET -G \  
-  -d 'fields=web{dedupe_key_feedback{dedupe_key,browser_events_with_dedupe_key{percentage,description},server_events_with_dedupe_key{percentage,description},overall_browser_coverage_from_dedupe_key{percentage,description}},event_name}' \  
-  -d 'dataset_id=<DATASET_ID>' \  
-  -d 'agent_name=<AGENT_NAME>' \  
-  -d 'access_token=<ACCESS_TOKEN>' \  
+curl -X GET -G \  
+  -d 'fields=web{dedupe_key_feedback{dedupe_key,browser_events_with_dedupe_key{percentage,description},server_events_with_dedupe_key{percentage,description},overall_browser_coverage_from_dedupe_key{percentage,description}​},event_name}' \  
+  -d 'dataset_id=<DATASET_ID>' \  
+  -d 'agent_name=<AGENT_NAME>' \  
+  -d 'access_token=<ACCESS_TOKEN>' \  
 https://graph.facebook.com/<LATEST_VERSION>/dataset_quality
-```
 ```
 
 **API Response**
 
 ```
-```
 {  
-  "web": [  
-    {  
-      "dedupe_key_feedback": [  
-        {  
-          "dedupe_key": "event_id",  
-          "browser_events_with_dedupe_key": {  
-            "percentage": 100,  
-            "description": "The percentage of browser events that contain this dedupe key."  
-          },  
-          "server_events_with_dedupe_key": {  
-            "percentage": 100,  
-            "description": "The percentage of server events that contain this dedupe key."  
-          },  
-          "overall_browser_coverage_from_dedupe_key": {  
-            "percentage": 14.8,  
-            "description": "The overall percentage of browser events that are deduped with Conversions API events using this key. This percentage is incremental for each dedupe key."  
-          }  
-        },  
-        {  
-          "dedupe_key": "external_id",  
-          "browser_events_with_dedupe_key": {  
-            "percentage": 100,  
-            "description": "The percentage of browser events that contain this dedupe key."  
-          },  
-          "server_events_with_dedupe_key": {  
-            "percentage": 100,  
-            "description": "The percentage of server events that contain this dedupe key."  
-          },  
-          "overall_browser_coverage_from_dedupe_key": {  
-            "percentage": 15.96,  
-            "description": "The overall percentage of browser events that are deduped with Conversions API events using this key. This percentage is incremental for each dedupe key."  
-          }  
-        },  
-        {  
-          "dedupe_key": "fbp",  
-          "browser_events_with_dedupe_key": {  
-            "percentage": 0,  
-            "description": "The percentage of browser events that contain this dedupe key."  
-          },  
-          "server_events_with_dedupe_key": {  
-            "percentage": 0,  
-            "description": "The percentage of server events that contain this dedupe key."  
-          },  
-          "overall_browser_coverage_from_dedupe_key": {  
-            "percentage": 0,  
-            "description": "The overall percentage of browser events that are deduped with Conversions API events using this key. This percentage is incremental for each dedupe key."  
-          }  
-        }  
-      ],  
-      "event_name": "AddToCart"  
-    },  
-  ]  
+  "web": [  
+    {  
+      "dedupe_key_feedback": [  
+        {  
+          "dedupe_key": "event_id",  
+          "browser_events_with_dedupe_key": {  
+            "percentage": 100,  
+            "description": "The percentage of browser events that contain this dedupe key."  
+          },  
+          "server_events_with_dedupe_key": {  
+            "percentage": 100,  
+            "description": "The percentage of server events that contain this dedupe key."  
+          },  
+          "overall_browser_coverage_from_dedupe_key": {  
+            "percentage": 14.8,  
+            "description": "The overall percentage of browser events that are deduped with Conversions API events using this key. This percentage is incremental for each dedupe key."  
+          }  
+        },  
+        {  
+          "dedupe_key": "external_id",  
+          "browser_events_with_dedupe_key": {  
+            "percentage": 100,  
+            "description": "The percentage of browser events that contain this dedupe key."  
+          },  
+          "server_events_with_dedupe_key": {  
+            "percentage": 100,  
+            "description": "The percentage of server events that contain this dedupe key."  
+          },  
+          "overall_browser_coverage_from_dedupe_key": {  
+            "percentage": 15.96,  
+            "description": "The overall percentage of browser events that are deduped with Conversions API events using this key. This percentage is incremental for each dedupe key."  
+          }  
+        },  
+        {  
+          "dedupe_key": "fbp",  
+          "browser_events_with_dedupe_key": {  
+            "percentage": 0,  
+            "description": "The percentage of browser events that contain this dedupe key."  
+          },  
+          "server_events_with_dedupe_key": {  
+            "percentage": 0,  
+            "description": "The percentage of server events that contain this dedupe key."  
+          },  
+          "overall_browser_coverage_from_dedupe_key": {  
+            "percentage": 0,  
+            "description": "The overall percentage of browser events that are deduped with Conversions API events using this key. This percentage is incremental for each dedupe key."  
+          }  
+        }  
+      ],  
+      "event_name": "AddToCart"  
+    },  
+  ]  
 }
-```
 ```
 
 ## Data freshness
@@ -550,44 +526,40 @@ GET/v25.0/dataset_quality?dataset_id=<DATASET_ID>&agent_name=<AGENT_NAME>&access
 **cURL**
 
 ```
-```
-curl -X GET -G \  
-  -d 'fields=web{data_freshness{upload_frequency,description},event_name}' \  
-  -d 'dataset_id=<DATASET_ID>' \  
-  -d 'agent_name=<AGENT_NAME>' \  
-  -d 'access_token=<ACCESS_TOKEN>' \  
+curl -X GET -G \  
+  -d 'fields=web{data_freshness{upload_frequency,description},event_name}' \  
+  -d 'dataset_id=<DATASET_ID>' \  
+  -d 'agent_name=<AGENT_NAME>' \  
+  -d 'access_token=<ACCESS_TOKEN>' \  
 https://graph.facebook.com/<LATEST_VERSION>/dataset_quality
-```
 ```
 
 **API Response**
 
 ```
-```
 {  
-  "web": [  
-    {  
-      "data_freshness": {  
-        "upload_frequency": "real_time",  
-        "description": "The average frequency with which instances of this event are received through the Conversions API."  
-      },  
-      "event_name": "ViewContent"  
-    },  
-    {  
-      "data_freshness": {  
-        "upload_frequency": "hourly",  
-        "description": "The average frequency with which instances of this event are received through the Conversions API."  
-      },  
-      "event_name": "Lead"  
-    },  
-  ]  
+  "web": [  
+    {  
+      "data_freshness": {  
+        "upload_frequency": "real_time",  
+        "description": "The average frequency with which instances of this event are received through the Conversions API."  
+      },  
+      "event_name": "ViewContent"  
+    },  
+    {  
+      "data_freshness": {  
+        "upload_frequency": "hourly",  
+        "description": "The average frequency with which instances of this event are received through the Conversions API."  
+      },  
+      "event_name": "Lead"  
+    },  
+  ]  
 }
-```
 ```
 
 ## Additional Conversions Reported (ACR) for Conversions API Event
 
-Additional Conversions Reported (ACR) for Conversions API Event is a metric that estimates how many conversions (for example, purchases, or link clicks) are measured as a result of an advertiser’s Conversions API setup.
+Additional Conversions Reported (ACR) for Conversions API Event is a metric that estimates how many conversions (for example, purchases, or link clicks) are measured as a result of an advertiser's Conversions API setup.
 
 **To learn more about additional conversions reported, see the [About ACR⁠](https://www.facebook.com/business/help/453888373437795) article and the [Learn More](https://developers.facebook.com/documentation/ads-commerce/conversions-api/dataset-quality-api#learn-more) section.**
 
@@ -606,38 +578,34 @@ GET/v25.0/dataset_quality?dataset_id=<DATASET_ID>&access_token=<ACCESS_TOKEN>&fi
 **cURL**
 
 ```
-```
-curl -X GET -G \  
-  -d 'fields=web{event_potential_aly_acr_increase{description,percentage},event_name}' \  
-  -d 'dataset_id=<DATASET_ID>' \  
-  -d 'access_token=<ACCESS_TOKEN>' \  
+curl -X GET -G \  
+  -d 'fields=web{event_potential_aly_acr_increase{description,percentage},event_name}' \  
+  -d 'dataset_id=<DATASET_ID>' \  
+  -d 'access_token=<ACCESS_TOKEN>' \  
 https://graph.facebook.com/<LATEST_VERSION>/dataset_quality
-```
 ```
 
 **API Response**
 
 ```
-```
 {  
-  "web": [  
-    {  
-      "event_potential_aly_acr_increase": {  
-        "description": "Similar advertisers who set up Conversions API for Search events saw a median of 32.9% additional conversions reported versus those that only used Meta Pixel.",  
-        "percentage": 32.9  
-      },  
-      "event_name": "Search"  
-    },  
-    {  
-      "event_potential_aly_acr_increase": {  
-        "description": "Similar advertisers who set up Conversions API for PageView events saw a median of 30.1% additional conversions reported versus those that only used Meta Pixel.",  
-        "percentage": 30.1  
-      },  
-      "event_name": "PageView"  
-    }  
-  ]  
+  "web": [  
+    {  
+      "event_potential_aly_acr_increase": {  
+        "description": "Similar advertisers who set up Conversions API for Search events saw a median of 32.9% additional conversions reported versus those that only used Meta Pixel.",  
+        "percentage": 32.9  
+      },  
+      "event_name": "Search"  
+    },  
+    {  
+      "event_potential_aly_acr_increase": {  
+        "description": "Similar advertisers who set up Conversions API for PageView events saw a median of 30.1% additional conversions reported versus those that only used Meta Pixel.",  
+        "percentage": 30.1  
+      },  
+      "event_name": "PageView"  
+    }  
+  ]  
 }
-```
 ```
 
 ## Additional Conversions Reported (ACR)
@@ -661,38 +629,34 @@ GET/v25.0/dataset_quality?dataset_id=<DATASET_ID>&access_token=<ACCESS_TOKEN>&fi
 **cURL**
 
 ```
-```
-curl -X GET -G \  
-  -d 'fields=web{acr{description,percentage},event_name}' \  
-  -d 'dataset_id=<DATASET_ID>' \  
-  -d 'access_token=<ACCESS_TOKEN>' \  
+curl -X GET -G \  
+  -d 'fields=web{acr{description,percentage},event_name}' \  
+  -d 'dataset_id=<DATASET_ID>' \  
+  -d 'access_token=<ACCESS_TOKEN>' \  
 https://graph.facebook.com/<LATEST_VERSION>/dataset_quality
-```
 ```
 
 **API Response**
 
 ```
-```
 {  
-  "web": [  
-    {  
-      "acr": {  
-        "description": "In the last 7 days, you saw about 37.9% more conversions reported for Search events by using the Conversions API alongside the Meta Pixel.",  
-        "percentage": 37.9  
-      },  
-      "event_name": "Search"  
-    },  
-    {  
-      "acr": {  
-        "description": "In the last 7 days, you saw about 45.5% more conversions reported for Page View events by using the Conversions API alongside the Meta Pixel..",  
-        "percentage": 45.5  
-      },  
-      "event_name": "PageView"  
-    }  
-  ]  
+  "web": [  
+    {  
+      "acr": {  
+        "description": "In the last 7 days, you saw about 37.9% more conversions reported for Search events by using the Conversions API alongside the Meta Pixel.",  
+        "percentage": 37.9  
+      },  
+      "event_name": "Search"  
+    },  
+    {  
+      "acr": {  
+        "description": "In the last 7 days, you saw about 45.5% more conversions reported for Page View events by using the Conversions API alongside the Meta Pixel..",  
+        "percentage": 45.5  
+      },  
+      "event_name": "PageView"  
+    }  
+  ]  
 }
-```
 ```
 
 ## FAQs

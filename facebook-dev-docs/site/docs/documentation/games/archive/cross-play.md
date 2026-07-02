@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/games/archive/cross-pl
 
 Updated: Mar 3, 2026
 
-Managed developers are Instant Games studios that have been accepted into Facebook’s partner program.
+Managed developers are Instant Games studios that have been accepted into Facebook's partner program.
 
 ## What Does Managed Developer Status Mean?
 
@@ -26,7 +26,7 @@ Your partner manager is your primary point of contact at Facebook. They can help
 * **Technical issues**: Escalating bugs and platform issues to engineering teams on your behalf.
 * **Strategic advice**: Recommending best practices for monetization, retention, and player acquisition based on data and experience with similar games.
 * **Feature requests**: Communicating your needs to the product team and keeping you informed of upcoming platform changes.
-* **Policy questions**: Clarifying Facebook’s policies and how they apply to your game.
+* **Policy questions**: Clarifying Facebook's policies and how they apply to your game.
 * **Launch support**: Coordinating promotional opportunities and ensuring smooth launches for new games or major updates.
 
 ## Priority Support Channels
@@ -54,7 +54,7 @@ For platform-wide outages or incidents, your partner manager will proactively co
 
 Managed developers typically have recurring meetings with their partner manager. These check-ins may include:
 
-* **Performance reviews**: Discussing your game’s key metrics (DAU, retention, revenue) and identifying opportunities for improvement.
+* **Performance reviews**: Discussing your game's key metrics (DAU, retention, revenue) and identifying opportunities for improvement.
 * **Roadmap alignment**: Learning about upcoming platform features and planning how to incorporate them into your game.
 * **Campaign planning**: Coordinating acquisition campaigns and promotional activities.
 * **Feedback sessions**: Sharing your experience with the platform and providing input that shapes future product development.
@@ -63,7 +63,7 @@ The cadence of check-ins is determined by your partner manager based on your nee
 
 ## How to Become a Managed Developer
 
-Managed developer status is not self-service. Facebook’s Gaming Partnerships team evaluates developers based on several factors, including:
+Managed developer status is not self-service. Facebook's Gaming Partnerships team evaluates developers based on several factors, including:
 
 * **Game performance**: Games with strong engagement metrics (DAU, retention, revenue) are more likely to be considered.
 * **Growth potential**: Studios with games that show significant growth potential on the Facebook platform.
@@ -80,4 +80,4 @@ There is no formal application form. The Facebook Gaming Partnerships team activ
 ## Related Resources
 
 * [Support for All Developers](https://developers.facebook.com/documentation/games/support/all-developers) - Self-service support resources available to every developer.
-* [Gaming Insights](https://developers.facebook.com/documentation/games/tools/gaming-insights) - Track the performance metrics that demonstrate your game’s potential.
+* [Gaming Insights](https://developers.facebook.com/documentation/games/tools/gaming-insights) - Track the performance metrics that demonstrate your game's potential.

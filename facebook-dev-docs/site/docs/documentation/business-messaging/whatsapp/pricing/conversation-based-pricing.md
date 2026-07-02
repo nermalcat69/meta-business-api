@@ -19,13 +19,13 @@ Use this API when you need to:
 * The second call moves phone numbers and deprecates the old WABA. Plan for any operational timing requirements.
 * Coexistence and Authorized Agents WABAs are not eligible for migration via this API.
 * For payment method changes, only credit card to Line of Credit and Line of Credit to Line of Credit migrations are supported. Migrating from Line of Credit to credit card or credit card to credit card is not supported.
-* Lines of Credit are always denominated in USD, regardless of your WABA’s billing currency. You do not need a Line of Credit in the target currency. If your migration requires Line of Credit billing, attach your existing USD Line of Credit.
-* You are billed in your WABA’s currency. Your WABA’s currency and your legal entity’s headquarters address together determine which Meta billing entity issues your invoices.
+* Lines of Credit are always denominated in USD, regardless of your WABA's billing currency. You do not need a Line of Credit in the target currency. If your migration requires Line of Credit billing, attach your existing USD Line of Credit.
+* You are billed in your WABA's currency. Your WABA's currency and your legal entity's headquarters address together determine which Meta billing entity issues your invoices.
 * Phone number limits are preserved on the new WABA (for example, expanded limits of up to 1,200 numbers carry over).
 
 | API Call | What is migrated | What is not migrated | Result | Can WABA be used to send messages? |
 | --- | --- | --- | --- | --- |
-| First call (Initiate) | * Templates (all statuses: Approved, Pending, Disabled, Rejected, Under Review) * Flows * App installation * Users/permissions | * Templates with outdated formats * Phone numbers in “manual review” state * Insights/analytics | New WABA in selected currency, with assets migrated | Not yet – No phone number attached |
+| First call (Initiate) | * Templates (all statuses: Approved, Pending, Disabled, Rejected, Under Review) * Flows * App installation * Users/permissions | * Templates with outdated formats * Phone numbers in "manual review" state * Insights/analytics | New WABA in selected currency, with assets migrated | Not yet – No phone number attached |
 | Second call (Complete) | Phone numbers | Historical insights (remain on old WABA) | Phone number migrated to this new WABA | Yes |
 
 | Insights | Before Migration | After Migration |
@@ -58,29 +58,25 @@ Use the POST /<WHATSAPP\_BUSINESS\_ACCOUNT\_ID>/`set_payment_method_migration_in
 **Request syntax**
 
 ```
-```
-curl -X POST "https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_ACCOUNT_ID>/set_payment_method_migration_intent" \  
--H "Authorization: Bearer <ACCESS_TOKEN>" \  
--H "Content-Type: application/json" \  
--d '  
+curl -X POST "https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_ACCOUNT_ID>/set_payment_method_migration_intent" \  
+-H "Authorization: Bearer <ACCESS_TOKEN>" \  
+-H "Content-Type: application/json" \  
+-d '  
 {  
-  "currency": "<CURRENCY>",  
+  "currency": "<CURRENCY>",  
   
-  <!-- Optional -->  
-  "extended_credit_id": "<EXTENDED_CREDIT_ID>"  
+  <!-- Optional -->  
+  "extended_credit_id": "<EXTENDED_CREDIT_ID>"  
 }'
-```
 ```
 
 **Response syntax**
 
 ```
-```
 {  
-  "migration_id": "<MIGRATION_ID>",  
-  "migration_status": "<MIGRATION_STATUS>"  
+  "migration_id": "<MIGRATION_ID>",  
+  "migration_status": "<MIGRATION_STATUS>"  
 }
-```
 ```
 
 ### Request parameters
@@ -95,27 +91,23 @@ curl -X POST "https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_ACC
 ### Example request
 
 ```
-```
-curl 'https://graph.facebook.com/v23.0/123456789012345/set_payment_method_migration_intent' \  
--H 'Content-Type: application/json' \  
--H 'Authorization: Bearer EAABsbCS1iHgBA...' \  
--d '  
+curl 'https://graph.facebook.com/v23.0/123456789012345/set_payment_method_migration_intent' \  
+-H 'Content-Type: application/json' \  
+-H 'Authorization: Bearer EAABsbCS1iHgBA...' \  
+-d '  
 {  
-  "currency": "INR",  
-  "extended_credit_id": "987654321098765"  
+  "currency": "INR",  
+  "extended_credit_id": "987654321098765"  
 }'
-```
 ```
 
 ### Example response
 
 ```
-```
 {  
-  "migration_id": "mig_01HZYK3ABCDEF4567890",  
-  "migration_status": "INITIATED"  
+  "migration_id": "mig_01HZYK3ABCDEF4567890",  
+  "migration_status": "INITIATED"  
 }
-```
 ```
 
 ## Check migration status
@@ -125,10 +117,8 @@ Use the GET /<MIGRATION\_ID> endpoint to check the current status of a migration
 ### Request syntax
 
 ```
-```
-curl 'https://graph.facebook.com/<API_VERSION>/<MIGRATION_ID>' \  
--H 'Authorization: Bearer <ACCESS_TOKEN>'
-```
+curl 'https://graph.facebook.com/<API_VERSION>/<MIGRATION_ID>' \  
+-H 'Authorization: Bearer <ACCESS_TOKEN>'
 ```
 
 ### Request parameters
@@ -140,28 +130,24 @@ curl 'https://graph.facebook.com/<API_VERSION>/<MIGRATION_ID>' \
 ### Example request
 
 ```
-```
-curl 'https://graph.facebook.com/v23.0/mig_01HZYK3ABCDEF4567890' \  
--H 'Authorization: Bearer EAABsbCS1iHgBA...'
-```
+curl 'https://graph.facebook.com/v23.0/mig_01HZYK3ABCDEF4567890' \  
+-H 'Authorization: Bearer EAABsbCS1iHgBA...'
 ```
 
 ### Example response
 
 ```
-```
 {  
-  "status": "READY_TO_COMPLETE",  
-  "destination_waba": {  
-    "id": "998877665544332",  
-    "name": "Acme WABA (INR)",  
-    "currency": "INR",  
-    "timezone_id": "1",  
-    "message_template_namespace": "1234abcd_namespace"  
-  },  
-  "id": "mig_01HZYK3ABCDEF4567890"  
+  "status": "READY_TO_COMPLETE",  
+  "destination_waba": {  
+    "id": "998877665544332",  
+    "name": "Acme WABA (INR)",  
+    "currency": "INR",  
+    "timezone_id": "1",  
+    "message_template_namespace": "1234abcd_namespace"  
+  },  
+  "id": "mig_01HZYK3ABCDEF4567890"  
 }
-```
 ```
 
 ## Pre-completion verification
@@ -195,28 +181,24 @@ After this step completes:
 **Request syntax**
 
 ```
-```
-curl -X POST "https://graph.facebook.com/<API_VERSION>/<MIGRATION_ID>/resume_migration" \  
--H "Authorization: Bearer <ACCESS_TOKEN>"
-```
+curl -X POST "https://graph.facebook.com/<API_VERSION>/<MIGRATION_ID>/resume_migration" \  
+-H "Authorization: Bearer <ACCESS_TOKEN>"
 ```
 
 **Response example**
 
 ```
-```
 {  
-  "status": "<STATUS>",  
-  "destination_waba": {  
-    "id": "<CLONED_WABA_ID>",  
-    "name": "<CLONED_WABA_NAME>",  
-    "currency": "<NEW_CURRENCY>",  
-    "timezone_id": "<CLONED_WABA_TIMEZONE>",  
-    "message_template_namespace": "<NAMESPACE_FOR_TEMPLATES>"  
-  },  
-  "id": "<MIGRATION_ID>"  
+  "status": "<STATUS>",  
+  "destination_waba": {  
+    "id": "<CLONED_WABA_ID>",  
+    "name": "<CLONED_WABA_NAME>",  
+    "currency": "<NEW_CURRENCY>",  
+    "timezone_id": "<CLONED_WABA_TIMEZONE>",  
+    "message_template_namespace": "<NAMESPACE_FOR_TEMPLATES>"  
+  },  
+  "id": "<MIGRATION_ID>"  
 }
-```
 ```
 
 ## Verify migration

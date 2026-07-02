@@ -39,11 +39,9 @@ curl -X POST \
 ### Example response
 
 ```
-```
 {  
-  "id": "<CREATIVE_ID>"  
+  "id": "<CREATIVE_ID>"  
 }
-```
 ```
 
 ## Learn more

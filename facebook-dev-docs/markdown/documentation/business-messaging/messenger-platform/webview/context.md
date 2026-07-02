@@ -23,23 +23,21 @@ The `askPermission()` method of the Messenger Extensions SDK allows you to reque
 For a complete list of method parameters, see the [askPermission() Reference](https://developers.facebook.com/documentation/business-messaging/messenger-platform/overview).
 
 ```
-```
 MessengerExtensions.askPermission(  
-  function(permission_response) {  
-    // Person grants or rejects the asked permission.  
-    let permissions = permission_response.permissions; // list of all permissions granted  
-    let isGranted = permission_response.isGranted;  
+  function(permission_response) {  
+    // Person grants or rejects the asked permission.  
+    let permissions = permission_response.permissions; // list of all permissions granted  
+    let isGranted = permission_response.isGranted;  
   
-    if (isGranted) {  
-      // User has granted user_profile permission  
-    }  
+    if (isGranted) {  
+      // User has granted user_profile permission  
+    }  
   
-  }, function(errorCode, errorMessage) {  
-    // Error occurred  
-  },  
-  "user_profile"  
+  }, function(errorCode, errorMessage) {  
+    // Error occurred  
+  },  
+  "user_profile"  
 );
-```
 ```
 
 The method returns the following object to the success callback after the person responds to the request:
@@ -65,13 +63,11 @@ You might use this information to first display context and set expectations for
 For a complete list of method parameters, see the [getGrantedPermissions() Reference](https://developers.facebook.com/documentation/business-messaging/messenger-platform/reference/messenger-extensions-sdk/getGrantedPermissions).
 
 ```
-```
-MessengerExtensions.getGrantedPermissions(function (permissions_response) {  
-  let permission = permissions_response.permissions // list of permissions granted  
-}, function() {  
-  // An error occurred  
+MessengerExtensions.getGrantedPermissions(function (permissions_response) {  
+  let permission = permissions_response.permissions // list of permissions granted  
+}, function() {  
+  // An error occurred  
 });
-```
 ```
 
 The method returns an array of the permissions that are currently granted to you in the `permissions` property of the following object:

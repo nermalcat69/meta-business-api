@@ -13,7 +13,7 @@ This table lists all standard parameters users can send to Meta.
 | --- | --- | --- | --- |
 | `availability` | `fb_availability` | `availability` | Value must be `available_soon`, `for_rent`, `for_sale`, `off_market`, `recently_sold` or `sale_pending`. |
 | `body_style` | `fb_body_style` | `body_style` | Body style of the vehicle: `CONVERTIBLE`, `COUPE`, `HATCHBACK`, `MINIVAN`, `TRUCK`, `SUV`, `SEDAN`, `VAN`, `WAGON`, `CROSSOVER`, `OTHER`. |
-| `checkin_date` | `fb_checkin_date` | `checkin_date` | The date the user is wanting to check-in to the hotel in the hotel’s time-zone. We accept dates in `YYYYMMDD`, `YYYY-MM-DD`, `YYYY-MM-DDThh:mmTZD` and `YYYY-MM-DDThh:mm:ssTZD`. |
+| `checkin_date` | `fb_checkin_date` | `checkin_date` | The date the user is wanting to check-in to the hotel in the hotel's time-zone. We accept dates in `YYYYMMDD`, `YYYY-MM-DD`, `YYYY-MM-DDThh:mmTZD` and `YYYY-MM-DDThh:mm:ssTZD`. |
 | `city` | `fb_city` | `city` | Provide the city of the location from user intent. |
 | `condition_of_vehicle` | `fb_condition_of_vehicle` | `condition_of_vehicle` | Condition of vehicle. |
 | `content_ids` | `fb_content_ids` | `content_ids` | The content IDs associated with the event, such as product SKUs for items in an `AddToCart` event. |
@@ -21,7 +21,7 @@ This table lists all standard parameters users can send to Meta.
 | `contents` | `fb_contents` | `contents` | A list of JSON objects that contain the product IDs associated with the event plus information about the products. Available fields: `id`, `quantity`, `item_price`, `delivery_category`. |
 | `country` | `fb_country` | `country` | Provide the country of the location from user intent. |
 | `currency` | `fb_currency` | `currency` | Required for purchase events. The currency for the `value` specified, if applicable. Currency must be a valid [ISO 4217⁠](https://en.wikipedia.org/wiki/ISO_4217?fbclid=IwAR2qARpy3ufnmcEY-sVHvTzUA1AsFOsLYdNsrZP6UYAMRt6NVM5SAhfzfJg) three-digit currency code. |
-| `delivery_category` | `fb_delivery_category` | `delivery_category` | Optional for purchase events. Type of delivery for a purchase event. Supported values are:   * `in_store` — Customer needs to enter the store to get the purchased product. * `curbside` — Customer picks up their order by driving to a store and waiting inside their vehicle. * `home_delivery` — Purchase is delivered to the customer’s home. |
+| `delivery_category` | `fb_delivery_category` | `delivery_category` | Optional for purchase events. Type of delivery for a purchase event. Supported values are:   * `in_store` — Customer needs to enter the store to get the purchased product. * `curbside` — Customer picks up their order by driving to a store and waiting inside their vehicle. * `home_delivery` — Purchase is delivered to the customer's home. |
 | `departing_arrival_date` | `fb_departing_arrival_date` | `departing_arrival_date` | The date and time for arrival at the destination of the outbound journey. |
 | `departing_departure_date` | `fb_departing_departure_date` | `departing_departure_date` | The date and time for start of the outbound journey. |
 | `destination_airport` | `fb_destination_airport` | `destination_airport` | Use official IATA code of destination airport. |
@@ -82,8 +82,8 @@ This table lists all standard parameters users can send to Meta.
 | `year` | `fb_year` | `year` | Year the vehicle was launched in `yyyy` format. |
 |  |  | `item_number` | Unique identifier to distinguish events within the same order or transaction. |
 |  | `ad_type` |  | Ad type. |
-|  | `fb_content` |  | A list of JSON object that contains the International Article Number (EAN) when applicable, or other product or content identifier(s) as well as quantities and prices of the products. Required: `id`, `quantity`.  Example: “[{"id": "1234", "quantity": 2,}, {"id": "5678", "quantity": 1,}]”. |
-|  | `fb_content_id` |  | International Article Number (EAN) when applicable, or other product or content identifier(s). For multiple product ids: e.g. “["1234","5678"]”. |
+|  | `fb_content` |  | A list of JSON object that contains the International Article Number (EAN) when applicable, or other product or content identifier(s) as well as quantities and prices of the products. Required: `id`, `quantity`.  Example: "[{"id": "1234", "quantity": 2,}, {"id": "5678", "quantity": 1,}]". |
+|  | `fb_content_id` |  | International Article Number (EAN) when applicable, or other product or content identifier(s). For multiple product ids: e.g. "["1234","5678"]". |
 |  | `fb_description` |  | A string description. |
 |  | `fb_level` |  | Level of a game. |
 |  | `fb_max_rating_value` |  | Upper bounds of a rating scale, for example 5 on a 5 star scale. |

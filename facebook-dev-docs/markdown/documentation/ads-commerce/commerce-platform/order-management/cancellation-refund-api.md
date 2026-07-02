@@ -36,7 +36,7 @@ https://graph.facebook.com/v25.0/<ORDER_ID>/shipments
 
 | Attribute & Type | Description |
 | --- | --- |
-| `retailer_id`  Type: string | **Required if `item_id` is not provided**.  ID representing the product in the seller’s catalog. You must provide `retailer_id` or `item_id`, but not both. If `item_id` is provided, `retailer_id` must not be provided. |
+| `retailer_id`  Type: string | **Required if `item_id` is not provided**.  ID representing the product in the seller's catalog. You must provide `retailer_id` or `item_id`, but not both. If `item_id` is provided, `retailer_id` must not be provided. |
 | `item_id`  Type: string | **Required if `retailer_id` is not provided**.  A Meta-generated ID representing the line item on the order. This value is readable as the `id` field of the [`item`](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/order-management/order-api#item) response in the read. You must provide `retailer_id` or `item_id`, but not both. If `retailer_id` is provided, `item_id` must not be provided. |
 | `quantity`  Type: number | **Required**  Number/quantity of items that are part of this shipment. |
 
@@ -189,17 +189,15 @@ curl -X POST \
 ### Sample Request
 
 ```
-```
 {  
-   "shipment_id" : "45752147666494713",  
-   "tracking_info" : {  
-        "tracking_number": "12345abcd",  
-        "carrier": "FEDEX",  
-        "shipping_method_name": "2 Day Fedex"  
-    },  
-    "idempotency_key": "cb090e84-e75a-9a34-45d3-5153bec88b65"  
+   "shipment_id" : "45752147666494713",  
+   "tracking_info" : {  
+        "tracking_number": "12345abcd",  
+        "carrier": "FEDEX",  
+        "shipping_method_name": "2 Day Fedex"  
+    },  
+    "idempotency_key": "cb090e84-e75a-9a34-45d3-5153bec88b65"  
 }
-```
 ```
 
 ### Sample Response
@@ -207,11 +205,9 @@ curl -X POST \
 If successful:
 
 ```
-```
 {  
-  "success": true  
+  "success": true  
 }
-```
 ```
 
 Otherwise, a relevant error message will be returned.
@@ -252,7 +248,7 @@ https://graph.facebook.com/v25.0/<ORDER_ID>/shipments
 | Attribute & Type | Description |
 | --- | --- |
 | `id`  Type: string | Unique ID representing the item as identified by Facebook. |
-| `retailer_id`  Type: string | ID representing the product in the seller’s catalog. |
+| `retailer_id`  Type: string | ID representing the product in the seller's catalog. |
 | `product_id`  Type: string | ID representing the product in the Facebook catalog. |
 | `quantity`  Type: number | Number of items ordered. |
 | `tax`  Type: [`tax`](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/order-management/cancellation-refund-api#tax) |  |

@@ -73,7 +73,7 @@ https://graph.facebook.com/v25.0/<APP_SCOPED_SYSTEM_USER_ID>/access_tokens
 
 * Begin your integration development with a test commerce account. A *test account* allows you to create a Facebook shop only visible to your team, place test orders, and use the API to manage those orders, without the additional setup required for a real account.
 * Once you have built out the basic functionality, submit your app for [App Review](https://developers.facebook.com/docs/commerce-platform/setup/app-review). After App Review approves your app for commerce related permissions, your app can then be used to make API calls against a real commerce account.
-* Set your Facebook or Instagram Shops in “Staging” mode in Commerce Manager where they are only visible to admins.
+* Set your Facebook or Instagram Shops in "Staging" mode in Commerce Manager where they are only visible to admins.
 * Test your integration and buyer experience (end-to-end) before publishing those Shops.
 
 Whether you are using a test account or real account, use a system user to generate access tokens for API calls; such tokens never expire. Treat these tokens as your password and store them securely.

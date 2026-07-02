@@ -25,7 +25,7 @@ Platform Rate Limits are tracked on an individual application or user level, dep
 
 ### Applications
 
-Graph API requests made with an [application access token](https://developers.facebook.com/docs/facebook-login/access-tokens#apptokens) are counted against that app’s rate limit. An app’s call count is the number of calls it can make during a rolling one hour window and is calculated as follows:
+Graph API requests made with an [application access token](https://developers.facebook.com/docs/facebook-login/access-tokens#apptokens) are counted against that app's rate limit. An app's call count is the number of calls it can make during a rolling one hour window and is calculated as follows:
 
 `Calls within one hour = 200 * Number of Users`
 
@@ -35,9 +35,9 @@ Note that this is not a per User limit but a limit on calls made by your app. An
 
 ### Users
 
-Graph API requests made with a [user access token](https://developers.facebook.com/docs/facebook-login/access-tokens#usertokens) are counted against that user’s call count. A user’s call count is the number of calls a user can make during a rolling one hour window. Due to privacy concerns, we do not reveal actual call count values for users.
+Graph API requests made with a [user access token](https://developers.facebook.com/docs/facebook-login/access-tokens#usertokens) are counted against that user's call count. A user's call count is the number of calls a user can make during a rolling one hour window. Due to privacy concerns, we do not reveal actual call count values for users.
 
-Note that a user’s call count can be spread over multiple apps. For example, a user could make X calls through App1 and Y calls through App2. If X+Y exceeds the user’s call count that user will be rate limited. This does not necessarily mean that any app is doing something wrong; it could be that the user is using multiple apps or is misusing the API.
+Note that a user's call count can be spread over multiple apps. For example, a user could make X calls through App1 and Y calls through App2. If X+Y exceeds the user's call count that user will be rate limited. This does not necessarily mean that any app is doing something wrong; it could be that the user is using multiple apps or is misusing the API.
 
 ### Headers
 
@@ -91,7 +91,7 @@ x-ad-account-usage: {
 
 ### Dashboard
 
-The [app dashboard](https://developers.facebook.com/apps/) displays the number of rate limited app users, the app’s current Application Rate Limits usage percentage, and displays average activity for the past 7 days. In the **Application Rate Limit** card, click **View Details** and hover over any point on the graph to see more details about usage for that particular moment. Because usage depends on call volume, this graph may not show a full 7 days. Apps with a higher volume of calls will show more days.
+The [app dashboard](https://developers.facebook.com/apps/) displays the number of rate limited app users, the app's current Application Rate Limits usage percentage, and displays average activity for the past 7 days. In the **Application Rate Limit** card, click **View Details** and hover over any point on the graph to see more details about usage for that particular moment. Because usage depends on call volume, this graph may not show a full 7 days. Apps with a higher volume of calls will show more days.
 
 ### Error Codes
 
@@ -139,7 +139,7 @@ When an app or user has reached their rate limit, requests made by that app or u
 * Spread out queries evenly to avoid traffic spikes.
 * Use filters to limit the data response size and avoid calls that request overlapping data.
 * Check the `X-App-Usage` HTTP header to see how close your app is to its limit and when you can resume making calls when the limit has been reached.
-* If Users are being throttled, be sure your app is not the cause. Reduce the user’s calls or spread the user’s calls more evenly over time.
+* If Users are being throttled, be sure your app is not the cause. Reduce the user's calls or spread the user's calls more evenly over time.
 
 ## Business Use Case Rate Limits
 
@@ -269,7 +269,7 @@ Calls to the Instagram messaging endpoints are counted against the number of cal
 
 ### LeadGen
 
-Requests made by your app to the LeadGen API are counted against the app’s call count. An app’s call count is the number of calls it can make during a rolling 24 hour window and is calculated as follows:
+Requests made by your app to the LeadGen API are counted against the app's call count. An app's call count is the number of calls it can make during a rolling 24 hour window and is calculated as follows:
 
 `Calls within 24 hours = 4800 * Leads Generated`
 
@@ -324,7 +324,7 @@ Requests made by your app are counted against the number of calls your app can m
 
 The Page Rate Limits may use either the Platform or BUC rate limit logic depending on the type of token used. Any Pages API calls that are made using a [Page](https://developers.facebook.com/docs/facebook-login/access-tokens#pagetokens) or [system user access token](https://developers.facebook.com/docs/marketing-api/businessmanager/systemuser#systemusertoken) use the rate limit calculation below. Any calls made with [application](https://developers.facebook.com/docs/facebook-login/access-tokens#apptokens) or [user access tokens](https://developers.facebook.com/docs/facebook-login/access-tokens#usertokens) are subject to application or User rate limits.
 
-Requests made by your app to the Pages API using a Page access token or system User access token are counted against the app’s call count. An app’s call count is the number of calls it can make during a rolling 24 hour window and is calculated as follows:
+Requests made by your app to the Pages API using a Page access token or system User access token are counted against the app's call count. An app's call count is the number of calls it can make during a rolling 24 hour window and is calculated as follows:
 
 `Calls within 24 hours = 4800 * Number of Engaged Users`
 
@@ -336,7 +336,7 @@ To avoid [rate limiting](https://developers.facebook.com/docs/graph-api/overview
 
 ### Spark AR Commerce Effect Management
 
-Requests made by your app to any Commerce endpoints are counted against the app’s call count. An app’s call count is the number of calls it can make during a rolling one hour window and is calculated as follows:
+Requests made by your app to any Commerce endpoints are counted against the app's call count. An app's call count is the number of calls it can make during a rolling one hour window and is calculated as follows:
 
 `Calls within one hour = 200 + 40 * Number of Catalogs`
 

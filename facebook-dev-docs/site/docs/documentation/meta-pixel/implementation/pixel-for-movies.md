@@ -14,7 +14,7 @@ The Meta Pixel is the main tool you can use to track events on a website. You ca
 
 ## Requirements
 
-* The Meta Pixel’s [base code](https://developers.facebook.com/documentation/meta-pixel/get-started) must already be installed on every webpage where you will be tracking events.
+* The Meta Pixel's [base code](https://developers.facebook.com/documentation/meta-pixel/get-started) must already be installed on every webpage where you will be tracking events.
 
 ### iOS 14.5 Updates
 
@@ -22,7 +22,7 @@ Due to the changes for iOS 14.5, we have introduced a new tool for tracking web 
 
 #### Aggregated Event Measurement
 
-Meta’s Aggregated Event Measurement is a protocol that allows for measurement of web and app events from people using iOS 14.5 or later devices. Statistical modeling may be used and is designed to provide a more complete view of results when data is missing or partial.
+Meta's Aggregated Event Measurement is a protocol that allows for measurement of web and app events from people using iOS 14.5 or later devices. Statistical modeling may be used and is designed to provide a more complete view of results when data is missing or partial.
 
 Aggregated Event Measurement currently limits domains and mobile apps to 8 conversion events that can be configured and prioritized for Aggregated Event Measurement.
 
@@ -88,7 +88,7 @@ fbq(
 
 ### Purchase
 
-Track the following `Purchase` standard event on your website’s **payment confirmation** page.
+Track the following `Purchase` standard event on your website's **payment confirmation** page.
 
 ```
 fbq(

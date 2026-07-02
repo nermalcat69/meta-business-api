@@ -40,7 +40,7 @@ In **WhatsApp Manager** > **Account tools**:
 
 * If business believe the category determined is not consistent with our template category guidelines, confirm there are no [common issues](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-review) that leads to rejections and if you are looking for further clarification you may [request a review](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-categorization#requesting-review) of the template via [Business Support⁠](https://business.facebook.com/business-support-home/).
   * Once approved template [status](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview#template-status) will be changed to `ACTIVE`.
-* Note that template’s status can change automatically from `ACTIVE` to `PAUSED` or `DISABLED` based on customer feedback and engagement. [Monitor status changes](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-review#common-rejection-reasons) and take appropriate actions whenever such change occurs.
+* Note that template's status can change automatically from `ACTIVE` to `PAUSED` or `DISABLED` based on customer feedback and engagement. [Monitor status changes](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-review#common-rejection-reasons) and take appropriate actions whenever such change occurs.
 
 ![Animation of Meta Business settings WhatsApp Accounts page showing a Test WhatsApp Business account, its Settings tab, and the WhatsApp Manager button](https://scontent.fdel1-1.fna.fbcdn.net/v/t39.2365-6/580081490_1541180930238272_2112454248678172804_n.gif?_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=czgFG91p0VIQ7kNvwEuyjyt&_nc_oc=AdqXwhT5Wbhmlmk71z3DFXNRFlug-VPK-muxo8me8thvmQXSOHieGWVXUwOwlPv6pe7IRvBWxpWyXrV8APUk7SWG&_nc_zt=14&_nc_ht=scontent.fdel1-1.fna&_nc_gid=SHPb-NX7a_1LeXc_93TsNw&_nc_ss=7b2a8&oh=00_AQACSF4PGgVeTsMLRzRpr4E53UvYT_HyAYagOaa5qkl6tA&oe=6A60448D)
 
@@ -49,29 +49,27 @@ In **WhatsApp Manager** > **Account tools**:
 To create a template through API and understand the general syntax, required categories and
 components please refer to our [Templates](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview) document. All the guidelines outlined above in creating templates apply through API as well.
 
-Order status template is categorized as “Utility” template and apart from ‘name’ and ‘language’ of
-choice, it has general template components such as BODY, FOOTER, and additionally sub category as “ORDER\_STATUS”.
+Order status template is categorized as "Utility" template and apart from 'name' and 'language' of
+choice, it has general template components such as BODY, FOOTER, and additionally sub category as "ORDER\_STATUS".
 
 ```
-```
-POST https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_BUSINESS_ID>/message_templates  
+POST https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_BUSINESS_ID>/message_templates  
 {  
-  "name": "<TEMPLATE_NAME>",  
-  "language": "<LANGUAGE_AND_LOCALE_CODE>",  
-  "category": "UTILITY",  
-  "sub_category": "ORDER_STATUS",  
-  "components": [  
-    {  
-      "type": "BODY",  
-      "text": "<TEMPLATE_BODY_TEXT>"  
-    },  
-    {  
-      "type": "FOOTER",  
-      "text": "<TEMPLATE_FOOTER_TEXT>"  
-    }  
-  ]  
+  "name": "<TEMPLATE_NAME>",  
+  "language": "<LANGUAGE_AND_LOCALE_CODE>",  
+  "category": "UTILITY",  
+  "sub_category": "ORDER_STATUS",  
+  "components": [  
+    {  
+      "type": "BODY",  
+      "text": "<TEMPLATE_BODY_TEXT>"  
+    },  
+    {  
+      "type": "FOOTER",  
+      "text": "<TEMPLATE_FOOTER_TEXT>"  
+    }  
+  ]  
 }
-```
 ```
 
 ## Sending order status template message
@@ -86,45 +84,43 @@ endpoint and attach a message object with `type=template`. Then, add a [template
 For example, the following sample describes how to send `shipped` status on the placed order.
 
 ```
-```
-  curl -X  POST \  
-  'https://graph.facebook.com/<API_VERSION>/<FROM_PHONE_NUMBER_ID>/messages' \  
- -H 'Authorization: Bearer <ACCESS_TOKEN>' \  
- -H 'Content-Type: application/json' \  
- -d '{  
-    "messaging_product": "whatsapp",  
-    "recipient_type": "individual",  
-    "to": "<PHONE_NUMBER>",  
-    "type": "template",  
-    "template":  
-    {  
-        "name": "<TEMPLATE_NAME>",  
-        "language":  
-        {  
-            "policy": "deterministic",  
-            "code": "<LANGUAGE_AND_LOCALE_CODE>"  
-        },  
-        "components":  
-        [  
-            {  
-                "type": "order_status",  
-                "parameters": [{  
-                    "type": "order_status",  
-                    "order_status":  
-                    {  
-                        "reference_id": "reference_id_value",  
-                        "order":  
-                        {  
-                            "status": "processing | partially_shipped | shipped | completed | canceled",  
-                            "description": "<OPTIONAL_DESCRIPTION>"  
-                        }  
-                    }  
-                }]  
-            }  
-        ]  
-    }  
+  curl -X  POST \  
+  'https://graph.facebook.com/<API_VERSION>/<FROM_PHONE_NUMBER_ID>/messages' \  
+ -H 'Authorization: Bearer <ACCESS_TOKEN>' \  
+ -H 'Content-Type: application/json' \  
+ -d '{  
+    "messaging_product": "whatsapp",  
+    "recipient_type": "individual",  
+    "to": "<PHONE_NUMBER>",  
+    "type": "template",  
+    "template":  
+    {  
+        "name": "<TEMPLATE_NAME>",  
+        "language":  
+        {  
+            "policy": "deterministic",  
+            "code": "<LANGUAGE_AND_LOCALE_CODE>"  
+        },  
+        "components":  
+        [  
+            {  
+                "type": "order_status",  
+                "parameters": [{  
+                    "type": "order_status",  
+                    "order_status":  
+                    {  
+                        "reference_id": "reference_id_value",  
+                        "order":  
+                        {  
+                            "status": "processing | partially_shipped | shipped | completed | canceled",  
+                            "description": "<OPTIONAL_DESCRIPTION>"  
+                        }  
+                    }  
+                }]  
+            }  
+        ]  
+    }  
 }
-```
 ```
 
 Upon sending an `order_status` message with an invalid transition, you will receive an error webhook with the error code `2046` and message `New order status was not correctly transitioned`.

@@ -252,7 +252,7 @@ curl -X POST \
 
 ## Delete Shipping Profiles
 
-Delete shipping profiles from your commerce account. You can’t delete the default shipping profile
+Delete shipping profiles from your commerce account. You can't delete the default shipping profile
 
 ```
 curl -X DELETE \
@@ -300,7 +300,7 @@ https://graph.facebook.com/{order-id}/items
 
 ```
 curl -i -X GET \
-"https://facebook.com/v3.3/720230338503549?fields=items.limit(10){id,ship_by,selected_shipping_option{name,price,calculated_tax,estimated_shipping_time,handling_time_days,reference_id}}&access_token=<access token sanitized>"
+"https://facebook.com/v3.3/720230338503549?fields=items.limit(10){id,ship_by,selected_shipping_option{name,price,calculated_tax,estimated_shipping_time,handling_time_days,reference_id}​}&access_token=<access token sanitized>"
 ```
 
 **New Response — Example Response**
@@ -364,7 +364,7 @@ curl -X PUT \
 | `reference_id`  Type: string | Unique external shipment profile ID representing a shipment pro as identified by the seller. Allowed characters are alphanumeric and `_`. |
 | `shipping_destinations`  Type: array of [`shipping_destinations`](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/order-management/associate-shipping-profiles#shipping-destinations-object) | **Required**  Groups of address categories and their associated shipping options.  Any existing shipping destinations are deleted. |
 
-You can’t update a profile from default to non-default using the `is_default_shipping_profile` field. Instead, you need to set `is_default_shipping_profile` on a new or other existing profile.
+You can't update a profile from default to non-default using the `is_default_shipping_profile` field. Instead, you need to set `is_default_shipping_profile` on a new or other existing profile.
 
 **Sample Request**
 

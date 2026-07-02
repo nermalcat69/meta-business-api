@@ -85,17 +85,17 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Application-ID}/whatsapp_business_solution' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "owner_permissions": [  
-    "MESSAGING"  
-  ],  
-  "partner_app_id": "9876543210987654",  
-  "partner_permissions": [],  
-  "solution_name": "Owner-Managed Messaging Solution"  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Application-ID}/whatsapp_business_solution' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "owner_permissions": [  
+    "MESSAGING"  
+  ],  
+  "partner_app_id": "9876543210987654",  
+  "partner_permissions": [],  
+  "solution_name": "Owner-Managed Messaging Solution"  
 }'
 ```
 
@@ -107,12 +107,12 @@ Select status code
 
 ```
 {  
-  "successful_creation": {  
-    "summary": "Successful solution creation",  
-    "value": {  
-      "solution_id": "1234567890123456"  
-    }  
-  }  
+  "successful_creation": {  
+    "summary": "Successful solution creation",  
+    "value": {  
+      "solution_id": "1234567890123456"  
+    }  
+  }  
 }
 ```
 
@@ -690,17 +690,17 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Application-ID}/whatsapp_business_solution' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "owner_permissions": [  
-    "MESSAGING"  
-  ],  
-  "partner_app_id": "9876543210987654",  
-  "partner_permissions": [],  
-  "solution_name": "Owner-Managed Messaging Solution"  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Application-ID}/whatsapp_business_solution' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "owner_permissions": [  
+    "MESSAGING"  
+  ],  
+  "partner_app_id": "9876543210987654",  
+  "partner_permissions": [],  
+  "solution_name": "Owner-Managed Messaging Solution"  
 }'
 ```
 
@@ -712,12 +712,12 @@ Select status code
 
 ```
 {  
-  "successful_creation": {  
-    "summary": "Successful solution creation",  
-    "value": {  
-      "solution_id": "1234567890123456"  
-    }  
-  }  
+  "successful_creation": {  
+    "summary": "Successful solution creation",  
+    "value": {  
+      "solution_id": "1234567890123456"  
+    }  
+  }  
 }
 ```
 

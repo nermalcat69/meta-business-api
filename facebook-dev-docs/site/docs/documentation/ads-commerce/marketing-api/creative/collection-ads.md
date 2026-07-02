@@ -255,7 +255,7 @@ Set up the Facebook SDK for JavaScript, see:
 * [Quickstart guide](https://developers.facebook.com/docs/javascript/quickstart)
 * [Initialization reference](https://developers.facebook.com/docs/javascript/reference/FB.init)
 
-The JavaScript SDK relies on the logged in user’s permissions to create an Instant Experience. If the user does not have the necessary permissions to create an Instant Experience for the supplied page and business, the dialog shows an error. To ensure no errors, the user must be in the business and have ‘create ads’ permissions for the page.
+The JavaScript SDK relies on the logged in user's permissions to create an Instant Experience. If the user does not have the necessary permissions to create an Instant Experience for the supplied page and business, the dialog shows an error. To ensure no errors, the user must be in the business and have 'create ads' permissions for the page.
 
 Then trigger the dialog:
 
@@ -327,7 +327,7 @@ Set up the Facebook SDK for JavaScript, see:
 * [Quickstart guide](https://developers.facebook.com/docs/javascript/quickstart)
 * [Initialization reference](https://developers.facebook.com/docs/javascript/reference/FB.init)
 
-The JavaScript SDK relies on the logged in user’s permissions to create an Instant Experience. If the user does not have the necessary permissions to view the Instant Experience, the dialog shows an error.
+The JavaScript SDK relies on the logged in user's permissions to create an Instant Experience. If the user does not have the necessary permissions to view the Instant Experience, the dialog shows an error.
 
 Then trigger the preview dialog:
 

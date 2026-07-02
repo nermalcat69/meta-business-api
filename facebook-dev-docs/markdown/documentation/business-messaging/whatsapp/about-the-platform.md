@@ -3,7 +3,7 @@ title: "WhatsApp Business Platform"
 source_url: https://developers.facebook.com/documentation/business-messaging/whatsapp/about-the-platform
 ---
 
-What’s next for business messaging and AI? Watch the Conversations keynote.
+What's next for business messaging and AI? Watch the Conversations keynote.
 
 [**Watch now**⁠](https://www.facebook.com/MetaforDevelopers/videos/1033573362435484/C26-EN-M4D-web-website_m4d-Website-Global-doc-whatsapp--)
 
@@ -15,7 +15,7 @@ Drive revenue growth, boost efficiency, and deliver exceptional customer experie
 
 ## Demo the API
 
-Preview an interactive experience showing how Jasper’s Market (our demo retail business) connects with customers using the WhatsApp Business Platform.
+Preview an interactive experience showing how Jasper's Market (our demo retail business) connects with customers using the WhatsApp Business Platform.
 
 Demo retail business![](https://scontent.fdel1-8.fna.fbcdn.net/v/t39.8562-6/547429620_764982376167016_715228206216507834_n.png?stp=dst-webp&_nc_cat=105&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=9a942e&_nc_ohc=Y1rkyr2xeMAQ7kNvwHKGEHZ&_nc_oc=Adp2Gk2k5GWcJEkl5K9kyZIlqmZlNzTbcKcr_rVDtGGhClMg_zWacFynsJJHenF9S19-xOyhk1O9SDKhanmtItkD&_nc_zt=14&_nc_ht=scontent.fdel1-8.fna&_nc_gid=5M18qvVIu-SkGy5cxYGNuw&_nc_ss=7b2a8&oh=00_AQDS3TtK6T2n2xGPhzMQit2Szl0bijjXEEbuEqPtPiymFA&oe=6A4C003E)
 
@@ -30,26 +30,25 @@ PythonJavaScriptcURL
 ---
 
 ```
-import requests  
+import requests  
   
-url = "https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/messages"  
-headers = {  
-    "Authorization": "Bearer <ACCESS_TOKEN>",  
-    "Content-Type": "application/json",  
+url = "https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/messages"  
+headers = {  
+    "Authorization": "Bearer <ACCESS_TOKEN>",  
+    "Content-Type": "application/json",  
 }  
-data = {  
-    "messaging_product": "whatsapp",  
-    "to": "<WHATSAPP_USER_PHONE_NUMBER>",  
-    "type": "template",  
-    "template": {  
-        "name": "hello_world",  
-        "language": {"code": "en_US"},  
-    }  
+data = {  
+    "messaging_product": "whatsapp",  
+    "to": "<WHATSAPP_USER_PHONE_NUMBER>",  
+    "type": "template",  
+    "template": {  
+        "name": "hello_world",  
+        "language": {"code": "en_US"},  
+    }  
 }  
-                    
-response = requests.post(url, headers=headers, json=data, timeout=30)  
-print(response.json())  
-  
+                    
+response = requests.post(url, headers=headers, json=data, timeout=30)  
+print(response.json())
 ```
 
 ## Essentials

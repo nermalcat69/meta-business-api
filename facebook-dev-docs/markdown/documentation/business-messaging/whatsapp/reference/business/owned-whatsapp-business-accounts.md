@@ -54,11 +54,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Business-ID}' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Business-ID}' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -69,13 +69,13 @@ Select status code
 
 ```
 {  
-  "Business portfolio": {  
-    "value": {  
-      "id": "506914307656634",  
-      "name": "Lucky Shrub",  
-      "timezone_id": 0  
-    }  
-  }  
+  "Business portfolio": {  
+    "value": {  
+      "id": "506914307656634",  
+      "name": "Lucky Shrub",  
+      "timezone_id": 0  
+    }  
+  }  
 }
 ```
 
@@ -188,11 +188,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Business-ID}' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Business-ID}' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -203,13 +203,13 @@ Select status code
 
 ```
 {  
-  "Business portfolio": {  
-    "value": {  
-      "id": "506914307656634",  
-      "name": "Lucky Shrub",  
-      "timezone_id": 0  
-    }  
-  }  
+  "Business portfolio": {  
+    "value": {  
+      "id": "506914307656634",  
+      "name": "Lucky Shrub",  
+      "timezone_id": 0  
+    }  
+  }  
 }
 ```
 

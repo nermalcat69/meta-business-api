@@ -17,7 +17,7 @@ Business integration Webhooks are available for the following Business Authoriza
 
 ## Fields
 
-The following are the available business integration Webhook fields that can be subscribed to, under the “Application” topic:
+The following are the available business integration Webhook fields that can be subscribed to, under the "Application" topic:
 
 | Field | Trigger | Example |
 | --- | --- | --- |
@@ -30,74 +30,68 @@ The following are the available business integration Webhook fields that can be 
 ### `business_integration_install`
 
 ```
-```
 {  
-  "entry": [  
-        {  
-            "id":"application_id",  
-            "time":123123,  
-            "changes": [  
-            {  
-                "field": "business_integration_install",  
-                "value": {  
-                    "business_manager_id": "bm_id"  
-                    "tp_config_id": "config_id"  
-                }  
-            }  
-        ]  
-    }  
-  ],  
-  "object":"application"  
+  "entry": [  
+        {  
+            "id":"application_id",  
+            "time":123123,  
+            "changes": [  
+            {  
+                "field": "business_integration_install",  
+                "value": {  
+                    "business_manager_id": "bm_id"  
+                    "tp_config_id": "config_id"  
+                }  
+            }  
+        ]  
+    }  
+  ],  
+  "object":"application"  
 }
-```
 ```
 
 ### `business_integration_uninstall`
 
 ```
-```
 {  
-  "entry": [  
-        {  
-            "id":"application_id",  
-            "time":123123,  
-            "changes": [  
-            {  
-                "field": "business_integration_uninstall",  
-                "value": {  
-                    "business_manager_id": "bm_id"  
-                }  
-            }  
-        ]  
-    }  
-  ],  
-  "object":"application"  
+  "entry": [  
+        {  
+            "id":"application_id",  
+            "time":123123,  
+            "changes": [  
+            {  
+                "field": "business_integration_uninstall",  
+                "value": {  
+                    "business_manager_id": "bm_id"  
+                }  
+            }  
+        ]  
+    }  
+  ],  
+  "object":"application"  
 }
-```
 ```
 
 ### `business_integration_update`
 
 ```
-```
 {  
-  "entry": [  
-        {  
-            "id":"application_id",  
-            "time":123123,  
-            "changes": [  
-            {  
-                "field": "business_integration_update",  
-                "value": {  
-                    "business_manager_id": "bm_id"  
-                }  
-            }  
-        ]  
-    }  
-  ],  
-  "object":"application"  
+  "entry": [  
+        {  
+            "id":"application_id",  
+            "time":123123,  
+            "changes": [  
+            {  
+                "field": "business_integration_update",  
+                "value": {  
+                    "business_manager_id": "bm_id"  
+                }  
+            }  
+        ]  
+    }  
+  ],  
+  "object":"application"  
 }
-```
 ```
 
 ## Next Steps

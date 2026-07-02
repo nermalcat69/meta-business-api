@@ -53,11 +53,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{WABA-ID}/schedules' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{WABA-ID}/schedules' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -68,32 +68,32 @@ Select status code
 
 ```
 {  
-  "schedules_list": {  
-    "summary": "Campaign schedules",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "1234567890123456",  
-          "name": "Spring Sale Campaign",  
-          "description": "Weekly promotional campaign",  
-          "delivery_time": 1706097600,  
-          "status": "SCHEDULED"  
-        },  
-        {  
-          "id": "2345678901234567",  
-          "name": "Welcome Series",  
-          "description": "New customer welcome messages",  
-          "delivery_time": 1706011200,  
-          "status": "COMPLETED"  
-        }  
-      ],  
-      "paging": {  
-        "cursors": {  
-          "after": "MTAxNTExOTQ1MjAwNzI5NDE="  
-        }  
-      }  
-    }  
-  }  
+  "schedules_list": {  
+    "summary": "Campaign schedules",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "1234567890123456",  
+          "name": "Spring Sale Campaign",  
+          "description": "Weekly promotional campaign",  
+          "delivery_time": 1706097600,  
+          "status": "SCHEDULED"  
+        },  
+        {  
+          "id": "2345678901234567",  
+          "name": "Welcome Series",  
+          "description": "New customer welcome messages",  
+          "delivery_time": 1706011200,  
+          "status": "COMPLETED"  
+        }  
+      ],  
+      "paging": {  
+        "cursors": {  
+          "after": "MTAxNTExOTQ1MjAwNzI5NDE="  
+        }  
+      }  
+    }  
+  }  
 }
 ```
 
@@ -460,11 +460,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{WABA-ID}/schedules' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{WABA-ID}/schedules' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -475,32 +475,32 @@ Select status code
 
 ```
 {  
-  "schedules_list": {  
-    "summary": "Campaign schedules",  
-    "value": {  
-      "data": [  
-        {  
-          "id": "1234567890123456",  
-          "name": "Spring Sale Campaign",  
-          "description": "Weekly promotional campaign",  
-          "delivery_time": 1706097600,  
-          "status": "SCHEDULED"  
-        },  
-        {  
-          "id": "2345678901234567",  
-          "name": "Welcome Series",  
-          "description": "New customer welcome messages",  
-          "delivery_time": 1706011200,  
-          "status": "COMPLETED"  
-        }  
-      ],  
-      "paging": {  
-        "cursors": {  
-          "after": "MTAxNTExOTQ1MjAwNzI5NDE="  
-        }  
-      }  
-    }  
-  }  
+  "schedules_list": {  
+    "summary": "Campaign schedules",  
+    "value": {  
+      "data": [  
+        {  
+          "id": "1234567890123456",  
+          "name": "Spring Sale Campaign",  
+          "description": "Weekly promotional campaign",  
+          "delivery_time": 1706097600,  
+          "status": "SCHEDULED"  
+        },  
+        {  
+          "id": "2345678901234567",  
+          "name": "Welcome Series",  
+          "description": "New customer welcome messages",  
+          "delivery_time": 1706011200,  
+          "status": "COMPLETED"  
+        }  
+      ],  
+      "paging": {  
+        "cursors": {  
+          "after": "MTAxNTExOTQ1MjAwNzI5NDE="  
+        }  
+      }  
+    }  
+  }  
 }
 ```
 
@@ -523,17 +523,17 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{WABA-ID}/schedules' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "hsm_id": "9876543210987654",  
-  "audience_id": "1111222233334444",  
-  "waba_cs_id": "5555666677778888",  
-  "description": "Weekly promotional campaign",  
-  "name": "Spring Sale Campaign",  
-  "delivery_time": 1706097600  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{WABA-ID}/schedules' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "hsm_id": "9876543210987654",  
+  "audience_id": "1111222233334444",  
+  "waba_cs_id": "5555666677778888",  
+  "description": "Weekly promotional campaign",  
+  "name": "Spring Sale Campaign",  
+  "delivery_time": 1706097600  
 }'
 ```
 
@@ -545,12 +545,12 @@ Select status code
 
 ```
 {  
-  "successful_creation": {  
-    "summary": "Schedule successfully created",  
-    "value": {  
-      "id": "1234567890123456"  
-    }  
-  }  
+  "successful_creation": {  
+    "summary": "Schedule successfully created",  
+    "value": {  
+      "id": "1234567890123456"  
+    }  
+  }  
 }
 ```
 
@@ -865,17 +865,17 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{WABA-ID}/schedules' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "hsm_id": "9876543210987654",  
-  "audience_id": "1111222233334444",  
-  "waba_cs_id": "5555666677778888",  
-  "description": "Weekly promotional campaign",  
-  "name": "Spring Sale Campaign",  
-  "delivery_time": 1706097600  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{WABA-ID}/schedules' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "hsm_id": "9876543210987654",  
+  "audience_id": "1111222233334444",  
+  "waba_cs_id": "5555666677778888",  
+  "description": "Weekly promotional campaign",  
+  "name": "Spring Sale Campaign",  
+  "delivery_time": 1706097600  
 }'
 ```
 
@@ -887,12 +887,12 @@ Select status code
 
 ```
 {  
-  "successful_creation": {  
-    "summary": "Schedule successfully created",  
-    "value": {  
-      "id": "1234567890123456"  
-    }  
-  }  
+  "successful_creation": {  
+    "summary": "Schedule successfully created",  
+    "value": {  
+      "id": "1234567890123456"  
+    }  
+  }  
 }
 ```
 

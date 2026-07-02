@@ -11,7 +11,7 @@ You can request Facebook Marketplace approval and then check the status of the r
 
 ## Request Marketplace Approval
 
-You can request a shop to be listed on Marketplace by updating the seller’s settings’ `marketplace_approval_requested` to `true`
+You can request a shop to be listed on Marketplace by updating the seller's settings' `marketplace_approval_requested` to `true`
 
 ```
 curl -X POST \
@@ -61,9 +61,9 @@ No request parameters
 | --- | --- | --- |
 | `shop_setup` | [`shop_setup_status`](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/platforms/support#shop_setup_status) | Status of the Page Shop. |
 | `payment_setup` | [`payment_setup_status`](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/platforms/support#payment_setup_status) | Status of the seller payment details. |
-| `marketplace_approval_status` | [`marketplace_approval_status`](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/platforms/support#marketplace_approval_status) | Status of seller’s Marketplace approval |
-| `deals_setup` | [`deals_setup`](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/platforms/support#deals_setup) | Status of seller’s Daily Deals allow list. |
-| `marketplace_approval_status_details` | [`marketplace_approval_status_details`](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/platforms/support#marketplace_approval_status) | Details on the seller’s approval status. |
+| `marketplace_approval_status` | [`marketplace_approval_status`](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/platforms/support#marketplace_approval_status) | Status of seller's Marketplace approval |
+| `deals_setup` | [`deals_setup`](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/platforms/support#deals_setup) | Status of seller's Daily Deals allow list. |
+| `marketplace_approval_status_details` | [`marketplace_approval_status_details`](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/platforms/support#marketplace_approval_status) | Details on the seller's approval status. |
 
 ### `shop_setup_status`
 
@@ -89,11 +89,11 @@ No request parameters
 
 | Value | Description |
 | --- | --- |
-| `UNDEFINED` | Seller’s application has not been submitted. |
-| `IN_REVIEW` | Seller’s application is in review. |
-| `APPROVED` | Seller’s is approved for Marketplace listings. |
-| `REJECTED` | Seller’s has been rejected for Marketplace listings. |
-| `ON_HOLD` | Seller’s is on hold for further review. |
+| `UNDEFINED` | Seller's application has not been submitted. |
+| `IN_REVIEW` | Seller's application is in review. |
+| `APPROVED` | Seller's is approved for Marketplace listings. |
+| `REJECTED` | Seller's has been rejected for Marketplace listings. |
+| `ON_HOLD` | Seller's is on hold for further review. |
 
 ### `deals_setup`
 
@@ -123,7 +123,7 @@ No request parameters
 | Value | Description |
 | --- | --- |
 | `FB_PAGE_SHOP_NOT_PUBLISHED` | Seller has not published their Page shop. |
-| `ONSITE_CHECKOUT_NOT_ENABLED` | Seller doesn’t support onsite checkout. |
+| `ONSITE_CHECKOUT_NOT_ENABLED` | Seller doesn't support onsite checkout. |
 | `FAIL_QUALITY_REVIEW` | Seller fails quality review. |
 | `NO_INVENTORY` | Seller does not have any in stock product. |
 

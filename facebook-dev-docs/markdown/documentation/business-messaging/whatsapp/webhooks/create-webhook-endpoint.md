@@ -17,7 +17,7 @@ Your webhook endpoint server must have a valid TLS or SSL digital security certi
 
 ## mTLS
 
-Webhooks support mutual TLS (mTLS) for added security. See Graph API’s [mTLS for webhooks](https://developers.facebook.com/docs/graph-api/webhooks/getting-started#mtls-for-webhooks) document to learn how to enable and use mTLS.
+Webhooks support mutual TLS (mTLS) for added security. See Graph API's [mTLS for webhooks](https://developers.facebook.com/docs/graph-api/webhooks/getting-started#mtls-for-webhooks) document to learn how to enable and use mTLS.
 
 Note that enabling and disabling mTLS is not supported at the WABA or business phone number level. If you have more than one application accessing the platform, enable mTLS for each application.
 
@@ -28,12 +28,10 @@ GET requests are used to verify your webhook endpoint. Anytime you [set or edit 
 ### Request syntax
 
 ```
-```
-GET <CALLBACK_URL>  
-  ?hub.mode=subscribe  
-  &hub.challenge=<HUB.CHALLENGE>  
-  &hub.verify_token=<HUB.VERIFY_TOKEN>
-```
+GET <CALLBACK_URL>  
+  ?hub.mode=subscribe  
+  &hub.challenge=<HUB.CHALLENGE>  
+  &hub.verify_token=<HUB.VERIFY_TOKEN>
 ```
 
 ### Request parameters
@@ -61,14 +59,12 @@ Anytime a webhook event is triggered for any webhook fields you are subscribed t
 ### Request syntax
 
 ```
-```
-POST <CALLBACK_URL>  
-Content-Type: application/json  
-X-Hub-Signature-256: sha256=<SHA256_PAYLOAD_HASH>  
-Content-Length: <CONTENT_LENGTH>  
+POST <CALLBACK_URL>  
+Content-Type: application/json  
+X-Hub-Signature-256: sha256=<SHA256_PAYLOAD_HASH>  
+Content-Length: <CONTENT_LENGTH>  
   
 <JSON_PAYLOAD>
-```
 ```
 
 ### Request parameters
@@ -113,4 +109,4 @@ Note that if you created your app using the **Connect with customers through Wha
 
 If your webhook endpoint is responding to webhook verification GET requests properly, the panel will save your changes, and a list of fields you can subscribe to will appear. You can then [subscribe to any fields](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/overview#fields) that fulfill your business needs.
 
-Note that you can use the [Application Subscriptions API](https://developers.facebook.com/docs/graph-api/reference/v24.0/app/subscriptions#creating) to configure webhooks as an alternative method, but it requires the use of an [app token](https://developers.facebook.com/documentation/facebook-login/guides/access-tokens#apptokens). See Graph API’s [Subscriptions edge](https://developers.facebook.com/docs/graph-api/webhooks/subscriptions-edge) document to learn how to do this, and use whatsapp\_business\_account as the object value.
+Note that you can use the [Application Subscriptions API](https://developers.facebook.com/docs/graph-api/reference/v24.0/app/subscriptions#creating) to configure webhooks as an alternative method, but it requires the use of an [app token](https://developers.facebook.com/documentation/facebook-login/guides/access-tokens#apptokens). See Graph API's [Subscriptions edge](https://developers.facebook.com/docs/graph-api/webhooks/subscriptions-edge) document to learn how to do this, and use whatsapp\_business\_account as the object value.

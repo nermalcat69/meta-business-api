@@ -20,7 +20,7 @@ MM API for WhatsApp is an API for sending marketing messages on WhatsApp that op
   * Time-to-live, to avoid irrelevant or delayed message delivery for time-sensitive campaigns.
 * **Upgrade easily, with consistent reliability and security**: MM API for WhatsApp offers a similar technical schema and same billing model as Cloud API, and businesses can use existing phone numbers and MM templates.
 
-Send all your marketing messages to the `/marketing_messages` endpoint for automatic routing of eligible business’ messages.
+Send all your marketing messages to the `/marketing_messages` endpoint for automatic routing of eligible business' messages.
 
 ## Footnotes
 

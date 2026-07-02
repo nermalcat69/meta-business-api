@@ -69,7 +69,7 @@ Set up regular reporting dashboards to monitor campaign performance. This helps 
 
 ## Conversions API
 
-The [Conversions API](https://developers.facebook.com/documentation/ads-commerce/conversions-api) creates a connection between marketing data from an advertiser’s server, website platform, mobile app, or CRM to Meta systems that optimize ad targeting, decrease cost per result and measure outcomes.
+The [Conversions API](https://developers.facebook.com/documentation/ads-commerce/conversions-api) creates a connection between marketing data from an advertiser's server, website platform, mobile app, or CRM to Meta systems that optimize ad targeting, decrease cost per result and measure outcomes.
 
 Rather than maintaining separate connection points for each data source, advertisers are able to leverage the Conversions API to send multiple event types and simplify their technology stack.
 

@@ -125,7 +125,7 @@ url_256_width: string,
 height: int32,
 width: int32,
 name: string,
-}}}
+}​}}
 ```
 
 #### Error Codes

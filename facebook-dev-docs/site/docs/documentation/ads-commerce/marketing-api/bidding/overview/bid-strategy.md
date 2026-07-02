@@ -9,8 +9,8 @@ Updated: Jun 26, 2026
 
 Set daily budget or lifetime budget at the ad set level. The amount you set for bid and budget is at ad account currencies minimum denomination level, such as cents for USD. All ads delivered in that set will not exceed a spend limit:
 
-* **`daily_budget`:** The average amount you’re willing to spend on an ad set or campaign each day. With Ads Manager, you’ll get roughly your daily budget’s worth of the result you optimized for. There may, however, be certain days when better opportunities are available. On days with better opportunities, up to 25% more than your daily budget may be spent. For example, if your daily budget is $10, up to $12.50 may be spent.
-* **`lifetime_budget`:** The amount you’re willing to spend over the entire run of an ad set or campaign. You won’t be charged more than your lifetime budget for your ad set’s results unless you change your delivery settings. If your ad set is running for five days and has a $250 lifetime budget, $50 may be spent on each of the first two days. On the third day, if lots of results are available, $75 may be spent. Then, if there aren’t as many opportunities available, $25 may be spent on the fourth day and $50 on the fifth day.
+* **`daily_budget`:** The average amount you're willing to spend on an ad set or campaign each day. With Ads Manager, you'll get roughly your daily budget's worth of the result you optimized for. There may, however, be certain days when better opportunities are available. On days with better opportunities, up to 25% more than your daily budget may be spent. For example, if your daily budget is $10, up to $12.50 may be spent.
+* **`lifetime_budget`:** The amount you're willing to spend over the entire run of an ad set or campaign. You won't be charged more than your lifetime budget for your ad set's results unless you change your delivery settings. If your ad set is running for five days and has a $250 lifetime budget, $50 may be spent on each of the first two days. On the third day, if lots of results are available, $75 may be spent. Then, if there aren't as many opportunities available, $25 may be spent on the fourth day and $50 on the fifth day.
 
 To set a daily budget of $20:
 
@@ -70,7 +70,7 @@ curl -X POST \
 https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/adsets
 ```
 
-A daily budget paces your spending across each day, while a lifetime budget paces spending over an ad set’s lifetime.
+A daily budget paces your spending across each day, while a lifetime budget paces spending over an ad set's lifetime.
 
 ## Learn more
 

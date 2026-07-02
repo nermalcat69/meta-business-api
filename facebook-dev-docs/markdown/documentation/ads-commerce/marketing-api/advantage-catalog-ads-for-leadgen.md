@@ -15,11 +15,11 @@ You can use [this tool](https://developers.facebook.com/tools/lead-ads-testing) 
 
 ![Lead Ads Testing Tool with Choose a page and Choose a form drop-downs and Create a test lead, Delete lead, and Preview form buttons](https://scontent.fdel1-1.fna.fbcdn.net/v/t39.2365-6/593536293_1378922783966372_8025584219527530072_n.png?_nc_cat=105&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=IIf6LvIdfY8Q7kNvwGXk7xi&_nc_oc=AdrpZ_t5K_KrDcuRnHivJ95BVmN8n9cij8qfKldnop6bJy7JytrBisPRkIfHlcSLSfekcG6oRtPg1bIirU1G3ktr&_nc_zt=14&_nc_ht=scontent.fdel1-1.fna&_nc_gid=I0oSY96TEYjvUEl-Rym14w&_nc_ss=7b289&oh=00_AQC8Spke_apCyVbepHlob-F_PsUgQH5olKFe4nO1u2E5ag&oe=6A605B74)
 
-You can create one test lead per form. You’ll need to delete an existing lead in order to create a new one.
+You can create one test lead per form. You'll need to delete an existing lead in order to create a new one.
 
 ## Debug real-time update integration
 
-Use this tool to test if your integration with Facebook’s Webhooks is successful. Here are the steps to use this tool to debug your integration.
+Use this tool to test if your integration with Facebook's Webhooks is successful. Here are the steps to use this tool to debug your integration.
 
 The leads created using this tool are organic leads that are not associated with any ad. Only one lead can be created per form. Therefore, to re-create a lead for the same form, click **Delete Lead** to first delete, then lead, and then re-create it.
 

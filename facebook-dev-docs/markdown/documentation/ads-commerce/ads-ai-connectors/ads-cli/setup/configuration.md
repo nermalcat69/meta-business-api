@@ -44,7 +44,7 @@ After setup, run commands with `uv run meta` or activate the virtual environment
 * Go to [Meta Business Suite⁠](https://business.facebook.com/) > **Settings** > **Users** > **System Users**.
 * Click **Add** to create a new system user.
 * Set the role to **Admin**.
-* Give it a descriptive name (for example, “Ads CLI”).
+* Give it a descriptive name (for example, "Ads CLI").
 
 ### Step 2: Assign assets to the system user
 

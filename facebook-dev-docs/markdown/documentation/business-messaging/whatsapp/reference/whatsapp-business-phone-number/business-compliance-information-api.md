@@ -76,11 +76,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/business_compliance_info' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/business_compliance_info' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -91,49 +91,49 @@ Select status code
 
 ```
 {  
-  "complete_compliance_info": {  
-    "summary": "Complete compliance information with all details",  
-    "value": {  
-      "data": [  
-        {  
-          "whatsapp_business_account_id": "1234567890123456",  
-          "messaging_product": "whatsapp",  
-          "entity_name": "Lucky Shrub Private Limited",  
-          "entity_type": "Partnership",  
-          "entity_type_custom": "",  
-          "is_registered": true,  
-          "grievance_officer_details": {  
-            "name": "Chandravati P.",  
-            "email": "chandravati@luckyshrub.com",  
-            "mobile_number": "+913854559033",  
-            "landline_number": "+913857614343"  
-          },  
-          "customer_care_details": {  
-            "email": "support@luckyshrub.com",  
-            "mobile_number": "+913854559033",  
-            "landline_number": "+913857614343"  
-          }  
-        }  
-      ]  
-    }  
-  },  
-  "minimal_compliance_info": {  
-    "summary": "Minimal compliance information for unregistered business",  
-    "value": {  
-      "data": [  
-        {  
-          "whatsapp_business_account_id": "2345678901234567",  
-          "messaging_product": "whatsapp",  
-          "entity_name": "",  
-          "entity_type": "",  
-          "entity_type_custom": "",  
-          "is_registered": false,  
-          "grievance_officer_details": "",  
-          "customer_care_details": ""  
-        }  
-      ]  
-    }  
-  }  
+  "complete_compliance_info": {  
+    "summary": "Complete compliance information with all details",  
+    "value": {  
+      "data": [  
+        {  
+          "whatsapp_business_account_id": "1234567890123456",  
+          "messaging_product": "whatsapp",  
+          "entity_name": "Lucky Shrub Private Limited",  
+          "entity_type": "Partnership",  
+          "entity_type_custom": "",  
+          "is_registered": true,  
+          "grievance_officer_details": {  
+            "name": "Chandravati P.",  
+            "email": "chandravati@luckyshrub.com",  
+            "mobile_number": "+913854559033",  
+            "landline_number": "+913857614343"  
+          },  
+          "customer_care_details": {  
+            "email": "support@luckyshrub.com",  
+            "mobile_number": "+913854559033",  
+            "landline_number": "+913857614343"  
+          }  
+        }  
+      ]  
+    }  
+  },  
+  "minimal_compliance_info": {  
+    "summary": "Minimal compliance information for unregistered business",  
+    "value": {  
+      "data": [  
+        {  
+          "whatsapp_business_account_id": "2345678901234567",  
+          "messaging_product": "whatsapp",  
+          "entity_name": "",  
+          "entity_type": "",  
+          "entity_type_custom": "",  
+          "is_registered": false,  
+          "grievance_officer_details": "",  
+          "customer_care_details": ""  
+        }  
+      ]  
+    }  
+  }  
 }
 ```
 
@@ -801,11 +801,11 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request GET \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/business_compliance_info' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{}'
+curl --request GET \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/business_compliance_info' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{}'
 ```
 
 Select status code
@@ -816,49 +816,49 @@ Select status code
 
 ```
 {  
-  "complete_compliance_info": {  
-    "summary": "Complete compliance information with all details",  
-    "value": {  
-      "data": [  
-        {  
-          "whatsapp_business_account_id": "1234567890123456",  
-          "messaging_product": "whatsapp",  
-          "entity_name": "Lucky Shrub Private Limited",  
-          "entity_type": "Partnership",  
-          "entity_type_custom": "",  
-          "is_registered": true,  
-          "grievance_officer_details": {  
-            "name": "Chandravati P.",  
-            "email": "chandravati@luckyshrub.com",  
-            "mobile_number": "+913854559033",  
-            "landline_number": "+913857614343"  
-          },  
-          "customer_care_details": {  
-            "email": "support@luckyshrub.com",  
-            "mobile_number": "+913854559033",  
-            "landline_number": "+913857614343"  
-          }  
-        }  
-      ]  
-    }  
-  },  
-  "minimal_compliance_info": {  
-    "summary": "Minimal compliance information for unregistered business",  
-    "value": {  
-      "data": [  
-        {  
-          "whatsapp_business_account_id": "2345678901234567",  
-          "messaging_product": "whatsapp",  
-          "entity_name": "",  
-          "entity_type": "",  
-          "entity_type_custom": "",  
-          "is_registered": false,  
-          "grievance_officer_details": "",  
-          "customer_care_details": ""  
-        }  
-      ]  
-    }  
-  }  
+  "complete_compliance_info": {  
+    "summary": "Complete compliance information with all details",  
+    "value": {  
+      "data": [  
+        {  
+          "whatsapp_business_account_id": "1234567890123456",  
+          "messaging_product": "whatsapp",  
+          "entity_name": "Lucky Shrub Private Limited",  
+          "entity_type": "Partnership",  
+          "entity_type_custom": "",  
+          "is_registered": true,  
+          "grievance_officer_details": {  
+            "name": "Chandravati P.",  
+            "email": "chandravati@luckyshrub.com",  
+            "mobile_number": "+913854559033",  
+            "landline_number": "+913857614343"  
+          },  
+          "customer_care_details": {  
+            "email": "support@luckyshrub.com",  
+            "mobile_number": "+913854559033",  
+            "landline_number": "+913857614343"  
+          }  
+        }  
+      ]  
+    }  
+  },  
+  "minimal_compliance_info": {  
+    "summary": "Minimal compliance information for unregistered business",  
+    "value": {  
+      "data": [  
+        {  
+          "whatsapp_business_account_id": "2345678901234567",  
+          "messaging_product": "whatsapp",  
+          "entity_name": "",  
+          "entity_type": "",  
+          "entity_type_custom": "",  
+          "is_registered": false,  
+          "grievance_officer_details": "",  
+          "customer_care_details": ""  
+        }  
+      ]  
+    }  
+  }  
 }
 ```
 
@@ -907,26 +907,26 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/business_compliance_info' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "messaging_product": "whatsapp",  
-  "entity_name": "Lucky Shrub Private Limited",  
-  "entity_type": "PARTNERSHIP",  
-  "is_registered": true,  
-  "grievance_officer_details": {  
-    "name": "Chandravati P.",  
-    "email": "chandravati@luckyshrub.com",  
-    "mobile_number": "+913854559033",  
-    "landline_number": "+913857614343"  
-  },  
-  "customer_care_details": {  
-    "email": "support@luckyshrub.com",  
-    "mobile_number": "+913854559033",  
-    "landline_number": "+913857614343"  
-  }  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/business_compliance_info' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "messaging_product": "whatsapp",  
+  "entity_name": "Lucky Shrub Private Limited",  
+  "entity_type": "PARTNERSHIP",  
+  "is_registered": true,  
+  "grievance_officer_details": {  
+    "name": "Chandravati P.",  
+    "email": "chandravati@luckyshrub.com",  
+    "mobile_number": "+913854559033",  
+    "landline_number": "+913857614343"  
+  },  
+  "customer_care_details": {  
+    "email": "support@luckyshrub.com",  
+    "mobile_number": "+913854559033",  
+    "landline_number": "+913857614343"  
+  }  
 }'
 ```
 
@@ -938,12 +938,12 @@ Select status code
 
 ```
 {  
-  "successful_update": {  
-    "summary": "Successful compliance information update",  
-    "value": {  
-      "success": true  
-    }  
-  }  
+  "successful_update": {  
+    "summary": "Successful compliance information update",  
+    "value": {  
+      "success": true  
+    }  
+  }  
 }
 ```
 
@@ -1606,26 +1606,26 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/business_compliance_info' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "messaging_product": "whatsapp",  
-  "entity_name": "Lucky Shrub Private Limited",  
-  "entity_type": "PARTNERSHIP",  
-  "is_registered": true,  
-  "grievance_officer_details": {  
-    "name": "Chandravati P.",  
-    "email": "chandravati@luckyshrub.com",  
-    "mobile_number": "+913854559033",  
-    "landline_number": "+913857614343"  
-  },  
-  "customer_care_details": {  
-    "email": "support@luckyshrub.com",  
-    "mobile_number": "+913854559033",  
-    "landline_number": "+913857614343"  
-  }  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/business_compliance_info' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "messaging_product": "whatsapp",  
+  "entity_name": "Lucky Shrub Private Limited",  
+  "entity_type": "PARTNERSHIP",  
+  "is_registered": true,  
+  "grievance_officer_details": {  
+    "name": "Chandravati P.",  
+    "email": "chandravati@luckyshrub.com",  
+    "mobile_number": "+913854559033",  
+    "landline_number": "+913857614343"  
+  },  
+  "customer_care_details": {  
+    "email": "support@luckyshrub.com",  
+    "mobile_number": "+913854559033",  
+    "landline_number": "+913857614343"  
+  }  
 }'
 ```
 
@@ -1637,12 +1637,12 @@ Select status code
 
 ```
 {  
-  "successful_update": {  
-    "summary": "Successful compliance information update",  
-    "value": {  
-      "success": true  
-    }  
-  }  
+  "successful_update": {  
+    "summary": "Successful compliance information update",  
+    "value": {  
+      "success": true  
+    }  
+  }  
 }
 ```
 

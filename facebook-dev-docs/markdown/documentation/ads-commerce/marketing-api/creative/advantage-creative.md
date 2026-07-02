@@ -32,9 +32,9 @@ The [Advantage+ catalog ads](https://developers.facebook.com/docs/marketing-api/
 #### Q: How do I get Google Merchant Center feed to dynamic ads?
 
 * Google Merchant Center feeds can be uploaded directly for dynamic ads.
-* Go to the “link” column to make sure it doesn’t have Google tracking parameters on it. The parameters may look like this: `URL?utm_campaign=GoogleDynRMKT&utm_medium=display`.
+* Go to the "link" column to make sure it doesn't have Google tracking parameters on it. The parameters may look like this: `URL?utm_campaign=GoogleDynRMKT&utm_medium=display`.
 
-**Note**: To reuse a data feed file from another inventory platform, such as Google or Amazon, Facebook’s requirements may be different. Check that your data feed is a CSV, TSV, or XML (RSS/ATOM) file, and has the required columns in our specifications.
+**Note**: To reuse a data feed file from another inventory platform, such as Google or Amazon, Facebook's requirements may be different. Check that your data feed is a CSV, TSV, or XML (RSS/ATOM) file, and has the required columns in our specifications.
 [Learn more](https://developers.facebook.com/docs/marketing-api/catalog-setup/catalog-feed-setup)
 
 #### Q: How do I troubleshoot my feed upload errors?
@@ -47,9 +47,9 @@ The [Advantage+ catalog ads](https://developers.facebook.com/docs/marketing-api/
 
 #### Q: How do I stop a product from running when it is out of stock?
 
-**A:** When products go out of stock, you need to mark it as “out of stock” in your product catalog. Products marked “out of stock” automatically stop serving. Scheduling and fetching the product catalog frequently helps you maintain your stock information easily. See the `availability` field in [Supported Fields](https://developers.facebook.com/docs/marketing-api/catalog-setup/catalog-feed-setup#da-commerce).
+**A:** When products go out of stock, you need to mark it as "out of stock" in your product catalog. Products marked "out of stock" automatically stop serving. Scheduling and fetching the product catalog frequently helps you maintain your stock information easily. See the `availability` field in [Supported Fields](https://developers.facebook.com/docs/marketing-api/catalog-setup/catalog-feed-setup#da-commerce).
 
-#### Q: I’m unable to choose or see a product catalog that my team uploaded.
+#### Q: I'm unable to choose or see a product catalog that my team uploaded.
 
 **A:** Go to **Business Manager** and make sure the user/account has **Product Catalog Admin** permissions.
 
@@ -68,7 +68,7 @@ The [Advantage+ catalog ads](https://developers.facebook.com/docs/marketing-api/
 
 #### Q: What are allowed values for `content_type` when setting up the pixel?
 
-**A:** The valid values for `content_type` are `product` or `product_group`. It’s important that the `content_type` matches the type of ID(s) included in the `content_ids` parameter. For example, if `content_type` is `product_group`, the product group ID(s) need to be provided in `content_ids`.
+**A:** The valid values for `content_type` are `product` or `product_group`. It's important that the `content_type` matches the type of ID(s) included in the `content_ids` parameter. For example, if `content_type` is `product_group`, the product group ID(s) need to be provided in `content_ids`.
 
 #### Q: Why is my audience size zero?
 
@@ -76,7 +76,7 @@ The [Advantage+ catalog ads](https://developers.facebook.com/docs/marketing-api/
 
 * Ensure the inclusion and exclusion rules do not conflict one another.
 * Ensure that the product set ID belongs to the product catalog for which the Meta Pixel is created.
-* For websites with poor traffic, they should try and keep the retention higher to collect an audience; ads don’t deliver if the audience size is less than 20.
+* For websites with poor traffic, they should try and keep the retention higher to collect an audience; ads don't deliver if the audience size is less than 20.
 
 ## Ads Management
 
@@ -90,7 +90,7 @@ The [Advantage+ catalog ads](https://developers.facebook.com/docs/marketing-api/
 
 #### Q: Any tools that can help debugging?
 
-* Install the [Meta Pixel Helper](https://developers.facebook.com/docs/facebook-pixel/pixel-helper). This tool can help you quickly identify issues with the pixel isn’t firing.
+* Install the [Meta Pixel Helper](https://developers.facebook.com/docs/facebook-pixel/pixel-helper). This tool can help you quickly identify issues with the pixel isn't firing.
 * [Advantage+ catalog ads Debugging Tools](https://developers.facebook.com/docs/marketing-api/dynamic-product-ads/debugging-tools) describes the available tools to use to debug issues with Advantage+ catalog ads.
 
 ## Learn More

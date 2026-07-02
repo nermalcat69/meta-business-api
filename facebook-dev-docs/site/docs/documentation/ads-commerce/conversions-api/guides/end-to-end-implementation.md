@@ -19,7 +19,7 @@ If you offer the Meta Pixel to your clients, add Conversions API functionalities
 
 ### [Zapier integration](https://developers.facebook.com/documentation/ads-commerce/conversions-api/guides/zapier-integration)
 
-Use the Zapier automation platform to send events to our Conversions API. Use Facebook’s Zapier app to automatically send events every time something changes in your data source.
+Use the Zapier automation platform to send events to our Conversions API. Use Facebook's Zapier app to automatically send events every time something changes in your data source.
 
 ### [Conversions API for Google Tag Manager](https://developers.facebook.com/documentation/ads-commerce/conversions-api/guides/gtm-server-side)
 

@@ -18,14 +18,12 @@ To display the `typing_on` or `typing_off` action for a sender in the conversati
 For the best conversational experience, send the `typing_on` indicator when your bot receives a message it will respond to. Do not allow an unnatural amount of time (too long or too short) to pass between `typing_on` and `typing_off` sender actions. Ideally, the user should feel that a real person was typing the message in the elapsed time.
 
 ```
-```
-curl -X POST -H "Content-Type: application/json" -d '{  
-  "recipient":{  
-    "id":"<IGSID>"  
-  },  
-  "sender_action":"typing_on"  
-}' "https://graph.facebook.com/VERSION/PAGE-ID/messages?access_token=PAGE-ACCESS_TOKEN"
-```
+curl -X POST -H "Content-Type: application/json" -d '{  
+  "recipient":{  
+    "id":"<IGSID>"  
+  },  
+  "sender_action":"typing_on"  
+}' "https://graph.facebook.com/VERSION/PAGE-ID/messages?access_token=PAGE-ACCESS_TOKEN"
 ```
 
 ### Mark messages as seen
@@ -35,14 +33,12 @@ To send the `mark_seen` indicator to the most recent message, send a POST reques
 For the best conversational experience, send the `mark_seen` indicator when your bot receives a message so that the user does not feel ignored.
 
 ```
-```
-curl -X POST -H "Content-Type: application/json" -d '{  
-  "recipient":{  
-    "id":"<IGSID>"  
-  },  
-  "sender_action":"mark_seen"  
-}' "https://graph.facebook.com/VERSION/PAGE-ID/messages?access_token=PAGE-ACCESS_TOKEN"
-```
+curl -X POST -H "Content-Type: application/json" -d '{  
+  "recipient":{  
+    "id":"<IGSID>"  
+  },  
+  "sender_action":"mark_seen"  
+}' "https://graph.facebook.com/VERSION/PAGE-ID/messages?access_token=PAGE-ACCESS_TOKEN"
 ```
 
 ### Limitations

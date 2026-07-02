@@ -97,7 +97,7 @@ curl
 
 You can now use custom events for app event optimization. If you already matched your custom app event to a standard app event, we recommend that you optimize directly for your custom event instead of the matched standard event. Learn more best practices for app event optimization.
 
-Make sure your events adhere to Facebook’s [Business Tools Terms⁠](https://www.facebook.com/legal/technology_terms) requirements and data policies. To comply with our [Facebook Business Tools Terms⁠](https://www.facebook.com/legal/technology_terms) and help protect your users’ privacy, don’t share sensitive user data with us when setting up events. Learn more about [sensitive data⁠](https://www.facebook.com/business/help/1057016521436966?id=188852726110565).
+Make sure your events adhere to Facebook's [Business Tools Terms⁠](https://www.facebook.com/legal/technology_terms) requirements and data policies. To comply with our [Facebook Business Tools Terms⁠](https://www.facebook.com/legal/technology_terms) and help protect your users' privacy, don't share sensitive user data with us when setting up events. Learn more about [sensitive data⁠](https://www.facebook.com/business/help/1057016521436966?id=188852726110565).
 
 ### API
 
@@ -116,7 +116,7 @@ curl
 -F "status=PAUSED"
 -F "optimization_goal=OFFSITE_CONVERSIONS"
 -F "billing_event=IMPRESSIONS"
--F "promoted_object={'application_id': {app_id}, 'object_store_url': '{appstore_url}', 'custom_event_type': 'OTHER', 'custom_event_str': {valid_custom_event}}"
+-F "promoted_object={'application_id': {app_id}, 'object_store_url': '{appstore_url}', 'custom_event_type': 'OTHER', 'custom_event_str': {valid_custom_event}​}"
 -F "bid_amount=100"
 -F "daily_budget=300"
 -F "campaign_id={campaign_id}"
@@ -128,7 +128,7 @@ At this time, optimising for custom app events is only available in the App Inst
 
 ## Value Optimization
 
-You can choose to have your campaign optimize for people who are likely to generate the most revenue given period after making a purchase. A purchase event that generates a lot of revenue relative to its cost is considered “higher value” than one that generates less revenue relative to its cost. For more information, see [About Value Optimization in the Help Center⁠](https://www.facebook.com/business/help/296463804090290).
+You can choose to have your campaign optimize for people who are likely to generate the most revenue given period after making a purchase. A purchase event that generates a lot of revenue relative to its cost is considered "higher value" than one that generates less revenue relative to its cost. For more information, see [About Value Optimization in the Help Center⁠](https://www.facebook.com/business/help/296463804090290).
 
 ### API
 
@@ -163,7 +163,7 @@ curl
 
 App advertisers that monetize via in-app ads now have an easier way to find users that generate the highest value by engaging with ads in their apps, without any restriction on what mediation partner they use.
 
-To be eligible to use this product, you will need to send your ad revenue data to Meta’s AdImpression event using either the Facebook SDK, Conversions API for App Events, or your mobile measurement partner (MMP).
+To be eligible to use this product, you will need to send your ad revenue data to Meta's AdImpression event using either the Facebook SDK, Conversions API for App Events, or your mobile measurement partner (MMP).
 
 Refer to the [documentation here](https://developers.facebook.com/documentation/app-events/guides/maximize-in-app-ad-revenue) to learn more about this product.
 

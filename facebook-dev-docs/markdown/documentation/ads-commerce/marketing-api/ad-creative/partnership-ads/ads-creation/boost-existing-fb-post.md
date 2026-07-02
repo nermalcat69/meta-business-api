@@ -67,11 +67,9 @@ curl -X POST \
 ### Example response
 
 ```
-```
 {  
-  "id": "<CREATIVE_ID>"  
+  "id": "<CREATIVE_ID>"  
 }
-```
 ```
 
 ## Boost partnership lead generation ads
@@ -105,11 +103,9 @@ curl -X POST \
 ### Example response
 
 ```
-```
 {  
-  "id": "<CREATIVE_ID>"  
+  "id": "<CREATIVE_ID>"  
 }
-```
 ```
 
 ## Learn more

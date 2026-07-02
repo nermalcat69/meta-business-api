@@ -11,13 +11,13 @@ Updated: May 5, 2026
 
 **No code changes are needed.**
 
-Tier labels have been updated: “Standard Access” is now **Limited Access**, and “Advanced Access” is now **Full Access**. The revised qualification threshold for Full Access has been reduced from 1,500 to **500 Marketing API calls** in the past 15 days. The underlying permission identifier remains the same, and existing access levels are preserved automatically. Learn more in the [Marketing API Access Tier documentation](https://developers.facebook.com/docs/features-reference#marketing-api-access-tier).
+Tier labels have been updated: "Standard Access" is now **Limited Access**, and "Advanced Access" is now **Full Access**. The revised qualification threshold for Full Access has been reduced from 1,500 to **500 Marketing API calls** in the past 15 days. The underlying permission identifier remains the same, and existing access levels are preserved automatically. Learn more in the [Marketing API Access Tier documentation](https://developers.facebook.com/docs/features-reference#marketing-api-access-tier).
 
 The authorization process verifies the users and apps that will be accessing the Marketing API and grants them permissions.
 
 ## App Roles
 
-In your app’s dashboard, you can set roles for yourself or team members as necessary: Admin, Developer, Tester.
+In your app's dashboard, you can set roles for yourself or team members as necessary: Admin, Developer, Tester.
 
 **Note:** Depending on your intended use case, you may need to submit your app for review to gain access to specific permissions related to ad management.
 
@@ -52,18 +52,18 @@ To check your current access level, go to **App Dashboard** > **App Review** > *
 
 The permissions you should request change depending on which API you want to access.
 
-If your app is only managing your ad account, standard access to the `ads_read` and `ads_management` permissions are sufficient. If your app is managing other people’s ad accounts, you need advanced access to the `ads_read` and/or `ads_management` permissions. See all [available permissions for business apps](https://developers.facebook.com/docs/development/create-an-app/app-dashboard/app-types#available-permissions-2).
+If your app is only managing your ad account, standard access to the `ads_read` and `ads_management` permissions are sufficient. If your app is managing other people's ad accounts, you need advanced access to the `ads_read` and/or `ads_management` permissions. See all [available permissions for business apps](https://developers.facebook.com/docs/development/create-an-app/app-dashboard/app-types#available-permissions-2).
 
 #### Features
 
-The features you should request change depending on how you want to use our APIs. If you’re managing ads, a common feature to request is Marketing API Access Tier. See [all available features for business apps](https://developers.facebook.com/docs/development/create-an-app/app-dashboard/app-types#available-features-2).
+The features you should request change depending on how you want to use our APIs. If you're managing ads, a common feature to request is Marketing API Access Tier. See [all available features for business apps](https://developers.facebook.com/docs/development/create-an-app/app-dashboard/app-types#available-features-2).
 
 ##### Feature access levels
 
 | Feature Access Level | Description |
 | --- | --- |
-| [Standard access](https://developers.facebook.com/docs/graph-api/overview/access-levels#standard-access) | Business apps are automatically approved for standard access for all permissions and features available to the Business app type.  Use this option if you’re getting started. You can build end-to-end workflows before requesting full permissions, and you can access an unlimited number of ad accounts.  Some API calls may not be available with standard access because they may belong to multiple accounts or the affected account can’t be identified programmatically. |
-| [Advanced access](https://developers.facebook.com/docs/graph-api/overview/access-levels#advanced-access) | Advanced access must be approved through the [App Review](https://developers.facebook.com/docs/app-review) process on an individual permission and feature basis.   * To request advanced access, go to your app’s dashboard and click **App Review** > **Permissions and Features**. * Find the permission or feature you would like to access and, under **Action**, click **Request advanced access**. You can select one or more features. Once you have selected your options, click **Continue the Request**. You’ll be taken to a screen that guides you through the submission process.   After you submit your information, Meta responds with an approval or denial and additional information if your app is not qualified for standard access.  If you’re approved for advanced access, you need to do the following to maintain your status:   * Have successfully made at least 500 Marketing API calls in the last 15 days. * Have made Marketing API calls with an error rate of less than 15% in the last 500 calls.   **Note:** These requirements also apply to upgrading your Marketing API Access Tier from Limited access to Full access. See [Get Full access](https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/basic-ad-creation#get-full-access) for details. |
+| [Standard access](https://developers.facebook.com/docs/graph-api/overview/access-levels#standard-access) | Business apps are automatically approved for standard access for all permissions and features available to the Business app type.  Use this option if you're getting started. You can build end-to-end workflows before requesting full permissions, and you can access an unlimited number of ad accounts.  Some API calls may not be available with standard access because they may belong to multiple accounts or the affected account can't be identified programmatically. |
+| [Advanced access](https://developers.facebook.com/docs/graph-api/overview/access-levels#advanced-access) | Advanced access must be approved through the [App Review](https://developers.facebook.com/docs/app-review) process on an individual permission and feature basis.   * To request advanced access, go to your app's dashboard and click **App Review** > **Permissions and Features**. * Find the permission or feature you would like to access and, under **Action**, click **Request advanced access**. You can select one or more features. Once you have selected your options, click **Continue the Request**. You'll be taken to a screen that guides you through the submission process.   After you submit your information, Meta responds with an approval or denial and additional information if your app is not qualified for standard access.  If you're approved for advanced access, you need to do the following to maintain your status:   * Have successfully made at least 500 Marketing API calls in the last 15 days. * Have made Marketing API calls with an error rate of less than 15% in the last 500 calls.   **Note:** These requirements also apply to upgrading your Marketing API Access Tier from Limited access to Full access. See [Get Full access](https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/basic-ad-creation#get-full-access) for details. |
 
 ##### Get Full access
 
@@ -72,7 +72,7 @@ In order to get Full access of Marketing API Access Tier, your app needs to meet
 * Have successfully made at least 500 Marketing API calls in the last 15 days.
 * Have made Marketing API calls with an error rate of less than 15% in the last 500 calls.
 
-If you’re managing someone’s ads, use the `scope` parameter to prompt them for the `ads_management` or `ads_read` permissions. Your app gets access when they click **Allow**.
+If you're managing someone's ads, use the `scope` parameter to prompt them for the `ads_management` or `ads_read` permissions. Your app gets access when they click **Allow**.
 
 ```
 https://www.facebook.com/v25.0/dialog/oauth?

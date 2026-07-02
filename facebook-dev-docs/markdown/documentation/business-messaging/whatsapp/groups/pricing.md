@@ -12,7 +12,7 @@ Updated: Jun 16, 2026
 | Code | Description | HTTP Status Code |
 | --- | --- | --- |
 | `131020`  Bad Group | Cannot send messages to single member groups. | `400`  Bad Request |
-| `131041`  Group unknown | The group was not found, either because it doesn’t exist or you are not a member. | `400`  Bad Request |
+| `131041`  Group unknown | The group was not found, either because it doesn't exist or you are not a member. | `400`  Bad Request |
 | `131059`  Invalid cursor | The cursor has either expired or become corrupted. Start pagination from the beginning again. | `400`  Bad Request |
 | `131201`  Request partially succeeded | Not all participant-level operations in the request succeeded. | `206`  Partial Content Success |
 | `131202`  Duplicate participant | Duplicate participants in the participant array input. | `400`  Bad Request |

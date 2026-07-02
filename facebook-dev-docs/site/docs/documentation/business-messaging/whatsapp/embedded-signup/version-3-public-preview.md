@@ -29,26 +29,24 @@ You can now use the features property to enable a range of features in Embedded 
 ### v3 request syntax
 
 ```
-```
-// Launch method and callback registration  
-const launchWhatsAppSignup = () => {  
-  FB.login(fbLoginCallback, {  
-    config_id: '<CONFIGURATION_ID>', // your configuration ID goes here  
-    response_type: 'code',  
-    override_default_response_type: true,  
-    extras: {  
-  version: 'v3'  
-  setup: {},  
-  features: [<FEATURE_NAME>],  
-      featureType: '<FEATURE_TYPE>'  
-    }  
+// Launch method and callback registration  
+const launchWhatsAppSignup = () => {  
+  FB.login(fbLoginCallback, {  
+    config_id: '<CONFIGURATION_ID>', // your configuration ID goes here  
+    response_type: 'code',  
+    override_default_response_type: true,  
+    extras: {  
+  version: 'v3'  
+  setup: {},  
+  features: [<FEATURE_NAME>],  
+      featureType: '<FEATURE_TYPE>'  
+    }  
 }
-```
 ```
 
 | Placeholder | Description | Example |
 | --- | --- | --- |
-| `<FEATURE_NAME>` | Name of feature to enable in ES configuration.  Note: You can leave the value blank to follow the default flow.  Values can be:   * `app_only_install` — Allows partners to only access WABAs via API using a [business token](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#business-integration-system-user-access-tokens). * `marketing_messages_lite` — Enables the MM API for WhatsApp onboarding flow. | ```  ``` {   features: [     {       name: 'marketing_messages_lite'     }   ] } ``` ``` |
+| `<FEATURE_NAME>` | Name of feature to enable in ES configuration.  Note: You can leave the value blank to follow the default flow.  Values can be:   * `app_only_install` — Allows partners to only access WABAs via API using a [business token](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#business-integration-system-user-access-tokens). * `marketing_messages_lite` — Enables the MM API for WhatsApp onboarding flow. | ``` {   features: [     {       name: 'marketing_messages_lite'     }   ] } ``` |
 | `<FEATURE_TYPE>` | Name of feature types to enable in ES configuration.  Value can only be `whatsapp_business_app_onboarding`, which enables the WhatsApp Business App phone number onboarding custom flow. | `whatsapp_business_app_onboarding` |
 
 ## Removal of multiple `featuretype` options in the ES Configuration

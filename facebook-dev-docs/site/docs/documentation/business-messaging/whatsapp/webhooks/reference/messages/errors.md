@@ -9,7 +9,7 @@ Updated: Jun 11, 2026
 
 **Edit messages are temporarily unsupported.** Edited messages are currently delivered as an unsupported message type webhook instead of an edit webhook. Work to restore edit message support is underway.
 
-The edit webhook is only available to WhatsApp Business app users (aka “Coexistence”)
+The edit webhook is only available to WhatsApp Business app users (aka "Coexistence")
 
 This reference describes edit events and payload contents for the WhatsApp Business account **messages** webhook for replies to messages.
 
@@ -21,60 +21,58 @@ This reference describes edit events and payload contents for the WhatsApp Busin
 ## Syntax
 
 ```
-```
 {  
- "object": "whatsapp_business_account",  
- "entry": [  
-   {  
-     "id": "<WHATSAPP_BUSINESS_ACCOUNT_ID>",  
-     "changes": [  
-       {  
-         "value": {  
-           "messaging_product": "whatsapp",  
-           "metadata": {  
-             "display_phone_number": "<BUSINESS_DISPLAY_PHONE_NUMBER>",  
-             "phone_number_id": "<BUSINESS_PHONE_NUMBER_ID>"  
-           },  
-           "contacts": [  
-             {  
-               "profile": {  
-                 "name": "<WHATSAPP_USER_PROFILE_NAME>"  
-               },  
-               "wa_id": "<WHATSAPP_USER_ID>"  
-             }  
-           ],  
-           "messages": [  
-             {  
-               "from": "<WHATSAPP_USER_PHONE_NUMBER>",  
-               "id": "<WHATSAPP_MESSAGE_ID>",  
-               "timestamp": "<WEBHOOK_TRIGGER_TIMESTAMP>",  
-               "type": "edit",  
-               "edit": {  
-                 "original_message_id": "<ORIGINAL_WHATSAPP_MESSAGE_ID>",  
-                 "message": {  
-                   "context": {  
-                     "id": "<CONTEXT_ID>"  
-                   },  
-                   "type": "image",  
-                   "image": {  
-                     "caption": "<MEDIA_ASSET_CAPTION>",  
-                     "mime_type": "<MEDIA_ASSET_MIME_TYPE>",  
-                     "sha256": "<MEDIA_ASSET_SHA256_HASH>",  
-                     "id": "<MEDIA_ASSET_ID>",  
-                     "url": "<MEDIA_ASSET_URL>"  
-                   }  
-                 }  
-               }  
-             }  
-           ]  
-         },  
-         "field": "messages"  
-       }  
-     ]  
-   }  
- ]  
+ "object": "whatsapp_business_account",  
+ "entry": [  
+   {  
+     "id": "<WHATSAPP_BUSINESS_ACCOUNT_ID>",  
+     "changes": [  
+       {  
+         "value": {  
+           "messaging_product": "whatsapp",  
+           "metadata": {  
+             "display_phone_number": "<BUSINESS_DISPLAY_PHONE_NUMBER>",  
+             "phone_number_id": "<BUSINESS_PHONE_NUMBER_ID>"  
+           },  
+           "contacts": [  
+             {  
+               "profile": {  
+                 "name": "<WHATSAPP_USER_PROFILE_NAME>"  
+               },  
+               "wa_id": "<WHATSAPP_USER_ID>"  
+             }  
+           ],  
+           "messages": [  
+             {  
+               "from": "<WHATSAPP_USER_PHONE_NUMBER>",  
+               "id": "<WHATSAPP_MESSAGE_ID>",  
+               "timestamp": "<WEBHOOK_TRIGGER_TIMESTAMP>",  
+               "type": "edit",  
+               "edit": {  
+                 "original_message_id": "<ORIGINAL_WHATSAPP_MESSAGE_ID>",  
+                 "message": {  
+                   "context": {  
+                     "id": "<CONTEXT_ID>"  
+                   },  
+                   "type": "image",  
+                   "image": {  
+                     "caption": "<MEDIA_ASSET_CAPTION>",  
+                     "mime_type": "<MEDIA_ASSET_MIME_TYPE>",  
+                     "sha256": "<MEDIA_ASSET_SHA256_HASH>",  
+                     "id": "<MEDIA_ASSET_ID>",  
+                     "url": "<MEDIA_ASSET_URL>"  
+                   }  
+                 }  
+               }  
+             }  
+           ]  
+         },  
+         "field": "messages"  
+       }  
+     ]  
+   }  
+ ]  
 }
-```
 ```
 
 ## Parameters
@@ -83,7 +81,7 @@ This reference describes edit events and payload contents for the WhatsApp Busin
 | --- | --- | --- |
 | `<BUSINESS_DISPLAY_PHONE_NUMBER>` | Business display phone number. | 15550783881 |
 | `<BUSINESS_PHONE_NUMBER_ID>` | Business phone number ID. | 106540352242922 |
-| `<WHATSAPP_USER_PROFILE_NAME>` | WhatsApp user’s profile name. | Sheena Nelson |
+| `<WHATSAPP_USER_PROFILE_NAME>` | WhatsApp user's profile name. | Sheena Nelson |
 | `<WHATSAPP_USER_ID>` | WhatsApp user ID. | 16505551234 |
 | `<WHATSAPP_USER_PHONE_NUMBER>` | WhatsApp user phone number. | 16505551234 |
 | `<WHATSAPP_MESSAGE_ID>` | WhatsApp message ID for the edit event. | wamid.HBgLMTY1MDM4Nzk0MzkV... |
@@ -101,58 +99,56 @@ This reference describes edit events and payload contents for the WhatsApp Busin
 This example webhook describes an edit made by a user in a message.
 
 ```
-```
 {  
- "object": "whatsapp_business_account",  
- "entry": [  
-   {  
-     "id": "102290129340398",  
-     "changes": [  
-       {  
-         "value": {  
-           "messaging_product": "whatsapp",  
-           "metadata": {  
-             "display_phone_number": "15550783881",  
-             "phone_number_id": "106540352242922"  
-           },  
-           "contacts": [  
-             {  
-               "profile": {  
-                 "name": "Sheena Nelson"  
-               },  
-               "wa_id": "16505551234"  
-             }  
-           ],  
-           "messages": [  
-             {  
-               "from": "16505551234",  
-               "id": "wamid.HBgLMTY1MDM4Nzk0MzkVAgASGBQzQUFERjg0NDEzNDdFODU3MUMxMAA=",  
-               "timestamp": "1749854575",  
-               "type": "edit",  
-               "edit": {  
-                 "original_message_id": "wamid.HBgLMTQxMjU1NTA4MjkVAgASGBQzQUNCNjk5RDUwNUZGMUZEM0VBRAA=",  
-                 "message": {  
-                   "context": {  
-                     "id": "M0"  
-                   },  
-                   "type": "image",  
-                   "image": {  
-                     "caption": "Updated image caption",  
-                     "mime_type": "image/jpeg",  
-                     "sha256": "a1b2c3d4e5f6...",  
-                     "id": "1234567890",  
-                     "url": "https://media.example.com/updated-image.jpg"  
-                   }  
-                 }  
-               }  
-             }  
-           ]  
-         },  
-         "field": "messages"  
-       }  
-     ]  
-   }  
- ]  
+ "object": "whatsapp_business_account",  
+ "entry": [  
+   {  
+     "id": "102290129340398",  
+     "changes": [  
+       {  
+         "value": {  
+           "messaging_product": "whatsapp",  
+           "metadata": {  
+             "display_phone_number": "15550783881",  
+             "phone_number_id": "106540352242922"  
+           },  
+           "contacts": [  
+             {  
+               "profile": {  
+                 "name": "Sheena Nelson"  
+               },  
+               "wa_id": "16505551234"  
+             }  
+           ],  
+           "messages": [  
+             {  
+               "from": "16505551234",  
+               "id": "wamid.HBgLMTY1MDM4Nzk0MzkVAgASGBQzQUFERjg0NDEzNDdFODU3MUMxMAA=",  
+               "timestamp": "1749854575",  
+               "type": "edit",  
+               "edit": {  
+                 "original_message_id": "wamid.HBgLMTQxMjU1NTA4MjkVAgASGBQzQUNCNjk5RDUwNUZGMUZEM0VBRAA=",  
+                 "message": {  
+                   "context": {  
+                     "id": "M0"  
+                   },  
+                   "type": "image",  
+                   "image": {  
+                     "caption": "Updated image caption",  
+                     "mime_type": "image/jpeg",  
+                     "sha256": "a1b2c3d4e5f6...",  
+                     "id": "1234567890",  
+                     "url": "https://media.example.com/updated-image.jpg"  
+                   }  
+                 }  
+               }  
+             }  
+           ]  
+         },  
+         "field": "messages"  
+       }  
+     ]  
+   }  
+ ]  
 }
-```
 ```

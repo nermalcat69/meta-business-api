@@ -63,12 +63,12 @@ Aggregated information about the edge, such as counts. Specify `summary=true` as
 
 ## Creating
 
-You can’t perform this operation on this edge. To create product feeds, use the [Product Feed](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-feed#Creating) node.
+You can't perform this operation on this edge. To create product feeds, use the [Product Feed](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-feed#Creating) node.
 
 ## Updating
 
-You can’t perform this operation on this edge. To update product feeds, use the [Product Feed](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-feed) node.
+You can't perform this operation on this edge. To update product feeds, use the [Product Feed](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-feed) node.
 
 ## Deleting
 
-You can’t perform this operation on this edge. To delete product feeds, use the [Product Feed](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-feed) node.
+You can't perform this operation on this edge. To delete product feeds, use the [Product Feed](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-feed) node.

@@ -181,7 +181,7 @@ If your app needs extended permissions (most Page management features), a Facebo
 
 # Facebook Pages API
 
-The Facebook Pages API from Meta allows apps to access and update a Facebook Page’s settings and content, create and get Posts, get Comments on Page owned content, get Page insights, update actions that Users are able to perform on a Page, and much more.
+The Facebook Pages API from Meta allows apps to access and update a Facebook Page's settings and content, create and get Posts, get Comments on Page owned content, get Page insights, update actions that Users are able to perform on a Page, and much more.
 
 This document contains the guides you will use to learn abour and implement the Facebook Pages API.
 

@@ -78,7 +78,7 @@ For each inclusion or exclusion rule, follow this structure:
 
 | Name | Description |
 | --- | --- |
-| `event_sources`  type: String | **Required.**  JSON object containing the `id` and `type`.   * For [Website Custom Audiences using Pixel](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/website-custom-audiences), set `id` to your Pixel’s ID and `type` to `'pixel'`. * For [Mobile App Custom Audiences](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/mobile-app-custom-audiences), set `id` to your app ID and `type` to `app`.   More event sources can be added to `type` using a comma-delimited list `"store_visits,pixel,app"`. |
+| `event_sources`  type: String | **Required.**  JSON object containing the `id` and `type`.   * For [Website Custom Audiences using Pixel](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/website-custom-audiences), set `id` to your Pixel's ID and `type` to `'pixel'`. * For [Mobile App Custom Audiences](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/mobile-app-custom-audiences), set `id` to your app ID and `type` to `app`.   More event sources can be added to `type` using a comma-delimited list `"store_visits,pixel,app"`. |
 | `retention_seconds`  type: Integer | **Required.**  Integer (in seconds) for the retention window of the audience, should be less than `retention_days`. Min=1; Max=365 days |
 | `filter`  type: String | **Required.**  JSON string of the filter rules. See [Filters](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/lookalike-audiences#filter). |
 | `aggregation`  type: Integer | **Optional.**  JSON string of the aggregation functions. See [Aggregate Functions](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/lookalike-audiences#aggregate). |
@@ -115,7 +115,7 @@ Filtration follows this general format:
 
 | Name | Description |
 | --- | --- |
-| `field`  type: String | **Required.**   * For [Website Custom Audiences](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/website-custom-audiences), use `'event'` if the filter is to specify an event. Parameters that match events sent by pixel (for example, `'ViewContent'`, `'Purchase'`). * For [Mobile App Custom Audiences](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/mobile-app-custom-audiences), Use `'event'` if the filter is to specify an event. Parameters that match App events sent by app; for example, “\_appVersion”, “\_value”, and so on. |
+| `field`  type: String | **Required.**   * For [Website Custom Audiences](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/website-custom-audiences), use `'event'` if the filter is to specify an event. Parameters that match events sent by pixel (for example, `'ViewContent'`, `'Purchase'`). * For [Mobile App Custom Audiences](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/mobile-app-custom-audiences), Use `'event'` if the filter is to specify an event. Parameters that match App events sent by app; for example, "\_appVersion", "\_value", and so on. |
 | `operator`  type: String | **Required.**   * `=` * `!=` * `>=` * `>` * `<=` * `<` * `i_contains` * `i_not_contains` * `contains` * `not_contains` * `is_any` * `is_not_any` * `i_is_any` * `i_is_not_any` * `i_starts_with` * `starts_with` * `regex_match`   If `field` set to `event`, must use `=`. |
 | `value`  type: String | **Required.**  If the `field` attribute is set to `"event"`, the `value` must be set to an event name. Use the App Event API to see app events and parameters reported by the app. |
 
@@ -146,22 +146,22 @@ Create custom audiences based on the frequency and intensity of behavior using t
 
 | Operator | Description |
 | --- | --- |
-| `>` or `gt` | True if event’s parameter value greater than specified value. |
-| `>=` or `gte` | True if event’s parameter value greater than or equal to specified value. |
-| `<` or `lt` | True if event’s parameter value less than specified value. |
-| `<=` or `lte` | True if event’s parameter value less than or equal to specified value. |
-| `=` or `eq` | True if event’s parameter value equal to specified value. Note: This is equivalent to not specifying an operator at all; that is, “‘x’ : { ‘eq’ : ‘y’ }” is the same as “‘x’ : ‘y’ }. |
-| `!=` or `neq` | True if event’s parameter value not equal to specified value. |
-| `contains` | True if event’s parameter value, as string, contains specified string. Value of “shoe12345” fulfills ‘contains’ if specified value ‘shoe’. |
-| `not_contains` | True if event’s parameter value, as string, does not contain specified string. Value “shoe12345” fulfills ‘not\_contains’ if specified value is ‘purse’. |
+| `>` or `gt` | True if event's parameter value greater than specified value. |
+| `>=` or `gte` | True if event's parameter value greater than or equal to specified value. |
+| `<` or `lt` | True if event's parameter value less than specified value. |
+| `<=` or `lte` | True if event's parameter value less than or equal to specified value. |
+| `=` or `eq` | True if event's parameter value equal to specified value. Note: This is equivalent to not specifying an operator at all; that is, "'x' : { 'eq' : 'y' }" is the same as "'x' : 'y' }. |
+| `!=` or `neq` | True if event's parameter value not equal to specified value. |
+| `contains` | True if event's parameter value, as string, contains specified string. Value of "shoe12345" fulfills 'contains' if specified value 'shoe'. |
+| `not_contains` | True if event's parameter value, as string, does not contain specified string. Value "shoe12345" fulfills 'not\_contains' if specified value is 'purse'. |
 | `i_contains` | Contains, case-insensitive |
 | `i_not_contains` | Not contains, case-insensitive |
-| `is_any` | True if event’s parameter value matches any strings in given array. |
-| `is_not_any` | True if event’s parameter value matches no strings in specified array. |
-| `i_is_any` | ‘is\_any’, case-insensitive. |
-| `i_is_not_any` | ‘is\_not\_any’, case-insensitive |
-| `starts_with` | True if the event’s parameter value starts with the given string |
-| `i_starts_with` | “starts\_with”, case-insensitive |
+| `is_any` | True if event's parameter value matches any strings in given array. |
+| `is_not_any` | True if event's parameter value matches no strings in specified array. |
+| `i_is_any` | 'is\_any', case-insensitive. |
+| `i_is_not_any` | 'is\_not\_any', case-insensitive |
+| `starts_with` | True if the event's parameter value starts with the given string |
+| `i_starts_with` | "starts\_with", case-insensitive |
 | `regex_match` | Matches a regular expression such as "example\.com.\*purchase$". The full PCRE grammar is supported |
 
 ## Examples

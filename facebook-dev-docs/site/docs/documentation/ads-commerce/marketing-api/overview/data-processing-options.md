@@ -11,9 +11,9 @@ Updated: May 5, 2026
 
 **No code changes are needed.**
 
-Tier labels have been updated: “Standard Access” is now **Limited Access**, and “Advanced Access” is now **Full Access**. The revised qualification threshold for Full Access has been reduced from 1,500 to **500 Marketing API calls** in the past 15 days. The underlying permission identifier remains the same, and existing access levels are preserved automatically. Learn more in the [Marketing API Access Tier documentation](https://developers.facebook.com/docs/features-reference#marketing-api-access-tier).
+Tier labels have been updated: "Standard Access" is now **Limited Access**, and "Advanced Access" is now **Full Access**. The revised qualification threshold for Full Access has been reduced from 1,500 to **500 Marketing API calls** in the past 15 days. The underlying permission identifier remains the same, and existing access levels are preserved automatically. Learn more in the [Marketing API Access Tier documentation](https://developers.facebook.com/docs/features-reference#marketing-api-access-tier).
 
-The Marketing API has its own rate limiting logic and is excluded from all the Graph API rate limitations. So if you make a Marketing API call, it won’t be calculated into the [Graph API throttling](https://developers.facebook.com/docs/graph-api/advanced/rate-limiting).
+The Marketing API has its own rate limiting logic and is excluded from all the Graph API rate limitations. So if you make a Marketing API call, it won't be calculated into the [Graph API throttling](https://developers.facebook.com/docs/graph-api/advanced/rate-limiting).
 
 The feature that impacts the Marketing API rate limit quota is [Marketing API Access Tier](https://developers.facebook.com/docs/features-reference#marketing-api-access-tier). When you add the Marketing API product in your [App Dashboard](https://developers.facebook.com/apps), you will get the **Limited tier** of Marketing API Access Tier by default. This will give you development access to the Marketing API. If you need to upgrade to get more rate limiting quota, upgrade to **Full access** of Marketing API Access Tier in [App Review](https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/authorization).
 
@@ -138,7 +138,7 @@ When our system detects that certain ad accounts generate a large amount of abno
 
 **Related error code:** `613, Error subcode: null, Message: (#613) Calls to this api have exceeded the rate limit.`
 
-The difference between this and the Ad Account Level API-Level Limit is this error doesn’t contain error subcodes. When this error is encountered, investigate if any action is triggering excessive API requests and contact [Meta support](https://developers.facebook.com/support/) for help.
+The difference between this and the Ad Account Level API-Level Limit is this error doesn't contain error subcodes. When this error is encountered, investigate if any action is triggering excessive API requests and contact [Meta support](https://developers.facebook.com/support/) for help.
 
 ## Handle Throttling Errors
 

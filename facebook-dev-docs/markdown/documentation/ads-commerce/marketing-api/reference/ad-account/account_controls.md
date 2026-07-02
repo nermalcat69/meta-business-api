@@ -20,8 +20,8 @@ HTTPPHP SDKJavaScript SDKAndroid SDKiOS SDK
 ---
 
 ```
-GET /v25.0/{ad-account-id}/aaa_compatible_ad_objects HTTP/1.1  
-Host: graph.facebook.com
+GET /v25.0/{ad-account-id}/aaa_compatible_ad_objects HTTP/1.1  
+Host: graph.facebook.com
 ```
 
 Try it in [Graph API Explorer](https://developers.facebook.com/tools/explorer/?method=GET&path=%7Bad-account-id%7D%2Faaa_compatible_ad_objects&version=v25.0)

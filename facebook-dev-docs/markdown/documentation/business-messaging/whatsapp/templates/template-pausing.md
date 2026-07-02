@@ -9,7 +9,7 @@ Updated: Jun 17, 2026
 
 Cloud API reviews templates and variable parameters using machine learning to protect the security and integrity of Cloud API services. When Cloud API reviews templates and variable text, no information is shared with WhatsApp.
 
-When you submit a template creation request, the content undergoes validation through a combination of automated systems and manual reviews. This process ensures that the template complies with WhatsApp’s policies and quality standards. Templates that contain spam, scam-like content, or violate WhatsApp policies are rejected during this review process.
+When you submit a template creation request, the content undergoes validation through a combination of automated systems and manual reviews. This process ensures that the template complies with WhatsApp's policies and quality standards. Templates that contain spam, scam-like content, or violate WhatsApp policies are rejected during this review process.
 
 ## Approval process
 
@@ -29,15 +29,15 @@ Submissions are commonly rejected for the following reasons, so make sure you av
 
 ### Parameter formatting
 
-* Variable parameters are missing or have mismatched curly braces. The correct format is `{{1}}` for positional parameters.
+* Variable parameters are missing or have mismatched curly braces. The correct format is `{​{1}​}` for positional parameters.
 * Variable parameters contain special characters such as a `#`, `$`, or `%`.
-* Variable parameters are not sequential. For example, `{{1}}`, `{{2}}`, `{{5}}`, `{{4}}`.
+* Variable parameters are not sequential. For example, `{​{1}​}`, `{​{2}​}`, `{​{5}​}`, `{​{4}​}`.
 * The template contains too many variable parameters relative to the message length. You need to decrease the number of variable parameters or increase the message length.
 * The message template cannot start or end with a parameter (dangling parameters are not allowed).
 
 ### Content and policy violations
 
-* The message template contains content that violates WhatsApp’s Commerce Policy: When you offer goods or services for sale, Meta considers all messages and media related to your goods or services, including any descriptions, prices, fees, taxes, and/or any required legal disclosures, to constitute transactions. Transactions must comply with the WhatsApp Commerce Policy.
+* The message template contains content that violates WhatsApp's Commerce Policy: When you offer goods or services for sale, Meta considers all messages and media related to your goods or services, including any descriptions, prices, fees, taxes, and/or any required legal disclosures, to constitute transactions. Transactions must comply with the WhatsApp Commerce Policy.
 * The message template contains content that violates the WhatsApp Business Policy: Do not request sensitive identifiers from users. For example, do not ask people to share full length individual payment card numbers, financial account numbers, National Identification numbers, or other sensitive identifiers. This also includes not requesting documents from users that might contain sensitive identifiers. Requesting partial identifiers (ex: last 4 digits of their Social Security number) is OK.
 * The content contains potentially abusive or threatening content, such as threatening a customer with legal action or threatening to publicly shame them.
 
@@ -67,7 +67,7 @@ If your submission is rejected you may file an appeal. Note that appeals must in
 
 * Hover over the suitcase icon (Account tools) and click Message templates. If you have multiple WhatsApp Business Accounts, use the dropdown menu in the top-right corner to select the account whose templates you want to manage.
 * Find the message template that you would like to edit and click it.
-* Edit the template’s contents.
+* Edit the template's contents.
 * Click the **Add Sample** button and add sample variable values and images.
 * Click **Submit**.
 

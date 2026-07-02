@@ -12,7 +12,7 @@ Updated: May 21, 2026
 * No members, including you, will be able to message the group.
 * Cloud API delivers any messages or statuses it received before you deleted the group, so you may still receive webhooks for those messages or statuses.
 
-### Why can’t a participant join the group using my invite link?
+### Why can't a participant join the group using my invite link?
 
 Some possible reasons include:
 

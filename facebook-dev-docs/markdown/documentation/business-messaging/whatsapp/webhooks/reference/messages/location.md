@@ -17,68 +17,66 @@ This reference describes trigger events and payload contents for the WhatsApp Bu
 ## Syntax
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "<WHATSAPP_BUSINESS_ACCOUNT_ID>",  
-      "changes": [  
-        {  
-          "value": {  
-            "messaging_product": "whatsapp",  
-            "metadata": {  
-              "display_phone_number": "<BUSINESS_DISPLAY_PHONE_NUMBER>",  
-              "phone_number_id": "<BUSINESS_PHONE_NUMBER_ID>"  
-            },  
-            "contacts": [  
-              {  
-                "profile": {  
-                  "name": "<WHATSAPP_USER_PROFILE_NAME>"  
-                },  
-                "wa_id": "<WHATSAPP_USER_ID>",  
-                "identity_key_hash": "<IDENTITY_KEY_HASH>" <!-- only included if identity change check enabled -->  
-              }  
-            ],  
-            "messages": [  
-              {  
-                "context": {  
-                  "from": "<BUSINESS_DISPLAY_PHONE_NUMBER>",  
-                  "id": "<CONTEXTUAL_WHATSAPP_MESSAGE_ID>"  
-                },  
-                "from": "<WHATSAPP_USER_PHONE_NUMBER>",  
-                "id": "<WHATSAPP_MESSAGE_ID>",  
-                "timestamp": "<WEBHOOK_TRIGGER_TIMESTAMP>",  
-                "type": "interactive",  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "<WHATSAPP_BUSINESS_ACCOUNT_ID>",  
+      "changes": [  
+        {  
+          "value": {  
+            "messaging_product": "whatsapp",  
+            "metadata": {  
+              "display_phone_number": "<BUSINESS_DISPLAY_PHONE_NUMBER>",  
+              "phone_number_id": "<BUSINESS_PHONE_NUMBER_ID>"  
+            },  
+            "contacts": [  
+              {  
+                "profile": {  
+                  "name": "<WHATSAPP_USER_PROFILE_NAME>"  
+                },  
+                "wa_id": "<WHATSAPP_USER_ID>",  
+                "identity_key_hash": "<IDENTITY_KEY_HASH>" <!-- only included if identity change check enabled -->  
+              }  
+            ],  
+            "messages": [  
+              {  
+                "context": {  
+                  "from": "<BUSINESS_DISPLAY_PHONE_NUMBER>",  
+                  "id": "<CONTEXTUAL_WHATSAPP_MESSAGE_ID>"  
+                },  
+                "from": "<WHATSAPP_USER_PHONE_NUMBER>",  
+                "id": "<WHATSAPP_MESSAGE_ID>",  
+                "timestamp": "<WEBHOOK_TRIGGER_TIMESTAMP>",  
+                "type": "interactive",  
   
-                <!-- interactive list message replies only -->  
-                "interactive": {  
-                  "type": "list_reply",  
-                  "list_reply": {  
-                    "id": "<ROW_ID>",  
-                    "title": "<ROW_TITLE>",  
-                    "description": "<ROW_DESCRIPTION>"  
-                  }  
-                },  
+                <!-- interactive list message replies only -->  
+                "interactive": {  
+                  "type": "list_reply",  
+                  "list_reply": {  
+                    "id": "<ROW_ID>",  
+                    "title": "<ROW_TITLE>",  
+                    "description": "<ROW_DESCRIPTION>"  
+                  }  
+                },  
   
-                <!-- interactive reply button message replies only -->  
-                "interactive": {  
-                  "type": "button_reply",  
-                  "button_reply": {  
-                    "id": "<BUTTON_ID>",  
-                    "title": "<BUTTON_LABEL_TEXT>"  
-                  }  
-                }  
-              }  
-            ]  
-          },  
-          "field": "messages"  
-        }  
-      ]  
-    }  
-  ]  
+                <!-- interactive reply button message replies only -->  
+                "interactive": {  
+                  "type": "button_reply",  
+                  "button_reply": {  
+                    "id": "<BUTTON_ID>",  
+                    "title": "<BUTTON_LABEL_TEXT>"  
+                  }  
+                }  
+              }  
+            ]  
+          },  
+          "field": "messages"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ## Parameters
@@ -97,117 +95,113 @@ This reference describes trigger events and payload contents for the WhatsApp Bu
 | `<WEBHOOK_TRIGGER_TIMESTAMP>`  *String* | Unix timestamp indicating when the webhook was triggered. | `1739321024` |
 | `<WHATSAPP_BUSINESS_ACCOUNT_ID>`  *String* | WhatsApp Business Account ID. | `102290129340398` |
 | `<WHATSAPP_MESSAGE_ID>`  *String* | WhatsApp message ID. | `wamid.HBgLMTY1MDM4Nzk0MzkVAgASGBQzQUFERjg0NDEzNDdFODU3MUMxMAA=` |
-| `<WHATSAPP_USER_ID>`  *String* | WhatsApp user ID. Note that a WhatsApp user’s ID and phone number may not always match. | `16505551234` |
-| `<WHATSAPP_USER_PHONE_NUMBER>`  *String* | WhatsApp user phone number. This is the same value returned by the API as the `input` value when sending a message to a WhatsApp user. Note that a WhatsApp user’s phone number and ID may not always match. | `16505551234` |
-| `<WHATSAPP_USER_PROFILE_NAME>`  *String* | WhatsApp user’s name as it appears in their profile in the WhatsApp client. | `Sheena Nelson` |
+| `<WHATSAPP_USER_ID>`  *String* | WhatsApp user ID. Note that a WhatsApp user's ID and phone number may not always match. | `16505551234` |
+| `<WHATSAPP_USER_PHONE_NUMBER>`  *String* | WhatsApp user phone number. This is the same value returned by the API as the `input` value when sending a message to a WhatsApp user. Note that a WhatsApp user's phone number and ID may not always match. | `16505551234` |
+| `<WHATSAPP_USER_PROFILE_NAME>`  *String* | WhatsApp user's name as it appears in their profile in the WhatsApp client. | `Sheena Nelson` |
 
 ## Examples
 
 This example webhook describes a WhatsApp user selecting a row in an interactive list message.
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "102290129340398",  
-      "changes": [  
-        {  
-          "value": {  
-            "messaging_product": "whatsapp",  
-            "metadata": {  
-              "display_phone_number": "15550783881",  
-              "phone_number_id": "106540352242922"  
-            },  
-            "contacts": [  
-              {  
-                "profile": {  
-                  "name": "Sheena Nelson"  
-                },  
-                "wa_id": "16505551234"  
-              }  
-            ],  
-            "messages": [  
-              {  
-                "context": {  
-                  "from": "15550783881",  
-                  "id": "wamid.HBgLMTQxMjU1NTA4MjkVAgASGBQzQUNCNjk5RDUwNUZGMUZEM0VBRAA="  
-                },  
-                "from": "16505551234",  
-                "id": "wamid.HBgLMTY1MDM4Nzk0MzkVAgASGBQzQUFERjg0NDEzNDdFODU3MUMxMAA=",  
-                "timestamp": "1749854575",  
-                "type": "interactive",  
-                "interactive": {  
-                  "type": "list_reply",  
-                  "list_reply": {  
-                    "id": "priority_express",  
-                    "title": "Priority Mail Express",  
-                    "description": "Next Day to 2 Days"  
-                  }  
-                }  
-              }  
-            ]  
-          },  
-          "field": "messages"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "102290129340398",  
+      "changes": [  
+        {  
+          "value": {  
+            "messaging_product": "whatsapp",  
+            "metadata": {  
+              "display_phone_number": "15550783881",  
+              "phone_number_id": "106540352242922"  
+            },  
+            "contacts": [  
+              {  
+                "profile": {  
+                  "name": "Sheena Nelson"  
+                },  
+                "wa_id": "16505551234"  
+              }  
+            ],  
+            "messages": [  
+              {  
+                "context": {  
+                  "from": "15550783881",  
+                  "id": "wamid.HBgLMTQxMjU1NTA4MjkVAgASGBQzQUNCNjk5RDUwNUZGMUZEM0VBRAA="  
+                },  
+                "from": "16505551234",  
+                "id": "wamid.HBgLMTY1MDM4Nzk0MzkVAgASGBQzQUFERjg0NDEzNDdFODU3MUMxMAA=",  
+                "timestamp": "1749854575",  
+                "type": "interactive",  
+                "interactive": {  
+                  "type": "list_reply",  
+                  "list_reply": {  
+                    "id": "priority_express",  
+                    "title": "Priority Mail Express",  
+                    "description": "Next Day to 2 Days"  
+                  }  
+                }  
+              }  
+            ]  
+          },  
+          "field": "messages"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 This example webhook describes a WhatsApp user tapping a button in an interactive reply button message.
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "102290129340398",  
-      "changes": [  
-        {  
-          "value": {  
-            "messaging_product": "whatsapp",  
-            "metadata": {  
-              "display_phone_number": "15550783881",  
-              "phone_number_id": "106540352242922"  
-            },  
-            "contacts": [  
-              {  
-                "profile": {  
-                  "name": "Sheena Nelson"  
-                },  
-                "wa_id": "16505551234"  
-              }  
-            ],  
-            "messages": [  
-              {  
-                "context": {  
-                  "from": "15550783881",  
-                  "id": "wamid.HBgLMTY1MDM4Nzk0MzkVAgARGBI3MEM2RUJFNkI0RENGQTVDRjUA"  
-                },  
-                "from": "16505551234",  
-                "id": "wamid.HBgLMTY1MDM4Nzk0MzkVAgASGBQzQTZBQzg0MzQ4QjRCM0NGNkVGOAA=",  
-                "timestamp": "1750025136",  
-                "type": "interactive",  
-                "interactive": {  
-                  "type": "button_reply",  
-                  "button_reply": {  
-                    "id": "cancel-button",  
-                    "title": "Cancel"  
-                  }  
-                }  
-              }  
-            ]  
-          },  
-          "field": "messages"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "102290129340398",  
+      "changes": [  
+        {  
+          "value": {  
+            "messaging_product": "whatsapp",  
+            "metadata": {  
+              "display_phone_number": "15550783881",  
+              "phone_number_id": "106540352242922"  
+            },  
+            "contacts": [  
+              {  
+                "profile": {  
+                  "name": "Sheena Nelson"  
+                },  
+                "wa_id": "16505551234"  
+              }  
+            ],  
+            "messages": [  
+              {  
+                "context": {  
+                  "from": "15550783881",  
+                  "id": "wamid.HBgLMTY1MDM4Nzk0MzkVAgARGBI3MEM2RUJFNkI0RENGQTVDRjUA"  
+                },  
+                "from": "16505551234",  
+                "id": "wamid.HBgLMTY1MDM4Nzk0MzkVAgASGBQzQTZBQzg0MzQ4QjRCM0NGNkVGOAA=",  
+                "timestamp": "1750025136",  
+                "type": "interactive",  
+                "interactive": {  
+                  "type": "button_reply",  
+                  "button_reply": {  
+                    "id": "cancel-button",  
+                    "title": "Cancel"  
+                  }  
+                }  
+              }  
+            ]  
+          },  
+          "field": "messages"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```

@@ -9,7 +9,7 @@ Updated: Jun 30, 2026
 
 Payments API introduces two new types of [interactive messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/send-messages#interactive-messages): `order_details` and `order_status`. These two message types are the entrypoint to collect payment in WhatsApp.
 
-* Send an `order_details` message to create an order in the buyer’s WhatsApp client app. This message includes the payment settings used to collect payment and can optionally include an `order` object with itemized products, fees, and discounts. Without the `order` object, you can send a simplified order details message with just the total amount and payment settings. The payment settings will vary depending on the integration type ([Pix](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-br/offsite-pix), [payment links](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-br/payment-links), [Boleto](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-br/boleto), [One Click Payments](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-br/one-click-payments)).
+* Send an `order_details` message to create an order in the buyer's WhatsApp client app. This message includes the payment settings used to collect payment and can optionally include an `order` object with itemized products, fees, and discounts. Without the `order` object, you can send a simplified order details message with just the total amount and payment settings. The payment settings will vary depending on the integration type ([Pix](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-br/offsite-pix), [payment links](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-br/payment-links), [Boleto](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-br/boleto), [One Click Payments](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-br/one-click-payments)).
 * Send an `order_status` message when you update the order status, either based on the WhatsApp payment status change notification or based on your internal processes. You can also send a simplified status update without the `order` object.
 
 ![Order status flow diagram: Pending leads to Shipped, Partially Shipped, or Processing, then to Completed or Canceled](https://scontent.fdel1-9.fna.fbcdn.net/v/t39.2365-6/565718019_1339318281260156_7557207642198018127_n.jpg?_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=VHtEQoEQySoQ7kNvwGr8AF3&_nc_oc=AdpOWGva2mva_h03J3BrydUw-Nub4d3uQD1xe9kAxVh7R8zORlf8htd5vU0wS9PzdlDybJLXkebNivc3VoMUjlzK&_nc_zt=14&_nc_ht=scontent.fdel1-9.fna&_nc_gid=owR1KblxjNFJLxJPYoyWuw&_nc_ss=7b2a8&oh=00_AQCuy2uTR2pZd4A0tHUepccAl3sLz2e3-5vsMZtM3LALKA&oe=6A606F35)
@@ -36,7 +36,6 @@ POST /{PHONE_NUMBER_ID}/messages
 
 #### Request body
 
-```
 ```
 {
   "recipient_type": "individual",
@@ -94,11 +93,10 @@ POST /{PHONE_NUMBER_ID}/messages
   }
 }
 ```
-```
 
 ### Simplified order details message
 
-You can send a simplified order details message without the `order` object. The simplified order details message is useful when you don’t need to send itemized product details and only need to collect the total payment amount.
+You can send a simplified order details message without the `order` object. The simplified order details message is useful when you don't need to send itemized product details and only need to collect the total payment amount.
 
 Simplified order details messages do not support an image header. Instead of the thumbnail image, the total payment amount is displayed prominently at the top of the message. If an image is a required part of your use case, consider using the [Payment Request CTA Templates](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-br/payment-request-cta) solution instead.
 
@@ -110,7 +108,6 @@ POST /{PHONE_NUMBER_ID}/messages
 
 #### Request body
 
-```
 ```
 {
   "recipient_type": "individual",
@@ -145,7 +142,6 @@ POST /{PHONE_NUMBER_ID}/messages
   }
 }
 ```
-```
 
 ### Order status example
 
@@ -161,7 +157,6 @@ POST /{PHONE_NUMBER_ID}/messages
 
 #### Request body
 
-```
 ```
 {
   "recipient_type": "individual",
@@ -191,7 +186,6 @@ POST /{PHONE_NUMBER_ID}/messages
   }
 }
 ```
-```
 
 ### Simplified order status example
 
@@ -203,7 +197,6 @@ POST /{PHONE_NUMBER_ID}/messages
 
 #### Request body
 
-```
 ```
 {
   "recipient_type": "individual",
@@ -230,13 +223,11 @@ POST /{PHONE_NUMBER_ID}/messages
   }
 }
 ```
-```
 
 ### Message response
 
 For either type, if your message is sent successfully, you will get the following response:
 
-```
 ```
 {
   "messaging_product": "whatsapp",
@@ -252,7 +243,6 @@ For either type, if your message is sent successfully, you will get the followin
     }
   ]
 }
-```
 ```
 
 For all errors that can be returned and guidance on how to handle them, see [Cloud API Errors Codes](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/error-codes).
@@ -330,7 +320,7 @@ To send an order\_details message, businesses must assemble an interactive objec
 | **Field Name** | **Optional?** | **Type** | **Description** |
 | --- | --- | --- | --- |
 | `retailer_id` | Required | String | Content ID for an item in the order from your catalog. |
-| name | Required | String | The item’s name to be displayed to the user. Cannot exceed 60 characters. |
+| name | Required | String | The item's name to be displayed to the user. Cannot exceed 60 characters. |
 | amount | Required | Amount Object | The price per item. See [Amount Object](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-br/orders#amountobject). |
 | quantity | Required | Integer | Number of items in this order. |
 | sale\_amount | Optional | Amount Object | The discounted price per item. This should be less than the original amount. If included, this field is used to calculate the subtotal amount. See [Amount Object](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-br/orders#amountobject). |
@@ -368,7 +358,7 @@ To send an order\_status message, businesses must assemble an interactive object
 | **Field Name** | **Optional?** | **Type** | **Description** |
 | --- | --- | --- | --- |
 | type | Required | String | Must be `order_status`. |
-| header | Optional | Object | Optional object for the message’s header for the message. |
+| header | Optional | Object | Optional object for the message's header for the message. |
 | body | Required | Object | An object with the body of the message. The object contains the following field:   * `text` string: The content of the message. Emojis and markdown are supported. Maximum length is 1024 characters. |
 | footer | Optional | Object | An object with the footer of the message. The object contains the following field:   * `text` string: **Required** if footer is present. The footer content. Emojis, markdown, and links are supported. Maximum length is 60 characters. |
 | action | Required | Action Object | See [Action Object](https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-br/orders#statusactionobject) below. |
@@ -422,7 +412,7 @@ The following payment status values are supported:
 | Value | Description |
 | --- | --- |
 | `pending` | Payment is pending. |
-| `captured` | Payment was successfully captured. Receiving this payment status will update the order bubble to include the “paid” label (with green checkmark). |
+| `captured` | Payment was successfully captured. Receiving this payment status will update the order bubble to include the "paid" label (with green checkmark). |
 | `failed` | Payment failed. |
 
 ## Errors and statuses

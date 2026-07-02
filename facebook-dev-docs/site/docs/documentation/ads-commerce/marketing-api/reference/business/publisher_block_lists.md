@@ -45,25 +45,23 @@ GET https://graph.facebook.com/<API_VERSION>/<BUSINESS_ACCOUNT_ID>/preverified_n
 A collection of [WhatsApp Business Pre-Verified Phone Numbers](https://developers.facebook.com/docs/graph-api/reference/whats-app-business-pre-verified-phone-number) and their default fields on the business.
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "phone_number": "<PHONE_NUMBER>",  
-      "code_verification_status": "<CODE_VERIFICATION_STATUS>",  
-      "verification_expiry_time": "<VERIFICATION_EXPIRY_TIME>",  
-      "id": "<ID>"  
-    },  
-    ...  
-  ],  
-  "paging": {  
-    "cursors": {  
-      "before": "QVFIU...",  
-      "after": "QVFIU..."  
-    }  
-  }  
+  "data": [  
+    {  
+      "phone_number": "<PHONE_NUMBER>",  
+      "code_verification_status": "<CODE_VERIFICATION_STATUS>",  
+      "verification_expiry_time": "<VERIFICATION_EXPIRY_TIME>",  
+      "id": "<ID>"  
+    },  
+    ...  
+  ],  
+  "paging": {  
+    "cursors": {  
+      "before": "QVFIU...",  
+      "after": "QVFIU..."  
+    }  
+  }  
 }
-```
 ```
 
 ### Sample Request
@@ -76,31 +74,29 @@ curl -X GET 'https://graph.facebook.com/v25.0/506914307656634/preverified_number
 ### Sample Response
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "phone_number": "+1 211-555-5105",  
-      "code_verification_status": "VERIFIED",  
-      "verification_expiry_time": "2023-04-14T22:12:31+0000",  
-      "id": "5745365898905902"  
-    },  
-    {  
-      "phone_number": "+1 211-555-7165",  
-      "code_verification_status": "VERIFIED",  
-      "verification_expiry_time": "2023-04-14T22:10:57+0000",  
-      "id": "9010077509033461"  
-    },  
-    ...  
-  ],  
-  "paging": {  
-    "cursors": {  
-      "before": "QVFIU...",  
-      "after": "QVFIU..."  
-    }  
-  }  
+  "data": [  
+    {  
+      "phone_number": "+1 211-555-5105",  
+      "code_verification_status": "VERIFIED",  
+      "verification_expiry_time": "2023-04-14T22:12:31+0000",  
+      "id": "5745365898905902"  
+    },  
+    {  
+      "phone_number": "+1 211-555-7165",  
+      "code_verification_status": "VERIFIED",  
+      "verification_expiry_time": "2023-04-14T22:10:57+0000",  
+      "id": "9010077509033461"  
+    },  
+    ...  
+  ],  
+  "paging": {  
+    "cursors": {  
+      "before": "QVFIU...",  
+      "after": "QVFIU..."  
+    }  
+  }  
 }
-```
 ```
 
 #### Parameters

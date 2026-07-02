@@ -20,8 +20,8 @@ Businesses that use Marketing Messages API for WhatsApp can view metrics from fo
   * WhatsApp Manager UI
   * [WhatsApp Business Management API](https://developers.facebook.com/documentation/business-messaging/whatsapp/about-the-platform#whatsapp-business-management-api)
 * Via Ads surfaces (optional)
-  * Ads Manager UI “Marketing Messages” tab
-  * Marketing API “[Insights API](https://developers.facebook.com/documentation/ads-commerce/marketing-api/insights)”
+  * Ads Manager UI "Marketing Messages" tab
+  * Marketing API "[Insights API](https://developers.facebook.com/documentation/ads-commerce/marketing-api/insights)"
 
 | ROI Reporting | WhatsApp Business Management surfaces | Ads surfaces |
 | --- | --- | --- |
@@ -55,7 +55,7 @@ Businesses that use Marketing Messages API for WhatsApp can view metrics from fo
 After sending Marketing Messages via Marketing Messages API for WhatsApp, view read-only metrics on sends, clicks, and conversions from two UIs:
 
 * WhatsApp Manager
-* Ads Manager “Marketing Messages” tab
+* Ads Manager "Marketing Messages" tab
 
 Marketing Messages API for WhatsApp metrics can be viewed in WhatsApp Manager on both Phone Number and Template screens:
 
@@ -63,7 +63,7 @@ Marketing Messages API for WhatsApp metrics can be viewed in WhatsApp Manager on
 
 ### Benchmarks and recommendations metrics
 
-Benchmark metrics provide insights into how your business is performing compared to similar businesses in your industry. These metrics are based on data from the past 30 days and take into account various factors that define similar businesses. Based on the benchmark metrics, WhatsApp provides personalized recommendations to help you improve your template’s performance. If your template’s read rate or click rate falls below the benchmark, WhatsApp provides suggestions to improve read and click rates.
+Benchmark metrics provide insights into how your business is performing compared to similar businesses in your industry. These metrics are based on data from the past 30 days and take into account various factors that define similar businesses. Based on the benchmark metrics, WhatsApp provides personalized recommendations to help you improve your template's performance. If your template's read rate or click rate falls below the benchmark, WhatsApp provides suggestions to improve read and click rates.
 
 ### Calculating benchmarks
 
@@ -80,15 +80,15 @@ WhatsApp then calculates two key benchmark metrics:
 
 ### Understanding your ranking and how to use benchmark metrics
 
-When you view your benchmark metrics, you will see a ranking that indicates how your template performs compared to templates in the same category. This ranking is calculated by comparing your template’s performance with the read rate or click rate performance of peer templates with high engagement over the past 30 days.
+When you view your benchmark metrics, you will see a ranking that indicates how your template performs compared to templates in the same category. This ranking is calculated by comparing your template's performance with the read rate or click rate performance of peer templates with high engagement over the past 30 days.
 
-Use the benchmark metrics to compare your template’s performance to templates from similar businesses over the past 30 days. Benchmarks are calculated daily, with a delay of up to 2 days. This ensures that you have access to updated and relevant data to inform your business decisions.
+Use the benchmark metrics to compare your template's performance to templates from similar businesses over the past 30 days. Benchmarks are calculated daily, with a delay of up to 2 days. This ensures that you have access to updated and relevant data to inform your business decisions.
 
 To access the benchmark and recommendations metrics:
 
-* Go to the WhatsApp Manager and select “Manage templates”.
+* Go to the WhatsApp Manager and select "Manage templates".
 * Choose the template you want to view.
-* Select the “Marketing Messages API for WhatsApp” option from the dropdown menu highlighted in red.
+* Select the "Marketing Messages API for WhatsApp" option from the dropdown menu highlighted in red.
 * The benchmark metrics and recommendation cards will be displayed below the preview card in the left panel.
 
 ![WhatsApp Manager Template insights with the Marketing Messages Lite API dropdown, Benchmarks, and Recommendations cards highlighted](https://scontent.fdel1-2.fna.fbcdn.net/v/t39.2365-6/489606125_1614641949479830_5793009593844219233_n.png?_nc_cat=105&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=5DRs_rj8NQQQ7kNvwEsTKet&_nc_oc=Ado9HTUQodGG6RGO3Rhb6T2Tinvlm5A4rp6IibJwQu6p7X581NMAPlBw1FIG8Dju51xB6HsSNhwUdXPWt6SFkZLs&_nc_zt=14&_nc_ht=scontent.fdel1-2.fna&_nc_gid=K9QGLTb65WeTQx_FNWhFAQ&_nc_ss=7b2a8&oh=00_AQD7fTblo25HuUJA7fGtcGov3tS7EEH6GvxQqazmjmo7WA&oe=6A603D4B)
@@ -111,10 +111,10 @@ The message delivery errors are also displayed as trend lines in the **Trend** t
 
 ## View metrics via APIs
 
-After registering in Marketing Messages API for WhatsApp, analytics for a business’s marketing message templates sent via the API are available from two APIs:
+After registering in Marketing Messages API for WhatsApp, analytics for a business's marketing message templates sent via the API are available from two APIs:
 
 * The WhatsApp Business Management API (does not include conversions)
-* The Marketing API “Insights API” (includes conversions)
+* The Marketing API "Insights API" (includes conversions)
 
 ### Benchmark metrics
 
@@ -126,11 +126,9 @@ You can get benchmark metrics via Insights API for read rates and click rates by
 #### Syntax
 
 ```
-```
 curl  
-'https://graph.facebook.com/<API_VERSION>/<AD_GROUP_ID>/insights?fields=<METRICS>' \  
--H 'Authorization: Bearer <ACCESS_TOKEN>'
-```
+'https://graph.facebook.com/<API_VERSION>/<AD_GROUP_ID>/insights?fields=<METRICS>' \  
+-H 'Authorization: Bearer <ACCESS_TOKEN>'
 ```
 
 #### Example query
@@ -138,40 +136,36 @@ curl
 This example query returns the number of messages read, their read rate, and the benchmark read rate for comparison, as well as the number of button link clicks, their click rate, and the benchmark click rate for comparison, with a default lookback of 30 days:
 
 ```
-```
-curl 'https://graph.facebook.com/v17.0/120229306178900226/insights?fields=marketing_messages_read,marketing_messages_read_rate,marketing_messages_read_rate_benchmark,marketing_messages_link_btn_click,marketing_messages_link_btn_click_rate,marketing_messages_click_rate_benchmark' \  
--H 'Authorization: Bearer EAACE...'
-```
+curl 'https://graph.facebook.com/v17.0/120229306178900226/insights?fields=marketing_messages_read,marketing_messages_read_rate,marketing_messages_read_rate_benchmark,marketing_messages_link_btn_click,marketing_messages_link_btn_click_rate,marketing_messages_click_rate_benchmark' \  
+-H 'Authorization: Bearer EAACE...'
 ```
 
 #### Example response
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "date_start": "2025-05-11",  
-      "date_stop": "2025-06-09",  
-      "marketing_messages_read": "265",  
-      "marketing_messages_read_rate": "481.818182",  
-      "marketing_messages_read_rate_benchmark": "70.27",  
-      "marketing_messages_link_btn_click": "59",  
-      "marketing_messages_link_btn_click_rate": "107.272727",  
-      "marketing_messages_click_rate_benchmark": "18.74"  
-    }  
-  ],  
-  "paging": {  
-    "cursors": {  
-      "after": "MAZDZD",  
-      "before": "MAZDZD"  
-    }  
-  }  
+  "data": [  
+    {  
+      "date_start": "2025-05-11",  
+      "date_stop": "2025-06-09",  
+      "marketing_messages_read": "265",  
+      "marketing_messages_read_rate": "481.818182",  
+      "marketing_messages_read_rate_benchmark": "70.27",  
+      "marketing_messages_link_btn_click": "59",  
+      "marketing_messages_link_btn_click_rate": "107.272727",  
+      "marketing_messages_click_rate_benchmark": "18.74"  
+    }  
+  ],  
+  "paging": {  
+    "cursors": {  
+      "after": "MAZDZD",  
+      "before": "MAZDZD"  
+    }  
+  }  
 }
 ```
-```
 
-### Measuring ROI with the Marketing API “Insights API” endpoint (additional conversion metrics, recommended)
+### Measuring ROI with the Marketing API "Insights API" endpoint (additional conversion metrics, recommended)
 
 Businesses can use the [Meta Pixel⁠](https://www.facebook.com/business/tools/meta-pixel) and [Conversions API for App Events](https://developers.facebook.com/documentation/ads-commerce/conversions-api/app-events) to send signals to Meta when customers take an action on their website or app, after clicking a URL in a marketing message. Note that in-thread conversion optimizations and reporting are not yet available for Marketing Messages API for WhatsApp.
 
@@ -181,7 +175,7 @@ The [Insights API](https://developers.facebook.com/documentation/ads-commerce/ma
 
 When a business has registered for Marketing Messages API for WhatsApp, Meta creates a read-only Ad account for each WABA under their BMID, and links any marketing message templates under the WABA to an Ad object in that Ad account. Meta also links each marketing message template under the WABA to an Ad set. These Ad and Ad set IDs are needed when calling the Insights API to retrieve metrics on marketing campaigns sent via Marketing Messages API for WhatsApp.
 
-Once a business has registered for the Marketing Messages API for WhatsApp, the Business Management API’s Template endpoint will return an additional parameter reflecting their Ad IDs.
+Once a business has registered for the Marketing Messages API for WhatsApp, the Business Management API's Template endpoint will return an additional parameter reflecting their Ad IDs.
 
 * `ad_id`
 * `ad_account_id`
@@ -199,10 +193,8 @@ Call the Template endpoint to retrieve the Ad IDs for each ad entity linked to m
 Request Syntax
 
 ```
-```
-GET /<WHATSAPP_BUSINESS_ACCOUNT_ID>/message_templates  
-  ?fields=category,ad_id,ad_adset_id,ad_campaign_id,ad_account_id
-```
+GET /<WHATSAPP_BUSINESS_ACCOUNT_ID>/message_templates  
+  ?fields=category,ad_id,ad_adset_id,ad_campaign_id,ad_account_id
 ```
 
 See docs: [GET Message Templates](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview#retrieve-templates)
@@ -216,10 +208,8 @@ If you only want to fetch 1 Template at a time, you can fetch the Ad ID fields a
 Request Syntax
 
 ```
-```
-GET /<TEMPLATE_ID>  
-  ?fields=category,ad_id,ad_adset_id,ad_campaign_id,ad_account_id
-```
+GET /<TEMPLATE_ID>  
+  ?fields=category,ad_id,ad_adset_id,ad_campaign_id,ad_account_id
 ```
 
 See docs: [GET Templates](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/message-template-api#fields)
@@ -237,32 +227,28 @@ Get the specified metrics at an ad object level (that is to say, ad account, cam
 ### Example request
 
 ```
-```
-curl --verbose -s -G -d "access_token=${ACCESS_TOKEN}" https://graph.facebook.com/v19.0/${AD_ACCOUNT_ID|CAMPAIGN_ID|AD_SET_ID|AD_ID}/insights?fields=marketing_messages_sent%2Cmarketing_messages_read"
-```
+curl --verbose -s -G -d "access_token=${ACCESS_TOKEN}" https://graph.facebook.com/v19.0/${AD_ACCOUNT_ID|CAMPAIGN_ID|AD_SET_ID|AD_ID}/insights?fields=marketing_messages_sent%2Cmarketing_messages_read"
 ```
 
 ### Example response
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "marketing_messages_sent": "2",  
-      "marketing_messages_read": "1",  
-      "date_start": "2023-09-24",  
-      "date_stop": "2023-10-23"  
-    }  
-  ],  
-  "paging": {  
-    "cursors": {  
-      "before": "MAZDZD",  
-      "after": "MAZDZD"  
-    }  
-  }  
+  "data": [  
+    {  
+      "marketing_messages_sent": "2",  
+      "marketing_messages_read": "1",  
+      "date_start": "2023-09-24",  
+      "date_stop": "2023-10-23"  
+    }  
+  ],  
+  "paging": {  
+    "cursors": {  
+      "before": "MAZDZD",  
+      "after": "MAZDZD"  
+    }  
+  }  
 }
-```
 ```
 
 This is only an example. For all available params of the API see the full doc: [Insights API docs](https://developers.facebook.com/documentation/ads-commerce/marketing-api/insights)
@@ -309,11 +295,11 @@ All available insights fields are listed below:
 * `marketing_messages_app_view_content`
 * `marketing_messages_app_other`
 
-### Measuring ROI with the WhatsApp Business Management API “Template Analytics” endpoint (basic analytics)
+### Measuring ROI with the WhatsApp Business Management API "Template Analytics" endpoint (basic analytics)
 
 The [Template Analytics](https://developers.facebook.com/documentation/business-messaging/whatsapp/analytics#template-analytics) endpoint of the WhatsApp Business Management API offers the ability to view metrics including: Sent, Delivered, Read, Clicked, and Cost.
 
-In order to fetch metrics for messages sent via Marketing Messages API for WhatsApp, attach the new parameter “product\_type” with the value below. If omitted, the API returns only analytics for Cloud API.
+In order to fetch metrics for messages sent via Marketing Messages API for WhatsApp, attach the new parameter "product\_type" with the value below. If omitted, the API returns only analytics for Cloud API.
 
 | Endpoint | Authentication |
 | --- | --- |
@@ -322,9 +308,7 @@ In order to fetch metrics for messages sent via Marketing Messages API for Whats
 Request Syntax
 
 ```
-```
-GET /WHATSAPP_BUSINESS_ACCOUNT_ID/?fields=conversation_analytics.start(<START_TIMESTAMP>).end(<END_TIMESTAMP>).granularity(DAILY).conversation_categories(MARKETING_LITE).dimensions(["CONVERSATION_CATEGORY"])
-```
+GET /WHATSAPP_BUSINESS_ACCOUNT_ID/?fields=conversation_analytics.start(<START_TIMESTAMP>).end(<END_TIMESTAMP>).granularity(DAILY).conversation_categories(MARKETING_LITE).dimensions(["CONVERSATION_CATEGORY"])
 ```
 
 See docs: [GET Conversation Analytics](https://developers.facebook.com/documentation/business-messaging/whatsapp/analytics#conversation-analytics)

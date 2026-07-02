@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/marketing
 
 Updated: Jun 24, 2026
 
-Facebook’s destination ads use cross-device intent signals to automatically promote destinations from your inventory with unique creatives.
+Facebook's destination ads use cross-device intent signals to automatically promote destinations from your inventory with unique creatives.
 
 ## How to set up destination ads
 

@@ -15,7 +15,7 @@ WhatsApp helps your customers understand the options available to them and get a
 
 WhatsApp Flows enables your users to get a quote within the chat thread - providing an experience that is quick and easy for users to complete.
 
-This guide walks through the entire process to build a Flow for a ‘Get Insurance Quote’ use case. The templates here can be adapted to suit your use case.
+This guide walks through the entire process to build a Flow for a 'Get Insurance Quote' use case. The templates here can be adapted to suit your use case.
 
 The Flows in this guide demonstrate how you can:
 
@@ -197,7 +197,7 @@ Managed by the business. Learn more [Learn more](https://developers.facebook.com
 
 You can preview the Flow on the right of the Builder UI.
 
-The Flow remains in the draft state as you edit it. You can share it with your team for testing purposes only. To share it with a large audience, you’ll need to publish it. However, you can’t edit the Flow once you [publish](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/gettingstarted/personalised-offer#publishing). Since you will still need to add the endpoint URL for this Flow, leave it as a draft for now and proceed to the next step, where you’ll configure the demo backend endpoint.
+The Flow remains in the draft state as you edit it. You can share it with your team for testing purposes only. To share it with a large audience, you'll need to publish it. However, you can't edit the Flow once you [publish](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/gettingstarted/personalised-offer#publishing). Since you will still need to add the endpoint URL for this Flow, leave it as a draft for now and proceed to the next step, where you'll configure the demo backend endpoint.
 
 **See also**
 
@@ -215,7 +215,7 @@ Access the [endpoint code in Glitch⁠](https://glitch.com/edit/#!/whatsapp-flow
 
 ### 2. Setup encryption key
 
-Private key helps decrypt the messages received. The passphrase will be used to verify the private key. Along with the private key, you also need its corresponding public key, which you’ll upload later. Never use the private keys for your production accounts here. Create a temporary private key for testing on Glitch, and then replace it with your production key in your own infrastructure.
+Private key helps decrypt the messages received. The passphrase will be used to verify the private key. Along with the private key, you also need its corresponding public key, which you'll upload later. Never use the private keys for your production accounts here. Create a temporary private key for testing on Glitch, and then replace it with your production key in your own infrastructure.
 
 * Generate the public-private key pair by running the command below in the Glitch terminal. Replace `YOUR_PASSPHRASE` with your designated passphrase. Access the Glitch terminal by clicking the **TERMINAL** tab at the bottom of the page and run the following command:
   `node src/keyGenerator.js YOUR_PASSPHRASE`
@@ -234,7 +234,7 @@ After making the necessary configurations, perform a health check from the last 
 
 ### 4. Set app secret (optional)
 
-App secret is used in signature verification. It helps you check whether a request is coming via WhatsApp and, therefore, is safe to process. You’ll add it to the **.env** file.
+App secret is used in signature verification. It helps you check whether a request is coming via WhatsApp and, therefore, is safe to process. You'll add it to the **.env** file.
 
 To access your app secret, select your App from the [dashboard in the Meta for Developers](https://developers.facebook.com/apps/). In the left navigation pane under **App settings**, choose **Basic**. Click **Show** under **App secret** and copy the secret. Then, return to Glitch, open the .env file, and create a variable named APP\_SECRET with the value of the secret you copied.
 
@@ -254,7 +254,7 @@ After you complete the configurations, toggle the interactive preview in the Wha
 * Trigger the interactive preview by clicking on settings menu in the **Preview** section of the Flow Builder and enabling **Interactive mode** toggle.
 * In the modal that appears, select the phone number, enter any string as **Flow token** and choose the **Request data** option under **Request data on the first screen**. This sends a request to the endpoint to retrieve data for the first screen.
 
-Now, click on **Actions** tab at the bottom of the code editor in Builder. You’ll see an `init` action in the list. Click on it to see the details and you will see the decrypted request sent to the endpoint. There will also be decrypted response received from endpoint with the initial data payload.
+Now, click on **Actions** tab at the bottom of the code editor in Builder. You'll see an `init` action in the list. Click on it to see the details and you will see the decrypted request sent to the endpoint. There will also be decrypted response received from endpoint with the initial data payload.
 
 Return to **Preview** and proceed to select option from radio button selection. Back in **Actions** tab notice action has changed to `data_exchange` and selected option is visible when you click on the last entry in the action log under request tab.
 
@@ -274,7 +274,7 @@ Before you publish your flow you can also send it and test it on an actual devic
 
 When you first created your Flow, it entered the Draft state.
 And as you edited and saved the modified Flow JSON content, it remained in the Draft state.
-You are able to send the Flow while it’s in the Draft state, but only for testing purposes. If you want to send the Flow to a larger audience, you’ll need to Publish the Flow.
+You are able to send the Flow while it's in the Draft state, but only for testing purposes. If you want to send the Flow to a larger audience, you'll need to Publish the Flow.
 
 You can publish your Flow once you have ensured that:
 
@@ -306,7 +306,7 @@ Upon flow completion a response message will be sent to the WhatsApp chat. You w
 
 Flow monitoring is only applicable to Flows with endpoint.
 
-After your Flow is published and being sent to the customers, it is important to monitor your Flow’s health and address any problems as they are discovered by WhatsApp.
+After your Flow is published and being sent to the customers, it is important to monitor your Flow's health and address any problems as they are discovered by WhatsApp.
 
 There are multiple ways how you can monitor your flows:
 
@@ -315,7 +315,7 @@ There are multiple ways how you can monitor your flows:
 * Metrics API
   * All the data presented in the Details page is also available to be queried through [Flows Metrics API](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/metrics_api).
 * Quality Webhooks
-  * You should also [subscribe to Flows Quality Webhooks](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/flowswebhooks#subscribe-to-webhooks) to be updated in real time about the statuses and performance of your business’ Flows.
+  * You should also [subscribe to Flows Quality Webhooks](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/flowswebhooks#subscribe-to-webhooks) to be updated in real time about the statuses and performance of your business' Flows.
 
 See [Flow Health and Monitoring](https://developers.facebook.com/documentation/business-messaging/whatsapp/flows/guides/healthmonitoring) overview for more information.
 
@@ -325,16 +325,14 @@ Now that you have successfully completed this guide, learn more about what you c
 
 ## Overview of demo backend
 
-There are four JavaScript files in the [Glitch example src directory⁠](https://glitch.com/edit/#!/whatsapp-flows-insurance-quote): `encryption.js`, `flow.js`, `keyGenerator.js`, and `server.js`. The entry file is `server.js`, so let’s look at it first.
+There are four JavaScript files in the [Glitch example src directory⁠](https://glitch.com/edit/#!/whatsapp-flows-insurance-quote): `encryption.js`, `flow.js`, `keyGenerator.js`, and `server.js`. The entry file is `server.js`, so let's look at it first.
 
 ### server.js
 
 The `server.js` file starts by configuring the Express application to use the express.json middleware to parse incoming JSON requests. Then, it loads the environment variables needed for the endpoint.
 
 ```
-```
-const { APP_SECRET, PRIVATE_KEY, PASSPHRASE, PORT = "3000" } = process.env;
-```
+const { APP_SECRET, PRIVATE_KEY, PASSPHRASE, PORT = "3000" } = process.env;
 ```
 
 The `server.js` file also contains a POST endpoint that performs different steps:
@@ -342,60 +340,50 @@ The `server.js` file also contains a POST endpoint that performs different steps
 Checks that the private key is present:
 
 ```
-```
-if (!PRIVATE_KEY) {  
-  throw new Error('Private key is empty. Please check your env variable "PRIVATE_KEY".');  
+if (!PRIVATE_KEY) {  
+  throw new Error('Private key is empty. Please check your env variable "PRIVATE_KEY".');  
 }
-```
 ```
 
 Validates the request signature using the isRequestSignatureValid function found at the bottom of the file:
 
 ```
-```
-if(!isRequestSignatureValid(req)) {  
-// Return status code 432 if request signature does not match.  
-// To learn more about return error codes visit: /documentation/business-messaging/whatsapp/flows/reference/error-codes#endpoint_error_codes  
-  return res.status(432).send();  
+if(!isRequestSignatureValid(req)) {  
+// Return status code 432 if request signature does not match.  
+// To learn more about return error codes visit: /documentation/business-messaging/whatsapp/flows/reference/error-codes#endpoint_error_codes  
+  return res.status(432).send();  
 }
-```
 ```
 
 Decrypts incoming messages using the decryptRequest function found in the encryption.js file:
 
 ```
-```
-let decryptedRequest = null;  
-try {  
-  decryptedRequest = decryptRequest(req.body, PRIVATE_KEY, PASSPHRASE);  
-} catch (err) {  
-  console.error(err);  
-  if (err instanceof FlowEndpointException) {  
-    return res.status(err.statusCode).send();  
-  }  
-  return res.status(500).send();  
+let decryptedRequest = null;  
+try {  
+  decryptedRequest = decryptRequest(req.body, PRIVATE_KEY, PASSPHRASE);  
+} catch (err) {  
+  console.error(err);  
+  if (err instanceof FlowEndpointException) {  
+    return res.status(err.statusCode).send();  
+  }  
+  return res.status(500).send();  
 }  
   
-const { aesKeyBuffer, initialVectorBuffer, decryptedBody } = decryptedRequest;  
-console.log("💬 Decrypted Request:", decryptedBody);
-```
+const { aesKeyBuffer, initialVectorBuffer, decryptedBody } = decryptedRequest;  
+console.log("💬 Decrypted Request:", decryptedBody);
 ```
 
-Decides what Flow screen to display to the user. You’ll look at the getNextScreen function in detail later.
+Decides what Flow screen to display to the user. You'll look at the getNextScreen function in detail later.
 
 ```
-```
-const screenResponse = await getNextScreen(decryptedBody);  
-console.log("👉 Response to Encrypt:", screenResponse);
-```
+const screenResponse = await getNextScreen(decryptedBody);  
+console.log("👉 Response to Encrypt:", screenResponse);
 ```
 
 Encrypts the response to be sent to the user:
 
 ```
-```
-res.send(encryptResponse(screenResponse, aesKeyBuffer, initialVectorBuffer));
-```
+res.send(encryptResponse(screenResponse, aesKeyBuffer, initialVectorBuffer));
 ```
 
 ### encryption.js
@@ -408,14 +396,12 @@ This file helps generate the private and public keys, as you saw earlier.
 
 ### flow.js
 
-The logic for handling the Flow is housed in this file. It starts with an object assigned the name `SCREEN_RESPONSES`. The object contains screen IDs with their corresponding details, such as the preset data used in the data exchanges. This object is generated from Flow Builder under **“...” > Endpoint > Snippets > Responses**. In the same object, you also have another ID, `SUCCESS`, that is sent back to the client device when the Flow is successfully completed. This closes the Flow.
+The logic for handling the Flow is housed in this file. It starts with an object assigned the name `SCREEN_RESPONSES`. The object contains screen IDs with their corresponding details, such as the preset data used in the data exchanges. This object is generated from Flow Builder under **"..." > Endpoint > Snippets > Responses**. In the same object, you also have another ID, `SUCCESS`, that is sent back to the client device when the Flow is successfully completed. This closes the Flow.
 
 The `getNextScreen` function contains the logic that guides the endpoint on what Flow data to display to the user. It starts by extracting the necessary data from the decrypted message.
 
 ```
-```
-const { screen, data, version, action, flow_token } = decryptedBody;
-```
+const { screen, data, version, action, flow_token } = decryptedBody;
 ```
 
 WhatsApp Flows endpoints usually receive three types of requests:
@@ -429,47 +415,43 @@ WhatsApp Flows endpoints usually receive three types of requests:
 The function handles the health check and error notifications using if statements and responds accordingly, as shown in the snippet below:
 
 ```
-```
-// handle health check request  
-if (action === "ping") {  
-    return {  
-        version,  
-        data: {  
-            status: "active",  
-        },  
-    };  
+// handle health check request  
+if (action === "ping") {  
+    return {  
+        version,  
+        data: {  
+            status: "active",  
+        },  
+    };  
 }  
   
-// handle error notification  
-if (data?.error) {  
-    console.warn("Received client error:", data);  
-    return {  
-        version,  
-        data: {  
-            acknowledged: true,  
-        },  
-    };  
+// handle error notification  
+if (data?.error) {  
+    console.warn("Received client error:", data);  
+    return {  
+        version,  
+        data: {  
+            acknowledged: true,  
+        },  
+    };  
 }
-```
 ```
 
 #### INIT handler
 
-When a user clicks the Flow’s call to action (CTA) button, a request with `INIT` action is sent to the endpoint. This action returns the initial data for the APPLICANTS screen.
+When a user clicks the Flow's call to action (CTA) button, a request with `INIT` action is sent to the endpoint. This action returns the initial data for the APPLICANTS screen.
 
 ```
-```
-// handle initial request when opening the flow and display APPLICANTS screen  
- if (action === "INIT") {  
-   return {  
-     ...SCREEN_RESPONSES.APPLICANTS,  
-     data: {  
-       ...SCREEN_RESPONSES.APPLICANTS.data,  
-       additional_applicants_count: undefined,  
-     },  
-   };  
- }
-```
+// handle initial request when opening the flow and display APPLICANTS screen  
+ if (action === "INIT") {  
+   return {  
+     ...SCREEN_RESPONSES.APPLICANTS,  
+     data: {  
+       ...SCREEN_RESPONSES.APPLICANTS.data,  
+       additional_applicants_count: undefined,  
+     },  
+   };  
+ }
 ```
 
 #### Data-exchange handlers
@@ -485,19 +467,17 @@ For the next two screens, `COVER_LEVEL` and `EXCESS`, the endpoint sets the init
 On the `DETAILS` screen, if the user has selected they want to cover only their children, the endpoint skips the `YOUR_HEALTH` screen.
 
 ```
-```
-if (data.cover === "my_children") {  
-  return {  
-    ...SCREEN_RESPONSES.ADDTIONAL_APPLICANT,  
-    data: {  
-      ...data,  
-      additional_applicants: [],  
-      additional_applicant_title: "Additional Applicant 1",  
-      additional_applicant_index: 0,  
-    },  
-  };  
+if (data.cover === "my_children") {  
+  return {  
+    ...SCREEN_RESPONSES.ADDTIONAL_APPLICANT,  
+    data: {  
+      ...data,  
+      additional_applicants: [],  
+      additional_applicant_title: "Additional Applicant 1",  
+      additional_applicant_index: 0,  
+    },  
+  };  
 }
-```
 ```
 
 Otherwise, the endpoint navigates to the next screen, `YOUR_HEALTH`, and overrides specific fields in the initial screen data with data received from the Flow.
@@ -505,18 +485,16 @@ Otherwise, the endpoint navigates to the next screen, `YOUR_HEALTH`, and overrid
 For the `YOUR_HEALTH` screen, if `cover` is just for `myself`, the endpoint takes the user to the `POLICY_SELECTION` screen next.
 
 ```
-```
-if (data.cover === "myself") {  
-  return {  
-    ...SCREEN_RESPONSES.POLICY_SELECTION,  
-    data: {  
-      // copy initial screen data then override specific fields  
-      ...SCREEN_RESPONSES.POLICY_SELECTION.data,  
-      ...data,  
-    },  
-  };  
+if (data.cover === "myself") {  
+  return {  
+    ...SCREEN_RESPONSES.POLICY_SELECTION,  
+    data: {  
+      // copy initial screen data then override specific fields  
+      ...SCREEN_RESPONSES.POLICY_SELECTION.data,  
+      ...data,  
+    },  
+  };  
 }
-```
 ```
 
 Otherwise, the endpoint navigates to the `ADDTIONAL_APPLICANT` screen.
@@ -524,38 +502,34 @@ Otherwise, the endpoint navigates to the `ADDTIONAL_APPLICANT` screen.
 For the `ADDTIONAL_APPLICANT` screen, while `applicant_index < data.additional_applicants_count`, the endpoint keeps sending the user to the `ADDTIONAL_APPLICANT` screen until it has collected information for all additional applicants.
 
 ```
-```
-if (applicant_index < data.additional_applicants_count) {  
-  return {  
-    ...SCREEN_RESPONSES.ADDTIONAL_APPLICANT,  
-    data: {  
-      ...rest,  
-      additional_applicant_title: `Additional Applicant ${  
-        applicant_index + 1  
-      }`,  
-      additional_applicant_index: applicant_index,  
-      additional_applicants: updateApplicantsList,  
-   },  
- };  
+if (applicant_index < data.additional_applicants_count) {  
+  return {  
+    ...SCREEN_RESPONSES.ADDTIONAL_APPLICANT,  
+    data: {  
+      ...rest,  
+      additional_applicant_title: `Additional Applicant ${  
+        applicant_index + 1  
+      }`,  
+      additional_applicant_index: applicant_index,  
+      additional_applicants: updateApplicantsList,  
+   },  
+ };  
 }
 ```
-```
 
-After all the additional applicants’ information is collected, the endpoint navigates to the `POLICY_SELECTION` screen.
+After all the additional applicants' information is collected, the endpoint navigates to the `POLICY_SELECTION` screen.
 
 ```
-```
-return {  
-  ...SCREEN_RESPONSES.POLICY_SELECTION,  
-  data: {  
-    // copy initial screen data then override specific fields  
-    ...SCREEN_RESPONSES.POLICY_SELECTION.data,  
-    ...rest,  
-    additional_applicants: updateApplicantsList,  
-    additional_applicants_count: undefined, // we do not need to send the count to the next screen  
-    additional_applicant_index: undefined, // we do not need to send the index to the next screen     },  
+return {  
+  ...SCREEN_RESPONSES.POLICY_SELECTION,  
+  data: {  
+    // copy initial screen data then override specific fields  
+    ...SCREEN_RESPONSES.POLICY_SELECTION.data,  
+    ...rest,  
+    additional_applicants: updateApplicantsList,  
+    additional_applicants_count: undefined, // we do not need to send the count to the next screen  
+    additional_applicant_index: undefined, // we do not need to send the index to the next screen     },  
 };
-```
 ```
 
 For the `POLICY_SELECTION` screen, the endpoint sets policy details based on `selected_policy` and navigates to the `SELECTED_POLICY` screen.

@@ -31,16 +31,16 @@ Host: graph.facebook.com
 | `id` | string | Yes | A unique content ID for the product. Each content ID must appear only once in your catalog. To run Advantage+ catalog ads, this ID must exactly match the content ID for the same product in your Meta Pixel code. Character limit: 100. |
 | `retailer_id` | string | Yes | Retailer-provided unique identifier for the service item. |
 | `name` | string | Yes | The name of the service. Shown in ads. Character limit: 200. See [title specifications⁠](https://www.facebook.com/business/help/2104231189874655). |
-| `description` | string | No | A short and relevant description of the service. Shown in ads. Use plain text and don’t enter text in all capital letters. Character limit: 9999. See [description specifications⁠](https://www.facebook.com/business/help/2302017289821154). |
+| `description` | string | No | A short and relevant description of the service. Shown in ads. Use plain text and don't enter text in all capital letters. Character limit: 9999. See [description specifications⁠](https://www.facebook.com/business/help/2302017289821154). |
 | `image_url` | string | Yes | The URL for the main image of your service. Shown in ads. Must be in a supported format (JPG/PNG) and at least 500 x 500 pixels. See [image specifications⁠](https://www.facebook.com/business/help/686259348512056). |
-| `url` | string | Yes | The link to the specific service page on your business’s website where people can learn more about or book this service. Links must begin with `http://` or `https://`. |
+| `url` | string | Yes | The link to the specific service page on your business's website where people can learn more about or book this service. Links must begin with `http://` or `https://`. |
 | `price` | string | No | The price of the service. Shown in ads. Format the price as a number followed by the 3-letter currency code (ISO 4217 standards). Use a period (`.`) as the decimal point, do not use commas. |
-| `sale_price` | string | No | The discounted price of the service if it’s on sale. Format the price as a number followed by the 3-letter currency code (ISO 4217 standards). Use a period (`.`) as the decimal point, do not use commas. A sale price is required if you want to use an overlay for discounted prices. |
+| `sale_price` | string | No | The discounted price of the service if it's on sale. Format the price as a number followed by the 3-letter currency code (ISO 4217 standards). Use a period (`.`) as the decimal point, do not use commas. A sale price is required if you want to use an overlay for discounted prices. |
 | `currency` | string | No | ISO 4217 currency code for the price. |
 | `brand` | string | No | The brand associated with the service. Character limit: 100. |
 | `service_category` | string | No | Type of service offered (for example, consulting, cleaning, home services). Used to recommend your service to the right people. |
 | `hours_available` | array<string> | No | Hours during which the service is available. Use the format from the OpeningHoursSpecification standard (for example, `["Mo-Fr 08:00-18:00", "Sa 10:00-15:00"]`). |
-| `duration` | string | No | Typical length of a service session (for example, “2 hours”). |
+| `duration` | string | No | Typical length of a service session (for example, "2 hours"). |
 | `award` | array<string> | No | Any notable awards won by the service or provider. Character limit: 200. |
 | `has_certification` | array<string> | No | Certification information about the service or organization. |
 | `user_rating` | float | No | The average user rating of the service. Enter a rating between 0.0 and 5.0, using a single decimal place. Can be shown in ads. |
@@ -56,10 +56,10 @@ Host: graph.facebook.com
 | `video_urls` | array<string> | No | URLs for videos of your service. Videos can be shown in ads and make your ads more engaging. Must be a direct link to download the video file. You can add up to 20 videos. |
 | `custom_label_0` through `custom_label_4` | string | No | Any relevant information you want to add to your ad creative such as in the headline. |
 | `custom_number_0` through `custom_number_4` | integer | No | Any number you want to filter products by when you create product sets. Use this to filter by number ranges (is greater than and is less than). Use whole numbers between 0 and 4294967295. Decimals and commas are not supported. |
-| `applink_ios_url` | string | No | A deep link to your app on iOS. Used to send people from your ads to your app, if installed. If it isn’t installed, redirects to your website or the App Store. |
+| `applink_ios_url` | string | No | A deep link to your app on iOS. Used to send people from your ads to your app, if installed. If it isn't installed, redirects to your website or the App Store. |
 | `applink_ios_app_store_id` | integer | No | The unique numeric identifier for the app on the Apple App Store. |
 | `applink_ios_app_name` | string | No | The official name of the app as it appears on the Apple App Store. |
-| `applink_android_url` | string | No | A deep link to your app on Android. Used to send people from your ads to your app, if installed. If it isn’t installed, redirects to your website or Google Play. |
+| `applink_android_url` | string | No | A deep link to your app on Android. Used to send people from your ads to your app, if installed. If it isn't installed, redirects to your website or Google Play. |
 | `applink_android_package` | string | No | The unique package identifier for the Android app. |
 | `applink_android_class` | string | No | Android activity class name. |
 | `applink_android_app_name` | string | No | The official name of the app as it appears on the Google Play Store. |

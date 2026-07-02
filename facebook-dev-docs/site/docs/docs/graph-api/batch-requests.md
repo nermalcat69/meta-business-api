@@ -184,7 +184,7 @@ Its possible that one of your requested operations may throw an error. This coul
       "headers": [
           {"name":"WWW-Authenticate", "value":"OAuth…"},
           {"name":"Content-Type", "value":"text/javascript; charset=UTF-8"} ],
-      "body": "{\"error\":{\"type\":\"OAuthException\", … }}"
+      "body": "{\"error\":{\"type\":\"OAuthException\", … }​}"
     }
 ]
 ```

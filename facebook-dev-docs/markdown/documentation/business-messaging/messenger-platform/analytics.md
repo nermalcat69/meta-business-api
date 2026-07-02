@@ -9,17 +9,17 @@ Updated: May 22, 2024
 
 Natural Language Processing (NLP) allows you to understand and extract meaningful information (dates, time, and more) from messages that your business receives. You can use this information to identify intent to implement the messaging experience needed for the conversation.
 
-Using Meta’s Built-in NLP reduces API calls that count against messaging rate limits.
+Using Meta's Built-in NLP reduces API calls that count against messaging rate limits.
 
 ## How It Works
 
-Before a message is delivered to your business, Meta’s Built-in NLP first parses the messages to help detect meaning and extract information using Wit.ai from Meta as well as a confidence level that indicates the probability the parser is correct. The message will then be relayed to your business as usual, along with any meaningful information, **entities** and **traits**, detected in the message. For example, if a message contains a phrase like “hello, tomorrow at 2pm”, you will get a trait that includes the greeting and an entity that includes the actual timestamp.
+Before a message is delivered to your business, Meta's Built-in NLP first parses the messages to help detect meaning and extract information using Wit.ai from Meta as well as a confidence level that indicates the probability the parser is correct. The message will then be relayed to your business as usual, along with any meaningful information, **entities** and **traits**, detected in the message. For example, if a message contains a phrase like "hello, tomorrow at 2pm", you will get a trait that includes the greeting and an entity that includes the actual timestamp.
 
-Language identification is automatically enabled with built-in NLP, and the date and time are automatically localized based on the locale in the person’s profile.
+Language identification is automatically enabled with built-in NLP, and the date and time are automatically localized based on the locale in the person's profile.
 
 ### Wit.ai
 
-The Wit.ai is the app that parses the message and creates the entities from a person’s message. You can use the default Wit.ai for supported languages or create your own Wit.ai app for each language you want to support. When Messenger Platform receives a message, it will first find the top detected language, and use the associated Wit.ai app for extracting the entities. If there isn’t a Wit.ai app linked to the top detected language, the default language model will be used.
+The Wit.ai is the app that parses the message and creates the entities from a person's message. You can use the default Wit.ai for supported languages or create your own Wit.ai app for each language you want to support. When Messenger Platform receives a message, it will first find the top detected language, and use the associated Wit.ai app for extracting the entities. If there isn't a Wit.ai app linked to the top detected language, the default language model will be used.
 
 Visit our Wit.ai documentation for more information about [Wit.ai apps and creating and testing your own custom Wit.ai app⁠](https://wit.ai/) as well as a [list of supported languages⁠](https://wit.ai/faq?fbclid=IwAR3sLT-fr3Z9Vy60G5oSWhSMZMPsR3Wy_-MDhC8WV0sPGfPst1HfZ24tdU4).
 
@@ -99,7 +99,7 @@ Visit [our Wit.ia documentation⁠](https://wit.ai/docs/built-in-entities/202109
 
 ### Example Notification
 
-The following example is for a message that includes the phrase “see you tomorrow at 4pm” and would include the `datetime` and `sentiment` entities after parsing:
+The following example is for a message that includes the phrase "see you tomorrow at 4pm" and would include the `datetime` and `sentiment` entities after parsing:
 
 ```
 {...,

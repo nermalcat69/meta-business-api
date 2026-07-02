@@ -52,21 +52,21 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/marketing_messages' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "messaging_product": "whatsapp",  
-  "recipient_type": "individual",  
-  "to": "16315552222",  
-  "type": "template",  
-  "template": {  
-    "name": "hello_world",  
-    "language": {  
-      "code": "en"  
-    }  
-  }  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/marketing_messages' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "messaging_product": "whatsapp",  
+  "recipient_type": "individual",  
+  "to": "16315552222",  
+  "type": "template",  
+  "template": {  
+    "name": "hello_world",  
+    "language": {  
+      "code": "en"  
+    }  
+  }  
 }'
 ```
 
@@ -78,24 +78,24 @@ Select status code
 
 ```
 {  
-  "Successful Response": {  
-    "summary": "Successful marketing message response",  
-    "value": {  
-      "contacts": [  
-        {  
-          "input": "16315552222",  
-          "wa_id": "16315552222"  
-        }  
-      ],  
-      "messages": [  
-        {  
-          "id": "wamid.gBGGSFcCNEOPAgkO_KJ55r4w_ww"  
-        }  
-      ],  
-      "messaging_product": "whatsapp",  
-      "success": true  
-    }  
-  }  
+  "Successful Response": {  
+    "summary": "Successful marketing message response",  
+    "value": {  
+      "contacts": [  
+        {  
+          "input": "16315552222",  
+          "wa_id": "16315552222"  
+        }  
+      ],  
+      "messages": [  
+        {  
+          "id": "wamid.gBGGSFcCNEOPAgkO_KJ55r4w_ww"  
+        }  
+      ],  
+      "messaging_product": "whatsapp",  
+      "success": true  
+    }  
+  }  
 }
 ```
 
@@ -304,21 +304,21 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/marketing_messages' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "messaging_product": "whatsapp",  
-  "recipient_type": "individual",  
-  "to": "16315552222",  
-  "type": "template",  
-  "template": {  
-    "name": "hello_world",  
-    "language": {  
-      "code": "en"  
-    }  
-  }  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Phone-Number-ID}/marketing_messages' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "messaging_product": "whatsapp",  
+  "recipient_type": "individual",  
+  "to": "16315552222",  
+  "type": "template",  
+  "template": {  
+    "name": "hello_world",  
+    "language": {  
+      "code": "en"  
+    }  
+  }  
 }'
 ```
 
@@ -330,24 +330,24 @@ Select status code
 
 ```
 {  
-  "Successful Response": {  
-    "summary": "Successful marketing message response",  
-    "value": {  
-      "contacts": [  
-        {  
-          "input": "16315552222",  
-          "wa_id": "16315552222"  
-        }  
-      ],  
-      "messages": [  
-        {  
-          "id": "wamid.gBGGSFcCNEOPAgkO_KJ55r4w_ww"  
-        }  
-      ],  
-      "messaging_product": "whatsapp",  
-      "success": true  
-    }  
-  }  
+  "Successful Response": {  
+    "summary": "Successful marketing message response",  
+    "value": {  
+      "contacts": [  
+        {  
+          "input": "16315552222",  
+          "wa_id": "16315552222"  
+        }  
+      ],  
+      "messages": [  
+        {  
+          "id": "wamid.gBGGSFcCNEOPAgkO_KJ55r4w_ww"  
+        }  
+      ],  
+      "messaging_product": "whatsapp",  
+      "success": true  
+    }  
+  }  
 }
 ```
 

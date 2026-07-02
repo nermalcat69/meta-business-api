@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/business-messaging/wha
 
 Updated: May 21, 2026
 
-WhatsApp Business Accounts (“WABAs”) represent a business on the WhatsApp Business Platform. You must have a WABA to send and receive messages to and from WhatsApp users, and to create and manage templates.
+WhatsApp Business Accounts ("WABAs") represent a business on the WhatsApp Business Platform. You must have a WABA to send and receive messages to and from WhatsApp users, and to create and manage templates.
 
 There are several ways to create a WABA, which are described below. Once created, [connect your phone number⁠](https://www.facebook.com/business/help/456220311516626) and [set up a payment method⁠](https://www.facebook.com/business/help/2225184664363779).
 
@@ -17,7 +17,7 @@ There are several ways to create a WABA, which are described below. Once created
 * Meta Business Accounts are initially limited to 2 registered business phone numbers, but this limit can be increased to up to 20. See [Registered Number Limits](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-phone-numbers/phone-numbers#registered-number-limits).
 * Meta Business Accounts are initially limited to 20 WABAs.
 * A WABA must belong to only one business portfolio. You cannot have two or more portfolios owning one WABA.
-* A WABA’s time zone and currency cannot be edited once a line of credit has been attached to it. You cannot migrate a WABA from one business to another.
+* A WABA's time zone and currency cannot be edited once a line of credit has been attached to it. You cannot migrate a WABA from one business to another.
 
 ## Create a WABA via the app dashboard
 
@@ -27,7 +27,7 @@ The **API Setup** panel allows you to add a production business phone number, wh
 
 ## Create a WABA via a partner
 
-If you are working with a [partner](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/overview) who offers WhatsApp messaging services for you via the API, your partner will provide you with instructions. Typically this involves you completing the Embedded Signup flow, which gathers information about your business and generates a WABA for you, then using your partner’s app to access your newly created WABA and related assets.
+If you are working with a [partner](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/overview) who offers WhatsApp messaging services for you via the API, your partner will provide you with instructions. Typically this involves you completing the Embedded Signup flow, which gathers information about your business and generates a WABA for you, then using your partner's app to access your newly created WABA and related assets.
 
 See our [Create your WhatsApp Business account with WhatsApp Business Solution Partners⁠](https://www.facebook.com/business/help/524220081677109) Help Center article for more information.
 
@@ -51,7 +51,7 @@ You can share your WABA (or any of your business assets) with any business-verif
 ### Notes
 
 * If you are sharing your WABA with a Solution Partner (a type of partner who has a credit line), they must share their credit line with you before you will be able to use their app to send messages.
-* The partner’s app must have **Advanced access** for the `whatsapp_business_management` permission to access your shared WABA via the API. Without it, API calls return error code `200`. See [App Review](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/app-review) for details.
+* The partner's app must have **Advanced access** for the `whatsapp_business_management` permission to access your shared WABA via the API. Without it, API calls return error code `200`. See [App Review](https://developers.facebook.com/documentation/business-messaging/whatsapp/solution-providers/app-review) for details.
 * You can share a WABA with up to two partners.
 
 ### If you have not shared an asset with the partner before
@@ -61,10 +61,10 @@ You can share your WABA (or any of your business assets) with any business-verif
 * Navigate to the **Settings** (gear icon) > **Accounts** > **WhatsApp** accounts panel.
 * In the list of WABAs, select your WABA, or click its **Details** link.
 * In the details overlay that appears to the right (pictured below), click the **Assign partner** button.
-* In the **Share this WhatsApp Account with a partner** overlay that appears, enter the partner’s business portfolio ID and use the toggles to define which permissions to grant to the partner, then click the **Assign** button.
+* In the **Share this WhatsApp Account with a partner** overlay that appears, enter the partner's business portfolio ID and use the toggles to define which permissions to grant to the partner, then click the **Assign** button.
 * If your WABA is shared with the partner successfully, a **Partner added** message will appear. Click the **Done** button to dismiss it.
 * Back in the details overlay, click the **Partners** tab.
-* In the **Partners** tab, confirm that the partner’s name appears as a partner with appropriate permissions.
+* In the **Partners** tab, confirm that the partner's name appears as a partner with appropriate permissions.
 * Inform the partner that you have successfully shared your WABA with them (and ask them to share their credit line if appropriate; see note above).
 
 ### If you have already shared an asset with the partner
@@ -93,16 +93,14 @@ curl 'https://graph.facebook.com/v25.0/102290129340398?fields=name,status,curren
 ### Example response
 
 ```
-```
 {  
-  "name": "Lucky Shrub",  
-  "status": "ACTIVE",  
-  "currency": "USD",  
-  "country": "US",  
-  "business_verification_status": "verified",  
-  "id": "102290129340398"  
+  "name": "Lucky Shrub",  
+  "status": "ACTIVE",  
+  "currency": "USD",  
+  "country": "US",  
+  "business_verification_status": "verified",  
+  "id": "102290129340398"  
 }
-```
 ```
 
 ## Access your WABA with WhatsApp Manager
@@ -118,34 +116,32 @@ To access your WABA in WhatsApp Manager:
 
 ## Webhooks
 
-Subscribe to the [account\_update](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/account_update) webhook to be notified of changes to a WhatsApp Business account’s status, including changes due to policy and terms violations.
+Subscribe to the [account\_update](https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/account_update) webhook to be notified of changes to a WhatsApp Business account's status, including changes due to policy and terms violations.
 
 Every time your WABA has violated a policy, you will get a notification looking like this:
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "whatsapp-business-account-id",  
-      "time": 1604703058,  
-      "changes": [  
-        {  
-          "field": "account_update",  
-          "value": {  
-            "phone_number": "16505551111",  
-            "event": "ACCOUNT_VIOLATION",  
-            "violation_info": {  
-              "violation_type": "ALCOHOL"  
-            }  
-          }  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "whatsapp-business-account-id",  
+      "time": 1604703058,  
+      "changes": [  
+        {  
+          "field": "account_update",  
+          "value": {  
+            "phone_number": "16505551111",  
+            "event": "ACCOUNT_VIOLATION",  
+            "violation_info": {  
+              "violation_type": "ALCOHOL"  
+            }  
+          }  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 See our [WhatsApp Business Platform Policy Violations](https://developers.facebook.com/documentation/business-messaging/whatsapp/policy-enforcement-violations) document for a list of policy violations. If a restriction has been imposed, an **account\_update** webhook will be triggered, describing the violation.

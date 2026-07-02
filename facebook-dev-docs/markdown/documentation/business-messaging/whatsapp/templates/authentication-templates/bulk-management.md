@@ -16,7 +16,7 @@ This feature works automatically with your existing authentication templates. Yo
 ## How it works
 
 * Your app sends an authentication template message containing an OTP to a WhatsApp user.
-* The WhatsApp user’s iOS device receives a push notification containing the code.
+* The WhatsApp user's iOS device receives a push notification containing the code.
 * iOS detects the numeric code in the notification and presents a one-tap autofill prompt in the keyboard.
 * The WhatsApp user taps the prompt to autofill the code into your app.
 
@@ -24,7 +24,7 @@ The copy code button remains available in the WhatsApp message as a fallback.
 
 ## Requirements
 
-For Keyboard suggestions to work, the WhatsApp user’s device must meet these requirements:
+For Keyboard suggestions to work, the WhatsApp user's device must meet these requirements:
 
 * The device must be running **iOS 26** or later.
 * WhatsApp notifications must be enabled: **Settings** > **Notifications** > **WhatsApp** > **Allow Notifications**.

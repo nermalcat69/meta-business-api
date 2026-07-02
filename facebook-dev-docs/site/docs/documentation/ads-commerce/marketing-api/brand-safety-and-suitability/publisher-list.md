@@ -49,7 +49,7 @@ The valid platform and position combinations are:
 | `age_rating` | integer | `audience_network` | N/A | Lists if the app is recommended for people of a certain age, according to the App Store or Google Play. Special values are: 0 = Unrated, 1 = Everyone. |
 | `app_store_category` | string | `audience_network` | N/A | Lists the type of app, according to the App Store or Google Play. |
 | `blue_verified_page` | boolean | facebook, instagram | N/A | Lists whether this Page or account has a verified badge. The verified badge next to a Facebook Page or Instagram account means that Meta has confirmed that this is the authentic presence of the public figure, celebrity, or global brand it represents. |
-| `content_creator` | string | ALL | N/A | Lists the creator’s name. On Facebook this means the Page name. On Instagram, this means the account name. On Audience Network, this means the name on the App Store or Google Play |
+| `content_creator` | string | ALL | N/A | Lists the creator's name. On Facebook this means the Page name. On Instagram, this means the account name. On Audience Network, this means the name on the App Store or Google Play |
 | `date_added` | string | ALL | N/A | Lists the date that this publisher was added to the partner-publisher list. |
 | `is_audience_network_classic` | boolean | `audience_network` | N/A | Lists if the publisher is a classic audience network. |
 | `is_audience_network_rewarded` | boolean | `audience_network` | N/A | Lists if the publisher showed any ad with this display format recently. |
@@ -73,14 +73,11 @@ The valid platform and position combinations are:
 Get the partner-publisher list for the Facebook in-stream videos placement with all relevant fields:
 
 ```
-```
 GET /brand_safety_publisher_list?platform=facebook&position=instream_video&fields=ads_in_live_videos,blue_verified_page,content_creator,date_added,language,median_views_per_video_in_last_28_days,page_followers,url,username,videos_uploaded_last_week
-```
 ```
 
 **Sample response**
 
-```
 ```
 {
   "data": [
@@ -118,7 +115,6 @@ GET /brand_safety_publisher_list?platform=facebook&position=instream_video&field
   }
 }
 ```
-```
 
 ### Error codes
 
@@ -151,15 +147,12 @@ Get the partner-publisher list metadata for all available placements:
 **Sample request**
 
 ```
-```
 GET /brand_safety_publisher_list_metadata
 ?fields=audience_network_latest_date,audience_network_total_publishers,facebook_instream_video_latest_date,facebook_instream_video_total_publishers,facebook_reels_overlay_latest_date,facebook_reels_overlay_total_publishers
-```
 ```
 
 **Sample response**
 
-```
 ```
 {
   "data": [
@@ -173,7 +166,6 @@ GET /brand_safety_publisher_list_metadata
     }
   ]
 }
-```
 ```
 
 ### Error codes
@@ -202,7 +194,7 @@ The following rate limits apply at the product-level, meaning all partner-publis
 ## Learn more
 
 * [Graph API - Overview](https://developers.facebook.com/docs/graph-api/overview)
-* For an interactive UI, try Meta’s [Graph API Explorer](https://developers.facebook.com/tools/explorer/)
+* For an interactive UI, try Meta's [Graph API Explorer](https://developers.facebook.com/tools/explorer/)
 * [Marketing API | Best Practices](https://developers.facebook.com/documentation/ads-commerce/marketing-api/best-practices)
 * [Marketing API | Error Reference](https://developers.facebook.com/documentation/ads-commerce/marketing-api/error-reference)
 * [Marketing API | Authorization](https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/authorization)

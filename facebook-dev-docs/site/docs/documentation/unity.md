@@ -16,9 +16,9 @@ Build cross-platform games with Facebook rapidly and easily
 
 The [Unity engine and ecosystem⁠](http://unity3d.com/) gives developers a world class technology platform from which they can build games that work seamlessly across multiple platforms quickly and effectively.
 
-The Facebook SDK for Unity complements Unity Technologies’ cross-platform support, providing a pure-Unity write-once, run-everywhere experience across the key gaming platforms of WebGL, Unity Web Player, Android and iOS. By maintaining a single codebase, you’ll be able to deploy socially integrated gaming experiences to your players, regardless of platform.
+The Facebook SDK for Unity complements Unity Technologies' cross-platform support, providing a pure-Unity write-once, run-everywhere experience across the key gaming platforms of WebGL, Unity Web Player, Android and iOS. By maintaining a single codebase, you'll be able to deploy socially integrated gaming experiences to your players, regardless of platform.
 
-The Facebook SDK for Unity provides a comprehensive collection of Facebook’s social features, giving players of your Unity game the ability to share content with their friends and allowing you to create a personal, social gaming experience. In addition to providing a base set of features that are invoked consistently across platforms, the SDK also offers support for Facebook features that are unique to a particular platform (e.g. payments on the Web or App Invites on mobile). This will allow you to keep your code clean, using a simple, consistent model for everything your game can do on Facebook.
+The Facebook SDK for Unity provides a comprehensive collection of Facebook's social features, giving players of your Unity game the ability to share content with their friends and allowing you to create a personal, social gaming experience. In addition to providing a base set of features that are invoked consistently across platforms, the SDK also offers support for Facebook features that are unique to a particular platform (e.g. payments on the Web or App Invites on mobile). This will allow you to keep your code clean, using a simple, consistent model for everything your game can do on Facebook.
 
 ## In Unity SDK
 
@@ -36,11 +36,11 @@ People can send invites to friends from your game.
 
 #### [App Events](https://developers.facebook.com/documentation/app-events/unity)
 
-Understand people’s actions in your game and measure the effectiveness of your Mobile App Ads.
+Understand people's actions in your game and measure the effectiveness of your Mobile App Ads.
 
 #### [Graph API](https://developers.facebook.com/documentation/unity/reference/current/FB.API)
 
-Get data in and out of Facebook’s social graph. Query data, post stories, upload photos and do other tasks.
+Get data in and out of Facebook's social graph. Query data, post stories, upload photos and do other tasks.
 
 #### [Ads](https://developers.facebook.com/documentation/app-ads)
 
@@ -62,10 +62,10 @@ Guide for mobile developers thinking about bringing their games to Facebook Canv
 
 #### [Terms of Use⁠](https://opensource.fb.com/legal/terms/)
 
-Terms of use for Facebook’s open source SDKs
+Terms of use for Facebook's open source SDKs
 
 #### [Privacy Policy⁠](https://opensource.fb.com/legal/privacy/)
 
-Privacy policy for Facebook’s open source SDKs
+Privacy policy for Facebook's open source SDKs
 
 Copyright © 2014-present Meta Platforms, Inc

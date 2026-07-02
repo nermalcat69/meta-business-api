@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/marketing
 
 Updated: May 22, 2026
 
-This ad-account-level endpoint returns the daily history of an ad account’s Opportunity Score over a configurable time range, with optional explainability that surfaces the campaign-level changes driving each score movement. It complements the existing [Performance Recommendations](https://developers.facebook.com/documentation/ads-commerce/marketing-api/overview/performance-recommendations) endpoints by adding Historical Trend and Explainability capabilities.
+This ad-account-level endpoint returns the daily history of an ad account's Opportunity Score over a configurable time range, with optional explainability that surfaces the campaign-level changes driving each score movement. It complements the existing [Performance Recommendations](https://developers.facebook.com/documentation/ads-commerce/marketing-api/overview/performance-recommendations) endpoints by adding Historical Trend and Explainability capabilities.
 
 ## Permissions
 
@@ -29,7 +29,6 @@ https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/opportunity_score_history
 
 ### Example response
 
-```
 ```
 {
   "data": [
@@ -57,7 +56,6 @@ https://graph.facebook.com/v25.0/act_<AD_ACCOUNT_ID>/opportunity_score_history
     }
   ]
 }
-```
 ```
 
 ### Parameters

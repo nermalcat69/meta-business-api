@@ -9,7 +9,7 @@ Updated: Aug 20, 2020
 
 ## Reading
 
-You can’t perform this operation on this endpoint.
+You can't perform this operation on this endpoint.
 
 ## Creating
 
@@ -50,7 +50,7 @@ name: string,
 
 | Error Code | Description |
 | --- | --- |
-| 42004 | You couldn’t create the client business on behalf your client successfully |
+| 42004 | You couldn't create the client business on behalf your client successfully |
 | 200 | Permissions error |
 | 100 | Invalid parameter |
 

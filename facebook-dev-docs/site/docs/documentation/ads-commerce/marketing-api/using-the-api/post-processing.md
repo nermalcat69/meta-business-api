@@ -269,7 +269,7 @@ With [batched requests](https://developers.facebook.com/docs/reference/api/batch
 
 Each [batched request](https://developers.facebook.com/docs/reference/api/batch) can contain a maximum of 50 requests. For [ad](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/adgroup) creation, include 10 or fewer [ads](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/adgroup) per batch.
 
-Batch requests for [ads](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/adgroup), [adcreatives](https://developers.facebook.com/docs/reference/ads-api/adcreative), and [ad sets](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-campaign) are similar, so this guide doesn’t discuss them separately. For more information, see [Graph API batch requests](https://developers.facebook.com/docs/reference/api/batch) and [ETags](https://developers.facebook.com/documentation/ads-commerce/marketing-api/using-the-api/post-processing#etags).
+Batch requests for [ads](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/adgroup), [adcreatives](https://developers.facebook.com/docs/reference/ads-api/adcreative), and [ad sets](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/ad-campaign) are similar, so this guide doesn't discuss them separately. For more information, see [Graph API batch requests](https://developers.facebook.com/docs/reference/api/batch) and [ETags](https://developers.facebook.com/documentation/ads-commerce/marketing-api/using-the-api/post-processing#etags).
 
 ### Create ads
 
@@ -290,7 +290,7 @@ curl -F 'access_token=______'
               "name": "create_creative",
               "relative_url": "<API_VERSION>/act_187687683/adcreatives",
               "attached_files": "test1",
-              "body": "name=sample creative&object_story_spec={\"link_data\": {\"image_hash\": \"{result=create_adimage:$.images.*.hash}\", \"link\": \"https://www.test12345.com\", \"message\": \"this is a sample message\"}, \"page_id\":\"12345678\"}&degrees_of_freedom_spec={\"creative_features_spec\": {\"standard_enhancements\": {\"enroll_status\": \"OPT_OUT\"}}}"
+              "body": "name=sample creative&object_story_spec={\"link_data\": {\"image_hash\": \"{result=create_adimage:$.images.*.hash}\", \"link\": \"https://www.test12345.com\", \"message\": \"this is a sample message\"}, \"page_id\":\"12345678\"}&degrees_of_freedom_spec={\"creative_features_spec\": {\"standard_enhancements\": {\"enroll_status\": \"OPT_OUT\"}​}}"
              },
              {
               "method": "POST",
@@ -402,11 +402,11 @@ curl -F 'access_token=____'
   -F 'batch=[
              {
               "method": "GET",
-              "relative_url": "<API_VERSION>/act_600335/reachestimate?targeting_spec={'geo_locations': {'countries':['US']}}"
+              "relative_url": "<API_VERSION>/act_600335/reachestimate?targeting_spec={'geo_locations': {'countries':['US']}​}"
              },
              {
               "method": "GET",
-              "relative_url": "<API_VERSION>/act_600335/reachestimate?targeting_spec={'geo_locations': {'countries':['FR']}}"
+              "relative_url": "<API_VERSION>/act_600335/reachestimate?targeting_spec={'geo_locations': {'countries':['FR']}​}"
              }
             ]' https://graph.facebook.com
 ```
@@ -532,7 +532,7 @@ The ETag is calculated using the entire response from the API call including its
 
 ### ETags examples
 
-To check if the user’s adaccounts have changed.
+To check if the user's adaccounts have changed.
 
 **Step 1**: Determine the ETag for the current data
 
@@ -587,7 +587,7 @@ Content-Length: 0
 
 Note the `304 Not Modified` response. If the data had changed a normal API response would be returned.
 
-A batch example to check if the user’s ads have changed.
+A batch example to check if the user's ads have changed.
 
 **Step 1**: Determine the ETag for the current data
 

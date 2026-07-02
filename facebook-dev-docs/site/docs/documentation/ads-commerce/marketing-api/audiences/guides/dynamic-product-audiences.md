@@ -14,7 +14,7 @@ For example, to target people who spent more than USD 1,000 in the past 90 days:
 ```
 curl \
 -F 'name=90d High Value' \
--F 'rule={"inclusions":{"operator":"or","rules":[{"retention_seconds":7776000,"event_sources":[{"id":"<OFFLINE_EVENT_SET_ID>","type":"offline_events"}],"filter":{"operator":"and","filters":[{"operator":"=","field":"event","value":"Purchase"}]},"aggregation":{"type":"sum","field":"value","operator":">","value":"1000"}}]}}' \
+-F 'rule={"inclusions":{"operator":"or","rules":[{"retention_seconds":7776000,"event_sources":[{"id":"<OFFLINE_EVENT_SET_ID>","type":"offline_events"}],"filter":{"operator":"and","filters":[{"operator":"=","field":"event","value":"Purchase"}]},"aggregation":{"type":"sum","field":"value","operator":">","value":"1000"}​}]}​}' \
 -F 'access_token=<ACCESS_TOKEN>' \
 https://graph.facebook.com/<VERSION>/act_<AD_ACCOUNT_ID>/customaudiences"
 ```
@@ -30,7 +30,7 @@ To create a custom audience from your offline event set, the account needs to ha
 ```
 curl \
   -F 'name=My New Offline Event Set' \
-  -F 'rule={"inclusions":{"operator":"or","rules":[{"retention_seconds":2592000,"event_sources":[{"id":"<OFFLINE_EVENT_SET_ID>","type":"offline_events"}],"filter":{"operator":"and","filters":[{"operator":"=","field":"event","value":"Purchase"},{"operator":">","field":"value","value":"50+Sheet1!A2+Sheet1!A2+Sheet1!A2+"}]}}]}}'
+  -F 'rule={"inclusions":{"operator":"or","rules":[{"retention_seconds":2592000,"event_sources":[{"id":"<OFFLINE_EVENT_SET_ID>","type":"offline_events"}],"filter":{"operator":"and","filters":[{"operator":"=","field":"event","value":"Purchase"},{"operator":">","field":"value","value":"50+Sheet1!A2+Sheet1!A2+Sheet1!A2+"}]}​}]}​}'
   -F 'access_token=<ACCESS_TOKEN>' \
   https://graph.facebook.com/<VERSION>/act_<AD_ACCOUNT_ID>/customaudiences
 ```
@@ -57,122 +57,116 @@ Rules determine whether an Accounts Center account should be added to this audie
 ### Example offline custom audience rules
 
 ```
-```
-//Match all referring `favorite_food` containing the string `'pizza'` in the last 30 days:  
+//Match all referring `favorite_food` containing the string `'pizza'` in the last 30 days:  
   
 {  
-    "inclusions": {  
-        "operator": "or",  
-        "rules": [  
-            {  
-                "event_sources": [  
-                    {  
-                        "type": "offline_events",  
-                        "id": "<OFFLINE_EVENT_SET_ID>",  
-                    }  
-                ],  
-                "retention_seconds": 2592000,  
-                "filter": {  
-                    "operator": "and",  
-                    "filters": [  
-                        {  
-                            "field": "custom_data.favorite_food",  
-                            "operator": "i_contains",  
-                            "value": "pizza"  
-                        }  
-                    ]  
-                },  
-            }  
-        ]  
-    }  
+    "inclusions": {  
+        "operator": "or",  
+        "rules": [  
+            {  
+                "event_sources": [  
+                    {  
+                        "type": "offline_events",  
+                        "id": "<OFFLINE_EVENT_SET_ID>",  
+                    }  
+                ],  
+                "retention_seconds": 2592000,  
+                "filter": {  
+                    "operator": "and",  
+                    "filters": [  
+                        {  
+                            "field": "custom_data.favorite_food",  
+                            "operator": "i_contains",  
+                            "value": "pizza"  
+                        }  
+                    ]  
+                },  
+            }  
+        ]  
+    }  
 }
-```
 ```
 
 Match Purchase events where cost is greater than or equal to USD 100 in the last 30 days. Use this rule for the following event:
 
 ```
-```
 {  
-    "inclusions": {  
-        "operator": "or",  
-        "rules": [  
-            {  
-                "event_sources": [  
-                    {  
-                        "type": "offline_events",  
-                        "id": "<OFFLINE_EVENT_SET_ID>"  
-                    }  
-                ],  
-                "retention_seconds": 2592000,  
-                "filter": {  
-                    "operator": "and",  
-                    "filters": [  
-                        {  
-                            "field": "event",  
-                            "operator": "eq",  
-                            "value": "Purchase"  
-                        },  
-                        {  
-                            "operator": "or",  
-                            "filters": [  
-                                {  
-                                    "field": "value",  
-                                    "operator": ">=",  
-                                    "value": "100"  
-                                }  
-                            ]  
-                        }  
-                    ]  
-                }  
-            }  
-        ]  
-    }  
+    "inclusions": {  
+        "operator": "or",  
+        "rules": [  
+            {  
+                "event_sources": [  
+                    {  
+                        "type": "offline_events",  
+                        "id": "<OFFLINE_EVENT_SET_ID>"  
+                    }  
+                ],  
+                "retention_seconds": 2592000,  
+                "filter": {  
+                    "operator": "and",  
+                    "filters": [  
+                        {  
+                            "field": "event",  
+                            "operator": "eq",  
+                            "value": "Purchase"  
+                        },  
+                        {  
+                            "operator": "or",  
+                            "filters": [  
+                                {  
+                                    "field": "value",  
+                                    "operator": ">=",  
+                                    "value": "100"  
+                                }  
+                            ]  
+                        }  
+                    ]  
+                }  
+            }  
+        ]  
+    }  
 }
 ```
-```
 
-Match Purchase events where the product’s color is `blue` defined by offline event attributes in the `custom_data` field called ‘color’ in the last 30 days. Use this rule for the following event:
+Match Purchase events where the product's color is `blue` defined by offline event attributes in the `custom_data` field called 'color' in the last 30 days. Use this rule for the following event:
 
-```
 ```
 {  
-    "inclusions": {  
-        "operator": "or",  
-        "rules": [  
-            {  
-                "event_sources": [  
-                    {  
-                        "type": "offline_events",  
-                        "id": "<OFFLINE_EVENT_SET_ID>"  
-                    }  
-                ],  
-                "retention_seconds": 2592000,  
-                "filter": {  
-                    "operator": "and",  
-                    "filters": [  
-                        {  
-                            "field": "event",  
-                            "operator": "eq",  
-                            "value": "Purchase"  
-                        },  
-                        {  
-                            "operator": "or",  
-                            "filters": [  
-                                {  
-                                    "field": "custom_data.color",  
-                                    "operator": "eq",  
-                                    "value": "blue"  
-                                }  
-                            ]  
-                        }  
-                    ]  
-                }  
-            }  
-        ]  
-    }  
+    "inclusions": {  
+        "operator": "or",  
+        "rules": [  
+            {  
+                "event_sources": [  
+                    {  
+                        "type": "offline_events",  
+                        "id": "<OFFLINE_EVENT_SET_ID>"  
+                    }  
+                ],  
+                "retention_seconds": 2592000,  
+                "filter": {  
+                    "operator": "and",  
+                    "filters": [  
+                        {  
+                            "field": "event",  
+                            "operator": "eq",  
+                            "value": "Purchase"  
+                        },  
+                        {  
+                            "operator": "or",  
+                            "filters": [  
+                                {  
+                                    "field": "custom_data.color",  
+                                    "operator": "eq",  
+                                    "value": "blue"  
+                                }  
+                            ]  
+                        }  
+                    ]  
+                }  
+            }  
+        ]  
+    }  
 }
-```
 ```
 
 ## Best practices

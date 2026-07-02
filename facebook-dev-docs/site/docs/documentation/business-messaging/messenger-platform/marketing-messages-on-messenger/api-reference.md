@@ -87,7 +87,7 @@ Campaigns: Campaign send now has broadcasting capabilities to send the same mess
 
 Marketing Message API for Messenger will be the only re-engagement messaging solution available. We recommend that partners transition to marketing messages now. Key benefits:
 
-Technical support: Meta’s product and engineering teams will provide direct support during onboarding and testing.
+Technical support: Meta's product and engineering teams will provide direct support during onboarding and testing.
 
 Incentives: Product development fund for partners and ad credits for end businesses.
 
@@ -113,23 +113,23 @@ To accurately test the future state, where marketing messages is the only re-eng
 
 **Answer:** Utility template messages (approved by Meta) on the Messenger API are for businesses to send timely, transactional updates to users, such as appointment updates and event reminders, and are not allowed to contain marketing content.
 
-While Utility templates are meant to replace three of Messenger’s Message Tags, `account_update`, `confirmed_event_update`, and `post_purchase_update`, these tags will be deprecated on January 12, 2026.
+While Utility templates are meant to replace three of Messenger's Message Tags, `account_update`, `confirmed_event_update`, and `post_purchase_update`, these tags will be deprecated on January 12, 2026.
 
 ## PRODUCT AND INTEGRATION BASICS
 
 **Question: How do marketing messages work?**
 
-**Answer:** First, businesses must get subscribers to their marketing messages. Then, they can use their Meta Business Partner’s platform to set up, edit, and send marketing messages to their subscribers. Metrics for marketing messages can be viewed on their partner’s platform or in Ads Manager.
+**Answer:** First, businesses must get subscribers to their marketing messages. Then, they can use their Meta Business Partner's platform to set up, edit, and send marketing messages to their subscribers. Metrics for marketing messages can be viewed on their partner's platform or in Ads Manager.
 
 **Question: How do businesses get marketing messages subscribers?**
 
 **Answer:** Ways to get subscribers:
 
-Ads that Click to Messenger – Any user that clicks and responds to these ads are immediately subscribed to marketing messages from the business’ Facebook Page.
+Ads that Click to Messenger – Any user that clicks and responds to these ads are immediately subscribed to marketing messages from the business' Facebook Page.
 
 Upload a CRM List – Upload a list of users with a phone number and/or email; any user from the list who are matched with existing Facebook profiles will be immediately subscribed to marketing messages from the Page.
 
-Send Opt-in messages – Send marketing message opt-in templates from the Meta Business Partner’s platform or in Messenger chat.
+Send Opt-in messages – Send marketing message opt-in templates from the Meta Business Partner's platform or in Messenger chat.
 
 **Question: What are the options for marketing message integration for Meta Business Partners?**
 
@@ -165,7 +165,7 @@ Marketing Message API for Messenger offers both campaign send and direct send st
 
 **Answer:** Partners must first meet technical prerequisites for integrating with Marketing Message API for Messenger:
 Have a Meta developer account, a business account, a Facebook Page for your business, and an ad account with a payment method set up.
-Have an established “Business” type developer app. Your app must have the Messenger product configured with the Facebook Page you intend to use and “Advanced” access for the required permissions.
+Have an established "Business" type developer app. Your app must have the Messenger product configured with the Facebook Page you intend to use and "Advanced" access for the required permissions.
 Create a Facebook Login for Business (FBL4B) configuration. You need to generate a system user access token in the Graph API Explorer simulating the Facebook Login For Business (FBL4B) flow.
 Have a handler for Messenger webhook notifications set up in your application code.
 
@@ -181,7 +181,7 @@ Then, partners can integrate with marketing messages on Marketing API and our de
 
 **Question: How does pricing work for marketing messages?**
 
-**Answer:** Marketing messages have a simple, stable pricing model where businesses only pay per message for messages that are delivered to the user’s device.
+**Answer:** Marketing messages have a simple, stable pricing model where businesses only pay per message for messages that are delivered to the user's device.
 
 To help businesses estimate their budget, in Ads Manager, we show a suggested bid and estimated delivery volume based on your budget. In Marketing API, we offer the capability to estimate delivery volume based on the budget. The bid component is optional in Marketing Message API for Messenger.
 
@@ -193,7 +193,7 @@ Businesses are billed directly by Meta and marketing messages spent are broken o
 
 **Question: How does the schedule and budget work together to send marketing messages to subscribers?**
 
-**Answer:** For example, a Page has a total of 1,000 subscribers (500 from opt-in template, 200 from a first custom audience upload, and 300 from a second custom audience upload). A marketing message campaign (direct send) is set up with a lifetime budget of $100 and schedule of 5 days. Assume sending each marketing message costs $1. On day 1, the Page uses the partner’s audience management UI for marketing messages to send to 20 subscribers they select. This means they spent $20. On day 2, the Page doesn’t send any messages. On day 3, they select another 50 subscribers to send to and they spend $50. So far their total spend is $70 across 3 days. On day 4, they select another 50 subscribers to send to, but only 30 were successfully sent, so they spent only because the lifetime budget cap was reached at 30 subscribers (). On day 5, they do not send any messages. On day 6, they try to send to 20 subscribers, but the campaign fails because the schedule has been completed after 5 days.
+**Answer:** For example, a Page has a total of 1,000 subscribers (500 from opt-in template, 200 from a first custom audience upload, and 300 from a second custom audience upload). A marketing message campaign (direct send) is set up with a lifetime budget of $100 and schedule of 5 days. Assume sending each marketing message costs $1. On day 1, the Page uses the partner's audience management UI for marketing messages to send to 20 subscribers they select. This means they spent $20. On day 2, the Page doesn't send any messages. On day 3, they select another 50 subscribers to send to and they spend $50. So far their total spend is $70 across 3 days. On day 4, they select another 50 subscribers to send to, but only 30 were successfully sent, so they spent only because the lifetime budget cap was reached at 30 subscribers (). On day 5, they do not send any messages. On day 6, they try to send to 20 subscribers, but the campaign fails because the schedule has been completed after 5 days.
 
 **Question: How can partners and businesses estimate the cost of a marketing messages campaign?**
 
@@ -204,7 +204,7 @@ Businesses are billed directly by Meta and marketing messages spent are broken o
 **Answer:** We currently have the following metrics in development for alpha and are also available in view-only mode in Ads Manager:
 Marketing\_messages\_delivered: number of messages your business sent to users that were delivered.
 Marketing\_messages\_link\_btn\_click: number of clicks or taps within the marketing message that led to advertiser-specified destinations, on or off Meta technologies
-Marketing\_messages\_spend: total amount of money you’ve spent on your campaign, set or message during its schedule
+Marketing\_messages\_spend: total amount of money you've spent on your campaign, set or message during its schedule
 Marketing\_messages\_read\_rate: number of messages read divided by the number of messages delivered
 Marketing\_messages\_link\_btn\_click\_rate: percentage of delivered messages that received a link click out of the total number of messages delivered
 Marketing\_messages\_cost\_per\_link\_btn\_click: average cost for each message link click
@@ -242,9 +242,9 @@ Direct send also provides delivery and read receipts via webhooks.
 
 **Answer:** If this happens during the asset selection step of set-up (image below), please check these possible reasons:
 Incorrect Business Portfolio selected: please check that you are selecting the correct Business Portfolio that both the Page and Ad Account are under
-Incompatible “Agency” use case: To set up the Page and Ad Account, you must be the Business Admin of the owning Business Portfolio that these assets belong to. For example, if the Page was “shared” with you to manage but you are not the Business Admin of the Page’s owning Business Portfolio, you will be unable to complete the set up for the Page. Please ensure Business Admin for the Business Portfolio, Page and Ad Account completes the set up.
+Incompatible "Agency" use case: To set up the Page and Ad Account, you must be the Business Admin of the owning Business Portfolio that these assets belong to. For example, if the Page was "shared" with you to manage but you are not the Business Admin of the Page's owning Business Portfolio, you will be unable to complete the set up for the Page. Please ensure Business Admin for the Business Portfolio, Page and Ad Account completes the set up.
 
-**Question: Some campaigns are active but don’t send and display an error message saying “The message must be in active status before it can be sent”. What should I do?**
+**Question: Some campaigns are active but don't send and display an error message saying "The message must be in active status before it can be sent". What should I do?**
 
 **Answer:** After creating a campaign, please wait for at least 60 minutes to allow the campaign to populate correctly before sending.
 

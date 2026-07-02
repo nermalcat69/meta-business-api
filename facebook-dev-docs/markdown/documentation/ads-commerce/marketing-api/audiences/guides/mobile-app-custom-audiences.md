@@ -82,7 +82,7 @@ These are supported event sources and corresponding engagement object IDs:
 * `shopping_page`: Facebook Shop Page ID.
 * `shopping_ig`: Instagram Shop ID.
 * `ar_experience`: An Instant Experience that uses an AR effect.
-* `ar_effects`: A Facebook or Instagram effect you own. This doesn’t include effects used in ads.
+* `ar_effects`: A Facebook or Instagram effect you own. This doesn't include effects used in ads.
 
 Each rule consists of an `object_id` and an `event_name`.
 
@@ -90,11 +90,11 @@ Each rule consists of an `object_id` and an `event_name`.
 
 Set `object_id` to your Page ID. Under `event_name`, use one of the following engagement events:
 
-* `page_engaged`: People who visited your Page or engaged with any of your Page’s content or ads, on Facebook or Messenger. This is the most inclusive engagement type and includes all other types of engagement.
+* `page_engaged`: People who visited your Page or engaged with any of your Page's content or ads, on Facebook or Messenger. This is the most inclusive engagement type and includes all other types of engagement.
 * `page_visited`: People who have visited your Page.
 * `page_liked`: People who currently like your Page. ([See details on retention and rules related to page likes](https://developers.facebook.com/documentation/ads-commerce/marketing-api/audiences/guides/mobile-app-custom-audiences#page-likes-retention-and-rules).)
 * `page_messaged`: People who sent a message to your Page.
-* `page_cta_clicked`: People who have clicked any call-to-action buttons on your Page (for example, “Contact Us” or “Shop Now”).
+* `page_cta_clicked`: People who have clicked any call-to-action buttons on your Page (for example, "Contact Us" or "Shop Now").
 * `page_or_post_save`: People who have saved your Page or any of your Page posts.
 * `page_post_interaction`: People who have interacted with any of your Page posts. Interactions include reactions (for example, Like, Love, Haha, Wow, Sad, Angry), shares, comments, link clicks, or carousel swipes.
 
@@ -122,8 +122,8 @@ Set `object_id` to `"CANVAS_ID"`. The `rule` should track one of the following e
 
 The `object_id` should be the `"INSTAGRAM_BUSINESS_PROFILE_ID"`, and the `rule` should track one of the following Instagram business profile events:
 
-* `ig_business_profile_all`: People who visited your Instagram business profile or engaged with any of your Instagram business profile’s content or ads. This is the most inclusive engagement type and includes all other types of engagement. It’s a union of `ig_business_profile_engaged`, `ig_user_messaged_business`, and `ig_user_messaged_business`.
-* `ig_business_profile_engaged`: People who engaged with your Instagram business profile or engaged with any of your Instagram business profile’s content or ads.
+* `ig_business_profile_all`: People who visited your Instagram business profile or engaged with any of your Instagram business profile's content or ads. This is the most inclusive engagement type and includes all other types of engagement. It's a union of `ig_business_profile_engaged`, `ig_user_messaged_business`, and `ig_user_messaged_business`.
+* `ig_business_profile_engaged`: People who engaged with your Instagram business profile or engaged with any of your Instagram business profile's content or ads.
 * `ig_user_messaged_business`: People who messaged your Instagram business profile.
 * `ig_business_profile_visit`: People who visited your Instagram business profile.
 * `ig_business_profile_ad_saved`: People who saved either organic content or an ad from your Instagram business profile.
@@ -363,7 +363,7 @@ For details on Custom Audiences see the [Custom Audience Reference](https://deve
 
 ### Page likes retention and rules
 
-Page likes audience has no retention (`retention_seconds=0`). Also, Page likes rules can’t be combined with other Page events.
+Page likes audience has no retention (`retention_seconds=0`). Also, Page likes rules can't be combined with other Page events.
 
 The following is an example of creating a Page likes audience:
 

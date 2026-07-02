@@ -24,52 +24,48 @@ Lastly, each card must specify the product and catalog identifiers `"product_ret
 ### The `card` object
 
 ```
-```
 ...  
 {  
-  "card_index": 0,  
-  "type": "product",  
-  "action": {  
-    "product_retailer_id": "abc123xyz",  
-    "catalog_id": "123456789"  
+  "card_index": 0,  
+  "type": "product",  
+  "action": {  
+    "product_retailer_id": "abc123xyz",  
+    "catalog_id": "123456789"  
 }  
 ...
-```
 ```
 
 ## Request syntax
 
 ```
-```
-curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/messages' \  
-  -H 'Content-Type: application/json' \  
-  -H 'Authorization: Bearer <ACCESS_TOKEN>' \  
-  -d '{  
-    "messaging_product": "whatsapp",  
-    "recipient_type": "individual",  
-    "to": "<WHATSAPP_USER_PHONE_NUMBER>",  
-    "type": "interactive", // must be interactive  
-    "interactive": {  
-      "type": "carousel", // must be carousel  
-      "body": {  
-        "text": "<MESSAGE_BODY_TEXT>"  
-      },  
-      "action": {  
-        "cards": [  
-          {  
-            "card_index": 0,  
-            "type": "product",  
-            "action": {  
-              "product_retailer_id": "abc123xyz",  
-              "catalog_id": "123456789"  
-            }  
-          }  
-          // additional product cards  
-        ]  
-      }  
-    }  
-  }'
-```
+curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/messages' \  
+  -H 'Content-Type: application/json' \  
+  -H 'Authorization: Bearer <ACCESS_TOKEN>' \  
+  -d '{  
+    "messaging_product": "whatsapp",  
+    "recipient_type": "individual",  
+    "to": "<WHATSAPP_USER_PHONE_NUMBER>",  
+    "type": "interactive", // must be interactive  
+    "interactive": {  
+      "type": "carousel", // must be carousel  
+      "body": {  
+        "text": "<MESSAGE_BODY_TEXT>"  
+      },  
+      "action": {  
+        "cards": [  
+          {  
+            "card_index": 0,  
+            "type": "product",  
+            "action": {  
+              "product_retailer_id": "abc123xyz",  
+              "catalog_id": "123456789"  
+            }  
+          }  
+          // additional product cards  
+        ]  
+      }  
+    }  
+  }'
 ```
 
 ## Request parameters
@@ -85,17 +81,15 @@ curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_
 ## Card object parameters
 
 ```
-```
 ...  
 {  
-  "card_index": <INDEX>,  
-  "type": "product",  
-  "action": {  
-    "product_retailer_id": "<PRODUCT_RETAILER_ID>",  
-    "catalog_id": "<CATALOG_ID>"  
+  "card_index": <INDEX>,  
+  "type": "product",  
+  "action": {  
+    "product_retailer_id": "<PRODUCT_RETAILER_ID>",  
+    "catalog_id": "<CATALOG_ID>"  
 }  
 ...
-```
 ```
 
 | Placeholder | Description | Sample value |
@@ -107,59 +101,55 @@ curl 'https://graph.facebook.com/<API_VERSION>/<WHATSAPP_BUSINESS_PHONE_NUMBER_
 ## Example request
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "recipient_type": "individual",  
-  "to": "1234567890",  
-  "type": "interactive",  
-  "interactive": {  
-    "type": "carousel",  
-    "body": {  
-      "text": "Check out our featured products!"  
-    },  
-    "action": {  
-      "cards": [  
-        {  
-          "card_index": 0,  
-          "type": "product",  
-          "action": {  
-            "product_retailer_id": "abc123xyz",  
-            "catalog_id": "123456789"  
-          }  
-        },  
-        {  
-          "card_index": 1,  
-          "type": "product",  
-          "action": {  
-            "product_retailer_id": "def456uvw",  
-            "catalog_id": "123456789"  
-          }  
-        }  
-      ]  
-    }  
-  }  
+  "messaging_product": "whatsapp",  
+  "recipient_type": "individual",  
+  "to": "1234567890",  
+  "type": "interactive",  
+  "interactive": {  
+    "type": "carousel",  
+    "body": {  
+      "text": "Check out our featured products!"  
+    },  
+    "action": {  
+      "cards": [  
+        {  
+          "card_index": 0,  
+          "type": "product",  
+          "action": {  
+            "product_retailer_id": "abc123xyz",  
+            "catalog_id": "123456789"  
+          }  
+        },  
+        {  
+          "card_index": 1,  
+          "type": "product",  
+          "action": {  
+            "product_retailer_id": "def456uvw",  
+            "catalog_id": "123456789"  
+          }  
+        }  
+      ]  
+    }  
+  }  
 }
-```
 ```
 
 ## Example response
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "contacts": [  
-    {  
-      "input": "+16505551234",  
-      "wa_id": "16505551234"  
-    }  
-  ],  
-  "messages": [  
-    {  
-      "id": "wamid.HBgLMTY0NjcwNDM1OTUVAgARGBI1RjQyNUE3NEYxMzAzMzQ5MkEA"  
-    }  
-  ]  
+  "messaging_product": "whatsapp",  
+  "contacts": [  
+    {  
+      "input": "+16505551234",  
+      "wa_id": "16505551234"  
+    }  
+  ],  
+  "messages": [  
+    {  
+      "id": "wamid.HBgLMTY0NjcwNDM1OTUVAgARGBI1RjQyNUE3NEYxMzAzMzQ5MkEA"  
+    }  
+  ]  
 }
-```
 ```

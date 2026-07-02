@@ -7,19 +7,19 @@ source_url: https://developers.facebook.com/documentation/ads-commerce/marketing
 
 Updated: Apr 30, 2024
 
-When you create destination ads, use these template tags in the ad creative and deep-link URLs. When Facebook displays your ad, we replace the template tags with that person’s travel selections.
+When you create destination ads, use these template tags in the ad creative and deep-link URLs. When Facebook displays your ad, we replace the template tags with that person's travel selections.
 
-**You should provide template tags in double curly brackets**: `{{....}}`
+**You should provide template tags in double curly brackets**: `{​{....}​}`
 
 **Before using template tags, make sure you provide all required details through your [Destination Events](https://developers.facebook.com/documentation/ads-commerce/marketing-api/destination-ads/events)**.
 
 For example, the title of your ad could be:
 
-> Book your travel to `{{destination.city}}` today!
+> Book your travel to `{​{destination.city}​}` today!
 
 And the template URL of your ad could deep link people straight to the destination page they were interested in, with the right travel dates:
 
-> `https://www.(...).com/destinations?id={{destination.destination_id}}&start={{trip.travel_start date_format:Y-m-d}}&end={{trip.travel_end date_format:Y-m-d}}`
+> `https://www.(...).com/destinations?id={​{destination.destination_id}​}&start={​{trip.travel_start date_format:Y-m-d}​}&end={​{trip.travel_end date_format:Y-m-d}​}`
 
 ## Dynamic Dates
 
@@ -32,9 +32,9 @@ Dynamic dates for template tags enable you to continuously update the dates that
 
 | Template tag | Description |
 | --- | --- |
-| `trip.currency_code` | The [ISO-4217⁠](https://www.iso.org/iso-4217-currency-codes.html) currency code (for example, “USD”) passed by the advertiser in dynamic events (for example, pixel events) using the key currency. If no currency code has been passed for an item, we show the product’s feed’s default currency. |
-| `trip.travel_start` | The trip start date that Facebook has collected for the user from the advertiser. If there was no trip start date collected, this template tag will default to tomorrow. We support most of the date formats provided [here⁠](http://php.net/manual/en/function.date.php).  Example:   * `{{trip.checkin_date}}` * `{{trip.checkin_date date_format:Y-m-d}}` |
-| `trip.travel_end` | The trip end date that Facebook has collected for the user from the advertiser. If there was no trip end date collected, this template tag will default to the day after tomorrow. We support most of the date formats provided [here⁠](http://php.net/manual/en/function.date.php).  Example:   * `{{trip.travel_end}}` * `{{trip.travel_end date_format:Y-m-d}}` |
+| `trip.currency_code` | The [ISO-4217⁠](https://www.iso.org/iso-4217-currency-codes.html) currency code (for example, "USD") passed by the advertiser in dynamic events (for example, pixel events) using the key currency. If no currency code has been passed for an item, we show the product's feed's default currency. |
+| `trip.travel_start` | The trip start date that Facebook has collected for the user from the advertiser. If there was no trip start date collected, this template tag will default to tomorrow. We support most of the date formats provided [here⁠](http://php.net/manual/en/function.date.php).  Example:   * `{​{trip.checkin_date}​}` * `{​{trip.checkin_date date_format:Y-m-d}​}` |
+| `trip.travel_end` | The trip end date that Facebook has collected for the user from the advertiser. If there was no trip end date collected, this template tag will default to the day after tomorrow. We support most of the date formats provided [here⁠](http://php.net/manual/en/function.date.php).  Example:   * `{​{trip.travel_end}​}` * `{​{trip.travel_end date_format:Y-m-d}​}` |
 | `trip.num_adults` | Number of adult travelers, based on intent signals Facebook collects about the user. Currently defaults to 1, subject to change. |
 | `trip.num_children` | Number of children travelers, based on intent signals Facebook collects about the user. Currently defaults to 0, subject to change. |
 | `trip.num_travelers` | Sum of adult and children travelers, based on intent signals Facebook collects about the user. Currently defaults to 1, subject to change. |

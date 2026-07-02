@@ -16,7 +16,7 @@ As per the November 2024 [WhatsApp Business Messaging Policy⁠](https://busines
 Businesses must follow the below requirements when obtaining opt-in:
 
 * Businesses must clearly state that a person is opting in to receive communication from the business.
-* Businesses must clearly state the business’s name that a person is opting in to receive messages from.
+* Businesses must clearly state the business's name that a person is opting in to receive messages from.
 * Businesses must comply with applicable law.
 
 ## Opt-in methods
@@ -45,4 +45,4 @@ Businesses should continue to optimize for the user experience while obtaining o
 ## Maintaining high quality
 
 Maintaining high-quality chat threads between people and businesses remains important.
-People can share feedback with WhatsApp or choose to [stop receiving marketing messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/marketing-templates#user-preferences-for-marketing-messages) from individual businesses. People can also block or report a business. Our systems will rate limit businesses if the business’s quality is low for a sustained period of time. We may also reactively evaluate user feedback to flag policy violations and develop additional types of enforcement over time.
+People can share feedback with WhatsApp or choose to [stop receiving marketing messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/marketing-templates#user-preferences-for-marketing-messages) from individual businesses. People can also block or report a business. Our systems will rate limit businesses if the business's quality is low for a sustained period of time. We may also reactively evaluate user feedback to flag policy violations and develop additional types of enforcement over time.

@@ -64,84 +64,80 @@ curl 'https://graph.facebook.com/v25.0/756079150920219/messages' \
 #### Group message sent example
 
 ```
-```
 {  
-   "object": "whatsapp_business_account",  
-   "entry": [  
-     {  
-       "id": "<WHATSAPP_BUSINESS_ACCOUNT_ID>",  
-       "changes": [  
-         {  
-           "value": {  
-               "messaging_product": "whatsapp",  
-               "metadata": {  
-                    "display_phone_number": "<BUSINESS_DISPLAY_PHONE_NUMBER>",  
-                    "phone_number_id": "<BUSINESS_PHONE_NUMBER_ID>"  
-               },  
-               "statuses": [  
-                 {  
-                   "id": "<WHATSAPP_MESSAGE_ID>",  
-                   "recipient_id": "<GROUP_ID>",  
-                   "recipient_type": "group",  
-                   "status": "sent",  
-                   "timestamp": "<WEBHOOK_TRIGGER_TIMESTAMP>",  
-                 }  
-               ]  
-           },  
-           "field": "messages"  
-         }  
-       ]  
-     }  
-   ]  
- }
-```
+   "object": "whatsapp_business_account",  
+   "entry": [  
+     {  
+       "id": "<WHATSAPP_BUSINESS_ACCOUNT_ID>",  
+       "changes": [  
+         {  
+           "value": {  
+               "messaging_product": "whatsapp",  
+               "metadata": {  
+                    "display_phone_number": "<BUSINESS_DISPLAY_PHONE_NUMBER>",  
+                    "phone_number_id": "<BUSINESS_PHONE_NUMBER_ID>"  
+               },  
+               "statuses": [  
+                 {  
+                   "id": "<WHATSAPP_MESSAGE_ID>",  
+                   "recipient_id": "<GROUP_ID>",  
+                   "recipient_type": "group",  
+                   "status": "sent",  
+                   "timestamp": "<WEBHOOK_TRIGGER_TIMESTAMP>",  
+                 }  
+               ]  
+           },  
+           "field": "messages"  
+         }  
+       ]  
+     }  
+   ]  
+ }
 ```
 
 #### Group message failed example
 
 ```
-```
 {  
-   "object": "whatsapp_business_account",  
-   "entry": [  
-     {  
-       "id": "<WHATSAPP_BUSINESS_ACCOUNT_ID>",  
-       "changes": [  
-         {  
-           "value": {  
-               "messaging_product": "whatsapp",  
-               "metadata": {  
-                    "display_phone_number": "<BUSINESS_DISPLAY_PHONE_NUMBER>",  
-                    "phone_number_id": "<BUSINESS_PHONE_NUMBER_ID>"  
-               },  
-               "statuses": [  
-                 {  
-                   "id": "<WHATSAPP_MESSAGE_ID>",  
-                   "recipient_id": "<GROUP_ID>",  
-                   "recipient_type": "group",  
-                   "status": "failed",  
-                   "timestamp": "<WEBHOOK_TRIGGER_TIMESTAMP>",  
-                   "errors": [  
-                     {  
-                       "code": "<ERROR_CODE>",  
-                       "title": "<ERROR_TITLE>",  
-                       "message": "<ERROR_MESSAGE>",  
-                       "error_data": {  
-                         "details": "<ERROR_DETAILS>",  
-                       },  
-                       "href": "/documentation/business-messaging/whatsapp/support/error-codes"  
-                    }  
-                  ]  
-                }  
-              ]  
-           },  
-           "field": "messages"  
-         }  
-       ]  
-     }  
-   ]  
- }
-```
+   "object": "whatsapp_business_account",  
+   "entry": [  
+     {  
+       "id": "<WHATSAPP_BUSINESS_ACCOUNT_ID>",  
+       "changes": [  
+         {  
+           "value": {  
+               "messaging_product": "whatsapp",  
+               "metadata": {  
+                    "display_phone_number": "<BUSINESS_DISPLAY_PHONE_NUMBER>",  
+                    "phone_number_id": "<BUSINESS_PHONE_NUMBER_ID>"  
+               },  
+               "statuses": [  
+                 {  
+                   "id": "<WHATSAPP_MESSAGE_ID>",  
+                   "recipient_id": "<GROUP_ID>",  
+                   "recipient_type": "group",  
+                   "status": "failed",  
+                   "timestamp": "<WEBHOOK_TRIGGER_TIMESTAMP>",  
+                   "errors": [  
+                     {  
+                       "code": "<ERROR_CODE>",  
+                       "title": "<ERROR_TITLE>",  
+                       "message": "<ERROR_MESSAGE>",  
+                       "error_data": {  
+                         "details": "<ERROR_DETAILS>",  
+                       },  
+                       "href": "/documentation/business-messaging/whatsapp/support/error-codes"  
+                    }  
+                  ]  
+                }  
+              ]  
+           },  
+           "field": "messages"  
+         }  
+       ]  
+     }  
+   ]  
+ }
 ```
 
 ## Receive group messages
@@ -155,94 +151,90 @@ The `message` object includes a `group_id` field to indicate this is a group mes
 #### Receive group message webhook sample
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [{  
-      "id": "<WHATSAPP_BUSINESS_ACCOUNT_ID>",  
-      "changes": [{  
-          "value": {  
-              "messaging_product": "whatsapp",  
-              "metadata": {  
-                  "display_phone_number": "<BUSINESS_DISPLAY_PHONE_NUMBER>",  
-                  "phone_number_id": "<BUSINESS_PHONE_NUMBER_ID>"  
-              },  
-              "contacts": [{  
-                  "profile": {  
-                    "name": "<WHATSAPP_USER_NAME>"  
-                  },  
-                  "wa_id": "<WHATSAPP_USER_PHONE_NUMBER>"  
-                }],  
-              "messages": [{  
-                  "from": "<GROUP_PARTICIPANT_PHONE_NUMBER>",  
-                  "group_id": "<GROUP_ID>",  
-                  "id": "<WHATSAPP_MESSAGE_ID>",  
-                  "timestamp": "<WEBHOOK_TRIGGER_TIMESTAMP>",  
-                  "text": {  
-                    "body": "<MESSAGE_BODY>"  
-                  },  
-                  "type": "text"  
-                }]  
-          },  
-          "field": "messages"  
-        }]  
-  }]  
+  "object": "whatsapp_business_account",  
+  "entry": [{  
+      "id": "<WHATSAPP_BUSINESS_ACCOUNT_ID>",  
+      "changes": [{  
+          "value": {  
+              "messaging_product": "whatsapp",  
+              "metadata": {  
+                  "display_phone_number": "<BUSINESS_DISPLAY_PHONE_NUMBER>",  
+                  "phone_number_id": "<BUSINESS_PHONE_NUMBER_ID>"  
+              },  
+              "contacts": [{  
+                  "profile": {  
+                    "name": "<WHATSAPP_USER_NAME>"  
+                  },  
+                  "wa_id": "<WHATSAPP_USER_PHONE_NUMBER>"  
+                }],  
+              "messages": [{  
+                  "from": "<GROUP_PARTICIPANT_PHONE_NUMBER>",  
+                  "group_id": "<GROUP_ID>",  
+                  "id": "<WHATSAPP_MESSAGE_ID>",  
+                  "timestamp": "<WEBHOOK_TRIGGER_TIMESTAMP>",  
+                  "text": {  
+                    "body": "<MESSAGE_BODY>"  
+                  },  
+                  "type": "text"  
+                }]  
+          },  
+          "field": "messages"  
+        }]  
+  }]  
 }
-```
 ```
 
 #### Receive unsupported group message webhook sample
 
 ```
-```
 {  
-  "object": "whatsapp_business_account",  
-  "entry": [  
-    {  
-      "id": "<WHATSAPP_BUSINESS_ACCOUNT_ID>",  
-      "changes": [  
-        {  
-          "value": {  
-              "messaging_product": "whatsapp",  
-              "metadata": {  
-                   "display_phone_number": "<BUSINESS_DISPLAY_PHONE_NUMBER>",  
-                   "phone_number_id": "<BUSINESS_PHONE_NUMBER_ID>",  
-              },  
-              "contacts": [  
-                {  
-                  "profile": {  
-                    "name": "<WHATSAPP_USER_NAME>"  
-                  },  
-                  "wa_id": "<WHATSAPP_USER_PHONE_NUMBER>"  
-                }  
-              ],  
-              "messages": [  
-                {  
-                  "from": "<GROUP_PARTICIPANT_PHONE_NUMBER>",  
-                  "group_id": "<GROUP_ID>",  
-                  "id": "<WHATSAPP_MESSAGE_ID>",  
-                  "timestamp": "<WEBHOOK_TRIGGER_TIMESTAMP>",  
-                  "errors": [  
-                    {  
-                      "code": 130501,  
-                      "message": "Message type is not currently supported",  
-                      "title": "Unsupported message type",  
-                      "error_data": {  
-                        "details": "<ERROR_DETAILS>"  
-                      }  
-                    }  
-                  ],  
-                  "type": "unsupported"  
-                }  
-              ]  
-          },  
-          "field": "messages"  
-        }  
-      ]  
-    }  
-  ]  
+  "object": "whatsapp_business_account",  
+  "entry": [  
+    {  
+      "id": "<WHATSAPP_BUSINESS_ACCOUNT_ID>",  
+      "changes": [  
+        {  
+          "value": {  
+              "messaging_product": "whatsapp",  
+              "metadata": {  
+                   "display_phone_number": "<BUSINESS_DISPLAY_PHONE_NUMBER>",  
+                   "phone_number_id": "<BUSINESS_PHONE_NUMBER_ID>",  
+              },  
+              "contacts": [  
+                {  
+                  "profile": {  
+                    "name": "<WHATSAPP_USER_NAME>"  
+                  },  
+                  "wa_id": "<WHATSAPP_USER_PHONE_NUMBER>"  
+                }  
+              ],  
+              "messages": [  
+                {  
+                  "from": "<GROUP_PARTICIPANT_PHONE_NUMBER>",  
+                  "group_id": "<GROUP_ID>",  
+                  "id": "<WHATSAPP_MESSAGE_ID>",  
+                  "timestamp": "<WEBHOOK_TRIGGER_TIMESTAMP>",  
+                  "errors": [  
+                    {  
+                      "code": 130501,  
+                      "message": "Message type is not currently supported",  
+                      "title": "Unsupported message type",  
+                      "error_data": {  
+                        "details": "<ERROR_DETAILS>"  
+                      }  
+                    }  
+                  ],  
+                  "type": "unsupported"  
+                }  
+              ]  
+          },  
+          "field": "messages"  
+        }  
+      ]  
+    }  
+  ]  
 }
-```
 ```
 
 ## Pin and unpin group message
@@ -266,19 +258,17 @@ The display order of the pinned messages is based on the chronological order of 
 ### Request body
 
 ```
-```
 {  
-  "messaging_product": "whatsapp",  
-  "recipient_type": "group",  
-  "to": "<GROUP_ID>",  
-  "type": "pin",  
-  "pin": {  
-    "type": "<PIN_OPERATION>",  
-    "message_id": "<MESSAGE_ID>",  
-    "expiration_days": "<EXPIRATION>"  
-  }  
+  "messaging_product": "whatsapp",  
+  "recipient_type": "group",  
+  "to": "<GROUP_ID>",  
+  "type": "pin",  
+  "pin": {  
+    "type": "<PIN_OPERATION>",  
+    "message_id": "<MESSAGE_ID>",  
+    "expiration_days": "<EXPIRATION>"  
+  }  
 }
-```
 ```
 
 ### Body parameters
@@ -293,22 +283,20 @@ The display order of the pinned messages is based on the chronological order of 
 ### Response body
 
 ```
-```
-    {  
-      "messaging_product": "whatsapp",  
-      "contacts": [  
-        {  
-          "input": "Y2FwaV9ncm91cDo....",  
-          "wa_id": "Y2FwaV9ncm91cDo...."  
-        }  
-      ],  
-      "messages": [  
-        {  
-          "id": "wamid.HBgLM..."  
-        }  
-      ]  
+    {  
+      "messaging_product": "whatsapp",  
+      "contacts": [  
+        {  
+          "input": "Y2FwaV9ncm91cDo....",  
+          "wa_id": "Y2FwaV9ncm91cDo...."  
+        }  
+      ],  
+      "messages": [  
+        {  
+          "id": "wamid.HBgLM..."  
+        }  
+      ]  
 }
-```
 ```
 
 ### Webhooks

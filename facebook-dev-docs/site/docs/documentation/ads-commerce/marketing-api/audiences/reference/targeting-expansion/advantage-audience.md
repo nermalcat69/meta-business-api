@@ -18,12 +18,10 @@ Targeting automation settings are expressed through distinct properties:
 An example of `targeting_optimization_types`:
 
 ```
-```
-targeting_optimization_types: {  
-  detailed_targeting: 1,  
-  lookalike: 1  
+targeting_optimization_types: {  
+  detailed_targeting: 1,  
+  lookalike: 1  
 }
-```
 ```
 
 Meta sets the `lookalike` and `detailed_targeting` flags to `1` (indicating expansion is turned on) in the following optimization goals:

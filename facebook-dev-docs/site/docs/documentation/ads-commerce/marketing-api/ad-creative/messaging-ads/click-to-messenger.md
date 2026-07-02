@@ -25,7 +25,7 @@ Ads that click to Messenger for lead generation give businesses the ability to g
 
 #### Ads that click to Messenger with product extensions
 
-Product extensions (the “Show product” feature in Meta Ads Manager) is an Advantage+ creative optimization that showcases products from your catalog below your main media on your ads. Product extensions support ads that click to Messenger.
+Product extensions (the "Show product" feature in Meta Ads Manager) is an Advantage+ creative optimization that showcases products from your catalog below your main media on your ads. Product extensions support ads that click to Messenger.
 
 #### Ads that click to subscribe
 

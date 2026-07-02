@@ -74,12 +74,12 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Business-ID}/add_phone_numbers' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "phone_number": "+1234567890"  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Business-ID}/add_phone_numbers' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "phone_number": "+1234567890"  
 }'
 ```
 
@@ -91,12 +91,12 @@ Select status code
 
 ```
 {  
-  "success": {  
-    "summary": "Phone number successfully added",  
-    "value": {  
-      "id": "1234567890123456"  
-    }  
-  }  
+  "success": {  
+    "summary": "Phone number successfully added",  
+    "value": {  
+      "id": "1234567890123456"  
+    }  
+  }  
 }
 ```
 
@@ -615,12 +615,12 @@ cURLJavaScriptPython
 ---
 
 ```
-curl --request POST \  
-  --url 'https://graph.facebook.com/{Version}/{Business-ID}/add_phone_numbers' \  
-  --header 'Authorization: Bearer <Token>' \  
-  --header 'Content-Type: application/json' \  
-  --data '{  
-  "phone_number": "+1234567890"  
+curl --request POST \  
+  --url 'https://graph.facebook.com/{Version}/{Business-ID}/add_phone_numbers' \  
+  --header 'Authorization: Bearer <Token>' \  
+  --header 'Content-Type: application/json' \  
+  --data '{  
+  "phone_number": "+1234567890"  
 }'
 ```
 
@@ -632,12 +632,12 @@ Select status code
 
 ```
 {  
-  "success": {  
-    "summary": "Phone number successfully added",  
-    "value": {  
-      "id": "1234567890123456"  
-    }  
-  }  
+  "success": {  
+    "summary": "Phone number successfully added",  
+    "value": {  
+      "id": "1234567890123456"  
+    }  
+  }  
 }
 ```
 

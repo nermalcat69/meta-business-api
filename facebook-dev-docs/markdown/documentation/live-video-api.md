@@ -53,4 +53,4 @@ Publishing on a Page
 
 ## Next Steps
 
-Read our [Overview](https://developers.facebook.com/documentation/live-video-api/overview) to learn about the API’s core concepts, then follow the steps in our [Getting Started](https://developers.facebook.com/documentation/live-video-api/overview) document to quickly create a broadcast on your own User profile.
+Read our [Overview](https://developers.facebook.com/documentation/live-video-api/overview) to learn about the API's core concepts, then follow the steps in our [Getting Started](https://developers.facebook.com/documentation/live-video-api/overview) document to quickly create a broadcast on your own User profile.

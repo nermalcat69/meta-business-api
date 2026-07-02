@@ -7,7 +7,7 @@ source_url: https://developers.facebook.com/documentation/business-messaging/mes
 
 Updated: Sep 14, 2021
 
-The `messaging_handovers` webhook event is used to notify your webhook when certain actions are taken using the Messenger Platform’s [handover protocol](https://developers.facebook.com/docs/messenger-platform/handover-protocol), including [pass thread control](https://developers.facebook.com/docs/messenger-platform/handover-protocol#pass_thread_control), [take thread control](https://developers.facebook.com/docs/messenger-platform/handover-protocol#take_thread_control), and [role change](https://developers.facebook.com/docs/messenger-platform/handover-protocol#app_roles) events.
+The `messaging_handovers` webhook event is used to notify your webhook when certain actions are taken using the Messenger Platform's [handover protocol](https://developers.facebook.com/docs/messenger-platform/handover-protocol), including [pass thread control](https://developers.facebook.com/docs/messenger-platform/handover-protocol#pass_thread_control), [take thread control](https://developers.facebook.com/docs/messenger-platform/handover-protocol#take_thread_control), and [role change](https://developers.facebook.com/docs/messenger-platform/handover-protocol#app_roles) events.
 
 For more information on the handover protocol, see [Handover Protocol](https://developers.facebook.com/docs/messenger-platform/handover-protocol).
 

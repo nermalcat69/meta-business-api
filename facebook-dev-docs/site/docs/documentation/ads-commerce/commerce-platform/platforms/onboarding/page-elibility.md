@@ -10,13 +10,13 @@ Updated: Jan 29, 2020
 The **Business On Behalf Of** API allows a partner to:
 
 * Get access to act on behalf of their client
-* Create a system user under their client’s Business Manager and fetch its access token
+* Create a system user under their client's Business Manager and fetch its access token
 
 A *system user* is defined as someone who may perform repetitive programmatic tasks, such as updating a product catalog, sending server-to-server events, or updating custom audiences, and so on.
 
-In this scenario, the system user has employee access and can only access assigned (at the time of creation) assets using the admin user’s access token.
+In this scenario, the system user has employee access and can only access assigned (at the time of creation) assets using the admin user's access token.
 
-The advantage of using a system user vs. a user access token — users can cycle off a business, but system user access tokens don’t expire. In this approach, the client continues to be the owner of their business and allows the partner access to their Business Manager and its assets via a system user. A client has the ability to go to their Business Manager and revoke the system user or remove certain assets access to a partner programmatically.
+The advantage of using a system user vs. a user access token — users can cycle off a business, but system user access tokens don't expire. In this approach, the client continues to be the owner of their business and allows the partner access to their Business Manager and its assets via a system user. A client has the ability to go to their Business Manager and revoke the system user or remove certain assets access to a partner programmatically.
 
 ![Image](https://scontent.fdel27-5.fna.fbcdn.net/v/t39.2365-6/585887563_1369493204909330_3462383981194584359_n.png?_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=Nr54zsG4jy8Q7kNvwHXmwuC&_nc_oc=Ado0WFjS2o50SFNcu4bIaz4YDXJgUgv9dC6HoVxwQF-9mruLBXTEngXsLQi1704a7TIYP1Fl6nFPxzQNxXARYVla&_nc_zt=14&_nc_ht=scontent.fdel27-5.fna&_nc_gid=cEIULY_7PvgET-ajaM8AHQ&_nc_ss=7b289&oh=00_AQBlZfFeg0ZISRqkUThs4fDkaYip95H6H1o_w38Kve9pSA&oe=6A609DCC)
 
@@ -37,22 +37,22 @@ If there is **no Business Manager** for the client, you **must create one before
 ### IDs
 
 * `PARTNER_BM_ID`: ID of the Business Manager of the partner who should own the app.
-* `CLIENT_BM_ID`: ID of the Business Manager of the client that owns the Facebook Page connected to the client’s Commerce Account.
+* `CLIENT_BM_ID`: ID of the Business Manager of the client that owns the Facebook Page connected to the client's Commerce Account.
 
 ### Access Tokens
 
-* `USERS_ACCESS_TOKEN`: The access token of an admin of client’s Business Manager, created with `business_manage` permissions using the app owned by the partner’s Business Manager. This token is generated through [Facebook Login](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/platforms/onboarding/cmredirect#1--set-up-a-facebook-login-flow).
-* `PARTNER_BM_ADMIN_SYSTEM_USER_ACCESS_TOKEN`: The access token of the admin system user in the partner’s Business Manager for the app.
-* `CLIENT_BM_SU_ACCESS_TOKEN`: The access token of the system user under the client’s Business Manager.
-* `CLIENT_BM_SU_PAGE_ACCESS_TOKEN`: The **page** access token of the system user under the client’s Business Manager.
+* `USERS_ACCESS_TOKEN`: The access token of an admin of client's Business Manager, created with `business_manage` permissions using the app owned by the partner's Business Manager. This token is generated through [Facebook Login](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/platforms/onboarding/cmredirect#1--set-up-a-facebook-login-flow).
+* `PARTNER_BM_ADMIN_SYSTEM_USER_ACCESS_TOKEN`: The access token of the admin system user in the partner's Business Manager for the app.
+* `CLIENT_BM_SU_ACCESS_TOKEN`: The access token of the system user under the client's Business Manager.
+* `CLIENT_BM_SU_PAGE_ACCESS_TOKEN`: The **page** access token of the system user under the client's Business Manager.
 
 ## Recommended Steps
 
 #### Step 1
 
-Create the On Behalf Of relationship between the partner and client’s Business Manager.
+Create the On Behalf Of relationship between the partner and client's Business Manager.
 
-This creates an relationship edge between partner’s Business Manager and client’s Business Manager. This enables the partner to be able to create a SU via the API in the next step.
+This creates an relationship edge between partner's Business Manager and client's Business Manager. This enables the partner to be able to create a SU via the API in the next step.
 
 **Access Token Used:** `USERS_ACCESS_TOKEN`
 
@@ -63,7 +63,7 @@ curl -i -X POST \
 
 #### Step 2
 
-Fetch the access token of system user under the client’s Business Manager. This installs the app in the client’s Business Manager and creates a system user. By default the name of the system user is **“{Client\_Business\_Manager\_Name} SYSTEM USER**”. A client will be able to see the partners App in their Business Manager as a shared asset. (They will not have any access to the App other than at most as a test user.)
+Fetch the access token of system user under the client's Business Manager. This installs the app in the client's Business Manager and creates a system user. By default the name of the system user is **"{Client\_Business\_Manager\_Name} SYSTEM USER**". A client will be able to see the partners App in their Business Manager as a shared asset. (They will not have any access to the App other than at most as a test user.)
 
 In the `scope` parameter, you should include any permissions you need the system user to have in order to access relevant API endpoints. Refer to individual API references for what permissions are needed to access them.
 
@@ -91,7 +91,7 @@ curl -i -X GET \
 
 #### Step 4
 
-Assign assets (page and catalog) to the system user in the client’s Business Manager.
+Assign assets (page and catalog) to the system user in the client's Business Manager.
 
 **Access Token Used:** `USERS_ACCESS_TOKEN`
 
@@ -116,40 +116,38 @@ curl -i -X GET \
 This request will list all Pages managed by the system user including the matching `access_token`. Example response:
 
 ```
-```
 {  
-  "data": [  
-    {  
-      "access_token": "<access token sanitized>",  
-      "category": "Retail Company",  
-      "category_list": [  
-        {  
-          "id": "2239",  
-          "name": "Retail Company"  
-        }  
-      ],  
-      "name": "Test_Shop_Page",  
-      "id": "<content sanitized>",  
-      "tasks": [  
-        "ANALYZE",  
-        "ADVERTISE",  
-        "MODERATE",  
-        "CREATE_CONTENT",  
-        "MANAGE"  
-      ]  
-    }  
-  ],  
-  "paging": {  
-    "cursors": {  
-      "before": "<content sanitized>",  
-      "after": "<content sanitized>"  
-    }  
-  }  
+  "data": [  
+    {  
+      "access_token": "<access token sanitized>",  
+      "category": "Retail Company",  
+      "category_list": [  
+        {  
+          "id": "2239",  
+          "name": "Retail Company"  
+        }  
+      ],  
+      "name": "Test_Shop_Page",  
+      "id": "<content sanitized>",  
+      "tasks": [  
+        "ANALYZE",  
+        "ADVERTISE",  
+        "MODERATE",  
+        "CREATE_CONTENT",  
+        "MANAGE"  
+      ]  
+    }  
+  ],  
+  "paging": {  
+    "cursors": {  
+      "before": "<content sanitized>",  
+      "after": "<content sanitized>"  
+    }  
+  }  
 }
 ```
-```
 
-Copy the `access_token` corresponding to the page linked with client’s Commerce Account, and store it securely. You will use it to access APIs that require a Page Access Token on behalf of the Commerce Account, such as [Order Management](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/order-management) and [Finance Reporting](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/reporting).
+Copy the `access_token` corresponding to the page linked with client's Commerce Account, and store it securely. You will use it to access APIs that require a Page Access Token on behalf of the Commerce Account, such as [Order Management](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/order-management) and [Finance Reporting](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/reporting).
 
 ## FAQ
 
