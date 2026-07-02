@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Meta Dev Docs Saver",
+  "version": "1.0.0",
+  "description": "Save the current developers.facebook.com doc page (and discover its links) to a local folder as Markdown, as you browse.",
+  "permissions": ["downloads", "storage", "activeTab", "scripting", "webNavigation"],
+  "host_permissions": ["https://developers.facebook.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://developers.facebook.com/docs/*", "https://developers.facebook.com/documentation/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Meta Dev Docs Saver"
+  }
+}
