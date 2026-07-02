@@ -1,0 +1,121 @@
+---
+title: "Offers API"
+source_url: https://developers.facebook.com/documentation/ads-commerce/catalog/guides/generic-feed-files-api
+---
+
+# Offers API
+
+Updated: Apr 24, 2026
+
+Use this API to add offer information to your [product catalog](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-catalog) to enable merchandising your offers on Facebook and Instagram. For sellers with Facebook or Instagram checkout enabled, buyers will be able to redeem your offers directly within Meta technologies.
+
+## Create Offers
+
+You can create offers using an offer feed or manually using Meta Commerce Manager.
+
+### Feed
+
+To create a new Offer Feed, make a `POST` request to the [/{product\_catalog\_id}/product\_feeds](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-feed#Creating) edge and set `feed_type` to `OFFER`. When posting to this edge, a Product Feed of type Offer is created for the catalog specified in the `product_catalog_id` field.
+
+Once the Offer Feed is created, you can upload your offer data via a `POST` request to the [`/{product_feed_id}/uploads`](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-feed/uploads#Creating) edge.
+
+#### Feed Columns
+
+You can set most of the [available fields](https://developers.facebook.com/documentation/ads-commerce/catalog/guides/generic-feed-files-api#available-fields) listed below as columns in your feed file. Only the fields marked as Read-Only cannot be set during creation.
+
+## Glossary
+
+#### Product Sets
+
+A [product set](https://developers.facebook.com/documentation/ads-commerce/catalog/guides/docs/marketing-api/reference/product-set/) is a group of related items within a product catalog.
+
+#### Offer Target Items
+
+These are the products for which an offer is valid.
+
+#### Offer Prerequisites
+
+These are the prerequisites that need to be met for the offer to apply. For example, you can determine that the offer is only valid when people buy at least a specific amount of products or reach at least a specific subtotal quantity or value of those products. Currently, the prerequisite products are derived from the target products. For example, an offer of 20% off all shoes means the minimum subtotal/quantity requirements must be met with shoes in the cart.
+
+#### Offer Application Type
+
+The Offer’s application type specifies how an offer is applied at checkout either on your own website or within Facebook checkout. For instance, application type can be used to determine whether an offer is automatically applied at checkout or requires a coupon code to be redeemed. The application type also informs an offer’s combination behavior with other offers. For more details see [Combining Offers](https://developers.facebook.com/documentation/ads-commerce/catalog/guides/generic-feed-files-api#combining-offers).
+
+## Basic Fields
+
+The below fields can be used to configure all offer types.
+
+| Field | Description |
+| --- | --- |
+| `offer_id`  type: `string` | **Required.**  A seller provided identifier for the offer.   This field is used to uniquely identify an offer within a catalog. |
+| `id`  type: `numeric string` | **Read-Only.**  A unique identifier (Facebook ID) for this item. |
+| `title`  type: `string` | **Optional.**  A title for the offer item.   Currently this title is only used to help identify offers within Commerce Manager and is not shown to buyers. |
+| `description`  type: `string` | **Read-Only.**  The auto-generated description of the offer. |
+| `application_type`  type: `enum{SALE, AUTOMATIC_AT_CHECKOUT, BUYER_APPLIED}` | **Required.**  Determines how and when an offer is applied. Available options are:   * `SALE`: Items are directly marked down, reflected as strikethrough pricing for buyers. These offers require no prerequisites from the buyer and are not affected by other items at checkout. The sale producing the lowest price of an item is always chosen, as sales are never combined. Sales can be combined with other offer types but are always applied first. If a product already has the `sale_price` field set then the final price is computed using `sale_price` as the base price. * `AUTOMATIC_AT_CHECKOUT`: The offer is automatically applied at checkout when the buyer meets the necessary redemption criteria. This offer has some configuration which prevents it from qualifying as a sale. It can only be combined with sale offers. Up to 25 of such offers may be active at a time. * `BUYER_APPLIED`: This offer is applied at checkout based on an action taken by the buyer, such as entering a promo code. These offers cannot currently be combined with each other or offers applied automatically at checkout. **Requires one of [`public_coupon_code`, `coupon_codes`] to be provided.** |
+| `coupon_codes`  type: `Array<string>` | List of case-insensitive coupon codes that customers use at checkout to redeem the offer. Maximum of 100 coupon codes allowed. For example: `["10OFF", "HOLIDAY_SALE"]`  Coupon codes may only be specified when the `application_type` is `BUYER_APPLIED`.  If this field is set, `public_coupon_code` must be null. |
+| `public_coupon_code`  type: `string` | **Optional.**  A single case-insensitive coupon code that will be merchandised with the offer and will be prefilled at checkout if the buyer meets the offer prerequisites.   By default offers with coupon codes are not visibly merchandised to buyers on Facebook or Instagram shopping surfaces such as a product details page. This is to prevent private or secret codes from leaking to buyers unintentionally. You can change this behavior by specifying a public coupon code to use for merchandising your offer. Offers with public codes will display the same as offers with an `application_type` of `AUTOMATIC_AT_CHECKOUT` but will also feature the code text.   A public coupon code cannot exceed 20 characters in length and your catalog may only contain at most 10 active offers with public coupon codes at a time.   A public coupon code may only be set when the `application_type` is `BUYER_APPLIED`.   If this field is set, `coupon_codes` must be null. |
+| `start_date_time`  type: `timestamp` | **Required.**  Unix timestamp, in seconds, of when the offer starts.   The input may either be a Unix timestamp, in seconds, or an [ISO-8601⁠](https://en.wikipedia.org/wiki/ISO_8601) formatted date string (e.g. 2021-09-25T12:34:56Z). |
+| `end_date_time`  type: `timestamp` | **Optional. Defaults to `null`.**  Unix timestamp, in seconds, of when the offer ends. If left empty or `null`, the offer has no end date.   The input may either be a Unix timestamp, in seconds, or an [ISO-8601⁠](https://en.wikipedia.org/wiki/ISO_8601) formatted date string (e.g. 2021-09-25T12:34:56Z). |
+| `min_quantity`  type: `int64` | **Optional. Defaults to 0.**  Use this field if your offer is only valid when the customer buys a minimum number of products.   This field represents the number of products the customer needs to buy for the offer to be valid. For example: “Buy 5 shirts, Get 20% discount”.   Only one of either `min_quantity` or `min_subtotal` can be set. |
+| `min_subtotal`  type: `string` | **Optional. Defaults to `null`.**  Use this field if your offer is only valid when the customer’s order meets a specific subtotal value.   The subtotal of the prerequisite products must be equal to or greater than this value for the offer to apply. If no explicit prerequisite products are set then the target products are used as prerequisite products.   This field should be formatted as the amount, followed by the 3-digit ISO currency code, with a space between amount and currency. For example: the string “30.99 USD” represents a $30.99 prerequisite subtotal for the offer to apply.   Only one of either `min_quantity` or `min_subtotal` can be set. |
+| `redeem_limit_per_user`  type: `int64` | **Optional. Defaults to 0 (unlimited).**  The maximum number of times the offer can be used by a single user.   Set this field to 1 to create a single use coupon code.   This field should only be set if `application_type` is `BUYER_APPLIED`. |
+| `value_type`  type: `enum {FIXED_AMOUNT, PERCENTAGE}` | **Required.**  The type of discount provided by the offer.   Available options are:   * `FIXED_AMOUNT`: applies a discount with the value taken from `fixed_amount_off`. * `PERCENTAGE`: applies a percentage discount with the value taken from `percent_off`. |
+| `fixed_amount_off`  type: `string` | **Required, if `value_type` is set to `FIXED_AMOUNT`.**  The discount amount of the offer. Should be formatted as the amount, followed by the [3-digit ISO currency code⁠](https://en.wikipedia.org/wiki/ISO_4217), with a space between amount and currency. For example, the string “30.99 USD” represents a $30.99 discount.   This field should only be set if `value_type` is `FIXED_AMOUNT`. |
+| `percent_off`  type: `int64` | **Required, if `value_type` is set to `PERCENTAGE`.**  The percentage discount of the offer. Should be an integer between 0 and 100. For example, “30” represents a 30% discount.   The field should only be set if `value_type` is `PERCENTAGE`. |
+| `target_granularity`  type: `enum {ITEM_LEVEL, ORDER_LEVEL}` | **Required.**  The granularity at which the offer’s discount is applied.   Available options are:   * `ITEM_LEVEL`: represents a discount applied to each of the target items in the cart. * `ORDER_LEVEL`: represents a discount applied across all of the target items in the cart. For example, if you have a “$30 off shoes” offer with 3 pairs of shoes in the cart, `ITEM_LEVEL` will apply $30 off each pair of shoes ($90 value), while `ORDER_LEVEL` will apply $30 off the sum of all 3 pairs of shoes (max $30 value).   Note that offers with `ORDER_LEVEL` granularity may result in discount allocations at purchase that do not divide evenly across items in an order. Handling these uneven discount allocations may result in added complexity at fulfillment time or in case of refunds. |
+| `offer_terms`  type: `string` | **Optional.**  Any additional terms and conditions which dictate a buyer’s use of the offer. Max 2500 characters.   Facebook will auto-generate terms describing the offer based on the offer configuration. In addition to these terms you can use `offer_terms` to add language describing your own terms for the offer. These terms will appear below Facebook’s offer terms.   The content must follow our [content policies⁠](https://transparency.fb.com/policies/community-standards/). |
+| `offer_tiers`  type: `JSON array of objects` | **Optional.**  Use this field to define tiered discount levels for the offer, where different discounts apply based on quantity or subtotal thresholds. For example, “10% off when you buy 3+, 20% off when you buy 5+.” A maximum of 3 tiers may be specified per offer.  Each object in the array supports the following fields:   * `rank`: (required, integer) A positive integer that determines the tier’s priority. The highest rank is applied first if the buyer qualifies, then lower ranks are checked in order. Ranks must be unique across tiers. * `percent_off`: (float) Percentage discount for this tier (e.g., 10.0 for 10% off). Provide either percent off or fixed amount off, not both. * `fixed_amount_off`: (string) Fixed monetary discount, formatted as the amount followed by the 3-digit ISO currency code with a space between them. For example: “10.00 USD”. Provide either percent\_off or fixed\_amount\_off, not both. * `min_quantity`: (integer) Minimum number of items the buyer must purchase to qualify for this tier. * `min_subtotal`: (string) Minimum order subtotal to qualify for this tier, formatted as the amount followed by the 3-digit ISO currency code with a space between them. For example: “50.00 USD”.   Example of a “Buy More Save More” offer:  `[{"rank": 1, "percent_off": 10.0, "min_quantity": 3}, {"rank": 2, "percent_off": 20.0, "min_quantity": 5}]` |
+| `application_priority`  type: `integer` | **Optional.**  A non-negative integer that controls the ranking order in which discounts are evaluated and applied when multiple offers exist. Lower values indicate higher priority — for example, an offer with `application_priority` set to 0 is ranked above one set to 5.  Offers that have an `application_priority` set are ranked before offers without one. |
+
+## Specifying Eligible Products
+
+Both the target items for which an offer is valid and the prerequisite items a buyer much purchase to redeem the offer are defined by product sets. The Offers API supports multiple ways to specify these product sets but only one method may be used per product set type per offer.
+
+| Field | Description |
+| --- | --- |
+| `target_selection`  type: `enum{ALL_CATALOG_PRODUCTS, SPECIFIC_PRODUCTS}` | **Required.**  This field is used to differentiate between offers which apply to an entire product catalog and offers restricted to a specific subset of items within a catalog.   Available options are:   * `ALL_CATALOG_PRODUCTS`: offer can be applied to any product in the catalog. * `SPECIFIC_PRODUCTS`: offer can only be applied to the target products specified by `target_filter`, `target_product_retailer_ids`, `target_product_group_retailer_ids`, or `target_product_set_retailer_ids`.    **If `target_selection` is `SPECIFIC_PRODUCTS`, exactly one of the following is required: `target_filter`, `target_product_retailer_ids`, `target_product_group_retailer_ids`, or `target_product_set_retailer_ids`.** |
+| `target_filter`  type: `JSON-encoded string` | **Optional.**  Filter rule to identify products that the offer can be applied to. Uses the same [filter rule logic](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-set#filterrules) used for adding products to a product set.   If the specified filter rule matches the filter of an existing product set then this offer will target that product set, otherwise a new product set will be created.   This field should only be set if `target_selection` is set to `SPECIFIC_PRODUCTS`. |
+| `target_product_retailer_ids`  type: `Array<product_retailer_id>` | **Optional.**  List of product item retailer IDs for products that the offer can be applied to.   This field should only be set if `target_selection` is set to `SPECIFIC_PRODUCTS`. |
+| `target_product_group_retailer_ids`  type: `Array<product_group_retailer_id>` | **Optional.**  List of product group retailer IDs for products that the offer can be applied to.   All [product variants](https://developers.facebook.com/documentation/ads-commerce/catalog/guides/docs/marketing-api/catalog/guides/product-variants) included in the product group will be eligible for the offer.   This field should only be set if `target_selection` is set to `SPECIFIC_PRODUCTS`. |
+| `target_product_set_retailer_ids`  type: `Array<product_set_retailer_id>` | **Optional.**  List of retailer IDs of product sets that contain products that the offer can be applied to. The offer will apply to the union of all products yielded by evaluating the specified product sets. |
+| `prerequisite_filter`  type: `JSON-encoded string` | **Optional.**  Filter rule to identify products that must be purchased for the buyer to redeem the offer. Uses the same [filter rule logic](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-set#filterrules) used for adding products to a product set. Typically used in [“Buy X get Y”](https://developers.facebook.com/documentation/ads-commerce/catalog/guides/generic-feed-files-api#bxgy-offers) style offers.   If the specified filter rule matches the filter of an existing product set then this offer will use that product set to define the prerequisite products, otherwise a new product set will be created.   If this field is set, `prerequisite_product_retailer_ids`, `prerequisite_product_group_retailer_ids`, and `prerequisite_product_set_retailer_ids` must be `null`. |
+| `prerequisite_product_retailer_ids`  type: `Array<product_retailer_id>` | **Optional.**  Retailer IDs for product items that the buyer must purchase to redeem the offer. Any items included in the list are eligible for the buyer to use as a prerequisite towards redeeming the offer. Typically used in [“Buy X get Y”](https://developers.facebook.com/documentation/ads-commerce/catalog/guides/generic-feed-files-api#bxgy-offers) style offers.   If this field is set, `prerequisite_filter`, `prerequisite_product_group_retailer_ids`, and `prerequisite_product_set_retailer_ids` must be `null`. |
+| `prerequisite_product_group_retailer_ids`  type: `Array<product_group_retailer_id>` | **Optional.**  Retailer IDs for product groups that the buyer must purchase to redeem the offer. All [product variants](https://developers.facebook.com/documentation/ads-commerce/catalog/guides/docs/marketing-api/catalog/guides/product-variants) included in each group are eligible for the buyer to use as a prerequisite towards redeeming the offer. Typically used in [“Buy X get Y”](https://developers.facebook.com/documentation/ads-commerce/catalog/guides/generic-feed-files-api#bxgy-offers) style offers.   If this field is set, `prerequisite_filter`, `prerequisite_product_retailer_ids`, and `prerequisite_product_set_retailer_ids` must be `null`. |
+| `prerequisite_product_set_retailer_ids`  type: `Array<product_set_retailer_id>` | **Optional.**  Retailer IDs for product sets containing items that the buyer must purchase to redeem the offer. Any items yielded from the union of evaluating the product sets are eligible for the buyer to use as a prerequisite towards redeeming the offer. Typically used in [“Buy X get Y”](https://developers.facebook.com/documentation/ads-commerce/catalog/guides/generic-feed-files-api#bxgy-offers) style offers.   If this field is set, `prerequisite_filter`, `prerequisite_product_retailer_ids`, and `prerequisite_product_group_retailer_ids` must be `null`. |
+| `exclude_sale_priced_products`  type: `bool enum {YES, NO}` | **Optional.**  Whether the offer applies to products which already have a reduced price set in catalog, as specified by the `sale_price` field of [product item](https://developers.facebook.com/documentation/ads-commerce/catalog/reference).   Set this field to `YES` to avoid potentially double discounting products. Omit this field or set it to `NO` to include products with a lower `sale_price` set in your catalog.   When set, this field applies to both the target products and prerequisite products of an offer. |
+
+## Shipping Offers
+
+The Offers API supports both offers that discount the price of products in a buyer’s purchase as well as offers that discount the shipping costs for those products. Just like offers for products, shipping offers may be applied with a coupon code or automatically with or without additional buyer prerequisites.
+
+To create a shipping offer the `target_type` must be set to `SHIPPING`. Currently, only free shipping offers are supported and thus `value_type` must always be `PERCENTAGE` with `percent_off` set to 100.
+
+| Field | Description |
+| --- | --- |
+| `target_type`  type: `enum{LINE_ITEM, SHIPPING}` | **Required.**  The type of object that the offer applies to:   * `LINE_ITEM`: offer is applied to the product items themselves. * `SHIPPING`: offer is applied to the shipping costs. This option is only valid when `target_granularity` is `ITEM_LEVEL`. |
+| `target_shipping_option_types`  type: `Array<shipping_service_tier>` | **Required, if the `target_type` is `SHIPPING`.**  A list of shipping service tiers (e.g. `STANDARD`, `RUSH`, `EXPEDITED`) which the offer is valid for.   For example to specify a shipping offer which applies to standard and rush shipping speeds but not overnight shipping, use:   * `target_type` of `SHIPPING` * `target_shipping_option_types` of `["STANDARD", "RUSH"]`   For sellers with Facebook or Instagram checkout enabled, you can use the [Shipping Profiles API](https://developers.facebook.com/documentation/ads-commerce/commerce-platform/order-management/shipping-profiles-api) to manage the shipping profiles on your commerce account. |
+
+## Buy X Get Y Offers
+
+“Buy X Get Y” style offers allow buyers to purchase a specific quantity of select “X products” to get 1 or more of “Y products” at a reduced price or free. Spend X get Y offers where the buyer must reach a minimum spend threshold for a set of X products to receive a discount are also supported. You create a buy X get Y offer by setting the `target_quantity` field as well as either the `min_quantity` or `min_subtotal` fields.
+
+In some cases such as the common “buy one get one free” offer, X and Y may refer to the same set of products. However you can also use the `prerequisite_filter`, `prerequisite_product_retailer_ids`, `prerequisite_product_group_retailer_ids`, and `prerequisite_product_set_retailer_ids` to specify a set of X products distinct from the target Y products. See [Specify Eligible Products](https://developers.facebook.com/documentation/ads-commerce/catalog/guides/generic-feed-files-api#specify-products) for how to configure these fields.
+
+| Field | Description |
+| --- | --- |
+| `target_quantity`  type: `int64` | **Optional. Defaults to 0 (unlimited).**  The number of products that will be discounted for each redemption of the offer. Setting `target_quantity` > 0 constitutes a Buy X get Y style offer.   Use this field to control how many products are discounted when a buyer meets the redemption prerequisites. For instance in a “buy 2 get 1 50% off” offer the target quantity is 1 and in a “buy 5 get 2 free” offer the target quantity is 2. |
+| `redemption_limit_per_order`  type: `int64` | **Optional. Defaults to 0 (unlimited).**  The number of times this offer can be redeemed per order.   Use this field to limit the number of times an offer can be applied to the products in a buyer’s purchase. For instance in a “buy one shirt get one free” offer by default a buyer who purchases 6 shirts would receive 3 at full price and 3 for free. However in the same example if `redemption_limit_per_order` is set to 2 then the buyer would receive 2 shirts for free and 4 at full price.   If this field is set, `target_quantity` must be greater than 0. |
+
+## Combining Offers
+
+For sellers with checkout on Facebook or Instagram enabled there is limited support for combining multiple offers within a single transaction. An offer’s ability to be combined with other offers is primarily determined by its [application type](https://developers.facebook.com/documentation/ads-commerce/catalog/guides/generic-feed-files-api#offer-application-type) and target type. Currently this behavior is not configurable by sellers. The below rules summarize offer stacking behavior:
+
+* For a given product, if there are any offers which would result in strikethrough pricing (`application_type` = `SALE`) the offer resulting in the lowest product price is applied. This is repeated for all items in a buyer’s cart. The item’s new discounted price is used in all future offer prerequisite calculations.
+* In a single order, the buyer may redeem either 1 `BUYER_APPLIED` or 1 `AUTOMATIC_AT_CHECKOUT` offer per `target_type` (`LINE_ITEM` or `SHIPPING`). For instance, a buyer may apply a free shipping coupon and a buy one get one coupon but may not redeem 2 offers which both discount product prices.
+* Meta may sometimes fund offers to attract new and returning customers at no cost to sellers. Offers funded by Meta can always be combined with offers funded by sellers.
+
+## Restricting User Eligibility for Offers
+
+At present, offers created via the Offers API cannot be selectively merchandised to specific cohorts of users. Offers created in Commerce Manager can be configured with user eligibility restrictions. A merchandised offer created via the Offers API will be shown to all buyers and any buyer who meets an offer’s prerequisites (including entering any coupon codes) in Facebook or Instagram checkout may redeem the offer.
+
+In the future, the Offers API may support limiting offers to specific countries for multinational sellers as well as restricting offer eligibility to specific groups of users such as first time buyers or followers of a seller’s Facebook Page.

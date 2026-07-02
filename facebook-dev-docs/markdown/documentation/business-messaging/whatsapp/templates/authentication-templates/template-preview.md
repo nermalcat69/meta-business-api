@@ -1,0 +1,167 @@
+---
+title: "Bulk management"
+source_url: https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/authentication-templates/template-preview
+---
+
+# Bulk management
+
+Updated: Jun 24, 2026
+
+Use the [Upsert Message Templates API](https://developers.facebook.com/docs/graph-api/reference/whats-app-business-account/upsert_message_templates#Creating) to bulk update or create authentication templates in multiple languages that include or exclude the optional security and expiration warnings.
+
+If a template already exists with a matching name and language, the API updates the template with the contents of the request. Otherwise, the API creates a new template.
+
+## Request syntax
+
+```
+```
+POST /<WHATSAPP_BUSINESS_ACCOUNT_ID>/upsert_message_templates
+```
+```
+
+## Post body
+
+```
+```
+{  
+  "name": "<NAME>",  
+  "languages": [<LANGUAGES>],  
+  "category": "AUTHENTICATION",  
+  "components": [  
+    {  
+      "type": "BODY",  
+      "add_security_recommendation": <ADD_SECURITY_RECOMMENDATION> // Optional  
+    },  
+    {  
+      "type": "FOOTER",  
+      "code_expiration_minutes": <CODE_EXPIRATION_MINUTES> // Optional  
+    },  
+    {  
+      "type": "BUTTONS",  
+      "buttons": [  
+        {  
+          "type": "OTP",  
+          "otp_type": "<OTP_TYPE>",  
+          "supported_apps": [  
+            {  
+              "package_name": "<PACKAGE_NAME>", // One-tap and zero-tap buttons only  
+              "signature_hash": "<SIGNATURE_HASH>" // One-tap and zero-tap buttons only  
+            }  
+          ]  
+        }  
+      ]  
+    }  
+  ]  
+}
+```
+```
+
+## Properties
+
+All [template creation properties](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/authentication-templates/authentication-templates#properties) are supported, with these exceptions:
+
+* The `language` property is not supported. Instead, use `languages` and set its value to an array of [language and locale code](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/supported-languages) strings. For example: `["en_US","es_ES","fr"]`.
+* The `text` property is not supported.
+* The `autofill_text` property is not supported.
+
+## Example copy code request
+
+This example creates three authentication templates in English, Spanish, and French, with copy code buttons. Each template is named “authentication\_code\_copy\_code\_button” and includes the security recommendation and expiration time.
+
+```
+curl 'https://graph.facebook.com/v25.0/102290129340398/upsert_message_templates' \
+-H 'Content-Type: application/json' \
+-H 'Authorization: Bearer EAAJB...' \
+-d '
+{
+  "name": "authentication_code_copy_code_button",
+  "languages": ["en_US","es_ES","fr"],
+  "category": "AUTHENTICATION",
+  "components": [
+    {
+      "type": "BODY",
+      "add_security_recommendation": true
+    },
+    {
+      "type": "FOOTER",
+      "code_expiration_minutes": 10
+    },
+    {
+      "type": "BUTTONS",
+      "buttons": [
+        {
+          "type": "OTP",
+          "otp_type": "COPY_CODE"
+        }
+      ]
+    }
+  ]
+}'
+```
+
+## Example one-tap autofill request
+
+This example (1) updates an existing template with the name “authentication\_code\_autofill\_button” and language “en\_US”, and (2) creates two new authentication templates in Spanish and French with one-tap autofill buttons. Both newly created templates are named “authentication\_code\_autofill\_button” and include the security recommendation and expiration time.
+
+```
+curl 'https://graph.facebook.com/v25.0/102290129340398/upsert_message_templates' \
+-H 'Content-Type: application/json' \
+-H 'Authorization: Bearer EAAJB...' \
+-d '
+{
+  "name": "authentication_code_autofill_button",
+  "languages": ["en_US","es_ES","fr"],
+  "category": "AUTHENTICATION",
+  "components": [
+    {
+      "type": "BODY",
+      "add_security_recommendation": true
+    },
+    {
+      "type": "FOOTER",
+      "code_expiration_minutes": 15
+    },
+    {
+      "type": "BUTTONS",
+      "buttons": [
+        {
+          "type": "OTP",
+          "otp_type": "ONE_TAP",
+          "supported_apps": [
+            {
+              "package_name": "com.example.luckyshrub",
+              "signature_hash": "K8a/AINcGX7"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}'
+```
+
+## Example response
+
+```
+```
+{  
+  "data": [  
+    {  
+      "id": "954638012257287",  
+      "status": "APPROVED",  
+      "language": "en_US"  
+    },  
+    {  
+      "id": "969725527415202",  
+      "status": "APPROVED",  
+      "language": "es_ES"  
+    },  
+    {  
+      "id": "969725530748535",  
+      "status": "APPROVED",  
+      "language": "fr"  
+    }  
+  ]  
+}
+```
+```

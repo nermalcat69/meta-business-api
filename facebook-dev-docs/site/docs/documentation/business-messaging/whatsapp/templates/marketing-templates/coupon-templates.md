@@ -1,0 +1,221 @@
+---
+title: "Call permission request message template"
+source_url: https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/marketing-templates/coupon-templates
+---
+
+# Call permission request message template
+
+Updated: Jun 24, 2026
+
+Call permission request templates allow you to request permission to call WhatsApp users. They include a required **body** component and a **call permission request** component. When a WhatsApp user receives the message, they can grant or deny your business permission to call them.
+
+You can categorize call permission request templates as either `MARKETING` or `UTILITY`. This page demonstrates creating and sending a call permission request template with the `MARKETING` category. See [Call permission request templates](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/utility-templates/utility-call-permission-request-templates/) for a utility example.
+
+![A call permission request template message in WhatsApp showing the body text with the first_name parameter resolved to Pablo, and an annotated callout pointing to the call permission request component](https://scontent.fdel1-6.fna.fbcdn.net/v/t39.2365-6/678354993_1488549883003661_7098293211039644029_n.jpg?_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e280be&_nc_ohc=YeQ_EnXTx3MQ7kNvwFnel9V&_nc_oc=Adrv7hsHFHQUEgoB261wX1tZEeey1IW3cvBXeLR7vIxuLMAg6UxN6XkJ2wqoUyCdcYn61WdjjeQ_taJBEsSOcpIC&_nc_zt=14&_nc_ht=scontent.fdel1-6.fna&_nc_gid=IC22BGqmEbD53HhiFGduvQ&_nc_ss=7b2a8&oh=00_AQCirufb5jTO7NT5iDuVloEwVgVUTlu6FqhcIsQXXthlUw&oe=6A606ED1)
+
+## Limitations
+
+* Only templates categorized as `MARKETING` or `UTILITY` can include a call permission request component.
+* You must include body text, and it must not be empty.
+* You can’t combine the call permission request component with other interactive components.
+
+## Create a call permission request template
+
+Use the [Message Templates API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/message-template-api) to [create a call permission request template](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-account/message-template-api#post-version-waba-id-message-templates).
+
+### Request syntax
+
+```
+curl -X POST \
+  'https://graph.facebook.com/v25.0/<WHATSAPP_BUSINESS_ACCOUNT_ID>/message_templates' \
+  -H 'Authorization: Bearer <ACCESS_TOKEN>' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "name": "<TEMPLATE_NAME>",
+    "language": "<TEMPLATE_LANGUAGE>",
+    "category": "<CATEGORY>",
+    "parameter_format": "named",
+    "components": [
+      {
+        "type": "body",
+        "text": "<BODY_TEXT>",
+        "example": {
+          "body_text_named_params": [
+            {
+              "param_name": "<PARAM_NAME>",
+              "example": "<EXAMPLE_PARAM_VALUE>"
+            }
+          ]
+        }
+      },
+      {
+        "type": "call_permission_request"
+      }
+   ]
+}'
+```
+
+### Request parameters
+
+| Placeholder | Description | Example value |
+| --- | --- | --- |
+| `<ACCESS_TOKEN>`  *String* | **Required.**  [System token](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#system-user-access-tokens) or [business token](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#business-integration-system-user-access-tokens). | `EAAA...` |
+| `<API_VERSION>`  *String* | **Optional.**  Graph API version. | v25.0 |
+| `<BODY_TEXT>`  *String* | **Required.**  Body text string. Supports named parameters in `{{parameter_name}}` format.  Maximum 1024 characters. | `Hi {{first_name}}, as a Lucky Shrub VIP, get a first look at our rare new succulents before anyone else. Can we give you a quick call?` |
+| `<CATEGORY>`  *Enum* | **Required.**  Template category. Must be `MARKETING` or `UTILITY`. | `MARKETING` |
+| `<EXAMPLE_PARAM_VALUE>`  *String* | **Required if body text uses named parameters.**  Example value for the named parameter. | `Pablo` |
+| `<PARAM_NAME>`  *String* | **Required if body text uses named parameters.**  Name of the parameter, matching the placeholder in the body text. | `first_name` |
+| `<TEMPLATE_LANGUAGE>`  *Enum* | **Required.**  Template [language and locale code](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/supported-languages). | `en_US` |
+| `<TEMPLATE_NAME>`  *String* | **Required.**  Template name.  Maximum 512 characters. | `vip_early_access_call` |
+| `<WHATSAPP_BUSINESS_ACCOUNT_ID>`  *String* | **Required.**  WhatsApp Business account ID. | `106540352242922` |
+
+### Example request
+
+```
+curl -X POST \
+  'https://graph.facebook.com/v25.0/106540352242922/message_templates' \
+  -H 'Authorization: Bearer EAAJB...' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "name": "vip_early_access_call",
+    "language": "en_US",
+    "category": "MARKETING",
+    "parameter_format": "named",
+    "components": [
+      {
+        "type": "body",
+        "text": "Hi {{first_name}}, as a Lucky Shrub VIP, get a first look at our rare new succulents before anyone else. Can we give you a quick call?",
+        "example": {
+          "body_text_named_params": [
+            {
+              "param_name": "first_name",
+              "example": "Pablo"
+            }
+          ]
+        }
+      },
+      {
+        "type": "call_permission_request"
+      }
+   ]
+}'
+```
+
+### Example response
+
+```
+```
+{  
+  "id": "546151681022936",  
+  "status": "PENDING",  
+  "category": "MARKETING"  
+}
+```
+```
+
+## Send a call permission request template
+
+Use the [Messages API](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/message-api) to [send an approved call permission request template](https://developers.facebook.com/documentation/business-messaging/whatsapp/reference/whatsapp-business-phone-number/message-api#post-version-phone-number-id-messages) in a template message.
+
+### Request syntax
+
+```
+curl -X POST \
+  'https://graph.facebook.com/v25.0/<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>/messages' \
+  -H 'Authorization: Bearer <ACCESS_TOKEN>' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "messaging_product": "whatsapp",
+    "recipient_type": "individual",
+    "to": "<WHATSAPP_USER_PHONE_NUMBER>",
+    "type": "template",
+    "template": {
+      "name": "<TEMPLATE_NAME>",
+      "language": {
+        "policy": "deterministic",
+        "code": "<TEMPLATE_LANGUAGE_CODE>"
+      },
+      "components": [
+        {
+          "type": "body",
+          "parameters": [
+            {
+              "type": "text",
+              "parameter_name": "<PARAM_NAME>",
+              "text": "<PARAM_VALUE>"
+            }
+          ]
+        }
+      ]
+    }
+}'
+```
+
+### Request parameters
+
+| Placeholder | Description | Example value |
+| --- | --- | --- |
+| `<ACCESS_TOKEN>`  *String* | **Required.**  [System token](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#system-user-access-tokens) or [business token](https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#business-integration-system-user-access-tokens). | `EAAA...` |
+| `<API_VERSION>`  *String* | **Optional.**  Graph API version. | v25.0 |
+| `<PARAM_NAME>`  *String* | **Required if the template body uses named parameters.**  Name of the parameter to replace in the template body. | `first_name` |
+| `<PARAM_VALUE>`  *String* | **Required if the template body uses named parameters.**  Value to substitute for the named parameter. | `Pablo` |
+| `<TEMPLATE_LANGUAGE_CODE>`  *Enum* | **Required.**  Template [language and locale code](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/supported-languages). | `en_US` |
+| `<TEMPLATE_NAME>`  *String* | **Required.**  Name of the template to send. | `vip_early_access_call` |
+| `<WHATSAPP_BUSINESS_PHONE_NUMBER_ID>`  *String* | **Required.**  WhatsApp business phone number ID. | `106540352242922` |
+| `<WHATSAPP_USER_PHONE_NUMBER>`  *String* | **Required.**  WhatsApp user phone number. | `+16505551234` |
+
+### Example request
+
+```
+curl -X POST \
+  'https://graph.facebook.com/v25.0/106540352242922/messages' \
+  -H 'Authorization: Bearer EAAJB...' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "messaging_product": "whatsapp",
+    "recipient_type": "individual",
+    "to": "+15551234567",
+    "type": "template",
+    "template": {
+      "name": "vip_early_access_call",
+      "language": {
+        "policy": "deterministic",
+        "code": "en_US"
+      },
+      "components": [
+        {
+          "type": "body",
+          "parameters": [
+            {
+              "type": "text",
+              "parameter_name": "first_name",
+              "text": "Pablo"
+            }
+          ]
+        }
+      ]
+    }
+}'
+```
+
+### Example response
+
+```
+```
+{  
+  "messaging_product": "whatsapp",  
+  "contacts": [  
+    {  
+      "input": "+15551234567",  
+      "wa_id": "15551234567"  
+    }  
+  ],  
+  "messages": [  
+    {  
+      "id": "wamid.HBgLMTMyMzI4NjU2NzgVAgARGBJBQzRBRDBEMDEwQzVBM0M0QkIA",  
+      "message_status": "accepted"  
+    }  
+  ]  
+}
+```
+```

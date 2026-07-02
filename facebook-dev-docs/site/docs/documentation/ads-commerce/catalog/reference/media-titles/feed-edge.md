@@ -1,0 +1,74 @@
+---
+title: "Product Set Media Titles"
+source_url: https://developers.facebook.com/documentation/ads-commerce/catalog/reference/media-titles/feed-edge
+---
+
+# Product Set Media Titles
+
+Updated: Jun 30, 2026
+
+The Product Set Media Titles edge allows you to list media title items (movies, TV shows, music) that belong to a specific product set.
+
+## Permissions
+
+To use this API, your app needs the following permission:
+
+* `catalog_management`
+
+## Reading
+
+To list media title items in a product set, send a `GET` request:
+
+```
+GET /v25.0/{product-set-id}/media_titles HTTP/1.1
+Host: graph.facebook.com
+```
+
+### Parameters
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `summary` | boolean | **Optional**. When `true`, includes a `summary` object with `total_count` in the response. |
+| `limit` | integer | **Optional**. Maximum number of items to return per page. |
+| `before` | string | **Optional**. Cursor for backward pagination. |
+| `after` | string | **Optional**. Cursor for forward pagination. |
+
+### Fields
+
+Reading from this edge returns a JSON-formatted result:
+
+```
+{
+  "data": [],
+  "paging": {},
+  "summary": {}
+}
+```
+
+#### `data`
+
+A list of [Media Title](https://developers.facebook.com/documentation/ads-commerce/catalog/reference/media-titles) nodes. See the [Media Title](https://developers.facebook.com/documentation/ads-commerce/catalog/reference/media-titles#reading-fields) reference for the full list of fields.
+
+#### `paging`
+
+For more details about pagination, see the [Graph API guide](https://developers.facebook.com/docs/graph-api/using-graph-api#paging).
+
+#### `summary`
+
+Aggregated information about the edge, such as counts. Specify `summary=true` as a query parameter to include the `summary` object in the response.
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `total_count` | integer | Total number of items in the product set. |
+
+## Creating
+
+You can’t perform this operation on this node. To create product sets, use the [Product Set](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-set) node.
+
+## Updating
+
+You can’t perform this operation on this node. To update product sets, use the [Product Set](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-set) node.
+
+## Deleting
+
+You can’t perform this operation on this node. To delete product sets, use the [Product Set](https://developers.facebook.com/documentation/ads-commerce/marketing-api/reference/product-set) node.
